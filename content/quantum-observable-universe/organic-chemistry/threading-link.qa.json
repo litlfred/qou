@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:threading-link' → expected 'threading_link'; Lean declares: ThreadingLink, ThreadingLink.numComponents, ThreadingLink.two_components_of_even, ThreadingLink.one_component_of_odd, ThreadingLink.numCrossings.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:20.003Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:per-nucleon-channel-decomposition' → expected 'per_nucleon_channel_decomposition'; Lean declares: KnotChannel, protoChannelFactor, neutronChannelFactor, protonChannelSum, branchingFactorization. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.121Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

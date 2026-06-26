@@ -1244,7 +1244,25 @@
           "value": 0.8
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:qbeta-ck-truncation-canonical' → expected 'qbeta_ck_truncation_canonical'; Lean declares: jonesHopfClassicalLimitCk, CanonicalCkForm, QbetaCkTruncationCanonicalClass, qbeta_ck_truncation_canonical_conjecture. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-24T03:58:58Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "31c8b21a9771",
+          "ts": "802840092715",
+          "lean": "ecea14513215"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:so3-generators' → expected 'so3_generators'; Lean declares: R_q, q_param, q_inv_param, So3Generators, R_beta_matrix.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.467Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

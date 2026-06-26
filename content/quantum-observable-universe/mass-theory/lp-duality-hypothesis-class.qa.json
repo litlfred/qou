@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "54622028a55b",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:lp-duality-hypothesis-class' → expected 'lp_duality_hypothesis_class'; Lean declares: HasFiniteLPDuality. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:03.609Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

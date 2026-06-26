@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean"
   },
   "source_hashes": {
-    "md": "f72b9b74e64b",
+    "md": "d7bc57651a82",
     "ts": "bd37ef54d0ea",
     "lean": "1faef5e3fd91"
   },
@@ -1163,6 +1163,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "d7bc57651a82",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:a-8-partition-function-identity' → expected 'a_8_partition_function_identity'; Lean declares: partitionCount, a_8_poly, partitionCount_values, a_8_eq_partition_sum, a_8_eq_partition_sum_ascending.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1622,5 +1638,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

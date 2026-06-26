@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4e2eafab9e3c",
+          "ts": "54397394c934",
+          "lean": "0adf9664b452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:yekutieli-lifting-condition' → expected 'yekutieli_lifting_condition'; Lean declares: YekutieliLiftingCondition, YekutieliLiftingCondition.lift_iff. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:30.378Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

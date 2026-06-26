@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.lean"
   },
   "source_hashes": {
-    "md": "5f8bc5f59a31",
+    "md": "82b68db13190",
     "ts": "f659f208dff2",
     "lean": "581587eab850"
   },
@@ -1151,6 +1151,22 @@
         "reviewed_at": "2026-06-22T02:57:12.791Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:q-beta-c-k-leading-bias-correction-identity' → expected 'q_beta_c_k_leading_bias_correction_identity'; Lean declares: biasedExtraction, bias_correction_recovers_alg, bias_correction_residual_is_quadratic, bias_correction_recovers_alg_exact_when_truncated. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:16.243Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

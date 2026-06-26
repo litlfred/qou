@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4a4b78db05cf",
     "ts": "7d011309058a",
-    "lean": "23bba852477d"
+    "lean": "fdcbf8cb00fa"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1159,6 +1159,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:binding-alpha-shift-extension' → expected 'binding_alpha_shift_extension'; Lean declares: bindingAlphaShift, BindingPerRepReebPhase, BindingForceCarrierKnot, binding_unique_via_alpha_shift, binding_subsingleton.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1822,5 +1838,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

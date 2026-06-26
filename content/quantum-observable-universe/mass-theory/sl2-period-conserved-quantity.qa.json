@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:sl2-period-conserved-quantity",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts",
+    "md": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.md",
+    "lean": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.lean"
+  },
+  "source_hashes": {
+    "md": "e63c7bd508b2",
+    "ts": "22ae8ded8568",
+    "lean": "ec6c282a3323"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:sl2-period-conserved-quantity' → expected 'sl2_period_conserved_quantity'; Lean declares: sl2Invariant, sl2Invariant_succ, sl2Invariant_eq_zeroth. Structural match via content."
+      }
+    ]
+  },
+  "updated_at": "2026-06-26T11:08:29.250Z"
+}

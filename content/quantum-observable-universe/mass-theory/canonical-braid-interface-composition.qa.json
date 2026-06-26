@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7d57c4d4a001",
+          "ts": "e8936dd40404",
+          "lean": "3770dcf28e4a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Block kind 'undefined' has no provable Lean content expected."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:12.195Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

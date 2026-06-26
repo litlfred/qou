@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.lean"
   },
   "source_hashes": {
-    "md": "1ad32d15c520",
-    "ts": "51715dbc09ac",
+    "md": "fded66a103d3",
+    "ts": "ace9be91a992",
     "lean": "7eb7699f7c76"
   },
   "criteria": {
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:57:11.728Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:qbeta-c4-from-c3-c8-product-identity' → expected 'qbeta_c4_from_c3_c8_product_identity'; Lean declares: c4_eq_c8_div_c3_at_silver, c3_times_c6_eq_c9_at_silver, c4_at_silver_eq_neg_49_32, c4_via_quotient_at_silver. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:15.294Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

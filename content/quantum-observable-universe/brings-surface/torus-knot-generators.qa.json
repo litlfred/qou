@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/torus-knot-generators.lean"
   },
   "source_hashes": {
-    "md": "556a18d8e386",
+    "md": "f04bc1ad0387",
     "ts": "e13b575bb7a1",
     "lean": "8c07903a8fcb"
   },
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:21.610Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "f04bc1ad0387",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:torus-knot-generators' → expected 'torus_knot_generators'; Lean declares: seifertGenus, torus_knot_generators_finite. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:25.072Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

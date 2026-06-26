@@ -956,7 +956,25 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "48846f26be98",
+          "ts": "d9ad90b6b900",
+          "lean": "17f17a9d6691"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:categorical-linking-operation' → expected 'categorical_linking_operation'; Lean declares: MarkovTraceCyclic, LkLinear, categorical_linking_linearity_holds, LkReductionAtZero, categorical_linking_reduction_at_zero_holds.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:01.761Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

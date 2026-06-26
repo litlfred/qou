@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean"
   },
   "source_hashes": {
-    "md": "86ee67f4c831",
+    "md": "4027f9fb7358",
     "ts": "172b87f46d0b",
-    "lean": "790bc449b1e4"
+    "lean": "f8ad1ba2118a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1159,6 +1159,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "f8ad1ba2118a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:blowup-yekutieli' → expected 'blowup_yekutieli'; Lean declares: BlowupYekutieli. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1600,5 +1616,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

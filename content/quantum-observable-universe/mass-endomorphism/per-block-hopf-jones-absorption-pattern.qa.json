@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean"
   },
   "source_hashes": {
-    "md": "2ab6e74adfd8",
+    "md": "5e79f0d08f7b",
     "ts": "15077a93f542",
     "lean": "842b0edd4ff6"
   },
@@ -877,7 +877,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:per-block-hopf-jones-absorption-pattern' → expected 'per_block_hopf_jones_absorption_pattern'; Lean declares: chi_V3_diff, chi_V21_diff, chi_V111_diff, jones_hopf_at_q1, chi_V3_diff_value_at_1.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.833Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

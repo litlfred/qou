@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "bfbddd177a1d",
     "ts": "5e6f5df02231",
-    "lean": "9bd4475beb55"
+    "lean": "60896dcef81a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1161,6 +1161,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:cl2-pentagon-and-faddeev-partial' → expected 'cl2_pentagon_and_faddeev_partial'; Lean declares: Cl_2_pentagon_at_zero_unconditional, Cl_2_pentagon_zero_substitution, Cl_2_pentagon_consistent_with_zero, faddeev_kashaev_at_zero_unconditional, faddeev_kashaev_consistency_at_zero.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1620,5 +1636,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

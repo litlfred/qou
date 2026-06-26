@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean"
   },
   "source_hashes": {
-    "md": "e919ea70ee16",
+    "md": "9eae30258049",
     "ts": "f76435b6380a",
     "lean": "e6375664698f"
   },
@@ -1149,6 +1149,22 @@
         "reviewed_at": "2026-06-22T02:57:14.275Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:q-beta-radius-of-convergence-gate' → expected 'q_beta_radius_of_convergence_gate'; Lean declares: qBetaLadderCoefficients, qBetaCandidatePoleLocation, u_substrate, RadiusOfConvergenceGateClass, qbeta_g_simple_pole_at_u_substrate.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1344,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.762Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

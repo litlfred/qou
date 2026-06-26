@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "268f8ecad4ab",
     "ts": "0a1d5e3de728",
-    "lean": "beba6ca41ef9"
+    "lean": "183fe2abe591"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1161,6 +1161,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:upstream-mathlib-additions' → expected 'upstream_mathlib_additions'; Lean declares: complexLiTwo, blochWigner, Cl_2_neg, Cl_2_zero_via_oddness, Cl_2_at_zero.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1620,5 +1636,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

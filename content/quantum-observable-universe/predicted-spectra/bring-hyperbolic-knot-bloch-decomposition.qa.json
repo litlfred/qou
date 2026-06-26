@@ -980,7 +980,25 @@
           "value": 0.85
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "03e86b904073",
+          "ts": "a82db280369a",
+          "lean": "bd83915cb58a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:bring-hyperbolic-knot-bloch-decomposition' → expected 'bring_hyperbolic_knot_bloch_decomposition'; Lean declares: r2Cyclotomic, compositum_rank_decomposition_narrow, compositum_rank_decomposition_full, BringHyperbolicDecomposition, bring_hyperbolic_decomposition.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:48.822Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

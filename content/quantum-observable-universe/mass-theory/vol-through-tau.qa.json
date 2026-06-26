@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/vol-through-tau.lean"
   },
   "source_hashes": {
-    "md": "24319d3dc065",
+    "md": "1a2bacf9c5c0",
     "ts": "cd2e497af6fe",
     "lean": "f08d76fa265e"
   },
@@ -1165,6 +1165,22 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "1a2bacf9c5c0",
+          "ts": "cd2e497af6fe",
+          "lean": "f08d76fa265e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:vol-through-tau' → expected 'vol_through_tau'; Lean declares: ArchimedeanCategory, FibreFunctor, VolThroughTau, vol_through_tau_factors. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1660,5 +1676,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T18:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

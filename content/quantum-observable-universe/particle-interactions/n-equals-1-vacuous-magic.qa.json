@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "5bd956457824",
-    "ts": "45b288ede5e9",
+    "ts": "8f8cc9a53a1e",
     "lean": "682ee3abe09b"
   },
   "criteria": {
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:57:20.664Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:n-equals-1-vacuous-magic' → expected 'n_equals_1_vacuous_magic'; Lean declares: one_isAlgebraicallyPrime. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:24.050Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

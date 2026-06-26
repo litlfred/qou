@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean"
   },
   "source_hashes": {
-    "md": "7713ce18583f",
+    "md": "7ef738a57cd7",
     "ts": "31803b06c884",
     "lean": "ed6947a2fe36"
   },
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:57:07.552Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "7ef738a57cd7",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:mass-side-kernel-formalize-first-gates' → expected 'mass_side_kernel_formalize_first_gates'; Lean declares: q_substrate, anchorTolerance, directionTarget, directionThreshold, MassAnchorStableGateClass.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:11.799Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

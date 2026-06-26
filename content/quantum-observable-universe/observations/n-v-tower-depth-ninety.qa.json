@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b60bdef8d629",
     "ts": "b60217ea3a77",
-    "lean": "a41ab2e5aa42"
+    "lean": "36ad3941b9cc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -978,7 +978,25 @@
           "value": 0.6
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b60bdef8d629",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:n-v-tower-depth-ninety' → expected 'n_v_tower_depth_ninety'; Lean declares: GBCategory, BraneTower, tower_depth, tower_depth_m_e_to_v_is_ninety. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.881Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:quantum-dilogarithm-disambiguation' → expected 'quantum_dilogarithm_disambiguation'; Lean declares: QuantumDilogarithm. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.420Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "1b36f1f037ec",
     "ts": "c40772a2380c",
-    "lean": "d98ba227aff6"
+    "lean": "add5ebc2a97e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -953,7 +953,25 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1b36f1f037ec",
+          "ts": "c40772a2380c",
+          "lean": "add5ebc2a97e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:q-resolvent' → expected 'q_resolvent'; Lean declares: QResolvent, QResolvent.first_identity. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

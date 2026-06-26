@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean"
   },
   "source_hashes": {
-    "md": "abcd681dc42d",
+    "md": "e0b607c7bebe",
     "ts": "bec5fd976af7",
     "lean": "0b03f6f78070"
   },
@@ -1151,6 +1151,22 @@
         "reviewed_at": "2026-06-22T02:57:07.327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "e0b607c7bebe",
+          "ts": "bec5fd976af7",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:q-beta-direction-sanity-gate' → expected 'q_beta_direction_sanity_gate'; Lean declares: qBetaTargetMagnitudeAtQ0, directionSanityThreshold, DirectionSanityGateClass, qbeta_direction_sanity_magnitude_match, direction_sanity_gate_reject.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:11.631Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

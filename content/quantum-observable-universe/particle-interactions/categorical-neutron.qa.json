@@ -917,7 +917,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "267ad182bb05",
+          "ts": "74498b73364b",
+          "lean": "ed2c960f1ded"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:categorical-neutron' → expected 'categorical_neutron'; Lean declares: CategoricalNeutron, q, q, neutron_mass, neutron_mass_from_substrate_axiom.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.602Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c545348babd8",
     "ts": "cd29bee00ef5",
-    "lean": "9fa5c3afa450"
+    "lean": "099389983be7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c545348babd8",
+          "ts": "cd29bee00ef5",
+          "lean": "099389983be7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:wenzl-A-operator' → expected 'wenzl_A_operator'; Lean declares: WenzlPartition, WenzlAOperator. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:00.815Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

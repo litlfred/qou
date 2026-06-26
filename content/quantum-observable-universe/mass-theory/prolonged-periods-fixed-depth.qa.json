@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.lean"
   },
   "source_hashes": {
-    "md": "e3235e657318",
+    "md": "5bbb164e6e5a",
     "ts": "9940887f0b9e",
     "lean": "de8bea51bf0d"
   },
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:57:10.277Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:prolonged-periods-fixed-depth' → expected 'prolonged_periods_fixed_depth'; Lean declares: prolongation_fixed_depth_recurrence. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:13.992Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

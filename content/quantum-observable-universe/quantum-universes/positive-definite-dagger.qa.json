@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/positive-definite-dagger.lean"
   },
   "source_hashes": {
-    "md": "8da7d0b2d682",
+    "md": "5b42f8bb30a7",
     "ts": "5f55ba2fe404",
     "lean": "2dabb305a819"
   },
@@ -1163,6 +1163,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:positive-definite-dagger' → expected 'positive_definite_dagger'; Lean declares: R_q, q_param, q_inv_param, PositiveDefiniteStructure, positive_definite_dagger_exists. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1658,5 +1674,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

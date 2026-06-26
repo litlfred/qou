@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean"
   },
   "source_hashes": {
-    "md": "6aec7ddb8c47",
+    "md": "55f35b095520",
     "ts": "231c5a878d65",
-    "lean": "2fcaee9ed2c3"
+    "lean": "a6076b68e822"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1163,6 +1163,22 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:explicit-central-idempotent' → expected 'explicit_central_idempotent'; Lean declares: qContent, explicit_central_idempotent_via_murphy. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1658,5 +1674,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T18:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "5fa0d2dd60c2",
     "ts": "10b187e6901b",
-    "lean": "f00b68281c00"
+    "lean": "2e7819a7b9a7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1149,6 +1149,22 @@
         "reviewed_at": "2026-06-22T02:56:22.666Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:alpha-em-habiro-bar-involution' → expected 'alpha_em_habiro_bar_involution'; Lean declares: alphaEmHabiro, alphaEmHabiro_bar_invariant, alphaEmHabiro_at_one, alphaEmHabiro_at_neg_one. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1344,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.140Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

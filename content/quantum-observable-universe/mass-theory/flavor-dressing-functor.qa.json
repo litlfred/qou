@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "04896044494d",
+          "ts": "ba0a5deea3ca",
+          "lean": "4f887a10f20b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:flavor-dressing-functor' → expected 'flavor_dressing_functor'; Lean declares: Flavor, FlavorDressingFunctor. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:02.530Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

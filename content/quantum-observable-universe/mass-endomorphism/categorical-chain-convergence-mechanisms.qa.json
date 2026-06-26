@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.lean"
   },
   "source_hashes": {
-    "md": "5f31acaec0af",
-    "ts": "c298c3972af8",
+    "md": "19e679d936a5",
+    "ts": "02972c686da0",
     "lean": "6a07fdaffdf2"
   },
   "criteria": {
@@ -1151,6 +1151,22 @@
         "reviewed_at": "2026-06-22T02:56:43.691Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:categorical-chain-convergence-mechanisms' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:47.149Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

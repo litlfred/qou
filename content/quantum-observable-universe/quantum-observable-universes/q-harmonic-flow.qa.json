@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:q-harmonic-flow",
+  "kind": "note",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.md",
+    "lean": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.lean"
+  },
+  "source_hashes": {
+    "md": "7e4ece7c1237",
+    "ts": "d8624af20881",
+    "lean": "17c662b2206f"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7e4ece7c1237",
+          "ts": "d8624af20881",
+          "lean": "17c662b2206f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:q-harmonic-flow' → expected 'q_harmonic_flow'; Lean declares: QHarmonicFlow, stationary_iff_qharmonic, vacuum_stationary. Structural match via content."
+      }
+    ]
+  },
+  "updated_at": "2026-06-26T11:08:29.250Z"
+}

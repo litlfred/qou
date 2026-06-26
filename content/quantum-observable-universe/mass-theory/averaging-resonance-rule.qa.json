@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "84a2e531b9ab",
     "ts": "9090da6593bd",
-    "lean": "cc7a211417b5"
+    "lean": "99a27cc6a19f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:57:15.455Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "84a2e531b9ab",
+          "ts": "9090da6593bd",
+          "lean": "99a27cc6a19f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'thm:averaging-resonance-rule' → expected 'averaging_resonance_rule'; Lean declares: kRes, kRes_def, kRes_proton_recipe, kRes_deuteron_recipe, kRes_tritium_recipe.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1376,5 +1392,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

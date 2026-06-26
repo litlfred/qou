@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "aa634b5a98d8",
     "ts": "9891a18a24fd",
-    "lean": "cb569019082f"
+    "lean": "c431a939eb0f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:23.155Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "aa634b5a98d8",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:habiro-pochhammer-bridge' → expected 'habiro_pochhammer_bridge'; Lean declares: one_sub_sq_factor, pochhammer_factor, HabiroPochhammerBridge. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.657Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

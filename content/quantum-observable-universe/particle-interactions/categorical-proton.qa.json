@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/categorical-proton.lean"
   },
   "source_hashes": {
-    "md": "cca0c63a60bd",
+    "md": "8bdc4aa6543b",
     "ts": "4e309a4bebf3",
     "lean": "5ba09130ec16"
   },
@@ -917,7 +917,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8bdc4aa6543b",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:categorical-proton' → expected 'categorical_proton'; Lean declares: CategoricalProton, q, q, proton_mass, proton_mass_from_substrate_axiom.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.817Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

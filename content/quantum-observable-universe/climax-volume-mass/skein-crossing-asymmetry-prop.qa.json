@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.lean"
   },
   "source_hashes": {
-    "md": "ee801449874e",
+    "md": "18c823f97e93",
     "ts": "4123e4bea16a",
     "lean": "c1ddde67f181"
   },
@@ -1163,6 +1163,22 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:skein-crossing-asymmetry' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1655,5 +1671,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T18:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

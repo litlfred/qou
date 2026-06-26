@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a9aeb89e4322",
     "ts": "856081b2f348",
-    "lean": "2b024d9ddb1a"
+    "lean": "bc01730b6740"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:45.709Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "a9aeb89e4322",
+          "ts": "856081b2f348",
+          "lean": "bc01730b6740"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'thm:hasse-weil-bound' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:49.320Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

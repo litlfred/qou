@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "bf6f4bf23895",
-    "ts": "17da4fb4bda2",
+    "ts": "4aac8373c6e8",
     "lean": "286fd2ed71af"
   },
   "criteria": {
@@ -924,8 +924,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": ".ts cites 'chlouveraki2016hdr' but references.ts registers 'chlouveraki2016-hdr' (with hyphen); no chlouveraki2016hdr exists. wenzl1988c DOI is a self-declared 'PLACEHOLDER \u2014 resolve before publication'.",
-        "rebuttal": "minor \u2014 both target entries exist (key typo + unresolved DOI); neither affects the math. A pre-publication fixit, not a soundness defect (auto-dischargeable).",
+        "referee_argument": ".ts cites 'chlouveraki2016hdr' but references.ts registers 'chlouveraki2016-hdr' (with hyphen); no chlouveraki2016hdr exists. wenzl1988c DOI is a self-declared 'PLACEHOLDER — resolve before publication'.",
+        "rebuttal": "minor — both target entries exist (key typo + unresolved DOI); neither affects the math. A pre-publication fixit, not a soundness defect (auto-dischargeable).",
         "evidence": [
           {
             "text": "f-bor-borromean-observable.ts:46 vs references.ts:4800"
@@ -954,7 +954,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "[3]_q!/q^3 looks reverse-engineered to convert tr_M~0.9986 into F_Bor~4.469 to hit 938.27.",
-        "rebuttal": "rebutted \u2014 the factor IS 1/y_{(3)} with q^3 forced by content-sum (q-Schur convention, Lean-proved F_Bor_eq_trM_over_y_3); the witness independently reproduces m_p=938.2721 (0.24 ppm) and PREDICTS m_n=939.564 (2 ppm) \u2014 a fitted normalization could not deliver a second observable.",
+        "rebuttal": "rebutted — the factor IS 1/y_{(3)} with q^3 forced by content-sum (q-Schur convention, Lean-proved F_Bor_eq_trM_over_y_3); the witness independently reproduces m_p=938.2721 (0.24 ppm) and PREDICTS m_n=939.564 (2 ppm) — a fitted normalization could not deliver a second observable.",
         "evidence": [
           {
             "text": "f-bor-borromean-observable.md:30-42; YLambdaQSchur.lean:260,218"
@@ -982,7 +982,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "'Lean-proved' claims could mask stubs.",
-        "rebuttal": "rebutted \u2014 trM_borromean_abs, qFact_three, F_Bor are genuine noncomputable defs over R, not :True; the block honestly labels the dim-V_{(2,1)}->linear-factor bridge an open structural step (no overclaim).",
+        "rebuttal": "rebutted — trM_borromean_abs, qFact_three, F_Bor are genuine noncomputable defs over R, not :True; the block honestly labels the dim-V_{(2,1)}->linear-factor bridge an open structural step (no overclaim).",
         "evidence": [
           {
             "text": "f-bor-borromean-observable.lean:51-68"
@@ -1010,7 +1010,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "|tr_M| (abs of a Laurent poly) is regime-ambiguous; beta_Bor closure / base ring.",
-        "rebuttal": "rebutted \u2014 tr_M is a rational function (4+h^2-3h^4-h^6)/(h^2+4) over R; at q_0 it is +0.9986 so |.| is unambiguous for q>1; beta_Bor=(s1^-1 s2)^3 closure + Jones normalization cited.",
+        "rebuttal": "rebutted — tr_M is a rational function (4+h^2-3h^4-h^6)/(h^2+4) over R; at q_0 it is +0.9986 so |.| is unambiguous for q>1; beta_Bor=(s1^-1 s2)^3 closure + Jones normalization cited.",
         "evidence": [
           {
             "text": "borromean-markov-trace-closed-form.md:1-50"
@@ -1036,7 +1036,7 @@
         },
         "result": "pass",
         "verdict": "clean",
-        "referee_argument": "The [3]_q!/q^3 normalization is exactly 1/y_{(3)}(q) (the q-Schur Markov weight of the trivial partition), with the q^3 denominator forced by content-sum c((3))=3 (Lean-proved) \u2014 not tuned; the only defect is a citation-key typo + a placeholder DOI.",
+        "referee_argument": "The [3]_q!/q^3 normalization is exactly 1/y_{(3)}(q) (the q-Schur Markov weight of the trivial partition), with the q^3 denominator forced by content-sum c((3))=3 (Lean-proved) — not tuned; the only defect is a citation-key typo + a placeholder DOI.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1047,7 +1047,25 @@
         "reviewed_at": "2026-06-24T04:12:24Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bf6f4bf23895",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:f-bor-borromean-observable' → expected 'f_bor_borromean_observable'; Lean declares: trM_borromean_abs, qFact_three, F_Bor, bar_pair_factor_two_categorical, ocneanu_factor_twelve_categorical. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-24T04:12:24Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

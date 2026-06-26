@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/markov-trace-operator-construction.lean"
   },
   "source_hashes": {
-    "md": "163d050b867b",
-    "ts": "58bb589983df",
+    "md": "9737507090d1",
+    "ts": "cadb65697e87",
     "lean": "d210f24ba2a7"
   },
   "criteria": {
@@ -875,7 +875,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:markov-trace-operator-construction' → expected 'markov_trace_operator_construction'; Lean declares: HnHilbertRep, HnInductiveEmbedding, MarkovTraceVNFactor. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.807Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

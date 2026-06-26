@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:atomic-braid' → expected 'atomic_braid'; Lean declares: PairType, NeutralAtom, atomic_braid_crossing_count. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.828Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

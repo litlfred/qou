@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:gamma-gamma-generates-particles",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.md",
+    "lean": "content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.lean"
+  },
+  "source_hashes": {
+    "md": "bd10a5e883f2",
+    "ts": "f46e23f5fa14",
+    "lean": "34cd5987c2f7"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:gamma-gamma-generates-particles' → expected 'gamma_gamma_generates_particles'; Lean declares: coeffLplus, coeffLminus, gamma_gamma_chirality_surjective, singlePhotonCoeffLminus, gamma_gamma_reaches_Lminus. Structural match via content."
+      }
+    ]
+  },
+  "updated_at": "2026-06-26T11:08:29.250Z"
+}

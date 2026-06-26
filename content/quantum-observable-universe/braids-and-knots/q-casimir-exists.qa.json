@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean"
   },
   "source_hashes": {
-    "md": "90acafa7cbdd",
+    "md": "709bcf4feaf3",
     "ts": "ffa00ce627ff",
     "lean": "1e2e5a894579"
   },
@@ -1149,6 +1149,22 @@
         "reviewed_at": "2026-06-22T02:56:23.720Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:q-casimir-exists' → expected 'q_casimir_exists'; Lean declares: QCasimir.exists_axiom, QCasimir.exists. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1344,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:27.362Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

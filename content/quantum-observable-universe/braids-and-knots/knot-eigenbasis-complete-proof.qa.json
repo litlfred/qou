@@ -818,7 +818,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prf:knot-eigenbasis-complete' → expected 'prf:knot_eigenbasis_complete'; Lean declares: KnotEigenbasisComplete. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.706Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

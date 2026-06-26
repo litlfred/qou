@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/color-superconductivity-borromean.lean"
   },
   "source_hashes": {
-    "md": "150157237a5d",
+    "md": "419844315875",
     "ts": "5a9b5aa610d1",
     "lean": "346bcc4e6e21"
   },
@@ -978,7 +978,25 @@
           "value": 0.78
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "419844315875",
+          "ts": "5a9b5aa610d1",
+          "lean": "346bcc4e6e21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.205Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

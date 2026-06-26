@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/hopf-diquark.lean"
   },
   "source_hashes": {
-    "md": "8c92a4bb1722",
+    "md": "735f3776276a",
     "ts": "7e9f4a62ee56",
     "lean": "b95007fab2c2"
   },
@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "735f3776276a",
+          "ts": "7e9f4a62ee56",
+          "lean": "b95007fab2c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:hopf-diquark' → expected 'hopf_diquark'; Lean declares: ColorIndex, Flavor, Flavor.orientation, Flavor.crossingCount, HopfDiquark.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.189Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

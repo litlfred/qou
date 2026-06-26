@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/borromean-quark.lean"
   },
   "source_hashes": {
-    "md": "f183bbd16534",
+    "md": "071d159a6d32",
     "ts": "f3dcffe5770a",
     "lean": "bde8b0982bfa"
   },
@@ -978,7 +978,25 @@
           "value": 0.78
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "071d159a6d32",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.860Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

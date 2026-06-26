@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "20b1520bf8d7",
     "ts": "2a5a733c1c81",
-    "lean": "39212e04a881"
+    "lean": "f7188a2c9573"
   },
   "criteria": {
     "voice-status-leak": [
@@ -980,7 +980,25 @@
           "value": 0.8
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "20b1520bf8d7",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:56.490Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

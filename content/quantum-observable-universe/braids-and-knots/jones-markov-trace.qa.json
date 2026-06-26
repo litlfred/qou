@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
   },
   "source_hashes": {
-    "md": "19319a499088",
+    "md": "e63cba14f5f2",
     "ts": "172b3ff4ecc2",
     "lean": "65d9d9531559"
   },
@@ -1163,6 +1163,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'thm:jones-markov-trace' → expected 'jones_markov_trace'; Lean declares: R_q, q_param, q_inv_param, HeckeAlgebraData, JonesMarkovTrace.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1604,5 +1620,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

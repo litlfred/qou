@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.lean"
   },
   "source_hashes": {
-    "md": "7de1742d31c3",
-    "ts": "9b0d68a6e531",
+    "md": "55c92c6add5f",
+    "ts": "c04fa321f353",
     "lean": "28fbd125e6e2"
   },
   "criteria": {
@@ -1153,6 +1153,22 @@
         "reviewed_at": "2026-06-22T02:57:15.660Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:q-beta-c-k-recursion-from-habiro-q-difference' → expected 'q_beta_c_k_recursion_from_habiro_q_difference'; Lean declares: CKRecursion, applyRecursion, applyRecursion_linear, esymm, esymm_neg.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1348,5 +1364,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.176Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

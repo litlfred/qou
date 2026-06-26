@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9994c6446432",
     "ts": "8b545ff822a2",
-    "lean": "806ceca9fee7"
+    "lean": "11a6a9f9658e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -875,7 +875,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9994c6446432",
+          "ts": "8b545ff822a2",
+          "lean": "11a6a9f9658e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:ck-extraction-from-algebraic-rules' → expected 'ck_extraction_from_algebraic_rules'; Lean declares: hoefsmitB_local, jonesHopfLocal, YangBaxterRule, QYoungSymmetrizers, HeckeQuadraticAllGenerators.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:05.541Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

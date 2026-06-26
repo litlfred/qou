@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "68b007e94cb7",
+          "ts": "ac840c305cc4",
+          "lean": "dc7eb922d791"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:q-dilogarithm' → expected 'q_dilogarithm'; Lean declares: R_q, QDilogarithm, QDilogarithm.unique_up_to_shift_axiom, QDilogarithm.unique_up_to_shift. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:31.979Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

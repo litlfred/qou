@@ -873,7 +873,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:electron-shells-hopf' → expected 'electron_shells_hopf'; Lean declares: ElectronShellsHopf, electron_shells_hopf_conjecture. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:50.566Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

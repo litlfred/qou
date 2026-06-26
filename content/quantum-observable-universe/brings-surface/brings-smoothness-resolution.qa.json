@@ -9,8 +9,8 @@
   },
   "source_hashes": {
     "md": "4f2af8ddf70b",
-    "ts": "a85416f15d99",
-    "lean": "26e72d652c40"
+    "ts": "3842ba9636ff",
+    "lean": "d604954da3c3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:21.649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "4f2af8ddf70b",
+          "ts": "3842ba9636ff",
+          "lean": "d604954da3c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:brings-smoothness-resolution' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:24.960Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

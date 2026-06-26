@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean"
   },
   "source_hashes": {
-    "md": "ab7fb6ff237a",
+    "md": "b5a5ba36f05a",
     "ts": "ce3265f713a2",
     "lean": "43eb64fb0ba1"
   },
@@ -1153,6 +1153,22 @@
         "reviewed_at": "2026-06-22T02:57:15.933Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:q-beta-q-eq-one-shadow-gate' → expected 'q_beta_q_eq_one_shadow_gate'; Lean declares: hopfJonesAtQOne, QOneShadowGateClass, qbeta_q_eq_one_shadow_anchors, q_eq_one_shadow_gate_reject_c2, q_eq_one_shadow_gate_reject_c3.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1348,5 +1364,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.690Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/golden-quartet-galois.lean"
   },
   "source_hashes": {
-    "md": "1673a3b217ef",
+    "md": "490c0ae8b8a5",
     "ts": "98cb83fe1242",
     "lean": "b0eef5a5f8f0"
   },
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:56:48.638Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:golden-quartet-galois' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:51.944Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

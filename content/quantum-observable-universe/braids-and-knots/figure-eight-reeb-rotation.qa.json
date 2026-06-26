@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.lean"
   },
   "source_hashes": {
-    "md": "7b015340f5c5",
+    "md": "7d751cd8549b",
     "ts": "3916b2547bf3",
     "lean": "685b2fd1a808"
   },
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:22.549Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:figure-eight-reeb-rotation' → expected 'figure_eight_reeb_rotation'; Lean declares: figure_eight_det_one, unit_modulus_of_det_one_small_trace, figure_eight_unitary_on_standard. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:25.940Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

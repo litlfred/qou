@@ -978,7 +978,25 @@
           "value": 0.68
         }
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "dda1a269b642",
+          "ts": "d302fc71849f",
+          "lean": "c41be4b37bc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:n-v-bring-action' → expected 'n_v_bring_action'; Lean declares: s5_acts_on_ew_slice, rescale_EW_eq_120, NVBringAction, instance_from_axiom. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.700Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

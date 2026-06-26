@@ -818,7 +818,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bf4aaaa90f06",
+          "ts": "d55c6036b8e7",
+          "lean": "bf8371c1a9f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'ex:connection-su2' → expected 'connection_su2'; Lean declares: SU2ConnectionData, su2Connection, su2_gauge_components. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:38.157Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "fa712a606373",
     "ts": "20983b2e18e7",
-    "lean": "78002e96d3a2"
+    "lean": "67b26c01c35a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:23.070Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:meson-em-sinh-closed-form' → expected 'meson_em_sinh_closed_form'; Lean declares: hbarQ, meson_EM_closed_form, meson_EM_closed_form_inverse, meson_EM_closed_form_planck. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.433Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

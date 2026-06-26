@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "cc02ba388aeb",
     "ts": "fd7d9254e456",
-    "lean": "724f66108a0b"
+    "lean": "08b12db0dea1"
   },
   "criteria": {
     "voice-status-leak": [
@@ -948,7 +948,7 @@
         "scope": "structural",
         "ruling": "surviving",
         "referee_argument": "mass-theory/...lean places an import AFTER declarations and re-declares class KnotFactorFrobeniusPairing in the same namespace as the imported class (different shape); knot_factor:=default needs an undeclared Inhabited. The file cannot compile.",
-        "rebuttal": "none \u2014 survived; genuine falsifiable structural defect (invariant: Lean-4 grammar \u2014 imports-after-decls + duplicate-name collision). lean.validation:not_checked confirms it was never built; the sibling shadows the library file (\u00a70a sibling-first).",
+        "rebuttal": "none — survived; genuine falsifiable structural defect (invariant: Lean-4 grammar — imports-after-decls + duplicate-name collision). lean.validation:not_checked confirms it was never built; the sibling shadows the library file (§0a sibling-first).",
         "evidence": [
           {
             "text": "mass-theory/knot-factor-frobenius-pairing.lean:34-40"
@@ -977,7 +977,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": "BraidKnot/KnotFactorFrobeniusPairing.lean instance canonical sets markov_trace:=0, frobenius_pairing:=0, discharging factorisation_holds by 0=0:=rfl; its docstring admits it 'encodes none of the conjectural content'. Conjectures/...lean is class where holds:True/trivial.",
-        "rebuttal": "partial \u2014 AGENTS.md \u00a71a permits a conjecture-block placeholder and it is honestly labelled conjecture; but a trivial zero instance means any downstream [KnotFactorFrobeniusPairing] theorem is conditioned on vacuum.",
+        "rebuttal": "partial — AGENTS.md §1a permits a conjecture-block placeholder and it is honestly labelled conjecture; but a trivial zero instance means any downstream [KnotFactorFrobeniusPairing] theorem is conditioned on vacuum.",
         "evidence": [
           {
             "text": "BraidKnot/KnotFactorFrobeniusPairing.lean:82-86"
@@ -1006,7 +1006,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": ".ts title and Lean state the ratio form a(N)=|tr_M(W_atom)|/|tr_M(W_free)|; .md:135-146 retracts it as historical and 6-17x off the Skein values; the a-K-via-lp-dual witness corroborates the divergence.",
-        "rebuttal": "none \u2014 survived; the durable Lean/title claim is the retracted form. .md body is internally honest but the Lean metadata is stale-wrong, not merely incomplete.",
+        "rebuttal": "none — survived; the durable Lean/title claim is the retracted form. .md body is internally honest but the Lean metadata is stale-wrong, not merely incomplete.",
         "evidence": [
           {
             "text": "knot-factor-frobenius-pairing.ts:5; .lean:12-25 vs .md:135-146"
@@ -1035,7 +1035,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "'Skein eigenvalue of 4_1' for a_K=1-h^2 is not the figure-8 Jones polynomial.",
-        "rebuttal": "rebutted \u2014 block + 2026-06-07 audit + skein witness disclaim this ('a_K is the h-content reduction, not V(4_1)'); honestly scoped.",
+        "rebuttal": "rebutted — block + 2026-06-07 audit + skein witness disclaim this ('a_K is the h-content reduction, not V(4_1)'); honestly scoped.",
         "evidence": [
           {
             "text": "knot-factor-frobenius-pairing.md:110,118-127"
@@ -1064,7 +1064,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Are crossing-signs sign(c) free fit parameters?",
-        "rebuttal": "rebutted \u2014 signs sourced from prop:nuclear-knot-classification (modelling input, flagged open); E_0 a single calibration; tr_M=Sum y_\u03bb \u03c7_\u03bb is Wenzl-derived.",
+        "rebuttal": "rebutted — signs sourced from prop:nuclear-knot-classification (modelling input, flagged open); E_0 a single calibration; tr_M=Sum y_λ χ_λ is Wenzl-derived.",
         "evidence": [
           {
             "text": "knot-factor-frobenius-pairing.md"
@@ -1091,7 +1091,7 @@
         },
         "result": "fail",
         "verdict": "open-objection",
-        "referee_argument": "The .ts title and BOTH .lean siblings define the conjecture as the ratio a(N)=|tr_M(W_atom)|/|tr_M(W_free)|, which the block's own .md retracts as historical and 6-17x wrong \u2014 and neither Lean file compiles, so nothing is verified.",
+        "referee_argument": "The .ts title and BOTH .lean siblings define the conjecture as the ratio a(N)=|tr_M(W_atom)|/|tr_M(W_free)|, which the block's own .md retracts as historical and 6-17x wrong — and neither Lean file compiles, so nothing is verified.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1102,7 +1102,25 @@
         "reviewed_at": "2026-06-24T04:12:24Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-06-24T04:12:24Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

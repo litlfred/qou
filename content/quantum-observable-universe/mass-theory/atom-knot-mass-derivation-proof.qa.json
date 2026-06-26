@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean"
   },
   "source_hashes": {
-    "md": "d172c5131c68",
+    "md": "fa53d62d2797",
     "ts": "106ca55e0be6",
     "lean": "830f9592d7fa"
   },
@@ -838,7 +838,25 @@
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "fa53d62d2797",
+          "ts": "106ca55e0be6",
+          "lean": "830f9592d7fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prf:atom-knot-mass-derivation' → expected 'prf:atom_knot_mass_derivation'; Lean declares: categorical_leg_to_markov_trace, archimedean_realization_to_mev, post_archimedean_naming_borrowed, atom_knot_mass_derivation_proof. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

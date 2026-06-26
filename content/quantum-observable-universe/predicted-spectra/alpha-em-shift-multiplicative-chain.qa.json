@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean"
   },
   "source_hashes": {
-    "md": "a20dcced60de",
+    "md": "0514ddc7efbc",
     "ts": "08949c5b9c0d",
     "lean": "6d61396e48fa"
   },
@@ -1149,6 +1149,22 @@
         "reviewed_at": "2026-06-22T02:56:49.777Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' → expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1344,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.485Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

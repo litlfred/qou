@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.lean"
   },
   "source_hashes": {
-    "md": "ccaee0ae5938",
+    "md": "f7accaee49d2",
     "ts": "c56311b2e585",
     "lean": "f556e8ba069d"
   },
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:57:02.624Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:sigma-shell-from-beta-chain-derivation' → expected 'sigma_shell_from_beta_chain_derivation'; Lean declares: SigmaShellAtMagic, SigmaShellFromBetaChainDerivation, sigma_shell_from_beta_chain. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:06.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

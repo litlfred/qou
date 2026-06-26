@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "aeb0ca9bce4b",
     "ts": "666d677a69f7",
-    "lean": "c2de808aa13d"
+    "lean": "ceeb4c520e27"
   },
   "criteria": {
     "voice-status-leak": [
@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "aeb0ca9bce4b",
+          "ts": "666d677a69f7",
+          "lean": "ceeb4c520e27"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:00.007Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

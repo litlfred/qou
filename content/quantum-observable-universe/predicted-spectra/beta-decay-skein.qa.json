@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b62a2f8f2d5c",
+          "ts": "1aa2652541aa",
+          "lean": "c4151d58589a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:beta-decay-skein' → expected 'beta_decay_skein'; Lean declares: WeakVertex, weakVertex, weak_vertex_crossings, crossing_budget_correct, NuclearLink.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:51.003Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

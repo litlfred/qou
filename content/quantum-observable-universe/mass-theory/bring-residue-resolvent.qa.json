@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean"
   },
   "source_hashes": {
-    "md": "12ee6306abdf",
+    "md": "2f1785a5cdd7",
     "ts": "6d7ebe576c37",
-    "lean": "c1306e75c789"
+    "lean": "52e169cfc74c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1219,6 +1219,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:bring-residue-resolvent' → expected 'bring_residue_resolvent'; Lean declares: hShift, canonicalResolvent, BringResidueAtOrder, bring_residue_equation, bring_residue_at_T_3_5.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1780,5 +1796,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

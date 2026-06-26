@@ -1101,7 +1101,25 @@
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:binding-qbeta-complex-volume' → expected 'binding_qbeta_complex_volume'; Lean declares: barParity_sum, barParity_diff, invol_descent, recurrence_invol_descent, fibreDefect.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-24T13:22:51Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

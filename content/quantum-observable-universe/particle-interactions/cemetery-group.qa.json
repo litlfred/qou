@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:cemetery-group' → expected 'cemetery_group'; Lean declares: CemeteryGroup, zero_not_in_cemetery. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.758Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

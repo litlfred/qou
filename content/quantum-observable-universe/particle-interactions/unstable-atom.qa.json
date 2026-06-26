@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0c0491ea572a",
+          "ts": "f2dffc419b9a",
+          "lean": "6c65f701e0cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:unstable-atom' → expected 'unstable_atom'; Lean declares: UnstableAtom. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.779Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

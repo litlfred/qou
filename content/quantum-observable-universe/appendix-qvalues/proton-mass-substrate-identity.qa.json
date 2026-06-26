@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean"
   },
   "source_hashes": {
-    "md": "cdbfa7894252",
+    "md": "b28645c0db24",
     "ts": "1d88e0fcbf44",
     "lean": "a918c3906e2f"
   },
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:56:27.750Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:proton-mass-substrate-identity' → expected 'proton_mass_substrate_identity'; Lean declares: ProtonMassSubstrateIdentity, proton_mass_substrate_identity_empirical, ProtonMassSubstrateIdentityClearedForm. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:31.232Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

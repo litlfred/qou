@@ -917,7 +917,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d67bbe47aca5",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:co2-molecular-braid' → expected 'co2_molecular_braid'; Lean declares: CO2Braid, co2_strands. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.583Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e51a8961aff1",
     "ts": "2499a8a1f2f6",
-    "lean": "1a3d81c95d79"
+    "lean": "6249c514947f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -875,7 +875,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:u-coordinate-discharges' → expected 'u_coordinate_discharges'; Lean declares: uCoord, hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, sigma_eigval_V3_sq_eq_u.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:42.054Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

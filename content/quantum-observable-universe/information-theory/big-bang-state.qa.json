@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "68d418650ce2",
+          "ts": "459fa2b3d621",
+          "lean": "6bec407376d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:big-bang-state' → expected 'big_bang_state'; Lean declares: BigBangState. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.908Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

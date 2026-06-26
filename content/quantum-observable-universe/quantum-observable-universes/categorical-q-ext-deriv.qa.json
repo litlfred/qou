@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a1b949ae8e1a",
+          "ts": "cba5dd34a9b3",
+          "lean": "963d5e8850e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:categorical-q-ext-deriv' → expected 'categorical_q_ext_deriv'; Lean declares: R_q, q_param, q_inv_param, CategoricalQExtDeriv, CategoricalQExtDeriv.proj_H.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:37.697Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "0e1235de1c00",
     "ts": "3def03d54601",
-    "lean": "a3cc2ad89343"
+    "lean": "d411ab4a8756"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1161,6 +1161,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'thm:pontryagin-dual-coxeter-character' → expected 'pontryagin_dual_coxeter_character'; Lean declares: zmodTwoSignChar, zmodTwo_pontryagin_self_dual_via_value_at_one, signHom_surjective_witness, pontryagin_dual_coxeter_character_structural, PontryaginDualCoxeterCharacter. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1677,5 +1693,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

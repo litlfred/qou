@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.lean"
   },
   "source_hashes": {
-    "md": "47ca908f908c",
+    "md": "9a38424e73ec",
     "ts": "5e14094e0626",
     "lean": "d44acfb69d51"
   },
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:56:42.745Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor' → expected 'qbeta_delta_tau_canonical_conditional_q2_minus_1_factor'; Lean declares: delta_tau_M_canonical_has_q2_minus_1_factor, delta_tau_M_canonical_vanish_at_one_via_factor. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:46.174Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

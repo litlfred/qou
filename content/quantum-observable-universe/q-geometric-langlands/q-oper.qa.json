@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7cdcc25a8781",
+          "ts": "a76fc8de685a",
+          "lean": "9da4592a57ab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:q-oper' → expected 'q_oper'; Lean declares: QOper. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:44.884Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }

@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/color-elliptic.lean"
   },
   "source_hashes": {
-    "md": "267f855f7715",
-    "ts": "a5c2a3e6ee23",
-    "lean": "a825d58cea2a"
+    "md": "93e9c72aceec",
+    "ts": "9da0df7b86b8",
+    "lean": "872f5b76e118"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:56:21.707Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:08:29.250Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:color-elliptic' → expected 'color_elliptic'; Lean declares: R_q, q_param, q_inv_param, ColorEllipticFibre, colorCubic.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:25.345Z"
+  "updated_at": "2026-06-26T11:08:29.250Z"
 }
