@@ -1,5 +1,6 @@
 import QOU.Mass.BindingQHermiteOscillator
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.Mass.RogersSzegoInhabited — `FollowsRogersSzego` is non-vacuous
@@ -65,5 +66,27 @@ discharges the hypothesis, so the q-deformed even/odd parity holds of a real wit
 theorem rsSeq_odd_vanishes_at_neg_one (q : ℝ) (j : ℕ) : rsSeq q (-1) (2 * j + 1) = 0 := by
   have hH1 : rsSeq q (-1) 1 = 0 := by simp [rsSeq]
   exact rogers_szego_odd_vanishes_at_neg_one (rsSeq q (-1)) q hH1 j
+
+/-- **Two-step recurrence at `t = −1`.** Setting `t = −1` kills the `(1+t)` head of the
+three-term recurrence, leaving the telescoping two-step `H_{n+2} = (1 − q^{n+1})·H_n`. -/
+theorem rsSeq_neg_one_step (q : ℝ) (n : ℕ) :
+    rsSeq q (-1) (n + 2) = (1 - q ^ (n + 1)) * rsSeq q (-1) n := by
+  rw [rsSeq]; ring
+
+/-- **The even terms of the inhabited model at `t = −1` are the `q`-shifted factorial
+`(q; q²)_j`** — `rsSeq q (−1) (2j) = ∏_{i<j} (1 − q^{2i+1})`. Unrolling the two-step
+recurrence `rsSeq_neg_one_step` on the even subsequence gives the explicit finite product
+`(1−q)(1−q³)⋯(1−q^{2j−1})`, the q-Pochhammer `(q; q²)_j`, written self-contained as a
+`Finset.prod` (no dependency on Mathlib's `QPochhammer`). Together with
+`rsSeq_odd_vanishes_at_neg_one` this is the full closed form of the inhabited Rogers–Szegő
+model at the binding anchor `t = −1`. -/
+theorem rsSeq_even_at_neg_one (q : ℝ) :
+    ∀ j, rsSeq q (-1) (2 * j) = ∏ i ∈ Finset.range j, (1 - q ^ (2 * i + 1))
+  | 0 => by simp [rsSeq]
+  | (j + 1) => by
+    have h2 : 2 * (j + 1) = 2 * j + 2 := by ring
+    rw [h2, rsSeq_neg_one_step q (2 * j), rsSeq_even_at_neg_one q j,
+      Finset.prod_range_succ]
+    ring
 
 end QOU.Mass.BindingQHermiteOscillator
