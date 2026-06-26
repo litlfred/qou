@@ -648,18 +648,20 @@ URLs.
 
 **Authoritative cross-link**: [`docs/canonical-derivation-cheat-sheet.md`](docs/canonical-derivation-cheat-sheet.md).
 
-The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — the canonical *mathematical* triple, **three measured masses**:
+The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — the canonical *mathematical* triple, **three weak-sector observables** (a leptonic mass scale and two decay widths; their numerical proxies are masses):
 
-| CAL | Measured input | What it fixes | DOF of H¹(Bring) = 2W |
-|-----|----------------|---------------|------------------------|
-| CAL-1 | m_e | the dimensional unit (scale) | W-plane scale |
-| CAL-2 | m_μ | q₀ (via m_μ/m_e = Vol(4₁)/ℏ_q²) | W-plane modulus |
-| CAL-3 | m_π | the orthogonal meson scale | orthogonal class |
+| CAL | Canonical observable | What it fixes | Numerical proxy | DOF of H¹(Bring) = 2W |
+|-----|----------------|---------------|-----------------|------------------------|
+| CAL-1 | m_e (leptonic mass scale, h⁰) | the dimensional unit (scale) | m_e (CODATA) | W-plane scale |
+| CAL-2 | 𝔇_β (neutron β-decay width, h²) | q₀ (via m_μ/m_e = Vol(4₁)/ℏ_q²) | Q_β = ℏ/𝔇_β; modulus pinned most precisely by m_μ/m_e | W-plane modulus |
+| CAL-3 | 𝔇_π (pion decay width, h³) | the orthogonal meson scale | m_π (PDG) | orthogonal class |
 
-All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-plane scale + modulus + one orthogonal class; 2+1=3) — **not** three distinct degrees H⁰/H¹/H² (per `calibration-cohomology-alignment`, Lean `QOU.Mass.calibrations_eq_cohomology`). The inputs are **three masses** (m_e, m_μ, m_π). m_e sets the unit; since q₀ is dimensionless it is fixed by m_μ *in that unit* — the ratio m_μ/m_e. The exact maps:
+> **🟧 Owner ruling (2026-06-26): the ideal *mathematical* canonical is the decay-width triple (m_e, 𝔇_β, 𝔇_π), NOT three masses.** Masses (m_e, m_μ/m_e, m_π) and Q_β are the *numerical proxies*; **Q_β is the proxy for CAL-2 (𝔇_β), not "derived, not a calibration".** This supersedes the prior "three measured masses / Q_β derived" wording. (PR #2866. The ~28 downstream echoes + the §"q₀ anchor convention" STRICT section below + the Lean witness are Stage-2 follow-up.)
 
-- **q₀** ← CAL-1 + CAL-2:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
-- **Q_β** (derived, not a calibration):  `Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π; the neutron β-decay width `𝔇_β/τ_n` is Q_β's experimental face, **not** a third calibration.
+All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-plane scale + modulus + one orthogonal class; 2+1=3) — **not** three distinct degrees H⁰/H¹/H² (per `calibration-cohomology-alignment`, Lean `QOU.Mass.calibrations_eq_cohomology` — a count/alignment claim, unchanged). The canonical inputs are **weak-sector observables** (m_e, 𝔇_β, 𝔇_π); their proxies are the masses (m_e, m_π) plus the Q-value Q_β. m_e sets the unit; since q₀ is dimensionless it is pinned by m_μ *in that unit* — the ratio m_μ/m_e, the most precise CAL-2 anchor. The exact maps:
+
+- **q₀** ← CAL-2 (𝔇_β), pinned numerically via CAL-1 + the lepton ratio:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
+- **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
