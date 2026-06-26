@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.ParticleInteractions.four_term_pair_nucleon
