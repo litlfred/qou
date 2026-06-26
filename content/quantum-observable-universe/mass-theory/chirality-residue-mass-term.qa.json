@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "7138560af961",
     "ts": "6beed0e93789",
-    "lean": "3ef4dd2f8d41"
+    "lean": "c94ce889a052"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1145,6 +1145,22 @@
         "reviewed_at": "2026-06-22T02:57:14.294Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "7138560af961",
+          "ts": "6beed0e93789",
+          "lean": "c94ce889a052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:chirality-residue-mass-term' → expected 'chirality_residue_mass_term'; Lean declares: signed_content, is_chirality, mass_tower_split_by_predicate, chirality_residue. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1356,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.781Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

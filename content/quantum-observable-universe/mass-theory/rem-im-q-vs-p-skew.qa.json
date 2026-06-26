@@ -873,7 +873,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:im-q-vs-p-skew' → expected 'im_q_vs_p_skew'; Lean declares: ProjectionMechanism, mechanisms_are_distinct. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:00.957Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

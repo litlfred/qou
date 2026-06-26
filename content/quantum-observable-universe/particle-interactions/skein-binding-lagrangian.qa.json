@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "accceea19158",
+          "ts": "1e8a83bd6c96",
+          "lean": "8e25aefa8816"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:skein-binding-lagrangian' → expected 'skein_binding_lagrangian'; Lean declares: R_q, q_param, q_inv_param, SkeinBindingLagrangian, SkeinBindingLagrangian.L_vol.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.982Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

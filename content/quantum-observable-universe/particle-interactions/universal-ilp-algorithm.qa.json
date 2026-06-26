@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:universal-ilp-algorithm' → expected 'universal_ilp_algorithm'; Lean declares: KnotOperator, gram_matrix, frobenius_positive, universal_ilp, universal_ilp_selects_minimum. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.611Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

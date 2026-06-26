@@ -873,7 +873,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:aeon-boundary-generates-chart' → expected 'aeon_boundary_generates_chart'; Lean declares: AeonRecycling, aeon_recycling_conjecture. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:27.712Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

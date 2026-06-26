@@ -875,7 +875,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "36c751675594",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:w-boson-mass-discrepancy' → expected 'w_boson_mass_discrepancy'; Lean declares: q, q, q, q, q.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.457Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

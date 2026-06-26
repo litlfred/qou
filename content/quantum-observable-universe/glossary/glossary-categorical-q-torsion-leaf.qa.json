@@ -873,7 +873,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c27eeffd4154",
+          "ts": "5ca32bf72319",
+          "lean": "39cee179e138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:glossary-categorical-q-torsion-leaf' → expected 'glossary_categorical_q_torsion_leaf'; Lean declares: CategoricalQTorsionLeaf. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:51.898Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

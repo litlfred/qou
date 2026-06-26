@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "74b0ef12f082",
+          "ts": "c71e0c7d8b75",
+          "lean": "e74b6edf3cb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:positron-knot' → expected 'positron_knot'; Lean declares: R_q, q_param, q_inv_param, Positron, positron_is_mirror_torus_knot.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:47.824Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

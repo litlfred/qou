@@ -816,7 +816,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "88cacedb9a5c",
+          "ts": "1cfc435c464a",
+          "lean": "1c6abc77c0a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prf:categorical-self-duality' → expected 'prf:categorical_self_duality'; Lean declares: categorical_self_duality. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:31.216Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

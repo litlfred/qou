@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean"
   },
   "source_hashes": {
-    "md": "6a2a757c68ee",
+    "md": "24190bf6dabb",
     "ts": "ba19994fffcd",
-    "lean": "5fb7dad5d0b9"
+    "lean": "cd348a430dcc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:53.829Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "24190bf6dabb",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:recursive-atom-knot-atlas' → expected 'recursive_atom_knot_atlas'; Lean declares: Methodology, AtlasEntry, atomKnotAtlas, principledAtlas, AtlasIsWitnessDerived.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1360,5 +1376,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

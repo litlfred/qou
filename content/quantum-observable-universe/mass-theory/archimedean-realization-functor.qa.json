@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:archimedean-realization-functor' → expected 'archimedean_realization_functor'; Lean declares: ArchimedeanRealizationFunctor, archimedean_realize_determined, archimedean_realize_pointwise_unique. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:13.151Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

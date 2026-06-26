@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean"
   },
   "source_hashes": {
-    "md": "9af042539bd6",
+    "md": "2acacd5e84ed",
     "ts": "cc5a3e015b3d",
     "lean": "fda6252037d0"
   },
@@ -1163,6 +1163,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:nuclear-groebner-reduction' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1358,5 +1374,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

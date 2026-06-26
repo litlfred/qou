@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "267dea65bb4b",
+          "ts": "a93b5f31861a",
+          "lean": "1056d82c3d2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:bundle-initial-conditions' → expected 'bundle_initial_conditions'; Lean declares: R_q, q_param, q_inv_param, BundleInitialConditions, BundleInitialConditions.size.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:51.737Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

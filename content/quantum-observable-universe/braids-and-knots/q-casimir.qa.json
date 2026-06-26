@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "39026f2b2a8f",
+          "ts": "7e71ae2f47e6",
+          "lean": "b100fd02b9b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:q-casimir' → expected 'q_casimir'; Lean declares: QCasimirData, qInv_unique, QuantumSu2Relations, QCasimir, QCasimir_EF.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:22.375Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

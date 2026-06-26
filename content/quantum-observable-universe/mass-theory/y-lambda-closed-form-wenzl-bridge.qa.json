@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean"
   },
   "source_hashes": {
-    "md": "efd80896a456",
+    "md": "eb91932315e3",
     "ts": "dca519aba6b6",
-    "lean": "b9c611630a27"
+    "lean": "e057bcbb2f25"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:56:56.157Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:y-lambda-closed-form-wenzl-bridge' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1360,5 +1376,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

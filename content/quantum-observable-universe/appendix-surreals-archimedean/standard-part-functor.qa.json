@@ -915,7 +915,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3c163ab3ac1c",
+          "ts": "482ecc01548a",
+          "lean": "ef0a26cedd2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:standard-part-functor' → expected 'standard_part_functor'; Lean declares: StandardPart, archimedean_mass_commutes. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.560Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

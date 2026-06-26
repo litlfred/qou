@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "fc08a41a9b32",
-    "ts": "f4faadbc8a88",
+    "ts": "8d0e52327c6b",
     "lean": "a441dfcfe8e2"
   },
   "criteria": {
@@ -1147,6 +1147,22 @@
         "reviewed_at": "2026-06-22T02:57:16.348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "fc08a41a9b32",
+          "ts": "8d0e52327c6b",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:qbeta-c8-c10-silver-rationals' → expected 'qbeta_c8_c10_silver_rationals'; Lean declares: qbeta_c8_at_silver, qbeta_c9_at_silver, qbeta_c10_at_silver, qbeta_c3_squared, qbeta_c3_cubed. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1342,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.780Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

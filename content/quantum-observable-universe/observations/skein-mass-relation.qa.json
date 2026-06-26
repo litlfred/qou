@@ -877,7 +877,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e1769a1e259b",
+          "ts": "a66827126717",
+          "lean": "5216589859bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:skein-mass-relation' → expected 'skein_mass_relation'; Lean declares: SkeinMassRelation, LeptonMassRatio, hbar_q_pos_of_gt_one, predicted_ratio_pos. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.298Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

@@ -875,7 +875,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "3cdeb9b1a4ec",
+          "ts": "cfe78ee8c967",
+          "lean": "56557fc5b95f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:hecke-algebra-type-scaffold' → expected 'hecke_algebra_type_scaffold'; Lean declares: HeckeGen, HeckeWord, HeckeRelations, HeckeWedderburn. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.955Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

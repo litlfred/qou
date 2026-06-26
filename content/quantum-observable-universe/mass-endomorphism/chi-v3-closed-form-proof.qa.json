@@ -875,7 +875,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2a2561df15b1",
+          "ts": "2a8cc6b6c276",
+          "lean": "806aabd3058a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:chi-v3-closed-form-proof' → expected 'chi_v3_closed_form_proof'; Lean declares: chi_V3_beta_p, chi_V3_beta_n, chi_V3_difference_factored, chi_V3_difference_polynomial, chi_V3_difference_eq_factored.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.609Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

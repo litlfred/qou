@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e1dbc91b6d24",
     "ts": "221545be3a9d",
-    "lean": "9e2355b8a744"
+    "lean": "86b9247abf20"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1151,6 +1151,22 @@
         "reviewed_at": "2026-06-22T02:56:58.968Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "e1dbc91b6d24",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:frobenius-self-duality-forces-lp-dual-extraction' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:02.327Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

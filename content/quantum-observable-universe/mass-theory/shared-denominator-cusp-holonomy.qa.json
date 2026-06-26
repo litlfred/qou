@@ -940,7 +940,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "039a7aba47a6",
+          "ts": "553831ec8fe7",
+          "lean": "bbc81c8ae5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:13.755Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

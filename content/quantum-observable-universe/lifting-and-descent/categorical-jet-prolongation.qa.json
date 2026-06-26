@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean"
   },
   "source_hashes": {
-    "md": "f80ae5ac2584",
+    "md": "5fbbe0b5f693",
     "ts": "f7e87434b955",
     "lean": "afc5dfb3bc4b"
   },
@@ -1165,6 +1165,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
+      },
+      {
+        "field_hash": {
+          "md": "5fbbe0b5f693",
+          "ts": "f7e87434b955",
+          "lean": "afc5dfb3bc4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:categorical-jet-prolongation' aligns with Lean declaration. Has sorry (cited)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1360,5 +1376,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

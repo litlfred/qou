@@ -936,7 +936,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9afd18f58291",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'conj:im-q-physical-role' → expected 'im_q_physical_role'; Lean declares: default_q_real, mass_observable_conj_invariance, ImQCandidateRole, im_q_observable_pairing. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:10.836Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

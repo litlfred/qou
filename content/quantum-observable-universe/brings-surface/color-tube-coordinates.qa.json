@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "d2d205ca27d4",
+          "ts": "9f4f555a9126",
+          "lean": "a9fe045a80f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:color-tube-coordinates' → expected 'color_tube_coordinates'; Lean declares: ColorTubeCoordinates, ColorTubeCoordinates.colorVector, color_recovers_resolvent, shifted_sum, ColorTubeCoordinates.p1.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:20.624Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

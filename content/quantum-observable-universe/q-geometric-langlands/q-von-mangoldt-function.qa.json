@@ -913,7 +913,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "225050938f28",
+          "ts": "7ad5c532cc8b",
+          "lean": "9b2aa08065b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'def:q-von-mangoldt-function' → expected 'q_von_mangoldt_function'; Lean declares: R_q, q_param, q_inv_param, MaxIdeal. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:44.969Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

@@ -940,7 +940,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Trivial skeleton proof stub restating the target."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "20b1520bf8d7",
+          "ts": "2a5a733c1c81",
+          "lean": "39212e04a881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:56.490Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

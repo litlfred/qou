@@ -816,7 +816,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f24c4e9f7e2c",
+          "ts": "d0d7b253f31c",
+          "lean": "baf34f17068d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'ex:hodge-su2' → expected 'hodge_su2'; Lean declares: R_q, q_param, q_inv_param, SU2HodgeData, su2Hodge.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:18.140Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

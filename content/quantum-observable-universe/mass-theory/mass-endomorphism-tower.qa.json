@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean"
   },
   "source_hashes": {
-    "md": "4805d7159427",
-    "ts": "e01ee62c8912",
+    "md": "72f6c4e4e63e",
+    "ts": "d50dd8322129",
     "lean": "3526fbb82bce"
   },
   "criteria": {
@@ -1161,6 +1161,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'prop:mass-endomorphism-tower' → expected 'mass_endomorphism_tower'; Lean declares: quantumDilogPoly, markovParamPoly, massPoly, proton_electron_ratio. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1356,5 +1372,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }

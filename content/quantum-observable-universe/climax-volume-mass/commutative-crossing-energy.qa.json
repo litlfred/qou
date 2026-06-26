@@ -877,7 +877,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a011b7b90700",
+          "ts": "740d0ddb15c8",
+          "lean": "9a7a3e0e8e16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T11:04:42.745Z",
+        "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
+        "notes": "Label 'rem:commutative-crossing-energy' → expected 'commutative_crossing_energy'; Lean declares: ord_u_zero_trM, ord_u_zero_trM_eq, ord_u_zero_proton, ord_u_zero_deuteron, ord_u_zero_tritium.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:16.035Z"
+  "updated_at": "2026-06-26T11:04:42.745Z"
 }
