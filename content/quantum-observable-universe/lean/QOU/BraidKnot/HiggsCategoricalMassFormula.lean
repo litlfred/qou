@@ -143,39 +143,26 @@ theorem scalar_gauge_ratio_at_zero :
   rw [h4_correction_at_zero]
   ring
 
-/-! ## What's CONJECTURED (sorry — open categorical derivations) -/
+/-! ## What's CONJECTURED (open categorical derivations — documented, not Lean-claimed)
 
-/-- **HYPOTHESIS (empirically validated within 1%, NOT proved)**:
-    the categorical Higgs mass formula gives the measured Higgs mass.
+The categorical Higgs mass formula is an **empirically-validated hypothesis,
+not a proved theorem**.  At the external anchor `m_W = 80.379` it gives
+`higgsMassFormula ≈ 124.26 GeV` against the measured `m_H = 125.10 GeV`
+(−0.67 %; PR #1159, witness
+`higgs-categorical-mass-formula-attempt.witness.json`, 50 dps).  The open
+categorical derivations are:
 
-    Per PR #1159 empirical results:
-      higgsMassFormula(80.379, h_0) = 124.26 GeV
-      measured m_H                  = 125.10 GeV
-      deviation                     = -0.67%
+  (a) `scalar_mass_factor / gauge_mass_factor = (6/5)·(1 − h⁴·2G)` *exactly*
+      (not merely empirically within 1 %);
+  (b) the categorical formulas for `scalar_mass_factor` / `gauge_mass_factor`
+      in terms of `P_m` and SM data;
+  (c) higher-order `h⁶`/`h⁸` corrections for the residual 0.5 %.
 
-    The sorry represents the OPEN categorical derivations:
-      (a) Proving that scalar_mass_factor / gauge_mass_factor equals
-          (6/5) · (1 - h^4·2G) EXACTLY (not just empirically within 1%)
-      (b) Proving that scalar_mass_factor and gauge_mass_factor have
-          the claimed categorical formulas in terms of P_m and SM data
-      (c) Higher-order corrections (h^6, h^8) for the residual 0.5%
-
-    Status: class-conditional per §3b-cond; requires research-grade
-    categorical work to discharge. -/
--- Ref: [manuscript] PR #1159 + computations/higgs-categorical-mass-formula-attempt.witness.json
-theorem higgs_mass_formula_matches_measured_hypothesis :
-    ∃ (m_W h_0 m_H : ℝ),
-      higgsMassFormula m_W h_0 = m_H ∧ m_H = 125.10 := by
-  -- Ref: [manuscript] PR #1159 + computations/higgs-categorical-mass-formula-attempt.witness.json
-  trivial
-
-/-- The formula's empirical match is < 1% (witness JSON). This is
-    a CLAIM about external empirical data, not a Lean theorem in the
-    classical sense; encoded as a documentation hook. -/
--- Ref: [manuscript] PR #1159 witness `higgs-categorical-mass-formula-attempt.witness.json`
-def higgs_mass_formula_empirically_within_one_percent :
-    True := trivial  -- placeholder for documentation; real verification
-                     -- lives in the witness JSON computed at 50 dps
+These are recorded as prose, not as a `True` / `trivial` Lean stub: the empirical
+match lives in the witness JSON and the structural conjecture is carried by the
+§3b-cond class scaffolding — no proved Lean theorem asserts the match.  (The
+prior `theorem … := by trivial` and `def … : True := trivial` audit-only
+placeholders were removed — they had no downstream consumers.) -/
 
 /-! ## Cross-particle ratio consistency -/
 
