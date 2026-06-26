@@ -243,10 +243,9 @@ achieved for all six terms.***
 
 **Remaining items (refinements, not gaps).**
 
-1. ~~*Verification of Habiro cyclotomic expansion coefficients
-   $a_m(K)$ for specific atomic braids.*~~ **Done for proton,
-   neutron, and deuteron** ($A \leq 2$): symbolic Markov trace
-   $\mathrm{tr}_M(T_w, q)$ admits the expansion
+1. *Habiro cyclotomic expansion coefficients $a_m(K)$ for atomic
+   braids.* For the proton, neutron, and deuteron ($A \leq 2$) the
+   symbolic Markov trace $\mathrm{tr}_M(T_w, q)$ admits the expansion
    $\mathrm{tr}_M = \sum_m a_m(u) \cdot (u; u)_m$ with $u = q^{1/2}$.
 
    | Braid | $\deg p(u)$ | Habiro coefficients | $m_{\max}$ | Wall time |
