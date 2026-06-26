@@ -1,13 +1,13 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-26T14:24:17.428Z",
+  "generated": "2026-06-26T14:33:41.831Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1770,
-  "files_flagged": 405,
-  "total_defects": 499,
+  "files_flagged": 410,
+  "total_defects": 504,
   "total_exempt": 40,
   "categories": {
-    "proof-conjecture-unclassified": 335,
+    "proof-conjecture-unclassified": 340,
     "proof-no-trivial-true": 72,
     "proof-no-false-premise": 12,
     "proof-no-decide-masking": 16,
@@ -1128,6 +1128,16 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean": [
+      {
+        "line": 47,
+        "category": "proof-conjecture-unclassified",
+        "pattern": "missing-primary-dependent",
+        "snippet": "class ChebyshevDegreeGenusAxiom : Prop where",
+        "decl": "ChebyshevDegreeGenusAxiom",
+        "severity": "major"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/eos_borromean_cfl.lean": [
       {
         "line": 165,
@@ -1513,6 +1523,16 @@
         "pattern": "missing-primary-dependent",
         "snippet": "class HeckeAnyonicSubstrate (R : Type u) [CommRing R] (q : R) where",
         "decl": "HeckeAnyonicSubstrate",
+        "severity": "major"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean": [
+      {
+        "line": 213,
+        "category": "proof-conjecture-unclassified",
+        "pattern": "missing-primary-dependent",
+        "snippet": "class V21Eigenphase (q : ℝ) : Prop where",
+        "decl": "V21Eigenphase",
         "severity": "major"
       }
     ],
@@ -2046,6 +2066,16 @@
         "snippet": "theorem color_elliptic [ctx : ColorEllipticContext] :",
         "decl": "color_elliptic",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BringsSurface/lagrange_resolvent_transform.lean": [
+      {
+        "line": 57,
+        "category": "proof-conjecture-unclassified",
+        "pattern": "missing-primary-dependent",
+        "snippet": "class LagrangeResolventEquivarianceAxiom : Prop where",
+        "decl": "LagrangeResolventEquivarianceAxiom",
+        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean": [
@@ -3324,6 +3354,16 @@
         "severity": "major"
       }
     ],
+    "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean": [
+      {
+        "line": 48,
+        "category": "proof-conjecture-unclassified",
+        "pattern": "missing-primary-dependent",
+        "snippet": "class KashiwaraCrystal (Λ : Type*) [Fintype Λ] where",
+        "decl": "KashiwaraCrystal",
+        "severity": "major"
+      }
+    ],
     "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean": [
       {
         "line": 68,
@@ -4009,6 +4049,16 @@
         "pattern": "missing-primary-dependent",
         "snippet": "class RigidMonoidalStructuralGapInvariance (α : Type*) where",
         "decl": "RigidMonoidalStructuralGapInvariance",
+        "severity": "major"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean": [
+      {
+        "line": 73,
+        "category": "proof-conjecture-unclassified",
+        "pattern": "missing-primary-dependent",
+        "snippet": "class ThreeFoldMarkovHopfExtraction (q : ℝ) : Type where",
+        "decl": "ThreeFoldMarkovHopfExtraction",
         "severity": "major"
       }
     ],

@@ -783,7 +783,7 @@ function isConjectureCarrier(doc: string): boolean {
     /conj:[a-z0-9-]+/i.test(doc) ||
     /\\label\{conj:/i.test(doc) ||
     /\bconjectur/i.test(doc) ||
-    /axiomatis[e|ing|ed]/i.test(doc)
+    /axiomatis/i.test(doc)
   );
 }
 
@@ -874,7 +874,9 @@ function detectDependentNotConditional(d: Decl, doc: string): Hit | undefined {
   const conditional =
     /\[[^\]]+\]/.test(d.sig) || // instance-implicit binder
     declExtends(d) ||
-    /\(\s*\w[\w']*\s*:\s*[A-Z][\w'.]*\b/.test(d.sig); // explicit hyp arg
+    // explicit `(…)`, implicit `{…}`, or strict-implicit `⦃…⦄` binder
+    // carrying a capitalised (class/type) hypothesis on the primary.
+    /[({⦃]\s*\w[\w']*\s*:\s*[A-Z][\w'.]*\b/.test(d.sig);
   if (conditional) return undefined;
   return mk(
     d,
