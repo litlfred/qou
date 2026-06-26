@@ -36,6 +36,21 @@
  *       in separate `*-proof` blocks in this corpus, so a provable block
  *       is just its statement and should not ramble.
  *
+ *   clarity-stmt-pure      (theorem/proposition/   — a statement block carries
+ *                           lemma/corollary/          ONLY its claim: no
+ *                           conjecture)               embedded remark /
+ *       interpretation / motivation / "physical meaning" / "intuitively" /
+ *       "in other words" prose. Such commentary belongs in a *follow-on*
+ *       `remark` block (`interprets:` the statement), not inside the
+ *       theorem/prop/lemma/conjecture itself.
+ *
+ *   clarity-grad-style     (every prose-bearing    — the block reads in the
+ *                           kind)                     register of a graduate-
+ *       level formal mathematics text: no contractions ("don't", "we'll",
+ *       "let's"), no second-person address ("you"), no hype adjectives
+ *       ("remarkable", "beautiful", "elegant"), no colloquialism
+ *       ("basically", "a lot of", "of course"), no exclamation marks / emoji.
+ *
  *   clarity-defn-misplaced (NON-definition kinds)    — the INVERSE audit: a
  *       block whose kind is *not* `definition` (a remark, prose, theorem,
  *       example, …) that secretly carries a definition — it declares
@@ -69,6 +84,7 @@
  * Criterion ids (the "audit parameters"):
  *   clarity-defterm-bold   clarity-defn-single
  *   clarity-defn-tight     clarity-stmt-tight
+ *   clarity-stmt-pure      clarity-grad-style
  *   clarity-defn-misplaced
  *
  * @module content/pipeline/definition-clarity-audit
@@ -140,6 +156,12 @@ const T = {
   stmtHeaders: 3,
   /** clarity-stmt-tight: preamble words before the first display-math. */
   stmtPreamble: 80,
+  /** clarity-stmt-pure: interpretive lead-in phrases ("intuitively", "in other
+   *  words", "physically", …) at/above this count flag embedded commentary. */
+  pureLeadIns: 1,
+  /** clarity-grad-style: register hits (contraction / second-person / hype /
+   *  colloquialism) at/above this count flag an informal block. */
+  styleHits: 2,
   /** clarity-defn-misplaced: defining-verb lead-ins in a non-definition block
    *  that has no `defines[]`/`:defterm[…]` marker — softer (minor) signal. */
   misplacedVerbs: 2,
@@ -163,11 +185,33 @@ type DefnKind =
 
 const PROVABLE: DefnKind[] = ["theorem", "lemma", "proposition", "corollary"];
 
+/** kinds subject to `clarity-stmt-pure` — the provable kinds plus `conjecture`.
+ *  The owner's framing: "a theorem, prop, lemma, conjecture or similar
+ *  statement should not have remarks or interpretation in them." */
+const STATEMENT_KINDS: DefnKind[] = [...PROVABLE, "conjecture"];
+
+/** kinds carrying scholarly prose, subject to `clarity-grad-style`. Pure
+ *  structural kinds (`diagram`, `simulator`, `equation`) have no prose register
+ *  to audit. */
+const PROSE_KINDS: DefnKind[] = [
+  "definition",
+  "theorem",
+  "lemma",
+  "proposition",
+  "corollary",
+  "conjecture",
+  "example",
+  "remark",
+  "prose",
+];
+
 const CRITERIA = [
   "clarity-defterm-bold",
   "clarity-defn-single",
   "clarity-defn-tight",
   "clarity-stmt-tight",
+  "clarity-stmt-pure",
+  "clarity-grad-style",
   "clarity-defn-misplaced",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
@@ -274,6 +318,7 @@ function principalTokens(title: string): string[] {
 /** strip fenced code / tex blocks and display math; keep prose for wordcount. */
 function prose(md: string): string {
   return md
+    .replace(/<!--[\s\S]*?-->/g, " ") // HTML comments (incl. AUTO: markers)
     .replace(/```[\s\S]*?```/g, " ") // fenced code/tex
     .replace(/\$\$[\s\S]*?\$\$/g, " ") // display math
     .replace(/\\begin\{[\s\S]*?\\end\{[a-zA-Z*]+\}/g, " ") // latex envs
@@ -318,6 +363,74 @@ function definingVerbs(s: string): number {
 /** count of `:defterm[…]` canonical-define-site directives in the prose. */
 function deftermCount(md: string): number {
   const m = md.match(/:defterm\[[^\]]+\]/g);
+  return m ? m.length : 0;
+}
+
+// --- clarity-stmt-pure detectors -------------------------------------------
+
+/** interpretive / explanatory lead-in phrases that signal commentary embedded
+ *  inside a statement block — the stuff that should be a *follow-on* `remark`,
+ *  not part of the theorem / proposition / lemma / conjecture itself. */
+const INTERPRETIVE_PHRASE =
+  /\b(intuitively|heuristically|morally|informally(?:\s+speaking|,)?|loosely speaking|physically(?:\s+speaking)?|in other words|that is to say|this means(?: that)?|this tells us|this says that|we interpret|one (?:should|can) think of|the (?:reader|physicist) (?:should|can)|the upshot|the (?:physical|geometric|categorical) (?:meaning|interpretation|picture)|by way of (?:motivation|interpretation)|to (?:build|gain) intuition|the (?:key |main )?intuition|this captures the idea|this reflects)\b/gi;
+
+/** bold section-headers whose title is interpretive / discursive — a statement
+ *  block should not contain a "Physical meaning." / "Interpretation." /
+ *  "Remark." / "Motivation." sub-section; that is a follow-on `remark`. */
+const INTERPRETIVE_HEADER =
+  /^(physical meaning|interpretation|geometric (?:meaning|picture)|categorical (?:meaning|picture)|intuition|motivation|why this matters|discussion|commentary|remark|remarks|in words|moral|upshot|significance|context|role in|physical picture|heuristic[s]?|aside)\b/i;
+
+function interpretivePhrases(s: string): number {
+  const m = s.match(INTERPRETIVE_PHRASE);
+  return m ? m.length : 0;
+}
+
+function interpretiveHeaders(md: string): string[] {
+  return boldHeaders(md).filter((h) => INTERPRETIVE_HEADER.test(h.trim()));
+}
+
+// --- clarity-grad-style detectors ------------------------------------------
+
+/** verb-contractions ("don't", "we'll", "let's", "it's") — NOT possessive
+ *  's (which is fine: "Cauchy's theorem"). Graduate-level math prose spells
+ *  these out. */
+const CONTRACTION =
+  /\b(?:do|does|did|is|are|was|were|has|have|had|would|should|could|can|will|won|ain|isn|aren|wasn|weren|doesn|didn|don|hasn|haven|hadn|wouldn|shouldn|couldn)n['’]t\b|\b(?:we|you|they|it|that|there|here|who|let|i)['’](?:ll|re|ve|s|d|m)\b/gi;
+
+/** second-person address — absent from formal mathematical exposition. */
+const SECOND_PERSON = /\byou(?:r|rself|rselves)?\b/gi;
+
+/** editorialising / hype adjectives — a formal text states results, it does
+ *  not advertise them. */
+// NOTE: "magic" is deliberately EXCLUDED — "magic number" is core nuclear-shell
+// terminology throughout this corpus (`magic-numbers-from-q`, `non-magic-Li6`),
+// not editorialising. Likewise "deep"/"key" are too domain-overloaded to flag.
+const HYPE =
+  /\b(remarkabl[ey]|beautiful(?:ly)?|elegant(?:ly)?|powerful(?:ly)?|amazing(?:ly)?|stunning(?:ly)?|striking(?:ly)?|wonderful(?:ly)?|profound(?:ly)?|fascinating|astonishing(?:ly)?|incredibl[ey]|gorgeous|breathtaking)\b/gi;
+
+/** colloquial / chatty register markers. */
+const COLLOQUIAL =
+  /\b(basically|pretty much|a lot of|lots of|tons of|kind of|sort of|of course|obviously|needless to say|at the end of the day|when all is said and done|stuff|things like that|you name it|so to speak|if you will)\b/gi;
+
+/** count of `!` that are genuine sentence-final exclamation marks. Requires a
+ *  word letter immediately before the `!`, which excludes: factorials written
+ *  in prose (`3!`, `n!` — digit/`M`-placeholder before), GitHub alert markers
+ *  (`> [!NOTE]` — `[` before), and `!=` (followed by `=`). Math is already
+ *  stripped to " M " by `prose()`. */
+function exclamations(proseText: string): number {
+  const m = proseText.match(/[A-Za-z]!(?!=)/g);
+  return m ? m.length : 0;
+}
+
+/** emoji / pictographic characters — never appear in formal math prose. The
+ *  ranges are deliberately the pictographic / dingbat / regional-indicator
+ *  blocks only; mathematical arrows (U+2190–U+21FF) and operators are excluded
+ *  so a stray `→` outside `$…$` is not misread as an emoji. */
+const EMOJI =
+  /[\u{1F000}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE00}-\u{FE0F}\u{1F1E6}-\u{1F1FF}]/gu;
+
+function countMatches(s: string, re: RegExp): number {
+  const m = s.match(re);
   return m ? m.length : 0;
 }
 
@@ -483,6 +596,76 @@ function checkStmtTight(b: Block): Finding {
   return base;
 }
 
+function checkStmtPure(b: Block): Finding {
+  const p = prose(b.md);
+  const phrases = interpretivePhrases(p);
+  const headers = interpretiveHeaders(b.md);
+  const base = mkFinding(b, "clarity-stmt-pure");
+  base.metrics = {
+    interpretivePhrases: phrases,
+    interpretiveHeaders: headers.length,
+  };
+  const impure = phrases >= T.pureLeadIns || headers.length >= 1;
+  if (impure) {
+    base.result = "fail";
+    // A dedicated interpretive sub-section ("Physical meaning.", "Remark.") is
+    // the strong signal; scattered lead-in phrases alone are softer.
+    base.severity = headers.length >= 1 || phrases >= 3 ? "major" : "minor";
+    const bits: string[] = [];
+    if (headers.length >= 1)
+      bits.push(
+        `${headers.length} interpretive sub-section${headers.length === 1 ? "" : "s"} (${headers.slice(0, 3).map((h) => `"${h}"`).join(", ")})`,
+      );
+    if (phrases >= T.pureLeadIns)
+      bits.push(`${phrases} interpretive lead-in${phrases === 1 ? "" : "s"} ("intuitively"/"in other words"/…)`);
+    base.evidence = `${b.kind} carries embedded interpretation: ${bits.join("; ")} — move to a follow-on \`remark\` block (\`interprets: "${b.label}"\`)`;
+  } else {
+    base.result = "pass";
+    base.evidence = "statement only — no embedded remark/interpretation";
+  }
+  return base;
+}
+
+function checkGradStyle(b: Block): Finding {
+  const p = prose(b.md);
+  const contractions = countMatches(p, CONTRACTION);
+  const secondPerson = countMatches(p, SECOND_PERSON);
+  const hype = countMatches(p, HYPE);
+  const colloquial = countMatches(p, COLLOQUIAL);
+  const bangs = exclamations(p);
+  const emoji = countMatches(b.md, EMOJI);
+  const hits = contractions + secondPerson + hype + colloquial + bangs + emoji;
+  const base = mkFinding(b, "clarity-grad-style");
+  base.metrics = {
+    contractions,
+    secondPerson,
+    hype,
+    colloquial,
+    exclamations: bangs,
+    emoji,
+    hits,
+  };
+  // emoji or an exclamation mark is on its own a hard register violation;
+  // otherwise require a couple of softer hits to fire.
+  const informal = emoji >= 1 || bangs >= 1 || hits >= T.styleHits;
+  if (informal) {
+    base.result = "fail";
+    base.severity = emoji >= 1 || hits >= 2 * T.styleHits ? "major" : "minor";
+    const bits: string[] = [];
+    if (emoji >= 1) bits.push(`${emoji} emoji`);
+    if (bangs >= 1) bits.push(`${bangs} exclamation mark${bangs === 1 ? "" : "s"}`);
+    if (contractions >= 1) bits.push(`${contractions} contraction${contractions === 1 ? "" : "s"}`);
+    if (secondPerson >= 1) bits.push(`${secondPerson} second-person ("you")`);
+    if (hype >= 1) bits.push(`${hype} hype adjective${hype === 1 ? "" : "s"}`);
+    if (colloquial >= 1) bits.push(`${colloquial} colloquialism${colloquial === 1 ? "" : "s"}`);
+    base.evidence = `informal register (not graduate-level math prose): ${bits.join("; ")}`;
+  } else {
+    base.result = "pass";
+    base.evidence = "graduate-level formal register";
+  }
+  return base;
+}
+
 function checkDefnMisplaced(b: Block): Finding {
   const base = mkFinding(b, "clarity-defn-misplaced");
   // Glossary blocks legitimately define terminology — exempt.
@@ -592,6 +775,12 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
   }
   if (PROVABLE.includes(b.kind) && want("clarity-stmt-tight")) {
     out.push(checkStmtTight(b));
+  }
+  if (STATEMENT_KINDS.includes(b.kind) && want("clarity-stmt-pure")) {
+    out.push(checkStmtPure(b));
+  }
+  if (PROSE_KINDS.includes(b.kind) && want("clarity-grad-style")) {
+    out.push(checkGradStyle(b));
   }
   if (!MISPLACE_SKIP.includes(b.kind) && want("clarity-defn-misplaced")) {
     out.push(checkDefnMisplaced(b));
