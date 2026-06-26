@@ -47,7 +47,7 @@ theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
     For `Z = N`, the `q^{(Z−N)(A−1)/2}` factor is `q^0 = 1`, so
     `Λ_sym(Z, Z) = ([2]_q/2)^{Z²}`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
-theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) (h_q_pos : 0 < q) :
+theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) :
     lambdaSym q Z Z = (qInt2 q / 2) ^ (Z * Z) := by
   unfold lambdaSym
   -- normalise `↑(Z+Z)` → `↑Z + ↑Z`, then the `(Z−Z)` factor kills the exponent.
