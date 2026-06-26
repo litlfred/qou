@@ -119,9 +119,9 @@ abbrev atlas_nitrogen14_uniqueness := @atlas_entry_uniqueness 14
 /-- Atlas entry: oxygen-16 (¹⁶O, A=16, n=48). -/
 abbrev atlas_oxygen16_uniqueness := @atlas_entry_uniqueness 16
 
-/-- **For any other A**: directly call `@atlas_entry_uniqueness A`.
-    The parameterised proof works for any `A : ℕ`. -/
-def atlas_entry_uniqueness_works_for_any_A (A : ℕ) :
-    True := trivial
+/-! **For any other A**: directly cite `@atlas_entry_uniqueness A` — the theorem
+    above is parameterised over `A : ℕ`, so it already covers every mass number
+    without a per-`A` wrapper.  (The prior `def …_works_for_any_A : True :=
+    trivial` audit-only marker was removed — it had no downstream consumers.) -/
 
 end QOU.BraidsAndKnots
