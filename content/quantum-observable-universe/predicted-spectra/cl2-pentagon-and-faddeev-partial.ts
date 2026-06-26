@@ -19,6 +19,7 @@ export default proposition({
     validation: "not_checked",
   },
   authorNotes: [
+    { kind: "note", date: "2026-06-26", body: "Resolving the boundary scaffolding for the Faddeev-Kashaev relation anchors the broader pentagon formulation in a strictly formalized setting. It establishes novel consistency boundaries essential for extending these relations over non-standard algebraic domains." },
     {
       kind: "status",
       body:

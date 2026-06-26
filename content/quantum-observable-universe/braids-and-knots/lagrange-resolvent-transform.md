@@ -29,6 +29,3 @@ constraints transform to: $w_0 = 0$ (linear projection),
 $w_1 w_4 + w_2 w_3 = 0$ (Hermitian quadric), and
 $w_1^2 w_3 + w_4^2 w_2 + w_2^2 w_1 + w_3^2 w_4 = 0$
 (symmetric cubic).
-
-
-**Mathematical Novelty:** While using a Discrete Fourier Transform (DFT) to diagonalize a cyclic action is standard, the explicit $n=5$ Bring-surface formalization with the modular zeta-power reduction is a non-trivial mathematical contribution. (Note that the quadric/cubic constraint transforms mentioned in the examples are stated as part of the framework but not fully formalized).

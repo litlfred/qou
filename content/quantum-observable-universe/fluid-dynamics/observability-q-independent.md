@@ -20,8 +20,6 @@ observability axiom for any substrate section $q > 1$, then
 it satisfies it for **every** substrate section, including
 $q = 1$.
 
-**Mathematical Novelty.** While the specific result is a straightforward categorical triviality (that Hom-spaces over a fixed monoidal category do not depend on the differential layer $d_q$), the mathematical novelty lies in establishing this exact independence as the formal mechanism that permits properties to safely propagate from the deformed observable phase space ($q > 1$) directly to the unphysical/classical substrate ($q = 1$) without discontinuity.
-
 *Proof.*
 The space $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A))$
 is computed in the category $\mathbf{C}$, which is defined

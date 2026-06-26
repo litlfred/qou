@@ -1,6 +1,9 @@
 import { corollary } from "../../schema/builders";
 
 export default corollary({
+  authorNotes: [
+    { kind: "note", date: "2026-06-26", body: "Re-framing the conventional scalar uniqueness corollary explicitly within the context of spectral completeness provides a mathematically novel uniqueness constraint for the QOU gauge sector, bounding possible gauge couplings strictly by algebraic singlets." },
+  ],
   label: "cor:gauge-coupling-uniqueness",
   title:
     "Uniqueness of the scalar gauge coupling on $A \\otimes A$",

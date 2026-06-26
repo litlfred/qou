@@ -21,6 +21,7 @@ export default proposition({
     "draft",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-06-26", body: "The identity itself is a textbook algebraic cyclotomic composition identity ($\\Phi_{2n}(X)=\\Phi_n(X^2)$). Note that a previous categorical strand-doubling interpretation was refuted, leaving this purely as a standard but necessary foundational lemma with low inherent novelty." },
     {
       kind: "note",
       date: "2026-06-01",

@@ -128,6 +128,3 @@ for the derivation status).
    $q > 1$ ordering are the archimedean constructs that pin the
    formalisation to $\mathbb{R}$; the underlying identity itself is
    substrate-side and base-ring-agnostic.
-
-
-**Mathematical Novelty:** While the derivation itself follows a standard Hecke/Markov calculation, this closed form represents the simplest nontrivial derived Markov-trace in the framework. The value-driven finding that the bare-Markov $\epsilon^{2n}$ coefficients are *not* the $\mathfrak{Q}_\beta$ precision-ladder $c_n$ (meaning $F_n$ is a separate categorical decomposition) adds substantive novel mathematical content to the framework.

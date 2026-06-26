@@ -25,6 +25,7 @@ export default proposition({
     "categorical-derivation",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-06-26", body: "While the existence of the Habiro expansion for quantum invariants with integer coefficients is a standard result in quantum topology, its novel application here is using the strictly finite nature of this algebraic ladder to eliminate arbitrary truncation choices in evaluating physical mass differences, anchoring the observable spectrum directly to the exact cyclotomic integrality of the trace." },
     {
       kind: "note",
       date: "2026-05-28",

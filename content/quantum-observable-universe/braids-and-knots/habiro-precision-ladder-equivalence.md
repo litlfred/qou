@@ -4,8 +4,6 @@ admits a finite Habiro expansion with integer coefficients $a_m \in
 \mathbb{Z}[u]$. The Habiro form is the canonical representation: it is
 an exact, finite rational evaluation, not a truncated series.*
 
-**Mathematical Novelty.** While the existence of the Habiro expansion for quantum invariants with integer coefficients is a standard result in quantum topology, its novel application here is using the strictly finite nature of this algebraic ladder to eliminate arbitrary truncation choices in evaluating physical mass differences, anchoring the observable spectrum directly to the exact cyclotomic integrality of the trace.
-
 *Specifically, the Markov trace of the neutron–proton braid-word
 difference admits the finite expansion*
 

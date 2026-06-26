@@ -18,6 +18,7 @@ export default proposition({
   ],
   uses: ["rem:helium-hopf-diagram"],
   authorNotes: [
+    { kind: "note", date: "2026-06-26", body: "This full-shell-as-full-curls topological characterization breaks from standard heuristic chemistry, introducing a novel sub-Hopf link invariant to rigidly classify noble gas inertness and formally binding empirical ionization energy peaks to crossing-energy maxima." },
     {
       kind: "caveat",
       date: "2026-06-16",

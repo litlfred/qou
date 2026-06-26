@@ -124,7 +124,3 @@ The beta-stability line
 ([beta-stability](#prop:beta-stability)) and the topological mass
 formula all receive analogous corrections when $q_0$ is replaced by
 $q_{\mathrm{eff}}$.
-
-**Formalization Goal Plausibility.** The intended Lean theorems (establishing `deltaQ <= 0` for neutron-rich nuclei, `differentialShift >= 0`, and `qEff > 1`) contain mathematically sound proof bodies relying on basic arithmetic, `omega`, and `positivity` tactics. Currently, the Lean file structure is technically broken because the theorem headers were commented out (due to their Archimedean/real-number nature not matching the generic `R_q` Laurent polynomial ring). However, closing this gap is highly plausible: it only requires separating the generic definitions from the Archimedean instantiations (e.g., via a ring homomorphism to $\mathbb{R}$) and restoring the theorem headers over the reals. The underlying inequalities are elementary, and the formalization gap is purely structural.
-
-**Remark on Mathematical Novelty:** Although the C(p,2)-C(n,2) signed-crossing excess is a natural back-reaction mechanism, framing it as a topological self-deformation of the substrate field by nuclear linking density (l_net/A^2) provides a genuinely novel geometric formalization of nuclear self-correction dynamics.

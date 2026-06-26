@@ -90,6 +90,3 @@ useful — what's wrong is the categorical content attached to it.
 The corresponding Lean lemma
 [`cyclotomic_8_eq_cyclotomic_4_comp_X_sq`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean)
 remains valid as a pure algebraic identity over $\mathbb{Z}[X]$.
-
-
-**Mathematical Novelty:** The identity itself is a textbook algebraic cyclotomic composition identity ($\Phi_{2n}(X)=\Phi_n(X^2)$). Note that a previous categorical strand-doubling interpretation was refuted, leaving this purely as a standard but necessary foundational lemma with low inherent novelty.

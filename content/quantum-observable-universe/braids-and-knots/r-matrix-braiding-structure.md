@@ -13,6 +13,3 @@ the tensor swap) furnishes a representation of the braid group on any
 tensor product of finite-dimensional
 $\mathcal{U}_q(\mathfrak{su}(2))$-modules, replacing the classical
 twist/flip involutions ([braid twist-flip](#def:braid-twist-flip)).
-
-
-**Mathematical Novelty:** The underlying R-matrix, Yang-Baxter, and braid-representation content is standard quantum-group theory. However, the specific identification of the eigenvalues $q, -q^{-1}$ (Hecke channels) provides the essential framework tie-in, connecting standard representation theory to the physical observable structures in this universe.

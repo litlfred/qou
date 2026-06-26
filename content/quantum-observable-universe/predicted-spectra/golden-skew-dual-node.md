@@ -85,6 +85,3 @@ $q = q_0$, the super-classical margin $\approx 1.508$ is the
 larger of the two — consistent with the empirical observation that
 nuclear physics is more robust against compression of the substrate
 than against rarefaction.
-
-
-**Remark on Mathematical Novelty:** By reinterpreting the conventional reciprocal node bar-duality (phi^-2 / phi^2) as a two-sided stability margin, this skew-dual framing provides a mathematically novel boundary condition for bounding spectral gaps.

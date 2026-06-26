@@ -70,6 +70,3 @@ the correction on the substrate-natural scale. Per
 this is the sinh-side categorical-action correction on the qq̄ pair,
 modulo a rigorous first-principles derivation of the
 $\hbar_q - \hbar_q^2/2$ truncation order.
-
-
-**Mathematical Novelty:** While the proved identity relies on the elementary textbook rational-function algebra $1+\hbar_q-\hbar_q^2/2 = (3q^2-1)/(2q^2)$, the interpretive novelty is highly framework-specific. Specifically, the meson $m_K^2/m_\pi^2$ closure significance and its Bring 3-generation reading provide a novel physical interpretation of this algebraic form.

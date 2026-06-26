@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", date: "2026-06-26", body: "The proved facts are elementary, consisting of a ring-level observation regarding the bar-symmetry of $[2]_q(1-h^2 \\alpha)$. The mathematical novelty and interesting framework content lie in the fibre-vs-observable framing and the realization that $\\zeta_4=0$ is dual to the $\\mathfrak{Q}_\\beta$ pole." },
+  ],
   label: "prop:alpha-em-habiro-bar-involution",
   title:
     "The $\\alpha_{EM}$ Habiro element $[2]_q(1-h^2\\alpha)$ is a " +

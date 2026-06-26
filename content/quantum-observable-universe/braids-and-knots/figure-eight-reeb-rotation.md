@@ -97,6 +97,3 @@ constructs that pin this formalisation to $\mathbb{R}$; the determinant
 identity itself stays on the substrate side (`figure_eight_det_one` for
 the $\mathbb{R}$ specialisation used here, with the generic
 Hecke-generator determinant lemma belonging in the algebraic layer).
-
-
-**Mathematical Novelty:** The q-Reeb-rotation-phase reading of the figure-eight eigenvalue on $V_{2,1}$, which connects to $\mathrm{Vol}(4_1)$ and the muon anchor, is a genuinely framework-specific and novel conceptual idea. (Note that this connection is asserted conceptually rather than fully established in the formalization).

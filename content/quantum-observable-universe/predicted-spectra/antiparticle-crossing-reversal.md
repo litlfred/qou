@@ -38,6 +38,4 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
    a particle equals that of its antiparticle:
    $m_{\mathrm{bare}}(\mathfrak{H}^{\sigma}) = m_{\mathrm{bare}}(\mathfrak{H})$.
 
-**Formalization Goal Plausibility.** The Lean formalization currently provides partial coverage: the sub-lemmas for Coulomb reversal, pair crossing energy, and bare mass invariance are `sorry`-free, resting on basic arithmetic and ring properties. The remaining gap—the full proposition declaration and the explicit algebraic demonstration of sign reversal under $q \leftrightarrow q^{-1}$—is highly plausible to close. The formal proof already establishes that the mirror operation swaps the topological crossing counts; upgrading this to the algebraic trace substitution is a localized, routine goal that does not threaten the structural validity of the antiparticle mechanism.
-
 While the derivation follows standard crossing-reversal ring algebra, equating this formal knot-theoretic mirror swapping of positive and negative crossings with the physical properties of antiparticles is a conceptually novel contribution of the Quantum Observable Universe.

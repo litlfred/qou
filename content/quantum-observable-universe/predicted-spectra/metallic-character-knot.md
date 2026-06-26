@@ -130,6 +130,3 @@ relative to the shell capacity (few electrons, many open
 sites), and weakest when $\lambda(R)$ approaches the closure
 threshold $2n^2$ (nearly full curls — approaching noble gas
 behaviour).
-
-
-**Remark on Mathematical Novelty:** Replacing qualitative atomic structure models with a rigid residual-linking-number lambda(R) classification introduces a highly novel knot-theoretic metric for metallic versus noble traits, formalizing Reidemeister-transport conductivity as a core algebraic topological property.
