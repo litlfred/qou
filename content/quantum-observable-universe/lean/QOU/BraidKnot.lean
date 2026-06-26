@@ -118,6 +118,10 @@ import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.DeltaLambdaRefutation
 import QOU.BraidKnot.DeltaLambdaExponentKeystone
 import QOU.BraidKnot.DeltaLambdaSignRule
+-- Tier-3 (bean 60iz): Jones value of the Hopf link via the Markov trace +
+-- proved stabilisation-invariance (the q-deformed H_n(q) side of the knot
+-- invariant; complementary to the q=1 k[S_n] Wedderburn build).
+import QOU.BraidKnot.JonesViaMarkovTrace
 
 /-!
 # BraidKnot — Module Index
