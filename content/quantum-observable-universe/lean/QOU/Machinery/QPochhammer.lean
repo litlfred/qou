@@ -97,9 +97,18 @@ theorem qPochhammerDiag_at_q_one (n : ℕ) (hn : 0 < n) :
 
 The standard form `[n k]_q = (q;q)_n / ((q;q)_k · (q;q)_{n-k})`.
 Currently a placeholder; promotion to `derived` requires the q-binomial
-theorem and Pascal-type recursion (q-deformed). -/
+theorem and Pascal-type recursion (q-deformed).
 
-/-- **Gaussian q-binomial** `[n k]_q` as a quotient of q-Pochhammers.
+**Normalization note (bean `5ldf` consolidation, 2026-06-26).** This is the
+**standard** `(q;q)` q-binomial — a *distinct* object from the QOU-canonical
+**balanced** `QOU.MathlibExt.QPartitionCombinatorics.qBinom`
+(`(qⁿ−q⁻ⁿ)/(q−q⁻¹)` brackets): e.g. `[2 choose 1]` is `1+q` here vs `q+q⁻¹`
+there. The two are NOT interchangeable; pick by which bracket convention the
+caller needs. (The balanced one has the proved q-Pascal `qBinom_pascal`.) -/
+
+/-- **Gaussian q-binomial** `[n k]_q` as a quotient of q-Pochhammers (standard
+`(q;q)` normalization — see the normalization note above; distinct from the
+balanced canonical `QPartitionCombinatorics.qBinom`).
 Well-defined when `(q;q)_k ≠ 0` and `(q;q)_{n-k} ≠ 0`. -/
 noncomputable def qBinomial (n k : ℕ) (q : ℝ) : ℝ :=
   qPochhammerDiag q n / (qPochhammerDiag q k * qPochhammerDiag q (n - k))

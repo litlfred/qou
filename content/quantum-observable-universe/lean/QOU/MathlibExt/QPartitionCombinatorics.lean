@@ -312,7 +312,16 @@ Consolidates the third standard q-analog primitive alongside `qBracket`
 (`[n]_q`) and `qFactorial` (`[n]_q!`). Bean `5ldf` (epic `08a2`). -/
 
 /-- The **Gaussian binomial coefficient** (q-binomial)
-    `[n choose k]_q = [n]_q! / ([k]_q! · [n-k]_q!)`. -/
+    `[n choose k]_q = [n]_q! / ([k]_q! · [n-k]_q!)`, in the **balanced** quantum
+    integer `[n]_q = (qⁿ−q⁻ⁿ)/(q−q⁻¹)`.
+
+    **Canonical** (bean `5ldf` consolidation): this is the QOU-canonical q-binomial.
+    Two other defs exist in the tree:
+    * `QOU.GaugeFieldFluidDynamics.qBinomial` — the **same** balanced object
+      (`qInteger ≡ qBracket`; verified bit-for-bit), kept as a deprecated duplicate.
+    * `QOU.Machinery.QPochhammer.qBinomial` — the **standard** form
+      `(q;q)ₙ/((q;q)ₖ(q;q)_{n-k})`, a *different* normalization (e.g. `[2 choose 1]`
+      is `q+q⁻¹` here vs `1+q` there). Not interchangeable. -/
 noncomputable def qBinom (q : ℝ) (n k : ℕ) : ℝ :=
   qFactorial q n / (qFactorial q k * qFactorial q (n - k))
 
