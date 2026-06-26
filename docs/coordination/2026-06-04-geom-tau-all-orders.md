@@ -130,3 +130,41 @@ sharpened form. If picked up: branch off
 - Anchor proposition: [`prop:crossed-module-euler-characteristic`](../../content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.md)
 - Upstream conjecture: [`conj:geom-universality`](../../content/quantum-observable-universe/particle-interactions/geom-universality.md)
 - Status remark this sharpens: [`rem:geom-bridge-status`](../../content/quantum-observable-universe/mass-theory/geom-bridge-status.md)
+
+## Update 2026-06-26 — the a_D^(n) fork settled + 3-layer recursive structure (lever-1, bean z2bn)
+
+PR #2795 (`sw-lambda-jet-prolongation`) settled the structural fork for the
+prolongation period `a_D^(n) = ∮ λ_SW^(n)`: the γ-loop encircles a √-branch of
+the color cubic ⇒ `X^(n) ~ (z−z_k)^{1/2−n}`, falling-factorial `(1/2)_n`, so the
+**global** `a_D^(n) = lw(n−1)` (#1765) is **super-exponential**; the depth-2 SL₂
+trace `τ` is only the **n≤4 effective fit** (it caps at λ₊≈2.18 while the lw
+ratio grows 1.9→3.1).
+
+Two PRs this session formalize + confirm that:
+
+- **#2800** (`lever1-keystone-na-stokes-3b`) — Lean. States the keystone
+  `a_D^(n)=lw(n−1)` as a §3b class (`ProlongationPeriodMeanQuantumDim`), proves
+  the conditional `τ = 3(3[2]²+2)/(4([2]+2))` (`NaStokesKeystone`), and maps the
+  3-layer recursive structure: hyperbolic cosh/sinh (`BindingHyperbolicRecurrence`,
+  reuses the Reeb growth tower), q-Bessel (`BindingQBesselKernel`, §3b class
+  `BindingFollowsQBessel` = z2bn), Rogers–Szegő (`BindingQHermiteOscillator`,
+  q-oscillator even/odd parity). na-Stokes bridge made explicit. Also a
+  **robustness fix** to `QBesselContiguityRecurrence.lean` (was silently broken
+  on main — brittle `mul_div_assoc`; → `div_mul_eq_mul_div`).
+- **#2808** (`lever1-qbessel-period-compute`) — compute. Probe
+  `sw_period_lw_sl2_qbessel_probe.py` reproduces the #2795 table with the
+  **canonical q-hook dim_q** (independent confirmation): SL₂ diverges from lw by
+  n=5/6; lw super-exp. Records the Hahn–Exton q-Bessel coefficients honestly
+  (scope-(a), no fit): they shrink, so the super-exp growth lives in the
+  **period/partial-sum**, not the coefficient — pins where the open z2bn
+  correspondence sits.
+
+**Still open** (z2bn): the geometric↔algebraic identification `a_D^(n)=lw(n−1)`
+itself (#1765), and the exact q-Bessel⇒period correspondence.
+
+**Sibling scope map + intent posted** (2026-06-26): #2795 (verdict — confirmed
+w/ canonical dim_q), #2722 (`tr B=f([2]_q)` — flagged Lean-overlap vs
+`tau_in_stokes_eigenvalue_gap`), #2325 (q-Bessel-2nd-kind binding — broadcast the
+`QBesselContiguityRecurrence` fix, which affects any q-Bessel consumer), #2807
+(q-binomial infra — reuse opportunity for `BindingQHermiteOscillator`, noted not
+posted). #2793 is the same author's `[2]_q` τ-assembly (complementary).
