@@ -38,8 +38,10 @@ theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
     lambdaSym q Z N
       = q ^ (((Z : ℝ) - N) * (((Z + N) : ℝ) - 1) / 2)
         * (qInt2 q / 2) ^ (Z * N) := by
-  -- Direct by definition.
-  rfl
+  -- `lambdaSym` binds `A := Z + N` (a ℕ), so its exponent carries `↑(Z+N)`
+  -- whereas the statement's `((Z + N) : ℝ)` elaborates to `↑Z + ↑N`; the two
+  -- are propositionally (not definitionally) equal, so reconcile the cast.
+  simp only [lambdaSym, Nat.cast_add]
 
 /-- **Boundary value at `Z = N`** (isospin-symmetric).
     For `Z = N`, the `q^{(Z−N)(A−1)/2}` factor is `q^0 = 1`, so
@@ -48,9 +50,8 @@ theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
 theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) (h_q_pos : 0 < q) :
     lambdaSym q Z Z = (qInt2 q / 2) ^ (Z * Z) := by
   unfold lambdaSym
-  simp only []
-  -- The `((Z : ℝ) - Z) * _ / 2` is `0`; `q^0 = 1`.
-  have h_zero : ((Z : ℝ) - Z) * (((Z + Z) : ℝ) - 1) / 2 = 0 := by ring
-  rw [h_zero, Real.rpow_zero, one_mul]
+  -- normalise `↑(Z+Z)` → `↑Z + ↑Z`, then the `(Z−Z)` factor kills the exponent.
+  push_cast
+  rw [sub_self, zero_mul, zero_div, Real.rpow_zero, one_mul]
 
 end QOU.BraidKnot
