@@ -34,5 +34,30 @@ strict-complementarity cert from the re-emitted per-block min-eigs).
 - Audit: `docs/audits/2026-06-25-r5-witness-staleness-and-rescoped-todo-triage.md` §1–2
 - Lean: `content/quantum-observable-universe/lean/QOU/BraidKnot/Helium3Witness.lean`
   (*Witness divergence* note)
-- Producer: the r5-full canonical knot solver (`computations/`) + cost function
+- Producer: `computations/r5_full_canonical_knot_solver.py` — `cost_for_candidate`
+  uses single-term `B_pred = ρ · m_e · |tr_M|` (line ~491)
 - Sibling root cause: deuteron same single-term-cost under-constraint (audit §2)
+
+## SCOPE (2026-06-26) — BLOCKED: research-gated, NOT a clean wire-up
+
+Grounding the "multi-term-cost re-run" found it is **gated on an open derivation
+question**, not a straightforward implementation. Per
+`mass-theory/six-term-mass-formula-complete.md` the formula is
+`m(ρ) = |tr_M(T_w)| [T1] + Σ Φ_q(|V_i|) [T2] + z² Σ Φ_q(|V_iV_j|) [T3]
++ m_e·τ(C_dimq) [T4] + a_K·C_K [T5] + Σ Res_ζ [T6]`:
+
+| term | status for the solver `B_pred` |
+|---|---|
+| T1 `\|tr_M\|` | already wired (the current single-term cost) |
+| **T2/T3** (brane tower — the **dominant** terms) | **PATHOLOGICAL at q₀.** The archimedean `Φ_q` specialisation is NOT Markov-invariant; `Φ_q(0.99) ≈ 6.7e5`, per-generator amplitudes blow up, tiny p/n asymmetries amplify ~1e5×, giving **T − ³He ≈ −737 MeV vs CODATA +0.019 MeV** (`brane-tower-isospin-diagnosis.witness.json`). Restoring T2/T3 trace-invariance at q₀ is an **OPEN derivation question** (PR #526; the binding-closure frontier — beans `z2bn`/`w5tg`/`thb7`). |
+| T4 `(2+1/[2]_q)·m_e` | clean (derived + Lean `frobenius_codim_universal`); sub-dominant (~1.3 MeV) |
+| T5 `tr_M(β·β*⁻¹)` | clean (Markov pairing); sub-dominant |
+| T6 `Σ Res_ζ` | clean (cyclotomic); tiny at real q₀ |
+
+**Verdict.** Wiring the *implementable* multi-term `B_pred` would make ³He (a mirror
+nucleus, 2p+1n) ~1e5× **worse**, not fix the 57 % residual; the clean sub-dominant
+T4/T5/T6 cannot close the ~4 MeV gap without T2/T3. So this bean is **gated on the
+open T2/T3 trace-invariant reformulation**, not an isolated compute task — the ³He
+57 % residual is a *symptom* of that frontier. **Do NOT wire the pathological Φ_q
+T2/T3 into the solver.** Keep ³He frozen + documented (PR #2836). Re-open when the
+binding-closure frontier resolves T2/T3 at q₀.
