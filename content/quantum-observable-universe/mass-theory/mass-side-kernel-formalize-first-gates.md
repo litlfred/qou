@@ -29,7 +29,7 @@ For any candidate `linking_weight` function $w : \mathbb{R} \to \mathbb{R}$:
 | (a) | **Anchor-stable** | cross-anchor swing $|w(q_\mu) - w(q_p)| / |w(q_p)| < 10^{-6}$ | `MassAnchorStableGateClass swing` (where `swing` is the probe-computed magnitude) |
 | (b) | **Bar-even** | $w(q) = w(q^{-1})$ (as elements of the formal q-rationals) | covered by [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) (CommRing R lemma) |
 | (c) | **q = 1 classical-limit shadow** | $w(1)$ equals a registered categorical anchor — **OPEN GAP** (no registered anchor for `linking_weight` is established) | `MassQOneShadowGateClass w (anchor : Option ℝ)` — vacuous when `anchor = none`, requires $w(1) = a$ when `anchor = some a` |
-| (d) | **Direction sanity** | $|m - \text{target}| \le \text{threshold} \cdot \text{target}$ (additive form; substrate target $\approx 2.46$, the CODATA-implied near-match documented in [`_li_2_q_util.py:298-313`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py)) | `MassDirectionSanityGateClass m_candidate` (where `m_candidate = |w(q_0)|`) |
+| (d) | **Direction sanity** | $|m - \text{target}| \le \text{threshold} \cdot \text{target}$ (additive form; substrate target $\approx 2.46$, the CODATA-implied near-match documented in [`_li_2_q_util.py:298-313`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py)) | `MassDirectionSanityGateClass m_candidate` (where `m_candidate` $= |w(q_0)|$) |
 
 > **Direction-sanity formula note.** The Lean class uses the
 > **additive** form $|m - \text{target}| \le \text{threshold} \cdot \text{target}$

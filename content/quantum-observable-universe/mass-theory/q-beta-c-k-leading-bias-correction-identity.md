@@ -63,7 +63,7 @@ the empirical near-match $c_3 = -2 = J_{\mathrm{Hopf}}(q=1)$ to $3\,\mathrm{ppm}
 
 ## Structural significance
 
-The $+1.71\\%$ relative bias on the SDP-extracted $\hat c_2$ vs the
+The $+1.71\%$ relative bias on the SDP-extracted $\hat c_2$ vs the
 **proved canonical** $c_2 = -1$ ([`prop:q-beta-c-2-eq-neg-one-structural`](q-beta-c-2-eq-neg-one-structural.md))
 was first reported as a methodology defect. This
 proposition reframes the bias as a **structural signature**: it is exactly
