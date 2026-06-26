@@ -87,7 +87,8 @@ theorem hopfLinkStandardEig_fst (q : ℝ) :
 theorem hopfLinkStandardEig_snd (q : ℝ) :
     (hopfLinkStandardEig q).2 = (hoefsmitStandardEig q).2 ^ 2 := by
   unfold hopfLinkStandardEig hoefsmitStandardEig
-  rw [sq, neg_mul_neg, ← sq, ← inv_pow, inv_pow]
+  dsimp only
+  ring
 
 /-- For any `q > 0`, both eigenvalues of `σ_k²` in the Hoefsmit
     standard-(2,1) representation are strictly positive.  This is
