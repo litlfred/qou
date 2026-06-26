@@ -37,7 +37,7 @@ open QOU.MathlibExt.QPartitionCombinatorics
 class WenzlBranching (q : ℝ) where
   weight : Partition → ℝ
   branching : ∀ (lam : Partition) (μ : Partition) (i j : ℕ),
-    weight lam = weight μ * q ^ cellContent i j / qBracket q (Partition.size lam)
+    weight lam = weight μ * q ^ cellContent i j / qBracket q lam.size
   base_one : weight [1] = 1
   normalised : ∀ n : ℕ, True
 

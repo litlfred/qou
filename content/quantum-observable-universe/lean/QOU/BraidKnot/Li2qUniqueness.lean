@@ -38,7 +38,7 @@ theorem li2q_at_zero (q : ℝ) (N : ℕ) : li2qTrunc q 0 N = 0 := by
   unfold li2qTrunc
   apply Finset.sum_eq_zero
   intro n _
-  by_cases h : n = 0 <;> simp [h, zero_pow]
+  cases n <;> simp [zero_pow]
 
 /-- **THEOREM.** Termwise derivative: d/dz [z^n/(n·[n]_q)] = z^{n-1}/[n]_q. -/
 theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
