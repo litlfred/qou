@@ -144,6 +144,13 @@ grep -rEni \
 # artifacts, trailing colons, over-long / compound titles. Hard
 # defects exit 1; emits a per-chapter agent worklist.
 bun run content/pipeline/qa-section-title-audit.ts
+
+# Self-assessment banners (Category L) — bold-labelled paragraphs that
+# grade the work's own novelty / formalization-plausibility / significance.
+# These are author-tracking notes, not scholarly prose (AGENTS.md §4d).
+# DEFAULT tier (Novelty / Plausibility) drives a non-zero exit (CI gate);
+# --strict also surfaces Significance / Contribution / Impact for judgement.
+bun run content/pipeline/no-self-assessment-banners.ts content/<paper>
 ```
 
 ### 2. Triage by category
@@ -161,6 +168,7 @@ bun run content/pipeline/qa-section-title-audit.ts
 | **I. Audit-doc reference in paper** | `docs/audits/...`, `[audit](../../../docs/audits/...)`, `per audit`, `see audit doc` | **Remove.** Paper content must NOT reference audit documents. Audit docs are internal working artifacts — they are not part of the scholarly publication. If the audit contains a result needed in the paper, promote the result to a content block (proposition/theorem/remark) and cite that block instead. Empirical observations (percentage matches, ppm comparisons to CODATA) belong in audit docs only, never in paper `.md` blocks. |
 | **J. Empirical fit in scholarly prose** | "within X% of CODATA", "matches to Y ppm", "≈ Z MeV (close to...)", "near-match", "numerical observation" | **Remove from paper content.** Empirical comparisons are audit-doc material. Paper content states the derived formula; the audit doc records how well it matches experiment. **EXCEPTION:** a content block may state a formula's formal precision target (e.g. "the substrate identity matches CODATA to $0.24\,\mathrm{ppm}$") if the block IS a proposition about precision (e.g. `prop:proton-mass-substrate-identity`). |
 | **K. Title coherence** | section/subsection title ending in `" : vs"` / `" : generation"` / `" : characterisation"` / `" : comparison"`; a comma-list title of 3+ concepts; a title meaningless without its chapter | **Rewrite from the section's story** — read the section's intro block, make it short + coherent against its responsible parent (paper→chapter→section→subsection) and distinct from the sibling. Surfaced by `qa-section-title-audit.ts`; conventions in `one-voice-style-guide.md` §Title Conventions. |
+| **L. Self-assessment banner** | bold-labelled paragraph grading the work's own contribution: `**Mathematical Novelty:**`, `**Remark on Novelty:**`, `**Formalization Goal Plausibility:**` (and, in `--strict`, `**Significance:**` / `**Contribution:**` when self-praising) | **Migrate to `authorNotes`** (AGENTS.md §4d): extract the banner *paragraph only* (keep surrounding proof / Lean-structure / asymptotic content), push as `{ kind, date, body }` on the `.ts` — `kind: "note"` for novelty, `kind: "status"` for formalization-plausibility. Detector: `content/pipeline/no-self-assessment-banners.ts` (criterion `voice-no-self-assessment-banners`). `--strict` Significance/Contribution hits need human judgement (many are legitimate "what this means" notes). |
 
 ### 3. Apply mechanical fixes
 
@@ -179,6 +187,12 @@ These are safe to do without author approval:
   text → push as `{ kind, date?, body }` entry on the block's `.ts`
   manifest; remove blockquote from `.md`). Skip the `**Theorem
   (conditional on conj:X)**` §3b-cond banners — those are structural.
+- Migrate Category L self-assessment banners (`**Mathematical
+  Novelty:**`, `**Remark on Novelty:**`, `**Formalization Goal
+  Plausibility:**`) to `authorNotes` (kind `note` for novelty, `status`
+  for formalization-plausibility). Extract the **banner paragraph only**
+  (paragraph-bounded — keep surrounding scholarly content). Confirm clean
+  with `content/pipeline/no-self-assessment-banners.ts` (exit 0).
 
 ### 4. Kick back to author for items where:
 

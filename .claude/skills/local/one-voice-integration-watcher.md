@@ -138,12 +138,13 @@ exists, `voice-scholarly-default` covers both files; for
 | `fit-section-chapter` | major | Block kind or topic does not fit its declared sub-section / section / chapter |
 | `framework-canonical` | major | Deprecated notation: 5-tuple, `$\omega$` fibre functor, `$\mathcal{C}$` category, bare `$H_q$`, etc. |
 | `voice-editorializing` | minor | Forbidden phrases (`surprisingly`, `remarkably`, `it is worth noting that`, `a beautiful result`) |
+| `voice-no-self-assessment-banners` | major | Bold-labelled paragraph grading the work's own contribution (`**Mathematical Novelty:**`, `**Remark on Novelty:**`, `**Formalization Goal Plausibility:**`; `--strict` also `**Significance:**`/`**Contribution:**`). Detector: `content/pipeline/no-self-assessment-banners.ts` (criterion `voice-no-self-assessment-banners`). |
 
 ## Slot E — §4d discharge bands
 
 | Band | Examples |
 |------|----------|
-| **Auto-discharge** | `voice-status-leak` (delete the marker), `voice-emoji-content` (substitute words in body / leave ✓✗ in tables), `voice-unicode-crash` (replace with LaTeX math equivalents), `voice-time-stamped-notes` (delete the temporal qualifier), `framework-canonical` (mechanical rewrite per notation register), `voice-editorializing` (delete or rephrase) |
+| **Auto-discharge** | `voice-status-leak` (delete the marker), `voice-emoji-content` (substitute words in body / leave ✓✗ in tables), `voice-unicode-crash` (replace with LaTeX math equivalents), `voice-time-stamped-notes` (delete the temporal qualifier), `framework-canonical` (mechanical rewrite per notation register), `voice-editorializing` (delete or rephrase), `voice-no-self-assessment-banners` (migrate the banner paragraph to `authorNotes` — kind `note` for novelty, `status` for formalization-plausibility; paragraph-bounded, keep surrounding scholarly content) |
 | **Author-assist** | `voice-scholarly-default` rewrites (substantive prose surgery, may need to preserve author intent), `voice-ai-slop` cleanup that touches > 5 sentences (mechanical first pass is fine; structural rewrite needs author), `fit-section-chapter` (move block, promote/demote kind, split section), `wall-side-correct` (move archimedean specialisation to a sibling block) |
 | **Defer** | `voice-editorializing` in a passage the author has explicitly marked acceptable, glossary-block status leaks where the marker is part of the term being defined, `framework-canonical` hits inside historical / deprecated-on-purpose remarks |
 
