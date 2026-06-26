@@ -3,11 +3,11 @@
 calibration inputs — the three real degrees of freedom of the first
 cohomology of Bring's curve, $H^1 = 2W$:*
 
-| DOF of $H^1(\text{Bring}) = 2W$ | Measured input | What it fixes | Source |
+| DOF of $H^1(\text{Bring}) = 2W$ | Canonical observable | What it fixes | Numerical proxy (source) |
 | ------------------------------- | -------------- | ------------- | ------ |
-| $W$-plane **scale**             | $m_e$          | the dimensional unit (scale) | CODATA (electron mass) |
-| $W$-plane **modulus**           | $m_\mu$        | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | CODATA (muon mass) |
-| **orthogonal class** (meson sector) | $m_\pi$    | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | PDG (charged-pion mass) |
+| $W$-plane **scale** ($h^0$)     | $m_e$ (leptonic mass scale) | the dimensional unit (scale) | $m_e$, CODATA (electron mass) |
+| $W$-plane **modulus** ($h^2$)   | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width) | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; modulus pinned most precisely by $m_\mu/m_e$ (CODATA muon mass) |
+| **orthogonal class** (meson sector, $h^3$) | $\mathfrak{D}_\pi$ (pion decay width) | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | $m_\pi$, PDG (charged-pion mass) |
 
 All three are the three real degrees of freedom of the single first
 cohomology $H^1(\text{Bring}) = 2W$ — **not** three distinct degrees
@@ -17,13 +17,18 @@ class), matching the three calibrations
 ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md),
 Lean witness `QOU.Mass.calibrations_eq_cohomology`).
 
-The three measured inputs are **three masses** $(m_e, m_\mu, m_\pi)$.
-$m_e$ sets the unit; since $q_0$ is dimensionless it is fixed by $m_\mu$
-*relative to that unit* — i.e. by the ratio $m_\mu/m_e$ through the
-figure-eight identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with
-$\hbar_q = 1 - q_0^{-1}$ (inverted for $q_0 \approx 1.10998$); $m_\pi$
-sets the orthogonal meson scale. $\mathfrak{Q}_\beta$ is **derived** from
-$m_e, q_0$ (see below), not a fourth input.
+The three canonical inputs are **weak-sector observables** — a leptonic
+mass scale and two decay widths $(m_e, \mathfrak{D}_\beta, \mathfrak{D}_\pi)$,
+entering at successive orders $h^0, h^2, h^3$. They are read off their
+most precise **proxies** — the masses $m_e, m_\pi$ and the $Q$-value
+$\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$. $m_e$ sets the unit; since
+$q_0$ is dimensionless it is pinned by $m_\mu$ *relative to that unit* —
+i.e. by the ratio $m_\mu/m_e$ through the figure-eight identity
+$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with $\hbar_q = 1 - q_0^{-1}$
+(inverted for $q_0 \approx 1.10998$), the most precise anchor for CAL-2
+($\mathfrak{D}_\beta$); $m_\pi$ is the proxy for the orthogonal meson scale
+($\mathfrak{D}_\pi$). $\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2**
+(see below), not a fourth input.
 
 *For every confined hadronic state $X$ the mass functional defined
 by the algebraic-side chain
@@ -46,12 +51,13 @@ $$
 $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$
 counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$
 in the baryon sector), and $q_0$ is fixed by the lepton ratio
-$m_\mu/m_e$ (the $H^1$ $W$-plane modulus). $\mathfrak{Q}_\beta$ is **derived**
-from $m_e$ and $q_0$ — it is the bar-odd ($\sinh$) partner of the
-bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution
+$m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $\mathfrak{D}_\beta$).
+$\mathfrak{Q}_\beta$ is the **CAL-2 proxy** — the bar-odd ($\sinh$) partner
+of the bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution
 $q \mapsto q^{-1}$
 ([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)),
-not a primitive calibration factor.*
+the experimental face of the modulus CAL-2 pins — not a separate
+dimensional mass-formula factor like $m_e$ or $m_\pi$.*
 
 ## Discussion
 
@@ -148,7 +154,8 @@ At each step:
 * **Meson sector.** The orthogonal $\mathrm{Vol}(\mathrm{Hopf}) = 0$
   class supplies the single meson scale $m_\pi$, independent of
   $(m_e, q_0)$ (the Hopf-link complement has zero hyperbolic volume).
-  $\mathfrak{Q}_\beta$, by contrast, is **derived** from $m_e$ and $q_0$ via the
+  $\mathfrak{Q}_\beta$, the CAL-2 proxy, is itself reproduced from $m_e$ and
+  the already-pinned $q_0$ via the
   substrate identity
   $$
     \mathfrak{Q}_\beta \;=\; m_e\,\frac{\lvert q_0^2 - 2q_0 - 1\rvert\,(q_0+1)}{2\,q_0^{3}}
