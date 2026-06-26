@@ -2,6 +2,9 @@ import UGB.GrobnerShirshov.Basic
 import UGB.GrobnerShirshov.AlgOps
 import UGB.GrobnerShirshov.CompositionLemma
 import UGB.GrobnerShirshov.Flatness
+import Mathlib.Order.WellFoundedSet
+import Mathlib.Data.List.Lex
+import Mathlib.Data.Prod.Lex
 
 /-!
 # Jet-Stratified Gröbner–Shirshov Reduction
@@ -88,17 +91,64 @@ def degLexNat (a b : List ℕ) : Prop :=
   a.length < b.length ∨ (a.length = b.length ∧ a < b)
 
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- TRUE (deg-lex is length-first ⇒ well-founded), but NOT a one-line "Mathlib
--- rename": `degLexNat` has order type ω^ω, so its well-foundedness needs a
--- length-then-fixed-length-lex argument — e.g. `Subrelation`/`InvImage` into
--- `Sigma.Lex Nat.lt (fun n => Pi.Lex (·<·) (β := fun _ : Fin n => ℕ))` (both
--- factors WF), plus a `List.lt ↔ Pi.Lex ∘ List.get` bridge for the equal-length
--- case. (Pure lex ALONE is not WF — cf. the removed `lexLt_wf` in NormalForms.lean,
--- where `[g₁] > [g₀,g₁] > …` descends forever; the length-first guard is exactly
--- what rescues `degLexNat`.) Formalisation target — load-bearing (used below at
--- `degLexNat_wf.apply` / the bounded-jet `Acc`).
+/-- Fixed-length lexicographic order on `List ℕ` is well-founded on each length fiber.
+Base case `{l | l.length = 0} = {[]}` is a singleton; the successor case is the head/tail
+decomposition `Prod.Lex (· < ·) (· < ·)` via `prod_lex_of_wellFoundedOn_fiber`, with the tail
+fibers (length `k`) pulled back from the inductive hypothesis. -/
+theorem fixedLength_lex_wf :
+    ∀ n, (List.length ⁻¹' {n} : Set (List ℕ)).WellFoundedOn (· < ·) := by
+  intro n
+  induction n with
+  | zero =>
+    apply Set.Subsingleton.wellFoundedOn
+    intro x hx y hy
+    simp only [Set.mem_preimage, Set.mem_singleton_iff, List.length_eq_zero_iff] at hx hy
+    rw [hx, hy]
+  | succ k ih =>
+    have prod_result :
+        (List.length ⁻¹' {k + 1} : Set (List ℕ)).WellFoundedOn
+          (Function.onFun (Prod.Lex (· < ·) (· < ·)) fun l => (l.headI, l.tail)) := by
+      refine Set.WellFoundedOn.prod_lex_of_wellFoundedOn_fiber
+        (f := List.headI) (g := List.tail) (rα := (· < ·)) (rβ := (· < ·))
+        ((InvImage.wf List.headI wellFounded_lt).wellFoundedOn) (fun a => ?_)
+      refine InvImage.wf
+        (fun p : ↥((List.length ⁻¹' {k + 1}) ∩ List.headI ⁻¹' {a}) =>
+          (⟨(p : List ℕ).tail, ?_⟩ : ↥(List.length ⁻¹' {k} : Set (List ℕ)))) ih
+      have hp : (p : List ℕ).length = k + 1 := p.2.1
+      simp only [Set.mem_preimage, Set.mem_singleton_iff, List.length_tail, hp,
+        Nat.add_sub_cancel]
+    refine Subrelation.wf (fun {a b} hab => ?_) prod_result
+    have hlt : (a : List ℕ) < (b : List ℕ) := hab
+    have ha : (a : List ℕ).length = k + 1 := a.2
+    have hb : (b : List ℕ).length = k + 1 := b.2
+    obtain ⟨x, t, hx⟩ :=
+      List.exists_cons_of_ne_nil (by intro h; rw [h] at ha; simp at ha : (a : List ℕ) ≠ [])
+    obtain ⟨y, u, hy⟩ :=
+      List.exists_cons_of_ne_nil (by intro h; rw [h] at hb; simp at hb : (b : List ℕ) ≠ [])
+    show Prod.Lex (· < ·) (· < ·) ((a : List ℕ).headI, (a : List ℕ).tail)
+      ((b : List ℕ).headI, (b : List ℕ).tail)
+    rw [hx, hy] at hlt ⊢
+    simp only [List.headI_cons, List.tail_cons]
+    rw [List.cons_lt_cons_iff] at hlt
+    exact Prod.lex_iff.2 hlt
+
+-- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
+/-- `degLexNat` (deg-lex, length-first) is well-founded. It has order type ω^ω — so it is not
+order-embeddable into ℕ, and *pure* lex is not well-founded (cf. the removed `lexLt_wf` in
+`NormalForms.lean`, where `[g₁] > [g₀,g₁] > …` descends forever). The length-first guard rescues
+it: `degLexNat = Prod.Lex (· < ·) (· < ·)` pulled back along `l ↦ (l.length, l)`, and the inner
+`(· < ·)` is well-founded on each length fiber (`fixedLength_lex_wf`), so
+`WellFounded.prod_lex_of_wellFoundedOn_fiber` applies. -/
 theorem degLexNat_wf : WellFounded degLexNat := by
-  sorry
+  have key := WellFounded.prod_lex_of_wellFoundedOn_fiber
+    (rα := (· < · : ℕ → ℕ → Prop)) (rβ := (· < · : List ℕ → List ℕ → Prop))
+    (f := List.length) (g := id)
+    (InvImage.wf List.length wellFounded_lt)
+    (fun a => fixedLength_lex_wf a)
+  refine Subrelation.wf ?_ key
+  intro a b h
+  show Prod.Lex (· < ·) (· < ·) (a.length, a) (b.length, b)
+  exact Prod.lex_iff.2 h
 
 /-- Deg-lex is compatible with left concatenation. -/
 theorem degLexNat_left_compat (a b c : List ℕ) (h : degLexNat a b) :
