@@ -62,9 +62,11 @@ def effectiveCellCount : ℚ := (5 : ℚ) / 2 * s3TrivialFactor
 -- Ref: [james1984representation] §2 (S_n branching rules)
 -- Ref: [adams1985hyperbolic] (8 ideal octahedra in 𝓑_3 complement)
 
-theorem halfSymTotalDim_eq : halfSymTotalDim = 5 := by native_decide
+theorem halfSymTotalDim_eq : halfSymTotalDim = 5 := by
+  simp only [halfSymTotalDim, halfSymRepresentatives, List.foldl_cons, List.foldl_nil]; norm_num
 
-theorem halfSymTrivialS3_eq : halfSymTrivialS3 = 2 := by native_decide
+theorem halfSymTrivialS3_eq : halfSymTrivialS3 = 2 := by
+  simp only [halfSymTrivialS3, halfSymRepresentatives, List.foldl_cons, List.foldl_nil]; norm_num
 
 theorem s3TrivialFactor_eq : s3TrivialFactor = 2 / 5 := by
   unfold s3TrivialFactor
