@@ -16,8 +16,9 @@ over-length statement) are cheaper, lower-stakes fixes.
 | `clarity-defn-single` | 163 | 59 | 19 | 0 |
 | `clarity-defn-tight` | 117 | 43 | 81 | 0 |
 | `clarity-stmt-tight` | 244 | 201 | 216 | 0 |
+| `clarity-defn-misplaced` | 1813 | 2 | 5 | 25 |
 
-Blocks scanned: **902**. Total candidate fails: **747**.
+Blocks scanned: **2086**. Total candidate fails: **754**.
 
 ## `clarity-defterm-bold` — 128 candidate(s)
 
@@ -202,4 +203,16 @@ Blocks scanned: **902**. Total candidate fails: **747**.
 | [`prop:root-of-unity-truncation`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md) | major | rambling statement: 650 prose words (>300); 8 sub-sections (>=3); 170-word preamble before the statement (>80) | words=650, boldHeaders=8, preambleWords=170 |
 | [`prop:vdw-pskew-isolation`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/information-theory/vdw-pskew-isolation.md) | major | rambling statement: 414 prose words (>300); 5 sub-sections (>=3) | words=414, boldHeaders=5, preambleWords=48 |
 | … and 377 more | | | |
+
+## `clarity-defn-misplaced` — 7 candidate(s)
+
+| block | sev | evidence | metrics |
+|---|---|---|---|
+| [`rem:observable-beable-correspondence`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/information-theory/observable-beable-correspondence.md) | major | remark block carries a definition (1 defines[] entry; 1 :defterm[…] define-site marker) — promote to a `definition` block | definesCount=1, deftermDirectives=1, definingVerbs=0 |
+| [`prop:emergence-to-quantum-flat`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.md) | major | proposition block carries a definition (1 defines[] entry; 1 :defterm[…] define-site marker) — promote to a `definition` block | definesCount=1, deftermDirectives=1, definingVerbs=0 |
+| [`prop:collatz-contact-boundary`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md) | minor | proposition block has 2 defining-verb lead-ins (>=2) — may hide a definition | definesCount=0, deftermDirectives=0, definingVerbs=2 |
+| [`conj:q-birch-swinnerton-dyer`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md) | minor | conjecture block has 2 defining-verb lead-ins (>=2) — may hide a definition | definesCount=0, deftermDirectives=0, definingVerbs=2 |
+| [`conj:q-aubin-lions`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.md) | minor | conjecture block has 3 defining-verb lead-ins (>=2) — may hide a definition | definesCount=0, deftermDirectives=0, definingVerbs=3 |
+| [`prop:knot-operator-lp-selection`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md) | minor | proposition block has 2 defining-verb lead-ins (>=2) — may hide a definition | definesCount=0, deftermDirectives=0, definingVerbs=2 |
+| [`rem:alpha-em-derivation-exploration-options`](https://github.com/litlfred/qou/blob/claude/definition-audit-setup-r9wazk/content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-exploration-options.md) | minor | remark block has 2 defining-verb lead-ins (>=2) — may hide a definition | definesCount=0, deftermDirectives=0, definingVerbs=2 |
 
