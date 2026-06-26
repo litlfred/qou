@@ -513,19 +513,21 @@ function checkDefnSingle(b: Block): Finding {
     definesCount: b.definesCount,
     definingVerbs: verbs,
   };
-  const tooMany =
-    headers.length >= T.singleHeaders ||
-    b.definesCount >= 2 ||
-    verbs >= T.singleVerbs;
+  // CALIBRATION (2026-06-26 agent adjudication): bold section-headers are NOT
+  // a multiple-definienda signal — they are a *tightness* signal (a single
+  // definition followed by property / interpretation / regime notes), already
+  // measured by `clarity-defn-tight`. Adjudicating the bold-header-driven
+  // majors gave 59/59 false-positive. The single-ness signal is the manifest
+  // `defines[]` count (the block literally declares ≥2 defined terms) and
+  // genuine repeated defining-verb lead-ins ("we define X … we define Y").
+  // `boldHeaders` is retained as an informational metric only.
+  // See docs/audits/2026-06-26-definition-clarity-adjudication.md.
+  const tooMany = b.definesCount >= 2 || verbs >= T.singleVerbs;
   if (tooMany) {
     base.result = "fail";
     base.severity =
-      headers.length >= T.singleHeaders + 1 || b.definesCount >= 3
-        ? "major"
-        : "minor";
+      b.definesCount >= 3 || verbs >= T.singleVerbs + 2 ? "major" : "minor";
     const bits: string[] = [];
-    if (headers.length >= T.singleHeaders)
-      bits.push(`${headers.length} bold section-headers (${headers.slice(0, 4).map((h) => `"${h}"`).join(", ")}…)`);
     if (b.definesCount >= 2) bits.push(`${b.definesCount} defines[] entries`);
     if (verbs >= T.singleVerbs) bits.push(`${verbs} defining-verb lead-ins`);
     base.evidence = `bundles multiple definienda: ${bits.join("; ")}`;
