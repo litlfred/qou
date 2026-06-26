@@ -1421,6 +1421,74 @@ theorem downstream_result {M : Type*} [MyConjecture M]
   MyConjecture.compatibility x
 ```
 
+#### §3b-tax — Primary vs dependent conjectures (taxonomy + enforcement)
+
+Every conjecture carrier is exactly one of two kinds, and **must
+declare which** with an explicit annotation in its doc block:
+
+- **Primary conjecture** — an open problem that is *not* downstream of
+  another conjecture. It is the genuine unproved input. Annotate the
+  class with `@conjecture: primary`.
+- **Dependent conjecture** — a statement that holds *if* a primary (or
+  another dependent) conjecture holds. It **must be stated
+  conditionally** — "if the primary conjecture is true, then …" — by
+  taking the primary's class as an explicit `[Instance]` hypothesis
+  (the §3b-cond pattern). Annotate with
+  `@conjecture: dependent on conj:<primary-label>`.
+
+A dependent conjecture written as a *flat, unconditional* assertion is
+**wrong**: it silently smuggles the primary conjecture in as if it were
+established. Always thread the dependency through the type:
+
+```lean
+-- @conjecture: primary
+class PrimaryConj (M : Type*) : Prop where
+  content : ∀ x : Real, 0 < x → ∃ y : Real, 0 ≤ y ∧ y ≤ x   -- real content, not `True`
+
+-- @conjecture: dependent on conj:primary
+-- WRONG — stated unconditionally, hides its dependence on PrimaryConj:
+class DependentBad (M : Type*) : Prop where
+  consequence : ...
+
+-- RIGHT — conditional on the primary (`if PrimaryConj then …`):
+class DependentGood (M : Type*) [PrimaryConj M] : Prop where
+  consequence : ...
+```
+
+**The carrier must assert something.** A conjecture axiomatised as an
+**empty** marker `class C : Prop` (no fields) asserts *nothing* — any
+`instance : C := ⟨⟩` discharges it, so a downstream `[C]`-conditional
+"theorem" proves nothing modulo `C`. Likewise a `structure`/`class`
+whose docstring *promises* defining properties (positivity,
+archimedean smallness, …) while encoding only a weak `≠`
+non-triviality under-delivers on its own prose. Class fields must carry
+the conjecture's **content** — a parameter-quantified inequality in the
+*shape* of the claim (the Round-11 pattern in
+[`ConditionalClasses.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean)),
+never a bare `True` or an empty body. An unproved primary is honestly
+represented by a **content-bearing class with no instance** (the open
+state); do not fabricate a trivial instance to "close" it.
+
+**Enforcement.** `content/pipeline/lean-vacuity-axiom-audit.ts` adds
+four conjecture-discipline criteria (high-recall candidates,
+agent-confirmed like the other vacuity classes). These close the gap
+that the proof-anti-pattern detectors structurally miss — an empty or
+under-specified carrier has no proof term, no `sorry`, and no `axiom`
+to flag, yet asserts nothing:
+
+| Criterion | Severity | Fires on |
+|---|---|---|
+| `proof-no-empty-prop-carrier` | critical | a `class`/`structure : Prop` with **zero fields** (and no `extends`); opt out a genuine opaque tag with `@marker` |
+| `proof-claims-unencoded` | major | a carrier whose docstring **enumerates ≥2 named properties** that are not encoded as Prop fields |
+| `proof-conjecture-unclassified` | major | a conjecture carrier (a `conj:` label / "conjecture" / "axiomatise" doc) with **no** `@conjecture: primary\|dependent` annotation |
+| `proof-dependent-conjecture-not-conditional` | critical | a class annotated `@conjecture: dependent` whose signature takes **no** `[Instance]` / hypothesis on its primary (stated unconditionally) |
+
+Worked exemplar (the bug that motivated these checks):
+[`ReebEpsilon.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean)
+— `ArchimedeanInfinitesimal` was an empty marker `: Prop` that passed
+every existing check; it is now a content-bearing primary-conjecture
+class alongside `ReebPositive`, each classified `@conjecture: primary`.
+
 ### 3a. Remark authoring convention — no dangling remarks
 
 Every `remark` block must have **formal backing**. The correct

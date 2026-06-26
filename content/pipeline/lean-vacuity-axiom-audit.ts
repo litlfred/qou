@@ -127,7 +127,18 @@ type Category =
   | "proof-no-provable-axiom"
   | "proof-no-placeholder-stub"
   | "proof-no-trivial-type-mismatch"
-  | "lean-import-after-content";
+  | "lean-import-after-content"
+  // Conjecture-discipline classes (§3b / §3b-cond). A conjecture
+  // axiomatised as a Lean `class`/`structure` can be sorry-free,
+  // axiom-free, and compile cleanly while asserting *nothing* — an
+  // empty marker `Prop`, or a structure whose docstring promises
+  // defining properties it never encodes as fields. The proof-anti-
+  // pattern detectors above all miss these because there is no proof
+  // term to inspect. These four close that gap.
+  | "proof-no-empty-prop-carrier"
+  | "proof-claims-unencoded"
+  | "proof-conjecture-unclassified"
+  | "proof-dependent-conjecture-not-conditional";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -138,6 +149,10 @@ const ALL_CATEGORIES: Category[] = [
   "proof-no-placeholder-stub",
   "proof-no-trivial-type-mismatch",
   "lean-import-after-content",
+  "proof-no-empty-prop-carrier",
+  "proof-claims-unencoded",
+  "proof-conjecture-unclassified",
+  "proof-dependent-conjecture-not-conditional",
 ];
 
 const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
@@ -152,6 +167,15 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   // the vacuity detectors miss and the basis of the CI `--fail-on` gate.
   "proof-no-trivial-type-mismatch": "critical",
   "lean-import-after-content": "critical",
+  // Conjecture-discipline severities. An empty `Prop` carrier and a
+  // dependent conjecture that forgot its conditional hypothesis are
+  // both unsound-as-stated (a downstream `[C]`-conditional theorem
+  // built on either is vacuous), hence critical. The claims-unencoded
+  // and unclassified findings are high-recall candidates → major.
+  "proof-no-empty-prop-carrier": "critical",
+  "proof-claims-unencoded": "major",
+  "proof-conjecture-unclassified": "major",
+  "proof-dependent-conjecture-not-conditional": "critical",
 };
 
 interface Hit {
@@ -164,6 +188,9 @@ interface Hit {
   /** When true the hit is recorded but does NOT count as a defect. */
   exempt?: boolean;
   exempt_reason?: string;
+  /** Extra human-readable context for the witness/evidence (e.g. which
+   * claimed properties went unencoded). */
+  detail?: string;
 }
 
 // ── Lean source helpers ─────────────────────────────────────────────
@@ -667,6 +694,196 @@ function mk(
   };
 }
 
+// ── Conjecture-discipline detectors (§3b / §3b-cond) ───────────────────
+// A conjecture axiomatised as a Lean `class`/`structure` is the project's
+// sanctioned way to carry an open problem (§3b). But the carrier only does
+// its job if it actually *asserts* the conjecture's content: an empty
+// `Prop` class asserts nothing (any `instance : C := ⟨⟩` discharges it),
+// and a structure whose docstring promises "positivity" / "archimedean
+// smallness" while encoding only `ε ≠ 𝟙` under-delivers on its own prose.
+// A downstream §3b-cond theorem `[C] → …` built on such a carrier is
+// vacuous — it proves nothing "modulo the conjecture" because the
+// conjecture, as formalised, says nothing. The proof-anti-pattern
+// detectors above all miss this: there is no proof term, no `sorry`, no
+// `axiom`, and the file compiles. These detectors inspect the *carrier*.
+
+/** Field declarations of a `structure`/`class`, parsed from the
+ * comment-free decl text. Returns `{name, type}` per field. An
+ * `extends`-only class (no `where`) returns `[]` but is detected as
+ * inheriting content via `declExtends`. */
+function classFields(d: Decl): { name: string; type: string }[] {
+  const whereIdx = d.text.search(/(^|\s)where(\s|$)/);
+  if (whereIdx < 0) return [];
+  const after = d.text.slice(whereIdx + d.text.slice(whereIdx).indexOf("where") + 5);
+  const lines = after.split("\n");
+  const fields: { name: string; type: string }[] = [];
+  for (const raw of lines) {
+    const line = raw.replace(/\s+$/, "");
+    if (line.trim() === "") continue;
+    // A new field: `name : type` or `(name : type)` at field indent. A
+    // continuation of the previous field's type is deeper / has no
+    // leading `ident :`, so append it to the last field.
+    const m = line.match(/^\s*\(?\s*([a-zA-Z_][\w']*)\s*:\s*(.*)$/);
+    if (m && !/^(end|namespace|section|deriving|with)\b/.test(m[1])) {
+      fields.push({ name: m[1], type: m[2] });
+    } else if (fields.length > 0) {
+      fields[fields.length - 1].type += " " + line.trim();
+    }
+  }
+  return fields;
+}
+
+function declExtends(d: Decl): boolean {
+  return /\bextends\b/.test(d.sig);
+}
+
+/** Sort of a `class`/`structure` head: the type after the top-level `:`
+ * (`Prop`, `Type`, `Type u`, …). Empty when no explicit sort ascription. */
+function declSort(d: Decl): string {
+  return conclusionTypeAscription(d.sig);
+}
+
+/** Raw (comment-bearing) doc region immediately above a decl: the
+ * contiguous run of `--` lines and `/- … -/` / `/-- … -/` / `/-! … -/`
+ * blocks directly above `declIdx0` (0-indexed), skipping `@[…]` attribute
+ * lines. Markdown and `-- Ref:` / `-- @conjecture` annotations are
+ * preserved so the conjecture-discipline heuristics can read them. */
+function docBlockAbove(origLines: string[], declIdx0: number): string {
+  const collected: string[] = [];
+  let j = declIdx0 - 1;
+  while (j >= 0 && /^\s*@\[/.test(origLines[j])) j--;
+  while (j >= 0) {
+    const t = origLines[j].trim();
+    if (t === "") break;
+    if (t.startsWith("--")) {
+      collected.unshift(origLines[j]);
+      j--;
+      continue;
+    }
+    if (t.endsWith("-/")) {
+      // Prepend lines up to and including the `/-` / `/--` / `/-!` opener.
+      while (j >= 0) {
+        collected.unshift(origLines[j]);
+        const opens = /\/-/.test(origLines[j]);
+        j--;
+        if (opens) break;
+      }
+      continue;
+    }
+    break;
+  }
+  return collected.join("\n");
+}
+
+/** True when the decl carries a conjecture label/citation — a
+ * `\label{conj:…}`, a `conj:` reference, or explicit "conjecture" /
+ * "axiomatis(e)" prose in its doc block. These are the §3b carriers. */
+function isConjectureCarrier(doc: string): boolean {
+  return (
+    /conj:[a-z0-9-]+/i.test(doc) ||
+    /\\label\{conj:/i.test(doc) ||
+    /\bconjectur/i.test(doc) ||
+    /axiomatis[e|ing|ed]/i.test(doc)
+  );
+}
+
+/** A field type that encodes an actual proposition (quantifier / relation /
+ * connective), as opposed to a data field (`obj : C`, `f : A ⟶ B`). A lone
+ * `≠` non-triviality counts as the weakest possible Prop content and is
+ * tracked separately by the caller. */
+function isPropBearingType(type: string): boolean {
+  return /[∀∃]|↔|(?<![-=])→|≤|≥|(?<![:<>=!])<|(?<![-:<>=!])>|≠|\b=\b|\bTrue\b|\bFalse\b/.test(
+    type,
+  );
+}
+
+const MARKER_OPT_OUT = /@marker\b|opaque\s+(tag|marker|predicate)/i;
+const CLASSIFY_RE = /@conjecture[:\s]+(primary|dependent)\b/i;
+
+function detectEmptyPropCarrier(
+  d: Decl,
+  doc: string,
+): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  if (declSort(d) !== "Prop") return undefined; // only Prop carriers
+  if (declExtends(d)) return undefined; // inherits content from parent
+  if (classFields(d).length > 0) return undefined; // has content
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-no-empty-prop-carrier", "annotated-marker", true);
+    h.exempt_reason = "explicit @marker opaque-tag opt-out";
+    return h;
+  }
+  const conj = isConjectureCarrier(doc);
+  return mk(
+    d,
+    "proof-no-empty-prop-carrier",
+    conj ? "empty-conjecture-class" : "empty-prop-class",
+    false,
+  );
+}
+
+function detectClaimsUnencoded(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const fields = classFields(d);
+  if (fields.length === 0) return undefined; // empty → other detector
+  // The doc must *enumerate defining properties* — a "properties / axioms /
+  // conditions / laws" framing — to avoid flagging prose that merely uses
+  // bold for emphasis.
+  if (
+    !/\b(propert(y|ies)|axiom|condition|law|must satisfy|pick(s)? out|characteri[sz])/i.test(
+      doc,
+    )
+  )
+    return undefined;
+  const bullets = [
+    ...doc.matchAll(/(?:^|\n)\s*(?:--\s*)?[-*]\s*\*\*([^*]+)\*\*/g),
+  ].map((m) => m[1].trim());
+  const claimed = bullets.length;
+  if (claimed < 2) return undefined;
+  // Prop-bearing fields whose content is more than a bare `≠` non-triviality.
+  const encoded = fields.filter(
+    (f) => isPropBearingType(f.type) && !/^[^=<>≤≥∀∃↔]*≠/.test(f.type),
+  ).length;
+  if (encoded >= claimed) return undefined;
+  const h = mk(d, "proof-claims-unencoded", "docstring-claims-gap", false);
+  h.detail = `doc enumerates ${claimed} propert${
+    claimed === 1 ? "y" : "ies"
+  } (${bullets.join(", ")}); only ${encoded} encoded as Prop field(s)`;
+  return h;
+}
+
+function detectConjectureUnclassified(d: Decl, doc: string): Hit | undefined {
+  // Conjectures are axiomatised as Lean `class`es (§3b). A Type-sorted
+  // data `structure` that merely *mentions* a conjecture in its
+  // docstring is a definition, not a carrier — exclude it.
+  const isCarrierKind =
+    d.kind === "class" || (d.kind === "structure" && declSort(d) === "Prop");
+  if (!isCarrierKind) return undefined;
+  if (!isConjectureCarrier(doc)) return undefined;
+  if (CLASSIFY_RE.test(doc)) return undefined; // already primary/dependent
+  return mk(d, "proof-conjecture-unclassified", "missing-primary-dependent", false);
+}
+
+function detectDependentNotConditional(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const m = doc.match(CLASSIFY_RE);
+  if (!m || m[1].toLowerCase() !== "dependent") return undefined;
+  // A dependent conjecture must be conditional on its primary: the carrier
+  // must take the primary as an `[Instance]` hypothesis, `extends` it, or
+  // bind it as a parameter. With none of these it is stated unconditionally.
+  const conditional =
+    /\[[^\]]+\]/.test(d.sig) || // instance-implicit binder
+    declExtends(d) ||
+    /\(\s*\w[\w']*\s*:\s*[A-Z][\w'.]*\b/.test(d.sig); // explicit hyp arg
+  if (conditional) return undefined;
+  return mk(
+    d,
+    "proof-dependent-conjecture-not-conditional",
+    "dependent-stated-unconditionally",
+    false,
+  );
+}
+
 // ── Compile-validity detectors (guaranteed Lean errors, not heuristics) ──
 // These catch the gap the vacuity detectors miss: a sibling that does not
 // even typecheck. They never compile, so they are never exempt.
@@ -765,6 +982,13 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectFalsePremise(d));
     push(detectProvableAxiom(d, origLines));
     push(detectTrivialTypeMismatch(d));
+    // Conjecture-discipline detectors operate on the `class`/`structure`
+    // carrier + its raw doc block (markdown + `-- @conjecture` annotation).
+    const doc = docBlockAbove(origLines, d.startLine - 1);
+    push(detectEmptyPropCarrier(d, doc));
+    push(detectClaimsUnencoded(d, doc));
+    push(detectConjectureUnclassified(d, doc));
+    push(detectDependentNotConditional(d, doc));
   }
   const importHit = detectImportOrder(origLines);
   if (importHit && (!onlyCat || onlyCat === "lean-import-after-content"))
@@ -958,7 +1182,9 @@ function writeSidecars(
               evidence: catHits
                 .map(
                   (h) =>
-                    `${relative(REPO_ROOT, leanAbs)}:${h.line} [${h.pattern}] ${h.snippet}`,
+                    `${relative(REPO_ROOT, leanAbs)}:${h.line} [${h.pattern}] ${h.snippet}${
+                      h.detail ? ` — ${h.detail}` : ""
+                    }`,
                 )
                 .join(" | "),
             }
@@ -1052,7 +1278,9 @@ function main() {
         const tag = h.exempt
           ? `EXEMPT(${h.exempt_reason})`
           : h.severity.toUpperCase();
-        console.log(`${rel}:${h.line}  ${h.category}  [${tag}]  ${h.snippet}`);
+        console.log(
+          `${rel}:${h.line}  ${h.category}  [${tag}]  ${h.snippet}${h.detail ? ` — ${h.detail}` : ""}`,
+        );
       }
   }
 
