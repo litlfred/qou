@@ -26,6 +26,12 @@ general-`H_n(q)` companion to the **Hopf-link-specific** `JonesViaMarkovTrace`
 this file gives the *arbitrary-braid-word* value `jonesOfBraid` and the move-II
 half of the invariance, the part that was BLOCKED on the `H_n(q)` element algebra.
 
+The `IwahoriHeckeAlgebra` structure carries its `Ring` as a *field* (`H.ring`),
+not a typeclass instance; we register it once as a `local instance` (per
+gemini-code-assist review on PR #2844) so `*` / `1` / `markov_trace` resolve
+without per-statement `letI`, keeping the signatures clean and robust against
+downstream unification issues.
+
 Sorry-free. (Verification note: this file imports the `IwahoriHeckeAPI`
 element-algebra cone, whose `Mathlib.Data.Nat.Dist` / `Mathlib.RingTheory.Idempotents`
 oleans are absent from the sandbox's partial `lake-cache`; it is authored against
@@ -37,14 +43,18 @@ namespace QOU.BraidKnot.IwahoriHeckeAPI
 namespace IwahoriHeckeAlgebra
 
 variable {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
+variable (H : IwahoriHeckeAlgebra n R q h_unit)
+
+/-- Register the carrier's `Ring` (a structure field) as a `local instance`, so
+    `*` / `1` / `markov_trace` resolve without `letI` in every statement below.
+    Local to this section: it does not leak past `end IwahoriHeckeAlgebra`. -/
+local instance : Ring H.carrier := H.ring
 
 /-- **Jones value of a positive braid word** `w` (a list of generator indices),
     via the Markov trace on `H_n(q)`: `J(w) = tr_M(∏_k σ_{w_k})`. The Hecke image
     is the ordered product of the generators named by `w`, built with core
     `List.foldr` (no `BigOperators` dependency). -/
-noncomputable def jonesOfBraid (H : IwahoriHeckeAlgebra n R q h_unit)
-    (w : List (Fin (n - 1))) : R :=
-  letI : Ring H.carrier := H.ring
+noncomputable def jonesOfBraid (w : List (Fin (n - 1))) : R :=
   H.markov_trace (List.foldr (· * ·) 1 (w.map H.sigma))
 
 /-- **Markov move II — conjugation invariance of the Markov trace.** For any
@@ -56,13 +66,9 @@ noncomputable def jonesOfBraid (H : IwahoriHeckeAlgebra n R q h_unit)
     `tr_M((b a)·binv) = tr_M(binv·(b a)) = tr_M((binv b)·a) = tr_M(1·a) = tr_M(a)`.
     The second of the two Markov moves (move I is `markovTrace_stab_comm` in
     `IwahoriHeckeAPI`); together they make `tr_M` a link invariant. Sorry-free. -/
-theorem markovTrace_conj_invariant
-    (H : IwahoriHeckeAlgebra n R q h_unit) [MarkovTraceCyclic H]
-    (a b binv : H.carrier)
-    (hb : letI : Ring H.carrier := H.ring; binv * b = 1) :
-    letI : Ring H.carrier := H.ring
+theorem markovTrace_conj_invariant [MarkovTraceCyclic H]
+    (a b binv : H.carrier) (hb : binv * b = 1) :
     H.markov_trace (b * a * binv) = H.markov_trace a := by
-  letI : Ring H.carrier := H.ring
   rw [MarkovTraceCyclic.cyclic (b * a) binv, ← mul_assoc, hb, one_mul]
 
 end IwahoriHeckeAlgebra
