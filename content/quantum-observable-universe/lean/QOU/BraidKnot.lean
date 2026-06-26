@@ -10,6 +10,7 @@ import QOU.BraidKnot.KeystoneC2DimTranspose
 import QOU.BraidKnot.KeystoneC2QDimTranspose
 import QOU.BraidKnot.KeystoneG2Gate
 import QOU.BraidKnot.BringWPlaneMonodromy
+import QOU.BraidKnot.BringWPlaneMonodromyTower
 import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.CyclotomicTrilogImaginary
 import QOU.BraidKnot.CyclotomicCl3OrbitSum
