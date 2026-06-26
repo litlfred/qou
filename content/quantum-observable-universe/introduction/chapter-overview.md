@@ -251,15 +251,17 @@ energy and Bohr radius** that seed the atomic-shell predictions.
 
 [*Physical Observations*](#chap:observations) then confronts theory with
 experiment.  The three calibrations are the three real degrees of
-freedom of the first cohomology of Bring's curve, $H^1 = 2W$: the
-**scale** of the rank-2 Hodge plane, fixed by the electron mass
-$m_e$ (CAL-1); its **modulus**, fixed by the substrate parameter
-$q_0$ through the lepton ratio $m_\mu/m_e$ (CAL-2); and one
+freedom of the first cohomology of Bring's curve, $H^1 = 2W$ —
+weak-sector observables entering at successive orders $h^0$, $h^2$,
+$h^3$: the **scale** of the rank-2 Hodge plane, fixed by the electron
+mass $m_e$ (CAL-1); its **modulus**, fixed by the neutron
+$\beta$-decay width $\mathfrak{D}_\beta$ (CAL-2); and one
 **orthogonal** class — the meson sector, whose Hopf-link complement
-has zero volume — fixed by the pion mass $m_\pi$ (CAL-3).  The
-neutron's $\beta$-decay $Q$-value $\mathfrak{Q}_\beta$ is **derived**
-from $m_e$ and $q_0$ — the bar-odd partner of the bar-even meson
-scale, not a fourth input.  The modulus is pinned by the Skein mass
+has zero volume — fixed by the pion decay width $\mathfrak{D}_\pi$
+(CAL-3).  Each is read off its most precisely measured proxy — $m_e$,
+the $Q$-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$, and the
+pion mass $m_\pi$.  The modulus is overdetermined, so it is pinned
+numerically by the lepton ratio $m_\mu/m_e$ through the Skein mass
 relation
 
 $$

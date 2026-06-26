@@ -5,24 +5,32 @@ input is permitted — every other mass, Q-value, binding energy,
 coupling constant, mixing angle, and dimensionless ratio in the paper
 is a prediction.*
 
-| ID | Observable | Measurement | What it fixes | DOF of $H^1 = 2W$ |
+| ID | Canonical observable | Numerical proxy | What it fixes | DOF of $H^1 = 2W$ |
 |----|-----------|-------------|--------------|-------------------|
-| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | the dimensional unit (leptonic mass scale) | $W$-plane scale |
-| **CAL-2** | $m_\mu$ | muon mass (CODATA) | substrate $q_0$ via $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | $W$-plane modulus |
-| **CAL-3** | $m_\pi$ | charged-pion mass (PDG) | meson scale; independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | orthogonal class |
+| **CAL-1** | $m_\mathfrak{e}$ (leptonic mass scale, order $h^0$) | electron mass (Penning trap) | the dimensional unit | $W$-plane scale |
+| **CAL-2** | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width, order $h^2$) | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
+| **CAL-3** | $\mathfrak{D}_\pi$ (pion decay width, order $h^3$) | charged-pion mass $m_\pi$ (PDG); independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | meson scale | orthogonal class |
 
 All three are the three real degrees of freedom of the single $H^1 = 2W$
 (rank-2 $W$-plane scale + modulus, plus one orthogonal class: $2+1=3$),
 **not** three distinct degrees $H^0/H^1/H^2$.
 
-The three measured inputs are **three masses** $(m_\mathfrak{e}, m_\mu, m_\pi)$;
-$m_\mathfrak{e}$ sets the unit, so $q_0$ (dimensionless) is fixed by $m_\mu$
-*in that unit* — the ratio $m_\mu/m_\mathfrak{e}$.
+The three canonical inputs are **weak-sector observables** — a leptonic
+mass scale and two decay widths $(m_\mathfrak{e}, \mathfrak{D}_\beta,
+\mathfrak{D}_\pi)$, entering at successive orders $h^0, h^2, h^3$. They
+are read off their most precisely measured **proxies** — the masses
+$m_\mathfrak{e}$, $m_\pi$ and the $Q$-value $\mathfrak{Q}_\beta =
+\hbar/\mathfrak{D}_\beta$. $m_\mathfrak{e}$ sets the unit, so the
+(dimensionless) modulus $q_0$ is pinned by the ratio $m_\mu/m_\mathfrak{e}$
+— the most precise anchor for CAL-2.
 
-$\mathfrak{Q}_\beta$ (neutron $\beta$-decay, $\mathfrak{D}_\beta$) is **derived**
-from CAL-1 + CAL-2, **not** a calibration — the bar-odd $\sinh$ partner
-of the bar-even $\cosh$ meson scale $m_\pi$. In the
-**Physical-Observations** layer $q_0$ may be numerically anchored on the
+$\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$),
+the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$;
+it is **not** a fourth calibration. Because the modulus is overdetermined,
+$\mathfrak{Q}_\beta$ and the lepton ratio $m_\mu/m_\mathfrak{e}$ are
+alternative handles on the *same* CAL-2 — whichever is used to pin $q_0$,
+the other becomes a cross-check prediction. In the
+**Physical-Observations** layer $q_0$ may instead be anchored on the
 more-precise proton ratio $m_p/m_\mathfrak{e}$ (the
 muon ratio is then a $9.5\sigma$ cross-check), a precision substitution
 within the same $H^1$ datum — not a fourth calibration.
@@ -55,10 +63,11 @@ $$
 $$
 
 with $a + b \in \{0, 1\}$ (dimensionless, mass-scale, or energy-scale
-output) and $q_0$ fixed by CAL-2 ($m_\mu/m_e$). The two dimensional
-bridges are the calibration scales $m_e$ and $m_\pi$; the derived
-hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the
-derived $\mathfrak{Q}_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
+output) and $q_0$ fixed by CAL-2 ($\mathfrak{D}_\beta$, pinned
+numerically through its proxy $m_\mu/m_e$). The two dimensional
+bridges to MeV are the proxy scales $m_e$ and $m_\pi$; the derived
+hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the CAL-2
+proxy $\mathfrak{Q}_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
 independent factors.
 
 ## Allowed substitutions
@@ -99,9 +108,10 @@ The framework forbids:
   $\delta q_0$ propagated from CODATA $m_\mu/m_e$ is a CAL-2 cross-check;
   it may not be supplemented by independent fits to $m_e$, $m_\mu$,
   $m_\tau$, or any other mass.
-- *A second hadronic scale*. $m_{\pi^{\pm}}$ is CAL-3; the hadronic
-  energy scale $\mathfrak{E}_0$ and $\mathfrak{Q}_\beta(n)$ are both derived from
-  CAL-1 + CAL-2 and serve as cross-checks. Proton mass, neutron mass,
+- *A second hadronic scale*. $m_{\pi^{\pm}}$ is the CAL-3 proxy; the
+  hadronic energy scale $\mathfrak{E}_0$ is derived from CAL-1 + CAL-2,
+  and $\mathfrak{Q}_\beta(n)$ is the CAL-2 proxy — neither is an
+  independent fourth input. Proton mass, neutron mass,
   and all nuclear binding energies must be derived from
   $\{m_e, q_0, m_{\pi^{\pm}}\}$, not introduced as inputs.
 
@@ -118,9 +128,9 @@ The calibration map is:
 
 | Wedderburn block | Calibration | Role |
 |------------------|-------------|------|
-| $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $m_\mu/m_e \mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
+| $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $\mathfrak{D}_\beta$ (proxy $m_\mu/m_e$) $\mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
 | $\mathrm{std}$ ($\lambda = (2,1)$) | CAL-1: $m_e$ | Sets the leptonic mass quantum (std is the 2-dimensional "matter" channel where $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$). |
-| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $m_{\pi^{\pm}}$ | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is **derived** from CAL-1 + CAL-2 via $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) and serves as a cross-check, not an independent input. |
+| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $\mathfrak{D}_\pi$ (proxy $m_{\pi^{\pm}}$) | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$); when $q_0$ is pinned by the alternative anchor $m_\mu/m_e$, the relation $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) makes it a cross-check on the same modulus, not a fourth input. |
 
 This is the meaning of "aligned to (co)homology": the three
 calibrations correspond bijectively to the three irreducible
@@ -159,11 +169,13 @@ on-shell + gauge-invariance restricts the categorical action to a
 external measurements pin the three parameters is conventional but
 constrained by:
 
-1. **Dimensional analysis.** One dimensionless input ($m_\mu/m_e$)
-   pins $q_0$; two dimensional inputs ($m_e$, $m_\pi$) pin the
+1. **Dimensional analysis.** The modulus $q_0$ is pinned numerically by
+   the dimensionless ratio $m_\mu/m_e$ (the most precise proxy for CAL-2,
+   $\mathfrak{D}_\beta$); two dimensional proxies ($m_e$, $m_\pi$) pin the
    leptonic mass scale and the meson scale. The hadronic energy scale
-   $\mathfrak{E}_0$ (and hence $\mathfrak{Q}_\beta$) is **derived** from $m_e$
-   and $q_0$, not an independent input.
+   $\mathfrak{E}_0$ is **derived** from $m_e$ and $q_0$; $\mathfrak{Q}_\beta$
+   is the CAL-2 proxy and, once $q_0$ is pinned by $m_\mu/m_e$, a
+   cross-check — neither is an independent input.
 
 2. **Precision.** $m_e$ has CODATA precision $2.9 \times 10^{-10}$;
    $m_\mu/m_e$ has $2.2 \times 10^{-8}$ (limited by $m_\mu$); $m_\pi$
