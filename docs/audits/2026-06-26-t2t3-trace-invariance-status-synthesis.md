@@ -99,6 +99,48 @@ mirror pair, but with $\text{tower}(³\text{He})>\text{tower}(\text{T})$, the
 > that any trace form puts the mirror split entirely in $T_1+T_5$ — is the
 > sharpest current constraint and the recommended next formalisation target.
 
+## Item 3 — Path-3 (Habiro) trace-invariance is *automatic*; the gap is the prefactor
+
+Re-examined the Path-3 probe
+([`path-b-habiro-mass-probe.witness.json`](../../computations/probes/path-b-habiro-mass-probe.witness.json)).
+Two findings:
+
+- **Trace-invariance is not the open part for Path 3.** The Habiro form is
+  $\mathrm{tr}_M(T_w)=\sum_m a_m(u)\,(u;u)_m$ — it *is* the Markov trace of the
+  braid word, merely re-expanded in the cyclotomic $(u;u)_m$ basis ($u=q^{1/2}$).
+  Re-expansion in a fixed basis preserves the value, so Path 3 is Markov-invariant
+  **by construction** (unlike the per-generator $\Phi_q$ form). It therefore
+  already satisfies the trace-invariance directive; what it absorbs is
+  $T_2{+}T_3{+}T_6$ into one trace.
+- **The residual open part is the binding prefactor $\alpha_M$, not invariance.**
+  The probe's single-prefactor model $B=\alpha_M\cdot|\mathrm{tr}_M^{\text{Habiro}}|$
+  uses $\alpha_M=5.7292$ MeV **calibrated from the deuteron**, giving
+  p $-0.65\%$, n $-0.56\%$, D $0\%$ (anchor). Deriving $\alpha_M$ from the
+  substrate (rather than calibrating it) is the genuine open question for Path 3.
+  Note $\alpha_M\approx 5.73 \approx 11.2\,m_e$ — relating it to the
+  $E_0$/$m_e$ fibre-functor calibration is the formalize-first target.
+- **Data-integrity flag (not fixed here):** re-running the producer
+  `path_b_habiro_mass_probe.py` crashes on the $A\ge3$ rows with an unsubstituted
+  free symbol (`-74.0*check_q - 74.0`); the committed witness's $\{p,n,D\}$ rows
+  are clean. Tracked as a separate data-integrity item, not in scope for this
+  framing PR.
+
+## Item 4 — q-Bessel tower-convergence gate is genuinely blocked (scoped, not attempted)
+
+The live frontier attack (`2026-06-19`) is the Jacobi–Anger gate: does the
+bar-odd residual of $\chi_\lambda(\mathcal B_n-\mathcal B_p)$ shrink along
+$n=3\to6\to9$ toward the Hahn–Exton q-Bessel coefficients? The **blocker is
+structural and unchanged**: the corpus has explicit proton/neutron braids only
+at $H_3$; the $H_6/H_9$ difference objects require a *first-principles braid
+construction* (the canonical $A$-nucleon embedding
+`β = atom_canonical_crossings(A,0,include_inter=False)` at level $3A$), which is
+**not** a mechanical evaluation. Per the formalize-first discipline this must be
+committed *a priori* (no scan-to-fit over embeddings). This PR does **not**
+attempt the construction — fabricating an $H_6/H_9$ braid without the principled
+builder would be exactly the fitting the discipline forbids. Recommended as a
+dedicated follow-up bean, gated on the canonical word-builder being lifted to
+$A>1$ (the same lift `2026-06-19` §"deferred item-A" names).
+
 ## Next steps (owner-selected 2026-06-26, all four)
 
 1. **(this doc)** synthesis + re-verified magnitudes.
