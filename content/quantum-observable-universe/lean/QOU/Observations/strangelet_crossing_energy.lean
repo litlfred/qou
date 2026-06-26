@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
