@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.BraidsKnots.skein_mass_from_linking
@@ -6,10 +7,13 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 **Placeholder canonical** for content block
 [`lem:skein-mass-from-linking`](../../../quantum-observable-universe/braids-and-knots/skein-mass-from-linking.md): *Mass functional on a Skein resolution: linking-energy plus constituent volume*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidsKnots.skein_mass_from_linking` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The Skein mass identity is axiomatised as a field of
+`SkeinMassFromLinkingContext` (§3b-cond); the `def`
+`skein_mass_from_linking` derives the equation from that field,
+conditional on `[SkeinMassFromLinkingContext]` — sorry-free at this
+file's level (the conjectural content sits in the class field). The
+`lean.ref` URI `qou:QOU.BraidsKnots.skein_mass_from_linking` resolves
+here.
 -/
 
 namespace QOU.BraidsKnots
@@ -57,10 +61,10 @@ second is the constituent mass (zero for torus-knot constituents),
 $Q(q) \in \mathbb{Z}[q^{\pm 1}]$ is the Skein polynomial of the
 linking configuration, and $\hbar_q = 1 - q^{-1}$.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the Skein mass identity as the type of
+    `def skein_mass_from_linking` and derives it from the
+    `SkeinMassFromLinkingContext` field (§3b-cond conditional); the
+    conjectural content lives in that class field, not in a `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
 def skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
     ctx.mass = ctx.Q * ctx.mass_Hopf +
