@@ -1,15 +1,20 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.BraidKnot.e_infinity_identifications
 
-**Placeholder canonical** for content block
+**§3b-cond conditional canonical** for content block
 [`prop:e-infinity-page-identifications`](../../../quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.md): *QOU.BraidKnot.e_infinity_identifications*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.e_infinity_identifications` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The six `E_∞^{p,*}` page identifications are axiomatised as fields of
+`EInfinityIdentificationsContext` (§3b-cond); the `def`
+`e_infinity_identifications` then *derives* the six-term conjunction
+from those fields, conditional on `[EInfinityIdentificationsContext]`.
+It is therefore sorry-free at this file's level — the conjectural
+content sits in the class fields (a concrete instance discharges
+`claim_wenzl_bridge_correction_holds` etc. by `sorry`). The `lean.ref`
+URI `qou:QOU.BraidKnot.e_infinity_identifications` resolves here.
 -/
 
 namespace QOU.BraidKnot
@@ -56,15 +61,20 @@ class EInfinityIdentificationsContext where
   claim_brane_tower_pairwise :
     page_pairing 2 = (Finset.range n_branes).sum (fun i =>
       (Finset.range n_branes).sum (fun j => brane_pairwise i j))
-  /-- Manuscript term 4 (DERIVED) — Frobenius co-Casimir is the
-      designated `frobenius_co_casimir` field. (No additional Prop
-      needed: the identification IS the field.) -/
+  /- Manuscript term 4 (DERIVED) — Frobenius co-Casimir is the
+     designated `frobenius_co_casimir` field. (No additional Prop
+     needed: the identification IS the field.) This is a plain
+     comment, not a field docstring: term 4 introduces no new field. -/
   /-- Chirality / sign factor of the mass-formula term 5 (must be ±1). -/
   chirality_sign : ℤ
   /-- Manuscript term 5 — chirality / sign factor: `chirality_sign ∈ {±1}`. -/
   claim_chirality_sign : chirality_sign = 1 ∨ chirality_sign = -1
-  /-- Manuscript term 6 — Wenzl-bridge `y_λ` correction (conjectural). -/
+  /-- Manuscript term 6 — Wenzl-bridge `y_λ` correction (conjectural):
+      the proposition asserting the correction (instance-supplied). -/
   claim_wenzl_bridge_correction : Prop
+  /-- Witness that the term-6 Wenzl-bridge claim holds (the conjecture
+      proper, §3b-cond; a concrete instance discharges this by `sorry`). -/
+  claim_wenzl_bridge_correction_holds : claim_wenzl_bridge_correction
 
 /-- **Content statement** (from manuscript):
 
@@ -76,9 +86,10 @@ mass-formula term from
 proposition attempts that identification for all six terms, marking
 derivation status per term.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding below states the full six-term conjunction as the
+    type of `def e_infinity_identifications` and derives it from the
+    `EInfinityIdentificationsContext` fields (§3b-cond conditional); the
+    conjectural content lives in those class fields, not in a `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
     ctx.m_total =
@@ -94,6 +105,6 @@ def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
     ctx.claim_wenzl_bridge_correction :=
   ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
    ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,
-   ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction⟩
+   ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction_holds⟩
 
 end QOU.BraidKnot
