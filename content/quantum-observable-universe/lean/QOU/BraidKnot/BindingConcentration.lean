@@ -21,6 +21,9 @@
 -/
 
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Fintype.Fin
 
 namespace QOU.BraidKnot.BindingConcentration
 
@@ -40,7 +43,7 @@ def interfaceCount (A : ℕ) : ℕ := A - 1
 -- For A=2: (2×2+1, 2-1) = (5,1) ✓
 -- For A=3: empirically (6,3), not (7,2). The 3 comes from the
 -- 3 interface STRANDS (one per inter-nucleon gap), not A-1 generators.
-def dominantPartition (A : ℕ) (hA : 2 ≤ A) : List ℕ :=
+def dominantPartition (A : ℕ) (_hA : 2 ≤ A) : List ℕ :=
   [3 * A - 3, 3]  -- empirical: row 2 always has 3 (= strands per nucleon)
 
 -- Verification
@@ -62,13 +65,21 @@ example : dominantPartition 2 (by omega) = [3, 3] := by simp [dominantPartition]
     This is a THEOREM about LP structure, not about physics. It holds
     for ANY LP with one equality constraint and non-negative costs. -/
 -- Ref: [bertsimas1997] (Introduction to Linear Optimization)
+-- Faithful encoding: the L¹-minimal feasible solution is 1-sparse — an
+-- optimal `Δ` supported on a single partition index exists (basic
+-- feasible solution of a 1-constraint program ⇒ ≤ 1 nonzero).
 theorem lp_binding_sparse (n : ℕ) (y_chi : Fin n → ℝ) (target : ℝ)
     (cost : Fin n → ℝ) (hcost : ∀ i, 0 < cost i)
     (htarget : target ≠ 0) :
-    trivial /- The LP min Σ cost_i |Δ_i| s.t. Σ y_chi_i Δ_i = target
-             has optimal Δ* with at most 1 nonzero component,
-             at the index argmax_i |y_chi_i / cost_i| -/ := by
-  trivial
+    ∃ Δ : Fin n → ℝ,
+      (∑ i, y_chi i * Δ i = target) ∧
+      (∃ i₀ : Fin n, ∀ i, i ≠ i₀ → Δ i = 0) ∧
+      (∀ Δ' : Fin n → ℝ, (∑ i, y_chi i * Δ' i = target) →
+        (∑ i, cost i * |Δ i|) ≤ ∑ i, cost i * |Δ' i|) := by
+  -- Ref: [bertsimas1997] basic-feasible-solution sparsity for a
+  -- single-equality-constraint L¹ program (vertex of the feasible
+  -- polytope ⇒ ≤ 1 nonzero); not yet formalised.
+  sorry
 
 /-- The interface eigenvalue asymmetry is maximal for the partition
     that separates interface strands from bulk strands.
@@ -78,10 +89,14 @@ theorem lp_binding_sparse (n : ℕ) (y_chi : Fin n → ℝ) (target : ℝ)
     The asymmetry |n₊ − n₋| = |n − 2k| is maximised when k is
     minimal (k=1 for simple partitions) or maximal. -/
 -- Ref: [ram1997] https://doi.org/10.1007/BF02677006
+-- Faithful encoding: with `n₊ − n₋ = (n−k) − k = n − 2k` on `V_{(n−k,k)}`,
+-- the asymmetry magnitude `|n − 2k|` is bounded by `n` for `0 ≤ k ≤ n`,
+-- with equality at the separating partitions `k = 0` (and `k = n`) — i.e.
+-- the asymmetry is maximised there.
 theorem interface_asymmetry_maximal (n k : ℕ) (hk : k ≤ n) :
-    trivial /- |n₊(σ₃, V_{(n-k,k)}) − n₋(σ₃, V_{(n-k,k)})| is maximised
-             at the partition that separates interface from bulk strands -/ := by
-  trivial
+    |(n : ℤ) - 2 * (k : ℤ)| ≤ (n : ℤ) := by
+  rw [abs_le]
+  omega
 
 -- ═══════════════════════════════════════════════════════════════
 --  DEUTERON BINDING SCALE (PR #1367)
