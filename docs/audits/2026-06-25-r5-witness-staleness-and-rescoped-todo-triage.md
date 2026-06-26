@@ -32,16 +32,23 @@ primal=dual=0.0023291934497948617`. The fact that the *deuteron* row's
 atom-label swap — confirmed by the regen commit date post-dating the Lean
 freeze.
 
-**Why it matters / why a blind refresh is unsafe.** `Helium3Witness`'s
-downstream `helium3StrictComplementarityCert` (and `AppliedHelium3Uniqueness`)
-rely on the frozen all-positive min-eigs (empty active set ⇒ strict-interior
-optimum). The current JSON summary does **not** emit per-block min-eigs, so a
-refresh of `rho_star` 3→4 + `primal/dual` → 0.14291 must be checked against
-whether the regenerated he3 optimum is still strict-interior. **Recommended:
-refresh under the witnessed-values discipline only after the producer
-re-emits per-block min-eigs**, or wire `primal/dual` to the JSON now and leave
-`rho_star`/cert pending an explicit min-eig check. Tracked as a follow-up
-(do not silently edit).
+**Why a "refresh" is actually a REGRESSION (corrected 2026-06-26).** A closer read
+of the regenerated JSON shows the `he3` *winner itself diverged* — not just
+`primal/dual`. The 2026-06-22 regen (single-term cost `B = m_e·ρ·|tr_M|`,
+`computedAt 14:48Z`, `scriptCommitSha c4ab12b6`) selects
+`σ₁⁶σ₂² = [1,1,1,1,1,1,2,2]` with `rho_star=4`, `cost=0.14291`, and
+**`rel_residual=0.5716` — 57 % off `B_AME`** — a degraded, non-canonical result (the
+single-term cost under-constrains, cf. §2). The frozen Lean values are PR #608's
+canonical `L_6a4` solve. So `0.14291` is the *degraded objective*, not a primal/dual
+to wire in, and refreshing `Helium3Witness` to the current JSON would **regress** it.
+(Contrary to the original note here, the JSON *does* emit per-block min-eigs —
+`top_k_candidates[0].per_block_summary`, `min_eig_sym` ≈ 2.304 / 0.554 / …,
+`min_eig_overall ≈ 0.434`, all positive — so the strict-interior property survives
+either way; the problem is the *winner*, not interiority.) **Correct action:** keep
+the frozen PR #608 values, document the divergence in the Lean header (done — PR
+[`he3-r5-witness-divergence`](https://github.com/litlfred/qou/tree/claude/he3-r5-witness-divergence-2026-06-26)),
+and gate the real refresh on the **multi-term-cost re-run** (§2, T2–T6). Do **not**
+wire to the single-term JSON. (do not silently edit)
 
 ## 2. "Doesn't run for" root causes (Tritium / Deuteron)
 
@@ -77,10 +84,13 @@ Both are genuine **compute-infra gaps**, not Lean edits:
 
 ## 4. Recommendations
 
-1. **He3 stale witness** — refresh `Helium3Witness.lean` to the 2026-06-22 JSON
-   `he3` row, gated on the producer re-emitting per-block min-eigs (so the
-   strict-complementarity cert can be re-derived rather than assumed). File a
-   data-integrity bean.
+1. **He3 stale witness — do NOT refresh to the current JSON (it would regress;
+   corrected 2026-06-26).** The 2026-06-22 regen winner diverged to a degraded
+   single-term result (`σ₁⁶σ₂²`, `rho_star=4`, 57 % residual; §1). Keep the frozen
+   PR #608 `L_6a4` values and **document the divergence in the Lean header** (done —
+   `Helium3Witness.lean` *Witness divergence* note). The real refresh is gated on the
+   **multi-term-cost re-run** (§2, T2–T6), which re-produces a canonical, witnessable
+   `he3` winner; wire `Helium3Witness` to *that*, not to the single-term JSON.
 2. **Tritium / Deuteron** — keep the explicit, non-`instance` placeholders;
    they correctly signal the H_5-Hoefsmit / multi-term-cost dependencies. Close
    only when those compute tasks land.
