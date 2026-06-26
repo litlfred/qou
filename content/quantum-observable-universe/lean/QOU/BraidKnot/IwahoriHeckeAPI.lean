@@ -144,13 +144,27 @@ class MarkovTraceCyclic (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
       letI : Ring H.carrier := H.ring
       H.markov_trace (a * b) = H.markov_trace (b * a)
 
-/-- Markov trace stabilisation: `tr_{M, n+1}(a · σ_n) = z · tr_{M, n}(a)`
-    for the Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
-    Stated here in skeleton form. -/
+/-- Markov trace stabilisation: with the natural inclusion
+    `incl : H_n ↪ H_{n+1}` and the new top generator `σ_n` of `H_{n+1}`
+    (index `n-1` of its `Fin n` generators), the Markov trace satisfies
+
+    `tr_{M, n+1}(incl a · σ_n) = z · tr_{M, n}(a)`
+
+    for the Markov parameter `z : R` (concretely `z = 1 / (q^{1/2} + q^{-1/2})`,
+    carried here as an abstract `R`-parameter since `q^{1/2}` need not lie in a
+    generic `R`).  Together with `MarkovTraceCyclic` this is the defining pair of
+    Markov moves characterising `tr_M` (Jones 1987 §3).  `hn : 0 < n` makes the
+    `σ_n` index `⟨n-1, _⟩ : Fin n` well-formed (stabilisation adds `σ_n` to
+    `H_n`, which requires `n ≥ 1`). -/
 class MarkovTraceStabilisation
     (H : IwahoriHeckeAlgebra n R q h_unit)
-    (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit) : Prop where
-  stabilisation : True
+    (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit)
+    (incl : H.carrier → H_succ.carrier) (z : R) (hn : 0 < n) : Prop where
+  stabilisation :
+    ∀ a : H.carrier,
+      letI : Ring H_succ.carrier := H_succ.ring
+      H_succ.markov_trace (incl a * H_succ.sigma ⟨n - 1, by omega⟩)
+        = z * H.markov_trace a
   -- Ref: [jones1987] Jones, Hecke algebra representations of braid groups
   -- and link polynomials — §3 uniqueness of Markov trace on H_∞(q).
 
