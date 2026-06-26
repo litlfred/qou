@@ -75,6 +75,5 @@ theorem qBinomial_pascal {q : ℝ} (hq : 1 < q) (k m : ℕ) :
   unfold qBinomial
   rw [s1, s2, s3, idx, e_top, e_k1, e_m1, e_add]
   field_simp
-  ring
 
 end QOU.Machinery
