@@ -151,7 +151,7 @@ export const references: CSLData[] = [
     page: "659-675",
     "collection-title": "Clay Mathematics Proceedings",
     "collection-number": 11,
-    note: "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. x↦−1/x) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The q↦q̃ modular-partner transformation + the √(2π/ℏ) radial-asymptotic prefactor are the conjectural frame for the QOU Q_β c_k √u/ε bar-involution (the bar-odd a_1 as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.",
+    note: "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. $x \\mapsto -1/x$) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The $q \\mapsto \\tilde{q}$ modular-partner transformation + the $\\sqrt{2\\pi/\\hbar}$ radial-asymptotic prefactor are the conjectural frame for the QOU $Q_\\beta$ $c_k$ $\\sqrt{u}/\\varepsilon$ bar-involution (the bar-odd $a_1$ as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.",
   }),
 
   // ── Vaksman–Korogodsky 1989 — q-Bessel = E_q(2) matrix coefficients ──
@@ -186,7 +186,7 @@ export const references: CSLData[] = [
     page: "483-508",
     DOI: "10.1215/S0012-7094-94-07617-0",
     URL: "https://doi.org/10.1215/S0012-7094-94-07617-0",
-    note: "Theorem: matrix coefficients of E_q(2) are Hahn–Exton q-Bessel functions J_ν^(3)(x;q); the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU c_k q-difference kernel = q-Bessel operator identification (#1839/#1880).",
+    note: "Theorem: matrix coefficients of $E_q(2)$ are Hahn–Exton q-Bessel functions $J_\\nu^{(3)}(x;q)$; the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU $c_k$ q-difference kernel = q-Bessel operator identification (\\#1839/\\#1880).",
   }),
 
   // ── Koelink–Swarttouw 1994 — q-Bessel zeros, q-Hankel transform ──

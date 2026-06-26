@@ -46,7 +46,7 @@ equation. That remains open and is **not** wired to production.
 
 The flow is axiomatised as a class
 `QOU.LocalQ.QHarmonicFlow` over an additive group $V$ of field
-configurations: a configuration `q`, its time-derivative `dq = ∂_t q`,
+configurations: a configuration `q`, its time-derivative `dq` $= \partial_t q$,
 the $q$-Laplacian `Δq`, and the ansatz law `dq = -Δq q`. The *existence*
 of such a structure for the physical substrate field is the conjecture.
 Conditional on the class, two structural consequences are

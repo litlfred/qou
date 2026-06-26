@@ -24,8 +24,12 @@ $$
 $$
 
 *where*
-$P^{\text{can}}(q) = y_{(3)}(q) P_{(3)}(q) + y_{(2,1)}(q) P_{(2,1)}(q)
-+ y_{(1,1,1)}(q) P_{(1,1,1)}(q)$,
+
+$$
+  P^{\text{can}}(q) = y_{(3)}(q) P_{(3)}(q) + y_{(2,1)}(q) P_{(2,1)}(q)
+  + y_{(1,1,1)}(q) P_{(1,1,1)}(q),
+$$
+
 *with $P_\lambda(q)$ the per-block witnesses from
 `chi_blocks_have_q2_minus_1_factor`. In particular,
 $\Delta\tau_M^{\text{can}}(1) = 0$.*
