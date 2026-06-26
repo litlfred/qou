@@ -32,6 +32,11 @@ namespace QOU.BraidKnot
 structure ClosedBraid (n : ℕ) where
   word : List ℤ
 
+/-- The empty-word closed braid is the default at every strand count
+    (the identity braid). Provides `default` for the skeleton instance
+    below. -/
+instance (n : ℕ) : Inhabited (ClosedBraid n) := ⟨⟨[]⟩⟩
+
 /-- **Conjecture class.**  An instance asserts the existence of:
     * a Markov-trace functional `markov_trace_q` for any closed
       braid at any strand count;
@@ -80,9 +85,10 @@ theorem markov_trace_factors [inst : KnotFactorFrobeniusPairing]
     discharge the §3b-cond hypothesis for downstream blocks. -/
 -- Ref: [manuscript] conj:knot-factor-frobenius-pairing §"Skeleton"
 instance canonical : KnotFactorFrobeniusPairing where
-  markov_trace_q := fun _ _ => 0
-  frobenius_pairing_q := fun _ _ _ => 0
+  markov_trace_q := fun (_ : ℝ) {_n : ℕ} (_ : ClosedBraid _n) => (0 : ℝ)
+  frobenius_pairing_q :=
+    fun (_ : ℝ) {_n : ℕ} (_ _ : ClosedBraid _n) => (0 : ℝ)
   knot_factor := default
-  factorisation_holds := fun _ _ => rfl
+  factorisation_holds := fun (_ : ℝ) {_n : ℕ} (_ : ClosedBraid _n) => rfl
 
 end QOU.BraidKnot
