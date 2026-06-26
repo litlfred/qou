@@ -87,24 +87,31 @@ matter: in $\gamma\gamma$ production two photons meet and their
 terms multiply out into the whole list of operations, assembling
 every other particle.
 
-Because only finitely many knots fit on a surface of fixed
-genus, that list is finite — it closes into a complete basis of
-exactly six, with no seventh possible.  The restriction is in
-part a psychological one: it concerns what an observer inside the
-universe can distinguish — a limit of the measuring frame, not of
-some outside world we never directly touch.  One object then
-recurs at the framework's hardest edges — an obstruction class,
-the precise measure of when something local fails to extend
-globally — the same class that governs whether a fluid stays
-smooth, whether a computation has a shortcut, and where the zeros
-of a zeta function must fall.
+Because only finitely many knots embed in a surface of fixed
+genus, that list is finite: it closes into a complete basis of
+exactly six, with no seventh possible.  The bound is a feature of
+the measuring frame — a limit on what an observer inside the
+universe can distinguish, not a fact about some outside world we
+never touch directly.
+
+One object recurs at the framework's hardest edges: an
+obstruction class, the precise measure of when something local
+fails to extend globally.  The same class governs whether a fluid
+stays smooth, whether a computation admits a shortcut, and where
+the zeros of a zeta function must fall.
 
 What remains, after the structure is fixed, is calibration.  The
 internal symmetry and the rigid topology of the state space leave
-only a handful of free parameters: **exactly three** inputs are
-required — one dimensionless ratio
-($m_\mu/m_e$), one leptonic mass scale ($m_e$), and one hadronic
-energy scale ($\mathfrak{Q}_\beta(n)$).  Every other mass, Q-value, binding
-energy, and coupling constant is a prediction.  That so much
-structure follows from so little input is, as Wigner put it,
-"something bordering on the mysterious" \cite{wigner1960}.
+only a handful of free parameters: **exactly three** measured
+masses fix the framework, and they are not chosen freely — they
+match, one for one, the three real degrees of freedom of the state
+space's first cohomology.  A leptonic mass scale ($m_e$) sets the
+unit, the *scale* of that cohomology; a dimensionless ratio
+($m_\mu/m_e$) fixes the substrate parameter $q_0$, its *modulus*;
+and a mesonic mass scale ($m_\pi$) fixes the one remaining
+*orthogonal* class, the meson sector whose Hopf-link complement has
+zero volume.  Every other mass, Q-value — the neutron's
+$\mathfrak{Q}_\beta$ among them, derived rather than measured —
+binding energy, and coupling constant is a prediction.  That so much structure
+follows from so little input is, as Wigner put it, "something
+bordering on the mysterious" \cite{wigner1960}.
