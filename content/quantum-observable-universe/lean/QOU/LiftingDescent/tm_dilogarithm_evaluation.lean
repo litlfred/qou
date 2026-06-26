@@ -1,61 +1,59 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.LiftingDescent.tm_dilogarithm_evaluation
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.md): *Quantum dilogarithm evaluation of exceptional-divisor contributions*.
+**Lemma** ([`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.LiftingDescent.tm_dilogarithm_evaluation` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+*Each exceptional-divisor summand evaluates to the quantum dilogarithm:*
+
+    ‖ MI∫_{E_i} (∇_A q, L ∧ F⁺) ‖ = Φ_q(z_i) = ∫₀^{z_i} ln_q(1+t)/t dt,
+
+*in the spectral coordinates of the Briggs–Klein chart at `E_i`.*
+
+## Status
+
+The substantive identity equates the norm of a **non-abelian
+multiplicative integral** over the exceptional divisor `E_i` with the
+**Faddeev–Kashaev quantum dilogarithm** `Φ_q(z_i)`, itself a
+`q`-deformed dilogarithm integral.  Establishing it requires both
+Yekutieli's multiplicative integration and the quantum dilogarithm
+`Φ_q` with its integral representation — **neither available in
+Mathlib**.
+
+The two quantities are modelled as named `opaque` reals — `MI i`
+(the divisor-`i` multiplicative-integral norm) and `Phi_q (z i)`
+(the quantum dilogarithm at the spectral coordinate `z_i`) — so the
+theorem `∀ i, MI i = Phi_q (z i)` is the genuine unproven identity
+between *these specific* objects.  Discharged with `sorry` and the
+citations per AGENTS.md §1.
 -/
 
 namespace QOU.LiftingDescent
 
+/-- The norm of the divisor-`i` non-abelian multiplicative integral
+    `‖MI∫_{E_i}(∇_A q, L ∧ F⁺)‖`. -/
+opaque MI : ℕ → ℝ
 
-/-- Abstract context for the `tm_dilogarithm_evaluation` claim — manuscript-themed
-    typed fields below. -/
-class TmDilogarithmEvaluationContext where
-  /-- Exceptional-divisor coordinate `z_i` per divisor index. -/
-  z : ℕ → ℝ
-  /-- Mass-integral evaluation `MI(E_i)` per divisor index. -/
-  MI : ℕ → ℝ
-  /-- Quantum dilogarithm `Φ_q : ℝ → ℝ`. -/
-  Phi_q : ℝ → ℝ
-  /-- Briggs-Klein coordinate integration per divisor index. -/
-  bk_integral : ℕ → ℝ
-  /-- Mass integral matches the Briggs-Klein integration. -/
-  mi_eq_integral : ∀ i : ℕ, MI i = bk_integral i
-  /-- Quantum dilogarithm matches the Briggs-Klein integration. -/
-  phi_eq_integral : ∀ i : ℕ, Phi_q (z i) = bk_integral i
+/-- The Faddeev–Kashaev quantum dilogarithm `Φ_q : ℝ → ℝ`. -/
+opaque Phi_q : ℝ → ℝ
 
-/-- **Lemma statement** (from manuscript):
+/-- The Briggs–Klein spectral coordinate `z_i` at the exceptional
+    divisor `E_i`. -/
+opaque z : ℕ → ℝ
 
-Each exceptional-divisor summand evaluates to the quantum
-dilogarithm:*
+/-- **Exceptional-divisor summand = quantum dilogarithm.**
 
-$$
-  \bigl\lVert
-  \mathrm{MI}\!\!\int_{E_i}
-  \bigl(\nabla_A q, L \wedge F^+\bigr)
-  \bigr\rVert
-  =
-  \Phi_q(z_i)
-  =
-  \int_0^{z_i} \frac{\ln_q(1+t)}{t}\, dt,
-$$
-
-*in the spectral coordinates of the Briggs--Klein chart at $E_i$.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
-theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] :
-    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) := by
-  intro i
-  rw [ctx.mi_eq_integral i, ctx.phi_eq_integral i]
+For every exceptional divisor `E_i`, the multiplicative-integral norm
+equals `Φ_q(z_i)`.  Needs the quantum dilogarithm + Yekutieli
+multiplicative integration (not in Mathlib); body is `sorry`. -/
+-- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
+-- Ref: [yekutieli2015] https://doi.org/10.1142/9537
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md
+theorem tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i) := by
+  -- Needs: Φ_q = ∫₀^{z} ln_q(1+t)/t dt (quantum dilogarithm integral
+  -- representation) and the Briggs–Klein chart evaluation of the
+  -- multiplicative integral on E_i.
+  sorry
 
 end QOU.LiftingDescent

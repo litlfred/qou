@@ -3,69 +3,63 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 /-!
 # QOU.HadronicMass.pair_skein_mass_formula
 
-**Placeholder canonical** for content block
-[`lem:pair-skein-mass-formula`](../../../quantum-observable-universe/observations/pair-skein-mass-formula.md): *Pair Skein mass and crossing-by-crossing recursion*.
+**Lemma** ([`lem:pair-skein-mass-formula`](../../../quantum-observable-universe/observations/pair-skein-mass-formula.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.HadronicMass.pair_skein_mass_formula` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+*The Borromean braid of a nucleon with quarks `(q₁, q₂, q₃)` contributes
+a pair Skein mass at each of its three color-exchange crossing pairs:*
+
+    𝒮_{ab}(q) = (q μ_a + q⁻¹ μ_b) / (q^{1/2} + q^{-1/2}),
+
+*where `μ_a` is the dressed quark Skein mass of species `a`.  The total
+nucleon mass is the sum over the three crossing pairs.*
+
+## Status
+
+The pair Skein mass `𝒮_{ab}` is the **Hecke-eigenvalue-weighted
+combination** of the dressed quark masses: the positive crossing weights
+species `a` by the eigenvalue `q`, the negative crossing weights species
+`b` by `q⁻¹`, normalised by the Markov parameter `q^{1/2} + q^{-1/2}`.
+Establishing that the categorical pair Skein mass equals this explicit
+ratio requires the pair-Skein-mass categorical construction and the
+Markov-trace normalisation — **not available in Mathlib**.
+
+The categorical pair Skein mass `S_ab` and the dressed masses `μ` are
+modelled as named `opaque` reals, so the theorem identifying `S_ab a b`
+with the explicit ratio is the genuine unproven identity between *these
+specific* objects (not a restatement of a definitional field, and not a
+projection of a class hypothesis).  Discharged with `sorry` and the
+citation per AGENTS.md §1.
 -/
 
 namespace QOU.HadronicMass
 
+open Real
 
-/-- Abstract context for the `pair_skein_mass_formula` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class PairSkeinMassFormulaContext where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- Dressed quark Skein masses (indexed by species). -/
-  μ : ℕ → ℝ
-  /-- Pair Skein mass `S_{ab}(q)` for quark species `(a, b)`. -/
-  S_ab : ℕ → ℕ → ℝ
-  /-- Numerator of the pair Skein mass formula. -/
-  numerator : ℕ → ℕ → ℝ
-  /-- Denominator of the pair Skein mass formula. -/
-  denominator : ℝ
-  /-- Numerator is `q * μ a + q⁻¹ * μ b`. -/
-  h_num : ∀ a b, numerator a b = q * μ a + q⁻¹ * μ b
-  /-- Denominator is `Real.sqrt q + 1 / Real.sqrt q`. -/
-  h_den : denominator = Real.sqrt q + 1 / Real.sqrt q
-  /-- The relationship between `S_ab`, `numerator`, and `denominator`. -/
-  h_S_ab : ∀ a b, S_ab a b = numerator a b / denominator
+/-- The substrate parameter `q : ℝ` (archimedean: `Real.sqrt` of `q`
+    enters the Markov normalisation, §7c). -/
+opaque q : ℝ
 
-/-- **Lemma statement** (from manuscript):
+/-- The dressed quark Skein mass `μ_a` per species index. -/
+opaque μ : ℕ → ℝ
 
-The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$
-contributes a pair Skein mass at each of its three color-exchange
-crossing pairs:*
+/-- The categorical pair Skein mass `𝒮_{ab}(q)` for quark species
+    `(a, b)`. -/
+opaque S_ab : ℕ → ℕ → ℝ
 
-$$
-  \mathcal{S}_{ab}(q)
-  =
-  \frac{q\mu_a +  q^{-1}\mu_b}
-       {q^{1/2} + q^{-1/2}},
-$$
+/-- **Pair Skein mass formula.**
 
-*where $\mu_a$ is the dressed quark Skein mass of species $a$.  The
-total nucleon mass is the sum over the three crossing pairs:
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
-theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] :
-    ∀ a b : ℕ, ctx.S_ab a b =
-      (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) /
-      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by
-  intro a b
-  rw [ctx.h_S_ab, ctx.h_num, ctx.h_den]
+The categorical pair Skein mass equals the Hecke-eigenvalue-weighted
+ratio `(q μ_a + q⁻¹ μ_b) / (√q + 1/√q)`.  Needs the pair-Skein-mass
+categorical construction + Markov-trace normalisation (not in Mathlib);
+body is `sorry`. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.md
+theorem pair_skein_mass_formula :
+    ∀ a b : ℕ, S_ab a b =
+      (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q) := by
+  -- Needs: the categorical pair Skein mass (positive crossing weights
+  -- species a by q, negative crossing weights species b by q⁻¹) and the
+  -- Markov parameter δ = q^{1/2} + q^{-1/2} as the normalisation.
+  sorry
 
 end QOU.HadronicMass
