@@ -643,7 +643,14 @@ instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
 WT=/tmp/lake-cache-wt
 # 1. Pack the built oleans (compressed). Create the tarball where the
 #    worktree can `git add` it — git cannot add a path outside its tree.
-tar czf /tmp/lake-oleans.tgz .lake/build .lake/packages/*/.lake/build 2>/dev/null
+#    ⚠ The QOU package build lives in the NESTED Lake dir
+#    `content/*/lean/.lake/build` — root `.lake/build` does NOT exist in
+#    this checkout, so the old glob `.lake/build .lake/packages/*/...`
+#    silently shipped a tarball with ZERO QOU oleans (only Mathlib). The
+#    restore-check (Step 5 below) is what catches this; ALWAYS run it.
+#    (2026-06-26: this is exactly why prior production reseeds held only
+#    the ~202-olean Mass cone — the QOU oleans were never packed.)
+tar czf /tmp/lake-oleans.tgz content/*/lean/.lake/build .lake/packages/*/.lake/build 2>/dev/null
 # 2. Orphan branch in a SEPARATE worktree (main tree untouched, no trap).
 git worktree add --orphan -b lake-cache/qou-v4-24-0 "$WT" 2>/dev/null \
   || { git worktree add --detach "$WT"; git -C "$WT" checkout --orphan lake-cache/qou-v4-24-0; \
@@ -662,6 +669,23 @@ git worktree remove --force "$WT"                      # main branch never left
 > `git push` after each one (`--force` on the first push to replace
 > the old cache history). Restorers are unaffected — the restore
 > recipe reads the tip tree, which contains all chunks.
+
+> **Step 4 — VERIFY the seed in a clean temp dir (MANDATORY — catches the
+> QOU-oleans-missing bug).** A silent bad seed corrupts the cache for every
+> downstream session, so prove the pushed branch restores before trusting it:
+> ```bash
+> T=/tmp/restore-check; rm -rf "$T"; mkdir -p "$T"
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0
+> git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
+>   | while read -r p; do git show "FETCH_HEAD:$p"; done > /tmp/rc.tgz
+> tar xzf /tmp/rc.tgz -C "$T"
+> # MUST be non-zero — if 0, the tar glob missed the nested QOU build dir:
+> find "$T" -path '*/lib/lean/QOU/*.olean' | wc -l
+> ```
+> Seeding to a `-test` branch suffix first (then a ref-only force-push
+> cutover to production — the blobs are already on the remote, so the
+> cutover uploads nothing and dodges the 413) is the safe path for the
+> load-bearing production branch.
 
 Keep ≤ 8 such branches (owner cap); the
 [`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
