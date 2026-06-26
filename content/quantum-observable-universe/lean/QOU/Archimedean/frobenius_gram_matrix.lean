@@ -1,5 +1,5 @@
 import Mathlib.LinearAlgebra.Matrix.Symmetric
-import Mathlib.Data.Matrix.Notation
+import Mathlib.LinearAlgebra.Matrix.Notation
 
 /-!
 # QOU.Archimedean.frobenius_gram_matrix — explicit Markov-Frobenius Gram matrix
