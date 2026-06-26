@@ -6,6 +6,21 @@
 
 > **Update (2026-06-25, [#2760](https://github.com/litlfred/qou/pull/2760)) — per-`n` down-payment landed.** The slice (i)/(ii) need at small `n` is now discharged **without** any of the P1–P5 infra below: explicit `PlancherelSnData {3,…,12}` instances (`IdentityIPlancherelInstances.lean`) wire the already-`decide`-verified `dim_validated_le12` / `idB_verified_le12` computations (`dim:=dimHLF`) into the class, so Identity I and `twoM_eq_plancherel_hook_sum` are **unconditional for `n ≤ 12`** (covering the deuteron `n=3`, keystone `n=5`, defect-cubic sign flip `n=7`).  The keystone defect coefficient `n144C` itself is then grounded in the genuine Plancherel squared-hook sum (`n144C_eq_twelve_plancherel` / `defect_closedform_plancherel`), eliminating the carried `def twoM`. `#print axioms` on the capstones = `[propext, Classical.choice, Quot.sound]` (no `sorry`, no custom axiom). This does **not** discharge the general-`n` class (P5 below); it is the tractable down-payment that makes the conditional terminus also an *unconditional* result on the physically-used `n`.
 
+> **Update (2026-06-26) — P0 spike RESOLVED (the "does Mathlib already have `Σ dim² = |G|`?" question below).** Reconnaissance against the **pinned** Mathlib commit `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` (toolchain `v4.24.0`), via GitHub code search over the dependency tree (the sandbox blocks `leansearch`/`leanfinder`/`loogle` with proxy 403, and has no restored oleans, so this is source-level recon, not an LSP/`decide` check — re-confirm against the pinned olean tree once a build is available):
+>
+> | Fact the program needs | Pinned-Mathlib status | Evidence |
+> |---|---|---|
+> | Irreducible-character **orthogonality** (`⟨χ_V, χ_W⟩ = [V≅W]`) | **present** | `Mathlib/RepresentationTheory/Character.lean` (`scalar_product_char_eq_finrank_equivariant`; the `if Nonempty (V ≅ W) then 1 else 0` orthogonality) |
+> | **Simple-iff-norm-one** `∑_g χ(g)χ(g⁻¹) = card G` | **present** (ref-hedge: `FinGroupCharZero.lean` is recent and may postdate `f897ebcf`; verify on the pinned tree) | `Mathlib/RepresentationTheory/FinGroupCharZero.lean` (`FDRep.simple_iff_char_is_norm_one`) |
+> | **Degree-square sum** `∑_{irrep} dim(V)² = card G` (regular rep at `e`) | **ABSENT** (no packaged lemma under expected names) | no `leftRegular`-character-decomposition lemma; `∑ … = Fintype.card G` hits are the *simple-norm-one* criterion, not the global degree-square sum |
+> | **`#irreps = #conjugacy classes`** | **ABSENT** (undergrad-curriculum gap) | `docs/undergrad.yaml` lists it with external-URL placeholders, no `decl:` |
+> | **Specht modules / partition-indexed `Sₙ` irreps** | **ABSENT** | only `Nat.Partition` *combinatorics* exists (e.g. Glaisher `Nat.Partition.card_restricted_eq_card_countRestricted`); no `S^λ`, no partition→irrep map |
+>
+> **Conclusion (negative, and it shapes the plan).** The hopeful shortcut the P2 note below floats — "maybe `Σ dim² = |G|` is already in Mathlib, so P2 collapses to P1 + a re-indexing" — **does not hold**: that lemma is *not* packaged in the pinned Mathlib. So P2's regular-rep route must still **build** `Σ dim² = |G|` from the orthogonality relations that *are* present (medium cost), then compose with P1's partition-indexing. Net effect on the plan:
+> - **P2 stays medium-large**, not "free"; its cheapest path is regular-character decomposition (`χ_reg = ∑_λ dim(λ)·χ_λ`, also absent) evaluated at `e`, **built on** the present orthogonality — not an off-the-shelf citation.
+> - **HLF / RSK is NOT on the critical path for axiom (i).** Via the regular-rep route, `∑_λ dim_Specht(λ)² = n!` needs only P1 (Specht irreps complete + partition-indexed) + the built degree-square sum — **no hook-length formula**. HLF only re-enters if one insists `dim = dimHLF` (the concrete `List ℕ` model), which the `n ≤ 12` instances already discharge *computationally* (`dim_validated_le12`). So a future general-`n` instance is cleaner with `dim := dim_Specht` than with `dim := dimHLF`.
+> - **P1 (Specht) remains the foundational blocker**, confirmed genuinely absent — consistent with the doc's Decision 2 ("rigor hygiene, not frontier progress; the keystone's *open* object is the geometric `W_λ` realization, not Identity I").
+
 ## Goal
 
 Fully close **Identity I** `M(n) = (1/n!)·Σ_{λ⊢n} dim(λ)²·Σ_{c∈λ} h_c² = n(3n−1)/2` in Lean,
@@ -51,9 +66,14 @@ normally lands **upstream in Mathlib** over many PRs, not in a paper repo in one
 | **P5** | bridge the abstract `λ ⊢ n` index to the `List ℕ` model used by (A)/`PlancherelSnData` (sorted-list ↔ `Nat.Partition`/`YoungDiagram`), then provide `instance : PlancherelSnData n` for all `n`; collapse #2709's conditional theorems to unconditional | P2, P4, #2709 | medium | **the class itself** |
 
 P2 has two independent routes (RSK bijection vs regular-rep `Σ dim²=|G|`); the regular-rep route
-may already be partly in Mathlib's character theory (`∑ χ(1)² = |G|`) — **a P0 spike should first
-check** whether `Σ_{irrep} dim² = card G` exists in the pinned Mathlib and only needs the
-partition-indexing of P1 to become (i). If so, P2 reduces to P1 + a re-indexing.
+rests on Mathlib's character theory. **The P0 spike is now RESOLVED (see the 2026-06-26 update at
+the top): `Σ_{irrep} dim² = card G` is NOT packaged in the pinned Mathlib** (`f897ebcf`, `v4.24.0`) —
+only the irreducible-character *orthogonality* and the *simple-norm-one* criterion are present. So
+P2 does **not** reduce to "P1 + a re-indexing"; it must build the degree-square sum from
+orthogonality (regular-character decomposition evaluated at `e`), then compose with P1. The spike's
+one favourable finding: HLF/RSK is **not** on the critical path for (i) via this route (only P1 +
+the built degree-square sum), so a general-`n` instance is cleaner with `dim := dim_Specht` than with
+the concrete `dim := dimHLF`.
 
 ## Decisions for the owner
 
