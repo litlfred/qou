@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.Torsion.mass_decomposition_categorical

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.Experimental.local_substrate_q

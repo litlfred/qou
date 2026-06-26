@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.ArchimedeanUniverse.brings_euler_characteristic

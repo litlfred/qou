@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.ParticleInteractions.lp_dual_stability

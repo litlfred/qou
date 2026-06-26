@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.ParticleInteractions.tritium_qvalue_symbolic

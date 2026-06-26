@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.ParticleInteractions.confinement_frobenius_reciprocity

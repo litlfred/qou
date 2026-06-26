@@ -1,4 +1,3 @@
-import Mathlib
 
 /-!
 # QOU.ParticleInteractions.transfer_matrix_identities

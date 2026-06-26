@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.FluidDynamics.vorticity_lower_bound
