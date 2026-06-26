@@ -1,6 +1,6 @@
 **Proposition (c_4 derived from c_3 and c_8 via product identity).**
 
-*The 𝔔_β precision-ladder coefficients $c_3$, $c_4$, $c_8$ satisfy the
+*The $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_3$, $c_4$, $c_8$ satisfy the
 structural product identity*
 
 $$

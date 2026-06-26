@@ -77,7 +77,7 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 and $m_n$ are upstream inputs in this LO form; $0.000\%$ is a
 calibration tautology, not a prediction quality.
 
-### FULL 𝔔_β prediction (framework, no CODATA mass injection)
+### FULL $\mathfrak{Q}_\beta$ prediction (framework, no CODATA mass injection)
 
 Per [`prop:neutron-qvalue-symbolic`](../particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value using only CAL-1 ($m_e$)

@@ -18,7 +18,7 @@ This proposition **lifts** [`prop:t-beta-markov-frobenius-collapse`](t-beta-mark
 
 | Block | Setting | Used by |
 |-------|---------|---------|
-| `prop:t-beta-markov-frobenius-collapse` | substrate model ($A = R$, $\tau = \mathrm{id}$) | scalar 𝔔_β identities |
+| `prop:t-beta-markov-frobenius-collapse` | substrate model ($A = R$, $\tau = \mathrm{id}$) | scalar $\mathfrak{Q}_\beta$ identities |
 | `prop:t-beta-markov-frobenius-collapse-general` (this block) | any unital $R$-algebra with normalised trace + PSD + non-deg | Hecke-algebra applications |
 
 ## Proof

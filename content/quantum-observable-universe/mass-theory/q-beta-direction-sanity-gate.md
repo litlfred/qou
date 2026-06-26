@@ -35,7 +35,7 @@ paper, not in compute. This is the $\S 4(d)$ formalize-first gate.
 | (d) | **Direction sanity** | **this proposition** |
 
 With (d) formalized, the four-invariant set is complete; any future
-candidate $F(q)$ for the 𝔔_β c_k Habiro element is evaluable as a
+candidate $F(q)$ for the $\mathfrak{Q}_\beta$ c_k Habiro element is evaluable as a
 Lean class-instance attempt rather than as a numerical fit.
 
 ## The target magnitude at $q_0$

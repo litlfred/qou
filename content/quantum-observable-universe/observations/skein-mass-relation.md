@@ -12,7 +12,7 @@
 > `ρ_K^LO + ρ_K^single-gen + ρ_K^pair-gen + ...` graded expansion.
 > The numerical match to $m_\mu/m_e = 206.77$ holds at lepton level
 > because operator-valued corrections are small for leptons; the
-> +0.17% 𝔔_β residual flagged in
+> +0.17% $\mathfrak{Q}_\beta$ residual flagged in
 > [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 > is consistent with operator corrections becoming non-negligible
 > for hadronic observables. The literal $\rho_q = 1/\hbar_q^2$

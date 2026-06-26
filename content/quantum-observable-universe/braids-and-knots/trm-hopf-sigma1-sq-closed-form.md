@@ -68,7 +68,7 @@ verified numerically via
 
 ## Implication for the $\mathfrak{Q}_\beta$ precision-ladder
 
-The 𝔔_β factorisation ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
+The $\mathfrak{Q}_\beta$ factorisation ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 writes
 $$
   \mathfrak{Q}_\beta \;=\; Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr)

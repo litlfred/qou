@@ -36,7 +36,7 @@ the electron ($2.9 \times 10^{-10}$).
 > Wedderburn-graded expansion (LO + single-gen + pair-gen + ...).
 > Numerically the Skein formula closes $m_\mu/m_e = 206.77$ at
 > lepton level because operator-valued corrections are small for
-> leptons; the +0.17% 𝔔_β residual flagged in
+> leptons; the +0.17% $\mathfrak{Q}_\beta$ residual flagged in
 > [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 > is consistent with operator corrections becoming non-negligible
 > for hadronic observables. Re-derivation of $m_\mu/m_e$ from
@@ -117,7 +117,7 @@ match (single-tick form) could be (a) genuine truncation residual
 or (b) an artefact of $q_0 \approx 1.110$ arising from a
 wrong leading-order operator. Until this is resolved by direct
 per-braid computation or a theoretical derivation, **CAL-3 must
-remain an input** and claims of "𝔔_β derivable from CAL-1 + CAL-2"
+remain an input** and claims of "$\mathfrak{Q}_\beta$ derivable from CAL-1 + CAL-2"
 are conditional on the unproved ansatz. Full audit:
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
 
