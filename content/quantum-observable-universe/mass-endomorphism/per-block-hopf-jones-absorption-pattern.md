@@ -80,7 +80,7 @@ beyond $c_3$. Higher precision-ladder coefficients $c_k$ for $k \geq 4$
 come from **products** of the per-block linear-in-$\hbar_q$ factors,
 giving $\hbar_q^k$ at order $k$. Each block's contribution carries the
 LO Hopf-Jones absorption ($-2$ or $-1$), modulated by the block's
-specific cyclotomic-factor structure (\Phi_4^2$ for 1D; $\Phi_8$ for 2D).
+specific cyclotomic-factor structure ($\Phi_4^2$ for 1D; $\Phi_8$ for 2D).
 
 Verified at $q_0$ via
 [`computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../computations/qbeta/qbeta_per_block_paper_closed_forms.py)
