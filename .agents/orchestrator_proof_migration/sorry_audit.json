@@ -6,6 +6,24 @@
     "is_class_body": false
   },
   {
+    "file": "Interactions/DoubleMagicDeltaI/DeltaIBoundConjecture.lean",
+    "line": 39,
+    "content": "noncomputable instance : DeltaIBoundConjecture := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "Information/QouPNeqNp.lean",
+    "line": 55,
+    "content": "noncomputable instance : QouPNeqNp := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "Archimedean/SingleVolumeIrrationality.lean",
+    "line": 50,
+    "content": "noncomputable instance : SingleVolumeIrrationality := sorry",
+    "is_class_body": false
+  },
+  {
     "file": "Archimedean/HyperbolicVolumeIndependence.lean",
     "line": 43,
     "content": "sorry",
@@ -18,129 +36,237 @@
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/SymmetricCrystalPairProduction.lean",
-    "line": 99,
-    "content": "bar_invariant _ := sorry",
+    "file": "Archimedean/BorelZagierQouVolumes.lean",
+    "line": 45,
+    "content": "noncomputable instance : BorelZagierQouVolumes := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/HeckeAnyonicSubstrate.lean",
-    "line": 88,
-    "content": "anyonic_holds T := sorry",
+    "file": "BraidKnot/jet_convergence_classical_limit.lean",
+    "line": 39,
+    "content": "noncomputable instance : jet_convergence_classical_limit := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "BraidKnot/ClassicalRiemannHypothesis.lean",
+    "line": 45,
+    "content": "noncomputable instance : ClassicalRiemannHypothesis := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/GSReductionOrder.lean",
-    "line": 128,
-    "content": "order_match _ := sorry",
+    "file": "BraidKnot/GradedBaerStarHq.lean",
+    "line": 39,
+    "content": "noncomputable instance : GradedBaerStarHq := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "BraidKnot/TwoFiltrationBridge.lean",
+    "line": 47,
+    "content": "noncomputable instance : TwoFiltrationBridge := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/KazhdanLusztigClassicalLimit.lean",
-    "line": 105,
-    "content": "kl_compatible_with_tau _ := sorry",
+    "file": "BraidKnot/spectral_sum_finite.lean",
+    "line": 39,
+    "content": "noncomputable instance : spectral_sum_finite := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "BraidKnot/TorusKnotMass.lean",
+    "line": 123,
+    "content": "noncomputable instance : TorusKnotMass := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/QBetaPerBlockChiClosedForms.lean",
-    "line": 329,
-    "content": "sorry",
+    "file": "BraidKnot/NSymSymmetricChannelNormalization.lean",
+    "line": 56,
+    "content": "noncomputable instance : NSymSymmetricChannelNormalization := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/CemeteryGroupEmergence.lean",
-    "line": 80,
-    "content": "monotone_under_extension _ _ := sorry",
+    "file": "BraidKnot/ConfinementNfStructureForcing.lean",
+    "line": 47,
+    "content": "noncomputable instance : ConfinementNfStructureForcing := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/JucysMurphyCentralElementsQOU.lean",
-    "line": 51,
-    "content": "sorry",
+    "file": "BraidKnot/BringFigureEightDepth2Witness.lean",
+    "line": 39,
+    "content": "noncomputable instance : BringFigureEightDepth2Witness := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "BraidKnot/jet_filtered_knot_factor.lean",
+    "line": 39,
+    "content": "noncomputable instance : jet_filtered_knot_factor := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "BraidKnot/Cl3Zeta5GeometricRealization.lean",
+    "line": 45,
+    "content": "noncomputable instance : Cl3Zeta5GeometricRealization := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/JucysMurphyCentralElementsQOU.lean",
-    "line": 61,
-    "content": "sorry",
+    "file": "BraidKnot/BringTrilogDepth3Witness.lean",
+    "line": 39,
+    "content": "noncomputable instance : BringTrilogDepth3Witness := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "BraidKnot/JointGaloisBraidAction.lean",
+    "line": 48,
+    "content": "noncomputable instance : JointGaloisBraidAction := sorry",
     "is_class_body": false
   },
   {
-    "file": "BraidKnot/ConfinementGradingCorrespondence.lean",
-    "line": 80,
-    "content": "filtrations_agree _ := sorry",
-    "is_class_body": false
+    "file": "BraidKnot/GBResidueSpectralSum/residue.lean",
+    "line": 39,
+    "content": "noncomputable instance : residue := sorry",
+    "is_class_body": true
   },
   {
-    "file": "BraidKnot/IdentityIContentDecomposition.lean",
-    "line": 84,
-    "content": "sorry",
-    "is_class_body": false
+    "file": "BraidKnot/GBResidueSpectralSum/spectral_decomposition.lean",
+    "line": 39,
+    "content": "noncomputable instance : spectral_decomposition := sorry",
+    "is_class_body": true
   },
   {
-    "file": "BraidKnot/RootOfUnityMTCTruncation.lean",
-    "line": 111,
-    "content": "truncation_holds _ := sorry",
-    "is_class_body": false
+    "file": "BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean",
+    "line": 39,
+    "content": "noncomputable instance : archimedean_agreement := sorry",
+    "is_class_body": true
   },
   {
-    "file": "ArchimedeanUniverse/mi_sw_cartan_reduction.lean",
-    "line": 49,
-    "content": "sorry",
-    "is_class_body": false
+    "file": "BraidKnot/HabiroResidueSumEquivalence/protonExample/archimedean_agreement.lean",
+    "line": 39,
+    "content": "noncomputable instance : archimedean_agreement := sorry",
+    "is_class_body": true
   },
   {
-    "file": "ArchimedeanUniverse/heisenberg_commutator.lean",
-    "line": 65,
-    "content": "sorry",
-    "is_class_body": false
+    "file": "StaircaseCornerHook/StaircaseEWResidual.lean",
+    "line": 39,
+    "content": "noncomputable instance : StaircaseEWResidual := sorry",
+    "is_class_body": true
   },
   {
-    "file": "FrobeniusHopfData/frobeniusForm.lean",
-    "line": 71,
-    "content": "sorry",
-    "is_class_body": false
-  },
-  {
-    "file": "Observations/QPlancherelAsymptoticSkeleton.lean",
-    "line": 76,
-    "content": "sorry",
-    "is_class_body": false
-  },
-  {
-    "file": "Observations/SDPRegimeSwitch.lean",
-    "line": 93,
-    "content": "sorry",
-    "is_class_body": false
-  },
-  {
-    "file": "Observations/centered_hecke_variance_positive.lean",
+    "file": "Torsion/YangMillsMassGap.lean",
     "line": 58,
-    "content": "sorry",
+    "content": "noncomputable instance : YangMillsMassGap := sorry",
     "is_class_body": false
   },
   {
-    "file": "Observations/hecke_satisfies_blitvic_hypothesis.lean",
-    "line": 72,
-    "content": "sorry",
+    "file": "Observations/QCltNonCommutative/QCltNonCommutative.lean",
+    "line": 57,
+    "content": "noncomputable instance : QCltNonCommutative := sorry",
     "is_class_body": false
   },
   {
-    "file": "FeynmanPathIntegrals/markov_identification.lean",
-    "line": 67,
-    "content": "sorry",
-    "is_class_body": false
+    "file": "QGeometricLanglands/q_oper_hecke.lean",
+    "line": 39,
+    "content": "noncomputable instance : q_oper_hecke := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "QGeometricLanglands/q_gl_fiber_functor.lean",
+    "line": 39,
+    "content": "noncomputable instance : q_gl_fiber_functor := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "QGeometricLanglands/q_gl_kummer_filtration.lean",
+    "line": 39,
+    "content": "noncomputable instance : q_gl_kummer_filtration := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "QGeometricLanglands/q_gl_classical_limit.lean",
+    "line": 39,
+    "content": "noncomputable instance : q_gl_classical_limit := sorry",
+    "is_class_body": true
+  },
+  {
+    "file": "AppendixSurreals/QCollatz.lean",
+    "line": 39,
+    "content": "noncomputable instance : QCollatz := sorry",
+    "is_class_body": true
   },
   {
     "file": "AppendixSurreals/BigbangHeatdeath.lean",
-    "line": 46,
+    "line": 48,
     "content": "sorry",
     "is_class_body": false
   },
   {
-    "file": "Descent/descended_level_zero.lean",
+    "file": "AppendixSurreals/DiophantineBirthday.lean",
+    "line": 50,
+    "content": "noncomputable instance : DiophantineBirthday := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/KashaevSurreal.lean",
+    "line": 46,
+    "content": "noncomputable instance : KashaevSurreal := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/InfinitesimalObservability.lean",
+    "line": 50,
+    "content": "noncomputable instance : InfinitesimalObservability := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/SpectralNormalForm.lean",
+    "line": 49,
+    "content": "noncomputable instance : SpectralNormalForm := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/ArchimedeanStpart.lean",
+    "line": 49,
+    "content": "noncomputable instance : ArchimedeanStpart := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/LocalInfinitesimalField.lean",
+    "line": 49,
+    "content": "noncomputable instance : LocalInfinitesimalField := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/JonesBirthday.lean",
+    "line": 49,
+    "content": "noncomputable instance : JonesBirthday := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/OnPModularHecke.lean",
+    "line": 48,
+    "content": "noncomputable instance : OnPModularHecke := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/InfinitesimalFrobenius.lean",
+    "line": 48,
+    "content": "noncomputable instance : InfinitesimalFrobenius := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/QBirchSwinnertonDyer.lean",
+    "line": 49,
+    "content": "noncomputable instance : QBirchSwinnertonDyer := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/HahnSubstrate.lean",
+    "line": 48,
+    "content": "noncomputable instance : HahnSubstrate := sorry",
+    "is_class_body": false
+  },
+  {
+    "file": "AppendixSurreals/QouInfraDischargesGoncharovZeta5.lean",
     "line": 45,
-    "content": "sorry",
+    "content": "noncomputable instance : QouInfraDischargesGoncharovZeta5 := sorry",
     "is_class_body": false
   }
 ]
