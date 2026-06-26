@@ -163,3 +163,37 @@ is the level-set side of my `H_n` invariant; no file collision content-block vs
 **#2793** (τ [2]_q assembly — coordinated 3×, Lean-landing noted). The geometric
 origin `a_D^(n)=lw(n−1)` (= SW period ≡ selection-rule value) remains the
 **#2488 W_λ DG frontier**, owner-gated, untouched here.
+
+---
+
+## 7. Report-back from #2822 (2026-06-26) — the binding period IS the q-deformed involution number (q-Hermite moment)
+
+Branch `claude/z2bn-qbessel-lw-exactness-2026-06-26`. Identifies WHAT the super-exp
+period of §6 is, sharpening the z2bn kernel target. Audit-only probes, no fit.
+
+- **IDENTIFICATION (verified, q→1 exact n=1..12):** `T_q(n) := Σ_{λ⊢n} dim_q(λ) =
+  n·a_D^(n)` satisfies `T_q(n) → I(n)` (involution/telephone numbers A000085) as
+  `q→1`, via the classical `Σ_λ f^λ = I(n)`. **⇒ `a_D^(n)=lw(n−1)` is the
+  q-deformed involution number `I_q(n)/n` = a q-Hermite / Rogers–Szegő moment.**
+  Structural home = #2800's `BindingQHermiteOscillator`. Explains the super-exp
+  growth and the depth-2-with-n-dependent-coefficient structure
+  (`I(n)=I(n−1)+(n−1)I(n−2)`, why constant-coeff SL₂ fails).
+- **Prune (a):** not a single Bessel-½ falling factorial `∏[1/2−k]_q` (ratio
+  decays monotonically) — `lw` is the residue SUM over Wedderburn blocks
+  (`prop:sw-period-residue-sum`); the falling factorial is the per-block period.
+- **Prune (a):** not the naive depth-2 q-telephone `T(n)=T(n−1)+[n−1]_q T(n−2)`
+  (exact n=3, drifts n≥4; no low-degree depth-2 q-holonomic in `q^n` closes,
+  held-out best ≈1.5e-3). Exact q-coefficient ≠ bare `[n−1]_q`.
+
+**z2bn kernel result (the FORK).** A high-precision q-holonomic search
+(`sw_period_qholonomic_kernel_search.py`, held-out-verified, precision-independent
+at 70/140 dps) finds **no low-order `R(q,x)`** (depth ≤3, deg ≤3) for the
+quantum-dim period `T_q(n)=Σ_λ dim_q` — scope-(a), genuine non-closure. The clean
+depth-2 kernel `μ_q(n)=μ_q(n−1)+[n−1]_q μ_q(n−2)` belongs instead to the
+**crossing**-counted q-Hermite moment `μ_q`, which **forks** from `T_q` past `n=3`
+(both →I(n) at q=1; differ 0.3%→7.9% over n=4..8 at q0). So the two q-deformations
+of `I(n)` are **not** interchangeable: the selection-rule binding period is the
+quantum-dim sum (no low-order kernel); the kernel-bearing object is the crossing
+moment (`BindingQHermiteOscillator`, #2800). **Decision for z2bn:** higher-order
+`R(q,x)` for `Σ dim_q`, or adopt the crossing moment as the physical binding
+object. The bare `[n−1]_q`-bracket shortcut is pruned. Full audit: #2822.
