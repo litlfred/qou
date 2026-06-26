@@ -51,6 +51,7 @@ import QOU.Mass.BindingHyperbolicRecurrence
 import QOU.Mass.BindingQBesselKernel
 import QOU.Mass.BindingJacobiAngerBridge
 import QOU.Mass.BindingQHermiteOscillator
+import QOU.Mass.RogersSzegoInhabited
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
