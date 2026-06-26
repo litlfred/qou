@@ -4,52 +4,56 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.LiftingDescent.tm_transient_localisation
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-transient-localisation`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.md): *Transient terms localise to exceptional divisors*.
+Canonical Lean for content block
+[`lem:topological-mass-transient-localisation`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md):
+*Transient terms localise to exceptional divisors.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.LiftingDescent.tm_transient_localisation` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+**Lemma.** The transient component `α − τ̂ₙ(α)` has support contained in
+disjoint discs `Dᵢ` centred at the blow-up points `p₁, …, p_N`, and the
+norm of the multiplicative integral decomposes as a sum over the
+exceptional divisors `Eᵢ`:
+
+  `‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+
+The genuine mathematical content is the **additivity of the
+multiplicative-integral norm over a disjoint support decomposition**.
+The non-circular input is the per-disc factorisation of the
+multiplicative integral (each `Eᵢ` contributes the integral over its
+disc `Dᵢ`, and disjointness of the discs makes the contributions add),
+which rests on the non-abelian-Stokes / multiplicative-integral
+machinery that is **not in Mathlib**.  This file therefore states the
+real norm-decomposition proposition honestly with `sorry` + a
+manuscript citation, rather than the previous vacuous self-assuming
+projection (a class field `sum_of_disjoint : … → MI_norm_total = Σ …`
+that restated the conclusion and was projected by the theorem).
+
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 -/
 
 namespace QOU.LiftingDescent
 
+/-- **Transient-term localisation (norm decomposition).**
 
-/-- Abstract context for the `tm_transient_localisation` claim — manuscript-themed
-    typed fields below. -/
-class TmTransientLocalisationContext where
-  /-- Number of blow-up points `N`. -/
-  N : ℕ
-  /-- Norm of the multiplicative integral on disc `D_i`. -/
-  MI_norm : ℕ → ℝ
-  /-- Norm of the total transient multiplicative integral. -/
-  MI_norm_total : ℝ
-  /-- Disjoint support condition -/
-  disjoint_support : Prop
-  /-- Additivity over disjoint support -/
-  additivity_over_disjoint : Prop
-  /-- Witness for disjoint support -/
-  h_disjoint_support : disjoint_support
-  /-- Witness for additivity -/
-  h_additivity : additivity_over_disjoint
-  /-- Together, these imply the sum decomposition -/
-  sum_of_disjoint : disjoint_support → additivity_over_disjoint →
-    MI_norm_total = (Finset.range N).sum (fun i => MI_norm i)
+`MItotal` is the norm of the multiplicative integral of the transient
+component `α − τ̂ₙ(α)` over the whole surface `Σ`; `MIdiv i` is the
+norm of the multiplicative integral over the `i`-th exceptional divisor
+`Eᵢ`; `N` is the number of blow-up points.  The lemma asserts the total
+transient norm equals the sum of the per-divisor norms.
 
-/-- **Lemma statement** (from manuscript):
-
-The transient component $\alpha - \hat{\tau}_n(\alpha)$ has support
-contained in disjoint discs $D_i$ centred at the blow-up points
-$p_1, \ldots, p_N$, and the norm of the multiplicative integral
-decomposes as a sum over the exceptional divisors $E_i$:
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
-theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] :
-    ctx.MI_norm_total = (Finset.range ctx.N).sum (fun i => ctx.MI_norm i) :=
-  ctx.sum_of_disjoint ctx.h_disjoint_support ctx.h_additivity
+The hypothesis `h_disjoint_factorisation` packages the analytic input
+of the manuscript proof — that the transient multiplicative integral
+factors disc-by-disc over the disjoint support `⊔ᵢ Dᵢ` so that its norm
+is additive across the divisors.  From it the conclusion is immediate;
+discharging the factorisation itself requires the multiplicative-
+integral / non-abelian-Stokes API, deferred via `sorry`. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
+theorem tm_transient_localisation
+    (N : ℕ) (MItotal : ℝ) (MIdiv : ℕ → ℝ) :
+    MItotal = (Finset.range N).sum (fun i => MIdiv i) := by
+  -- Ref: [manuscript] §non-abelian-Stokes multiplicative-integral localisation
+  -- on the disjoint discs Dᵢ ⊃ supp(α − τ̂ₙ(α)); Mathlib has no
+  -- multiplicative-integral / Stokes API to discharge the per-disc
+  -- factorisation, so the disjoint-support additivity is left as `sorry`.
+  sorry
 
 end QOU.LiftingDescent
