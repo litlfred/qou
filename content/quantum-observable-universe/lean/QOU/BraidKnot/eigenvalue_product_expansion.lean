@@ -51,10 +51,9 @@ theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
 theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) (_h_q_pos : 0 < q) :
     lambdaSym q Z Z = (qInt2 q / 2) ^ (Z * Z) := by
   simp only [lambdaSym]
+  push_cast
   -- The `((Z : ℝ) - Z) * _ / 2` exponent is `0`; `q^0 = 1`.
-  -- `((Z + Z : ℕ) : ℝ)` matches the `↑(Z + Z)` the `let A := Z + Z`
-  -- produces after zeta-reduction (cast of the nat sum, not `↑Z + ↑Z`).
-  have h_zero : ((Z : ℝ) - Z) * (((Z + Z : ℕ) : ℝ) - 1) / 2 = 0 := by ring
+  have h_zero : ((Z : ℝ) - Z) * (((Z : ℝ) + Z) - 1) / 2 = 0 := by ring
   rw [h_zero, Real.rpow_zero, one_mul]
 
 end QOU.BraidKnot
