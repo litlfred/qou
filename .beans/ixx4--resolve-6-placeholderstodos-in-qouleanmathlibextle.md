@@ -1,11 +1,11 @@
 ---
 # ixx4
-title: Resolve 6 placeholders/TODOs in qou/lean/MathlibExt.lean
-status: todo
+title: 'CLOSED (misclassified): MathlibExt.lean — 0 actionable; 6 `-- TODO upstream:` markers on proved lemmas'
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T03:10:18Z
+updated_at: 2026-06-26T15:30:00Z
 ---
 
 
@@ -18,3 +18,5 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 
 
 [2026-06-26 MISCLASSIFIED] MathlibExt.lean has 0 sorry; the 6 'TODOs' are '-- TODO upstream:' markers on PROVED sorry-free lemmas (Mathlib-upstreaming candidates, not in-repo placeholders). Recommend CLOSE or re-scope as upstream-contribution tracking. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
+
+[2026-06-26 CLOSED — owner-authorized, rsseq-even-part session] 0 actionable confirmed (4 consecutive resweeps + lean-direct vs lake-cache/qou-v4-24-0). The 6 markers are Mathlib-upstreaming candidates on already-proved sorry-free lemmas, not in-repo work. If upstreaming is desired, open a fresh `upstream-to-mathlib` bean rather than reopening this grep-inflated placeholder count.
