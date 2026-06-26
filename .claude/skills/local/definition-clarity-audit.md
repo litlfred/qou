@@ -13,8 +13,12 @@ description: >-
   definitions", "no rambling definitions", "one definition per block", "tight
   theorem/proposition/lemma statements", or to set up / run a clarity audit.
   Also runs the inverse audit — a non-`definition` block that secretly carries
-  a definition (`clarity-defn-misplaced`). Emits per-block QA sidecar params
-  under the `clarity-*` criteria via
+  a definition (`clarity-defn-misplaced`) — plus a statement-purity check
+  (`clarity-stmt-pure`: a theorem/prop/lemma/conjecture carries only its claim;
+  embedded remark / interpretation moves to a follow-on `remark`) and a
+  register check (`clarity-grad-style`: graduate-level formal-math prose — no
+  contractions, second-person, hype, colloquialism, or emoji). Emits per-block
+  QA sidecar params under the `clarity-*` criteria via
   `content/pipeline/definition-clarity-audit.ts`.
 ---
 
@@ -23,19 +27,24 @@ description: >-
 A content block can be **schema-clean, ref-resolving, Lean-backed** and still be
 hard to read. The four QA axes that already exist guard *correctness* and
 *voice*; none guards **clarity of the statement itself**. This skill adds that
-axis — `clarity` — with five audit parameters (four forward + one inverse).
+axis — `clarity` — with seven audit parameters (four definition/statement
+forward checks + the purity + register checks + one inverse check).
 
 The owner's framing (2026-06-26):
 
 > *bold defined terms… there is a lot of preamble which should not be in defn…
 > a lot of the definitions are long and very unclear… each thing should get its
 > own definition… no multiple definitions in a content block… similarly,
-> theorem/prop/lemma should have a no-rambling/tight-statement audit param.*
+> theorem/prop/lemma should have a no-rambling/tight-statement audit param…
+> a theorem, prop, lemma, conjecture or similar statement should not have
+> remarks or interpretation in them — it should be a follow-on remark… [each
+> content block should follow the] style of a graduate-level formal math book.*
 
-## The five audit parameters (criterion ids)
+## The seven audit parameters (criterion ids)
 
 The first four are **forward** checks on blocks that *are* definitions/statements;
-the fifth is the **inverse** — a definition hiding in the wrong block kind.
+`clarity-stmt-pure` and `clarity-grad-style` are two further forward checks; the
+last is the **inverse** — a definition hiding in the wrong block kind.
 
 | Criterion | Applies to | Passes when | Fails when |
 |---|---|---|---|
@@ -43,6 +52,8 @@ the fifth is the **inverse** — a definition hiding in the wrong block kind.
 | **`clarity-defn-single`** | `definition` | the block defines exactly **one** concept | the block bundles several definienda (many bold section-headers, ≥2 `defines[]` entries, or several "we define / is defined as" lead-ins) |
 | **`clarity-defn-tight`** | `definition` | the definition is stated tightly, near the top | rambling: long prose, a stack of downstream-realisation sub-sections, or a long motivational preamble before the actual definition |
 | **`clarity-stmt-tight`** | `theorem` / `proposition` / `lemma` / `corollary` | the claim is stated tightly | the statement rambles. Proofs live in separate `*-proof` blocks in this corpus, so a provable block is *just* its statement and should not ramble |
+| **`clarity-stmt-pure`** | `theorem` / `proposition` / `lemma` / `corollary` / `conjecture` | the block carries **only the claim** — hypotheses + conclusion | the statement embeds **remark / interpretation / motivation** prose — an interpretive sub-section (`**Physical meaning.**`, `**Interpretation.**`, `**Remark.**` → **major**) or interpretive lead-ins ("intuitively", "in other words", "physically", "this means that" → **minor**/**major**). Such commentary belongs in a *follow-on* `remark` block (`interprets:` the statement) |
+| **`clarity-grad-style`** | every prose-bearing kind (definition / statement / conjecture / example / remark / prose) | the prose reads in the register of a **graduate-level formal mathematics text** | informal register: contractions ("don't", "we'll", "let's"), second-person ("you"), hype adjectives ("remarkable", "beautiful", "elegant"), colloquialism ("basically", "a lot of", "of course"), exclamation marks, or emoji. An emoji or `!` is on its own a hard violation (→ **major**) |
 | **`clarity-defn-misplaced`** | **non-**`definition` kinds (remark, prose, theorem, conjecture, example, …) | the block carries no definition — no `defines[]`, no `:defterm[…]`, few defining verbs | the block secretly **is** a definition: it declares `defines[]` or marks a `:defterm[…]{#slug}` define-site (→ **major**), or leads in with ≥ 2 defining verbs (→ **minor**). **Glossary blocks** (tag `"glossary"`) are exempt (`n/a`) — they define terminology by design |
 
 ### Worked example — `def:q-dilogarithm`
@@ -64,6 +75,23 @@ The remedy (a follow-up, not the audit itself) is to split it into atomic
 blocks — `def:level-k-primitive`, `def:q-dilogarithm` (the level-2 primitive
 only, term **bolded**), `prop:q-dilogarithm-pentagon`, `rem:q-dilogarithm-r-matrix`,
 `rem:q-dilogarithm-habiro`, etc. — each tight, each defining one thing.
+
+### Worked examples — the two new criteria
+
+- **`clarity-stmt-pure`.** Several `proposition` blocks under `brings-surface/`
+  and `observations/` carry an embedded `**Interpretation.**` / `**Remark on
+  the cutoff.**` sub-section *inside* the proposition
+  (`prop:x5-z5-automorphism`, `prop:torus-knot-generators`,
+  `prop:gravity-spectral-prefactor`, `prop:neutron-prediction-comparison`, …).
+  The proposition should be just its claim; the interpretation becomes a
+  follow-on `rem:…` with `interprets:` set to the proposition's label
+  (`AGENTS.md §3a` structure).
+- **`clarity-grad-style`.** `prop:habiro-pochhammer-bridge` and
+  `prop:a-8-partition-function-identity` carry results-table check marks
+  (`✓`, U+2713) — a register slip caught as **major**;
+  `prop:recursive-atom-knot-atlas` carries sentence-final `!`. The fix is to
+  drop the table glyph / exclamation and state the result in prose. (These also
+  surface on the `one-voice` emoji axis — fix once.)
 
 ## The scanner
 
@@ -108,6 +136,21 @@ there, not in the per-criterion functions.
   `3`, or preamble words (before the first display-math / marked term) > `60`.
 - **`clarity-stmt-tight`** — fail if prose words > `300`, or bold sub-sections ≥
   `3`, or preamble words (before the first display-math) > `80`.
+- **`clarity-stmt-pure`** — fail if ≥ `1` interpretive bold sub-section
+  (`**Interpretation.**`, `**Physical meaning.**`, `**Remark.**`,
+  `**Motivation.**`, `**Discussion.**`, … → **major**) **or** ≥ `1` interpretive
+  lead-in phrase ("intuitively", "in other words", "this means that",
+  "physically", "the upshot", "one should think of", … → **minor**, or **major**
+  at ≥ 3). A `*-proof` lives in its own block, so a statement block is *just*
+  its claim; the commentary is the *follow-on* `remark`.
+- **`clarity-grad-style`** — count register hits = contractions + second-person
+  + hype adjectives + colloquialisms + exclamations + emoji. Fail if emoji ≥ `1`
+  **or** exclamation ≥ `1` (hard violations, **major**) **or** total hits ≥ `2`
+  (**minor**, **major** at ≥ `4`). Exclusions baked into the detectors:
+  possessive `'s` is fine ("Cauchy's theorem"); **"magic"** is excluded because
+  *magic number* is core nuclear-shell terminology in this corpus; mathematical
+  arrows (U+2190–U+21FF) are not emoji; factorials in prose (`3!`), GitHub-alert
+  markers (`> [!NOTE]`), and HTML comments are not exclamations.
 - **`clarity-defn-misplaced`** — runs on every block whose kind is **not**
   `definition` / `diagram` / `simulator`. `defines[]` ≥ `1` **or** a
   `:defterm[…]` directive → **major** (a canonical define-site on a
@@ -136,6 +179,8 @@ heuristics are deliberately high-recall. For a durable disposition the agent:
 | `clarity-defn-single` | split the block — one `definition` per definiendum; demote interpretation sub-sections to `remark` blocks with `interprets:`; promote sub-statements to their own `proposition`/`lemma`. Mind the `uses[]` graph: downstream blocks that cite the old label point at the *primary* split product. |
 | `clarity-defn-tight` | move motivation to a sibling `prose`/`remark` block; lead with the definition; push "downstream realisation" / "physical meaning" paragraphs out to `remark` blocks (`interprets:` the definition). |
 | `clarity-stmt-tight` | strip preamble from the statement block; the hypotheses + conclusion only. Motivation → a preceding `prose` block; consequences → a following `remark`. |
+| `clarity-stmt-pure` | cut the interpretive sub-section / lead-in from the statement block and re-home it as a **follow-on `remark`** block (`interprets: "<this label>"`), per `AGENTS.md §3a`. The provable/conjectural block keeps only its hypotheses + conclusion; the physical / geometric / intuition prose lives in the remark. (A `conjecture` may keep a short scope caveat that is *part of the claim*; what moves is *interpretation*, not the conditional banner.) |
+| `clarity-grad-style` | rewrite to the formal register: spell out contractions, drop second-person address (impersonal "one" / passive), delete hype adjectives, replace colloquialisms, remove `!`/emoji (a results-table `✓`/`✗` becomes prose or is dropped). Overlaps `one-voice-audit` Category B/E (AI-slop / emoji) — if a one-voice sidecar already flagged the same emoji, fix once. |
 | `clarity-defn-misplaced` | promote the hidden definition to its own `definition` block (with a `.lean` sibling, per the type system); leave behind a `remark`/`prose` that `uses:` (or `interprets:`) it. Move the `defines[]` entry and the `:defterm[…]` site to the new block. If the block legitimately defines terminology as a Mathlib wrapper, retag it `"glossary"` instead. |
 
 > **Content fixes are collaborator-level and graph-aware.** Splitting a block
@@ -155,12 +200,23 @@ heuristics are deliberately high-recall. For a durable disposition the agent:
   *intra-block* bundling (one block, many definienda). Different axis.
 - **Complements `one-voice-audit`.** One-voice guards *voice* (status leaks,
   AI-slop, emoji); `clarity-*` guards *structure & concision*. A block can be
-  perfect voice and still ramble.
+  perfect voice and still ramble. The overlap is `clarity-grad-style`:
+  one-voice's emoji / AI-slop categories and `clarity-grad-style` both flag
+  emoji and `!`, so a finding may appear on both axes — fix once. The
+  `clarity-grad-style` *register* signals (contractions, second-person, hype,
+  colloquialism) are finer-grained than one-voice and specific to the
+  "graduate-level formal math book" bar the owner set.
+- **`clarity-stmt-pure` complements `AGENTS.md §3a` (remark authoring).** §3a
+  says interpretation lives in a `remark` that `interprets:` the statement;
+  `clarity-stmt-pure` is the detector that catches the interpretation *still
+  embedded inside* the theorem/prop/lemma/conjecture, before it has been split
+  out. The fix produces exactly the §3a structure
+  (`statement → follow-on remark`).
 
 ## Registry note (folio-assistant companion)
 
 The canonical qa-sweep criterion registry lives in the external
-`litlfred/folio-assistant` repo (qou is content-only). Registering the five
+`litlfred/folio-assistant` repo (qou is content-only). Registering the seven
 `clarity-*` ids there — so `qa-sweep.ts` / `qa-staleness.ts` schedule and
 hash-track them like every other criterion — is a **companion change out of qou
 scope**. Until it lands, this scanner is **standalone**: it produces the
