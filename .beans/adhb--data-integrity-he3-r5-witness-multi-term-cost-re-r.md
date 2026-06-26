@@ -42,7 +42,8 @@ strict-complementarity cert from the re-emitted per-block min-eigs).
 
 Grounding the "multi-term-cost re-run" found it is **gated on an open derivation
 question**, not a straightforward implementation. Per
-`mass-theory/six-term-mass-formula-complete.md` the formula is
+`content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md`
+the formula is
 `m(ρ) = |tr_M(T_w)| [T1] + Σ Φ_q(|V_i|) [T2] + z² Σ Φ_q(|V_iV_j|) [T3]
 + m_e·τ(C_dimq) [T4] + a_K·C_K [T5] + Σ Res_ζ [T6]`:
 
