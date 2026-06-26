@@ -3,8 +3,9 @@
 title: '§7c orphan leaks: generalize ℝ→{R}/[Field R] in content-verified algebraic orphan Lean (YLambdaQSchur q-Schur weights, H3HeckeIdempotents q-integers, HeckeAlgebra/MarkovTrace scalar, Shared/WedderburnBlockDecompositionContext dim_q/w/w_tilde; ~15 extenders). Triage the 53 base-ring-minimal + 33 mixed orphan candidates per docs/audits/2026-06-25-lean-library-tree-7c-coverage-gap.md — content-verified only, NOT a mass-fix.'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-06-25T20:49:27Z
-updated_at: 2026-06-25T20:49:27Z
+updated_at: 2026-06-26T01:57:37Z
 ---
 
 ## Progress 2026-06-25 (PR #2804) — 1 fixed, 3 triaged
@@ -25,3 +26,6 @@ updated_at: 2026-06-25T20:49:27Z
   archimedean-domain false positives). The folio-assistant `q-usage-audit` orphan pass is the canonical
   tool; this is the qou-side fix work.
 
+
+
+[2026-06-26 currency re-check] H3HeckeIdempotents.lean is ALREADY generic {R}[Field R] (stale audit flag, in-build, no work). Of the 4 audit leaks: H3=done; YLambdaQSchur=true orphan (0 importers/0 block-refs, CI-unenforced) → generalise + wire into BraidsAndKnots aggregator to make it count; HeckeAlgebra/MarkovTrace=cascade (markovTrace ℝ codomain fixed upstream in Common); Wedderburn…Context=deferred (~15 extenders). Table in docs/coordination/keystone-infra.md + audit currency note.
