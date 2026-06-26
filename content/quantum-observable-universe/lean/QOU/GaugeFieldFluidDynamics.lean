@@ -105,7 +105,13 @@ noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
 /-- **q-binomial coefficient** `[n choose k]_q := [n]_q!
     / ([k]_q! · [n−k]_q!)`.  Note: this is the ratio definition;
     when `q − q⁻¹ ≠ 0` and the denominator is non-zero (always
-    true at generic `q`) the result is a well-defined rational. -/
+    true at generic `q`) the result is a well-defined rational.
+
+    **DEPRECATED duplicate (bean `5ldf` consolidation, 2026-06-26).** Bit-for-bit
+    the canonical balanced q-binomial `QOU.MathlibExt.QPartitionCombinatorics.qBinom`
+    (the local `qInteger` ≡ that module's `qBracket`; verified). New code should use
+    the canonical one; kept here for the existing local consumers
+    (`WenzlBridgeConcrete`, `GroundRingAnnotations`). -/
 noncomputable def qBinomial (q : ℝ) (n k : ℕ) : ℝ :=
   qFactorial q n / (qFactorial q k * qFactorial q (n - k))
 
