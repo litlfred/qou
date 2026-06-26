@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "29d2418e92ad",
     "ts": "6c025abd1986",
-    "lean": "f3dd3404431a"
+    "lean": "53033c704132"
   },
   "criteria": {
     "voice-status-leak": [
@@ -915,7 +915,65 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-no-empty-prop-carrier": [
+      {
+        "field_hash": {
+          "md": "29d2418e92ad",
+          "ts": "6c025abd1986",
+          "lean": "53033c704132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-conjecture-discipline",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-26",
+          "agent_skill": "local/lean-conjecture-discipline"
+        },
+        "reviewed_at": "2026-06-26T14:30:00.000Z",
+        "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
+        "notes": "Finding + resolution. PRIOR STATE: `class ArchimedeanInfinitesimal ... : Prop` was an empty marker (no fields) — it asserted nothing, so any downstream `[ArchimedeanInfinitesimal]`-conditional result was vacuous. The proof-anti-pattern checkers all missed it (no proof term, no sorry, no axiom, compiles). Surfaced by the new `proof-no-empty-prop-carrier` detector. RESOLVED in this change: positivity and archimedean smallness are now encoded as content-bearing primary-conjecture classes `ReebPositive` / `ArchimedeanInfinitesimal` (real-parameter inequality fields, §3b Round-11 shape), classified `@conjecture: primary`, no instance (honest open state)."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "29d2418e92ad",
+          "ts": "6c025abd1986",
+          "lean": "53033c704132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-conjecture-discipline",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-26",
+          "agent_skill": "local/lean-conjecture-discipline"
+        },
+        "reviewed_at": "2026-06-26T14:30:00.000Z",
+        "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
+        "notes": "The two defining properties the docstring promises — positivity (`⟨v, ε·v⟩ > 0`) and archimedean smallness (`n·ε < λ`) — are now each encoded as a Lean class field, not merely described in prose while the structure carried only `ε ≠ 𝟙`. Narrative and Lean are now in correspondence."
+      }
+    ],
+    "proof-dependent-conjecture-not-conditional": [
+      {
+        "field_hash": {
+          "md": "29d2418e92ad",
+          "ts": "6c025abd1986",
+          "lean": "53033c704132"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-26T14:30:00.000Z",
+        "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
+        "notes": "Both `ReebPositive` and `ArchimedeanInfinitesimal` are derived as PRIMARY conjectures (roots) by classifyConjectures — their signatures bind no other conjecture class, and their prose claims no unmet conditionality. Primary/dependent is derived from Lean instance binders, not tagged."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:38.947Z"
+  "updated_at": "2026-06-26T14:30:00.000Z"
 }

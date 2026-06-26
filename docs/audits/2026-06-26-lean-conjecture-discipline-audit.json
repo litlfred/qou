@@ -1,0 +1,2314 @@
+{
+  "audit": "lean-vacuity-axiom-audit",
+  "generated": "2026-06-26T15:01:18.136Z",
+  "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
+  "scanned_files": 1770,
+  "files_flagged": 168,
+  "total_defects": 164,
+  "total_exempt": 40,
+  "categories": {
+    "proof-no-trivial-true": 72,
+    "proof-no-false-premise": 12,
+    "proof-no-decide-masking": 16,
+    "proof-no-empty-prop-carrier": 3,
+    "proof-no-self-assuming-projection": 55,
+    "proof-no-placeholder-stub": 6
+  },
+  "conjecture_graph": {
+    "total": 211,
+    "primary": [
+      "AeonRecycling",
+      "AlgebraicGeometricEquivalence",
+      "AlphaEmGluonOctetConjecture",
+      "AlphaKCategoricalClosure",
+      "ArchimedeanLimit",
+      "AtomBraidStep4Hypothesis",
+      "BigBangHeatDeath",
+      "BlochWignerInjective",
+      "BlowupYekutieli",
+      "BlowupYekutieli",
+      "BlowupYekutieli",
+      "BlowupYekutieli",
+      "BorelZagierQOU",
+      "BorelZagierQouVolumes",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BringFigureEightDepth2Witness",
+      "BringHyperbolicDecomposition",
+      "BringResidueAtOrder",
+      "BringTrilogDepth3Witness",
+      "CanonicalKnotIdSDP",
+      "CanonicalMarkovWeightsH3",
+      "CanonicalMarkovWeightsH3",
+      "CasimirEpsilonVacuum",
+      "ChebyshevDegreeGenusAxiom",
+      "ChernSimonsCorrectionConjecture",
+      "Cl3Zeta5GeometricRealization",
+      "Cl_2_DoubleAngle",
+      "Cl_2_PentagonHolds",
+      "Cl_2_PentagonIdentity",
+      "ClassicalRiemannHypothesis",
+      "ComplexChiralityRotation",
+      "ConfinementNfStructureForcing",
+      "ContentAdditive",
+      "CriticalExponent",
+      "CriticalExponent",
+      "CriticalExponent",
+      "CriticalExponent",
+      "CrystalEigenlineSignBlind",
+      "CrystalGraphRealization",
+      "DeltaCouplingSubstrateForm",
+      "DeltaIBoundConjecture",
+      "DiophantineBirthday",
+      "DirectionSanityGateClass",
+      "DoubleMagicConjecture",
+      "DoubleMagicConjecture",
+      "E2Degenerates",
+      "FaddeevQuantumDilogContext",
+      "FirstInteractingCasimirCorrection",
+      "FullTwistContentFormula",
+      "GActionOnSubstrate",
+      "GSOrderMatch",
+      "GeneralPhiD4FConjecture",
+      "GenerationBranchingFunctor",
+      "GeomFullFunctorial",
+      "GradedBaerStarHq",
+      "GradedMarkovTraceDescent",
+      "GradedMarkovTraceFromGSFiltration",
+      "GradedTraceResidueSplit",
+      "HabiroCompletion",
+      "HahnSubstrate",
+      "HasAlphaShiftTorus",
+      "HasBlochGroup",
+      "HasFiniteLPDuality",
+      "HasFiniteLPDuality",
+      "HasThurstonTriangulation",
+      "HasTwoRowCardinality",
+      "HasTwoRowProjection",
+      "HeckeAlgebra",
+      "HeckeAnyonicSubstrate",
+      "HeckeBranchingTraceDecomposition",
+      "HeckeQuadraticAllGenerators",
+      "HeckeQuotient",
+      "HeckeWedderburn",
+      "HiggsAsT28",
+      "HnInductiveEmbedding",
+      "HomologicalConjecture",
+      "HyperbolicVolumeIndependence",
+      "HyperbolicVolumeIndependence",
+      "HyperbolicVolumeIndependence",
+      "HyperbolicVolumeTranscendence",
+      "InterNucleonChannelColorTube",
+      "IsAMEValue",
+      "IsPieriShift",
+      "JetTowerUniformDeltaMax",
+      "JetTowerUniformDeltaMax",
+      "JointGaloisBraidAction",
+      "KLRCategorifiesNegativeHalfUqg",
+      "KappaZeroImpliesSelfConjugate",
+      "KashiwaraCrystal",
+      "LRCoefficientHecke",
+      "LagrangeResolventEquivarianceAxiom",
+      "LeviDegeneracy",
+      "LinkEquivalence",
+      "LocalInfinitesimalField",
+      "MRatioInversionMonotone",
+      "MagicABindingFormula",
+      "MagicEqualsEmpirical",
+      "MagicNumbersBring",
+      "MarkovDisjointStabilisation",
+      "MarkovTraceCyclic",
+      "MarkovTraceUniqueness",
+      "MassEndomorphism",
+      "MassEndomorphism",
+      "MassFormula",
+      "MassVolumeFactorization",
+      "ModularSTransformQQTilde",
+      "MotivicSubstrate",
+      "MotivicSubstrate",
+      "NSCounterexample",
+      "NSCounterexample",
+      "NSCounterexample",
+      "NSCounterexample",
+      "NVBringAction",
+      "PLCorrectnessHypotheses",
+      "PSDTrace",
+      "PachnerPentagonBorromean",
+      "PairGenCanonical",
+      "PeriodicTableDemand",
+      "PhiD4FConjecture",
+      "PlancherelSnData",
+      "ProlongationPeriodMeanQuantumDim",
+      "PvsNPQou",
+      "QAubinLions",
+      "QAubinLions",
+      "QAubinLions",
+      "QAubinLions",
+      "QBKMContext",
+      "QBetaCKClosedForms",
+      "QBirchSwinnertonDyer",
+      "QCollatz",
+      "QGeometricLanglandsConjecture",
+      "QIntegerMassFormula",
+      "QOneShadowGateClass",
+      "QPochhammerHabiroEvaluation",
+      "QSchurYLambdaClosedFormClaim",
+      "QYoungSymmetrizers",
+      "QbetaC3StructuralFormClass",
+      "QbetaC4StructuralFormClass",
+      "QbetaC5StructuralFormClass",
+      "QbetaC6StructuralFormClass",
+      "QbetaC7StructuralFormClass",
+      "QbetaHabiroTaylorBridgeClass",
+      "QouInfraDischargesGoncharovZeta5",
+      "QouPNeqNp",
+      "QuantumComputationalUniversality",
+      "RadiusOfConvergenceGateClass",
+      "RegularityBreakdown",
+      "RegularityBreakdown",
+      "RegularityBreakdown",
+      "RegularityBreakdown",
+      "ResidueAtRoot",
+      "RhoKH3ARefinement",
+      "RhoPrefactorStructural",
+      "SDPSlaterUniqueness",
+      "SaturatedShellConjecture",
+      "SharedDenominatorCuspHolonomy",
+      "ShellClosureNFTermCount",
+      "ShellClosureNFTermCount",
+      "ShellCondensationConjecture",
+      "ShellThreadingEnergy",
+      "SingleVolumeIrrational",
+      "SingleVolumeIrrational",
+      "SingleVolumeIrrationality",
+      "SpectralNormalForm",
+      "StembridgeCrystal",
+      "SurrealField",
+      "SymmetricCrystalPairProduction",
+      "SymmetricCrystalPairProduction",
+      "TauBandedKernelMap",
+      "TauDistinctInvariants",
+      "TauOrderMixingMap",
+      "Term7ShellCorrectionClass",
+      "ThreeFoldMarkovHopfExtraction",
+      "TopologicalDecompositionMass",
+      "TowerSummandRealization",
+      "TowerSummandRealization",
+      "TrackCReducedAxiom",
+      "TwoFiltrationBridge",
+      "V21Eigenphase",
+      "VacuumEpsilon",
+      "VolumeConjecture",
+      "VolumeConjecture",
+      "WeakSpectralCompleteness",
+      "WeakSpectralCompletenessSkeleton",
+      "WeakSymmetricNormalization",
+      "WoronowiczLeftCalculus",
+      "YangBaxterRule",
+      "YekutieliSurfaceToBoundary",
+      "ZHabiroConvergenceClass",
+      "ZRecursionCoeffs",
+      "ZRecursionCoeffs",
+      "ZeqNRhoCorrection",
+      "archimedean_agreement",
+      "archimedean_agreement",
+      "jet_convergence_classical_limit",
+      "jet_filtered_knot_factor",
+      "q_gl_classical_limit",
+      "q_gl_fiber_functor",
+      "q_gl_kummer_filtration",
+      "q_oper_hecke"
+    ],
+    "dependent": [
+      {
+        "name": "OmegaOrder",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean",
+        "line": 57,
+        "dependsOn": [
+          "SurrealField"
+        ]
+      },
+      {
+        "name": "JonesBirthday",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+        "line": 487,
+        "dependsOn": [
+          "SurrealField"
+        ]
+      },
+      {
+        "name": "CrystalRMatrixSubLemma",
+        "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean",
+        "line": 74,
+        "dependsOn": [
+          "CrystalGraphRealization"
+        ]
+      },
+      {
+        "name": "SaturatedShellConjecture",
+        "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean",
+        "line": 334,
+        "dependsOn": [
+          "FullTwistContentFormula"
+        ]
+      },
+      {
+        "name": "WKBGreensFunction",
+        "file": "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.lean",
+        "line": 80,
+        "dependsOn": [
+          "ArchimedeanLimit"
+        ]
+      }
+    ]
+  },
+  "flagged": {
+    "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem b1_figure_8_row : True := by",
+        "decl": "b1_figure_8_row",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem b1_hyperbolic_rows : True := by",
+        "decl": "b1_hyperbolic_rows",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem b1_soft_sharpness : True := by",
+        "decl": "b1_soft_sharpness",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem b1_torus_knot_rows : True := by",
+        "decl": "b1_torus_knot_rows",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem borel_partial : True := by",
+        "decl": "borel_partial",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/BorelPartialResolution.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean": [
+      {
+        "line": 37,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def collatz_contact_boundary_conditional",
+        "decl": "collatz_contact_boundary_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.lean": [
+      {
+        "line": 32,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def collatz_no_cycles_conditional",
+        "decl": "collatz_no_cycles_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem depth_2_identification : True := by",
+        "decl": "depth_2_identification",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.lean": [
+      {
+        "line": 32,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def hoefsmit_is_surreal_construction : True := by",
+        "decl": "hoefsmit_is_surreal_construction",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean": [
+      {
+        "line": 179,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def partitionCount_eq_fintype_card_partition_small :",
+        "decl": "partitionCount_eq_fintype_card_partition_small",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean": [
+      {
+        "line": 124,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem isospin_signature_distinct_from_deuteron :",
+        "decl": "isospin_signature_distinct_from_deuteron",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean": [
+      {
+        "line": 149,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def q_commutation_grade_one_half",
+        "decl": "q_commutation_grade_one_half",
+        "severity": "critical"
+      },
+      {
+        "line": 274,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def pentagon_ascension_under_woronowicz",
+        "decl": "pentagon_ascension_under_woronowicz",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean": [
+      {
+        "line": 19,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem HasReconciliation : True := by",
+        "decl": "HasReconciliation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean": [
+      {
+        "line": 254,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def orbital_fourier_decomposition_conditional_on_borromean_quark",
+        "decl": "orbital_fourier_decomposition_conditional_on_borromean_quark",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean": [
+      {
+        "line": 190,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def orbital_space_normal_bundle_conditional_on_borromean_quark",
+        "decl": "orbital_space_normal_bundle_conditional_on_borromean_quark",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.lean": [
+      {
+        "line": 60,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem skein_crossing_asymmetry : True := sorry",
+        "decl": "skein_crossing_asymmetry",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Braiding/skein_crossing_asymmetry.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean": [
+      {
+        "line": 49,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem t2_11_genus : seifertGenus_T2 11 = 5 := by native_decide",
+        "decl": "t2_11_genus",
+        "severity": "critical"
+      },
+      {
+        "line": 58,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem t2_9_saturates : seifertGenus_T2 9 = 4 := by native_decide",
+        "decl": "t2_9_saturates",
+        "severity": "critical"
+      },
+      {
+        "line": 135,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem z3_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 3 :=",
+        "decl": "z3_in_s5",
+        "severity": "critical"
+      },
+      {
+        "line": 140,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem z5_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 5 :=",
+        "decl": "z5_in_s5",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/fluid-dynamics/observability-q-independent.lean": [
+      {
+        "line": 19,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem observability_q_independent : True := by",
+        "decl": "observability_q_independent",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean": [
+      {
+        "line": 33,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def root_of_unity_truncation_conditional",
+        "decl": "root_of_unity_truncation_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean": [
+      {
+        "line": 33,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def vorticity_lower_bound_conditional",
+        "decl": "vorticity_lower_bound_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/information-theory/composite-crossing-parity.lean": [
+      {
+        "line": 109,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def composite_crossing_parity_g2_conditional [_inst : BorromeanQuark] : True := trivial",
+        "decl": "composite_crossing_parity_g2_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/information-theory/horizon-conformal-invariance.lean": [
+      {
+        "line": 29,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem horizon_conformal_invariance : True := by",
+        "decl": "horizon_conformal_invariance",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.lean": [
+      {
+        "line": 59,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def qGaussian_variance (q t : ℝ) (hq : 0 < q) (ht : 0 < t) (n : ℕ) :",
+        "decl": "qGaussian_variance",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean": [
+      {
+        "line": 82,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def qHeatKernelPeterWeyl (q t : ℝ)",
+        "decl": "qHeatKernelPeterWeyl",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/information-theory/qou-is-ccc.lean": [
+      {
+        "line": 35,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem qou_is_ccc : True := by",
+        "decl": "qou_is_ccc",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean": [
+      {
+        "line": 56,
+        "category": "proof-no-empty-prop-carrier",
+        "pattern": "empty-conjecture-class",
+        "snippet": "class PvsNPQou : Prop",
+        "decl": "PvsNPQou",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean": [
+      {
+        "line": 139,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem hoefsmit_bridge_two :",
+        "decl": "hoefsmit_bridge_two",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean": [
+      {
+        "line": 267,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem interaction_completeness :",
+        "decl": "interaction_completeness",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean": [
+      {
+        "line": 499,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem HyperbolicVolumeIndependence.implies_single_irrational",
+        "decl": "HyperbolicVolumeIndependence.implies_single_irrational",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_12C.lean": [
+      {
+        "line": 64,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem witness_12C [ctx : Witness12CContext] :",
+        "decl": "witness_12C",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_4He.lean": [
+      {
+        "line": 56,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem witness_4He [ctx : Witness4HeContext] :",
+        "decl": "witness_4He",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_8Be.lean": [
+      {
+        "line": 61,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem witness_8Be [ctx : Witness8BeContext] :",
+        "decl": "witness_8Be",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_braid_structure.lean": [
+      {
+        "line": 78,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem descartes_braid_structure [ctx : DescartesBraidStructureContext] :",
+        "decl": "descartes_braid_structure",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_hartree_derivation.lean": [
+      {
+        "line": 72,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem archimedean_hartree_derivation [ctx : ArchimedeanHartreeDerivationContext] :",
+        "decl": "archimedean_hartree_derivation",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/beta_decay_transfer_matrix.lean": [
+      {
+        "line": 128,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] :",
+        "decl": "beta_decay_transfer_matrix",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/borromean_hopf_energy_crossover.lean": [
+      {
+        "line": 132,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :",
+        "decl": "borromean_hopf_energy_crossover",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/eos_borromean_cfl.lean": [
+      {
+        "line": 165,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] :",
+        "decl": "eos_borromean_cfl",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean": [
+      {
+        "line": 111,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] :",
+        "decl": "genus_filtration_ideal",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/genus_maximal_descent.lean": [
+      {
+        "line": 55,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :",
+        "decl": "genus_maximal_descent",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/gram_weighted_qvalue.lean": [
+      {
+        "line": 139,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :",
+        "decl": "gram_weighted_qvalue",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean": [
+      {
+        "line": 85,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :",
+        "decl": "knot_operator_selection",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/shell_structure_eigenvalues.lean": [
+      {
+        "line": 174,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :",
+        "decl": "shell_structure_eigenvalues",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/skein_finiteness_bound.lean": [
+      {
+        "line": 130,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :",
+        "decl": "skein_finiteness_bound",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/torus_knot_shell_binding.lean": [
+      {
+        "line": 123,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :",
+        "decl": "torus_knot_shell_binding",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_euler_characteristic.lean": [
+      {
+        "line": 51,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] :",
+        "decl": "brings_euler_characteristic",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean": [
+      {
+        "line": 53,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :",
+        "decl": "brings_riemann_hurwitz",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/heisenberg_commutator.lean": [
+      {
+        "line": 63,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] :",
+        "decl": "heisenberg_commutator",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean": [
+      {
+        "line": 49,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] :",
+        "decl": "mi_sw_cartan_reduction",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BaryonWeight/beta4_hook.lean": [
+      {
+        "line": 66,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem beta4_hook [ctx : Beta4HookContext] :",
+        "decl": "beta4_hook",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerNStar.lean": [
+      {
+        "line": 202,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def betaDecayRecoveryTarget_1ppb_remains_conjectural :",
+        "decl": "betaDecayRecoveryTarget_1ppb_remains_conjectural",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrossedModuleEulerCharacteristic.lean": [
+      {
+        "line": 113,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem h2_curvature_trace :",
+        "decl": "h2_curvature_trace",
+        "severity": "critical"
+      },
+      {
+        "line": 118,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem crossed_module_euler_characteristic :",
+        "decl": "crossed_module_euler_characteristic",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean": [
+      {
+        "line": 228,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def wedderburn_decomposition_generic",
+        "decl": "wedderburn_decomposition_generic",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean": [
+      {
+        "line": 63,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def briggs_klein_is_neg_li2q (q : ℝ) (V : ℝ) (hq : 1 < q) :",
+        "decl": "briggs_klein_is_neg_li2q",
+        "severity": "critical"
+      },
+      {
+        "line": 103,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def li2q_unique_from_ftc (q : ℝ) (hq : 1 < q) :",
+        "decl": "li2q_unique_from_ftc",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean": [
+      {
+        "line": 204,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem substrateGap_of_uniform_gapValue",
+        "decl": "substrateGap_of_uniform_gapValue",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean": [
+      {
+        "line": 363,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def qbeta_inductive_categorical_closure_conjecture",
+        "decl": "qbeta_inductive_categorical_closure_conjecture",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean": [
+      {
+        "line": 52,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def contentSum_add_cell (μ : Partition) (i j : ℕ) :",
+        "decl": "contentSum_add_cell",
+        "severity": "critical"
+      },
+      {
+        "line": 72,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def qSchur_weight_by_induction (q : ℝ) (hq : 1 < q) [WenzlBranching q] :",
+        "decl": "qSchur_weight_by_induction",
+        "severity": "critical"
+      },
+      {
+        "line": 83,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def qSchur_normalisation (q : ℝ) (hq : 1 < q) [WenzlBranching q] :",
+        "decl": "qSchur_normalisation",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean": [
+      {
+        "line": 252,
+        "category": "proof-no-empty-prop-carrier",
+        "pattern": "empty-prop-class",
+        "snippet": "class Saturated (lam : YoungDiagram) : Prop",
+        "decl": "Saturated",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights.lean": [
+      {
+        "line": 57,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def binding_assembly_subpercent",
+        "decl": "binding_assembly_subpercent",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ThreeCalibrationInputs.lean": [
+      {
+        "line": 59,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def three_calibration_inputs",
+        "decl": "three_calibration_inputs",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean": [
+      {
+        "line": 60,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem A5Irrep.reebCasimir_not_injective :",
+        "decl": "A5Irrep.reebCasimir_not_injective",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/UnitModulusEigenvalue.lean": [
+      {
+        "line": 66,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def borromean_trace_21_eq_neg_two :",
+        "decl": "borromean_trace_21_eq_neg_two",
+        "severity": "critical"
+      },
+      {
+        "line": 90,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def all_positive_trace_positive :",
+        "decl": "all_positive_trace_positive",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Brings/brings_is_qou.lean": [
+      {
+        "line": 67,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem brings_is_qou [ctx : BringsIsQouContext] :",
+        "decl": "brings_is_qou",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Brings/color_elliptic.lean": [
+      {
+        "line": 49,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem color_elliptic [ctx : ColorEllipticContext] :",
+        "decl": "color_elliptic",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean": [
+      {
+        "line": 71,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem boundaryPerm_bijective (β : CanonicalBraid) :",
+        "decl": "boundaryPerm_bijective",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/CategoricalReeb/ofWeightDecomposition.lean": [
+      {
+        "line": 59,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] :",
+        "decl": "ofWeightDecomposition",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/CommutativeQOU/u1EquivariantReduction.lean": [
+      {
+        "line": 79,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem u1EquivariantReduction [ctx : U1EquivariantReductionContext] :",
+        "decl": "u1EquivariantReduction",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean": [
+      {
+        "line": 45,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem descended_level_zero [ctx : DescendedLevelZeroContext] :",
+        "decl": "descended_level_zero",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean": [
+      {
+        "line": 153,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem mass_rigidity_of_mostow {M : Type*} [h : MostowRigidity M] :",
+        "decl": "mass_rigidity_of_mostow",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Experimental/local_substrate_q.lean": [
+      {
+        "line": 44,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem local_substrate_q [ctx : LocalSubstrateQContext] :",
+        "decl": "local_substrate_q",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Experimental/terminal_resolution.lean": [
+      {
+        "line": 47,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem terminal_resolution [ctx : TerminalResolutionContext] :",
+        "decl": "terminal_resolution",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean": [
+      {
+        "line": 63,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem markov_identification [ctx : MarkovIdentificationContext] :",
+        "decl": "markov_identification",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean": [
+      {
+        "line": 46,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem ns_obstruction_tower {R : Type*} [CommRing R]",
+        "decl": "ns_obstruction_tower",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "legitimate iff-from-directions conditional-class"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean": [
+      {
+        "line": 69,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem q_bkm_criterion {R : Type*} [CommRing R] [ctx : QBKMContext R] :",
+        "decl": "q_bkm_criterion",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "legitimate iff-from-directions conditional-class"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FrobeniusHopfData/frobeniusForm.lean": [
+      {
+        "line": 71,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem frobeniusForm [ctx : FrobeniusFormContext] :",
+        "decl": "frobeniusForm",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HadronicMass/nucleon_borromean_topology.lean": [
+      {
+        "line": 55,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] :",
+        "decl": "nucleon_borromean_topology",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Hecke/Hoefsmit.lean": [
+      {
+        "line": 217,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem hoefsmit_distinguishes_word_sensitivity",
+        "decl": "hoefsmit_distinguishes_word_sensitivity",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HyperellipticQuintic/minimal_z5_classification.lean": [
+      {
+        "line": 87,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] :",
+        "decl": "minimal_z5_classification",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean": [
+      {
+        "line": 149,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem zero_not_isAlgebraicallyPrime (q : ℝ) :",
+        "decl": "zero_not_isAlgebraicallyPrime",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean": [
+      {
+        "line": 137,
+        "category": "proof-no-empty-prop-carrier",
+        "pattern": "empty-conjecture-class",
+        "snippet": "class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop",
+        "decl": "IsAMEValue",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/UniversalILP.lean": [
+      {
+        "line": 49,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem UniversalILP [ctx : UniversalILPContext] :",
+        "decl": "UniversalILP",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/inductiveGBReduction.lean": [
+      {
+        "line": 83,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem inductiveGBReduction [ctx : InductiveGBReductionContext] :",
+        "decl": "inductiveGBReduction",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean": [
+      {
+        "line": 267,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem borromean_crossing_minimal :",
+        "decl": "borromean_crossing_minimal",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/LightningPath.lean": [
+      {
+        "line": 76,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem lightning_path_synthesis :",
+        "decl": "lightning_path_synthesis",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean": [
+      {
+        "line": 73,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem no_separate_lambda_scale (h : SeparateLambdaScale_Antipattern) : False :=",
+        "decl": "no_separate_lambda_scale",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean": [
+      {
+        "line": 142,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem additive_wedderburn_recurrence_matches_std_rep_trace",
+        "decl": "additive_wedderburn_recurrence_matches_std_rep_trace",
+        "severity": "critical"
+      },
+      {
+        "line": 168,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem typed_crossings_encoding_unique :",
+        "decl": "typed_crossings_encoding_unique",
+        "severity": "critical"
+      },
+      {
+        "line": 188,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem phi_q_converges_absolutely",
+        "decl": "phi_q_converges_absolutely",
+        "severity": "critical"
+      },
+      {
+        "line": 218,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem n_star_existence_conjecture :",
+        "decl": "n_star_existence_conjecture",
+        "severity": "critical"
+      },
+      {
+        "line": 241,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem wedderburn_weights_H3 (q : ℝ) (h : q > 0) :",
+        "decl": "wedderburn_weights_H3",
+        "severity": "critical"
+      },
+      {
+        "line": 294,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem per_nucleon_shift_additive",
+        "decl": "per_nucleon_shift_additive",
+        "severity": "critical"
+      },
+      {
+        "line": 304,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem per_nucleon_shift_at_A1",
+        "decl": "per_nucleon_shift_at_A1",
+        "severity": "critical"
+      },
+      {
+        "line": 327,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem frobenius_co_casimir_universal_high_n",
+        "decl": "frobenius_co_casimir_universal_high_n",
+        "severity": "critical"
+      },
+      {
+        "line": 353,
+        "category": "proof-no-trivial-true",
+        "pattern": "placeholder-true",
+        "snippet": "theorem wenzl_bridge_atomic_tr_M (Z N : ℕ) (h_A : Z + N ≤ 4) :",
+        "decl": "wenzl_bridge_atomic_tr_M",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MassDerivation.lean": [
+      {
+        "line": 73,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem topological_mass_formula (tmf : TopologicalMassFormula) :",
+        "decl": "topological_mass_formula",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MathlibExt.lean": [
+      {
+        "line": 134,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]",
+        "decl": "List.prod_eq_of_perm",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean": [
+      {
+        "line": 81,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
+        "decl": "Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/co2_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/co_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/SpectatorNormalization.lean": [
+      {
+        "line": 52,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :",
+        "decl": "SpectatorNormalization",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean": [
+      {
+        "line": 105,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] :",
+        "decl": "atomic_nf_witness",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean": [
+      {
+        "line": 84,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] :",
+        "decl": "confinement_frobenius_reciprocity",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/deuterium_derived_binding.lean": [
+      {
+        "line": 130,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :",
+        "decl": "deuterium_derived_binding",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
+      {
+        "line": 56,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :",
+        "decl": "four_term_pair_nucleon",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean": [
+      {
+        "line": 70,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] :",
+        "decl": "frobenius_positivity_filter",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/ground_state_ordering.lean": [
+      {
+        "line": 64,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem ground_state_ordering [ctx : GroundStateOrderingContext] :",
+        "decl": "ground_state_ordering",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean": [
+      {
+        "line": 93,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem lp_dual_stability [ctx : LpDualStabilityContext] :",
+        "decl": "lp_dual_stability",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean": [
+      {
+        "line": 62,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :",
+        "decl": "mass_categorical_descent",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean": [
+      {
+        "line": 103,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :",
+        "decl": "operator_selection_lp",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean": [
+      {
+        "line": 78,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :",
+        "decl": "parity_regime_selection",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean": [
+      {
+        "line": 59,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] :",
+        "decl": "transfer_matrix_identities",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/PhotonThreading.lean": [
+      {
+        "line": 91,
+        "category": "proof-no-trivial-true",
+        "pattern": "reflexive-tautology",
+        "snippet": "theorem crossing_energy_gauge_invariant {M : Type*}",
+        "decl": "crossing_energy_gauge_invariant",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_1_frobenius.lean": [
+      {
+        "line": 45,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] :",
+        "decl": "exists_axiom_1_frobenius",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_3_chern.lean": [
+      {
+        "line": 48,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :",
+        "decl": "exists_axiom_3_chern",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/orbital_fourier_decomposition.lean": [
+      {
+        "line": 121,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] :",
+        "decl": "orbital_fourier_decomposition",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean": [
+      {
+        "line": 62,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :",
+        "decl": "q_gl_obstruction_calc",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/qou_canonical_action.lean": [
+      {
+        "line": 104,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem qou_canonical_action [ctx : QouCanonicalActionContext] :",
+        "decl": "qou_canonical_action",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/variational_equations.lean": [
+      {
+        "line": 106,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "tuple-projection",
+        "snippet": "theorem variational_equations [ctx : VariationalEquationsContext] :",
+        "decl": "variational_equations",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-endomorphism/gb-spectral-sequence.lean": [
+      {
+        "line": 19,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem gb_spectral_sequence : True := by",
+        "decl": "gb_spectral_sequence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/GBSpectralSequence.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean": [
+      {
+        "line": 85,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def bar_idempotent_transposition_partition",
+        "decl": "bar_idempotent_transposition_partition",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.lean": [
+      {
+        "line": 48,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def branch_trace {q : ℝ} [HeckeBranchingTraceDecomposition q] : True := by",
+        "decl": "branch_trace",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean": [
+      {
+        "line": 113,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def markovTraceAxiomaticClosedForm :",
+        "decl": "markovTraceAxiomaticClosedForm",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem character_closure_holds : True := by",
+        "decl": "character_closure_holds",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean": [
+      {
+        "line": 24,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def categorical_leg_to_markov_trace (T_w : Type*) :",
+        "decl": "categorical_leg_to_markov_trace",
+        "severity": "critical"
+      },
+      {
+        "line": 36,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def archimedean_realization_to_mev (T_w : Type*)",
+        "decl": "archimedean_realization_to_mev",
+        "severity": "critical"
+      },
+      {
+        "line": 45,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def post_archimedean_naming_borrowed (K : Type*) (hyp : Prop) :",
+        "decl": "post_archimedean_naming_borrowed",
+        "severity": "critical"
+      },
+      {
+        "line": 63,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def atom_knot_mass_derivation_proof",
+        "decl": "atom_knot_mass_derivation_proof",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/confinement-categorical.lean": [
+      {
+        "line": 46,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def confinement_survives_only_centre",
+        "decl": "confinement_survives_only_centre",
+        "severity": "critical"
+      },
+      {
+        "line": 81,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def observables_are_wedderburn_sum",
+        "decl": "observables_are_wedderburn_sum",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/eigenvalue-product-expansion.lean": [
+      {
+        "line": 33,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def geometric_sum_is_qint (q : ℝ) (hq : q > 1) (c : ℕ) :",
+        "decl": "geometric_sum_is_qint",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean": [
+      {
+        "line": 39,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def feynman_classical_limit_g3_conditional [_inst : ClassicalLimitStpart] : True := trivial",
+        "decl": "feynman_classical_limit_g3_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean": [
+      {
+        "line": 41,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def force_carrier_intertwining_correspondence",
+        "decl": "force_carrier_intertwining_correspondence",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean": [
+      {
+        "line": 248,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def hecke_d_irrep_closed_form_character_g2_conditional [_inst : BorromeanQuark] : True := trivial",
+        "decl": "hecke_d_irrep_closed_form_character_g2_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean": [
+      {
+        "line": 61,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def pipeline_functoriality {R : Type u} [Field R] (q : R) :",
+        "decl": "pipeline_functoriality",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      },
+      {
+        "line": 128,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def conditional_on_HyperbolicVolumeIndependence",
+        "decl": "conditional_on_HyperbolicVolumeIndependence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean": [
+      {
+        "line": 106,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :",
+        "decl": "figure_eight_volume_from_vc",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      },
+      {
+        "line": 115,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :",
+        "decl": "borromean_volume_from_vc",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean": [
+      {
+        "line": 151,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def lepton_mass_ratio_im_q_invariance_at_LO",
+        "decl": "lepton_mass_ratio_im_q_invariance_at_LO",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean": [
+      {
+        "line": 170,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem bindingRegime_doublyMagic_iff (Z N : ℕ) :",
+        "decl": "bindingRegime_doublyMagic_iff",
+        "severity": "critical"
+      },
+      {
+        "line": 179,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem bindingRegime_alphaShift_iff (Z N : ℕ) :",
+        "decl": "bindingRegime_alphaShift_iff",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/markov-trace-product.lean": [
+      {
+        "line": 274,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def degree_bound (mtp : MarkovTraceProduct) :",
+        "decl": "degree_bound",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/q-pochhammer-partial-product.lean": [
+      {
+        "line": 67,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :",
+        "decl": "denomPoly_root_iff",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean": [
+      {
+        "line": 151,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def reidemeister_mass_invariance_conditional_on_borromean_quark",
+        "decl": "reidemeister_mass_invariance_conditional_on_borromean_quark",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean": [
+      {
+        "line": 107,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def transfer_matrix_level_conditional [_inst : CrystalGraphRealization] : True := trivial",
+        "decl": "transfer_matrix_level_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula.lean": [
+      {
+        "line": 95,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def paper_terminology_mapping :",
+        "decl": "paper_terminology_mapping",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean": [
+      {
+        "line": 33,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def vertex_is_exceptional_divisor",
+        "decl": "vertex_is_exceptional_divisor",
+        "severity": "critical"
+      },
+      {
+        "line": 49,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def skein_confined_to_reeb_bundle",
+        "decl": "skein_confined_to_reeb_bundle",
+        "severity": "critical"
+      },
+      {
+        "line": 62,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def vertex_completeness",
+        "decl": "vertex_completeness",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/volume-tower-decomposition.lean": [
+      {
+        "line": 19,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def VolumeTowerDecomposition : True := by",
+        "decl": "VolumeTowerDecomposition",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean": [
+      {
+        "line": 65,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def wenzl_bridge_applicability_qou",
+        "decl": "wenzl_bridge_applicability_qou",
+        "severity": "critical"
+      },
+      {
+        "line": 83,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def y_lambda_unique_in_qou",
+        "decl": "y_lambda_unique_in_qou",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean": [
+      {
+        "line": 52,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def wigner_coefficient_conditional [_inst : QIntegerMassFormula] : True := trivial",
+        "decl": "wigner_coefficient_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/observations/flavor-split-substrate.lean": [
+      {
+        "line": 20,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem flavor_split_substrate : True := by",
+        "decl": "flavor_split_substrate",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/HadronicMass.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/observations/magic-numbers-from-q.lean": [
+      {
+        "line": 27,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem magic_numbers_from_q : True := by",
+        "decl": "magic_numbers_from_q",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.lean": [
+      {
+        "line": 39,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem barrier_grows_with_ring_size :",
+        "decl": "barrier_grows_with_ring_size",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean": [
+      {
+        "line": 28,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem alexander_weight_diff_six : alexanderWeightDifference 6 = 2 := by",
+        "decl": "alexander_weight_diff_six",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean": [
+      {
+        "line": 93,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def photon_neutrino_requires_T35 :",
+        "decl": "photon_neutrino_requires_T35",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/confinement-lp.lean": [
+      {
+        "line": 19,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem lp_achieves_zero_trace : True := by",
+        "decl": "lp_achieves_zero_trace",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/confinement-topological.lean": [
+      {
+        "line": 20,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem gram_indefinite_witness : True := by",
+        "decl": "gram_indefinite_witness",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean": [
+      {
+        "line": 34,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def cpt_closure [CPTD6D7D8Closure] : True := by",
+        "decl": "cpt_closure",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean": [
+      {
+        "line": 174,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def conditional_on_SymmetricCrystalPairProduction",
+        "decl": "conditional_on_SymmetricCrystalPairProduction",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/geom-universality.lean": [
+      {
+        "line": 199,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def conditional_on_HyperbolicVolumeIndependence",
+        "decl": "conditional_on_HyperbolicVolumeIndependence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean": [
+      {
+        "line": 18,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def nuclearOperatorRegimes : True := by",
+        "decl": "nuclearOperatorRegimes",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean": [
+      {
+        "line": 195,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial",
+        "decl": "q_beta_cos_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean": [
+      {
+        "line": 23,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def quarkAntiquarkProduction : True := trivial",
+        "decl": "quarkAntiquarkProduction",
+        "severity": "critical"
+      },
+      {
+        "line": 29,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def quark_antiquark_production_witness : True := trivial",
+        "decl": "quark_antiquark_production_witness",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean": [
+      {
+        "line": 20,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem hoCumulative_eq_sum (N : ℕ) :",
+        "decl": "hoCumulative_eq_sum",
+        "severity": "critical"
+      },
+      {
+        "line": 34,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem ho_closures :",
+        "decl": "ho_closures",
+        "severity": "critical"
+      },
+      {
+        "line": 72,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem stability_pairs_correct :",
+        "decl": "stability_pairs_correct",
+        "severity": "critical"
+      },
+      {
+        "line": 82,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem first_three_eq_ho :",
+        "decl": "first_three_eq_ho",
+        "severity": "critical"
+      },
+      {
+        "line": 89,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem fourth_pair :",
+        "decl": "fourth_pair",
+        "severity": "critical"
+      },
+      {
+        "line": 94,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem shellTransition_counts :",
+        "decl": "shellTransition_counts",
+        "severity": "critical"
+      },
+      {
+        "line": 149,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def shell_transition_knot_conditional_on_borromean_quark",
+        "decl": "shell_transition_knot_conditional_on_borromean_quark",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean": [
+      {
+        "line": 57,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def typed_garside_leading_term",
+        "decl": "typed_garside_leading_term",
+        "severity": "critical"
+      },
+      {
+        "line": 68,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def pure_proton_garside_is_standard",
+        "decl": "pure_proton_garside_is_standard",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean": [
+      {
+        "line": 23,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def UnstableAtom.decay_channel_unique",
+        "decl": "UnstableAtom.decay_channel_unique",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean": [
+      {
+        "line": 25,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :",
+        "decl": "breit_wheeler_pair_production",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean": [
+      {
+        "line": 87,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def faddeev_kashaev_consistency_at_zero",
+        "decl": "faddeev_kashaev_consistency_at_zero",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.lean": [
+      {
+        "line": 19,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def CSEvaluationFaithful : True := by",
+        "decl": "CSEvaluationFaithful",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
+      {
+        "line": 103,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def bohr_radius_from_hartree [EHartreeCategoricalDerivation] :",
+        "decl": "bohr_radius_from_hartree",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      },
+      {
+        "line": 117,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def force_carrier_from_hartree [EHartreeCategoricalDerivation] :",
+        "decl": "force_carrier_from_hartree",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean": [
+      {
+        "line": 62,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true-conjecture",
+        "snippet": "def hydrogen_shell_writhe_conditional_on_borromean_quark",
+        "decl": "hydrogen_shell_writhe_conditional_on_borromean_quark",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean": [
+      {
+        "line": 139,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def shell_eigenvalues_conditional [_inst : BorromeanQuark] : True := trivial",
+        "decl": "shell_eigenvalues_conditional",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean": [
+      {
+        "line": 134,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem magic_from_shells :",
+        "decl": "magic_from_shells",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean": [
+      {
+        "line": 237,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "def blochWigner_unit_circle_eq_Cl_2",
+        "decl": "blochWigner_unit_circle_eq_Cl_2",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.lean": [
+      {
+        "line": 32,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem beta_3_from_jonquiere : True := by",
+        "decl": "beta_3_from_jonquiere",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/q-geometric-langlands/q-hecke-eigenvalue.lean": [
+      {
+        "line": 20,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem q_hecke_eigenvalue : True := by",
+        "decl": "q_hecke_eigenvalue",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/quantum-observable-universes/categorical-dq-squared-proof.lean": [
+      {
+        "line": 34,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem categorical_dq_squared : True := by",
+        "decl": "categorical_dq_squared",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean": [
+      {
+        "line": 79,
+        "category": "proof-no-trivial-true",
+        "pattern": "def-disguised-true",
+        "snippet": "noncomputable def qou_canonical_action_unique_up_to_scalar",
+        "decl": "qou_canonical_action_unique_up_to_scalar",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem joint_action_discharged : True := by",
+        "decl": "joint_action_discharged",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem figure_8_joint_action : True := by",
+        "decl": "figure_8_joint_action",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.lean": [
+      {
+        "line": 16,
+        "category": "proof-no-trivial-true",
+        "pattern": "conclusion-True",
+        "snippet": "theorem bridge_small_cases : True := by",
+        "decl": "bridge_small_cases",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean)"
+      }
+    ]
+  }
+}
