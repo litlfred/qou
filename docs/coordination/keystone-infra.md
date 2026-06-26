@@ -18,6 +18,7 @@ honestly bound the research-grade walls. Tiered breakdown in bean epic
 | 2026-06-25 | #2812 | coordination ledger (this file) | merged | tiered-status template |
 | 2026-06-26 | #2815 | T3 `60iz` Jones-Hopf layer (`JonesViaMarkovTrace`, sorry-free) | merged | Jones-via-Markov-trace + stabilisation-invariance pattern |
 | 2026-06-26 | #2817 | `qBracket_add` `[a+b]=q^b[a]+q^{-a}[b]` + if-guard removal | open | `qBracket_add`/`qBracket_eq_formula` (q-Pascal primitive) |
+| 2026-06-26 | (markov-trace-wall-unblock) | T3 `60iz` general-`H_n(q)` Jones layer on `IwahoriHeckeAPI`: `jonesOfBraid` + Markov move II (`MarkovTraceLinkInvariance`) | CI-gated | `jonesOfBraid` + `markovTrace_conj_invariant` (move II); element-algebra wall down |
 
 ## Tiered status (epic `08a2`)
 
@@ -27,20 +28,30 @@ honestly bound the research-grade walls. Tiered breakdown in bean epic
   identity → honest-abstract).
 - **Tier 2 — DONE.** `5ldf` `qBinom` (q-int/q-factorial pre-existed; only
   the Gaussian-binomial gap filled).
-- **Tier 3 — at drainable boundary:**
-  - `60iz` **Jones polynomial** — **partial DONE** (#2815, merged). Built the
-    `H_n(q)` Markov-trace → knot-invariant layer on the cached
-    `Braiding/HnMarkovTrace`: `JonesViaMarkovTrace.lean` (sorry-free, in-build
-    via the `BraidKnot` aggregator) — `jonesHopf` (Jones value of the Hopf
-    link = `tr_M(σ₁²)`), `jonesHopf_invariant` (**proved** Markov-stabilisation
-    ⇒ link invariant), `jonesHopf_canonical` (closed form), `jonesHopf_pos`
-    (positivity, q>1). Complementary to (not duplicative of) #2743's `k[S_n]`
-    (q = 1) Wedderburn build; boundary posted on #2743. **REMAINING (blocked):**
-    wiring `jonesHopf` into `jet_filtered_knot_factor.jonesQuotient` needs the
-    general `H_n(q)` element algebra (`IwahoriHecke` olean, **not cached**) to
-    express the Jones polynomial of an arbitrary nuclear-quotient braid
-    `β̄(Z,N)`; the cached `MarkovTraceTower` only exposes `trM_sigma1_sq` (the
-    Hopf/σ₁² case).
+- **Tier 3 — Jones wall LARGELY DOWN (was BLOCKED):**
+  - `60iz` **Jones polynomial** — **two layers landed/authored:**
+    1. **Hopf layer** (#2815, merged) — `JonesViaMarkovTrace.lean` on the cached
+       `Braiding/HnMarkovTrace`: `jonesHopf` (= `tr_M(σ₁²)`),
+       `jonesHopf_invariant` (Markov-stabilisation ⇒ link invariant),
+       `jonesHopf_canonical`, `jonesHopf_pos`. Sorry-free, in-build.
+    2. **General-`H_n(q)` layer** (this PR) — the **owner-directed "unblock the
+       Markov-trace wall" (option 3)** found the wall already largely down: a
+       sibling landed the abstract **`IwahoriHeckeAPI`** (commits `c2035fb1`/
+       `1fe4bc37`) providing the `H_n(q)` *element algebra* (`sigma`,
+       `markov_trace`) + `MarkovTraceCyclic` + `MarkovTraceStabilisation` +
+       the proved `markovTrace_stab_comm` (= **Markov move I**). On it,
+       `MarkovTraceLinkInvariance.lean` adds `jonesOfBraid` (Jones value of an
+       **arbitrary** positive braid word = `tr_M(∏σ_{w_k})`) and
+       `markovTrace_conj_invariant` (= **Markov move II**, conjugation). Moves
+       I+II together ⇒ `tr_M` descends to a link invariant at general `n`.
+    - **REMAINING:** wiring `jonesOfBraid` into
+      `jet_filtered_knot_factor.jonesQuotient` now needs only the **(Z,N) → quotient-braid-word map** (a *research-grade* identification, not infra) — the
+      element-algebra blocker is resolved. Verification of layer 2 is **CI-gated**:
+      the `IwahoriHeckeAPI` cone needs `Mathlib.Data.Nat.Dist` /
+      `Mathlib.RingTheory.Idempotents` oleans, **absent** from the sandbox's
+      partial `lake-cache` (and from `lake-cache/qou-v4-24-0`; 0 mathlib source
+      on disk; network blocked) — so authored against the fully-read API,
+      verified by CI's full-Mathlib build, not local `lean`-direct.
   - `6chz` **geometric-Langlands** (q-opers/eigensheaves/LocSys/Bun_G) —
     **BLOCKED**: no infra in Mathlib *or* QOU. q-GL family stays
     honestly-abstract §3b.
