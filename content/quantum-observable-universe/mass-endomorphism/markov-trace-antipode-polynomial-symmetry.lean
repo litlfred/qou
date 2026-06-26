@@ -20,13 +20,17 @@ degree-(20-k) coefficients satisfy c_k = -c_{20-k}.
 This file:
 
   1. Defines `protonClosedFormPolynomial : ℤ[X]` as p(q).
-  2. Proves the anti-self-reciprocity identity at the polynomial
-     level via a coefficient-by-coefficient check (degrees
-     0, 2, 8, 12, 18, 20 with appropriate signs).
+  2. Proves the anti-self-reciprocity identity `shiftedReverse20 p = -p`
+     SORRY-FREE, by expanding the finite `Finset.range 21` sum and
+     checking the resulting polynomial identity by `simp` on the
+     explicit coefficients followed by `ring`.
 
-The categorical content (Markov-trace antipode descent) is
-documented in the narrative .md sibling; this Lean file proves
-the algebraic-combinatorial identity that supports it.
+The identity is a concrete `ℤ[X]` equality with no Archimedean,
+representation-theoretic, or external-uniqueness input, so it is
+discharged directly (no axiom, no `sorry`).  The categorical
+content (Markov-trace antipode descent) that *motivates* the
+identity is documented in the narrative .md sibling; this Lean
+file proves the algebraic-combinatorial identity that supports it.
 
 Ref: [wenzl1988] Hecke algebras of type A_n and subfactors,
 Inventiones Math. 92, 349-383.
@@ -68,25 +72,27 @@ noncomputable def shiftedReverse20 (p : ℤ[X]) : ℤ[X] :=
     relation `q^20 · p(1/q) = -p(q)` on the closed-form Markov
     trace.
 
+    **Proof.**  Both sides are concrete elements of `ℤ[X]`.  Expanding
+    the degree-20 shifted reverse over `Finset.range 21` and computing
+    each `protonClosedFormPolynomial.coeff (20 - k)` (only the six
+    non-zero coefficients survive) reduces the goal to a polynomial
+    identity in `X` that `ring` closes.  No axiom and no `sorry`.
+
     Categorical content (delegated to references): the Hopf antipode
     `S(σ_i) = σ_i^{-1}` on `H_3(q)` descends through the Frobenius
-    integral / Markov trace to a polynomial identity on the
+    integral / Markov trace to this polynomial identity on the
     closed-form numerator.  The minus sign reflects the odd parity
     of the proton word's length 11 under the antipode-induced
     involution. -/
-/-- **External axiom (§3b-cond pattern): markovTraceAntipodePolynomialSymmetry.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
--- Ref: [manuscript] Ch. mass-endomorphism, prop:markov-trace-antipode-polynomial-symmetry (proton closed-form antipode symmetry); antipode S(σ_i)=σ_i⁻¹ per [kassel2008]
-axiom markovTraceAntipodePolynomialSymmetry_axiom  :
-    shiftedReverse20 protonClosedFormPolynomial = -protonClosedFormPolynomial
-
+-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), Ch. III — Hopf
+-- antipode S(σ_i)=σ_i⁻¹ on H_n(q) and the Frobenius integral / Markov
+-- trace descent that motivates the identity proved below.
 theorem markovTraceAntipodePolynomialSymmetry :
-    shiftedReverse20 protonClosedFormPolynomial = -protonClosedFormPolynomial :=
-  markovTraceAntipodePolynomialSymmetry_axiom
+    shiftedReverse20 protonClosedFormPolynomial = -protonClosedFormPolynomial := by
+  unfold shiftedReverse20 protonClosedFormPolynomial
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero]
+  norm_num [Polynomial.coeff_add, Polynomial.coeff_sub, Polynomial.coeff_one,
+    Polynomial.coeff_X_pow, Polynomial.coeff_ofNat_mul, Polynomial.coeff_neg]
+  ring
 
 end QOU.BraidKnot
