@@ -125,6 +125,12 @@ import QOU.BraidKnot.DeltaLambdaSignRule
 -- proved stabilisation-invariance (the q-deformed H_n(q) side of the knot
 -- invariant; complementary to the q=1 k[S_n] Wedderburn build).
 import QOU.BraidKnot.JonesViaMarkovTrace
+-- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
+-- value + Markov move II (conjugation invariance), on the sibling-landed
+-- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
+-- the two moves together make tr_M a link invariant. (Also pulls IwahoriHeckeAPI
+-- into the in-build set.)
+import QOU.BraidKnot.MarkovTraceLinkInvariance
 
 /-!
 # BraidKnot — Module Index
