@@ -72,7 +72,7 @@ Both are genuine **compute-infra gaps**, not Lean edits:
 | `Helium3Witness` `dual_obj` placeholder | 95jh | partial | as above |
 | `TritiumWitness` placeholder | 95jh | no | H_5 Hoefsmit Python port (§2) |
 | `DeuteronWitness` placeholder | 95jh | no | multi-term cost re-run (§2) |
-| `QBetaPerBlockChiClosedForms` order-3..7 Taylor coeffs | 95jh | **order-3 DONE** | `c₃ = −41/9` now fully proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_3`, via `deriv2` + its two `HasDerivAt` lemmas + the `eventuallyEq` chain); orders 4–7 remain (one `HasDerivAt` level each) |
+| `QBetaPerBlockChiClosedForms` order-3..7 Taylor coeffs | 95jh | **ALL DONE (3–7)** | `c₃ = −41/9` (explicit closed form) + `c₄ = 149/18`, `c₅ = −1729/108`, `c₆ = 111/4`, `c₇ = −3665/81` (via a new sorry-free **iterated-Leibniz recurrence** `iteratedDeriv_mul_eq_sum` on `f·D = N`, since Mathlib v4.24 lacks it + `iteratedDeriv_pow`/`ContDiffAt→DifferentiableAt(iteratedDeriv)`). 5 reusable private helpers added |
 | `qbeta-per-block-chi-closed-forms` (mass-endo duplicate) | mlt7 | (sibling) | same `delta_tau_M_surrogate` content; apply the same infra |
 
 ## 4. Recommendations
@@ -84,17 +84,26 @@ Both are genuine **compute-infra gaps**, not Lean edits:
 2. **Tritium / Deuteron** — keep the explicit, non-`instance` placeholders;
    they correctly signal the H_5-Hoefsmit / multi-term-cost dependencies. Close
    only when those compute tasks land.
-3. **QBeta order-3..7** — the one genuinely-formalizable item. **Order-3 is
-   now fully proved sorry-free on this branch**: `c₃ = −41/9`
-   (`delta_tau_M_surrogate_taylor_coeff_3 : deriv (deriv (deriv f)) 1 / 6 = −41/9`),
-   built from `delta_tau_M_surrogate_deriv2` (second-derivative closed form) +
-   `..._deriv_hasDerivAt2` (q>0) + `..._deriv2_hasDerivAt_one` (`g'''(1) = −82/3`,
-   all-numeric at q=1) + the `eventuallyEq` chain. Independently value-checked
-   (`c₃..c₇` exact vs the witness JSON). Orders 4–7 add one `HasDerivAt` level each.
+3. **QBeta order-3..7 — ALL formalized sorry-free on this branch.** Order-3
+   `c₃ = −41/9` via the explicit closed-form template
+   (`delta_tau_M_surrogate_taylor_coeff_3`). **Orders 4–7 now also proved**
+   (`delta_tau_M_surrogate_taylor_coeff_4..7`: `149/18`, `−1729/108`, `111/4`,
+   `−3665/81`) — the explicit template caps at order-3 (order-4 needs the
+   degree-≈57 `deriv3`), so orders 4–7 use a **general iterated-Leibniz
+   recurrence** built from scratch: `iteratedDeriv_mul_eq_sum` (Leibniz, by
+   induction + Pascal reindex), `iteratedDeriv_pow_eq` (monomial), a
+   `ContDiffAt`-local `DifferentiableAt (iteratedDeriv …)` helper, and a
+   polynomial-iterated-derivative-at-1 evaluator — all of which Mathlib v4.24
+   lacks. The recurrence `Σ C(n,k)·f⁽ᵏ⁾(1)·D⁽ⁿ⁻ᵏ⁾(1) = N⁽ⁿ⁾(1)` recovers each
+   `f⁽ⁿ⁾(1)` from the lower derivatives. Cross-checked against the witness JSON.
+   The 5 helpers are reusable (candidates for upstreaming).
 4. **SnapPy / Borromean §6** — leave; gated on producer scripts / Mathlib
    integration infra.
 
-Net: of the 9 rescoped markers, **0 are clean mechanical resolves**; 2 (the
-QBeta Taylor coeffs) are bulky-but-tractable Lean work, the rest are gated on
-compute-infra or Mathlib gaps. The headline actionable item is the **He3
-stale-witness refresh** (§1).
+Net: of the 9 rescoped markers, the **2 QBeta Taylor-coefficient items are now
+fully resolved** (orders 3–7 proved sorry-free, including a from-scratch
+iterated-Leibniz infrastructure that backfills a real Mathlib gap); the
+remaining 7 are gated on compute-infra (Tritium/Deuteron), producer scripts
+(SnapPy), a Mathlib Lebesgue-integral extension (Borromean §6), or a
+data-integrity decision (He3). The headline remaining actionable item is the
+**He3 stale-witness refresh** (§1).

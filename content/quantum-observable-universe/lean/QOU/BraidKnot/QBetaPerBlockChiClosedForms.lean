@@ -5,6 +5,8 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
+import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
@@ -703,10 +705,319 @@ theorem delta_tau_M_surrogate_taylor_coeff_3 :
     exact delta_tau_M_surrogate_deriv2_hasDerivAt_one.deriv
   rw [h3]; norm_num
 
-/-! The order-4..7 Taylor coefficients (`149/18`, `-1729/108`, `111/4`,
-`-3665/81`) are recorded in the witness JSON
-`qbeta-c3-multiblock-recursion-attack.witness.json`. Each adds one more
-`HasDerivAt` differentiation level on top of the order-3 chain above. -/
+/-! ### Orders 4–7 Taylor coefficients — formalized via an iterated-Leibniz recurrence
+
+The order-3 explicit-closed-form template does not extend (order-4 would need the
+degree-≈57 third-derivative closed form). Instead we build a general **iterated
+Leibniz** lemma (`iteratedDeriv_mul_eq_sum`, missing from Mathlib v4.24) and apply
+the recurrence on the polynomial identity `f·D = N`
+(`f = delta_tau_M_surrogate`, `D = 4q⁵(q²+q+1)`, `N` the numerator):
+
+  `Σ_{k=0}^{n} C(n,k)·f⁽ᵏ⁾(1)·D⁽ⁿ⁻ᵏ⁾(1) = N⁽ⁿ⁾(1)`,
+
+solving the `k=n` term against `D(1)=12` to recover `f⁽ⁿ⁾(1)` from the lower
+derivatives. This yields `c₄ = 149/18`, `c₅ = -1729/108`, `c₆ = 111/4`,
+`c₇ = -3665/81` (all matching the witness JSON), sorry-free.
+
+The five private helpers below are general (monomial iterated derivative, a
+`ContDiffAt`-local iterated Leibniz, a Pascal reindex, and a polynomial
+iterated-derivative-at-1 evaluator); they could be upstreamed. -/
+section QBetaTaylorOrders47
+open Finset
+
+-- helper 1: monomial iterated derivative (proved green earlier)
+private theorem iteratedDeriv_pow_eq (m : ℕ) :
+    ∀ k : ℕ, iteratedDeriv k (fun x : ℝ => x ^ m)
+      = fun x => (m.descFactorial k : ℝ) * x ^ (m - k) := by
+  intro k
+  induction k with
+  | zero => simp [Nat.descFactorial]
+  | succ j ih =>
+    rw [iteratedDeriv_succ, ih]
+    funext x
+    rw [deriv_const_mul _ (by fun_prop), (hasDerivAt_pow (m - j) x).deriv]
+    rw [show (m - j) - 1 = m - (j + 1) from by omega, Nat.descFactorial_succ]
+    push_cast; ring
+
+-- helper 2: differentiability of iterated derivative (proved green earlier)
+private lemma diffAt_iterDeriv {f : ℝ → ℝ} {x : ℝ} {k : ℕ}
+    (hf : ContDiffAt ℝ (k + 1 : ℕ) f x) :
+    DifferentiableAt ℝ (iteratedDeriv k f) x := by
+  obtain ⟨u, hu, hfu⟩ := hf.contDiffOn (m := (k + 1 : ℕ)) le_rfl (by simp)
+  have hxu : x ∈ interior u := mem_interior_iff_mem_nhds.mpr hu
+  have hopen : IsOpen (interior u) := isOpen_interior
+  have hfv : ContDiffOn ℝ (k + 1 : ℕ) f (interior u) := hfu.mono interior_subset
+  have hdiff : DifferentiableOn ℝ (iteratedDerivWithin k f (interior u)) (interior u) :=
+    hfv.differentiableOn_iteratedDerivWithin (by exact_mod_cast Nat.lt_succ_self k)
+      hopen.uniqueDiffOn
+  have hda : DifferentiableAt ℝ (iteratedDerivWithin k f (interior u)) x :=
+    (hdiff x hxu).differentiableAt (hopen.mem_nhds hxu)
+  refine hda.congr_of_eventuallyEq ?_
+  filter_upwards [hopen.mem_nhds hxu] with y hy
+  exact (iteratedDerivWithin_of_isOpen hopen hy).symm
+
+-- helper 3: Pascal reindex (proved green earlier)
+private lemma pascal_reindex (n : ℕ) (a b : ℕ → ℝ) :
+    (∑ k ∈ range (n + 1), (n.choose k : ℝ) * a (k + 1) * b (n - k))
+      + (∑ k ∈ range (n + 1), (n.choose k : ℝ) * a k * b (n - k + 1))
+    = ∑ k ∈ range (n + 2), ((n + 1).choose k : ℝ) * a k * b (n + 1 - k) := by
+  set Core := ∑ k ∈ range n, (n.choose (k + 1) : ℝ) * a (k + 1) * b (n - k) with hCore
+  set S1 := ∑ k ∈ range (n + 1), (n.choose k : ℝ) * a (k + 1) * b (n - k) with hS1
+  have hCoreExt : ∑ x ∈ range (n + 1), (n.choose (x + 1) : ℝ) * a (x + 1) * b (n - x) = Core := by
+    rw [hCore, Finset.sum_range_succ]
+    have hz : (n.choose (n + 1) : ℝ) = 0 := by
+      exact_mod_cast Nat.choose_eq_zero_of_lt (Nat.lt_succ_self n)
+    rw [hz]; ring
+  have hT : (∑ k ∈ range (n + 2), ((n + 1).choose k : ℝ) * a k * b (n + 1 - k))
+      = S1 + Core + a 0 * b (n + 1) := by
+    rw [Finset.sum_range_succ' (fun k => ((n + 1).choose k : ℝ) * a k * b (n + 1 - k)) (n + 1)]
+    simp only [Nat.succ_sub_succ, Nat.choose_zero_right, Nat.cast_one, Nat.sub_zero, one_mul]
+    have hsplit : ∑ x ∈ range (n + 1), ((n + 1).choose (x + 1) : ℝ) * a (x + 1) * b (n - x)
+        = S1 + Core := by
+      rw [← hCoreExt, hS1, ← Finset.sum_add_distrib]
+      apply Finset.sum_congr rfl
+      intro x _
+      rw [Nat.choose_succ_succ]; push_cast; ring
+    rw [hsplit]
+  have hS2 : (∑ k ∈ range (n + 1), (n.choose k : ℝ) * a k * b (n - k + 1))
+      = Core + a 0 * b (n + 1) := by
+    rw [Finset.sum_range_succ' (fun k => (n.choose k : ℝ) * a k * b (n - k + 1)) n, hCore]
+    simp only [Nat.choose_zero_right, Nat.cast_one, Nat.sub_zero, one_mul]
+    congr 1
+    apply Finset.sum_congr rfl
+    intro k hk
+    have hk' : k < n := Finset.mem_range.mp hk
+    rw [show n - (k + 1) + 1 = n - k from by omega]
+  rw [hT, hS2]; ring
+
+-- MAIN: general iterated Leibniz
+private theorem iteratedDeriv_mul_eq_sum {f g : ℝ → ℝ} :
+    ∀ (n : ℕ) (x : ℝ), ContDiffAt ℝ (n : ℕ) f x → ContDiffAt ℝ (n : ℕ) g x →
+      iteratedDeriv n (fun y => f y * g y) x
+        = ∑ k ∈ range (n + 1),
+            (n.choose k : ℝ) * iteratedDeriv k f x * iteratedDeriv (n - k) g x := by
+  intro n
+  induction n with
+  | zero =>
+    intro x _ _
+    simp [iteratedDeriv_zero]
+  | succ n ih =>
+    intro x hf hg
+    rw [iteratedDeriv_succ]
+    have hfn : ∀ᶠ y in 𝓝 x, ContDiffAt ℝ (n : ℕ) f y :=
+      (hf.eventually (by simp)).mono fun y hy => hy.of_le (by exact_mod_cast Nat.le_succ n)
+    have hgn : ∀ᶠ y in 𝓝 x, ContDiffAt ℝ (n : ℕ) g y :=
+      (hg.eventually (by simp)).mono fun y hy => hy.of_le (by exact_mod_cast Nat.le_succ n)
+    have heq : iteratedDeriv n (fun y => f y * g y) =ᶠ[𝓝 x]
+        (fun y => ∑ k ∈ range (n + 1),
+          (n.choose k : ℝ) * iteratedDeriv k f y * iteratedDeriv (n - k) g y) := by
+      filter_upwards [hfn, hgn] with y hfy hgy using ih y hfy hgy
+    rw [heq.deriv_eq]
+    have hfun : (fun y => ∑ k ∈ range (n + 1),
+          (n.choose k : ℝ) * iteratedDeriv k f y * iteratedDeriv (n - k) g y)
+        = ∑ k ∈ range (n + 1),
+          (fun y => (n.choose k : ℝ) * iteratedDeriv k f y * iteratedDeriv (n - k) g y) := by
+      funext y; rw [Finset.sum_apply]
+    have hdiff : ∀ k ∈ range (n + 1), DifferentiableAt ℝ
+        (fun y => (n.choose k : ℝ) * iteratedDeriv k f y * iteratedDeriv (n - k) g y) x := by
+      intro k hk
+      have hkn : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+      have hdf : DifferentiableAt ℝ (iteratedDeriv k f) x :=
+        diffAt_iterDeriv (hf.of_le (by exact_mod_cast Nat.succ_le_succ hkn))
+      have hdg : DifferentiableAt ℝ (iteratedDeriv (n - k) g) x :=
+        diffAt_iterDeriv (hg.of_le (by exact_mod_cast Nat.succ_le_succ (Nat.sub_le n k)))
+      exact (hdf.const_mul _).mul hdg
+    rw [hfun, deriv_sum hdiff]
+    have hterm : ∀ k ∈ range (n + 1),
+        deriv (fun y => (n.choose k : ℝ) * iteratedDeriv k f y * iteratedDeriv (n - k) g y) x
+        = (n.choose k : ℝ) * iteratedDeriv (k + 1) f x * iteratedDeriv (n - k) g x
+          + (n.choose k : ℝ) * iteratedDeriv k f x * iteratedDeriv (n - k + 1) g x := by
+      intro k hk
+      have hkn : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+      have hdf : HasDerivAt (iteratedDeriv k f) (iteratedDeriv (k + 1) f x) x := by
+        have h := (diffAt_iterDeriv (hf.of_le (by exact_mod_cast Nat.succ_le_succ hkn))).hasDerivAt
+        rwa [← iteratedDeriv_succ] at h
+      have hdg : HasDerivAt (iteratedDeriv (n - k) g) (iteratedDeriv (n - k + 1) g x) x := by
+        have h := (diffAt_iterDeriv (hg.of_le (by exact_mod_cast Nat.succ_le_succ (Nat.sub_le n k)))).hasDerivAt
+        rwa [← iteratedDeriv_succ] at h
+      have hmul : HasDerivAt
+          (fun y => (n.choose k : ℝ) * iteratedDeriv k f y * iteratedDeriv (n - k) g y)
+          ((n.choose k : ℝ) * iteratedDeriv (k + 1) f x * iteratedDeriv (n - k) g x
+            + (n.choose k : ℝ) * iteratedDeriv k f x * iteratedDeriv (n - k + 1) g x) x := by
+        have h := (hdf.const_mul (n.choose k : ℝ)).mul hdg
+        convert h using 1
+      exact hmul.deriv
+    rw [Finset.sum_congr rfl hterm, Finset.sum_add_distrib]
+    exact pascal_reindex n (fun j => iteratedDeriv j f x) (fun j => iteratedDeriv j g x)
+private lemma iteratedDeriv_polysum_one (c : ℕ → ℝ) (j : ℕ) :
+    ∀ M : ℕ, iteratedDeriv j (fun x : ℝ => ∑ m ∈ range M, c m * x ^ m) 1
+      = ∑ m ∈ range M, c m * (m.descFactorial j : ℝ) := by
+  intro M
+  induction M with
+  | zero =>
+    have key : ∀ i : ℕ, iteratedDeriv i (fun _ : ℝ => (0:ℝ)) = fun _ => 0 := fun i => by
+      induction i with
+      | zero => rfl
+      | succ k ih => rw [iteratedDeriv_succ, ih]; funext x; simp
+    simp only [Finset.range_zero, Finset.sum_empty, key j]
+  | succ M ihM =>
+    have hsplit : (fun x : ℝ => ∑ m ∈ range (M + 1), c m * x ^ m)
+        = (fun x : ℝ => ∑ m ∈ range M, c m * x ^ m) + (fun x : ℝ => c M * x ^ M) := by
+      funext x; simp [Finset.sum_range_succ]
+    rw [hsplit, iteratedDeriv_add (by fun_prop) (by fun_prop), ihM,
+        iteratedDeriv_const_mul (by fun_prop), iteratedDeriv_pow_eq M j,
+        Finset.sum_range_succ]
+    simp
+
+-- ===== APPLICATION to the surrogate =====
+private noncomputable def Nf (q : ℝ) : ℝ :=
+  -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1
+private noncomputable def Df (q : ℝ) : ℝ := 4 * q^5 * (q^2 + q + 1)
+private noncomputable def f0 : ℝ → ℝ := delta_tau_M_surrogate
+
+private def cN : ℕ → ℝ := fun m =>
+  match m with
+  | 0 => 1 | 1 => -1 | 2 => 2 | 3 => -1 | 4 => 0 | 5 => -1
+  | 6 => 1 | 7 => 0 | 8 => 1 | 9 => -2 | 10 => 1 | 11 => -1 | _ => 0
+private def cD : ℕ → ℝ := fun m => if m = 5 then 4 else if m = 6 then 4 else if m = 7 then 4 else 0
+
+private lemma hNf_poly : Nf = fun x : ℝ => ∑ m ∈ range 12, cN m * x ^ m := by
+  funext x; simp only [Nf, cN, Finset.sum_range_succ, Finset.sum_range_zero]; ring
+private lemma hDf_poly : Df = fun x : ℝ => ∑ m ∈ range 8, cD m * x ^ m := by
+  funext x; simp only [Df, cD, Finset.sum_range_succ, Finset.sum_range_zero]; norm_num; ring
+
+private lemma hNd (j : ℕ) : iteratedDeriv j Nf 1 = ∑ m ∈ range 12, cN m * (m.descFactorial j : ℝ) := by
+  rw [hNf_poly]; exact iteratedDeriv_polysum_one cN j 12
+private lemma hDd (j : ℕ) : iteratedDeriv j Df 1 = ∑ m ∈ range 8, cD m * (m.descFactorial j : ℝ) := by
+  rw [hDf_poly]; exact iteratedDeriv_polysum_one cD j 8
+
+private lemma hDf1_ne : Df 1 ≠ 0 := by norm_num [Df]
+private lemma hf0_cd (n : ℕ) : ContDiffAt ℝ (n : ℕ) f0 1 :=
+  ContDiffAt.div (by fun_prop) (by fun_prop) hDf1_ne
+private lemma hDf_cd (n : ℕ) : ContDiffAt ℝ (n : ℕ) Df 1 := by unfold Df; fun_prop
+
+private lemma hev : (fun q => f0 q * Df q) =ᶠ[𝓝 1] Nf := by
+  have hcont : Continuous Df := by unfold Df; fun_prop
+  have hne : ∀ᶠ q in 𝓝 1, Df q ≠ 0 := hcont.continuousAt.eventually_ne hDf1_ne
+  filter_upwards [hne] with q hq
+  show f0 q * Df q = Nf q
+  rw [show f0 q = Nf q / Df q from rfl, div_mul_cancel₀ _ hq]
+
+private lemma hleib (n : ℕ) : iteratedDeriv n Nf 1
+    = ∑ k ∈ range (n + 1), (n.choose k : ℝ) * iteratedDeriv k f0 1 * iteratedDeriv (n - k) Df 1 := by
+  rw [← hev.iteratedDeriv_eq n]
+  exact iteratedDeriv_mul_eq_sum n 1 (hf0_cd n) (hDf_cd n)
+
+
+-- ===== polynomial derivative values =====
+private lemma hD0 : iteratedDeriv 0 Df 1 = 12 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD1 : iteratedDeriv 1 Df 1 = 72 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD2 : iteratedDeriv 2 Df 1 = 368 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD3 : iteratedDeriv 3 Df 1 = 1560 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD4 : iteratedDeriv 4 Df 1 = 5280 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD5 : iteratedDeriv 5 Df 1 = 13440 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD6 : iteratedDeriv 6 Df 1 = 23040 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hD7 : iteratedDeriv 7 Df 1 = 20160 := by
+  rw [hDd]; simp [cD, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN1 : iteratedDeriv 1 Nf 1 = -10 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN2 : iteratedDeriv 2 Nf 1 = -100 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN3 : iteratedDeriv 3 Nf 1 = -888 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN4 : iteratedDeriv 4 Nf 1 = -7008 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN5 : iteratedDeriv 5 Nf 1 = -48120 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN6 : iteratedDeriv 6 Nf 1 = -281520 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+private lemma hN7 : iteratedDeriv 7 Nf 1 = -1380960 := by
+  rw [hNd]; simp [cN, Finset.sum_range_succ, Nat.descFactorial]; norm_num
+
+-- ===== Taylor derivative values via the Leibniz recurrence =====
+private lemma hF0 : iteratedDeriv 0 f0 1 = 0 := by
+  rw [iteratedDeriv_zero]; exact delta_tau_M_surrogate_vanish_at_one
+private lemma hF1 : iteratedDeriv 1 f0 1 = -5/6 := by
+  have h := hleib 1
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 1 f0 1 with hX
+  norm_num [Nat.choose, hF0, hN1, hD0, hD1] at h
+  linarith
+private lemma hF2 : iteratedDeriv 2 f0 1 = 5/3 := by
+  have h := hleib 2
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 2 f0 1 with hX
+  norm_num [Nat.choose, hF0, hF1, hN2, hD0, hD1, hD2] at h
+  linarith
+private lemma hF3 : iteratedDeriv 3 f0 1 = -82/3 := by
+  have h := hleib 3
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 3 f0 1 with hX
+  norm_num [Nat.choose, hF0, hF1, hF2, hN3, hD0, hD1, hD2, hD3] at h
+  linarith
+private lemma hF4 : iteratedDeriv 4 f0 1 = 596/3 := by
+  have h := hleib 4
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 4 f0 1 with hX
+  norm_num [Nat.choose, hF0, hF1, hF2, hF3, hN4, hD0, hD1, hD2, hD3, hD4] at h
+  linarith
+private lemma hF5 : iteratedDeriv 5 f0 1 = -17290/9 := by
+  have h := hleib 5
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 5 f0 1 with hX
+  norm_num [Nat.choose, hF0, hF1, hF2, hF3, hF4, hN5, hD0, hD1, hD2, hD3, hD4, hD5] at h
+  linarith
+private lemma hF6 : iteratedDeriv 6 f0 1 = 19980 := by
+  have h := hleib 6
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 6 f0 1 with hX
+  norm_num [Nat.choose, hF0, hF1, hF2, hF3, hF4, hF5, hN6, hD0, hD1, hD2, hD3, hD4, hD5, hD6] at h
+  linarith
+private lemma hF7 : iteratedDeriv 7 f0 1 = -2052400/9 := by
+  have h := hleib 7
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero] at h
+  set X := iteratedDeriv 7 f0 1 with hX
+  norm_num [Nat.choose, hF0, hF1, hF2, hF3, hF4, hF5, hF6, hN7, hD0, hD1, hD2, hD3, hD4, hD5, hD6, hD7] at h
+  linarith
+
+-- ===== order-4..7 Taylor coefficients =====
+/-- **Theorem (order-4 Taylor coefficient).** The 4-th Taylor coefficient at
+`q = 1` of `delta_tau_M_surrogate` is `c_4`, via the iterated-Leibniz recurrence
+on `f·D = N`. Matches the witness JSON `qbeta-c3-multiblock-recursion-attack`. -/
+theorem delta_tau_M_surrogate_taylor_coeff_4 :
+    iteratedDeriv 4 delta_tau_M_surrogate 1 / 24 = 149 / 18 := by
+  show iteratedDeriv 4 f0 1 / 24 = 149 / 18
+  rw [hF4]; norm_num
+/-- **Theorem (order-5 Taylor coefficient).** The 5-th Taylor coefficient at
+`q = 1` of `delta_tau_M_surrogate` is `c_5`, via the iterated-Leibniz recurrence
+on `f·D = N`. Matches the witness JSON `qbeta-c3-multiblock-recursion-attack`. -/
+theorem delta_tau_M_surrogate_taylor_coeff_5 :
+    iteratedDeriv 5 delta_tau_M_surrogate 1 / 120 = -1729 / 108 := by
+  show iteratedDeriv 5 f0 1 / 120 = -1729 / 108
+  rw [hF5]; norm_num
+/-- **Theorem (order-6 Taylor coefficient).** The 6-th Taylor coefficient at
+`q = 1` of `delta_tau_M_surrogate` is `c_6`, via the iterated-Leibniz recurrence
+on `f·D = N`. Matches the witness JSON `qbeta-c3-multiblock-recursion-attack`. -/
+theorem delta_tau_M_surrogate_taylor_coeff_6 :
+    iteratedDeriv 6 delta_tau_M_surrogate 1 / 720 = 111 / 4 := by
+  show iteratedDeriv 6 f0 1 / 720 = 111 / 4
+  rw [hF6]; norm_num
+/-- **Theorem (order-7 Taylor coefficient).** The 7-th Taylor coefficient at
+`q = 1` of `delta_tau_M_surrogate` is `c_7`, via the iterated-Leibniz recurrence
+on `f·D = N`. Matches the witness JSON `qbeta-c3-multiblock-recursion-attack`. -/
+theorem delta_tau_M_surrogate_taylor_coeff_7 :
+    iteratedDeriv 7 delta_tau_M_surrogate 1 / 5040 = -3665 / 81 := by
+  show iteratedDeriv 7 f0 1 / 5040 = -3665 / 81
+  rw [hF7]; norm_num
+
+end QBetaTaylorOrders47
 
 /-! ### Extension #4 — canonical √q-bearing Δτ_M (conditional on
 class axiomatisation of canonical Wenzl–Markov weights)
