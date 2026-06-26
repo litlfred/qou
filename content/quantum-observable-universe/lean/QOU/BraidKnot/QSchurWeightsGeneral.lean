@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Int.Basic
 import QOU.MathlibExt.QPartitionCombinatorics
 
@@ -36,8 +36,8 @@ open QOU.MathlibExt.QPartitionCombinatorics
 -- Ref: [wenzl1988] Theorem 5 (branching rule for Markov weights)
 class WenzlBranching (q : ℝ) where
   weight : Partition → ℝ
-  branching : ∀ (λ : Partition) (μ : Partition) (i j : ℕ),
-    weight λ = weight μ * q ^ cellContent i j / qBracket q (size λ)
+  branching : ∀ (lam : Partition) (μ : Partition) (i j : ℕ),
+    weight lam = weight μ * q ^ cellContent i j / qBracket q (Partition.size lam)
   base_one : weight [1] = 1
   normalised : ∀ n : ℕ, True
 
@@ -45,7 +45,9 @@ class WenzlBranching (q : ℝ) where
     Definitional from qFactorial. -/
 theorem qFactorial_succ' (q : ℝ) (n : ℕ) :
     qFactorial q (n + 1) = qFactorial q n * qBracket q (n + 1) :=
-  rfl
+  -- `qFactorial q (n+1)` is defn `qBracket q (n+1) * qFactorial q n`; the stated
+  -- form has the two factors commuted (the prior `rfl` failed on that swap).
+  mul_comm (qBracket q (n + 1)) (qFactorial q n)
 
 /-- **THEOREM (content additivity).** Adding a cell at (i,j) to
     partition μ increases the content sum by (j-i). -/
