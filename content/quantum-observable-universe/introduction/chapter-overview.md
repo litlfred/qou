@@ -263,7 +263,7 @@ scale, not a fourth input.  The modulus is pinned by the Skein mass
 relation
 
 $$
-\frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = \frac{q - 1}{q},
+\frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1},
 $$
 
 giving
