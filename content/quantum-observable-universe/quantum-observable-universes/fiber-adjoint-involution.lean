@@ -1,5 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -65,10 +66,24 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
   orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
     f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
-/-- Theorem stating the existence of the fiber-adjoint involution. -/
+/-- **Existence of the fibre–adjoint involution.**  The structure
+    `FiberAdjointInvolution` already bundles the genuine content (the orbit
+    embedding `σ`, its antipode-induced involution with `τ_Ad ≫ τ_Ad = id`,
+    the embedding/involution compatibility, and the monomorphism property),
+    so the honest claim is that this bundle is *inhabited* for every
+    Frobenius–Hopf datum — not the degenerate `∃ inv, True`.
+
+    Constructing the witness (the coadjoint-orbit embedding `P(V) ↪ Ad(A)`
+    and the antipode-induced `τ_Ad` in a general monoidal category) needs
+    categorical machinery beyond the current `QOU.Basic` API, so the body
+    is an honest `sorry`. -/
+-- Ref: [lusztig1993] Introduction to Quantum Groups
 -- Ref: [manuscript] prop:fiber-adjoint-involution
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
-    ∃ (inv : FiberAdjointInvolution C fh), True := sorry
+    Nonempty (FiberAdjointInvolution C fh) := by
+  -- Ref: [manuscript] prop:fiber-adjoint-involution — coadjoint-orbit
+  -- embedding + antipode-induced involution not yet in QOU.Basic.
+  sorry
 
 end QOU
