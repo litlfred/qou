@@ -1,4 +1,3 @@
-import Mathlib
 
 /-!
 # QOU.HyperellipticQuintic.minimal_z5_classification

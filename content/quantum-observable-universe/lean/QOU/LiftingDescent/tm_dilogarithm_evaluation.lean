@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.LiftingDescent.tm_dilogarithm_evaluation

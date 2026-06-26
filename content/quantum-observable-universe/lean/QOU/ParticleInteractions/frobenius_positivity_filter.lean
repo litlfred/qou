@@ -1,4 +1,3 @@
-import Mathlib
 
 /-!
 # QOU.ParticleInteractions.frobenius_positivity_filter

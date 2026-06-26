@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.Observations.hecke_satisfies_blitvic_hypothesis

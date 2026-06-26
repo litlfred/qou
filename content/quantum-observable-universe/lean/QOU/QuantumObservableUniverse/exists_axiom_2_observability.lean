@@ -1,4 +1,3 @@
-import Mathlib
 
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_2_observability

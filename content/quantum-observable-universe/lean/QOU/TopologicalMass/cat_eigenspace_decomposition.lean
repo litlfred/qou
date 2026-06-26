@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 /-!
 # QOU.TopologicalMass.cat_eigenspace_decomposition

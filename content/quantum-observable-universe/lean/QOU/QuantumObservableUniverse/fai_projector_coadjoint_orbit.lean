@@ -1,4 +1,3 @@
-import Mathlib
 
 /-!
 # QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit
