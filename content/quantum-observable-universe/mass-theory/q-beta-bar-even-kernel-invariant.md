@@ -57,7 +57,7 @@ chain), and $\hbar_q^4$ is even in $t$ to leading order
 $\hbar_q^4 = t^4 + O(t^5)$ — the odd-in-$t$ content sits at orders $t^5$
 and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
 
-## Contrast: α_EM template vs 𝔔_β trace-difference
+## Contrast: α_EM template vs $\mathfrak{Q}_\beta$ trace-difference
 
 | programme | kernel | bar-even? | scalar $c_k$ extraction |
 |---|---|---|---|

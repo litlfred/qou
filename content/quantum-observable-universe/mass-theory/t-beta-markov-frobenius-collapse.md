@@ -58,7 +58,7 @@ $T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
 
 ## Corollary — observable c_k invariance
 
-The 𝔔_β production rule extracts the c_k Taylor coefficients from
+The $\mathfrak{Q}_\beta$ production rule extracts the c_k Taylor coefficients from
 $\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
 coordinate-vector space $R^6$ (the SHAPE $\times$ S decomposition)
 or the canonical Markov–Frobenius norm above — the SDP **constraint**

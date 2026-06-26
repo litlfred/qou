@@ -141,7 +141,7 @@ $$
 
 *is the desired closed form.* $\blacksquare$
 
-**Compatibility with the "no 𝔔_β derivation" directive.**
+**Compatibility with the "no $\mathfrak{Q}_\beta$ derivation" directive.**
 
 *The corrected formula uses **only** categorical inputs computed
 from the substrate:*
@@ -155,8 +155,8 @@ from the substrate:*
 - *$|\mathrm{tr}_M(\mathcal{B}_K)|$ — canonical Markov trace per
  [`conj:gs-graded-markov-trace-existence`](#conj:gs-graded-markov-trace-existence).*
 
-*No 𝔔_β, no AME chain manifold, no fitted parameters. The 780 ppb
-floor from CAL-2 (𝔔_β uncertainty) **does not apply** to this
+*No $\mathfrak{Q}_\beta$, no AME chain manifold, no fitted parameters. The 780 ppb
+floor from CAL-2 ($\mathfrak{Q}_\beta$ uncertainty) **does not apply** to this
 derivation — the shell magnitude is a purely categorical observable.*
 
 **Open** for $A_{\mathrm{magic}} \ge 8$.**
