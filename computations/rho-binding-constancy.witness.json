@@ -1,0 +1,22 @@
+{
+  "name": "rho-binding-constancy",
+  "description": "B_obs/|tr_M| across D,T,³He under the canonical Markov trace (include_inter=True). Tests whether the Path-3 single-prefactor binding model B=α_M·|tr_M| has a FORCED universal α_M (= m_e·ρ_binding, constant). Finding: the ratio varies ~182% (D 5.73, T 81.5, ³He 37.4), so α_M is NOT a forced constant — the model is a deuteron-anchored approximation that fails at A=3. Scope (a): tr_M as an ingredient is NOT excluded; only the constant-prefactor assumption is refuted. The D ratio 5.728 reproduces the published α_M 5.729 (cross-validates the pipeline).",
+  "auditOnly": true,
+  "probe": true,
+  "substrate": {
+    "q0": 1.1099785955573347,
+    "q0_pin": "muon (computations-layer canonical)"
+  },
+  "ratios_B_over_trM": {
+    "D": 5.7281432417649505,
+    "T": 81.5002627969272,
+    "He3": 37.36137867070401
+  },
+  "relative_spread": 1.824518432194893,
+  "t_he3_mirror_mismatch": 0.7426934977714107,
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "5983c2551261",
+    "producer": "computations/probes/rho_binding_constancy_probe.py"
+  }
+}

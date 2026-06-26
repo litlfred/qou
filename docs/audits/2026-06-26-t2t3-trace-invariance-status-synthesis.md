@@ -138,6 +138,30 @@ Two findings:
   categorical identity `m = m_e·ρ·|tr_M|` — i.e. whether `α_M = m_e·ρ_binding`
   for a **derived** (not fitted) categorical density `ρ_binding`. That is a
   derivation target; the bare number is not.
+- **Tested it directly — `ρ_binding` is NOT a forced constant (scope (a)).**
+  `rho_binding_constancy_probe.py`
+  ([`rho-binding-constancy.witness.json`](../../computations/rho-binding-constancy.witness.json))
+  computes `B_obs/|tr_M|` under the canonical Markov trace
+  (`global_wedderburn_sum_q_hecke_seminormal`, `include_inter=True`) — the
+  scale-free content in which `α_M` cancels. If `α_M` were one forced
+  calibration this ratio would be constant. It is **not**:
+
+  | atom | $|\mathrm{tr}_M|$ | $B_{\mathrm{obs}}$ (MeV) | $B_{\mathrm{obs}}/|\mathrm{tr}_M|$ |
+  |---|---|---|---|
+  | D | 0.388357 | 2.224566 | **5.728** |
+  | T | 0.104071 | 8.481821 | **81.50** |
+  | ³He | 0.206579 | 7.718058 | **37.36** |
+
+  Relative spread **182%**; T/³He mirror mismatch **74%**. The D ratio 5.728
+  reproduces the published `α_M = 5.729` to 0.02% (cross-validates the pipeline).
+  **Conclusion (scope (a)):** the single-prefactor model `B = α_M·|tr_M|` is a
+  *deuteron-anchored approximation that fails at A=3* — `α_M` is not a forced
+  universal constant and `ρ_binding` is not scale-only. This does **not** exclude
+  `tr_M` as an ingredient (the trace is correct; only the constant-prefactor
+  assumption is refuted) — it is the **binding-sector face of the same open
+  `ρ_K` closure** that `knot-mass-formula-unified` already flags (~5% at A=1,
+  22–31% short at A=2,3). So Path 3's apparent "sub-1%" was on *absolute mass*
+  (where the ≲6 MeV correction is small vs ~938 MeV), **not** on binding.
 - **Data-integrity flag (not fixed here):** re-running the producer
   `path_b_habiro_mass_probe.py` crashes on the $A\ge3$ rows with an unsubstituted
   free symbol (`-74.0*check_q - 74.0`); the committed witness's $\{p,n,D\}$ rows
