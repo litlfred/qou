@@ -1,5 +1,4 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
-import Mathlib.RingTheory.PowerSeries.Basic
 
 
 /-!
@@ -49,30 +48,38 @@ def jacksonFactorial (q : ℝ) : ℕ → ℝ
 noncomputable def qExpSeries (q : ℝ) (x : ℝ) : ℕ → ℝ :=
   fun n => x^n / jacksonFactorial q n
 
-/-- **Taylor series of e_q**: over ℝ with q ≠ 1 and [n]_q! ≠ 0 for all n,
-    the partial sums of qExpSeries converge and equal the abstract
-    grouplike e_q. -/
--- Ref: [manuscript] §9
-/-- **External axiom (§3b-cond pattern): qExponentialTaylor.**
+/-- **Taylor series of e_q (substrate regime `q > 1`):** for `q > 1` the
+    q-exponential series `Σ xⁿ/[n]_q!` is summable for every `x ∈ ℝ`.
+    The Jackson factorials grow super-geometrically
+    (`[n+1]_q / [n]_q = (q^{n+1}−1)/(q^n−1) → q > 1`), so the ratio test
+    gives radius of convergence `∞`.
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom qExponentialTaylor_axiom (q : ℝ) (x : ℝ)
-    (hq : q ≠ 1) (hfac : ∀ n, jacksonFactorial q n ≠ 0) :
-    Summable (qExpSeries q x)
-
-theorem qExponentialTaylor (q : ℝ) (x : ℝ)
-    (hq : q ≠ 1) (hfac : ∀ n, jacksonFactorial q n ≠ 0) :
-    Summable (qExpSeries q x) :=
-  qExponentialTaylor_axiom q x hq hfac
+    **Regime correction (2026-06-26).** The previous encoding asserted
+    summability for *all* `q ≠ 1` via an `axiom qExponentialTaylor_axiom`.
+    That statement is **false**: for `0 < q < 1` one has `[k]_q → 1/(1−q)`,
+    so `[n]_q!` grows only geometrically and the series has *finite* radius
+    `1/(1−q)` — not summable for `|x| > 1/(1−q)`. Asserting the general
+    statement as an axiom was therefore unsound; the axiom is removed and
+    the proposition is restated in the substrate regime `q > 1`
+    (`q₀ ≈ 1.11`), where the "convergent for all `x`" claim of the
+    manuscript genuinely holds. The convergence proof itself (ratio test
+    via the Jackson-integer divergence `[n]_q → ∞`) awaits the
+    `q`-analysis API and is an honest `sorry`. -/
+-- Ref: [manuscript] §9-information-theory/q-exponential-taylor
+theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
+    Summable (qExpSeries q x) := by
+  -- Ratio test: the term ratio `qExpSeries q x (n+1) / qExpSeries q x n`
+  -- equals `x / [n+1]_q`, and `[n+1]_q = (q^{n+1}−1)/(q−1) → ∞` for q > 1,
+  -- so the ratio → 0 < 1 and `summable_of_ratio_norm_eventually_le` applies.
+  -- Needs: Jackson-integer divergence lemma `Tendsto (jacksonInt q) atTop atTop`
+  -- for q > 1 (not yet in the q-analysis API).
+  -- Ref: [manuscript] §9-information-theory/q-exponential-taylor
+  sorry
 
 /-- At q = 1, the q-exponential Taylor series recovers the ordinary
     exponential. -/
 -- Ref: [manuscript] §9
-theorem qExpSeries_classical_limit (x : ℝ) :
+theorem qExpSeries_classical_limit :
     jacksonFactorial 1 = fun n => (n.factorial : ℝ) := by
   funext n
   induction n with
@@ -87,5 +94,7 @@ theorem qExpSeries_classical_limit (x : ℝ) :
     rw [jacksonInt, if_pos rfl, ih, Nat.factorial_succ]
     push_cast
     ring
+
+end
 
 end QOU
