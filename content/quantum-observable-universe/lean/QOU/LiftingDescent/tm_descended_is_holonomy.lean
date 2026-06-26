@@ -1,48 +1,54 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.LiftingDescent.tm_descended_is_holonomy
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-holonomy`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.md): *Descended term is the unknot-core holonomy*.
+**Lemma** ([`lem:topological-mass-holonomy`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.LiftingDescent.tm_descended_is_holonomy` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+*Under the topological blow-up decomposition
+`Σ = Σ₀ ∪ ⋃_{i=1}^N D_i`, where `Σ₀` is a disc spanning the unknot core
+`ϱ₀` and each `D_i` is the exceptional disc at the `i`-th blow-up, the
+descended term equals the unknot-core holonomy:*
+
+    MI∫_Σ τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊).
+
+## Status
+
+The substantive identity equates a **non-abelian multiplicative surface
+integral** of the descended connection term with the **holonomy** of the
+gauge connection `∇A` around the unknot core.  Both sides require
+Yekutieli's non-abelian multiplicative integration on surfaces (the
+non-abelian Stokes theorem identifying the surface integral of the
+descended term with the boundary holonomy), which is **not available in
+Mathlib**.
+
+The two quantities are modelled as named `opaque` reals — `descendedMI`
+(the multiplicative surface integral) and `unknotHolonomy` (the boundary
+holonomy) — so the theorem `descendedMI = unknotHolonomy` is the genuine
+unproven identity between *these specific* objects, not a vacuous claim
+about arbitrary reals.  Discharged with `sorry` and the citation per
+AGENTS.md §1.
 -/
 
 namespace QOU.LiftingDescent
 
+/-- The descended-term multiplicative surface integral `MI∫_Σ τ̂ₙ(α)`. -/
+opaque descendedMI : ℝ
 
-/-- Abstract context for the `tm_descended_is_holonomy` claim — manuscript-themed
-    typed fields below. -/
-class TmDescendedIsHolonomyContext where
-  /-- The descended-term value. -/
-  descended_term : ℝ
-  /-- The unknot-core holonomy `hol(ρ_0)`. -/
-  unknot_holonomy : ℝ
-  /-- Base disc spanning the unknot core. -/
-  disc_integral : ℝ
-  /-- Descended term is given by the disc integral. -/
-  descended_eq_integral : descended_term = disc_integral
-  /-- Unknot-core holonomy is given by the disc integral. -/
-  holonomy_eq_integral : unknot_holonomy = disc_integral
+/-- The unknot-core holonomy `Hol_{∇A}(ϱ₀; 𝔊)`. -/
+opaque unknotHolonomy : ℝ
 
-/-- **Lemma statement** (from manuscript):
+/-- **Descended term = unknot-core holonomy.**
 
-Under the topological blow-up decomposition
-$\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where $\Sigma_0$ is a
-disc spanning the unknot core $\varrho_0$ and each $D_i$ is the
-exceptional disc at the $i$-th blow-up, the descended term equals
-the unknot-core holonomy:
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
-theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] :
-    ctx.descended_term = ctx.unknot_holonomy :=
-  by rw [ctx.descended_eq_integral, ctx.holonomy_eq_integral]
+The identity `MI∫_Σ τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊)` is the non-abelian Stokes
+theorem for the blow-up decomposition — Yekutieli machinery not in
+Mathlib; body is `sorry`. -/
+-- Ref: [yekutieli2015] https://doi.org/10.1142/9537
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md
+theorem tm_descended_is_holonomy : descendedMI = unknotHolonomy := by
+  -- Needs: Yekutieli non-abelian multiplicative integration + non-abelian
+  -- Stokes (surface integral of the descended term over Σ = Σ₀ ∪ ⋃ D_i
+  -- collapses, on the exceptional discs, to the boundary holonomy of ϱ₀).
+  sorry
 
 end QOU.LiftingDescent
