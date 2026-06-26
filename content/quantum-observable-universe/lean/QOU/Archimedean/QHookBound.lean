@@ -42,7 +42,7 @@ open QOU.Archimedean
 /-- The q-integer [m]_q as a real number for q > 1.
     [m]_q = (qᵐ − q⁻ᵐ)/(q − q⁻¹) = Σ_{j=0}^{m-1} q^{m-1-2j}. -/
 noncomputable def qIntReal (q : ℝ) (m : ℕ) : ℝ :=
-  if hq : q = 1 then m
+  if _hq : q = 1 then m
   else (q ^ m - q⁻¹ ^ m) / (q - q⁻¹)
 
 /-- For q > 1 and m ≥ 1, [m]_q > 0. -/
@@ -635,8 +635,8 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     The R² factors perturb the classical measure by O(h²) per
     partition, but the SUM over all partitions averages these
     perturbations, giving convergence. -/
-theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
-    (dq dim_classical : ℝ) (hdq : dq > 0) (hdim : dim_classical > 0)
+theorem qDim_geq_dim (q : ℝ) (_hq : q > 1)
+    (dq dim_classical : ℝ) (_hdq : dq > 0) (hdim : dim_classical > 0)
     (h_ratio : dq / dim_classical ≥ 1) :
     dq ≥ dim_classical := by
   have h := (le_div_iff₀ hdim).mp (by linarith : (1:ℝ) ≤ dq / dim_classical)

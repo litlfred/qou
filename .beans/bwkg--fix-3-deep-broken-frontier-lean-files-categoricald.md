@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-23T17:03:11Z
-updated_at: 2026-06-24T01:58:12Z
+updated_at: 2026-06-26T02:22:35Z
 ---
 
 
@@ -124,3 +124,11 @@ All 3 files green sorry-free (lean-direct vs restored v4.24.0 oleans, exit 0):
     q<2-vs-3/2 bracket bug, nat-cast/mod_cast, maxHeartbeats.
 
 Awaiting PR review + merge; close after merge (human verifies).
+
+
+
+[2026-06-26 VERIFICATION — premise STALE] All 3 'deep-broken' files actually compile clean, lean-direct EXIT=0, sorry-free (against lake-cache/qou-v4-24-0 oleans; LEAN_PATH = package build/lib/lean dirs):
+- CategoricalDqSquared.lean — EXIT=0 (deps Basic/Glossary/CategoricalFoundations/Structures/Instanton all built; Instanton already carries the identical proof under categorical_dq_squared_classical_limit, 0 sorry).
+- Interactions/MarkovPeel.lean — EXIT=0; the '1 sorry' was a COMMENT match (line 28), no real sorry.
+- Archimedean/QHookBound.lean — EXIT=0; had 3 harmless unused-variable lint warnings (lines 45/638/639) → CLEANED (_hq/_hdq prefixes; qDim_geq_dim has no callers), now 0 warnings.
+None are broken. Recommend CLOSING bwkg (premise no longer holds; files were repaired upstream and the bean wasn't updated). PR: lint cleanup + this note. [Agent does not self-close per AGENTS.md §4a — owner closes.]
