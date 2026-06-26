@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "11a89ab3c511",
     "ts": "239c0e93722e",
-    "lean": "4ed28a93808d"
+    "lean": "9a2e78c76f80"
   },
   "criteria": {
     "voice-status-leak": [
@@ -258,6 +258,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -277,6 +294,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "q-usage-regime-detected": [
@@ -887,7 +921,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": ".md:28-31 'every per-n MarkovTraceN class is automatically derivable (restrictions of the global ones)' vs .lean:98-105 instance hard-codes tau_identity:=1, tau_stab_factor:=markovZN_legacy q with rfl; the [MarkovTraceInductiveLimit q] hypothesis is a dead instance arg.",
-        "rebuttal": "partial\u2192survived \u2014 honestly tagged scaffolding (authorNotes + .lean Status + dedicated audit), but the .md prose overstates beyond the disclaimer: the consolidation API exists, the derivation does not.",
+        "rebuttal": "partial→survived — honestly tagged scaffolding (authorNotes + .lean Status + dedicated audit), but the .md prose overstates beyond the disclaimer: the consolidation API exists, the derivation does not.",
         "evidence": [
           {
             "text": "markov-trace-inductive-limit.md:28-31 vs .lean:98-105"
@@ -915,8 +949,8 @@
         "result": "fail",
         "scope": "structural",
         "ruling": "surviving",
-        "referee_argument": ".md:3-5 'tau_M : B_inf -> R ... single operator on the inductive limit of braid groups'; sibling markov-axioms-primitive.md:11 correctly says tau_M on H_n(R,q). The Markov/Ocneanu trace is a functional on the HECKE tower, not the braid group (a group hom B_n->R under multiplication cannot be the Jones trace \u2014 it is linear on the algebra).",
-        "rebuttal": "partial\u2192survived \u2014 invariant cited: Jones 1985 trace lives on H_n(q) not B_n. Mitigated (tau_M can be defined on braid words via rho:B_n->H_n then trace) but the domain label is literally false as stated; sibling + audit get it right.",
+        "referee_argument": ".md:3-5 'tau_M : B_inf -> R ... single operator on the inductive limit of braid groups'; sibling markov-axioms-primitive.md:11 correctly says tau_M on H_n(R,q). The Markov/Ocneanu trace is a functional on the HECKE tower, not the braid group (a group hom B_n->R under multiplication cannot be the Jones trace — it is linear on the algebra).",
+        "rebuttal": "partial→survived — invariant cited: Jones 1985 trace lives on H_n(q) not B_n. Mitigated (tau_M can be defined on braid words via rho:B_n->H_n then trace) but the domain label is literally false as stated; sibling + audit get it right.",
         "evidence": [
           {
             "text": "markov-trace-inductive-limit.md:3-5; markov-axioms-primitive.md:11"
@@ -944,8 +978,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": ".md:10 'M1-M4 characterise tau_M uniquely' \u2014 uniqueness fails at roots of unity.",
-        "rebuttal": "rebutted \u2014 substrate regime is real q_0~1.1097>1 (never a root of unity), so generic-q uniqueness applies; missing explicit 0<q is a hygiene nit (Real.sqrt total).",
+        "referee_argument": ".md:10 'M1-M4 characterise tau_M uniquely' — uniqueness fails at roots of unity.",
+        "rebuttal": "rebutted — substrate regime is real q_0~1.1097>1 (never a root of unity), so generic-q uniqueness applies; missing explicit 0<q is a hygiene nit (Real.sqrt total).",
         "evidence": [
           {
             "text": "markov-trace-inductive-limit.md:10"
@@ -974,7 +1008,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Do Jones/Wenzl support an inductive-limit single global trace?",
-        "rebuttal": "rebutted \u2014 Jones 1985 constructs the Markov trace on the tower, Wenzl 1988 the inductive-limit/C* rep; citations apt, DOIs correct.",
+        "rebuttal": "rebutted — Jones 1985 constructs the Markov trace on the tower, Wenzl 1988 the inductive-limit/C* rep; citations apt, DOIs correct.",
         "evidence": [
           {
             "text": "markov-trace-inductive-limit.ts:9-13"
@@ -1000,7 +1034,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The narrative asserts a single global trace tau_M:B_inf->R characterised uniquely by M1-M4 with every per-n class 'automatically derivable', but the Lean bridge hard-codes the per-n conclusions (tau_identity:=1, tau_stab_factor:=markovZN_legacy q) with rfl proofs and never invokes tauM_n / the inclusion \u2014 it asserts rather than derives; and tau_M is mislabelled on the braid GROUP B_inf rather than the Hecke tower.",
+        "referee_argument": "The narrative asserts a single global trace tau_M:B_inf->R characterised uniquely by M1-M4 with every per-n class 'automatically derivable', but the Lean bridge hard-codes the per-n conclusions (tau_identity:=1, tau_stab_factor:=markovZN_legacy q) with rfl proofs and never invokes tauM_n / the inclusion — it asserts rather than derives; and tau_M is mislabelled on the braid GROUP B_inf rather than the Hecke tower.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1013,5 +1047,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T04:37:26Z"
+  "updated_at": "2026-06-26T15:20:59.452Z"
 }

@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "2a7c8726b3ec",
-    "ts": "c3a038c8d47b",
+    "ts": "e92822081216",
     "lean": "75d446394f02"
   },
   "criteria": {
@@ -163,6 +163,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "2a7c8726b3ec",
+          "ts": "e92822081216",
+          "lean": "75d446394f02"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-ai-slop": [
@@ -1342,5 +1359,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.298Z"
+  "updated_at": "2026-06-26T15:20:59.452Z"
 }

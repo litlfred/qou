@@ -4,13 +4,11 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md",
-    "lean": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.lean"
+    "md": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md"
   },
   "source_hashes": {
     "md": "4e76f4347021",
-    "ts": "c7d34067c0e3",
-    "lean": "dbbcfe40d1e6"
+    "ts": "c7d34067c0e3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -258,6 +256,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "4e76f4347021",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
+        "notes": "block has no .lean sibling"
       }
     ],
     "wall-base-ring-minimal": [
@@ -277,6 +292,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "4e76f4347021",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
+        "notes": "block has no .lean sibling"
       }
     ],
     "q-usage-regime-detected": [
@@ -1340,5 +1372,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:15.631Z"
+  "updated_at": "2026-06-26T15:20:59.452Z"
 }
