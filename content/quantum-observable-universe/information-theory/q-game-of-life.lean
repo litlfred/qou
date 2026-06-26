@@ -72,13 +72,21 @@ theorem qGameOfLife_unitary {L : Type*} (T : L → L)
     Replaces the former `axiom qGameOfLife_stable_axiom`, which *trusted* this
     globally. The unused `q > 1` substrate hypotheses are dropped — `q − 1 ≠ 0`
     holds unconditionally in `R_q` (the indeterminate minus a constant is a
-    nonzero Laurent polynomial). The elementary `coeff`-level discharge awaits
-    the `LaurentPolynomial` coefficient API, so the body is an honest `sorry`
-    (not an axiom). -/
+    nonzero Laurent polynomial). Discharged **sorry-free** via the injective
+    ring hom `Polynomial.toLaurent`: `q − 1 = toLaurent (X − 1)` and `X − 1 ≠ 0`
+    in `ℤ[X]`, so injectivity gives `q − 1 ≠ 0`. -/
 theorem qGameOfLife_stable : qAnd_amplitude ≠ 0 := by
   -- Ref: [manuscript] Ch.8 prop:toffoli-lp-stability — q-AND amplitude nonzero
-  -- `q_param - 1` is nonzero: its coefficient at degree 1 is 1 ≠ 0.
-  sorry
+  -- `q_param - 1 = toLaurent (X - 1)`; toLaurent is injective and `X - 1 ≠ 0`.
+  unfold qAnd_amplitude q_param
+  have hX : (Polynomial.X - 1 : Polynomial ℤ) ≠ 0 := by
+    simpa using Polynomial.X_sub_C_ne_zero (1 : ℤ)
+  have htl : (LaurentPolynomial.T 1 - 1 : R_q)
+      = Polynomial.toLaurent (Polynomial.X - 1) := by
+    rw [map_sub, Polynomial.toLaurent_X, map_one]
+  rw [htl]
+  intro h
+  exact hX (Polynomial.toLaurent_injective (h.trans (map_zero _).symm))
 
 end
 
