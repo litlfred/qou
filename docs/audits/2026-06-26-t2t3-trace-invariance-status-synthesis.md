@@ -108,5 +108,3 @@ mirror pair, but with $\text{tower}(³\text{He})>\text{tower}(\text{T})$, the
    empirical → derived gap.
 4. **Push the q-Bessel tower gate** (`2026-06-19`) — construct $H_6/H_9$
    $\chi_\lambda(\mathcal B_n-\mathcal B_p)$; test residual shrinkage.
-</content>
-</invoke>
