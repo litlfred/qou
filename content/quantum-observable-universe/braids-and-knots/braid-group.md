@@ -1,4 +1,4 @@
-The *braid group on three strands* is the group
+The **braid group on three strands** is the group
 
 ```tex
 \begin{equation}\label{eq:braid-presentation}

@@ -8,7 +8,7 @@ $\mathbf{C}_{\mathrm{any}}(N)$ with only finitely many simple
 objects $\mathbf{V}_0, \mathbf{V}_1, \ldots, \mathbf{V}_{N-2}$
 \cite{moore-seiberg1989}.
 
-**Definition.**  The *observable modular tensor category* at level
+**Definition.**  The **observable modular tensor category** at level
 $N$ is the ribbon fusion category $\mathbf{C}_{\mathrm{any}}(N)$
 together with the braiding $c$ and ribbon twist $\varTheta$ inherited
 from the quasi-triangular structure of $U_q(\mathfrak{su}_2)$ at

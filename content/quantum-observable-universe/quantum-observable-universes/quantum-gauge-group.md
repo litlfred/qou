@@ -4,7 +4,7 @@ substrate parameter $q \in \mathrm{End}(\mathbf{1})$
 ([substrate parameter](#def:substrate-parameter)), where $q$ is the
 braiding eigenvalue on the symmetric summand of $V \otimes V$
 ([braiding eigenvalue extraction](#prop:braiding-eigenvalue-extraction)).
-The *quantum gauge group* is the Hopf algebra
+The **quantum gauge group** is the Hopf algebra
 $H = \mathrm{End}^{\otimes}(\tau)$ reconstructed via Tannaka--Krein
 duality ([reconstruction](#prop:tannaka-krein-reconstruction)).
 By the universal property, $H \cong \mathcal{O}_q(\mathrm{SU}(2))$

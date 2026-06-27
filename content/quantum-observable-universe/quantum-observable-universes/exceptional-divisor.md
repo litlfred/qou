@@ -8,7 +8,7 @@ $$
   O(p) =  p + RN(p).
 $$
 
-The *exceptional divisor* at $p$ is the fibre of the state bundle
+The **exceptional divisor** at $p$ is the fibre of the state bundle
 $\mathcal{S}$ at $p$ --- the $\mathbb{P}^1(\mathbb{C})$ fibre
 
 $$

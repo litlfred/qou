@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **Definition.**
-*Benzene $C_6H_6$ is the molecular braid of six carbon atoms and
+**Benzene** *$C_6H_6$ is the molecular braid of six carbon atoms and
 six hydrogen atoms, assembled iteratively from pre-computed atomic
 braids.*
 

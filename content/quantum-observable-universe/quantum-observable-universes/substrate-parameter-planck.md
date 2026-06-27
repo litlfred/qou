@@ -1,4 +1,4 @@
-The *substrate parameter* $q \in \mathbb{C}^*$ is the deformation
+The **substrate parameter** $q \in \mathbb{C}^*$ is the deformation
 parameter of the Frobenius--Hopf algebra $A$. It governs the
 non-commutativity of the algebraic substrate: when $q = 1$ the algebra
 is commutative and the quantum structure degenerates to its classical

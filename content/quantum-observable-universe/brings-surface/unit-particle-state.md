@@ -1,4 +1,4 @@
-Define the unit particle state $\mathrm{Li}_q(z)$ as the fundamental
+Define the **unit particle state** $\mathrm{Li}_q(z)$ as the fundamental
 generator of $H^1_{\mathfrak{m}_1}(A)$. It is the unique (up to
 scalar) element satisfying the $q$-differential equation:
 

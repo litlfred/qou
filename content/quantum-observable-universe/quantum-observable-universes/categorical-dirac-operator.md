@@ -3,7 +3,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 and Reeb derivation $\xi$ ([categorical Reeb derivation](#def:categorical-reeb)).
-The *categorical Dirac operator* is the morphism
+The :defterm[categorical Dirac operator]{#categorical-dirac-operator} is the morphism
 
 $$
   \mathcal{D}_\nabla

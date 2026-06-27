@@ -2,7 +2,7 @@
 
 Let $R$ be a commutative ring with $30 \in R^{\times}$ (i.e.
 $\mathrm{char}(R) \nmid 30$).  Let $x_j$, $j\in\{0,\dots,4\}$, be
-homogeneous coordinates on $\mathbb{P}^4_R$.  *Bring's surface* is the
+homogeneous coordinates on $\mathbb{P}^4_R$.  **Bring's surface** is the
 algebraic variety
 
 $$

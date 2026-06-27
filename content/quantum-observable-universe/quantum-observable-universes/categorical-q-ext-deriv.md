@@ -2,8 +2,8 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 and weight decomposition $\pi_H, \pi_V$
-([weight decomposition](#def:weight-decomposition)).  The *$q$-deformed
-exterior derivative* $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is
+([weight decomposition](#def:weight-decomposition)).  The **$q$-deformed
+exterior derivative** $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is
 
 $$
   d_q =  q^{-1}d + (1 - q^{-1})\pi_V \circ d,

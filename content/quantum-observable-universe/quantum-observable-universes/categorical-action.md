@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def\:quantum-observable-universe)).
-A *categorical action* on $(\mathbf{C}, A, \tau)$ is a morphism
+A :defterm[categorical action]{#categorical-action} on $(\mathbf{C}, A, \tau)$ is a morphism
 $\mathfrak{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
 
 ```tex

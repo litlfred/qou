@@ -1,8 +1,8 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the
 ([recursive brane tower](#def\:recursive-brane-tower)).  Let $\mathfrak{d}_{n+1}$ be
-the :refterm[descent]{#descent} homomorphism ([:refterm[descent]{#descent}](#lem\:descent)).  The *defining
-boundary* of the $n$-th brane is the full subcategory of $\mathbf{C}$
+the :refterm[descent]{#descent} homomorphism ([:refterm[descent]{#descent}](#lem\:descent)).  The **defining
+boundary** of the $n$-th brane is the full subcategory of $\mathbf{C}$
 consisting of subobjects of $A_n$ on which the restriction morphism
 $r_n \colon A_n \to A_{n-1}$ has non-trivial kernel:
 

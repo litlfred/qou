@@ -1,6 +1,6 @@
 Let $\mathfrak{H} = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a composite
 of knots linked by a link $\mathcal{L}$, with braid word
-$\beta \in B_n$ representing the linking.  The *crossing energy*
+$\beta \in B_n$ representing the linking.  The **crossing energy**
 of $\mathfrak{H}$ is
 
 $$

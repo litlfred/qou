@@ -24,7 +24,7 @@ Let $\Delta \colon A \to A \otimes A$ be the comultiplication (encoding
 the connection) and let $\int_A \colon A \to \mathbf{1}$ be the
 Frobenius form.
 
-The *inertial mass* of a morphism $\varrho \colon \mathbf{1} \to A$
+The **inertial mass** of a morphism $\varrho \colon \mathbf{1} \to A$
 (a "closed cycle" in the Frobenius--Hopf object) is
 
 $$

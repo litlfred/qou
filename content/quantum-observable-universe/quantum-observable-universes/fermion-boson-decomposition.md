@@ -16,9 +16,9 @@ a short exact sequence
 ```
 
 where $\mathcal{H}_{q,H}^k = \mathcal{H}_q^k \cap \Omega^k_H(A)$
-and $\mathcal{H}_{q,V}^k = \pi_V(\mathcal{H}_q^k)$.  A *boson*
+and $\mathcal{H}_{q,V}^k = \pi_V(\mathcal{H}_q^k)$.  A **boson**
 is a particle in the kernel $\mathcal{H}_{q,H}^k$ (purely horizontal:
-$\alpha_V = 0$).  A *fermion* is a particle with
+$\alpha_V = 0$).  A **fermion** is a particle with
 $\alpha_V \neq 0$, i.e. one whose image under $\pi_V$ is non-zero.
 
 The sequence splits via $\pi_H$:

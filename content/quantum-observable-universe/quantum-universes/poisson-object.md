@@ -4,7 +4,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ and
 [higher forms](#def:higher-forms) $\Omega^k(A)$.
 
-An *internal Poisson object* on $A$ is a morphism
+An **internal Poisson object** on $A$ is a morphism
 
 $$
 \pi \colon \mathbf{1} \longrightarrow \Lambda^2\bigl(\Omega^1(A)^{\vee}\bigr)

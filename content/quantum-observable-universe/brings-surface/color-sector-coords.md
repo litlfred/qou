@@ -3,7 +3,7 @@
 With notation as in [exceptional divisor](#def:exceptional-divisor), fix the
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) and set
 $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
-*red*, *green*, and *blue* sector embeddings by
+**red**, **green**, and **blue** sector embeddings by
 
 ```tex
 \begin{align*}

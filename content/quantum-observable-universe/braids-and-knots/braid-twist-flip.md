@@ -4,7 +4,7 @@ Define the two involutions
 ```tex
 \begin{align}
   \sigma_1(\mathbf{w}) &= (w_2,w_1,w_4,w_3)
-    &&\text{(twist),}
+    &&\text{(\textbf{twist}),}
     \label{eq:braid-twist}\\[4pt]
   \sigma_2(\mathbf{w}) &= (w_4,w_3,w_2,w_1)
     &&\text{(flip).}

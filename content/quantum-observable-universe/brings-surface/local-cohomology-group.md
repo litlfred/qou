@@ -1,4 +1,4 @@
-Define the local cohomology group $H^1_{\mathfrak{m}_1}(A)$ as the
+Define the **local cohomology group** $H^1_{\mathfrak{m}_1}(A)$ as the
 first right derived functor of the $\mathfrak{m}_1$-torsion functor
 $\Gamma_{\mathfrak{m}_1}$:
 

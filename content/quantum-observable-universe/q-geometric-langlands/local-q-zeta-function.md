@@ -1,4 +1,4 @@
-Define the local $q$-zeta function of Bring's curve $\mathcal{B}$ as
+Define the :defterm[local $q$-zeta function]{#local-q-zeta-function} of Bring's curve $\mathcal{B}$ as
 the generating function for point counts over finite extensions:
 
 $$

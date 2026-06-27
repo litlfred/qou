@@ -1,4 +1,4 @@
-Let $z \in \mathbb{P}^1(\mathbb{C})$.  The *color tube* at $z$ is the
+Let $z \in \mathbb{P}^1(\mathbb{C})$.  The **color tube** at $z$ is the
 affine curve defined over $\mathbb{Z}[z]$ by the color tube
 cubic; we denote it $R_z$, $G_z$, or
 $B_z$ according to which color tube coordinate $\mathbf{r}_z$,

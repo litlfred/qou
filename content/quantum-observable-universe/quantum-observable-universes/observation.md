@@ -6,7 +6,7 @@ $p \colon \mathbf{1} \to A$ be a
 ([categorical point](#def:categorical-point)), and let
 $U \subset M$ be an open causal neighbourhood of $p$.
 
-An *intent on $U$* is a pair $(\mathfrak{O}, \epsilon)$
+An **intent on $U$** is a pair $(\mathfrak{O}, \epsilon)$
 where $\epsilon \in \{+1, -1\}$ is the **direction** and
 
 $$

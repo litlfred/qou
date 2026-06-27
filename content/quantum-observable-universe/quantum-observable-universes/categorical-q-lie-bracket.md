@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 Reeb derivation $\xi$ ([categorical Reeb derivation](#def:categorical-reeb)) and
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)).
-The *$q$-deformed Lie bracket* on derivations of $A$ is
+The **$q$-deformed Lie bracket** on derivations of $A$ is
 
 $$
   [X, Y]_q =  q^{-1}[X, Y]

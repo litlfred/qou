@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum universe over $R$
 ([quantum universe](#def:quantum-universe)) with higher differential forms
 $\Omega^k(A)$ ([higher forms](#def:higher-forms)). The
-*categorical Hodge star* is the involution
+**categorical Hodge star** is the involution
 $\star \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
 
 $$
