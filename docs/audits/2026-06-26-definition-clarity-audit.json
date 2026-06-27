@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-27T12:55:29.494Z",
-  "scanned": 2086,
+  "generated_at": "2026-06-27T13:56:45.450Z",
+  "scanned": 2090,
   "criteria": [
     "clarity-defterm-bold",
     "clarity-defn-single",
@@ -183,9 +183,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "pass",
-      "evidence": "tight (175 words, 2 sub-sections)",
+      "evidence": "tight (176 words, 2 sub-sections)",
       "metrics": {
-        "words": 175,
+        "words": 176,
         "boldHeaders": 2,
         "preambleWords": 30
       },
@@ -209,20 +209,19 @@
       "label": "prop:habiro-pochhammer-bridge",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 1,
-        "hits": 1
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.qa.json"
     },
     {
       "label": "prop:habiro-pochhammer-bridge",
@@ -2723,9 +2722,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 387 prose words (>300)",
+      "evidence": "rambling statement: 392 prose words (>300)",
       "metrics": {
-        "words": 387,
+        "words": 392,
         "boldHeaders": 2,
         "preambleWords": 26
       },
@@ -2750,20 +2749,19 @@
       "label": "prop:a-8-partition-function-identity",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 5 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 5,
-        "hits": 5
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.qa.json"
     },
     {
       "label": "prop:a-8-partition-function-identity",
@@ -3479,6 +3477,38 @@
       "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/levi-form-defect.qa.json"
     },
     {
+      "label": "rem:torus-embeddable-completeness-remark",
+      "kind": "remark",
+      "criterion": "clarity-grad-style",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
+      "metrics": {
+        "contractions": 0,
+        "secondPerson": 0,
+        "hype": 0,
+        "colloquial": 0,
+        "exclamations": 0,
+        "emoji": 0,
+        "hits": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/torus-embeddable-completeness-remark.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-embeddable-completeness-remark.qa.json"
+    },
+    {
+      "label": "rem:torus-embeddable-completeness-remark",
+      "kind": "remark",
+      "criterion": "clarity-defn-misplaced",
+      "result": "pass",
+      "evidence": "no misplaced definition (0 defining verbs, 0 defterm, 0 defines[])",
+      "metrics": {
+        "definesCount": 0,
+        "deftermDirectives": 0,
+        "definingVerbs": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/torus-embeddable-completeness-remark.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-embeddable-completeness-remark.qa.json"
+    },
+    {
       "label": "prop:bring-trefoil-cinquefoil-channel",
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
@@ -3852,10 +3882,10 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 3 sub-sections (>=3); 88-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 88-word preamble before the statement (>80)",
       "metrics": {
-        "words": 265,
-        "boldHeaders": 3,
+        "words": 205,
+        "boldHeaders": 2,
         "preambleWords": 88
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/torus-embeddable-complete.md",
@@ -3866,15 +3896,14 @@
       "label": "prop:torus-embeddable-complete",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "fail",
-      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Remark.\") — move to a follow-on `remark` block (`interprets: \"prop:torus-embeddable-complete\"`)",
+      "result": "pass",
+      "evidence": "statement only — no embedded remark/interpretation",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 1
+        "interpretiveHeaders": 0
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/torus-embeddable-complete.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-embeddable-complete.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-embeddable-complete.qa.json"
     },
     {
       "label": "prop:torus-embeddable-complete",
@@ -4501,6 +4530,38 @@
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/c5-color-tube.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/c5-color-tube.qa.json"
+    },
+    {
+      "label": "rem:x5-bring-weight-geometric-content",
+      "kind": "remark",
+      "criterion": "clarity-grad-style",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
+      "metrics": {
+        "contractions": 0,
+        "secondPerson": 0,
+        "hype": 0,
+        "colloquial": 0,
+        "exclamations": 0,
+        "emoji": 0,
+        "hits": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/x5-bring-weight-geometric-content.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-bring-weight-geometric-content.qa.json"
+    },
+    {
+      "label": "rem:x5-bring-weight-geometric-content",
+      "kind": "remark",
+      "criterion": "clarity-defn-misplaced",
+      "result": "pass",
+      "evidence": "no misplaced definition (0 defining verbs, 0 defterm, 0 defines[])",
+      "metrics": {
+        "definesCount": 0,
+        "deftermDirectives": 0,
+        "definingVerbs": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/x5-bring-weight-geometric-content.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-bring-weight-geometric-content.qa.json"
     },
     {
       "label": "rem:t-duality-color-tube",
@@ -5961,10 +6022,10 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 465 prose words (>300); 4 sub-sections (>=3); 131-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 131-word preamble before the statement (>80)",
       "metrics": {
-        "words": 465,
-        "boldHeaders": 4,
+        "words": 211,
+        "boldHeaders": 2,
         "preambleWords": 131
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/torus-knot-generators.md",
@@ -5975,15 +6036,14 @@
       "label": "prop:torus-knot-generators",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "fail",
-      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Remark on the cutoff.\") — move to a follow-on `remark` block (`interprets: \"prop:torus-knot-generators\"`)",
+      "result": "pass",
+      "evidence": "statement only — no embedded remark/interpretation",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 1
+        "interpretiveHeaders": 0
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/torus-knot-generators.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-knot-generators.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-knot-generators.qa.json"
     },
     {
       "label": "prop:torus-knot-generators",
@@ -6037,14 +6097,14 @@
       "kind": "theorem",
       "criterion": "clarity-stmt-pure",
       "result": "fail",
-      "evidence": "theorem carries embedded interpretation: 1 interpretive lead-in (\"intuitively\"/\"in other words\"/…) — move to a follow-on `remark` block (`interprets: \"thm:generation-completeness\"`)",
+      "evidence": "theorem carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation.\"); 1 interpretive lead-in (\"intuitively\"/\"in other words\"/…) — move to a follow-on `remark` block (`interprets: \"thm:generation-completeness\"`)",
       "metrics": {
         "interpretivePhrases": 1,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/generation-completeness.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/generation-completeness.qa.json",
-      "severity": "minor"
+      "severity": "major"
     },
     {
       "label": "thm:generation-completeness",
@@ -6169,6 +6229,38 @@
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/fivefold-symmetry.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/fivefold-symmetry.qa.json"
+    },
+    {
+      "label": "rem:torus-knot-generators-interpretation",
+      "kind": "remark",
+      "criterion": "clarity-grad-style",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
+      "metrics": {
+        "contractions": 0,
+        "secondPerson": 0,
+        "hype": 0,
+        "colloquial": 0,
+        "exclamations": 0,
+        "emoji": 0,
+        "hits": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/torus-knot-generators-interpretation.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-knot-generators-interpretation.qa.json"
+    },
+    {
+      "label": "rem:torus-knot-generators-interpretation",
+      "kind": "remark",
+      "criterion": "clarity-defn-misplaced",
+      "result": "pass",
+      "evidence": "no misplaced definition (0 defining verbs, 0 defterm, 0 defines[])",
+      "metrics": {
+        "definesCount": 0,
+        "deftermDirectives": 0,
+        "definingVerbs": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/torus-knot-generators-interpretation.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/torus-knot-generators-interpretation.qa.json"
     },
     {
       "label": "sec:orbital-symmetry-embedding-intro",
@@ -6692,10 +6784,10 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "pass",
-      "evidence": "tight (145 words, 2 sub-sections)",
+      "evidence": "tight (91 words, 1 sub-sections)",
       "metrics": {
-        "words": 145,
-        "boldHeaders": 2,
+        "words": 91,
+        "boldHeaders": 1,
         "preambleWords": 35
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism.md",
@@ -6705,15 +6797,14 @@
       "label": "prop:x5-z5-automorphism",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "fail",
-      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Interpretation.\") — move to a follow-on `remark` block (`interprets: \"prop:x5-z5-automorphism\"`)",
+      "result": "pass",
+      "evidence": "statement only — no embedded remark/interpretation",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 1
+        "interpretiveHeaders": 0
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-z5-automorphism.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-z5-automorphism.qa.json"
     },
     {
       "label": "prop:x5-z5-automorphism",
@@ -6778,6 +6869,38 @@
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/brings-qou-axiom-map.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/brings-qou-axiom-map.qa.json"
+    },
+    {
+      "label": "rem:x5-z5-automorphism-interpretation",
+      "kind": "remark",
+      "criterion": "clarity-grad-style",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
+      "metrics": {
+        "contractions": 0,
+        "secondPerson": 0,
+        "hype": 0,
+        "colloquial": 0,
+        "exclamations": 0,
+        "emoji": 0,
+        "hits": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism-interpretation.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-z5-automorphism-interpretation.qa.json"
+    },
+    {
+      "label": "rem:x5-z5-automorphism-interpretation",
+      "kind": "remark",
+      "criterion": "clarity-defn-misplaced",
+      "result": "pass",
+      "evidence": "no misplaced definition (0 defining verbs, 0 defterm, 0 defines[])",
+      "metrics": {
+        "definesCount": 0,
+        "deftermDirectives": 0,
+        "definingVerbs": 0
+      },
+      "mdPath": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism-interpretation.md",
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-z5-automorphism-interpretation.qa.json"
     },
     {
       "label": "rem:knot-basis-color-content",
@@ -7437,10 +7560,10 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 320 prose words (>300); 84-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 84-word preamble before the statement (>80)",
       "metrics": {
-        "words": 320,
-        "boldHeaders": 2,
+        "words": 225,
+        "boldHeaders": 1,
         "preambleWords": 84
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/x5-bring-weight-identification.md",
@@ -7451,15 +7574,14 @@
       "label": "prop:x5-bring-weight-identification",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "fail",
-      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Remark on the geometric content.\") — move to a follow-on `remark` block (`interprets: \"prop:x5-bring-weight-identification\"`)",
+      "result": "pass",
+      "evidence": "statement only — no embedded remark/interpretation",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 1
+        "interpretiveHeaders": 0
       },
       "mdPath": "content/quantum-observable-universe/brings-surface/x5-bring-weight-identification.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-bring-weight-identification.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/brings-surface/x5-bring-weight-identification.qa.json"
     },
     {
       "label": "prop:x5-bring-weight-identification",
@@ -11475,14 +11597,15 @@
       "label": "prop:sdp-regime-switch",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation\") — move to a follow-on `remark` block (`interprets: \"prop:sdp-regime-switch\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/observations/sdp-regime-switch.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/sdp-regime-switch.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/sdp-regime-switch.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:sdp-regime-switch",
@@ -13616,14 +13739,15 @@
       "label": "prop:brane-tower-q-laplacian-decay",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Physical reading.\") — move to a follow-on `remark` block (`interprets: \"prop:brane-tower-q-laplacian-decay\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:brane-tower-q-laplacian-decay",
@@ -14088,20 +14212,19 @@
       "label": "rem:transcendental-accounting",
       "kind": "remark",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 contraction; 1 colloquialism",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
-        "contractions": 1,
+        "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
-        "colloquial": 1,
+        "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 2
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/transcendental-accounting.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/transcendental-accounting.qa.json"
     },
     {
       "label": "rem:transcendental-accounting",
@@ -16172,14 +16295,14 @@
       "kind": "conjecture",
       "criterion": "clarity-stmt-pure",
       "result": "fail",
-      "evidence": "conjecture carries embedded interpretation: 1 interpretive lead-in (\"intuitively\"/\"in other words\"/…) — move to a follow-on `remark` block (`interprets: \"conj:q-birch-swinnerton-dyer\"`)",
+      "evidence": "conjecture carries embedded interpretation: 1 interpretive sub-section (\"Categorical content.\"); 1 interpretive lead-in (\"intuitively\"/\"in other words\"/…) — move to a follow-on `remark` block (`interprets: \"conj:q-birch-swinnerton-dyer\"`)",
       "metrics": {
         "interpretivePhrases": 1,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.qa.json",
-      "severity": "minor"
+      "severity": "major"
     },
     {
       "label": "conj:q-birch-swinnerton-dyer",
@@ -25103,20 +25226,19 @@
       "label": "rem:incompleteness-horizon",
       "kind": "remark",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 3 hype adjectives",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
-        "hype": 3,
+        "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 3
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/information-theory/incompleteness-horizon.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/information-theory/incompleteness-horizon.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/information-theory/incompleteness-horizon.qa.json"
     },
     {
       "label": "rem:incompleteness-horizon",
@@ -31449,14 +31571,15 @@
       "label": "thm:substrate-self-duality",
       "kind": "theorem",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "theorem carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation.\") — move to a follow-on `remark` block (`interprets: \"thm:substrate-self-duality\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.qa.json",
+      "severity": "major"
     },
     {
       "label": "thm:substrate-self-duality",
@@ -45751,9 +45874,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 577 prose words (>300)",
+      "evidence": "rambling statement: 579 prose words (>300)",
       "metrics": {
-        "words": 577,
+        "words": 579,
         "boldHeaders": 0,
         "preambleWords": 57
       },
@@ -45778,20 +45901,19 @@
       "label": "prop:force-carrier-intertwining-correspondence",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 2,
-        "hits": 2
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.qa.json"
     },
     {
       "label": "prop:force-carrier-intertwining-correspondence",
@@ -46581,9 +46703,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 936 prose words (>300)",
+      "evidence": "rambling statement: 942 prose words (>300)",
       "metrics": {
-        "words": 936,
+        "words": 942,
         "boldHeaders": 2,
         "preambleWords": 53
       },
@@ -46608,20 +46730,19 @@
       "label": "prop:lepton-bring-surface-h3-3channel",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 5 emoji; 1 contraction",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
-        "contractions": 1,
+        "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 5,
-        "hits": 6
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel.qa.json"
     },
     {
       "label": "prop:lepton-bring-surface-h3-3channel",
@@ -48883,20 +49004,19 @@
       "label": "conj:canonical-knot-id-sdp",
       "kind": "conjecture",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 1,
-        "hits": 1
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.qa.json"
     },
     {
       "label": "conj:canonical-knot-id-sdp",
@@ -49280,10 +49400,10 @@
       "kind": "theorem",
       "criterion": "clarity-stmt-pure",
       "result": "fail",
-      "evidence": "theorem carries embedded interpretation: 1 interpretive sub-section (\"Why this matters for the 6-term formula.\") — move to a follow-on `remark` block (`interprets: \"thm:frobenius-antipode-unifies-chirality-and-tower\"`)",
+      "evidence": "theorem carries embedded interpretation: 2 interpretive sub-sections (\"Geometric interpretation of $G/3$.\", \"Why this matters for the 6-term formula.\") — move to a follow-on `remark` block (`interprets: \"thm:frobenius-antipode-unifies-chirality-and-tower\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 1
+        "interpretiveHeaders": 2
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/frobenius-antipode-unifies-chirality-and-tower.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/frobenius-antipode-unifies-chirality-and-tower.qa.json",
@@ -49400,14 +49520,15 @@
       "label": "prop:curvature-rank-gb-stratification",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Geometric reading.\") — move to a follow-on `remark` block (`interprets: \"prop:curvature-rank-gb-stratification\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:curvature-rank-gb-stratification",
@@ -49796,20 +49917,19 @@
       "label": "rem:block-multiplicativity-v-free",
       "kind": "remark",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 2,
-        "hits": 2
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/block-multiplicativity-v-free.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/block-multiplicativity-v-free.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/block-multiplicativity-v-free.qa.json"
     },
     {
       "label": "rem:block-multiplicativity-v-free",
@@ -51189,20 +51309,19 @@
       "label": "conj:im-q-physical-role",
       "kind": "conjecture",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 contractions",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
-        "contractions": 2,
+        "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 2
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.qa.json"
     },
     {
       "label": "conj:im-q-physical-role",
@@ -54524,20 +54643,19 @@
       "label": "conj:bring-figure-eight-depth-2-witness",
       "kind": "conjecture",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 1,
-        "hits": 1
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/bring-figure-eight-depth-2-witness.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/bring-figure-eight-depth-2-witness.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/bring-figure-eight-depth-2-witness.qa.json"
     },
     {
       "label": "conj:bring-figure-eight-depth-2-witness",
@@ -56432,11 +56550,11 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 730 prose words (>300); 5 sub-sections (>=3); 174-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 731 prose words (>300); 5 sub-sections (>=3); 175-word preamble before the statement (>80)",
       "metrics": {
-        "words": 730,
+        "words": 731,
         "boldHeaders": 5,
-        "preambleWords": 174
+        "preambleWords": 175
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.qa.json",
@@ -56459,20 +56577,19 @@
       "label": "prop:markov-trace-frobenius-selection",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 1,
-        "hits": 1
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.qa.json"
     },
     {
       "label": "prop:markov-trace-frobenius-selection",
@@ -57882,14 +57999,15 @@
       "label": "prop:graded-trace-residue-split",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation of each piece.\") — move to a follow-on `remark` block (`interprets: \"prop:graded-trace-residue-split\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/graded-trace-residue-split.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/graded-trace-residue-split.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/graded-trace-residue-split.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:graded-trace-residue-split",
@@ -58034,14 +58152,15 @@
       "label": "prop:chirality-residue-mass-term",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation.\") — move to a follow-on `remark` block (`interprets: \"prop:chirality-residue-mass-term\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:chirality-residue-mass-term",
@@ -59716,9 +59835,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 891 prose words (>300); 7 sub-sections (>=3); 111-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 893 prose words (>300); 7 sub-sections (>=3); 111-word preamble before the statement (>80)",
       "metrics": {
-        "words": 891,
+        "words": 893,
         "boldHeaders": 7,
         "preambleWords": 111
       },
@@ -59744,20 +59863,19 @@
       "label": "prop:chi-lambda-w0-sign-weighting",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 2,
-        "hits": 2
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.qa.json"
     },
     {
       "label": "prop:chi-lambda-w0-sign-weighting",
@@ -59822,20 +59940,19 @@
       "label": "rem:frobenius-limits-substrate-cost",
       "kind": "remark",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 second-person (\"you\"); 1 hype adjective",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
-        "secondPerson": 1,
-        "hype": 1,
+        "secondPerson": 0,
+        "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 2
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/frobenius-limits-substrate-cost.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/frobenius-limits-substrate-cost.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/frobenius-limits-substrate-cost.qa.json"
     },
     {
       "label": "rem:frobenius-limits-substrate-cost",
@@ -62807,9 +62924,9 @@
       "kind": "definition",
       "criterion": "clarity-defn-tight",
       "result": "fail",
-      "evidence": "rambling: 322 prose words (>250)",
+      "evidence": "rambling: 324 prose words (>250)",
       "metrics": {
-        "words": 322,
+        "words": 324,
         "boldHeaders": 2,
         "preambleWords": 0
       },
@@ -62821,20 +62938,19 @@
       "label": "def:hq-bi-filtration",
       "kind": "definition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 2,
-        "hits": 2
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/hq-bi-filtration.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/hq-bi-filtration.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/hq-bi-filtration.qa.json"
     },
     {
       "label": "rem:calibration-inputs",
@@ -65712,14 +65828,15 @@
       "label": "thm:frobenius-codim-universal",
       "kind": "theorem",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "theorem carries embedded interpretation: 1 interpretive sub-section (\"Physical content.\") — move to a follow-on `remark` block (`interprets: \"thm:frobenius-codim-universal\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/frobenius-codim-universal.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/frobenius-codim-universal.qa.json",
+      "severity": "major"
     },
     {
       "label": "thm:frobenius-codim-universal",
@@ -66472,9 +66589,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 533 prose words (>300); 4 sub-sections (>=3)",
+      "evidence": "rambling statement: 536 prose words (>300); 4 sub-sections (>=3)",
       "metrics": {
-        "words": 533,
+        "words": 536,
         "boldHeaders": 4,
         "preambleWords": 36
       },
@@ -66499,20 +66616,19 @@
       "label": "prop:cyclotomic-dimension-synthesis-all-depths",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 emoji; 1 contraction",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
-        "contractions": 1,
+        "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 2,
-        "hits": 3
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.qa.json"
     },
     {
       "label": "prop:cyclotomic-dimension-synthesis-all-depths",
@@ -66579,14 +66695,15 @@
       "label": "prop:chirality-dual-space-derivation",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Categorical content.\") — move to a follow-on `remark` block (`interprets: \"prop:chirality-dual-space-derivation\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:chirality-dual-space-derivation",
@@ -70712,20 +70829,19 @@
       "label": "rem:chi-per-irrep-cyclotomic-closed-forms",
       "kind": "remark",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 second-person (\"you\"); 1 hype adjective",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 1,
-        "hype": 1,
+        "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 2
+        "hits": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.qa.json"
     },
     {
       "label": "rem:chi-per-irrep-cyclotomic-closed-forms",
@@ -72367,11 +72483,11 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 447 prose words (>300); 447-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 451 prose words (>300); 451-word preamble before the statement (>80)",
       "metrics": {
-        "words": 447,
+        "words": 451,
         "boldHeaders": 1,
-        "preambleWords": 447
+        "preambleWords": 451
       },
       "mdPath": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.qa.json",
@@ -72394,20 +72510,19 @@
       "label": "prop:qbeta-c-k-closed-forms",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 4 contractions",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
-        "contractions": 4,
+        "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 4
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.qa.json"
     },
     {
       "label": "prop:qbeta-c-k-closed-forms",
@@ -75889,20 +76004,19 @@
       "label": "conj:bring-hyperbolic-knot-bloch-decomposition",
       "kind": "conjecture",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 5 emoji",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
-        "emoji": 5,
-        "hits": 5
+        "emoji": 0,
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.qa.json",
-      "severity": "major"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.qa.json"
     },
     {
       "label": "conj:bring-hyperbolic-knot-bloch-decomposition",
@@ -76577,20 +76691,19 @@
       "label": "rem:shell-construction-rules",
       "kind": "remark",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 1 exclamation mark",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
         "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
-        "exclamations": 1,
+        "exclamations": 0,
         "emoji": 0,
-        "hits": 1
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/predicted-spectra/shell-construction-rules.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/shell-construction-rules.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/shell-construction-rules.qa.json"
     },
     {
       "label": "rem:shell-construction-rules",
@@ -77445,14 +77558,15 @@
       "label": "prop:parity-violation-skein",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation.\") — move to a follow-on `remark` block (`interprets: \"prop:parity-violation-skein\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/parity-violation-skein.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/parity-violation-skein.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:parity-violation-skein",
@@ -77626,10 +77740,10 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
       "result": "fail",
-      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Remark on the classical limit.\") — move to a follow-on `remark` block (`interprets: \"prop:em-coupling-projection\"`)",
+      "evidence": "proposition carries embedded interpretation: 2 interpretive sub-sections (\"Remark on the classical limit.\", \"Physical interpretation.\") — move to a follow-on `remark` block (`interprets: \"prop:em-coupling-projection\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 1
+        "interpretiveHeaders": 2
       },
       "mdPath": "content/quantum-observable-universe/predicted-spectra/em-coupling-projection.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/em-coupling-projection.qa.json",
@@ -81370,9 +81484,9 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 811 prose words (>300); 4 sub-sections (>=3); 93-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 813 prose words (>300); 4 sub-sections (>=3); 93-word preamble before the statement (>80)",
       "metrics": {
-        "words": 811,
+        "words": 813,
         "boldHeaders": 4,
         "preambleWords": 93
       },
@@ -81398,20 +81512,19 @@
       "label": "prop:silver-ratio-beta-decay-null",
       "kind": "proposition",
       "criterion": "clarity-grad-style",
-      "result": "fail",
-      "evidence": "informal register (not graduate-level math prose): 2 contractions",
+      "result": "pass",
+      "evidence": "graduate-level formal register",
       "metrics": {
-        "contractions": 2,
+        "contractions": 0,
         "secondPerson": 0,
         "hype": 0,
         "colloquial": 0,
         "exclamations": 0,
         "emoji": 0,
-        "hits": 2
+        "hits": 0
       },
       "mdPath": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.qa.json"
     },
     {
       "label": "prop:silver-ratio-beta-decay-null",
@@ -83042,14 +83155,15 @@
       "label": "thm:groebner-shirshov-energy",
       "kind": "theorem",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "theorem carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation.\") — move to a follow-on `remark` block (`interprets: \"thm:groebner-shirshov-energy\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.qa.json",
+      "severity": "major"
     },
     {
       "label": "thm:groebner-shirshov-energy",
@@ -86597,14 +86711,15 @@
       "label": "prop:shell-schur-weyl-self-duality",
       "kind": "proposition",
       "criterion": "clarity-stmt-pure",
-      "result": "pass",
-      "evidence": "statement only — no embedded remark/interpretation",
+      "result": "fail",
+      "evidence": "proposition carries embedded interpretation: 1 interpretive sub-section (\"Physical interpretation.\") — move to a follow-on `remark` block (`interprets: \"prop:shell-schur-weyl-self-duality\"`)",
       "metrics": {
         "interpretivePhrases": 0,
-        "interpretiveHeaders": 0
+        "interpretiveHeaders": 1
       },
       "mdPath": "content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.qa.json"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.qa.json",
+      "severity": "major"
     },
     {
       "label": "prop:shell-schur-weyl-self-duality",
@@ -88780,11 +88895,11 @@
       "kind": "proposition",
       "criterion": "clarity-stmt-tight",
       "result": "fail",
-      "evidence": "rambling statement: 351 prose words (>300); 351-word preamble before the statement (>80)",
+      "evidence": "rambling statement: 355 prose words (>300); 355-word preamble before the statement (>80)",
       "metrics": {
-        "words": 351,
+        "words": 355,
         "boldHeaders": 2,
-        "preambleWords": 351
+        "preambleWords": 355
       },
       "mdPath": "content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.qa.json",

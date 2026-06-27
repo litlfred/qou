@@ -378,7 +378,7 @@ const INTERPRETIVE_PHRASE =
  *  block should not contain a "Physical meaning." / "Interpretation." /
  *  "Remark." / "Motivation." sub-section; that is a follow-on `remark`. */
 const INTERPRETIVE_HEADER =
-  /^(physical meaning|interpretation|geometric (?:meaning|picture)|categorical (?:meaning|picture)|intuition|motivation|why this matters|discussion|commentary|remark|remarks|in words|moral|upshot|significance|context|role in|physical picture|heuristic[s]?|aside)\b/i;
+  /^((?:physical|geometric|categorical|operational|conceptual|intuitive|topological|algebraic|number-theoretic)\s+(?:meaning|interpretation|picture|content|reading)|interpretation|intuition|motivation|why this matters|discussion|commentary|remark|remarks|in words|moral|upshot|significance|context|role in|heuristic[s]?|aside)\b/i;
 
 function interpretivePhrases(s: string): number {
   const m = s.match(INTERPRETIVE_PHRASE);
