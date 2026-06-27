@@ -1,4 +1,4 @@
-Let $R$ be a commutative ring. A *quantum universe over $R$* is a
+Let $R$ be a commutative ring. A **quantum universe over $R$** is a
 triple $(\mathbf{C}, A, \tau)$ where:
 
 1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid

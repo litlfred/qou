@@ -1,4 +1,4 @@
-Define the classical limit as a :refterm[monoidal functor]{#monoidal-functor}
+Define the **classical limit** as a :refterm[monoidal functor]{#monoidal-functor}
 
 $$
 \mathcal{L} : \mathbf{C}_q \longrightarrow \mathbf{C}_1
