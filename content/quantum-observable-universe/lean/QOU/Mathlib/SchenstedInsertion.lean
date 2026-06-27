@@ -153,3 +153,67 @@ theorem insertWord_rowsSorted (w : List ℕ) : RowsSorted (insertWord w) := by
     intro T hT
     rw [List.foldl_cons]
     exact ih _ (insert_rowsSorted hT a)
+
+/-! ## Brick 3 — cell count: `|P(w)| = |w|` (each insertion adds exactly one cell) -/
+
+/-- A no-bump row insertion (append) grows the row by one. -/
+theorem rowInsert_length_none {r : List ℕ} {x : ℕ} (h : (rowInsert r x).2 = none) :
+    (rowInsert r x).1.length = r.length + 1 := by
+  induction r with
+  | nil => simp [rowInsert]
+  | cons a r ih =>
+    rw [rowInsert_cons] at h ⊢
+    by_cases hx : x < a
+    · rw [if_pos hx] at h; simp at h
+    · rw [if_neg hx] at h ⊢
+      have := ih h
+      simp only [List.length_cons]; omega
+
+/-- A bumping row insertion keeps the row length fixed. -/
+theorem rowInsert_length_some {r : List ℕ} {x y : ℕ} (h : (rowInsert r x).2 = some y) :
+    (rowInsert r x).1.length = r.length := by
+  induction r with
+  | nil => simp [rowInsert] at h
+  | cons a r ih =>
+    rw [rowInsert_cons] at h ⊢
+    by_cases hx : x < a
+    · rw [if_pos hx] at h ⊢; simp
+    · rw [if_neg hx] at h ⊢
+      have := ih h
+      simp only [List.length_cons]; omega
+
+/-- Total number of cells of a tableau. -/
+def totalCells (T : List (List ℕ)) : ℕ := (T.map List.length).sum
+
+@[simp] theorem totalCells_nil : totalCells [] = 0 := rfl
+
+@[simp] theorem totalCells_cons (a : List ℕ) (l : List (List ℕ)) :
+    totalCells (a :: l) = a.length + totalCells l := by simp [totalCells]
+
+/-- **Each insertion adds exactly one cell.**  A bump replaces an entry (no length change in that
+row) but cascades the bumped value downward, which eventually appends one cell (or starts a new
+row); a no-bump appends directly.  Either way the total grows by exactly one. -/
+theorem insert_totalCells : ∀ (T : List (List ℕ)) (x : ℕ),
+    totalCells (insert T x) = totalCells T + 1
+  | [], x => by simp [insert]
+  | row :: rest, x => by
+      rw [insert]
+      cases hb : (rowInsert row x).2 with
+      | none => rw [totalCells_cons, totalCells_cons, rowInsert_length_none hb]; omega
+      | some y =>
+        rw [totalCells_cons, totalCells_cons, rowInsert_length_some hb,
+            insert_totalCells rest y]; omega
+
+/-- `|P(w)| = |w|`: the insertion tableau of a word has exactly as many cells as the word has
+letters — the cell-count fact RSK's cardinality argument rests on. -/
+theorem insertWord_totalCells (w : List ℕ) : totalCells (insertWord w) = w.length := by
+  have key : ∀ (v : List ℕ) (T : List (List ℕ)),
+      totalCells (v.foldl insert T) = totalCells T + v.length := by
+    intro v
+    induction v with
+    | nil => intro T; simp
+    | cons a v ih =>
+      intro T
+      rw [List.foldl_cons, ih (insert T a), insert_totalCells]
+      simp only [List.length_cons]; omega
+  simpa using key w []
