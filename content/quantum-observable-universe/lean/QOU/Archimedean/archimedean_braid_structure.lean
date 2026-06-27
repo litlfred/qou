@@ -71,15 +71,18 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
    ([$p$-adic realisation](#ex:p-adic-realisation)), where knot complements
    and skein relations are not available.
 
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+    Honest encoding (§3b): the four sub-claims are conjectural categorical
+    facts about `Rep(SU_q(2))` / `Dic₃` that are not yet formalisable over
+    the opaque context types, so this is **named as a conditional
+    proposition**, not asserted by a vacuous self-assuming projection.
+    The Descartes-universe data `ctx` is the conjecture carrier; an
+    instance of `DescartesBraidStructureContext` *is* the conjecture (no
+    instance = honest open state). -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/descartes-braid-structure.ts
-theorem descartes_braid_structure [ctx : DescartesBraidStructureContext] :
+def descartes_braid_structure (ctx : DescartesBraidStructureContext) : Prop :=
     12 ≤ ctx.ρ_3_image_size ∧
     ctx.image_order = 12 ∧
     ctx.n_S3_copies = 3 ∧
-    (∀ R : Type, ctx.defined_over R) :=
-  ⟨ctx.claim_i_faithful_rep, ctx.claim_ii_image_order_eq_12, ctx.claim_iii_three_S3_copies, ctx.claim_iv_padic_universal⟩
+    (∀ R : Type, ctx.defined_over R)
 
 end QOU.Archimedean
