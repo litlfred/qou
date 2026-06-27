@@ -41,6 +41,18 @@
 >
 > So: continuing "in this sandbox" means the **combinatorial route** (SYT type → RSK/HLF), each a multi-session theorem; the **representation-theory route** (cleaner for (i) via `∑dim²=|G|`, and the only route for (ii)) needs an environment with the full Mathlib olean tree or lands upstream in Mathlib. This is an owner-steering fork (Decision 1: in-repo vs upstream), recorded here.
 
+> **Update (2026-06-27) — axiom-(i) STATEMENT infra complete and merged (combinatorial route, 3 PRs).** Owner directed the combinatorial route; the entire *statement-level* infrastructure for axiom (i) now composes end-to-end on `main`, all sorry-free / axiom-clean / `lean`-direct verified against the restored v4.24.0 oleans:
+>
+> | PR | Module | Contents |
+> |---|---|---|
+> | [#2848](https://github.com/litlfred/qou/pull/2848) | `QOU/Mathlib/PartitionListBridge.lean` | `Nat.Partition n ≃ {sorted positive List ℕ}` (`toList`/`ofList`/`equivSortedList`) + sum transport (`toList_injective`, `sum_image_toList`) |
+> | [#2871](https://github.com/litlfred/qou/pull/2871) | `QOU/Mathlib/StandardYoungTableau.lean` | the SYT type Mathlib lacks — `StandardYoungTableau μ`, `row_strict`, `Finite` instance, `numStandardYoungTableaux μ := Nat.card …` (genuine `#SYT`) |
+> | [#2879](https://github.com/litlfred/qou/pull/2879) | `QOU/Mathlib/RSKBurnsideTarget.lean` | `partitionShape` (via `ofRowLens` + sorted parts) → `dimSYT` → **`RSKBurnsideHolds n : Prop := ∑_{p⊢n} (dimSYT p)² = n!`** — axiom (i) as a faithful, fully-defined `Prop` (no axiom, no `sorry`) |
+>
+> The chain `Nat.Partition n → ofRowLens → YoungDiagram → StandardYoungTableau → numStandardYoungTableaux → RSKBurnsideHolds` is fully *defined*. **What remains is exactly the PROOF of `RSKBurnsideHolds`** — the RSK correspondence `S_n ≃ Σ_λ SYT(λ)²`, genuinely absent from pinned Mathlib (no `Combinatorics.RSK` module; recon 2026-06-26) and a multi-session theorem (Schensted insertion + bijectivity + the cardinality count). Proving it discharges `PlancherelSnData.sum_dim_sq`. **HLF** (`dimSYT = dimHLF`, connecting to the existing `List ℕ`-model dimension) and **axiom (ii)** (the content-square mean — needs representation theory, un-verifiable in this sandbox: `RepresentationTheory` oleans absent) are the other two multi-session remainders.
+>
+> **Verification note.** Files under `QOU/Mathlib/` that import other QOU modules (e.g. `RSKBurnsideTarget` importing `StandardYoungTableau`) are verified by building the dependency olean manually (`lean -o` into the QOU lib build dir, no `lake` Mathlib re-storm) then `lean`-direct on the importer. A full-cache re-seed (bean `olzz`) would let CI / `lake build QOU` cover them directly.
+
 ## Goal
 
 Fully close **Identity I** `M(n) = (1/n!)·Σ_{λ⊢n} dim(λ)²·Σ_{c∈λ} h_c² = n(3n−1)/2` in Lean,
