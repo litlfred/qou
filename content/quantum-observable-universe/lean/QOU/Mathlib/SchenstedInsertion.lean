@@ -1,4 +1,7 @@
 import Mathlib.Data.List.Sort
+import Mathlib.Data.Multiset.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.Abel
 
 /-!
 # QOU.Mathlib.SchenstedInsertion — Schensted row insertion (RSK foundation, brick 1)
@@ -216,4 +219,72 @@ theorem insertWord_totalCells (w : List ℕ) : totalCells (insertWord w) = w.len
       intro T
       rw [List.foldl_cons, ih (insert T a), insert_totalCells]
       simp only [List.length_cons]; omega
+  simpa using key w []
+
+/-! ## Brick 4 — content preservation: `P(w)` holds exactly the multiset of `w`'s letters -/
+
+/-- The bumped value as a multiset (`∅` if no bump, `{a}` if `a` is bumped). -/
+def bumpMs : Option ℕ → Multiset ℕ
+  | none => 0
+  | some a => {a}
+
+/-- The multiset of entries of a tableau (sum of its rows' multisets). -/
+def content : List (List ℕ) → Multiset ℕ
+  | [] => 0
+  | r :: T => (↑r : Multiset ℕ) + content T
+
+@[simp] theorem content_nil : content [] = 0 := rfl
+
+@[simp] theorem content_cons (r : List ℕ) (T : List (List ℕ)) :
+    content (r :: T) = (↑r : Multiset ℕ) + content T := rfl
+
+/-- **Row insertion conserves entries**: the new row plus the bumped value (if any) carries exactly
+the old row's entries together with the inserted `x`. -/
+theorem rowInsert_content (r : List ℕ) (x : ℕ) :
+    (↑(rowInsert r x).1 : Multiset ℕ) + bumpMs (rowInsert r x).2 = (↑r : Multiset ℕ) + {x} := by
+  induction r with
+  | nil => simp [rowInsert, bumpMs]
+  | cons a r ih =>
+    rw [rowInsert_cons]
+    by_cases hx : x < a
+    · rw [if_pos hx]
+      simp only [bumpMs, ← Multiset.cons_coe, ← Multiset.singleton_add]
+      abel
+    · rw [if_neg hx]
+      simp only [← Multiset.cons_coe, ← Multiset.singleton_add]
+      rw [add_assoc, ih]
+      abel
+
+/-- **The insertion cascade conserves entries**: `insert T x` holds exactly the entries of `T`
+together with `x`.  (The bumped value is never lost — it cascades down until appended.) -/
+theorem insert_content : ∀ (T : List (List ℕ)) (x : ℕ),
+    content (insert T x) = content T + {x}
+  | [], x => by simp [insert, content]
+  | row :: rest, x => by
+      rw [insert]
+      cases hb : (rowInsert row x).2 with
+      | none =>
+        have hc := rowInsert_content row x
+        rw [hb, bumpMs, add_zero] at hc
+        rw [content_cons, content_cons, hc]; abel
+      | some y =>
+        have hc := rowInsert_content row x
+        rw [hb, bumpMs] at hc
+        rw [content_cons, content_cons, insert_content rest y]
+        have h2 : (↑(rowInsert row x).1 : Multiset ℕ) + (content rest + {y})
+                = ((↑(rowInsert row x).1 : Multiset ℕ) + {y}) + content rest := by abel
+        rw [h2, hc]; abel
+
+/-- `content (P(w)) = ↑w`: the insertion tableau of a word holds exactly the multiset of its
+letters — the content-preservation fact RSK's bijection content-matching rests on. -/
+theorem insertWord_content (w : List ℕ) : content (insertWord w) = (↑w : Multiset ℕ) := by
+  have key : ∀ (v : List ℕ) (T : List (List ℕ)),
+      content (v.foldl insert T) = content T + (↑v : Multiset ℕ) := by
+    intro v
+    induction v with
+    | nil => intro T; simp
+    | cons a v ih =>
+      intro T
+      rw [List.foldl_cons, ih (insert T a), insert_content]
+      simp only [← Multiset.cons_coe, ← Multiset.singleton_add]; abel
   simpa using key w []
