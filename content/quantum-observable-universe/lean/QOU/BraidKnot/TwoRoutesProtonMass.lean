@@ -202,7 +202,9 @@ theorem five_averaged_crossings (q : ℝ) (hq : q ≠ 0)
     (σ - (q - 1/q) / 2) ^ 5 =
     (1 + (q - 1/q) ^ 2 / 4) ^ 2 * (σ - (q - 1/q) / 2) := by
   have sq := averaged_crossing_squared_scalar q hq σ hecke
-  nlinarith [sq, sq]
+  calc (σ - (q - 1/q) / 2) ^ 5
+      = ((σ - (q - 1/q) / 2) ^ 2) ^ 2 * (σ - (q - 1/q) / 2) := by ring
+    _ = (1 + (q - 1/q) ^ 2 / 4) ^ 2 * (σ - (q - 1/q) / 2) := by rw [sq]
 
 end
 end QOU.BraidKnot.TwoRoutes
