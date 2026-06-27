@@ -46,14 +46,13 @@ theorem fibre_functor_atlas {G : Type} [Group G] [ctx : FibreFunctorAtlasContext
     (∀ i j : ctx.FFIdx, ctx.g j i = (ctx.g i j)⁻¹) ∧
     (∀ i j k : ctx.FFIdx, ctx.g i k = ctx.g j k * ctx.g i j) ∧
     (∀ i j : ctx.FFIdx, ∃ x : G, ctx.g i j = x) := by
-  refine ⟨fun i => ?_, fun i j => ?_, ctx.cocycle, fun i j => ⟨ctx.g i j, rfl⟩⟩
-  · -- (i) Chart identity: cocycle at `(i,i,i)` is `g i i = g i i * g i i`
-    --     (`a = b * a` with `b = a`), so `b = 1`, i.e. `g i i = 1`.
-    exact right_eq_mul.mp (ctx.cocycle i i i)
-  · -- (ii) Torsor inverse: cocycle at `(i,j,i)` is `g i i = g j i * g i j`;
-    --      with `g i i = 1` this gives `g j i * g i j = 1`, so `g j i = (g i j)⁻¹`.
-    have hcharts : ctx.g i i = 1 := right_eq_mul.mp (ctx.cocycle i i i)
-    have h1 : ctx.g j i * ctx.g i j = 1 := by rw [← ctx.cocycle i j i]; exact hcharts
-    exact mul_eq_one_iff_eq_inv.mp h1
+  -- (i) Chart identity: cocycle at `(i,i,i)` is `g i i = g i i * g i i`
+  --     (`a = b * a` with `b = a`), so `b = 1`, i.e. `g i i = 1`. Shared below.
+  have hcharts (i : ctx.FFIdx) : ctx.g i i = 1 := right_eq_mul.mp (ctx.cocycle i i i)
+  refine ⟨hcharts, fun i j => ?_, ctx.cocycle, fun i j => ⟨ctx.g i j, rfl⟩⟩
+  -- (ii) Torsor inverse: cocycle at `(i,j,i)` is `g i i = g j i * g i j`;
+  --      with `g i i = 1` this gives `g j i * g i j = 1`, so `g j i = (g i j)⁻¹`.
+  have h1 : ctx.g j i * ctx.g i j = 1 := by rw [← ctx.cocycle i j i]; exact hcharts i
+  exact mul_eq_one_iff_eq_inv.mp h1
 
 end QOU.QuantumObservableUniverse
