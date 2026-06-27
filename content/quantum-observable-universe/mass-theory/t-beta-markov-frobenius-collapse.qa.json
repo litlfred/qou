@@ -1271,6 +1271,24 @@
         "reviewed_at": "2026-06-22T02:57:12.157Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement + proof, then 'Categorical reading' section ('This is the natural categorical answer to what is T_beta as an operator...') — interpretive prose on meaning, plus a 'Corollary' on observable invariance. No companion interprets: remark.",
+        "notes": "The categorical-reading content is interpretation of the result's meaning; mathematically tied and modest in size, so WARN rather than FAIL."
       }
     ],
     "fit-section-chapter": [
@@ -1546,5 +1564,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "ecc2f45d1167",
     "ts": "91ca2068a882",
-    "lean": "dc6151450d2f"
+    "lean": "0440169118f6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1277,6 +1277,22 @@
         "reviewed_at": "2026-06-22T02:56:24.538Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Statement + one-line proof + a single short clarifying paragraph on the rate separation (first-order-in-h reading) — a brief scope/applicability note, which the rubric treats as PASS. Lean note only otherwise."
       }
     ],
     "fit-section-chapter": [
@@ -1812,5 +1828,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

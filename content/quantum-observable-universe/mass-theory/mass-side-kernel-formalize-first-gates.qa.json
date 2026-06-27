@@ -1269,6 +1269,22 @@
         "reviewed_at": "2026-06-22T02:57:06.009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "7ef738a57cd7",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Infrastructure 'definition + composition theorem' block. Content is structural (typeclass tables, composition liftings, scope notes), not physical interpretation/motivation; authoring archaeology already moved to authorNotes."
       }
     ],
     "fit-section-chapter": [
@@ -1544,5 +1560,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

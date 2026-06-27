@@ -1273,6 +1273,24 @@
         "reviewed_at": "2026-06-22T02:57:00.499Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "1c3d85efc4df",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement + multi-step derivation, then '## Why summing it per level is a double count', '## Engineering consequence' (quotes an infrastructure-audit fix), and '## Relation to the Nakayama triviality' — downstream-consequence and engineering-justification prose in the same block. No interprets: remark.",
+        "notes": "Mostly mathematical derivation justification; the 'Engineering consequence' section is the most interpretive but is tied to the derivation. Borderline, not a clear mislocation."
       }
     ],
     "fit-section-chapter": [
@@ -1862,5 +1880,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

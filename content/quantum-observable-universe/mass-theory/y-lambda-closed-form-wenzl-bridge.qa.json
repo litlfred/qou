@@ -1288,6 +1288,24 @@
         "reviewed_at": "2026-06-22T02:56:54.644Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Contains borderline interpretive prose."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": ".md has a \"## Significance\" section (lines 103-159) with motivation and an \"Implications\" subsection; no companion interprets: remark holds it.",
+        "notes": "Content is largely technical scope (convention bridge, computational speedups) rather than physical-meaning interpretation, so it sits below the FAIL threshold. Could be migrated to a linked remark or authorNotes."
       }
     ],
     "fit-section-chapter": [
@@ -1832,5 +1850,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

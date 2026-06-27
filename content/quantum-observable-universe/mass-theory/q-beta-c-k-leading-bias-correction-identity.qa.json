@@ -1275,6 +1275,24 @@
         "reviewed_at": "2026-06-22T02:57:11.286Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "q-beta-c-k-leading-bias-correction-identity.md lines 64-99: '## Structural significance' and '## Implications for the 569bedda1 c_3 falsification' reframe the bias as a 'structural signature' and 'predictive evidence', and argue the falsification should be revisited — substantive methodological/motivational prose in the same proposition block, no companion interprets: remark.",
+        "notes": "Significance/Implications headings present; content is methodological discussion grounded in numerics rather than physical meaning, so WARN. Candidate for an interprets: remark to hold the falsification-revisit argument."
       }
     ],
     "fit-section-chapter": [
@@ -1550,5 +1568,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

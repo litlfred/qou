@@ -1273,6 +1273,22 @@
         "reviewed_at": "2026-06-22T02:57:01.015Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Exemplary separation: the block explicitly splits interpretation into four linked companion remarks (## Companion interpretive remarks links rem:confinement-sdp-spectral-gap, -multi-operator, -vs-lp, -misdp, plus a thimble-flow remark). Statement (primal/dual SDP) + proof sketch only."
       }
     ],
     "fit-section-chapter": [
@@ -1998,5 +2014,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

@@ -278,7 +278,25 @@
         "reviewed_at": "2026-06-26T15:20:59.452Z",
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "'Fork consequence' section is a mathematical scope clarification (factorial growth ⇒ no depth-2 recurrence), not physical interpretation."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

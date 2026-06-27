@@ -1307,6 +1307,22 @@
         "reviewed_at": "2026-06-22T02:56:40.612Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Statement + proof + representation-theoretic structure sections (Kashiwara/JM/Macdonald/Habiro) are mathematical content, not physical interpretation; status/provenance framing is held in authorNotes per §4d."
       }
     ],
     "fit-section-chapter": [
@@ -1582,5 +1598,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

@@ -1271,6 +1271,24 @@
         "reviewed_at": "2026-06-22T02:56:21.025Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement + proof sketch (lines 1-36) are followed by substantive interpretive/motivational sections in the same block: 'Connection to the q-Reeb flow', and especially 'Why $4_1$ sets the mass scale' (lines 63-80) which is physical-meaning/motivation prose ('appears in the mass formula because it is the simplest alternating braid', 'the mechanism that connects the two lepton generations'). The .ts has no interprets: and no companion remark holds this interpretation.",
+        "notes": "The unitarity claim itself is the bare statement; the 'why this matters / mass-scale significance' material is genuinely mislocated interpretation with no linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1546,5 +1564,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

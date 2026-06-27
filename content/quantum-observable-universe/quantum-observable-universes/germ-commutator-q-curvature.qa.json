@@ -278,7 +278,27 @@
         "reviewed_at": "2026-06-26T15:20:59.452Z",
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement [δq1,δq2]=F_q, then two \"structural consequences\" (agreement⟺flatness, antisymmetry — mathematical) plus interpretive prose: \"the local disagreement between two observers is the q-curvature\" and \"the kinematic half of how the substrate parameter q evolves locally\" (.md lines 14-16, 40-43). No companion interprets: remark.",
+        "notes": "Consequences are largely mathematical, but the observer-disagreement/kinematic-evolution framing is physical interpretation held in-block. Borderline → warn."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }

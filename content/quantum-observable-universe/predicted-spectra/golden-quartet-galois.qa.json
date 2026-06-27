@@ -1269,6 +1269,24 @@
         "reviewed_at": "2026-06-22T02:56:47.269Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Proposition + Proof, then \"Consequence: replace ζ5 Galois arithmetic ...\" motivation, a \"Remark on Novelty\" (.md line 101), and \"Connection to Bring's surface\" reading physical/structural meaning (phase boundaries, Möbius fixed points of the Descartes universe). No companion interprets: remark.",
+        "notes": "Core is a clean algebraic-orbit theorem; the trailing consequence/novelty/Bring-connection prose is motivation/interpretation. Mathematical enough to be borderline, so warn."
       }
     ],
     "fit-section-chapter": [
@@ -1544,5 +1562,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }

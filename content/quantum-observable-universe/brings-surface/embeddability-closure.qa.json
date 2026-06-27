@@ -1269,6 +1269,24 @@
         "reviewed_at": "2026-06-22T02:56:19.876Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": ".md lines 89-99 carry a 'Physical consequence.' paragraph (all particles interact, no dark sectors, 'self-consistent, fully interacting particle spectrum'); the .ts theorem block has no companion interprets: remark to hold it.",
+        "notes": "Substantive physical-significance prose follows the statement+proof in the same provable block with no linked interpretive remark — genuinely mislocated. Move the 'Physical consequence' paragraph (and the line 27-28 'no generated knot is dark' aside) into a remark with interprets: 'thm:embeddability-closure'."
       }
     ],
     "fit-section-chapter": [
@@ -1544,5 +1562,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

@@ -1269,6 +1269,24 @@
         "reviewed_at": "2026-06-22T02:56:26.199Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "After the boxed proton-mass identity statement (lines 9-26), the block carries multiple discussion sections in the same block with no companion interprets: remark: 'Combined with the canonical flavor-split' (derives both nucleon masses, 'reduces to 2 calibrations'), 'Consistency gap: decay-rate cross-check', 'Open work for full categorical proof', and 'Sub-ppm precision frontier'.",
+        "notes": "Much of the trailing content is numerical verification (50-dps tables, h-expansion) which is acceptable scope/verification material, but the 'Combined with flavor-split' and 'Sub-ppm precision frontier' sections add downstream-consequence and motivational framing that would more cleanly live in a linked remark. Borderline rather than clear mislocation; flagged as warn."
       }
     ],
     "fit-section-chapter": [
@@ -1544,5 +1562,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

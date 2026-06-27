@@ -1273,6 +1273,24 @@
         "reviewed_at": "2026-06-22T02:57:20.668Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Extensive physical-interpretation prose (beta decay as 1-jet, double beta decay as 2-jet, 0νββ neutrino propagator, jet bundle, Reeb decomposition connection) follows the proposition in the same block; no `interprets:` remark.",
+        "notes": "Bulk is mathematical structure (jet expansion, transfer matrix), but the decay-physics/jet-bundle framing is interpretive. WARN."
       }
     ],
     "fit-section-chapter": [
@@ -1862,5 +1880,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }

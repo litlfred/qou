@@ -1273,6 +1273,22 @@
         "reviewed_at": "2026-06-22T02:57:17.324Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Statement + proof sketch + a citation to the GNS-positivity analogue. Statement+proof only; no mislocated interpretation. Pass."
       }
     ],
     "fit-section-chapter": [
@@ -1862,5 +1878,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }

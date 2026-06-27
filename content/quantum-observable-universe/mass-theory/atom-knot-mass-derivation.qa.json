@@ -1290,6 +1290,24 @@
         "reviewed_at": "2026-06-22T02:57:09.062Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "This is an algorithm/pipeline proposition with extensive embedded interpretive sections: '### Post-Archimedean interpretation (borrowed, optional)', 'Physical reading'-style passages, and 'Where the gaps actually are'. Some of this (volume-conjecture naming convention, physical reading of the shortfall) is interpretation rather than bare statement. No companion interprets: remark.",
+        "notes": "Algorithm-style block where architectural/pipeline exposition is expected; the genuinely interpretive 'post-Archimedean' naming material could live in a remark but the block is long-form by design."
       }
     ],
     "fit-section-chapter": [
@@ -1565,5 +1583,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

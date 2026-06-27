@@ -1296,6 +1296,24 @@
         "reviewed_at": "2026-06-22T02:57:14.129Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.md lines 24-56 ('Why this is the right structure', 'What the recursion buys') are motivation sections, and lines 182-194 are a 'Remark (quantum-modularity ...; conjectural)' interpretive aside, all in a scaffolding proposition block with no companion interprets: remark.",
+        "notes": "Motivation headings present; this is a flagged scaffolding block whose body is mostly structural documentation, so WARN not FAIL. The quantum-modularity remark is at least demarcated as a Remark."
       }
     ],
     "fit-section-chapter": [
@@ -1571,5 +1589,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

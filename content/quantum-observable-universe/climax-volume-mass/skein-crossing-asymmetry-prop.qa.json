@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "18c823f97e93",
     "ts": "4123e4bea16a",
-    "lean": "c1ddde67f181"
+    "lean": "a62888073425"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1275,6 +1275,21 @@
         "reviewed_at": "2026-06-22T02:57:15.482Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
       }
     ],
     "fit-section-chapter": [
@@ -1861,5 +1876,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }
