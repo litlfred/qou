@@ -115,16 +115,9 @@ H1b_exact = all(res_top[m] == 0 for m in range(2, MMAX + 1))
 #     kernel correction. Factor symbolically to expose its (q-1)^2 + cyclotomic structure. ---
 Dm = {m: sp.cancel(res_sym[m]) for m in range(2, MMAX + 1)}
 Dm_factored = {m: sp.factor(Dm[m]) for m in range(2, MMAX + 1)}
-# Universal (q-1)^2 prefactor test: every nonzero D(m) divisible by (q-1)^2
-# (=> deviation is O((q-1)^2)=O(h^2), so the q=1 involution skeleton is exact and the
-#  correction is a pure fibre/q-deformation effect).
-qm1_sq = (q - 1) ** 2
-all_have_qm1_sq = all(
-    sp.simplify(sp.cancel(Dm[m] * q ** (10) / qm1_sq) - sp.cancel(Dm[m] * q ** (10)) / qm1_sq) == 0
-    or sp.rem(sp.numer(sp.cancel(Dm[m])), qm1_sq, q) == 0
-    for m in range(2, MMAX + 1) if Dm[m] != 0
-)
-# robust check: numerator of D(m) (a Laurent poly * q^power) has a double root at q=1
+# Universal (q-1)^2 prefactor test: the numerator of every nonzero D(m) (a Laurent poly
+# times a q-power) has a DOUBLE root at q=1 => deviation is O((q-1)^2)=O(h^2), so the q=1
+# involution skeleton is exact and the correction is a pure fibre/q-deformation effect.
 def has_double_root_at_1(expr):
     num = sp.numer(sp.cancel(expr))
     p = sp.Poly(num, q)
@@ -230,6 +223,7 @@ witness = {
         "(the q-deformation of a PROVED classical identity Sum f^lam = #involutions), not a "
         "coefficient search; (a)/(b)-scoped verdict."
     ),
+    "auditOnly": "docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md",
     "results": results,
     "assertions": assertions,
     "anyKernelMatch": bool(any_kernel),

@@ -2,6 +2,7 @@
   "computation": "lever1_qinvolution_kernel_test",
   "description": "Tests the parameter-free hypothesis that S(m)=Sum_{lam|-m} dim_q(lam) (with lw(c)=S(c+1)/(c+1)) satisfies the q-involution order-2 q-holonomic recurrence S(m)=S(m-1)+[m-1]_q*S(m-2) -- the symmetric-q-integer deformation of the classical involution recursion I(m)=I(m-1)+(m-1)I(m-2) (q=1 sanity verified). This is the formalize-first follow-up to the depth-2 SL2 (C-finite) FALSIFICATION: the q-Bessel Lean skeleton predicts a q^k-DEPENDENT (q-holonomic) kernel, of which C-finite is only the q->1 degeneration. Three q-integer conventions tested.",
   "discipline": "no fit; sympy symbolic in q + mpmath 50dps at q0; parameter-free structural hypothesis (the q-deformation of a PROVED classical identity Sum f^lam = #involutions), not a coefficient search; (a)/(b)-scoped verdict.",
+  "auditOnly": "docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md",
   "results": {
     "S_at_q0": {
       "0": "1.0",
