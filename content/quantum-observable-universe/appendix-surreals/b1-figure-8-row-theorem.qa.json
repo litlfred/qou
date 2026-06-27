@@ -1364,8 +1364,8 @@
         "result": "fail",
         "scope": "structural",
         "ruling": "surviving",
-        "referee_argument": "b1-figure-8-row-theorem.lean:16 theorem b1_figure_8_row : True := by trivial; real decl at lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean:30-34 (depth_4_1=2 \u2227 bloch_wigner_4_1\u22600).",
-        "rebuttal": "none \u2014 \u00a70a forbids a ': True := trivial' sibling when the library decl exists; the stub is the banned artifact. Honest fix: delete the stub (the real theorem is non-vacuous). Mechanical.",
+        "referee_argument": "b1-figure-8-row-theorem.lean:16 theorem b1_figure_8_row : True := by trivial; real decl at lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean:30-34 (depth_4_1=2 ∧ bloch_wigner_4_1≠0).",
+        "rebuttal": "none — §0a forbids a ': True := trivial' sibling when the library decl exists; the stub is the banned artifact. Honest fix: delete the stub (the real theorem is non-vacuous). Mechanical.",
         "evidence": [
           {
             "text": "b1-figure-8-row-theorem.lean:16"
@@ -1393,8 +1393,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": ".md:35 'Theorem-level (no conditional).' vs library [ctx:B1Figure8RowContext] proving depth=2 \u2227 bloch_wigner\u22600 conditional on a class that axiomatises BOTH conjuncts as fields (depth_eq_2, bloch_wigner_ne_zero) \u2014 self-assuming projection (\u00a73b-cond rule 5); 'no conditional' contradicts the [ctx] hypothesis.",
-        "rebuttal": "partial \u2014 the narrative proof (Borel rank-1 + Murakami-Murakami) is genuine math with real citations and the Lean is honestly labelled 'pending Mathlib KTheory.K3', but it does not discharge the claim; \u00a73b-cond non-degeneracy fails.",
+        "referee_argument": ".md:35 'Theorem-level (no conditional).' vs library [ctx:B1Figure8RowContext] proving depth=2 ∧ bloch_wigner≠0 conditional on a class that axiomatises BOTH conjuncts as fields (depth_eq_2, bloch_wigner_ne_zero) — self-assuming projection (§3b-cond rule 5); 'no conditional' contradicts the [ctx] hypothesis.",
+        "rebuttal": "partial — the narrative proof (Borel rank-1 + Murakami-Murakami) is genuine math with real citations and the Lean is honestly labelled 'pending Mathlib KTheory.K3', but it does not discharge the claim; §3b-cond non-degeneracy fails.",
         "evidence": [
           {
             "text": "b1-figure-8-row-theorem.md:35; B1Figure8RowTheorem.lean:23,26"
@@ -1423,7 +1423,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Do murakami-murakami2001 / bloch2000 / suslin1991 support 'theorem-level'?",
-        "rebuttal": "rebutted \u2014 Murakami-Murakami 2001 proves VC for 4_1; Bloch-Suslin depth-2 regulator + Borel rank-1 for Q(zeta_6) standard; figure-8 is hyperbolic (Vol=2Cl_2(pi/3)). Narrative number theory correct; defect is the Lean encoding.",
+        "rebuttal": "rebutted — Murakami-Murakami 2001 proves VC for 4_1; Bloch-Suslin depth-2 regulator + Borel rank-1 for Q(zeta_6) standard; figure-8 is hyperbolic (Vol=2Cl_2(pi/3)). Narrative number theory correct; defect is the Lean encoding.",
         "evidence": [
           {
             "text": "b1-figure-8-row-theorem.ts cites"
@@ -1449,7 +1449,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The content-block sibling is theorem b1_figure_8_row : True := by trivial (a \u00a70a shadowing-stub that should be DELETED since a real library decl exists), and the lean.ref resolves to a library theorem that is itself a \u00a73b-cond rule-5 self-assuming projection (class carries both conjuncts as fields); the .md says 'Theorem-level (no conditional)' but the Lean is conditional on that class.",
+        "referee_argument": "The content-block sibling is theorem b1_figure_8_row : True := by trivial (a §0a shadowing-stub that should be DELETED since a real library decl exists), and the lean.ref resolves to a library theorem that is itself a §3b-cond rule-5 self-assuming projection (class carries both conjuncts as fields); the .md says 'Theorem-level (no conditional)' but the Lean is conditional on that class.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1460,7 +1460,187 @@
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.004Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.089Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.150Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.206Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.276Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.347Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.420Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.496Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6f58b6f42111",
+          "ts": "bbb5148740be",
+          "lean": "b8579c75ae95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:44.577Z",
+        "reviewed_sha": "39a4cb9a12eba6029869927bdf03823227e61b99",
+        "notes": "Direct audit criterion verified clean."
+      }
     ]
   },
-  "updated_at": "2026-06-24T11:19:38Z"
+  "updated_at": "2026-06-27T12:28:44.577Z"
 }
