@@ -1,11 +1,40 @@
 ---
 # tnjb
 title: 'Data-integrity: per-observable-100x-status.witness.json stale on main (m_mu/Q_beta/m_n)'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-06-24T17:42:41Z
-updated_at: 2026-06-24T17:42:41Z
+updated_at: 2026-06-27T00:00:00Z
 ---
+
+## RESOLUTION 2026-06-27 (owner ruling) — m_μ pinned; Q_β/m_n remainder open
+
+**Owner call made:** the L2 dashboard reflects the **experimental /
+proton-anchored** m_μ prediction (209.8 ppb / 963.6× FAIL), NOT the
+ideal / muon-anchored CAL-2 tautology (~0 ppb MET). Matches AGENTS.md
+§"q₀ anchor convention" STRICT rule 1 (L2 = 3/7).
+
+**Fix shipped (PR #2897):** `per_observable_100x_status.py` now PINS the
+m_μ prediction to `105.658397811` MeV (the proton-anchored value carried
+by the committed witness) in both the substrate-identity and Borromean-
+fallback paths, decoupled from the muon-flipped `muon_check`. So a fresh
+regen can no longer substitute the ideal tautology. Verified in-sandbox
+(compute stack up): producer exit 0, m_μ row 209.8 ppb / 963.6× FAIL,
+summary 3/7.
+
+**Avoided:** the proton-q₀ solver `_solve_q_proton_f64` embeds the
+fitted Habiro ratio `(1+46u⁴)(1+4u⁵)(1−29u⁶)…` (a CODATA fit purged from
+production) — so we PIN the canonical value rather than recompute through
+the fit. Package constants `Q` and `Q_MP` are BOTH the muon value in the
+current checkout (proton q₀ not available as a clean constant).
+
+**STILL OPEN (this bean's other half):** the committed dashboard witness
+also has genuine **Q_β / m_n / Δ_pn upstream staleness** (the dashboard
+was not regenerated after upstream witnesses changed — `err_ppb` drifts
+~2-3%). That needs a **canonical-env regen** (mpmath 1.3.0, canonical
+upstreams) — NOT done in #2897 (a sandbox regen would bundle an mpmath
+1.4.1 engine bump). Keep this bean open for the Q_β/m_n regen.
+
 
 
 ## DIAGNOSIS 2026-06-24 (session bold-mendel, via me3r A/B)
