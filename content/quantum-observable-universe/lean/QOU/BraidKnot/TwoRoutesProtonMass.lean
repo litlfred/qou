@@ -18,6 +18,9 @@
 -/
 
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+import Mathlib.Tactic
 
 namespace QOU.BraidKnot.TwoRoutes
 
@@ -67,19 +70,29 @@ def mpOverMe (G : ℝ) : ℝ := geomScale q G * lwSpectral q
     This is what the substrate identity IMPLICITLY uses. -/
 def lwProduction : ℝ := 0 -- m_p_N0 / (8G/ℏ²)
 
-/-- THEOREM: The two routes agree to 130 ppm.
-    lw_spectral ≈ lw_production to 130 ppm.
+/- EMPIRICAL CLAIM (not a Lean theorem — see disposition note below).
 
-    This is the structural relationship: the spectral correction
-    (arccos of the Borromean character on V_{(2,1)}) reproduces
-    the substrate identity's effective linking weight.
+   The two routes agree to 130 ppm:
+       |lwSpectral q − lwProduction q| / lwProduction q < 2·10⁻⁴.
 
-    The 130 ppm residual is the h⁴ linking weight correction
-    (transcendental, from the arccos Taylor truncation). -/
--- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
-theorem two_routes_agree :
-    trivial /- |lwSpectral q - lwProduction q| / lwProduction q < 2e-4 -/ := by
-  trivial
+   This is the structural relationship: the spectral correction
+   (arccos of the Borromean character on V_{(2,1)}) reproduces the
+   substrate identity's effective linking weight.  The 130 ppm
+   residual is the h⁴ linking-weight correction (transcendental,
+   from the arccos Taylor truncation).
+
+   DISPOSITION (AGENTS.md §1a — honest, no audit-dodge): this is a
+   numerical agreement between two SUBSTRATE-computed quantities,
+   `lwProduction = m_p(Route 1)/(8G/ℏ²)` and `lwSpectral`.  It cannot
+   be stated faithfully in this file because `F_Bor` and
+   `lwProduction` are placeholder `:= 0` stubs here (the actual
+   values come from the Hecke / Markov-trace compute, not from any
+   construction available in this module).  Stating it against the
+   `:= 0` placeholders would be vacuous (`x/0 = 0 < 2e-4` holds
+   trivially in Lean), which is exactly the audit-dodge §1a forbids.
+   It is recorded as an empirical result of the production compute
+   (the witness pipeline), not faked as a Lean theorem.
+   -- Ref: [habiro2000] https://doi.org/10.1007/s002220000013 -/
 
 /-- KEY IDENTITY: h = (q+1)·ℏ.
     This connects the two routes through the substrate structure. -/
@@ -118,22 +131,35 @@ theorem mpOverMe_factored (G : ℝ) :
   unfold mpOverMe lwSpectral
   ring
 
-/-- The spectral correction converges as a series in h⁴(3+h²)/2:
-    arccos(1−x) = √(2x)·(1 + x/12 + 3x²/160 + ...)
-    with ALL coefficients c_n = C(2n,n)/(4ⁿ(2n+1)) RATIONAL.
+/- STRUCTURAL CLAIM (not a Lean theorem — see disposition note below).
 
-    At N=3 (h¹⁴): precision < 1 ppQ. -/
-theorem spectral_series_rational :
-    trivial /- spectralCorr q = (q+1)²√(3+h²)/8 × (1 + rational_corrections) -/ := by
-  trivial
+   The spectral correction converges as a series in h⁴(3+h²)/2:
+       arccos(1−x) = √(2x)·(1 + x/12 + 3x²/160 + ...)
+   with the bracket coefficients RATIONAL.  At N=3 (h¹⁴) the
+   truncation precision is < 1 ppQ.
 
-/-- The Habiro rational function gives the EXACT Markov trace.
-    tr_M(B₃, q) = p(√q)/d(√q) with p, d ∈ ℤ[u].
-    This is NOT a Taylor series — it's a FINITE rational evaluation. -/
--- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
-theorem habiro_is_exact :
-    trivial /- tr_M = p(u)/d(u), degree p ≤ 40, degree d ≤ 21, coefficients in ℤ -/ := by
-  trivial
+   DISPOSITION (AGENTS.md §1a): the faithful object is an INFINITE
+   power series (the arccos expansion), whose target identity
+   `spectralCorr q = (q+1)²√(3+h²)/8 × (1 + Σ rational·xⁿ)` quantifies
+   over all coefficients of a series this module does not construct.
+   Stating it would require a `PowerSeries`/`HasSum` development that
+   is out of scope here; recorded as a structural fact about the
+   `Real.arccos` expansion rather than a fake `: trivial` theorem.
+   -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 -/
+
+/- EXTERNAL RESULT (not a Lean theorem — see disposition note below).
+
+   The Habiro rational function gives the EXACT Markov trace:
+       tr_M(B₃, q) = p(√q)/d(√q),   p, d ∈ ℤ[u],
+   with deg p ≤ 40, deg d ≤ 21.  This is a FINITE rational
+   evaluation, not a Taylor series.
+
+   DISPOSITION (AGENTS.md §1a): `tr_M`, `p`, and `d` are not defined
+   in this module (the Markov trace lives in the Hecke-engine compute
+   layer); the claim is a property of Habiro's cyclotomic expansion
+   cited from the literature.  Recorded as an external result with
+   its citation rather than faked as a `: trivial` theorem.
+   -- Ref: [habiro2000] https://doi.org/10.1007/s002220000013 -/
 
 -- ═══════════════════════════════════════════════════════════════
 --  INTERFACE QUADRATIC STRUCTURE (binding key identity)
