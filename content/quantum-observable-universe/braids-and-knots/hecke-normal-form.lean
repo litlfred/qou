@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Tactic.NormNum
+
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
@@ -36,4 +39,4 @@ inductive RewriteRule where
   deriving DecidableEq, Repr
 
 /-- The NF basis has exactly n! = 6 elements for H₃(q). -/
-theorem nf_basis3_card : 6 = Nat.factorial 3 := by norm_num
+theorem nf_basis3_card : 6 = Nat.factorial 3 := rfl

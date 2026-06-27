@@ -15,3 +15,19 @@ Tasks:
 
 MANDATORY INTEGRITY WARNING:
 DO NOT CHEAT. All implementations must be genuine. DO NOT hardcode test results, create dummy/facade implementations, or circumvent the intended task. A Forensic Auditor will independently verify your work. Integrity violations WILL be detected and your work WILL be rejected.
+
+## 2026-06-27T12:25:23Z
+Audit and drain QA criteria for Batch 7 of the QA Agent Queue.
+Input: Batch 7 (batch_id = 7) from `.beans/qa-agent-drain-queue.json`.
+Tasks:
+1. Parse the blocks in Batch 7 and their required criteria (the `need` array) from `.beans/qa-agent-drain-queue.json`.
+2. For each block in the batch:
+   - Read the block's files: `<block>.ts`, `<block>.md`, and `<block>.lean` (if it exists).
+   - Evaluate each criterion in the `need` array. If clean, the verdict is `pass`. If there is an issue, determine the appropriate result (`warn` or `fail`) and write notes/evidence.
+   - Run `bun run folio-assistant/src/qa-agent-write.ts` to record the entry.
+3. Verify the changes by running `bun run scripts/run-validate.ts` or `scripts/lean-verify.sh`.
+4. Commit the changes as `chore(qa): drain batch 7`.
+5. Update the batch status to `"done"` in `.beans/qa-agent-drain-queue.json` and commit it.
+6. Push all commits.
+
+MANDATORY INTEGRITY WARNING: DO NOT CHEAT. All implementations must be genuine. DO NOT hardcode test results, create dummy/facade implementations, or circumvent the intended task. A Forensic Auditor will independently verify your work. Integrity violations WILL be detected and your work WILL be rejected.
