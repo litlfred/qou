@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-23T14:19:27Z
-updated_at: 2026-06-24T11:45:00Z
+updated_at: 2026-06-27T14:09:03Z
 ---
 
 
@@ -278,3 +278,7 @@ Derived, no fit; Lean `QOU/Mass/TauQuantumIntegerForm.lean` sorry-free:
 - **(b)**: τ∉ℤ ⇒ M∉SL₂(ℤ) ⇒ M is NOT the topological monodromy (formalises the 2026-06-24 audit via the
   SL₂ trace). **Indicated:** real/q-difference SL₂(ℝ) operator with bar-even trace τ([2]_q). Construction
   of M still genuine multi-session math — NOT faked. Three probes done; operator now sharply characterised.
+
+
+
+**Update 2026-06-27 (PR #2899):** formalize-first probe on the fibre kernel. Tested parameter-free q-involution recurrence S(m)=S(m-1)+[m-1]_q·S(m-2) for S(m)=Σ_{λ⊢m}dim_q(λ) (lw(c)=S(c+1)/(c+1)). q=1 limit IS the involution numbers (skeleton correct). Bare ansatz exact at seed m=2,3, drifts beyond. KEY FINDING: correction D(m) carries a universal (q-1)² prefactor (O(h²), pure fibre effect) and factors cyclotomically (D4 carries Φ3; D7 Φ3²Φ5; D8 Φ3Φ5Φ7) — the Habiro-ring signature. So the lever-1 kernel = q-involution operator dressed by a cyclotomic/Habiro correction = the SAME object class kehn's c_k/Q_β closure needs. Scope: refutes the bare ansatz (a) only, not the q-holonomic class; the D(m) cyclotomic tower is the derived parameter-free constraint. Next: fit D(m) to a single Habiro element, verify held-out m. Audit: docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md
