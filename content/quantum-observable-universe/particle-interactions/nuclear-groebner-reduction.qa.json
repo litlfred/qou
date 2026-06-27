@@ -1291,6 +1291,24 @@
         "severity": "minor",
         "evidence": "`**Connection to the half-life.**` section gives physical interpretation (Fermi golden rule, why ³H→³He is shortest, ¹⁴C longer) embedded in the proposition block; no companion `interprets:` remark.",
         "notes": "Much of the block is computational/normal-form content directly supporting the claim; the half-life paragraph is borderline interpretive. WARN."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "nuclear-groebner-reduction.md:130 '**Connection to the half-life.**' and :155 'This is the quantity that determines the half-life via the Fermi golden rule.'",
+        "notes": "Substantive physical interpretation (half-life, Fermi golden rule, beta-decay energetics) follows the proposition statement in the same block with no companion interprets: remark. Borderline — much is mathematical elaboration of the normal form; the half-life/Fermi-rule prose is interpretive and would be better in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1329,21 @@
         "reviewed_at": "2026-06-22T02:57:19.015Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1364,22 @@
         "reviewed_at": "2026-06-22T02:57:19.389Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement fixes the generic ground ring R=ℤ[q,q⁻¹] (md:13) — correctly substrate-generic, no archimedean construct in the claim."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1400,22 @@
         "reviewed_at": "2026-06-22T02:57:19.818Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is Diamond-Lemma / confluence / length-lex termination — purely algebraic, matches the generic-ring statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1385,6 +1450,24 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "nuclear-groebner-reduction.lean:49-52 'theorem nuclear_groebner_reduction (Z N : ℕ) : ∃ (uniqueForm : HeckeElement... ), nuclearBraidNormalForm Z N = uniqueForm := by sorry' vs md:5-6 '...produces a unique normal form'",
+        "notes": "Resolution per §0a takes the block sibling FIRST: the sibling stub theorem proves only ∃ uniqueForm, nuclearBraidNormalForm Z N = uniqueForm — a trivial existence (closable by ⟨_, rfl⟩), NOT the uniqueness / path-independence the narrative asserts. (The richer library decl at lean/QOU/Archimedean/NuclearGroebnerReduction.lean states a Prop with reducedness+uniqueness via the normal_form_exists_unique axiom, but that is a different declaration the ref does not resolve to first.) Conclusion divergence: narrative=uniqueness, resolved Lean=trivial existence stub."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1880,5 +1963,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

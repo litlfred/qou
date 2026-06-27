@@ -1239,6 +1239,23 @@
         "severity": "minor",
         "evidence": "After the iff Statement (.md lines 7-29) the block carries extensive physical-meaning prose with no companion interprets: remark: \"Metallic bonding as shared linking sites\" (delocalisation), \"Conductivity as Reidemeister transport\", resistance/pinning/phonon discussion, variable oxidation states / catalysis / magnetism, \"Contrast with noble gases\", and a closing \"Remark on Mathematical Novelty\" (line 135). The .ts has no interprets/companion remark (only uses: prop:noble-gas-characterization).",
         "notes": "Provable proposition whose statement is followed by substantive motivation, downstream-consequence, and physical-interpretation prose that belongs in a separate interprets: remark. Genuinely mislocated; clearest fail in the set."
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "metallic-character-knot.md:31-132: 'Metallic bonding as shared linking sites.' … 'Conductivity as Reidemeister transport.' … extensive physical interpretation (delocalisation, transition-metal oxidation states, catalysis, magnetism, resistance/temperature) follows the iff statement in the same proposition block.",
+        "notes": "The proposition .ts has no companion interprets: remark; the substantive physical-meaning prose (metallic bonding picture, conductivity-as-Reidemeister-transport, contrast with noble gases) is mislocated in the provable block. Move to a separate remark linked via interprets:'prop:metallic-character-knot'."
       }
     ],
     "fit-section-chapter": [
@@ -1258,6 +1275,20 @@
         "reviewed_at": "2026-06-22T02:56:47.253Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1277,6 +1308,21 @@
         "reviewed_at": "2026-06-22T02:56:47.584Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Physical-realization chapter; statement is a topological/combinatorial iff (|R|, crossing-energy ≪, open sites) with no gratuitous Real.* or numeric q — matches its archimedean regime."
       }
     ],
     "wall-side-proof": [
@@ -1296,6 +1342,21 @@
         "reviewed_at": "2026-06-22T02:56:47.933Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Only a 'Strategy' paragraph in .md; library Lean proof is a field projection, no archimedean-only machinery proving an algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1329,6 +1390,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Archimedean/metallic_character_knot.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "lean.ref resolves to library QOU/Archimedean/metallic_character_knot.lean (no shadowing sibling). Lean: IsMetallic a ↔ (OuterShellIncomplete a ∧ LowOuterCrossingEnergy a ∧ HasOpenSite a) over ∀ a matches the narrative iff with the same three named conditions (conditions abstracted as predicates — reconcilable)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1799,5 +1875,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1289,6 +1289,22 @@
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement + Proof + a brief \"Structural content\" note (inter-generation spacing controlled by h) + a one-line novelty remark. Predominantly mathematical; the structural note is a short scope/structure remark, not substantive mislocated physical interpretation. Pass."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement+proof are clean; '## Structural content' is a short scope/structural note (discrete tower indexed by odd n) and a one-line novelty remark, not substantive mislocated physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1325,22 @@
         "reviewed_at": "2026-06-22T02:56:48.639Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:nuclear-stability-decay next to beta-decay-skein/lepton-number; the lepton-tower T_{2,n} Hecke normal form is in scope and is a distinct algebraic result (Morgan–Voyce continuant), no sibling redundancy."
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1361,22 @@
         "reviewed_at": "2026-06-22T02:56:49.042Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is an algebraic identity in ℤ[q^±1] (Hecke relation, continuant recurrence); the q≈1.1100 numeric table (l.59-67) is explicitly an archimedean evaluation, and the Lean is generic over {R}[CommRing R] per §7c — no archimedean construct hard-coded into the claim."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1397,22 @@
         "reviewed_at": "2026-06-22T02:56:49.449Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is induction via the Hecke relation (linear_combination over generic R); no linarith/IVT/continuity/Real machinery. Decimal table is a separate numeric evaluation, not part of the proof."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1369,6 +1433,22 @@
         "reviewed_at": "2026-06-22T02:56:49.768Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean `lepton_continuant_recurrence (h s : R)(hs: s^2=h*s+1)(n): s^n = mvA h n + mvB h n*s` matches the .md ∀n claim NF(σ₀ⁿ)=a_n·1+b_n·σ₀ with mvA/mvB the stated recurrences; mvB_succ encodes b_{n+1}=a_n+h·b_n. Quantifier, hypothesis (Hecke relation), conclusion all align."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,6 +1473,22 @@
         "reviewed_at": "2026-06-22T02:56:50.266Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0 — plan stated up front: apply the quadratic Hecke relation, read off the two-term recurrence by induction; both .md and .lean name the route."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1417,6 +1513,22 @@
         "reviewed_at": "2026-06-22T02:56:50.640Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0 — sorry-free Lean (induction + linear_combination)."
       }
     ],
     "proof-rater-novelty": [
@@ -1441,6 +1553,22 @@
         "reviewed_at": "2026-06-22T02:56:50.999Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.5 — standard continuant induction; the Morgan–Voyce (vs Chebyshev) identification is a tidy observation, not duplicated elsewhere."
       }
     ],
     "proof-statement-integrity": [
@@ -1461,6 +1589,22 @@
         "reviewed_at": "2026-06-22T02:56:51.359Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature is the general ∀-quantified recurrence over generic CommRing R; no weakening, no axiom injection, no sorry."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1481,6 +1625,22 @@
         "reviewed_at": "2026-06-22T02:56:51.723Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof derives s^n form by induction (rw pow_succ, ih, mvB_succ; linear_combination (mvB h m)*hs); no structure field equal to the conclusion is projected."
       }
     ],
     "proof-no-trivial-true": [
@@ -1501,6 +1661,22 @@
         "reviewed_at": "2026-06-22T02:56:52.084Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a genuine polynomial-recurrence equation in R, not True/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1521,6 +1697,22 @@
         "reviewed_at": "2026-06-22T02:56:52.534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypothesis s^2=h*s+1 is satisfiable (the Hecke generator); not contradictory."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1541,6 +1733,22 @@
         "reviewed_at": "2026-06-22T02:56:52.983Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The Hecke hypothesis hs is used in the inductive step (linear_combination (mvB h m)*hs)."
       }
     ],
     "proof-no-decide-masking": [
@@ -1561,8 +1769,24 @@
         "reviewed_at": "2026-06-22T02:56:53.362Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "915610eefecf",
+          "ts": "4806465ab264",
+          "lean": "e566f073ce57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses induction/simp/ring/linear_combination; no decide/trivial masking."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

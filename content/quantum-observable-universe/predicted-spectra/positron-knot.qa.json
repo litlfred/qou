@@ -1098,6 +1098,22 @@
         "reviewed_at": "2026-06-22T02:56:47.497Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f198557cf844",
+          "ts": "c71e0c7d8b75",
+          "lean": "e74b6edf3cb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "definition in sec:fundamental-fermions (lepton sector) alongside electron-knot/neutrino-knot; the positron is exactly this section's subject and names a new construction (mirror trefoil σ(T_{2,3}))."
       }
     ],
     "wall-side-statement": [
@@ -1118,8 +1134,24 @@
         "reviewed_at": "2026-06-22T02:56:47.824Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "f198557cf844",
+          "ts": "c71e0c7d8b75",
+          "lean": "e74b6edf3cb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Definition is over the formal ground ring R_q=ℤ[q,q⁻¹] (Lean) with specialisation ι:R_q→ℝ named for evaluation; charge/orientation are integers. No archimedean construct hard-coded — generic/substrate side, consistent with a knot definition."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

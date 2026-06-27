@@ -1080,8 +1080,24 @@
         "reviewed_at": "2026-06-22T02:56:41.833Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Remark with interprets:rem:chi-per-irrep-cyclotomic-closed-forms; per-Wedderburn-block Hopf-Jones absorption (qbeta/Markov-trace) squarely in mass-endomorphism scope."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1302,6 +1302,24 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Long expository proposition; the interpretive phrasing ('algebraic origin of the blowup', 'topological selection rule') is fused with the obstruction-mechanism statement itself rather than appended as detachable significance prose. Conservatively PASS."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "p3-blowup-yekutieli.md:144-177: '**The descent condition and vortex reconnection.** … net \"reconnection charge\" …' and '**Constraint from Berry phase.** … a topological selection rule on the blowup'",
+        "notes": "The core provable claim is the iff (smooth ⟺ all κ_n vanish; blowup ⟺ ∃ n* with κ≠0). Substantial physical interpretation — fluid vortex-reconnection picture, Berry-phase selection rule, Hausdorff-dimension table — is woven into the same proposition block with no companion `interprets:` remark to hold it. Borderline: some of the elaboration (the cohomological-address quintuple) is structural rather than purely interpretive, so warn not fail."
       }
     ],
     "fit-section-chapter": [
@@ -1322,6 +1340,21 @@
         "reviewed_at": "2026-06-22T02:56:29.142Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1342,6 +1375,24 @@
         "reviewed_at": "2026-06-22T02:56:29.498Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "p3-blowup-yekutieli.md:39-51: 'smooth for $q > 1$ because the exponential damping … $|\\hat{v}_k(t)| \\leq |\\hat{v}_k(0)|e^{-\\nu_q[k]_q^2 t}$'; lines 56-69: '$|\\hat{v}_k(t)| \\sim k^{-s}$ … $v \\in H^s$ … $n > s(t)$'",
+        "notes": "The chapter (lifting-and-descent) is a generic/substrate chapter. The core reformulation iff is genuinely generic (the .lean states it purely logically over an abelian group with no archimedean structure, §7c-clean). But the elaboration sections hard-code the order hypothesis `q > 1`, exponential damping (`Real.exp`-style), and Sobolev `H^s` decay without a `wall:` field flagging which material is the archimedean q-NS specialisation vs the generic core. Mixes regimes without flagging the side ⇒ warn (not fail: these archimedean parts are explicitly the downstream q-NS illustration citing thm:q-ns-wellposedness, not the core claim)."
       }
     ],
     "wall-side-proof": [
@@ -1362,6 +1413,22 @@
         "reviewed_at": "2026-06-22T02:56:29.986Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The core iff is proved logically in the .lean (`rw [...]; not_forall`), regime-matched. The exp-decay/Sobolev arguments in the .md are the genuinely-archimedean q-NS illustration citing thm:q-ns-wellposedness — archimedean method applied to an archimedean sub-claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1396,6 +1463,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean `blowup_yekutieli` proves `(smooth ↔ ∀ n, obstruction n = 0) ∧ (¬smooth ↔ ∃ n, obstruction n ≠ 0)` — matches the manuscript's two equivalences. Non-sorry proof; quantifiers (∀ n / ∃ n) and conclusions align."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1664,6 +1747,22 @@
         "reviewed_at": "2026-06-22T02:56:32.357Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "First conjunct is the class field `smooth_iff_all_obstructions_vanish`, but the second conjunct is DERIVED by composing that field (`rw [ctx.smooth_iff_all_obstructions_vanish, not_forall]`). The field is reused, not merely handed back as the whole goal — the legitimate §3b-cond 'derive via lemma' pattern, and the .lean explicitly documents the non-degenerate disposition."
       }
     ],
     "proof-no-trivial-true": [
@@ -1684,6 +1783,22 @@
         "reviewed_at": "2026-06-22T02:56:32.721Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a substantive iff conjunction, not True / x=x / a Prop-field set to True."
       }
     ],
     "proof-no-false-premise": [
@@ -1834,8 +1949,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof uses `refine` + `rw [..., not_forall]`; no `decide`/`trivial` masking an incomplete goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

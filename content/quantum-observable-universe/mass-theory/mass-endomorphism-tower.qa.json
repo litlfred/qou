@@ -1306,6 +1306,24 @@
         "severity": "minor",
         "evidence": "Proposition (mass of a vortex) followed by 'Application to the proton--electron mass ratio' section with downstream physical consequence (ratio vs CODATA) and 'Gluon derivation from the integer LP dual' interpretive narrative. No companion interprets: remark.",
         "notes": "Block is title-framed as a physics ratio and mixes statement, proof, audit banners, and an Application/interpretation section. Interpretive material would normally live in a linked remark, but the bulk is derivation/audit; WARN."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-tower.md:366-407: \"## Application to the proton--electron mass ratio\" ... \"No parameters are fitted. The inputs are the substrate parameter q_0 and the electron mass m_e\"",
+        "notes": "The boxed Proposition statement is clean, but the same block carries substantive downstream-consequence/physical content (proton-electron ratio ~1870 vs CODATA, gluon LP-dual derivation) plus the SUPERSEDED/audit/diagnosis discussion, none routed to a companion interprets: remark. Borderline: the ratio section reads as a worked application (legitimate) rather than mislocated interpretation, and the SUPERSEDED banners are author-tracking (one-voice territory). Warn rather than fail."
       }
     ],
     "fit-section-chapter": [
@@ -1326,6 +1344,22 @@
         "reviewed_at": "2026-06-22T02:57:07.208Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'LP-dual and Jucys-Murphy central elements'; the block's mass tower includes the gluon-from-integer-LP-dual derivation and shadow-price y_gamma=-1, matching the LP-dual section subject. Mass tower / proton-electron ratio is in mass-theory scope."
       }
     ],
     "wall-side-statement": [
@@ -1346,6 +1380,22 @@
         "reviewed_at": "2026-06-22T02:57:07.567Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The boxed Proposition is the algebraic R-side tower (Li_2^q over the substrate, Markov parameter z); it carries no Real.sqrt/order/MeV. The Lean cleanly splits Pre (generic [Field R]) from Arch (R, 1<q); the q_0~1.11 / MeV numerics live only in the Application/diagnosis prose, which is the archimedean-realisation side and is flagged as such ('archimedean specialisation')."
       }
     ],
     "wall-side-proof": [
@@ -1366,6 +1416,22 @@
         "reviewed_at": "2026-06-22T02:57:07.921Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The proof derives the integration identity int_0^V ln_q(1+t)/t dt = -Li_2^q(-V) by termwise differentiation/integration of the q-series — algebraic. The q_0-numeric checks are presented as verification of the archimedean realisation, and the proof names the tau: R -> C archimedean crossing for |S|>=3 extension. Method matches the stated side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1400,6 +1466,24 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "mass-endomorphism-tower.lean:81-82: \"theorem proton_electron_ratio (frobeniusNorm : R->R) (q v : R) (n) (V) : q > 1 -> Pre.massPoly ... > 0 := sorry\"",
+        "notes": "The .md Proposition asserts the explicit mass formula m(rho) = |prod V_i| - Sum Li_2^q(-|V_i|) - Sum z^2 Li_2^q(-|V_i V_j|) and a proton-electron ratio ~1870. The Lean theorem the lean.ref resolves to proves only positivity (massPoly > 0) of a leading-order truncation (quantumDilogPoly = 1 - q^{-1} z, not the full Li_2^q/Phi_q), under q>1, and is a `sorry` stub. Conclusion and content diverge in a theorem-changing way (positivity stub vs the closed-form mass identity)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1877,5 +1961,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

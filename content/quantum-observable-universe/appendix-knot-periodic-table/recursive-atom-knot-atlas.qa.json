@@ -1303,6 +1303,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1323,6 +1338,22 @@
         "reviewed_at": "2026-06-22T02:56:52.593Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Recursive atom-knot atlas sits in app:knot-periodic-table / sec:knot-periodic-table alongside knot-periodic-table; squarely on-topic for the appendix."
       }
     ],
     "wall-side-statement": [
@@ -1343,6 +1374,22 @@
         "reviewed_at": "2026-06-22T02:56:53.063Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Atlas is explicitly a q_0-indexed predicted-spectrum data table in an archimedean appendix (MeV masses, AME residuals); archimedean evaluation is the chapter regime, not a wall violation."
       }
     ],
     "wall-side-proof": [
@@ -1363,6 +1410,22 @@
         "reviewed_at": "2026-06-22T02:56:53.432Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No narrative Proof block; the Lean predicates are decidable List facts (decide/rfl), no archimedean machinery proving an algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1383,6 +1446,24 @@
         "reviewed_at": "2026-06-22T02:56:53.829Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "recursive-atom-knot-atlas.lean:153-161: `def AtlasIsWitnessDerived : Prop := atomKnotAtlas.length ≥ 1` proved by `decide`; .md:1-8 states each entry is *determined* by the GB-NF Markov-equivalence class of its canonical T_w.",
+        "notes": "The narrative is a substantive atlas-determination claim (every entry derived from canonical Hecke element + Markov closure); the Lean encodes only regression-guard predicates (atlas non-empty, methodology-filter identity, non-empty braid words). These are honest regression guards (docstrings say so) and not theorem-changing in the sense of weakening a stated equation, but the narrative claim is broader than what the Lean certifies. Borderline — flagged as warn rather than fail because the Lean docstrings explicitly scope the predicates as minimal regression guards."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1407,6 +1488,22 @@
         "reviewed_at": "2026-06-22T02:56:54.160Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9 — each Lean predicate states its plan up front in the docstring (show length ≥ 1; decide / rfl on the seed entries)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1431,6 +1528,22 @@
         "reviewed_at": "2026-06-22T02:56:54.516Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0 — all three Lean theorems are sorry-free (decide/rfl)."
       }
     ],
     "proof-rater-novelty": [
@@ -1455,6 +1568,22 @@
         "reviewed_at": "2026-06-22T02:56:54.864Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.6 — standard regression-guard predicates over a bespoke AtlasEntry list; not duplicated elsewhere."
       }
     ],
     "proof-statement-integrity": [
@@ -1475,6 +1604,22 @@
         "reviewed_at": "2026-06-22T02:56:55.203Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean decls are sorry-free regression predicates; no sorryAx, no statement weakening evident."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1495,6 +1640,22 @@
         "reviewed_at": "2026-06-22T02:56:55.611Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs are decide/rfl on concrete List computations, not projections of a self-assumed field."
       }
     ],
     "proof-no-trivial-true": [
@@ -1533,6 +1694,22 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are `length ≥ 1`, `principledAtlas atomKnotAtlas = atomKnotAtlas`, `∀ e ∈ atlas, braid_word ≠ \"\"` — substantive (if minimal) decidable predicates over the seed list, not `True` or `x=x`."
       }
     ],
     "proof-no-false-premise": [
@@ -1553,6 +1730,22 @@
         "reviewed_at": "2026-06-22T02:56:56.335Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No `False`/`0=1`/uninhabited hypotheses."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1573,6 +1766,22 @@
         "reviewed_at": "2026-06-22T02:56:56.698Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Theorems take no hypotheses (closed predicates), so none are unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -1593,8 +1802,24 @@
         "reviewed_at": "2026-06-22T02:56:57.100Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "`decide` is justified — the goals are genuinely decidable List computations (length, membership exhaustion) over a finite concrete list, not a structural goal being masked."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

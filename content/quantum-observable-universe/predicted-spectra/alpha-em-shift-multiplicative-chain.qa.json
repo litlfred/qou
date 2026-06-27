@@ -1288,6 +1288,24 @@
         },
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.md:91 'Expressing the shift as a unified multiplicative chain shows that the electromagnetic shifts are governed by an intrinsically multiplicative, rather than additive, algebraic chain.'",
+        "notes": "Single trailing interpretive sentence appended after the proof + numerical verification, with no companion interprets: remark. There is a sibling alpha-em-shift-multiplicative-chain-significance block that could hold it. Borderline — one sentence, not a substantive interpretation section."
       }
     ],
     "fit-section-chapter": [
@@ -1308,6 +1326,22 @@
         "reviewed_at": "2026-06-22T02:56:48.638Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:archimedean-hartree-crystal-alpha-em-categorical alongside alpha-em-categorical-trace-ratio; the α_EM⁻¹ multiplicative-chain identity adds a distinct shift-exponent result, not a redundant restatement."
       }
     ],
     "wall-side-statement": [
@@ -1328,6 +1362,22 @@
         "reviewed_at": "2026-06-22T02:56:49.029Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement explicitly works over R = ℤ[q^{±1/2},(q−q⁻¹)⁻¹] — a generic q-data ring; the numerical re-evaluation at q₀ is confined to a separate '## Numerical verification' subsection citing a witness. No archimedean construct in the boxed identity."
       }
     ],
     "wall-side-proof": [
@@ -1348,6 +1398,22 @@
         "reviewed_at": "2026-06-22T02:56:49.378Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof composes two named algebraic identities (em-coupling-projection + alpha-shift-torus-knot); Lean discharge is unfold/rw/rfl. The numeric mpmath check is segregated and labeled. No archimedean-only machinery in the algebraic proof."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1368,6 +1434,24 @@
         "reviewed_at": "2026-06-22T02:56:49.777Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": ".md:8-15 boxed conclusion α_EM⁻¹ = q·[α_shift(T_{2,9})]_q·[α_shift(T_{3,5})]_q; .lean:67-72 theorem alpha_em_shift_chain concludes only `chainIndices = bareIndices`, i.e. [alphaShift 2 9, alphaShift 3 5] = [9,10].",
+        "notes": "Lean encodes only the index-substitution step (α_shift values 9,10 equal the bare crossing-number indices), not the full q-integer multiplicative identity about α_EM⁻¹. The Lean is the faithful load-bearing substitution lemma but is strictly weaker than the narrative's boxed equation (the q·[·]_q·[·]_q product is not formalized). Reconcilable as an index-level abstraction, but the conclusion scope differs."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1392,6 +1476,22 @@
         "reviewed_at": "2026-06-22T02:56:50.141Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.95: plan explicit — compose prop:em-coupling-projection (bare form) with prop:alpha-shift-torus-knot specialised at (2,9),(3,5); cited lemmas named up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1416,6 +1516,22 @@
         "reviewed_at": "2026-06-22T02:56:50.565Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0: Lean is sorry-free modulo the two witness-backed HasAlphaShiftTorus class instances (conditional-class hypotheses, not sorries in this decl)."
       }
     ],
     "proof-rater-novelty": [
@@ -1440,6 +1556,22 @@
         "reviewed_at": "2026-06-22T02:56:51.019Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7: a composition of two existing identities; non-redundant as the named multiplicative-chain synthesis but not a new argument."
       }
     ],
     "proof-statement-integrity": [
@@ -1460,6 +1592,22 @@
         "reviewed_at": "2026-06-22T02:56:51.448Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature stable; proof is unfold/rw/rfl with no sorryAx or injected axioms beyond the declared HasAlphaShiftTorus instance hypotheses."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1480,6 +1628,22 @@
         "reviewed_at": "2026-06-22T02:56:51.899Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof rewrites via alpha_shift_torus_knot lemmas then rfl; it derives the equality, does not project a field whose type is the goal."
       }
     ],
     "proof-no-trivial-true": [
@@ -1500,6 +1664,22 @@
         "reviewed_at": "2026-06-22T02:56:52.298Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal chainIndices = bareIndices is non-tautological as stated (LHS defined via alphaShift, RHS literal [9,10]); the rw via the αshift lemmas is the content, with rfl closing only after the substitution. Not a verbatim x=x of the goal."
       }
     ],
     "proof-no-false-premise": [
@@ -1520,6 +1700,22 @@
         "reviewed_at": "2026-06-22T02:56:52.721Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypotheses are HasAlphaShiftTorus class instances (inhabitable/witness-backed); no False or contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1540,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:56:53.133Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "[HasAlphaShiftTorus 2 9] and [HasAlphaShiftTorus 3 5] are consumed via alpha_shift_torus_knot 2 9 / 3 5 in the rewrite."
       }
     ],
     "proof-no-decide-masking": [
@@ -1560,8 +1772,24 @@
         "reviewed_at": "2026-06-22T02:56:53.485Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide; trailing rfl closes a genuine list-equality after the substantive rewrite, not a masked vacuous goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

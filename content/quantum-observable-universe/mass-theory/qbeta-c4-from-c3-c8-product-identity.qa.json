@@ -1304,6 +1304,24 @@
         "severity": "minor",
         "evidence": "Statement is the product identity; followed by '## Why this matters' (motivation: why a multiplicative law vs linear recursion, categorical reading 'applying the J_Hopf Markov-trace twist...') and a 'Companion identity' / 'Honest caveats' discussion embedded in the same block, with no separate interprets: remark.",
         "notes": "The 'Why this matters' motivation is interpretive but the caveats are legitimate scope notes; borderline rather than clear mislocation."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "qbeta-c4-from-c3-c8-product-identity.md:21-58: a '## Why this matters' section plus 'categorically reads as…' motivation and a 'Companion identity' follows the statement in the same block with no linked interprets: remark.",
+        "notes": "The product-identity statement (lines 1-19) is bare, but substantial motivation/interpretation ('Why this matters', categorical reading of the product law) lives in the same block. Borderline — much is honest derivation context — so warn not fail."
       }
     ],
     "fit-section-chapter": [
@@ -1324,6 +1342,22 @@
         "reviewed_at": "2026-06-22T02:57:10.523Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Q_β c_k precision-ladder algebra is squarely mass-theory scope; no sibling restates the c_8=c_3·c_4 identity."
       }
     ],
     "wall-side-statement": [
@@ -1344,6 +1378,22 @@
         "reviewed_at": "2026-06-22T02:57:10.950Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is a Q-rational identity at the silver ratio b²=7/8 (line 100-103 explicitly notes fibre-level, no q-archimedean evaluation); √2 appears only as the symbolic anchor name q=1+√2, the actual claim is over ℚ. Generic/fibre side, correct."
       }
     ],
     "wall-side-proof": [
@@ -1364,6 +1414,22 @@
         "reviewed_at": "2026-06-22T02:57:11.359Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is pure ℚ-rational norm_num (qbeta-c4-from-c3-c8-product-identity.lean:35-61); no archimedean machinery, matches the algebraic statement side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1384,6 +1450,22 @@
         "reviewed_at": "2026-06-22T02:57:11.728Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The .md's two Lean-named claims (c4_eq_c8_div_c3_at_silver: −2·(−49/32)=49/16; c3_times_c6_eq_c9_at_silver: −2·7/2=−7) match the .lean theorems exactly; the lean.ref decl c4_eq_c8_div_c3_at_silver is present and faithful."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1408,6 +1490,22 @@
         "reviewed_at": "2026-06-22T02:57:12.132Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0; the .md '## Lean proof structure' states the two norm_num rational identities up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1432,6 +1530,22 @@
         "reviewed_at": "2026-06-22T02:57:12.525Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0; the resolved Lean theorems are sorry-free. (The categorical-theorem upstream caveat is acknowledged in prose as an open question but the stated Lean claims are fully closed.)"
       }
     ],
     "proof-rater-novelty": [
@@ -1456,6 +1570,22 @@
         "reviewed_at": "2026-06-22T02:57:12.869Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.6; the product-identity relation is a distinct structural observation, though the underlying norm_num rational checks are standard."
       }
     ],
     "proof-statement-integrity": [
@@ -1476,6 +1606,22 @@
         "reviewed_at": "2026-06-22T02:57:13.288Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean signature (rational equalities) matches the .md; no sorry, no injected axiom on the claimed-proved decls. Could not run lean_verify but the proofs are concrete norm_num."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1496,6 +1642,22 @@
         "reviewed_at": "2026-06-22T02:57:13.644Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs are direct norm_num computations, not field projections of a self-assuming structure."
       }
     ],
     "proof-no-trivial-true": [
@@ -1516,6 +1678,22 @@
         "reviewed_at": "2026-06-22T02:57:14.049Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are genuine non-tautological rational equalities (−2·(−49/32)=49/16 etc.), not True/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1536,6 +1714,21 @@
         "reviewed_at": "2026-06-22T02:57:14.511Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1556,6 +1749,22 @@
         "reviewed_at": "2026-06-22T02:57:14.925Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The theorems are hypothesis-free closed rational identities; nothing to leave unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -1576,8 +1785,24 @@
         "reviewed_at": "2026-06-22T02:57:15.294Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "fded66a103d3",
+          "ts": "ace9be91a992",
+          "lean": "7eb7699f7c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses norm_num (justified numeric reflection on rationals), not decide/trivial masking a structural goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

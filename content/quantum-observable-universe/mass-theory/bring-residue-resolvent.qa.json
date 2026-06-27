@@ -1363,6 +1363,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the bare proposition (residue->resolvent form); the prose that follows is §3b-cond Lean-structure documentation and downstream-PR bookkeeping, not physical-meaning interpretation mislocated after the claim."
       }
     ],
     "fit-section-chapter": [
@@ -1383,6 +1399,22 @@
         "reviewed_at": "2026-06-22T02:56:55.848Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'He-4 channel and magic-A binding'; the resolvent form 1/(1-h_q q^n) underlies the alpha_shift indices used by p-n averaging / meson / EM specialisations consumed in mass-theory. Belongs in chapter scope; no sibling carries the same shared-resolvent claim."
       }
     ],
     "wall-side-statement": [
@@ -1403,6 +1435,22 @@
         "reviewed_at": "2026-06-22T02:56:56.228Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is generic over [Field R]; F_n(q)=1/(1-h_q q^n) is an algebraic identity with no Real.sqrt/log/order hypothesis. The Mathlib.Data.Real.Basic import is unused by the stated theorem (which is generic); Phase-3 instances specialise to q=2:Q (decidable), not R."
       }
     ],
     "wall-side-proof": [
@@ -1423,6 +1471,22 @@
         "reviewed_at": "2026-06-22T02:56:56.571Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof of bring_residue_equation is mul_inv_cancel0 h.pole_nonzero — pure field algebra, no archimedean machinery (no linarith/IVT/continuity/Real.*). Phase-3 q=2:Q non-vanishing uses norm_num over Q, not R."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1457,6 +1521,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative states conditional uniqueness/resolvent form per §3b-cond; Lean encodes BringResidueAtOrder as the class hypothesis and proves bring_residue_equation (1-h_q q^n)*canonicalResolvent=1 sorry-free conditional on the class — quantifiers (n,q), the class hypothesis, and the resolvent-equation conclusion all match the narrative's conditional claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1725,6 +1805,22 @@
         "reviewed_at": "2026-06-22T02:56:59.050Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Not a self-assuming projection: the class field pole_nonzero (1-h_q q^n != 0) is a genuine hypothesis distinct from the conclusion (the resolvent equation), and the proof DERIVES the conclusion via mul_inv_cancel0 rather than projecting it back. The earlier existential-rfl loophole field was explicitly strengthened away (lines 97-107)."
       }
     ],
     "proof-no-trivial-true": [
@@ -1745,6 +1841,22 @@
         "reviewed_at": "2026-06-22T02:56:59.453Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is the resolvent equation (1-h_q q^n)*F_n=1, a substantive ring equation — not True, not x=x. The Phase-3 concrete theorems prove non-trivial inequalities (e.g. 1-(3/2)*2^3 != 0) over Q."
       }
     ],
     "proof-no-false-premise": [
@@ -2018,5 +2130,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

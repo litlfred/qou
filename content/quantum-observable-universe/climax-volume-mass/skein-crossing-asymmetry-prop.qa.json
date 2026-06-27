@@ -1290,6 +1290,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement carries inline physical naming ('per-crossing repulsive Coulomb correction') but no separated motivational/significance prose; the substantive interpretation (emergent Coulomb repulsion, nucleus/binding) is held by the companion remark rem:skein-crossing-asymmetry (interprets: prop:skein-crossing-asymmetry)."
       }
     ],
     "fit-section-chapter": [
@@ -1310,6 +1326,22 @@
         "reviewed_at": "2026-06-22T02:57:15.937Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Placed in sec:crossing-energy ('Crossing energy and Coulomb charge') of q-Hyperbolic Geometry; the Skein crossing-asymmetry / per-crossing Coulomb correction is the section's subject. Siblings (rem, skein-bar-antisymmetry) do not restate the claim."
       }
     ],
     "wall-side-statement": [
@@ -1330,6 +1362,22 @@
         "reviewed_at": "2026-06-22T02:57:16.363Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement uses q>1, ½(q−q⁻¹), tanh(ln q), q^{1/2} — archimedean constructs, but the crossing-energy / Coulomb section is the genuinely archimedean-physical regime (positivity of a real Coulomb correction at the substrate q>1). The Lean correctly localises this over ℝ with the §7c rationale stated. Matches its regime."
       }
     ],
     "wall-side-proof": [
@@ -1350,6 +1398,22 @@
         "reviewed_at": "2026-06-22T02:57:16.772Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The .md proposition has no narrative **Proof.** body; the proof lives in Lean and uses linarith/positivity on ℝ — appropriate machinery for the archimedean positivity statement 0 < ½(q−q⁻¹) under 1<q. No wall violation."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1384,6 +1448,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "skein-crossing-asymmetry-prop.md:32: 'The companion Lean `skein_crossing_asymmetry` currently encodes a placeholder (`: True`); the intended statement ... is sketched in-file and deferred via `sorry`'",
+        "notes": "The mathematical statement and the actual Lean signature AGREE (q>1 ⇒ q⁻¹<q ∧ Coulomb identity ∧ 0<coulombCorrection q, all derived sorry-free in skein-crossing-asymmetry-prop.lean:75-81). But the .md 'Lean formalization' note is STALE: it claims the Lean is a `: True` placeholder deferred via sorry, whereas the .lean is a complete, sorry-free proof of a stronger conjunction. The prose description of the Lean contradicts the Lean itself — update the note to match the real theorem."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1723,6 +1805,22 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The decl the lean.ref resolves to (QOU.Braiding.skein_crossing_asymmetry) concludes q⁻¹<q ∧ (Coulomb identity) ∧ 0<coulombCorrection q — substantive, not True/rfl. The .md note's '`: True` placeholder' claim is stale and incorrect; evaluating the resolved decl, the goal is genuine."
       }
     ],
     "proof-no-false-premise": [
@@ -1876,5 +1974,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

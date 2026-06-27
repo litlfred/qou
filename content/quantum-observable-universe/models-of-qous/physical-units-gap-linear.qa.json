@@ -1293,6 +1293,22 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement + one-line proof + a single short clarifying paragraph on the rate separation (first-order-in-h reading) — a brief scope/applicability note, which the rubric treats as PASS. Lean note only otherwise."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the bare identity Δ_q/ℏ_q² = q(q−1)(q+1)/2 plus a one-line proof; the following paragraph is a short scope/clarification note (which vanishing orders the normalisation buys back), not mislocated physical-meaning interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1313,6 +1329,22 @@
         "reviewed_at": "2026-06-22T02:56:24.948Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "models-of-qous symmetric-point / mass-gap scope; algebraic identity about the crossing-energy gap fits."
       }
     ],
     "wall-side-statement": [
@@ -1333,6 +1365,22 @@
         "reviewed_at": "2026-06-22T02:56:25.325Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "q∈ℝ with q≠0,1 is used only as a field where q⁻¹ exists; no order hypothesis (0<q / q<1), no Real.sqrt/log/exp, no numeric q, no MeV. The statement is a generic rational-function identity that happens to be typed over ℝ; algebraic, not archimedean — within models-of-qous regime."
       }
     ],
     "wall-side-proof": [
@@ -1353,6 +1401,22 @@
         "reviewed_at": "2026-06-22T02:56:25.701Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is 'Direct computation' / field_simp;ring — purely algebraic, matching the algebraic statement. No linarith/IVT/continuity/Real.* lemmas."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1387,6 +1451,22 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "narrative identity (Δ_q/ℏ_q² = q(q−1)(q+1)/2 with q≠0,1) matches Lean theorem physical_units_gap_linear (q:ℝ)(h0:q≠0)(h1:q≠1) : (crossingEnergyGap q*(q-1)^2)/((q-1)/q)^2 = q*(q-1)*(q+1)/2, element-by-element. (The .md §Lean note says the proof is 'deferred via sorry' but the actual .lean discharges it with field_simp;ring — a stale prose note, not a statement/Lean divergence.)"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1655,6 +1735,22 @@
         "reviewed_at": "2026-06-22T02:56:28.059Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is unfold + field_simp + ring on a genuine algebraic goal; no structure-field projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1675,6 +1771,22 @@
         "reviewed_at": "2026-06-22T02:56:28.376Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a non-trivial rational-function equality, not True/x=x; ring discharges real content."
       }
     ],
     "proof-no-false-premise": [
@@ -1828,5 +1940,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

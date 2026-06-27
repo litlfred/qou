@@ -1305,6 +1305,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conditional proposition with a proof sketch; the §3b-cond conditional banner ('conditional on def:q-reeb-flow') is a statement banner, not migratable interpretation, and the 'Why this is conditional' / 'Volume corollaries' sections are scope/applicability notes plus downstream cross-refs — not mislocated motivation requiring a separate remark."
       }
     ],
     "fit-section-chapter": [
@@ -1325,6 +1340,21 @@
         "reviewed_at": "2026-06-22T02:57:13.884Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Block sits in sec:exceptional-divisor-reeb (Reeb bundle / vertex operators), whose scope squarely covers the q-Reeb-flow S3 realisation."
       }
     ],
     "wall-side-statement": [
@@ -1345,6 +1375,20 @@
         "reviewed_at": "2026-06-22T02:57:14.313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1365,6 +1409,20 @@
         "reviewed_at": "2026-06-22T02:57:14.771Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1399,6 +1457,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The .md flags explicitly (lines 86-99) that the Lean theorem `boundary_perm_realises_S3` discharges only the combinatorial S3-bijection content and is unconditional, while the geometric flow-trajectory identification remains conditional on the Reeb class. The Lean signature (injective + bijective + count-six) faithfully encodes that combinatorial claim; quantifiers and conclusion match the narrative's purely-combinatorial sub-claim, with the conditional geometric part honestly kept in prose."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1659,6 +1732,21 @@
         "reviewed_at": "2026-06-22T02:57:17.030Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "`boundary_perm_realises_S3` composes three independently-proved lemmas (boundaryPerm_injective via case-decide, boundaryPerm_bijective, canonical_braid_count_six) — a genuine composition, not a projection of a field equal to the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1714,6 +1802,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a conjunction of Function.Injective/Bijective + a length/nodup claim over a concrete 6-element inductive — substantive, not a tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1859,8 +1962,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "`decide` is used on genuinely finite combinatorial goals (nodup of a 6-element list, distinctness of constructor images on a 3-element type) — justified computational reflection, not masking an open structural goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

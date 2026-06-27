@@ -1293,6 +1293,22 @@
         "severity": "minor",
         "evidence": "\"## Why this matters (the structural discriminant)\" section (lines 13-39) plus contrast/usage sections carry motivation; no companion interprets: remark.",
         "notes": "Methodological gate content; below FAIL threshold."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement (md:1-11) is the bare iff; interpretive material lives under separate ## headings (Why this matters, Contrast, Use in the gate) — acceptable discussion structure with the statement isolated."
       }
     ],
     "fit-section-chapter": [
@@ -1313,6 +1329,21 @@
         "reviewed_at": "2026-06-22T02:57:07.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1333,6 +1364,22 @@
         "reviewed_at": "2026-06-22T02:57:08.067Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is a bar-evenness criterion over the formal variable t=q-1; no archimedean construct hard-coded. Lean is over generic CommRing R."
       }
     ],
     "wall-side-proof": [
@@ -1353,6 +1400,22 @@
         "reviewed_at": "2026-06-22T02:57:09.041Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is a `ring` identity (1 - u^2 = 1 - b^2·ℏ^4) over commutative rings; Taylor-order remarks about t are leading-order bookkeeping, not archimedean machinery proving the algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1373,6 +1436,24 @@
         "reviewed_at": "2026-06-22T02:57:09.786Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-beta-bar-even-kernel-invariant.md:9-11 vs lean.ref qou:QOU.QBeta.BarEvenInvariant.bar_even_quadratic_term_in_t_squared (sibling .lean:66-69)",
+        "notes": "The narrative Proposition is an iff (clean integer-u ladder ⇔ R bar-even). The Lean decl named by lean.ref proves only the N=2 prototype ring identity (1 - b^2·hbar^4 = 1 - (b·hbar^2)^2), not the full iff; the file's three lemmas together (incl. bar_even_test_n2 giving the obstruction measure) encode the prototype/discriminant rather than the general biconditional. The .md itself frames the proof as 'the N=2 instance is the prototype' (one-line ring identity), so narrative and Lean agree on the prototype but the Lean does not capture the general ⇔ quantifier. Reconcilable as a prototype-of-the-claim gap; warn."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1397,6 +1478,22 @@
         "reviewed_at": "2026-06-22T02:57:10.200Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — plan stated up front: 'Proof (one-line ring identity)', N=2 prototype, bar-even factor decomposition explicitly named."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1421,6 +1518,22 @@
         "reviewed_at": "2026-06-22T02:57:10.564Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — sorry-free; three one-line ring/pow_mul proofs."
       }
     ],
     "proof-rater-novelty": [
@@ -1445,6 +1558,22 @@
         "reviewed_at": "2026-06-22T02:57:11.041Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.5 — the bar-even discriminant is a useful formalize-first gate but the Lean content is standard ring identities; the structural framing is non-redundant vs siblings."
       }
     ],
     "proof-statement-integrity": [
@@ -1465,6 +1594,21 @@
         "reviewed_at": "2026-06-22T02:57:11.326Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1485,6 +1629,22 @@
         "reviewed_at": "2026-06-22T02:57:11.723Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs are `ring`/`pow_mul` derivations, not field projections of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1505,6 +1665,22 @@
         "reviewed_at": "2026-06-22T02:57:12.110Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are non-trivial ring equalities (1 - b^2·hbar^4 = 1 - (b·hbar^2)^2, the bar-asymmetry measure b^2·hbar^4·(q^4-1)); not True/x=x tautologies."
       }
     ],
     "proof-no-false-premise": [
@@ -1525,6 +1701,21 @@
         "reviewed_at": "2026-06-22T02:57:12.671Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1545,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:57:13.049Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Theorems take only the ring elements they use (b, hbar, a, m, q); no unused binders."
       }
     ],
     "proof-no-decide-masking": [
@@ -1565,6 +1772,22 @@
         "reviewed_at": "2026-06-22T02:57:13.454Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "`ring`/`pow_mul`/`rw` on genuine identities; no decide/trivial masking."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1702,5 +1925,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1043,8 +1043,23 @@
         "reviewed_at": "2026-06-22T02:57:01.134Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "76495e0538cf",
+          "ts": "40451e0412b0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "remark interprets prop:six-canonical-knot-operators, placed in sec:exceptional-divisor-reeb (geometric face) right after garside-as-compound-flow. The explicit closed-form Garside trajectory in color coordinates is on-topic; it is an interpretive remark with formal backing (interprets set), no new unproved provable claim."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

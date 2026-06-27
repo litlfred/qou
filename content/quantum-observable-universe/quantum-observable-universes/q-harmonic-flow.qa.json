@@ -278,7 +278,44 @@
         "reviewed_at": "2026-06-26T15:20:59.452Z",
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7e4ece7c1237",
+          "ts": "d8624af20881",
+          "lean": "17c662b2206f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7e4ece7c1237",
+          "ts": "d8624af20881",
+          "lean": "17c662b2206f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-harmonic-flow.lean:46-58: `class QHarmonicFlow ... flow : dq = - Δq q` (the ansatz instance is the open conjecture); .md:25-34 'Ansatz, not theorem ... the evolution law is conjectural.'",
+        "notes": "score ~0.3 — the remaining gap (existence of a QHarmonicFlow instance for the physical substrate field) IS the core conjecture, a new postulate not derived from existing blocks (a 'core' / near-'restates-target' gap, not routine). The conditional consequences (stationary_iff_qharmonic, vacuum_stationary) are sorry-free, but closing the conjecture itself is low-plausibility. Routes to proof-triage."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

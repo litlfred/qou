@@ -1288,6 +1288,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the cos-resummation refinement claim; subsequent prose is '## Structural origin' (the proof: Markov cyclicity + decategorification) and '## Numerical reduction', i.e. proof/derivation, not mislocated physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1308,6 +1324,24 @@
         "reviewed_at": "2026-06-22T02:57:21.049Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "particle-interactions.ts:91-92 hosts q-beta-cos-resummation in section sec:confinement-selection-confinement-sdp-vs ('Which constraints survive', confinement LP/SDP). The block subject is a beta-decay Q-value refinement Q_β^{A,cos}=Q_β^A·cos((z-1)h/2), not a confinement constraint.",
+        "notes": "A different existing section is a strictly better home: sec:transfer-beta-decay (particle-interactions.ts:163-180) already collects the Q_β / neutron-qvalue / spectral-bridge blocks this directly extends (uses prop:q-beta-spectral-bridge). The manifest comment notes it was 'Absorbed from former Ch encounter'; the absorb landed it in the confinement section rather than the beta-decay section. Warn, not fail — topic is q-physics within the chapter scope."
       }
     ],
     "wall-side-statement": [
@@ -1328,6 +1362,22 @@
         "reviewed_at": "2026-06-22T02:57:21.432Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "particle-interactions chapter; .md line 1 declares 'Lean sibling: archimedean specialisation over ℝ (§7c)' and the statement is flagged conditional. cos/√q usage is on the archimedean-specialised side with the banner present."
       }
     ],
     "wall-side-proof": [
@@ -1348,6 +1398,22 @@
         "reviewed_at": "2026-06-22T02:57:21.803Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is structural (Markov cyclicity ⇒ even-in-α ⇒ cosine) plus an empirical residual table; the archimedean cos/Real.* machinery is declared as the §7c specialisation. eigenphase_bar_involution uses Real.sqrt with hq:0<q on the specialised side, properly banner'd."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1368,6 +1434,24 @@
         "reviewed_at": "2026-06-22T02:57:22.135Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "q-beta-cos-resummation.lean:159-183: theorem q_beta_cos_resummation proves ∀ formA, ∃ formA_cos, formA_cos = formA·cos α ∧ (Taylor-remainder identity), closed by 'refine ⟨formA*cos, rfl, ?_⟩; ring'. The [TransferMatrixEigenphase q] instance is never invoked in the body.",
+        "notes": "The narrative theorem is the refinement Q_β^{A,cos} := Q_β^A·cos((z-1)h/2) tightening the CODATA residual 1677.5→305.7 ppm 'conditional on prop:beta-decay-transfer-matrix'. The Lean encodes only an unconditional algebraic/Taylor tautology dressed with an unused class hypothesis — the conditional content (the eigenphase identification α=(z-1)h/2 on V_{(2,1)}) is not used to derive anything. Statement-vs-Lean agree on the definitional factor cos α but the Lean's '∃ ∧ Taylor-remainder' claim is weaker than (and structurally different from) the narrative's spectral-symmetrization result; a reader cannot reconcile the conditional framing with an instance-free ring proof. Warn (major) — notational/scope gap rather than an outright opposite claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1392,6 +1476,22 @@
         "reviewed_at": "2026-06-22T02:57:22.575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.8. Lean docstring states the plan (construct formA_cos:=formA·cos α; rfl; ring on Taylor remainder); narrative gives the two structural constraints up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1416,6 +1516,22 @@
         "reviewed_at": "2026-06-22T02:57:22.894Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9. The resolved theorem q_beta_cos_resummation is sorry-free (ring-closed); the conditional input is axiomatised in the class, no open sorry in the proved decl."
       }
     ],
     "proof-rater-novelty": [
@@ -1440,6 +1556,22 @@
         "reviewed_at": "2026-06-22T02:57:23.410Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.6. The eigenphase-symmetrization-to-cosine argument is a standard even-function/Markov-cyclicity move; not duplicated elsewhere but not novel machinery."
       }
     ],
     "proof-statement-integrity": [
@@ -1460,6 +1592,22 @@
         "reviewed_at": "2026-06-22T02:57:23.757Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "lean.ref resolves to QOU.Interactions.q_beta_cos_resummation (the genuine ring-closed conditional theorem), not to the audit stub QOU.ParticleInteractions.QBetaCos.ConditionalAudit.q_beta_cos_conditional. No statement-weakening relabel in the resolved decl."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1480,6 +1628,22 @@
         "reviewed_at": "2026-06-22T02:57:24.080Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Resolved decl q_beta_cos_resummation composes (refine ⟨…, rfl, ?_⟩; ring), not a field projection. NOTE: the file also contains an audit-visibility stub QOU.ParticleInteractions.QBetaCos.ConditionalAudit with 'class BorromeanQuark : Prop where holds : True' and 'def q_beta_cos_conditional [_inst:BorromeanQuark] : True := trivial' (lines 188-197) — that stub is NOT the resolved lean.ref and is a separate empty-Prop/trivial-True pattern, but it falls outside this block's lean.ref scope."
       }
     ],
     "proof-no-trivial-true": [
@@ -1518,6 +1682,22 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Resolved decl's conclusion is a real existential equality over ℝ, not True/rfl. (The unrelated audit stub def q_beta_cos_conditional : True := trivial at line 195 is out of this lean.ref's scope.)"
       }
     ],
     "proof-no-false-premise": [
@@ -1538,6 +1718,21 @@
         "reviewed_at": "2026-06-22T02:57:24.642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1558,6 +1753,24 @@
         "reviewed_at": "2026-06-22T02:57:24.884Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "q-beta-cos-resummation.lean:159: 'theorem q_beta_cos_resummation (q : ℝ) [TransferMatrixEigenphase q] : ...' — the class instance is never referenced in the proof body (refine ⟨formA*Real.cos (eigenphase q), rfl, ?_⟩; ring); the goal is a pure algebraic identity in eigenphase q independent of the spectral-identification fields.",
+        "notes": "The conditional hypothesis that makes the theorem 'conditional on prop:beta-decay-transfer-matrix' contributes nothing to the proof — the result holds unconditionally as an algebra identity. The unused [TransferMatrixEigenphase q] signals the proven statement is weaker than the advertised conditional spectral result (same root cause as the proof-narrative-lean-equiv warn). Routes to lean-proof-review."
       }
     ],
     "proof-no-decide-masking": [
@@ -1578,6 +1791,22 @@
         "reviewed_at": "2026-06-22T02:57:25.075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Closed by ring/rfl on a genuine algebraic identity, not decide/trivial masking a vacuous goal."
       }
     ],
     "da-reproducibility": [
@@ -1815,5 +2044,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

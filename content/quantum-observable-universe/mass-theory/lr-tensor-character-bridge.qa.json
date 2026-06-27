@@ -1293,6 +1293,22 @@
         "severity": "minor",
         "evidence": "Corollary statement + proof, then large non-statement sections: 'Applicability in QOU' (motivation/why this is the engine of mass prediction), 'Convolutional structure' (categorical interpretation: 'This is the categorical content of the speedup'), 'Scope of applicability'.",
         "notes": "Interpretation/motivation is substantial but is algebraic/compute-context and applicability scope rather than physical meaning; no companion interprets: remark exists. Borderline — content is largely correct elaboration tied to the claim, so WARN not FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "a0e49112026d",
+          "ts": "628b6a75557a",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Boxed corollary statement (LR character factorisation) is the bare claim; the proof is in ## Proof; the ## Applicability/## Witness/## Scope material is computational-context / cost analysis, not physical-meaning interpretation appended to the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1313,6 +1329,22 @@
         "reviewed_at": "2026-06-22T02:57:06.863Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a0e49112026d",
+          "ts": "628b6a75557a",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In its own section 'The LR-tensor character bridge'; the LR comultiplication speedup for tensor-product Hecke characters is the section's subject. Correctly placed; kind=corollary matches (specialisation of prop:hecke-branching-trace-decomposition)."
       }
     ],
     "wall-side-statement": [
@@ -1333,6 +1365,22 @@
         "reviewed_at": "2026-06-22T02:57:07.310Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a0e49112026d",
+          "ts": "628b6a75557a",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is over H_n(R,q) with generic ring R and partition combinatorics; no archimedean construct. The illustrative cost ratios (5e2, 1e6) are complexity estimates, not an order/Real hypothesis in the claim."
       }
     ],
     "wall-side-proof": [
@@ -1353,6 +1401,22 @@
         "reviewed_at": "2026-06-22T02:57:07.626Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a0e49112026d",
+          "ts": "628b6a75557a",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof sets I=1 in the branching identity and iterates the Schur-coproduct factorisation — purely algebraic/categorical, no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1387,6 +1451,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "a0e49112026d",
+          "ts": "628b6a75557a",
+          "lean": "07f0966a3392"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lr-tensor-character-bridge.lean:113: \"1 = 1 := sorry\"; lr-tensor-character-bridge.md:193: \"the companion Lean ... currently records a placeholder conclusion (`1 = 1`) ... deferred via `sorry`\"",
+        "notes": "The .md asserts a real LR character-bridge identity (chi^nu = Sum c^nu prod chi^lambda) but the Lean theorem lr_tensor_character_bridge concludes the placeholder `1 = 1` via `sorry` — a True-placeholder while the narrative asserts a substantive result. This is a genuine unformalised placeholder (no library decl exists for the full statement), so it is flagged as unformalised, not blessed. The .md self-discloses the gap honestly, but per the rubric the Lean does not encode the same claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1882,5 +1964,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

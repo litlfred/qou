@@ -1289,6 +1289,24 @@
         "severity": "minor",
         "evidence": "Corollary statement + Proof sketch, then a \"Geometric interpretation\" heading (.md line 170) reading each Q factor geometrically (\"discretisation correction\", q-spaced vs e-spaced divisors), plus shell-correction / Kummer-tower discussion. No companion interprets: remark.",
         "notes": "Largely technical derivation, but the explicit Geometric-interpretation section reads physical/geometric meaning into the formula in-block. Content is borderline (interleaved with computation), so warn rather than fail."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.md:170-178: '### Geometric interpretation … The ratio ℏ_q/ln q = 0.9496 is the discretisation correction'; also extensive 'Shell correction proportions' / 'Error structure' sections follow the corollary statement in-block.",
+        "notes": "Large corollary block mixes statement + proof sketch + interpretation (geometric reading of each factor) + further results (F_deg2, F_Pauli) without a companion interprets: remark. Borderline mislocation; the genuinely-interpretive 'Geometric interpretation' subsection would be better as a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1327,21 @@
         "reviewed_at": "2026-06-22T02:56:48.947Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1362,22 @@
         "reviewed_at": "2026-06-22T02:56:49.321Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Archimedean specialisation explicitly banner'd at .md:1 (AGENTS.md §7c); statement is a physical Q-value decomposition (m_e, ℏ_q, log_q) appropriate to its regime."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1398,22 @@
         "reviewed_at": "2026-06-22T02:56:49.731Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof sketch is representation-theoretic/combinatorial; Lean helper lemmas use omega/ring on genuinely arithmetic goals; method matches statement side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1369,6 +1434,24 @@
         "reviewed_at": "2026-06-22T02:56:50.079Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:84-96: theorem spectral_decomposition_qvalue … : ∃ Q_q : ℝ, Q_q = bareQValue q (daughterPoly/parentPoly) m_e * knotOperator := ⟨…, rfl⟩ — with the in-file comment 'Trivial existential … The substantive content … belongs in a sharper theorem.'",
+        "notes": "Narrative asserts an EXACT, finite spectral decomposition with knot-operator product collapsing to a single term (Rosso–Jones completeness, shell cancellation, tower termination). The Lean main theorem proves only a vacuous existence (∃ Q_q = RHS), discharged by rfl ignoring all hypotheses — it does not encode the claimed result. Theorem-changing divergence."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,6 +1476,22 @@
         "reviewed_at": "2026-06-22T02:56:50.432Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — .md 'Proof sketch' lays out a 5-step named plan (completeness, inductive chain, shell cancellation, Pauli projection, tower termination) up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1417,6 +1516,22 @@
         "reviewed_at": "2026-06-22T02:56:50.801Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.3 — Lean main theorem closes only a trivial existential; the substantive claim (Rosso–Jones completeness / exact decomposition) is a core, unproved gap (restates-target in the sharper theorem the comment defers)."
       }
     ],
     "proof-rater-novelty": [
@@ -1441,6 +1556,22 @@
         "reviewed_at": "2026-06-22T02:56:51.158Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — novel construction (torus-knot basis spectral decomposition of the β-decay Q-value), not duplicated by a sibling."
       }
     ],
     "proof-statement-integrity": [
@@ -1461,6 +1592,24 @@
         "reviewed_at": "2026-06-22T02:56:51.643Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:89-96: the main theorem states a weak ∃ Q_q = RHS rather than the .md's exact characterisation; .ts validation: 'not_checked'.",
+        "notes": "The Lean statement is materially weaker than the narrative claim, though the weakening is openly documented in-file (not disguised) and carries no sorryAx / injected axiom. Route to lean-proof-review to either strengthen the theorem or down-scope the .md claim."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1481,6 +1630,22 @@
         "reviewed_at": "2026-06-22T02:56:51.999Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is an existential witnessed by the RHS (⟨…, rfl⟩), not a structure-field projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1501,6 +1666,24 @@
         "reviewed_at": "2026-06-22T02:56:52.428Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "spectral-decomposition-qvalue.lean:89-96: ∃ Q_q : ℝ, Q_q = bareQValue … * knotOperator := ⟨bareQValue … * knotOperator, rfl⟩",
+        "notes": "The goal is a tautological existential (∃ x, x = a is always true), discharged by rfl while ignoring every hypothesis. The reflexivity is NOT the intended content — the named result is the exact spectral decomposition, not 'something equals the RHS'. Restate to characterise Q_q."
       }
     ],
     "proof-no-false-premise": [
@@ -1521,6 +1704,21 @@
         "reviewed_at": "2026-06-22T02:56:52.764Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1541,6 +1739,24 @@
         "reviewed_at": "2026-06-22T02:56:53.202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "spectral-decomposition-qvalue.lean:85-96: hypotheses (hq : 1 < q), (hp : 0 < parentPoly), (hd : 0 < daughterPoly), (hme : 0 < m_e) are all unused — the proof ⟨RHS, rfl⟩ references none of them.",
+        "notes": "Every analytic hypothesis is unused, confirming the proven statement (a bare existential) is far weaker than the intended characterisation."
       }
     ],
     "proof-no-decide-masking": [
@@ -1561,8 +1777,24 @@
         "reviewed_at": "2026-06-22T02:56:53.660Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial; closure is rfl in an anonymous constructor (vacuity already captured by proof-no-trivial-true)."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

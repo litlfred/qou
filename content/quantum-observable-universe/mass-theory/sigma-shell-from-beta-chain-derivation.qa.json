@@ -1289,6 +1289,22 @@
         "severity": "minor",
         "evidence": "Proposition statement + derivation, plus motivational/justification sections: 'Why this is the correct frame (replacing the earlier beta-chain formulation)' and 'Compatibility with the no-Qβ derivation directive' (references the user's stance). No companion interprets: remark.",
         "notes": "Motivation and directive-compliance prose is non-statement content; it is scope/justification of the derivation rather than physical interpretation, so WARN."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the boxed closed-form y_target formula; subsequent sections ('Why this is the correct frame', 'Compatibility with the no-Q_beta directive') are derivation provenance / scope clarification, not physical-meaning interpretation mislocated after the claim."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1325,22 @@
         "reviewed_at": "2026-06-22T02:57:01.515Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'Staircase and character lemmas'; the sigma_shell magnitude as a Wedderburn coefficient at the staircase partition (with Hoefsmit character) is exactly staircase+character content. Well placed."
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1361,22 @@
         "reviewed_at": "2026-06-22T02:57:01.813Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Boxed statement is a categorical/algebraic ratio of Wedderburn coefficient, central weight, Hoefsmit character and Markov trace evaluated at symbolic q_0 — no Real.sqrt/log/order hypothesis or MeV unit. Numeric values (0.0374..., 0.00731...) are witness comparisons, not part of the claim."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1397,22 @@
         "reviewed_at": "2026-06-22T02:57:02.259Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Derivation (Steps 1-3) is categorical: identify sigma_shell on the self-conjugate staircase partition, take the Delta-block contribution from the Wedderburn-Schur mass decomposition, form the dimensionless ratio. No archimedean machinery; numeric benchmarks are witness checks."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1369,6 +1433,24 @@
         "reviewed_at": "2026-06-22T02:57:02.624Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "sigma-shell-from-beta-chain-derivation.lean:68-79: \"class SigmaShellFromBetaChainDerivation : Prop where identity : forall data, data.y_target = data.C_lambda * data.y_lambda * data.abs_chi / data.abs_tr_M ... theorem sigma_shell_from_beta_chain ... := inst.identity data\"",
+        "notes": "The .md DERIVES the closed form via a 3-step categorical argument (Wedderburn-Schur decomposition, Delta-block identification). The Lean does not derive it: it axiomatises the very identity as a class field `identity` and the theorem returns it (inst.identity data). So the Lean asserts (modulo an unproved class) the conclusion as an axiom, whereas the narrative claims a derivation — they do not encode the same epistemic content. Compounded by Float-valued fields rather than the symbolic q-objects of the statement."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,6 +1475,24 @@
         "reviewed_at": "2026-06-22T02:57:03.043Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "sigma-shell-from-beta-chain-derivation.lean:74-79: \"theorem sigma_shell_from_beta_chain [inst : ...] (data) : ... := inst.identity data\"",
+        "notes": "score 0.2 — the Lean 'proof' is an opaque field projection (inst.identity data) with no plan; the narrative derivation is legible but the formal object carries none of that strategy. Routes to proof-simplifier/lean-proof-review."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1417,6 +1517,24 @@
         "reviewed_at": "2026-06-22T02:57:03.389Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "sigma-shell-from-beta-chain-derivation.lean:68: \"class SigmaShellFromBetaChainDerivation : Prop where identity : ...\"",
+        "notes": "score 0.2 — the open input IS the target identity itself (the class field equals the theorem conclusion), so the gap is 'restates-target' rather than a routine sub-lemma; closing it requires the full categorical derivation, not yet formalised. Low plausibility-of-closure as currently structured."
       }
     ],
     "proof-rater-novelty": [
@@ -1441,6 +1559,23 @@
         "reviewed_at": "2026-06-22T02:57:03.836Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 0.4 — the categorical re-derivation (replacing the refuted beta-chain frame with the staircase Wedderburn coefficient) is a non-duplicated argument in the corpus, but the Lean encoding adds nothing (axiom projection)."
       }
     ],
     "proof-statement-integrity": [
@@ -1461,6 +1596,22 @@
         "reviewed_at": "2026-06-22T02:57:04.264Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No sorry/sorryAx and no surprise axiom in the proof term (it depends only on the named class instance, the §3b-cond mechanism). The title still says 'from compound beta-decay chain Q-values' while the body rederives away from that frame (stale title), but that is a labelling drift, not a statement-weakening/axiom-injection integrity violation."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1481,6 +1632,24 @@
         "reviewed_at": "2026-06-22T02:57:04.600Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "sigma-shell-from-beta-chain-derivation.lean:68-79: class field \"identity : forall data, data.y_target = data.C_lambda * data.y_lambda * data.abs_chi / data.abs_tr_M\" and \"theorem sigma_shell_from_beta_chain ... := inst.identity data\"",
+        "notes": "Textbook self-assuming projection: the class field `identity` has exactly the theorem's own conclusion as its type, and the proof is the verbatim projection inst.identity data (P |- P). There are no sibling hypothesis fields composed — the class carries only the conclusion, violating the §3b-cond non-degeneracy clause (class must axiomatise hypotheses, not the conclusion). Should be restructured so the class carries the genuine derivation inputs (Wedderburn coefficient, central weight, character, trace as separate data with the binding-fraction identity) from which y_target is composed. Routes to lean-proof-review."
       }
     ],
     "proof-no-trivial-true": [
@@ -1501,6 +1670,22 @@
         "reviewed_at": "2026-06-22T02:57:04.930Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The conclusion is a non-trivial arithmetic equation on the data fields (y_target = C*y*chi/tr_M), not True/rfl/x=x; the issue is the self-assuming projection (flagged separately), not a vacuous tautological goal."
       }
     ],
     "proof-no-false-premise": [
@@ -1521,6 +1706,22 @@
         "reviewed_at": "2026-06-22T02:57:05.342Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The SigmaShellAtMagic data and the class are inhabitable (the witness supplies concrete Float values); no False/0=1/uninhabited-type premise drives the implication."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1541,6 +1742,22 @@
         "reviewed_at": "2026-06-22T02:57:05.691Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The class instance inst and the argument data are both used (inst.identity data); no stated hypothesis is left unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -1561,8 +1778,24 @@
         "reviewed_at": "2026-06-22T02:57:06.000Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "f7accaee49d2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial used; the (vacuous) discharge is via class-field projection, which is the self-assuming-projection finding above, not a decide-masking one."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

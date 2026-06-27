@@ -1149,6 +1149,22 @@
         "reviewed_at": "2026-06-22T02:56:41.310Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "659912525d5d",
+          "ts": "023d49246295",
+          "lean": "453502e1bdc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conjecture about the pair-gen piece of the ρ_K graded mass expansion; promotes the open subsection of prop:rho-k-graded-expansion, same chapter."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1173,8 +1189,24 @@
         "reviewed_at": "2026-06-22T02:56:41.720Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "659912525d5d",
+          "ts": "023d49246295",
+          "lean": "453502e1bdc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.3 — the gap IS the goal (core open analytical work): naive log-additive form refuted, Wedderburn-coupled form degrades, q-dilog form derivation pending; described as multi-day effort gated on the s5-so3 keystone."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

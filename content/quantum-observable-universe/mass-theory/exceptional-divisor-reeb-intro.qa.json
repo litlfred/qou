@@ -1007,8 +1007,23 @@
         "reviewed_at": "2026-06-22T02:57:13.853Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c4d6b67a71d3",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "prose section-intro (sec:exceptional-divisor-reeb-intro) registered at line 331 as the opener of sec:exceptional-divisor-reeb; it forward-references the section's own blocks (exceptional divisor, Reeb bundle, six knot operators, ramified-disc fusion, Reeb-bundle-complement-equals-volume) — correctly an in-scope navigational prose intro, no new provable claim with a proof, no naming of a new construction."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

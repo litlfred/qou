@@ -1239,6 +1239,20 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement + proof followed by an explicit 'Honest scope — what this does and does NOT establish' section plus a numerical sanity check; that is scope/applicability clarification, explicitly permitted, not mislocated physical interpretation."
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1258,6 +1272,20 @@
         "reviewed_at": "2026-06-22T02:56:42.683Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1277,6 +1305,21 @@
         "reviewed_at": "2026-06-22T02:56:43.036Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is deliberately a √q-bearing instance over the ℝ→ℝ class CanonicalMarkovWeightsH3; mass-endomorphism is an archimedean-evaluation chapter and the archimedean √q is the stated subject, not a leak."
       }
     ],
     "wall-side-proof": [
@@ -1296,6 +1339,21 @@
         "reviewed_at": "2026-06-22T02:56:43.363Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Normalisation z + 2(1/2 - z) + z = 1 is a purely algebraic identity; proof is `ring`, no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1329,6 +1387,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "ref resolves to instance CanonicalMarkovWeightsH3.explicitInstance; y3/y21/y111 := markov_parameter, 1/2-markov_parameter, markov_parameter matches the .md y_(3)=z, y_(2,1)=1/2-z, y_(1,1,1)=z; sum_dim_normalised by ring matches the narrative normalisation proof."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1390,6 +1463,21 @@
           "max": 1,
           "value": 0.82
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.9 — one-line normalisation, plan obvious (sum of weights = 1 via ring)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1451,6 +1539,21 @@
           "max": 1,
           "value": 0.78
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — sorry-free instance, no remaining gap."
       }
     ],
     "proof-rater-novelty": [
@@ -1512,6 +1615,21 @@
           "max": 1,
           "value": 0.68
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.6 — explicit inhabitability witness for a conditional class; useful but modest."
       }
     ],
     "proof-statement-integrity": [
@@ -1565,6 +1683,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1618,6 +1750,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Normalisation field is derived by `ring`, not a verbatim projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1654,6 +1801,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a genuine real equation (weighted dimension sum = 1), not True/rfl-tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1707,6 +1869,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1760,6 +1936,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:48-53: `sum_dim_normalised := by intro q _; ring` — the `q > 0` hypothesis (bound to `_`) is unused.",
+        "notes": "The `q > 0` hypothesis is mandated by the class field signature (`∀ q > 0, …`); the normalisation identity holds unconditionally over ℝ, so `ring` legitimately ignores it. Interface-driven, harmless — not a weakened statement."
       }
     ],
     "proof-no-decide-masking": [
@@ -1796,8 +1989,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses `ring`, not `decide`/`trivial`."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

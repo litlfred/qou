@@ -1239,6 +1239,23 @@
         "severity": "minor",
         "evidence": ".md line 21 reframes the criterion's role: 'the bound functions as a diagnostic limit check in the observable universe ... the BKM condition shifts from a PDE survival test to an obstruction indicator at the q→1 substrate boundary.' No companion interprets: remark on the theorem block.",
         "notes": "Borderline significance/motivation prose; partly a scope clarification (the integral is finite for q>1) but the 'diagnostic indicator' framing is interpretive. Could migrate the second sentence to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-bkm-criterion.md:21: \"the bound functions as a diagnostic limit check in the observable universe ... so the BKM condition shifts from a PDE survival test to an obstruction indicator at the q → 1 substrate boundary.\"",
+        "notes": "Substantive interpretive prose (physical-meaning / 'why this matters' framing) follows the iff statement in the same theorem block, and the .ts carries no companion remark with interprets: thm:q-bkm to hold it. The interpretation is genuinely mislocated; it should live in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1258,6 +1275,20 @@
         "reviewed_at": "2026-06-22T02:56:45.634Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1277,6 +1308,23 @@
         "reviewed_at": "2026-06-22T02:56:45.976Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "q-bkm-criterion.md:1-3: \"Let v be the solution of the q-NS system ... with q > 1 on [0, T)\"; reiterated lines 16-18.",
+        "notes": "Generic/substrate-chapter (fluid-dynamics) statement carries the order hypothesis q > 1 without an explicit narrative wall: banner. Borderline: q > 1 is intrinsic to the referenced q-NS regime (def:q-navier-stokes), and the Lean sibling explicitly §7c-handles it (drops the order predicate, stays generic CommRing). Flag as a mixed-regime statement lacking an explicit narrative side-marker rather than a hard leak."
       }
     ],
     "wall-side-proof": [
@@ -1296,6 +1344,20 @@
         "reviewed_at": "2026-06-22T02:56:46.334Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1329,6 +1391,20 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1799,5 +1875,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1306,6 +1306,23 @@
         "severity": "minor",
         "evidence": "Statement + proof followed by **Why this matters.** (lines 66-77) giving physical/motivational reading (\"not posited — it is read off as the monodromy...\"). The block uses rem:rho-s3-holonomy-exposition but has no interprets: link holding this interpretation.",
         "notes": "Interpretation could move to a linked remark; the cited exposition remark is a candidate host."
+      },
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "ramified-disc-fusion.md:66-77 `**Why this matters.** The proposition closes the geometric chain … the S_3 Galois action … is not posited — it is read off as the monodromy …`",
+        "notes": "Statement (parts 1-3) + Sketch of proof are the bare claim, but the trailing **Why this matters** paragraph is substantive interpretation/significance with no companion interprets: remark holding it. Borderline; recommend relocating to a linked remark. Warn, not fail."
       }
     ],
     "fit-section-chapter": [
@@ -1326,6 +1343,21 @@
         "reviewed_at": "2026-06-22T02:57:01.907Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Placed in sec:exceptional-divisor-reeb (geometric face: exceptional divisor, Reeb bundle, vertex operators), uses def:reeb-bundle + def:color-sector-coords. Ramified-disc fusion / S_3 monodromy at the foundry boundary of the Reeb bundle is squarely the section's subject."
       }
     ],
     "wall-side-statement": [
@@ -1346,6 +1378,21 @@
         "reviewed_at": "2026-06-22T02:57:02.347Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is topological/algebraic (branched cover, ramification degree, S_3 Galois monodromy, cube roots of unity) with no archimedean constructs (no Real.sqrt/exp, no numeric q≈, no order hypothesis). Generic/substrate-side content appropriate to the geometric-face chapter regime."
       }
     ],
     "wall-side-proof": [
@@ -1366,6 +1413,21 @@
         "reviewed_at": "2026-06-22T02:57:02.649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The sketch proves via topological tiling / quotient-cone argument, loop-monodromy, and the cube-root DFT relating sectors to Lagrange resolvents — algebraic/topological machinery matching the algebraic statement. No archimedean linarith/IVT/continuity/Real.* method."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1386,6 +1448,23 @@
         "reviewed_at": "2026-06-22T02:57:03.103Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "Library decl QOU/BraidsKnots/RamifiedDiscFusion.lean:24-49: `class RamifiedDiscFusionContext where … claim_three_sectors : n_sectors = 3; claim_degree_three_ramification : ramification_degree = 3; claim_s3_monodromy : galois_group_order = 6` and `def RamifiedDiscFusion [ctx] : ctx.n_sectors = 3 ∧ ctx.ramification_degree = 3 ∧ ctx.galois_group_order = 6 := ⟨ctx.claim_three_sectors, ctx.claim_degree_three_ramification, ctx.claim_s3_monodromy⟩`.",
+        "notes": "The .md asserts three substantive claims: (1) topological fusion into a single disc with degree-3 ramification, (2) C_3 monodromy / S_3 Galois group of the cover, (3) agreement of that S_3 action with the Lagrange-resolvent action. The Lean captures only three NUMERIC equalities (n_sectors=3, ramification=3, |group|=6) — and even those are assumed as the context class's own fields, then handed back. The cover topology, the monodromy realisation, and the resolvent-agreement claim (part 3 entirely) are absent. Conclusion diverges: substantive geometric proposition vs three assumed integers. (This vacuity also implicates proof-no-self-assuming-projection / proof-no-trivial-true, which are not in this block's criteria list but should be flagged to lean-proof-review.)"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1616,5 +1695,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

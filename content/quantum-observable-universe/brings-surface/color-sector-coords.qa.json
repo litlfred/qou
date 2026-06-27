@@ -1130,6 +1130,21 @@
         "reviewed_at": "2026-06-22T02:56:19.769Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f70d8f75bf6d",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1150,8 +1165,24 @@
         "reviewed_at": "2026-06-22T02:56:20.207Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f70d8f75bf6d",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Definition is an explicitly archimedean geometric realisation (sin/cos sector embeddings on the exceptional divisor); it lives in the archimedean brings-surface chapter, the leading note flags the ℝ-specialisation per §7c, and the Lean sibling carries the explicit 'Ground ring: ℝ (geometric/analytic realisation) ... NOT part of the formal proof chain' banner. The archimedean constructs (Real.sin/cos) are properly declared, not an unflagged substrate-chapter leak."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

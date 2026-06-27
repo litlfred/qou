@@ -279,8 +279,250 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative statement is geometric (SU(2)-bundle trivialisation, exceptional divisor, SW differential A^0 = X dz = λ_SW). No Real.*, numeric q≈, MeV, or 0<q order hypothesis. brings-surface is a substrate/generic chapter; statement matches its regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof (in -proof sibling) uses bundle trivialisation via π₁(SU(2))=0 and weight-space decomposition — purely categorical/geometric. No linarith/IVT/continuity/Real./numeric-eval machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:49-51: `theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW := ctx.claim_mi_sw_cartan_reduction`",
+        "notes": "Narrative asserts a substantive geometric lemma with three structural conclusions (bundle trivialises, weight-space split A|=A⁰⊗H+A⁺⊗E₊+A⁻⊗E₋, Cartan component = SW differential). The Lean encodes ONLY the bare scalar equality A_0=X_dz=lambda_SW and obtains it by projecting a class field claim_mi_sw_cartan_reduction whose type IS that conjunction. The geometric content of the narrative (trivialisation, weight decomposition, spectral-curve single-sheet) is absent from the Lean, and what remains is assumed not derived. Narrative ≠ Lean."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.85 — narrative proof states the plan up front: trivialise the SU(2)-bundle over S²≅𝒮_c (π₁(SU(2))=0), apply the weight-space decomposition, then read off the Cartan component as X dz = λ_SW. Cited lemmas (weight-space decomposition, color bundles) named."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:6-12: '**Placeholder canonical** ... The full Lean statement and proof are pending; this stub exists so the lean.ref URI resolves'",
+        "notes": "score 0.15 — the Lean is sorry-free only because the conclusion is injected as a class field (restates-target). The genuine gap (formalising the bundle/weight-space geometry) is unaddressed; closing it is core/restates-target, not routine. Routes to proof-triage."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.6 — Cartan-reduction abelianisation recovering the SW differential is a standard SW argument, not duplicated elsewhere in the corpus."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:49-50: `theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW`",
+        "notes": "The proved Lean statement is materially weaker than the narrative lemma: it drops the structural conclusions (trivialisation, weight-space decomposition) and reduces to a bare equality of three opaque ℝ scalars, which is itself assumed as the class field claim_mi_sw_cartan_reduction. The decl is 'passed' by weakening the statement to a self-assumed hypothesis. Routes to lean-proof-review (Review Type 4)."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:30,49-51: field `claim_mi_sw_cartan_reduction : A_0 = X_dz ∧ X_dz = lambda_SW` and proof `:= ctx.claim_mi_sw_cartan_reduction`",
+        "notes": "Verbatim self-assuming projection: the class field type equals the declaration's own conclusion and the proof hands it back (P ⊢ P). The other class fields (A_0, X_dz, lambda_SW) are merely the equality's operands, not sibling hypotheses from which the goal is derived. No composition / Iff.intro / obtain-derivation. The lean.ref resolves to this library decl (no shadowing sibling); it is a genuine unformalised placeholder flagged as such. Routes to lean-proof-review."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is A_0 = X_dz ∧ X_dz = lambda_SW over three distinct class fields — not True, not syntactic x=x. The vacuity here is self-assumption, caught by proof-no-self-assuming-projection, not by the trivial-True criterion."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No False / 0=1 / uninhabited premise; MiSwCartanReductionContext is inhabitable, the implication is not vacuous via False.elim."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The sole hypothesis is the [ctx] instance, used via ctx.claim_mi_sw_cartan_reduction. The signature carries no extra explicit hypothesis to be unused (the weakness here is statement-weakening / self-assumption, covered by the dedicated criteria)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a46cf3f032dc",
+          "ts": "56428a164a1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial; the proof is a field projection (the masking concern is the self-assuming projection, flagged separately)."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

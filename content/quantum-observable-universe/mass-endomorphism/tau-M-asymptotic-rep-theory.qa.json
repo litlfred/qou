@@ -1323,6 +1323,24 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement + proof + representation-theoretic structure sections (Kashiwara/JM/Macdonald/Habiro) are mathematical content, not physical interpretation; status/provenance framing is held in authorNotes per §4d."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "tau-M-asymptotic-rep-theory.md:132-217: `## Representation-theoretic structure of the rung coefficients` + `## Synthesis` append extended four-anchor exposition after the Proof.",
+        "notes": "Conditional banner is correctly in-prose (§3b-cond). The appended Synthesis material is mathematical structure (Kashiwara/JM/Macdonald/Habiro anchors), not physical 'why this matters'; borderline but not a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1343,6 +1361,22 @@
         "reviewed_at": "2026-06-22T02:56:41.014Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "τ_M precision-ladder rep theory feeding the Q_β/mass derivation; in mass-endomorphism scope."
       }
     ],
     "wall-side-statement": [
@@ -1363,6 +1397,22 @@
         "reviewed_at": "2026-06-22T02:56:41.375Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the categorical/fibre u-ladder factorisation (cos, ℏ_q, √q-bearing b_λ) in the qbeta chapter, carrying the §3b-cond conditional banner; cos/ℏ_q are the ladder's intrinsic fibre structure, not a smuggled archimedean evaluation."
       }
     ],
     "wall-side-proof": [
@@ -1383,6 +1433,22 @@
         "reviewed_at": "2026-06-22T02:56:41.861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof argues parity (bar involution q↔q⁻¹), q=1 baseline, 1-d triviality, and the proved c_2=-1 seed — categorical/algebraic, no IVT/continuity/numeric-q evaluation."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1403,6 +1469,24 @@
         "reviewed_at": "2026-06-22T02:56:42.219Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "tau-M-asymptotic-rep-theory.md:19-27 boxed claim `τ_M^{V_λ}(β) = Tr ρ_λ(β)·cos(α_λ - b_λℏ_q²/2)·∏_k(1+c_k u_λ^k)`; tau-M-asymptotic-rep-theory.lean:108-120 `theorem tau_M_asymptotic_rep_theory` concludes only `c_k 0 = 0 ∧ c_k 1 = b_lambda ∧ power_sum 1 q = 0`.",
+        "notes": "The Lean conclusion is a conjunction of three low-order class-field pinnings, NOT the narrative factorisation identity. The full ladder/cos/Tr factorisation the .md states is absent from the Lean; conclusions differ substantively."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1427,6 +1511,22 @@
         "reviewed_at": "2026-06-22T02:56:42.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.85 — plan stated up front (proved data enumerated; case split by irrep dimension; named cited lemmas)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1451,6 +1551,22 @@
         "reviewed_at": "2026-06-22T02:56:43.026Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.4 — proved rungs (c_0, 1-d, N=1 b, c_2=-1) are sorry-free; the open higher rungs hinge on the R(q,ξ) kernel = s5-so3 keystone (core, research-grade)."
       }
     ],
     "proof-rater-novelty": [
@@ -1475,6 +1591,22 @@
         "reviewed_at": "2026-06-22T02:56:43.429Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — synthesis of four complementary rep-theory anchors into one ladder is a non-redundant framing."
       }
     ],
     "proof-statement-integrity": [
@@ -1495,6 +1627,22 @@
         "reviewed_at": "2026-06-22T02:56:43.835Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Theorem is sorry-free (exact projections); no sorryAx introduced; no evidence of a weakening restatement vs prior commit."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1515,6 +1663,24 @@
         "reviewed_at": "2026-06-22T02:56:44.240Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "tau-M-asymptotic-rep-theory.lean:117-120: `refine ⟨?_,?_,?_⟩; · exact KashiwaraCrystal.c_0_zero; · exact KashiwaraCrystal.c_1_eq_b; · exact JucysMurphySpectrum.p_1_vanish q` — each conjunct of the goal IS a class field handed straight back.",
+        "notes": "The conclusion `c_k 0 = 0 ∧ c_k 1 = b_lambda ∧ power_sum 1 q = 0` is exactly the three class fields `c_0_zero`, `c_1_eq_b`, `p_1_vanish`; the proof projects them verbatim (P ⊢ P). No derivation/composition; the Macdonald and Habiro instance hypotheses are unused. This is the self-assuming-projection anti-pattern."
       }
     ],
     "proof-no-trivial-true": [
@@ -1535,6 +1701,22 @@
         "reviewed_at": "2026-06-22T02:56:44.633Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is real equalities (c_k 0 = 0, etc.), not `True`/syntactic x=x. (Weakness is captured under self-assuming-projection and narrative-equiv, not here.)"
       }
     ],
     "proof-no-false-premise": [
@@ -1555,6 +1737,21 @@
         "reviewed_at": "2026-06-22T02:56:45.007Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1595,8 +1792,24 @@
         "reviewed_at": "2026-06-22T02:56:45.845Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "727d433b4e88",
+          "ts": "e87f92683843",
+          "lean": "860777419ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses `refine`/`exact`, no `decide`/`trivial`."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1287,6 +1287,24 @@
         "severity": "minor",
         "evidence": "Proposition + Proof, then \"Consequence: replace ζ5 Galois arithmetic ...\" motivation, a \"Remark on Novelty\" (.md line 101), and \"Connection to Bring's surface\" reading physical/structural meaning (phase boundaries, Möbius fixed points of the Descartes universe). No companion interprets: remark.",
         "notes": "Core is a clean algebraic-orbit theorem; the trailing consequence/novelty/Bring-connection prose is motivation/interpretation. Mathematical enough to be borderline, so warn."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "golden-quartet-galois.md:90-125: after the statement+proof, the same proposition block carries substantive interpretive sections — '**Consequence: replace $\\zeta_5$ Galois arithmetic with quartet orbit.**' (l.90-108), '**Remark on Novelty:**' (l.101), and '**Connection to Bring's surface.**' (l.110-125) asserting physical/structural meaning (phase boundaries, Möbius fixed points, S_5 symmetry).",
+        "notes": "This interpretive/consequence prose (motivation, why-this-matters, downstream Bring-surface meaning) is mislocated inside the provable block; no companion `interprets:` remark holds it. Move to a follow-on remark linked via interprets:."
       }
     ],
     "fit-section-chapter": [
@@ -1307,6 +1325,21 @@
         "reviewed_at": "2026-06-22T02:56:47.563Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1327,6 +1360,22 @@
         "reviewed_at": "2026-06-22T02:56:47.882Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Block sits in sec:topological-mass-pl-sw-duality (predicted-spectra, an archimedean-realization chapter); statement uses √5/φ over ℝ and the .md banner (l.1) + .lean docstring declare archimedean specialisation per §7c."
       }
     ],
     "wall-side-proof": [
@@ -1347,6 +1396,22 @@
         "reviewed_at": "2026-06-22T02:56:48.221Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is direct ring/field expansion + Galois conjugation over ℝ; matches the archimedean side. Lean uses ring/nlinarith/field_simp consistent with the ℝ specialisation banner."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1367,6 +1432,24 @@
         "reviewed_at": "2026-06-22T02:56:48.638Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "golden-quartet-galois.md:41-43 claims G ≅ ℤ/2×ℤ/2 acts on Q 'with a single orbit equal to Q, transitively and faithfully', and l.17-32 assert two size-2 Galois orbits; golden-quartet-galois.lean:132-139 `golden_quartet_galois` only proves the 5-conjunct (the four values are roots of x⁴−3x²+1 ∧ phi·phiInv=1).",
+        "notes": "Lean encodes the root-set + bar-pairing facts but not the transitivity/faithfulness/single-orbit group-action claim the narrative headlines. A reader can reconcile (the orbit claim follows from the encoded facts), so warn rather than fail, but the central group-action statement is not directly formalised by the cited decl."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1391,6 +1474,22 @@
         "reviewed_at": "2026-06-22T02:56:49.000Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9 — plan is explicit: factor the quartic, identify each quadratic as a minimal polynomial, compute Galois conjugates and the bar pairing, tabulate the orbit. Both .md and .lean state the route up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1415,6 +1514,22 @@
         "reviewed_at": "2026-06-22T02:56:49.407Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0 — Lean proof is sorry-free (ring/nlinarith/field_simp); no remaining gap."
       }
     ],
     "proof-rater-novelty": [
@@ -1439,6 +1554,22 @@
         "reviewed_at": "2026-06-22T02:56:49.764Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.5 — standard golden-ratio/Galois arithmetic; the joint G=Gal×bar orbit framing is a mild structural recast, not a novel proof technique, but not a duplicate of a sibling."
       }
     ],
     "proof-statement-integrity": [
@@ -1459,6 +1590,22 @@
         "reviewed_at": "2026-06-22T02:56:50.129Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature is a plain conjunction of polynomial-root equalities; lean_verify-equivalent inspection shows ring/nlinarith proofs with no sorry/sorryAx or injected axioms."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1479,6 +1626,22 @@
         "reviewed_at": "2026-06-22T02:56:50.478Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "`golden_quartet_galois` composes independently-proved lemmas (phi_quartic, phiInv_quartic, …, phi_mul_phiInv) via ⟨…⟩; no structure field equal to the conclusion is projected back."
       }
     ],
     "proof-no-trivial-true": [
@@ -1499,6 +1662,22 @@
         "reviewed_at": "2026-06-22T02:56:50.798Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is genuine polynomial-root equalities (x⁴−3x²+1=0 at four values) + φ·φ⁻¹=1, not True/rfl-tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1519,6 +1698,22 @@
         "reviewed_at": "2026-06-22T02:56:51.206Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No hypotheses; no False/contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1539,6 +1734,22 @@
         "reviewed_at": "2026-06-22T02:56:51.598Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The decl takes no hypotheses; sub-lemmas consume the equations they cite."
       }
     ],
     "proof-no-decide-masking": [
@@ -1559,8 +1770,24 @@
         "reviewed_at": "2026-06-22T02:56:51.944Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "490c0ae8b8a5",
+          "ts": "98cb83fe1242",
+          "lean": "b0eef5a5f8f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs use ring/nlinarith/field_simp; no decide/trivial masking a vacuous goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

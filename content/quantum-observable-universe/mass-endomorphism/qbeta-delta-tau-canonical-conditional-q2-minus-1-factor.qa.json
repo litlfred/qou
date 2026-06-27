@@ -1284,6 +1284,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the conditional (q^2-1) factorisation of Delta-tau_M^can + Proof. The '## What this block does NOT establish' is scope-limitation, not physical interpretation; the §3b-cond conditional banner is part of the statement, properly kept in prose."
       }
     ],
     "fit-section-chapter": [
@@ -1304,6 +1320,22 @@
         "reviewed_at": "2026-06-22T02:56:41.564Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:hecke-chi-per-block-delta-tau-canonical-weights with its parent (qbeta-per-block-chi-closed-forms) and the canonical-weights instance block. The conditional q^2-1 factor of Delta-tau_M is the section's stated scope; no sibling carries this conditional result."
       }
     ],
     "wall-side-statement": [
@@ -1324,6 +1356,22 @@
         "reviewed_at": "2026-06-22T02:56:41.892Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the algebraic identity Delta-tau_M^can(q) = (q^2-1)·P^can(q) for q>0, with q>0 the rational well-definedness domain (denominators in chi_block). Generic/pre-archimedean (tag pre-archimedean); the √q lives only inside the unrealised CanonicalMarkovWeightsH3 instance, not in this statement. No archimedean construct hard-coded."
       }
     ],
     "wall-side-proof": [
@@ -1344,6 +1392,22 @@
         "reviewed_at": "2026-06-22T02:56:42.329Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is obtain per-block factorisations (chi_blocks_have_q2_minus_1_factor) then rw + ring — pure algebraic machinery matching the algebraic statement. No linarith/IVT/continuity/numeric-q."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1364,6 +1428,22 @@
         "reviewed_at": "2026-06-22T02:56:42.745Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative: assume CanonicalMarkovWeightsH3 instance, then Delta-tau_M^can(q) = (q^2-1)·P^can(q) for q>0. Lean delta_tau_M_canonical_has_q2_minus_1_factor [w : CanonicalMarkovWeightsH3] (q:ℝ)(hq:0<q) : ∃ P, delta_tau_M_canonical q = (q^2-1)*P. Hypothesis (class instance + 0<q), quantifier, conclusion all match; narrative's explicit P^can is the Lean ∃-witness w.y3·P3+w.y21·P21+w.y111·P111."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1388,6 +1468,23 @@
         "reviewed_at": "2026-06-22T02:56:43.085Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.95. Plan stated up front in both md proof and Lean docstring: pull per-block (q^2-1) factorisations from the parent theorem, substitute, factor out, ring. Cited lemma named (chi_blocks_have_q2_minus_1_factor)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1412,6 +1509,23 @@
         "reviewed_at": "2026-06-22T02:56:43.477Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=1.0 for this decl. delta_tau_M_canonical_has_q2_minus_1_factor is sorry-free (conditional on the class). The open item (a concrete CanonicalMarkovWeightsH3 instance) is the upstream class, not an in-proof gap; this conditional theorem fully discharges its goal."
       }
     ],
     "proof-rater-novelty": [
@@ -1436,6 +1550,23 @@
         "reviewed_at": "2026-06-22T02:56:43.849Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.5. Direct §3b-cond consequence of the parent's per-block factorisation; standard but not duplicated (the parent proves per-block, this lifts to the weighted canonical sum). The corollary restates the parent's vanishing-at-1, acknowledged explicitly."
       }
     ],
     "proof-statement-integrity": [
@@ -1456,6 +1587,22 @@
         "reviewed_at": "2026-06-22T02:56:44.272Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature is a genuine ∃-factorisation under an explicit class hypothesis; no tautology-weakening. The single conjectural input is the named CanonicalMarkovWeightsH3 class (§3b-cond), not an injected axiom on this decl; no sorryAx on the theorem itself."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1476,6 +1623,22 @@
         "reviewed_at": "2026-06-22T02:56:44.624Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The proof DERIVES the factorisation by composing chi_blocks_have_q2_minus_1_factor with the weights (rw + ring), not by projecting a class field equal to the conclusion. CanonicalMarkovWeightsH3 carries only the y_λ weights + dimension-normalisation axiom (inputs), not the (q^2-1) claim — §3b-cond non-degenerate."
       }
     ],
     "proof-no-trivial-true": [
@@ -1496,6 +1659,22 @@
         "reviewed_at": "2026-06-22T02:56:45.031Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a substantive ∃-factorisation equality, not True/x=x. The corollary's delta_tau_M_canonical 1 = 0 is a real vanishing derived from the factorisation, not a vacuous rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1516,6 +1695,22 @@
         "reviewed_at": "2026-06-22T02:56:45.378Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No false/contradictory premise. CanonicalMarkovWeightsH3 is a content class with a satisfiable normalisation axiom (open whether instantiated, but not contradictory); 0<q is satisfiable."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1536,6 +1731,22 @@
         "reviewed_at": "2026-06-22T02:56:45.811Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Both binders are used: the class instance w supplies w.y3/w.y21/w.y111 in the ∃-witness, and hq:0<q is passed to chi_blocks_have_q2_minus_1_factor. No unused hypothesis."
       }
     ],
     "proof-no-decide-masking": [
@@ -1556,8 +1767,24 @@
         "reviewed_at": "2026-06-22T02:56:46.174Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial. Proof is obtain + refine + unfold + rw + ring — genuine structural derivation."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

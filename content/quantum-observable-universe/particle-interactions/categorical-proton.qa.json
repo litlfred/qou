@@ -1100,6 +1100,21 @@
         "reviewed_at": "2026-06-22T02:57:20.431Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8bdc4aa6543b",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1120,8 +1135,24 @@
         "reviewed_at": "2026-06-22T02:57:20.817Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "8bdc4aa6543b",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hard-codes q_0≈1.1100 / MeV / λ_scale but carries the §7c archimedean-specialisation banner at categorical-proton.md:1, so the wall is correctly declared. (Separate content note, out of this criterion's scope: line 108 reintroduces the purged λ_scale factor — flag to canonical-watcher.)"
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

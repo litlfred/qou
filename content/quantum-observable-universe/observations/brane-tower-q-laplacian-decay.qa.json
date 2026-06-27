@@ -1271,6 +1271,21 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement + bound + mechanism + geometric-series tail are mathematical; the closing 'Physical reading' is brief, and the significance/motivation already lives in the block's authorNotes. Treated as correctly located."
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the tower-sum definition + the boxed bound; the 'Physical reading' material is interpretive but is a separate labelled section and the block is itself the proposition+bound (no companion remark required since interpretation is clearly demarcated as discussion, not woven into the claim). Borderline but the boxed Bound is the operative statement."
       }
     ],
     "fit-section-chapter": [
@@ -1290,6 +1305,21 @@
         "reviewed_at": "2026-06-22T02:56:53.671Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "observations chapter; brane-tower convergence / non-local integration bound is on-scope (tagged issue-649, established)."
       }
     ],
     "wall-side-statement": [
@@ -1309,6 +1339,21 @@
         "reviewed_at": "2026-06-22T02:56:54.051Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "observations is an explicitly-archimedean chapter; the bound is a real-valued L² norm inequality with q in the Wenzl regime q>1 and q₀≈1.110, which is legitimately archimedean for this chapter. The Lean sibling explicitly notes q specialised to ℝ because it is a real-valued norm inequality."
       }
     ],
     "wall-side-proof": [
@@ -1328,6 +1373,21 @@
         "reviewed_at": "2026-06-22T02:56:54.475Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Geometric-series tail bound with q^{-2}<1 is an archimedean estimate matching an archimedean statement; consistent."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1361,6 +1421,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean theorem brane_tower_q_laplacian_decay [ctx] : |T_rho − ℏ_q²·Δ⁽¹⁾| ≤ ℏ_q⁴·‖ρ‖·(q⁻²/(1−q⁻²)) faithfully encodes the boxed Bound in brane-tower-q-laplacian-decay.md:17-23. Hypotheses (Wenzl regime, bounded L² norm) are carried as context-class fields. The proof rw[←ctx.ratio_eq]; exact ctx.remainder_bound matches the bound; agreement up to the context-class packaging."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1686,6 +1761,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a genuine real inequality (|T−ℏ²Δ¹| ≤ …), not True/rfl; the remainder_bound field carries the actual inequality content."
       }
     ],
     "proof-no-false-premise": [
@@ -1828,8 +1918,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof uses rw + exact; no decide/trivial masking."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1309,6 +1309,24 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "interface-knot-markov-z.md:99 \"### Structural reading\", md:115 \"This locks 's interface-knot factorisation as derivation-grade\", md:143 \"### Consequences\"",
+        "notes": "The provable statement (boxed identity ★, md:1-49) is clean, but the block then carries extensive interpretive/discussion material (Structural reading, Consequences 1-5, Phase-5b commentary) plus a conjectural Constit-side companion — all in the same block with no companion interprets: remark. Much is legitimate scope clarification and proved corollaries (Lean-backed), so not clearly mislocated; warn. Note also md:115 has a dangling possessive ('This locks 's') — minor prose defect."
       }
     ],
     "fit-section-chapter": [
@@ -1329,6 +1347,21 @@
         "reviewed_at": "2026-06-22T02:56:55.933Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1349,6 +1382,22 @@
         "reviewed_at": "2026-06-22T02:56:56.249Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is over the Markov parameter z(q)=1/(q^{1/2}+q^{-1/2}) and Hecke skein h=q-q^{-1} as symbolic ring elements; the empirical-verification table (numeric q_0, f64) is clearly flagged as the archimedean realisation, separate from the exact symbolic identity. Lean is over generic CommRing R."
       }
     ],
     "wall-side-proof": [
@@ -1369,6 +1418,22 @@
         "reviewed_at": "2026-06-22T02:56:56.673Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof of ★ uses the Markov axiom + Hecke skein + trace-linearity (algebraic), not archimedean machinery. The §5/§6/§7 ℝ-typed corollaries (deficit, AM-GM z≤1/2, ursell) are explicitly the archimedean-realisation facts and correctly use linarith/positivity over ℝ where order is genuinely needed."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1403,6 +1468,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "lean.ref qou:QOU.BraidKnot.interface_knot_markov_z resolves to the sibling iterated theorem (interfaceTrace folded = z^(count true)·(z-h)^(count false)·tvac), sorry-free, matching the narrative boxed identity ★ and Consequence 1 (τ_M(B_K)=z^{p_+}(z-h)^{p_-}τ_M(vac)). Single-step, negative, and bar-symmetric variants in the same file faithfully match their narrative sub-claims."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2114,5 +2195,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

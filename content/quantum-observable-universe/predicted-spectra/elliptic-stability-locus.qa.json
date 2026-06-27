@@ -1093,8 +1093,26 @@
         "reviewed_at": "2026-06-22T02:56:51.022Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "predicted-spectra.ts:253-263: block 'elliptic-stability-locus' is placed in section 'Atomic shells: construction foundations'; its content (nuclear degeneracy locus in the (p,A)-plane, β-stability cubic, color-fiber isogeny) interprets prop:integer-stability, which lives in the 'Integer stability and the Diophantine valley' section (predicted-spectra.ts:201).",
+        "notes": "Still in-chapter (Ch 13), so not misfiled to a different chapter, but a different EXISTING section ('Integer stability and the Diophantine valley', or 'Nuclear stability and decay') is a strictly better home for a nuclear-stability/elliptic-curve conjecture than 'Atomic shells: construction foundations'."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

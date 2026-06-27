@@ -1289,6 +1289,24 @@
         "severity": "minor",
         "evidence": "`## Discussion` (4 numbered points: motivation, overdetermination physical meaning, audit consequences) and `## Audit hook` follow the statement+proof in the same block; no companion `interprets:` remark.",
         "notes": "Borderline: the Discussion is tightly bound to the discipline claim and largely proof-sketch/audit framing rather than free-floating physical interpretation. WARN, not FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "three-calibration-discipline.md:62-123: '## Discussion' section with sub-points 1-4 (interpretation, overdetermination, audit consequence) follows the proposition statement in the same block.",
+        "notes": "The block carries a substantial '## Discussion' with motivation/audit-consequence prose rather than routing it to a linked interprets: remark. Borderline: much of the Discussion is scope/applicability clarification (the m_e^a m_pi^c Q(q0) discipline and its audit hook) which is arguably part of the statement's meaning, not external physical interpretation. Flagged warn rather than fail since no clean physical-interpretation remark is mislocated and the prose stays on the dimensional-discipline claim."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1327,21 @@
         "reviewed_at": "2026-06-22T02:56:53.952Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1362,21 @@
         "reviewed_at": "2026-06-22T02:56:54.298Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1397,21 @@
         "reviewed_at": "2026-06-22T02:56:54.656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1369,6 +1432,21 @@
         "reviewed_at": "2026-06-22T02:56:54.984Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,6 +1471,22 @@
         "reviewed_at": "2026-06-22T02:56:55.405Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7. Narrative proof-sketch states the plan up front (induction along the 19-link chain, step-by-step Q(q)-rationality preservation). Lean strategy is a single class-field projection, plan obvious."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1417,6 +1511,22 @@
         "reviewed_at": "2026-06-22T02:56:55.734Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.4. Narrative is explicitly conditional/open: 'A fully tower-summed derivation ... remains open' and the proposition is conditional on the chain being realised; the Lean discharges the conditional via a class instance (the realisation is the open input). Core-conditional, not routine."
       }
     ],
     "proof-rater-novelty": [
@@ -1441,6 +1551,22 @@
         "reviewed_at": "2026-06-22T02:56:56.153Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.8. The cohomological-alignment framing (3 calibrations = 3 real DOF of H^1=2W) is the distinctive discipline hook; not a duplicate of a sibling proof."
       }
     ],
     "proof-statement-integrity": [
@@ -1461,6 +1587,22 @@
         "reviewed_at": "2026-06-22T02:56:56.564Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Last commit 19d0cf1d relabeled docstrings to the decay-width framing across .md/.ts/.lean together (owner ruling 2026-06-26, PR #2866 in authorNotes); the theorem signature mass X = m_e^a·m_pi^c·towerValue X is structurally unchanged. lean.ref resolves to the class-conditional theorem (no sorryAx)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1481,6 +1623,24 @@
         "reviewed_at": "2026-06-22T02:56:56.952Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "three-calibration-discipline.lean:139-146: 'theorem threeCalibrationDiscipline ... : c.mass X = c.m_e^... * c.m_pi^... * c.towerValue X := c.mass_factorisation X' — the class field mass_factorisation (lines 128-133) has a type IDENTICAL to the theorem conclusion.",
+        "notes": "Verbatim projection of the class field whose type IS the declaration's conclusion (P ⊢ P). The sibling hypothesis fields m_e_pos, q_0_pos, m_pi_pos are unused; the proof composes nothing. Per §3b-cond non-degeneracy clause this is the vacuous self-assuming projection pattern (class axiomatises the block's own conclusion rather than genuine sub-hypotheses). Mitigating context: AGENTS.md states this proposition is deliberately a §3b structural-assumption 'class', not a free-standing theorem — but the headline theorem still merely returns the assumed field. Routes to lean-proof-review."
       }
     ],
     "proof-no-trivial-true": [
@@ -1501,6 +1661,22 @@
         "reviewed_at": "2026-06-22T02:56:57.442Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a real equation mass X = m_e^a·m_pi^c·towerValue X, not True/rfl-tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1521,6 +1697,21 @@
         "reviewed_at": "2026-06-22T02:56:57.839Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1541,6 +1732,24 @@
         "reviewed_at": "2026-06-22T02:56:58.387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "three-calibration-discipline.lean:98-99,104-105,110-111: class fields m_e_pos (0 < m_e), q_0_pos (1 < q_0), m_pi_pos (0 < m_pi) are declared but never referenced by theorem threeCalibrationDiscipline (lines 139-146), which uses only mass_factorisation.",
+        "notes": "The positivity hypotheses are part of the conditional-class interface but play no role in deriving the factorisation; the headline theorem ignores all three. This is consistent with the self-assuming-projection finding above — the only field used is the one equal to the goal. Routes to lean-proof-review."
       }
     ],
     "proof-no-decide-masking": [
@@ -1561,6 +1770,21 @@
         "reviewed_at": "2026-06-22T02:56:58.692Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1730,5 +1954,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

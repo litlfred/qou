@@ -1318,6 +1318,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1338,6 +1353,21 @@
         "reviewed_at": "2026-06-22T02:56:20.441Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1358,6 +1388,21 @@
         "reviewed_at": "2026-06-22T02:56:20.908Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1378,6 +1423,21 @@
         "reviewed_at": "2026-06-22T02:56:21.277Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1398,6 +1458,24 @@
         "reviewed_at": "2026-06-22T02:56:21.707Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean/QOU/Brings/color_elliptic.lean:48-52: `theorem color_elliptic [ctx : ColorEllipticContext] : ctx.X^3 + ... = 0 := ctx.claim_color_elliptic`",
+        "notes": "lean.ref resolves to the library stub QOU.Brings.color_elliptic (candidate 2; the sibling color-elliptic.lean is a different namespace of ring-identity helpers). The resolved theorem encodes only the cubic identity X^3+...=0, and does so by ASSUMING it as a class field — the .md's headline claim ('for generic z this defines an elliptic curve; j-invariant varies rationally') is not derived. Conclusion (cubic equation) does match the displayed .md equation, hence warn not fail, but the elliptic-curve result is unformalised and assumed."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1422,6 +1500,24 @@
         "reviewed_at": "2026-06-22T02:56:22.011Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "lean/QOU/Brings/color_elliptic.lean:52: `ctx.claim_color_elliptic`",
+        "notes": "score 0.1 — no strategy; the resolved proof is a one-line projection of a class field. Opaque (placeholder stub)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1446,6 +1542,24 @@
         "reviewed_at": "2026-06-22T02:56:22.517Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "lean/QOU/Brings/color_elliptic.lean:6-12: docstring 'Placeholder canonical ... full Lean statement and proof are pending'",
+        "notes": "score 0.2 — restates-target style: the resolved theorem assumes its own conclusion as a field rather than deriving it; the real elliptic-curve content is unformalised."
       }
     ],
     "proof-rater-novelty": [
@@ -1470,6 +1584,22 @@
         "reviewed_at": "2026-06-22T02:56:22.906Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.3 — standard cubic; projection stub adds no novel argument."
       }
     ],
     "proof-statement-integrity": [
@@ -1490,6 +1620,22 @@
         "reviewed_at": "2026-06-22T02:56:23.323Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Resolved theorem signature is the manuscript cubic; no sorryAx, no injected axiom (closed by ctx.claim_color_elliptic). The self-assuming defect is captured under proof-no-self-assuming-projection."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1510,6 +1656,24 @@
         "reviewed_at": "2026-06-22T02:56:23.786Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "lean/QOU/Brings/color_elliptic.lean:28-52: `class ColorEllipticContext ... where claim_color_elliptic : X^3 + (z+1)X^2 + ... = 0` then `theorem color_elliptic [ctx : ColorEllipticContext] : <same cubic> = 0 := ctx.claim_color_elliptic`",
+        "notes": "Verbatim self-assuming projection (P ⊢ P): the theorem's conclusion IS the class field `claim_color_elliptic`, handed straight back. The inherited MarkovTraceContext sibling fields are unused. No derivation/composition. This is the §3b-cond anti-pattern and a deletion/replacement target — the real algebraic content lives in the sibling color-elliptic.lean (ring lemmas) but is not what the ref resolves to."
       }
     ],
     "proof-no-trivial-true": [
@@ -1530,6 +1694,22 @@
         "reviewed_at": "2026-06-22T02:56:24.187Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a genuine cubic equation, not True / x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1550,6 +1730,21 @@
         "reviewed_at": "2026-06-22T02:56:24.544Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1570,6 +1765,24 @@
         "reviewed_at": "2026-06-22T02:56:24.956Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean/QOU/Brings/color_elliptic.lean:48-52: theorem uses only `ctx.claim_color_elliptic`; the inherited `QOU.Shared.MarkovTraceContext` fields and the `z`/`X` data carry no role in the derivation.",
+        "notes": "Direct consequence of the self-assuming projection: every sibling hypothesis field except the claim itself is unused. Indicates the statement is the assumed field, not a derived result."
       }
     ],
     "proof-no-decide-masking": [
@@ -1590,8 +1803,23 @@
         "reviewed_at": "2026-06-22T02:56:25.345Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "872f5b76e118"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

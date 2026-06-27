@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.lean"
   },
   "source_hashes": {
-    "md": "9a6072bbd0f7",
+    "md": "63a2abbc64a0",
     "ts": "077f57784289",
     "lean": "463181fa3454"
   },
@@ -1115,6 +1115,22 @@
         "reviewed_at": "2026-06-22T02:57:10.445Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "63a2abbc64a0",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "conjecture cataloguing the substrate Im(q) role sits naturally in mass-theory alongside the mass-formula modulus-projection discussion it references; no sibling carries the same three-candidate catalogue."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1139,8 +1155,24 @@
         "reviewed_at": "2026-06-22T02:57:10.836Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "63a2abbc64a0",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.2; this is an open conjecture (kind=conjecture) — its Lean placeholders (im_q_observable_pairing roles all = True; mass_observable_conj_invariance closed via `right; trivial`) are honest non-proofs of a core open question, so plausibility of closing the genuine content is low. Correctly a conjecture, not a vacuity violation under the criteria reviewed here."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }
