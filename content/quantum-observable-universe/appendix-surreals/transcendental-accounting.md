@@ -59,7 +59,7 @@ i.e. Jones-faithfulness on this class) is open
 ([`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Question 3).
 **A single Jones-coincident pair would yield a non-trivial
 post-archimedean equality forced by $q$-rational structure** —
-exactly the kind of "wall-crossing" prediction the keystone
+exactly the "wall-crossing" prediction the keystone
 framework should make explicit.
 
 ### What does *not* survive: archimedean accidents
@@ -73,7 +73,7 @@ $$
 
 holds among hyperbolic volumes (after $\tau_{\mathrm{arch}}$) but is
 **not** a $\mathbb{Q}(q)$-polynomial identity on the pre-archimedean
-side. It's an archimedean accident at depth 2 — a relation in
+side. It is an archimedean accident at depth 2 — a relation in
 $\mathcal{P}_2 / \mathcal{P}_1$ that has no $q$-polynomial witness.
 
 Similar wall-crossing accidents at depth 3:

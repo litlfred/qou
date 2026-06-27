@@ -156,7 +156,7 @@ where $-b^2$ is the **pure-$\sigma$-action** (Kashiwara return
 amplitude squared) and $-1/2$ is the **averaged-crossing involution
 fingerprint at rung 5**.
 
-### Why other $c_k$ don't pick up the $1/2$
+### Why other $c_k$ do not pick up the $1/2$
 
 $c_3, c_4, c_6, c_7$ have dominant contributions from POSITIONS in
 the braid that are pure $\sigma$ or pure $\sigma^{-1}$ — not averaged.
@@ -173,7 +173,7 @@ relative to the pure-$\sigma$ contributions at this specific order.
 ### Implication
 
 The $c_5$ Pell-Lucas outlier is **not a sign of categorical
-incompleteness** — it's the **fingerprint of the typed-$\mathbf{B}_3$
+incompleteness** — it is the **fingerprint of the typed-$\mathbf{B}_3$
 averaged-crossing recipe**. The categorical chain IS complete; $c_5$
 just lives in the involution-fixed-point sector while the other $c_k$
 live in the pure-$\sigma$ sector.

@@ -37,7 +37,7 @@ See [Table 1](#tbl:chi-per-irrep-cyclotomic-closed-forms-table1-data).
 Recall: $\Phi_1(q) = q-1$, $\Phi_2(q) = q+1$, $\Phi_4(q) = q^2+1$,
 $\Phi_8(q) = q^4+1$.
 
-**Two striking observations**:
+**Two observations**:
 
 1. **$V_{(3)}$ and $V_{(1,1,1)}$ share the identical numerator polynomial** — only the denominator differs ($q$ vs $q^5$). The denominator-power gap of $4$ exactly matches the factor by which the closed forms differ:
    $$\chi_{(1,1,1)}\text{-diff}(q) = \frac{\chi_{(3)}\text{-diff}(q)}{q^4}.$$

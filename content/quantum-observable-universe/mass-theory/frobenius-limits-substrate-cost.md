@@ -6,7 +6,7 @@ $$
   \tau(C_{\dim_q}^{H_n(R, q)}) \;=\; \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}
 $$
 
-*has a striking limit structure across all $n$, with a clean
+*has a regular limit structure across all $n$, with a clean
 physical interpretation as the **substrate's fundamental cost
 of information exchange** — independent of the specific vortex
 being processed.*
@@ -112,7 +112,7 @@ is the total computational work for that vortex.*
 
 *The Landauer analogy: Frobenius = minimum energy to erase a
 bit ($k_B T \ln 2$); brane tower = energy to actually do the
-computation.  The substrate gives you the vacuum for free only
+computation.  The substrate gives the vacuum for free only
 up to the Frobenius bound.*
 
 **Do other calibration values enter the brane tower?**
