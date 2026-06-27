@@ -9,7 +9,7 @@ $b, b', r, s \in B$:
    $s \neq 1$, then $b < \mathrm{LM}(b')$.
 
 If $B$ admits a monomial ordering $<$, then the pair $(B, <)$ is an
-*admissible system*.
+**admissible system**.
 
 **Divisibility.** If $(B, <)$ is an admissible system and
 $0 \neq f \in A$, we say $\beta \in B$ *divides* $f$ (written

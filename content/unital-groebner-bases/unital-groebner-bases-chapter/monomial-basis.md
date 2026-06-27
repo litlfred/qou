@@ -15,7 +15,7 @@ $$
 $$
 
 **Monomial basis.** Suppose $A$ is free as an $R$-module. We say $A$
-has a *monomial basis* $B$ subordinate to $\Lambda$ if $B$ is a subset
+has a **monomial basis** $B$ subordinate to $\Lambda$ if $B$ is a subset
 of all finite-length words in $\Lambda$ such that
 
 $$
