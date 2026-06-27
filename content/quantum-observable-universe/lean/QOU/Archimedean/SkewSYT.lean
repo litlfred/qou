@@ -2,7 +2,6 @@ import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Finset.Card
 import Mathlib.Data.List.Basic
 import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Order.LocallyFiniteOrder
 import Mathlib.Tactic
 import QOU.MathlibExt
 

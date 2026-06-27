@@ -1,4 +1,3 @@
-import Mathlib.GroupTheory.Coxeter.Basic
 import Mathlib.Algebra.FreeAlgebra
 import Mathlib.RingTheory.Ideal.Basic
 import Mathlib.RingTheory.Ideal.Operations
