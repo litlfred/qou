@@ -1256,6 +1256,21 @@
         "reviewed_at": "2026-06-22T02:56:53.269Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Statement + bound + mechanism + geometric-series tail are mathematical; the closing 'Physical reading' is brief, and the significance/motivation already lives in the block's authorNotes. Treated as correctly located."
       }
     ],
     "fit-section-chapter": [
@@ -1816,5 +1831,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

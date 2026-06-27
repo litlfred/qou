@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/observations/three-calibration-discipline.lean"
   },
   "source_hashes": {
-    "md": "fcccaf0db5f6",
-    "ts": "094d70097cfe",
-    "lean": "01c4db759618"
+    "md": "150fe9663849",
+    "ts": "22487e0d576f",
+    "lean": "4902f3e9c3c5"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1271,6 +1271,24 @@
         "reviewed_at": "2026-06-22T02:56:53.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Contains borderline interpretive prose."
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "`## Discussion` (4 numbered points: motivation, overdetermination physical meaning, audit consequences) and `## Audit hook` follow the statement+proof in the same block; no companion `interprets:` remark.",
+        "notes": "Borderline: the Discussion is tightly bound to the discipline claim and largely proof-sketch/audit framing rather than free-floating physical interpretation. WARN, not FAIL."
       }
     ],
     "fit-section-chapter": [
@@ -1712,5 +1730,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }

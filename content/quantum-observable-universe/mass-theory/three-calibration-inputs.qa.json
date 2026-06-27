@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/three-calibration-inputs.md"
   },
   "source_hashes": {
-    "md": "f00bb2e1e468",
+    "md": "8cb14572196e",
     "ts": "da6a29fcff4a"
   },
   "criteria": {
@@ -1275,6 +1275,23 @@
         "reviewed_at": "2026-06-22T02:57:14.773Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement followed by substantive interpretive/significance prose, notably \"## Comparison with the Standard Model\" (19→3 reduction, lines 134-151) and framework-rigidity discussion. rem:calibration-inputs is referenced but does not host this material.",
+        "notes": "This is framework-definitional content for the proposition; heavy but not cleanly mislocated. A linked interprets: remark would be the cleaner home."
       }
     ],
     "fit-section-chapter": [
@@ -1550,5 +1567,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

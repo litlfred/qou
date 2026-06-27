@@ -1273,6 +1273,22 @@
         "reviewed_at": "2026-06-22T02:56:52.697Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Statement is the four-part mathematical claim (mass comparison, binding comparison, evaluation at q_0, compression energy) plus a proof sketch. Statement-and-proof only; no embedded standalone interpretive essay."
       }
     ],
     "fit-section-chapter": [
@@ -1808,5 +1824,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

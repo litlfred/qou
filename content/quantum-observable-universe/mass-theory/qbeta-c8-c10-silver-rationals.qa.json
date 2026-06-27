@@ -1288,6 +1288,24 @@
         "reviewed_at": "2026-06-22T02:57:14.759Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "\"## Why these values matter\" section (lines 25-34) gives significance/motivation in-block; no companion interprets: remark.",
+        "notes": "Short and largely structural-signal scope; borderline."
       }
     ],
     "fit-section-chapter": [
@@ -1563,5 +1581,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

@@ -1222,6 +1222,23 @@
         "reviewed_at": "2026-06-22T02:56:45.344Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "8c5356d237cd",
+          "ts": "66c065437466"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": ".md line 29: 'the critical exponent α=4/3 is a heuristic derivation imported from physical arguments (Kolmogorov scaling); here it is framed as a universality-class invariant ... recasts the scaling behavior as an intrinsic topological property of the background category.' No interprets: companion remark.",
+        "notes": "Interpretive/motivational paragraph embedded between the Claim and the Argument; the rest of the block is the supporting argument. Conservatively a WARN — the block is a conditional 'Claim + Argument' structure and the interpretation is woven in, but the line-29 paragraph is significance prose that would sit better in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1782,5 +1799,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

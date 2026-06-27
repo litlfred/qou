@@ -1273,6 +1273,24 @@
         "reviewed_at": "2026-06-22T02:57:18.658Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "2acacd5e84ed",
+          "ts": "cc5a3e015b3d",
+          "lean": "fda6252037d0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "`**Connection to the half-life.**` section gives physical interpretation (Fermi golden rule, why ³H→³He is shortest, ¹⁴C longer) embedded in the proposition block; no companion `interprets:` remark.",
+        "notes": "Much of the block is computational/normal-form content directly supporting the claim; the half-life paragraph is borderline interpretive. WARN."
       }
     ],
     "fit-section-chapter": [
@@ -1862,5 +1880,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }

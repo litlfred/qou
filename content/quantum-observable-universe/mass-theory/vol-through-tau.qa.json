@@ -1275,6 +1275,24 @@
         "reviewed_at": "2026-06-22T02:57:13.674Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "1a2bacf9c5c0",
+          "ts": "cd2e497af6fe",
+          "lean": "f08d76fa265e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement followed by **Identification** and **Consequence** sections with interpretive prose, e.g. \"There is no archimedean side-channel: every real-valued QOU observable is the τ-shadow of a categorical morphism\" (lines 75-82). No interprets: remark.",
+        "notes": "The interpretive material is intertwined with the factorization claim itself; borderline rather than cleanly mislocated."
       }
     ],
     "fit-section-chapter": [
@@ -1864,5 +1882,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

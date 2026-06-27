@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "4027f9fb7358",
     "ts": "172b87f46d0b",
-    "lean": "f8ad1ba2118a"
+    "lean": "39a3d4c92f6b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1286,6 +1286,22 @@
         "reviewed_at": "2026-06-22T02:56:28.718Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "39a3d4c92f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "notes": "Long expository proposition; the interpretive phrasing ('algebraic origin of the blowup', 'topological selection rule') is fused with the obstruction-mechanism statement itself rather than appended as detachable significance prose. Conservatively PASS."
       }
     ],
     "fit-section-chapter": [
@@ -1821,5 +1837,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

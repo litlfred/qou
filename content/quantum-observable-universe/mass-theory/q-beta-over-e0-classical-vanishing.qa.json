@@ -1275,6 +1275,24 @@
         "reviewed_at": "2026-06-22T02:56:55.237Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "After the one-line statement+proof, the block carries '## Consequence for the $c_k$ precision ladder' and '## Two independent routes to the same conclusion' sections with interpretive/diagnostic prose (what the vanishing implies for the ladder normalization, the SDP-constraint-scalar reading, CODATA-free narrative). No companion interprets: remark holds this material.",
+        "notes": "Borderline: the prose is the diagnostic significance of the algebraic obstruction and stays tightly coupled to the math; could be migrated to a linked remark but is not a clear mislocation."
       }
     ],
     "fit-section-chapter": [
@@ -1550,5 +1568,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

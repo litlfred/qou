@@ -1290,6 +1290,24 @@
         "reviewed_at": "2026-06-22T02:56:40.850Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Contains borderline interpretive prose."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "explicit-central-idempotent.md lines 84-108: a '### Significance' section follows the statement+cross-checks, framing e_λ as 'the explicit, computable, named generator of the period class' and developing the Bloch-regulator class τ_arch(e_λ·Li_2^q) interpretation. Block is a proposition with no companion interprets: remark.",
+        "notes": "Significance heading present with borderline interpretive prose; content is largely mathematical (regulator class identity, Vol(4_1) numeric) rather than physical meaning, so WARN rather than FAIL. Could be split into an interprets: remark."
       }
     ],
     "fit-section-chapter": [
@@ -1879,5 +1897,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

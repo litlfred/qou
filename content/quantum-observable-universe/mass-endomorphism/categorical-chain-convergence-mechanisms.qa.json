@@ -1292,6 +1292,24 @@
         "reviewed_at": "2026-06-22T02:56:42.037Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "categorical-chain-convergence-mechanisms.md lines 78-88: '## Why this works in the QOU framework' presents the 'categorical analog of asymptotic freedom' interpretation; the block reads as mechanism exposition rather than a bare statement+proof. Proposition block, no companion interprets: remark.",
+        "notes": "Interpretive/analogy heading present; content is mechanism description (mathematical) so borderline WARN, not genuine mislocation. The asymptotic-freedom analogy could move to a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1567,5 +1585,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

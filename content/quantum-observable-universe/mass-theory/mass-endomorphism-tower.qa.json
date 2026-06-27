@@ -1288,6 +1288,24 @@
         "reviewed_at": "2026-06-22T02:57:06.757Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Proposition (mass of a vortex) followed by 'Application to the proton--electron mass ratio' section with downstream physical consequence (ratio vs CODATA) and 'Gluon derivation from the integer LP dual' interpretive narrative. No companion interprets: remark.",
+        "notes": "Block is title-framed as a physics ratio and mixes statement, proof, audit banners, and an Application/interpretation section. Interpretive material would normally live in a linked remark, but the bulk is derivation/audit; WARN."
       }
     ],
     "fit-section-chapter": [
@@ -1859,5 +1877,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:07.188Z"
 }

@@ -1273,6 +1273,24 @@
         "reviewed_at": "2026-06-22T02:57:20.109Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "`## Reading` section gives explicit interpretation ('Form A and Form B are not competing predictions but a single observable expressed in two bases'; eigenfunction-dampening principle) in the same block; authorNotes present but no `interprets:` remark.",
+        "notes": "Labeled Reading/interpretation heading; content is borderline (re-states equivalence already in the statement). WARN, not FAIL."
       }
     ],
     "fit-section-chapter": [
@@ -1844,5 +1862,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T13:05:09.443Z"
 }
