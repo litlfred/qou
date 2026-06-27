@@ -779,7 +779,268 @@
         "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
         "notes": "No Lean sibling file present for this block."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "n/a",
+        "notes": "Block of kind simulator does not assert a formal mathematical or physical theorem/definition.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "No mathematical or physical objections apply directly: this is a simulator block.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6ad8223cb77e",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "notes": "Block placement and kind match validated structurally.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:18:39.463Z"
+  "updated_at": "2026-06-27T23:32:41.399Z"
 }

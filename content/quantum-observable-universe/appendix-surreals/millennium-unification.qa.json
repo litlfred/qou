@@ -1074,7 +1074,27 @@
         "reviewed_at": "2026-06-27T23:25:50.172Z",
         "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "545543ab610b",
+          "ts": "362d46f90c9e"
+        },
+        "result": "pass",
+        "notes": "Block placement and kind match validated structurally.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:32:41.399Z",
+        "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:25:50.172Z"
+  "updated_at": "2026-06-27T23:32:41.399Z"
 }
