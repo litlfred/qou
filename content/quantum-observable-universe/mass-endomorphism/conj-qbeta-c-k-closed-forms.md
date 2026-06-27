@@ -49,14 +49,14 @@ Three concrete routes (from
 3. **Spectral-sequence stratification** (declined by ledger;
    no good candidate spectral sequence in framework's content).
 
-## Why these aren't decoration
+## Why these are not decoration
 
 The current $\mathfrak{Q}_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
 already meets the 7.8 ppb L2 target at $N=3$ (residual +6.02 ppb,
 within target). The c_4..c_7 corrections push residual to sub-ppb,
 which is **research-grade precision beyond the 100$\times$-experimental
-target**. So these conjectures aren't blockers for the framework's
-core deliverables — they're optional precision-deepening for
+target**. So these conjectures are not blockers for the framework's
+core deliverables — they are optional precision-deepening for
 research-grade results.
 
 But the framework's **three-calibration discipline** flags empirical
@@ -81,6 +81,6 @@ c_7 extracted = +57.149   (matches empirical sweep EXACTLY)
 Verified by `qbeta_decay_sdp_full_ck.py` (4 assertions pass).
 
 The "empirical c_k from `binding_q_target_sweep`" are NOT arbitrary
-fits — they're TAUTOLOGICALLY determined by the precision-ladder
+fits — they are TAUTOLOGICALLY determined by the precision-ladder
 structure applied to CODATA $\mathfrak{Q}_\beta$. The conjectures here are
 the **closed-form pattern interpretations** of those extracted values.

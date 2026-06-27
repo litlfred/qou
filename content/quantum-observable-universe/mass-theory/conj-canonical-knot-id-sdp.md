@@ -97,7 +97,7 @@ three light nuclei.  Result:
 
 | Nucleus | Canonical $T_w$ | $\alpha^*$ | PSD-feasible at $q_0$? | Rank in 138 KLR-canonical classes |
 |---------|-----------------|------------|------------------------|------------------------------------|
-| $^3\mathrm{He}$ | $L_{6a4}$ | $0.000$ | **yes** ✓ | 24 (top 17 %) |
+| $^3\mathrm{He}$ | $L_{6a4}$ | $0.000$ | **yes** | 24 (top 17 %) |
 | $^2\mathrm{H}$ | $6_2$ | $0.891$ | no (single-term cost) | 62 (top 45 %) |
 | $^3\mathrm{H}$ | $8_{11}$ | — | (deferred — needs $H_5$ Hoefsmit) | — |
 

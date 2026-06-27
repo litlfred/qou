@@ -8,7 +8,7 @@ with no remaining choice.*
 
 | form | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
 |---|---:|---:|---|:---:|
-| Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | ✓ on $H_n(q)$ |
+| Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
 
 ## The chain: cat-action $\to$ Markov trace
 
