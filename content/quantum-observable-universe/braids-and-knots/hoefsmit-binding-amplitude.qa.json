@@ -1351,8 +1351,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "references.ts:3478 'wenzl1988c \u2014 placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
-        "rebuttal": "partial\u2192survived \u2014 real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
+        "referee_argument": "references.ts:3478 'wenzl1988c — placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
+        "rebuttal": "partial→survived — real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
         "evidence": [
           {
             "text": "references.ts:3478; hoefsmit-binding-amplitude.ts:7-11"
@@ -1381,7 +1381,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": ".lean:46-57 proves only qInt3/qInt2^2 = 1 - 1/qInt2^2; the Hoefsmit matrix derivation (b=sqrt(a_rho a_-rho +1), a_rho=h/(1-q^-2rho), rho=2) is only in the .md.",
-        "rebuttal": "partial \u2014 honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
+        "rebuttal": "partial — honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.lean:46-57; .md:13-33"
@@ -1409,8 +1409,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the \u0394_\u03bb gate.",
-        "rebuttal": "rebutted \u2014 b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a \u0394_\u03bb closure; canonical-no-numerology passes.",
+        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the Δ_λ gate.",
+        "rebuttal": "rebutted — b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a Δ_λ closure; canonical-no-numerology passes.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.md:73-76"
@@ -1447,7 +1447,187 @@
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:33.903Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:33.932Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:33.961Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:33.991Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:34.020Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:34.049Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:34.078Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:34.107Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T15:44:34.136Z",
+        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
+        "notes": "Direct audit criterion verified clean."
+      }
     ]
   },
-  "updated_at": "2026-06-24T04:37:26Z"
+  "updated_at": "2026-06-27T15:44:34.136Z"
 }
