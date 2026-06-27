@@ -18,7 +18,7 @@ work.*
 ## What Im(q) is NOT
 
 Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
-- The EM / $P_{\mathrm{skew}}$ channel (that's a real-q mechanism)
+- The EM / $P_{\mathrm{skew}}$ channel (this is a real-q mechanism)
 - A fourth calibration input (the 3-CAL count is cohomologically forced)
 - An observable in the current framework (mass formula uses $|\cdot|$)
 - Equal to $\mathrm{Im}(\mathrm{tr}_M(\rho(\beta)))$ — Im(q) is a parameter; Im(tr_M) is the value induced
@@ -106,7 +106,7 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - **Empirically sufficient**: all known mass observables fit
   with real $q_0$ to the precision documented in `per-observable-100x-status.witness.json`.
 - **NOT structurally forced**: nothing in the QOU framework's
-  cohomological discipline requires $\mathrm{Im}(q) = 0$; it's a
+  cohomological discipline requires $\mathrm{Im}(q) = 0$; it is a
   convention pending an Im-sensitive measurement.
 
 ## Cross-references
