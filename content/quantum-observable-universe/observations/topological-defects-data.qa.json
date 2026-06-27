@@ -781,25 +781,264 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "444a85dd49dd",
+          "ts": "b8dbd210a661"
+        },
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
+      }
+    ],
+    "da-referee-verdict": [
       {
         "field_hash": {
           "md": "444a85dd49dd",
           "ts": "b8dbd210a661"
         },
         "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "No mathematical or physical objections apply: this is a prose/remark block with no formal mathematical theorems or proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.811Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.811Z"
+  "updated_at": "2026-06-27T23:25:50.172Z"
 }

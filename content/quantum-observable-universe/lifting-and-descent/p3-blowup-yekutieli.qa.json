@@ -1047,105 +1047,7 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:28.718Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:29.142Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:29.498Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:29.986Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
     "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:30.380Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
       {
         "field_hash": {
           "ts": "172b87f46d0b",
@@ -1177,444 +1079,114 @@
         "notes": "Label 'prop:blowup-yekutieli' → expected 'blowup_yekutieli'; Lean declares: BlowupYekutieli. Structural match via content."
       }
     ],
-    "proof-rater-strategy-clarity": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:30.882Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carrying structure."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "4027f9fb7358",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "warn",
-        "notes": "md sketch (Sobolev s vs jet order n, local cohomology H^1_m1 at z=1) is suggestive but heuristic; the Lean encoding is degenerate/broken, no strategy realised",
-        "reviewed_at": "2026-06-25T17:08:36.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.58
-        }
-      }
-    ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.34,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:31.230Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carries math structure and definitions."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
           "md": "4027f9fb7358",
           "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "notes": "identifying NS finite-time blowup with a finite Yekutieli obstruction level n* (cohomological address (v0,T*,Sigma,n*,kappa)) is a substantive, well-posed conjectural goal",
-        "reviewed_at": "2026-06-25T17:08:36.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "lean": "f8ad1ba2118a"
         },
         "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:31.602Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "4027f9fb7358",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "notes": "the cohomological-address / obstruction-level framing of NS blowup is a genuinely novel reformulation within the framework",
-        "reviewed_at": "2026-06-25T17:08:36.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains sorry gaps; evaluated as core stub."
       }
     ],
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:31.939Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Declaration contains sorryAx or unexpected axioms."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
           "md": "4027f9fb7358",
           "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "lean": "f8ad1ba2118a"
         },
-        "result": "fail",
-        "notes": "no theorem proves prop:blowup-yekutieli; sibling p3-blowup-yekutieli.lean is BROKEN (class BlowupYekutieli declared twice in QOU.FluidDynamics, stray Ref line between bodies — won't compile). ConditionalClasses.BlowupYekutieli is an admittedly-trivial existential (forall T>=0 exists r>=0, r<=1+T; comment: 'Trivially r=0 works'; witnessed by linarith) — degenerate, captures none of the cohomological-address content of the .md",
-        "reviewed_at": "2026-06-25T17:08:36.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof has active sorry; statement integrity verified but proof is incomplete."
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "86ee67f4c831",
+          "md": "4027f9fb7358",
           "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "lean": "f8ad1ba2118a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:32.357Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No self-assuming field projections detected."
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "86ee67f4c831",
+          "md": "4027f9fb7358",
           "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "lean": "f8ad1ba2118a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:32.721Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Conclusion is not trivially True."
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:33.108Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
           "md": "4027f9fb7358",
           "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "lean": "f8ad1ba2118a"
         },
         "result": "pass",
-        "notes": "the existential class fields are trivially satisfiable (zero witnesses); no contradictory premise",
-        "reviewed_at": "2026-06-25T17:08:36.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "version": "claude-opus-4-8"
         },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:33.549Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "4027f9fb7358",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "pass",
-        "notes": "blowup_yekutieli_canonical: fun T hT => <0, le_refl 0, by linarith> uses hT for r<=1+T; the other canonical instances use their hyps; no unused binder",
-        "reviewed_at": "2026-06-25T17:08:36.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No False.elim vacuously true premise detected."
       }
     ],
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "86ee67f4c831",
+          "md": "4027f9fb7358",
           "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:33.955Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "172b87f46d0b",
-          "lean": "790bc449b1e4"
+          "lean": "f8ad1ba2118a"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No computational reflection decide/trivial masking detected."
       }
     ]
   },
-  "updated_at": "2026-06-26T11:08:29.250Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

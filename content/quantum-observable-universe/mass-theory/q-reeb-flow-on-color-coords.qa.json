@@ -8,9 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean"
   },
   "source_hashes": {
-    "md": "773bb0fad519",
-    "ts": "68893ae80386",
-    "lean": "9ea2e5873ff9"
+    "md": "001619590869",
+    "ts": "c4078f0f4e5c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -874,46 +873,6 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "773bb0fad519",
-          "ts": "68893ae80386",
-          "lean": "9ea2e5873ff9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:05.853Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "773bb0fad519",
-          "ts": "68893ae80386",
-          "lean": "9ea2e5873ff9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:06.169Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
@@ -932,25 +891,25 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
-      },
+      }
+    ],
+    "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "773bb0fad519",
-          "ts": "68893ae80386"
+          "md": "001619590869",
+          "ts": "c4078f0f4e5c"
         },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
       }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

@@ -1051,105 +1051,7 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:20.822Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:21.240Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:21.669Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:22.022Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
     "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:22.481Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
       {
         "field_hash": {
           "ts": "74f46e5cee25",
@@ -1165,70 +1067,6 @@
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean); stale agent flag refreshed (sorry discharged after prior review)."
       }
     ],
-    "proof-rater-strategy-clarity": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:22.841Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carrying structure."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "notes": ".md gives clear 4-step chain (Hecke from R-matrix -> semisimple -> Schur-Weyl -> Markov detection); Lean structures mirror it though the capstone is axiom-backed",
-        "reviewed_at": "2026-06-25T16:56:24.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
-      }
-    ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
@@ -1237,124 +1075,14 @@
           "lean": "577d6e46a35c"
         },
         "result": "warn",
-        "score": {
-          "value": 0.34,
-          "max": 1
-        },
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:23.198Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carries math structure and definitions."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "notes": "well-posed corollary: Descartes condition (chi=-6, q not root of unity) instantiates complete knot-type eigenbasis via Schur-Weyl + Markov detection",
-        "reviewed_at": "2026-06-25T16:56:24.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.78
-        }
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:23.609Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "notes": "substantive instantiation tying chi=-6 Descartes universe to knot-eigenbasis completeness; concrete n=3 trefoil/unknot detection witnesses are real content",
-        "reviewed_at": "2026-06-25T16:56:24.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.68
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains sorry gaps; evaluated as core stub."
       }
     ],
     "proof-statement-integrity": [
@@ -1364,53 +1092,15 @@
           "ts": "74f46e5cee25",
           "lean": "577d6e46a35c"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:23.975Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Declaration contains sorryAx or unexpected axioms."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "fail",
-        "notes": "main descartes_knot_eigenbasis := descartes_knot_eigenbasis_axiom (declared axiom) with degenerately-weak conclusion (exists jonesVal != 0, trivial in R_q), not 'complete eigenbasis'; also references commented-out D.q_pos (lines 73/106/284/289) -> non-compiling",
-        "reviewed_at": "2026-06-25T16:56:24.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof has active sorry; statement integrity verified but proof is incomplete."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1424,13 +1114,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:24.399Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No self-assuming field projections detected."
       }
     ],
     "proof-no-trivial-true": [
@@ -1444,13 +1132,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:24.794Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Conclusion is not trivially True."
       }
     ],
     "proof-no-false-premise": [
@@ -1460,109 +1146,15 @@
           "ts": "74f46e5cee25",
           "lean": "577d6e46a35c"
         },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.145Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
         "result": "pass",
-        "notes": "DescartesData premises (euler=-6, dimV=2, q_ne_one) satisfiable; not contradictory (the defect is the axiom/weak-conclusion + missing q_pos, not a false premise)",
-        "reviewed_at": "2026-06-25T16:56:24.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
+          "version": "claude-opus-4-8"
         },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.527Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "notes": "proved corollaries (n3_both_detected, eigenvalues_distinct, particle_count) use their D/n binders; no unused explicit binder among the genuine theorems",
-        "reviewed_at": "2026-06-25T16:56:24.000Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No False.elim vacuously true premise detected."
       }
     ],
     "proof-no-decide-masking": [
@@ -1572,297 +1164,17 @@
           "ts": "74f46e5cee25",
           "lean": "577d6e46a35c"
         },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.917Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean, content/quantum-observable-universe/lean/QOU/Archimedean.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      }
-    ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-27T16:02:15.532Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:15.606Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:15.675Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:15.747Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:15.814Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:15.897Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:15.969Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:16.038Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:16.119Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:16.191Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:16.264Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:16.326Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "f722260a2da4",
-          "ts": "74f46e5cee25",
-          "lean": "577d6e46a35c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T16:02:16.395Z",
-        "reviewed_sha": "882a2d32879771ba153e0f6ffa5edd039ae103f0",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No computational reflection decide/trivial masking detected."
       }
     ]
   },
-  "updated_at": "2026-06-27T16:02:16.395Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

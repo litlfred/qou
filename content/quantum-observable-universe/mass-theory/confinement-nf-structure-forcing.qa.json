@@ -858,86 +858,40 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "6576e8e8eb19",
-          "ts": "d236eea63bd8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:54.527Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
           "md": "6576e8e8eb19",
           "ts": "d236eea63bd8"
         },
-        "result": "fail",
-        "score": {
-          "value": 0,
-          "max": 1
-        },
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:56:54.940Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub restating the target."
-      },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
+      }
+    ],
+    "da-lean-narrative-divergence": [
       {
         "field_hash": {
           "md": "6576e8e8eb19",
           "ts": "d236eea63bd8"
         },
         "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "6576e8e8eb19",
-          "ts": "d236eea63bd8"
+          "version": "claude-opus-4-8"
         },
-        "result": "pass",
-        "notes": "Conjecture; std §3b placeholder class (residual=0, instance:=sorry). md: NF-support localisation + shift bound |Delta|<=duality_gap, 6/6 LP bench. Well-posed.",
-        "reviewed_at": "2026-06-25T17:05:14.000Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.78
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.940Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

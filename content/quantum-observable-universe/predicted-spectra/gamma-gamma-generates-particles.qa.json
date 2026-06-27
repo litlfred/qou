@@ -30,7 +30,115 @@
         "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
         "notes": "Label 'prop:gamma-gamma-generates-particles' → expected 'gamma_gamma_generates_particles'; Lean declares: coeffLplus, coeffLminus, gamma_gamma_chirality_surjective, singlePhotonCoeffLminus, gamma_gamma_reaches_Lminus. Structural match via content."
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains no sorry gaps."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No unexpected axioms or statement changes detected."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No self-assuming field projections detected."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Conclusion is not trivially True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No False.elim vacuously true premise detected."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No computational reflection decide/trivial masking detected."
+      }
     ]
   },
-  "updated_at": "2026-06-26T11:08:29.250Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

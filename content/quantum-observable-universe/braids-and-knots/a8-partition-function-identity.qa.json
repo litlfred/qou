@@ -1051,105 +1051,7 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.389Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.420Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.448Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.476Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
     "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "f72b9b74e64b",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:23.284Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
       {
         "field_hash": {
           "ts": "bd37ef54d0ea",
@@ -1181,106 +1083,6 @@
         "notes": "Label 'prop:a-8-partition-function-identity' → expected 'a_8_partition_function_identity'; Lean declares: partitionCount, a_8_poly, partitionCount_values, a_8_eq_partition_sum, a_8_eq_partition_sum_ascending.... Structural match via content."
       }
     ],
-    "proof-rater-strategy-clarity": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.506Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.535Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.564Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "proof-statement-integrity": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.593Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.621Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
@@ -1299,7 +1101,45 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
-      },
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "d7bc57651a82",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains sorry gaps; evaluated as core stub."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "d7bc57651a82",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof has active sorry; statement integrity verified but proof is incomplete."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
       {
         "field_hash": {
           "md": "d7bc57651a82",
@@ -1310,13 +1150,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-27T15:44:27.651Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No self-assuming field projections detected."
       }
     ],
     "proof-no-false-premise": [
@@ -1330,33 +1168,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-27T15:44:27.680Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.709Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No False.elim vacuously true premise detected."
       }
     ],
     "proof-no-decide-masking": [
@@ -1370,275 +1186,13 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-27T15:44:27.739Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.770Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.802Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.832Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.865Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.913Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.944Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:27.974Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:28.005Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:28.033Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:28.062Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:28.092Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:28.120Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "d7bc57651a82",
-          "ts": "bd37ef54d0ea",
-          "lean": "1faef5e3fd91"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:44:28.149Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No computational reflection decide/trivial masking detected."
       }
     ]
   },
-  "updated_at": "2026-06-27T15:44:28.149Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

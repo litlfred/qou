@@ -30,7 +30,115 @@
         "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
         "notes": "Label 'prop:sl2-period-conserved-quantity' → expected 'sl2_period_conserved_quantity'; Lean declares: sl2Invariant, sl2Invariant_succ, sl2Invariant_eq_zeroth. Structural match via content."
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains sorry gaps; evaluated as core stub."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof has active sorry; statement integrity verified but proof is incomplete."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No self-assuming field projections detected."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Conclusion is not trivially True."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No False.elim vacuously true premise detected."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No computational reflection decide/trivial masking detected."
+      }
     ]
   },
-  "updated_at": "2026-06-26T11:08:29.250Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

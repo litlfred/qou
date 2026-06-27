@@ -895,50 +895,6 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "beb11bb24ad8",
-          "ts": "3b07c600d482",
-          "lean": "03731008cba8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.659Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "beb11bb24ad8",
-          "ts": "3b07c600d482",
-          "lean": "03731008cba8"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.974Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
-      }
-    ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -956,7 +912,25 @@
         "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
         "notes": "Conjecture with class/axiom axiomatisation — structural match."
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "beb11bb24ad8",
+          "ts": "3b07c600d482",
+          "lean": "add8378bc05f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains no sorry gaps."
+      }
     ]
   },
-  "updated_at": "2026-06-26T11:08:29.250Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

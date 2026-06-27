@@ -3,31 +3,29 @@
   "label": "rem:eigenbasis-structural-lemmas",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/eigenbasis-structural-lemmas.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/eigenbasis-structural-lemmas.md"
+    "ts": "../qou/content/quantum-observable-universe/braids-and-knots/eigenbasis-structural-lemmas.ts",
+    "md": "../qou/content/quantum-observable-universe/braids-and-knots/eigenbasis-structural-lemmas.md"
   },
   "source_hashes": {
     "md": "a6b94d9e6ef7",
     "ts": "d0430cdd83af"
   },
   "criteria": {
-    "fit-section-chapter": [
+    "da-lean-narrative-divergence": [
       {
         "field_hash": {
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-27T15:13:10.237Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
       }
     ],
     "da-false-claim": [
@@ -36,17 +34,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:10.367Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-vacuous": [
@@ -55,17 +54,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:10.480Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-circular": [
@@ -74,17 +74,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:10.590Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-overclaim": [
@@ -93,17 +94,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:10.704Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-hidden-dof": [
@@ -112,17 +114,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:10.856Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-non-sequitur": [
@@ -131,36 +134,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:10.968Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "a6b94d9e6ef7",
-          "ts": "d0430cdd83af"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-27",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-27T15:13:11.070Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-citation-misuse": [
@@ -169,17 +154,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:11.178Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-definitional-ambiguity": [
@@ -188,17 +174,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:11.336Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-empirical-fragility": [
@@ -207,17 +194,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:11.435Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-physical-implausibility": [
@@ -226,17 +214,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:11.560Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-reproducibility": [
@@ -245,17 +234,18 @@
           "md": "a6b94d9e6ef7",
           "ts": "d0430cdd83af"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Narrative prose/remark block with no formal mathematical proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:11.685Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ],
     "da-referee-verdict": [
@@ -265,18 +255,20 @@
           "ts": "d0430cdd83af"
         },
         "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "No mathematical or physical objections apply: this is a prose/remark block with no formal mathematical theorems or proofs.",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T15:13:11.800Z",
-        "reviewed_sha": "ddfe3d425fba9c62d23b3339a27d069d6e1546f8",
-        "notes": "Direct audit criterion verified clean."
+        "reviewed_at": "2026-06-27T23:25:50.172Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274"
       }
     ]
   },
-  "updated_at": "2026-06-27T15:13:11.800Z"
+  "updated_at": "2026-06-27T23:25:50.172Z"
 }

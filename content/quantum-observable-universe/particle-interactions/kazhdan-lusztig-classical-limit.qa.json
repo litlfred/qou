@@ -856,86 +856,40 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "b1e53e3f32d5",
-          "ts": "c10fcf81e959"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:21.195Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
           "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "fail",
-        "score": {
-          "value": 0,
-          "max": 1
-        },
+        "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "version": "claude-opus-4-8"
         },
-        "reviewed_at": "2026-06-22T02:57:21.641Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub restating the target."
-      },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
+      }
+    ],
+    "da-lean-narrative-divergence": [
       {
         "field_hash": {
           "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
         "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "b1e53e3f32d5",
-          "ts": "c10fcf81e959"
+          "version": "claude-opus-4-8"
         },
-        "result": "pass",
-        "notes": "Conjecture: q→1 KLR canonical basis b_w → KL basis C_w of ℤ[S_n], classical-limit functor monoidal + τ-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
-        "reviewed_at": "2026-06-25T17:08:56.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.74
-        }
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.641Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }

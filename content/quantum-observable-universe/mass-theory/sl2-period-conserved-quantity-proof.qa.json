@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:sl2-period-conserved-quantity",
+  "kind": "proof",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts",
+    "md": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.md"
+  },
+  "source_hashes": {
+    "md": "2fd0776485b2",
+    "ts": "7cedcf251bc8"
+  },
+  "criteria": {
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "No Lean sibling file present for this block."
+      }
+    ]
+  },
+  "updated_at": "2026-06-27T23:18:39.463Z"
+}

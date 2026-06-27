@@ -30,7 +30,25 @@
         "reviewed_sha": "c66cd73fd711ee44fc411e0a5870a5b887e12b8b",
         "notes": "Label 'conj:q-harmonic-flow' → expected 'q_harmonic_flow'; Lean declares: QHarmonicFlow, stationary_iff_qharmonic, vacuum_stationary. Structural match via content."
       }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7e4ece7c1237",
+          "ts": "d8624af20881",
+          "lean": "17c662b2206f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-27T23:18:39.463Z",
+        "reviewed_sha": "9e8d766e40f7e93e0eef8cdae783b3c1d433c274",
+        "notes": "Proof contains sorry gaps; evaluated as core stub."
+      }
     ]
   },
-  "updated_at": "2026-06-26T11:08:29.250Z"
+  "updated_at": "2026-06-27T23:18:39.463Z"
 }
