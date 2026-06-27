@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Fintype.Fin
 import Mathlib.Data.Real.Basic
 
 /-!

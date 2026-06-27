@@ -23,9 +23,10 @@ Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, I.7
 Ref: conj:depth-stratified-frobenius-reciprocity.md
 -/
 
-import Mathlib.Algebra.Ring.Defs
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidKnot
 
@@ -45,8 +46,8 @@ structure DistinguishedKnotIdeal (k : ℕ) where
     6_1 (Stevedore knot), named in
     prop:plancherel-term-7-formulation. -/
 noncomputable def chirality_ideal_6_1 : DistinguishedKnotIdeal 3 :=
-  { central_projector_value := 1 -- placeholder for the
-                                 -- abstract projector value
+  { central_projector_value := 1, -- placeholder for the
+                                  -- abstract projector value
     knot_label := "6_1" }
 
 /-- The classical (uniform) Wedderburn weight at depth k:
@@ -117,10 +118,10 @@ class DepthStratifiedFrobeniusReciprocity where
 
 /-- Default instance providing the chirality ideal at k = 3
     and discharging the q = 1 case for all k. -/
-instance : DepthStratifiedFrobeniusReciprocity where
+noncomputable instance : DepthStratifiedFrobeniusReciprocity where
   knot_ideal_at_k k _h := match k with
     | 3 => chirality_ideal_6_1
-    | _ => { central_projector_value := 0
+    | _ => { central_projector_value := 0,
               knot_label := "?" }
   fr_pullback_at_low_k q _k := q = 1
   fr_pullback_classical _k := rfl
@@ -164,7 +165,6 @@ theorem fr_weight_chi_scale
       c * frPulledBackWeight dim_q_sq n_q_fact chi_lambda_eK z_normalization := by
   unfold frPulledBackWeight
   field_simp
-  ring
 
 /-- The FR-pulled-back weight is invariant under simultaneous
     rescaling of dim_q_sq and z_normalization by the same factor
@@ -178,7 +178,6 @@ theorem fr_weight_homogeneous
       frPulledBackWeight dim_q_sq n_q_fact chi_lambda_eK z_normalization := by
   unfold frPulledBackWeight
   field_simp
-  ring
 
 /-! ## Variance record across the categorical chain on PR #801 -/
 
