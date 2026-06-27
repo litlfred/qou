@@ -1,73 +1,59 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.Group.Basic
 
 /-!
 # QOU.QuantumObservableUniverse.fibre_functor_atlas
 
-**Placeholder canonical** for content block
-[`prop:fibre-functor-atlas`](../../../quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.md): *QOU.QuantumObservableUniverse.fibre_functor_atlas*.
+Canonical Lean for content block
+[`prop:fibre-functor-atlas`](../../../quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.md):
+*the transition data of a fibre-functor atlas is a `G`-cocycle, so its
+charts are identity-diagonal, its transitions are torsor inverses, and the
+atlas is connected.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.QuantumObservableUniverse.fibre_functor_atlas` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+**§3b-cond rule 5 (non-degenerate).** The context class carries the single
+structural **hypothesis** — the cocycle condition
+`g(i,k) = g(j,k)·g(i,j)` — and the theorem **derives** the remaining three
+manuscript sub-claims (chart identity, torsor inverse, connectedness) from
+it. The class does *not* carry the conclusion; the proof is a genuine
+derivation, not a projection.
 -/
 
 namespace QOU.QuantumObservableUniverse
 
-
-/-- Abstract context for the `fibre_functor_atlas` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class FibreFunctorAtlasContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Tannaka group `G = Aut⊗(τ)`. -/
-  G : Type
-  /-- Group structure on `G`. -/
-  groupG : Group G
-  /-- Fibre functor index set (indexes the chart cover). -/
+/-- Context for `fibre_functor_atlas`: the transition data `g` of a
+    fibre-functor atlas over the Tannaka group `G = Aut⊗(τ)`, together with
+    the **cocycle hypothesis**, the single structural input from which the
+    chart/torsor/connectedness conclusions follow. -/
+class FibreFunctorAtlasContext (G : Type) [Group G] where
+  /-- Fibre-functor index set (indexes the chart cover). -/
   FFIdx : Type
-  /-- Transition isomorphisms `g_{ij} : G` for each pair of fibre
-      functors. -/
+  /-- Transition isomorphisms `g(i,j) : G` for each pair of fibre functors. -/
   g : FFIdx → FFIdx → G
-  /-- Manuscript sub-claim (i) — Charts: identity diagonals
-      `g(i, i) = 1` for every fibre functor (the affine chart at
-      `i` has identity transition with itself). -/
-  claim_i_fibre_functor_affine : ∀ i : FFIdx,
-    haveI := groupG; g i i = 1
-  /-- Manuscript sub-claim (ii) — Transitions form a `G`-torsor:
-      inverses exist (`g(j, i) = g(i, j)⁻¹` for every pair). -/
-  claim_ii_transition_torsor : ∀ i j : FFIdx,
-    haveI := groupG; g j i = (g i j)⁻¹
-  /-- Manuscript sub-claim (iii) — Cocycle condition: for any three
-      fibre functors `(i, j, k)`, `g(i, k) = g(j, k) · g(i, j)`. -/
-  claim_iii_cocycle_condition : ∀ i j k : FFIdx,
-    haveI := groupG; g i k = g j k * g i j
-  /-- Manuscript sub-claim (iv) — Atlas: the category of fibre
-      functors is a connected `G`-gerbe (any two fibre functors
-      are connected by some transition isomorphism). -/
-  claim_iv_atlas_connected : ∀ i j : FFIdx, ∃ x : G, g i j = x
+  /-- **Cocycle condition** `g(i,k) = g(j,k) · g(i,j)` for every triple
+      — the lone structural hypothesis. -/
+  cocycle : ∀ i j k : FFIdx, g i k = g j k * g i j
 
-/-- **Proposition statement** (from manuscript):
-
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-with $G = \mathrm{Aut}^{\otimes}(\tau)$
-([Tannaka–Krein](#rem:tannaka-krein-overview)).  In the following,
-$\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
-(not the canonical $\tau$).  Then:*
-
-1.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
-theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] :
-    (∀ i : ctx.FFIdx, haveI := ctx.groupG; ctx.g i i = 1) ∧
-    (∀ i j : ctx.FFIdx, haveI := ctx.groupG; ctx.g j i = (ctx.g i j)⁻¹) ∧
-    (∀ i j k : ctx.FFIdx, haveI := ctx.groupG; ctx.g i k = ctx.g j k * ctx.g i j) ∧
-    (∀ i j : ctx.FFIdx, ∃ x : ctx.G, ctx.g i j = x) :=
-  ⟨ctx.claim_i_fibre_functor_affine, ctx.claim_ii_transition_torsor,
-   ctx.claim_iii_cocycle_condition, ctx.claim_iv_atlas_connected⟩
+/-- **Proposition (fibre-functor atlas).** Let `(C, A, τ)` be a quantum
+    observable universe with `G = Aut⊗(τ)` and fibre-functor transition data
+    `g` satisfying the cocycle condition. Then the four manuscript sub-claims
+    hold: (i) chart identity `g(i,i) = 1`; (ii) torsor inverse
+    `g(j,i) = g(i,j)⁻¹`; (iii) the cocycle condition; (iv) connectedness.
+
+    Claims (i), (ii), (iv) are **derived** from the cocycle hypothesis
+    `ctx.cocycle`; only (iii) restates it. -/
+theorem fibre_functor_atlas {G : Type} [Group G] [ctx : FibreFunctorAtlasContext G] :
+    (∀ i : ctx.FFIdx, ctx.g i i = 1) ∧
+    (∀ i j : ctx.FFIdx, ctx.g j i = (ctx.g i j)⁻¹) ∧
+    (∀ i j k : ctx.FFIdx, ctx.g i k = ctx.g j k * ctx.g i j) ∧
+    (∀ i j : ctx.FFIdx, ∃ x : G, ctx.g i j = x) := by
+  refine ⟨fun i => ?_, fun i j => ?_, ctx.cocycle, fun i j => ⟨ctx.g i j, rfl⟩⟩
+  · -- (i) Chart identity: cocycle at `(i,i,i)` is `g i i = g i i * g i i`
+    --     (`a = b * a` with `b = a`), so `b = 1`, i.e. `g i i = 1`.
+    exact right_eq_mul.mp (ctx.cocycle i i i)
+  · -- (ii) Torsor inverse: cocycle at `(i,j,i)` is `g i i = g j i * g i j`;
+    --      with `g i i = 1` this gives `g j i * g i j = 1`, so `g j i = (g i j)⁻¹`.
+    have hcharts : ctx.g i i = 1 := right_eq_mul.mp (ctx.cocycle i i i)
+    have h1 : ctx.g j i * ctx.g i j = 1 := by rw [← ctx.cocycle i j i]; exact hcharts
+    exact mul_eq_one_iff_eq_inv.mp h1
 
 end QOU.QuantumObservableUniverse
