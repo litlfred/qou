@@ -32,12 +32,3 @@ $\phi_5^{\,k}(x, y) = (\zeta_5^{\,k} x, y)$, and $\phi_5^{\,5} = \mathrm{id}$
 because $\zeta_5^{\,5} = 1$.  Order $5$: if $\phi_5^{\,k} = \mathrm{id}$
 then $\zeta_5^{\,k} x = x$ for all $x$, forcing $\zeta_5^{\,k} = 1$
 and hence $5 \mid k$.  $\square$
-
-**Interpretation.**  Under the identification of $x$ with the first
-Lagrange resolvent $w_1$ (Remark
-[rem:lagrange-resolvents](#rem:lagrange-resolvents)), the automorphism
-$\phi_5$ is the diagonalised action of the cyclic generator $\sigma$ on
-$w_1$ via $\phi_5 \leftrightarrow \sigma$ with $\sigma(w_1) = \zeta_5^{-1} w_1$.
-The orbit $\{x, \zeta_5 x, \zeta_5^{2} x, \zeta_5^{3} x, \zeta_5^{4} x\}$
-is a single $\mathbb{Z}_5$-orbit of size five, matching the five finite
-branch points of the double cover.
