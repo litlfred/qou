@@ -1,4 +1,31 @@
 import QOU.Basic
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
+namespace QOU
+
+noncomputable section
+
+abbrev R_q := LaurentPolynomial ℤ
+
+structure QuantumSu2 where
+  q : R_q
+  q_ne_one : q ≠ 1
+  Algebra : Type*
+  [instRing : Ring Algebra]
+  E : Algebra
+  F : Algebra
+  K : Algebra
+  K_inv : Algebra
+  K_inv_left : K_inv * K = 1
+  K_inv_right : K * K_inv = 1
+
+attribute [instance] QuantumSu2.instRing
+
+structure QCasimirData (qs : QuantumSu2) where
+  ι : R_q →+* qs.Algebra
+
+axiom QCasimir (qs : QuantumSu2) (d : QCasimirData qs) : qs.Algebra
 
 
 /-!
@@ -34,10 +61,6 @@ pinned up to the additive `R_q`-scalar — Kassel §VI.4.9).
 - [manuscript] §4-braids-and-knots/q-casimir-unique
 - [kassel1995] Quantum Groups, §VI.4.9 (Joseph–Letzter centre)
 -/
-
-namespace QOU
-
-noncomputable section
 
 /-- **Differ by a scalar multiple of the identity.**  Two algebra elements
     `x y : qs.Algebra` are *scalar-equivalent* when `y = x + ι(r) · 1` for

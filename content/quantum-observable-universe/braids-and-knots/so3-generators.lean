@@ -25,9 +25,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -55,7 +56,9 @@ theorem R_beta_involution :
     R_beta_matrix * R_beta_matrix = 1 := by
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [R_beta_matrix, Matrix.mul_apply, Fin.sum_univ_three] <;>
-    ring
+    simp [R_beta_matrix, Matrix.mul_apply, Fin.sum_univ_three]
+
+end
 
 end QOU
+

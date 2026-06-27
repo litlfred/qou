@@ -24,9 +24,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -54,9 +55,11 @@ structure Su2Basis where
 structure Su2KillingForm extends Su2Basis where
   /-- The Killing form. -/
   killing : LieAlg → LieAlg → R_q
-  /-- Normalisation: ⟨eₐ, eₐ⟩ = -1/2. -/
-  normalised : ∀ a : Fin 3, killing (basis a) (basis a) = -1/2
+  /-- Normalisation: 2 * ⟨eₐ, eₐ⟩ = -1. -/
+  normalised : ∀ a : Fin 3, 2 * killing (basis a) (basis a) = -1
   /-- Orthogonality: ⟨eₐ, e_b⟩ = 0 for a ≠ b. -/
   orthogonal : ∀ a b : Fin 3, a ≠ b → killing (basis a) (basis b) = 0
+
+end
 
 end QOU
