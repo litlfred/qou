@@ -180,8 +180,10 @@ the formula returns the input mass exactly. **This is a bug, not
 a feature**: the QOU framework admits exactly three calibration
 inputs ([three calibration inputs](three-calibration-inputs.md))
 — CAL-1 $= m_e$, CAL-2 $= \mathfrak{D}_\beta$ (proxy $m_\mu/m_e$,
-fixing $q_0$), CAL-3 $= \mathfrak{D}_\pi$ (proxy $m_\pi$); the CAL-2
-proxy $\mathfrak{Q}_\beta(n)$ fixes the hadronic scale $E_0$. $m_p$ and $m_n$
+fixing $q_0$), CAL-3 $= \mathfrak{D}_\pi$ (proxy $m_\pi$, the meson
+scale). The hadronic energy scale $E_0 = m_e/(q_0(q_0-1))$ is
+**derived** from CAL-1 + CAL-2 (equivalently $E_0 = \mathfrak{Q}_\beta(n)/\lvert\Delta(\mathrm{net})\rvert$
+via the CAL-2 proxy $\mathfrak{Q}_\beta$), not a calibration input. $m_p$ and $m_n$
 are **predictions** of the framework, derivable as
 $m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
 $m_n = m_p + \mathfrak{Q}_\beta + m_e$ per the 3-input convention recommended
