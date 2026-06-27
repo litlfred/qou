@@ -93,6 +93,27 @@ _MU_QUOTED = (
     f"'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made)."
 )
 
+# ── m_μ PREDICTION — PINNED to the experimental / proton-anchored value ──
+# Owner ruling 2026-06-27 (bean tnjb): the L2 dashboard reports the
+# EXPERIMENTAL (proton-anchored q₀) m_μ prediction, NOT the ideal / muon-
+# anchored CAL-2 value. At the muon anchor m_μ = m_e·Vol(4_1)/ℏ_q² returns
+# CODATA to ~0 ppb BY CONSTRUCTION (the CAL-2 calibration tautology); the
+# proton re-pin (2026-05-28) makes it a genuine 9.5σ PREDICTION missing
+# CODATA by 209.8 ppb (963.6× the 100× target). The upstream Borromean
+# witness `muon_check.m_mu_pred_MeV` was flipped to the MUON q₀ by 768d9ddf,
+# so reading it would silently substitute the ideal tautology (MET) for the
+# experimental prediction (FAIL). PIN the prediction here so a regen cannot
+# corrupt the canonical committed value. Provenance: the proton-anchored
+# m_e·Vol(4_1)/ℏ_q² value carried by the committed
+# per-observable-100x-status.witness.json (2026-05-28 re-pin).
+# AGENTS.md §"q₀ anchor convention" STRICT rule 1.
+_M_MU_PRED_PROTON_MEV = mpf("105.658397811")
+_M_MU_PRED_SOURCE = (
+    "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e "
+    "re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean "
+    "muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1"
+)
+
 # Observable registry: (codata_value, codata_err, role, source_label)
 OBSERVABLES: dict[str, tuple[mpf, mpf, str, str]] = {
     "m_e":      (M_E_MEV,         M_E_MEV_ERR,            "CAL-1 anchor",
@@ -256,23 +277,19 @@ def main() -> dict:
             rows.append(_row_for("m_p", m_p_sub, sub_source))
         else:
             rows.append({"obs": "m_p", "status": "NO-WITNESS"})
-        # m_mu: under the proton-anchored convention this is a 9.5σ
-        # PREDICTION (~210 ppb, 963.6× the 100× target), NOT an anchor.
-        # CAVEAT: the Borromean witness currently carries the MUON q₀, so its
-        # muon_check ≈ CODATA (~0 ppb) = the CAL-2 calibration tautology;
-        # reading it here can silently flip m_mu FAIL→MET vs the canonical
-        # committed witness. See AGENTS.md §"q₀ anchor convention" + bean tnjb.
-        v_mu = borr_data.get("muon_check", {}).get("m_mu_pred_MeV")
-        if v_mu is None:
-            rows.append({"obs": "m_mu", "status": "NO-WITNESS"})
-        else:
-            rows.append(_row_for("m_mu", mpf(str(v_mu)), borr_source))
+        # m_mu PREDICTION: PINNED to the experimental / proton-anchored value
+        # (209.8 ppb, 963.6× FAIL). Decoupled from borr_data["muon_check"],
+        # which 768d9ddf flipped to the MUON q₀ (~0 ppb = the CAL-2 ideal
+        # tautology) and would silently flip m_mu FAIL→MET on regen.
+        # Owner ruling 2026-06-27 (bean tnjb); AGENTS.md §"q₀ anchor convention".
+        rows.append(_row_for("m_mu", _M_MU_PRED_PROTON_MEV, _M_MU_PRED_SOURCE))
     else:
-        # Fallback: read all four from Borromean (historical wiring)
+        # Fallback: read m_p / m_n / Delta_pn from Borromean (historical
+        # wiring); m_mu stays PINNED to the proton-anchored prediction (see
+        # above) — never read from the muon-flipped muon_check.
         for obs, path_key in [
             ("m_p",      "proton.m_p_pred_MeV"),
             ("m_n",      "neutron.m_n_pred_MeV"),
-            ("m_mu",     "muon_check.m_mu_pred_MeV"),
             ("Delta_pn", "proton_neutron_split.delta_m_pn_pred_MeV"),
         ]:
             section, field = path_key.split(".")
@@ -281,6 +298,7 @@ def main() -> dict:
                 rows.append({"obs": obs, "status": "NO-WITNESS"})
                 continue
             rows.append(_row_for(obs, mpf(str(v)), borr_source))
+        rows.append(_row_for("m_mu", _M_MU_PRED_PROTON_MEV, _M_MU_PRED_SOURCE))
 
     # ── Q_β — Habiro-exact evaluation ──────────────────────────────
     # The Markov trace difference tr_M(β_n) - tr_M(β_p) lives in the
