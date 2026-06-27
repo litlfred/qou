@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Basic
-import Mathlib.LinearAlgebra.FiniteDimensional
+import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 import Mathlib.Data.Real.Basic
 
 /-!

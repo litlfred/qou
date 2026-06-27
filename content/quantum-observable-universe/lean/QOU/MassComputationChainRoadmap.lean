@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
-import Mathlib.LinearAlgebra.Matrix.Basic
+import Mathlib.LinearAlgebra.Matrix.Defs
 import Mathlib.Tactic
 
 /-!
