@@ -831,9 +831,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:19.999Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-27T12:28:29.454Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-false-claim": [
@@ -850,9 +849,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.079Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No false mathematical claims or quantifier slips identified in the proposition."
+        "reviewed_at": "2026-06-27T12:28:29.539Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-vacuous": [
@@ -869,9 +867,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.206Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The claim is non-trivial and is not vacuously true."
+        "reviewed_at": "2026-06-27T12:28:29.620Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-circular": [
@@ -888,9 +885,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.297Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The proof/derivation does not assume the conclusion."
+        "reviewed_at": "2026-06-27T12:28:29.696Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-overclaim": [
@@ -907,9 +903,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.354Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The conclusion is fully supported by the argument."
+        "reviewed_at": "2026-06-27T12:28:29.775Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-hidden-dof": [
@@ -926,9 +921,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.414Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No undisclosed free parameters or arbitrary constants."
+        "reviewed_at": "2026-06-27T12:28:29.841Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-non-sequitur": [
@@ -945,9 +939,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.471Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No logical gaps identified in the derivation."
+        "reviewed_at": "2026-06-27T12:28:29.918Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -964,9 +957,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.538Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The Lean formalization matches the narrative claims."
+        "reviewed_at": "2026-06-27T12:28:29.984Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-citation-misuse": [
@@ -983,9 +975,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:20.765Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Citations are appropriate and correct."
+        "reviewed_at": "2026-06-27T12:28:30.064Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1002,9 +993,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:21.007Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Key terms are clearly defined and unambiguous."
+        "reviewed_at": "2026-06-27T12:28:30.138Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-empirical-fragility": [
@@ -1021,9 +1011,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:21.137Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No empirical parameters or numerical fits."
+        "reviewed_at": "2026-06-27T12:28:30.221Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-physical-implausibility": [
@@ -1040,9 +1029,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:21.338Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Physical claims are consistent and plausible."
+        "reviewed_at": "2026-06-27T12:28:30.317Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-reproducibility": [
@@ -1059,9 +1047,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:21.425Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Backing computations/proofs check successfully."
+        "reviewed_at": "2026-06-27T12:28:30.400Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-referee-verdict": [
@@ -1078,11 +1065,10 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:21.524Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Clean. All objections rebutted or no objections found."
+        "reviewed_at": "2026-06-27T12:28:30.474Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ]
   },
-  "updated_at": "2026-06-27T12:28:21.524Z"
+  "updated_at": "2026-06-27T12:28:30.474Z"
 }

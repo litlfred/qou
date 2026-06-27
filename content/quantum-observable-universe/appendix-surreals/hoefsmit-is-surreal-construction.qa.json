@@ -1374,9 +1374,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:16.702Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No false mathematical claims or quantifier slips identified in the proposition."
+        "reviewed_at": "2026-06-27T12:28:25.287Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-vacuous": [
@@ -1394,9 +1393,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:16.772Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The claim is non-trivial and is not vacuously true."
+        "reviewed_at": "2026-06-27T12:28:25.354Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-circular": [
@@ -1414,9 +1412,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:16.826Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The proof/derivation does not assume the conclusion."
+        "reviewed_at": "2026-06-27T12:28:25.418Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-overclaim": [
@@ -1434,9 +1431,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:16.889Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The conclusion is fully supported by the argument."
+        "reviewed_at": "2026-06-27T12:28:25.493Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-hidden-dof": [
@@ -1454,9 +1450,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:16.952Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No undisclosed free parameters or arbitrary constants."
+        "reviewed_at": "2026-06-27T12:28:25.560Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-non-sequitur": [
@@ -1474,9 +1469,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.016Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No logical gaps identified in the derivation."
+        "reviewed_at": "2026-06-27T12:28:25.621Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1494,9 +1488,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.089Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "The Lean formalization matches the narrative claims."
+        "reviewed_at": "2026-06-27T12:28:25.690Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-citation-misuse": [
@@ -1514,9 +1507,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.150Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Citations are appropriate and correct."
+        "reviewed_at": "2026-06-27T12:28:25.751Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1534,9 +1526,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.206Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Key terms are clearly defined and unambiguous."
+        "reviewed_at": "2026-06-27T12:28:25.822Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-empirical-fragility": [
@@ -1554,9 +1545,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.261Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "No empirical parameters or numerical fits."
+        "reviewed_at": "2026-06-27T12:28:25.885Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-physical-implausibility": [
@@ -1574,9 +1564,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.310Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Physical claims are consistent and plausible."
+        "reviewed_at": "2026-06-27T12:28:25.946Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-reproducibility": [
@@ -1594,9 +1583,8 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.367Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Backing computations/proofs check successfully."
+        "reviewed_at": "2026-06-27T12:28:26.008Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ],
     "da-referee-verdict": [
@@ -1614,11 +1602,10 @@
           "agent_date": "2026-06-27",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-27T12:28:17.434Z",
-        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
-        "notes": "Clean. All objections rebutted or no objections found."
+        "reviewed_at": "2026-06-27T12:28:26.065Z",
+        "reviewed_sha": "1e548f074882836db82d2ae518b72cd15b8c79f1"
       }
     ]
   },
-  "updated_at": "2026-06-27T12:28:17.434Z"
+  "updated_at": "2026-06-27T12:28:26.065Z"
 }
