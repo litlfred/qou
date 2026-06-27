@@ -31,8 +31,8 @@ on D, T, ${}^{3}$He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in
 | atom | proton block (gens 0, 1) | neutron block | matches D? |
 |---|---|---|:-:|
 | D (A=2) | $V_0 = 0.6714$, $V_1 = 1.0551$ | $V_0 = 0.5517$, $V_1 = 1.0884$ | — |
-| T (A=3) | same | same | ✓ |
-| ${}^{3}$He (A=3) | same | same | ✓ |
+| T (A=3) | same | same | yes |
+| ${}^{3}$He (A=3) | same | same | yes |
 
 Block-multiplicativity holds **exactly** to 4 digits, the resolution
 of the recorded witness. The block factors evaluate to

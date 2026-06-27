@@ -72,7 +72,7 @@ The keystone predicts analogous numerical witnesses at every depth:
 
 | Depth | Bring object | Predicted std-image |
 |---|---|---|
-| 2 | figure-8 in genus-4 ($4_1$) | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988\ldots$ ✓ |
+| 2 | figure-8 in genus-4 ($4_1$) | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988\ldots$ (confirmed) |
 | 3 | $\mathrm{Li}_3$ at $\zeta_5$ ($S_5$-natural Bring root of unity) | $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) \in \mathcal{P}_3/\mathcal{P}_2$ |
 | $n$ | $\mathrm{Li}_n^q$ at the $S_5$-orbit of $\zeta_5$ | weight-$n$ Goncharov motivic period |
 

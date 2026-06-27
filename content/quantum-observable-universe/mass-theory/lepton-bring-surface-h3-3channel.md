@@ -58,7 +58,7 @@ Plancherel weighting to a single observable. The 3-channel structure
 for leptons is the **canonical "where leptons live"** on the
 Bring surface: even though $\sigma_1^{2m+1}$ is naturally an $H_2$
 element (2 strands, 1 generator), the mass formula sits at $H_3$
-because that's where the cohomological discipline
+because that is where the cohomological discipline
 ([`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md))
 fixes the 3-CAL $\leftrightarrow$ 3-channel mapping.
 
@@ -94,11 +94,11 @@ Computed $\hat V_\ell$ and Li_2^q-tower mass ratios at $q_0$:
 
 | Lepton | Braid | $\hat V_\ell$ | $\|\hat V\| < q_0$? | $m_{\mathrm{dim}}$ | Ratio | CODATA | Δ |
 |---|---|---:|:---:|---:|---:|---:|---:|
-| Electron | $\sigma_1^3$ T(2,3) | $+0.586$ | ✓ | $0.518$ | $1$ (cal) | — | — |
-| Muon T(2,5) | $\sigma_1^5$ | $+0.834$ | ✓ | $0.705$ | $1.36$ | $206.77$ | $-99.3\%$ |
-| Muon T(2,7) | $\sigma_1^7$ | $+1.119$ | ✗ | diverges | — | — | — |
-| Tau T(2,7) | $\sigma_1^7$ | $+1.119$ | ✗ | diverges | — | — | — |
-| Tau T(2,9) | $\sigma_1^9$ | $+1.452$ | ✗ | diverges | — | — | — |
+| Electron | $\sigma_1^3$ T(2,3) | $+0.586$ | yes | $0.518$ | $1$ (cal) | — | — |
+| Muon T(2,5) | $\sigma_1^5$ | $+0.834$ | yes | $0.705$ | $1.36$ | $206.77$ | $-99.3\%$ |
+| Muon T(2,7) | $\sigma_1^7$ | $+1.119$ | no | diverges | — | — | — |
+| Tau T(2,7) | $\sigma_1^7$ | $+1.119$ | no | diverges | — | — | — |
+| Tau T(2,9) | $\sigma_1^9$ | $+1.452$ | no | diverges | — | — | — |
 
 The convention is internally consistent (electron calibrates correctly),
 but **mass ratios do not close** under the canonical Li_2^q tower

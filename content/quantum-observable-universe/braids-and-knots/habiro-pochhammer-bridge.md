@@ -54,7 +54,7 @@ At the substrate $q_0 \approx 1.1100$, $u_0 = \sqrt{q_0} \approx 1.0536$:
 | $\sum a_m\,(q;q)_m$ | $136.071$ |
 | $\sum a_m\,(u;u)_m$ | $24.227$ |
 | $\langle\prod(1+u^k)\rangle_{\mathrm{Hab}}$ | $5.616$ |
-| Ratio check | $136.071 / 24.227 = 5.616$ ✓ |
+| Ratio check | $136.071 / 24.227 = 5.616$ (confirmed) |
 
 The full bridge
 $R_{\mathrm{alg}}(q) = \mathrm{bridge}(q) / (n!/[n]_q!)$

@@ -275,11 +275,11 @@ identifies the present coverage gap concretely:
 
 | Atlas hyperbolic object | Explicit $\sigma$-word in $H_n(q)$? | Methodology tag |
 |---|---|---|
-| Figure-8 $4_1$ | ✗ (mentioned as Higgs/mass mechanism only) | not principled-derivation |
-| Borromean $\mathcal{B}_3$ | ✓ $(\sigma_1\sigma_2^{-1})^3 \in H_3$ | `principled-derivation` |
-| Deuterium $6_2$ | ✗ | `manual-historical-volume-match` |
-| Tritium $8_{11}$ | ✗ | `manual-historical-volume-match` |
-| Helium-3 $L_{6a4}$ | ✗ | `manual-historical-volume-match` |
+| Figure-8 $4_1$ | no (mentioned as Higgs/mass mechanism only) | not principled-derivation |
+| Borromean $\mathcal{B}_3$ | yes $(\sigma_1\sigma_2^{-1})^3 \in H_3$ | `principled-derivation` |
+| Deuterium $6_2$ | no | `manual-historical-volume-match` |
+| Tritium $8_{11}$ | no | `manual-historical-volume-match` |
+| Helium-3 $L_{6a4}$ | no | `manual-historical-volume-match` |
 
 So **only 1 of 5 atlas hyperbolic objects has a principled-derivation
 $\sigma$-word**; the other four lack explicit Hecke representatives.
@@ -443,7 +443,7 @@ to $\mathbb{Q}(\zeta_3, \sqrt{-15})$ to higher cubic fields) need
 to be checked for $S_5$-compatible embeddability and trace-field
 inclusion in $\mathbb{Q}(\zeta_{15})$.
 
-## What's proved (Lean handle)
+## What is proved (Lean handle)
 
 The Lean file [`bring-hyperbolic-knot-bloch-decomposition.lean`](bring-hyperbolic-knot-bloch-decomposition.lean)
 establishes the unconditional algebraic skeleton plus one

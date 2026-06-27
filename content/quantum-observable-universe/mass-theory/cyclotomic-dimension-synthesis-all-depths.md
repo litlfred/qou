@@ -74,7 +74,7 @@ for prime $K$, $\mathbb{Q}(\zeta_K)$ is totally complex with $r_2 =
 - $n$ odd: $\dim K_{2n - 1}^{\mathrm{ind}}(\mathbb{Q}(\zeta_K)) \otimes \mathbb{Q} = r_2 = (K - 1)/2$.
   Modding the $\zeta(n)$-line gives $(K - 3)/2$ predicted.
 - $n$ even: $\dim K_{2n - 1}^{\mathrm{ind}}(\mathbb{Q}(\zeta_K)) \otimes \mathbb{Q} = r_1 + r_2 = (K - 1)/2$.
-  No $\zeta(n)$ subtraction (it's already Tate). All $(K - 1)/2$
+  No $\zeta(n)$ subtraction (it is already Tate). All $(K - 1)/2$
   predicted.
 
 Beilinson's conjecture asserts the regulator image saturates the
@@ -109,8 +109,8 @@ Beilinson-conditional:
 
 | Prime $K$ | $n = 3$ (odd, $(K-3)/2$) | $n = 4$ (even, $(K-1)/2$) | $n = 5$ (odd, $(K-3)/2$) |
 |---|---|---|---|
-| 5 | 1 ✓ (round 12 + round D) | 2 | 1 |
-| 7 | 2 ✓ (round D this PR) | 3 | 2 |
+| 5 | 1 (confirmed; round 12 + round D) | 2 | 1 |
+| 7 | 2 (confirmed; round D this PR) | 3 | 2 |
 | 11 | 4 | 5 | 4 |
 | 13 | 5 | 6 | 5 |
 
