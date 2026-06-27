@@ -54,6 +54,3 @@ See [Table 3](#tbl:cl2-pentagon-and-faddeev-partial-table3-data).
 This represents the maximum advance achievable without upstream
 Mathlib contributions or ~hundreds of lines of additional Lean
 analysis infrastructure.
-
-
-**Remark on Mathematical Novelty:** Resolving the boundary scaffolding for the Faddeev-Kashaev relation anchors the broader pentagon formulation in a strictly formalized setting. It establishes novel consistency boundaries essential for extending these relations over non-standard algebraic domains.

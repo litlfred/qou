@@ -1,0 +1,1 @@
+**Remark (mathematical novelty).** Although the $\binom{p}{2} - \binom{n}{2}$ signed-crossing excess is a natural back-reaction mechanism, framing it as a topological self-deformation of the substrate field by nuclear linking density ($\ell_{\mathrm{net}}/A^2$) provides a genuinely novel geometric formalization of nuclear self-correction dynamics.

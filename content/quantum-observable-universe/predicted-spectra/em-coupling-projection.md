@@ -183,13 +183,6 @@ finite ($k = \mathbb{F}_\ell$).  The fine structure constant is a
 **ring-theoretic invariant** of the Descartes universe, not a
 continuous parameter requiring measurement.
 
-**Remark on the classical limit.**
-As $q \to 1$, $[n]_q \to n$, and
-$\alpha_{\mathrm{EM}} \to 1/(9 \times 10) = 1/90$.  The observed
-value $\alpha^{-1} \approx 137$ requires $q > 1$; the departure
-from the classical limit is what makes the coupling weaker than
-$1/90$.
-
 **:refterm[Descent]{#descent} decomposition: Chern-Simons correction.**
 
 The bare formula $\alpha^{-1} = q \cdot [9]_q \cdot [10]_q$ gives
@@ -300,14 +293,3 @@ requires either (i) a pre-archimedean origin for the $\pi$-bearing
 additive correction (RT-invariant or quantum-dilogarithm $q \to 1$
 asymptotics) or (ii) an off-diagonal Gram deformation that escapes
 the multiplicative-family ruling. Neither has been established.
-
-**Physical interpretation.**
-
-The :refterm[descent]{#descent} decomposition of the coupling mirrors that of the mass:
-
-See [Table 2](#tbl:em-coupling-projection-table2-data).
-
-The correction is positive because the force-carrier braids
-$T_{2,9}$ and $T_{3,5}$, embedded on the genus-$4$ Bring's surface,
-have crossing degeneracies that **screen** the bare electromagnetic
-charge, increasing $1/\alpha$ from the bare value.

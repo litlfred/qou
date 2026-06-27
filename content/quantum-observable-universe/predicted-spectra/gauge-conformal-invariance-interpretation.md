@@ -1,0 +1,1 @@
+**Remark.** When these emitted photons propagate across the domain interface into the relaxed $q_{\text{baseline}}$ intergalactic medium, astronomers measure this coherent conformal shift, systematically misidentifying the structurally required higher-order topological poles as massive dead star metallicities.
