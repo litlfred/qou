@@ -7,7 +7,7 @@ Define the two involutions
     &&\text{(\textbf{twist}),}
     \label{eq:braid-twist}\\[4pt]
   \sigma_2(\mathbf{w}) &= (w_4,w_3,w_2,w_1)
-    &&\text{(flip).}
+    &&\text{(\textbf{flip}).}
     \label{eq:braid-flip}
 \end{align}
 ```
