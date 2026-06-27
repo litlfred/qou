@@ -1,0 +1,1460 @@
+[
+ {
+  "file": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean",
+  "line": 37,
+  "category": "trivial-true",
+  "decl": "collatz_contact_boundary_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.lean",
+  "line": 32,
+  "category": "trivial-true",
+  "decl": "collatz_no_cycles_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.lean",
+  "line": 32,
+  "category": "trivial-true",
+  "decl": "hoefsmit_is_surreal_construction",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean",
+  "line": 179,
+  "category": "trivial-true",
+  "decl": "partitionCount_eq_fintype_card_partition_small",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean",
+  "line": 124,
+  "category": "false-premise",
+  "decl": "isospin_signature_distinct_from_deuteron",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
+  "line": 149,
+  "category": "trivial-true",
+  "decl": "q_commutation_grade_one_half",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
+  "line": 274,
+  "category": "trivial-true",
+  "decl": "pentagon_ascension_under_woronowicz",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean",
+  "line": 49,
+  "category": "decide-masking",
+  "decl": "t2_11_genus",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean",
+  "line": 58,
+  "category": "decide-masking",
+  "decl": "t2_9_saturates",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean",
+  "line": 135,
+  "category": "decide-masking",
+  "decl": "z3_in_s5",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean",
+  "line": 140,
+  "category": "decide-masking",
+  "decl": "z5_in_s5",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean",
+  "line": 33,
+  "category": "trivial-true",
+  "decl": "root_of_unity_truncation_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean",
+  "line": 33,
+  "category": "trivial-true",
+  "decl": "vorticity_lower_bound_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/information-theory/composite-crossing-parity.lean",
+  "line": 109,
+  "category": "trivial-true",
+  "decl": "composite_crossing_parity_g2_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.lean",
+  "line": 59,
+  "category": "trivial-true",
+  "decl": "qGaussian_variance",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean",
+  "line": 82,
+  "category": "trivial-true",
+  "decl": "qHeatKernelPeterWeyl",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean",
+  "line": 139,
+  "category": "false-premise",
+  "decl": "hoefsmit_bridge_two",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean",
+  "line": 267,
+  "category": "false-premise",
+  "decl": "interaction_completeness",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
+  "line": 499,
+  "category": "false-premise",
+  "decl": "HyperbolicVolumeIndependence.implies_single_irrational",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_12C.lean",
+  "line": 64,
+  "category": "self-assuming-projection",
+  "decl": "witness_12C",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_4He.lean",
+  "line": 56,
+  "category": "self-assuming-projection",
+  "decl": "witness_4He",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_8Be.lean",
+  "line": 61,
+  "category": "self-assuming-projection",
+  "decl": "witness_8Be",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_braid_structure.lean",
+  "line": 78,
+  "category": "self-assuming-projection",
+  "decl": "descartes_braid_structure",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_hartree_derivation.lean",
+  "line": 72,
+  "category": "self-assuming-projection",
+  "decl": "archimedean_hartree_derivation",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/beta_decay_transfer_matrix.lean",
+  "line": 128,
+  "category": "self-assuming-projection",
+  "decl": "beta_decay_transfer_matrix",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/borromean_hopf_energy_crossover.lean",
+  "line": 132,
+  "category": "self-assuming-projection",
+  "decl": "borromean_hopf_energy_crossover",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/eos_borromean_cfl.lean",
+  "line": 165,
+  "category": "self-assuming-projection",
+  "decl": "eos_borromean_cfl",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean",
+  "line": 111,
+  "category": "self-assuming-projection",
+  "decl": "genus_filtration_ideal",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/genus_maximal_descent.lean",
+  "line": 55,
+  "category": "self-assuming-projection",
+  "decl": "genus_maximal_descent",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/gram_weighted_qvalue.lean",
+  "line": 139,
+  "category": "self-assuming-projection",
+  "decl": "gram_weighted_qvalue",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean",
+  "line": 85,
+  "category": "self-assuming-projection",
+  "decl": "knot_operator_selection",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/shell_structure_eigenvalues.lean",
+  "line": 174,
+  "category": "self-assuming-projection",
+  "decl": "shell_structure_eigenvalues",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/skein_finiteness_bound.lean",
+  "line": 130,
+  "category": "self-assuming-projection",
+  "decl": "skein_finiteness_bound",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Archimedean/torus_knot_shell_binding.lean",
+  "line": 123,
+  "category": "self-assuming-projection",
+  "decl": "torus_knot_shell_binding",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_euler_characteristic.lean",
+  "line": 51,
+  "category": "self-assuming-projection",
+  "decl": "brings_euler_characteristic",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean",
+  "line": 53,
+  "category": "self-assuming-projection",
+  "decl": "brings_riemann_hurwitz",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/heisenberg_commutator.lean",
+  "line": 63,
+  "category": "self-assuming-projection",
+  "decl": "heisenberg_commutator",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean",
+  "line": 49,
+  "category": "self-assuming-projection",
+  "decl": "mi_sw_cartan_reduction",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BaryonWeight/beta4_hook.lean",
+  "line": 67,
+  "category": "self-assuming-projection",
+  "decl": "beta4_hook",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerNStar.lean",
+  "line": 202,
+  "category": "trivial-true",
+  "decl": "betaDecayRecoveryTarget_1ppb_remains_conjectural",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrossedModuleEulerCharacteristic.lean",
+  "line": 113,
+  "category": "decide-masking",
+  "decl": "h2_curvature_trace",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrossedModuleEulerCharacteristic.lean",
+  "line": 118,
+  "category": "decide-masking",
+  "decl": "crossed_module_euler_characteristic",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean",
+  "line": 239,
+  "category": "trivial-true",
+  "decl": "wedderburn_decomposition_generic",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean",
+  "line": 64,
+  "category": "trivial-true",
+  "decl": "briggs_klein_is_neg_li2q",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean",
+  "line": 104,
+  "category": "trivial-true",
+  "decl": "li2q_unique_from_ftc",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean",
+  "line": 204,
+  "category": "false-premise",
+  "decl": "substrateGap_of_uniform_gapValue",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
+  "line": 363,
+  "category": "trivial-true",
+  "decl": "qbeta_inductive_categorical_closure_conjecture",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean",
+  "line": 54,
+  "category": "trivial-true",
+  "decl": "contentSum_add_cell",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean",
+  "line": 74,
+  "category": "trivial-true",
+  "decl": "qSchur_weight_by_induction",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean",
+  "line": 85,
+  "category": "trivial-true",
+  "decl": "qSchur_normalisation",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights.lean",
+  "line": 57,
+  "category": "trivial-true",
+  "decl": "binding_assembly_subpercent",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/ThreeCalibrationInputs.lean",
+  "line": 59,
+  "category": "trivial-true",
+  "decl": "three_calibration_inputs",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean",
+  "line": 60,
+  "category": "false-premise",
+  "decl": "A5Irrep.reebCasimir_not_injective",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean",
+  "line": 705,
+  "category": "decide-masking",
+  "decl": "hopf_generation_selection",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/UnitModulusEigenvalue.lean",
+  "line": 66,
+  "category": "trivial-true",
+  "decl": "borromean_trace_21_eq_neg_two",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/UnitModulusEigenvalue.lean",
+  "line": 90,
+  "category": "trivial-true",
+  "decl": "all_positive_trace_positive",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Brings/brings_is_qou.lean",
+  "line": 67,
+  "category": "self-assuming-projection",
+  "decl": "brings_is_qou",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Brings/color_elliptic.lean",
+  "line": 48,
+  "category": "self-assuming-projection",
+  "decl": "color_elliptic",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean",
+  "line": 71,
+  "category": "false-premise",
+  "decl": "boundaryPerm_bijective",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/CategoricalReeb/ofWeightDecomposition.lean",
+  "line": 60,
+  "category": "self-assuming-projection",
+  "decl": "ofWeightDecomposition",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/CommutativeQOU/u1EquivariantReduction.lean",
+  "line": 79,
+  "category": "self-assuming-projection",
+  "decl": "u1EquivariantReduction",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean",
+  "line": 45,
+  "category": "self-assuming-projection",
+  "decl": "descended_level_zero",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean",
+  "line": 153,
+  "category": "self-assuming-projection",
+  "decl": "mass_rigidity_of_mostow",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Experimental/local_substrate_q.lean",
+  "line": 44,
+  "category": "self-assuming-projection",
+  "decl": "local_substrate_q",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Experimental/terminal_resolution.lean",
+  "line": 48,
+  "category": "self-assuming-projection",
+  "decl": "terminal_resolution",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean",
+  "line": 63,
+  "category": "self-assuming-projection",
+  "decl": "markov_identification",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/FrobeniusHopfData/frobeniusForm.lean",
+  "line": 71,
+  "category": "self-assuming-projection",
+  "decl": "frobeniusForm",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/HadronicMass/nucleon_borromean_topology.lean",
+  "line": 56,
+  "category": "self-assuming-projection",
+  "decl": "nucleon_borromean_topology",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Hecke/Hoefsmit.lean",
+  "line": 217,
+  "category": "trivial-true",
+  "decl": "hoefsmit_distinguishes_word_sensitivity",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/HyperellipticQuintic/minimal_z5_classification.lean",
+  "line": 86,
+  "category": "self-assuming-projection",
+  "decl": "minimal_z5_classification",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean",
+  "line": 149,
+  "category": "false-premise",
+  "decl": "zero_not_isAlgebraicallyPrime",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Interactions/UniversalILP.lean",
+  "line": 49,
+  "category": "self-assuming-projection",
+  "decl": "UniversalILP",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Interactions/inductiveGBReduction.lean",
+  "line": 83,
+  "category": "self-assuming-projection",
+  "decl": "inductiveGBReduction",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean",
+  "line": 267,
+  "category": "decide-masking",
+  "decl": "borromean_crossing_minimal",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/LightningPath.lean",
+  "line": 76,
+  "category": "trivial-true",
+  "decl": "lightning_path_synthesis",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean",
+  "line": 73,
+  "category": "self-assuming-projection",
+  "decl": "no_separate_lambda_scale",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 142,
+  "category": "trivial-true",
+  "decl": "additive_wedderburn_recurrence_matches_std_rep_trace",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 168,
+  "category": "trivial-true",
+  "decl": "typed_crossings_encoding_unique",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 188,
+  "category": "trivial-true",
+  "decl": "phi_q_converges_absolutely",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 218,
+  "category": "trivial-true",
+  "decl": "n_star_existence_conjecture",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 241,
+  "category": "trivial-true",
+  "decl": "wedderburn_weights_H3",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 294,
+  "category": "trivial-true",
+  "decl": "per_nucleon_shift_additive",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 304,
+  "category": "trivial-true",
+  "decl": "per_nucleon_shift_at_A1",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 327,
+  "category": "trivial-true",
+  "decl": "frobenius_co_casimir_universal_high_n",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
+  "line": 353,
+  "category": "trivial-true",
+  "decl": "wenzl_bridge_atomic_tr_M",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MassDerivation.lean",
+  "line": 73,
+  "category": "self-assuming-projection",
+  "decl": "topological_mass_formula",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MathlibExt.lean",
+  "line": 134,
+  "category": "self-assuming-projection",
+  "decl": "List.prod_eq_of_perm",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean",
+  "line": 81,
+  "category": "false-premise",
+  "decl": "Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean",
+  "line": 1,
+  "category": "placeholder-stub",
+  "decl": "",
+  "verdict": "genuine",
+  "reason": "unfilled placeholder / conclusion bundled from impl_* fields",
+  "action": "state real prop + cited sorry, or derive"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean",
+  "line": 1,
+  "category": "placeholder-stub",
+  "decl": "",
+  "verdict": "genuine",
+  "reason": "unfilled placeholder / conclusion bundled from impl_* fields",
+  "action": "state real prop + cited sorry, or derive"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Molecular/co2_lp_dual_binding.lean",
+  "line": 1,
+  "category": "placeholder-stub",
+  "decl": "",
+  "verdict": "genuine",
+  "reason": "unfilled placeholder / conclusion bundled from impl_* fields",
+  "action": "state real prop + cited sorry, or derive"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Molecular/co_lp_dual_binding.lean",
+  "line": 1,
+  "category": "placeholder-stub",
+  "decl": "",
+  "verdict": "genuine",
+  "reason": "unfilled placeholder / conclusion bundled from impl_* fields",
+  "action": "state real prop + cited sorry, or derive"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean",
+  "line": 1,
+  "category": "placeholder-stub",
+  "decl": "",
+  "verdict": "genuine",
+  "reason": "unfilled placeholder / conclusion bundled from impl_* fields",
+  "action": "state real prop + cited sorry, or derive"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/SpectatorNormalization.lean",
+  "line": 52,
+  "category": "self-assuming-projection",
+  "decl": "SpectatorNormalization",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean",
+  "line": 105,
+  "category": "self-assuming-projection",
+  "decl": "atomic_nf_witness",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean",
+  "line": 84,
+  "category": "self-assuming-projection",
+  "decl": "confinement_frobenius_reciprocity",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/deuterium_derived_binding.lean",
+  "line": 131,
+  "category": "self-assuming-projection",
+  "decl": "deuterium_derived_binding",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean",
+  "line": 57,
+  "category": "self-assuming-projection",
+  "decl": "four_term_pair_nucleon",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean",
+  "line": 69,
+  "category": "self-assuming-projection",
+  "decl": "frobenius_positivity_filter",
+  "verdict": "legit",
+  "reason": "body genuinely derives (trans/Iff.intro/linarith/ring/rw)",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/ground_state_ordering.lean",
+  "line": 64,
+  "category": "self-assuming-projection",
+  "decl": "ground_state_ordering",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean",
+  "line": 93,
+  "category": "self-assuming-projection",
+  "decl": "lp_dual_stability",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean",
+  "line": 62,
+  "category": "self-assuming-projection",
+  "decl": "mass_categorical_descent",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean",
+  "line": 1,
+  "category": "placeholder-stub",
+  "decl": "",
+  "verdict": "genuine",
+  "reason": "unfilled placeholder / conclusion bundled from impl_* fields",
+  "action": "state real prop + cited sorry, or derive"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean",
+  "line": 103,
+  "category": "self-assuming-projection",
+  "decl": "operator_selection_lp",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean",
+  "line": 78,
+  "category": "self-assuming-projection",
+  "decl": "parity_regime_selection",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean",
+  "line": 58,
+  "category": "self-assuming-projection",
+  "decl": "transfer_matrix_identities",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/PhotonThreading.lean",
+  "line": 91,
+  "category": "trivial-true",
+  "decl": "crossing_energy_gauge_invariant",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_1_frobenius.lean",
+  "line": 45,
+  "category": "self-assuming-projection",
+  "decl": "exists_axiom_1_frobenius",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_3_chern.lean",
+  "line": 47,
+  "category": "self-assuming-projection",
+  "decl": "exists_axiom_3_chern",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/orbital_fourier_decomposition.lean",
+  "line": 121,
+  "category": "self-assuming-projection",
+  "decl": "orbital_fourier_decomposition",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean",
+  "line": 62,
+  "category": "self-assuming-projection",
+  "decl": "q_gl_obstruction_calc",
+  "verdict": "legit",
+  "reason": "body genuinely derives (trans/Iff.intro/linarith/ring/rw)",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/qou_canonical_action.lean",
+  "line": 105,
+  "category": "self-assuming-projection",
+  "decl": "qou_canonical_action",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/lean/QOU/variational_equations.lean",
+  "line": 107,
+  "category": "self-assuming-projection",
+  "decl": "variational_equations",
+  "verdict": "genuine",
+  "reason": "body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim",
+  "action": "restructure: carry sub-hypotheses, derive (\u00a73b-cond rule 5)"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean",
+  "line": 85,
+  "category": "trivial-true",
+  "decl": "bar_idempotent_transposition_partition",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.lean",
+  "line": 48,
+  "category": "trivial-true",
+  "decl": "branch_trace",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
+  "line": 113,
+  "category": "trivial-true",
+  "decl": "markovTraceAxiomaticClosedForm",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean",
+  "line": 24,
+  "category": "trivial-true",
+  "decl": "categorical_leg_to_markov_trace",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean",
+  "line": 36,
+  "category": "trivial-true",
+  "decl": "archimedean_realization_to_mev",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean",
+  "line": 45,
+  "category": "trivial-true",
+  "decl": "post_archimedean_naming_borrowed",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean",
+  "line": 63,
+  "category": "trivial-true",
+  "decl": "atom_knot_mass_derivation_proof",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean",
+  "line": 46,
+  "category": "trivial-true",
+  "decl": "confinement_survives_only_centre",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean",
+  "line": 81,
+  "category": "trivial-true",
+  "decl": "observables_are_wedderburn_sum",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/eigenvalue-product-expansion.lean",
+  "line": 33,
+  "category": "trivial-true",
+  "decl": "geometric_sum_is_qint",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean",
+  "line": 39,
+  "category": "trivial-true",
+  "decl": "feynman_classical_limit_g3_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean",
+  "line": 41,
+  "category": "trivial-true",
+  "decl": "force_carrier_intertwining_correspondence",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean",
+  "line": 248,
+  "category": "trivial-true",
+  "decl": "hecke_d_irrep_closed_form_character_g2_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean",
+  "line": 170,
+  "category": "false-premise",
+  "decl": "bindingRegime_doublyMagic_iff",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean",
+  "line": 179,
+  "category": "false-premise",
+  "decl": "bindingRegime_alphaShift_iff",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/markov-trace-product.lean",
+  "line": 274,
+  "category": "trivial-true",
+  "decl": "degree_bound",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/q-pochhammer-partial-product.lean",
+  "line": 67,
+  "category": "false-premise",
+  "decl": "denomPoly_root_iff",
+  "verdict": "legit",
+  "reason": "honest theorem with a real proof (degree/omega/spectral/refine); discharges an impossible branch legitimately",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
+  "line": 107,
+  "category": "trivial-true",
+  "decl": "transfer_matrix_level_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula.lean",
+  "line": 95,
+  "category": "trivial-true",
+  "decl": "paper_terminology_mapping",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean",
+  "line": 33,
+  "category": "trivial-true",
+  "decl": "vertex_is_exceptional_divisor",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean",
+  "line": 49,
+  "category": "trivial-true",
+  "decl": "skein_confined_to_reeb_bundle",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean",
+  "line": 62,
+  "category": "trivial-true",
+  "decl": "vertex_completeness",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/volume-tower-decomposition.lean",
+  "line": 19,
+  "category": "trivial-true",
+  "decl": "VolumeTowerDecomposition",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+  "line": 65,
+  "category": "trivial-true",
+  "decl": "wenzl_bridge_applicability_qou",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+  "line": 83,
+  "category": "trivial-true",
+  "decl": "y_lambda_unique_in_qou",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
+  "line": 52,
+  "category": "trivial-true",
+  "decl": "wigner_coefficient_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.lean",
+  "line": 39,
+  "category": "decide-masking",
+  "decl": "barrier_grows_with_ring_size",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean",
+  "line": 28,
+  "category": "decide-masking",
+  "decl": "alexander_weight_diff_six",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean",
+  "line": 93,
+  "category": "trivial-true",
+  "decl": "photon_neutrino_requires_T35",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean",
+  "line": 18,
+  "category": "trivial-true",
+  "decl": "nuclearOperatorRegimes",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean",
+  "line": 195,
+  "category": "trivial-true",
+  "decl": "q_beta_cos_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean",
+  "line": 23,
+  "category": "trivial-true",
+  "decl": "quarkAntiquarkProduction",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean",
+  "line": 29,
+  "category": "trivial-true",
+  "decl": "quark_antiquark_production_witness",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean",
+  "line": 20,
+  "category": "decide-masking",
+  "decl": "hoCumulative_eq_sum",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean",
+  "line": 34,
+  "category": "decide-masking",
+  "decl": "ho_closures",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean",
+  "line": 72,
+  "category": "decide-masking",
+  "decl": "stability_pairs_correct",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean",
+  "line": 82,
+  "category": "decide-masking",
+  "decl": "first_three_eq_ho",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean",
+  "line": 89,
+  "category": "decide-masking",
+  "decl": "fourth_pair",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean",
+  "line": 94,
+  "category": "decide-masking",
+  "decl": "shellTransition_counts",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean",
+  "line": 57,
+  "category": "trivial-true",
+  "decl": "typed_garside_leading_term",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean",
+  "line": 68,
+  "category": "trivial-true",
+  "decl": "pure_proton_garside_is_standard",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean",
+  "line": 23,
+  "category": "trivial-true",
+  "decl": "UnstableAtom.decay_channel_unique",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean",
+  "line": 25,
+  "category": "trivial-true",
+  "decl": "breit_wheeler_pair_production",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ },
+ {
+  "file": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean",
+  "line": 87,
+  "category": "trivial-true",
+  "decl": "faddeev_kashaev_consistency_at_zero",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness.lean",
+  "line": 19,
+  "category": "trivial-true",
+  "decl": "CSEvaluationFaithful",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean",
+  "line": 139,
+  "category": "trivial-true",
+  "decl": "shell_eigenvalues_conditional",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean",
+  "line": 134,
+  "category": "decide-masking",
+  "decl": "magic_from_shells",
+  "verdict": "legit",
+  "reason": "native_decide on a concrete closed finite fact (genus/order/sum); idiomatic",
+  "action": "prefer plain `decide` (adds ofReduceBool)"
+ },
+ {
+  "file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
+  "line": 237,
+  "category": "trivial-true",
+  "decl": "blochWigner_unit_circle_eq_Cl_2",
+  "verdict": "legit",
+  "reason": "documented shadow-stub; real formalisation resolves elsewhere",
+  "action": "none"
+ },
+ {
+  "file": "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean",
+  "line": 79,
+  "category": "trivial-true",
+  "decl": "qou_canonical_action_unique_up_to_scalar",
+  "verdict": "genuine",
+  "reason": "conclusion is `True := trivial` / `X=X:=rfl` \u2014 asserts nothing (def-disguised-true)",
+  "action": "state real prop with cited sorry, or demote to conjecture"
+ }
+]
