@@ -1338,7 +1338,67 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "875c207b88a2",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:23.152Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "875c207b88a2",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:23.236Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Direct audit criterion verified clean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "875c207b88a2",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:23.303Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Direct audit criterion verified clean."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:44.519Z"
+  "updated_at": "2026-06-27T12:28:23.303Z"
 }

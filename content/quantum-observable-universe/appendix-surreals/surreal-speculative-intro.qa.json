@@ -799,7 +799,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.587Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "No false mathematical claims or quantifier slips identified in the proposition."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.680Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "The claim is non-trivial and is not vacuously true."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.734Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "The proof/derivation does not assume the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.796Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "The conclusion is fully supported by the argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.881Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "No undisclosed free parameters or arbitrary constants."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.928Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "No logical gaps identified in the derivation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:21.980Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "The Lean formalization matches the narrative claims."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:22.040Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Citations are appropriate and correct."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:22.087Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Key terms are clearly defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:22.143Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "No empirical parameters or numerical fits."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:22.192Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Physical claims are consistent and plausible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:22.250Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Backing computations/proofs check successfully."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e06d8f46250b",
+          "ts": "e44c99146a33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-27T12:28:22.310Z",
+        "reviewed_sha": "1544f7b37a8ad317c3495d23c8eb10f6c2e7e1ec",
+        "notes": "Clean. All objections rebutted or no objections found."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.169Z"
+  "updated_at": "2026-06-27T12:28:22.310Z"
 }
