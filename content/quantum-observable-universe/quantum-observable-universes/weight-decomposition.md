@@ -17,7 +17,7 @@ summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
 \end{equation}
 ```
 
-Here $\alpha_H = \pi_H(\alpha)$ is the *horizontal component*
+Here $\alpha_H = \pi_H(\alpha)$ is the **horizontal component**
 (weight-$0$ under $T$) and $\alpha_V = \pi_V(\alpha)$ is the
 *vertical component* (non-zero weight). A form is *purely
 horizontal* if and only if $\alpha_V = 0$.

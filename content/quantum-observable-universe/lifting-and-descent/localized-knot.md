@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 projective line object $\mathbb{P}(V) = G/T$
-([Definition](#def:projective-line-object)).  A *localized knot* is a pair
+([Definition](#def:projective-line-object)).  A **localized knot** is a pair
 
 $$
   (p, K)  \in  \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A^{\mathrm{co}T})

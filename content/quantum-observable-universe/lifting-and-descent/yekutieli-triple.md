@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def\:recursive-brane-tower)); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site $\mathcal{S}$ trivialising every level of the tower.
-The *Yekutieli triple* at level $n$ over an intersection
+The **Yekutieli triple** at level $n$ over an intersection
 $U_i \cap U_j$ is the datum $(x_{ij}^{(n)}, g_{ij}^{(n)}, a_{ij}^{(n)})$
 where:
 

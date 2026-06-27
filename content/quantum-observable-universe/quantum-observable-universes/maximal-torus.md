@@ -5,7 +5,7 @@ see [spin labels](#prop:spin-labels) for the full labelling). The *weight
 subcategory* $\langle V \rangle \subset \mathbf{C}$ is the full
 subcategory whose objects are direct sums of weight spaces of $V$
 (i.e. simultaneous eigenspaces of the Cartan subalgebra action).
-The *maximal torus* of the gauge group is
+The **maximal torus** of the gauge group is
 
 $$
   T = \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle}),

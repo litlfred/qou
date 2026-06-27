@@ -1,4 +1,4 @@
-The $q$-von Mangoldt function is defined over the maximal ideals
+The :defterm[$q$-von Mangoldt function]{#q-von-mangoldt-function} is defined over the maximal ideals
 $\mathfrak{m}$ of the coordinate ring $\mathcal{O}_q(\mathcal{B})$. For a
 maximal ideal $\mathfrak{m}$ with norm $N(\mathfrak{m})$ (the cardinality
 of the residue field):

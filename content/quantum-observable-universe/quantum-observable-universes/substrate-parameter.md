@@ -30,7 +30,7 @@ $$
 \end{equation}
 ```
 
-The *substrate parameter* is the unique element
+The **substrate parameter** is the unique element
 $q \in \mathrm{End}(\mathbf{1}) \cong k$ such that $d_q$
 acts as $q^{-1}d$ on horizontal forms and as $d$ on vertical forms.
 Geometrically, $q$ is the fibre coordinate on the

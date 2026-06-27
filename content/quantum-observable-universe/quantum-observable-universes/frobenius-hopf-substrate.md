@@ -1,5 +1,5 @@
-Let $\mathbf{C}$ be a rigid :refterm[monoidal category]{#monoidal-category}. A *Frobenius--Hopf
-substrate* is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in
+Let $\mathbf{C}$ be a rigid :refterm[monoidal category]{#monoidal-category}. A **Frobenius--Hopf
+substrate** is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in
 $\mathbf{C}$ equipped with a Frobenius form
 $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms.
 

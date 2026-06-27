@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)).
-The *spatial realization* of $A$ is the space
+The **spatial realization** of $A$ is the space
 
 $$
   M = \mathrm{Spec}(A) = \{ p \colon \mathbf{1} \to A \mid

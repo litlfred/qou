@@ -6,7 +6,7 @@ substrate parameter $q \in k^{\times}$
 ($i = 1,2$) be two paths from a source to a screen position $y$,
 each passing through one slit of width $a$ separated by distance $d$.
 
-The *$q$-deformed path phase* accumulated along $\gamma_i$ is
+The **$q$-deformed path phase** accumulated along $\gamma_i$ is
 
 $$
   \Phi_q^{(i)}(y)

@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$ denote the substrate parameter.  Let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)).  The
-*direct limit algebra of the quantum observable universe* is the
+**direct limit algebra of the quantum observable universe** is the
 colimit in the category of $R$-algebras:
 
 $$

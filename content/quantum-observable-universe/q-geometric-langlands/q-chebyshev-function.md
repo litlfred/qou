@@ -1,4 +1,4 @@
-The $q$-Chebyshev function is the partial sum of the $q$-von Mangoldt
+The :defterm[$q$-Chebyshev function]{#q-chebyshev-function} is the partial sum of the $q$-von Mangoldt
 function over the geometry:
 
 $$
