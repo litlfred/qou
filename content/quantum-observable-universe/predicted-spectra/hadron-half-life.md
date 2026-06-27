@@ -210,6 +210,3 @@ $\alpha = q^{-1}/([9]_q \cdot [10]_q)$, with Chern-Simons correction
 The fine structure constant is now fully derived from $q$ alone
 ($2.1\;\mathrm{ppm}$ from CODATA).  The weak scale crossing count $N_v$ remains
 open (see [verification](#ex:hadron-half-life-verification)).
-
-
-**Remark on Mathematical Novelty:** While the resulting decay structure follows the standard weak-decay formulation, the novelty lies in successfully re-deriving this empirical structure purely categorically, unifying the Fermi golden rule and Sargent's rule within a fundamental Markov-trace matrix element.

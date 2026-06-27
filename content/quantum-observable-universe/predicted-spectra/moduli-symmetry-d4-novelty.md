@@ -1,0 +1,1 @@
+**Remark.** Identifying Z[i]—rather than Z—as the strict ring of definition for the Mobius family under the D_4 action represents a conceptually novel structural constraint, tightly locking the moduli line symmetries to a complex algebraic origin.

@@ -15,8 +15,6 @@ genus-$4$ uniqueness proposition, the only such torus knots are
 $T_{2,9}$ (crossing number $9$) and $T_{3,5}$ (crossing number $10$).
 $\square$
 
-**Remark on Novelty:** While the underlying Diophantine constraint $(m-1)(n-1)=2g$ is standard, its application here as a *genus-saturation* condition on the symplectic homology of Bring's surface provides a uniquely rigid, novel algebraic-geometric derivation of the exact force-carrier pair (the crossing-number 9 and 10 knots), replacing the ad-hoc symmetry assumptions historically required in the literature.
-
 **Corollary (categorical complexity of the force-carrier sector).**
 *Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}]$, the
 categorical $q$-dimensions assigned to the two force-carrier objects

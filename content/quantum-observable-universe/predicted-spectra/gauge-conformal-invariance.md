@@ -5,5 +5,3 @@
 $\square$
 
 Because the physical state is trapped on an isolated spectrahedral vertex, all eigenvalues remain strictly bound to words of the generators $q$ and $q^{-1}$. The fundamental quotient of the Hecke algebra enforces gauge invariance, acting as a projective equivalence. When $q$ varies during the aeon initiation's relaxation, the poles do not slide independently; the relative ratios of the eigenspaces are strictly preserved. The mathematical distance between a primary Balmer transition and a higher-order Cemetery group spike remains structurally locked.
-
-**Remark.** When these emitted photons propagate across the domain interface into the relaxed $q_{\text{baseline}}$ intergalactic medium, astronomers measure this coherent conformal shift, systematically misidentifying the structurally required higher-order topological poles as massive dead star metallicities.

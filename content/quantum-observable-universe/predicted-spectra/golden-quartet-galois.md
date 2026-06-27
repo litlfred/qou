@@ -98,8 +98,6 @@ $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$, since
 $\mathbb{Q}(\sqrt{5}) \subset \mathbb{Q}(\zeta_5) = \mathbb{Q}(\zeta_{10})$
 is the **maximal real subfield**.
 
-**Remark on Novelty:** While the Galois properties of $\mathbb{Q}(\sqrt{5})$ and the golden ratio are entirely standard, introducing the joint group $G = \mathrm{Gal} \times \langle \iota \rangle$ acting on the specific quartet $Q$ provides a novel structural refactoring for QOU models. Rather than relying on standard cyclotomic $\zeta_5$ bookkeeping which carries complex phase ambiguities, this formulation allows physical observables to be strictly bounded within the maximal real subfield. This geometric substitution of the cyclotomic Galois tracking with a pure real orbit $Q$ is conceptually novel in the context of Bring's curve reductions.
-
 The quartet-orbit description above lets such arguments be
 **rewritten without $\zeta_5$**: instead of "the $\zeta_5$-action
 on the color tube coordinates fixes $\varphi$ as a real combination",

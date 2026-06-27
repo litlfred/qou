@@ -1,0 +1,1 @@
+**Remark.** This structural identification of the lepton-tower sequence as a positive-sign Morgan-Voyce continuant, distinct from standard Chebyshev U_n recurrences, introduces a novel algebraic lens that elegantly captures the unique combinatorial constraints of the lepton sector.

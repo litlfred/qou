@@ -79,6 +79,3 @@ to the $\sigma_0$ coefficient and shifting the identity
 coefficient by $b_n$.  The lepton generations are thus a
 **discrete tower indexed by odd $n$**, with inter-generation
 spacing controlled by $h = q - q^{-1}$.
-
-
-**Remark on Mathematical Novelty:** This structural identification of the lepton-tower sequence as a positive-sign Morgan-Voyce continuant, distinct from standard Chebyshev U_n recurrences, introduces a novel algebraic lens that elegantly captures the unique combinatorial constraints of the lepton sector.
