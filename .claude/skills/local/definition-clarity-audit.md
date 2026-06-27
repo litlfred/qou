@@ -141,7 +141,10 @@ there, not in the per-criterion functions.
   `3`, or preamble words (before the first display-math) > `80`.
 - **`clarity-stmt-pure`** — fail if ≥ `1` interpretive bold sub-section
   (`**Interpretation.**`, `**Physical meaning.**`, `**Remark.**`,
-  `**Motivation.**`, `**Discussion.**`, … → **major**) **or** ≥ `1` interpretive
+  `**Motivation.**`, `**Discussion.**`, plus a qualifier + meaning/
+  interpretation/picture/content/reading — `**Physical interpretation.**`,
+  `**Geometric interpretation.**`, `**Number-theoretic content.**`, … →
+  **major**) **or** ≥ `1` interpretive
   lead-in phrase ("intuitively", "in other words", "this means that",
   "physically", "the upshot", "one should think of", … → **minor**, or **major**
   at ≥ 3). A `*-proof` lives in its own block, so a statement block is *just*
