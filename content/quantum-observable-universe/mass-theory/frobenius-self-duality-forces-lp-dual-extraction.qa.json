@@ -1308,6 +1308,22 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement + 5-step proof + Corollary (mathematical) + an explicitly demarcated 'Remark (categorical content)' holding the interpretation. Interpretation is in a labeled remark within the block."
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proposition statement is the bare self-duality/Frobenius claim; the Corollary, categorical-content Remark, and consequence are clearly demarcated follow-on blocks, not interpretive prose buried in the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1328,6 +1344,22 @@
         "reviewed_at": "2026-06-22T02:56:57.848Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:substrate-binding-setup; Frobenius-trace LP-dual structural justification feeds the mass-formula-as-LP-dual chain — on-topic for the chapter's archimedean-face binding setup."
       }
     ],
     "wall-side-statement": [
@@ -1348,6 +1380,22 @@
         "reviewed_at": "2026-06-22T02:56:58.388Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is over generic H_n(R,q) with Markov trace; no archimedean construct hard-coded. The ℝ coefficient c_λ in the Consequence is a downstream observable note, not the statement's regime."
       }
     ],
     "wall-side-proof": [
@@ -1368,6 +1416,22 @@
         "reviewed_at": "2026-06-22T02:56:58.675Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is algebraic (non-degeneracy of τ, Φ_τ isomorphism, LP strong-duality under Slater); no linarith/IVT/continuity/Real.* machinery. LP-duality invoked is finite-dimensional structural."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1402,6 +1466,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "frobenius-self-duality-forces-lp-dual-extraction.lean:19-23: `theorem frobenius_self_duality_forces_lp_dual_extraction ... : observationFrame FA = frobeniusSelfDualityMap FA ∧ Function.Bijective (observationFrame FA) := by sorry`",
+        "notes": "The narrative presents a complete 5-step proof ending in $\\square$, but the Lean conclusion is a `sorry` and both supporting defs (observationFrame, frobeniusSelfDualityMap) are themselves `sorry` stubs over an abstract FrobeniusTraceAlgebra (no Markov-trace / non-degeneracy content). The signature shape (Obs = Φ ∧ bijective) reasonably encodes the narrative claim and the sorry is disclosed in .md:128, so a reader can reconcile the intent — hence warn not fail. Also the .ts lean.ref `qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction` names a namespace, not the decl `frobenius_self_duality_forces_lp_dual_extraction`."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1897,5 +1979,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

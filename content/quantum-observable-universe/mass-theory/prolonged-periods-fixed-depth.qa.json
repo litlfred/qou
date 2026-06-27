@@ -1286,6 +1286,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the existence claim (a fixed-depth recurrence exists by Cayley-Hamilton); the surrounding text distinguishes existence vs identification half — that is scope clarification, not mislocated physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1306,6 +1322,22 @@
         "reviewed_at": "2026-06-22T02:57:08.109Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'q-difference prolongation and periods' section; the prolonged SW periods / Gauss-Manin recurrence is exactly that section's subject. Well placed."
       }
     ],
     "wall-side-statement": [
@@ -1326,6 +1358,22 @@
         "reviewed_at": "2026-06-22T02:57:09.394Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean is generic {R}[CommRing R]{V}[AddCommGroup V][Module R V]; the operator recurrence M^(n+d)=Sum c_j M^(n+j) is purely algebraic. No Real/order/numeric construct. Matches substrate-side regime."
       }
     ],
     "wall-side-proof": [
@@ -1346,6 +1394,22 @@
         "reviewed_at": "2026-06-22T02:57:09.914Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof uses pow_add, Finset.mul_sum, mul_smul_comm — module/ring algebra only; no archimedean machinery. Method matches the algebraic statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1366,6 +1430,22 @@
         "reviewed_at": "2026-06-22T02:57:10.277Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean theorem takes M, d, c, hCH (the Cayley-Hamilton relation M^d=Sum c_j M^j) and n, concluding M^(n+d)=Sum c_j M^(n+j) for every n. Narrative states the same operator recurrence with n-independent kernel, with the finite-rank/Cayley-Hamilton premise (= hCH) cited as the structural input and the scalar period recurrence following by applying phi(.,v0). Quantifiers, the CH hypothesis, and conclusion match."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1390,6 +1470,23 @@
         "reviewed_at": "2026-06-22T02:57:10.641Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 0.9 — plan stated up front (Cayley-Hamilton -> operator recurrence -> apply linear functional for period recurrence), both in .md and Lean docstring; the 3-line proof is fully legible."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1414,6 +1511,23 @@
         "reviewed_at": "2026-06-22T02:57:11.116Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 1.0 — the Lean theorem prolongation_fixed_depth_recurrence is sorry-free. (The remaining 'identification half' is an explicitly separate downstream conjecture, not a gap in this proof.)"
       }
     ],
     "proof-rater-novelty": [
@@ -1438,6 +1552,23 @@
         "reviewed_at": "2026-06-22T02:57:11.531Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 0.6 — Cayley-Hamilton -> linear recurrence is a standard argument, but its application as the existence half of the q-difference prolongation keystone is non-duplicated in the corpus."
       }
     ],
     "proof-statement-integrity": [
@@ -1458,6 +1589,22 @@
         "reviewed_at": "2026-06-22T02:57:11.933Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature is a clean generic theorem with hCH as explicit hypothesis; proof is sorry-free term/tactic (no sorryAx), no axiom injection, statement not weakened to a tautology."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1478,6 +1625,22 @@
         "reviewed_at": "2026-06-22T02:57:12.307Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion M^(n+d)=Sum c_j M^(n+j) is DERIVED from hCH via pow_add/mul_smul_comm; it is not a field whose type is the conclusion handed back."
       }
     ],
     "proof-no-trivial-true": [
@@ -1498,6 +1661,22 @@
         "reviewed_at": "2026-06-22T02:57:12.702Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a genuine operator equation, not True/rfl/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1518,6 +1697,22 @@
         "reviewed_at": "2026-06-22T02:57:13.152Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypothesis hCH (a Cayley-Hamilton relation) is satisfiable (true for any End on a finite-rank module); no False/0=1/uninhabited premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1538,6 +1733,22 @@
         "reviewed_at": "2026-06-22T02:57:13.594Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "hCH is rewritten in, n is used in the exponents, c/d/M all appear in the conclusion — every binder is load-bearing."
       }
     ],
     "proof-no-decide-masking": [
@@ -1558,8 +1769,24 @@
         "reviewed_at": "2026-06-22T02:57:13.992Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is rw + Finset.sum_congr; no decide/trivial masking."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

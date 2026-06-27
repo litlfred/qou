@@ -1293,6 +1293,22 @@
         "severity": "minor",
         "evidence": "q-beta-c-k-leading-bias-correction-identity.md lines 64-99: '## Structural significance' and '## Implications for the 569bedda1 c_3 falsification' reframe the bias as a 'structural signature' and 'predictive evidence', and argue the falsification should be revisited — substantive methodological/motivational prose in the same proposition block, no companion interprets: remark.",
         "notes": "Significance/Implications headings present; content is methodological discussion grounded in numerics rather than physical meaning, so WARN. Candidate for an interprets: remark to hold the falsification-revisit argument."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proposition statement is the bare conditional identity; the bias-as-structural-signature interpretation and falsification discussion live in separate later ## sections (## Structural significance, ## Implications), not appended to the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1313,6 +1329,22 @@
         "reviewed_at": "2026-06-22T02:57:11.672Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Registered under the q-beta precision-ladder collection of mass-theory; subject (Q_β c_k extraction-bias) squarely on-topic."
       }
     ],
     "wall-side-statement": [
@@ -1333,6 +1365,22 @@
         "reviewed_at": "2026-06-22T02:57:12.102Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is a CommRing R ring identity (ĉ_k − ĉ_{k+1}·u = c_alg k − c_alg(k+2)·u²) with u_0 a formal small parameter; numeric q_0 values appear only in the separate ## Numerical confirmation section."
       }
     ],
     "wall-side-proof": [
@@ -1353,6 +1401,22 @@
         "reviewed_at": "2026-06-22T02:57:12.431Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is a one-line algebraic substitution + expansion (`ring`); no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1373,6 +1437,22 @@
         "reviewed_at": "2026-06-22T02:57:12.791Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative identity matches Lean bias_correction_recovers_alg over [CommRing R]: biasedExtraction = c_hat = c_alg j + c_alg(j+1)·u; conclusion identical. ∀ c_alg, u, k quantification matches."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1397,6 +1477,22 @@
         "reviewed_at": "2026-06-22T02:57:13.195Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Plan explicit: substitute the bias model for both ĉ and expand; `simp [biasedExtraction]; ring`. score 1.0"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1421,6 +1517,22 @@
         "reviewed_at": "2026-06-22T02:57:13.606Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Sorry-free. score 1.0"
       }
     ],
     "proof-rater-novelty": [
@@ -1445,6 +1557,22 @@
         "reviewed_at": "2026-06-22T02:57:13.999Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Distinct leading-bias-inversion identity not duplicated by a sibling; standard algebra but novel application. score 0.6"
       }
     ],
     "proof-statement-integrity": [
@@ -1465,6 +1593,22 @@
         "reviewed_at": "2026-06-22T02:57:14.411Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Three sorry-free `ring` theorems; no axiom injection. Signatures unchanged."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1485,6 +1629,22 @@
         "reviewed_at": "2026-06-22T02:57:14.892Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "`simp [biasedExtraction]; ring` derives the identity; no field-of-conclusion projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -1505,6 +1665,22 @@
         "reviewed_at": "2026-06-22T02:57:15.235Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a non-trivial polynomial equation, not True/rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1525,6 +1701,21 @@
         "reviewed_at": "2026-06-22T02:57:15.614Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1545,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:57:15.920Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "c_alg, u, k all used; the truncated variant genuinely uses h : c_alg(k+2)=0."
       }
     ],
     "proof-no-decide-masking": [
@@ -1565,8 +1772,23 @@
         "reviewed_at": "2026-06-22T02:57:16.243Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "82b68db13190",
+          "ts": "f659f208dff2",
+          "lean": "581587eab850"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

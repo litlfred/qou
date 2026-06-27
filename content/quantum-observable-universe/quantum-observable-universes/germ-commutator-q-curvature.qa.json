@@ -297,8 +297,253 @@
         "severity": "minor",
         "evidence": "Statement [δq1,δq2]=F_q, then two \"structural consequences\" (agreement⟺flatness, antisymmetry — mathematical) plus interpretive prose: \"the local disagreement between two observers is the q-curvature\" and \"the kinematic half of how the substrate parameter q evolves locally\" (.md lines 14-16, 40-43). No companion interprets: remark.",
         "notes": "Consequences are largely mathematical, but the observer-disagreement/kinematic-evolution framing is physical interpretation held in-block. Borderline → warn."
+      },
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "germ-commutator-q-curvature.md:13-16: \"This is the formal core of the two-observer parallelogram ...: the local disagreement between two observers *is* the q-curvature ... Two structural consequences follow.\"",
+        "notes": "Statement (the bare identity $[\\delta q_1,\\delta q_2]=F_q$) is clean, but interpretive prose ('formal core', 'kinematic half') follows in the same block. A companion remark rem:two-observer-parallelogram is cited; consequences 1 and 2 are themselves formalized theorems (agree_iff_flat, curvature_antisymm), so they are additional results rather than pure motivation. Borderline mislocation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.9 — the .md 'Lean' section names the three formalized lemmas (commutator_eq_curvature, agree_iff_flat, curvature_antisymm) and states the abstract non-commutative ring setting up front; the plan is fully legible."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — the resolved decl commutator_eq_curvature is sorry-free; no remaining gap."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.5 — standard commutator/curvature bracket identity over a ring; not duplicated elsewhere in the corpus but a routine algebraic packaging."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "germ-commutator-q-curvature.lean:50-59: field `parallelogram : obsCommutator δq₁ δq₂ = Fq` and `theorem commutator_eq_curvature (P : ObservationParallelogram R) : obsCommutator P.δq₁ P.δq₂ = P.Fq := P.parallelogram`",
+        "notes": "The lean.ref resolves to commutator_eq_curvature, whose body is a verbatim projection of the structure field `parallelogram` whose type IS the theorem's own conclusion (P ⊢ P). The data fields δq₁/δq₂/Fq are not derived through any composition — the identity is assumed as a field and handed back. This is the self-assuming-projection anti-pattern. Restructure so the identity is derived (e.g. carry the two perturbations + a curvature DEFINITION and prove the bracket equals it), or treat the structure as a conjecture carrier. Note agree_iff_flat / curvature_antisymm DO compose fields and are legitimate."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10",
+          "lean": "1c2642e2e9f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

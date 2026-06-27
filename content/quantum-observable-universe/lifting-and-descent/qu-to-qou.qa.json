@@ -1290,6 +1290,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1310,6 +1325,21 @@
         "reviewed_at": "2026-06-22T02:56:30.261Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1330,6 +1360,21 @@
         "reviewed_at": "2026-06-22T02:56:30.671Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1350,6 +1395,22 @@
         "reviewed_at": "2026-06-22T02:56:31.025Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The .md carries no `**Proof.**` body — only a 'Lean formalization' note (line 37). No narrative proof to adjudicate."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1384,6 +1445,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "qu-to-qou.lean:94: `theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry`; qu-to-qou.md:37: 'currently encodes an existence stub (`∃ q, True`) pending a faithful statement'",
+        "notes": "The narrative asserts a substantive conditional theorem — QU + observability + Yekutieli lifting ⟹ QOU with five named structural properties (descent terminates, κ₀ = Euler class, perpetual obstruction, Riemann–Hurwitz branch formula, terminal fibre involution). The Lean proves only `∃ QuToQou, True`, a True-placeholder that asserts nothing about the hypotheses implying the conclusion; the QuToQou structure's fields (trace_map, perpetual, riemann_hurwitz) are never claimed to be derivable from any QU. The .md self-admits the stub. Theorem-changing divergence: Lean = True-placeholder while narrative asserts a real conditional result."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1879,5 +1958,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

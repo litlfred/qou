@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/torus-knot-generators.lean"
   },
   "source_hashes": {
-    "md": "f04bc1ad0387",
+    "md": "f4f72605003a",
     "ts": "e13b575bb7a1",
     "lean": "8c07903a8fcb"
   },
@@ -1289,6 +1289,24 @@
         "severity": "minor",
         "evidence": "The genus-bound finiteness statement (lines 13-37) is followed by a 'Physical interpretation' section (lines 38-69) with four substantive numbered points of physical interpretation in the same block — 'Lepton generations', 'Quark sector' (T_{3,4} color binding / T_{3,5} weak interaction), 'Saturation', and 'Hyperbolic knots are derived'. The .ts has no interprets: and there is no companion remark holding this interpretation.",
         "notes": "The bare claim is the (m-1)(n-1)<=8 finiteness of the generator set; the particle-physics reading (lepton generations, quark sector mediators, why no 4th generation) is substantive interpretation that should live in a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "torus-knot-generators.md:38-75: '**Physical interpretation.** 1. **Lepton generations.** ... 2. **Quark sector.** ... 3. **Saturation.** ... 4. **Hyperbolic knots are derived.** ... **Remark on the cutoff.**'",
+        "notes": "The proposition block carries an extensive 'Physical interpretation' section (lepton generations, quark sector, saturation, hyperbolic-knots-derived) plus a 'Remark on the cutoff' — substantive physical-meaning/downstream-consequence prose appended after the statement+proof. No companion `interprets:` remark holds it; the .ts lists only proofs[] and uses[]. This interpretation is mislocated inside the provable block and should move to a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1327,21 @@
         "reviewed_at": "2026-06-22T02:56:20.363Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1362,22 @@
         "reviewed_at": "2026-06-22T02:56:20.807Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is genus/coprime-pair arithmetic over ℕ (g(T_{m,n})=(m-1)(n-1)/2 ≤ 4); no Real.*, MeV, or order-over-ℝ hypothesis. Lean sibling is over ℕ. The chapter is the archimedean Descartes universe, and the combinatorial statement matches it; the leading note flags the ℝ-specialisation framing for any analytic part."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1398,22 @@
         "reviewed_at": "2026-06-22T02:56:21.231Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof ('Genus bound from χ=-6') is Seifert-genus arithmetic and crossing-change inequalities; Lean proof uses nlinarith/interval_cases/omega over ℕ — no IVT/continuity/Real machinery. Method matches the algebraic/combinatorial statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1369,6 +1434,24 @@
         "reviewed_at": "2026-06-22T02:56:21.610Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "torus-knot-generators.md:23-27 'admits exactly six coprime pairs ... |G|=7' vs torus-knot-generators.lean:24-28 'theorem torus_knot_generators_finite (g:ℕ)(hg:g=4): ∃ S:Finset(ℕ×ℕ), ∀ m n, m≥2 → n>m → Coprime m n → seifertGenus m n ≤ g → (m,n)∈S'",
+        "notes": "Lean encodes the FINITENESS half (∃ finite S containing every qualifying pair) — matching the block title 'Finiteness of the T_{m,n} generator set' — but not the narrative's stronger 'exactly six pairs / |G|=7' enumeration. Quantifiers and hypotheses (m≥2, n>m, coprime, genus≤g) align; only the strength of the conclusion is weaker (containment, not exact cardinality). Reconcilable for a reader who reads the decl as the finiteness lemma; not a theorem-changing contradiction, hence warn not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,6 +1476,22 @@
         "reviewed_at": "2026-06-22T02:56:22.024Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.9 — narrative states the plan up front (genus bound g(T_{m,n})=(m-1)(n-1)/2 ≤ 2g=8 selects finitely many pairs); Lean proof is a clear bound-then-interval_cases enumeration."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1417,6 +1516,22 @@
         "reviewed_at": "2026-06-22T02:56:22.493Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — Lean proof is sorry-free (subst/nlinarith/interval_cases/omega close all goals)."
       }
     ],
     "proof-rater-novelty": [
@@ -1441,6 +1556,22 @@
         "reviewed_at": "2026-06-22T02:56:22.902Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.7 — standard finite-enumeration argument; distinct from sibling embeddability-closure (which checks a fixed dictionary list rather than deriving the bound)."
       }
     ],
     "proof-statement-integrity": [
@@ -1461,6 +1592,22 @@
         "reviewed_at": "2026-06-22T02:56:23.212Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No sorryAx; proof uses subst/nlinarith/interval_cases/omega only. Signature is a genuine finiteness claim, not a weakened tautology."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1481,6 +1628,22 @@
         "reviewed_at": "2026-06-22T02:56:23.591Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is derived by explicit witness ⟨{6 pairs}, ...⟩ + interval_cases, not projected from a hypothesis field."
       }
     ],
     "proof-no-trivial-true": [
@@ -1501,6 +1664,22 @@
         "reviewed_at": "2026-06-22T02:56:23.963Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a real ∃/∀ finiteness statement, not True/rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1521,6 +1700,22 @@
         "reviewed_at": "2026-06-22T02:56:24.339Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Premise hg:g=4 is satisfiable; no False/0=1 hypothesis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1541,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:56:24.712Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "hg used via subst; hm/hmn/hcop/hg consumed by nlinarith bounds and interval_cases/simp_all[Coprime]/omega."
       }
     ],
     "proof-no-decide-masking": [
@@ -1561,8 +1772,24 @@
         "reviewed_at": "2026-06-22T02:56:25.072Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial masking; goals closed by substantive nlinarith/interval_cases/omega."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

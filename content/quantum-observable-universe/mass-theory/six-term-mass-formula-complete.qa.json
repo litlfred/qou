@@ -1234,6 +1234,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The block is a deliberate master completeness/status index (per-term derivation status), not a theorem-statement followed by mislocated motivation; the per-term notes are scholarly scope/status content for an index block."
       }
     ],
     "fit-section-chapter": [
@@ -1253,6 +1268,20 @@
         "reviewed_at": "2026-06-22T02:57:01.791Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1272,6 +1301,20 @@
         "reviewed_at": "2026-06-22T02:57:02.136Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1291,6 +1334,20 @@
         "reviewed_at": "2026-06-22T02:57:02.517Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1324,6 +1381,23 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "six_term_mass_formula_complete.lean:45-48: Lean encodes only `cat_mass = term1+...+term6` over six abstract reals; six-term-mass-formula-complete.md spells out each term's explicit categorical formula (Φ_q, tr_M(T_w), residues) and per-term derivation status.",
+        "notes": "The narrative's headline statement (the six-term sum decomposition) does match the Lean equation, so the core claim is reconcilable; but the Lean is an abstract-context placeholder carrying none of the per-term content the narrative asserts. Agreement holds only at the bare-sum level."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1385,6 +1459,21 @@
           "max": 1,
           "value": 0.45
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.7 — the index is well-organised per term; Lean plan (abstract context + field projection) is explicit, if thin."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1446,6 +1535,21 @@
           "max": 1,
           "value": 0.66
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.3 — the Lean has no sorry, but the substantive per-term derivations (Terms 1-3,5,6) remain open/pathological per the .md, and the Lean restates-target (the sum is assumed as a field). Effective remaining-content plausibility is core-gap-tier."
       }
     ],
     "proof-rater-novelty": [
@@ -1507,6 +1611,21 @@
           "max": 1,
           "value": 0.66
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.5 — a master-index aggregation of existing per-term results; not a duplicate but adds no new argument."
       }
     ],
     "proof-statement-integrity": [
@@ -1560,6 +1679,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1613,6 +1746,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "six_term_mass_formula_complete.lean:45-48: `def six_term_mass_formula_complete [ctx : SixTermMassFormulaContext] : ctx.cat_mass = ctx.term1 + ... + ctx.term6 := ctx.claim_six_term_sum`. The class field `claim_six_term_sum` (lines 37-39) has type identical to the declaration's conclusion.",
+        "notes": "Classic self-assuming projection: the SixTermMassFormulaContext class carries `claim_six_term_sum : cat_mass = Σ term_i` as a field, and the theorem hands it straight back (P ⊢ P), with no sub-hypotheses composed. The class axiomatises the conclusion itself, not the per-term derivations. This is the vacuous §3b-cond degenerate pattern; restructure so the class carries the per-term construction and the sum is derived. Routes to lean-proof-review."
       }
     ],
     "proof-no-trivial-true": [
@@ -1649,6 +1799,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a real-valued sum equation, not True/rfl/x=x; the field is content-bearing (an equation among 7 abstract reals), so not the `holds:Prop := True` pattern — though it IS a restate-target field (flagged under self-assuming-projection instead)."
       }
     ],
     "proof-no-false-premise": [
@@ -1702,6 +1867,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1755,6 +1934,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The sole hypothesis (the context instance) is used."
       }
     ],
     "proof-no-decide-masking": [
@@ -1791,8 +1985,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0726047ddaa",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

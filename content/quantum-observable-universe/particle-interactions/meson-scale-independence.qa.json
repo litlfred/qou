@@ -1288,6 +1288,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the bare independence claim; following text is '**Proof**' and a '## Calibration structure' table/clarification of scope, not mislocated physical motivation."
       }
     ],
     "fit-section-chapter": [
@@ -1308,6 +1324,22 @@
         "reviewed_at": "2026-06-22T02:57:21.513Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hosted in sec:particle-interactions-orphan-reconnect after categorical-proton/neutron/meson; the m_π scale-independence claim sits with the categorical meson material it depends on (uses def:categorical-meson)."
       }
     ],
     "wall-side-statement": [
@@ -1328,6 +1360,22 @@
         "reviewed_at": "2026-06-22T02:57:22.019Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is about derivability of m_π from (m_e,q_0); chapter is particle-interactions. No gratuitous archimedean construct hard-coded in the narrative statement (Vol/Hopf topology is the argument, not an order/Real.* leak)."
       }
     ],
     "wall-side-proof": [
@@ -1348,6 +1396,22 @@
         "reviewed_at": "2026-06-22T02:57:22.338Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof is representation-theoretic + topological (Vol(Hopf)=0 ⇒ no geometric invariant; Hecke character ratios fix m_K/m_π not m_π). No archimedean-only machinery (linarith/IVT/continuity) used for an algebraic statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1382,6 +1446,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "meson-scale-independence.lean:8-16: 'theorem meson_scale_independence : ¬ ∃ (f : ℝ→ℝ→ℝ), ∀ (m_e q_0 m_pi : ℝ), m_pi = f m_e q_0' proved by exhibiting f 0 0 = 0 and = 1 (witness m_e=q_0=0, m_pi∈{0,1}). The .md states the substantive rep-theoretic/topological claim that m_π is not determined by (m_e,q_0) because Vol(Hopf-complement)=0.",
+        "notes": "Theorem-changing divergence. The Lean encodes a logical triviality: ¬∃f.∀ m_pi. m_pi=f(m_e,q_0) is false for ANY two-argument f (a function of (m_e,q_0) cannot equal every real m_pi), provable with zero QOU content and no Hecke/Hopf input. It does not capture the narrative claim that the QOU substrate map specifically fails to fix m_π. The .md even says (line 50) the Lean 'defers its proof via sorry' — but the actual Lean is a non-sorry vacuous restatement, contradicting the .md's own description. Routes to proof-narrative-lean-equivalence / lean-proof-review."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1877,5 +1959,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

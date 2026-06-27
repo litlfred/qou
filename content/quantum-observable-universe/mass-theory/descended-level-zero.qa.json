@@ -1291,6 +1291,21 @@
         "severity": "minor",
         "evidence": "Statement + multi-step derivation, then '## Why summing it per level is a double count', '## Engineering consequence' (quotes an infrastructure-audit fix), and '## Relation to the Nakayama triviality' — downstream-consequence and engineering-justification prose in the same block. No interprets: remark.",
         "notes": "Mostly mathematical derivation justification; the 'Engineering consequence' section is the most interpretive but is tied to the derivation. Borderline, not a clear mislocation."
+      },
+      {
+        "field_hash": {
+          "md": "1c3d85efc4df",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1326,21 @@
         "reviewed_at": "2026-06-22T02:57:00.952Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "1c3d85efc4df",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1361,22 @@
         "reviewed_at": "2026-06-22T02:57:01.301Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "1c3d85efc4df",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is generic/categorical (traces, norms, descended subalgebras). The numeric q₀≈1.11 appears only in the later 'double count' discussion section, not in the Proposition statement."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1397,22 @@
         "reviewed_at": "2026-06-22T02:57:01.687Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "1c3d85efc4df",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Derivation is algebraic (idempotence of τ̂ₙ, level-lowering recursion); no archimedean machinery in the proof."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1385,6 +1447,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "1c3d85efc4df",
+          "ts": "e8f69c4633c9",
+          "lean": "f930a9721a09"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "descended-level-zero.lean:9-11: 'theorem descended_level_zero [ctx : DescendedLevelZeroContext] : ∀ n : ℕ, 1 ≤ n → ctx.desc_contrib n = 0 := by sorry' vs descended-level-zero.md:18-26 stating ‖tr(τ̂ₙ(α^(n+1)))‖ = 𝔪(ϱ₀) = |∏ V̂ᵢ⁽⁰⁾|, independent of n.",
+        "notes": "Conclusions diverge: the narrative asserts the descended trace EQUALS the base-level mass 𝔪(ϱ₀) for all n≥0; the Lean asserts only that an abstract field desc_contrib n = 0 for n≥1 (a sorry stub over an unconstrained ℕ→ℝ field). The Lean encodes a different, weaker claim and proves nothing (sorry)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1880,5 +1960,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1306,6 +1306,22 @@
         "severity": "minor",
         "evidence": ".md has a \"## Significance\" section (lines 103-159) with motivation and an \"Implications\" subsection; no companion interprets: remark holds it.",
         "notes": "Content is largely technical scope (convention bridge, computational speedups) rather than physical-meaning interpretation, so it sits below the FAIL threshold. Could be migrated to a linked remark or authorNotes."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The Proposition statement is the bare closed-form claim; interpretive material lives in separate ## Significance / ## Implications sections after the proof, which is acceptable structuring, not interpretation embedded in the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1326,6 +1342,22 @@
         "reviewed_at": "2026-06-22T02:56:54.948Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Sits in sec:alpha-k-procedure-atom-knot-mass (Joint-tower SDP and closed-form weights); the Wenzl-bridge y_λ closed form is squarely within the archimedean/Wenzl-bridge scope of the chapter."
       }
     ],
     "wall-side-statement": [
@@ -1346,6 +1378,22 @@
         "reviewed_at": "2026-06-22T02:56:55.400Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is a q-rational closed-form identity; the substrate evaluation q_0 ≈ 1.110 appears only as an illustrative 'At the substrate value' remark, and the .md header explicitly flags the Lean as an archimedean specialisation over ℝ while keeping the combinatorial content generic. Chapter (mass-theory, archimedean face) regime matches."
       }
     ],
     "wall-side-proof": [
@@ -1366,6 +1414,22 @@
         "reviewed_at": "2026-06-22T02:56:55.782Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof cites Wenzl 1988 + Chlouveraki uniqueness + the convention iso g=qσ — algebraic/categorical machinery matching the statement's side. No archimedean-only IVT/continuity/linarith argument."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1386,6 +1450,24 @@
         "reviewed_at": "2026-06-22T02:56:56.157Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "y-lambda-closed-form-wenzl-bridge.lean:117-118 `def wenzlSchurElement … (Q X : ℝ) : ℝ := 0 * (Q + X + …)`; lean:145-146 `def jonesMarkovCoefficient … := 0 * q`; lean:156-173 theorem `y_lambda_closed_form_wenzl_bridge … := by simp [jonesMarkovCoefficient, yLambdaWenzlBridge, wenzlSchurElement, wenzlNormalization]`.",
+        "notes": "The .md asserts the substantive identity y_λ = s_{λ,r}(Q)/Σ_µ d_µ s_{µ,r}(Q). The Lean encodes both sides as content-free `0·(…)` stubs, so the theorem is `0 = 0` discharged by simp/zero_mul/zero_div. The Lean does NOT express the narrative claim — conclusions diverge (real closed form vs vacuous 0=0). Faithful encoding absent."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1410,6 +1492,22 @@
         "reviewed_at": "2026-06-22T02:56:56.544Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Quality score ~0.9 for the NARRATIVE strategy: plan stated up front (Wenzl weight + convention iso g=qσ + Chlouveraki 1-dim uniqueness, three named steps). Legible. (Score reflects narrative; the Lean proof is a stub.)"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1434,6 +1532,24 @@
         "reviewed_at": "2026-06-22T02:56:56.990Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "lean:117 wenzlSchurElement := 0*(…); lean:156 main theorem proves 0=0, not the stated identity; the genuine identity remains unformalised behind placeholder defs.",
+        "notes": "Quality score ~0.3. The stated narrative identity is well-supported (machine-precision numerical agreement at n=2..12), so closing the REAL goal is plausible in principle, but the current Lean discharges only a vacuous 0=0; the substantive formalisation (real Schur principal-specialisation + Markov trace) is a core-criticality gap, not a routine one. Low until the placeholder defs are replaced."
       }
     ],
     "proof-rater-novelty": [
@@ -1458,6 +1574,22 @@
         "reviewed_at": "2026-06-22T02:56:57.402Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Quality score ~0.7. The convention-bridge (Q=q², z_GL=q·z) and the resulting closed q-rational form are a non-redundant result reconciling the paper's σ-convention with the Wenzl-Orellana literature; not a duplicate of a sibling."
       }
     ],
     "proof-statement-integrity": [
@@ -1478,6 +1610,24 @@
         "reviewed_at": "2026-06-22T02:56:57.713Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean:156-161 theorem signature `y_lambda_closed_form_wenzl_bridge {n} (q : ℝ) (hq : q > 1) (parts) (parts_complete) (lam) : jonesMarkovCoefficient q lam = yLambdaWenzlBridge parts lam q`; both sides are `0·_` stubs (lean:117,145).",
+        "notes": "No sorryAx and no added axiom (proof is simp over zero_mul), so the integrity guard on axioms is clean. But the 'proved' status is achieved by WEAKENING the statement to a vacuous identity between placeholder definitions — the signature names jonesMarkovCoefficient / yLambdaWenzlBridge yet they carry no content. This is the statement-weakening failure mode the criterion guards against; flagging as warn/major pending replacement of the stubs with the genuine definitions. Routes to lean-proof-review (Review Type 4)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1498,6 +1648,22 @@
         "reviewed_at": "2026-06-22T02:56:58.223Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The main theorem is not a field-projection of its own conclusion; it reduces both abstract stubs to 0 by zero_mul. (The vacuity is captured under proof-no-trivial-true, not here.) The conditional uniqueness theorem wenzl_bridge_unique_categorical (lean:244-252) discharges via wenzl_bridge_unique_definitional, a genuine rfl on the convention defs, not a self-projection of the class field."
       }
     ],
     "proof-no-trivial-true": [
@@ -1536,6 +1702,24 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "lean:117 `wenzlSchurElement … := 0 * (Q + X + …)`; lean:141 `jonesMarkovTrace … := 0 * q`; lean:145-146 `jonesMarkovCoefficient … := 0 * q`; lean:156-173 main theorem closes `jonesMarkovCoefficient q lam = yLambdaWenzlBridge parts lam q` by `simp [...]` reducing both to 0.",
+        "notes": "The stated goal collapses to the tautology 0 = 0 once the placeholder `0·_` definitions unfold — any proof discharges it vacuously, and all hypotheses (hq : q>1, parts_complete, the partition data) are ignored. This is the 'goal is vacuously closeable / rfl is not the content' failure: the equation 0=0 is NOT the intended named identity. Routes to lean-proof-review."
       }
     ],
     "proof-no-false-premise": [
@@ -1556,6 +1740,22 @@
         "reviewed_at": "2026-06-22T02:56:58.943Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No False/0=1/uninhabited-type premise; the proof does not proceed by False.elim. (The vacuity is from placeholder definitions, not a contradictory hypothesis.)"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1576,6 +1776,24 @@
         "reviewed_at": "2026-06-22T02:56:59.289Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean:157-160 hypotheses `(hq : q > 1)`, `(parts_complete : ∀ lam, lam ∈ parts)`, and `(lam : Partition n)` are all unused; lean:172-173 the proof is `simp [...]` reducing both sides to 0 via zero_mul, touching none of them.",
+        "notes": "Every stated hypothesis is unused because the goal is the vacuous 0=0. The presence of hq:q>1 and parts_complete with no mathematical dependence is the diagnostic that the proven statement is weaker than intended. Routes to lean-proof-review."
       }
     ],
     "proof-no-decide-masking": [
@@ -1596,6 +1814,22 @@
         "reviewed_at": "2026-06-22T02:56:59.684Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "9e1810d09b8c",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No `decide`/`native_decide`; the proof uses `simp`. (The masking here is via placeholder `0·_` definitions, flagged under proof-no-trivial-true, not via a decide/trivial reflection mask.)"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1850,5 +2084,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

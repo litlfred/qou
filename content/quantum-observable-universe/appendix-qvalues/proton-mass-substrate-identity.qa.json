@@ -1287,6 +1287,22 @@
         "severity": "minor",
         "evidence": "After the boxed proton-mass identity statement (lines 9-26), the block carries multiple discussion sections in the same block with no companion interprets: remark: 'Combined with the canonical flavor-split' (derives both nucleon masses, 'reduces to 2 calibrations'), 'Consistency gap: decay-rate cross-check', 'Open work for full categorical proof', and 'Sub-ppm precision frontier'.",
         "notes": "Much of the trailing content is numerical verification (50-dps tables, h-expansion) which is acceptable scope/verification material, but the 'Combined with flavor-split' and 'Sub-ppm precision frontier' sections add downstream-consequence and motivational framing that would more cleanly live in a linked remark. Borderline rather than clear mislocation; flagged as warn."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the boxed identity + numerical residual; the surrounding sections (verification, h-expansion, open work) are scope/precision notes, not mislocated physical-meaning interpretation requiring a separate remark."
       }
     ],
     "fit-section-chapter": [
@@ -1307,6 +1323,22 @@
         "reviewed_at": "2026-06-22T02:56:26.614Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lives in app:qvalues / 'Substrate evaluations' section; an archimedean substrate evaluation of m_p at q_0 fits the section scope exactly."
       }
     ],
     "wall-side-statement": [
@@ -1327,6 +1359,22 @@
         "reviewed_at": "2026-06-22T02:56:27.004Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Explicitly archimedean appendix block (tags: substrate-evaluation, archimedean; q_0 ≈ 1.10978, MeV units). Correctly on the archimedean side; the categorical F_Bor is consumed from def:f-bor-borromean-observable upstream."
       }
     ],
     "wall-side-proof": [
@@ -1347,6 +1395,22 @@
         "reviewed_at": "2026-06-22T02:56:27.402Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The .md offers numerical (50-dps MPFR) verification of an archimedean identity, citing the upstream categorical F_Bor; matches the archimedean side of the wall."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1367,6 +1431,24 @@
         "reviewed_at": "2026-06-22T02:56:27.750Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "proton-mass-substrate-identity.lean:80-84: `theorem proton_mass_substrate_identity_empirical (q_0 m_e m_mu : ℝ) (h_q : q_0 ≠ 0) : ∃ m_p : ℝ, ProtonMassSubstrateIdentity q_0 m_e m_mu m_p h_q := by refine ⟨2 * m_mu * F_Bor q_0 - 12 * m_e, ?_⟩; unfold ...`. The .md (lines 9-16) asserts the concrete identity `m_p = 2·m_μ·F_Bor(q_0) - 12·m_e` matching CODATA m_p to 0.24 ppm.",
+        "notes": "Theorem-changing divergence: the narrative asserts a specific physical equation whose content is that the RHS evaluates to the CODATA proton mass; the Lean proves only `∃ m_p, m_p = RHS`, which is vacuously true for ANY F_Bor and any m_μ,m_e by choosing m_p := RHS. The Lean carries none of the narrative's content (no CODATA value, no residual bound). Note the .ts deliberately omits the `lean:` field (deferred per §3b-cond), so the proposition is not formally claiming this Lean as its proof, but the sibling .lean still does not encode the stated claim."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1391,6 +1473,22 @@
         "reviewed_at": "2026-06-22T02:56:28.115Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7 — the .md numerical-verification section lays out the plan (compute tr_M, [3]_q!, F_Bor, multiply) clearly; the Lean existential proof strategy is trivially explicit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1415,6 +1513,22 @@
         "reviewed_at": "2026-06-22T02:56:28.479Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.3 — sorry-free Lean, but the open categorical 'why 2 and 12' bridge (core gap, .md §'Open work') remains; the precision residual closure is conjectural (s5-so3 keystone)."
       }
     ],
     "proof-rater-novelty": [
@@ -1439,6 +1553,22 @@
         "reviewed_at": "2026-06-22T02:56:28.919Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.8 — the substrate proton-mass identity is a distinct result (not duplicated by a sibling)."
       }
     ],
     "proof-statement-integrity": [
@@ -1459,6 +1589,24 @@
         "reviewed_at": "2026-06-22T02:56:29.301Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "proton-mass-substrate-identity.lean:80-82: the proved decl is `∃ m_p, ProtonMassSubstrateIdentity ...`, a weaker existential than the .md's concrete CODATA-matching identity.",
+        "notes": "No axiom injection / no sorryAx (the proof is `refine ⟨…⟩; unfold` closing by rfl), so SafeVerify on axioms is clean. But the Lean STATEMENT is a strictly weaker existential than the narrative claim — the integrity concern here is statement-weakening rather than axiom-injection. Flagged warn (overlaps the proof-narrative-lean-equiv fail)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1479,6 +1627,22 @@
         "reviewed_at": "2026-06-22T02:56:29.667Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Not a structure-field projection; the existential witness is constructed from the formula, not handed back from a self-assumed `claim` field."
       }
     ],
     "proof-no-trivial-true": [
@@ -1499,6 +1663,24 @@
         "reviewed_at": "2026-06-22T02:56:30.108Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "proton-mass-substrate-identity.lean:69-84: `ProtonMassSubstrateIdentity q_0 m_e m_mu m_p h_q := (m_p = 2*m_mu*F_Bor q_0 - 12*m_e)`, and the theorem proves `∃ m_p, …` by supplying `m_p := RHS` then `unfold` (closes by rfl).",
+        "notes": "Not a syntactic `True`, but the existential `∃ m_p, m_p = RHS` is discharged vacuously for any inputs — the proof ignores all the substance (CODATA value, F_Bor's actual value) and closes a tautological `RHS = RHS`. The genuine content (the RHS equals the measured proton mass) is absent. Treated as a vacuous-existential variant of the trivial-true anti-pattern; warn rather than critical because the equation shape is non-tautological as written, only the quantification makes it vacuous."
       }
     ],
     "proof-no-false-premise": [
@@ -1519,6 +1701,22 @@
         "reviewed_at": "2026-06-22T02:56:30.515Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Only hypothesis is `h_q : q_0 ≠ 0`, satisfiable; no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1539,6 +1737,24 @@
         "reviewed_at": "2026-06-22T02:56:30.867Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "proton-mass-substrate-identity.lean:81-84: `(h_q : q_0 ≠ 0)` is a binder on `proton_mass_substrate_identity_empirical` but the proof `refine ⟨…⟩; unfold` never uses `h_q` (the existential closes by rfl regardless of whether q_0 = 0).",
+        "notes": "`h_q : q_0 ≠ 0` is unused — it is carried into ProtonMassSubstrateIdentity's signature but the predicate body doesn't reference it and the proof ignores it. Indicates the stated theorem is weaker / the hypothesis is interface decoration rather than a genuine mathematical dependence."
       }
     ],
     "proof-no-decide-masking": [
@@ -1559,8 +1775,24 @@
         "reviewed_at": "2026-06-22T02:56:31.232Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No `decide`/`trivial` used; the existential is closed by an explicit witness + unfold (rfl)."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

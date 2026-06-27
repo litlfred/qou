@@ -1234,6 +1234,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proposition statement is the bare closed-form identity; Taylor-expansion, Q_β-implication, and remarks follow the proof as separate sections, not interpretation embedded in the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1253,6 +1268,21 @@
         "reviewed_at": "2026-06-22T02:56:21.386Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'Markov trace and normal form' subsection; canonical Markov-trace closed form fits squarely."
       }
     ],
     "wall-side-statement": [
@@ -1272,6 +1302,21 @@
         "reviewed_at": "2026-06-22T02:56:21.716Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative statement is the algebraic identity over Q(q^{1/2}), holding for all q with no ordering hypothesis (md:1-18). The archimedean q>1 / Real.sqrt specialisation is confined to the Lean realisation and declared in the §7c banner (md:118-130). Correctly generic on the narrative side."
       }
     ],
     "wall-side-proof": [
@@ -1291,6 +1336,21 @@
         "reviewed_at": "2026-06-22T02:56:22.108Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof is algebraic (Hecke quadratic relation + Markov axioms + denominator clearing), no archimedean machinery. The Real.sqrt/field_simp step is the declared Lean archimedean specialisation, not used in the narrative proof."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1324,6 +1384,23 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "trm-hopf...md:6 'for every n ≥ 2' + identity over Q(q^{1/2}); TrMHopfSigma1SqClosedForm.lean:45-53 class TrMHopfSigma1SqClosedForm (q : ℝ) [q_gt_one : 1 < q] carries trM_sigma1_sq as a FIELD with closed_form; :62 theorem ...simplified derives 1+(q-1)q^{-1/2}",
+        "notes": "Lean specialises q to ℝ with q>1 (archimedean, banner-declared per §7c — acceptable). The narrative's 'tr_M(σ_1²)=...' is reduced in Lean to a class FIELD `closed_form` (the value is axiomatised, not computed from the Markov axioms), and the proved theorem is the algebraic simplification closed_form ⇒ 1+(q-1)q^{-1/2}. So the Lean proves the second equality but ASSUMES the first (that the Markov trace equals (q^{5/2}-...)/(q²+q)) as a class hypothesis rather than deriving it from the Markov axioms as the narrative proof does. The 'for every n≥2' invariance is a separate theorem (trm_hopf_sigma1_sq_markov_invariant) over MarkovTraceTower. Reconcilable (the assumed field is the genuine value, exhibited by the canonical instance with closed_form := rfl), but the narrative derivation step is not formalised — warn."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1385,6 +1462,21 @@
           "max": 1,
           "value": 0.9
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9 — both md and Lean docstring state the plan (Hecke relation + Markov axioms; substitute u:=sqrt(q), field_simp+ring)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1446,6 +1538,21 @@
           "max": 1,
           "value": 0.8
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0 — trm_hopf_sigma1_sq_closed_form_simplified and the canonical instance are sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -1507,6 +1614,21 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.6 — the Markov-trace computation is standard, but the finding that the bare-Markov ε^{2n} coefficients are NOT the Q_β precision-ladder c_n (so F_n is a separate categorical decomposition) is a substantive framework-specific observation."
       }
     ],
     "proof-statement-integrity": [
@@ -1560,6 +1682,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The §3b-cond conditional-class pattern: the class carries the value as a hypothesis field and the theorem derives the simplified equality. No sorryAx on the proved theorem; the .ts banner/validation:not_checked reflects honest status. Not a weakening-to-True."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1613,6 +1750,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "trm_hopf_sigma1_sq_closed_form_simplified does NOT project closed_form back as the goal: it rewrites with closed_form then performs a genuine rpow→sqrt substitution and field_simp+ring to reach a DIFFERENT expression 1+(q-1)q^{-1/2}. The conclusion ≠ the field; this is composition/derivation per §3b-cond, not P⊢P."
       }
     ],
     "proof-no-trivial-true": [
@@ -1649,6 +1801,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a non-trivial real equation; not True/rfl-tautology (the canonical instance's closed_form := rfl is a definitional witness for a field value, legitimate)."
       }
     ],
     "proof-no-false-premise": [
@@ -1702,6 +1869,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Premise 1<q is satisfiable (Wenzl regime); no contradiction."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1755,6 +1937,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "TrMHopfSigma1SqClosedForm.lean:62 theorem trm_hopf_sigma1_sq_closed_form_simplified (q : ℝ) (hq : 1 < q) [inst : TrMHopfSigma1SqClosedForm q]",
+        "notes": "The explicit hypothesis `hq : 1 < q` appears redundant: the class instance already carries `q_gt_one : 1 < q`, and the proof derives hq_pos from hq but could equally use inst.q_gt_one. The proof uses hq (hq_pos := lt_trans zero_lt_one hq), so it is not literally unused, but carrying both hq and inst.q_gt_one duplicates the positivity hypothesis — mild interface redundancy worth a glance. Borderline warn."
       }
     ],
     "proof-no-decide-masking": [
@@ -1791,8 +1990,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial masking; closed by field_simp+ring on a real identity."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

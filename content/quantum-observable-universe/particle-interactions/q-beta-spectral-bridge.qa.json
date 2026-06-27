@@ -1291,6 +1291,24 @@
         "severity": "minor",
         "evidence": "`## Reading` section gives explicit interpretation ('Form A and Form B are not competing predictions but a single observable expressed in two bases'; eigenfunction-dampening principle) in the same block; authorNotes present but no `interprets:` remark.",
         "notes": "Labeled Reading/interpretation heading; content is borderline (re-states equivalence already in the statement). WARN, not FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-beta-spectral-bridge.md:131 '## Reading' and :141-142 'Form A and Form B are not competing predictions but a single observable expressed in two bases'",
+        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline — the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1329,21 @@
         "reviewed_at": "2026-06-22T02:57:20.493Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1364,22 @@
         "reviewed_at": "2026-06-22T02:57:20.806Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Explicitly archimedean block (Q_β, MeV, q_0, Real.log) carrying the §3b-cond conditional banner at md:1; matches its archimedean regime."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1400,22 @@
         "reviewed_at": "2026-06-22T02:57:21.135Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Taylor expansion + ratio algebra over the archimedean statement — proof method matches the archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1385,6 +1450,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (∀ h z, (h(2-h)/2)·z = (1-h/2)(zh)) ∧ ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
+        "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h²) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence → warn."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1449,6 +1532,23 @@
           "max": 1,
           "value": 0.8
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.9. Plan explicit: refine ⟨_,_,_⟩ delegating to three named lemmas (polynomial_bridge_identity / leading_order_ratio_identity / bridge_first_order_remainder), each a one-line ring/field_simp."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1513,6 +1613,23 @@
           "max": 1,
           "value": 0.84
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=1.0. The ref decl q_beta_spectral_bridge is sorry-free and axiom-free in its own proof term (the analytic axioms in the file feed separate lemmas, not this decl)."
       }
     ],
     "proof-rater-novelty": [
@@ -1577,6 +1694,23 @@
           "max": 1,
           "value": 0.76
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.6. Standard Taylor/ratio algebra; not a duplicate of a sibling proof but not a novel argument."
       }
     ],
     "proof-statement-integrity": [
@@ -1633,6 +1767,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature is the three-way conjunction of algebraic identities; no statement weakening, no sorryAx in the q_beta_spectral_bridge proof term (proof = three ring/field_simp lemmas)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1689,6 +1839,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof composes three independently-proved derived lemmas, not a read-back of a structure/class field whose type is the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1709,6 +1875,22 @@
         "reviewed_at": "2026-06-22T02:57:23.952Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a conjunction of genuine algebraic equalities (not True, not x=x)."
       }
     ],
     "proof-no-false-premise": [
@@ -1765,6 +1947,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h≠0, z≠0, 1-zh/2≠0) are satisfiable at the substrate."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1821,6 +2019,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Top decl has no hypotheses; the inner ∀-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
       }
     ],
     "proof-no-decide-masking": [
@@ -1859,8 +2073,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial masking; goals closed by ring/field_simp."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

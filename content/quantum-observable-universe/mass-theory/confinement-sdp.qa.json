@@ -1289,6 +1289,22 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Exemplary separation: the block explicitly splits interpretation into four linked companion remarks (## Companion interpretive remarks links rem:confinement-sdp-spectral-gap, -multi-operator, -vs-lp, -misdp, plus a thimble-flow remark). Statement (primal/dual SDP) + proof sketch only."
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The Proposition statement (confinement-sdp.md:11-86) is the primal/dual SDP claim only; the 'why this SDP is the right object' interpretation is explicitly split into four companion remarks (lines 88-110), exactly the prescribed structure."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1325,22 @@
         "reviewed_at": "2026-06-22T02:57:01.389Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Confinement SDP / operator selection belongs in the mass-binding scope; lean namespace is ParticleInteractions but content is co-filed in mass-theory consistent with the SDP-as-selection-principle thread. No sibling restates the matrix-SDP statement."
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1361,22 @@
         "reviewed_at": "2026-06-22T02:57:01.723Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is generic over End_R(H_n(R,q)) and the PSD cone — an algebraic/operator claim with no hard-coded archimedean construct, MeV, or numeric q0. Slater feasibility at 'generic q' is a structural hypothesis, not an order-over-ℝ leak in the statement."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1397,22 @@
         "reviewed_at": "2026-06-22T02:57:02.062Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof sketch is standard convex/conic duality (Slater ⇒ strong duality, boyd-vandenberghe §5.9); the Lean sibling carries the conic-duality step as a cited `sorry` (confinement-sdp.lean:29). Method matches the convex-optimization statement; no algebraic claim proved by smuggled archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1383,6 +1447,24 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "confinement-sdp.md:11-86 states a full primal–dual matrix SDP with global PSD cone, per-block Frobenius positivity, 2×2 pair PSD and normalisation; confinement-sdp.lean:17-29 abstracts all of this to `class ConfinementSDPData { primalOpt, nTarget, y0Star, slaterStrictFeasible }` and `theorem confinement_sdp … : primalOpt = nTarget * y0Star := by sorry`.",
+        "notes": "The Lean encodes only the scalar strong-duality equation primal = nTarget·y0Star as a real-number identity behind a sorry; the rich matrix-Frobenius structure (PSD cone, per-block/2×2 constraints, complementary-slackness matrix equation) of the narrative is not represented in the signature. Agreement is only at the strong-duality-value level, reconcilable by a reader but a notable abstraction gap; the proof is an honest cited sorry (acceptable for a proposition awaiting a Mathlib SDP API), so warn not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2014,5 +2096,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1306,6 +1306,21 @@
         "severity": "minor",
         "evidence": "\"## Why these values matter\" section (lines 25-34) gives significance/motivation in-block; no companion interprets: remark.",
         "notes": "Short and largely structural-signal scope; borderline."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1326,6 +1341,21 @@
         "reviewed_at": "2026-06-22T02:57:15.240Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1346,6 +1376,24 @@
         "reviewed_at": "2026-06-22T02:57:15.632Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "qbeta-c8-c10-silver-rationals.md:3: \"At the silver ratio $q = 1 + \\sqrt{2}$ where the Hoefsmit parameter takes the exact rational value $b^2 = 7/8$\"",
+        "notes": "Statement is pinned at a specific real algebraic anchor q=1+√2 (an archimedean point) in a generic/substrate-flavored mass-theory context. The §q-usage note (md:51-59) explicitly flags this as a fibre-level rational identity specialised to the silver-ratio real point, and the Lean is purely over ℚ (no order/Real.* used), so the wall is acknowledged rather than violated. Borderline because the anchor value lives in the statement; warn not fail."
       }
     ],
     "wall-side-proof": [
@@ -1366,6 +1414,21 @@
         "reviewed_at": "2026-06-22T02:57:15.965Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1386,6 +1449,21 @@
         "reviewed_at": "2026-06-22T02:57:16.348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1410,6 +1488,22 @@
         "reviewed_at": "2026-06-22T02:57:16.698Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — the Lean proof structure section (md:36-49) states the plan up front: three pure-rational identities each closed by norm_num, with the explicit forms listed per theorem."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1434,6 +1528,22 @@
         "reviewed_at": "2026-06-22T02:57:17.168Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — sorry-free; all three theorems closed by norm_num over ℚ."
       }
     ],
     "proof-rater-novelty": [
@@ -1458,6 +1568,22 @@
         "reviewed_at": "2026-06-22T02:57:17.585Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.5 — extends the documented c_4/c_6/c_7 Pell-Lucas closed-form pattern by one rung per parity class; standard arithmetic but not a duplicate of any sibling."
       }
     ],
     "proof-statement-integrity": [
@@ -1478,6 +1604,21 @@
         "reviewed_at": "2026-06-22T02:57:17.958Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1498,6 +1639,21 @@
         "reviewed_at": "2026-06-22T02:57:18.345Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-trivial-true": [
@@ -1518,6 +1674,22 @@
         "reviewed_at": "2026-06-22T02:57:18.768Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are concrete rational equalities (4*(7/8)^2 = 49/16 etc.), genuine numeric content closed by norm_num — not a tautology or x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1538,6 +1710,21 @@
         "reviewed_at": "2026-06-22T02:57:19.171Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1558,6 +1745,22 @@
         "reviewed_at": "2026-06-22T02:57:19.425Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Theorems take no hypotheses; closed-form constant identities."
       }
     ],
     "proof-no-decide-masking": [
@@ -1578,8 +1781,24 @@
         "reviewed_at": "2026-06-22T02:57:19.780Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses norm_num on genuine rational arithmetic, not decide/trivial to mask a vacuous goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

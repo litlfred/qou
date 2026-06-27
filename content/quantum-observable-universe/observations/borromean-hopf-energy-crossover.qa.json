@@ -1289,6 +1289,22 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement is the four-part mathematical claim (mass comparison, binding comparison, evaluation at q_0, compression energy) plus a proof sketch. Statement-and-proof only; no embedded standalone interpretive essay."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Multi-part proposition (mass comparison, binding comparison, q₀ evaluation, compression energy) with a proof sketch; the physical readings are interleaved with the quantitative claims as part of each numbered result rather than appended as a separate motivation block. Borderline but the content is claim-bearing throughout."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1325,22 @@
         "reviewed_at": "2026-06-22T02:56:53.090Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "observations chapter; Borromean/Hopf-diquark phase energetics is on-scope."
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1361,24 @@
         "reviewed_at": "2026-06-22T02:56:53.460Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "borromean-hopf-energy-crossover.lean:22-23: 'q : ℝ' with 'q_gt_one : 1 < q'; borromean-hopf-energy-crossover.md:70-93 evaluate at q₀ with numeric V_B=7.32772, MeV-scale (~125 GeV elsewhere), 250× factor.",
+        "notes": "Block is in the observations (archimedean) chapter and the .md header explicitly invokes §7c archimedean specialisation, so ℝ + 1<q is legitimate. Marked warn only because the statement mixes the generic combinatorial mass formula (M_B=2V_B/ℏ_q², M_D=q+q⁻¹) with numeric archimedean evaluation in the same proposition without cleanly separating which side each part lives on; the §7c banner mitigates."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1399,22 @@
         "reviewed_at": "2026-06-22T02:56:53.839Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof sketch is part topological/algebraic (mass formula, Vol(L_H)=0) and part 'direct evaluation at q=q₀' — the numeric evaluation is explicitly named as the specialisation point (Part 3), so the regime mix is declared, not silent."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1383,6 +1449,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "borromean_hopf_energy_crossover.lean:132-136 proves M_B=2·V_B/((q−1)/q)² ∧ M_D=q+q⁻¹ ∧ (diquark_favoured ↔ |E_D|>|E_B|) vs the four-part .md proposition (mass comparison, binding comparison, q₀ evaluation 749.2 vs 3.016, compression energy / critical density).",
+        "notes": "Lean captures only sub-claims (i) M_B, (ii) M_D, and (iii) the crossover iff. The narrative's Part 3 numeric inequality (Borromean dominant by ~250×) and Part 4 compression-energy / critical-density results are not encoded. Partial encoding — agrees on the parts it states, but the narrative claims strictly more. Not theorem-changing for the encoded fields, hence warn not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1651,6 +1735,24 @@
         "reviewed_at": "2026-06-22T02:56:55.995Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "borromean_hopf_energy_crossover.lean:132-136: 'theorem borromean_hopf_energy_crossover [ctx] : ctx.M_B = … ∧ ctx.M_D = … ∧ (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) := ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass, ctx.claim_iii_crossover⟩' — the three class fields (lines 38, 40, 45) ARE exactly the three conjuncts of the goal.",
+        "notes": "Verbatim self-assuming projection: the conclusion is assumed as structure fields claim_i/ii/iii and handed back as the proof term (P ⊢ P). No derivation, no composition via lemmas; nothing is proved. The .md §Lean note claims the proof is 'deferred via sorry' but the .lean instead disguises the vacuity as a field-projection. Routes to lean-proof-review per §3b-cond non-degeneracy."
       }
     ],
     "proof-no-trivial-true": [
@@ -1671,6 +1773,22 @@
         "reviewed_at": "2026-06-22T02:56:56.380Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "335d79a460bd",
+          "ts": "3dddb14d6474",
+          "lean": "bafe2546f7dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The conjuncts are genuine equalities/iff (M_B=2V_B/ℏ_q², M_D=q+q⁻¹, crossover iff), not True/x=x. The vacuity here is the self-assuming projection (flagged separately), not a tautological goal."
       }
     ],
     "proof-no-false-premise": [
@@ -1824,5 +1942,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

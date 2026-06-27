@@ -1285,6 +1285,22 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Physical reading is explicitly deferred to rem:mass-modulus-em-phase-color-grading (md line 51-52); remaining prose is proof explanation. Correctly located."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the bare 3-part group-theoretic claim (faithful S2×S3↪S5, orthogonality, R→finite trivial). Physical interpretation (mass=modulus / EM=phase / color=grading) is offloaded to the linked rem:mass-modulus-em-phase-color-grading (interprets this prop). The §Discreteness/§Lean prose is proof exposition + a pointer to that remark, not mislocated interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1305,6 +1321,22 @@
         "reviewed_at": "2026-06-22T02:56:41.341Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:complex-volume alongside binding-qbeta-complex-volume and the interpreting remark — the color/spacetime split of the Bring fivefold underpins the Re/Im complex-volume reading. Provable kind matches content (genuine group-theoretic theorems). Well placed."
       }
     ],
     "wall-side-statement": [
@@ -1325,6 +1357,22 @@
         "reviewed_at": "2026-06-22T02:56:41.791Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement parts 1-3 are generic combinatorial group theory: faithful embedding, sector orthogonality, and 'every additive hom ℝ→finite group is trivial' (a divisibility argument, not an order/0<q hypothesis). md:62 explicitly notes the construction is generic with no archimedean input. The Complex.arg/Real.pi polar decompositions in the Lean are auxiliary (not the ref'd statement) and correctly archimedean. No wall violation in the statement."
       }
     ],
     "wall-side-proof": [
@@ -1345,6 +1393,22 @@
         "reviewed_at": "2026-06-22T02:56:42.110Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Group-theoretic statements proved by sumCongrHom injectivity / simp (parts 1-2) and the divisibility/card_nsmul argument (part 3) — algebraic/structural machinery matching the generic statement. No linarith/IVT/continuity on an algebraic goal. The winding-hom proof's field_simp on ℝ is intrinsic to the (genuinely-ℝ) divisible-group claim, properly on the archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1365,6 +1429,22 @@
         "reviewed_at": "2026-06-22T02:56:42.455Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative parts 1-3 map to Lean colorSpacetimeEmbed_injective (1), color_fixes_spacetime + spacetime_fixes_color (2), winding_hom_to_finite_trivial (3), plus spacetime_color_card (2+3=5). Quantifiers/hypotheses/conclusions match; Lean adds polar-decomposition lemmas the narrative mentions in §Lean. Faithful encoding."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1389,6 +1469,23 @@
         "reviewed_at": "2026-06-22T02:56:42.776Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.9. Each theorem docstring states its target ('factorisation is faithful', 'color fixes spacetime', 'discreteness gate'); the winding proof gives the divisibility plan up front (md:46-48 and the calc block). Plan legible before steps."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1413,6 +1510,23 @@
         "reviewed_at": "2026-06-22T02:56:43.195Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=1.0. Lean file is sorry-free (md:56 'Formalized sorry-free'); no remaining gap."
       }
     ],
     "proof-rater-novelty": [
@@ -1437,6 +1551,23 @@
         "reviewed_at": "2026-06-22T02:56:43.637Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.7. The S2×S3↪S5 orthogonal-sector packaging with the divisibility discreteness gate is the framework's own combination (md:77-88 distinguishes it from nearby A5/S5 flavor-symmetry literature); not a sibling duplicate."
       }
     ],
     "proof-statement-integrity": [
@@ -1457,6 +1588,22 @@
         "reviewed_at": "2026-06-22T02:56:43.957Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Provable-kind signatures are genuine (injectivity, fixed-point, trivial-hom); ts validation: 'validated'. No tautology-weakening, no axiom injection — winding_hom uses only Finite/AddCommGroup typeclasses and Mathlib lemmas."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1477,6 +1624,22 @@
         "reviewed_at": "2026-06-22T02:56:44.375Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No structure-field projection of the conclusion; each theorem derives via Mathlib lemmas (sumCongrHom_injective, map_nsmul, card_nsmul_eq_zero) — composes, does not assume the goal."
       }
     ],
     "proof-no-trivial-true": [
@@ -1497,6 +1660,22 @@
         "reviewed_at": "2026-06-22T02:56:44.764Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are substantive (Function.Injective; fixed-point equalities of distinct indices; f = 0 over a nontrivial map). spacetime_color_card (5=card) is a real computation via decide, not a True-dodge."
       }
     ],
     "proof-no-false-premise": [
@@ -1517,6 +1696,22 @@
         "reviewed_at": "2026-06-22T02:56:45.163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No false/contradictory premise. Finite G with the divisibility argument is consistent; no h:False or uninhabited-type shortcut."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1537,6 +1732,22 @@
         "reviewed_at": "2026-06-22T02:56:45.668Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Each theorem uses its binders: color_fixes_spacetime uses τ,i; spacetime_fixes_color uses ρ,j; winding_hom_to_finite_trivial uses f and the Finite/AddCommGroup instances (card argument). No gratuitous hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -1557,8 +1768,24 @@
         "reviewed_at": "2026-06-22T02:56:46.059Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "decide is used only for spacetime_color_card (Fintype.card (Fin 2 ⊕ Fin 3) = 5), a justified finite computation, not masking an incomplete structural goal. Other proofs are genuine simp/Mathlib-lemma derivations."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

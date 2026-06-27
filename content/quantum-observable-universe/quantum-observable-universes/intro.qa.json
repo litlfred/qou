@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/intro.md"
   },
   "source_hashes": {
-    "md": "9792b94e0acc",
+    "md": "12532b4c80db",
     "ts": "6e68d4033475"
   },
   "criteria": {
@@ -814,8 +814,22 @@
         "reviewed_at": "2026-06-22T02:56:31.430Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "12532b4c80db",
+          "ts": "6e68d4033475"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

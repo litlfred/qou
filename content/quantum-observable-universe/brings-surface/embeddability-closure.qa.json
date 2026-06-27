@@ -1287,6 +1287,24 @@
         "severity": "minor",
         "evidence": ".md lines 89-99 carry a 'Physical consequence.' paragraph (all particles interact, no dark sectors, 'self-consistent, fully interacting particle spectrum'); the .ts theorem block has no companion interprets: remark to hold it.",
         "notes": "Substantive physical-significance prose follows the statement+proof in the same provable block with no linked interpretive remark — genuinely mislocated. Move the 'Physical consequence' paragraph (and the line 27-28 'no generated knot is dark' aside) into a remark with interprets: 'thm:embeddability-closure'."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "embeddability-closure.md:89-99: '**Physical consequence.** The closure of embeddability under generation is the topological reason that *all* fundamental particles interact ... guarantees a self-consistent, fully interacting particle spectrum with no dark sectors.'",
+        "notes": "The theorem block ends with a 'Physical consequence' paragraph (physical 'reason that all particles interact', no-dark-sector significance) — substantive interpretation appended to the provable block, with no companion `interprets:` remark to hold it. Should be relocated to a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1307,6 +1325,21 @@
         "reviewed_at": "2026-06-22T02:56:20.211Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1327,6 +1360,22 @@
         "reviewed_at": "2026-06-22T02:56:20.555Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is genus-bound + categorical descent; the only ℝ appears as M: Sk_q → ℝ_{≥0} codomain of the mass functional, not as an order hypothesis on q or a numeric q≈value. Matches the archimedean Descartes-universe chapter regime; no unflagged substrate wall-crossing."
       }
     ],
     "wall-side-proof": [
@@ -1347,6 +1396,22 @@
         "reviewed_at": "2026-06-22T02:56:21.019Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof argues via Seifert-genus inequalities and the spectral-filter kernel; Lean proof is List membership + simp/rcases over ℕ genus values. No linarith/IVT/continuity/Real lemma misuse against an algebraic claim."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1367,6 +1432,24 @@
         "reviewed_at": "2026-06-22T02:56:21.409Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "embeddability-closure.md:10-28 (Theorem: K produced by ANY finite sequence of Hopf linkings/threadings/Skein changes satisfies (1) g(K)≤4, (2) admits a localized knot structure, (3) descends under τ to an observable morphism) vs embeddability-closure.lean:87-93 'theorem embeddability_closure: ∀ K ∈ particleDictionary, embeddable K' where particleDictionary (lean:46-64) is a fixed 9-element list and embeddable K := K.genus ≤ 4 (lean:42).",
+        "notes": "Theorem-changing divergence. The narrative is a universal closure statement over all knots generated by arbitrary finite operation sequences and asserts THREE conclusions (genus bound, localized-knot existence, τ-descent/observability). The Lean only proves conclusion (1) and only for a hardcoded 9-entry list (generators ++ skeinDescendants), not for the closure of the generation operations; conclusions (2) localized-knot structure and (3) descent under τ are absent from the Lean entirely. The Lean is a finite spot-check, not the stated ∀-closure theorem."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1391,6 +1474,22 @@
         "reviewed_at": "2026-06-22T02:56:21.783Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — narrative names the case split (Hopf / threading / Skein) and the spectral-filter mechanism up front; Lean strategy (membership rcases + simp) is legible."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1415,6 +1514,22 @@
         "reviewed_at": "2026-06-22T02:56:22.166Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — Lean proof as stated (over the fixed list) is sorry-free. (Separately flagged under proof-narrative-lean-equiv that it under-states the narrative goal.)"
       }
     ],
     "proof-rater-novelty": [
@@ -1439,6 +1554,24 @@
         "reviewed_at": "2026-06-22T02:56:22.544Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "embeddability-closure.lean:66-93 generators_embeddable / descendants_embeddable / embeddability_closure all reduce to `simp [embeddable, brings_genus]` over the same genus≤4 list; torus-knot-generators.lean already establishes the genus bound.",
+        "notes": "score 0.4 — the Lean content (each dictionary knot has genus ≤ 4) is largely a redundant table-check of the genus bound already proved in the sibling prop:torus-knot-generators; the novel narrative parts (localized-structure + τ-descent) are not formalised. Low novelty in the formalised portion; candidate for consolidation."
       }
     ],
     "proof-statement-integrity": [
@@ -1459,6 +1592,22 @@
         "reviewed_at": "2026-06-22T02:56:22.905Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No sorryAx; closed by simp/rcases/omega. (The Lean statement is narrower than the narrative — handled under proof-narrative-lean-equiv — but the Lean decl itself is an honest, non-tautological claim about the dictionary list.)"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1479,6 +1628,22 @@
         "reviewed_at": "2026-06-22T02:56:23.270Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "embeddable predicate is K.genus ≤ brings_genus evaluated on concrete list entries; not a projection of a field whose type is the goal."
       }
     ],
     "proof-no-trivial-true": [
@@ -1499,6 +1664,22 @@
         "reviewed_at": "2026-06-22T02:56:23.700Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is ∀ K ∈ dictionary, K.genus ≤ 4 — a real decidable inequality over concrete data, not True/rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1519,6 +1700,22 @@
         "reviewed_at": "2026-06-22T02:56:24.086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No false/contradictory hypothesis; membership premises are inhabited."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1539,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:56:24.565Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Membership hypotheses (hK) drive the rcases case split that closes each goal; seifert_genus_bound's hm/hn/hembed feed the omega. No genuinely unused binder."
       }
     ],
     "proof-no-decide-masking": [
@@ -1559,8 +1772,24 @@
         "reviewed_at": "2026-06-22T02:56:24.938Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "4e39526f024b",
+          "ts": "60010a1888c7",
+          "lean": "789c86331a7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses simp/rcases/omega over concrete genus values; no decide/trivial masking an unproved structural goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

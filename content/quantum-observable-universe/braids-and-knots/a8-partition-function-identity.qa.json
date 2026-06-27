@@ -1291,6 +1291,22 @@
         "severity": "minor",
         "evidence": "Statement + coefficient-match proof are followed by a 'Categorical interpretation' section (lines 38-57) with interpretive prose ('strongly suggests that the m=8 shell of the Habiro tower is counting partitions', 'a_8 is the dimension-generating function of partitions'). No companion interprets: remark.",
         "notes": "The interpretation is borderline — partly mathematical context (where p(n) appears in representation theory) and partly speculative significance. Flagged warn rather than fail since the content is mathematical-structural rather than physical-meaning prose."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the polynomial identity + proof; the 'Categorical interpretation' section is clearly delineated interpretive commentary after the proof, but the rubric targets interpretation injected INTO the statement of a provable block — the proposition statement itself is bare. Pass."
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1327,22 @@
         "reviewed_at": "2026-06-22T02:56:22.168Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Placed in 'Markov trace and normal form' subsection; Habiro-coefficient/partition combinatorics fits the Hecke/Markov scope."
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1363,22 @@
         "reviewed_at": "2026-06-22T02:56:22.568Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is a polynomial identity in ℤ[X] — purely algebraic, generic-ring; no archimedean tokens."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1399,22 @@
         "reviewed_at": "2026-06-22T02:56:22.956Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is coefficient-matching closed by ring over ℤ[X]; no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1385,6 +1449,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "md a_8(X)=Σ_{n=1..5} p(n) X^{5-n} matches Lean a_8_eq_partition_sum: a_8_poly = Σ n ∈ Finset.Icc 1 5, partitionCount n • X^(5-n). partitionCount value table (1,2,3,5,7) = p(1..5). Quantifier-free identity, conclusion matches."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1449,6 +1529,22 @@
           "max": 1,
           "value": 0.88
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.95 — plan explicit: expand Icc, evaluate partitionCount, match by ring (docstring + comments)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1513,6 +1609,22 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9 — the main identity a_8_eq_partition_sum is sorry-free; the only sorry-like residue is the Mathlib bridge placeholder (def ...: True := trivial), which is documented as not on the critical path and routine to close."
       }
     ],
     "proof-rater-novelty": [
@@ -1577,6 +1689,22 @@
           "max": 1,
           "value": 0.4
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.4 — it records a numerical coincidence (a_8 coeffs match p(1..5)) using standard partition values; empirical Habiro-shell observation, low deductive novelty (md self-describes as such)."
       }
     ],
     "proof-statement-integrity": [
@@ -1633,6 +1761,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "a_8_eq_partition_sum is the genuine identity; closed by push_cast+ring, no sorryAx on the claimed-proved decl. The separate bridge placeholder is honestly a True-stub, not a weakening of this proposition's statement."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1653,6 +1797,22 @@
         "reviewed_at": "2026-06-22T02:56:25.284Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "a_8_eq_partition_sum derives the identity by sum expansion and ring, not by projecting a field equal to the goal."
       }
     ],
     "proof-no-trivial-true": [
@@ -1691,6 +1851,24 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "a8-partition-function-identity.lean:179-180 'def partitionCount_eq_fintype_card_partition_small : True := trivial  -- placeholder'",
+        "notes": "The proposition's resolved decl (a_8_eq_partition_sum) is a genuine non-trivial identity — PASS on the proposition itself. But the same file carries a `def ... : True := trivial` Mathlib-bridge stub. Per CLAUDE.md §1a this is the def-disguised-True anti-pattern (a sorry-workaround: it states a real semantic claim, partitionCount n = Fintype.card (Nat.Partition n), but discharges `True` instead). It is documentation-honest (comment + Refs) and off the critical path, so warn rather than fail; the honest disposition is a sorry'd theorem with the real statement, not `: True := trivial`."
       }
     ],
     "proof-no-false-premise": [
@@ -1747,6 +1925,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No false/contradictory premise; the identity is proved unconditionally."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1803,6 +1997,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "a_8_eq_partition_sum is hypothesis-free; nothing to leave unused."
       }
     ],
     "proof-no-decide-masking": [
@@ -1841,8 +2051,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "564eaaee35bf",
+          "ts": "bd37ef54d0ea",
+          "lean": "1faef5e3fd91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "decide is used only to compute the concrete Finset (Icc 1 5 = {1,2,3,4,5}), a justified finite enumeration; the substantive step is ring, not decide. The bridge stub uses trivial on True but that is the §no-trivial-true concern already flagged, not decide-masking of a structural goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

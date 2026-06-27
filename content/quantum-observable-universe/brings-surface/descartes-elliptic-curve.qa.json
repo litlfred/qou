@@ -1318,6 +1318,24 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "descartes-elliptic-curve.md:66-70: 'This is the **sub-classical regime** q<1 where the substrate parameter reverses its role ... marks the boundary beyond which the Descartes universe cannot support stable color structure.'; :75-81 q-dependence table with a 'Physics' column ('Our universe', 'No stable color fibers').",
+        "notes": "Substantive physical interpretation/motivation (sub-classical regime, substrate role-reversal, 'cannot support stable color structure', a Physics-column q-dependence table, classical-limit and golden-ratio degeneration narratives) is mixed into the proposition block. The .ts carries no companion `interprets:` remark to hold it. The bare claim (E_q with coefficients p(q), r(q)) should stand alone; the physics belongs in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1338,6 +1356,24 @@
         "reviewed_at": "2026-06-22T02:56:20.845Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "brings-surface.ts:124-142 places descartes-elliptic-curve in sec:spectral-gauge; the dedicated sec:color-fibration-elliptic (lines 89-103: color-elliptic, t-duality-elliptic, color-tube-cubic, ...) is the elliptic-curve home.",
+        "notes": "The block's primary subject is the color elliptic curve E_q (color-fibration / elliptic-curve), which has a dedicated existing section (sec:color-fibration-elliptic). Its current home (sec:spectral-gauge) is a deliberate section-closer bridge (spectral-gauge-intro.md flags it as 'names the elliptic curve ... the Descartes condition of the next section will pin down'), so it is not a misfile, but a strictly better existing home exists — hence warn, not fail."
       }
     ],
     "wall-side-statement": [
@@ -1358,6 +1394,22 @@
         "reviewed_at": "2026-06-22T02:56:21.239Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Archimedean statement (s=√q, numeric Δ≈-18.95, j≈129.9, √5) correctly flagged with the §7c archimedean-specialisation banner at .md:1; chapter regime (brings-surface, archimedean) matches."
       }
     ],
     "wall-side-proof": [
@@ -1378,6 +1430,22 @@
         "reviewed_at": "2026-06-22T02:56:21.636Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is algebraic symbolic manipulation (Weierstrass shift X=x-(z+1)/3, substitute z=s-s⁻¹, clear denominators, factor) with the archimedean specialisation point (s=√q) named; matches the statement's archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1398,6 +1466,22 @@
         "reviewed_at": "2026-06-22T02:56:22.034Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean `descartes_elliptic_curve (q) (0<q) : p_z = weierstrass_p q ∧ r_z = weierstrass_r q` matches the .md's ∀q>0 claim of both Weierstrass coefficient identities p(q), r(q). Quantifier (∀ q, 0<q), hypothesis (0<q), and conclusion (both coefficient equalities) align with the narrative. The axiom-backing is a separate integrity concern, not an equivalence gap."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1422,6 +1506,22 @@
         "reviewed_at": "2026-06-22T02:56:22.511Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — .md proof states the plan up front (standard Weierstrass shift, substitute z=s-s⁻¹, clear denominators, factor); reader knows the route before the steps."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1446,6 +1546,24 @@
         "reviewed_at": "2026-06-22T02:56:22.864Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "descartes-elliptic-curve.lean:68-72: 'Verified symbolically via sympy; full Lean proof needs Mathlib's Real.rpow arithmetic.'",
+        "notes": "score 0.7 — the residual gap (rpow algebra discharged by an axiom) is routine to close (sympy-verified), but currently stands as a bespoke axiom rather than a closed proof."
       }
     ],
     "proof-rater-novelty": [
@@ -1470,6 +1588,22 @@
         "reviewed_at": "2026-06-22T02:56:23.227Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — distinct construction (Descartes elliptic curve E_q, golden-ratio cusp at q=1/φ²); not duplicated by a sibling proof."
       }
     ],
     "proof-statement-integrity": [
@@ -1490,6 +1624,24 @@
         "reviewed_at": "2026-06-22T02:56:23.668Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "descartes-elliptic-curve.lean:72-86: `axiom descartes_elliptic_curve_axiom : ...` then `theorem descartes_elliptic_curve (q) (hq) : ... := descartes_elliptic_curve_axiom q hq`; also :105-112 `axiom golden_ratio_degeneration_axiom` discharging `golden_ratio_degeneration`.",
+        "notes": "The Proposition (presented as proved in the .md) is discharged by injecting a bespoke, non-standard `axiom` that asserts exactly the goal — lean_verify would report `descartes_elliptic_curve_axiom` (and `golden_ratio_degeneration_axiom`) as unexpected axioms. Injecting an axiom to make the goal 'pass' is the integrity anti-pattern; route to lean-proof-review (Review Type 4). Either prove via Real.rpow algebra or honestly demote to `sorry` + -- Ref per AGENTS.md §1 (a bespoke axiom is stronger and worse than a cited sorry)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1510,6 +1662,22 @@
         "reviewed_at": "2026-06-22T02:56:24.042Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Closed via `:= descartes_elliptic_curve_axiom q hq` (axiom injection), not a structure-field projection of its own conclusion. Distinct defect, captured under proof-statement-integrity."
       }
     ],
     "proof-no-trivial-true": [
@@ -1530,6 +1698,22 @@
         "reviewed_at": "2026-06-22T02:56:24.530Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a genuine coefficient-equality conjunction (p_z = weierstrass_p q ∧ r_z = weierstrass_r q), not True / rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1550,6 +1734,22 @@
         "reviewed_at": "2026-06-22T02:56:24.843Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypothesis 0 < q is satisfiable; no False / 0=1 premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1570,6 +1770,22 @@
         "reviewed_at": "2026-06-22T02:56:25.192Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Both q and hq:0<q are passed to the axiom whose signature consumes them; no unused hypothesis in the theorem."
       }
     ],
     "proof-no-decide-masking": [
@@ -1590,8 +1806,24 @@
         "reviewed_at": "2026-06-22T02:56:25.648Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial masking; classical_limit_p uses simp[one_rpow];ring legitimately."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

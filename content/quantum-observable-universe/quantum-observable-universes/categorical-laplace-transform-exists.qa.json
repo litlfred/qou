@@ -1289,6 +1289,22 @@
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Bare existence statement + a short proof-strategy note. No interpretive/physical-meaning prose. Pass."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the bare existence claim; the trailing 'Strategy' note is proof strategy, not physical interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1325,21 @@
         "reviewed_at": "2026-06-22T02:56:33.517Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1360,21 @@
         "reviewed_at": "2026-06-22T02:56:33.795Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1395,21 @@
         "reviewed_at": "2026-06-22T02:56:34.157Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1383,6 +1444,24 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "categorical-laplace-transform-exists.lean:32-37: `axiom CategoricalLaplace.exists_axiom (A : Type*) [Nonempty A] : Nonempty (CategoricalLaplace A)` then `theorem CategoricalLaplace.exists ... := CategoricalLaplace.exists_axiom A`",
+        "notes": "Narrative asserts existence of the monoidal functor 𝓛 under the hypotheses of prop:q-exponential-exists. Lean encodes existence as `Nonempty (CategoricalLaplace A)` requiring only `[Nonempty A]` and discharges it by an injected axiom (exists_axiom). Claim SHAPE (existence) matches, but the hypothesis set is weaker than the narrative and the result is axiom-backed rather than constructed (validation: not_checked in .ts). Reader-reconcilable up to the axiom/encoding gap; flag for lean-proof-review."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1651,6 +1730,24 @@
         "reviewed_at": "2026-06-22T02:56:36.405Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "categorical-laplace-transform-exists.lean:35-37: `theorem CategoricalLaplace.exists (A) [Nonempty A] : Nonempty (CategoricalLaplace A) := CategoricalLaplace.exists_axiom A`",
+        "notes": "Not a structure/class-field projection, but the spiritual equivalent: the theorem's conclusion is assumed verbatim as `axiom exists_axiom` (identical statement) and handed straight back. The proof composes nothing and derives nothing — it re-exports the axiom that IS its own conclusion. Honest dispositions: construct the witness, or demote to a conjecture carrier. Routes to lean-proof-review."
       }
     ],
     "proof-no-trivial-true": [
@@ -1671,6 +1768,22 @@
         "reviewed_at": "2026-06-22T02:56:36.795Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is `Nonempty (CategoricalLaplace A)`, not a tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1842,5 +1955,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

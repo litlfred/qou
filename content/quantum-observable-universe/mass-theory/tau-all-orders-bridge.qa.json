@@ -1123,6 +1123,21 @@
         "reviewed_at": "2026-06-22T02:57:14.441Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1147,8 +1162,26 @@
         "reviewed_at": "2026-06-22T02:57:14.897Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "tau-all-orders-bridge.lean:128-129: `def tau_all_orders_bridge … := Nonempty (TauBandedKernelMap …) ∨ Nonempty (TauDistinctInvariants …)`; lean:126-127 \"Neither class currently has an instance … the honest reflection of the open status\".",
+        "notes": "Quality score ~0.3. This is a genuine open dichotomy (core-criticality: deciding which arm holds is the open content, not a routine gap). No sorry to close — the open question is whether a finite-band convolution kernel exists; plausibility of resolution is low, not a sorry-free 1.0 nor a trivially-closeable routine 0.9. Honestly stated open status."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

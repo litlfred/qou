@@ -264,7 +264,24 @@
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof block (kind=proof) of prop:sl2-period-conserved-quantity, co-located in mass-theory with its proposition; correctly a proof block carrying the derivation of the depth-2 first integral, not a misfiled new claim."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1291,6 +1291,22 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "'Consequence' section is a short scope/applicability note that explicitly grounds the physical reading in rem:markov-chain-fluctuations (md line 49). Correctly located."
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proposition statement is the bare obstruction + quantitative witness; the modelling implication lives in the separate ## Consequence section, which interprets via rem:markov-chain-fluctuations."
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1327,22 @@
         "reviewed_at": "2026-06-22T02:56:59.814Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Registered in sec:exceptional-divisor-reeb neighborhood; the q-Gaussian/braid-fluctuation obstruction at the substrate q_0 is a legitimate mass-theory substrate-statistics result."
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1363,22 @@
         "reviewed_at": "2026-06-22T02:57:00.306Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "This is a genuinely archimedean proposition (its whole content is that at the numeric substrate q_0 ≈ 1.10998 > 1 the BS q-Gaussian fails because |q|≤1 is required). The order hypothesis q_0>1 and ln q_0>0 are correct for its archimedean regime; Lean correctly uses ℝ with (hq : 1 < q). Not a misfiled algebraic identity."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1399,22 @@
         "reviewed_at": "2026-06-22T02:57:00.621Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Archimedean statement proved by archimedean machinery (positivity, exp(Θ(n²)) lower bound, ln q_0>0, BS positivity threshold) — proof method matches the statement's archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1385,6 +1449,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "q-gaussian-obstruction-at-q0.lean:25-29: `theorem qGaussianObstructionAtQ0 (q : ℝ) (hq : 1 < q) (T : ℕ → ℝ) (hT : ∀ m, q ^ (m*(m-1)/2) ≤ T m) : ∀ N : ℝ, ∃ m, N < T m := by sorry`",
+        "notes": "Two gaps vs the narrative: (1) the Lean takes the maximal-crossing lower bound `hT` as a HYPOTHESIS, whereas the narrative PROVES it combinatorially in Step 1 (max cr(π)=C(n,2)); and (2) the Lean conclusion is only the divergence witness (∀N ∃m, N<T m), omitting the narrative's headline conclusion that no representing probability measure exists (Step 3). The Lean body is also `sorry`. So the Lean formalizes a proper sub-claim of the narrative with one narrative-proved lemma demoted to a hypothesis. The disclosure (Lean docstring + .md:55) and the ℝ/1<q regime match keep this at warn rather than fail; note the .ts ref `qou:QOU.MassTheory.qGaussianObstructionAtQ0` does resolve to the decl."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1880,5 +1962,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

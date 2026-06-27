@@ -1291,6 +1291,22 @@
         "severity": "minor",
         "evidence": "\"## Why this is the §4(a) formalize-first gate\" plus \"## Use in the formalize-first checklist\" sections supply motivation/methodology alongside the statement; no companion interprets: remark.",
         "notes": "Mostly methodological/structural scope tied to the gate's purpose; below FAIL threshold."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The Proposition statement is the bare simple-pole / ratio-test claim plus the refutation consequence (which is part of the claim, not motivation). Interpretive material ('Why this is the §4(a) gate', 'Why this matters') lives in separate ## sections after the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1327,22 @@
         "reviewed_at": "2026-06-22T02:57:13.044Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Listed in sec:mass-algebraic-qbeta-formalize-first-gates (Q_β precision ladder: formalize-first gates and the c_k recursion); the §4(a) radius-of-convergence gate is exactly this section's subject."
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1363,22 @@
         "reviewed_at": "2026-06-22T02:57:13.450Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "This is an explicitly-archimedean Q_β precision/numeric block (u_substrate ≈ 0.00852, cross-anchor ppb tolerances). The numeric pole location and ℝ-valued ratio test are intrinsic to the gate; the chapter regime (Q_β formalize-first gates, archimedean face) matches. The authorNotes/banner flags the §3b-cond conditional class. Not a wall violation."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1399,22 @@
         "reviewed_at": "2026-06-22T02:57:13.902Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The proof sketch is an asymptotic ratio-test / singularity-locator argument on the c_k series, appropriate to an archimedean numeric statement; the Lean refute-direction theorem is a pure algebraic contradiction derivation. Method matches the statement side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1371,6 +1435,24 @@
         "reviewed_at": "2026-06-22T02:57:14.275Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-beta-radius-of-convergence-gate.md:1-19 states a simple pole + ratio-test limit `lim |c_{k+1}|/|c_k| = 1/u_substrate`; lean:88-92 the class field is `pole_location_is_u_substrate : qBetaCandidatePoleLocation = u_substrate` and the proved theorem (lean:102-105) is the projection of that field; the asymptotic ratio-test / simple-pole content is axiomatised, not derived.",
+        "notes": "The Lean faithfully encodes the GATE direction (reject on pole mismatch — lean:119-127 radius_of_convergence_gate_reject is a genuine derivation) which is the block's stated new content. But the narrative's analytic claim (simple pole at u_substrate, ratio test limit) is carried by axioms (qBetaCandidatePoleLocation) + the §3b-cond class hypothesis rather than proved; the forward theorem is a restatement of the class field. Agree up to the conditional-class framing the .md openly declares; warn, not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1395,6 +1477,22 @@
         "reviewed_at": "2026-06-22T02:57:14.686Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Quality score ~0.9. Plan is explicit: the §3b-cond conditional class axiomatising the simple-pole signature, then the contrapositive reject lemma; the .md gives a 5-step operational checklist. A reader knows the plan before the steps."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1419,6 +1517,22 @@
         "reviewed_at": "2026-06-22T02:57:15.098Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Quality score ~0.95. The Lean is sorry-free; the only 'gap' is the §3b-cond class hypothesis (the forward asymptotic-pole fact), which is the intended conditional input, not an unfinished goal. The gate/reject theorems are fully discharged."
       }
     ],
     "proof-rater-novelty": [
@@ -1443,6 +1557,22 @@
         "reviewed_at": "2026-06-22T02:57:15.485Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Quality score ~0.7. The radius-of-convergence gate as a formalize-first refutation criterion on candidate Habiro kernels is a distinct contribution (sharpest concrete form of §4(a)), not a duplicate of the bar-even or q=1-shadow gates."
       }
     ],
     "proof-statement-integrity": [
@@ -1463,6 +1593,24 @@
         "reviewed_at": "2026-06-22T02:57:15.868Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean:57 `axiom qBetaLadderCoefficients : ℕ → ℝ`; lean:66 `axiom qBetaCandidatePoleLocation : ℝ`.",
+        "notes": "The decls are not claimed 'proved' beyond their §3b-cond conditional scope and the signatures match the .md, so no statement-weakening. But the file introduces two file-level `axiom` declarations (abstract candidate sequence + pole location). These are honest abstract placeholders for an open research target (the .md states 'Its closed form is the open research target'), not contradiction-introducing axioms — qBetaLadderCoefficients is in fact unused by the proved theorems. Flag for lean-proof-review to confirm the axioms are sound abstract opaques and to consider replacing them with section variables / class parameters; warn, not fail."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1483,6 +1631,24 @@
         "reviewed_at": "2026-06-22T02:57:16.187Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "lean:88-92 `class RadiusOfConvergenceGateClass : Prop where pole_location_is_u_substrate : qBetaCandidatePoleLocation = u_substrate`; lean:102-105 `theorem qbeta_g_simple_pole_at_u_substrate [hC : RadiusOfConvergenceGateClass] : qBetaCandidatePoleLocation = u_substrate := hC.pole_location_is_u_substrate`.",
+        "notes": "qbeta_g_simple_pole_at_u_substrate IS a verbatim projection of the class field whose type equals the conclusion (P ⊢ P), with no sibling fields composed — the self-assuming pattern. The file's own docstring (lean:97-99) calls it a 'Trivial restatement of the class field'. It is borderline-legitimate as a §3b-cond named-input handle (its value is composition downstream), and the substantive content lives in the genuine reject derivation (lean:119-127, which composes the hypotheses and is NOT a projection). Warn so lean-proof-review can decide whether the trivial forward restatement is worth keeping vs collapsing into the reject lemma."
       }
     ],
     "proof-no-trivial-true": [
@@ -1503,6 +1669,22 @@
         "reviewed_at": "2026-06-22T02:57:16.514Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are genuine equalities/inequalities over ℝ (qBetaCandidatePoleLocation = u_substrate; ¬RadiusOfConvergenceGateClass), not True/x=x tautologies. gate_satisfied_at_exact_match (lean:136-138) is a `u_substrate = u_substrate` rfl, but it is an explicitly-labelled trivial composition helper, not the block's main claim; the main reject theorem is substantive. No vacuous-True goal masking the result."
       }
     ],
     "proof-no-false-premise": [
@@ -1523,6 +1705,22 @@
         "reviewed_at": "2026-06-22T02:57:16.987Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "radius_of_convergence_gate_reject derives ¬Class from a genuine mismatch hypothesis (u_0 ≠ u_substrate) via a real contradiction (deriving u_0 = u_substrate then applying h_mismatch) — this is a legitimate proof-by-contradiction, not reliance on a baked-in false premise. No h:False / 0=1 / uninhabited type."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1543,6 +1741,22 @@
         "reviewed_at": "2026-06-22T02:57:17.359Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "radius_of_convergence_gate_reject uses both h_candidate_pole (rw) and h_mismatch (final contradiction). The forward theorem uses its [RadiusOfConvergenceGateClass] instance. No spurious unused hypotheses in the substantive theorems."
       }
     ],
     "proof-no-decide-masking": [
@@ -1563,8 +1777,24 @@
         "reviewed_at": "2026-06-22T02:57:17.762Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "9eae30258049",
+          "ts": "f76435b6380a",
+          "lean": "e6375664698f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs use rw/exact/intro and rfl on a definitional identity — no `decide`/`native_decide`/`trivial` masking an incomplete goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

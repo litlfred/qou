@@ -1308,6 +1308,24 @@
         "severity": "minor",
         "evidence": "explicit-central-idempotent.md lines 84-108: a '### Significance' section follows the statement+cross-checks, framing e_λ as 'the explicit, computable, named generator of the period class' and developing the Bloch-regulator class τ_arch(e_λ·Li_2^q) interpretation. Block is a proposition with no companion interprets: remark.",
         "notes": "Significance heading present with borderline interpretive prose; content is largely mathematical (regulator class identity, Vol(4_1) numeric) rather than physical meaning, so WARN rather than FAIL. Could be split into an interprets: remark."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "explicit-central-idempotent.md:84-108: `### Significance` section develops Bloch-regulator / period-class interpretation (`τ_arch(e_λ·Li_2^q(z)) ∈ P_2/P_1`, Vol(4_1) = 2Cl_2(π/3)) in the same block with no companion interprets: remark.",
+        "notes": "The Significance material is downstream-consequence interpretation appended to a provable statement; borderline (it cites a separate witness conjecture). Cross-checks/Examples are legitimate scope. Candidate for migration to a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1328,6 +1346,22 @@
         "reviewed_at": "2026-06-22T02:56:41.280Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Explicit central idempotents of H_n(q) via Murphy elements — Hecke-algebra Wedderburn structure underpinning the Markov-trace mass machinery; in chapter scope."
       }
     ],
     "wall-side-statement": [
@@ -1348,6 +1382,22 @@
         "reviewed_at": "2026-06-22T02:56:41.728Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Core statement (q-content q^{2(j-i)}, Lagrange formula in JM elements) is generic-ring algebraic; Lean uses {R}[CommRing]/[Field]. The Vol(4_1)/Cl_2 archimedean material is confined to the Significance section, not the statement."
       }
     ],
     "wall-side-proof": [
@@ -1368,6 +1418,22 @@
         "reviewed_at": "2026-06-22T02:56:42.044Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No proof body — Lean deferred via `sorry` with [murphy1981]/[dipper-james1986] citations; no archimedean machinery invoked."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1402,6 +1468,24 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "explicit-central-idempotent.md:25-72 asserts the explicit Lagrange formula for e_λ plus four cross-checks (sum-to-identity, orthogonality, self-adjointness, bar-pairing); explicit-central-idempotent.lean:58-90 declares `opaque centralIdempotent … : R` and `theorem explicit_central_idempotent_via_murphy` proves only `centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q` via `sorry`.",
+        "notes": "Lean encodes neither the explicit formula nor any of the four cross-checks; it states bare idempotency of an unconstrained `opaque` element (any element trivially fails to be idempotent, so the claim is also `sorry`-deferred). The narrative result and the Lean signature diverge in a theorem-changing way."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1897,5 +1981,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

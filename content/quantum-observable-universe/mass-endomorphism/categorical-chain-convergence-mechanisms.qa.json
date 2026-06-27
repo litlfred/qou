@@ -1310,6 +1310,24 @@
         "severity": "minor",
         "evidence": "categorical-chain-convergence-mechanisms.md lines 78-88: '## Why this works in the QOU framework' presents the 'categorical analog of asymptotic freedom' interpretation; the block reads as mechanism exposition rather than a bare statement+proof. Proposition block, no companion interprets: remark.",
         "notes": "Interpretive/analogy heading present; content is mechanism description (mathematical) so borderline WARN, not genuine mislocation. The asymptotic-freedom analogy could move to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "categorical-chain-convergence-mechanisms.md:78: \"## Why this works in the QOU framework\" / \"The categorical analog of **asymptotic freedom**\"",
+        "notes": "The proposition body carries substantive interpretive prose ('## Why this works', asymptotic-freedom analogy, high-density vs dilution physical reading) inline rather than in a separate interprets: remark. Borderline (it is partly methodological motivation for the two mechanisms), so warn rather than fail; the core Mechanism 1/2 math precedes it."
       }
     ],
     "fit-section-chapter": [
@@ -1330,6 +1348,22 @@
         "reviewed_at": "2026-06-22T02:56:42.426Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Convergence (per-knot bound + inter-knot linking locality) of the categorical Q_beta product belongs in the Hecke chi / delta-tau machinery section of the mass-endomorphism chapter; uses prop:q-beta-categorical-precision-ladder. No sibling restates both mechanisms."
       }
     ],
     "wall-side-statement": [
@@ -1350,6 +1384,22 @@
         "reviewed_at": "2026-06-22T02:56:42.810Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Generic/substrate chapter. The formal statements carry the archimedean order hypotheses (0 < q, (hbarQc q)^2 < 1) as EXPLICIT binders, and markovZc uses Real.sqrt — but the block is explicitly framed pre-archimedean / Habiro-ring with the numeric q_0≈1.110 confined to expository evaluation prose, and the archimedean realisation named as such (§Pre-archimedean home). Order hyps declared in-signature = the specialisation point is flagged. Pass."
       }
     ],
     "wall-side-proof": [
@@ -1370,6 +1420,22 @@
         "reviewed_at": "2026-06-22T02:56:43.193Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "cKBound_pos uses linarith (h_den) and positivity, and the statement is itself archimedean (0 ≤ cKBound over ℝ with 0<q hyps) — proof method matches the archimedean side. cKBound_geometric_decay / stabIter_spec are pure ring/induction. linarith appears only on a genuinely archimedean (0 ≤ ...) goal, not on an algebraic identity."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1390,6 +1456,24 @@
         "reviewed_at": "2026-06-22T02:56:43.691Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "categorical-chain-convergence-mechanisms.lean:164: theorem categorical_chain_convergence_mechanisms ... (∀ N, cKBound q (N+1) = (hbarQc q)^2 * cKBound q N) ∧ (∀ ..., stabIter ... = ... * (markovZc q)^k)",
+        "notes": "Narrative Mechanism 1 headline is the residual BOUND |R_N| ≤ ℏ_q^(2(N+1))/(1-ℏ_q²) (md:16-18), but the Lean conjunct proves geometric DECAY cKBound(N+1)=ℏ²·cKBound(N) — the bound itself is delegated to prop:archimedean-remainder-exponential-decay (lean:29). Mechanism 2 (z^k factorisation) and combined convergence match. The boxed full-cluster product (md:62-72) is heuristic, not formalised. Reconcilable by a reader (decay supports the bound) but the proved conjunct ≠ the stated bound, so warn."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1414,6 +1498,23 @@
         "reviewed_at": "2026-06-22T02:56:44.132Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.9. Plan is explicit: each theorem's docstring states the mechanism (delegated c(K) bound / Markov-M3 z^k), the combined theorem is a refine ⟨?_,?_⟩ over the two named lemmas. A reader knows the plan before the steps."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1438,6 +1539,23 @@
         "reviewed_at": "2026-06-22T02:56:44.491Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=1.0. The ref'd Lean (categorical_chain_convergence_mechanisms and its two supporting lemmas) is sorry-free; no remaining gap. (Mechanism-1 residual bound is delegated to a separate block, not an in-file sorry.)"
       }
     ],
     "proof-rater-novelty": [
@@ -1462,6 +1580,23 @@
         "reviewed_at": "2026-06-22T02:56:44.885Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.6. The z^k disjoint-stabilisation factorisation via iterated Markov-M3 and the geometric-decay packaging are standard but not duplicated by a sibling; the inter-knot-locality combination is the block's own contribution."
       }
     ],
     "proof-statement-integrity": [
@@ -1482,6 +1617,22 @@
         "reviewed_at": "2026-06-22T02:56:45.300Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No statement-weakening detected; conjunction conclusion is non-trivial (geometric-decay equality + z^k factorisation). Block is new/experimental (validation: not_checked, status: experimental), no prior-commit signature to compare against; proofs close real goals, no axiom injection beyond the declared MarkovDisjointStabilisation class hypothesis."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1502,6 +1653,22 @@
         "reviewed_at": "2026-06-22T02:56:45.697Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "MarkovDisjointStabilisation axiomatises the ATOMIC single-strand M3 (stab t = t·z); the z^k factorisation is DERIVED by induction (stabIter_spec), composing the field — §3b-cond non-degeneracy holds, not a self-assuming projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1522,6 +1689,22 @@
         "reviewed_at": "2026-06-22T02:56:46.080Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conjuncts are substantive equalities (geometric-decay recurrence; z^k factorisation), not True/x=x/rfl-vacuous. Hypotheses are not all ignored — Mechanism-2 conjunct uses the class instance."
       }
     ],
     "proof-no-false-premise": [
@@ -1542,6 +1725,22 @@
         "reviewed_at": "2026-06-22T02:56:46.429Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No False/0=1/uninhabited-type premise. (hbarQc q)^2 < 1 with 0<q is satisfiable (e.g. q=1.110), MarkovDisjointStabilisation is a content class, not contradictory."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1562,6 +1761,24 @@
         "reviewed_at": "2026-06-22T02:56:46.778Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "categorical-chain-convergence-mechanisms.lean:164: theorem categorical_chain_convergence_mechanisms (q : ℝ) (hq_lower : 0 < q) (hq_upper : (hbarQc q)^2 < 1) [MarkovDisjointStabilisation q]",
+        "notes": "hq_lower and hq_upper are threaded into cKBound_geometric_decay but that lemma's body ignores them (its own params are underscore-prefixed _hq_lower/_hq_upper, lean:60). So in the combined theorem the convergence-regime hypotheses are mathematically unused — the geometric-decay identity holds unconditionally. Documented as 'API uniformity' (lean:58-59), hence warn not fail, but the stated theorem is strictly weaker than it could be without these hyps."
       }
     ],
     "proof-no-decide-masking": [
@@ -1582,8 +1799,24 @@
         "reviewed_at": "2026-06-22T02:56:47.149Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial masking. Proofs use induction, ring, pow lemmas, div_nonneg, linarith on genuine archimedean goals; the one decide-adjacent term (spacetime_color_card) is in a sibling block, not here."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1292,6 +1292,23 @@
         "severity": "minor",
         "evidence": "Statement followed by substantive interpretive/significance prose, notably \"## Comparison with the Standard Model\" (19→3 reduction, lines 134-151) and framework-rigidity discussion. rem:calibration-inputs is referenced but does not host this material.",
         "notes": "This is framework-definitional content for the proposition; heavy but not cleanly mislocated. A linked interprets: remark would be the cleaner home."
+      },
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "three-calibration-inputs.md:144: \"## Comparison with the Standard Model\" and md:135-142 \"This is the meaning of 'aligned to (co)homology': ...\"",
+        "notes": "This is a framework-level meta-proposition; large interpretive sections (Comparison with the Standard Model, (Co)homological alignment narrative, Allowed substitutions, What is forbidden) accompany the statement+proof in the same block, with no companion interprets: remark. Borderline because the block is editorial-by-nature (the proposition's content IS the calibration-counting claim and the 'forbidden' clauses are stated to be editorial); much of the prose is legitimate scope/framing rather than mislocated downstream consequence. Warn not fail."
       }
     ],
     "fit-section-chapter": [
@@ -1312,6 +1329,20 @@
         "reviewed_at": "2026-06-22T02:57:15.292Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1332,6 +1363,21 @@
         "reviewed_at": "2026-06-22T02:57:15.639Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Calibration block whose subject IS the archimedean anchoring of the framework to physical observables (MeV, CODATA, m_e/m_μ/m_π); the MeV units and numeric q_0 references are intrinsic to the calibration claim, matching the physical-anchor regime of a calibration proposition, not a stray archimedean leak into a generic algebraic identity."
       }
     ],
     "wall-side-proof": [
@@ -1352,6 +1398,21 @@
         "reviewed_at": "2026-06-22T02:57:15.991Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is a conventional/dimensional-analysis argument citing prop:three-parameters-wedderburn and prop:categorical-mass-markov; no algebraic-identity statement proved by archimedean-only machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1372,6 +1433,23 @@
         "reviewed_at": "2026-06-22T02:57:16.356Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "lean/QOU/BraidKnot/ThreeCalibrationInputs.lean:59: \"def three_calibration_inputs (cal : ThreeCalibrationInputs) : True := by ... trivial\"",
+        "notes": ".ts lean.ref qou:QOU.BraidKnot.three_calibration_inputs resolves (no sibling .lean) to a library decl whose conclusion is `True := by trivial` — a stub. The narrative (md:46-71) asserts a substantive ∀-observable factorisation claim O = Ô(q_0)·m_e^a·m_π^b. The Lean proves nothing of that content; it is a `: True` placeholder. The accompanying ThreeCalibrationInputs structure carries the real data (positivity, q_zero_from_ratio) but the decl named by lean.ref discharges only True, so narrative-vs-Lean diverge in a theorem-changing way (real result vs True-stub)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1567,5 +1645,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

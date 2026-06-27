@@ -1289,6 +1289,24 @@
         "severity": "minor",
         "evidence": "Statement + proof, then 'Categorical reading' section ('This is the natural categorical answer to what is T_beta as an operator...') — interpretive prose on meaning, plus a 'Corollary' on observable invariance. No companion interprets: remark.",
         "notes": "The categorical-reading content is interpretation of the result's meaning; mathematically tied and modest in size, so WARN rather than FAIL."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "t-beta-markov-frobenius-collapse.md:84-100: \"## Categorical reading\" — \"This is the natural categorical answer to 'what is T_beta as an operator?': the Markov-Frobenius minimum-norm primal-feasible solution is the least-Hecke-Frobenius-norm operator ...\"",
+        "notes": "The boxed statement + Lagrangian proof are clean, but the block then carries a '## Corollary' (c_k invariance) and a '## Categorical reading' giving interpretive meaning of T_beta, none routed to a companion interprets: remark. The Corollary is an additional result (arguably its own block); the Categorical reading is interpretation. Warn (the statement itself is unpolluted; interpretation is in clearly-headed later sections)."
       }
     ],
     "fit-section-chapter": [
@@ -1309,6 +1327,22 @@
         "reviewed_at": "2026-06-22T02:57:12.618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In 'He-4 channel and magic-A binding'; the min-Frobenius-norm collapse T_beta=S.1 underpins the canonical primal-feasible Q_beta/SDP operator used in that section's binding analysis. In chapter scope; no sibling carries the same min-norm collapse claim."
       }
     ],
     "wall-side-statement": [
@@ -1329,6 +1363,22 @@
         "reviewed_at": "2026-06-22T02:57:12.996Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is over H_n(R,q) with field R and the Markov-trace Frobenius inner product; algebraic, no archimedean construct. The c_k/q_0 cross-anchor discussion is in the corollary, not the statement."
       }
     ],
     "wall-side-proof": [
@@ -1349,6 +1399,22 @@
         "reviewed_at": "2026-06-22T02:57:13.402Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Completing-the-square + PSD-on-squares + non-degeneracy of tau_M — all algebraic trace properties (no linarith/IVT/Real.*). The Lean substrate-model proof is `ring`/`rw` over [CommRing/Field R]. Matches the algebraic side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1369,6 +1435,24 @@
         "reviewed_at": "2026-06-22T02:57:13.790Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "t-beta-markov-frobenius-collapse.lean:64-67: \"theorem t_beta_collapse ... (h_constraint : X = S) : X * X = S * S := by rw [h_constraint]\"",
+        "notes": "The .md proposition is a min-Frobenius-norm/uniqueness result: for all feasible X with tau_M(X)=S, ||X||^2 >= S^2 with equality iff X=S.1. The Lean theorem the lean.ref resolves to (t_beta_collapse) proves only the equality X*X=S*S UNDER the assumption X=S — it omits the universal lower bound and the uniqueness, i.e. the actual optimality content. The narrative's universally-quantified minimisation is not encoded; the .md discloses this ('full H_n lift queued') but the Lean claim is strictly weaker."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1393,6 +1477,23 @@
         "reviewed_at": "2026-06-22T02:57:14.232Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 0.9 — the .md proof states the plan up front (decompose X=(X-S.1)+S.1, complete the square, apply PSD + non-degeneracy); the Lean docstring mirrors the 4-step sketch. Plan is explicit."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1417,6 +1518,23 @@
         "reviewed_at": "2026-06-22T02:57:14.654Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 0.6 — the resolved Lean theorem is sorry-free, but it is the substrate reduction; the full H_n(R,q) min-norm lift is an explicitly-queued gap requiring the PSD-on-squares class hypothesis (routine-to-core typeclass scaffolding), so the overall claimed result is not yet fully closed."
       }
     ],
     "proof-rater-novelty": [
@@ -1441,6 +1559,23 @@
         "reviewed_at": "2026-06-22T02:57:15.090Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score 0.5 — completing-the-square min-norm is a standard Lagrangian argument; its use to show the c_k L2/Markov-invariance (T_beta=S.1) is a non-duplicated application but not a novel proof technique."
       }
     ],
     "proof-statement-integrity": [
@@ -1461,6 +1596,22 @@
         "reviewed_at": "2026-06-22T02:57:15.458Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "t_beta_collapse / completing_the_square are sorry-free ring lemmas (no sorryAx, no axiom injection). The substrate-model signature is stable; the weakening relative to the narrative is the equiv issue above, not an integrity (axiom/restatement) violation."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1481,6 +1632,22 @@
         "reviewed_at": "2026-06-22T02:57:15.923Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "t_beta_collapse derives X*X=S*S by rewriting with the hypothesis X=S; it is not a structure field whose type is the conclusion handed back."
       }
     ],
     "proof-no-trivial-true": [
@@ -1501,6 +1668,22 @@
         "reviewed_at": "2026-06-22T02:57:16.309Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal X*X=S*S is a substantive equation discharged via the constraint, not True; min_norm_value (S*S=S*S:=rfl) is a separate helper, but the lean.ref resolves to t_beta_collapse, which is non-trivial."
       }
     ],
     "proof-no-false-premise": [
@@ -1521,6 +1704,22 @@
         "reviewed_at": "2026-06-22T02:57:16.758Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypothesis X=S is satisfiable (take X:=S); no False/0=1/uninhabited premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1541,6 +1740,22 @@
         "reviewed_at": "2026-06-22T02:57:17.255Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "h_constraint : X = S is used by rw; S and X both appear in the conclusion."
       }
     ],
     "proof-no-decide-masking": [
@@ -1561,8 +1776,24 @@
         "reviewed_at": "2026-06-22T02:57:17.606Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5371b65c7da",
+          "ts": "e2c09a8f38c2",
+          "lean": "08ddab0ffdef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs use ring / rw / rfl on genuine equalities; no decide/trivial masking an incomplete goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

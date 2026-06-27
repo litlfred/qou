@@ -1314,6 +1314,22 @@
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.md lines 24-56 ('Why this is the right structure', 'What the recursion buys') are motivation sections, and lines 182-194 are a 'Remark (quantum-modularity ...; conjectural)' interpretive aside, all in a scaffolding proposition block with no companion interprets: remark.",
         "notes": "Motivation headings present; this is a flagged scaffolding block whose body is mostly structural documentation, so WARN not FAIL. The quantum-modularity remark is at least demarcated as a Remark."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proposition (scaffolding) statement is the bare conditional depth-d recursion claim; the 'Why this is the right structure', 'What the recursion buys', literature and conjectural-modularity discussion are separate ## sections."
       }
     ],
     "fit-section-chapter": [
@@ -1334,6 +1350,22 @@
         "reviewed_at": "2026-06-22T02:57:14.606Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In the q-beta precision-ladder collection of mass-theory; the Habiro q-difference recursion for the c_k ladder is on-topic."
       }
     ],
     "wall-side-statement": [
@@ -1354,6 +1386,22 @@
         "reviewed_at": "2026-06-22T02:57:14.953Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is fibre-level over ℚ(q)/ℚ(q_0) with q_0 a formal anchor; the q-Bessel / q-difference structure is explicitly fibre-level (.md §'Discipline (fibre vs archimedean)'). No archimedean construct in the statement; the real-x closure is explicitly noted as refuted/out-of-scope."
       }
     ],
     "wall-side-proof": [
@@ -1374,6 +1422,22 @@
         "reviewed_at": "2026-06-22T02:57:15.326Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean proofs are generic: esymm_neg/esymm_bar_parity over [CommRing R], cyclotomic self-reciprocity over Field/IsDomain via reverse, Finset.sum_range_reflect, strong induction. No linarith/IVT/continuity/Real.* — purely algebraic."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1394,6 +1458,24 @@
         "reviewed_at": "2026-06-22T02:57:15.660Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "q-beta-c-k-recursion-from-habiro-q-difference.ts:7-9 ref `qou:QOU.QBeta.CKRecursion.CKRecursion` (a `structure`, not the recursion-induction theorem); .lean has no theorem proving the headline 'c_k satisfy a depth-d recursion induced by the Habiro q-difference equation'.",
+        "notes": "The headline Proposition (the depth-d recursion implication from F's q-difference equation) is NOT formalized; the Lean provides the recursion data structure CKRecursion + applyRecursion + genuine auxiliary theorems (esymm parity-alternation, cyclotomic bar-stability/self-reciprocity, all sorry-free). The block is explicitly labelled 'Proposition (scaffolding)' and authorNotes flag the categorical F(q) construction as the open keystone, so narrative and Lean agree on being scaffolding — the divergence (lean.ref points at the structure, not the claimed implication) is disclosed, hence warn not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1418,6 +1500,22 @@
         "reviewed_at": "2026-06-22T02:57:16.069Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Each Lean lemma states its plan in its docstring (e_j(-x)=(-1)^j e_j; cyclotomic palindrome by strong induction peeling d=1). score 0.9"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1442,6 +1540,23 @@
         "reviewed_at": "2026-06-22T02:57:16.428Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "All Lean lemmas present are sorry-free, but the core deliverable — the categorical F(q) construction that turns the scaffold into a concrete c_k predictor — remains open (a `core` gap per authorNotes), so the overall goal of the proposition is not closed. score ~0.4 (scaffold proved; keystone open)."
       }
     ],
     "proof-rater-novelty": [
@@ -1466,6 +1581,22 @@
         "reviewed_at": "2026-06-22T02:57:16.817Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "cyclotomic_self_reverse (general palindrome, not in Mathlib) and the esymm bar-parity law are genuinely novel formal content. score 0.9"
       }
     ],
     "proof-statement-integrity": [
@@ -1486,6 +1617,22 @@
         "reviewed_at": "2026-06-22T02:57:17.190Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "All present theorems sorry-free; no statement-weakening or axiom injection. The unproved keystone is honestly an open construction, not a disguised pass."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1506,6 +1653,22 @@
         "reviewed_at": "2026-06-22T02:57:17.567Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Theorems compose/derive (map_sum, esymm_neg, mul_right_cancel₀, strong induction); no projection of a conclusion-typed field."
       }
     ],
     "proof-no-trivial-true": [
@@ -1526,6 +1689,22 @@
         "reviewed_at": "2026-06-22T02:57:17.905Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusions are substantive equalities (bar(e_j)=(-1)^j e_j; reverse Φ_n = Φ_n; Φ_n(1/q)·q^φ = Φ_n(q)), not True/rfl-tautologies."
       }
     ],
     "proof-no-false-premise": [
@@ -1546,6 +1725,22 @@
         "reviewed_at": "2026-06-22T02:57:18.279Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypotheses (hq : q ≠ 0, Fact p.Prime, 1 < n) are satisfiable, not contradictory."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1566,6 +1761,22 @@
         "reviewed_at": "2026-06-22T02:57:18.806Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "hodd, hj, hq, hn, h all consumed in their proofs (e.g. cyclotomic_prime_bar_stable uses hq via pow_sub₀; esymm_bar_odd uses hj.neg_one_pow)."
       }
     ],
     "proof-no-decide-masking": [
@@ -1586,8 +1797,24 @@
         "reviewed_at": "2026-06-22T02:57:19.176Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "55c92c6add5f",
+          "ts": "c04fa321f353",
+          "lean": "28fbd125e6e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No `decide`; `simp`/`field_simp`/`ring`/`omega`/induction used substantively."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

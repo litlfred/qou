@@ -1021,6 +1021,22 @@
         "reviewed_at": "2026-06-22T02:57:10.617Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fa53d62d2797",
+          "ts": "106ca55e0be6",
+          "lean": "830f9592d7fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof block (prf:atom-knot-mass-derivation) companion to prop:atom-knot-mass-derivation in the same mass-theory chapter; subject (Markov-trace mass derivation + Archimedean realization) is on-scope."
       }
     ],
     "proof-no-trivial-true": [
@@ -1044,5 +1060,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

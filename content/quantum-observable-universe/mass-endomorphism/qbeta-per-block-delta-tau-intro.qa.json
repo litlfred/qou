@@ -264,7 +264,24 @@
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "prose intro for sec:hecke-chi-per-block-delta-tau-canonical-weights; correctly a prose block (pure exposition, no provable claim), forward-references the section's siblings (chi closed forms, the conditional q^2-1 factor, surrogate Taylor, canonical instance). Well placed."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

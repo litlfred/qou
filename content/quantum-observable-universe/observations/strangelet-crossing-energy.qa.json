@@ -1255,6 +1255,20 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Statement (three numbered parts) + proof. The 'purely strong / enhanced binding' phrasings are part of the mathematical claims, not separable interpretive prose. Statement+proof only."
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1274,6 +1288,20 @@
         "reviewed_at": "2026-06-22T02:56:54.208Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1293,6 +1321,21 @@
         "reviewed_at": "2026-06-22T02:56:54.658Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "observations is an explicitly-archimedean chapter; the 0 < q hypothesis and ℝ specialisation are appropriate, and the .lean sibling note declares the §7c archimedean specialisation."
       }
     ],
     "wall-side-proof": [
@@ -1312,6 +1355,21 @@
         "reviewed_at": "2026-06-22T02:56:55.177Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "linarith is used to derive part (3)'s strict inequality 8q⁻¹ > 6q⁻¹ from q⁻¹ > 0; the ordering proof matches the archimedean-chapter statement's side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1345,6 +1403,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/strangelet_crossing_energy.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean theorem encodes the three narrative claims (Q=0; E_cross formula; 0<q → E_bind_uds=8q⁻¹, E_bind_udd=6q⁻¹, E_bind_udd<E_bind_uds) as a faithful conjunction; quantifiers/hypotheses/conclusion match."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1670,6 +1743,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a substantive conjunction, not True/x=x; the q⁻¹>0 → 8q⁻¹>6q⁻¹ inequality is genuinely derived via linarith. Claims (1)/(2) are conditional-class field projections (legitimate §3b-cond disposition), not vacuous-True masking."
       }
     ],
     "proof-no-false-premise": [
@@ -1812,8 +1900,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof uses refine/intro/rw/linarith; no decide and no trivial masking an incomplete goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1294,6 +1294,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
@@ -1314,6 +1329,21 @@
         "reviewed_at": "2026-06-22T02:57:14.835Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1334,6 +1364,21 @@
         "reviewed_at": "2026-06-22T02:57:15.185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1354,6 +1399,21 @@
         "reviewed_at": "2026-06-22T02:57:15.584Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1374,6 +1434,24 @@
         "reviewed_at": "2026-06-22T02:57:15.933Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-beta-q-eq-one-shadow-gate.lean:79-82: lean.ref decl `qbeta_q_eq_one_shadow_anchors` is a `def` returning `⟨hC.c2_at_one_eq_neg_one, hC.c3_at_one_eq_jones_hopf⟩`; the .md states a magnitude gate over 'any candidate Habiro element F(q)'.",
+        "notes": "The narrative asserts a rejection gate on candidate elements; the Lean decl the ref resolves to only restates the two class hypotheses (forward projection). The genuine gate content lives in the sibling reject lemmas, not the referenced `qbeta_q_eq_one_shadow_anchors`. Reconcilable but the chosen ref is the weakest of the file."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1398,6 +1476,22 @@
         "reviewed_at": "2026-06-22T02:57:16.311Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.8 — plan stated up front (two integer-shadow anchors c2→-1, c3→-2; rejection lemma)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1422,6 +1516,22 @@
         "reviewed_at": "2026-06-22T02:57:16.770Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — sorry-free Lean."
       }
     ],
     "proof-rater-novelty": [
@@ -1446,6 +1556,22 @@
         "reviewed_at": "2026-06-22T02:57:17.162Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.5 — sibling of q-beta-direction-sanity-gate; same §3b-cond class+reject-lemma template, distinct invariant."
       }
     ],
     "proof-statement-integrity": [
@@ -1466,6 +1592,21 @@
         "reviewed_at": "2026-06-22T02:57:17.573Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1486,6 +1627,24 @@
         "reviewed_at": "2026-06-22T02:57:17.926Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "critical",
+        "evidence": "q-beta-q-eq-one-shadow-gate.lean:79-82: `def qbeta_q_eq_one_shadow_anchors (c2 c3) [hC : QOneShadowGateClass c2 c3] : c2 1 = -1 ∧ c3 1 = hopfJonesAtQOne := ⟨hC.c2_at_one_eq_neg_one, hC.c3_at_one_eq_jones_hopf⟩`. The class fields (lines 67-70) ARE `c2 1 = -1` and `c3 1 = -2`; the conclusion is their conjunction.",
+        "notes": "The lean.ref resolves to a verbatim projection of two class fields whose types ARE the declaration's conclusion (P ⊢ P), with no derivation. This is the §3b-cond non-degenerate violation: the class axiomatises the conclusion, not sub-hypotheses, and the decl merely hands it back. The substantive content is in the reject lemmas (which DO derive a contradiction), but the referenced decl is a self-assuming projection. Routes to lean-proof-review; re-point lean.ref at a reject lemma or restructure so the class carries the c_k recursion, not the anchor values."
       }
     ],
     "proof-no-trivial-true": [
@@ -1506,6 +1665,22 @@
         "reviewed_at": "2026-06-22T02:57:18.393Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is a conjunction of two real equalities, not True/rfl; class fields are content-bearing (c2 1 = -1, c3 1 = -2), not `: Prop` empty markers."
       }
     ],
     "proof-no-false-premise": [
@@ -1526,6 +1701,21 @@
         "reviewed_at": "2026-06-22T02:57:18.810Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1546,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:57:19.249Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Both class fields (c2 and c3 anchors) are consumed in the projected conjunction."
       }
     ],
     "proof-no-decide-masking": [
@@ -1566,8 +1772,23 @@
         "reviewed_at": "2026-06-22T02:57:19.690Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "ce3265f713a2",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

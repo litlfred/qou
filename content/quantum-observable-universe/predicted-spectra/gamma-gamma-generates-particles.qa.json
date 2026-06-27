@@ -294,8 +294,259 @@
         },
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:pair-production-knot-operators of Ch13; γγ pair-production generating the operator basis squarely fits the section scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Generic-ring algebraic statement (Hecke H₃(q) coefficient identity); no archimedean construct, no numeric q₀, no order hypothesis."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is pure algebraic normal-form reduction; Lean uses simp over generic CommRing. No linarith/IVT/Real.* machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "gamma-gamma-generates-particles.md:1-6 claims '…reach every operator of the six-element basis'; .lean:42-45 lean.ref gamma_gamma_chirality_surjective proves only joint surjectivity of the (L₊,L₋) chiral pair.",
+        "notes": "Lean faithfully encodes the explicitly-scoped 'generative core' (chirality surjectivity + L₋ reachability via gamma_gamma_reaches_Lminus); the full 'every basis operator' claim and the e⁻ opening are deferred to the upstream breit-wheeler block per the .md 'Lean structure' section. Reconcilable; the Lean is a faithful encoding of the sub-claims it states it covers, not a divergent or stub proof."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9: plan stated up front — expand γ₁·γ₂, reduce by the Hecke relation, read off the five/six basis coefficients, then the cross-color L₊/L₋ surjectivity."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0: Lean is sorry-free (simp / explicit witness)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7: standard Hecke normal-form computation, but the cross-color independent-chirality framing is non-duplicated in the section."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Provable-kind signatures unchanged; proofs are explicit witnesses / simp, no sorryAx or injected axioms."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs construct explicit witnesses (⟨a,b,1,1,…⟩, ⟨0,1,1,0,…⟩) and compute; no field whose type is the conclusion handed back."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are genuine ∃-statements about coeff equalities / inequality (coeffLminus ≠ 0); not True / x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Only hypothesis is [Nontrivial R] on the second theorem; no False / contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "[Nontrivial R] is used via one_ne_zero in gamma_gamma_reaches_Lminus; first theorem has no hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial; proofs are simp + explicit term construction."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1029,8 +1029,25 @@
         "reviewed_at": "2026-06-22T02:56:20.737Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f234adda79de",
+          "ts": "2fff92338fea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/brings-surface/brings-surface.ts: grep -c 'brings-q-hyperbolic-geometry' = 0 — the block is not referenced in any section's `blocks[]` of the chapter manifest.",
+        "notes": "Orphan placement: the block file lives under brings-surface/ but is not filed into any section of brings-surface.ts (unlike the explicit sec:brings-surface-orphan-reconnect blocks). Its subject (q-Bessel / SU_q(1,1) q-hyperbolic deformation) leans toward the q-Bessel/QBeta machinery (it `uses` proof:jackson-q-bessel-contiguity, whose home is mass-theory). Needs an explicit home section; if kept in this chapter, sec:brings-smoothness or the orphan-reconnect section is the natural slot. Not a clean misfile to a different chapter, hence warn."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

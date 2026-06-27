@@ -264,7 +264,24 @@
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "708c08e36ef8",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Prose section intro framing the four formalize-first gates and the recursion machinery for the Q_β c_k ladder; correctly a `prose` block (no provable claim asserted) introducing the surrounding mass-theory section it lists."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

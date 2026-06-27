@@ -1254,6 +1254,21 @@
         },
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The ansatz-dependency status is correctly externalised to authorNotes (.ts caveat); the '## Relation to the transfer-matrix eigenfunction form' section is a scope/equivalence cross-reference, not mislocated physical motivation."
       }
     ],
     "fit-section-chapter": [
@@ -1273,6 +1288,20 @@
         "reviewed_at": "2026-06-22T02:57:20.543Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1292,6 +1321,21 @@
         "reviewed_at": "2026-06-22T02:57:21.045Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Archimedean block (Q_β, MeV, q_0 numeric) with the §3b-cond conditional banner at md:1; the library Lean carries the order hypotheses (0<h<2, 1<q) as explicit BorromeanQuark class fields."
       }
     ],
     "wall-side-proof": [
@@ -1311,6 +1355,21 @@
         "reviewed_at": "2026-06-22T02:57:21.328Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Derivation uses abs resolution under 0<h<2 + field_simp — archimedean, and the Lean proof carries those bounds as explicit class hypotheses (h_pos, h_lt_two), matching the statement's side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1344,6 +1403,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Ref resolves to library decl QOU.ParticleInteractions.neutron_qvalue_symbolic. Narrative derives Q_β = m_e(2−h)h/(2q(q−1)) from the NF nets + ansatz; Lean theorem [BorromeanQuark] proves exactly that, with the conjectural inputs as class hypotheses matching the 'conditional on conj:borromean-quark' banner. Quantifiers/hypotheses/conclusion align."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1405,6 +1479,22 @@
           "max": 1,
           "value": 0.42
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.9. Plan explicit: resolve |Δ(net)| via neutron_delta_net + abs_of_nonpos under 0<h<2, then field_simp."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1466,6 +1556,22 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=1.0. Sorry-free conditional theorem (the only open input is the BorromeanQuark class instance, per §3b-cond)."
       }
     ],
     "proof-rater-novelty": [
@@ -1527,6 +1633,22 @@
           "max": 1,
           "value": 0.68
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "notes": "score=0.7. Construction-specific symbolic derivation; not duplicated by a sibling."
       }
     ],
     "proof-statement-integrity": [
@@ -1580,6 +1702,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Signature stable; no sorryAx — the theorem is discharged by ring/field_simp from class hypotheses."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1633,6 +1770,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Non-degenerate §3b-cond: the class carries inputs (net_p, net_n, qvalue_ansatz); the theorem DERIVES the closed form via neutron_delta_net + abs resolution + field_simp, not a field read-back."
       }
     ],
     "proof-no-trivial-true": [
@@ -1669,6 +1821,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Conclusion is the real closed-form equation Q_β = m_e(2−h)h/(2q(q−1)), not a tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1722,6 +1889,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Class hypotheses (1<q, 0<h<2, NF nets, ansatz) are jointly satisfiable at the substrate q₀≈1.11; denom q(q-1)≠0 proved."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1775,6 +1957,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "proton_net, neutron_net, h_pos, h_lt_two, qvalue_ansatz, q_gt_one are all used (delta-net rewrite, abs resolution, denom-nonzero, final field_simp)."
       }
     ],
     "proof-no-decide-masking": [
@@ -1811,6 +2008,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial; goals closed by ring/field_simp/nlinarith over genuine content."
       }
     ],
     "da-reproducibility": [
@@ -1946,5 +2158,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

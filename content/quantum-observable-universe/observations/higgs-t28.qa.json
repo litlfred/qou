@@ -1134,6 +1134,22 @@
         "reviewed_at": "2026-06-22T02:56:52.266Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "203709b4aa13",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "conjecture (tier:E) identifying the Higgs as T(2,8); particle-identification conjectures live in observations alongside the other tier-E physical identifications. On-scope. (Aside outside this criterion: the mass formula at higgs-t28.md:90-92 invokes the purged λ_scale — flag for canonical-watcher, not fit.)"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1201,5 +1217,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

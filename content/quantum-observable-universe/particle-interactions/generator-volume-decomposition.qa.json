@@ -1291,6 +1291,24 @@
         "severity": "minor",
         "evidence": "Extensive physical-interpretation prose (beta decay as 1-jet, double beta decay as 2-jet, 0νββ neutrino propagator, jet bundle, Reeb decomposition connection) follows the proposition in the same block; no `interprets:` remark.",
         "notes": "Bulk is mathematical structure (jet expansion, transfer matrix), but the decay-physics/jet-bundle framing is interpretive. WARN."
+      },
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "generator-volume-decomposition.md:108 '## Beta decay as the 1-jet variation', :126 '## Double beta decay as the 2-jet variation', :274 '## Connection to the Reeb decomposition'",
+        "notes": "Extensive physical interpretation (single/double beta decay, 0νββ neutrino propagator, Reeb-flow correspondence) follows the proposition statement in the same block with no companion interprets: remark. Much is mathematical (jet expansion), but the decay-physics and Reeb-connection sections are interpretive and better placed in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1311,6 +1329,21 @@
         "reviewed_at": "2026-06-22T02:57:21.021Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1331,6 +1364,22 @@
         "reviewed_at": "2026-06-22T02:57:21.316Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Carries the §7c archimedean-specialisation banner at md:1; the transfer-matrix/jet content is combinatorial with a declared ℝ realisation."
       }
     ],
     "wall-side-proof": [
@@ -1351,6 +1400,22 @@
         "reviewed_at": "2026-06-22T02:57:21.662Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is the Hecke relation + far commutativity (span closure, step count) — algebraic, matches the statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1385,6 +1450,24 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
+      },
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : ℝ) (A : ℕ) (nuclear_energy : ℝ) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
+        "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum — it does not encode 'the nuclear energy decomposes as Σ generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 — a probable build error.)"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1880,5 +1963,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1308,6 +1308,24 @@
         "severity": "minor",
         "evidence": "This is an algorithm/pipeline proposition with extensive embedded interpretive sections: '### Post-Archimedean interpretation (borrowed, optional)', 'Physical reading'-style passages, and 'Where the gaps actually are'. Some of this (volume-conjecture naming convention, physical reading of the shortfall) is interpretation rather than bare statement. No companion interprets: remark.",
         "notes": "Algorithm-style block where architectural/pipeline exposition is expected; the genuinely interpretive 'post-Archimedean' naming material could live in a remark but the block is long-form by design."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.md:14-52,105-137: the block opens with multi-paragraph 'Caveat (structural form)', 'Class-A discipline status', 'Historical note — single-term shorthand retired', and 'Mass identity' commentary embedding motivation, downstream-consequence and status framing directly around the Statement; no separate interprets: remark holds it.",
+        "notes": "Substantive interpretive/status prose (173x shortfall narrative, rho_K closure path, single-term retirement) is interleaved with the proposition statement rather than housed in a linked remark. Borderline because much of it is genuine mathematical scope-caveat; flagged warn not fail."
       }
     ],
     "fit-section-chapter": [
@@ -1328,6 +1346,21 @@
         "reviewed_at": "2026-06-22T02:57:09.814Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1348,6 +1381,22 @@
         "reviewed_at": "2026-06-22T02:57:10.216Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "mass-theory is an archimedean-adjacent chapter; the statement explicitly separates the pre-Archimedean Q(q) invariant M(H) from the Archimedean realization B = m_e·M|_{q=q0}, naming the wall (Archimedean realization functor) where MeV/q0/R enter. Banner'd correctly."
       }
     ],
     "wall-side-proof": [
@@ -1368,6 +1417,22 @@
         "reviewed_at": "2026-06-22T02:57:10.622Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Per-atom MassIdentity proofs use norm_num on concrete real-literal certs (archimedean evaluation), matching the archimedean side; the structural finite-sum theorem is generic. No algebraic-statement-proved-by-archimedean-machinery violation."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1388,6 +1453,24 @@
         "reviewed_at": "2026-06-22T02:57:11.071Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "atom-knot-mass-derivation.md:121-128 asserts the exact mass identity B(H)=m_e·M(H)|_{q=q0}=m_e·ν_SDP·m(H)|_{q=q0}; atom-knot-mass-derivation.lean:182-184 encodes MassIdentity as `cert.B_pred_MeV ≥ 0 ∧ |B_pred − B_AME| ≤ B_AME/4` (non-negative + within 25%).",
+        "notes": "The Lean `MassIdentity` predicate (B≥0 and within 25% of AME) is a substantially weaker empirical surrogate than the narrative's exact categorical mass-identity equation; the .lean docstring itself calls it 'the empirical version'. Conclusions differ in a theorem-changing way."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1412,6 +1495,22 @@
         "reviewed_at": "2026-06-22T02:57:11.316Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7; strategy is legible — substrate-conjecture class for the general claim, then per-atom norm_num MassIdentity proofs each stated up front."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1436,6 +1535,22 @@
         "reviewed_at": "2026-06-22T02:57:11.667Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.4; the per-atom MassIdentity theorems are sorry-free, but the headline general derivation is gated on AtomKnotMassDerivationConjecture (core open conjecture / ~173x rho_K shortfall) — closing the genuine end-to-end derivation is a core gap, not routine."
       }
     ],
     "proof-rater-novelty": [
@@ -1460,6 +1575,22 @@
         "reviewed_at": "2026-06-22T02:57:11.990Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7; the categorical pipeline + per-atom certificate construction is non-redundant within the corpus."
       }
     ],
     "proof-statement-integrity": [
@@ -1480,6 +1611,24 @@
         "reviewed_at": "2026-06-22T02:57:12.351Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "atom-knot-mass-derivation.lean:182-184,204-219: the proved Lean obligation is the weakened `MassIdentity` (B≥0 ∧ within 25%) and the general theorem is conditional on a conjecture class, while the .md proposition states the exact mass identity.",
+        "notes": "Not an injected axiom, but the statement that is actually discharged is materially weaker than the .md proposition claim (25%-tolerance surrogate). Treated as integrity warn pending an author-approved restatement reconciling .md and .lean; could not run lean_verify (Lean env not exercised)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1500,6 +1649,24 @@
         "reviewed_at": "2026-06-22T02:57:12.770Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.lean:204-219: `class AtomKnotMassDerivationConjecture` carries field `atom_knot_mass_derivation : … → MassIdentity cert` and the theorem body is `h.atom_knot_mass_derivation cert T_w` — a verbatim projection of the class field whose type is the declaration's own conclusion.",
+        "notes": "This is the §3b-cond conditional-conjecture pattern (the class axiomatises the open derivation as a hypothesis), so it is the LEGITIMATE form rather than a vacuous self-assuming projection; flagged warn only because the field type equals the conclusion and no sibling hypotheses are composed. The per-atom MassIdentity theorems are proved independently by norm_num."
       }
     ],
     "proof-no-trivial-true": [
@@ -1520,6 +1687,22 @@
         "reviewed_at": "2026-06-22T02:57:13.275Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are MassIdentity (B≥0 ∧ |B−B_AME|≤B_AME/4) over concrete real literals — not True/rfl tautologies; the categorical_mass_invariant_finite theorem reduces predicates but its goal is a genuine implication, not `: True`."
       }
     ],
     "proof-no-false-premise": [
@@ -1540,6 +1723,21 @@
         "reviewed_at": "2026-06-22T02:57:13.627Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1560,6 +1758,24 @@
         "reviewed_at": "2026-06-22T02:57:13.997Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.lean:163-167: `categorical_mass_invariant_finite` takes the GbSpectralSequenceCollapseAtE2 hypothesis (`fun h _ => h`) and discards it; line 213-219 the theorem ignores the two Yekutieli/collapse predicate hypotheses, returning only the class field application.",
+        "notes": "The collapse/Yekutieli hypotheses are present in the signature to mirror the narrative pipeline but are not used in the discharge (the proof is `fun h _ => h` / class projection). Indicates the Lean statement is weaker than the narrative dependency chain suggests."
       }
     ],
     "proof-no-decide-masking": [
@@ -1580,8 +1796,26 @@
         "reviewed_at": "2026-06-22T02:57:14.480Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed2bef393d16",
+          "ts": "c3af17e22a73",
+          "lean": "04649755b398"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "atom-knot-mass-derivation.lean:461: `cohortName_nonempty … := by refine ⟨…⟩ <;> decide` closes a string-≠-\"\" conjunction by decide.",
+        "notes": "`decide` here evaluates concrete cohort-name string inequalities (a legitimate decidable check), not masking a substantive structural goal; flagged warn only because decide is used on a non-core auxiliary lemma. Per-atom MassIdentity proofs use norm_num, not decide."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

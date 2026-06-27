@@ -264,7 +264,40 @@
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "'Fix a substrate q > 1' (md:1) is the standard substrate-regime condition for the magic-strand predicate, not an archimedean leak into an algebraic identity; no Real.sqrt/MeV/numeric-q. The definition names a construction (IsAlgebraicallyPrime) rather than asserting an order-dependent identity."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

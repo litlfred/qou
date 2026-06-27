@@ -1293,6 +1293,24 @@
         "severity": "minor",
         "evidence": "After the one-line statement+proof, the block carries '## Consequence for the $c_k$ precision ladder' and '## Two independent routes to the same conclusion' sections with interpretive/diagnostic prose (what the vanishing implies for the ladder normalization, the SDP-constraint-scalar reading, CODATA-free narrative). No companion interprets: remark holds this material.",
         "notes": "Borderline: the prose is the diagnostic significance of the algebraic obstruction and stays tightly coupled to the math; could be migrated to a linked remark but is not a clear mislocation."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "q-beta-over-e0-classical-vanishing.md:36-73: '## Consequence for the c_k precision ladder' + '## Two independent routes' — substantive interpretation (which object is the SDP-constraint scalar vs the ladder normalization, the categorical missing-input diagnosis) follows the proof in the same proposition block.",
+        "notes": "The statement+proof (lines 1-28) is bare; but the post-proof sections carry the block's actual significance (the degenerate-recipe diagnosis), which is interpretation/consequence material. No companion interprets: remark holds it. Borderline scholarly diagnostic vs. migratable interpretation — warn."
       }
     ],
     "fit-section-chapter": [
@@ -1313,6 +1331,21 @@
         "reviewed_at": "2026-06-22T02:56:55.669Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1333,6 +1366,22 @@
         "reviewed_at": "2026-06-22T02:56:55.979Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is explicitly 'an algebraic identity over any commutative ring' (S(1)=0); generic regime, .lean over generic {R}[CommRing]/[Field]. Correctly substrate-side."
       }
     ],
     "wall-side-proof": [
@@ -1353,6 +1402,22 @@
         "reviewed_at": "2026-06-22T02:56:56.324Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is direct evaluation S(1)=0 by `ring` over CommRing R — algebraic method matching the algebraic statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1373,6 +1438,22 @@
         "reviewed_at": "2026-06-22T02:56:56.738Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative: numerator (2q+1-q^2)(q^2-1) vanishes at q=1, hence S(1)=0. Lean: `qbeta_over_e0_numerator_at_one_eq_zero` proves the numerator-at-1 = 0 over CommRing R, and `qbeta_over_e0_at_one_eq_zero` proves S_N0 1 = 0 over Field R. Quantifiers (∀ R) + conclusion match the narrative's algebraic-identity claim. The ref points at the numerator lemma, of which the full-ratio is the immediate corollary; faithful."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1397,6 +1478,22 @@
         "reviewed_at": "2026-06-22T02:56:57.103Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.9 — plan is one-line ('direct evaluation; the (q-1) zero no rearrangement can cancel'), fully legible."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1421,6 +1518,22 @@
         "reviewed_at": "2026-06-22T02:56:57.432Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 1.0 — sorry-free Lean (ring + zero_div)."
       }
     ],
     "proof-rater-novelty": [
@@ -1445,6 +1558,22 @@
         "reviewed_at": "2026-06-22T02:56:57.778Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score 0.6 — a specific diagnostic identity (the degenerate 0/0 recipe), not duplicated elsewhere."
       }
     ],
     "proof-statement-integrity": [
@@ -1465,6 +1594,21 @@
         "reviewed_at": "2026-06-22T02:56:58.275Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1485,6 +1629,22 @@
         "reviewed_at": "2026-06-22T02:56:58.729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is `by ring` (and `rw [h, zero_div]`) — a genuine algebraic derivation, not a field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -1505,6 +1665,22 @@
         "reviewed_at": "2026-06-22T02:56:59.111Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a non-trivial polynomial-evaluation equation = 0 (not x=x); ring genuinely computes (2+1-1)(1-1)=0. The reflexivity is the content (definitional-evaluation establishing a named vanishing)."
       }
     ],
     "proof-no-false-premise": [
@@ -1525,6 +1701,21 @@
         "reviewed_at": "2026-06-22T02:56:59.602Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1545,6 +1736,22 @@
         "reviewed_at": "2026-06-22T02:57:00.096Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No hypotheses beyond the ring instance; numerator lemma takes none, full-ratio lemma reuses the numerator result."
       }
     ],
     "proof-no-decide-masking": [
@@ -1565,8 +1772,24 @@
         "reviewed_at": "2026-06-22T02:57:00.440Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "a01fc0154a1b",
+          "ts": "a43926751641",
+          "lean": "d9f3f0328145"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Uses `ring`/`zero_div`, no `decide`/`trivial` masking."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

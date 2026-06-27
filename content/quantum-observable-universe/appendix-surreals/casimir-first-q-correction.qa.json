@@ -1099,6 +1099,22 @@
         "reviewed_at": "2026-06-22T02:56:38.947Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Casimir-vacuum substrate correction via figure-eight 4_1 belongs to the surreal/vacuum sub-arc of app:surreals (parent conj:casimir-epsilon-vacuum is in the same appendix)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1123,8 +1139,24 @@
         "reviewed_at": "2026-06-22T02:56:39.364Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.4 — supporting weight-expansion lemmas (jones41_taylor etc.) are sorry-free; the carrier identification is class-axiomatised (FirstInteractingCasimirCorrection, §3b-cond) with the open mode-sum as the remaining instance — a core, non-routine gap, but the Lean class stub is honestly an open conjecture rather than a false closure."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

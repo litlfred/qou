@@ -1286,6 +1286,24 @@
         },
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.md:61-89: '**Refactoring corollary.**', '**Hecke-algebraic origin.**', and the closing line 'Framing the standard q→q⁻¹ involution as a Hecke-bar origin gives an algebraic geometry…' follow the proof in the same proposition block.",
+        "notes": "Substantive interpretive/methodological prose (refactoring opportunity, Hecke-bar origin, parity framing) follows the statement+proof with no companion interprets: remark to hold it. The refactoring corollary is arguably a real follow-on result; the Hecke-origin and closing sentences are interpretation that belongs in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1306,6 +1324,22 @@
         "reviewed_at": "2026-06-22T02:56:47.991Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:topological-mass-pl-sw-duality, adjacent to bar-self-dual-confinement-band and golden-skew-dual-node which it cites; the substrate-level bar T-duality on E_q is in scope and distinct from the sibling band/node results."
       }
     ],
     "wall-side-statement": [
@@ -1326,6 +1360,22 @@
         "reviewed_at": "2026-06-22T02:56:48.358Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Archimedean-side section; .md:1 opens with the §7c banner ('archimedean specialisation over ℝ … underlying combinatorial content stays generic'). The ℝ-ordering / golden-ratio band content matches the archimedean regime and is flagged."
       }
     ],
     "wall-side-proof": [
@@ -1346,6 +1396,22 @@
         "reviewed_at": "2026-06-22T02:56:48.721Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof method matches the archimedean statement: discriminant/j-invariant substitution + the band argument; Lean sibling proves the ℝ involution properties (inv_inv, order-reversing via inv_lt_inv₀, nlinarith for the fixed point) consistent with the ℝ-side. No algebraic statement proved by smuggled archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1366,6 +1432,24 @@
         "reviewed_at": "2026-06-22T02:56:49.121Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": ".md:9-32 proposition asserts ι_* E_q = E_{q⁻¹} plus (1) discriminant-locus pairing, (2) j-invariant relation, (3) confinement-band invariance; .lean:94-99 bar_t_duality_substrate proves only a conjunction of scalar bar-map facts (bar involutive, bar 1 = 1, order-reversing, bar-paired zero locus of an abstract f).",
+        "notes": "The Lean (lean.ref target) does not formalize the elliptic-curve pullback E_q ↔ E_{1/q} nor claims (1)-(3) about Δ, j, or the band; it abstracts the duality to the scalar involution q↦q⁻¹ on ℝ and its properties. The .lean header itself admits this ('abstracts the bar T-duality at the level of (q,x,y)-tuples'). The narrative's principal geometric conclusion is absent from the Lean — a theorem-changing scope divergence, not merely a notational gap. bar_paired_zero_locus captures the discriminant-pairing *shadow* but over an abstract f, not the actual Δ(E_q)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1390,6 +1474,22 @@
         "reviewed_at": "2026-06-22T02:56:49.554Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.85: narrative plan explicit (substitute q↦q⁻¹ in Weierstrass coeffs, derive claims 1-3); Lean lemmas named and composed in the bundling theorem."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1414,6 +1514,22 @@
         "reviewed_at": "2026-06-22T02:56:49.903Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0: Lean is sorry-free (inv_inv, inv_one, inv_lt_inv₀, nlinarith, etc.)."
       }
     ],
     "proof-rater-novelty": [
@@ -1438,6 +1554,22 @@
         "reviewed_at": "2026-06-22T02:56:50.278Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.6: the scalar bar-involution properties are standard; the substrate-T-duality framing on the Descartes family is the novel narrative contribution (not duplicated in siblings)."
       }
     ],
     "proof-statement-integrity": [
@@ -1458,6 +1590,22 @@
         "reviewed_at": "2026-06-22T02:56:50.607Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Lean signatures are unchanged and proved with standard Mathlib lemmas; no sorryAx or unexpected axioms. (The statement-weakening concern relative to the narrative is captured under proof-narrative-lean-equiv, not an axiom/diff integrity violation here.)"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1478,6 +1626,22 @@
         "reviewed_at": "2026-06-22T02:56:51.029Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "bar_t_duality_substrate composes four independently-proved lemmas ⟨bar_involutive, bar_one, bar_lt_iff, bar_paired_zero_locus⟩; each is derived from Mathlib facts, not a field whose type is the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1498,6 +1662,22 @@
         "reviewed_at": "2026-06-22T02:56:51.392Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are substantive ℝ statements (inv_inv, order-reversal iff, fixed-point iff); none is True / x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1518,6 +1698,22 @@
         "reviewed_at": "2026-06-22T02:56:51.730Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Hypotheses are q ≠ 0 / 0 < q — satisfiable, not contradictory; no False.elim shortcut."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1538,6 +1734,24 @@
         "reviewed_at": "2026-06-22T02:56:52.080Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "bar-t-duality-substrate.lean:35 theorem bar_involutive (q : ℝ) (_ : q ≠ 0) : bar (bar q) = q := by unfold bar; exact inv_inv q",
+        "notes": "The q ≠ 0 hypothesis (named `_`) is unused: inv_inv holds for all reals in Mathlib (0⁻¹⁻¹ = 0), so the nonzero hypothesis is not needed for bar_involutive. The bundling theorem bar_t_duality_substrate then carries the vacuous `q ≠ 0 → …` clause. Minor/harmless but indicates the stated involution hypothesis is stronger than the proof requires."
       }
     ],
     "proof-no-decide-masking": [
@@ -1558,8 +1772,24 @@
         "reviewed_at": "2026-06-22T02:56:52.539Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide; proofs use unfold + named Mathlib lemmas and nlinarith. trivial not used to mask a goal."
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:09.443Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }

@@ -1307,6 +1307,22 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is the three closed forms + antipode pairing + vanishing-at-1, followed by Proof. The '## Scope and discipline notes' / '## Lean extensions' are scope/applicability + formalization-tracking notes, not physical-meaning interpretation; not mislocated interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1327,6 +1343,22 @@
         "reviewed_at": "2026-06-22T02:56:42.426Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Per-block chi closed forms over H_3(q) belong in sec:hecke-chi-closed-forms-chi-per-irrep / the per-block delta-tau section of the mass-endomorphism chapter; no sibling carries these three closed forms."
       }
     ],
     "wall-side-statement": [
@@ -1347,6 +1379,22 @@
         "reviewed_at": "2026-06-22T02:56:42.807Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is 'For all q>0, chi_lambda(q) = <rational function>' — an algebraic rational identity with only the q>0 well-definedness hypothesis (denominators 4q^k). Tagged pre-archimedean; q>0 is the natural domain of the rational form, not an archimedean-only order claim. No Real.sqrt/MeV/numeric q in the statement."
       }
     ],
     "wall-side-proof": [
@@ -1367,6 +1415,22 @@
         "reviewed_at": "2026-06-22T02:56:43.254Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is field_simp; ring after q>0 denominator positivity witnesses — pure algebraic machinery matching the algebraic statement. No linarith/IVT/continuity/numeric-q on the ref'd statement (chi_block_antipode_pairing). The √q markov_parameter and HasDerivAt extensions are separately scoped Extension blocks, properly archimedean."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1401,6 +1465,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "lean.ref = chi_block_antipode_pairing: narrative antipode claim 'chi_(1,1,1)(q) = q^{-4}·chi_(3)(q) for all q>0' matches Lean 'chi_block_111 q = q⁻¹^4 * chi_block_3 q (hq : 0 < q)'. The three closed forms + vanishing-at-1 also have matching Lean defs/theorem (chi_blocks_vanish_at_one). Quantifier (∀ q>0), hypothesis (0<q), conclusion all match."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1669,6 +1749,22 @@
         "reviewed_at": "2026-06-22T02:56:45.637Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "chi_block_antipode_pairing proves an equality by unfold + field_simp over concrete rational defs — derives, does not project a field equal to its own conclusion. No self-assuming structure."
       }
     ],
     "proof-no-trivial-true": [
@@ -1704,6 +1800,22 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goal is a substantive rational equality (chi_block_111 = q⁻¹^4·chi_block_3), not True/x=x. The one sorry (delta_tau_M_surrogate_taylor_coeff_2) is an honest cited sorry on a real f''(1)/2=5/6 goal, not a vacuous-True dodge; the ref'd decl is sorry-free."
       }
     ],
     "proof-no-false-premise": [
@@ -2111,5 +2223,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-27T13:05:07.188Z"
+  "updated_at": "2026-06-27T14:33:06.940Z"
 }
