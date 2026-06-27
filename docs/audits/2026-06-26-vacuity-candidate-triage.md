@@ -84,11 +84,11 @@ Each asserts/derives nothing meaningful. Fix = state the real proposition (cited
 | lean/QOU/MassComputationChainRoadmap.lean:353 | `wenzl_bridge_atomic_tr_M` | trivial-true | conclusion is `True := trivial` / `X=X:=rfl` — asserts nothing (def-disguised-true) |
 | lean/QOU/MassDerivation.lean:73 | `topological_mass_formula` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/MathlibExt.lean:134 | `List.prod_eq_of_perm` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
-| lean/QOU/Molecular/benzene_threading_emergence.lean:1 | `` | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
-| lean/QOU/Molecular/ch4_lp_dual_binding.lean:1 | `` | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
-| lean/QOU/Molecular/co2_lp_dual_binding.lean:1 | `` | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
-| lean/QOU/Molecular/co_lp_dual_binding.lean:1 | `` | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
-| lean/QOU/Molecular/h2_lp_dual_binding.lean:1 | `` | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
+| lean/QOU/Molecular/benzene_threading_emergence.lean:1 | — | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
+| lean/QOU/Molecular/ch4_lp_dual_binding.lean:1 | — | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
+| lean/QOU/Molecular/co2_lp_dual_binding.lean:1 | — | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
+| lean/QOU/Molecular/co_lp_dual_binding.lean:1 | — | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
+| lean/QOU/Molecular/h2_lp_dual_binding.lean:1 | — | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
 | lean/QOU/ParticleInteractions/SpectatorNormalization.lean:52 | `SpectatorNormalization` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/ParticleInteractions/atomic_nf_witness.lean:105 | `atomic_nf_witness` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean:84 | `confinement_frobenius_reciprocity` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
@@ -97,7 +97,7 @@ Each asserts/derives nothing meaningful. Fix = state the real proposition (cited
 | lean/QOU/ParticleInteractions/ground_state_ordering.lean:64 | `ground_state_ordering` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/ParticleInteractions/lp_dual_stability.lean:93 | `lp_dual_stability` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/ParticleInteractions/mass_categorical_descent.lean:62 | `mass_categorical_descent` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
-| lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean:1 | `` | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
+| lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean:1 | — | placeholder-stub | unfilled placeholder / conclusion bundled from impl_* fields |
 | lean/QOU/ParticleInteractions/operator_selection_lp.lean:103 | `operator_selection_lp` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/ParticleInteractions/parity_regime_selection.lean:78 | `parity_regime_selection` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
 | lean/QOU/ParticleInteractions/transfer_matrix_identities.lean:58 | `transfer_matrix_identities` | self-assuming-projection | body is a bare projection `:= ctx.claim_*` returning the conclusion field verbatim |
