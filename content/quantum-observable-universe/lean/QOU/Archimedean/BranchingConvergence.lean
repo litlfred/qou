@@ -342,9 +342,7 @@ instance branchingConverges_refl (k : ℕ) (hk : k ≥ 4)
     BranchingConverges k hk f f C_q hC := by
   refine ⟨?_⟩
   simp
-  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by
-    have h4 : (4 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
-    linarith
+  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by exact_mod_cast (by omega : 3 ≤ k)
   have h_pos : (k : ℝ) - 3 ≥ 0 := by linarith
   have h_sqrt_nonneg : Real.sqrt ((k : ℝ) - 3) ≥ 0 := Real.sqrt_nonneg _
   positivity
@@ -368,9 +366,7 @@ theorem finite_k_convergence (k : ℕ) (_hk : 4 ≤ k) (hK : k ≤ 12)
     (f_k f_4 : ℝ)
     (hf : |f_k - f_4| ≤ (k - 4 : ℝ) * 0.01) :
     |f_k - f_4| ≤ 0.08 := by
-  have : (k - 4 : ℝ) ≤ 8 := by
-    have hk12 : (k : ℝ) ≤ 12 := by exact_mod_cast hK
-    linarith
+  have : (k - 4 : ℝ) ≤ 8 := by exact_mod_cast (by omega : k - 4 ≤ 8)
   linarith [abs_nonneg (f_k - f_4)]
 
 /-- **Finite-k witness — numerical agreement class.**
