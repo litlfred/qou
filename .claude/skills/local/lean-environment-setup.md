@@ -647,10 +647,12 @@ WT=/tmp/lake-cache-wt
 #    `content/*/lean/.lake/build` — root `.lake/build` does NOT exist in
 #    this checkout, so the old glob `.lake/build .lake/packages/*/...`
 #    silently shipped a tarball with ZERO QOU oleans (only Mathlib). The
-#    restore-check (Step 5 below) is what catches this; ALWAYS run it.
+#    restore-check (Step 4 below) is what catches this; ALWAYS run it.
 #    (2026-06-26: this is exactly why prior production reseeds held only
 #    the ~202-olean Mass cone — the QOU oleans were never packed.)
-tar czf /tmp/lake-oleans.tgz content/*/lean/.lake/build .lake/packages/*/.lake/build 2>/dev/null
+# (No `2>/dev/null` — a missing path must fail LOUDLY; suppressing tar's
+#  "No such file or directory" is what made the old glob bug silent.)
+tar czf /tmp/lake-oleans.tgz content/*/lean/.lake/build .lake/packages/*/.lake/build
 # 2. Orphan branch in a SEPARATE worktree (main tree untouched, no trap).
 git worktree add --orphan -b lake-cache/qou-v4-24-0 "$WT" 2>/dev/null \
   || { git worktree add --detach "$WT"; git -C "$WT" checkout --orphan lake-cache/qou-v4-24-0; \
@@ -677,7 +679,7 @@ git worktree remove --force "$WT"                      # main branch never left
 > T=/tmp/restore-check; rm -rf "$T"; mkdir -p "$T"
 > git fetch --depth=1 origin lake-cache/qou-v4-24-0
 > git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
->   | while read -r p; do git show "FETCH_HEAD:$p"; done > /tmp/rc.tgz
+>   | while read -r p; do git cat-file -p "FETCH_HEAD:$p"; done > /tmp/rc.tgz
 > tar xzf /tmp/rc.tgz -C "$T"
 > # MUST be non-zero — if 0, the tar glob missed the nested QOU build dir:
 > find "$T" -path '*/lib/lean/QOU/*.olean' | wc -l
