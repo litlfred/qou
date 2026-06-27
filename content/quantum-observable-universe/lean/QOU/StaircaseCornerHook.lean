@@ -1,4 +1,3 @@
-import Mathlib.Data.Nat.Defs
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import QOU.Hecke.Staircase
 

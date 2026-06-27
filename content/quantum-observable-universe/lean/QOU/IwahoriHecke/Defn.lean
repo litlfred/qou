@@ -1,4 +1,3 @@
-import Mathlib.GroupTheory.Coxeter.Basic
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Algebra.Basic
 import QOU.IwahoriHecke.Quotient
