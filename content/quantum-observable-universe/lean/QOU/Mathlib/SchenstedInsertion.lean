@@ -93,3 +93,63 @@ theorem rowInsert_sorted {r : List ℕ} (h : r.Sorted (· ≤ ·)) (x : ℕ) :
       rcases mem_rowInsert hb with hbr | hbx
       · exact h.1 b hbr
       · exact hbx ▸ not_lt.mp hx
+
+/-! ## Brick 2 — the bumping cascade (insertion tableau) -/
+
+/-- **Schensted insertion into a tableau** (a `List (List ℕ)` of rows).  Row-insert `x` into the
+first row; if an entry is bumped, cascade the bumped value into the next row; if the cascade falls
+off the bottom, start a new one-cell row. -/
+def insert : List (List ℕ) → ℕ → List (List ℕ)
+  | [], x => [[x]]
+  | row :: rest, x =>
+      match (rowInsert row x).2 with
+      | none => (rowInsert row x).1 :: rest
+      | some y => (rowInsert row x).1 :: insert rest y
+
+/-- The insertion tableau `P(w)` of a word `w`: insert its letters left to right into the empty
+tableau. -/
+def insertWord (w : List ℕ) : List (List ℕ) := w.foldl insert []
+
+/-- Every row of a tableau is weakly increasing. -/
+def RowsSorted (T : List (List ℕ)) : Prop := ∀ row ∈ T, row.Sorted (· ≤ ·)
+
+@[simp] theorem rowsSorted_nil : RowsSorted [] := by intro _ h; simp at h
+
+/-- **The cascade preserves row-sortedness.**  Each row that changes does so by `rowInsert`, which
+keeps it weakly increasing (`rowInsert_sorted`); untouched rows are unchanged.  So `insert`
+maps row-sorted tableaux to row-sorted tableaux — the invariant making `insertWord w` a tableau
+with weakly-increasing rows. -/
+theorem insert_rowsSorted : ∀ {T : List (List ℕ)}, RowsSorted T → ∀ x, RowsSorted (insert T x)
+  | [], _, x => by
+      intro row hrow
+      rw [insert] at hrow
+      rw [List.mem_singleton] at hrow
+      exact hrow ▸ List.sorted_singleton x
+  | row :: rest, h, x => by
+      have hrow : row.Sorted (· ≤ ·) := h row List.mem_cons_self
+      have hrest : RowsSorted rest := fun r hr => h r (List.mem_cons_of_mem _ hr)
+      have hrow' : (rowInsert row x).1.Sorted (· ≤ ·) := rowInsert_sorted hrow x
+      rw [insert]
+      cases hb : (rowInsert row x).2 with
+      | none =>
+        intro r hr
+        rcases List.mem_cons.mp hr with h1 | h1
+        · exact h1 ▸ hrow'
+        · exact hrest r h1
+      | some y =>
+        intro r hr
+        rcases List.mem_cons.mp hr with h1 | h1
+        · exact h1 ▸ hrow'
+        · exact insert_rowsSorted hrest y r h1
+
+/-- `insertWord w` has weakly-increasing rows, for every word `w`. -/
+theorem insertWord_rowsSorted (w : List ℕ) : RowsSorted (insertWord w) := by
+  unfold insertWord
+  suffices h : ∀ (T : List (List ℕ)), RowsSorted T → RowsSorted (w.foldl insert T) by
+    exact h [] rowsSorted_nil
+  induction w with
+  | nil => intro T hT; simpa using hT
+  | cons a w ih =>
+    intro T hT
+    rw [List.foldl_cons]
+    exact ih _ (insert_rowsSorted hT a)
