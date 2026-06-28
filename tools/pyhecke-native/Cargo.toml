@@ -17,11 +17,30 @@ hecke-engine = { path = "../hecke-engine" }
 rug = "1.26"
 
 [features]
-# OFF by default — keeps the shipped wheel light and the build simple.
-# When enabled, exposes `operator_selection_lp` (MPFR LP, prop:operator-
-# selection-lp) and pulls clarabel + rug/MPFR into the wheel.  Flipping it
-# into the default wheel build is a follow-up: the wheel CI must add this
-# feature + gmp/mpfr on every platform and an import test in a numpy env.
+# ON by default (2026-06-28) — the shipped wheel includes the Clarabel-rs
+# MPFR LP backend, exposing `operator_selection_lp` (prop:operator-selection-lp)
+# so the canonical LP-dual / operator-selection compute is available out of the
+# box. Pulls clarabel (the litlfred fork — see [patch.crates-io] below) +
+# rug/MPFR.
+#
+# BLAS-free: clarabel-mpfr uses the `MpfrFloat` scalar (NOT the netlib SDP
+# backend), so NO system OpenBLAS/LAPACK/gfortran is required — only system
+# GMP + MPFR, which `rug` already needs. (The heavier f64 SDP solver remains
+# opt-in as hecke-engine's `clarabel-sdp`, mutually exclusive with clarabel-mpfr
+# and the one that does require BLAS.)
+#
+# Wheel-CI requirement: the wheel build now needs the litlfred clarabel fork
+# reachable + system GMP/MPFR on every target platform, plus an import test in
+# a numpy env.
+#
+# Restricted-network builds: an egress policy may block the fork (e.g. some web
+# sandboxes return 403 for github.com/litlfred/Clarabel.rs). Then either build
+# the rug/MPFR-only kernels with `--no-default-features` (the seminormal / Gram
+# / Markov-trace primitives do NOT need clarabel), or supply a local empty
+# `clarabel` stub crate (declare the mpfr/sdp-netlib/serde/bigrational features,
+# empty lib) and repoint [patch.crates-io] at it so clarabel is only resolved,
+# never compiled. Full recipe: README.md §"Clarabel (litlfred fork)".
+default = ["clarabel-lp"]
 clarabel-lp = ["hecke-engine/clarabel-mpfr"]
 
 [profile.release]
