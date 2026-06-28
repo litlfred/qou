@@ -1,0 +1,72 @@
+name: pyhecke-native-wheel
+
+# Verifies the pyhecke-native wheel builds with its DEFAULT features
+# (`clarabel-lp` → hecke-engine `clarabel-mpfr`, pulling the litlfred
+# Clarabel.rs fork via [patch.crates-io]) and imports cleanly, including the
+# clarabel-gated `operator_selection_lp` entry point.
+#
+# Why this exists: as of 2026-06-28 clarabel is ON by default in the wheel
+# (tools/pyhecke-native/Cargo.toml `default = ["clarabel-lp"]`). That build
+# cannot be exercised in restricted-network sandboxes (the fork is egress-
+# blocked, 403). This CI job is the authoritative check that the fork-default
+# wheel actually compiles + imports on a fork-reachable runner. The backend is
+# the BLAS-free MpfrFloat path, so only system GMP + MPFR are needed (no
+# OpenBLAS/LAPACK/gfortran). See tools/pyhecke-native/README.md
+# §"Clarabel (litlfred fork)".
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tools/pyhecke-native/**'
+      - 'tools/hecke-engine/**'
+      - '.github/workflows/pyhecke-native-wheel.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tools/pyhecke-native/**'
+      - 'tools/hecke-engine/**'
+      - '.github/workflows/pyhecke-native-wheel.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system GMP + MPFR (for rug; clarabel-mpfr is BLAS-free)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgmp-dev libmpfr-dev m4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install build + test deps
+        run: python -m pip install --upgrade pip maturin numpy mpmath
+
+      - name: Build wheel (DEFAULT features = clarabel-lp → litlfred Clarabel.rs fork)
+        working-directory: tools/pyhecke-native
+        run: maturin build --release
+
+      - name: Install + import test (incl. clarabel-gated operator_selection_lp)
+        working-directory: tools/pyhecke-native
+        run: |
+          python -m pip install --force-reinstall target/wheels/pyhecke_native-*.whl
+          python - <<'PY'
+          import pyhecke_native as p
+          # rug/MPFR cone (always present)
+          assert hasattr(p, "seminormal_matrices_mpfr"), "missing seminormal_matrices_mpfr"
+          assert hasattr(p, "chi_lambda_braid_mpfr"), "missing chi_lambda_braid_mpfr"
+          # clarabel-gated entry point — present iff clarabel-lp actually compiled in
+          assert hasattr(p, "operator_selection_lp"), (
+              "operator_selection_lp missing — clarabel-lp default did NOT compile "
+              "in (the litlfred Clarabel.rs fork / clarabel-mpfr backend failed)"
+          )
+          print("OK: default wheel built with clarabel-lp; all entry points present")
+          PY
