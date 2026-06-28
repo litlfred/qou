@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-28T06:43:06.657623+00:00",
-  "commitSha": "94b3c335cc8c81883e886765e6486b3954afd376",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-28T17:58:46.020083+00:00",
+  "commitSha": "f801469eee19e22b6f265bdad2c266646ab654c8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 26,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "d25340a5de8528e9bb82bed3200afa3f15863baf",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,16 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 961,
+    "files_scanned": 973,
     "patterns": [
       "P15",
       "P16",
@@ -36,9 +38,9 @@
   "data": {
     "by_pattern_count": {
       "P15": 130,
-      "P16": 264,
+      "P16": 284,
       "P21": 24,
-      "P30": 148,
+      "P30": 151,
       "P31": 23
     },
     "top_files": [
@@ -64,6 +66,13 @@
         "count": 15,
         "patterns": [
           "P15",
+          "P16"
+        ]
+      },
+      {
+        "file": "probe_markov_trace_factorization.py",
+        "count": 15,
+        "patterns": [
           "P16"
         ]
       },
@@ -145,13 +154,6 @@
       },
       {
         "file": "derived_chi_catalogue_build.py",
-        "count": 8,
-        "patterns": [
-          "P16"
-        ]
-      },
-      {
-        "file": "prearchimedean_bond_factor.py",
         "count": 8,
         "patterns": [
           "P16"
@@ -2239,6 +2241,13 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P30",
+        "file": "keystone_wlambda_ladder_higher_rungs.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P15",
         "file": "kite_tail_reconciliation.py",
         "line": 65,
@@ -2657,6 +2666,13 @@
         "line": 89,
         "snippet": "CODATA literal \"206.7682830\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P30",
+        "file": "meson_per_knot_density.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P21",
@@ -3135,6 +3151,13 @@
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
+        "pattern": "P30",
+        "file": "per_knot_density_deuteron_perknot_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P16",
         "file": "pm_qm_pythagorean_identity.py",
         "line": 88,
@@ -3233,6 +3256,118 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 133,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 134,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 135,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 138,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 145,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 168,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 169,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 170,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 174,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 215,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 218,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 219,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 220,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 235,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_factorization.py",
+        "line": 236,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_markov_trace_ratio_exact.py",
+        "line": 191,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
         "pattern": "P30",
         "file": "probe_option_e_h3_entry_point.py",
         "line": 1,
@@ -3259,6 +3394,34 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_topological_mass_formula.py",
+        "line": 105,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_topological_mass_formula.py",
+        "line": 106,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_topological_mass_formula.py",
+        "line": 107,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_topological_mass_formula.py",
+        "line": 146,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P30",
