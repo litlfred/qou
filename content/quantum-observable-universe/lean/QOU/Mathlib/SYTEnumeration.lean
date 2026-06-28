@@ -105,4 +105,42 @@ theorem rsk_sumSq_eq_factorial_le4 :
     ∀ nps ∈ partitionsByN, (nps.2.map (fun l => (numSYTenum l) ^ 2)).sum = nps.1.factorial := by
   decide
 
+/-! ## Extension to `n = 5` and `n = 6`
+
+The `n ≤ 4` checks above enumerate `n!` fillings in the kernel.  `n = 5` (`120` fillings/shape) still
+`decide`s at the default `maxRecDepth`; `n = 6` (`720` fillings/shape) needs the recursion-depth limit
+raised (the structural `allPerms`/`insertEverywhere` recursion goes `720` deep per shape).  `n = 7`
+(`5040` fillings/shape) is left to the aggregate `dim_validated_le12`: the per-shape kernel enumeration
+becomes the build-time bottleneck, not a soundness limit — recorded here, not silently dropped. -/
+
+/-- The partitions of `5` (every weakly-decreasing shape with `∑ = 5`). -/
+def shapes5 : List (List ℕ) :=
+  [[5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1]]
+
+/-- The partitions of `6` (every weakly-decreasing shape with `∑ = 6`). -/
+def shapes6 : List (List ℕ) :=
+  [[6], [5, 1], [4, 2], [4, 1, 1], [3, 3], [3, 2, 1], [3, 1, 1, 1],
+   [2, 2, 2], [2, 2, 1, 1], [2, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]
+
+/-- **Per-shape hook-length validation at `n = 5` (sorry-free).** `#SYT(λ) = dimHLF(λ)` for every
+shape of `5`, extending `numSYTenum_eq_dimHLF_le4`. -/
+theorem numSYTenum_eq_dimHLF_5 :
+    ∀ l ∈ shapes5, numSYTenum l = dimHLF l := by decide
+
+set_option maxRecDepth 20000 in
+/-- **Per-shape hook-length validation at `n = 6` (sorry-free).** `#SYT(λ) = dimHLF(λ)` for every
+shape of `6`.  Needs `maxRecDepth` raised for the `720`-deep structural permutation recursion. -/
+theorem numSYTenum_eq_dimHLF_6 :
+    ∀ l ∈ shapes6, numSYTenum l = dimHLF l := by decide
+
+/-- **RSK sum-of-squares at `n = 5` (sorry-free).** `Σ_{λ ⊢ 5} (#SYT λ)² = 5!`, on the
+independently-enumerated standard-tableau count. -/
+theorem rsk_sumSq_eq_factorial_5 :
+    (shapes5.map (fun l => (numSYTenum l) ^ 2)).sum = (5).factorial := by decide
+
+set_option maxRecDepth 20000 in
+/-- **RSK sum-of-squares at `n = 6` (sorry-free).** `Σ_{λ ⊢ 6} (#SYT λ)² = 6!`. -/
+theorem rsk_sumSq_eq_factorial_6 :
+    (shapes6.map (fun l => (numSYTenum l) ^ 2)).sum = (6).factorial := by decide
+
 end QOU.Mathlib.SYTEnum
