@@ -1,10 +1,11 @@
 ---
 # 5wld
 title: 'Red-drain SkewSYT.lean — comprehensive repair (922 lines): λ→lam rename unmasks 23 deeper errors across whole file'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-28T00:23:38Z
-updated_at: 2026-06-28T00:23:38Z
+updated_at: 2026-06-28T05:57:59Z
 ---
 
 `content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean` is red
