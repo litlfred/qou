@@ -55,6 +55,38 @@ bend the A-scaling toward closure?
    *uniform* +1. So magnitude alone, even structured, is not closure; the
    A-/λ-shape is still wrong.
 
+## Structural origin of the 6.17× spread — the edge-set hypothesis is REFUTED
+
+A natural hypothesis: the tower's pair term sums over **all C(A,2) pairs**
+(complete graph, ~A²), but nuclear binding is **extensive** (~A, saturation —
+each nucleon binds only its neighbors), so sparsifying to **adjacent bonds**
+(A−1, ~A) should flatten the A-scaling. **Tested and refuted:**
+
+| edge set | net/target A-profile | spread |
+|----------|----------------------|-------:|
+| all-pairs C(A,2) ~A² | D 1.12, ⁴He 0.23, ¹²C 0.35, ⁵⁶Fe 1.39 (U-shaped) | **6.17×** |
+| adjacent A−1 ~A | D 1.12, ⁴He 0.18, ¹²C 0.10, ⁵⁶Fe 0.062 (monotone ↓) | **17.90× (worse)** |
+
+Sparsifying **worsens** the spread — adjacent monotonically *under*-binds heavy
+nuclei (⁵⁶Fe 0.062). So the U-shape is **not** a pure edge-count artifact. It
+decomposes into two distinct effects:
+
+1. **A²-overscaling at the heavy end.** all-pairs ~A² grows faster than
+   `B_AME` ~A, so net/target rises with A (⁵⁶Fe 1.39). The per-pair magnitude is
+   only `~0.4 MeV` (vs the ~8 MeV/nucleon real binding), and all-pairs compensates
+   for heavy nuclei by sheer pair count — overshooting.
+2. **The ⁴He magic dip.** ⁴He is doubly-magic (anomalously tight, ~7 MeV/nucleon);
+   the tower has **no shell/magic structure**, so even all-pairs (6 pairs ×0.4 MeV)
+   reaches only 0.23 of `B_AME` — the known magic-A issue (`standard-part-functor.md`
+   uses the shell-closure `2·m_e·A·8G` for ⁴He specifically).
+
+**Consequence (sharpens the lever map):** the **edge-set lever alone (w5tg) cannot
+bend this A-scaling** — sparsifying the graph makes it *worse*, not better. The
+closure needs **magnitude-reshaping** (a per-λ/per-bond generating kernel that
+lifts the ~0.4 MeV per-pair toward the saturated nuclear scale — exactly z2bn's
+`R(q,x)`) **plus shell/magic structure** for the ⁴He-type dips. Neither pure
+all-pairs nor pure adjacent is the right combinatorics.
+
 ## Conclusion (scope (a))
 
 The Borromean per-braid Li₂^q tower is a **genuine magnitude-side lever** for the

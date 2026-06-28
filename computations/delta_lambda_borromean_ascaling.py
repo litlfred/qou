@@ -88,10 +88,57 @@ def main() -> int:
           "still non-uniform (D over, mid under, ⁵⁶Fe over) — it does NOT close. "
           "Positions it with z2bn/w5tg/thb7/PROBE-2; derive-or-refute its A-profile.")
 
+    # ---- structural origin of the spread: edge-set test (REFUTES the simple
+    #   "all-pairs over-counts → sparsify" hypothesis). Re-run the pair sum over
+    #   ADJACENT bonds only (A−1, ~A) instead of all C(A,2) (~A²).
+    from math import comb as _comb
+    import mpmath as _mp
+    from q_parameter import Q as _Q
+    from codata_constants import M_E_MEV as _ME
+    from _li_2_q_util import li_2_q as _li
+    _mp.mp.dps = 50
+    _q = _mp.mpf(str(_Q)); _me = _mp.mpf(str(_ME)); _qi = 1 / _q; _hh = _q - _qi
+    _E0 = _me / (_q * (_q - 1)); _z = _mp.mpf(1) / (_mp.sqrt(_q) + _mp.sqrt(_qi))
+    _tau = (4 + _hh**2 - 3 * _hh**4 - _hh**6) / (_hh**2 + 4)
+    _fp, _fn = _z, _z - _hh
+
+    def _gg(x):
+        return -_li(-x, _q, _qi)
+
+    def _b(Z, N, adjacent):
+        A = Z + N
+        ratio = _fp**max(Z - 1, 0) * (_z if Z and N else 1) * _fn**max(N - 1, 0)
+        Dtr = _tau**A * (1 - ratio)
+        cnts = ((max(Z - 1, 0), 1 if Z and N else 0, max(N - 1, 0)) if adjacent
+                else (_comb(Z, 2), Z * N, _comb(N, 2)))
+        pr = sum(c * (_gg(_tau * _tau) - _gg(_tau * _tau * f))
+                 for c, f in zip(cnts, (_fp, _z, _fn)))
+        return float(_E0 * (Dtr + _z * _z * pr))
+
+    adj = [_b(Z, N, True) / B for _, (Z, N, B) in AME.items()]
+    allp = [_b(Z, N, False) / B for _, (Z, N, B) in AME.items()]
+    edge = {"all_pairs_spread": max(allp) / min(allp),
+            "adjacent_spread": max(adj) / min(adj),
+            "hypothesis_refuted": max(adj) / min(adj) > max(allp) / min(allp),
+            "note": ("sparsifying the edge set (all-pairs C(A,2)~A² → adjacent "
+                     "A−1~A) WORSENS the spread (monotone under-bind at heavy A) — "
+                     "the U-shape is NOT a pure edge-count effect; it is "
+                     "A²-overscaling at the heavy end PLUS the ⁴He magic dip "
+                     "(no shell structure). Edge-set lever (w5tg) alone is "
+                     "insufficient; the per-pair magnitude (~0.4 MeV) is far below "
+                     "~8 MeV/nucleon, so closure needs magnitude-reshaping "
+                     "(z2bn R(q,x)) + shell/magic structure, not sparsification.")}
+    print(f"\n  EDGE-SET TEST: all-pairs spread {edge['all_pairs_spread']:.2f}× "
+          f"vs adjacent spread {edge['adjacent_spread']:.2f}× → "
+          f"sparsify hypothesis {'REFUTED' if edge['hypothesis_refuted'] else 'supported'} "
+          f"(adjacent worse; monotone heavy-A under-bind).")
+
     out = {"schema": "delta-lambda-borromean-ascaling/v1",
            "description": "Borromean per-braid tower net/target vs canonical "
-                          "sgn(w₀)·dim; A-scaling diagnostic (no fit, no closure).",
-           "tower_net_over_target_spread": spread_t, "rows": rows}
+                          "sgn(w₀)·dim; A-scaling diagnostic + edge-set test "
+                          "(no fit, no closure).",
+           "tower_net_over_target_spread": spread_t, "rows": rows,
+           "edge_set_test": edge}
     p = HERE / "delta-lambda-borromean-ascaling.witness.json"
     p.write_text(json.dumps(out, indent=2))
     print(f"\n  witness → {p.name}")

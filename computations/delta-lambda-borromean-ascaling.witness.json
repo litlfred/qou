@@ -1,6 +1,6 @@
 {
   "schema": "delta-lambda-borromean-ascaling/v1",
-  "description": "Borromean per-braid tower net/target vs canonical sgn(w\u2080)\u00b7dim; A-scaling diagnostic (no fit, no closure).",
+  "description": "Borromean per-braid tower net/target vs canonical sgn(w\u2080)\u00b7dim; A-scaling diagnostic + edge-set test (no fit, no closure).",
   "tower_net_over_target_spread": 6.1655584950713145,
   "rows": [
     {
@@ -67,5 +67,11 @@
       "tower_net_over_target": 1.3917907506518736,
       "canon_sgn_dim_net_over_target": null
     }
-  ]
+  ],
+  "edge_set_test": {
+    "all_pairs_spread": 6.1655584950713145,
+    "adjacent_spread": 17.8975134867134,
+    "hypothesis_refuted": true,
+    "note": "sparsifying the edge set (all-pairs C(A,2)~A\u00b2 \u2192 adjacent A\u22121~A) WORSENS the spread (monotone under-bind at heavy A) \u2014 the U-shape is NOT a pure edge-count effect; it is A\u00b2-overscaling at the heavy end PLUS the \u2074He magic dip (no shell structure). Edge-set lever (w5tg) alone is insufficient; the per-pair magnitude (~0.4 MeV) is far below ~8 MeV/nucleon, so closure needs magnitude-reshaping (z2bn R(q,x)) + shell/magic structure, not sparsification."
+  }
 }
