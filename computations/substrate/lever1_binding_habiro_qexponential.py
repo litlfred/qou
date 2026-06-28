@@ -38,7 +38,7 @@ from qou_substrate import constants as C
 # Shared, cached Young-diagram / symmetric quantum-dimension machinery (bean z3a2; PR #2952).
 # Replaces the formerly inline qint/qfact/partitions/hooks/dim_q/S — same symbolic results,
 # lru_cache-memoised across calls.
-from young_qdim import q, qfact, S
+from young_qdim import q, qfact, S  # noqa: E402
 
 
 MMAX = 8
