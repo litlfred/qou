@@ -12,7 +12,7 @@ from pathlib import Path
 import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parent))
+sys.path.insert(0, str(HERE.parent / 'substrate'))
 
 from _precision import set_compute_dps
 from q_parameter import Q_50_DIGIT_STR
