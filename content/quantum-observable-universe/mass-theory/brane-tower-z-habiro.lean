@@ -61,7 +61,7 @@ class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Skeleton"
 instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
   nStar := fun ell _ => max ell 1
-  nStar_pos := by intro ell k hell; simp [Nat.lt_max_iff]; left; exact hell
+  nStar_pos := by intro ell k _; simp
   recoversBinding := fun _ _ _ _ => True
   recovery_holds := fun _ _ _ _ _ => trivial
 
