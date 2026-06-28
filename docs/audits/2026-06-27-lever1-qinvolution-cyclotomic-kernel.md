@@ -189,6 +189,54 @@ size. What survives is the **exact cyclotomic structure** of Stage 1: the q-invo
 (seed-exact) plus the `(q−1)²·Φ_d` Habiro correction tower. The fibre kernel is a genuine
 cyclotomic-completion (Habiro-ring) object, not a low-order recurrence.
 
+## Stage 5 — the EXPLICIT binding Habiro element (q-exponential closed form)
+
+Since `S(m)` is not a low-order q-difference operator (Stages 3–4), the explicit object is its
+**generating function**. The classical involution EGF closes: `Σ_m I(m) x^m/m! = exp(x + x²/2)`
+(log truncates at degree 2). Construct the q-analog in the symmetric q-factorial
+`[m]_q! = ∏_{k=1}^m [k]_q`:
+
+```
+  Ŝ(z) = Σ_m S(m) z^m / [m]_q!  =  exp( L₁ z + L₂ z² + Σ_{m≥3} L_m z^m ),
+```
+
+with the log-coefficients computed exactly in `q`
+([`lever1_binding_habiro_qexponential.py`](../../computations/substrate/lever1_binding_habiro_qexponential.py),
+witness [`lever1-binding-habiro-qexponential.witness.json`](../../computations/substrate/lever1-binding-habiro-qexponential.witness.json)):
+
+| m | `L_m` | `q=1` | `(q−1)`-order |
+|---|---|---|---|
+| 1 | `1` (exact) | 1 | — |
+| 2 | `−(q²−4q+1)/(2(q²+1))` | ½ | 0 |
+| 3 | `(q−1)²(q⁴−4q³−4q²−4q+1)/(3·Φ₄Φ₆Φ₃)` | 0 | 2 |
+| 4 | `−(q−1)²(…deg 8…)/(4·Φ₄²Φ₈Φ₆)` | 0 | 2 |
+| 5 | `(q−1)⁴(…deg 14…)/(5·Φ₄²Φ₈Φ₆Φ₁₀Φ₅)` | 0 | 4 |
+| 6 | `−(q−1)⁴(…deg 22…)/(6·…)` | 0 | 4 |
+| 7 | `(q−1)⁶(…deg 28…)/(7·…)` | 0 | 6 |
+| 8 | `−(q−1)⁶(…deg 36…)/(8·…)` | 0 | 6 |
+
+Three exact, parameter-free facts:
+
+1. **q-Gaussian skeleton.** `L₁ = 1` exactly; `L₁, L₂ → 1, ½` at `q=1`. The leading object is the
+   pure q-Gaussian `exp(z + L₂(q) z²)` — the clean q-deformation of the classical `exp(x + x²/2)`.
+2. **Suppressed Habiro tail.** Every higher log-coefficient `L_{≥3}` carries a `(q−1)` factor and
+   the order **grows**: `(q−1)²` at `m=3,4`, `(q−1)⁴` at `m=5,6`, `(q−1)⁶` at `m=7,8`
+   (`L_m ~ (q−1)^{2⌊(m−1)/2⌋}`). So the q-Gaussian is an increasingly accurate approximation; the
+   tail is a pure fibre/q-deformation correction.
+3. **Cyclotomic (Habiro) denominators.** Every `L_m` denominator is a product of cyclotomic
+   polynomials `Φ_d` (Φ₃,Φ₄,Φ₆,Φ₇,Φ₈,Φ₁₀,Φ₁₂,Φ₁₄…), numerators palindromic. This is the
+   defining habitat of the Habiro ring (cyclotomic completion). **`L₂`'s denominator is `Φ₄ = q²+1`
+   — the `ζ₄` residue** the Q_β `c_k` kernel constraints independently require (constraint set in
+   [`2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md`](../scope/2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md)).
+
+This is the **explicit binding-side Habiro element in closed form**, constructed from exact
+(non-floor-limited) data. It is **not** the Q_β element `F(q)` — that is a different object, gated
+on the open SW-residue / jet-prolongation keystone `conj:qdifference-kernel-prolongation-symbol`,
+and fitting its `Φ₂` is the explicitly-forbidden "seventh ansatz"
+([`2026-06-09-qbeta-phi2-watcher-post-alpha-eff-refutation.md`](../scope/2026-06-09-qbeta-phi2-watcher-post-alpha-eff-refutation.md)).
+The construction here exhibits the **same Habiro-ring habitat** (cyclotomic denominators, `ζ₄`
+residue) from the binding side, which — unlike the noise-limited `c_k` — has exact data.
+
 ## Cross-link — the Q_β `c_k` ladder is in the same state (the `kehn` connection)
 
 The corpus `c_k` state of play
