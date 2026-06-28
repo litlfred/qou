@@ -138,8 +138,12 @@ def format_md_tables(text):
             widths = [0] * max_cols
             for r_idx, row in enumerate(rows):
                 for c_idx, cell in enumerate(row):
-                    if r_idx == 1: continue # skip separator
-                    widths[c_idx] = max(widths[c_idx], len(cell))
+                    w = len(cell)
+                    if r_idx == 1: # separator
+                        if cell.startswith(':') and cell.endswith(':'): w = max(3, w)
+                        elif cell.startswith(':') or cell.endswith(':'): w = max(2, w)
+                        else: w = max(1, w)
+                    widths[c_idx] = max(widths[c_idx], w)
             
             # Format table
             for r_idx, row in enumerate(rows):
