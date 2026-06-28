@@ -35,7 +35,7 @@ import sympy as sp
 
 # Shared, cached Young-diagram / symmetric quantum-dimension machinery (bean z3a2; PR #2952).
 # Replaces the formerly inline qint/qfact/partitions/hooks/dim_q/S — same symbolic results.
-from young_qdim import q, S
+from young_qdim import q, S  # noqa: E402
 
 
 NMAX = 9          # compute S(0..9)
