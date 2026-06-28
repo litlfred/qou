@@ -13,7 +13,9 @@ transcendental functions of per-generator volumes.  They are not.
 Two equivalent expansions both factor $\Phi_q$ through Markov
 traces of the same per-generator subwords already used by Term 1.
 
-## Series expansion
+## $\Phi_q$ factors through Markov traces
+
+### Series expansion
 
 Using the standard identity
 $\Phi_q(z) = \exp\!\bigl[\sum_{k \geq 1} z^k / (k(1 - q^k))\bigr]$,
@@ -34,7 +36,7 @@ terms therefore reduce to (a series of) Markov traces of powers of
 per-generator (or pair) sub-braids — the same algebraic species
 that supplies Terms 1, 4, 5, 6.
 
-## Kähler-lift expansion
+### Kähler-lift expansion
 
 The same fact is visible from
 ([topological mass](#thm:topological-mass)).  The transient summands
@@ -45,7 +47,7 @@ descended trace.  Resumming via $\Phi_q$ collapses the tower into a
 single transcendental factor; the underlying algebra remains
 Markov-trace arithmetic.
 
-## Practical consequence
+### Practical consequence
 
 Both routes confirm that the six-term formula is, end-to-end, a
 construction over Markov traces:

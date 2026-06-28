@@ -11,7 +11,13 @@ is $\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$.
 
 ---
 
-## Table L.1: NF basis multiplication table ($T_{1,0}$ — identity operator)
+## NF basis multiplication tables per torus-knot operator
+
+The three tables below are facets of one object — the NF-basis
+multiplication table $b_i \cdot \beta(T_{m,n}) \cdot b_j$ — evaluated
+for the identity operator and the two lowest-crossing torus operators.
+
+### Table L.1: NF basis multiplication table ($T_{1,0}$ — identity operator)
 
 The identity operator $\beta(T_{1,0}) = \mathbf{1}$ gives
 the raw product $b_i \cdot b_j$.  Every entry below is **exact
@@ -38,7 +44,7 @@ See [Table 1](#tbl:knot-operator-basis-table-table1-data).
 
 ---
 
-## Table L.2: $T_{2,3}$ operator (trefoil / electron)
+### Table L.2: $T_{2,3}$ operator (trefoil / electron)
 
 $\beta(T_{2,3}) = \sigma_0\sigma_1\sigma_0 = e^-$.
 
@@ -56,7 +62,7 @@ $T_{2,3}$ as the universal pair-production operator.
 
 ---
 
-## Table L.3: $T_{2,1}$ operator (single crossing)
+### Table L.3: $T_{2,1}$ operator (single crossing)
 
 $\beta(T_{2,1}) = \sigma_0$.
 
@@ -69,7 +75,7 @@ to open the electron channel.
 
 ---
 
-## Summary: operator channel opening
+### Summary: operator channel opening
 
 See [Table 4](#tbl:knot-operator-basis-table-table4-data).
 

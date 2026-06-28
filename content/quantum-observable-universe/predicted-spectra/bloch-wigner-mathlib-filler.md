@@ -19,11 +19,13 @@ where shape parameters are unit-circle roots:
 
 See [Table 1](#tbl:bloch-wigner-mathlib-filler-table1-data).
 
-## Lean carriers added
+## The filler and its remaining gaps
+
+### Lean carriers added
 
 See [Table 2](#tbl:bloch-wigner-mathlib-filler-table2-data).
 
-## Mathlib gaps remaining
+### Mathlib gaps remaining
 
 The unit-circle restriction of $D$ is **all that's needed for the
 hyperbolic-knot $\leftrightarrow$ Bloch-Wigner chain in the QOU framework**: every
@@ -37,7 +39,7 @@ What is still blocked:
 
 See [Table 3](#tbl:bloch-wigner-mathlib-filler-table3-data).
 
-## Significance
+### Significance
 
 With this filler added, **every BW value referenced in the α_EM
 chain is now a Lean carrier with explicit definition**, not an

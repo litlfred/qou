@@ -12,7 +12,9 @@ logically separate scaling factors. Conflating them obscures which
 constants are topological (intrinsic to the Hecke trace) and which are
 dimensional (set by the choice of physical anchor).*
 
-## Tier 1: topological scaling — quantum dimension $[N]_q$
+## The two tiers and their separation
+
+### Tier 1: topological scaling — quantum dimension $[N]_q$
 
 Before the Markov trace
 ([categorical mass as Markov trace](#prop:categorical-mass-markov))
@@ -38,7 +40,7 @@ this normalisation the polynomial would grow with every additional
 trivial component, and Reidemeister-I invariance would fail
 ([Reidemeister mass invariance](#conj:reidemeister-mass-invariance)).
 
-## Tier 2: physical scaling — base mass $m_0$
+### Tier 2: physical scaling — base mass $m_0$
 
 Evaluating the normalised $P_K(q)$ at the substrate parameter
 $q_0 = 1.109978595554181\ldots$ (50 dps) produces a dimensionless real number; converting
@@ -68,7 +70,7 @@ equivalent predictions for dimensionless ratios such as
 $m_\mu/m_e$ and $m_n - m_p$, but require independent calibration of
 the leptonic sector to match observed masses.
 
-## Significance of the separation
+### Significance of the separation
 
 The two tiers commute with disjoint operations:
 

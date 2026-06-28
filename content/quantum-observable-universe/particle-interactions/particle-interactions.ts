@@ -186,6 +186,8 @@ export default chapter({
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
         "beta-decay-interpretation",
+        "beta-decay-tritium-example",
+        "beta-decay-double-beta",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
         "negative-debt-confinement",

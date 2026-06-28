@@ -70,6 +70,7 @@ export default chapter({
             "bar-grading-algebra",
             "braid-group-n-strand",
             "h3-hecke-idempotents",
+            "h3-hecke-idempotents-poincare-normalizer",
             "braid-link-types",
           ],
         }),

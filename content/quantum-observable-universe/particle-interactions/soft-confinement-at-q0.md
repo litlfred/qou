@@ -1,5 +1,3 @@
-## Soft confinement at the substrate parameter
-
 The Wedderburn block labels of $H_n(q)$ — partitions $\lambda \vdash n$ —
 are combinatorial and $q$-independent.  What **is** $q$-dependent is
 the **measure** on this grading: the Plancherel weights
@@ -29,7 +27,9 @@ $$
 Partitions of depth or width exceeding $\ell_*$ contribute negligibly
 to the Frobenius packing and can be truncated in practice.
 
-## Implication for atomic braids
+## Consequences of the soft cutoff
+
+### Implication for atomic braids
 
 An atomic braid with $A$ nucleons has $3A$ strands and lives in
 $H_{3A}(q_0)$, whose Wedderburn sum ranges over partitions
@@ -52,7 +52,7 @@ $H_{3A}$ for larger $A$ starts to exceed $\ell_*$, and cross-Wedderburn
 couplings — which collapse under truncation — must be re-summed
 via cluster decomposition.
 
-## Numerical estimate
+### Numerical estimate
 
 At $q_0 = 1.109978595554181\ldots$ (50 dps):
 

@@ -144,6 +144,8 @@ export default chapter({
         "flavor-split-substrate",
         "flavor-split-substrate-proof",
         "dressed-quark-numerology-at-q0",
+        "dressed-quark-distance-from-bound",
+        "dressed-quark-heavier-flavors",
         // Phase 7 orphan reconnection (2026-05-25):
         "m-tau-knot-prediction",
       ],
@@ -205,6 +207,8 @@ export default chapter({
         "half-life-shell-worked-table-data",
         "half-life-as-q-probe",
         "finiteness-bound-interpretation",
+        "finiteness-bound-nuclear-chart",
+        "finiteness-bound-q-dependence",
         "tritium-decay-knot-equation",
         "tritium-qvalue-audit",
       ],

@@ -22,7 +22,9 @@ the power series expansion of any quantum knot invariant at $q = 1$ are
 finite-type invariants, with the order matching the power of the
 deformation parameter.
 
-## Content of the Vassiliev grading
+## The Vassiliev filtration of the mass tower
+
+### Content of the Vassiliev grading
 
 The graded decomposition
 $V_0 \subset V_1 \subset V_2 \subset \cdots$ of knot invariants
@@ -55,7 +57,7 @@ by type gives a **canonical filtration by complexity**:
    suppresses by a factor of $\sim 0.209$, giving roughly one
    additional decimal digit of precision per Vassiliev order.
 
-## Connection to the Archimedean-image table
+### Connection to the Archimedean-image table
 
 In the Archimedean-image table
 ([`rem:archimedean-image-table`](#rem:archimedean-image-table)),
@@ -78,26 +80,3 @@ filtration:
   $y_\lambda \cdot \chi_\lambda(\beta)$ has Vassiliev type
   controlled by the partition's content statistics.
 
-## Connection to optimisation
-
-For the LP/SDP operator-selection framework — concretely the
-[knot operator energy](#def:knot-operator-energy)
-$E(\lambda, q) = |w_\lambda/d_\lambda - 1/[k]_q!|$ — the
-Vassiliev filtration provides a **canonical cost-vector basis**
-at each type:
-
-$$
-  t_k^{(\mathrm{type}\,m)}
-  \;=\;
-  c_m(b_k)
-  \quad\text{(type-$m$ Vassiliev invariant of basis element $b_k$)}
-$$
-
-The LP at type $m$ finds the optimal operator for the type-$m$
-mass correction, independent of higher-order terms. This
-decomposes the mass-formula optimisation into a **graded hierarchy**
-of independent LPs — one per Vassiliev type — whose solutions
-can be composed to give the full mass prediction.
-
-This decomposition follows directly from the Vassiliev
-filtration's compatibility with the Markov trace.

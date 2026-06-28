@@ -534,6 +534,8 @@ export default chapter({
             "vassiliev-filtration-mass-tower",
             "hecke-quandle",
             "knot-operator-bring-action",
+            "knot-operator-bring-action-so3-gap",
+            "knot-operator-bring-action-gram-inverse",
             "phi-q-resums-trace-series",
             "phi-q-resums-trace-series-table-data",
             "markov-axiom-recursive-ascent",

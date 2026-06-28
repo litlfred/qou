@@ -11,14 +11,16 @@ residual discharges in
 [`rem:ck-extraction-from-algebraic-rules`](#rem:ck-extraction-from-algebraic-rules)
 and elsewhere.
 
-## Substantive identities (all proved by `field_simp + ring`)
+## The $u = q^2$ substantive discharges
+
+### Substantive identities (all proved by `field_simp + ring`)
 
 See [Table](#tbl:u-coordinate-discharges-table-data).
 
 Each scalar identity above is exported as a Lean theorem closed by
 `field_simp + ring` (no sqrt, no opaque axioms).
 
-## Significance
+### Significance
 
 Before this block, the explicit-residual discharges at the class
 level (`⟨0, rfl⟩`) appeared **abstractly trivial** — the residual is
@@ -34,7 +36,7 @@ vanishes is then concretely captured by `hecke_root_sum_times_q`:
 $q \cdot (q - q^{-1}) = u - 1$, which is a non-trivial rational
 identity provable by `field_simp + ring`.
 
-## Files affected (downstream consumers)
+### Files affected (downstream consumers)
 
 - `rem:ck-extraction-from-algebraic-rules` — instances now point to
   the $u$-coordinate identities as their substantive backing.

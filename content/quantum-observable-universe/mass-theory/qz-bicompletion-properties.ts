@@ -4,7 +4,7 @@ export default remark({
   label: "rem:qz-bicompletion-properties",
   interprets: "def:qz-bicompletion",
   title:
-    "Cyclotomic apex, conjectural mass element, and open questions for the $(q,z)$-bicompletion",
+    "Cyclotomic apex and conjectural mass element of the $(q,z)$-bicompletion",
   tags: [
     "habiro-ring",
     "bicompletion",

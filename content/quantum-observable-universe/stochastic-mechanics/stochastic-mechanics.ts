@@ -51,6 +51,7 @@ export default chapter({
         "polynomial-bar-involution-table-data",
         "c5-involution-leibniz-decomposition",
         "c5-involution-leibniz-decomposition-interpretation",
+        "c5-involution-leibniz-falsifiable-prediction",
         "braid-group-n-strand-table3-data",
       ],
     }),

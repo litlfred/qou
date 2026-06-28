@@ -2,9 +2,11 @@ The framework has **two distinct projection mechanisms** that each
 discard structural content. They are often conflated, yet **must
 be kept separate**:
 
-## Two mechanisms
+## Distinguishing the two projection mechanisms
 
-### Mechanism 1 — bar projection (real-q phenomenon)
+### Two mechanisms
+
+#### Mechanism 1 — bar projection (real-q phenomenon)
 
 Per [bar-involution.md](bar-involution.md), every Hecke-algebra
 element decomposes as $x = P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x)$
@@ -25,7 +27,7 @@ $\sinh(\log q)$ is the **EM / Coulomb channel**. So the EM /
 P_skew content **exists** for real $q$ and is discarded by the
 canonical projection.
 
-### Mechanism 2 — modulus projection (complex-q phenomenon)
+#### Mechanism 2 — modulus projection (complex-q phenomenon)
 
 Per [`prop:categorical-mass-markov`](categorical-mass-markov.md),
 the categorical mass formula is
@@ -37,7 +39,7 @@ and $|\cdot|$ is trivial (absolute value of a sign). For
 **complex** $q$, $\mathrm{tr}_M$ becomes complex and $|\cdot|$
 genuinely projects: $\mathrm{Im}(\mathrm{tr}_M)$ is discarded.
 
-## A common incorrect claim
+### A common incorrect claim
 
 A natural-but-incorrect claim is "Im(q) = EM channel = P_skew channel".
 This conflates the two mechanisms. The correct statements are:
@@ -53,7 +55,7 @@ So:
 - Im(q) is **set to zero** by the framework's real-q convention, not "discarded by a projection".
 - These are independent.
 
-## Significance
+### Significance
 
 Quantitative consequences differ between the two mechanisms:
 

@@ -7,9 +7,11 @@ the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives
 in the **3-fold Markov closure $\to$ Hopf-link substructure**
 identification (Step 3 of the Track-C chain).
 
-This remark **factorises that content** into two ATOMIC axioms:
+This remark **factorises that content** into two ATOMIC axioms.
 
-## The two atomic axioms
+## Two-atom factorisation of the Markov-closure content
+
+### The two atomic axioms
 
 1. **Markov-closure of a 2-strand 2-crossing braid is the Hopf link**:
    $$\widehat{\sigma_1^2 \in B_2} \;=\; \text{Hopf link}$$
@@ -21,7 +23,7 @@ This remark **factorises that content** into two ATOMIC axioms:
    Already proved in Lean ([`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean))
    via `unfold + norm_num`.
 
-## Lean encoding
+### Lean encoding
 
 The companion file [`markov-closure-map-axiomatic.lean`](markov-closure-map-axiomatic.lean):
 
@@ -36,7 +38,7 @@ The companion file [`markov-closure-map-axiomatic.lean`](markov-closure-map-axio
 
 - Proves `track_C_c_3_eq_neg_two`: under both classes, $c_3 = -2$.
 
-## Result
+### Result
 
 **Before**: the `ThreeFoldMarkovHopfExtraction` class had a single
 broad axiomatic field encoding "the substantive 2-strand sub-braid

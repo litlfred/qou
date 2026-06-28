@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "thm:jones-markov-trace",
   label: "rem:markov-lambda-knot-operations",
-  title: "Knot operations, Markov chain, and the partition $\\lambda$",
+  title: "Wedderburn $\\lambda$-block decomposition of the Markov chain",
   tags: [
     "markov-chain",
     "young-graph",

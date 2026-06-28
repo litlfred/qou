@@ -7,7 +7,9 @@ the paper.  This remark matches each chain layer to its
 controlling bound and flags a standard CLT framework that
 **fails** in this paper's regime.
 
-## Outer chain: $q$-Plancherel CLT (Féray--Méliot)
+## Error bounds across the two chain layers
+
+### Outer chain: $q$-Plancherel CLT (Féray--Méliot)
 
 The outer chain samples $\lambda \vdash n$ under the normalised
 Ocneanu weights $\pi_\lambda(q)$, which at generic $q$ are the
@@ -26,7 +28,7 @@ with explicit constants worked out in
 This is the standard Gaussian CLT rate transported to the
 $q$-deformed Plancherel measure.
 
-## Inner chain: Perron--Frobenius, not Bożejko--Speicher
+### Inner chain: Perron--Frobenius, not Bożejko--Speicher
 
 The inner chain on $\mathrm{SYT}(\lambda)$ is the natural venue
 for a $q$-Gaussian CLT in the sense of Bożejko--Speicher, since

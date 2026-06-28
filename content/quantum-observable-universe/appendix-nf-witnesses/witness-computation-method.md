@@ -2,7 +2,14 @@ The Pauli witnesses are computed by the **hecke-engine** (versions v8/v9),
 an inductive Gröbner--Shirshov reduction algorithm operating in the
 Iwahori--Hecke algebra $H_A(q)$.
 
-## Crossing convention
+## The hecke-engine reduction algorithm
+
+The single inductive method below — its crossing convention, the
+strand-by-strand construction, the exact Laurent arithmetic, and its
+scalability profile — is one algorithm; the subsections describe its
+facets.
+
+### Crossing convention
 
 All computations use the unimodular $(1, -\mathrm{HA})$ crossing convention:
 
@@ -15,7 +22,7 @@ All computations use the unimodular $(1, -\mathrm{HA})$ crossing convention:
 where $\mathrm{HA} = q - q^{-1}$.  This gives $\det T_{nn} = -1$
 (unimodular), consistent with the Iwahori--Hecke inverse relation.
 
-## Inductive construction
+### Inductive construction
 
 The engine builds the normal form strand by strand, from $A = 2$ up to the
 target mass number.  At each step $A \to A + 1$:
@@ -37,7 +44,7 @@ target mass number.  At each step $A \to A + 1$:
    $\mathrm{tr}_{\mathrm{alt}} = \sum_w c_w \cdot (-q^{-1})^{\ell(w)}$
    and the net trace $\mathrm{net} = \sum_w c_w \cdot q^{\ell(w)}$.
 
-## Arithmetic
+### Arithmetic
 
 All intermediate computations use exact Laurent polynomials in
 $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ where $\check{q} = q^{1/2}$ is the spinor information rate. No floating-point
@@ -46,7 +53,7 @@ The denominator $2^{p_n}$ (from the doubled pn crossing convention)
 is tracked separately and cancels in the Pauli ratio
 $F_{\mathrm{Pauli}} = |\mathrm{tr}_{\mathrm{alt}}| / |\mathrm{net}|$.
 
-## Scalability
+### Scalability
 
 For $A \leq 12$, the full symbolic computation completes in seconds.
 For medium nuclei ($A = 13$--$60$), the engine switches to $64$-bit
