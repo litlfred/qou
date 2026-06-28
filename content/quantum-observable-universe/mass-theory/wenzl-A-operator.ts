@@ -33,7 +33,7 @@ export default definition({
     script:
       "computations/a_operator/A_operator_extract_at_level.py",
     witness: [
-      "computations/A-operator-extract-h9-pn.witness.json",
+      "computations/a_operator/A-operator-extract-h9-pn.witness.json",
     ],
     status: "verified",
     requires: [],
