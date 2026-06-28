@@ -1,0 +1,106 @@
+{
+  "schema": "witness/v1",
+  "name": "wlambda-ladder-higher-rungs",
+  "description": "W_\u03bb q-Plancherel defect ladder: exact c_{2k}(n) via Kerov moments; degree-3k law confirmed exactly + held-out predictively through k=5.",
+  "computation": {
+    "script": "computations/keystone_wlambda_ladder_higher_rungs.py",
+    "method": "exact Kerov\u2013Plancherel moment series (Fraction); finite-difference degree; Newton held-out prediction",
+    "parameter_free": true
+  },
+  "result": {
+    "K": 5,
+    "n_range": [
+      2,
+      19
+    ],
+    "rungs": [
+      {
+        "k": 1,
+        "coeff": "c_2",
+        "degree": 3,
+        "expected_degree_3k": 3,
+        "degree_law_ok": true,
+        "fit_window_n": [
+          2,
+          5
+        ],
+        "held_out_n": [
+          6,
+          19
+        ],
+        "held_out_predictive_ok": true
+      },
+      {
+        "k": 2,
+        "coeff": "c_4",
+        "degree": 6,
+        "expected_degree_3k": 6,
+        "degree_law_ok": true,
+        "fit_window_n": [
+          2,
+          8
+        ],
+        "held_out_n": [
+          9,
+          19
+        ],
+        "held_out_predictive_ok": true
+      },
+      {
+        "k": 3,
+        "coeff": "c_6",
+        "degree": 9,
+        "expected_degree_3k": 9,
+        "degree_law_ok": true,
+        "fit_window_n": [
+          2,
+          11
+        ],
+        "held_out_n": [
+          12,
+          19
+        ],
+        "held_out_predictive_ok": true
+      },
+      {
+        "k": 4,
+        "coeff": "c_8",
+        "degree": 12,
+        "expected_degree_3k": 12,
+        "degree_law_ok": true,
+        "fit_window_n": [
+          2,
+          14
+        ],
+        "held_out_n": [
+          15,
+          19
+        ],
+        "held_out_predictive_ok": true
+      },
+      {
+        "k": 5,
+        "coeff": "c_10",
+        "degree": 15,
+        "expected_degree_3k": 15,
+        "degree_law_ok": true,
+        "fit_window_n": [
+          2,
+          17
+        ],
+        "held_out_n": [
+          18,
+          19
+        ],
+        "held_out_predictive_ok": true
+      }
+    ],
+    "degree_3k_law": true,
+    "c2_matches_lean_closed_form": true
+  },
+  "provenance": {
+    "extends": "PR #2965 (exact_ladder, k\u22643)",
+    "lean_anchor": "QOU.BraidKnot.WLambdaDefectClosedForm.n144C_closed_form",
+    "keystone_bean": "s5bb"
+  }
+}
