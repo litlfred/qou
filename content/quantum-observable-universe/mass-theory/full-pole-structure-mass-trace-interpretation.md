@@ -10,5 +10,7 @@ $\mathbb{C}$. Each finite-order Cauchy-kernel partial sum is the
 $q$-adic image of a Habiro truncation; computational data confirms
 that for the proton and neutron the Cauchy kernel partial sum
 truncated at $n \leq 6$ is identically zero, in agreement with
-property (2) above (the Habiro coefficients $a_0, \ldots, a_5$
+property (2) of the mass-trace pole structure
+([`prop:full-pole-structure-mass-trace`](#prop:full-pole-structure-mass-trace))
+(the Habiro coefficients $a_0, \ldots, a_5$
 vanish on the atomic trefoil class).*

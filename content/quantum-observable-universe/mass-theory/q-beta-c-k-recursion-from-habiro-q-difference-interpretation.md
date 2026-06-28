@@ -10,4 +10,4 @@ radial asymptotic, and the failure of the naive $q$-dilogarithm route is the
 vanishing of the modular cocycle's Bloch–Wigner (volume) term on the
 **non-hyperbolic** Hopf link. This is a motivated analogy, **not a theorem** —
 establishing it would require exhibiting $F(q)$ as a quantum modular form.
-Full discussion: [`docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md).
+Full discussion: [`docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md`](../../../docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md).

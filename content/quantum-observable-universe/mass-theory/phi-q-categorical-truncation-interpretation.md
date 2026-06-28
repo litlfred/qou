@@ -13,7 +13,7 @@ defined above:*
 
 *The two coincide whenever the GB-depth filtration is induced by the
 strand-size filtration on partitions, but they **can differ** when a
-small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.
+small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.*
 
 **Computed for tritium.** A direct YSN/Hoefsmit
 character computation
@@ -52,7 +52,7 @@ $k_{\max}$ in the witness.
 *Under this proposition, the structural truncation depth for tritium
 is $k_\star(\mathrm{T_w}) = 5$ (computed; full partition support of
 $\lambda \vdash 5$), and for D and ${}^3\mathrm{He}$ at most
-$k_\star \leq 3$ (since they live in $H_3$). The* uniform-$k$ *probe
+$k_\star \leq 3$ (since they live in $H_3$). The uniform-$k$ probe
 ([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))
 shows the Frobenius-paired truncation is far from numerically closed:
 at $k = 2$ subtractive form, D errs $-22\%$, T errs $-39\%$,
