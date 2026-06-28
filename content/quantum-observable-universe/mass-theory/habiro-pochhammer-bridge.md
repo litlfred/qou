@@ -23,28 +23,6 @@ $$
 $\langle f_m \rangle_{\mathrm{Hab}} =
 \sum_m a_m(u)\,(u;u)_m \cdot f_m \,/\, \sum_m a_m(u)\,(u;u)_m$.*
 
-## Proof
-
-The identity $1 - q^k = 1 - u^{2k} = (1 - u^k)(1 + u^k)$ is
-immediate from $q = u^2$. Applying it to each factor of the
-Pochhammer product gives
-
-$$
-  (q;q)_m = \prod_{k=1}^{m}(1 - q^k)
-  = \prod_{k=1}^{m}(1 - u^k)(1 + u^k)
-  = (u;u)_m \cdot \prod_{k=1}^{m}(1 + u^k).
-$$
-
-Substituting into the numerator:
-
-$$
-  \sum_m a_m(u)\,(q;q)_m
-  = \sum_m a_m(u)\,(u;u)_m \cdot \prod_{k=1}^{m}(1 + u^k).
-$$
-
-Dividing by $\sum_m a_m(u)\,(u;u)_m$ gives the weighted average.
-$\square$
-
 ## Numerical verification (proton, $n = 9$)
 
 At the substrate $q_0 \approx 1.1100$, $u_0 = \sqrt{q_0} \approx 1.0536$:
@@ -63,6 +41,5 @@ The correction $S = R_{\mathrm{alg}} / (\mathrm{Vol}(4_1)/\hbar_q^2)$
 inherits transcendental dependence on $\mathrm{Vol}(4_1)$ and
 cannot be expressed as a closed-form rational function of $\hbar_q^2$
 from representation theory alone.
-
 
 **Mathematical Novelty:** The proved identity relies on the elementary textbook algebraic factorization $1-q^k = (1-u^k)(1+u^k)$. The novel, framework-specific mathematical contribution lies in its application to the Habiro-weighted-average ratio, linking standard q-series identities to the physical structure.
