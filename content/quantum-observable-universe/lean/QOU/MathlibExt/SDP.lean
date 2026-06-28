@@ -130,13 +130,23 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   ystar : ι → R
   /-- Primal feasibility witness. -/
   primal_feas : sdp.IsFeasible Φstar
-  /-- Dual feasibility — `True` placeholder; ℝ-specialised
-      version (`RealStrongDualityPair.dualSlack_psd`) encodes
-      `(sdp.dualSlack ystar).PosSemidef`. -/
+  /-- Dual feasibility — `opaque marker` for genuinely-open
+      infrastructure: PSD-ness `(sdp.dualSlack ystar).PosSemidef`
+      requires `[Fintype ι]` + the `StarOrderedRing` of `R := ℝ`
+      and so cannot be stated over the generic `R` carrier here.
+      The content-bearing ℝ-specialised field is
+      `RealStrongDualityPair.dualSlack_psd` (in
+      `QOU.MathlibExt.SDPRealUniqueness`); consume that, not this
+      abstract skeleton. -/
   dual_feas : True
-  /-- Strong-duality identity — `True` placeholder; ℝ-specialised
-      version (`RealStrongDualityPair.obj_eq_dualObj`) encodes
-      `objAt Φstar = dualObjAt ystar`. -/
+  /-- Strong-duality identity — `opaque marker` for genuinely-open
+      infrastructure: the content-bearing ℝ-specialised field is
+      `RealStrongDualityPair.obj_eq_dualObj`
+      (`objAt Φstar = dualObjAt ystar`, in
+      `QOU.MathlibExt.SDPRealUniqueness`). Kept `True` here so the
+      generic skeleton stays usable by the empty-constraint witness
+      `trivialStrongDualityPair`; consume the ℝ form for the real
+      objective-equality content. -/
   obj_eq : True
 
 /-- **Strong-duality typeclass**: witnesses that an SDP satisfies
