@@ -1,4 +1,16 @@
-# 2026-06-28 — Δ_λ three-piece test: the fibre kernel MODULATES the bulk (multiplicative), additive is refuted
+# 2026-06-28 — Δ_λ three-piece test: numerical cross-check of the body-order series (scope-corrected)
+
+> **⚠ SCOPE CORRECTION (2026-06-28).** Corpus-grep after the fact shows the
+> canonical structure is **already** [`prop:binding-manybody-jet-filtration`](../../content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.md)
+> (+ Lean sibling): `B(K)=Σ_{n≥2} B_n(K)`, `B_n=m_e·a_D^(n)=m_e·∮λ_SW^(n)`, with
+> anchors at **n=2 (deuteron)** and **n=4 (magic `B(⁴He)=2·m_e·A·Vol(L6a4)`,
+> +5.87%)** and the R(q,x) recursion `G(qx)=R(q,x)G(x)`. My "extensive bulk
+> `2·m_e·8G`" **is that n=4 anchor**; the proper combination is the additive
+> body-order sum `Σ_n B_n` (distinct SW periods), so my "additive refuted" tested
+> the wrong thing (bulk + tower = the *same* body order, double-counted — not a
+> failure of additivity over orders). **Residual value:** the per-isotope `r(K)`
+> profile is a numerical diagnostic of where the body-order series sits vs AME; it
+> is not a new combination law. Novelty language below is retracted.
 
 **Branch:** `claude/delta-lambda-three-piece-test-2026-06-28`
 **Goal:** Δ_λ binding-closure (Track-A / Option-E)

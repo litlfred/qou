@@ -1,7 +1,29 @@
-# 2026-06-28 — Deriving R(q,x): the binding kernel is the q-deformed telephone EGF (Frobenius/Wedderburn)
+# 2026-06-28 — R(q,x) = q-telephone/q-Hermite: INDEPENDENT CROSS-CHECK (not a new derivation)
+
+> **⚠ SCOPE CORRECTION (2026-06-28).** This is **NOT a new derivation** — it
+> **reproduces existing corpus**, which I failed to corpus-grep before writing.
+> The result (`a_D^(n)=(1/n)Σ_λ dim_q`, `q→1` = involution/telephone numbers
+> A000085, q-Hermite home, the `[n−1]_q` q-telephone recurrence drift for n≥4, no
+> low-order R(q,x)) is **already established**, more completely:
+> - [`docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md`](2026-06-26-binding-period-qinvolution-qhermite-identification.md)
+>   — the q-involution/q-Hermite identification, proved **all-n via RSK** (vs my
+>   finite n≤8 check); a 90-dps held-out search proving **no low-order R(q,x)**;
+>   and a **fork I missed** (the clean kernel belongs to the *crossing* moment
+>   μ_q, not the quantum-dim period Σ_λ dim_q — they diverge past n=3).
+> - [`prop:binding-genfun-qdifference`](../../content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md)
+>   — the R(q,x) recursion `G(qx)=R(q,x)G(x)` block (+ Lean sibling).
+> - [`prop:sw-period-residue-sum`](../../content/quantum-observable-universe/brings-surface/sw-period-residue-sum.md)
+>   — `a_D^(n)=∮λ_SW^(n)` = residue sum = per-block Wedderburn weights (+ Lean).
+> - Compute already exists: `sw_period_qinvolution_identification_probe.py`,
+>   `sw_period_qholonomic_kernel_search.py`.
+>
+> **Residual value:** my `delta_lambda_Rqx_derivation.py` is an *independent
+> numerical cross-check* (Frobenius-total-q-mass framing, exact in q for n≤8)
+> confirming the anchor identities + the (q−1)²·Φ₃ defect factorization. It adds
+> no new mathematics. The novelty language below is retracted.
 
 **Branch:** `claude/delta-lambda-three-piece-test-2026-06-28` · **PR:** #3040 · **Bean:** `z2bn`
-**Scope tag:** (a)/(b) — exact derivation of the anchor identity + classical limit + the z2bn defect structure. **No fit; the fibre→per-isotope bridge remains the open keystone.**
+**Scope tag:** (a) — independent numerical cross-check of existing corpus (see correction above). **No new result.**
 **Producer:** [`computations/delta_lambda_Rqx_derivation.py`](../../computations/delta_lambda_Rqx_derivation.py)
 **Witness:** `computations/delta-lambda-Rqx-derivation.witness.json`
 
