@@ -40,12 +40,13 @@ The owner's framing (2026-06-26):
 > remarks or interpretation in them — it should be a follow-on remark… [each
 > content block should follow the] style of a graduate-level formal math book.*
 
-## The nine audit parameters (criterion ids)
+## The ten audit parameters (criterion ids)
 
 The first four are **forward** checks on blocks that *are* definitions/statements;
 `clarity-stmt-pure`, `clarity-grad-style`, and `clarity-rhetorical-header` are three further forward checks;
 `clarity-defn-misplaced` is the **inverse** (a definition hiding in the wrong block kind);
-`clarity-remark-single-topic` is a **remark-scope** check (one remark = one topic).
+`clarity-remark-single-topic` and `clarity-remark-embeds-statement` are **remark-scope**
+checks (one remark = one topic; a remark must not embed formal statements).
 
 | Criterion | Applies to | Passes when | Fails when |
 |---|---|---|---|
@@ -57,7 +58,8 @@ The first four are **forward** checks on blocks that *are* definitions/statement
 | **`clarity-grad-style`** | every prose-bearing kind (definition / statement / conjecture / example / remark / prose) | the prose reads in the register of a **graduate-level formal mathematics text** | informal register: contractions ("don't", "we'll", "let's"), second-person ("you"), hype adjectives ("remarkable", "beautiful", "elegant"), colloquialism ("basically", "a lot of", "of course"), exclamation marks, or emoji. An emoji or `!` is on its own a hard violation (→ **major**) |
 | **`clarity-rhetorical-header`** | every prose-bearing kind | every section header (bold `**…**` or ATX `## …`) reads in **noun-phrase academic register** | a header is a **rhetorical question** (ends with `?`, or opens with Why/What/How/When/Where/… → **major**) or **colloquial framing** (`Consequence.`, `The upshot.`, `Why this matters`, `What X actually was` → **minor**). Owner directive 2026-06-27: such headers are not graduate-academic; reword to a noun phrase (`Why genus 4?` → `The genus-4 selection.`; `Consequence.` → `Corollary.`). The *content* may stay — only the header changes |
 | **`clarity-defn-misplaced`** | **non-**`definition` kinds (remark, prose, theorem, conjecture, example, …) | the block carries no definition — no `defines[]`, no `:defterm[…]`, few defining verbs | the block secretly **is** a definition: it declares `defines[]` or marks a `:defterm[…]{#slug}` define-site (→ **major**), or leads in with ≥ 2 defining verbs (→ **minor**). **Glossary blocks** (tag `"glossary"`) are exempt (`n/a`) — they define terminology by design |
-| **`clarity-remark-single-topic`** | `remark` | the remark covers **one** topic | the remark bundles **≥ 2 distinct topical sub-sections** (`## …` ATX headers / `**Remark (…).**`-style run-in headers, after excluding ancillary `Example`/`Proof`/`References`/… sub-heads). Such a remark should be **split into separate remark blocks**, each `interprets:` its parent. ≥ 4 topical sub-sections → **major**, else **minor**. **Glossary blocks** (`isGlossary`) are exempt — their sub-structure is term-mapping, not multiple topics |
+| **`clarity-remark-single-topic`** | `remark` | the remark covers **one** topic | the remark bundles **≥ 2 distinct topical top-level `## …` sub-sections** (run-in bold and `###`+ sub-heads are sub-structure, not topics; ancillary `Example`/`Proof`/`References`/… excluded). Such a remark should be **split into separate remark blocks**, each `interprets:` its parent. ≥ 4 topical sub-sections → **major**, else **minor**. **Glossary blocks** (`isGlossary`) are exempt — their sub-structure is term-mapping, not multiple topics |
+| **`clarity-remark-embeds-statement`** | `remark` | interpretive prose only — no embedded formal statements | the remark embeds **run-in formal statement labels** (`**Proposition (Lean: …).**`, `**Theorem.**`, `**Lemma.**`, `**Corollary.**`, `**Claim.**`) or a `## Proof(s)` catalog — formal content invisible to the proof / dependency / Lean pipeline. **Promote each embedded statement to its own `proposition`/`theorem`/`lemma` block** (with a Lean sibling); keep the remark interpretive. The mirror of `clarity-defn-misplaced`, one level up. ≥ 3 labels or a proof section → **major**, else **minor**. Glossary exempt |
 
 ### Worked example — `def:q-dilogarithm`
 

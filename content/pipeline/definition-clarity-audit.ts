@@ -176,6 +176,11 @@ const T = {
    *  topical sub-sections (`## …` ATX headers / `**Remark (…).**`-style run-in
    *  headers) is a candidate for splitting into one remark per topic. */
   remarkTopics: 2,
+  /** clarity-remark-embeds-statement: a remark carrying this many or more
+   *  run-in formal statement labels (`**Proposition.**`, `**Theorem.**`, …) is
+   *  a candidate for promoting the embedded statements to their own provable
+   *  blocks (with Lean siblings). One is enough to flag. */
+  remarkEmbeds: 1,
 };
 
 type Result = "pass" | "fail" | "n/a";
@@ -226,6 +231,7 @@ const CRITERIA = [
   "clarity-rhetorical-header",
   "clarity-defn-misplaced",
   "clarity-remark-single-topic",
+  "clarity-remark-embeds-statement",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
 
@@ -937,6 +943,57 @@ function checkRemarkSingleTopic(b: Block): Finding {
   return base;
 }
 
+/** run-in bold formal-statement labels embedded in prose: `**Proposition (…).**`,
+ *  `**Theorem.**`, `**Lemma …**`, `**Corollary.**`, `**Claim.**`. These are
+ *  formal statements masquerading as emphasis inside a remark / prose block;
+ *  they belong in their own provable block (with a Lean sibling). */
+const EMBEDDED_STMT_LABEL =
+  /(^|\n)[ \t]*\*\*\s*(proposition|theorem|lemma|corollary|claim|conjecture)\b[^*]{0,80}\*\*/gi;
+
+function embeddedStatementLabels(md: string): string[] {
+  const noCode = md.replace(/```[\s\S]*?```/g, "\n");
+  const out: string[] = [];
+  let m: RegExpExecArray | null;
+  EMBEDDED_STMT_LABEL.lastIndex = 0;
+  while ((m = EMBEDDED_STMT_LABEL.exec(noCode))) out.push(m[2].toLowerCase());
+  return out;
+}
+
+/** clarity-remark-embeds-statement: the mirror of `clarity-defn-misplaced`,
+ *  one level up. A `remark` is interpretive prose; if it embeds run-in formal
+ *  statement labels (`**Proposition (Lean: …).**`, `**Theorem.**`, …) — or a
+ *  `## Proof`/`## Proofs` catalog — those formal statements are invisible to the
+ *  proof / dependency / Lean pipeline. Promote each to its own provable block
+ *  (with a Lean sibling); keep the remark interpretive. Glossary exempt. */
+function checkRemarkEmbedsStatement(b: Block): Finding {
+  const labels = embeddedStatementLabels(b.md);
+  const hasProofSection = topLevelHeaders(b.md).some((h) =>
+    /^proofs?\b[.:]?$/i.test(h.replace(/[*_`]/g, "").trim()),
+  );
+  const base = mkFinding(b, "clarity-remark-embeds-statement");
+  base.metrics = { embeddedStatements: labels.length, proofSection: hasProofSection ? 1 : 0 };
+  if (b.isGlossary) {
+    base.result = "pass";
+    base.evidence = "glossary remark — exempt";
+    return base;
+  }
+  if (labels.length >= T.remarkEmbeds || hasProofSection) {
+    base.result = "fail";
+    base.severity = labels.length >= 3 || hasProofSection ? "major" : "minor";
+    const counts = [...new Set(labels)]
+      .map((k) => `${labels.filter((x) => x === k).length}×${k}`)
+      .join(", ");
+    const bits: string[] = [];
+    if (labels.length) bits.push(`${labels.length} embedded statement-label${labels.length === 1 ? "" : "s"} (${counts})`);
+    if (hasProofSection) bits.push("a `## Proof(s)` catalog");
+    base.evidence = `remark embeds formal content: ${bits.join("; ")} — promote each to its own \`proposition\`/\`theorem\`/\`lemma\` block (with Lean sibling); keep the remark interpretive`;
+  } else {
+    base.result = "pass";
+    base.evidence = "interpretive prose — no embedded formal statements";
+  }
+  return base;
+}
+
 function findingsFor(b: Block, only?: Criterion): Finding[] {
   const out: Finding[] = [];
   const want = (c: Criterion) => !only || only === c;
@@ -962,6 +1019,9 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
   }
   if (b.kind === "remark" && want("clarity-remark-single-topic")) {
     out.push(checkRemarkSingleTopic(b));
+  }
+  if (b.kind === "remark" && want("clarity-remark-embeds-statement")) {
+    out.push(checkRemarkEmbedsStatement(b));
   }
   return out;
 }
