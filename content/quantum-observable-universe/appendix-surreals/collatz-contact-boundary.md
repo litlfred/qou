@@ -59,13 +59,6 @@ Laurent polynomial ring — the $q$-analog of the $2$-adic
 valuation $v_2(n)$ that counts trailing zeros in the
 binary expansion of an integer.
 
-**Geometric meaning.** The value $v_{[2]}(P)$ is the
-**contact order** of $P$ with the divisor $D_{[2]}$: the
-order to which $P(q)$ vanishes at $q = -1$.  High contact
-order means the orbit "grazes" the divisor closely — it
-is very divisible by $[2]_q$, meaning many halvings can be
-extracted.
-
 At $q = 1$: $[2]_1 = 2$, and $v_{[2]}(n) = v_2(n)$
 recovers ordinary $2$-adic valuation.  The number
 $n = 24 = 2^3 \cdot 3$ has $v_2(24) = 3$: three halvings

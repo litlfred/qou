@@ -160,7 +160,9 @@ export default chapter({
       label: "sec:surreal-rate-calculus",
       blocks: [
         "surreal-rate-calculus",
+        "surreal-rate-calculus-interpretation",
         "surreal-squeeze",
+        "surreal-squeeze-interpretation",
       ],
     },
     {
@@ -179,6 +181,7 @@ export default chapter({
           blocks: [
             // BSD
             "q-birch-swinnerton-dyer",
+            "q-birch-swinnerton-dyer-interpretation",
             "bsd-surreal-bound",
             // RH
             "rh-surreal-bound",
@@ -193,10 +196,12 @@ export default chapter({
           blocks: [
             // P vs NP
             "p-vs-np-conjecture",
+            "p-vs-np-conjecture-interpretation",
             "p-vs-np-surreal-bound",
             // Collatz family
             "q-collatz-conjecture",
             "collatz-contact-boundary",
+            "collatz-contact-boundary-interpretation",
             "collatz-no-cycles",
             "collatz-three-forms",
             "q-collatz-interpretation",

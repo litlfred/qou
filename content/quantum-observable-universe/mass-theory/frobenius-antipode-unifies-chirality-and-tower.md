@@ -108,22 +108,6 @@ underlying:*
 5. *(Open) Geometric derivation of $\alpha^* \approx G/3$ from
    Borromean-volume / $|S_4|$ geometry.*
 
-**Significance for the 6-term formula.**
-*The Frobenius-antipode framework simultaneously:*
-
-- *Provides Term 5's chirality factor algebraically
-  ([chirality dual-space](#prop:chirality-dual-space-derivation)
-  established this).*
-- *Refines the brane-tower components (Terms 2, 3) via
-  $\hat V \to \hat V^{\mathrm{Frob}}$ — closes the neutron-mass
-  computation that was a known gap.*
-
-*With the antipode-corrected $\hat V$, **all six terms are not
-only derived but produce sub-ppm-accurate masses for the proton
-and neutron**.  The remaining task — deriving $\alpha^*$ exactly
-— is geometric (Catalan / Borromean / $|S_4|$ structure), not
-algebraic.*
-
 **Reference implementations (rebased upstream + my chirality work).**
 
 - *`computations/frobenius_antipode_symmetry.py`

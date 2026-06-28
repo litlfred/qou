@@ -83,16 +83,6 @@ disproportionately at deep strata: for $^4$He at depth $k = 4$ the
 chirality channel dominates with ratio $-26.6$ relative to the total
 $\Phi_4$.*
 
-**Physical interpretation.**
-
-*The chirality contribution is **positive** for all isotopes (an
-attractive / confining force) while the total mass tower is mostly
-negative (net repulsive at the categorical level, balanced by the
-positive m_e baseline).  This is consistent with the chirality
-channel being the gauge-invariant background that mediates
-confinement — see
-[rem:confinement-curvature-rank](#rem:confinement-curvature-rank).*
-
 **Relation to the mass-tower coefficient stratification.**
 
 *By

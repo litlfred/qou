@@ -43,6 +43,7 @@ export default chapter({
       label: "sec:surreals-archimedean-char-p",
       blocks: [
         "on-p-modular-hecke",
+        "on-p-modular-hecke-interpretation",
         "on-p-modular-hecke-table-data",
       ],
     },

@@ -232,6 +232,7 @@ export default chapter({
         "rigid-dualizing-complex",
         "rigid-dualizing-brings",
         "substrate-self-duality",
+        "substrate-self-duality-interpretation",
       ],
     }),
 

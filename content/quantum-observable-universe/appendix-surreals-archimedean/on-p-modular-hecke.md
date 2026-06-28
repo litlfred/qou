@@ -203,8 +203,3 @@ suggesting a different combinatorial replacement is needed.
 for $p = 2, n = 3$ feasible by hand and Lean — matter of weeks.
 General Layer 2: requires Kazhdan–Lusztig cell theory in Lean —
 substantial mathlib gap, multi-year project.
-
-**Significance**: even verifying the smallest case ($p = 2,
-n = 3$) would be the first formalised connection between Hecke
-combinatorics and nim-arithmetic, opening a door to a much
-larger program.
