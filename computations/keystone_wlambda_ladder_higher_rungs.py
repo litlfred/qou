@@ -163,7 +163,7 @@ def main():
     }
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "wlambda-ladder-higher-rungs.witness.json")
-    with open(out, "w") as fh:
+    with open(out, "w", encoding="utf-8") as fh:
         json.dump(witness, fh, indent=2)
         fh.write("\n")
     print(f"\nwrote {out}")
