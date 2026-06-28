@@ -178,8 +178,10 @@ where Mathlib's existing `Real.sqrt`-based numerics apply. -/
     conventions).  Symmetric form of Mathlib's
     `Real.sqrt_eq_rpow`.
 
-    TODO upstream: this is `Real.rpow_one_div_two` in some Mathlib
-    versions. -/
+    Upstream status: this is the `.symm` of Mathlib's `Real.sqrt_eq_rpow`
+    (present in the pinned v4.24).  A named `Real.rpow_one_div_two` is
+    **not** in the pinned Mathlib (probed 2026-06-26 — `unknown constant`),
+    so this local convenience wrapper stays until/unless one lands upstream. -/
 theorem Real.rpow_half_eq_sqrt (x : ℝ) :
     x ^ (1/2 : ℝ) = Real.sqrt x :=
   (Real.sqrt_eq_rpow x).symm
