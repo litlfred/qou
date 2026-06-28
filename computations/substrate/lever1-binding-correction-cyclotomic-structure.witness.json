@@ -1,0 +1,132 @@
+{
+  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
+  "description": "Lever-1 binding correction tower D(m): exact cyclotomic (Habiro) factorization \u2014 \u03a6_d root-of-unity vanishing rule + non-cyclotomic core growth.",
+  "bean": "z2bn",
+  "computation": {
+    "script": "computations/substrate/lever1_binding_correction_cyclotomic_structure.py"
+  },
+  "params": {
+    "MMAX": 11,
+    "DMAX": 60
+  },
+  "cyclotomic_factor_map": {
+    "m=4": {
+      "Phi_1": 2,
+      "Phi_3": 1
+    },
+    "m=5": {
+      "Phi_1": 2,
+      "Phi_2": 2,
+      "Phi_3": 1,
+      "Phi_6": 1
+    },
+    "m=6": {
+      "Phi_1": 2,
+      "Phi_5": 1
+    },
+    "m=7": {
+      "Phi_1": 2,
+      "Phi_3": 2,
+      "Phi_5": 1
+    },
+    "m=8": {
+      "Phi_1": 2,
+      "Phi_3": 1,
+      "Phi_5": 1,
+      "Phi_7": 1
+    },
+    "m=9": {
+      "Phi_1": 2,
+      "Phi_4": 1,
+      "Phi_7": 1
+    },
+    "m=10": {
+      "Phi_1": 2,
+      "Phi_3": 1,
+      "Phi_7": 1,
+      "Phi_9": 1
+    },
+    "m=11": {
+      "Phi_1": 2,
+      "Phi_3": 1,
+      "Phi_5": 1,
+      "Phi_6": 1,
+      "Phi_9": 1
+    }
+  },
+  "phi_first_appearance": {
+    "Phi_2": 5,
+    "Phi_3": 4,
+    "Phi_4": 9,
+    "Phi_5": 6,
+    "Phi_6": 5,
+    "Phi_7": 8,
+    "Phi_9": 10
+  },
+  "phi_first_minus_d": {
+    "Phi_2": 3,
+    "Phi_3": 1,
+    "Phi_4": 5,
+    "Phi_5": 1,
+    "Phi_6": -1,
+    "Phi_7": 1,
+    "Phi_9": 1
+  },
+  "qminus1_order_per_m": {
+    "m=4": 2,
+    "m=5": 2,
+    "m=6": 2,
+    "m=7": 2,
+    "m=8": 2,
+    "m=9": 2,
+    "m=10": 2,
+    "m=11": 2
+  },
+  "qminus1_universal_squared": true,
+  "noncyclotomic_core": {
+    "m=4": {
+      "deg": 0,
+      "poly": "1",
+      "is_trivial": true
+    },
+    "m=5": {
+      "deg": 0,
+      "poly": "1",
+      "is_trivial": true
+    },
+    "m=6": {
+      "deg": 8,
+      "poly": "q**8 + 4*q**7 + 6*q**6 + 2*q**5 + 2*q**4 + 2*q**3 + 6*q**2 + 4*q + 1",
+      "is_trivial": false
+    },
+    "m=7": {
+      "deg": 10,
+      "poly": "4*(q**10 - q**9 + 2*q**8 - q**7 + 2*q**5 - q**3 + 2*q**2 - q + 1)",
+      "is_trivial": false
+    },
+    "m=8": {
+      "deg": 14,
+      "poly": "6*q**14 - 5*q**13 + 8*q**12 - 2*q**11 + 4*q**10 + 2*q**9 - 4*q**8 + 16*q**7 - 4*q**6 + 2*q**5 + 4*q**4 - 2*q**3 + 8*q**2 - 5*q + 6",
+      "is_trivial": false
+    },
+    "m=9": {
+      "deg": 28,
+      "poly": "4*q**28 + 13*q**27 + 13*q**26 + 18*q**25 + 22*q**24 + 39*q**23 + 31*q**22 + 43*q**21 + 48*q**20 + 70*q**19 + 55*q**18 + 75*q**17 + 72*q**16 + 82*q**15 + 62*q**14 + 82*q**13 + 72*q**12 + 75*q**11 + 55*q**10 + 70*q**9 + 48*q**8 + 43*q**7 + 31*q**6 + 39*q**5 + 22*q**4 + 18*q**3 + 13*q**2 + 13*q + 4",
+      "is_trivial": false
+    },
+    "m=10": {
+      "deg": 34,
+      "poly": "q**34 + 12*q**33 + 6*q**32 + 18*q**31 + 9*q**30 + 37*q**29 + 11*q**28 + 35*q**27 + 27*q**26 + 56*q**25 + 39*q**24 + 49*q**23 + 67*q**22 + 59*q**21 + 79*q**20 + 46*q**19 + 89*q**18 + 48*q**17 + 89*q**16 + 46*q**15 + 79*q**14 + 59*q**13 + 67*q**12 + 49*q**11 + 39*q**10 + 56*q**9 + 27*q**8 + 35*q**7 + 11*q**6 + 37*q**5 + 9*q**4 + 18*q**3 + 6*q**2 + 12*q + 1",
+      "is_trivial": false
+    },
+    "m=11": {
+      "deg": 46,
+      "poly": "5*q**46 + 17*q**45 + 30*q**44 + 33*q**43 + 30*q**42 + 48*q**41 + 74*q**40 + 102*q**39 + 97*q**38 + 117*q**37 + 141*q**36 + 192*q**35 + 197*q**34 + 231*q**33 + 236*q**32 + 296*q**31 + 291*q**30 + 332*q**29 + 325*q**28 + 379*q**27 + 361*q**26 + 399*q**25 + 373*q**24 + 412*q**23 + 373*q**22 + 399*q**21 + 361*q**20 + 379*q**19 + 325*q**18 + 332*q**17 + 291*q**16 + 296*q**15 + 236*q**14 + 231*q**13 + 197*q**12 + 192*q**11 + 141*q**10 + 117*q**9 + 97*q**8 + 102*q**7 + 74*q**6 + 48*q**5 + 30*q**4 + 33*q**3 + 30*q**2 + 17*q + 5",
+      "is_trivial": false
+    }
+  },
+  "noncyclotomic_core_first_m": 6,
+  "noncyclotomic_core_grows": true,
+  "verdict": "GENUINE CYCLOTOMIC-COMPLETION (Habiro) object: D(m) carries a universal (q\u22121)\u00b2 \u00d7 \u03a6_d cyclotomic tower (root-of-unity vanishing rule below) PLUS a non-cyclotomic core R_m whose degree GROWS with m (first nontrivial at m=6, deg 8 \u2192 46 at m=11). The binding correction is therefore not a finite cyclotomic object; its essential core is the genuine Habiro-ring content \u2014 consistent with Stages 3-6 (no finite low-order operator). The \u03a6_d tower is the derived, parameter-free constraint; the growing core is what any candidate Habiro element must reproduce.",
+  "scope": "(a)/(b) per AGENTS.md: the \u03a6_d vanishing rule + (q\u22121)\u00b2 prefactor are derived structural facts (positive); 'not a finite cyclotomic object' is a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
+}
