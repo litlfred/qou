@@ -359,9 +359,12 @@ function atxHeaders(md: string): string[] {
   return out;
 }
 
-/** all section-header texts (bold + ATX), deduped by trimmed text. */
+/** all section-header texts (bold + ATX), deduped by trimmed text. Fenced
+ *  code/tex blocks are stripped first so `##`/`**` inside Lean / shell / tex
+ *  samples are not mistaken for section headers. */
 function sectionHeaders(md: string): string[] {
-  return [...new Set([...boldHeaders(md), ...atxHeaders(md)])];
+  const noCode = md.replace(/```[\s\S]*?```/g, "\n");
+  return [...new Set([...boldHeaders(noCode), ...atxHeaders(noCode)])];
 }
 
 // --- clarity-rhetorical-header detectors -----------------------------------
@@ -378,8 +381,12 @@ function rhetoricalHeaderKind(h: string): "question" | "colloquial" | null {
   if (/^(why|what|how|when|where|which|who|whose|whom|whence|wherefore|isn'?t|aren'?t|does|do|can|could|should|would)\b/i.test(t))
     return "question";
   // (2) colloquial / rhetorical framing words used as a section header.
-  if (/^(consequence[s]?|the upshot|upshot|so what|takeaway|take-?away|bottom line|the point|the moral|moral of|what this means|why it matters|why this matters|the big picture|in a nutshell|the takeaway)\b/i.test(t))
+  if (/^(the upshot|upshot|so what|takeaway|take-?away|bottom line|the point|the moral|moral of|what this means|why it matters|why this matters|the big picture|in a nutshell|the takeaway)\b/i.test(t))
     return "colloquial";
+  // "Consequence(s)" only as a STANDALONE header (optional trailing
+  // punctuation) — not "Consequences of Theorem 1.1" which is a valid
+  // noun-phrase academic header.
+  if (/^consequences?[.:!?]*$/i.test(t)) return "colloquial";
   return null;
 }
 

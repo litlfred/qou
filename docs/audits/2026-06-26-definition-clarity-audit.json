@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T00:22:59.437Z",
+  "generated_at": "2026-06-28T00:26:30.388Z",
   "scanned": 2109,
   "criteria": [
     "clarity-defterm-bold",
@@ -1576,11 +1576,11 @@
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Why Hecke generators satisfy it.\", \"Consequence: the q-CLT input is verified.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "1 rhetorical/colloquial section-header (\"Why Hecke generators satisfy it.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 5,
         "rhetoricalQuestions": 1,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis.qa.json",
@@ -3344,16 +3344,15 @@
       "label": "rem:markov-axioms-primitive",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence: disjoint-product factorisation\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 3,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.qa.json"
     },
     {
       "label": "rem:markov-axioms-primitive",
@@ -14656,16 +14655,15 @@
       "label": "rem:algebraic-gns-embedding-cfs-consequence",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the $\\mu_{\\mathrm{arch}}$ programm\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 1,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/observations/algebraic-gns-embedding-cfs-consequence.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/algebraic-gns-embedding-cfs-consequence.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/algebraic-gns-embedding-cfs-consequence.qa.json"
     },
     {
       "label": "rem:algebraic-gns-embedding-cfs-consequence",
@@ -15240,16 +15238,15 @@
       "label": "rem:g-q-closed-form",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the spectral prefactor.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 7,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/observations/g-q-closed-form.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/g-q-closed-form.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/g-q-closed-form.qa.json"
     },
     {
       "label": "rem:g-q-closed-form",
@@ -17770,11 +17767,11 @@
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "3 rhetorical/colloquial section-headers (\"What can be shown.\", \"What differs.\", \"Consequence for QOU.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "2 rhetorical/colloquial section-headers (\"What can be shown.\", \"What differs.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 4,
         "rhetoricalQuestions": 2,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/observations/cfs-comparison-summary.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/observations/cfs-comparison-summary.qa.json",
@@ -32227,16 +32224,15 @@
       "label": "rem:observable-beable-correspondence",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence: no superselection axiom.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 5,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/information-theory/observable-beable-correspondence.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/information-theory/observable-beable-correspondence.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/information-theory/observable-beable-correspondence.qa.json"
     },
     {
       "label": "rem:observable-beable-correspondence",
@@ -40775,11 +40771,11 @@
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Consequence for the QOU substrate.\", \"Where the q-deformation enters.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "1 rhetorical/colloquial section-header (\"Where the q-deformation enters.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 2,
         "rhetoricalQuestions": 1,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/quantum-observable-universes/reeb-contact-universal-computer.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/reeb-contact-universal-computer.qa.json",
@@ -43956,16 +43952,15 @@
       "label": "prop:reeb-u1-chart-swap",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequences (five roles, one $U(1)$)\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 8,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap.qa.json"
     },
     {
       "label": "prop:reeb-u1-chart-swap",
@@ -56732,16 +56727,15 @@
       "label": "prop:ordering-jet-compatibility",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for time.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 2,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.qa.json"
     },
     {
       "label": "prop:ordering-jet-compatibility",
@@ -60946,16 +60940,15 @@
       "label": "conj:motivic-perpetual-obstruction",
       "kind": "conjecture",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence (paper-wide).\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 3,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.qa.json"
     },
     {
       "label": "conj:motivic-perpetual-obstruction",
@@ -61215,16 +61208,15 @@
       "label": "prop:wedderburn-trace-identity",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for mass.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 3,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.qa.json"
     },
     {
       "label": "prop:wedderburn-trace-identity",
@@ -63074,16 +63066,15 @@
       "label": "prop:markov-trace-ratio-exact",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the HOMFLYPT engine.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 3,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.qa.json"
     },
     {
       "label": "prop:markov-trace-ratio-exact",
@@ -65341,11 +65332,11 @@
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "3 rhetorical/colloquial section-headers (\"Why $\\tilde w_\\lambda$ is canonical\", \"Why each context picks a different form\", \"Consequences for downstream use\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "2 rhetorical/colloquial section-headers (\"Why $\\tilde w_\\lambda$ is canonical\", \"Why each context picks a different form\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 10,
         "rhetoricalQuestions": 2,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.qa.json",
@@ -69306,16 +69297,15 @@
       "label": "prop:skein-polynomial-transfer-matrix",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Consequence for beta decay.\", \"Consequence for double beta decay.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 6,
         "rhetoricalQuestions": 0,
-        "colloquial": 2
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.qa.json"
     },
     {
       "label": "prop:skein-polynomial-transfer-matrix",
@@ -78362,16 +78352,15 @@
       "label": "prop:hecke-generator-poly-reduction",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the Markov trace\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 5,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/hecke-generator-poly-reduction.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/hecke-generator-poly-reduction.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/hecke-generator-poly-reduction.qa.json"
     },
     {
       "label": "prop:hecke-generator-poly-reduction",
@@ -79909,16 +79898,15 @@
       "label": "rem:kashaev-volume-density",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequences for the mass formula\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 4,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/kashaev-volume-density.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/kashaev-volume-density.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/kashaev-volume-density.qa.json"
     },
     {
       "label": "rem:kashaev-volume-density",
@@ -80125,11 +80113,11 @@
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "3 rhetorical/colloquial section-headers (\"Consequence for B1\", \"What the proof gives in full generality\", \"Consequences\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "2 rhetorical/colloquial section-headers (\"What the proof gives in full generality\", \"Consequences\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 10,
         "rhetoricalQuestions": 1,
-        "colloquial": 2
+        "colloquial": 1
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.qa.json",
@@ -81072,11 +81060,11 @@
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Consequence for the binding energy\", \"What remains open\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "1 rhetorical/colloquial section-header (\"What remains open\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 5,
         "rhetoricalQuestions": 1,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.qa.json",
@@ -83908,16 +83896,15 @@
       "label": "prop:q-beta-over-e0-classical-vanishing",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the $c_k$ precision ladder\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 4,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/q-beta-over-e0-classical-vanishing.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/q-beta-over-e0-classical-vanishing.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/q-beta-over-e0-classical-vanishing.qa.json"
     },
     {
       "label": "prop:q-beta-over-e0-classical-vanishing",
@@ -84119,11 +84106,11 @@
       "kind": "conjecture",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Consequence: exponential closed form\", \"Why locality is non-trivial\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "1 rhetorical/colloquial section-header (\"Why locality is non-trivial\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 7,
         "rhetoricalQuestions": 1,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/lifted-crossing-locality.qa.json",
@@ -84510,16 +84497,15 @@
       "label": "rem:markov-lambda-knot-operations",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the Markov chain.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 9,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/markov-lambda-knot-operations.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-lambda-knot-operations.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-lambda-knot-operations.qa.json"
     },
     {
       "label": "rem:markov-lambda-knot-operations",
@@ -84974,16 +84960,15 @@
       "label": "thm:markov-trace-factorization",
       "kind": "theorem",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence: the chain of invariant-preserving map\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 7,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-factorization.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/markov-trace-factorization.qa.json"
     },
     {
       "label": "thm:markov-trace-factorization",
@@ -86633,11 +86618,11 @@
       "kind": "conjecture",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "5 rhetorical/colloquial section-headers (\"Why (1) is plausible.\", \"Why (2) is plausible.\", \"Consequence for the formalisation.\", \"Why a dichotomy\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "4 rhetorical/colloquial section-headers (\"Why (1) is plausible.\", \"Why (2) is plausible.\", \"Why a dichotomy\", \"What does *not* settle the conjecture\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 9,
         "rhetoricalQuestions": 4,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.qa.json",
@@ -87283,11 +87268,11 @@
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Why this is not a PDE.\", \"Consequence for the JSJ verdict.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "1 rhetorical/colloquial section-header (\"Why this is not a PDE.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 6,
         "rhetoricalQuestions": 1,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.qa.json",
@@ -91141,16 +91126,15 @@
       "label": "rem:algebraic-core-survives",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the appendix\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 3,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/appendix-surreals-archimedean/algebraic-core-survives.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/appendix-surreals-archimedean/algebraic-core-survives.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/appendix-surreals-archimedean/algebraic-core-survives.qa.json"
     },
     {
       "label": "rem:algebraic-core-survives",
@@ -91309,11 +91293,11 @@
       "kind": "conjecture",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "2 rhetorical/colloquial section-headers (\"Why this is natural\", \"Consequences if true\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "1 rhetorical/colloquial section-header (\"Why this is natural\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 12,
         "rhetoricalQuestions": 1,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday.qa.json",
@@ -93184,11 +93168,11 @@
       "kind": "conjecture",
       "criterion": "clarity-rhetorical-header",
       "result": "fail",
-      "evidence": "3 rhetorical/colloquial section-headers (\"Why Re/Im is forced — the bar-parity = the complex\", \"What is proved, and the fibre-level caveat\", \"Consequence — one story, and one proof\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "evidence": "2 rhetorical/colloquial section-headers (\"Why Re/Im is forced — the bar-parity = the complex\", \"What is proved, and the fibre-level caveat\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
       "metrics": {
         "headers": 12,
         "rhetoricalQuestions": 2,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md",
       "qaPath": "/home/user/qou/content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.qa.json",
@@ -104511,16 +104495,15 @@
       "label": "prop:golden-quartet-galois",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence: replace $\\zeta_5$ Galois arithmetic w\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 4,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/predicted-spectra/golden-quartet-galois.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/golden-quartet-galois.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/predicted-spectra/golden-quartet-galois.qa.json"
     },
     {
       "label": "prop:golden-quartet-galois",
@@ -114662,16 +114645,15 @@
       "label": "rem:ontological-agnosticism",
       "kind": "remark",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the engine.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 4,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/particle-interactions/ontological-agnosticism.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/ontological-agnosticism.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/ontological-agnosticism.qa.json"
     },
     {
       "label": "rem:ontological-agnosticism",
@@ -115133,16 +115115,15 @@
       "label": "prop:shell-schur-weyl-self-duality",
       "kind": "proposition",
       "criterion": "clarity-rhetorical-header",
-      "result": "fail",
-      "evidence": "1 rhetorical/colloquial section-header (\"Consequence for the ILP at level 4.\") — reword to a noun-phrase academic header (e.g. \"Why X is canonical.\" → \"Canonicity of X.\"; \"Consequence.\" → \"Corollary.\"); the content may stay",
+      "result": "pass",
+      "evidence": "section headers in academic register",
       "metrics": {
         "headers": 9,
         "rhetoricalQuestions": 0,
-        "colloquial": 1
+        "colloquial": 0
       },
       "mdPath": "content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.md",
-      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.qa.json",
-      "severity": "minor"
+      "qaPath": "/home/user/qou/content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.qa.json"
     },
     {
       "label": "prop:shell-schur-weyl-self-duality",
