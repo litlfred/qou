@@ -18,7 +18,7 @@ $$
 = z(q) + 1 - 2 z(q) + z(q) = 1$, valid for every $q > 0$. The Lean
 discharge is `ring`. $\square$
 
-## Honest scope — what this instance does and does NOT establish
+## Scope of the instance
 
 **Establishes (rigorously):**
 
@@ -33,7 +33,7 @@ discharge is `ring`. $\square$
   $\sqrt q$ structure expected from the canonical Wenzl–Markov
   construction.
 
-**Does NOT establish:**
+**Not established:**
 
 - That this instance IS the canonical Wenzl–Markov weights. The
   canonical weights from $H_3(q)$ have a specific closed form

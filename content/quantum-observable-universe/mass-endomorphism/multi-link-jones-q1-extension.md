@@ -19,7 +19,7 @@ double-Hopf, etc.
 | $c_5$ | $\approx -395.4$ | $-J_{\mathrm{Borromean}} = +8$ (50$\times$ off in scale and sign) |
 | $c_6$ | $\approx -45{,}485$ | $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ (3000$\times$ off) |
 
-## What this block provides
+## Contents of this block
 
 This is **infrastructure, not closure**. The Lean module
 `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
@@ -48,7 +48,7 @@ This is **infrastructure, not closure**. The Lean module
    **explicitly flagged as exploratory placeholders, not closure
    values**.
 
-## Why the simple multi-link pattern fails
+## Failure of the simple multi-link pattern
 
 Three structural hypotheses for the 50–3000$\times$ mismatch:
 

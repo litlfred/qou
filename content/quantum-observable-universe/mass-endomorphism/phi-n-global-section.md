@@ -9,7 +9,7 @@ by its compatibility with the Frobenius-Hopf substrate axioms across
 *every* sub-tensor-factor of $A^{\otimes n}$, not by an additive
 combination of local pieces.
 
-## Why locality has to be dropped
+## Necessity of dropping locality
 
 Local trivialisation — "screening" — was the framework's earlier
 explanation of shell closure: that something local at each vortex
@@ -60,7 +60,7 @@ section, rather than a colimit of local pieces, forces the
 substrate-level constraint that the central action vanishes at
 saturated $n$.
 
-## What this changes for the conjecture
+## Implications for the conjecture
 
 [`conj:mass-endomorphism`](#conj\:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is

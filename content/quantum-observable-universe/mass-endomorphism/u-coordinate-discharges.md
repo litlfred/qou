@@ -18,7 +18,7 @@ See [Table](#tbl:u-coordinate-discharges-table-data).
 Each scalar identity above is exported as a Lean theorem closed by
 `field_simp + ring` (no sqrt, no opaque axioms).
 
-## Why this matters
+## Significance
 
 Before this block, the explicit-residual discharges at the class
 level (`⟨0, rfl⟩`) appeared **abstractly trivial** — the residual is

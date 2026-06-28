@@ -1,4 +1,4 @@
-## Why this is structural, not a matrix identity
+## Structural nature, not a matrix identity
 
 The full-twist $\Delta_n^2$ acts on each Wedderburn block $V_\lambda$
 of $H_n(q)$ by the central scalar $q^{c(\lambda)}$, where

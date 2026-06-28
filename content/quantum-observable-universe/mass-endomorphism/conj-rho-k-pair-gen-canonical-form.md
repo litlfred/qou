@@ -33,7 +33,7 @@ is the Markov parameter.*
 
 The Kashaev-limit form (six-term $T_3$) is the expected canonical form, but its derivation as a leading-order expansion in $\hbar_q$ — parallel to the single-gen Kashaev derivation $\alpha \sum \ln|V_i|$ — has not been completed.
 
-## What's proved vs conjectured
+## Proved versus conjectured status
 
 | Component | Status | Evidence |
 |---|---|---|

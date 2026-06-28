@@ -1,4 +1,4 @@
-**What remains open after this derivation.**
+**Open items after this derivation.**
 
 *The $d \circ d = 0$ and $E_\infty$ convergence are now **derived**
 from standard Hochschild-complex theory.  What remains open:*
@@ -21,7 +21,7 @@ Hochschild complex standard theory); the **matching of its pages
 to the six mass-formula terms** remains the open identification
 problem.*
 
-**Why this is still only a partial rigorisation.**
+**Partiality of the rigorisation.**
 
 *A complete rigorous derivation would require:*
 

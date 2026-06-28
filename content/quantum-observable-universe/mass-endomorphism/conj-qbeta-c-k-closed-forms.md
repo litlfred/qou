@@ -49,7 +49,7 @@ Three concrete routes (from
 3. **Spectral-sequence stratification** (declined by ledger;
    no good candidate spectral sequence in framework's content).
 
-## Why these are not decoration
+## Significance — not decoration
 
 The current $\mathfrak{Q}_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
 already meets the 7.8 ppb L2 target at $N=3$ (residual +6.02 ppb,

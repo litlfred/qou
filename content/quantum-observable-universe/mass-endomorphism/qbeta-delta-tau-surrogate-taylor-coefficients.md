@@ -42,7 +42,7 @@ under `taylor_coeffs_w_expansion`.*
   function is a degree-11/degree-7 quotient, so a finite-order
   linear recursion on $c_n$ exists, but extracting it is open work).
 
-**Why the witness values are reliable.** The SymPy script in
+**Reliability of the witness values.** The SymPy script in
 [`qbeta_c3_multiblock_recursion_attack.py`](../../../computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
 applies `sp.series(... w, 0, 12)` to the closed form
 
