@@ -34,6 +34,7 @@ export default chapter({
         "qou-exists-axiom-4-proof",
         "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
+        "braiding-induced-ordering-proof",
         "frobenius-integration",
         "yekutieli-stokes-remark",
         "fibre-functor-rigidity",
@@ -149,6 +150,7 @@ export default chapter({
       blocks: [
         "differential-structures-fiber-adjoint-intro",
         "fibre-functor-atlas",
+        "fibre-functor-atlas-proof",
         "substrate-radial-coordinate",
         "substrate-radial-coordinate-proof",
         "fiber-adjoint-involution",
@@ -191,6 +193,7 @@ export default chapter({
         // u1-equivariant-reduction below depends on.
         "commutative-qou",
         "u1-equivariant-reduction",
+        "u1-equivariant-reduction-proof",
       ],
     }),
 
@@ -345,6 +348,7 @@ export default chapter({
         "q-laplacian-spectral-tower",
         "hodge-laplacian-relation",
         "categorical-lichnerowicz",
+        "categorical-lichnerowicz-proof",
         "q-harmonic-particle",
         "brings-geometric-connection",
         "complex-substrate-interpretation",
@@ -508,7 +512,9 @@ export default chapter({
         "i-as-braiding-orientation",
         "affine-chart-origin-of-i-and-q",
         "reeb-u1-chart-swap",
+        "reeb-u1-chart-swap-proof",
         "categorical-coordinate-ring",
+        "categorical-coordinate-ring-proof",
       ],
     }),
 

@@ -79,7 +79,9 @@ export default chapter({
         "q-ns-wellposedness",
         "q-ns-proof-strategy",
         "p1-spectral-sobolev",
+        "p1-spectral-sobolev-proof",
         "quantum-peter-weyl",
+        "quantum-peter-weyl-proof",
         "quantum-peter-weyl-interpretation",
         "p1-nonlinear-uniqueness",
         "q-ns-proof-details",
@@ -106,6 +108,7 @@ export default chapter({
         "substrate-line-bundle",
         "substrate-gm-torsion",
         "observability-q-independent",
+        "observability-q-independent-proof",
         "core-levi-form",
         "core-levi-interpretation",
         "ns-regular-qou",
@@ -125,6 +128,7 @@ export default chapter({
         "ns-obstruction-computation-interpretation",
         "ns-kummer-specialisation",
         "ns-singularity-descartes",
+        "ns-singularity-descartes-proof",
         "ns-singularity-descartes-interpretation",
         "torus-ns-regular",
         "torus-ns-regular-table-data",
@@ -133,6 +137,7 @@ export default chapter({
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
         "bn-mtc-action",
+        "bn-mtc-action-proof",
       ],
     }),
 

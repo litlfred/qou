@@ -37,39 +37,6 @@ The bar-even invariant is the **§4(b) formalize-first gate** of the
 [refuted-class map](../../../docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md):
 *any candidate kernel $R(q,\xi)$ for the Habiro element $F(q)$ must clear
 the bar-evenness check before the numerical anchor sweep runs*.
-
-## Proof (one-line ring identity)
-
-The N=2 instance is the prototype. With $u = b \cdot \hbar_q^2$:
-
-$$
-1 \;-\; u^2
-\;=\; 1 - (b \cdot \hbar_q^2)^2
-\;=\; 1 - b^2 \cdot \hbar_q^4.
-$$
-
-This is a `ring` identity in any commutative ring containing $b$ and
-$\hbar_q$. Both factors are bar-even at the Taylor level: $b^2(q)$ is a
-manifest q-rational that satisfies $b^2(q^{-1}) = b^2(q)$ exactly
-(verified in the [`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
-chain), and $\hbar_q^4$ is even in $t$ to leading order
-($\hbar_q = t - t^2 + O(t^3)$, so $\hbar_q^2 = t^2 - 2t^3 + O(t^4)$ and
-$\hbar_q^4 = t^4 + O(t^5)$ — the odd-in-$t$ content sits at orders $t^5$
-and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
-
-## Contrast: α_EM template vs $\mathfrak{Q}_\beta$ trace-difference
-
-| programme | kernel | bar-even? | scalar $c_k$ extraction |
-|---|---|---|---|
-| $\alpha_{\text{EM}}$ | $H(q) = [2]_q \cdot (1 - h^2 \alpha)$ | **yes** — $[2]_q = q + q^{-1}$ and $h^2 = (q - q^{-1})^2$ are manifest q-symmetric | **clean** |
-| $\mathfrak{Q}_\beta$ | trace-difference $T_\beta$ on the operator level | **no** — archimedean trace mixes odd-in-$t$ content (closed operator-level framing) | **singular at $u = 0$** |
-
-The bar-even discriminant explains the asymmetry structurally: $\alpha_{\text{EM}}$
-admits a scalar Habiro element because its kernel is bar-even; $\mathfrak{Q}_\beta$ does
-not, so its $c_k \ge 3$ requires the **operator-level grading** (the open
-[probe-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)
-spec from the closed sibling analysis).
-
 ## Use in the formalize-first gate for new $F(q)$ candidates
 
 Before any numerical anchor sweep on a new candidate $F(q)$ / kernel

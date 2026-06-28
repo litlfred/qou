@@ -40,6 +40,7 @@ export default chapter({
             // Bloch–Suslin — theorem-level discharge of the keystone
             // at depth 2 over every Bring-natural number field.
             "depth-2-identification-bloch-suslin",
+            "depth-2-identification-bloch-suslin-proof",
             // QOU infra (Hecke NF + Bring S_5) potentially discharges
             // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
             "qou-infra-discharges-goncharov-zeta5",
@@ -53,8 +54,10 @@ export default chapter({
           blocks: [
             // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
             "b1-soft-sharpness-theorem",
+            "b1-soft-sharpness-theorem-proof",
             // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
             "b1-figure-8-row-theorem",
+            "b1-figure-8-row-theorem-proof",
             // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
             "b1-torus-knot-rows-theorem",
             "b1-torus-knot-rows-theorem-table-data",
@@ -86,6 +89,7 @@ export default chapter({
         "surreal-construction-grading-intro",
         "birthday-grading",
         "hoefsmit-is-surreal-construction",
+        "hoefsmit-is-surreal-construction-proof",
         "sign-sequence-of-braid",
         "jones-birthday",
       ],
@@ -160,8 +164,10 @@ export default chapter({
       label: "sec:surreal-rate-calculus",
       blocks: [
         "surreal-rate-calculus",
+        "surreal-rate-calculus-proof",
         "surreal-rate-calculus-interpretation",
         "surreal-squeeze",
+        "surreal-squeeze-proof",
         "surreal-squeeze-interpretation",
       ],
     },
@@ -200,6 +206,7 @@ export default chapter({
             "q-collatz-conjecture",
             "collatz-contact-boundary",
             "collatz-no-cycles",
+            "collatz-no-cycles-proof",
             "collatz-three-forms",
             "q-collatz-interpretation",
             "collatz-surreal-bound",
