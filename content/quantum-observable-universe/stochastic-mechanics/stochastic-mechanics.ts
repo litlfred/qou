@@ -75,6 +75,7 @@ export default chapter({
         "classical-limit-functor",
         "quantum-gap-collapse",
         "classical-limit-obstruction",
+        "classical-limit-obstruction-properties",
         "qou-obstruction-reduction",
         "qou-obstruction-reduction-table4-data",
         "qou-obstruction-reduction-table3-data",
