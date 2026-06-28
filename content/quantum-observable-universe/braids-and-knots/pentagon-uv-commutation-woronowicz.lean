@@ -256,15 +256,19 @@ class StandardHeckeWoronowicz
     (Hecke_n : Type*) [Ring Hecke_n] [Algebra R Hecke_n] where
   -- The class promises a `WoronowiczLeftCalculus` instance.
   to_calculus : WoronowiczLeftCalculus R q Hecke_n
-  -- Modular automorphism is the q-grading by Coxeter length.
-  -- (= the standard modular automorphism on left-covariant Γ pulled
-  -- back from `O_q(SU(N))` via Schur–Weyl–Hecke.)
-  deg_is_coxeter_length :
-    -- `to_calculus.deg σ_i = 1` for every Hecke generator σ_i.
-    -- Stated abstractly here; the concrete check requires naming
-    -- the generators.  We leave the precise statement to the
-    -- instance constructor.
-    True
+  /-- The Hecke generators `σ : ℕ → Hecke_n` (`σ i` is the generator
+      `σ_i` of `H_n(R, q)`). -/
+  generator : ℕ → Hecke_n
+  /-- Modular automorphism is the q-grading by Coxeter length:
+      `to_calculus.deg σ_i = 1` for every Hecke generator `σ_i`
+      (the Coxeter length of a simple reflection is 1).  This is the
+      standard modular automorphism on left-covariant Γ pulled back
+      from `O_q(SU(N))` via Schur–Weyl–Hecke (`σ_q = q^{2·ℓ}`).
+
+      Encoding the real claim (replacing the former `True` placeholder):
+      every generator sits in grade 1 of the q-grading, so its modular
+      factor is exactly `q²` (cf. `q_commutation_grade_one`). -/
+  deg_generator_eq_one : ∀ i : ℕ, to_calculus.deg (generator i) = 1
 
 /-- **Pentagon-ascension precondition** (algebraic skeleton — derived).
 
