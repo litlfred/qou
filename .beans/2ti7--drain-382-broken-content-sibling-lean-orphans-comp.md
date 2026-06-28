@@ -59,3 +59,34 @@ wants author intent (repair vs honest-stub vs delete). The mechanical
 `fix_ncs.py` transform is preserved in the session scratchpad but was NOT
 committed (greened nothing). Next attempt should treat these per-cluster
 with formalizer-level effort, not a sweep.
+
+## 2026-06-28 finding #2 — dominant root cause: `R_q`-used-as-a-field (89/382)
+
+Drained the **braids-and-knots** cluster (15 files) on branch
+`claude/lean-orphan-drain-2026-06-28` (PR #2996). Outcome: **2 quick wins**
+(`su2-basis`, `so3-generators` — section/`noncomputable`/codomain-ℚ fixes,
+committed green) and **13 deep** files that the mechanical fixes do NOT green.
+
+The 13 deep files share one systematic blocker, and a corpus grep confirms it
+is the largest identifiable cause across the whole sweep:
+
+- **89 of 382 genuine orphans** declare `abbrev R_q := LaurentPolynomial ℤ`
+  (a `CommRing`) yet use **field/order ops over it** — `q⁻¹` (needs `Inv`),
+  `/2` / `/(q−q⁻¹)` (needs division), `≤`/`<`/`positivity` (needs an order).
+  None exist on `LaurentPolynomial ℤ`. The files were authored as if the
+  ground ring were `ℚ(q)` / `ℝ`.
+
+This is a **ground-ring decision**, not a mechanical fix (per §7c base-ring
+convention the R_q-formal vs ℝ-archimedean distinction is load-bearing).
+Options:
+- (A) fraction field `RatFunc ℚ` — fixes `q⁻¹`, `/n`; ordering still absent.
+- (B) archimedean `ℝ` — fixes all three but collapses the substrate/archimedean
+  wall (§7c violation unless the quantity is genuinely archimedean).
+- (C) per-file triage — q-independent rationals → `ℚ` (the su2-basis fix),
+  archimedean numerics → `ℝ` (post-wall), formal q-algebra → keep `R_q` with
+  `q_inv_param` for `q⁻¹` and no division/order. Most correct, slowest.
+
+**Recommendation: (C), per-file** — it is the only option consistent with the
+repo's base-ring discipline. su2-basis is the worked exemplar (Killing form is
+q-independent rational → codomain `ℚ`). Needs author sign-off before a wide
+pass since it touches ~89 files and makes per-quantity math judgments.
