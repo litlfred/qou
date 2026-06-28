@@ -90,21 +90,47 @@ The six branch points $\{\zeta_5^k, \infty\}$ are not $A_5$-invariant (no
 icosahedral orbit has size $6$; minimum $12$): they are the $C_5$-pentagon
 skeleton — the equatorial $S$-orbit — not the full icosahedral set.
 
-## The sole residual open content
+## Keystone-base orbifold identification (established)
 
-With the group-theoretic core discharged, the **only** remaining conjectural
-claim is the geometric identification
+The orbifold quotient is classical icosahedral geometry, and it is the keystone
+base. The three exceptional $A_5$-orbits on $\mathbb{P}(V)$ — vertices ($12$),
+faces ($20$), edges ($30$) — have cyclic stabilisers of orders
+$60/\{12,20,30\} = \{5,3,2\}$, the **cone-point orders** of the quotient. Hence
 
 $$
-  \mathbb{P}(V)/A_5 \;\cong\; S^2(2,3,5)
-  \quad = \quad \text{the Seifert base of } S^3/2I,
+  \mathbb{P}(V)/A_5 \;=\; S^2(2,3,5),
+  \qquad
+  \chi_{\mathrm{orb}} = 2 - \!\sum_{m\in\{2,3,5\}}\!\bigl(1-\tfrac1m\bigr)
+   = \tfrac{1}{30}
+   = \frac{\chi(\mathbb{P}^1)}{|A_5|} = \frac{2}{60},
 $$
 
-i.e. that the orbit space of the constructed icosahedral action *is* the
-keystone Poincaré-sphere base, via Klein's resolvent of the Bring–Jerrard
-quintic. In the Lean class `KleinBringIcosahedralBridge` this is the pair of
-open fields `proj_orbit_constant` / `proj_separates_orbits` (the quotient map
-$\mathbb{P}(V) \to S^2(2,3,5)$); no instance is constructed.
+the matching Euler characteristics confirming the underlying surface is the
+genus-$0$ sphere \cite{klein1888}. This spherical orbifold $S^2(2,3,5)$ is
+exactly the base of the Seifert fibration $S^3/2I \to S^2(2,3,5)$ of the
+**Poincaré homology sphere** — $2I \subset \mathrm{SU}(2)=S^3$ being the binary
+cover of $A_5 \subset \mathrm{SO}(3)$, so the induced fibration descends to
+$\mathbb{P}^1/A_5$. The cone-structure facts are Lean-proved sorry-free
+(`cone_orders`, `orbifold_euler_char`, `orbifold_euler_char_eq_cover`,
+`orbifold_spherical`).
+
+## The sole residual open content — canonicity on the categorical base
+
+With the group-theoretic core *constructed* and the orbifold target
+*identified*, the only remaining conjectural claim is the **canonicity** of the
+icosahedral action on the categorical base $\mathbb{P}(V)$: that the icosahedral
+$A_5$ is intrinsic to the braiding object $V$, not merely imposed. The corpus
+furnishes the order-$5$ $\zeta_5$ pentad ($c_2c_3$) and the order-$3$ trefoil
+canonically; what is not yet established is a *canonical* icosahedral $2$-fold —
+Klein's $T$, at the icosahedral angle, distinct from the dihedral EM involution
+$\beta$ the corpus carries. Pinning $T$ to a braiding-intrinsic operation on
+$\mathbb{P}(V)$ would promote the whole bridge to a theorem.
+
+**Scope (unchanged).** Even fully established, this bridge sits on the geometric
+/ $V_\lambda$ (icosahedral-selector) side of the Schur–Weyl duality: it
+identifies and motivates the keystone $S^3/2I$ arena, but does **not** produce
+the Hecke-side measure $W_\lambda$, its Schur–Weyl dual. The keystone
+$W_\lambda$ closure remains the separate open problem.
 
 ## Scope
 

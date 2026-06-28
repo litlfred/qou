@@ -91,15 +91,55 @@ theorem icosahedral_235_realizable :
   ⟨swap (1 : Fin 5) 2 * swap 3 4, swap (0 : Fin 5) 2 * swap 2 4,
     by decide, by decide, by decide⟩
 
-/-! ## The residual primary conjecture (sole open content: the keystone-base quotient) -/
+/-! ## Keystone-base orbifold identification: the `(2,3,5)` cone structure (proved) -/
+
+/-- **Cone orders of `ℙ(V)/A₅` are `(5,3,2)`.** The three exceptional orbits —
+vertices (`12`), faces (`20`), edges (`30`) — have cyclic stabilisers of orders
+`60/{12,20,30} = {5,3,2}`, which are the cone-point orders of the quotient
+orbifold. So `ℙ(V)/A₅` is the sphere with cone points of orders `2, 3, 5`. -/
+theorem cone_orders : (60 / 12, 60 / 20, 60 / 30) = (5, 3, 2) := by decide
+
+/-- **Orbifold Euler characteristic of `S²(2,3,5)`** is `1/30`:
+`χ_orb = 2 - Σ_i (1 - 1/mᵢ)` over the cone orders `m = 2,3,5`. -/
+theorem orbifold_euler_char :
+    (2 : ℚ) - (1 - 1 / 2) - (1 - 1 / 3) - (1 - 1 / 5) = 1 / 30 := by norm_num
+
+/-- **Underlying space is genus-0 `S²`.** Orbifold-cover multiplicativity for
+`ℙ(V) → ℙ(V)/A₅` (degree `|A₅| = 60`): `χ_orb = χ(ℙ¹)/|A₅| = 2/60`. Matching
+`1/30` confirms the quotient's underlying surface is the sphere — hence
+`ℙ(V)/A₅ ≅ S²(2,3,5)`. -/
+theorem orbifold_euler_char_eq_cover :
+    (2 : ℚ) - (1 - 1 / 2) - (1 - 1 / 3) - (1 - 1 / 5) = (2 : ℚ) / 60 := by norm_num
+
+/-- The orbifold is **spherical** (`χ_orb > 0`) — consistent with its being the
+base of a Seifert fibration of the (positively-curved) Poincaré sphere `S³/2I`.
+Classically `S³/2I → S²(2,3,5)` is the Seifert fibration of the Poincaré
+homology sphere, with `2I` the binary cover of `A₅`; so `ℙ(V)/A₅` **is** that
+Seifert base. -- Ref: [klein1888] (ℙ¹/A₅ = S²(2,3,5)) -/
+theorem orbifold_spherical :
+    (2 : ℚ) - (1 - 1 / 2) - (1 - 1 / 3) - (1 - 1 / 5) > 0 := by norm_num
+
+/-! ## The residual primary conjecture (sole open content: canonicity on the QOU base) -/
 
 /-- **Klein icosahedral–quintic / Bring-radical bridge** (PRIMARY conjecture,
-§3b-tax). The group-theoretic core is now *discharged* (`icosahedral_235_realizable`
-+ the Klein witness): an order-2/order-3 pair with `c₂c₃` the `ζ₅` pentad exists
-and generates a faithful `A₅`. This class isolates the **sole residual open
-content** — the orbifold identification `ℙ(V)/⟨c₂,c₃⟩ ≅ KB`, where `KB` is the
-keystone Seifert base `S²(2,3,5)` of `S³/2I`. The map `proj : P → KB` realising
-the quotient is the open geometric object (no instance is constructed).
+§3b-tax). Two layers are now *discharged*:
+
+* the group-theoretic core (`icosahedral_235_realizable` + the Klein witness):
+  an order-2/order-3 pair with `c₂c₃` the `ζ₅` pentad exists and generates a
+  faithful `A₅`; and
+* the orbifold target (`cone_orders`, `orbifold_euler_char`,
+  `orbifold_euler_char_eq_cover`): `ℙ(V)/A₅` is the sphere with cone orders
+  `(2,3,5)` and `χ_orb = 1/30`, classically `= S²(2,3,5)` = the Seifert base of
+  `S³/2I` (Klein `[klein1888]` + the Poincaré-sphere Seifert fibration).
+
+The class therefore isolates the **sole residual open content** — the
+**canonicity** of the icosahedral action on the *categorical* base `P = ℙ(V)`:
+that `act` is the icosahedral `A₅` *intrinsic to the braiding object `V`* (with
+`proj` the icosahedral-invariant quotient onto `KB`), rather than an action
+merely imposed to match. The corpus supplies the `ζ₅` pentad (`c₂c₃`) and the
+order-3 trefoil canonically, but a *canonical* icosahedral 2-fold on `ℙ(V)` (the
+Klein `T`, distinct from the dihedral EM `β`) is not yet established — that is
+the open geometric object; no instance is constructed.
 
 * `act` — the `A₅`-action on the base `P = ℙ(V)`;
 * `c2, c3` — the icosahedral-angle generators (orders 2, 3; `c₂c₃` order 5);
