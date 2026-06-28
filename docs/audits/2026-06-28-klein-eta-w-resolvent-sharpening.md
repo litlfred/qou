@@ -58,10 +58,42 @@ icosahedral-angle axis** (the `ST` position), not the coaxial `e₃` axis the
 must intertwine the trefoil's `(η₁,η₂) ↦ (η₁, ζ^j η₂)` action with the Möbius
 order-3 `ST` on the base `ℙ(V)`.
 
+## Localization in the corpus's own resolvent coordinates (2026-06-28 follow-up)
+
+The original obstruction (above) used abstract `so3` rotations. Re-deriving it
+in the **corpus's** spectral ratios `η₁ = w₁/w₂`, `η₂ = w₃/w₄`
+([`rem:braid-group-action`](../../content/quantum-observable-universe/brings-surface/braid-group-action.md))
+pinpoints the obstruction more sharply
+([`scripts/keystone_eta_w_resolvent_corpus_coords.py`](../../scripts/keystone_eta_w_resolvent_corpus_coords.py),
+parameter-free, exit 0):
+
+- The pentad `P` (the `ζ₅` 5-cycle `x_j↦x_{j+1}`, i.e. `w_k↦ζ₅^{-k}w_k`) acts
+  on `(η₁,η₂)` as the **scalar** `ζ₅·I`.
+- The trefoil `τ` acts as `diag(1, ω)`, `ω = e^{2πi/3}`.
+
+Both are diagonal, so `⟨P, τ⟩ = C₁₅` (order 15, verified) — the same abelian
+collapse as the `so3` probe, now intrinsic to the coordinates.
+
+The decisive new fact: **a scalar pentad acts trivially on the projective
+ratio `η₁/η₂`** (verified: `η₁/η₂` is fixed by `P`). So in these coordinates
+the pentad's icosahedral order-5 rotation is *invisible* on any single `ℙ¹`.
+The only generator that fails to commute with `P` is the off-diagonal
+reflection `σ₂` `(η₁,η₂)↦(η₂⁻¹,η₁⁻¹)`, and it does so merely as an
+**inversion** `σ₂Pσ₂ = P⁻¹` (dihedral) — it does *not* supply the missing
+5-fold. By contrast Klein's genuine non-scalar order-5 Möbius `S` with the
+2-fold `T` gives `⟨S,T⟩ = A₅` (order 60, verified projectively).
+
+**Refined open step.** The resolvent must collapse the 2-torus `(η₁,η₂)` to a
+single icosahedral parameter on which the *scalar* `ζ₅` becomes Klein's
+*non-scalar* order-5 Möbius `S`; only then is `A₅` realized on one `ℙ(V)`.
+This is a one-line, checkable requirement on the `η ↔ w` map — but
+constructing the collapse remains the open G1 work.
+
 ## Status
 
 This **sharpens** the residual to a single, well-posed differential-geometry /
-resolvent identity — and guards against the coaxial trap — but does **not**
-close it; constructing the `η ↔ w` intertwiner is the owner-authorized G1
+resolvent identity — and guards against the coaxial trap (now localized to the
+scalar-pentad degeneracy in corpus coordinates) — but does **not** close it;
+constructing the `η ↔ w` intertwiner is the owner-authorized G1
 (research-DG) step. Scope unchanged: this is the `V_λ`/geometry side; it does
 **not** produce the Hecke-dual `W_λ`.
