@@ -28,6 +28,15 @@ coefficients of `Ŝ`) is the symbolic compute cited above, not re-proved here �
 partition-sum EGF and its formal-power-series logarithm is out of scope; this file proves exactly
 the algebraic factorization it states.
 
+**See also (sibling Rogers–Szegő formalization on main).** The binding period `S(m)` is the
+q-involution number — a moment of the **Rogers–Szegő / q-Hermite** family that
+`QOU.Mass.BindingQHermiteOscillator.FollowsRogersSzego` (the §3b recurrence class) and its concrete
+instance `QOU.Mass.RogersSzegoInhabited.rsSeq` (`instFollowsRogersSzego`) formalize abstractly. That
+work axiomatizes the q-oscillator three-term recurrence; **this** file is the complementary,
+independent piece — the *log-coefficients* `L_m(q)` of the binding period's q-Gaussian EGF `Ŝ(z)`
+and their cyclotomic `(q−1)`-order structure. Different objects (q-oscillator basis vs.
+generating-function log-expansion); no overlap.
+
 Generic base ring `[CommRing R]`: these are purely algebraic identities in the formal fibre
 parameter `q`, with no archimedean structure (AGENTS.md §7c). Sorry-free.
 

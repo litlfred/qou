@@ -235,6 +235,12 @@ The `(q−1)`-order tower (`L₃,L₄ ∼ (q−1)²`, `L₅ ∼ (q−1)⁴`) and
 (`L3_factor`, `L4_factor`, `L5_factor`, `L2_classical_limit`); the numerator polynomials' provenance
 (that they are the log-coefficients of `Ŝ`) is the symbolic compute, cited in the file.
 
+This complements the **Rogers–Szegő / q-Hermite** formalization that landed on main in parallel
+(`QOU.Mass.BindingQHermiteOscillator.FollowsRogersSzego` + concrete `QOU.Mass.RogersSzegoInhabited.rsSeq`):
+that work axiomatizes the q-oscillator three-term recurrence (the bound-state basis); the q-Gaussian
+EGF and its log-coefficients here are the independent generating-function face of the same
+q-involution moment. Different objects, no duplication.
+
 This is the **explicit binding-side Habiro element in closed form**, constructed from exact
 (non-floor-limited) data. It is **not** the Q_β element `F(q)` — that is a different object, gated
 on the open SW-residue / jet-prolongation keystone `conj:qdifference-kernel-prolongation-symbol`,
