@@ -51,7 +51,7 @@ determine the coefficients:
 |-----------|-------|-------|:-----------:|
 | $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | $-1$ |
 | $\mathfrak{n}$-$\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ | $-1$ |
-| mixed | $1$ | $-\frac{1}{2}(q - q^{-1})$ | $-1 + \frac{1}{4}(q - q^{-1})^2$ |
+| mixed | $1$ | $-\frac{1}{2}(q - q^{-1})$ | $-1 - \frac{1}{4}(q - q^{-1})^2$ |
 
 The product of $k_i$ transfer matrices at generator $\sigma_i$
 gives $M_i \in \mathrm{GL}_2(\mathbb{Q}(q))$, whose entries are
