@@ -584,4 +584,55 @@ theorem sytToList_entryFn (l a : List ℕ) (hlen : a.length = l.sum) :
   unfold sytToList
   rw [rowsOf_entryFn l a hlen, flatten_chunk l a hlen]
 
+/-! ### The flatten of an SYT is a standard filling -/
+
+/-- Membership in the flatten: `v` appears iff it is `e i j` for some cell `(i,j)`. -/
+theorem mem_sytToList (l : List ℕ) (e : ℕ → ℕ → ℕ) (v : ℕ) :
+    v ∈ sytToList l e ↔ ∃ i, ∃ j, ∃ hi : i < l.length, j < l[i]'hi ∧ e i j = v := by
+  unfold sytToList rowsOf
+  simp only [List.mem_flatten, List.mem_map, List.mem_finRange, List.get_eq_getElem, true_and]
+  constructor
+  · rintro ⟨row, ⟨i', hrow_eq⟩, hv⟩
+    subst hrow_eq
+    rw [List.mem_map] at hv
+    obtain ⟨j, hj, hje⟩ := hv
+    rw [List.mem_range] at hj
+    exact ⟨i'.val, j, i'.isLt, hj, hje⟩
+  · rintro ⟨i, j, hi, hj, hje⟩
+    refine ⟨(List.range (l[i]'hi)).map (e i), ⟨⟨i, hi⟩, rfl⟩, ?_⟩
+    rw [List.mem_map]
+    exact ⟨j, List.mem_range.mpr hj, hje⟩
+
+/-- The flatten of a grid-injective entry map is `Nodup`. -/
+theorem sytToList_nodup (l : List ℕ) (e : ℕ → ℕ → ℕ)
+    (hinj : ∀ i1 j1 i2 j2, (h1 : i1 < l.length) → j1 < l[i1]'h1 → (h2 : i2 < l.length) →
+      j2 < l[i2]'h2 → e i1 j1 = e i2 j2 → i1 = i2 ∧ j1 = j2) :
+    (sytToList l e).Nodup := by
+  unfold sytToList
+  rw [List.nodup_flatten]
+  refine ⟨?_, ?_⟩
+  · intro row hrow
+    unfold rowsOf at hrow
+    rw [List.mem_map] at hrow
+    obtain ⟨i, _, rfl⟩ := hrow
+    rw [List.nodup_map_iff_inj_on List.nodup_range]
+    intro x hx y hy hxy
+    rw [List.mem_range] at hx hy
+    simp only [List.get_eq_getElem] at hx hy
+    exact (hinj i.val x i.val y i.isLt hx i.isLt hy hxy).2
+  · unfold rowsOf
+    rw [List.pairwise_map, List.pairwise_iff_getElem]
+    intro a b ha hb hab
+    simp only [List.length_finRange] at ha hb
+    rw [List.disjoint_iff_ne]
+    intro v1 hv1 v2 hv2
+    simp only [List.getElem_finRange, Fin.cast_mk, List.mem_map, List.mem_range,
+      List.get_eq_getElem] at hv1 hv2
+    obtain ⟨j1, hj1, hje1⟩ := hv1
+    obtain ⟨j2, hj2, hje2⟩ := hv2
+    intro heq
+    rw [← hje1, ← hje2] at heq
+    have := (hinj a j1 b j2 (by simpa using ha) hj1 (by simpa using hb) hj2 heq).1
+    omega
+
 end QOU.Mathlib.SYTEnum
