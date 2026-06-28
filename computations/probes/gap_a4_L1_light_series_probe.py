@@ -56,6 +56,11 @@ import sympy as sp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
+from closed_form_tau_M import (  # noqa: E402
+    compute_tau_M_nucleon_H3,
+    closed_form_tau_M,
+)
+
 from witness_base import WitnessBuilder  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
@@ -122,11 +127,9 @@ def A_phase4(Z: int, N: int, vol_hyp: mp.mpf, q_0: mp.mpf) -> mp.mpf:
     return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
 
 
-def lambda_L1a(q_0: mp.mpf) -> mp.mpf:
-    """L1a — uniform linking_weight_family_a(q₀)."""
-    q_sym = sp.Symbol("q", positive=True)
-    expr = linking_weight_family_a_sym(q_sym)
-    return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
+def lambda_L1a(tr_M_K: mp.mpf) -> mp.mpf:
+    """L1a — canonical per-knot Hecke density tr_M(K)."""
+    return tr_M_K
 
 
 def lambda_L1b(Z: int, N: int, vol_hyp: mp.mpf, m_K: mp.mpf,
@@ -153,21 +156,20 @@ def lambda_L1b(Z: int, N: int, vol_hyp: mp.mpf, m_K: mp.mpf,
     return A * vol_hyp / VOL_BORROMEAN_8G * hbar_q_sq(q_0)
 
 
-def lambda_L1c(Z: int, N: int, q_0: mp.mpf) -> mp.mpf:
-    """L1c — Phase-4 carriers alone:
-    λ(K) = linking_weight_family_a(q₀) · [3]_q^{2(Z-1)} ·
+def lambda_L1c(Z: int, N: int, q_0: mp.mpf, tr_M_K: mp.mpf) -> mp.mpf:
+    """L1c — Phase-4 carriers alone scaled by tr_M(K):
+    λ(K) = tr_M(K) · [3]_q^{2(Z-1)} ·
            (q^{1/2}+q^{-1/2})^{4N}.
-    At Z=1, N=0 (proton) this reduces to linking_weight_family_a alone.
+    At Z=1, N=0 (proton) this reduces to tr_M(p) alone.
     """
     q_sym = sp.Symbol("q", positive=True)
-    lw = linking_weight_family_a_sym(q_sym)
     three_q = q_number_sym(3, q_sym)
     spin_carrier = (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym)) ** (4 * N)
     # `[3]_q^{2(Z-1)}` extends naturally to Z=0 (= [3]_q^{-2}); no
     # zero-clamp (Copilot review on PR #1874).
     color_carrier = three_q ** (2 * (Z - 1))
-    expr = lw * color_carrier * spin_carrier
-    return mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
+    expr = color_carrier * spin_carrier
+    return tr_M_K * mp.mpf(str(sp.N(expr.subs(q_sym, sp.Float(str(q_0), 50)), 50)))
 
 
 def _verdict(rel_err: mp.mpf) -> str:
@@ -207,7 +209,8 @@ def main() -> int:
     )
 
     q_0 = mp.mpf(Q_0_50DPS)
-    lw_val = lambda_L1a(q_0)
+    tau_p_H3 = compute_tau_M_nucleon_H3("p", q_0)
+    tau_n_H3 = compute_tau_M_nucleon_H3("n", q_0)
 
     print("=" * 78)
     print("GAP-A-4 L1 probe — substrate-derived λ(K) for the light series")
@@ -216,7 +219,6 @@ def main() -> int:
     print(f"  m_e (MeV)                         = {float(M_E_MEV):.9f}")
     print(f"  ℏ_q²                              = {float(hbar_q_sq(q_0)):.10f}")
     print(f"  Vol(𝓑₃) = 8·G                     = {float(VOL_BORROMEAN_8G):.10f}")
-    print(f"  linking_weight_family_a(q₀)       = {float(lw_val):.10f}")
     print("-" * 78)
     print(f"  {'atom':<4} {'Z':>2} {'N':>2} {'Vol(K)':>10} "
           f"{'λ_emp':>10} "
@@ -227,7 +229,6 @@ def main() -> int:
 
     w.add_parameter("q_0_50dps", Q_0_50DPS)
     w.add_parameter("m_e_MeV", str(M_E_MEV))
-    w.add_parameter("linking_weight_family_a_at_q0", str(lw_val))
     w.add_data("discipline", "EXPLORATORY")
     w.add_data("production_wired", False)
     w.add_data(
@@ -237,10 +238,11 @@ def main() -> int:
 
     rows = []
     for label, Z, N, m_K, vol_K in LIGHT_SERIES:
+        tr_M_K = closed_form_tau_M(Z, N, q_0, tau_p_H3, tau_n_H3)
         lam_emp = lambda_empirical(m_K, vol_K, q_0)
-        L1a_pred = lambda_L1a(q_0)
+        L1a_pred = lambda_L1a(tr_M_K)
         L1b_pred = lambda_L1b(Z, N, vol_K, m_K, q_0)
-        L1c_pred = lambda_L1c(Z, N, q_0)
+        L1c_pred = lambda_L1c(Z, N, q_0, tr_M_K)
         rel_a = (L1a_pred - lam_emp) / lam_emp
         rel_b = (L1b_pred - lam_emp) / lam_emp
         rel_c = (L1c_pred - lam_emp) / lam_emp
@@ -257,7 +259,7 @@ def main() -> int:
             "vol_K": str(vol_K),
             "m_K_MeV": str(m_K),
             "lambda_empirical": str(lam_emp),
-            "L1a_uniform_lw": {
+            "L1a_tr_M": {
                 "prediction": str(L1a_pred),
                 "relative_error": str(rel_a),
                 "verdict": ver_a,
@@ -289,11 +291,11 @@ def main() -> int:
                 worst_label = r["label"]
         return worst_label, worst
 
-    L1a_worst = worst_rel("L1a_uniform_lw")
+    L1a_worst = worst_rel("L1a_tr_M")
     L1b_worst = worst_rel("L1b_phase4_reexpression")
     L1c_worst = worst_rel("L1c_phase4_carriers")
     print("-" * 78)
-    print(f"  worst-rel L1a (uniform lw):       {float(L1a_worst[1]):+.2%}  at {L1a_worst[0]}")
+    print(f"  worst-rel L1a (tr_M):       {float(L1a_worst[1]):+.2%}  at {L1a_worst[0]}")
     print(f"  worst-rel L1b (Phase-4 re-expr):  {float(L1b_worst[1]):+.2%}  at {L1b_worst[0]}")
     print(f"  worst-rel L1c (Phase-4 carriers): {float(L1c_worst[1]):+.2%}  at {L1c_worst[0]}")
 
@@ -344,26 +346,7 @@ def main() -> int:
     for chunk in synthesis.split(". "):
         print(f"    {chunk.strip()}")
 
-    # Proton-row sanity assertion: linking_weight_family_a(q₀) ≈ 2.533
-    # and λ_emp(p) ≈ 2.46 (the docstring quote in
-    # `_li_2_q_util.py::vol_density_borromean`).  Their ratio is the
-    # documented +2.89 % gap, ≈ 0.0289 ± 0.001.
-    lam_emp_p = mp.mpf([r["lambda_empirical"] for r in rows
-                        if r["label"] == "p"][0])
-    gap_p = lw_val / lam_emp_p - 1
-    w.add_assertion(
-        "proton_uniform_lw_overshoots_lambda_emp_by_2_89_pct",
-        computed=float(gap_p),
-        expected=0.0289,
-        tolerance=2e-3,
-        source=(
-            "Production docstring `_li_2_q_util.py::vol_density_borromean` "
-            "states: 'the 2.53 is a CODATA-implied-λ near-match that "
-            "lands near λ = m_p / (m_e·Vol/ℏ²) ≈ 2.46'.  This assertion "
-            "anchors the probe by recovering that documented +2.89 % "
-            "overshoot exactly for the proton row."
-        ),
-    )
+
 
     out_path = w.save()
     repo_root = COMPUTE_DIR.parent.parent

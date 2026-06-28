@@ -35,11 +35,8 @@ from habiro_coefficients_interpolate import (  # noqa: E402
 )
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_weyl_symbolic import partitions_of  # noqa: E402
-from _li_2_q_util import (  # noqa: E402
-    bring_color_weighted_linking_weight as bw,
-    linking_weight_family_a as base_lw,
-    flavor_split_subleading,
-)
+from _li_2_q_util import flavor_split_subleading  # noqa: E402
+from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
@@ -69,7 +66,6 @@ def _per_block(Z, N, inter):
 
 def main() -> int:
     delta = flavor_split_subleading(q0)
-    base = base_lw(q0)
     print(f"E_0 = {float(E0):.4f} MeV   δ = {float(delta):.4e}   "
           f"α_EM = {float(ALPHA_EM):.4e}\n")
 
@@ -77,7 +73,14 @@ def main() -> int:
     B0 = {xy: E0 * (_per_block(Z, N, False) - _per_block(Z, N, True))
           for xy, (Z, N) in {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2)}.items()}
     # Per-bond COLOR weight (1 + δ·asym + δ²·sym) via bond's own (Z,N).
-    w = {xy: bw(Z, N, q0) / base
+    # Applied to the tr_M(K) base instead of the global λ_A.
+    def color_weight_factor(Z: int, N: int) -> mp.mpf:
+        A = Z + N
+        asym = mp.mpf(N - Z) / (3 * A)
+        sym = mp.mpf(2 * (2*Z + N) * (Z + 2*N)) / (9 * A * A)
+        return mp.mpf(1) + delta * asym + delta**2 * sym
+    
+    w = {xy: color_weight_factor(Z, N)
          for xy, (Z, N) in {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2)}.items()}
     for xy in ("pp", "pn", "nn"):
         print(f"  bond {xy}: B0 = {float(B0[xy]):+.4f} MeV   "
