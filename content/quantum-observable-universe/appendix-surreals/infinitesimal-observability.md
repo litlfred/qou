@@ -67,7 +67,7 @@ Under the relaxation, infinitesimally many endomorphisms might be
 *almost-detectable* — visible at first order in $\varepsilon$ but
 invisible to standard-part archimedean observers.
 
-Physically (if a physical reading is allowed): this corresponds
+Under a physical reading (if one is allowed): this corresponds
 to *near-symmetries* — symmetries that are spontaneously broken
 at archimedean scale but restored at infinitesimal scale. The
 analog in particle physics is approximate isospin or chiral

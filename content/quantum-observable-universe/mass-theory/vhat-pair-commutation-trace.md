@@ -1,6 +1,6 @@
 The jet-tower mass formula
 ([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))
-contains a "pentagon ascension" argument that informally cites the
+contains a "pentagon ascension" argument that non-rigorously invokes the
 quantum-dilogarithm pentagon identity
 $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$ —
 which **as an operator identity requires
@@ -94,7 +94,7 @@ $\Phi_q(uv) = 1$, which is non-trivial only at very specific
 $uv$ values and **does not hold generically**. So the pentagon
 identity does *not* apply to scalar $\hat V$'s.
 
-This means the pentagon ascension argument as stated in
+Hence the pentagon ascension argument as stated in
 [`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)
 **describes the correct structure** (singletons + pairs at level $n$,
 defects of order $\geq 3$ ascending to level $n+1$) but is **not

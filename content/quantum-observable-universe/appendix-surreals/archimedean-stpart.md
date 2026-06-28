@@ -86,8 +86,8 @@ generalisation of the main paper:
  counterpart; the surreal counterpart may have additional
  non-trivial first-order corrections that vanish under
  $\mathrm{St}$.
-3. Future work can investigate whether these corrections are
- physically meaningful (e.g., explain corrections to the QOU
+3. Future work can investigate whether these corrections have
+ physical significance (e.g., explain corrections to the QOU
  mass formula's $4\%$ MAE on $\mathcal{Q}$-values).
 ## Proof strategy
 

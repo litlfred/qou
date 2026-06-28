@@ -62,7 +62,7 @@ $$
   \end{aligned}
 $$
 
-is feasible iff the bound state $T$ is **physically realisable** —
+is feasible iff the bound state $T$ is **realisable** —
 i.e. iff the demand profile lies in the positive cone spanned by
 the supply profiles. The Frobenius pairing
 $\langle \cdot, \cdot \rangle_F$ on $H_n(q)$ provides the natural

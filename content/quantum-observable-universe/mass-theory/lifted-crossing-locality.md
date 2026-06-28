@@ -76,7 +76,7 @@ and fails at special values:
  $z_q \to 0$ or $1$, and locality becomes vacuous since $\xi(q) = 0$.
 
 Locality holding at $q_0$ but **failing away from it** is what makes
-the substrate parameter physically distinguished: it sits in the
+the substrate parameter distinguished: it sits in the
 locality window where the crossing-graded expansion has its cleanest
 closed form.
 

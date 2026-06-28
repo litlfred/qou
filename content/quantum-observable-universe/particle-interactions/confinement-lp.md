@@ -43,8 +43,7 @@ $\approx 0.811$ for the neutron, and $M$ is a large constant.*
 The objective $\sum t_i x_i = \mathrm{tr}_M(\Phi)$ is the
 categorical action.  The Frobenius positivity constraint
 $Gx \geq 0$ ensures that $\Phi$ pairs non-negatively with all
-basis elements — physically, the confined state does not create
-unbounded demand in any channel.
+basis elements.
 
 ## Dual program (demand satisfaction)
 

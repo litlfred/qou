@@ -30,7 +30,7 @@ $\mathcal{S}$.
 
 The [Euler characteristic stability](#prop:euler-char-stability)
 theorem states that $\chi(E_n)$ is constant across the brane
-tower: $\chi(E_n) = \chi(A)$ for all $n$.  This means the
+tower: $\chi(E_n) = \chi(A)$ for all $n$.  Hence the
 tower has a uniform topological structure at every level.
 
 The critical exponent $\alpha$ is determined by two quantities

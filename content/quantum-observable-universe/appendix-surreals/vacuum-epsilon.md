@@ -9,7 +9,7 @@ This strict-zero condition is awkward in two ways:
 
 1. It introduces a *boundary case* — the unknot must be
  special-cased in the geometric-energy formula.
-2. It is *physically suspicious* — a "vacuum energy" of exactly
+2. It is *suspicious on physical grounds* — a "vacuum energy" of exactly
  zero is the textbook signature of a fine-tuned theory, and is
  thought by many to be the wrong setting (cosmological
  constant problem, vacuum-fluctuation arguments, etc.).

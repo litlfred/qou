@@ -230,7 +230,7 @@ $$
 $$
 
 For small $\epsilon$, this approximates $1/n^2$ over the
-physically relevant range ($n = 1$ to $\sim 7$).  The exact
+relevant range ($n = 1$ to $\sim 7$).  The exact
 formula is the **exponential** $\lambda_+^{-n}$, which
 reproduces the Rydberg formula to the precision of
 low-$n$ hydrogen spectroscopy.

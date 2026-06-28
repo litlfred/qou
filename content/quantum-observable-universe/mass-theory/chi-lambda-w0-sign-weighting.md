@@ -72,7 +72,7 @@ into the per-block-diagonal sum).
 
 ## The role of $w_0$ versus $-I$
 
-The probe agent that surfaced this finding informally referred to
+The probe agent that surfaced this finding referred to
 the weighting as "character $\chi_\lambda(-I)$." In the symmetric
 group $S_n$ realised as a Coxeter group, "$-I$" has no canonical
 meaning (the group is not realised as matrices acting on a real

@@ -199,4 +199,4 @@ Markov pairing $\langle \mathrm{tr}_M, r_k \rangle$ via the
 witnessed $y_\lambda$.  Step (i) is the open work; step (ii) is
 mechanical once (i) is fixed.*
 
-Although the derivation mechanism utilizes the standard Jones-Markov linear system extraction across Wenzl bridges, employing this machinery to extract the physically predictive mass spectrum coefficients $\alpha_k$ constitutes a mathematically novel physical framework unique to the Quantum Observable Universe.
+Although the derivation mechanism utilizes the standard Jones-Markov linear system extraction across Wenzl bridges, employing this machinery to extract the mass-spectrum coefficients $\alpha_k$ constitutes a mathematically novel physical framework unique to the Quantum Observable Universe.

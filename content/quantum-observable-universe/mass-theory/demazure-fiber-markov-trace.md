@@ -70,7 +70,7 @@ two senses:
 | Per-partition complexity | $O(\dim V_\lambda^3)$ | $O(\ell(w_0)) = O(n^2)$ |
 | Crystal interpretation | none — empirical | sub-crystal projection |
 
-For the LP/SDP solvers in the QOU pipeline, this means the cost
+For the LP/SDP solvers in the QOU pipeline, the cost
 vector at $w = w_0$ is unchanged, but the dual variables and
 shadow prices acquire a structural interpretation: the active set
 $\{\lambda \mid u_\lambda^* > 0\}$ corresponds to the Demazure
