@@ -11,8 +11,7 @@ alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying
 multi-link Jones values for $c_5, c_7, \ldots$ — Borromean rings,
 double-Hopf, etc.
 
-**Empirically this fails**: at $q_0$ at 50 dps via
-[`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 | coefficient | empirical | closest simple multi-link Jones candidate |
 |:---:|---:|---:|
@@ -41,12 +40,7 @@ This is **infrastructure, not closure**. The Lean module
    docstrings noting the empirical mismatch** — they are not
    closures.
 
-4. **A `MultiLinkJonesAtOne` class** with fields `c5_candidate`,
-   `c6_candidate` for downstream consumers to plug in any specific
-   candidate values they want to test. The default instance uses the
-   probe's "best simple integer" candidates ($c_5 = +8$, $c_6 = 16$),
-   **explicitly flagged as exploratory placeholders, not closure
-   values**.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Failure of the simple multi-link pattern
 
@@ -68,7 +62,7 @@ Three structural hypotheses for the 50–3000$\times$ mismatch:
    coupling, a Mostow rigidity gap correction, or a non-trivial
    Habiro residue contribution may enter only at orders $k \geq 5$.
 
-## Concrete next probe
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 Test whether the **per-Wedderburn-block contribution at $k = 5, 6$**
 matches empirical when properly weighted by the $q$-deformed

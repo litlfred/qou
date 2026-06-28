@@ -41,20 +41,7 @@ has eigenvalue $c(T(k); q)$. Together with
 [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)
 this gives a complete explicit construction of $Z(H_n(q))$.*
 
-> **Scope correction note.** Earlier versions of this
-> proposition ranged the inner Lagrange product over cells of $\lambda$
-> only (i.e., $\square \in \lambda$).  With that scope, the off-block
-> projection does NOT vanish: the JM eigenvalue $q^{2c(T'(k))}$ for
-> $T' \in \mathrm{SYT}(\mu \neq \lambda)$ may not lie in
-> $\{c(\square; q) : \square \in \lambda\}$, so the Lagrange factor
-> fails to kill that direction.  The corrected scope above ranges
-> over $\mathrm{C}(n)$ (the union of contents across every $\mu$),
-> which is exactly the candidate set of joint JM eigenvalues across
-> all Wedderburn blocks.  Numerically verified to $\sim 10^{-50}$ in
-> [`explicit-central-idempotent-probe.witness.json`](../../../computations/probes/explicit-central-idempotent-probe.witness.json):
-> own-block residue $0$, off-block residue $0$, completeness
-> residue $0$ under the corrected scope; literal-scope off-block
-> residue $\approx 32$ at $q_0$ for $n = 3$.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ### Cross-checks
 

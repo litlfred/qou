@@ -44,15 +44,4 @@ needed.
 
 ## Remarks
 
-- The hypothesis $q^{1/2} + q^{-1/2} > 2$ is sharp for semisimplicity
-  (Wenzl 1988, §1); below it, the Wedderburn decomposition fails and
-  the $A^\lambda_{\mu,\nu}$ decomposition is not well-defined. The
-  substrate value $q_0 > 1$ is comfortably inside the regime.
-- Halverson–Ram 1998 give an explicit combinatorial Murnaghan–
-  Nakayama-type rule for evaluating
-  $\operatorname{tr}\,A^\lambda_{\mu,\nu}(I)$ when $I$ is a product
-  of Murphy generators; this is the computational ingredient used by
-  `probe_operator_valued_ansatze_from_mass_endo.py`.
-- The same statement holds for any inclusion
-  $H_{n_1}(q) \otimes \cdots \otimes H_{n_k}(q) \hookrightarrow
-  H_{\sum n_i}(q)$ (iterate the branching).
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.

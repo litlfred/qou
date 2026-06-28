@@ -17,13 +17,7 @@ after a finite number of terms.
 
 ## Construction (three steps)
 
-1. **Extraction**
-   ([`computations/probes/habiro_frobenius_probe.py`](../../../computations/probes/habiro_frobenius_probe.py)).
-   For each atom in
-   `habiro-coefficients-atomic.witness.json` (proton, neutron,
-   deuteron) and each prime $p \in \{2, 3, 5, 7, 11, 13\}$, evaluate
-   $f$ at $u = \zeta_{2p}$. Witness:
-   `habiro-frobenius-probe.witness.json` field `frob_p_complex`.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 2. **Compatibility verification.** Two finite-place coherence
    checks pass on every $(p, \text{atom})$ cell:

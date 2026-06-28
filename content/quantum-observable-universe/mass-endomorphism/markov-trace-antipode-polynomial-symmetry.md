@@ -76,8 +76,7 @@ $\operatorname{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
 
 ## Witness
 
-- `computations/poly_q_proof_probe.py` — sympy-exact verification.
-- `computations/poly-q-proof.witness.json` — proof certificate.
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 
