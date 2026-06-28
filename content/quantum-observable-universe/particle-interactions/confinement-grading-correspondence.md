@@ -26,7 +26,7 @@ geometrically forbidden, providing a rigorous justification for
 the existing heuristic confinement cutoff and a quantitative
 speed-up by pruning the crystal graph at depth $\ell$.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The KLR grading is unique up to isomorphism, and the
 Brundan–Kleshchev isomorphism intertwines it with the centre of
 $H_n(R, q)$.  What is conjectural is that the filtration coming

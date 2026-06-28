@@ -37,7 +37,7 @@ selection rule is introduced for the bosonic vs fermionic split; the
 split is the eigenvalue decomposition of $s_i$ acting on the
 $q \to 1$ canonical basis.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The $q \to 1$ specialisation of $H_n(R, q)$ to $\mathbb{Z}[S_n]$ is
 classical \cite{kassel1995}, as is the $b_w \to C_w$ correspondence
 on the level of canonical bases \cite{khovanovlauda2009,

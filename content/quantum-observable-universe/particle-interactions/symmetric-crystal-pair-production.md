@@ -38,7 +38,7 @@ combinatorial post-conditions into intrinsic invariants of the
 crystal traversal — no custom $\mathbb{Z}/2\mathbb{Z}$ rules required
 in the engine code.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The Type B folding of $\mathfrak{sl}_n$ Kashiwara crystals into
 $\mathfrak{so}_{2n+1}$ symmetric crystals is established at the level
 of generic quantum-group representations

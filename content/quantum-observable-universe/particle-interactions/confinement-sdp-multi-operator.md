@@ -19,7 +19,7 @@ $|\mathcal{S}^*| \ge 1$ is the **binding multiplicity**:
 * $|\mathcal{S}^*| \ge 2$ is the generic multi-operator regime and
   includes all shell-closure and magic-number configurations.
 
-**Why complementary slackness is a matrix equation.**
+**Complementary slackness as a matrix equation.**
 The optimality identity
 
 $$

@@ -79,7 +79,7 @@ $h = q - q^{-1}$ in Skein units) plus an identity strand
 (photon release).  The physical energy cost of this step is
 $E_0$.
 
-## Why free neutron decay calibrates this
+## Calibration by free neutron decay
 
 The free neutron decay $n \to p + e^- + \bar\nu_e$ is the
 simplest process that exercises a single Hecke step in the

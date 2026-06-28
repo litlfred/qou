@@ -92,7 +92,7 @@ The $Q$-value has three factors:
  channels. Each of the $N$ neutrons can convert; the physical
  $Q$-value is the sum of all weighted contributions.
 
-## Why the Gram weight is non-uniform
+## Non-uniformity of the Gram weight
 
 The Gram matrix $G$ on $H_A(q)$ is symmetric but **not positive
 definite** — it has both positive and negative eigenvalues. The

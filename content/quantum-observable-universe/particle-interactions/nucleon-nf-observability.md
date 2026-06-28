@@ -75,7 +75,7 @@ $L_- = \sigma_1\sigma_0$ (both), which are bound states of
 two linked rings.  Note that $L_+$ is **negative** for the
 neutron — the typed $d$-$d$ crossing turns it into a debt.
 
-## Where $\sigma_1$ lives: the color tube fiber
+## Location of $\sigma_1$: the color tube fiber
 
 The generator $\sigma_1$ exchanges strands $1$ and $2$ in the
 $3$-strand braid — the crossing between the second and third quark

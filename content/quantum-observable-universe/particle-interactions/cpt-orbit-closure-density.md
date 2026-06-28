@@ -89,7 +89,7 @@ Then:
 In every case the original Boolean flag is recovered as the orbit-
 closure check, with no per-link case analysis.
 
-## Why the fold is the right involution
+## Correctness of the fold involution
 
 The Type-B Cartan datum is obtained from the $A_{n-1}$ datum by
 folding along the Dynkin involution $i \mapsto n - i$
