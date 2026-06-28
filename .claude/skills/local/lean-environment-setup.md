@@ -236,6 +236,26 @@ elan / cache hosts are network-restricted.
 > toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
 > from-source build below — and **SEED the cache branch afterwards** so the
 > next agent restores in 2 min instead of rebuilding.
+>
+> **RepThy/Wedderburn addon (2026-06-28).** The base `lake-cache/qou-v4-24-0`
+> does **not** carry `Mathlib.RepresentationTheory.*` or
+> `RingTheory.SimpleModule.{WedderburnArtin,Isotypic,IsAlgClosed}` (they are
+> outside the QOU dependency closure). The 11 oleans those modules need — for
+> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
+> + [`WedderburnSn.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
+> (and any rep-theory / OV-tower follow-up) — are preserved on the **addon**
+> orphan branch `lake-cache/qou-v4-24-0-repthy-wedderburn` (2.9 MB). Restore it
+> **after** the base restore above:
+>
+> ```bash
+> ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0-repthy-wedderburn
+> git show FETCH_HEAD:addon-oleans.tgz > "$T"; tar xzf "$T" -C "$ROOT"
+> ```
+>
+> This saves the ~5-min from-source rebuild of those 11 modules. (If a future
+> base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
+> this addon becomes redundant and can be ignored.)
 
 **Fallback workaround — source clone + from-source build (only when the
 cache-branch restore above misses; battle-tested on PR #1761 + PR #1772):**
