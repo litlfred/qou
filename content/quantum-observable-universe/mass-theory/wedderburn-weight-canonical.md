@@ -61,7 +61,7 @@ which records $|y_\lambda / \tilde w_\lambda|$ ratios from $0.14$ to
 $2.54$ at $q_0$ for $n \in \{2, 3\}$, confirming the two are
 distinct weight families away from self-conjugate $\lambda$.*
 
-## Why $\tilde w_\lambda$ is canonical
+## Canonicity of $\tilde w_\lambda$
 
 The Wedderburn–Artin decomposition
 ([Wedderburn mass formula](#thm:wedderburn-mass-formula))
@@ -186,7 +186,7 @@ general (definitional) and the Wenzl-bridge identity on the
 self-conjugate stratum. Witness:
 [`docs/audits/-p1-3a-bw-equivalence.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/-p1-3a-bw-equivalence.witness.json).
 
-## Why each context picks a different form
+## Form selection by context
 
 | Context | Form chosen | Reason |
 |---------|-------------|--------|
@@ -200,7 +200,7 @@ $\tilde w_\lambda$ is exact on the self-conjugate stratum; off that
 stratum, the Markov coefficient $y_\lambda$ is a distinct weight
 family and must be obtained from the Wenzl closed form.
 
-## Consequences for downstream use
+## Corollaries for downstream use
 
 - Any new BW mass coefficient or LP shadow-price at a new
   partition can be derived in three steps: (1) compute $\tilde w_\lambda$

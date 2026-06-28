@@ -72,7 +72,7 @@ recovers exactly $\ln |\mathrm{Vol}_{q_0}(\beta)|$, the standard
 formula
 ([algebraic quantum volume](#def:algebraic-quantum-volume)).
 
-**Consequence.**
+**Corollary.**
 Any physical computation of a knot volume in QOU — Kashaev limit,
 Bloch–Wigner dilogarithm, hyperbolic-volume formula
 ([$q$-Kashaev volume density](#rem:kashaev-volume-density),

@@ -28,7 +28,7 @@ geometric meaning of
 in the torus regime, where every shape parameter $z_c$ collapses
 to a real number and the Bloch–Wigner sum vanishes term-by-term.
 
-**Why the 3-cycle is exactly the torus regime.**  Three features
+**Identification of the 3-cycle with the torus regime.**  Three features
 of the global-vortex flow conspire to keep its complement
 Seifert-fibered:
 
@@ -44,7 +44,7 @@ Seifert-fibered:
    minus the torus-knot neighbourhood, all of which admits a
    Seifert structure.
 
-**Physical consequence: bare topological mass vanishes for
+**Physical corollary: bare topological mass vanishes for
 torus configurations.**  Combining with
 [Reeb-bundle complement equals volume](#prop:reeb-bundle-complement-equals-volume),
 the topological Markov-trace observable

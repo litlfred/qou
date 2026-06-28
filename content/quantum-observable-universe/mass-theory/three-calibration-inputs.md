@@ -91,7 +91,7 @@ independent factors.
 - $m_e$ enters as the unique dimensional bridge from $\mathbb{Q}(q_0)$
   to MeV.
 
-## What is forbidden
+## Forbidden substitutions
 
 The framework forbids:
 

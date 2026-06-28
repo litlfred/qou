@@ -7,7 +7,7 @@ formalism \cite{frenkel2004} and QOU structures.
 [Table: VOA $\to$ QOU dictionary](#tbl:vertex-operator-dictionary-table-data)
 for the 13-concept correspondence.
 
-**Why the dictionary works.**
+**Basis of the dictionary.**
 
 The connection between VOA and quantum groups is classical: the
 Knizhnik--Zamolodchikov (KZ) equation for the WZW model at level $k$

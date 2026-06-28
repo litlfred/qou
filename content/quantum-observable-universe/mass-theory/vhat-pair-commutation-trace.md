@@ -82,7 +82,7 @@ linear) and invoking the pair Markov-trace identity
 equality $\mathrm{tr}_M(\hat V_i \hat V_j) = z^2$ for **all**
 $i, j$ — adjacent or not. $\square$
 
-## Why the pentagon ascension still works
+## Validity of the pentagon ascension
 
 The pentagon identity
 $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$

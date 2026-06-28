@@ -18,7 +18,7 @@ $$
   \;=\; \{\text{hyperbolic 3-manifold volumes}\}.
 $$
 
-### Why this is the right reading
+### Justification of the reading
 
 The Volume Conjecture asserts that the asymptotic growth of the
 coloured Jones polynomial $J_K^{(N)}(q)$ at $q = e^{2\pi i / N}$ as
@@ -48,7 +48,7 @@ Bloch–Wigner regulator lives. Predicted at every depth $n$ is an
 analogous statement: *colored quantum invariants built from
 $\mathrm{Li}_n^q$ asymptote to weight-$n$ Goncharov periods.*
 
-### What changes if we accept the keystone
+### Implications of accepting the keystone
 
 The keystone correspondence does **not** prove the Volume Conjecture.
 What it does is reduce the conjecture to two structurally smaller

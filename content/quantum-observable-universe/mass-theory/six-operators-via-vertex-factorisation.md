@@ -15,7 +15,7 @@ explicit Reeb-flow trajectory and boundary permutation.
 
 See [Table](#tbl:six-operators-via-vertex-factorisation-table-data).
 
-**What this gives the rest of the section.**  The
+**Contribution to the rest of the section.**  The
 Markov-trace-product theorem
 ([product factorization of the Markov trace](#thm:markov-trace-product))
 that follows now has six concrete worked cases against which to

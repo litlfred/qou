@@ -64,7 +64,7 @@ sum is the level-$0$ singleton contribution; the pair sum is the
 level-$0$ pair contribution. Every $\hat V_i(q)$ is an element of
 $\mathbb{Z}[q^{1/2}, q^{-1/2}]$.*
 
-## Why this is the algebraic-side statement
+## Algebraic-side character of the statement
 
 The archimedean version
 [`prop:topological-mass-formula`](#prop:topological-mass-formula)

@@ -44,7 +44,7 @@ above silver it was $\{1\}$ (row 2 tight).  The degeneracy at silver
 is the **first non-null result** in a series of five prior numerical
 probes that all returned smooth observables.
 
-**Why this matters structurally.**  The metallic-ratio ladder
+**Structural significance.**  The metallic-ratio ladder
 (see [`docs/audits/2026-06-08-metallic-q-hierarchy-proof.md`](../../../docs/audits/2026-06-08-metallic-q-hierarchy-proof.md)
 and Lean module `QOU.AlgebraicSubstrate.MetallicHierarchy`)
 sits on the algebraic side: $q = \delta_n$ is exactly where the Hecke scalar

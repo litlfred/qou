@@ -86,7 +86,7 @@ $$
   \pmod{\Phi_{n_\ell}(q)}.
 $$
 
-## Why this replaces the class field representation
+## Replacement of the class field representation
 
 The Lean formulation in
 [`gb-residue-spectral-sum.lean`](gb-residue-spectral-sum.lean)
