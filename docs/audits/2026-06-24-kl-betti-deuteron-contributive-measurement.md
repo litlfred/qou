@@ -86,6 +86,29 @@ here is the *measurement* of its contribution, as a witness.
   the binding generating function — the unpruned, fibre-level direction (a new
   *term*, not a per-λ magnitude refit).
 
+## Coordination (2026-06-28) — siblings own S₁₂ and z2bn
+
+Picking this up against `main` (+504 commits) surfaced two active sibling lanes
+that overlap the owner's option-4 / option-3 asks — recorded here to avoid
+duplication:
+
+- **Option 4 (S₁₂ / ⁴He native KL-Betti) → sibling PR #2839**
+  (`a4-betti-derivation-2026-06-26`). Independently found the same localization
+  (inverse-RSK over the canonical cell; "shallow interval phenomenon" for
+  elongated λ) and has the **native Rust** KL engine to pass the Python n≤6 cap:
+  reports $B_{(10,2)}=584$ (~98 s) and claims it "closes" A=4. The
+  `kl_betti_smoothness_pruned.py` added here is the **pure-Python cross-check**
+  of that method (validated at n=6; n≥7 needs their Rust engine).
+  - **⚠ Reconcile (critical-distance):** the deuteron **full exact sum** here
+    shows KL-Betti is **×2.0 contributive, not closing**. A blanket "KL-Betti
+    closes binding" is contradicted by the deuteron oracle. Whether A=4
+    genuinely differs, or the #2839 "closure" is a single-partition-scalar fit,
+    must be checked on the **full** A=4 Σ_λ (not one B_λ). Posted as a
+    coordination note on #2839.
+- **Option 3 (fibre q-difference kernel R(q,x)) → sibling bean `z2bn`, PRs
+  #2899/#2925.** Deep progress (Stage 2–5, sorry-free binding q-Gaussian Habiro
+  tower). Not duplicated here.
+
 ## Cross-references
 
 - [`2026-06-16-option-e-probe4-kl-positivity-prune.md`](2026-06-16-option-e-probe4-kl-positivity-prune.md) — the sign prune (stands)
