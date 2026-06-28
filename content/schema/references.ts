@@ -3581,6 +3581,22 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF02392716",
   }),
 
+  // ── Champanerkar 2003 — A-polynomial & Bloch invariants (thesis) ─
+  ref({
+    id: "champanerkar2003",
+    type: "thesis",
+    title:
+      "A-polynomial and Bloch invariants of hyperbolic 3-manifolds",
+    author: [
+      { family: "Champanerkar", given: "Abhijit" },
+    ],
+    publisher: "Columbia University",
+    genre: "Ph.D. thesis",
+    issued: { "date-parts": [[2003]] },
+    URL: "https://www.semanticscholar.org/paper/26afbffed31d6b00ffefc92c178ddeceed14bc00",
+    note: "Added 2026-06-28 (bib-cite-resolves): corrects the phantom key 'champanerkar-kofman-mullen2008' cited in phi-q-aj-machinery-identification — no such Champanerkar–Kofman–Mullen 2008 A-polynomial paper exists (the 2008 Champanerkar–Kofman paper is on Khovanov homology). Champanerkar's A-polynomial work is this 2003 Columbia Ph.D. thesis, the verifiable source for classical A-polynomials/Bloch invariants of hyperbolic 3-manifolds. If a specific multi-author paper was intended, redirect this entry.",
+  }),
+
   // ── Kerov 1996 (q-hook walk on Young diagrams) ────────────────
   ref({
     id: "kerov1996",

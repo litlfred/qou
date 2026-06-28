@@ -36,7 +36,6 @@ export default proposition({
     witness: [
       "computations/c-k-beta-decay-bound.witness.json",
       "computations/inter-knot-decoupling.witness.json",
-      "computations/q-beta-cat-per-factor-decomposition.witness.json",
     ],
     status: "experimental",
   },
