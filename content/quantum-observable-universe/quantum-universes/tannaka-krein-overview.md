@@ -30,7 +30,7 @@ over any field and reconstructs an affine group scheme. For quantum
 groups ($q \neq 1$), the appropriate extension is due to
 Woronowicz \cite{woronowicz1988}.
 
-**Where $q$ comes from.**  The deformation parameter $q$ is not
+**Origin of $q$.**  The deformation parameter $q$ is not
 imposed from outside. When the braiding $c_{V,V}$ on the
 fundamental object $V$ is non-symmetric ($c_{V,V}^2 \neq \mathrm{id}$),
 $q$ is the eigenvalue of $c_{V,V}$ on the symmetric summand

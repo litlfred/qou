@@ -14,7 +14,7 @@ e.g. the Hopf link).  The closed form is a finite Laurent rational over
 $\mathbb{Z}[q, q^{-1}]$ — like the c=1 and c=3 anchors, derivation-tight
 (no fit, zero free parameters).*
 
-## Why this matters
+## Significance
 
 The per-component rule is
 $\mathrm{lw}(c) = (1/(c+1)) \sum_{\lambda \vdash (c+1)} \dim_q V_\lambda$,

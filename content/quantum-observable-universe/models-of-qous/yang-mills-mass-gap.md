@@ -62,7 +62,7 @@ In the QOU framework, the translation is:
 
 See [Table](#tbl:yang-mills-mass-gap-table-data).
 
-**Why the categorical setting is natural.**
+**Naturality of the categorical setting.**
 The mass gap is a topological consequence of the Frobenius--Hopf
 structure: the categorical mass $\mathfrak{m}(\varrho)$ is computed
 via the trace-norm through the comultiplication $\Delta$, and the

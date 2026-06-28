@@ -38,7 +38,7 @@ $$
  Kummer-level data compatible with the Habiro-ring framework
  ([Habiro completion](#prop:full-pole-structure-mass-trace)).*
 
-**Why this is the right substrate.** Three observations accordingly
+**Canonicity of the substrate.** Three observations accordingly
 factor through $\mathcal{S}_{\mathrm{mot}}$ rather than through any
 single one of its realizations:
 

@@ -41,7 +41,7 @@ $$
   \mathcal{L}(X).
 $$
 
-**Why arc spaces.** Even when the underlying base $X$ is singular —
+**Role of arc spaces.** Even when the underlying base $X$ is singular —
 a vortex reconnection, an exceptional divisor of a fluid blow-up, a
 braid resolution with crossings — the arc space $\mathcal{L}(X)$
 contains all the formal data needed to evaluate the variety

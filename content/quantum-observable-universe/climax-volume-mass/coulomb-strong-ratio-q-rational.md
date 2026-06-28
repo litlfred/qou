@@ -12,7 +12,7 @@ which is the analytic value $\tanh(\ln q_0)$, equals the q-rational
 expression $(q_0^2 - 1)/(q_0^2 + 1)$ at the substrate anchor — they are the
 SAME object, not two different choices.*
 
-## Why this matters
+## Significance
 
 `def:coulomb-charge` introduces the Coulomb-to-strong ratio as $\tanh(\ln q)$.
 This proposition records that the analytic and the algebraic forms coincide

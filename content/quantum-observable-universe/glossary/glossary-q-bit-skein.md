@@ -65,7 +65,7 @@ electron trefoil, $0$ for the antineutrino unknot, $7$
 absorbed as R2 moves) is the Gröbner--Shirshov reduction — a
 $q$-bit accounting ledger.
 
-### Why this justifies $Q_{\mathrm{cat}}$
+### Justification of $Q_{\mathrm{cat}}$
 
 The categorical $Q$-value of a nuclear reaction
 is the net $q$-bit balance: the difference between the
