@@ -18,7 +18,7 @@ substrate parameter $q$
 ([quantum observable universe](#def:quantum-observable-universe)).
 Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
-([three-invariant mass formula](#sec:atomic-braid-mass)).
+([three-invariant mass formula](#sec:atomic-braid-mass-foundations)).
 
 ### Algebraic form
 
@@ -119,7 +119,7 @@ the Kashaev limit of the R-side algebraic form.  Its empirical
 consequence is the $-737$ MeV mirror-nucleus pathology
 (`brane-tower-isospin-diagnosis.witness.json`).*
 
-*The paper's `prop:atomic-braid-mass` uses the alternative form
+*The paper's `sec:atomic-braid-mass-foundations` uses the alternative form
 $\tfrac{\alpha}{2} \cdot \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ (with $\alpha = m_e \cdot 8G$,
 the Borromean binding scale `prop:binding-scale-catalan`), which gives
 0.19% mean atomic-mass error across $Z = 1$..$10$ with zero fitted

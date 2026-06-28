@@ -11,7 +11,7 @@ import { proposition } from "../../schema/builders";
  *   - constituent (LO) piece: PROVED via Markov multiplicativity
  *     (`rho-k-markov-multiplicativity.witness.json`).
  *   - single-gen log-volume correction: PROVED via
- *     `prop:atomic-braid-mass` (0.18 % across Z=1..20).
+ *     `sec:atomic-braid-mass-foundations` (0.18 % across Z=1..20).
  *   - pair-gen Wedderburn-coupling correction: OPEN — the naive
  *     log-additive form fails (`rho-k-pair-gen-extension.witness.json`);
  *     proper Wedderburn-block coupling needed.

@@ -57,7 +57,7 @@ $|E_{e^-}| + |E_{e^+}| = 3q + 3q^{-1} = 3(q + q^{-1}) = 6\cosh(\ln q) \approx 6.
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
 nonabelian multiplicative integral \[yekutieli2015]
-([mass over $\mathbb{C}$](#ex:mass-identity-C)), and
+([mass over $\mathbb{C}$](#cor:mass-identity-C)), and
 $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes
 
 $$
