@@ -155,7 +155,7 @@ a function of the irrep characters, which are spanned by the
 $6$ torus knots.  No knot on $\Sigma_4$ can have an invariant
 independent of $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}\}$.
 
-## Consequences
+## Corollaries
 
 1. **Particle finiteness**: the $6$ torus knots are the complete
    knot-particle content.  Every observable hadron is a composite

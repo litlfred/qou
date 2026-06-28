@@ -28,14 +28,14 @@ $$
   \bigl(A_1 \oplus A_2\bigr)\big|_{\mathcal{S}_0}.
 $$
 
-**What the CMB contains.**
+**Content of the CMB.**
 
 | Degree | Jet data | Physical content |
 |:---:|:---|:---|
 | $1$ | $A_1/A_0$: linear transport | Photon polarization modes ($\sigma_0, \sigma_1$), winding numbers, first-order correlations |
 | $2$ | $A_2/A_0$: curvature | Hopf-link cross-terms ($L_{\pm}$), linking numbers, power spectrum |
 
-**What the CMB does not contain.**
+**Exclusions from the CMB.**
 
 Degree-$0$ data ($A_0$) is absent: no photon identity
 $\mathbf{1}$, no particle labels, no knot types.  The CMB

@@ -21,7 +21,7 @@ the neutron flavor triple $(u, d, d)$ maps to $(\bar u, \bar d,
 averaging of
 [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube).*
 
-## Why this disentangles D6 from CPT
+## Disentanglement of D6 from CPT
 
 [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 formalises the **composite** CPT action; the framework historically

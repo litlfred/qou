@@ -30,7 +30,7 @@ therefore:
 > the classical Navier--Stokes equation, or does it develop
 > singularities in the limit?*
 
-**Why the categorical formulation matters.**
+**Significance of the categorical formulation.**
 The three mechanisms that ensure regularity for $q > 1$
 — exponential UV damping, positive viscosity, finite cascade
 depth — are all consequences of the categorical structure:
@@ -152,7 +152,7 @@ $r_H \to 0$ (the acoustic black hole shrinks to a point).
 The classical Navier--Stokes regularity problem asks whether
 smooth solutions exist globally.  The QOU framework answers:
 **yes, for any $q > 1$**, and reframes the classical question as:
-**does regularity survive the $q \to 1$ degeneration?**  The three
+**whether regularity survives the $q \to 1$ degeneration**  The three
 categorical mechanisms (exponential spectral growth, positive
 viscosity from non-trivial substrate, finite cascade from
 observability) all derive from the axioms of a quantum observable

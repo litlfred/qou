@@ -9,7 +9,7 @@ time unit.  Temperature is not a statistical average over
 kinetic energies — it is the **tick rate** of the quantum
 substrate.
 
-**Why temperature is a surface quantity.**
+**Surface character of temperature.**
 The entropy $S_q(U)$ is defined as a surface integral over
 $\partial U$, not a bulk integral over $U$.  This follows
 from two ingredients:

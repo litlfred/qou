@@ -48,7 +48,7 @@ That is: the section $q \colon M \to \mathbb{G}_m$ avoids the
 torsion subscheme.  The image of $q$ lies in the complement
 $\mathbb{G}_m \setminus \mu_\infty$.
 
-**Why torsion avoidance is needed.**
+**Necessity of torsion avoidance.**
 At a torsion point $q_0 = e^{2\pi i m/n}$:
 
 1. The quantum dimension $[n]_{q_0} = 0$ (the $n$-th quantum

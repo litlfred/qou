@@ -10,7 +10,7 @@ $$
   \kappa(t) = O(1).
 $$
 
-**What each outcome means.**
+**Interpretation of each outcome.**
 
 If the Levi form **stays non-degenerate** ($\kappa = O(1)$):
 vorticity concentrates in tubular cores, the lower bound

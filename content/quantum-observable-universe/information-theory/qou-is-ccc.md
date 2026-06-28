@@ -57,7 +57,7 @@ be well-defined.  At the boundary where $A_0 = 0$, the
 pairing degenerates and degree-$0$ data is unobservable.
 $\square$
 
-**What the proposition does not claim.**
+**Limitations of the claim.**
 The proposition establishes that a QOU *with aeons* is
 structurally a CCC.  It does **not** claim:
 - that any particular affine chart admits aeons (this is dynamical),

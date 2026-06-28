@@ -149,7 +149,7 @@ identically for all $q > 1$.
 | $S_{\mathrm{cell}}$   | $(q-1)^2/q^3$  | $0.00881$ $q$-bits |
 | $G_{\mathrm{Planck}}$ | $1$            | $1.000$ (exact)    |
 
-**Why quadratic and not linear?**
+**Quadratic versus linear suppression.**
 The $\hbar_q^{2k}$ (not $\hbar_q^k$) exponent has a direct
 geometric origin: the exceptional divisor
 $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$ is a

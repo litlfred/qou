@@ -1,4 +1,4 @@
-**What each case means geometrically.**
+**Geometric meaning of each case.**
 
 * **$\mathcal{H}_c = \varnothing$** (P = NP):
   The polynomial observable subcategory $\mathcal{R}^{\circ}$

@@ -112,7 +112,7 @@ maintains global regularity. This is the
 [branch (B) outcome](#conj:levi-degeneracy) of the conjecture
 — **NS globally regular** — under the point-vortex assumption.
 
-**Where the approximation fails.**
+**Breakdown of the approximation.**
 The Biot–Savart strain rate
 $\alpha(t) = \Gamma / (2\pi d(t)^2)$ assumes a point-vortex
 geometry: the cores are much smaller than the separation,
