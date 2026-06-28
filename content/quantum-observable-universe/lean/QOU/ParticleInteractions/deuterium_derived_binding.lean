@@ -52,45 +52,20 @@ class DeuteriumDerivedBindingContext where
   NF_p_braid_word : List ℤ
   /-- Neutron NF braid word in `H_3(q)`. -/
   NF_n_braid_word : List ℤ
-  /-- Manuscript sub-claim (i): `NF(𝔭)` and `NF(𝔫)` exist as proton
-      and neutron normal forms in `H_3(q)` — both braid words are
-      non-empty (existence witnessed by the field values themselves). -/
-  claim_i_NF_existence :
-    NF_p_braid_word ≠ [] ∧ NF_n_braid_word ≠ []
   /-- Length of the Borromean baryon braid word `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2`. -/
   braid_length_B3 : ℕ
-  /-- Manuscript sub-claim (ii): the Borromean baryon factor has the
-      6-letter form `𝓑_3 = σ_0σ_1σ_2σ_0σ_1σ_2` (length 6). -/
-  claim_ii_B3_factorisation : braid_length_B3 = 6
   /-- Strand count of the H_3 source algebra. -/
   h3_strand_count : ℕ
   /-- Strand count of the H_6 target algebra. -/
   h6_strand_count : ℕ
-  /-- Manuscript sub-claim (iii): the H_3 → H_6 Hecke embedding
-      doubles the strand count (3 → 6) — `NF(𝔭) · T_pn · NF(𝔫)`
-      assembles two H_3 normal forms across the inter-nucleon site. -/
-  claim_iii_h6_factorisation :
-    h3_strand_count = 3 ∧ h6_strand_count = 2 * h3_strand_count
   /-- Inter-nucleon Hecke generator value `σ_0`. -/
   sigma_0 : ℝ
   /-- Inverse Hecke generator `σ_0⁻¹`. -/
   sigma_0_inv : ℝ
   /-- The time-reversal-symmetric inter-nucleon operator `T_pn`. -/
   T_pn : ℝ
-  /-- Manuscript sub-claim (iv): `T_pn = (σ_0 + σ_0⁻¹) / 2` — the
-      time-reversal-symmetric inter-nucleon crossing operator. -/
-  claim_iv_Tpn_symmetric : T_pn = (sigma_0 + sigma_0_inv) / 2
-  /-- Manuscript sub-claim (v): the boxed binding-energy identity
-      `B(d) = [tr_M(p) + tr_M(n) − tr_M(T_pn · n)] · m_e · Vol(𝓑_3) · (1 − α_EM/2)`. -/
-  claim_v_binding_energy_formula :
-    B_d = (tr_M_p + tr_M_n - tr_M_Tpn_n) * m_e * Vol_B3
-          * (1 - α_EM / 2)
   /-- CODATA deuteron binding energy `B_exp = 2.2246 MeV`. -/
   B_exp : ℝ
-  /-- Manuscript sub-claim (vi): the formula recovers the CODATA
-      value within 1-keV tolerance. -/
-  claim_vi_codata_match :
-    B_exp = 2.2246 ∧ |B_d - B_exp| < 0.001
 
 /-- **Proposition statement** (from manuscript):
 
@@ -123,12 +98,15 @@ $$
 Deuterium has exactly one inter-nucleon crossing site (the $p$-$n$
 pair).
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding **names** the conditional conjecture as a `Prop`
+    (pattern C of the vacuity-fix playbook): the context class is the
+    carrier of the deuteron-binding-pipeline data, and
+    `deuterium_derived_binding` is the proposition that the six
+    manuscript sub-claims hold for that data.  It is *not* asserted
+    (no `theorem … := ⟨ctx.claim_*⟩` self-assuming projection); a
+    discharging instance is the open conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
-theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
+def deuterium_derived_binding (ctx : DeuteriumDerivedBindingContext) : Prop :=
     (ctx.NF_p_braid_word ≠ [] ∧ ctx.NF_n_braid_word ≠ []) ∧
     ctx.braid_length_B3 = 6 ∧
     (ctx.h3_strand_count = 3 ∧
@@ -137,8 +115,7 @@ theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
     (ctx.B_d
       = (ctx.tr_M_p + ctx.tr_M_n - ctx.tr_M_Tpn_n) * ctx.m_e * ctx.Vol_B3
         * (1 - ctx.α_EM / 2)) ∧
-    (ctx.B_exp = 2.2246 ∧ |ctx.B_d - ctx.B_exp| < 0.001) :=
-  ⟨ctx.claim_i_NF_existence, ctx.claim_ii_B3_factorisation, ctx.claim_iii_h6_factorisation, ctx.claim_iv_Tpn_symmetric, ctx.claim_v_binding_energy_formula, ctx.claim_vi_codata_match⟩
+    (ctx.B_exp = 2.2246 ∧ |ctx.B_d - ctx.B_exp| < 0.001)
 
 /-! ## Mass–binding endomorphism analogy (2026-05-28)
 

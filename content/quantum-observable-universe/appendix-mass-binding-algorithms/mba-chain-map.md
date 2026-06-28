@@ -43,7 +43,7 @@ the production pipeline and appear in their own sections:
    (`witness-schema`) and the `WitnessBuilder` pattern used by every
    canonical script.
 
-**Where the algorithms are stated.**
+**Location of the algorithm statements.**
 The per-step blocks that follow each algorithm carry the precise
 input/output contract, the correctness conditions (referring to the
 propositions cited above), the complexity estimate, and the

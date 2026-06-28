@@ -38,7 +38,7 @@ exceptional-divisor variable.
 | $q$ | $(q;q)_n = \prod_{k=1}^{n}(1-q^k)$ | $\widehat{\mathbb{Z}[q]}$ | colored Jones $J_K$ |
 | $z$ (this block) | $P_n(q,z) = \prod_{k=1}^{n}(1-q^{-k}z)$ | $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$ | brane-tower element $\widetilde{\Phi}_q^{\mathrm{tower}}$ (conjectural) |
 
-## Why this ideal
+## Choice of ideal
 
 The poles of the analytic quantum dilogarithm
 ([quantum dilogarithm](#cor:quantum-dilogarithm))

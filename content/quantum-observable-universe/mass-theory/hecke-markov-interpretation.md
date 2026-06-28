@@ -174,7 +174,7 @@ probability measure on $S_n$ that weights each permutation
 by $q$ raised to its number of inversions
 \cite{diaconis-ram2000}.
 
-## Consequences
+## Corollaries
 
 The product factorization
 ([product factorization](#thm:markov-trace-product)) is exact

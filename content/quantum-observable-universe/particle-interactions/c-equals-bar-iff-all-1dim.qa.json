@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean"
   },
   "source_hashes": {
-    "md": "304a48a0ab77",
+    "md": "fedfa1386b3c",
     "ts": "7f74fbf6f8a9",
     "lean": "30987cd7e5d9"
   },
@@ -1575,7 +1575,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1 — content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1600,5 +1600,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

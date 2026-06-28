@@ -41,7 +41,7 @@ with $n$ ranging over the four classes, $\mathrm{std}$ the
 archimedean realization, and the inequality direction enforced by
 [`lem:surreal-squeeze`](#lem:surreal-squeeze).
 
-### Why this matters for the paper
+### Significance for the paper
 
 Three concrete consequences of unifying the four bounds:
 

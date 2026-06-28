@@ -30,12 +30,6 @@ class SpectatorNormalizationContext where
   spectator_p : ℕ
   /-- Number of spectator neutrons (always `N − 1` for `β⁻` decay). -/
   spectator_n : ℕ
-  /-- Exactly one neutron converts to a proton in beta decay. -/
-  h_converting : converting = 1
-  /-- Spectator protons equals Z. -/
-  h_spectator_p : spectator_p = Z
-  /-- Spectator neutrons equals N - 1. -/
-  h_spectator_n : spectator_n = N - 1
 
 /-- **Content statement** (from manuscript):
 
@@ -45,12 +39,15 @@ decay ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu$, only one
 neutron converts to a proton; the remaining $Z$ protons and
 $N - 1$ neutrons are spectators.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding **names** the conditional conjecture as a `Prop`
+    (pattern C of the vacuity-fix playbook): the context class is the
+    carrier of the spectator-count data, and `SpectatorNormalization`
+    is the proposition that the spectator decomposition holds for that
+    data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
+    self-assuming projection); an instance discharging it is the open
+    conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :
-    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
-  ⟨ctx.h_converting, ctx.h_spectator_p, ctx.h_spectator_n⟩
+def SpectatorNormalization (ctx : SpectatorNormalizationContext) : Prop :=
+    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1
 
 end QOU.ParticleInteractions

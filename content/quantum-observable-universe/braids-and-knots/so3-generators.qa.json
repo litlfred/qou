@@ -1136,7 +1136,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.lean:1 — content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1160,5 +1160,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

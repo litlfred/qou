@@ -10,7 +10,7 @@ the 3d–3d theory $T[\mathbf{S}^3 \setminus \mathcal{B}_3]$ has a
 partition function whose $h^4$ coefficient is the QOU framework's
 $h^4 = -3/4$.*
 
-## Why this matters
+## Significance
 
 The 3d–3d correspondence gives the framework a **gauge-theory
 realisation** of every hyperbolic-3-manifold mass formula:

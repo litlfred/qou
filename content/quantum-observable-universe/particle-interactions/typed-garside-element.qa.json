@@ -931,7 +931,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "da-false-claim": [
@@ -1168,7 +1168,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 — content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
+        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1193,5 +1193,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

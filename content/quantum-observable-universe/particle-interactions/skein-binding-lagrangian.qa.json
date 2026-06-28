@@ -1149,7 +1149,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "skein-binding-lagrangian.lean:1 — content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "skein-binding-lagrangian.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1174,5 +1174,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

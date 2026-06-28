@@ -1286,7 +1286,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.lean:48 [def-disguised-true] def branch_trace {q : ℝ} [HeckeBranchingTraceDecomposition q] : True := by",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.lean:48 [def-disguised-true] def branch_trace {q : \u211d} [HeckeBranchingTraceDecomposition q] : True := by",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1296,7 +1296,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -1605,5 +1605,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

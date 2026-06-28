@@ -51,7 +51,7 @@ bar-involution $q \leftrightarrow q^{-1}$ symmetry — fold the
 $\mathfrak{sl}_n$ Cartan datum into a Type B datum. The resulting
 Kashiwara graph is a **symmetric crystal**, and its GS normal forms
 are bar-involution invariant by construction.* For chirality,
-this means: **on the folded Type-B crystal, $\langle c \rangle_\beta$
+**on the folded Type-B crystal, $\langle c \rangle_\beta$
 is a sum of cell-content invariants paired by the fold involution
 $\lambda \leftrightarrow \lambda^T$, hence a fixed-point integer
 combination $c(\lambda) + c(\lambda^T) = 0$ summand-by-summand.**

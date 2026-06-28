@@ -856,6 +856,52 @@ function detectClaimsUnencoded(d: Decl, doc: string): Hit | undefined {
   return h;
 }
 
+/** A `class`/`structure` field whose type is literally `True` (or a
+ * conjunction of `True`s, or a `Prop`/`… := True` default) carries **zero**
+ * content — any instance satisfies it, so a downstream consumer that uses the
+ * field as a hypothesis assumes nothing. This is the field-level analogue of a
+ * `: True` conclusion and is the gap the empty-prop-carrier (zero-field) and
+ * claims-unencoded (≥2 enumerated bullets) detectors both structurally miss —
+ * a *single* `: True` field on an otherwise-populated carrier. Exemplar:
+ * `mass-theory/confinement-categorical.lean` `hh_vanish : True`. Honest fix:
+ * encode the real property as the field type, or demote per §3b-tax. */
+const TRUE_FIELD_TYPE = /^True(\s*[∧×]\s*True)*$/;
+function detectTrueClassField(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const trueFields = classFields(d).filter((f) => {
+    const t = f.type.replace(/--.*$/, "").replace(/\s+/g, " ").trim();
+    return (
+      TRUE_FIELD_TYPE.test(t) ||
+      /(^|\s):=\s*True$/.test(t) ||
+      /^Prop\s*:=\s*True$/.test(t)
+    );
+  });
+  if (trueFields.length === 0) return undefined;
+  const names = trueFields.map((f) => f.name).join(", ");
+  // Honest opaque-marker carve-out (consistent with empty-prop-carrier): a
+  // field explicitly framed as an opaque/marker placeholder for genuinely-open
+  // infrastructure is recorded but not counted. An *un-annotated* `: True`
+  // field — especially one a trivial `instance` then "closes" — is the
+  // §3b-tax violation (fabricating a content-free conjecture instance).
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-claims-unencoded", "true-class-field", true);
+    h.exempt_reason = "explicit @marker / opaque-tag opt-out";
+    h.detail = `opaque-marker field(s) \`: True\` (${names}) — honestly framed; tracked not counted`;
+    return h;
+  }
+  const h = mk(d, "proof-claims-unencoded", "true-class-field", false);
+  h.detail = `carrier field(s) typed \`: True\` carry no content (${names}) — encode the real property as the field type, or demote per §3b-tax`;
+  return h;
+}
+
+/** Theorem-assertion language in a docstring: a bold or leading
+ * **Theorem/Lemma/Proposition/Corollary** header. Signals the block claims a
+ * *provable* result — so a `: True` conclusion underneath it is the
+ * `q_gl_obstruction_calc` failure mode (a real claim hidden behind a
+ * tautology), NOT an honest open conjecture. */
+const DOC_ASSERTS_PROVABLE =
+  /\*\*\s*(Theorem|Lemma|Proposition|Corollary)\b|(^|\n)\s*(--\s*)?(Theorem|Lemma|Proposition|Corollary)\b/i;
+
 // ── Derived primary/dependent classification (no hand tags) ────────────
 // A dependent conjecture takes its primary as an `[Instance]` (or other
 // binder / `extends`) hypothesis — the §3b-cond pattern. That edge is
@@ -1073,8 +1119,32 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     });
   }
 
-  for (const d of decls) {
-    push(detectTrivialTrue(d, src, fileIsStub, absPath));
+  for (let di = 0; di < decls.length; di++) {
+    const d = decls[di];
+    // The doc block is computed once up front so the trivial-true detector
+    // can be escalated when the prose asserts a *provable* claim (the
+    // `q_gl_obstruction_calc` failure mode) and the conjecture-discipline
+    // content detectors can read it.
+    const doc = docBlockAbove(origLines, d.startLine - 1);
+    // Raw (comment-bearing) span of this decl through the next, so the
+    // true-field opaque-marker opt-out can see a *field-level* `opaque marker`
+    // annotation (which lives inside the class body, not in the block above).
+    const spanEnd =
+      di + 1 < decls.length ? decls[di + 1].startLine - 1 : origLines.length;
+    const rawSpan = origLines.slice(d.startLine - 1, spanEnd).join("\n");
+    const tt = detectTrivialTrue(d, src, fileIsStub, absPath);
+    if (
+      tt &&
+      !tt.exempt &&
+      /placeholder-true|def-disguised-true/.test(tt.pattern) &&
+      DOC_ASSERTS_PROVABLE.test(doc) &&
+      !isConjectureCarrier(doc)
+    ) {
+      tt.detail =
+        (tt.detail ? tt.detail + "; " : "") +
+        "docstring asserts a provable claim (Theorem/Lemma/Proposition) while the Lean concludes `True` — a genuine vacuity defect, not an honest open conjecture";
+    }
+    push(tt);
     push(detectSelfAssuming(d));
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));
@@ -1085,9 +1155,9 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     // dependent classification is NOT a per-file check — it is derived
     // globally from instance binders in `classifyConjectures` (the
     // dependency is already in the Lean type; no hand tag is needed).
-    const doc = docBlockAbove(origLines, d.startLine - 1);
     push(detectEmptyPropCarrier(d, doc));
     push(detectClaimsUnencoded(d, doc));
+    push(detectTrueClassField(d, doc + "\n" + rawSpan));
   }
   const importHit = detectImportOrder(origLines);
   if (importHit && (!onlyCat || onlyCat === "lean-import-after-content"))
@@ -1325,12 +1395,24 @@ function main() {
   // the gate is low-false-positive; the high-recall vacuity candidates stay
   // warn-only (agent-adjudicated). Pass `--fail-on a,b` to override.
   let failOn: Set<string> | undefined;
+  // Agent-inspection ledger (the durable "not just machine" layer). A
+  // standalone library `.lean` has no `<block>.qa.json` sidecar, so an agent
+  // verdict has nowhere to live and detection stays purely heuristic. The
+  // ledger is a committed JSON keyed by `<relpath>::<decl>::<category>` that
+  // records the AGENT verdict (genuine / legit / advisory) + the `.lean` sha
+  // at review time. `--review-ledger` seeds/refreshes it (new + file-changed
+  // candidates → `needs-agent`); `--check-ledger` fails if any non-exempt
+  // candidate lacks a FRESH agent verdict — making agent inspection mandatory.
+  let reviewLedger: string | undefined;
+  let checkLedger: string | undefined;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--json") jsonOut = argv[++i];
     else if (a === "--write-sidecars") writeSc = true;
     else if (a === "--quiet") quiet = true;
     else if (a === "--only") onlyCat = argv[++i] as Category;
+    else if (a === "--review-ledger") reviewLedger = argv[++i];
+    else if (a === "--check-ledger") checkLedger = argv[++i];
     else if (a === "--fail-on") {
       // Only consume the next token if it is a comma-list of valid categories;
       // otherwise (a flag, a path, or end-of-args) fall back to the default
@@ -1437,11 +1519,145 @@ function main() {
     if (!quiet) console.log(`\nsidecars written/updated: ${n}`);
   }
 
+  // ── Agent-inspection ledger ──────────────────────────────────────
+  // The set of non-exempt candidates this scan would defer to an agent.
+  // `flaggedByLean` already has the derived conjecture hits merged in.
+  let ledgerFail = 0;
+  if (reviewLedger || checkLedger) {
+    const nowIso = new Date().toISOString();
+    const candidates: {
+      key: string;
+      rel: string;
+      line: number;
+      decl: string;
+      category: string;
+      pattern: string;
+      file_sha?: string;
+    }[] = [];
+    const shaCache = new Map<string, string | undefined>();
+    for (const [f, hits] of flaggedByLean) {
+      const rel = relative(REPO_ROOT, f);
+      if (!shaCache.has(f)) shaCache.set(f, hashFile(f));
+      const sha = shaCache.get(f);
+      for (const h of hits) {
+        if (h.exempt) continue;
+        const decl = h.decl ?? "file";
+        candidates.push({
+          key: `${rel}::${decl}::${h.category}`,
+          rel,
+          line: h.line,
+          decl,
+          category: h.category,
+          pattern: h.pattern,
+          file_sha: sha,
+        });
+      }
+    }
+
+    if (reviewLedger) {
+      const p = resolve(REPO_ROOT, reviewLedger);
+      let led: {
+        $schema: string;
+        updated_at: string;
+        entries: Record<string, Record<string, unknown>>;
+      } = { $schema: "lean-vacuity-review/v1", updated_at: nowIso, entries: {} };
+      if (existsSync(p)) {
+        try {
+          const r = JSON.parse(readFileSync(p, "utf-8"));
+          if (r?.entries) led = r;
+        } catch {
+          /* fresh */
+        }
+      }
+      const seen = new Set<string>();
+      let added = 0,
+        kept = 0,
+        stale = 0;
+      for (const c of candidates) {
+        seen.add(c.key);
+        const prev = led.entries[c.key];
+        const hasVerdict =
+          prev && prev.verdict && prev.verdict !== "needs-agent";
+        if (hasVerdict && prev.file_sha === c.file_sha) {
+          led.entries[c.key] = { ...prev, line: c.line, pattern: c.pattern };
+          kept++;
+        } else if (hasVerdict) {
+          // file changed since the verdict → re-review required.
+          led.entries[c.key] = {
+            ...prev,
+            verdict: "needs-agent",
+            stale_prev_verdict: prev.verdict,
+            line: c.line,
+            pattern: c.pattern,
+            file_sha: c.file_sha,
+          };
+          stale++;
+        } else {
+          led.entries[c.key] = {
+            category: c.category,
+            pattern: c.pattern,
+            line: c.line,
+            verdict: "needs-agent",
+            file_sha: c.file_sha,
+          };
+          added++;
+        }
+      }
+      // Drop entries whose candidate no longer flags (resolved/fixed).
+      for (const k of Object.keys(led.entries))
+        if (!seen.has(k)) delete led.entries[k];
+      led.updated_at = nowIso;
+      writeFileSync(p, JSON.stringify(led, null, 2) + "\n");
+      if (!quiet)
+        console.log(
+          `\nreview ledger: ${candidates.length} candidate(s) — ${added} new, ${kept} confirmed, ${stale} stale (file changed); ${reviewLedger}`,
+        );
+    }
+
+    if (checkLedger) {
+      const p = resolve(REPO_ROOT, checkLedger);
+      let led: { entries?: Record<string, Record<string, unknown>> } = {};
+      if (existsSync(p)) {
+        try {
+          led = JSON.parse(readFileSync(p, "utf-8"));
+        } catch {
+          /* missing → all fail */
+        }
+      }
+      const missing: string[] = [];
+      for (const c of candidates) {
+        const e = led.entries?.[c.key];
+        if (
+          !e ||
+          !e.verdict ||
+          e.verdict === "needs-agent" ||
+          e.file_sha !== c.file_sha
+        )
+          missing.push(
+            `${c.rel}:${c.line} [${c.category}/${c.pattern}] ${c.decl}`,
+          );
+      }
+      if (missing.length) {
+        console.error(
+          `\n✗ agent-inspection gate: ${missing.length} candidate(s) lack a fresh agent verdict in ${checkLedger}:`,
+        );
+        for (const l of missing) console.error(`  ${l}`);
+        ledgerFail = missing.length;
+      } else {
+        console.log(
+          `\n✓ agent-inspection gate: all ${candidates.length} candidate(s) carry a fresh agent verdict.`,
+        );
+      }
+    }
+  }
+
   console.log(
     `\n${jsonOut} — scanned ${files.length} .lean, ${totalHits} defect candidate(s) across ${Object.keys(flagged).length} file(s) (${exemptHits} exempt).`,
   );
   for (const c of ALL_CATEGORIES)
     if (counts[c]) console.log(`  ${c}: ${counts[c]}`);
+
+  if (checkLedger && ledgerFail) process.exit(1);
 
   if (failOn) {
     const failing: string[] = [];

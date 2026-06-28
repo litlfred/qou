@@ -76,7 +76,7 @@ scaffolded in [`S5SO3FiberAction.lean`](../../computations/lean/QOU/BraidsAndKno
    value comes from the dimension-5 irrep ($\ell = 2$) of
    $\mathrm{SO}(3)$ acting on the 3-color tensor space.
 
-## How D10 partners with D9 to unlock D11 (Wigner SU(4))
+## Partnership of D10 with D9 unlocking D11 (Wigner SU(4))
 
 Per [`docs/duality-tracker.md`](../../docs/duality-tracker.md)
 §Cluster B:

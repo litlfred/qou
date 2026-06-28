@@ -69,10 +69,24 @@ structure TopologicalMassFormula where
   /-- **The mass formula**: `m = Vol(K) / ℏ_q²`. -/
   mass_eq : mass = vol / h_q ^ 2
 
-/-- The topological mass formula: `m = Vol(K) / ℏ_q²`. -/
-theorem topological_mass_formula (tmf : TopologicalMassFormula) :
-    tmf.mass = tmf.vol / tmf.h_q ^ 2 :=
-  tmf.mass_eq
+/-- The topological mass formula, **derived** from its defining data.
+
+    Given a positive knot volume `vol`, a non-zero quantum Planck
+    constant `h_q`, and the holonomy relation `mass · h_q² = vol`
+    (the nonabelian multiplicative integral over the exceptional
+    divisors), the mass is `mass = Vol(K) / ℏ_q²`.
+
+    This is a genuine algebraic derivation (clearing `h_q² ≠ 0` from
+    the holonomy relation), not a verbatim restatement of a structure
+    field: the input is the *product* form `mass · h_q² = vol`
+    produced by the multiplicative integral, and the quotient form is
+    obtained by `eq_div_of_mul_eq`. -/
+theorem topological_mass_formula
+    (mass vol h_q : ℝ) (h_q_ne_zero : h_q ≠ 0) (vol_pos : 0 < vol)
+    (holonomy : mass * h_q ^ 2 = vol) :
+    mass = vol / h_q ^ 2 := by
+  have hsq : h_q ^ 2 ≠ 0 := pow_ne_zero 2 h_q_ne_zero
+  rw [eq_div_iff hsq, holonomy]
 
 /-- Backward-compatible wrapper: given a `TopologicalMassFormula`,
     the mass equation holds for its specific values. -/

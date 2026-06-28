@@ -27,7 +27,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements — `positivity` here only needs to show that `(a : R_q) / 2 ≥ 0` given `a ≥ 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical — see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
+        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements \u2014 `positivity` here only needs to show that `(a : R_q) / 2 \u2265 0` given `a \u2265 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical \u2014 see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
       },
       {
         "field_hash": {
@@ -46,7 +46,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114: archimedean tactic in categorical chapter — (0 : R_q) ≤ (a : R_q) / 2 := by positivity | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128: archimedean tactic in categorical chapter — linarith [this ▸ (le_refl (a : R_q))] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133: archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136: archimedean tactic in categorical chapter — push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:137: archimedean tactic in categorical chapter — linarith"
+        "evidence": "quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114: archimedean tactic in categorical chapter \u2014 (0 : R_q) \u2264 (a : R_q) / 2 := by positivity | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128: archimedean tactic in categorical chapter \u2014 linarith [this \u25b8 (le_refl (a : R_q))] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133: archimedean tactic in categorical chapter \u2014 have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136: archimedean tactic in categorical chapter \u2014 push_cast [\u2190 hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:137: archimedean tactic in categorical chapter \u2014 linarith"
       }
     ],
     "voice-status-leak": [
@@ -1372,7 +1372,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
@@ -1465,7 +1465,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
@@ -1580,7 +1580,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:1 — content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1604,5 +1604,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

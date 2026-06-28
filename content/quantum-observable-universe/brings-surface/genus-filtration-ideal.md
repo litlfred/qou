@@ -62,7 +62,7 @@ Hecke completeness condition holds.*
 
 ## Part I: Chebyshev degree = Seifert genus
 
-**Why Chebyshev.**
+**Origin of the Chebyshev structure.**
 The Iwahori--Hecke algebra $H_2(q)$ is $2$-dimensional with basis
 $\{1, T\}$ and the single relation $T^2 = sT + 1$ where
 $s = q - q^{-1}$.  The generator $T$ has two eigenvalues:

@@ -104,10 +104,17 @@ structure CategoricalMobiusEnergy (M : Type*) where
   energy : ℝ
   /-- The classical Möbius energy of the same knot. -/
   classicalEnergy : ClassicalMobiusEnergy
+  /-- The categorical energy of the knot after applying the Möbius
+      transform with parameter `g ∈ PSL(2, ℂ)` (parametrised here by a
+      real coordinate on the group, acting on the `ℂP¹` fibre via the
+      gauge group fixed by the categorical volume constraint). -/
+  energyUnderMobius : ℝ → ℝ
   /-- **Möbius invariance**: `E_cat(γ)` is invariant under the full Möbius
-      group `PSL(2, ℂ)`, which acts on the `ℂP¹` fibre via the gauge group
-      fixed by the categorical volume constraint. -/
-  mobiusInvariant : True  -- categorical: invariance under Aut⊗(ω)
+      group `PSL(2, ℂ)`. Encoded as: the transformed energy equals the
+      base energy for every group element `g` — the energy functional is
+      constant along every Möbius orbit (categorical: invariance under
+      `Aut⊗(ω)`). -/
+  mobiusInvariant : ∀ g : ℝ, energyUnderMobius g = energy
   /-- **Classical limit**: as `q → 1`, the categorical energy recovers the
       classical Möbius energy up to topological normalisation.
       Encoded as: `E_cat = (1/4) · E_classical + const`. -/

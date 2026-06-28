@@ -50,7 +50,7 @@ answers. A partial list:
    content from the transcendental (dilogarithm, hyperbolic
    volume) content.
 
-## What this appendix **does** accomplish
+## Accomplishments of this appendix
 
 * It provides an explicit ambient for the $q \to 1$ limit and
   renormalisation blow-ups, avoiding informal $\infty$ notation.

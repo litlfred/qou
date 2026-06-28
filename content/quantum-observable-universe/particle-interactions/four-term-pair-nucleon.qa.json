@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1184,7 +1184,7 @@
           "ts": "b8539569a318"
         },
         "result": "warn",
-        "notes": "md derivation chain is clear, but Lean reduces it to trivial count facts (4/3/4) on a context class — strategy not reflected in Lean.",
+        "notes": "md derivation chain is clear, but Lean reduces it to trivial count facts (4/3/4) on a context class \u2014 strategy not reflected in Lean.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1245,7 +1245,7 @@
           "ts": "b8539569a318"
         },
         "result": "pass",
-        "notes": "Deriving (not asserting) p and n from three γγ pair productions + Borromean confinement is well-posed, substantive framework claim.",
+        "notes": "Deriving (not asserting) p and n from three \u03b3\u03b3 pair productions + Borromean confinement is well-posed, substantive framework claim.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "b8539569a318"
         },
         "result": "fail",
-        "notes": "Lean encodes only counting facts (n_proton_colors=4 ∧ n_neutron_colors=4 ∧ pair_count=3 ∧ photon_terms=4); the md's actual content — deriving p/n NF (net≈0.999/0.811) from pair production + Borromean confinement — is absent. Degenerate.",
+        "notes": "Lean encodes only counting facts (n_proton_colors=4 \u2227 n_neutron_colors=4 \u2227 pair_count=3 \u2227 photon_terms=4); the md's actual content \u2014 deriving p/n NF (net\u22480.999/0.811) from pair production + Borromean confinement \u2014 is absent. Degenerate.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "b8539569a318"
         },
         "result": "fail",
-        "notes": "theorem := ⟨ctx.claim_i_proton_derivation, ctx.claim_ii_neutron_derivation, ctx.claim_iii_counts⟩ — conclusion is verbatim the 3 class count-fields.",
+        "notes": "theorem := \u27e8ctx.claim_i_proton_derivation, ctx.claim_ii_neutron_derivation, ctx.claim_iii_counts\u27e9 \u2014 conclusion is verbatim the 3 class count-fields.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1639,7 +1639,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Nucleon derivation from 4-term photon pair production' presents substantial mathematical content: The proton and neutron are derived — not asserted — from three independent $\\gamma\\gamma$ pair productions using the ...",
+        "notes": "The block 'Nucleon derivation from 4-term photon pair production' presents substantial mathematical content: The proton and neutron are derived \u2014 not asserted \u2014 from three independent $\\gamma\\gamma$ pair productions using the ...",
         "severity": "minor"
       }
     ],
@@ -1852,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -225,7 +225,7 @@ For $n = 3$ this is exactly $5/2$ — recovering the upstream
 classical discovery
 (`residual_partition_sum.py`).*
 
-**Why "unified":**
+**Rationale for the "unified" label:**
 *The three pieces were previously distinct objects with separate
 derivations:*
 

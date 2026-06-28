@@ -19,14 +19,14 @@ $$
 
 The torus quantum universe is **NS-regular**.
 
-**What this means physically.**
+**Physical meaning.**
 The Levi form is allowed to degenerate at collision loci.
 Vortex cores can flatten into sheets.  Vorticity spreads rather
 than concentrates.  The classical Navier--Stokes equation
 (the $q = 1$ specialisation) admits smooth global solutions for
 all smooth initial data.
 
-**Why the torus cannot support the observed physics.**
+**Failure of the torus to support the observed physics.**
 The torus has $g = 1$, so only one torus knot embeds:
 $T_{2,3}$ (the trefoil, Seifert genus 1).  The knot spectrum
 has a single generator — no muon, no tau, no quarks beyond

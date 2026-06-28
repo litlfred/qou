@@ -910,7 +910,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-endomorphism/mass-identity.lean matches the mathematical statement in content/quantum-observable-universe/mass-endomorphism/mass-identity.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1135,7 +1135,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-identity.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:58:21: error: unexpected token '/--'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:58:21: error: unexpected token '/--'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1159,5 +1159,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

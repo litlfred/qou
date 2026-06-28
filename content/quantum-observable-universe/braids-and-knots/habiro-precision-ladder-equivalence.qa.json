@@ -1339,7 +1339,7 @@
           "lean": "9549aabb0b76"
         },
         "result": "pass",
-        "notes": "genuine result: Habiro integrality anchors observable spectrum, eliminates truncation; the open c_k bridge is properly isolated as §3b-cond",
+        "notes": "genuine result: Habiro integrality anchors observable spectrum, eliminates truncation; the open c_k bridge is properly isolated as \u00a73b-cond",
         "reviewed_at": "2026-06-25T16:49:41.000Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
@@ -1399,7 +1399,7 @@
           "lean": "9549aabb0b76"
         },
         "result": "pass",
-        "notes": "termination (card=M+1) + determinacy faithfully proved sorry-free; integrality theorem is weakly encoded (eval at Z pt trivially in Z) but type already forces Z[u]; c_k bridge is honest §3b-cond class, no instance",
+        "notes": "termination (card=M+1) + determinacy faithfully proved sorry-free; integrality theorem is weakly encoded (eval at Z pt trivially in Z) but type already forces Z[u]; c_k bridge is honest \u00a73b-cond class, no instance",
         "reviewed_at": "2026-06-25T16:49:40.000Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
@@ -1847,5 +1847,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

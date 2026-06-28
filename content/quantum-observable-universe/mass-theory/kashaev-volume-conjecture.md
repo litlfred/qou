@@ -61,7 +61,7 @@ This is the same pattern used for `MassEvaluation` in
 numerical computation is axiomatised so that the algebraic tower
 identities are machine-checked.
 
-### Why a class, not an axiom
+### Rationale for a class rather than an axiom
 
 Three reasons:
 

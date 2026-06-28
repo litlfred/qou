@@ -27,7 +27,7 @@ any choice of operator-volume convention (per-generator algebraic
 volumes, eigenvalue spectra, pair-knot composites, multi-term
 assembly, ...) for evaluating $\mathrm{End}_{\mathbf{C}}(A^{\otimes 3A})$.*
 
-## Why this is convention-independent
+## Convention-independence of the structural gap
 
 The Markov trace $\tau$ on $H_n(q)$ is **uniquely determined** by
 the categorical axioms M1 (cyclicity), M2 (Markov-axiom Hecke peel

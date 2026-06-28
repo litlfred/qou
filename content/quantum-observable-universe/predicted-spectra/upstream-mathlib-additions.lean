@@ -225,19 +225,33 @@ class ComplexLiTwoSummable (z : ℂ) : Prop where
     proof requires Mathlib's `Summable` / absolute-convergence
     infrastructure for the term-by-term imaginary-part extraction.
     We record the statement as a typeclass hypothesis, parallel
-    to the rest of the §3b-cond pattern. -/
+    to the rest of the §3b-cond pattern. Per AGENTS.md §3b-tax the
+    class field carries the **content** of the conjecture — the
+    parameter-quantified identity in the shape of the claim — not a
+    bare `True` marker. -/
 -- Ref: [zagier1986]
 class ComplexLiTwoUnitCircleClassical : Prop where
-  /-- The classical identity Im(Li_2(e^{iθ})) = Cl_2(θ). -/
-  unit_circle_identity_holds : True
+  /-- The classical identity `Im(Li_2(e^{iθ})) = Cl_2(θ)` for every
+      angle `θ` (Zagier 1986; the imaginary part of the complex
+      dilogarithm on the unit circle is the Clausen function). -/
+  unit_circle_identity :
+    ∀ θ : ℝ, (complexLiTwo (Complex.exp (θ * Complex.I))).im = Cl_2 θ
 
 /-- **Conditional theorem: with the classical identity class in
-    scope, the unit-circle BW dilogarithm equals Cl_2.** -/
--- Ref: [zagier1986]
-def blochWigner_unit_circle_eq_Cl_2
-    [ComplexLiTwoUnitCircleClassical]
+    scope, the Bloch-Wigner dilogarithm on the unit circle equals
+    `Cl_2`.** Since `‖e^{iθ}‖ = 1`, the `log‖z‖` correction term in
+    `blochWigner` vanishes, so `D(e^{iθ}) = Im(Li_2(e^{iθ})) = Cl_2(θ)`.
+    Derived from the class field — not asserted as `True`. -/
+-- Ref: [zagier1986], [bloch2000]
+theorem blochWigner_unit_circle_eq_Cl_2
+    [hC : ComplexLiTwoUnitCircleClassical]
     (θ : ℝ) :
-    True := trivial
+    blochWigner (Complex.exp (θ * Complex.I)) = Cl_2 θ := by
+  unfold blochWigner
+  rw [Complex.norm_exp]
+  simp only [Complex.mul_I_re, Complex.ofReal_im, neg_zero, Real.exp_zero,
+    Real.log_one, zero_mul, add_zero]
+  exact hC.unit_circle_identity θ
 
 /-! ## (5) Cl_2 double-angle functional equation -/
 

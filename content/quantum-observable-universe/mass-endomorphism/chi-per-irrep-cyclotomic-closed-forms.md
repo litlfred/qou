@@ -53,7 +53,7 @@ $\Phi_8(q) = q^4+1$.
 
    The denominator exponent is $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
 
-## Where the V_(2,1) closed form comes from
+## Origin of the V_(2,1) closed form
 
 V_(2,1) is the **2-dimensional Hoefsmit irrep**. Each typed crossing
 acts as a 2$\times$2 matrix on the SYT basis $\{v_{T_1}, v_{T_2}\}$:

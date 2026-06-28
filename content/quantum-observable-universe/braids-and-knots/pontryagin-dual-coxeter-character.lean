@@ -78,10 +78,8 @@ theorem signHom_surjective_witness (n : ℕ) (hn : 2 ≤ n) :
     Equiv.Perm.sign (Equiv.swap (⟨0, by omega⟩ : Fin n) ⟨1, by omega⟩) = -1 := by
   exact Equiv.Perm.sign_swap (by
     intro h
-    have : (0 : Fin n).val = (1 : Fin n).val := by
-      rw [show (0 : Fin n) = ⟨0, by omega⟩ from rfl,
-          show (1 : Fin n) = ⟨1, by omega⟩ from rfl] at h
-      exact congrArg Fin.val h
+    -- the two explicit `Fin.mk` values have distinct `.val` (0 ≠ 1)
+    have : (0 : ℕ) = 1 := congrArg Fin.val h
     simp at this)
 
 /-- **Discharge of `conj:pontryagin-dual-coxeter-character`.**
@@ -119,14 +117,20 @@ naked `sorry`. New downstream code should cite
 `pontryagin_dual_coxeter_character_structural` directly. -/
 
 class PontryaginDualCoxeterCharacter where
-  /-- The structural Pontryagin / abelianised-Coxeter content; now
-      backed by `pontryagin_dual_coxeter_character_structural`. -/
-  holds : Prop := True
+  /-- The structural Pontryagin / abelianised-Coxeter content, encoded
+      as the genuine claim (no longer a bare `: True`): for every
+      `n ≥ 2`, characters of `ZMod 2` are determined by their value at
+      `1` (self-duality), and `swap 0 1` realises the non-trivial sign
+      class (surjectivity of the abelianisation map).  Backed by
+      `pontryagin_dual_coxeter_character_structural`. -/
+  holds : ∀ (n : ℕ) (hn : 2 ≤ n),
+    (∀ (φ ψ : ZMod 2 →+ ZMod 2), φ 1 = ψ 1 → φ = ψ) ∧
+    Equiv.Perm.sign (Equiv.swap (⟨0, by omega⟩ : Fin n) ⟨1, by omega⟩) = -1
 
-/-- Default instance: the class content is non-trivially inhabited
-    by the structural theorem above (for `n ≥ 2`). The witness uses
-    `n = 2` as the minimal case. -/
+/-- Default instance: the class content is discharged by the structural
+    theorem above (proved sorry-free for every `n ≥ 2`), not by a
+    fabricated trivial witness. -/
 instance : PontryaginDualCoxeterCharacter where
-  holds := True
+  holds := pontryagin_dual_coxeter_character_structural
 
 end QOU.BraidsAndKnots

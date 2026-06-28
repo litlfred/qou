@@ -2,7 +2,7 @@
 *User question: where does the Gram matrix fit in the
 spectral-sequence / Frobenius framework?*
 
-**Answer.**
+**Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common
 algebraic object that encodes:*
 
@@ -88,7 +88,7 @@ at a root of unity $q = e^{i\pi/\kappa}$ they truncate to the finite
 Verlinde/ADE set, so the Gram matrix becomes finite block-diagonal
 modular-tensor data there.*
 
-**Where Gram-matrix rank governs the spectral sequence.**
+**Gram-matrix rank and the spectral sequence.**
 
 *The filtration $J^\bullet(q)$ induces a block structure on $G$:
 entries $G_{ij}$ with $b_i \in J^p$ and $b_j \in J^{q}$ sit in

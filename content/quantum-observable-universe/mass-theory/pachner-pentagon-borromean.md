@@ -82,7 +82,7 @@ trace cyclicity and 10 sum to $-3/4$.  (The "10" matches the
 [`docs/canonical-derivation-cheat-sheet.md §"Bring color-tube weighted averaging"`](../../docs/canonical-derivation-cheat-sheet.md)
 — possibly the same categorical structure viewed from two angles.)
 
-## Why this is a high-value $h^{4}$ cross-validation route
+## High-value $h^{4}$ cross-validation route
 
 Per
 [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)

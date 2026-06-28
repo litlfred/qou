@@ -54,7 +54,7 @@ $\mathrm{Re}(\rho) = 1/2$.  This realises, at the level of surreal
 arithmetic, the equivalence
 [macroscopic stability $\Leftrightarrow$ RH](#thm:macroscopic-stability-equivalence).
 
-**What the bound replaces.** The informal "as $q \to 1^+$, the energy
+**The replacement for the informal bound.** The informal "as $q \to 1^+$, the energy
 cost $O(\delta^2 (q-1)^{-1})$ exceeds the closing mass gap
 $O((q-1)^3)$" becomes a *single* inequality $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$
 inside the ordered field $\mathbb{R}(\varepsilon) \subset \mathbf{No}$.

@@ -65,7 +65,7 @@ where $\Phi$ is the quark-content functor (e.g. $\Phi(\mathfrak{p})
 \mathfrak{u}\mathfrak{d}\mathfrak{d}$) and the right-vertical
 arrow lifts a bare hadron mass to its electron-dressed atomic mass.
 
-## Why a functor, not a function
+## Functor versus function
 
 The discrete-category framing makes the dressing assignment
 **accordingly** compatible with the chapter's other categorical

@@ -34,7 +34,7 @@ sits at the **crossroads**: it computes the Markov closure of a typed braid,
 which simultaneously lives in $H_n(q)$ (Kashiwara side) and produces an
 invariant of $\widehat\beta$ (Jones side).
 
-## Why even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
+## Parity rule: even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
 
 The structural rule (empirically validated through $k = 4$):
 
@@ -115,7 +115,7 @@ The closure is **hyperbolic** ($\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$);
 its sub-link structure (Hopf at 3-fold closure, full Borromean at higher
 orders) drives the Jones contributions in the precision ladder.
 
-## Why $c_5, c_6$ break the simple alternating pattern
+## Breakdown of the alternating pattern at $c_5, c_6$
 
 Per [`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),
 the empirical $c_5, c_6$ don't fit simple integer Jones values or simple

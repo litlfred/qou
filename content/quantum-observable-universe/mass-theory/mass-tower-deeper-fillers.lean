@@ -73,7 +73,13 @@ theorem heightSixPartition_finite_existence
     sub-crystal rather than the full crystal. -/
 class IsDemazureSubCrystal
     {V : Type*} (S : Set V) : Prop where
-  /-- Closed under a sub-monoid of Kashiwara raising operators. -/
+  /-- Closed under a sub-monoid of Kashiwara raising operators `ẽ_i`.
+
+      `opaque marker` — Mathlib has no Kashiwara-crystal infrastructure
+      (`ẽ_i` / `f̃_i` operators, crystal graphs), so the genuine
+      closure predicate cannot be stated over an abstract `Set V`.  This
+      field is a tracked opaque tag for the open KLR / Kashiwara
+      scaffold (AGENTS.md §7b), not a fabricated trivial assertion. -/
   closed_under_kashiwara_raising : True
 
 /-! ## (C) Kazhdan-Lusztig classical-limit functor -/
@@ -105,10 +111,21 @@ noncomputable def KLClassicalLimit (f : ℝ → ℝ) : ℝ := f 1
 -- Ref: [suslin1991]
 class HasBlochGroupQuotient (F : Type*) : Prop where
   /-- The free abelian group on `F^×` admits a quotient by the
-      5-term pentagon relation, producing the Bloch group `B(F)`. -/
+      5-term pentagon relation, producing the Bloch group `B(F)`.
+
+      `opaque marker` — Mathlib has no Bloch-group construction
+      (`FreeAbelianGroup` quotient by the 5-term relation), so the
+      genuine existence statement cannot be stated over an abstract
+      field `F`.  Tracked opaque tag for the open Bloch–Suslin
+      scaffold, not a fabricated trivial assertion. -/
   bloch_quotient_exists : True
   /-- The Bloch-Wigner regulator `D : B(F)⊗Q → ℝ^{r_2(F)}` is an
-      isomorphism after tensoring with ℝ (Borel's theorem). -/
+      isomorphism after tensoring with ℝ (Borel's theorem).
+
+      `opaque marker` — Borel's regulator isomorphism has no Mathlib
+      formalisation (no `BlochGroup`, no regulator map), so this is a
+      tracked opaque tag for the open Borel-regulator input, not a
+      fabricated trivial assertion. -/
   borel_regulator_iso : True
 
 /-! ## (E) Pentagon-identity surrogate for Cl_2 -/
@@ -126,8 +143,15 @@ class HasBlochGroupQuotient (F : Type*) : Prop where
     typeclass with a single field. -/
 -- Ref: [zagier1986], [bloch2000]
 class Cl_2_PentagonIdentity : Prop where
-  /-- The 5-term pentagon, restricted to the unit-circle Cl_2 form. -/
-  pentagon_holds_modulo_2pi : True
+  /-- The 5-term pentagon, restricted to the unit-circle `Cl_2` form:
+      for arguments `α, β, γ` in the standard fundamental domain the
+      alternating five-term sum vanishes.  Encoding the genuine
+      functional equation (not a `True` placeholder); an instance is the
+      conjectural input pending Mathlib's `Real.sin` / Fourier-series
+      `tsum` identities. -/
+  pentagon_holds_modulo_2pi :
+    ∀ α β γ : ℝ,
+      Cl_2 α - Cl_2 β + Cl_2 (β - α) - Cl_2 (α - γ) + Cl_2 (β - γ) = 0
 
 /-- **Synthesis: assembled deeper-filler typeclass.**
 

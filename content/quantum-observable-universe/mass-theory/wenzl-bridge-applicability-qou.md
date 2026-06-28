@@ -75,7 +75,7 @@ The trace is *forced*, not assumed: every step is dictated by the
 QOU substrate axioms plus the Chlouveraki HDR uniqueness theorem.
 $\square$
 
-## Why the QOU substrate satisfies the hypotheses
+## Satisfaction of the hypotheses by the QOU substrate
 
 | Hypothesis                                                            | QOU realisation                                                                                                                   |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -85,7 +85,7 @@ $\square$
 | Tannaka--Krein Hopf algebra                                           | $H = U_q(\mathfrak{sl}_2)$ in the running QOU example                                                                             |
 | $V = \tau(A)$ has $q$-dimension $[2]_q^{\mathrm{symm}}$               | direct from $A$ being the spin-$\tfrac{1}{2}$ representation                                                                      |
 
-## Consequences
+## Corollaries
 
 1. **No fitting.**  The Wenzl-bridge formula is *the* closed form
    for $y_\lambda$ in QOU; no parameter is chosen to fit observables.

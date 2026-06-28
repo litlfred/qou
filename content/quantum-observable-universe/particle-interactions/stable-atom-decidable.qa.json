@@ -1575,7 +1575,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1 — content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -1600,5 +1600,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

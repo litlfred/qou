@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean"
   },
   "source_hashes": {
-    "md": "7683fd7cf3eb",
+    "md": "7a8f9d406419",
     "ts": "1128c70fab45",
     "lean": "f6090fbf18ce"
   },
@@ -1211,7 +1211,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Clear §3b-cond pattern: axiomatize conjecture as class field, derive the per-ℓ iff by two rw directions; both narrative and Lean aligned.",
+        "notes": "Clear \u00a73b-cond pattern: axiomatize conjecture as class field, derive the per-\u2113 iff by two rw directions; both narrative and Lean aligned.",
         "reviewed_at": "2026-06-25T17:03:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1275,7 +1275,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Conditional confinement-filtration = KLR ℤ-grading correspondence, well-posed modulo the named upstream conjecture (Brundan-Kleshchev backing).",
+        "notes": "Conditional confinement-filtration = KLR \u2124-grading correspondence, well-posed modulo the named upstream conjecture (Brundan-Kleshchev backing).",
         "reviewed_at": "2026-06-25T17:03:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1339,7 +1339,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Connects QOU LP shadow-price filtration to KLR grading; conditional but a non-trivial structural identification, with empirical k_max≤7 table.",
+        "notes": "Connects QOU LP shadow-price filtration to KLR grading; conditional but a non-trivial structural identification, with empirical k_max\u22647 table.",
         "reviewed_at": "2026-06-25T17:03:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1399,7 +1399,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Theorem derives iff (confinementLevel T=ℓ ↔ KLRTopDegree(klr_lift T)=ℓ) by rw on class field confinement_eq_klr_top_degree; faithful §3b-cond, sorry only in class instance. (NB uses deprecated 'constant' kw.)",
+        "notes": "Theorem derives iff (confinementLevel T=\u2113 \u2194 KLRTopDegree(klr_lift T)=\u2113) by rw on class field confinement_eq_klr_top_degree; faithful \u00a73b-cond, sorry only in class instance. (NB uses deprecated 'constant' kw.)",
         "reviewed_at": "2026-06-25T17:03:33.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1495,7 +1495,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Class instance + (T,ℓ) satisfiable; equality ∀T confinementLevel=KLRTopDegree is a consistent hypothesis, not contradictory.",
+        "notes": "Class instance + (T,\u2113) satisfiable; equality \u2200T confinementLevel=KLRTopDegree is a consistent hypothesis, not contradictory.",
         "reviewed_at": "2026-06-25T17:03:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1551,7 +1551,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Binders [inst:CrystalGraphRealization], (T), (ℓ) all used: inst.confinement_eq_klr_top_degree T and hT/hKLR drive both rw directions.",
+        "notes": "Binders [inst:CrystalGraphRealization], (T), (\u2113) all used: inst.confinement_eq_klr_top_degree T and hT/hKLR drive both rw directions.",
         "reviewed_at": "2026-06-25T17:03:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1589,7 +1589,7 @@
           "lean": "f6090fbf18ce"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (§1a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
+        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
         "reviewed_at": "2026-06-25T12:27:24.000Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
@@ -1616,7 +1616,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claim in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist.",
+        "notes": "The claim in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1"
       }
@@ -1656,7 +1656,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
       }
@@ -1676,7 +1676,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean is incomplete (has sorry).",
+        "notes": "The prose in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean is incomplete (has sorry).",
         "severity": "minor"
       }
     ],
@@ -1695,7 +1695,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
       }
@@ -1774,7 +1774,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
       }
@@ -1794,7 +1794,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
       }
@@ -1814,7 +1814,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts:1"
       }
@@ -1836,7 +1836,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1 — content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist"
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1857,9 +1857,9 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean for 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' fails compilation with error: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean for 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' fails compilation with error: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist. This invalidates the claim of formal verification."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

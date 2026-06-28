@@ -31,3 +31,22 @@ batched with other improvements). RiemannZeta (140) stays out-of-scope.
 Net correctness value is low regardless — all 5 files are green in CI; this is
 sandbox-DX only. QuaternionFromHecke's own λ-reds are the only real bug here
 (handle under red-drain, not cache infra).
+
+## Update (2026-06-28) — scope reduced to 2 leaves
+
+- **`Quaternion` leaf MOOTED.** `QuaternionFromHecke` (PR #2927, merged) had a
+  *dead* `import Mathlib.Algebra.Quaternion` (the only non-comment "Quaternion"
+  mentions were its own title + class name). Dropping it red-drained the file to
+  green AND removed its cache-artifact dependency — so the `Quaternion` leaf is
+  no longer needed by anything.
+- **`Trigonometric.Complex` (1 olean)** — built + proven this session; the 2
+  dependents (`ScratchZeta5`, `zeta5_residue_monodromy`) are pure cache-artifacts
+  that go green with just this leaf.
+- **`Log.Summable` (30) + `RiemannZeta` (140) CONFIRMED genuinely needed** —
+  verified empirically: `PhiQConvergence` uses `Summable`/`Multipliable`
+  (L186-215), `ClassicalRiemannHypothesis` uses `riemannZeta` (L38, faithful §3b
+  conjecture class). NOT dead imports. Their dependents stay deferred.
+
+**Net remaining bnyo:** fold `Trigonometric.Complex` (+ optionally `Log.Summable`,
+`RiemannZeta`) into the next full cache refresh. Still recommend NOT a piecemeal
+852 MB reseed. Sandbox-DX only.

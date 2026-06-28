@@ -176,7 +176,7 @@ $$
    \times  (\text{pair Skein scale})
 $$
 
-## Why single-crossing was insufficient
+## Insufficiency of the single-crossing approximation
 
 The previous single-crossing approximation captured only $1$
 of the $10$ crossings in the weak vertex. This explains:

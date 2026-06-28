@@ -40,7 +40,7 @@ the classical continuum is what remains after that single local
 $\varepsilon_v$ is collapsed, while the non-archimedean $\varepsilon_p$'s
 are discarded.
 
-**Why $\mathcal{L}$ is not full: phase decoherence.** The full
+**Non-fullness of $\mathcal{L}$: phase decoherence.** The full
 motivic class $[X] \in \widehat{\mathcal{M}}$ carries the relative
 $q$-phases between all finite places — the cohomological data that
 the cyclotomic-projection tower

@@ -1491,8 +1491,27 @@ to flag, yet asserts nothing:
 | Criterion | Severity | Fires on |
 |---|---|---|
 | `proof-no-empty-prop-carrier` | critical | a `class`/`structure : Prop` with **zero fields** (and no `extends`); opt out a genuine opaque tag with `@marker` |
-| `proof-claims-unencoded` | major | a carrier whose docstring **enumerates ≥2 named properties** that are not encoded as Prop fields |
+| `proof-claims-unencoded` | major | a carrier whose docstring **enumerates ≥2 named properties** that are not encoded as Prop fields; **or** (pattern `true-class-field`) a single field typed literally `: True` carrying no content — opt out a genuinely-open opaque field with `@marker` / `opaque marker` |
 | `proof-dependent-conjecture-not-conditional` | critical | a carrier whose doc **explicitly claims conditionality** ("conditional on / assuming / given conj:Y") while its signature binds **no** such class — the prose says conditional, the type does not (derived, intent-vs-type mismatch) |
+
+The high-recall trivial-true detector also annotates a `placeholder-true` /
+`def-disguised-true` whose docstring carries **theorem-assertion language**
+(`**Theorem**`/`**Lemma**`/`**Proposition**`) and is not a conjecture carrier —
+*"docstring asserts a provable claim while the Lean concludes `True`"* — the
+`q_gl_obstruction_calc` failure mode (a real claim hidden behind a tautology),
+which a heuristic-only triage repeatedly mis-called "legit".
+
+**Agent inspection is mandatory, not optional (the ledger).** These criteria are
+high-recall *candidates*; the legit-vs-genuine verdict is an **agent** call.
+Standalone library `.lean` files have no `<block>.qa.json` sidecar to hold that
+verdict, so it lives in a committed **review ledger**
+([`docs/audits/lean-vacuity-review-ledger.json`](docs/audits/lean-vacuity-review-ledger.json),
+schema `lean-vacuity-review/v1`): `--review-ledger` seeds new / file-changed
+candidates as `needs-agent`; `--check-ledger` exits 1 unless every non-exempt
+candidate carries a **fresh** agent verdict (`genuine` / `legit` / `advisory`)
+whose recorded `.lean` sha still matches. A verdict goes stale the moment the
+file changes — the machine can flag, only an agent can clear. Workflow +
+discipline: [`lean-proof-vacuity-audit.md` §Agent-inspection ledger](.claude/skills/local/lean-proof-vacuity-audit.md).
 
 The primary/dependent split itself is **not a criterion** — it is the
 derived `conjecture_graph` in the witness (primary count, dependent

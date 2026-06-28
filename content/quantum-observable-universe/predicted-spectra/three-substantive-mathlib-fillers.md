@@ -76,7 +76,7 @@ This file adds:
  (holds by definition at $x = 0$ since both sides are identically zero
  there).
 
-## What's *fully* closed by this file
+## Content fully closed by this file
 
 The three §3b-cond class hooks are now formally available with
 named carrier infrastructure for downstream usage. None of the
@@ -89,7 +89,7 @@ single §3b-cond hypothesis that downstream blocks can take in
 their `[Instance]` lists; the consistency theorem confirms the
 synthesis is structurally well-formed.
 
-## What remains
+## Remaining content
 
 After this file, the open content is exactly:
 

@@ -98,7 +98,7 @@ $q_{\mathrm{gold}} = 1/\varphi^2$
 present) is the $p = 5$ case: the Descartes elliptic curve nodes
 at $\zeta_5$, and Hecke fusion becomes 5-ary.
 
-## What survives, what breaks
+## Surviving and broken structure
 
 Compared to the char-0 surreal lift
 ([algebraic core survives](#rem:algebraic-core-survives)):

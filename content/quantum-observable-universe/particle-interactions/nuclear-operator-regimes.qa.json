@@ -1273,7 +1273,7 @@
           "lean": "6435e6e87fd5"
         },
         "result": "pass",
-        "notes": "md goal is substantive/well-posed (3 inter-nucleon binding regimes I/II/III with LP-witness demand table A≤6); plausibility rates the md claim, independent of the vacuous Lean.",
+        "notes": "md goal is substantive/well-posed (3 inter-nucleon binding regimes I/II/III with LP-witness demand table A\u22646); plausibility rates the md claim, independent of the vacuous Lean.",
         "reviewed_at": "2026-06-25T17:06:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1337,7 +1337,7 @@
           "lean": "6435e6e87fd5"
         },
         "result": "pass",
-        "notes": "Regime classification (torus T_{2,5}→Hopf L±→bare crossing) with B_3-is-quark-level-only claim is a substantive empirical observation; cited witness nuclear-binding-lp.",
+        "notes": "Regime classification (torus T_{2,5}\u2192Hopf L\u00b1\u2192bare crossing) with B_3-is-quark-level-only claim is a substantive empirical observation; cited witness nuclear-binding-lp.",
         "reviewed_at": "2026-06-25T17:06:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1397,7 +1397,7 @@
           "lean": "6435e6e87fd5"
         },
         "result": "fail",
-        "notes": "Lean is 'def nuclearOperatorRegimes : True := by trivial' — concludes :True (def-disguised-true per AGENTS.md §1a); encodes none of the md's 3-regime operator-selection claim. Degenerate weakening.",
+        "notes": "Lean is 'def nuclearOperatorRegimes : True := by trivial' \u2014 concludes :True (def-disguised-true per AGENTS.md \u00a71a); encodes none of the md's 3-regime operator-selection claim. Degenerate weakening.",
         "reviewed_at": "2026-06-25T17:06:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1464,7 +1464,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -1635,25 +1635,6 @@
         "notes": "No false claims identified in 'Three operator regimes for nuclear binding': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "bf64d7a72d1b",
-          "ts": "e8c10b6e76f3",
-          "lean": "f1bf745976d3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Three operator regimes for nuclear binding' presents substantial mathematical content: The inter-nucleon binding operator is not fixed — it transitions between three distinct regimes as the nucleus grows....",
-        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1874,7 +1855,26 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Three operator regimes for nuclear binding' are consistent."
       }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Three operator regimes for nuclear binding' presents substantial mathematical content: The inter-nucleon binding operator is not fixed \u2014 it transitions between three distinct regimes as the nucleus grows....",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

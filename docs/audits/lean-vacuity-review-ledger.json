@@ -1,0 +1,108 @@
+{
+  "$schema": "lean-vacuity-review/v1",
+  "updated_at": "2026-06-28T06:43:51.852Z",
+  "entries": {
+    "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 247,
+      "verdict": "needs-agent",
+      "file_sha": "800365aee7af"
+    },
+    "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean::BorromeanQuark::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 183,
+      "verdict": "needs-agent",
+      "file_sha": "3b81c71853fb"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 267,
+      "verdict": "legit",
+      "file_sha": "5dd637d71e12",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean::HyperbolicVolumeIndependence.implies_single_irrational::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 499,
+      "verdict": "legit",
+      "file_sha": "79eeb4de80bb",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean::hecke_deg_monic::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 97,
+      "verdict": "legit",
+      "file_sha": "1ec9f4e7e360",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean::substrateGap_of_uniform_gapValue::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 204,
+      "verdict": "legit",
+      "file_sha": "aaf41243710f",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean::A5Irrep.reebCasimir_not_injective::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 60,
+      "verdict": "legit",
+      "file_sha": "081b2a56dbc4",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean::zero_not_isAlgebraicallyPrime::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 149,
+      "verdict": "legit",
+      "file_sha": "ff5e15bdd6e0",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
+      "category": "proof-no-decide-masking",
+      "pattern": "native_decide",
+      "line": 267,
+      "verdict": "legit",
+      "file_sha": "0aa015d1bcbf",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T07:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Real finite computation, not decide-masking of a non-fact. The theorem enumerates all ~1365 pure 3-braid words of length <6, computing each Kauffman/TL3 bracket (Laurent-polynomial arithmetic) to confirm none is simultaneously Brunnian and nontrivial while the Borromean (length 6) is — minimal crossing number = 6. Kernel decide is infeasible: re-verified 2026-06-28 that decide times out at 590s even with maxHeartbeats 4000000 (the docstring already notes nontriviality alone took ~45s by decide). native_decide compiles the decision procedure; its Lean.ofReduceBool/trustCompiler axioms are documented in the docstring and independently cross-checked against the Python enumeration oracle (both yield 6). Cannot be cleared by decide/norm_num/omega without audit-dodging (§1a); honest disposition is native_decide + documented axioms + oracle cross-check."
+    },
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean::Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 81,
+      "verdict": "legit",
+      "file_sha": "362fa5288152",
+      "reviewer": "agent",
+      "reviewed_at": "2026-06-28T02:00:00Z",
+      "disposition": "no-fix",
+      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    }
+  }
+}

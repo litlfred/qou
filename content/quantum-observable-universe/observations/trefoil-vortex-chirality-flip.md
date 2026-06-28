@@ -26,7 +26,7 @@ After several reconnections the trefoil reduces to unknotted loops,
 each carrying a portion of the original helicity as twist. **No
 chirality flip occurs** — the trefoil dissolves.
 
-**Why classical vortices cannot flip chirality.**
+**Obstructions to classical chirality reversal.**
 
 Three obstructions prevent a smooth chirality reversal in
 Navier--Stokes fluid dynamics:

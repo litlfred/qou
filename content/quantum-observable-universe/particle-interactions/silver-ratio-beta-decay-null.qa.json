@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean"
   },
   "source_hashes": {
-    "md": "cc1dbffda5cd",
+    "md": "145ba850aa24",
     "ts": "dd0d9de57ef0",
     "lean": "2ce5e645356e"
   },
@@ -1552,7 +1552,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "silver-ratio-beta-decay-null.lean:1 — content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress"
+        "evidence": "silver-ratio-beta-decay-null.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress"
       }
     ],
     "da-referee-verdict": [
@@ -1577,5 +1577,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

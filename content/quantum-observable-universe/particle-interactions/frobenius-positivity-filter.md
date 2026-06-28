@@ -31,7 +31,7 @@ $Gx \geq 0$ in the
 [confinement LP](#prop:confinement-lp).
 In the discrete (branching) setting, it acts as a
 **configuration filter**: only configurations that produce
-physically meaningful (non-negative) mass elements for both
+non-negative mass elements for both
 parent and daughter nuclei contribute to the Q-value.
 
 ## Computational complexity

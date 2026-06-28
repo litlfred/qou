@@ -20,7 +20,7 @@ approach explicitly: the ideal would be the full transcendence machinery
 which is out of reach; the reduction replaces that machinery with three
 QOU-native tools and one remaining QOU-native gap.
 
-**Why this is a finite, decidable claim.**  Each $J_K(q)$ has a
+**Finiteness and decidability of the claim.**  Each $J_K(q)$ has a
 canonical *jet-order* grading — the Habiro (cyclotomic) expansion
 $J_K(q) = \sum_{n \ge 0} c_n(K)\,(q;q)_n$, whose $n$-th term is the
 vertical/jet degree-$n$ part of the categorical generating function (the

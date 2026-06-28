@@ -21,7 +21,7 @@ See [Table 3](#tbl:tm-notation-table3-data).
 
 See [Table 4](#tbl:tm-notation-table4-data).
 
-## How transfer matrices are used
+## Mechanism of transfer-matrix use
 
 Given a nucleus with $A = Z + N$ nucleons, the braid word has
 $A - 1$ generators $\sigma_0, \ldots, \sigma_{A-2}$.  At each

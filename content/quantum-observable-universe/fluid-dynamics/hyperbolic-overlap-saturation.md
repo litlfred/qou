@@ -14,7 +14,7 @@ flattening $\kappa \to 0$ is reversed: the squared Levi
 condition number **locks** to a strictly positive constant
 $\kappa^2 = \pi\nu/\Gamma$.
 
-**Why the kernel changes.**
+**Mechanism of the kernel change.**
 The singular Biot–Savart strain $\alpha(t) = \Gamma/(2\pi d^2)$
 diverges *only* because $d \to 0$ while the cores are held
 small. Once $V_1 \gtrsim d^2$ the filaments are no longer two

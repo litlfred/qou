@@ -10,7 +10,7 @@ operator product $x \cdot y$. The non-commutative probability lens
 of this section places CFS and QOU on common ground; the comparison
 yields three structural conclusions.
 
-**What can be shown.**
+**Structural agreements.**
 
 1. *Same carrier algebra.* Both QOU's inductive-limit Hecke algebra
    $(H_\infty(q), \mathrm{tr}_M)$ — embedded via Jones–Wenzl GNS as a
@@ -37,7 +37,7 @@ yields three structural conclusions.
    braid relations, knot crossing-order, and non-trace free-probability
    cumulants: data QOU has and CFS structurally cannot represent.
 
-**What differs.**
+**Structural differences.**
 
 The two continuum theories evaluate **different real-valued
 functionals** on the shared spectral data. The QOU natural quadratic
@@ -102,7 +102,7 @@ are confirmed as **distinct continuum theories of the same
 operator-algebra substrate**, differing by a named correction term
 in their action functionals.
 
-**Consequence for QOU.** The framework developed in this section —
+**Corollary for QOU.** The framework developed in this section —
 non-commutative probability, q-CLT, Jones–Wenzl carrier, Plancherel
 asymptotics — stands independently of any CFS comparison. The
 specific QOU phenomena that CFS cannot natively express (knot

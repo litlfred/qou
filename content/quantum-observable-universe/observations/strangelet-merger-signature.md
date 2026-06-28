@@ -86,7 +86,7 @@ observable consequences.
    cosmic ray detectors (AMS-02, DAMPE) constrain the flux
    of such objects.
 
-**Why not from the surface?**
+**Absence of surface emission.**
 
 An isolated neutron star cannot emit strangelets because:
 

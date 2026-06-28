@@ -13,9 +13,5 @@ export default proposition({
     "yekutieli",
     "speed-of-light",
   ],
-  uses: ["thm:mass-energy-equivalence"],
-  cites: [
-    "yekutieli2015",
-    "reshetikhin1991",
-  ],
+  uses: ["def:mass-identity"],
 });

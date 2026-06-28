@@ -24,9 +24,11 @@ export default chapter({
         "nuclear-groebner-reduction",
         "nuclear-reduction-algorithm",
         "groebner-shirshov-energy",
+        "groebner-shirshov-energy-interpretation",
         "inductive-gb-reduction",
         "nucleon-ordering-factorization",
         "box-braid-irreducibility",
+        "box-braid-irreducibility-interpretation",
         "generator-volume-decomposition",
         // thm:markov-trace-factorization moved earlier to
         // braids-and-knots/sec:phi-q-markov-schur-weyl-tower per
@@ -59,9 +61,11 @@ export default chapter({
             "confinement-lp",
             "confinement-nucleon-unit",
             "confinement-operator-selection",
+            "confinement-operator-selection-interpretation",
             "confinement-operator-selection-table2-data",
             "confinement-operator-selection-table1-data",
             "confinement-frobenius-reciprocity",
+            "confinement-frobenius-reciprocity-interpretation",
             // prop:confinement-sdp moved earlier to
             // braids-and-knots/sec:alpha-k-procedure per detangler P33.
             // New H2 → confinement-lp accepted §5.
@@ -77,6 +81,7 @@ export default chapter({
             "confinement-sdp-vs-lp",
             "confinement-misdp",
             "confinement-topological",
+            "confinement-topological-interpretation",
             "lp-dual-stability",
             "lp-dual-stability-table-data",
             "algebraic-primality",
@@ -184,6 +189,7 @@ export default chapter({
         "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
+        "silver-ratio-beta-decay-null-interpretation",
         "beta-decay-interpretation",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",
@@ -389,6 +395,7 @@ export default chapter({
         "ilp-solution-count-unwrap",
         "shell-schur-weyl-self-duality",
         "compound-beta-shell-calibration",
+        "compound-beta-shell-calibration-interpretation",
         "compound-beta-shell-calibration-table3-data",
         "compound-beta-shell-calibration-table2-data",
         "compound-beta-shell-calibration-table1-data",

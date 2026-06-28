@@ -40,7 +40,7 @@ spectral_decomposition :
 `noncomputable opaque` block: instances must supply this identity as
 input, currently as `sorry` per AGENTS.md §3b.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *A Lean proof requires:*
 
 1. *[graded Markov trace existence](#conj:gs-graded-markov-trace-existence)

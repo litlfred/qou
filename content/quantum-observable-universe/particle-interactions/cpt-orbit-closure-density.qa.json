@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean"
   },
   "source_hashes": {
-    "md": "c1629e334c47",
+    "md": "38fb253d77e3",
     "ts": "2c35a2834a2a",
     "lean": "eebe516e5768"
   },
@@ -963,7 +963,7 @@
           "lean": "eebe516e5768"
         },
         "result": "pass",
-        "notes": "Conjecture: derive Frobenius CPT-saturation Boolean from Type-B fold orbit-closure σ(Λ)⊆Λ (n=3 worked example); well-posed, substantive, removes a posited flag.",
+        "notes": "Conjecture: derive Frobenius CPT-saturation Boolean from Type-B fold orbit-closure \u03c3(\u039b)\u2286\u039b (n=3 worked example); well-posed, substantive, removes a posited flag.",
         "reviewed_at": "2026-06-25T17:06:12.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1031,7 +1031,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claims in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are non-vacuous as they make concrete conjectures about 'transpose involution $\\lambda \\mapsto \\lambda^{T}$ — the Dynkin involution on the $A_{n-1}$ crystal that, after foldi...'.",
+        "notes": "The claims in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are non-vacuous as they make concrete conjectures about 'transpose involution $\\lambda \\mapsto \\lambda^{T}$ \u2014 the Dynkin involution on the $A_{n-1}$ crystal that, after foldi...'.",
         "severity": "minor"
       }
     ],
@@ -1230,7 +1230,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 — content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1255,5 +1255,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

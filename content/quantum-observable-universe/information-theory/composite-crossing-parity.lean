@@ -7,9 +7,7 @@
   reduces to Z mod 2.
 -/
 import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Parity
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Omega
 import Mathlib.Tactic.NormNum
 
 namespace QOU.Information
@@ -29,8 +27,14 @@ def compositeCrossingNumber (Z N : ℕ) : ℕ :=
 theorem crossingBudget (Z N : ℕ) :
     compositeCrossingNumber Z N =
     8 * (Z + N) + (Z + N) * (Z + N - 1) + 3 * Z + 2 * Z := by
-  unfold compositeCrossingNumber
-  omega
+  -- `show` forces the explicit form (defeq to the `let`), so the truncated
+  -- `A - 1` and the products are visible. Identity: A²+7A+5Z = 8A+A(A-1)+5Z.
+  show (Z + N) * (Z + N) + 7 * (Z + N) + 5 * Z
+      = 8 * (Z + N) + (Z + N) * (Z + N - 1) + 3 * Z + 2 * Z
+  rcases Nat.eq_zero_or_pos (Z + N) with h | h
+  · rw [h]; ring
+  · obtain ⟨b, hb⟩ : ∃ b, Z + N = b + 1 := ⟨(Z + N) - 1, by omega⟩
+    rw [hb]; simp only [Nat.add_sub_cancel]; ring
 
 /-- **Main theorem**: the composite crossing number has the same parity
     as the atomic number Z.
@@ -43,15 +47,15 @@ theorem crossingBudget (Z N : ℕ) :
     we get n_K ≡ 5Z ≡ Z (mod 2). -/
 theorem crossing_parity_eq_Z (Z N : ℕ) :
     compositeCrossingNumber Z N % 2 = Z % 2 := by
-  unfold compositeCrossingNumber
-  -- A = Z + N
-  -- n_K = A² + 7A + 5Z = (Z+N)² + 7(Z+N) + 5Z
-  -- We need to show (Z+N)² + 7(Z+N) + 5Z ≡ Z (mod 2)
-  -- i.e., (Z+N)² + 7(Z+N) + 4Z ≡ 0 (mod 2)
-  -- (Z+N)² + (Z+N) = (Z+N)(Z+N+1) is even (consecutive product)
-  -- so (Z+N)² ≡ (Z+N) (mod 2), hence
-  -- (Z+N)² + 7(Z+N) ≡ (Z+N) + (Z+N) ≡ 0 (mod 2)
-  -- and 4Z ≡ 0 (mod 2), so total ≡ Z (mod 2) from 5Z.
+  -- `show` forces the explicit form (defeq to the `let`) so `omega` sees the
+  -- product `(Z+N)*(Z+N)` rather than treating the whole body as one atom.
+  show ((Z + N) * (Z + N) + 7 * (Z + N) + 5 * Z) % 2 = Z % 2
+  -- The only nonlinear term is A²; a square preserves parity (`m² ≡ m mod 2`),
+  -- so the rest is linear parity arithmetic that `omega` discharges.
+  have key : ∀ m : ℕ, m * m % 2 = m % 2 := by
+    intro m
+    rcases Nat.mod_two_eq_zero_or_one m with h | h <;> simp [Nat.mul_mod, h]
+  have h := key (Z + N)
   omega
 
 /-- Atoms with even atomic number have even crossing number. -/
@@ -70,42 +74,31 @@ theorem hydrogen_crossing : compositeCrossingNumber 1 0 = 13 := by
 
 /-- **Hydrogen has odd crossing number** (Z = 1 is odd). -/
 theorem hydrogen_odd : compositeCrossingNumber 1 0 % 2 = 1 := by
-  rw [hydrogen_crossing]; norm_num
+  rw [hydrogen_crossing]
 
-/-- **Helium** (Z = 2, N = 2): crossing number n_K = 56, which is even. -/
-theorem helium_crossing : compositeCrossingNumber 2 2 = 56 := by
+/-- **Helium** (Z = 2, N = 2): crossing number n_K = A²+7A+5Z = 16+28+10 = 54,
+    which is even. -/
+theorem helium_crossing : compositeCrossingNumber 2 2 = 54 := by
   unfold compositeCrossingNumber; norm_num
 
 /-- **Helium has even crossing number** (Z = 2 is even). -/
 theorem helium_even : compositeCrossingNumber 2 2 % 2 = 0 := by
-  rw [helium_crossing]; norm_num
+  rw [helium_crossing]
 
 /-- **Nitrogen** (Z = 7, N = 7): odd crossing number. -/
 theorem nitrogen_odd : compositeCrossingNumber 7 7 % 2 = 1 := by
-  rw [crossing_parity_eq_Z]; norm_num
+  rw [crossing_parity_eq_Z]
 
 /-- **Arsenic** (Z = 33, N = 42): odd crossing number. -/
 theorem arsenic_odd : compositeCrossingNumber 33 42 % 2 = 1 := by
-  rw [crossing_parity_eq_Z]; norm_num
+  rw [crossing_parity_eq_Z]
 
 /-- **Iron** (Z = 26, N = 30): even crossing number. -/
 theorem iron_even : compositeCrossingNumber 26 30 % 2 = 0 := by
-  rw [crossing_parity_eq_Z]; norm_num
+  rw [crossing_parity_eq_Z]
 
 /-- **Iodine** (Z = 53, N = 74): odd crossing number. -/
 theorem iodine_odd : compositeCrossingNumber 53 74 % 2 = 1 := by
-  rw [crossing_parity_eq_Z]; norm_num
+  rw [crossing_parity_eq_Z]
 
 end QOU.Information
-
-
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
-
-namespace QOU.CompositeCrossingParity.ConditionalAudit
-
-class BorromeanQuark : Prop where
-  holds : True
-
-def composite_crossing_parity_g2_conditional [_inst : BorromeanQuark] : True := trivial
-
-end QOU.CompositeCrossingParity.ConditionalAudit

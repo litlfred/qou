@@ -1354,7 +1354,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
+        "notes": "The mathematical claims in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.lean:1"
       }
@@ -1394,7 +1394,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid'.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.ts:1"
       }
@@ -1414,7 +1414,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The remarks and narrative scope in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are appropriately qualified.",
+        "notes": "The remarks and narrative scope in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are appropriately qualified.",
         "severity": "minor"
       }
     ],
@@ -1433,7 +1433,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid'.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.ts:1"
       }
@@ -1492,7 +1492,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.ts:1"
       }
@@ -1512,7 +1512,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.ts:1"
       }
@@ -1532,7 +1532,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.ts:1"
       }
@@ -1552,7 +1552,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Energy as a Gröbner--Shirshov invariant of the nuclear braid' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "groebner-shirshov-energy.ts:1"
       }
@@ -1574,7 +1574,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "groebner-shirshov-energy.lean:1 — content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+        "evidence": "groebner-shirshov-energy.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
       }
     ],
     "da-referee-verdict": [
@@ -1599,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

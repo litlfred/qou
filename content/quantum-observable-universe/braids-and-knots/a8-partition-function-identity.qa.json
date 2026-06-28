@@ -1290,7 +1290,7 @@
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
         "evidence": "Statement + coefficient-match proof are followed by a 'Categorical interpretation' section (lines 38-57) with interpretive prose ('strongly suggests that the m=8 shell of the Habiro tower is counting partitions', 'a_8 is the dimension-generating function of partitions'). No companion interprets: remark.",
-        "notes": "The interpretation is borderline — partly mathematical context (where p(n) appears in representation theory) and partly speculative significance. Flagged warn rather than fail since the content is mathematical-structural rather than physical-meaning prose."
+        "notes": "The interpretation is borderline \u2014 partly mathematical context (where p(n) appears in representation theory) and partly speculative significance. Flagged warn rather than fail since the content is mathematical-structural rather than physical-meaning prose."
       },
       {
         "field_hash": {
@@ -1306,7 +1306,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the polynomial identity + proof; the 'Categorical interpretation' section is clearly delineated interpretive commentary after the proof, but the rubric targets interpretation injected INTO the statement of a provable block — the proposition statement itself is bare. Pass."
+        "notes": "Statement is the polynomial identity + proof; the 'Categorical interpretation' section is clearly delineated interpretive commentary after the proof, but the rubric targets interpretation injected INTO the statement of a provable block \u2014 the proposition statement itself is bare. Pass."
       }
     ],
     "fit-section-chapter": [
@@ -1378,7 +1378,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is a polynomial identity in ℤ[X] — purely algebraic, generic-ring; no archimedean tokens."
+        "notes": "Statement is a polynomial identity in \u2124[X] \u2014 purely algebraic, generic-ring; no archimedean tokens."
       }
     ],
     "wall-side-proof": [
@@ -1414,7 +1414,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is coefficient-matching closed by ring over ℤ[X]; no archimedean machinery."
+        "notes": "Proof is coefficient-matching closed by ring over \u2124[X]; no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1464,7 +1464,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "md a_8(X)=Σ_{n=1..5} p(n) X^{5-n} matches Lean a_8_eq_partition_sum: a_8_poly = Σ n ∈ Finset.Icc 1 5, partitionCount n • X^(5-n). partitionCount value table (1,2,3,5,7) = p(1..5). Quantifier-free identity, conclusion matches."
+        "notes": "md a_8(X)=\u03a3_{n=1..5} p(n) X^{5-n} matches Lean a_8_eq_partition_sum: a_8_poly = \u03a3 n \u2208 Finset.Icc 1 5, partitionCount n \u2022 X^(5-n). partitionCount value table (1,2,3,5,7) = p(1..5). Quantifier-free identity, conclusion matches."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1544,7 +1544,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.95 — plan explicit: expand Icc, evaluate partitionCount, match by ring (docstring + comments)."
+        "notes": "score=0.95 \u2014 plan explicit: expand Icc, evaluate partitionCount, match by ring (docstring + comments)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1624,7 +1624,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.9 — the main identity a_8_eq_partition_sum is sorry-free; the only sorry-like residue is the Mathlib bridge placeholder (def ...: True := trivial), which is documented as not on the critical path and routine to close."
+        "notes": "score=0.9 \u2014 the main identity a_8_eq_partition_sum is sorry-free; the only sorry-like residue is the Mathlib bridge placeholder (def ...: True := trivial), which is documented as not on the critical path and routine to close."
       }
     ],
     "proof-rater-novelty": [
@@ -1704,7 +1704,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.4 — it records a numerical coincidence (a_8 coeffs match p(1..5)) using standard partition values; empirical Habiro-shell observation, low deductive novelty (md self-describes as such)."
+        "notes": "score=0.4 \u2014 it records a numerical coincidence (a_8 coeffs match p(1..5)) using standard partition values; empirical Habiro-shell observation, low deductive novelty (md self-describes as such)."
       }
     ],
     "proof-statement-integrity": [
@@ -1850,7 +1850,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -1868,7 +1868,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
         "evidence": "a8-partition-function-identity.lean:179-180 'def partitionCount_eq_fintype_card_partition_small : True := trivial  -- placeholder'",
-        "notes": "The proposition's resolved decl (a_8_eq_partition_sum) is a genuine non-trivial identity — PASS on the proposition itself. But the same file carries a `def ... : True := trivial` Mathlib-bridge stub. Per CLAUDE.md §1a this is the def-disguised-True anti-pattern (a sorry-workaround: it states a real semantic claim, partitionCount n = Fintype.card (Nat.Partition n), but discharges `True` instead). It is documentation-honest (comment + Refs) and off the critical path, so warn rather than fail; the honest disposition is a sorry'd theorem with the real statement, not `: True := trivial`."
+        "notes": "The proposition's resolved decl (a_8_eq_partition_sum) is a genuine non-trivial identity \u2014 PASS on the proposition itself. But the same file carries a `def ... : True := trivial` Mathlib-bridge stub. Per CLAUDE.md \u00a71a this is the def-disguised-True anti-pattern (a sorry-workaround: it states a real semantic claim, partitionCount n = Fintype.card (Nat.Partition n), but discharges `True` instead). It is documentation-honest (comment + Refs) and off the critical path, so warn rather than fail; the honest disposition is a sorry'd theorem with the real statement, not `: True := trivial`."
       }
     ],
     "proof-no-false-premise": [
@@ -2041,7 +2041,7 @@
           "lean": "1faef5e3fd91"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (§1a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
+        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
         "reviewed_at": "2026-06-25T12:27:24.000Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
@@ -2066,7 +2066,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "decide is used only to compute the concrete Finset (Icc 1 5 = {1,2,3,4,5}), a justified finite enumeration; the substantive step is ring, not decide. The bridge stub uses trivial on True but that is the §no-trivial-true concern already flagged, not decide-masking of a structural goal."
+        "notes": "decide is used only to compute the concrete Finset (Icc 1 5 = {1,2,3,4,5}), a justified finite enumeration; the substantive step is ring, not decide. The bridge stub uses trivial on True but that is the \u00a7no-trivial-true concern already flagged, not decide-masking of a structural goal."
       }
     ],
     "da-false-claim": [
@@ -2291,7 +2291,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:1 — content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress"
       }
     ],
     "da-referee-verdict": [
@@ -2315,5 +2315,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

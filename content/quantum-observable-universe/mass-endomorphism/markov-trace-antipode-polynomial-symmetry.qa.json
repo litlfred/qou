@@ -1399,7 +1399,7 @@
           "lean": "ac1c0b21c103"
         },
         "result": "fail",
-        "notes": "Identity q^20·p(1/q)=-p(q) is a finite decidable polynomial identity (full elem. proof in .md), yet discharged by axiom markovTraceAntipodePolynomialSymmetry_axiom — unnecessary axiom masks a provable claim.",
+        "notes": "Identity q^20\u00b7p(1/q)=-p(q) is a finite decidable polynomial identity (full elem. proof in .md), yet discharged by axiom markovTraceAntipodePolynomialSymmetry_axiom \u2014 unnecessary axiom masks a provable claim.",
         "reviewed_at": "2026-06-25T16:59:44.000Z",
         "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
@@ -1848,5 +1848,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

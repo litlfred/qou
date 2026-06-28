@@ -19,7 +19,7 @@ produces three unbound unknots.  This is the topological face of
 observed in isolation is exactly the Brunnian property of
 $\mathcal{B}_3$, with no separate dynamical assumption required.
 
-**Where this is computed elsewhere.**  The energetic cost
+**Location of the computation.**  The energetic cost
 attached to the unlinking move — the bare topological mass that
 distinguishes a confined Borromean baryon from three free
 unknots — is the hyperbolic-volume contribution computed in the

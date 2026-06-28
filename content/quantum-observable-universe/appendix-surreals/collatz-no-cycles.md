@@ -61,7 +61,7 @@ is a consequence of consecutive integers being coprime
 — a fact that lifts from $\mathbb{Z}$ to $\mathbb{Z}[q]$
 via the $q$-integer functor.
 
-**What remains.** This proposition settles half the Collatz
+**Remaining work.** This proposition settles half the Collatz
 conjecture: no periodic cycles other than $\{1\}$.  The
 other half — no divergent orbits — is the contact condition
 $\langle v_{[2]} \rangle \geq 2$

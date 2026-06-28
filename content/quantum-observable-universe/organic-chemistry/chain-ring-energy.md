@@ -20,7 +20,7 @@ The threaded ring binds all 6 carbons with Alexander weight
 $\approx 3$ — **less than the chain's weight of 5**, despite
 binding one more atom.
 
-**Why the chain exists.**
+**Existence of the chain.**
 If the ring is lower in energy, why does the linear chain
 exist at all?  Because the transition from pairwise to
 threaded topology is **discontinuous**.  The chain cannot

@@ -60,7 +60,7 @@ the figure-eight's alternating crossings — the same geometric
 quantity that, in the Kashaev $N \to \infty$ limit, yields the
 hyperbolic volume $\mathrm{Vol}(4_1)$.
 
-## Why $4_1$ sets the mass scale
+## Role of $4_1$ in the mass scale
 
 The $q$-Reeb rotation mixes the lepton channels
 $V_{(2)} \leftrightarrow V_{(1,1)}$ inside $V_{(2,1)}$.  The

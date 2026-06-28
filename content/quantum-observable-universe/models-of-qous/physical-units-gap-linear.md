@@ -11,7 +11,7 @@ $$
   \frac{q\,(q-1)(q+1)}{2},
 $$
 
-*so the physically normalised gap vanishes **linearly** in
+*so the gap in physical units vanishes **linearly** in
 $h = q - 1$ as $q \to 1$, while the categorical bound $\Delta_q$
 itself vanishes cubically.  Both vanish identically at $q = 1$.*
 

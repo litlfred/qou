@@ -1,9 +1,12 @@
 import Mathlib.GroupTheory.FreeAbelianGroup
+import Mathlib.GroupTheory.QuotientGroup.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 import QOU.Archimedean.BlochWignerMathlibFiller
+import QOU.Archimedean.DilogarithmArchimedeanLimit
 
 
 /-!
@@ -65,10 +68,14 @@ abbrev PreBlochGroup (F : Type*) [Zero F] [One F] [DecidableEq F] :=
     here we take the predicate as a class hypothesis to keep the
     file scoped. -/
 class HasPentagonRelation
-    (F : Type*) [Zero F] [One F] [DecidableEq F] : Prop where
-  /-- The pentagon relation defines an additive sub-group of the
-      free abelian group. -/
-  pentagon_subgroup_exists : True
+    (F : Type*) [Zero F] [One F] [DecidableEq F] where
+  /-- The 5-term pentagon relations span an additive **subgroup** of
+      the free abelian pre-Bloch group. Encoded as the genuine
+      `AddSubgroup (PreBlochGroup F)` carrier (not a `True`
+      placeholder) — Mathlib's `AddSubgroup` is the real object; the
+      conjectural input is its concrete generating set (the pentagon-
+      shaped relations), carried abstractly here. -/
+  pentagon_subgroup : AddSubgroup (PreBlochGroup F)
 
 /-- **`BlochGroup F` as a quotient (axiomatised).** With the
     pentagon-relation class in scope, `BlochGroup F` is the
@@ -77,12 +84,22 @@ class HasPentagonRelation
     elements via the canonical projection. -/
 class HasBlochGroup
     (F : Type*) [Zero F] [One F] [DecidableEq F]
-    [HasPentagonRelation F] : Prop where
-  /-- The Bloch group quotient exists as an abelian group. -/
-  bloch_quotient_is_abelian : True
-  /-- The Bloch group has a Bloch-Wigner regulator
-      `D : BlochGroup F → ℝ` whose kernel is torsion. -/
-  bloch_wigner_regulator_exists : True
+    [HasPentagonRelation F] where
+  /-- The **Bloch-Wigner regulator** as a genuine additive-group
+      homomorphism `D` from the Bloch group quotient
+      `PreBlochGroup F ⧸ pentagon_subgroup` to `ℝ` (not a `True`
+      placeholder). The quotient `AddCommGroup` is Mathlib's real
+      `QuotientAddGroup` construction; the regulator's defining
+      values on generators (the Bloch-Wigner function `D(z)`) are
+      the conjectural analytic input, carried abstractly by the hom
+      field. -/
+  regulator :
+    (PreBlochGroup F ⧸ HasPentagonRelation.pentagon_subgroup (F := F)) →+ ℝ
+  /-- The regulator's kernel is a torsion subgroup — the genuine
+      torsion-kernel content (§3b-tax shape of the claim): every
+      kernel element has finite additive order. -/
+  kernel_torsion :
+    ∀ x ∈ regulator.ker, ∃ k : ℕ, 0 < k ∧ k • x = 0
 
 /-! ## (2) Pentagon identity for `Cl_2` -/
 
@@ -97,12 +114,23 @@ class HasBlochGroup
     identity for `Im(Li_2)`. Full proof requires Mathlib's Fourier
     infrastructure (sine-series rearrangements). We axiomatise the
     identity as a class hypothesis. -/
-class Cl_2_PentagonHolds : Prop where
-  /-- The 5-term sine pentagon for Cl_2 holds. -/
-  pentagon_holds_general : True
-  /-- A specific instance: the Spence-style identity at the cube
-      roots of unity, `Cl_2(π/3)` arithmetic. -/
-  pentagon_at_pi_third : True
+class Cl_2_PentagonHolds where
+  /-- The pentagon-closure predicate on 5-tuples of angles: the
+      imaginary-part projection of the standard `Li_2` 5-term
+      relation. Its concrete defining equation is the open
+      Fourier-rearrangement input Mathlib lacks; the class carries
+      it abstractly as a hypothesis datum. -/
+  closure : (Fin 5 → ℝ) → Prop
+  /-- The 5-term sine pentagon for `Cl_2`: every `closure`-related
+      5-tuple `c` lying in the fundamental domain `(0, 2π)` makes
+      the alternating `Cl_2` sum vanish. This is the genuine
+      *vanishing* content (not a tautology), conditional on the
+      abstract closure datum above — the §3b-tax "shape of the
+      claim". -/
+  pentagon_holds_general :
+    ∀ c : Fin 5 → ℝ,
+      closure c → (∀ i, 0 < c i ∧ c i < 2 * Real.pi) →
+      Cl_2 (c 0) - Cl_2 (c 1) + Cl_2 (c 2) - Cl_2 (c 3) + Cl_2 (c 4) = 0
 
 /-- **Conditional theorem (sorry-free).** Given the pentagon-holds
     class, the trivial 0-instance of the pentagon identity at all
@@ -135,12 +163,24 @@ theorem Cl_2_pentagon_at_zero
     substantive-fillers level. -/
 -- Ref: [faddeev1994] DOI 10.1142/S0217732394002793
 class FaddeevKashaevQuasiClassicalLimit
-    (x : ℝ) : Prop where
-  /-- The convergence holds in the Faddeev-Kashaev sense. The
-      precise epsilon-delta statement is in the upstream
-      `ArchimedeanLimit x` class; this class is its named
-      surrogate at the substantive-fillers level. -/
-  convergence_holds : True
+    (x : ℝ) where
+  /-- The joint-scaling sequence `q_n → 1` realising the
+      Faddeev-Kashaev limit (the `n → ∞, n(1-q_n) → ∞` regime). -/
+  q : ℕ → ℝ
+  /-- The scaling is admissible: `q_n → 1`. (The companion
+      `n(1-q_n) → ∞` divergence is the open analytic input; carried
+      abstractly with the convergence field below.) -/
+  q_tendsto_one : Filter.Tendsto q Filter.atTop (nhds 1)
+  /-- **The Faddeev-Kashaev quasi-classical limit, stated.** Along
+      the admissible scaling, `(1 - q_n) · log Φ_n(x; q_n) → Li_2(x)`,
+      where `Φ_n = partialProductLocal q x n`. This is the genuine
+      `Tendsto` content of the convergence (not a `True`
+      placeholder) — the §3b-tax "shape of the claim"; the analytic
+      Tauberian estimate closing it is the open Mathlib input. -/
+  convergence_holds :
+    Filter.Tendsto
+      (fun n => (1 - q n) * Real.log (QOU.QPochhammer.partialProductLocal (q n) x n))
+      Filter.atTop (nhds (QOU.QPochhammer.LiTwo x))
 
 /-- **Conditional theorem (sorry-free).** Given the
     Faddeev-Kashaev class, the boundary case at `x = 0` is
@@ -161,7 +201,7 @@ theorem faddeev_kashaev_at_zero
     closure plus the Faddeev-Kashaev archimedean-limit closure
     plus the BlochGroup quotient. -/
 class HasAllSubstantiveFillers
-    (F : Type*) [Zero F] [One F] [DecidableEq F] : Prop where
+    (F : Type*) [Zero F] [One F] [DecidableEq F] where
   pentagon_relation : HasPentagonRelation F
   bloch_group : @HasBlochGroup F _ _ _ pentagon_relation
   cl_2_pentagon : Cl_2_PentagonHolds

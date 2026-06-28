@@ -108,7 +108,7 @@ underlying:*
 5. *(Open) Geometric derivation of $\alpha^* \approx G/3$ from
    Borromean-volume / $|S_4|$ geometry.*
 
-**Why this matters for the 6-term formula.**
+**Significance for the 6-term formula.**
 *The Frobenius-antipode framework simultaneously:*
 
 - *Provides Term 5's chirality factor algebraically

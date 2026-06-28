@@ -1,53 +1,56 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.ArchimedeanUniverse.mi_sw_cartan_reduction
 
-**Placeholder canonical** for content block
+Content block
 [`lem:mi-sw-abelianisation-cartan`](../../../quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.md): *Cartan reduction recovers the Seiberg--Witten differential*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ArchimedeanUniverse.mi_sw_cartan_reduction` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+## Lean structure
+
+The claim is the geometric identification, on the exceptional divisor
+`𝒮_c ≅ ℙ¹(ℂ)`, of the Cartan component `A⁰` of the reduced connection
+with the local coordinate `1`-form `X · dz` and the Seiberg–Witten
+differential `λ_SW`:
+
+```
+A⁰ = X · dz = λ_SW.
+```
+
+These three real quantities are opaque outputs of the abelianisation /
+Cartan-reduction construction; there is no faithful Mathlib structure
+that *forces* their equality, so neither pattern A (compute) nor
+pattern B (Mathlib derive) applies.  Per the vacuity-fix playbook
+(pattern C) the honest disposition is to **name** the conditional
+conjecture as a `def : Prop` over the three quantities, rather than to
+fake a proof by projecting a `claim_*` field that already asserts it.
+Naming a construction is not a logical claim (AGENTS.md §3b).
+
+## References
+
+- [manuscript] quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.md.
 -/
 
 namespace QOU.ArchimedeanUniverse
 
+/-- **Statement** ([`lem:mi-sw-abelianisation-cartan`]):
+    Cartan reduction recovers the Seiberg–Witten differential.
 
-/-- Abstract context for the `mi_sw_cartan_reduction` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class MiSwCartanReductionContext where
-  /-- Cartan component `A⁰` of the reduced connection. -/
-  A_0 : ℝ
-  /-- Local coordinate function value `X · dz` evaluated at the
-      relevant point. -/
-  X_dz : ℝ
-  /-- Seiberg-Witten differential `λ_SW`. -/
-  lambda_SW : ℝ
-  /-- Manuscript identity: `A⁰ = X · dz = λ_SW` (the Cartan component
-      recovers the SW differential). -/
-  claim_mi_sw_cartan_reduction : A_0 = X_dz ∧ X_dz = lambda_SW
+    On the exceptional divisor `𝒮_c ≅ ℙ¹(ℂ)` the principal
+    `SU(2)`-bundle trivialises, the connection `∇_A` reduces to a
+    `𝔰𝔲(2)`-valued `1`-form, and its Cartan component `A⁰` satisfies
 
-/-- **Lemma statement** (from manuscript):
+    `A⁰ = X · dz = λ_SW`,
 
-On the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
-the principal $\mathrm{SU}(2)$-bundle trivialises, the connection
-$\nabla_A$ reduces to a $\mathfrak{su}(2)$-valued $1$-form, and its
-Cartan component satisfies*
+    recovering the Seiberg–Witten differential.
 
-$$
-  A^0 = X\, dz = \lambda_{\mathrm{SW}},
-$$
-
-*recovering the Seiberg--Witten differential.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.ts
-theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] :
-    ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW :=
-  ctx.claim_mi_sw_cartan_reduction
+    This `def : Prop` **names** the conjectural identification over the
+    three geometric quantities (the Cartan component `A_0`, the local
+    coordinate form `X_dz`, and the SW differential `lambda_SW`); it is
+    an open categorical fact, carried honestly rather than projected
+    from a self-asserting class field. -/
+-- Ref: [manuscript] quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.md
+def mi_sw_cartan_reduction (A_0 X_dz lambda_SW : ℝ) : Prop :=
+  A_0 = X_dz ∧ X_dz = lambda_SW
 
 end QOU.ArchimedeanUniverse

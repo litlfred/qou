@@ -72,7 +72,7 @@ a probability measure). The Markov-trace direct compute at $q_0$ gives
 $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$ (consistent with the
 $y_\lambda(q_0) \cdot \chi_\lambda(q_0)$ sum).
 
-## Why this matters
+## Significance
 
 The per-block Hopf-Jones absorption pattern is the **structural
 foundation** for extending [Fact 3](#prop:q-beta-c3-hopf-three-fold-markov)

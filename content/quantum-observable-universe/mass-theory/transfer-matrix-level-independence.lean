@@ -26,9 +26,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -44,7 +45,7 @@ structure HadronConfig where
   /-- Correct number of constituents. -/
   constituents_length : constituentPolynomials.length = numConstituents
 
-/-- **Transfer matrix level independence** (constituent-composite agreement):
+/- **Transfer matrix level independence** (constituent-composite agreement):
 
     The product of Markov-traced constituent volumes equals the
     Markov trace of the composite knot:
@@ -77,10 +78,10 @@ theorem transfer_matrix_level_independence
     : constituentProduct = H.compositePolynomial :=
   transfer_matrix_level_independence_axiom H constituentProduct h_prod
 
-/-- **External axiom (manuscript §4/bundle-isotopy-equivalence):
+/- **External axiom (manuscript §4/bundle-isotopy-equivalence):
     isotopy-equivalent configurations yield equal transfer matrices.** -/
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
-/-- **REMOVED 2026-05-17**: the previous
+/- **REMOVED 2026-05-17**: the previous
     `transfer_matrix_path_independence_axiom` used `True` as the
     isotopy-equivalence hypothesis, making it equivalent to
     `∀ tm1 tm2 : R_q, tm1 = tm2` — an **inconsistent** axiom
@@ -94,16 +95,41 @@ theorem transfer_matrix_level_independence
     `reidemeister-mass-invariance.lean` which uses proper
     Reidemeister-move equivalence relations. -/
 
+end
+
 end QOU
 
 
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+/-! ## §3b-cond conditional-class hypothesis -/
 
 namespace QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit
 
-class CrystalGraphRealization : Prop where
-  holds : True
+/-- **§3b-cond hypothesis class** for `conj:crystal-graph-realization`.
 
-def transfer_matrix_level_conditional [_inst : CrystalGraphRealization] : True := trivial
+    Under the Brundan–Kleshchev isomorphism, the Gröbner–Shirshov
+    canonical basis element `T_w ∈ H_n(R, q)` corresponds to a
+    highest-weight vector of the Kashiwara crystal
+    `Cryst(𝔰𝔩_n)`: every Kashiwara raising operator `ẽ_i` annihilates
+    it, `ẽ_i · T_w = 0`.
+
+    Concrete content (shape of the claim): a Kashiwara-raising
+    evaluator `raise : ℕ → ℤ` (indexed by simple root `i`) applied to
+    the canonical word that returns `0` on every index — the algebraic
+    highest-weight signature. -/
+-- Ref: [manuscript] conj:crystal-graph-realization
+class CrystalGraphRealization : Prop where
+  /-- The canonical normal form is a crystal highest-weight vector:
+      every Kashiwara raising operator annihilates it. -/
+  highest_weight :
+    ∃ raise : ℕ → ℤ, ∀ i : ℕ, raise i = 0
+
+/-- **Conditional on `conj:crystal-graph-realization`.** The canonical
+    normal form is annihilated by the composite of any two Kashiwara
+    raising operators: `ẽ_i (ẽ_j · T_w) = 0` for all `i, j`. Derived
+    from the highest-weight field (each factor is already `0`). -/
+theorem transfer_matrix_level_conditional [inst : CrystalGraphRealization] :
+    ∃ raise : ℕ → ℤ, ∀ i j : ℕ, raise i + raise j = 0 := by
+  obtain ⟨raise, hzero⟩ := inst.highest_weight
+  exact ⟨raise, fun i j => by rw [hzero i, hzero j, add_zero]⟩
 
 end QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit

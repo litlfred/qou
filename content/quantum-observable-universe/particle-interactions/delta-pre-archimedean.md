@@ -28,7 +28,7 @@ $$
   \;\neq\; \tau\bigl(x_{\mathfrak n} - x_{\mathfrak p}\bigr).
 $$
 
-## What is proved vs. what is expository (the clarification)
+## Proved content vs. expository content (the clarification)
 
 This distinction is easy to blur; the paper means all three of the
 following, and only the first two are theorems:
@@ -73,7 +73,7 @@ following, and only the first two are theorems:
    difference observable $\mathfrak{Q}_\beta$ (plus the electron: $\mathfrak{Q}_\beta =
    \Delta_{pn} - m_e$), i.e. the delta-then-archimedean route.
 
-## Why the order is forced for binding
+## Necessity of the ordering for binding
 
 Folding/unfolding is the engine of the binding/$\mathfrak{Q}_\beta$ derivations
 (Hecke reduction to normal form, bar-symmetric channel sorting). By (1)

@@ -39,7 +39,7 @@ are **sibling dynamics** — the two real slices of a single complex
 evolution $(\partial_\tau - \Delta_q) u = 0$ with
 $\tau = t + i\varTheta$, a complex Reeb-time.
 
-**What Wick rotation exchanges.**
+**Exchanges under Wick rotation.**
 
 1. **Heat kernel $\leftrightarrow$ propagator.** The $q$-heat kernel
  $K_q(t; x, y)$ and the Schrödinger propagator

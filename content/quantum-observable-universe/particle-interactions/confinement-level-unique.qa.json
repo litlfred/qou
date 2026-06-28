@@ -1574,7 +1574,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-unique.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "confinement-level-unique.lean:1 — content/quantum-observable-universe/particle-interactions/confinement-level-unique.lean:32:15: error: Function expected at"
+        "evidence": "confinement-level-unique.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/confinement-level-unique.lean:32:15: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -1599,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

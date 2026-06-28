@@ -21,7 +21,7 @@ $$
 time — far faster than the Hoefsmit-seminormal path
 ($O(p(n) \cdot \dim_\lambda^2 \cdot \ell(w))$).*
 
-## Why this is significant
+## Significance
 
 Three orthogonal speedups combine:
 

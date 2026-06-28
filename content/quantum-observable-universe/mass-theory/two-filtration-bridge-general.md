@@ -84,7 +84,7 @@ So chiral pair $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 3$.
 
 $\square$
 
-### What the proof gives in full generality
+### Generality of the proof
 
 The argument is *structural*, not case-by-case:
 
@@ -100,12 +100,12 @@ See [Table](#tbl:two-filtration-bridge-general-table-data).
 (Self-conjugate partitions of $n$ are in bijection with partitions of
 $n$ into distinct odd parts — a classical result.)
 
-### Consequences
+### Corollaries
 
 **Generalises round 9**: the small-cases bridge verification
 at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 
-**Consequence for B1**:
+**Corollary for B1**:
 - For each self-conjugate cell, B1's depth-2 row is theorem-level
  (combining Bloch–Suslin + per-knot VC where available).
 - For each chiral pair, B1's depth-3 row is conditional on the CS

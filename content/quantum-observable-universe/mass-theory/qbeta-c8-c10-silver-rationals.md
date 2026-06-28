@@ -21,7 +21,7 @@ $$
 PURE σ-action rung with no averaging-resonance $\tfrac{1}{2}$
 fingerprint.*
 
-## Why these values matter
+## Significance of these values
 
 The Pell-Lucas-clean classification at the silver ratio is the
 **structural signal** for the $\mathfrak{Q}_\beta$ c_k precision ladder. Per the

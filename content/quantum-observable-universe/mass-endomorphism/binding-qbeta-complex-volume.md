@@ -57,7 +57,7 @@ of `binding_canonical`. Read over $\mathbb{C}$ the defect carries **one
 bit more information than either observable alone**: its two
 bar-parities.
 
-## Why Re/Im is forced — the bar-parity = the complexification
+## Forcing of Re/Im — the bar-parity = the complexification
 
 Write $q = e^{\lambda}$, $\lambda = \log q$. The two crossing
 eigenvalues $q, -q^{-1}$ split as
@@ -84,7 +84,7 @@ The mass/binding channel is the **volume** (real, $\cosh$) part; the
 decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
 *same* $\mathfrak{V}$.
 
-## What is proved, and the fibre-level caveat
+## Established results, and the fibre-level caveat
 
 - **Proved (algebra).** The bar-parity decomposition
   $\tfrac{q+q^{-1}}{2}\pm\tfrac{q-q^{-1}}{2} = q^{\pm1}$ holds over any
@@ -123,7 +123,7 @@ witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
 the two parities are exactly what Re/Im components of one complex
 $c_2$ predict.
 
-## Consequence — one story, and one proof
+## Corollary — one story, and one proof
 
 Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter are **one derivation**: compute the complex

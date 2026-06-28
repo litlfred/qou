@@ -1,0 +1,86 @@
+{
+ "engine": "mpmath",
+ "engineVersion": "mpmath 50dps on canonical witnesses",
+ "computedAt": "2026-06-28T06:19:05.559326+00:00",
+ "computation": "delta-lambda-cancellation-ascaling-probe",
+ "scriptFile": "delta_lambda_cancellation_ascaling_probe.py",
+ "scriptHash": "c9f18af316a2",
+ "description": "SIGNED net/target = \u03a3_\u03bb y_\u03bb \u03c7^\u03bb sgn(w\u2080^{S_\u03bb'}) dim_q,\u03bb (closure \u21d2 +1) for D/T/\u00b3He/\u2074He under classic + 3 q-dim conventions. As the convention grows the net grows NON-UNIFORMLY in A: heavy isotopes (\u00b3He 1.27, \u2074He 1.31 at fake-degree) overshoot while light ones (D 0.28, T 0.91) undershoot. NO single convention lands all four near +1 \u27f9 no flat q-dim convention reproduces binding's A-scaling; the closure object must be A-/\u03bb-structured (route (ii)/(iii) or a structured kernel, e.g. z2bn q-Gaussian/Habiro EGF #2899). Scope (a), not a (b) exclusion. Sign on transpose \u03bb' (proven form PR #2416).",
+ "scope": "(a) scope-limited \u2014 the 3 flat q-dim conventions fail the A-scaling closure test",
+ "parameters": {
+  "q_0": 1.1099785955573347,
+  "m_e_MeV": 0.51099895069
+ },
+ "data": {
+  "rows": [
+   {
+    "atom": "D",
+    "A": 2,
+    "B_AME_MeV": 2.224566,
+    "net_over_target": {
+     "classic": 0.17085186593588303,
+     "balanced": 0.1802576137738499,
+     "unbalanced": 0.2187788912611763,
+     "fake_degree": 0.2769300513801864
+    }
+   },
+   {
+    "atom": "T",
+    "A": 3,
+    "B_AME_MeV": 8.481798,
+    "net_over_target": {
+     "classic": 0.2250151160229988,
+     "balanced": 0.2952067969883689,
+     "unbalanced": 0.5677191944124267,
+     "fake_degree": 0.9078541182549537
+    }
+   },
+   {
+    "atom": "3He",
+    "A": 3,
+    "B_AME_MeV": 7.718043,
+    "net_over_target": {
+     "classic": 0.30378240760528336,
+     "balanced": 0.4016024078189423,
+     "unbalanced": 0.7831453956280945,
+     "fake_degree": 1.2703259122989523
+    }
+   },
+   {
+    "atom": "4He",
+    "A": 4,
+    "B_AME_MeV": 28.295673,
+    "net_over_target": {
+     "classic": 0.1073728468868487,
+     "balanced": 0.20601384482255988,
+     "unbalanced": 0.652882613506759,
+     "fake_degree": 1.3134349405876835
+    }
+   }
+  ],
+  "per_convention_isotope_spread": {
+   "classic": {
+    "min": 0.1073728468868487,
+    "max": 0.30378240760528336,
+    "ratio": 2.829229329510228
+   },
+   "balanced": {
+    "min": 0.1802576137738499,
+    "max": 0.4016024078189423,
+    "ratio": 2.2279358935861104
+   },
+   "unbalanced": {
+    "min": 0.2187788912611763,
+    "max": 0.7831453956280945,
+    "ratio": 3.5796204611585787
+   },
+   "fake_degree": {
+    "min": 0.2769300513801864,
+    "max": 1.3134349405876835,
+    "ratio": 4.742840056691862
+   }
+  },
+  "any_convention_closes_all_four": false
+ },
+ "allPassed": true
+}

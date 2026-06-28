@@ -35,7 +35,7 @@ $\mathcal{P}_n / \mathcal{P}_{n-1}$.*
 | 2 | $\mathrm{Li}_2^q$ | hyperbolic 3-mfld volumes (Bloch–Wigner regulator) |
 | $n$ | $\mathrm{Li}_n^q$ | weight-$n$ multiple polylogs (Goncharov motivic) |
 
-### Why this is the right structural statement
+### Structural content of the statement
 
 The classical Mikusiński operational calculus on $C[0,\infty)$ takes
 $f * g \mapsto \tilde f \cdot \tilde g$ under Laplace, turning ODEs

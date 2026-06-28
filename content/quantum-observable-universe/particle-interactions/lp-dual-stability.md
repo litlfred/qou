@@ -22,7 +22,7 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
 
 3. *The $B_3$ sub-braid $\sigma_0\sigma_1^{-1}$ is LP-unstable:
    $G\vec{x}$ has a negative $\sigma_0$ component $\approx -0.106$.
-   This means partial confinement (1 of 3 $B_3$ units) is not
+   Hence partial confinement (1 of 3 $B_3$ units) is not
    sufficient --- all three units are required.*
 
 4. *Strong duality holds: $\mathrm{tr}_M(x^*) = y_0^* \cdot
@@ -37,7 +37,7 @@ sub-unit is not.**  This is the precise algebraic statement of
 confinement: the gluon field ($B_3 = (\sigma_0\sigma_1^{-1})^3$)
 contains an LP-unstable intermediate ($\sigma_0\sigma_1^{-1}$),
 but the full 3-fold Borromean product restores stability.
-Physically: the confinement mechanism is not that quarks are
+The confinement mechanism is not that quarks are
 unstable, but that the **binding operator** requires a
 topologically complete (Borromean) structure to be stable.
 

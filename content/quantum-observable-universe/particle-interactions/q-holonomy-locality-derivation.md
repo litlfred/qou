@@ -74,7 +74,7 @@ $$
 The scalar obstruction — the only failure mode — would be a
 non-abelian monodromy, ruled out by flatness. $\square$
 
-## Where flatness fails
+## Failure of flatness
 
 Flatness is equivalent to the **semisimplicity** of the braided
 tensor category of $U_q(\mathfrak{sl}_2)$-representations:

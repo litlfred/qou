@@ -23,7 +23,7 @@ residual in
 | $m_\mu/m_e$ (CODATA 2022) | $206.7682830\ldots$ | empirical |
 | relative residual | $1.45 \times 10^{-30}$ ppm | — |
 
-## Why the residual is structurally zero (not "small")
+## Structural vanishing of the residual (not "small")
 
 The 50-dps residual is $\sim 10^{-30}$ ppm — *not* a fit, *not* a
 coincidence, *not* a fortunate cancellation. It is exactly the

@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "727d433b4e88",
-    "ts": "cedd5782821b",
+    "ts": "e87f92683843",
     "lean": "860777419ba2"
   },
   "criteria": {
@@ -1322,7 +1322,7 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
-        "notes": "Statement + proof + representation-theoretic structure sections (Kashiwara/JM/Macdonald/Habiro) are mathematical content, not physical interpretation; status/provenance framing is held in authorNotes per §4d."
+        "notes": "Statement + proof + representation-theoretic structure sections (Kashiwara/JM/Macdonald/Habiro) are mathematical content, not physical interpretation; status/provenance framing is held in authorNotes per \u00a74d."
       },
       {
         "field_hash": {
@@ -1340,7 +1340,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "tau-M-asymptotic-rep-theory.md:132-217: `## Representation-theoretic structure of the rung coefficients` + `## Synthesis` append extended four-anchor exposition after the Proof.",
-        "notes": "Conditional banner is correctly in-prose (§3b-cond). The appended Synthesis material is mathematical structure (Kashiwara/JM/Macdonald/Habiro anchors), not physical 'why this matters'; borderline but not a linked remark."
+        "notes": "Conditional banner is correctly in-prose (\u00a73b-cond). The appended Synthesis material is mathematical structure (Kashiwara/JM/Macdonald/Habiro anchors), not physical 'why this matters'; borderline but not a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1376,7 +1376,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "τ_M precision-ladder rep theory feeding the Q_β/mass derivation; in mass-endomorphism scope."
+        "notes": "\u03c4_M precision-ladder rep theory feeding the Q_\u03b2/mass derivation; in mass-endomorphism scope."
       }
     ],
     "wall-side-statement": [
@@ -1412,7 +1412,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the categorical/fibre u-ladder factorisation (cos, ℏ_q, √q-bearing b_λ) in the qbeta chapter, carrying the §3b-cond conditional banner; cos/ℏ_q are the ladder's intrinsic fibre structure, not a smuggled archimedean evaluation."
+        "notes": "Statement is the categorical/fibre u-ladder factorisation (cos, \u210f_q, \u221aq-bearing b_\u03bb) in the qbeta chapter, carrying the \u00a73b-cond conditional banner; cos/\u210f_q are the ladder's intrinsic fibre structure, not a smuggled archimedean evaluation."
       }
     ],
     "wall-side-proof": [
@@ -1448,7 +1448,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof argues parity (bar involution q↔q⁻¹), q=1 baseline, 1-d triviality, and the proved c_2=-1 seed — categorical/algebraic, no IVT/continuity/numeric-q evaluation."
+        "notes": "Proof argues parity (bar involution q\u2194q\u207b\u00b9), q=1 baseline, 1-d triviality, and the proved c_2=-1 seed \u2014 categorical/algebraic, no IVT/continuity/numeric-q evaluation."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1485,7 +1485,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "tau-M-asymptotic-rep-theory.md:19-27 boxed claim `τ_M^{V_λ}(β) = Tr ρ_λ(β)·cos(α_λ - b_λℏ_q²/2)·∏_k(1+c_k u_λ^k)`; tau-M-asymptotic-rep-theory.lean:108-120 `theorem tau_M_asymptotic_rep_theory` concludes only `c_k 0 = 0 ∧ c_k 1 = b_lambda ∧ power_sum 1 q = 0`.",
+        "evidence": "tau-M-asymptotic-rep-theory.md:19-27 boxed claim `\u03c4_M^{V_\u03bb}(\u03b2) = Tr \u03c1_\u03bb(\u03b2)\u00b7cos(\u03b1_\u03bb - b_\u03bb\u210f_q\u00b2/2)\u00b7\u220f_k(1+c_k u_\u03bb^k)`; tau-M-asymptotic-rep-theory.lean:108-120 `theorem tau_M_asymptotic_rep_theory` concludes only `c_k 0 = 0 \u2227 c_k 1 = b_lambda \u2227 power_sum 1 q = 0`.",
         "notes": "The Lean conclusion is a conjunction of three low-order class-field pinnings, NOT the narrative factorisation identity. The full ladder/cos/Tr factorisation the .md states is absent from the Lean; conclusions differ substantively."
       }
     ],
@@ -1526,7 +1526,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.85 — plan stated up front (proved data enumerated; case split by irrep dimension; named cited lemmas)."
+        "notes": "score 0.85 \u2014 plan stated up front (proved data enumerated; case split by irrep dimension; named cited lemmas)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1566,7 +1566,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.4 — proved rungs (c_0, 1-d, N=1 b, c_2=-1) are sorry-free; the open higher rungs hinge on the R(q,ξ) kernel = s5-so3 keystone (core, research-grade)."
+        "notes": "score 0.4 \u2014 proved rungs (c_0, 1-d, N=1 b, c_2=-1) are sorry-free; the open higher rungs hinge on the R(q,\u03be) kernel = s5-so3 keystone (core, research-grade)."
       }
     ],
     "proof-rater-novelty": [
@@ -1606,7 +1606,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.8 — synthesis of four complementary rep-theory anchors into one ladder is a non-redundant framing."
+        "notes": "score 0.8 \u2014 synthesis of four complementary rep-theory anchors into one ladder is a non-redundant framing."
       }
     ],
     "proof-statement-integrity": [
@@ -1679,8 +1679,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
-        "evidence": "tau-M-asymptotic-rep-theory.lean:117-120: `refine ⟨?_,?_,?_⟩; · exact KashiwaraCrystal.c_0_zero; · exact KashiwaraCrystal.c_1_eq_b; · exact JucysMurphySpectrum.p_1_vanish q` — each conjunct of the goal IS a class field handed straight back.",
-        "notes": "The conclusion `c_k 0 = 0 ∧ c_k 1 = b_lambda ∧ power_sum 1 q = 0` is exactly the three class fields `c_0_zero`, `c_1_eq_b`, `p_1_vanish`; the proof projects them verbatim (P ⊢ P). No derivation/composition; the Macdonald and Habiro instance hypotheses are unused. This is the self-assuming-projection anti-pattern."
+        "evidence": "tau-M-asymptotic-rep-theory.lean:117-120: `refine \u27e8?_,?_,?_\u27e9; \u00b7 exact KashiwaraCrystal.c_0_zero; \u00b7 exact KashiwaraCrystal.c_1_eq_b; \u00b7 exact JucysMurphySpectrum.p_1_vanish q` \u2014 each conjunct of the goal IS a class field handed straight back.",
+        "notes": "The conclusion `c_k 0 = 0 \u2227 c_k 1 = b_lambda \u2227 power_sum 1 q = 0` is exactly the three class fields `c_0_zero`, `c_1_eq_b`, `p_1_vanish`; the proof projects them verbatim (P \u22a2 P). No derivation/composition; the Macdonald and Habiro instance hypotheses are unused. This is the self-assuming-projection anti-pattern."
       }
     ],
     "proof-no-trivial-true": [
@@ -2054,5 +2054,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

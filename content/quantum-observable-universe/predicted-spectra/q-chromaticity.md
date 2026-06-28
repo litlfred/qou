@@ -65,7 +65,7 @@ lie *outside* all three $S_3$ subgroups act by **conjugation**,
 permuting the three color sectors among themselves — this is the
 $S_5$-theoretic origin of the color permutation symmetry of QCD.
 
-**Why confinement is necessary.**
+**Necessity of confinement.**
 
 In Feynman's language: some spectral colors lie outside the triangle
 of primaries, requiring negative coefficients.  In QOU language:

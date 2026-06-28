@@ -77,13 +77,3 @@ $$
 where $\mathrm{cr}(\pi)$ is the number of crossings of $\pi$. This
 matches Blitvić's $(q, t)$-Gaussian moment formula
 [`blitvic2012`, eq. (1.2)] at parameter $(q, t = 1)$. $\square$
-
-**Remark on crossing exponent.** The crossing-count exponent
-$q^{\mathrm{cr}(\pi)}$ arises from the braid relation
-$\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$:
-each non-trivial reordering of a crossing pair contributes one
-factor of $q$ (positive crossing) or $q^{-1}$ (negative crossing).
-The Blitvić $(q, t)$-Gaussian recovers this exact crossing-weighted
-combinatorics. Our use of $q$ throughout fixes a sign convention;
-the corresponding $t$ parameter in Blitvić's framework is $t = 1$,
-which is the standard fermionic/Hecke case.

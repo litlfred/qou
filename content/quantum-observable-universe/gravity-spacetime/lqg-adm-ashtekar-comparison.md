@@ -80,7 +80,7 @@ well-known obstructions of the canonical programmes:
    produces the real Lorentzian archimedean projection without
    imposing reality conditions by hand.
 
-## What QOU does not claim
+## Limitations of the claim
 
 The dictionary does not claim that QOU *derives* LQG from first
 principles; canonical loop quantum gravity is a self-contained

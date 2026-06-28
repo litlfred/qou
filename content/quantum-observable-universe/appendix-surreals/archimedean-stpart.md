@@ -75,7 +75,7 @@ This conjecture is the **categorical** counterpart of
 The two conjectures are likely equivalent modulo functoriality,
 but a precise reduction is open.
 
-## What this would unlock
+## Consequences of the lift
 
 If true, the appendix's $\varepsilon$-relaxation is a *strict*
 generalisation of the main paper:
@@ -86,8 +86,8 @@ generalisation of the main paper:
  counterpart; the surreal counterpart may have additional
  non-trivial first-order corrections that vanish under
  $\mathrm{St}$.
-3. Future work can investigate whether these corrections are
- physically meaningful (e.g., explain corrections to the QOU
+3. Future work can investigate whether these corrections have
+ physical significance (e.g., explain corrections to the QOU
  mass formula's $4\%$ MAE on $\mathcal{Q}$-values).
 ## Proof strategy
 

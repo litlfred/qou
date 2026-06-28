@@ -83,7 +83,7 @@ $n$ reorganise into pair + singleton at level $n$ plus a residual
 ascending to level $n+1$ — the algebraic content of the jet-tower
 ascension.
 
-## Why this matters for the mass tower
+## Significance for the mass tower
 
 The mass-tower jet form
 ([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))

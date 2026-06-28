@@ -76,7 +76,7 @@ $$
 (both SU(2)_S and SU(2)_I supermultiplets), the 4 from $A=4$
 nucleons, and the $8G$ from the Borromean hyperbolic volume scale.
 
-## Why this unlocks L3 wiring
+## Unlocking of L3 wiring
 
 The current L3 prototype script
 [`prototype_gs_nf_shell_binding.py`](../../computations/prototype_gs_nf_shell_binding.py)

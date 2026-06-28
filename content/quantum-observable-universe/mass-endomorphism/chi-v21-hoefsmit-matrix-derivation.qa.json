@@ -259,7 +259,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "evidence": "quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:1: Lean file contains both archimedean (\u211d / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers \u2014 split into two files per CLAUDE.md \u00a77c."
       }
     ],
     "wall-base-ring-minimal": [
@@ -892,7 +892,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No false claims identified in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$': mathematical reasoning is consistent.",
+        "notes": "No false claims identified in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts:1"
       }
@@ -930,7 +930,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts:1"
       }
@@ -949,7 +949,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The prose in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "notes": "The prose in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
       }
     ],
@@ -967,7 +967,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts:1"
       }
@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Key terms and symbols in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts:1"
       }
@@ -1061,7 +1061,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The algebraic and logical relations in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts:1"
       }
@@ -1080,7 +1080,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The physical concepts described in 'V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'V_(2,1) Hoefsmit 2\u00d72 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts:1"
       }
@@ -1101,7 +1101,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:130:2: error: No goals to be solved"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:130:2: error: No goals to be solved"
       }
     ],
     "da-referee-verdict": [
@@ -1125,5 +1125,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

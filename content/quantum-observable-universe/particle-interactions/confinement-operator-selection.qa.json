@@ -1284,7 +1284,7 @@
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
-        "notes": "Topological (Brunnian) selector replacing refuted min-action SDP framing; decidable B₂ sublink-triviality core is a genuine formalization contribution.",
+        "notes": "Topological (Brunnian) selector replacing refuted min-action SDP framing; decidable B\u2082 sublink-triviality core is a genuine formalization contribution.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1341,7 +1341,7 @@
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
-        "notes": "Lean faithfully states Brunnian-minimality selection + n≥3 dichotomy + Borromean at n=3; BraidModel machine-proves (decide) signature (0,0,0), counts (2,2,2), sublinks-trivial. No sorry/native_decide in-file.",
+        "notes": "Lean faithfully states Brunnian-minimality selection + n\u22653 dichotomy + Borromean at n=3; BraidModel machine-proves (decide) signature (0,0,0), counts (2,2,2), sublinks-trivial. No sorry/native_decide in-file.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1394,7 +1394,7 @@
           "ts": "e23cc3d0f3e7"
         },
         "result": "fail",
-        "notes": "Headline confinement_operator_selection composes class fields verbatim (⟨ctx.exists_impl_three_le, ctx.is_nontrivial, ctx.is_brunnian, ctx.is_minimal, ctx.borromean_identity, ctx.confine_three⟩) — conclusion IS the BorromeanConfinement fields.",
+        "notes": "Headline confinement_operator_selection composes class fields verbatim (\u27e8ctx.exists_impl_three_le, ctx.is_nontrivial, ctx.is_brunnian, ctx.is_minimal, ctx.borromean_identity, ctx.confine_three\u27e9) \u2014 conclusion IS the BorromeanConfinement fields.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1572,7 +1572,7 @@
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (§1a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
+        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
         "reviewed_at": "2026-06-25T12:27:24.000Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
@@ -1617,7 +1617,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Confinement operator selection via topological Brunnian minimality' presents substantial mathematical content: The Borromean braid $\\mathcal{B}_3 = (\\sigma_0\\sigma_1^{-1})^3$ is not asserted as the confinement operator — it is s...",
+        "notes": "The block 'Confinement operator selection via topological Brunnian minimality' presents substantial mathematical content: The Borromean braid $\\mathcal{B}_3 = (\\sigma_0\\sigma_1^{-1})^3$ is not asserted as the confinement operator \u2014 it is s...",
         "severity": "minor"
       }
     ],
@@ -1830,5 +1830,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -33,7 +33,7 @@ $$
 *with no upper-bound slack — i.e., the formula is an equality, not an
 inequality.*
 
-## Why this is an equality, not a bound
+## Equality versus bound
 
 The original "upper bound" framing came from the pentagon-ascension
 argument. By
@@ -92,7 +92,7 @@ $$
 
 as an exact equality. $\square$
 
-## What the empirical residual is, then
+## Nature of the empirical residual
 
 The empirical table on light atoms
 ([rem:mass-endomorphism-jet-tower §all-pairs vs adjacent error](#rem\:mass-endomorphism-jet-tower))

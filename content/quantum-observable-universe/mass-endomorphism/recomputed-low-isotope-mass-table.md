@@ -114,7 +114,7 @@ the derived $E_0 = m_e/(q_0(q_0-1))$ is the single-level
 absorb this $0.17\%$. Closure path: Workplan 2 Phase 2 50-dps
 $m_e^{\mathrm{Hecke}}$ lift.
 
-#### Why "single-wrap symbolic" beats the typed-crossings 6-term form
+#### Advantage of "single-wrap symbolic" over the typed-crossings 6-term form
 
 An earlier draft used the typed-crossings 6-term decomposition
 ([`beta-decay-energy-scale.md`](../particle-interactions/beta-decay-energy-scale.md))

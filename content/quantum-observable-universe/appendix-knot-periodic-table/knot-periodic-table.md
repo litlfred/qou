@@ -89,7 +89,7 @@ of partner nucleon type.  The $Q$-value of any decay
 is the difference of parent and daughter Skein polynomials,
 concentrated at the converting nucleon's generators.
 
-**Why $N > Z$ for heavy elements.**
+**Neutron excess $N > Z$ for heavy elements.**
 The neutron count $N$ exceeds $Z$ for all elements beyond
 calcium.  In the QOU framework, proton--proton Hopf crossings carry
 a repulsive Skein phase (electromagnetic charge), while

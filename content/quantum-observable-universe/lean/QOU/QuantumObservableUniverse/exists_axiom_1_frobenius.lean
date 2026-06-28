@@ -6,17 +6,23 @@ import Mathlib.Tactic
 **Placeholder canonical** for content block
 [`lem:qou-exists-axiom-1`](../../../quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.md): *Axiom 1 — Haar state gives a non-degenerate Frobenius pairing*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.QuantumObservableUniverse.exists_axiom_1_frobenius` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
--/
+The lemma is *named* as a `Prop` over a primitive-data carrier
+(pattern C of the vacuity-fix playbook) rather than asserted via a
+self-assuming projection; the `lean.ref` URI
+`qou:QOU.QuantumObservableUniverse.exists_axiom_1_frobenius`
+resolves to it.  An instance of the proposition is the open
+faithfulness claim. -/
 
 namespace QOU.QuantumObservableUniverse
 
 
-/-- Abstract context for the `exists_axiom_1_frobenius` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Carrier for the `exists_axiom_1_frobenius` data — only the
+    primitive, non-conclusory fields (pattern C): the Hopf algebra,
+    its dual, the Haar state, and the induced Frobenius pairing map.
+    The conclusion (non-degeneracy / bijectivity of the pairing) is
+    **not** a field here — it is the named proposition
+    `exists_axiom_1_frobenius` below, so the claim is stated, not
+    self-assumed. -/
 class ExistsAxiom1FrobeniusContext where
   /-- Hopf algebra carrier `A`. -/
   A : Type
@@ -26,24 +32,22 @@ class ExistsAxiom1FrobeniusContext where
   h : A → ℝ
   /-- Frobenius pairing `(a, b) ↦ h(a · b)` induced map `A → A^∨`. -/
   pairing_map : A → A_dual
-  /-- The Frobenius pairing map is injective. -/
-  pairing_inj : Function.Injective pairing_map
-  /-- The Frobenius pairing map is surjective. -/
-  pairing_surj : Function.Surjective pairing_map
 
-/-- **Lemma statement** (from manuscript):
+/-- **Axiom 1 — Haar-state Frobenius pairing** (pattern C — named,
+not asserted).
 
-The Haar state $h = \int_{A}$ on $A = \mathcal{O}_{q}(G)$ is faithful;
-equivalently, the pairing $(a, b) \mapsto h(ab)$ is non-degenerate
-and induces an isomorphism $A \xrightarrow{\sim} A^{\vee}$, verifying
-axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
+**Lemma statement** (from manuscript): the Haar state
+$h = \int_{A}$ on $A = \mathcal{O}_{q}(G)$ is faithful; equivalently,
+the pairing $(a, b) \mapsto h(ab)$ is non-degenerate and induces an
+isomorphism $A \xrightarrow{\sim} A^{\vee}$, verifying axiom~(1) of
+[quantum observable universe](#def:quantum-observable-universe).
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+We **name** non-degeneracy as the bijectivity of the induced pairing
+map — a `Prop` over the context's primitive data — rather than
+projecting it from self-assuming `pairing_inj`/`pairing_surj` fields.
+An instance of this proposition is the open faithfulness claim. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
-theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] :
-    Function.Bijective ctx.pairing_map :=
-  ⟨ctx.pairing_inj, ctx.pairing_surj⟩
+def exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] : Prop :=
+    Function.Bijective ctx.pairing_map
 
 end QOU.QuantumObservableUniverse

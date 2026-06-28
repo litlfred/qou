@@ -74,9 +74,14 @@ open HadronicMass CODATAChain ArchimedeanUniverse Torsion
 
     LaTeX: `\label{rem:lightning-path}` -/
 theorem lightning_path_synthesis :
-    -- Pillar 1: Gauge group (SU(2) emergence via det-one constraint)
-    -- Witnessed by: SU2Emergence structure with det_one field
-    True
+    -- Pillar 1: Gauge group (SU(2) emergence via det-one constraint).
+    -- The volume-determinant constraint `det(g_V) = 1` is exactly the
+    -- statement that every gauge element acts as the identity on the
+    -- exterior square `Λ²V` — the genuine `SU2Emergence.det_one` field.
+    (∀ {C : Type*} [CategoryTheory.Category C] [CategoryTheory.MonoidalCategory C]
+        {exteriorSquare : C} (emg : SU2Emergence C exteriorSquare)
+        (g : emg.gaugeGroupType),
+        emg.ext_sq_action g = CategoryTheory.CategoryStruct.id exteriorSquare)
     -- Pillar 2: Self-dual instantons
     ∧ (∀ {C : Type*} [CategoryTheory.Category C] [CategoryTheory.MonoidalCategory C]
         (fh : FrobeniusHopfData C) (inst : CategoricalInstanton fh),
@@ -93,7 +98,7 @@ theorem lightning_path_synthesis :
     -- Pillar 5: Descartes terminality
     ∧ (∀ (dc : ArchimedeanCondition) (tk : TannakaKreinRigidity),
         dc.eulerChar = -6 ∧ tk.iso_count = 1) :=
-  ⟨trivial,
+  ⟨fun emg g => emg.det_one g,
    fun _ inst => categorical_self_duality _ inst,
    fun tmd => topological_mass_decomposition tmd,
    terminal_resolution_hadronic_mass,

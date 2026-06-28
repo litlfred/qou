@@ -23,7 +23,7 @@ radon — six fully closed sub-Hopf links, every curl interlocked.
 The 87th trefoil sits alone in shell $n = 7$: a **single loose
 curl** weakly Hopf-linked to the radon core.
 
-**Why francium is extremal.**
+**Extremality of francium.**
 
 Among all stable (or near-stable) atoms, francium minimises the
 outermost crossing energy in two independent ways:

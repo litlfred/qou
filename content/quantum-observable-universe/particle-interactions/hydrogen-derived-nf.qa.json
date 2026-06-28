@@ -838,24 +838,6 @@
         "evidence": "hydrogen-derived-nf.ts:1"
       }
     ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "00e3c90803d8",
-          "ts": "45acd2e18260"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The remarks and narrative scope in 'Hydrogen: full normal form from pair production' are appropriately qualified.",
-        "severity": "minor"
-      }
-    ],
     "da-hidden-dof": [
       {
         "field_hash": {
@@ -1025,7 +1007,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Hydrogen: full normal form from pair production' are consistent."
       }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Hydrogen: full normal form from pair production' are appropriately qualified.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

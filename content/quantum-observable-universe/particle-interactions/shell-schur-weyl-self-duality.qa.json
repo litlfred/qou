@@ -1356,7 +1356,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier.",
+        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token '\u03bb'; expected '_' or identifier.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
       }
@@ -1576,7 +1576,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "shell-schur-weyl-self-duality.lean:1 — content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier"
+        "evidence": "shell-schur-weyl-self-duality.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token '\u03bb'; expected '_' or identifier"
       }
     ],
     "da-referee-verdict": [
@@ -1601,5 +1601,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

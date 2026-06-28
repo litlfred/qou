@@ -69,7 +69,7 @@ new framework derivation — but it does close the duality-tracker
 D20 entry and provides a concrete `Equiv.swap 0 1` witness usable
 in any downstream parity argument.
 
-## Why we recorded it (now closed)
+## Rationale for recording it (now closed)
 
 D20 was included in the duality tracker for **completeness**: the
 13-driver categorical menu mentions "Pontryagin / Cartier /

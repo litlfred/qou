@@ -909,7 +909,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' presents substantial mathematical content: Following the user direction \"first prove formally V\" + \"V_3 ε^k pattern\" on the...",
+        "notes": "The block 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' presents substantial mathematical content: Following the user direction \"first prove formally V\" + \"V_3 \u03b5^k pattern\" on the...",
         "severity": "minor"
       }
     ],
@@ -1098,7 +1098,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:171:36: error: unsolved goals"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:171:36: error: unsolved goals"
       }
     ],
     "da-referee-verdict": [
@@ -1122,5 +1122,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

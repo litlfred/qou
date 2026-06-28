@@ -1565,7 +1565,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Set/Finite.olean' of module Mathlib.Data.Set.Finite does not exist"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Set/Finite.olean' of module Mathlib.Data.Set.Finite does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1589,5 +1589,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

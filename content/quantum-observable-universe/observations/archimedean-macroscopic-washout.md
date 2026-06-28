@@ -1,4 +1,4 @@
-**Why bounded observers see continuous q-Gaussian distributions on
+**Origin of continuous q-Gaussian distributions for bounded observers on
 a deterministic substrate.** A macroscopic observer is bounded by the
 operational-entropy limit $\eta_q = (2q-1)/q^3$ and cannot resolve
 individual Reeb ticks; her measurement of an observable $\Phi$ is an
@@ -13,7 +13,7 @@ $G_{q_0}(t, x)$ peaked at $\mathrm{tr}_M(\Phi)$ with width
 $\sqrt{\kappa_2^{(q)}/n}$. The observer therefore registers a
 q-Gaussian bell curve, not the underlying delta-function expectation.
 
-**Why q-Gaussian rather than Gaussian.** The braid relations
+**q-Gaussian rather than Gaussian.** The braid relations
 $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$
 are global correlations across the entire braid: every generator
 talks to every other through the Hecke algebra structure. The

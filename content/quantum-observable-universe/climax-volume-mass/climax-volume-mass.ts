@@ -31,6 +31,7 @@ export default chapter({
         "nsi-q-deformed-kernel",
         "nsi-q-deformed-kernel-proof",
         "non-self-intersection-proof",
+        "non-self-intersection-interpretation",
       ],
     }),
     section({

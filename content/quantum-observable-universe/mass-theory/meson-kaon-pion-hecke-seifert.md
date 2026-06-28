@@ -89,8 +89,8 @@ proved" downstream.
 
 **The gap (NOT Lean-proved, and intentionally so):**
 
-1. **The exponent $n_q=2$** is *physically motivated* (two-quark
-   composite) and *empirically confirmed* (the power scan: $290$ ppm at
+1. **The exponent $n_q=2$** has a *physical rationale* (two-quark
+   composite) and is *empirically confirmed* (the power scan: $290$ ppm at
    $n_q=2$ vs $4.4\times 10^5$ ppm at $n_q=1$). It is **not derived** from
    the substrate; the `meson_squaring_exponent` lemma only records the
    value, it does not select it.

@@ -57,7 +57,7 @@ trajectory is the four-crossing braid $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1
 it again crosses between Heegaard tori twice, producing a
 hyperbolic complement of minimal volume.
 
-**Why this is the mass-bearing regime.**  Combining with
+**The mass-bearing regime.**  Combining with
 [Reeb-bundle complement equals volume](#prop:reeb-bundle-complement-equals-volume),
 the Markov-trace observable for a non-torus braid receives a
 non-zero topological-mass contribution proportional to

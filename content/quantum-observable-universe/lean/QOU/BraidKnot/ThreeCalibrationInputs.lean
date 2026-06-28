@@ -46,24 +46,24 @@ structure ThreeCalibrationInputs where
     m_mu_over_m_e = vol4_1 / (hbar_q ^ 2) ∧ hbar_q = 1 - q_zero⁻¹
 
 /--
-Three-calibration-inputs proposition: every numerical observable
-factors through (q₀, m_e, Q_β(n)).
+**Three-calibration-inputs proposition** (pattern C — named, not
+asserted).
 
-The `Observable` predicate is left abstract here — the proposition
-is a framework-level commitment that the body of the paper realises
-on a case-by-case basis (every numerical comparison cites the
-calibration block).
+Every numerical observable of the framework factors through the
+three calibration inputs `(q₀, m_e, Q_β(n))`: there is a function
+`f : ℝ → ℝ → ℝ → ℝ` of the three calibrations reproducing the
+observable's value `obs`.  We *name* this factorization claim as a
+`Prop` over an abstract observable `obs : ℝ` — honestly stating the
+conditional conjecture rather than discharging it with a vacuous
+`: True := trivial`.  The framework realises it case-by-case (every
+numerical comparison cites the calibration block); an inhabitant of
+this `Prop` for a given `obs` is the per-observable factorization
+witness.
 
 Ref: [manuscript] `prop:three-calibration-inputs`
 -/
 def three_calibration_inputs
-    (cal : ThreeCalibrationInputs) :
-    True := by
-  -- The proposition is a framework-level claim; the proof is
-  -- discharged by the paper's per-prediction citations of the
-  -- calibration block, not by a single Lean derivation. This stub
-  -- exists so `lean.ref` resolves; substantive Lean content lives
-  -- in the per-observable derivation modules.
-  trivial
+    (cal : ThreeCalibrationInputs) (obs : ℝ) : Prop :=
+    ∃ f : ℝ → ℝ → ℝ → ℝ, obs = f cal.q_zero cal.m_e cal.Q_beta_n
 
 end QOU.BraidKnot

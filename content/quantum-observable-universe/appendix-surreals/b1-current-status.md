@@ -47,11 +47,11 @@ After eleven rounds, B1's open content reduces to:
 
 See [Table 2](#tbl:b1-current-status-table2-data).
 
-### What rounds 1–11 added
+### Contributions of rounds 1–11
 
 See [Table 3](#tbl:b1-current-status-table3-data).
 
-### Where the framework stands
+### Status of the framework
 
 The graded-Mikusiński / Goncharov-period-correspondence framework
 is now **substantially established**:

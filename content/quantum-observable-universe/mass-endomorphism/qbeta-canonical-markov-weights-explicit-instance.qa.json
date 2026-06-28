@@ -768,7 +768,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -788,7 +788,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1238,7 +1238,7 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
-        "notes": "Statement + proof followed by an explicit 'Honest scope — what this does and does NOT establish' section plus a numerical sanity check; that is scope/applicability clarification, explicitly permitted, not mislocated physical interpretation."
+        "notes": "Statement + proof followed by an explicit 'Honest scope \u2014 what this does and does NOT establish' section plus a numerical sanity check; that is scope/applicability clarification, explicitly permitted, not mislocated physical interpretation."
       },
       {
         "field_hash": {
@@ -1319,7 +1319,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is deliberately a √q-bearing instance over the ℝ→ℝ class CanonicalMarkovWeightsH3; mass-endomorphism is an archimedean-evaluation chapter and the archimedean √q is the stated subject, not a leak."
+        "notes": "Statement is deliberately a \u221aq-bearing instance over the \u211d\u2192\u211d class CanonicalMarkovWeightsH3; mass-endomorphism is an archimedean-evaluation chapter and the archimedean \u221aq is the stated subject, not a leak."
       }
     ],
     "wall-side-proof": [
@@ -1477,7 +1477,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.9 — one-line normalisation, plan obvious (sum of weights = 1 via ring)."
+        "notes": "score 0.9 \u2014 one-line normalisation, plan obvious (sum of weights = 1 via ring)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1525,7 +1525,7 @@
           "ts": "a805e80e1a19"
         },
         "result": "pass",
-        "notes": "Inhabiting CanonicalMarkovWeightsH3 to de-vacuify downstream §3b-cond theorems is well-posed; explicit √q/(1+q) instance given.",
+        "notes": "Inhabiting CanonicalMarkovWeightsH3 to de-vacuify downstream \u00a73b-cond theorems is well-posed; explicit \u221aq/(1+q) instance given.",
         "reviewed_at": "2026-06-25T17:00:27.000Z",
         "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
@@ -1553,7 +1553,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 1.0 — sorry-free instance, no remaining gap."
+        "notes": "score 1.0 \u2014 sorry-free instance, no remaining gap."
       }
     ],
     "proof-rater-novelty": [
@@ -1629,7 +1629,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.6 — explicit inhabitability witness for a conditional class; useful but modest."
+        "notes": "score 0.6 \u2014 explicit inhabitability witness for a conditional class; useful but modest."
       }
     ],
     "proof-statement-integrity": [
@@ -1951,8 +1951,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:48-53: `sum_dim_normalised := by intro q _; ring` — the `q > 0` hypothesis (bound to `_`) is unused.",
-        "notes": "The `q > 0` hypothesis is mandated by the class field signature (`∀ q > 0, …`); the normalisation identity holds unconditionally over ℝ, so `ring` legitimately ignores it. Interface-driven, harmless — not a weakened statement."
+        "evidence": "QBetaCanonicalMarkovWeightsInstance.lean:48-53: `sum_dim_normalised := by intro q _; ring` \u2014 the `q > 0` hypothesis (bound to `_`) is unused.",
+        "notes": "The `q > 0` hypothesis is mandated by the class field signature (`\u2200 q > 0, \u2026`); the normalisation identity holds unconditionally over \u211d, so `ring` legitimately ignores it. Interface-driven, harmless \u2014 not a weakened statement."
       }
     ],
     "proof-no-decide-masking": [
@@ -2239,5 +2239,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

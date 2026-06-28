@@ -71,7 +71,7 @@ $$
 The non-vanishing is preserved under the regulator embedding into
 $\mathcal{P}_n / \mathcal{P}_{n-1}$. $\square$
 
-### What this gives QOU
+### Consequences for QOU
 
 **Soft sharpness as a theorem** is sufficient for the following
 keystone-derived claims to be theorems:
@@ -83,7 +83,7 @@ keystone-derived claims to be theorems:
 | $\mathrm{Cl}_3(2\pi/5)$ lives non-by definition in $\mathcal{P}_3/\mathcal{P}_2$ | conjectural | **theorem** (Borel + Lewin) |
 | Each numerical witness in [`rem:transcendental-accounting`](#rem:transcendental-accounting) row lands at the predicted depth | partly conjectural | **theorem** for non-triviality; depth-match is structural |
 
-### What soft sharpness does NOT give
+### Limitations of soft sharpness
 
 **Strong sharpness — $\tau_{\mathrm{arch}}(G^{(n)})$ equals all of
 $\mathcal{P}_n / \mathcal{P}_{n-1}$ over arbitrary $F$** — remains

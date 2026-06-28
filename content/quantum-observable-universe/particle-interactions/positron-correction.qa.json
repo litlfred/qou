@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/positron-correction.md"
   },
   "source_hashes": {
-    "md": "506d228871e0",
+    "md": "1d7f4d8376de",
     "ts": "6ef0ab961147"
   },
   "criteria": {
@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/positron-correction.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/positron-correction.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/positron-correction.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/positron-correction.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1245,7 +1245,7 @@
           "ts": "6ef0ab961147"
         },
         "result": "pass",
-        "notes": "Well-posed: identifies the +1 in Q as m_{e+}/m_e from γγ→e-e+ Breit-Wheeler pair vertex, applies in A=1/even-A regimes; not a fitting constant.",
+        "notes": "Well-posed: identifies the +1 in Q as m_{e+}/m_e from \u03b3\u03b3\u2192e-e+ Breit-Wheeler pair vertex, applies in A=1/even-A regimes; not a fitting constant.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "6ef0ab961147"
         },
         "result": "pass",
-        "notes": "Conjunction faithfully encodes md Q=Σ_char·m_e+m_e + regime applicability (pair-creation⇒correction=m_e, else 0) over ℝ; no :True/sorry/native_decide.",
+        "notes": "Conjunction faithfully encodes md Q=\u03a3_char\u00b7m_e+m_e + regime applicability (pair-creation\u21d2correction=m_e, else 0) over \u211d; no :True/sorry/native_decide.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "6ef0ab961147"
         },
         "result": "fail",
-        "notes": "thm := ⟨ctx.claim_i_corrected_Q, ctx.claim_ii…1, .2⟩; claim_i_corrected_Q IS the headline Q-value identity, projected from a class field. No derivation.",
+        "notes": "thm := \u27e8ctx.claim_i_corrected_Q, ctx.claim_ii\u20261, .2\u27e9; claim_i_corrected_Q IS the headline Q-value identity, projected from a class field. No derivation.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "6ef0ab961147"
         },
         "result": "pass",
-        "notes": "claim_i (Q=Σ·m_e+m_e) and claim_ii (regime-conditional correction) jointly satisfiable; no contradiction.",
+        "notes": "claim_i (Q=\u03a3\u00b7m_e+m_e) and claim_ii (regime-conditional correction) jointly satisfiable; no contradiction.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1639,7 +1639,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Positron correction to the Q-value' presents substantial mathematical content: The $+1$ additive term in the Q-value formula is not a fitting constant — it is the positron mass $m_{e^+}/m_e = 1$, ...",
+        "notes": "The block 'Positron correction to the Q-value' presents substantial mathematical content: The $+1$ additive term in the Q-value formula is not a fitting constant \u2014 it is the positron mass $m_{e^+}/m_e = 1$, ...",
         "severity": "minor"
       }
     ],
@@ -1852,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

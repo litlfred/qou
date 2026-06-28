@@ -22,7 +22,7 @@ the power series expansion of any quantum knot invariant at $q = 1$ are
 finite-type invariants, with the order matching the power of the
 deformation parameter.
 
-## What the Vassiliev grading buys
+## Content of the Vassiliev grading
 
 The graded decomposition
 $V_0 \subset V_1 \subset V_2 \subset \cdots$ of knot invariants

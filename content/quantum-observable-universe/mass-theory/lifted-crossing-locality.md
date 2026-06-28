@@ -28,7 +28,7 @@ $$
 $c$ alone, its sign $\varepsilon(c) \in \{\pm 1\}$, and the substrate
 parameter $q$ — but not on which other crossings are lifted.*
 
-## Consequence: exponential closed form
+## Corollary: exponential closed form
 
 Given locality, the crossing-graded expansion collapses:
 
@@ -44,7 +44,7 @@ $$
 For the homogeneous case $\eta(c) = 1$ for all $c$, this is 
 $(1 + \xi(q))^{c(\mathcal{K})}$.
 
-## Why locality is non-trivial
+## Non-triviality of locality
 
 Without locality, lifting two crossings $c_1, c_2$ could produce
 interference: the joint amplitude
@@ -76,7 +76,7 @@ and fails at special values:
  $z_q \to 0$ or $1$, and locality becomes vacuous since $\xi(q) = 0$.
 
 Locality holding at $q_0$ but **failing away from it** is what makes
-the substrate parameter physically distinguished: it sits in the
+the substrate parameter distinguished: it sits in the
 locality window where the crossing-graded expansion has its cleanest
 closed form.
 

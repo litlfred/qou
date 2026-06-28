@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/lp-dual-stability.md"
   },
   "source_hashes": {
-    "md": "7b2faf0b8ef8",
+    "md": "d26f7273aaad",
     "ts": "dbe01703a7f2"
   },
   "criteria": {
@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/lp-dual-stability.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1245,7 +1245,7 @@
           "ts": "dbe01703a7f2"
         },
         "result": "pass",
-        "notes": "LP dual stability of confined hadrons (Gx*≥0, bounded shadow prices, sub-braid σ₀σ₁⁻¹ unstable, strong duality) is well-posed and substantive — algebraic confinement statement.",
+        "notes": "LP dual stability of confined hadrons (Gx*\u22650, bounded shadow prices, sub-braid \u03c3\u2080\u03c3\u2081\u207b\u00b9 unstable, strong duality) is well-posed and substantive \u2014 algebraic confinement statement.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "dbe01703a7f2"
         },
         "result": "fail",
-        "notes": "Lean conjunction (Gx*≥0 ∧ |y*|≤κ‖t‖ ∧ (Gx_partial)_σ0<0 ∧ tr_M=y_0·n) faithfully states the 4 md claims but all are posited as class fields (claim_i..iv); LP-stability/duality posited, not derived from G.",
+        "notes": "Lean conjunction (Gx*\u22650 \u2227 |y*|\u2264\u03ba\u2016t\u2016 \u2227 (Gx_partial)_\u03c30<0 \u2227 tr_M=y_0\u00b7n) faithfully states the 4 md claims but all are posited as class fields (claim_i..iv); LP-stability/duality posited, not derived from G.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "dbe01703a7f2"
         },
         "result": "fail",
-        "notes": "theorem := ⟨ctx.claim_i_primal_stable, ctx.claim_ii_dual_bounded, ctx.claim_iii_sub_braid_unstable, ctx.claim_iv_strong_duality⟩ — conclusion is verbatim the 4 class fields.",
+        "notes": "theorem := \u27e8ctx.claim_i_primal_stable, ctx.claim_ii_dual_bounded, ctx.claim_iii_sub_braid_unstable, ctx.claim_iv_strong_duality\u27e9 \u2014 conclusion is verbatim the 4 class fields.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "dbe01703a7f2"
         },
         "result": "pass",
-        "notes": "claim_i (Gx*≥0) and claim_iii ((Gx_partial)_σ0<0) concern different vectors x_star vs x_partial — jointly satisfiable, no contradiction.",
+        "notes": "claim_i (Gx*\u22650) and claim_iii ((Gx_partial)_\u03c30<0) concern different vectors x_star vs x_partial \u2014 jointly satisfiable, no contradiction.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1852,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

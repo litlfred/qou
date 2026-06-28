@@ -900,7 +900,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:20 [native_decide] theorem hoCumulative_eq_sum (N : ℕ) : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:34 [native_decide] theorem ho_closures : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:72 [native_decide] theorem stability_pairs_correct : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:82 [native_decide] theorem first_three_eq_ho : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:89 [native_decide] theorem fourth_pair : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:94 [native_decide] theorem shellTransition_counts :",
+        "evidence": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:20 [native_decide] theorem hoCumulative_eq_sum (N : \u2115) : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:34 [native_decide] theorem ho_closures : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:72 [native_decide] theorem stability_pairs_correct : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:82 [native_decide] theorem first_three_eq_ho : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:89 [native_decide] theorem fourth_pair : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:94 [native_decide] theorem shellTransition_counts :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -910,7 +910,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "fit-section-chapter": [
@@ -1249,7 +1249,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "shell-transition-knot.lean:1 — content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:7:5: error: unknown namespace `Finset`"
+        "evidence": "shell-transition-knot.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:7:5: error: unknown namespace `Finset`"
       }
     ],
     "da-referee-verdict": [
@@ -1274,5 +1274,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -37,7 +37,7 @@ and $|\cdot|$ is trivial (absolute value of a sign). For
 **complex** $q$, $\mathrm{tr}_M$ becomes complex and $|\cdot|$
 genuinely projects: $\mathrm{Im}(\mathrm{tr}_M)$ is discarded.
 
-## What is wrongly claimed
+## A common incorrect claim
 
 A natural-but-incorrect claim is "Im(q) = EM channel = P_skew channel".
 This conflates the two mechanisms. The correct statements are:
@@ -53,7 +53,7 @@ So:
 - Im(q) is **set to zero** by the framework's real-q convention, not "discarded by a projection".
 - These are independent.
 
-## Why this matters
+## Significance
 
 Quantitative consequences differ between the two mechanisms:
 

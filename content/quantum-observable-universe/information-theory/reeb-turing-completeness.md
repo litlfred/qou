@@ -63,7 +63,7 @@ classical setting. Three structural identifications follow.
    reaches a given open set, just as no finite QOU observer
    can resolve every section of $\mathcal{S}$.
 
-**What this buys the QOU.**
+**Consequences for the QOU.**
 The categorical Reeb derivation is sometimes criticised as a
 formal device — an axiomatised derivation rather than a
 geometric flow. The Cardona–Miranda–Peralta-Salas–Presas
@@ -85,7 +85,7 @@ encodes a Turing machine as a braid whose Skein polynomial is
 the output — is the discrete (Hecke-algebra) shadow of the
 continuous geometric construction.
 
-**Where the conjectural part still lives.**
+**Location of the conjectural part.**
 Cardona–Miranda–Peralta-Salas–Presas prove universality at
 *one* fixed metric. The QOU's stronger conjectural claim is
 that universality is preserved under the

@@ -26,7 +26,7 @@ $$
 coefficients $a_1, a_3, a_5 > 0$ depend on the specific
 particle through its brane tower weights.*
 
-## Why $\gamma = 0$ (photon masslessness)
+## Vanishing of $\gamma$ (photon masslessness)
 
 The :refterm[descent]{#descent} involution $\hat\tau_n$ at the first brane level
 projects onto the $H_1(q)$ content of $H_3(R, q)$.  Since

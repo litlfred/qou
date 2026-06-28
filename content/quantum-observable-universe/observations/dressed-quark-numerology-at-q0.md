@@ -22,7 +22,7 @@ substrate parameter).  The CODATA value $m_n - m_p \approx 1.293\,
 \text{MeV}$ is **no longer an input** — it is a prediction at
 $-0.53\%$ residual.
 
-## Why $\bar\mu \approx M_N / 3$ (and the Skein cross-term shift)
+## Origin of $\bar\mu \approx M_N / 3$ (and the Skein cross-term shift)
 
 The proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron
 ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$) braids each carry three

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean"
   },
   "source_hashes": {
-    "md": "15b0649aa99f",
+    "md": "b35f0c3567b3",
     "ts": "a77c2a816d41",
     "lean": "381c8d255021"
   },
@@ -1573,7 +1573,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 — content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
       }
     ],
     "da-referee-verdict": [
@@ -1598,5 +1598,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

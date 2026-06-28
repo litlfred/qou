@@ -1109,7 +1109,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1 — content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1134,5 +1134,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

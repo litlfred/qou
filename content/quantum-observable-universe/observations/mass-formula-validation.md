@@ -28,7 +28,7 @@ the complete framework uses three calibration inputs
 ([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
 $m_\mu/m_e$, and $m_e$.
 
-## What the substrate parameter $q$ genuinely predicts
+## Genuine predictions of the substrate parameter $q$
 
 The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 \to \hbar_q \to q_0$ yields:
@@ -173,7 +173,7 @@ The $2 \times 2$ transfer matrix (used in earlier computations) only
 captures the symmetric and one copy of the standard irrep, missing
 the alternating channel entirely.
 
-**Why the full $6 \times 6$ matters.** The adjoint representation
+**Necessity of the full $6 \times 6$.** The adjoint representation
 of the strong force requires all three channels. The $L_+$ and $L_-$
 terms (Hopf links) carry the gluon field content. The $e^-$ term
 (trefoil = $\sigma_0\sigma_1\sigma_0$, the longest element $w_0$)
@@ -207,7 +207,7 @@ See [Table 8](#tbl:mass-formula-validation-table8-data).
  The $\Delta\mathrm{net} = -0.188$ drives the neutron $\beta$-decay
  $Q$-value.
 
-**Beta decay: why free neutron is the simplest.** Free neutron decay
+**Beta decay: minimality of the free neutron.** Free neutron decay
 $n \to p + e^- + \bar{\nu}$ is the simplest possible $\beta^-$ decay:
 a single nucleon, no nuclear environment, no Coulomb corrections.
 This is why it calibrates $E_0$ directly. The next simplest is tritium
@@ -226,7 +226,7 @@ nucleus. $B/A$ varies smoothly from 0 (hydrogen) through a peak
 near iron to $\sim$7.6 (uranium), encoding the entire nuclear
 landscape.
 
-**Why this matters.** Currently, $B/A$ enters our mass formula as an
+**Significance.** Currently, $B/A$ enters our mass formula as an
 external AME2020 input, making $M(Z,N)$ a tautology. If $B/A$ could
 be derived from the certificate polynomial $P(q_0)$, then
 $M(Z,N) = Z m_\mathfrak{p}(q) + N m_\mathfrak{n}(q) + Z m_e - A \cdot (B/A)(q)$

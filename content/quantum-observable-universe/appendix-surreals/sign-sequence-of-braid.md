@@ -97,7 +97,7 @@ $$
   \qquad b(\mathrm{surr}(\beta, t)) \leq c(\beta).
 $$
 
-## Why this is interesting
+## Significance
 
 The sign sequence carries strictly more information than the
 crossing number: it records *which* eigenchannel is chosen at

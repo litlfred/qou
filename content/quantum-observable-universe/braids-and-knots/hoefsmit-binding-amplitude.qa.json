@@ -1351,8 +1351,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "references.ts:3478 'wenzl1988c — placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
-        "rebuttal": "partial→survived — real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
+        "referee_argument": "references.ts:3478 'wenzl1988c \u2014 placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
+        "rebuttal": "partial\u2192survived \u2014 real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
         "evidence": [
           {
             "text": "references.ts:3478; hoefsmit-binding-amplitude.ts:7-11"
@@ -1381,7 +1381,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": ".lean:46-57 proves only qInt3/qInt2^2 = 1 - 1/qInt2^2; the Hoefsmit matrix derivation (b=sqrt(a_rho a_-rho +1), a_rho=h/(1-q^-2rho), rho=2) is only in the .md.",
-        "rebuttal": "partial — honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
+        "rebuttal": "partial \u2014 honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.lean:46-57; .md:13-33"
@@ -1409,8 +1409,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the Δ_λ gate.",
-        "rebuttal": "rebutted — b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a Δ_λ closure; canonical-no-numerology passes.",
+        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the \u0394_\u03bb gate.",
+        "rebuttal": "rebutted \u2014 b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a \u0394_\u03bb closure; canonical-no-numerology passes.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.md:73-76"
@@ -1615,9 +1615,9 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:1 — content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize"
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

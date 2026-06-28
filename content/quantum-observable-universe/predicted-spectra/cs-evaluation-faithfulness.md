@@ -16,7 +16,7 @@ $H^2(\mathcal{S}, \mathcal{B})$, then the Chern--Simons period integral
 over the $n$-th twisted sector produces a non-zero real contribution to
 $\mathrm{Vol}(K)$.
 
-**Consequences.**
+**Corollaries.**
 
 1. **No accidental cancellation.** The Peiffer identity in the crossed
    groupoid conjugates $a^{(n)}$ by $g^{(n)}$ but does not annihilate

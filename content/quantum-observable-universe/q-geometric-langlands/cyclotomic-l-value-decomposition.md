@@ -31,7 +31,7 @@ $$
 i.e., **each $\mathrm{Cl}_n(2\pi a/K)$ is a $\mathbb{Q}(\zeta_K)$-linear
 combination of $L(\chi, n)$ values** (and vice versa).
 
-### Specific consequence: Catalan-like depth-3 L-value
+### Specific corollary: Catalan-like depth-3 L-value
 
 **Theorem (instance verified at $N = 4$, $n = 3$):**
 
@@ -89,11 +89,11 @@ Corresponds, via the Hurwitz–Lerch decomposition, to the 2 odd
 Dirichlet characters $\chi_5$, $\chi_5^3$ mod 5 (complex-conjugate
 pair).  Modulo bar-conjugation: 1 real dimension. Matches Theorem G.
 
-### Why this matters — Bridge to analytic number theory
+### Significance — Bridge to analytic number theory
 
 The graded-Mikusiński framework's depth-$n$ cyclotomic content
 **IS** the Dirichlet $L$-value content at integer $n$, up to
-$\mathbb{Q}(\zeta_K)$-linear combinations.  This means:
+$\mathbb{Q}(\zeta_K)$-linear combinations.  Three consequences follow:
 
 1. **Classical L-value identities are theorems of our framework**:
    $\beta(3) = \pi^3/32$, $\beta(5) = 5\pi^5/1536$, $L(\chi_3, 3) = ?$,

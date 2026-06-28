@@ -805,7 +805,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -826,7 +826,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/meson-scale-independence.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1339,7 +1339,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Hosted in sec:particle-interactions-orphan-reconnect after categorical-proton/neutron/meson; the m_π scale-independence claim sits with the categorical meson material it depends on (uses def:categorical-meson)."
+        "notes": "Hosted in sec:particle-interactions-orphan-reconnect after categorical-proton/neutron/meson; the m_\u03c0 scale-independence claim sits with the categorical meson material it depends on (uses def:categorical-meson)."
       }
     ],
     "wall-side-statement": [
@@ -1375,7 +1375,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is about derivability of m_π from (m_e,q_0); chapter is particle-interactions. No gratuitous archimedean construct hard-coded in the narrative statement (Vol/Hopf topology is the argument, not an order/Real.* leak)."
+        "notes": "Statement is about derivability of m_\u03c0 from (m_e,q_0); chapter is particle-interactions. No gratuitous archimedean construct hard-coded in the narrative statement (Vol/Hopf topology is the argument, not an order/Real.* leak)."
       }
     ],
     "wall-side-proof": [
@@ -1411,7 +1411,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Narrative proof is representation-theoretic + topological (Vol(Hopf)=0 ⇒ no geometric invariant; Hecke character ratios fix m_K/m_π not m_π). No archimedean-only machinery (linarith/IVT/continuity) used for an algebraic statement."
+        "notes": "Narrative proof is representation-theoretic + topological (Vol(Hopf)=0 \u21d2 no geometric invariant; Hecke character ratios fix m_K/m_\u03c0 not m_\u03c0). No archimedean-only machinery (linarith/IVT/continuity) used for an algebraic statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1462,8 +1462,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "meson-scale-independence.lean:8-16: 'theorem meson_scale_independence : ¬ ∃ (f : ℝ→ℝ→ℝ), ∀ (m_e q_0 m_pi : ℝ), m_pi = f m_e q_0' proved by exhibiting f 0 0 = 0 and = 1 (witness m_e=q_0=0, m_pi∈{0,1}). The .md states the substantive rep-theoretic/topological claim that m_π is not determined by (m_e,q_0) because Vol(Hopf-complement)=0.",
-        "notes": "Theorem-changing divergence. The Lean encodes a logical triviality: ¬∃f.∀ m_pi. m_pi=f(m_e,q_0) is false for ANY two-argument f (a function of (m_e,q_0) cannot equal every real m_pi), provable with zero QOU content and no Hecke/Hopf input. It does not capture the narrative claim that the QOU substrate map specifically fails to fix m_π. The .md even says (line 50) the Lean 'defers its proof via sorry' — but the actual Lean is a non-sorry vacuous restatement, contradicting the .md's own description. Routes to proof-narrative-lean-equivalence / lean-proof-review."
+        "evidence": "meson-scale-independence.lean:8-16: 'theorem meson_scale_independence : \u00ac \u2203 (f : \u211d\u2192\u211d\u2192\u211d), \u2200 (m_e q_0 m_pi : \u211d), m_pi = f m_e q_0' proved by exhibiting f 0 0 = 0 and = 1 (witness m_e=q_0=0, m_pi\u2208{0,1}). The .md states the substantive rep-theoretic/topological claim that m_\u03c0 is not determined by (m_e,q_0) because Vol(Hopf-complement)=0.",
+        "notes": "Theorem-changing divergence. The Lean encodes a logical triviality: \u00ac\u2203f.\u2200 m_pi. m_pi=f(m_e,q_0) is false for ANY two-argument f (a function of (m_e,q_0) cannot equal every real m_pi), provable with zero QOU content and no Hecke/Hopf input. It does not capture the narrative claim that the QOU substrate map specifically fails to fix m_\u03c0. The .md even says (line 50) the Lean 'defers its proof via sorry' \u2014 but the actual Lean is a non-sorry vacuous restatement, contradicting the .md's own description. Routes to proof-narrative-lean-equivalence / lean-proof-review."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1514,7 +1514,7 @@
           "lean": "4f1907f3b93c"
         },
         "result": "warn",
-        "notes": "md rep-theoretic+topological proof (Hopf complement solid torus, Vol=0; character ratios fix m_K/m_π not m_π) is clear, but Lean statement is a degenerate ¬∃ deferred via sorry.",
+        "notes": "md rep-theoretic+topological proof (Hopf complement solid torus, Vol=0; character ratios fix m_K/m_\u03c0 not m_\u03c0) is clear, but Lean statement is a degenerate \u00ac\u2203 deferred via sorry.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1578,7 +1578,7 @@
           "lean": "4f1907f3b93c"
         },
         "result": "pass",
-        "notes": "Claim that m_π is an independent scale (not derivable from m_e,q₀ via Vol(Hopf)=0) is well-posed and physically substantive — the CAL-3 independence.",
+        "notes": "Claim that m_\u03c0 is an independent scale (not derivable from m_e,q\u2080 via Vol(Hopf)=0) is well-posed and physically substantive \u2014 the CAL-3 independence.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1642,7 +1642,7 @@
           "lean": "4f1907f3b93c"
         },
         "result": "pass",
-        "notes": "Vol(Hopf)=0 ⇒ no geometric invariant to set meson scale (vs Vol(B₃)=8G for baryons) is a genuine structural distinction grounding CAL-3 independence.",
+        "notes": "Vol(Hopf)=0 \u21d2 no geometric invariant to set meson scale (vs Vol(B\u2083)=8G for baryons) is a genuine structural distinction grounding CAL-3 independence.",
         "reviewed_at": "2026-06-25T17:10:53.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1702,7 +1702,7 @@
           "lean": "4f1907f3b93c"
         },
         "result": "fail",
-        "notes": "Lean ¬∃f, ∀ m_e q_0 m_pi, m_pi=f m_e q_0 is degenerate: trivially true since m_pi is universally quantified/free (no constant-valued f equals all reals) — captures a cardinality triviality, NOT the Vol(Hopf)=0 representation-theoretic content of the md. Proof is sorry (honest -- Ref).",
+        "notes": "Lean \u00ac\u2203f, \u2200 m_e q_0 m_pi, m_pi=f m_e q_0 is degenerate: trivially true since m_pi is universally quantified/free (no constant-valued f equals all reals) \u2014 captures a cardinality triviality, NOT the Vol(Hopf)=0 representation-theoretic content of the md. Proof is sorry (honest -- Ref).",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1908,7 +1908,7 @@
           "lean": "4f1907f3b93c"
         },
         "result": "pass",
-        "notes": "Theorem has no hypothesis binders (closed ¬∃ goal); nothing unused.",
+        "notes": "Theorem has no hypothesis binders (closed \u00ac\u2203 goal); nothing unused.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -2217,5 +2217,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

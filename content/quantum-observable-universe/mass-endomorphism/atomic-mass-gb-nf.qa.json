@@ -1355,7 +1355,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The claim in 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form' is unverified due to Lean compilation failures in sibling file.",
+        "notes": "The claim in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1"
       }
@@ -1374,7 +1374,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form' presents substantial mathematical content: ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) — LO piece (Markov-...",
+        "notes": "The block 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' presents substantial mathematical content: ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) \u2014 LO piece (Markov-...",
         "severity": "minor"
       }
     ],
@@ -1392,7 +1392,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
@@ -1411,7 +1411,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The prose presents 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form' as verified, but the sibling Lean file fails to compile.",
+        "notes": "The prose presents 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
       }
     ],
@@ -1429,7 +1429,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
@@ -1504,7 +1504,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Key terms and symbols in 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
@@ -1523,7 +1523,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The algebraic and logical relations in 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
@@ -1542,7 +1542,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The physical concepts described in 'Atomic mass as Markov trace of the Gröbner–Shirshov normal form' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
@@ -1563,7 +1563,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1587,5 +1587,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

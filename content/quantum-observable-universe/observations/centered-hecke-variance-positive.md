@@ -11,7 +11,7 @@ $$
 *is strictly positive: $\mathrm{Var}(\sigma_i) > 0$. Numerically at
 the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
 
-**Why this matters for the q-CLT.** The second free cumulant
+**Significance for the q-CLT.** The second free cumulant
 $\kappa_2^{(q)} = \mathrm{Var}(\sigma_i)$ is the variance parameter
 of the q-Gaussian limit measure
 (`conj:q-clt-non-commutative`). Its

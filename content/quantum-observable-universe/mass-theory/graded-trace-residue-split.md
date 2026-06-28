@@ -37,7 +37,7 @@ $$
 *Both pieces are computable from $T_w$ alone; neither involves
 empirical calibration.*
 
-**Why the split is canonical.**
+**Canonicity of the split.**
 *The filtration $J^\bullet(q)$ makes $H_n(R, q)$ a filtered algebra
 with compatible trace
 ([Hecke mass trace](#prop:hecke-mass-trace)). Any such filtered

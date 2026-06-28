@@ -92,12 +92,21 @@ theorem term_6_plus_term_7_eq_high_strata
       Term 6 = α_3 · Φ_3
       Term 7 = Σ_{k≥4} α_k · Φ_k
 -/
-def paper_terminology_mapping :
-    -- Statement (informal): the seven labels map to the curvature-rank
-    -- functionals as described in the .md.  Formal restatement:
-    -- terms 1-7 are an ENUMERATION of the same Σ_k α_k Φ_k by stratum.
-    True := by
-  trivial
-  -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
+-- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
+theorem paper_terminology_mapping
+    (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (h_n : 4 ≤ n) :
+    -- The seven paper labels are an EXHAUSTIVE enumeration of the
+    -- single curvature-rank sum by stratum: the total mass equals the
+    -- low-strata part (k < 3 = "Terms 1–3/5") plus the high-strata part
+    -- (k ≥ 3 = "Term 6 + Term 7"). No stratum is double-counted or
+    -- omitted — the decomposition partitions Σ_k α_k Φ_k.
+    unified_curvature_rank_mass alphas blocks n
+      = ((List.range 3).foldl
+          (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0)
+        + ((List.range n).filter (· ≥ 3)).foldl
+            (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0 := by
+  have h := term_6_plus_term_7_eq_high_strata alphas blocks n h_n
+  -- `h : full - low = high`, so `full = low + high`.
+  linarith [h]
 
 end QOU.WedderburnMass

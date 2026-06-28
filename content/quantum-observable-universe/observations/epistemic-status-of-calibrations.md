@@ -105,7 +105,7 @@ $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
 | CAL-3 | $m_\pi$ (meson scale; orthogonal class) | independent of $(m_e,q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | **genuine independent input** |
 | *(derived)* | $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open** (derivation status of $\mathfrak{Q}_\beta$, not a CAL) |
 
-## What this remark does NOT do
+## Scope exclusions for this remark
 
 - Does **not** propose a 4th calibration input.
 - Does **not** propose to replace CAL-1, CAL-2, or CAL-3 with empirical fits.
@@ -117,7 +117,7 @@ It is a structural clarification: the framework's *cohomological*
 status is more advanced than the *calibration* status, and the gap
 between them is a recognised open research direction.
 
-## Why this matters
+## Significance
 
 The 3-CAL discipline is rhetorically powerful: it claims the
 Standard Model's 19 free parameters reduce to 3. The accounting

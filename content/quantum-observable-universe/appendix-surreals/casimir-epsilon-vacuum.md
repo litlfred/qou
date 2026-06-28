@@ -22,7 +22,7 @@ $$
 \right).
 $$
 
-## Why $\mathrm{st}$ does not annihilate
+## Non-annihilation of $\mathrm{st}$
 
 A naive reading would assert $\mathrm{st}(\varepsilon) = 0$ and
 conclude the force vanishes. The conjecture is precisely that this
@@ -130,7 +130,7 @@ the Lean formulation in `CasimirEpsilonVacuum.lean` takes
 `[VacuumEpsilon]` and the plate-mode-count class as explicit
 instance hypotheses.
 
-## What is open (the actual conjecture)
+## Open conjecture
 
 The conjecture has three sub-problems, in decreasing tractability:
 
@@ -210,7 +210,7 @@ killed — analogous to the "Round-8" partial results in
 where shell-spacing ratios match but the absolute scale is
 transported.
 
-## Why this matters
+## Significance
 
 Three reasons:
 

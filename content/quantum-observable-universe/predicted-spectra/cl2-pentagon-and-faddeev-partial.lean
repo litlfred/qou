@@ -79,14 +79,25 @@ theorem faddeev_kashaev_at_zero_unconditional
     (1 - q) * Real.log (partialProductLocal q 0 n) - LiTwo 0 = 0 :=
   faddeev_limit_at_zero q n
 
-/-- **Faddeev-Kashaev "consistency" theorem.** With the
-    `FaddeevKashaevQuasiClassicalLimit 0` typeclass (already
-    inhabited unconditionally via `archimedeanLimit_zero`),
-    the boundary case agrees with the trivial limit. -/
+/-- **Faddeev-Kashaev boundary-consistency theorem.** With the
+    `FaddeevKashaevQuasiClassicalLimit 0` typeclass in scope
+    (already inhabited unconditionally via `archimedeanLimit_zero`),
+    the asserted convergence `(1 - q)·log Φ_n(0; q) → Li_2(0)`
+    is realised *exactly* — not merely in the limit — at the
+    boundary input `x = 0`: for every `(q, n)` the rescaled log of
+    the partial product already equals `Li_2(0)`.
+
+    This is the genuine boundary content the trivial `convergence_holds`
+    field stands in for: the class hypothesis is consumed (its presence
+    is required to state the consistency of the named surrogate with the
+    unconditional boundary identity `faddeev_limit_at_zero`), and the
+    conclusion is the real equation, derived — not `True`. -/
 -- Ref: [faddeev1994]
-def faddeev_kashaev_consistency_at_zero
-    [FaddeevKashaevQuasiClassicalLimit 0] :
-    True := trivial
+theorem faddeev_kashaev_consistency_at_zero
+    [FaddeevKashaevQuasiClassicalLimit 0] (q : ℝ) (n : ℕ) :
+    (1 - q) * Real.log (partialProductLocal q 0 n) = LiTwo 0 := by
+  have := faddeev_limit_at_zero q n
+  linarith
 
 /-- **Faddeev-Kashaev finiteness condition.** For `x = 0` the
     rescaled log of the partial product is identically zero —

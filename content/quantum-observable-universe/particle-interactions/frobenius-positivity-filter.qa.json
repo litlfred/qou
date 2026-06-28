@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md"
   },
   "source_hashes": {
-    "md": "c13c53b29cd9",
+    "md": "8483160730c1",
     "ts": "dc4928841f82"
   },
   "criteria": {
@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1184,7 +1184,7 @@
           "ts": "dc4928841f82"
         },
         "result": "warn",
-        "notes": "md ties filter to LP feasibility Gx≥0 with ⁶He worked example, but Lean only assumes the two sub-claims on a context class.",
+        "notes": "md ties filter to LP feasibility Gx\u22650 with \u2076He worked example, but Lean only assumes the two sub-claims on a context class.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1245,7 +1245,7 @@
           "ts": "dc4928841f82"
         },
         "result": "pass",
-        "notes": "Frobenius-positivity configuration filter (parent+daughter ≥0; 2^(A-1)/4^A excluded) is well-posed and substantive for even-A Q-values.",
+        "notes": "Frobenius-positivity configuration filter (parent+daughter \u22650; 2^(A-1)/4^A excluded) is well-posed and substantive for even-A Q-values.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "dc4928841f82"
         },
         "result": "fail",
-        "notes": "md states Frobenius-positive IFF m_par≥0∧m_dau≥0; Lean drops the iff (claim_i asserts m_par≥0∧m_dau≥0 as a bare fact) and asserts admissible=4^A−2^(A-1). Characterization lost; all assumed.",
+        "notes": "md states Frobenius-positive IFF m_par\u22650\u2227m_dau\u22650; Lean drops the iff (claim_i asserts m_par\u22650\u2227m_dau\u22650 as a bare fact) and asserts admissible=4^A\u22122^(A-1). Characterization lost; all assumed.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "dc4928841f82"
         },
         "result": "fail",
-        "notes": "theorem := ⟨ctx.claim_i_positivity_condition, ctx.claim_ii_exclusion_count⟩ — conclusion is verbatim the 2 class fields.",
+        "notes": "theorem := \u27e8ctx.claim_i_positivity_condition, ctx.claim_ii_exclusion_count\u27e9 \u2014 conclusion is verbatim the 2 class fields.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "dc4928841f82"
         },
         "result": "pass",
-        "notes": "m_par≥0 ∧ m_dau≥0 plus the count equation are jointly satisfiable; no contradictory premise.",
+        "notes": "m_par\u22650 \u2227 m_dau\u22650 plus the count equation are jointly satisfiable; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:07:47.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1852,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

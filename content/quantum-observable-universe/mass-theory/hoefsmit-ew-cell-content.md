@@ -59,7 +59,7 @@ $\sigma_i^{2k_i}$. The multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$
 reflect non-trivial cell-content combinatorics — they are **not**
 uniform.)
 
-### Why $n = 6$ is the minimum
+### Minimality of $n = 6$
 
 Each EW carrier $T(2, 2k)$ acts non-by definition on a **single
 strand-pair** (the two endpoints of its 2-component link
@@ -81,7 +81,7 @@ The disjoint-product framing $\sigma_1^4 \cdot \sigma_3^6 \cdot
 \sigma_5^8$ — equivalent to a tensor product via far-commutativity
 $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \geq 2$ —
 treats $W, Z, H$ as **independent** carriers. This is
-mathematically clean but **physically wrong**: the electroweak
+mathematically clean but does not match the physics: the electroweak
 symmetry breaking $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to
 \mathrm{U}(1)_{\rm em}$ is a *coupling* mediated by the Higgs
 vacuum-expectation value, not a disjoint sum.

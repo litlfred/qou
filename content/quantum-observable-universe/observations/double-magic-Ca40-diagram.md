@@ -56,7 +56,7 @@ multiplicity one. The cancellation $\sum c(x) = 0$ on $\nu_{20, 20}$
 is forced by additivity of the content sum along LR fusion plus
 self-conjugacy of both factors.
 
-## What the diagram shows
+## Content of the diagram
 
 The diagrammatic illustration in this example block is, schematically:
 
@@ -71,7 +71,7 @@ The diagrammatic illustration in this example block is, schematically:
 The cancellation $\sum_{x \in \nu_{20, 20}} c(x) = 0$ is depicted by
 arms balancing legs across the diagonal of $\nu_{20, 20}$.
 
-## Why $^{40}\mathrm{Ca}$ is exceptionally bound
+## Exceptional binding of $^{40}\mathrm{Ca}$
 
 The empirical $^{40}\mathrm{Ca}$ binding energy is $342.05$ MeV,
 sitting at a sharp local maximum of the binding-per-nucleon curve

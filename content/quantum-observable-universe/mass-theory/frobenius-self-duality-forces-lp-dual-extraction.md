@@ -91,7 +91,7 @@ $\mathrm{Obs}_\tau(a) = \tau(a \cdot -)$ is **literally**
 $\Phi_\tau$. Therefore, an observable produced by τ-extraction
 is — *by definition* — a dual-space element.
 
-**Consequence.** Every coefficient
+**Corollary.** Every coefficient
 $c_\lambda \in \mathbb{R}$ that arises as a τ-extracted
 observable from a Frobenius-positivity-constrained LP is a
 **shadow price** $u_\lambda^*$ of the corresponding constraint.

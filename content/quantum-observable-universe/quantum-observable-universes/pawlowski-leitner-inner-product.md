@@ -43,7 +43,7 @@ This orthogonality has two consequences for the QOU framework:
 1. **Decomposition of hadron states.** A
    [categorical hadron](#def:hadron) of valence $n$ can be
    uniquely expanded in the PawLei basis, with
-   coefficients that are physically interpretable as partial-wave
+   coefficients that are the partial-wave
    amplitudes.
 2. **Compatibility with the Frobenius form.** The inner product
    $\langle{-},{-}\rangle_{\mathrm{PL}}$ agrees with the restriction

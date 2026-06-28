@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.md"
   },
   "source_hashes": {
-    "md": "b1e53e3f32d5",
+    "md": "159611eb7130",
     "ts": "c10fcf81e959"
   },
   "criteria": {
@@ -920,7 +920,7 @@
           "ts": "c10fcf81e959"
         },
         "result": "pass",
-        "notes": "Conjecture: q→1 KLR canonical basis b_w → KL basis C_w of ℤ[S_n], classical-limit functor monoidal + τ-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
+        "notes": "Conjecture: q\u21921 KLR canonical basis b_w \u2192 KL basis C_w of \u2124[S_n], classical-limit functor monoidal + \u03c4-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
         "reviewed_at": "2026-06-25T17:08:56.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -950,7 +950,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No false claims identified in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics': mathematical reasoning is consistent.",
+        "notes": "No false claims identified in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -969,7 +969,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claims in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are non-vacuous as they make concrete conjectures about '\\cite{khovanovlauda2009, kashiwara1991} associated to the anyonic Hecke substrate, and let $\\{C_w\\} \\subset \\mathbb{Z...'.",
+        "notes": "The claims in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are non-vacuous as they make concrete conjectures about '\\cite{khovanovlauda2009, kashiwara1991} associated to the anyonic Hecke substrate, and let $\\{C_w\\} \\subset \\mathbb{Z...'.",
         "severity": "minor"
       }
     ],
@@ -987,7 +987,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1006,7 +1006,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No overclaims: the scope of 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is appropriately qualified.",
+        "notes": "No overclaims: the scope of 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is appropriately qualified.",
         "severity": "minor"
       }
     ],
@@ -1024,7 +1024,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1043,7 +1043,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The argument flow in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is logically sound, mapping onto the cited dependencies.",
+        "notes": "The argument flow in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1062,7 +1062,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Conjectured block 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' has no Lean sibling, representing a minor structural gap.",
+        "notes": "Conjectured block 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
       }
     ],
@@ -1099,7 +1099,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1118,7 +1118,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1137,7 +1137,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1156,7 +1156,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The derivation steps and formal definitions in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are reproducible.",
+        "notes": "The derivation steps and formal definitions in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
@@ -1178,9 +1178,9 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic and physical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
+        "referee_argument": "The conjectured algebraic and physical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

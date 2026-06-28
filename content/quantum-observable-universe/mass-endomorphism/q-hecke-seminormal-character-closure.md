@@ -21,7 +21,7 @@ $$
 $\mathrm{tr}_M(\mathcal{B}_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer))
 *to numerical precision at $q = q_0$.*
 
-## Why it matters
+## Significance
 
 The partition-sum form is the standard rewriting of the Markov
 trace via the Wedderburn–Artin decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}(\mathbb{C})$.

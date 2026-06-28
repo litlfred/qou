@@ -28,7 +28,7 @@ crystal nodes and reads off the $F$- and $R$-matrices of
 $\mathrm{MTC}_k$ directly from the $\sigma_{s_i}$ generators evaluated at
 the chosen root.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The Bakalov–Kirillov MTC structure on cyclotomic-KLR modules at a
 root of unity is established \cite{bakalovkirillov2001,
 khovanovlauda2009}, as is the truncation of the Kashiwara crystal at

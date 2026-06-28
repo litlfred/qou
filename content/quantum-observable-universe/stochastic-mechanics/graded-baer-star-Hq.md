@@ -23,7 +23,7 @@ intra-depth label $i$, with*
 - *$\sum_{i} p_n^{(i)} \cdot \mathrm{id}_{G^{(n)}} = \mathrm{id}_{G^{(n)}}$
   (completeness at each depth).*
 
-### Why this is the right structural statement
+### Structural justification
 
 Three free consequences if discharged:
 

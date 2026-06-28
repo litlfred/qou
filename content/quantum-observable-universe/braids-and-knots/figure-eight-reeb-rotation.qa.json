@@ -1377,7 +1377,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement asserts |λ|=1 (unit-modulus eigenvalues) — an archimedean/complex-modulus claim. braids-and-knots is a generic/substrate chapter, but the .md §7c 'Lean realisation (archimedean specialisation)' banner (lines 82-99) explicitly declares the archimedean side and the q>1 / t²<4 ordering. Properly banner'd."
+        "notes": "Statement asserts |\u03bb|=1 (unit-modulus eigenvalues) \u2014 an archimedean/complex-modulus claim. braids-and-knots is a generic/substrate chapter, but the .md \u00a77c 'Lean realisation (archimedean specialisation)' banner (lines 82-99) explicitly declares the archimedean side and the q>1 / t\u00b2<4 ordering. Properly banner'd."
       }
     ],
     "wall-side-proof": [
@@ -1413,7 +1413,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof-sketch is the algebraic det/trace argument over Q(q^{1/2}); the Lean nlinarith/ordering step is the declared archimedean specialisation per the §7c banner."
+        "notes": "Proof-sketch is the algebraic det/trace argument over Q(q^{1/2}); the Lean nlinarith/ordering step is the declared archimedean specialisation per the \u00a77c banner."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1450,8 +1450,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "figure-eight-reeb-rotation.lean:90-94 figure_eight_unitary_on_standard takes (t : ℝ)(ht : t²<4)(lam : ℂ)(hroot : lam²-t·lam+1=0) ⊢ ‖lam‖=1; md:1-9 claims M_{4_1} has eigenvalues of unit modulus",
-        "notes": "Lean proves the ABSTRACT lemma: any root of x²-t·x+1 with t²<4 has unit modulus. It never instantiates t as the actual figure-eight trace on V_{(2,1)}, nor proves det(M_{4_1})=1 for the real operator (figure_eight_det_one is merely (-1)^4=1). So the narrative's claim ABOUT THE OPERATOR is reduced to a general lemma whose hypotheses (t²<4, the char poly being x²-tx+1) are assumed, not established for 4_1. The .md itself flags this ('asserted conceptually rather than fully established in the formalization', md:102). Reconcilable as a faithful encoding of the unit-modulus mechanism, hence warn not fail."
+        "evidence": "figure-eight-reeb-rotation.lean:90-94 figure_eight_unitary_on_standard takes (t : \u211d)(ht : t\u00b2<4)(lam : \u2102)(hroot : lam\u00b2-t\u00b7lam+1=0) \u22a2 \u2016lam\u2016=1; md:1-9 claims M_{4_1} has eigenvalues of unit modulus",
+        "notes": "Lean proves the ABSTRACT lemma: any root of x\u00b2-t\u00b7x+1 with t\u00b2<4 has unit modulus. It never instantiates t as the actual figure-eight trace on V_{(2,1)}, nor proves det(M_{4_1})=1 for the real operator (figure_eight_det_one is merely (-1)^4=1). So the narrative's claim ABOUT THE OPERATOR is reduced to a general lemma whose hypotheses (t\u00b2<4, the char poly being x\u00b2-tx+1) are assumed, not established for 4_1. The .md itself flags this ('asserted conceptually rather than fully established in the formalization', md:102). Reconcilable as a faithful encoding of the unit-modulus mechanism, hence warn not fail."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1491,7 +1491,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.9 — plan stated up front in both md proof-sketch (det+real-trace ⇒ conjugate pair on unit circle) and Lean docstring (real/imag parts of root eqn, t²<4 ⇒ non-real ⇒ re=t/2 ⇒ normSq=1)."
+        "notes": "score=0.9 \u2014 plan stated up front in both md proof-sketch (det+real-trace \u21d2 conjugate pair on unit circle) and Lean docstring (real/imag parts of root eqn, t\u00b2<4 \u21d2 non-real \u21d2 re=t/2 \u21d2 normSq=1)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1531,7 +1531,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=1.0 — Lean proof is sorry-free (theorem closed by nlinarith)."
+        "notes": "score=1.0 \u2014 Lean proof is sorry-free (theorem closed by nlinarith)."
       }
     ],
     "proof-rater-novelty": [
@@ -1571,7 +1571,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.7 — the unit-modulus-of-char-poly lemma is standard, but the q-Reeb-rotation-phase reading tying θ to Vol(4_1) and the muon anchor is framework-specific."
+        "notes": "score=0.7 \u2014 the unit-modulus-of-char-poly lemma is standard, but the q-Reeb-rotation-phase reading tying \u03b8 to Vol(4_1) and the muon anchor is framework-specific."
       }
     ],
     "proof-statement-integrity": [
@@ -1607,7 +1607,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Signature is the genuine unit-modulus statement (docstring notes it replaced a prior placeholder (-1)^4=1 ∧ 2=2). No sorryAx; closed by nlinarith. Not a weakened-to-True restatement."
+        "notes": "Signature is the genuine unit-modulus statement (docstring notes it replaced a prior placeholder (-1)^4=1 \u2227 2=2). No sorryAx; closed by nlinarith. Not a weakened-to-True restatement."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1643,7 +1643,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "figure_eight_unitary_on_standard delegates to unit_modulus_of_det_one_small_trace, which derives ‖lam‖=1 from the root equation via real/imag-part composition — not a field projection of the conclusion."
+        "notes": "figure_eight_unitary_on_standard delegates to unit_modulus_of_det_one_small_trace, which derives \u2016lam\u2016=1 from the root equation via real/imag-part composition \u2014 not a field projection of the conclusion."
       }
     ],
     "proof-no-trivial-true": [
@@ -1679,7 +1679,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goal is ‖lam‖=1, a substantive equation, not True/rfl/x=x."
+        "notes": "Goal is \u2016lam\u2016=1, a substantive equation, not True/rfl/x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -1715,7 +1715,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Hypotheses t²<4 and the root equation are satisfiable (e.g. t=0, lam=i); no contradictory premise."
+        "notes": "Hypotheses t\u00b2<4 and the root equation are satisfiable (e.g. t=0, lam=i); no contradictory premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1751,7 +1751,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Both ht (t²<4, used to force lam.im≠0) and hroot (used for re/im equations) are genuinely consumed."
+        "notes": "Both ht (t\u00b2<4, used to force lam.im\u22600) and hroot (used for re/im equations) are genuinely consumed."
       }
     ],
     "proof-no-decide-masking": [
@@ -2036,5 +2036,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

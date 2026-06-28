@@ -19,7 +19,7 @@ $\mathrm{tr}_M$ (pairing with the unit) and the transition counit
 $\varepsilon$ (pairing with the integral $\omega = G^{-1}\mathbf{1}$) —
 so their equality is required for consistency.
 
-## Why the convergence is non-perturbative
+## Non-perturbative nature of the convergence
 
 The equality is not a small-correction limit. At the substrate the
 single Markov-trace term already misses the target by a wide margin:

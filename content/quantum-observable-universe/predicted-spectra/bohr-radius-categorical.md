@@ -21,7 +21,7 @@ $$
   \;=\;
   \Phi_{1}^{\mathrm{Coul}}(a_{0}^{\mathrm{cat}}).
 $$
-### What is rigorous (and what is not)
+### Rigorous and non-rigorous content
 
 **Rigorous (in QOU):**
 - $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$ as the operator-selection
@@ -44,7 +44,7 @@ $$
  $a_0 = \hbar/(m_e c \alpha)$ is the standard physics formula,
  and we used standard $\alpha \approx 1/137$ as input.
 
-### Companion remark — why this matters anyway
+### Companion remark — structural significance
 
 Even as a transport sketch, this proposition serves a structural
 purpose:

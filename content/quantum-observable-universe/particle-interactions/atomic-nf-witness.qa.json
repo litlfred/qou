@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/atomic-nf-witness.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/atomic-nf-witness.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/atomic-nf-witness.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/atomic-nf-witness.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1245,7 +1245,7 @@
           "ts": "029501d4ecb5"
         },
         "result": "pass",
-        "notes": "Well-posed computational-witness claim (atomic braid -> GS normal form, Φ₁ min, GB convergence, committed certificates); falsifiable via the certs.",
+        "notes": "Well-posed computational-witness claim (atomic braid -> GS normal form, \u03a6\u2081 min, GB convergence, committed certificates); falsifiable via the certs.",
         "reviewed_at": "2026-06-25T17:21:41.000Z",
         "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
         "reviewer": {
@@ -1306,7 +1306,7 @@
           "ts": "029501d4ecb5"
         },
         "result": "pass",
-        "notes": "Constructive per-atom NF pipeline with committed JSON certificates (Φ₁ ground state, GB convergence, Pauli char) is substantive infrastructure, not a restatement.",
+        "notes": "Constructive per-atom NF pipeline with committed JSON certificates (\u03a6\u2081 ground state, GB convergence, Pauli char) is substantive infrastructure, not a restatement.",
         "reviewed_at": "2026-06-25T17:21:42.000Z",
         "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "029501d4ecb5"
         },
         "result": "fail",
-        "notes": "Body is ⟨claim_i,...,claim_v⟩ — each conjunct returns the namesake class field that IS the sub-claim verbatim; pure projection, no derivation.",
+        "notes": "Body is \u27e8claim_i,...,claim_v\u27e9 \u2014 each conjunct returns the namesake class field that IS the sub-claim verbatim; pure projection, no derivation.",
         "reviewed_at": "2026-06-25T17:21:06.000Z",
         "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "029501d4ecb5"
         },
         "result": "pass",
-        "notes": "Fields satisfiable (existence of a Φ₁-min ordering, greedy e-pos, convergence predicates, F_Pauli def); not contradictory/vacuous.",
+        "notes": "Fields satisfiable (existence of a \u03a6\u2081-min ordering, greedy e-pos, convergence predicates, F_Pauli def); not contradictory/vacuous.",
         "reviewed_at": "2026-06-25T17:21:39.000Z",
         "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
         "reviewer": {
@@ -1639,7 +1639,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Atomic braid normal form witness' presents substantial mathematical content: construction produces an element of $H_{A+Z}(q)$ that is verified to be in Gröbner--Shirshov normal form.  Specifical...",
+        "notes": "The block 'Atomic braid normal form witness' presents substantial mathematical content: construction produces an element of $H_{A+Z}(q)$ that is verified to be in Gr\u00f6bner--Shirshov normal form.  Specifical...",
         "severity": "minor"
       }
     ],
@@ -1852,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

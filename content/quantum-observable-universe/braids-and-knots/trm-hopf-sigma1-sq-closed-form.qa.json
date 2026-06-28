@@ -764,7 +764,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -784,7 +784,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1248,7 +1248,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proposition statement is the bare closed-form identity; Taylor-expansion, Q_β-implication, and remarks follow the proof as separate sections, not interpretation embedded in the statement."
+        "notes": "Proposition statement is the bare closed-form identity; Taylor-expansion, Q_\u03b2-implication, and remarks follow the proof as separate sections, not interpretation embedded in the statement."
       }
     ],
     "fit-section-chapter": [
@@ -1316,7 +1316,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Narrative statement is the algebraic identity over Q(q^{1/2}), holding for all q with no ordering hypothesis (md:1-18). The archimedean q>1 / Real.sqrt specialisation is confined to the Lean realisation and declared in the §7c banner (md:118-130). Correctly generic on the narrative side."
+        "notes": "Narrative statement is the algebraic identity over Q(q^{1/2}), holding for all q with no ordering hypothesis (md:1-18). The archimedean q>1 / Real.sqrt specialisation is confined to the Lean realisation and declared in the \u00a77c banner (md:118-130). Correctly generic on the narrative side."
       }
     ],
     "wall-side-proof": [
@@ -1399,8 +1399,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "trm-hopf...md:6 'for every n ≥ 2' + identity over Q(q^{1/2}); TrMHopfSigma1SqClosedForm.lean:45-53 class TrMHopfSigma1SqClosedForm (q : ℝ) [q_gt_one : 1 < q] carries trM_sigma1_sq as a FIELD with closed_form; :62 theorem ...simplified derives 1+(q-1)q^{-1/2}",
-        "notes": "Lean specialises q to ℝ with q>1 (archimedean, banner-declared per §7c — acceptable). The narrative's 'tr_M(σ_1²)=...' is reduced in Lean to a class FIELD `closed_form` (the value is axiomatised, not computed from the Markov axioms), and the proved theorem is the algebraic simplification closed_form ⇒ 1+(q-1)q^{-1/2}. So the Lean proves the second equality but ASSUMES the first (that the Markov trace equals (q^{5/2}-...)/(q²+q)) as a class hypothesis rather than deriving it from the Markov axioms as the narrative proof does. The 'for every n≥2' invariance is a separate theorem (trm_hopf_sigma1_sq_markov_invariant) over MarkovTraceTower. Reconcilable (the assumed field is the genuine value, exhibited by the canonical instance with closed_form := rfl), but the narrative derivation step is not formalised — warn."
+        "evidence": "trm-hopf...md:6 'for every n \u2265 2' + identity over Q(q^{1/2}); TrMHopfSigma1SqClosedForm.lean:45-53 class TrMHopfSigma1SqClosedForm (q : \u211d) [q_gt_one : 1 < q] carries trM_sigma1_sq as a FIELD with closed_form; :62 theorem ...simplified derives 1+(q-1)q^{-1/2}",
+        "notes": "Lean specialises q to \u211d with q>1 (archimedean, banner-declared per \u00a77c \u2014 acceptable). The narrative's 'tr_M(\u03c3_1\u00b2)=...' is reduced in Lean to a class FIELD `closed_form` (the value is axiomatised, not computed from the Markov axioms), and the proved theorem is the algebraic simplification closed_form \u21d2 1+(q-1)q^{-1/2}. So the Lean proves the second equality but ASSUMES the first (that the Markov trace equals (q^{5/2}-...)/(q\u00b2+q)) as a class hypothesis rather than deriving it from the Markov axioms as the narrative proof does. The 'for every n\u22652' invariance is a separate theorem (trm_hopf_sigma1_sq_markov_invariant) over MarkovTraceTower. Reconcilable (the assumed field is the genuine value, exhibited by the canonical instance with closed_form := rfl), but the narrative derivation step is not formalised \u2014 warn."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1476,7 +1476,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.9 — both md and Lean docstring state the plan (Hecke relation + Markov axioms; substitute u:=sqrt(q), field_simp+ring)."
+        "notes": "score=0.9 \u2014 both md and Lean docstring state the plan (Hecke relation + Markov axioms; substitute u:=sqrt(q), field_simp+ring)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1552,7 +1552,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=1.0 — trm_hopf_sigma1_sq_closed_form_simplified and the canonical instance are sorry-free."
+        "notes": "score=1.0 \u2014 trm_hopf_sigma1_sq_closed_form_simplified and the canonical instance are sorry-free."
       }
     ],
     "proof-rater-novelty": [
@@ -1628,7 +1628,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.6 — the Markov-trace computation is standard, but the finding that the bare-Markov ε^{2n} coefficients are NOT the Q_β precision-ladder c_n (so F_n is a separate categorical decomposition) is a substantive framework-specific observation."
+        "notes": "score=0.6 \u2014 the Markov-trace computation is standard, but the finding that the bare-Markov \u03b5^{2n} coefficients are NOT the Q_\u03b2 precision-ladder c_n (so F_n is a separate categorical decomposition) is a substantive framework-specific observation."
       }
     ],
     "proof-statement-integrity": [
@@ -1696,7 +1696,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "The §3b-cond conditional-class pattern: the class carries the value as a hypothesis field and the theorem derives the simplified equality. No sorryAx on the proved theorem; the .ts banner/validation:not_checked reflects honest status. Not a weakening-to-True."
+        "notes": "The \u00a73b-cond conditional-class pattern: the class carries the value as a hypothesis field and the theorem derives the simplified equality. No sorryAx on the proved theorem; the .ts banner/validation:not_checked reflects honest status. Not a weakening-to-True."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1764,7 +1764,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "trm_hopf_sigma1_sq_closed_form_simplified does NOT project closed_form back as the goal: it rewrites with closed_form then performs a genuine rpow→sqrt substitution and field_simp+ring to reach a DIFFERENT expression 1+(q-1)q^{-1/2}. The conclusion ≠ the field; this is composition/derivation per §3b-cond, not P⊢P."
+        "notes": "trm_hopf_sigma1_sq_closed_form_simplified does NOT project closed_form back as the goal: it rewrites with closed_form then performs a genuine rpow\u2192sqrt substitution and field_simp+ring to reach a DIFFERENT expression 1+(q-1)q^{-1/2}. The conclusion \u2260 the field; this is composition/derivation per \u00a73b-cond, not P\u22a2P."
       }
     ],
     "proof-no-trivial-true": [
@@ -1952,8 +1952,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "TrMHopfSigma1SqClosedForm.lean:62 theorem trm_hopf_sigma1_sq_closed_form_simplified (q : ℝ) (hq : 1 < q) [inst : TrMHopfSigma1SqClosedForm q]",
-        "notes": "The explicit hypothesis `hq : 1 < q` appears redundant: the class instance already carries `q_gt_one : 1 < q`, and the proof derives hq_pos from hq but could equally use inst.q_gt_one. The proof uses hq (hq_pos := lt_trans zero_lt_one hq), so it is not literally unused, but carrying both hq and inst.q_gt_one duplicates the positivity hypothesis — mild interface redundancy worth a glance. Borderline warn."
+        "evidence": "TrMHopfSigma1SqClosedForm.lean:62 theorem trm_hopf_sigma1_sq_closed_form_simplified (q : \u211d) (hq : 1 < q) [inst : TrMHopfSigma1SqClosedForm q]",
+        "notes": "The explicit hypothesis `hq : 1 < q` appears redundant: the class instance already carries `q_gt_one : 1 < q`, and the proof derives hq_pos from hq but could equally use inst.q_gt_one. The proof uses hq (hq_pos := lt_trans zero_lt_one hq), so it is not literally unused, but carrying both hq and inst.q_gt_one duplicates the positivity hypothesis \u2014 mild interface redundancy worth a glance. Borderline warn."
       }
     ],
     "proof-no-decide-masking": [
@@ -2239,5 +2239,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

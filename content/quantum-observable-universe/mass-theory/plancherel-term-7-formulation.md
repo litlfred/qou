@@ -32,7 +32,7 @@ $$
 deep-tower strata where no specific hyperbolic-knot ideal appears, only
 the universal Frobenius co-Casimir tail.*
 
-**Why universal at $k \geq 4$.** *At low strata $k \leq 3$ the
+**Universality at $k \geq 4$.** *At low strata $k \leq 3$ the
 restricted Frobenius integral $\int_{A_\lambda} \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
 factors through specific hyperbolic-knot ideals (specifically $4_1$
 at $k = 3$ — the chirality channel via Fricke-trace derivation, empirically
@@ -70,7 +70,7 @@ constant is $\sup_\lambda \tilde w_\lambda \cdot \#\Lambda_k \cdot
 \sup_\lambda |\log|\!\int||$, not $1$ as for the classical
 Plancherel measure. $\square$
 
-**Why the logarithm controls scale.** *The bare Wedderburn-weighted
+**Logarithmic control of scale.** *The bare Wedderburn-weighted
 character sum $\sum_\lambda \tilde w_\lambda \cdot
 \chi_\lambda(\beta) / \dim_q V_\lambda$ is bounded by a finite
 constant (numerically $\lesssim 2$ at $q_0$ for $n \leq 12$), giving

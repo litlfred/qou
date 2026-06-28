@@ -6,7 +6,7 @@ typed-$\mathbf{B}_3$ infrastructure in
 [`rem:typed-b3-sub-braid-extraction`](#rem:typed-b3-sub-braid-extraction)
 to an arbitrary number of strands $n \in \mathbb{N}$.
 
-## What's defined
+## Defined objects
 
 See [Table 1](#tbl:braid-group-n-strand-table1-data).
 
@@ -14,7 +14,7 @@ See [Table 1](#tbl:braid-group-n-strand-table1-data).
 
 See [Table 2](#tbl:braid-group-n-strand-table2-data).
 
-## Why this matters
+## Significance
 
 The categorical-derivation chain through $N=4$ in
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)

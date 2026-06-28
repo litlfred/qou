@@ -1563,7 +1563,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:51:57: error: failed to synthesize"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean:51:57: error: failed to synthesize"
       }
     ],
     "da-referee-verdict": [
@@ -1587,5 +1587,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

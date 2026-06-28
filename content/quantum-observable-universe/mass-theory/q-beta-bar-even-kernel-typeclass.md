@@ -6,7 +6,7 @@ $q = 1$ classical-limit shadows, and direction-sanity magnitude check.
 Instantiating `BarEvenKernel` for any candidate is equivalent to that
 candidate clearing all four §4 gates simultaneously.*
 
-## Why a unified typeclass
+## Motivation for a unified typeclass
 
 The four §4 formalize-first invariants from the
 [refuted-class map](../../../docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)

@@ -51,8 +51,9 @@ last is the **inverse** — a definition hiding in the wrong block kind.
 | **`clarity-defterm-bold`** | `definition` | the principal defined term is marked at its definition site by markdown bold `**…**` **or** a `:defterm[…]{#slug}` directive | the term appears only as plain text / `*italic*` — never emphasised |
 | **`clarity-defn-single`** | `definition` | the block defines exactly **one** concept | the block bundles several definienda (many bold section-headers, ≥2 `defines[]` entries, or several "we define / is defined as" lead-ins) |
 | **`clarity-defn-tight`** | `definition` | the definition is stated tightly, near the top | rambling: long prose, a stack of downstream-realisation sub-sections, or a long motivational preamble before the actual definition |
-| **`clarity-stmt-tight`** | `theorem` / `proposition` / `lemma` / `corollary` | the claim is stated tightly | the statement rambles. Proofs live in separate `*-proof` blocks in this corpus, so a provable block is *just* its statement and should not ramble |
+| **`clarity-stmt-tight`** | `theorem` / `proposition` / `lemma` / `corollary` | the claim is stated tightly | the **statement** rambles. **Inline-proof words are excluded** from the count (calibration 2026-06-28: 71/86 majors were proof-driven, not rambling-statement — the check now measures only the text before the first `**Proof.**`/`## Proof` marker) |
 | **`clarity-stmt-pure`** | `theorem` / `proposition` / `lemma` / `corollary` / `conjecture` | the block carries **only the claim** — hypotheses + conclusion | the statement embeds **remark / interpretation / motivation** prose — an interpretive sub-section (`**Physical meaning.**`, `**Interpretation.**`, `**Remark.**` → **major**) or interpretive lead-ins ("intuitively", "in other words", "physically", "this means that" → **minor**/**major**). Such commentary belongs in a *follow-on* `remark` block (`interprets:` the statement) |
+| **`clarity-proof-pure`** | `proof` (`prf:`) blocks + provable blocks with an **inline** `**Proof.**` | the proof carries **only its argument** | the proof embeds exposition that belongs in a `remark` — an interpretive sub-section (`**Physical meaning.**`, `**Discussion.**` → **major**) or interpretive lead-ins ("intuitively", "this means that" → **minor**). The proof argument stays; the exposition moves to a follow-on `remark`. (Same detectors as `stmt-pure`, applied to the proof region.) |
 | **`clarity-grad-style`** | every prose-bearing kind (definition / statement / conjecture / example / remark / prose) | the prose reads in the register of a **graduate-level formal mathematics text** | informal register: contractions ("don't", "we'll", "let's"), second-person ("you"), hype adjectives ("remarkable", "beautiful", "elegant"), colloquialism ("basically", "a lot of", "of course"), exclamation marks, or emoji. An emoji or `!` is on its own a hard violation (→ **major**) |
 | **`clarity-rhetorical-header`** | every prose-bearing kind | every section header (bold `**…**` or ATX `## …`) reads in **noun-phrase academic register** | a header is a **rhetorical question** (ends with `?`, or opens with Why/What/How/When/Where/… → **major**) or **colloquial framing** (`Consequence.`, `The upshot.`, `Why this matters`, `What X actually was` → **minor**). Owner directive 2026-06-27: such headers are not graduate-academic; reword to a noun phrase (`Why genus 4?` → `The genus-4 selection.`; `Consequence.` → `Corollary.`). The *content* may stay — only the header changes |
 | **`clarity-defn-misplaced`** | **non-**`definition` kinds (remark, prose, theorem, conjecture, example, …) | the block carries no definition — no `defines[]`, no `:defterm[…]`, few defining verbs | the block secretly **is** a definition: it declares `defines[]` or marks a `:defterm[…]{#slug}` define-site (→ **major**), or leads in with ≥ 2 defining verbs (→ **minor**). **Glossary blocks** (tag `"glossary"`) are exempt (`n/a`) — they define terminology by design |
@@ -139,7 +140,16 @@ there, not in the per-criterion functions.
 - **`clarity-defn-tight`** — fail if prose words > `250`, or bold sub-sections ≥
   `3`, or preamble words (before the first display-math / marked term) > `60`.
 - **`clarity-stmt-tight`** — fail if prose words > `300`, or bold sub-sections ≥
-  `3`, or preamble words (before the first display-math) > `80`.
+  `3`, or preamble words (before the first display-math) > `80`. **Inline-proof
+  words are stripped** before counting (`stripProof`: everything from the first
+  `**Proof.**`/`## Proof`/`*Proof*` marker is excluded), so the check measures
+  the statement, not the proof (calibration 2026-06-28). `totalWords` retained
+  as an informational metric.
+- **`clarity-proof-pure`** — runs on `proof` (`prf:`) blocks and provable blocks
+  with an inline proof. Fail if the **proof region** has ≥ `1` interpretive
+  sub-section (→ **major**) or ≥ `pureLeadIns` interpretive lead-ins (→ **minor**);
+  `n/a` for a provable block with no inline proof. Fix: move the exposition to a
+  follow-on `remark`, keep the proof to its argument.
 - **`clarity-stmt-pure`** — fail if ≥ `1` interpretive bold sub-section
   (`**Interpretation.**`, `**Physical meaning.**`, `**Remark.**`,
   `**Motivation.**`, `**Discussion.**`, plus a qualifier + meaning/

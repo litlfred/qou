@@ -40,22 +40,6 @@ class ConfinementFrobeniusReciprocityContext where
   /-- Primal/dual objective values. -/
   primal_obj : ℝ
   dual_obj : ℝ
-  /-- Manuscript sub-claim (i) — LP primal optimum exists with
-      a finite non-zero coefficient. -/
-  claim_i_primal_optimum : ∃ i : Fin d, x_star i ≠ 0
-  /-- Manuscript sub-claim (ii) — Dual optimum non-trivial:
-      `y_0* > 0`. -/
-  claim_ii_dual_optimum : 0 < y_0_star
-  /-- Manuscript sub-claim (iii) — LP-active set non-empty:
-      `∃ i, A_star i`. -/
-  claim_iii_active_set_nonempty : ∃ i : Fin d, A_star i
-  /-- Manuscript sub-claim (iv) — Active-set characterisation:
-      `A_star i ↔ 0 < y_star i`. -/
-  claim_iv_active_iff_dual_positive :
-    ∀ i : Fin d, A_star i ↔ 0 < y_star i
-  /-- Manuscript sub-claim (v) — Strong duality
-      `primal_obj = dual_obj`. -/
-  claim_v_strong_duality : primal_obj = dual_obj
 
 /-- **Proposition statement** (from manuscript):
 
@@ -76,18 +60,21 @@ functional $b \mapsto \langle O, b\rangle = \mathrm{tr}_M(O \cdot b)$ on
 the algebra — the physical expectation value of $O$ in the bound state
 $T$ is the
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding **names** the conditional conjecture as a `Prop`
+    (pattern C of the vacuity-fix playbook): the context class is the
+    carrier of the LP primal/dual data, and
+    `confinement_frobenius_reciprocity` is the proposition that the five
+    manuscript sub-claims (primal optimum, dual optimum, active-set
+    non-emptiness, active-iff-dual-positive, strong duality) hold for
+    that data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
+    self-assuming projection); a discharging instance is the open
+    conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts
-theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] :
+def confinement_frobenius_reciprocity (ctx : ConfinementFrobeniusReciprocityContext) : Prop :=
     (∃ i : Fin ctx.d, ctx.x_star i ≠ 0) ∧
     0 < ctx.y_0_star ∧
     (∃ i : Fin ctx.d, ctx.A_star i) ∧
     (∀ i : Fin ctx.d, ctx.A_star i ↔ 0 < ctx.y_star i) ∧
-    ctx.primal_obj = ctx.dual_obj :=
-  ⟨ctx.claim_i_primal_optimum, ctx.claim_ii_dual_optimum, ctx.claim_iii_active_set_nonempty,
-    ctx.claim_iv_active_iff_dual_positive, ctx.claim_v_strong_duality⟩
+    ctx.primal_obj = ctx.dual_obj
 
 end QOU.ParticleInteractions

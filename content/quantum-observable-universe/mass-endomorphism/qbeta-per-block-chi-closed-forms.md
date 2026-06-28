@@ -40,7 +40,7 @@ feeds the Q$_\beta$ precision-ladder derivation. Each per-block
 character is an exact rational function of $q$, pre-archimedean,
 sorry-free.
 
-**What this proposition does NOT establish.**
+**Limitations of this proposition.**
 
 - A closed form for $\Delta\tau_M(q) = \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(q)$.
   Why: the canonical Wenzl–Markov weights $y_\lambda(q)$ from

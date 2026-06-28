@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1245,7 +1245,7 @@
           "ts": "006729f446ec"
         },
         "result": "pass",
-        "notes": "Well-posed: tritium ³H→³He Q-value as rational fn of q from branching factorization (Z=1,N=2); -3.64% vs experiment, zero extra fitting.",
+        "notes": "Well-posed: tritium \u00b3H\u2192\u00b3He Q-value as rational fn of q from branching factorization (Z=1,N=2); -3.64% vs experiment, zero extra fitting.",
         "reviewed_at": "2026-06-25T17:05:25.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "006729f446ec"
         },
         "result": "pass",
-        "notes": "thm faithfully states the md closed form Q=m_e·3(q²-1)³(q²+1)²(3q⁴+4q²+3)/32q⁷ over ℝ; no :True/sorry/native_decide; projection issue under dedicated criterion.",
+        "notes": "thm faithfully states the md closed form Q=m_e\u00b73(q\u00b2-1)\u00b3(q\u00b2+1)\u00b2(3q\u2074+4q\u00b2+3)/32q\u2077 over \u211d; no :True/sorry/native_decide; projection issue under dedicated criterion.",
         "reviewed_at": "2026-06-25T17:05:25.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "006729f446ec"
         },
         "result": "fail",
-        "notes": "Proof rw[ctx.h_Q,←ctx.h_closed_form]: class field h_closed_form ASSERTS the rational fn = intermediate_Q, so the closed form is a hypothesis not derived. Pure self-projection; ab(a-b) derivation only in md, not Lean.",
+        "notes": "Proof rw[ctx.h_Q,\u2190ctx.h_closed_form]: class field h_closed_form ASSERTS the rational fn = intermediate_Q, so the closed form is a hypothesis not derived. Pure self-projection; ab(a-b) derivation only in md, not Lean.",
         "reviewed_at": "2026-06-25T17:05:25.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1851,5 +1851,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean"
   },
   "source_hashes": {
-    "md": "5c81290fc07d",
+    "md": "c1279456f803",
     "ts": "4eaaf360a48d",
     "lean": "c550806b5636"
   },
@@ -1171,7 +1171,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1 — content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
       }
     ],
     "da-referee-verdict": [
@@ -1196,5 +1196,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

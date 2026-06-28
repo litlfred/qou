@@ -1472,7 +1472,7 @@
           "ts": "ad0db80f70f4"
         },
         "result": "pass",
-        "notes": "Well-posed: dressing-chain σ_F monotone + marginal-gain peaks at shell closures → noble-gas terminality (chemical inertness); honestly flags the noble-gas identification as conditional on the open 2n²/Madelung derivation.",
+        "notes": "Well-posed: dressing-chain \u03c3_F monotone + marginal-gain peaks at shell closures \u2192 noble-gas terminality (chemical inertness); honestly flags the noble-gas identification as conditional on the open 2n\u00b2/Madelung derivation.",
         "reviewed_at": "2026-06-25T17:10:27.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1590,7 +1590,7 @@
           "ts": "ad0db80f70f4"
         },
         "result": "pass",
-        "notes": "Lean formalizes only the consistent content (claim1 monotone, claim2 μ≥2) via conditional classes; explicitly does NOT assert the σ_F local-max. No :True/sorry/native_decide; faithful to the hedged md.",
+        "notes": "Lean formalizes only the consistent content (claim1 monotone, claim2 \u03bc\u22652) via conditional classes; explicitly does NOT assert the \u03c3_F local-max. No :True/sorry/native_decide; faithful to the hedged md.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1643,7 +1643,7 @@
           "ts": "ad0db80f70f4"
         },
         "result": "fail",
-        "notes": "Headline ShellClosureStability := noble_gas_multi_operator D.shell q h projects the [NobleGasMultiOperator] field which IS its conclusion μ≥2; shell_closure_monotone:=hi.monotone likewise. Theorems return the class field = conclusion (§3b-cond rule-5).",
+        "notes": "Headline ShellClosureStability := noble_gas_multi_operator D.shell q h projects the [NobleGasMultiOperator] field which IS its conclusion \u03bc\u22652; shell_closure_monotone:=hi.monotone likewise. Theorems return the class field = conclusion (\u00a73b-cond rule-5).",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1732,7 +1732,7 @@
           "ts": "ad0db80f70f4"
         },
         "result": "pass",
-        "notes": "nElectrons∈nobleGasMagic (e.g. 2) satisfiable; HasFrobeniusStability/NobleGasMultiOperator classes inhabitable; no contradictory premise.",
+        "notes": "nElectrons\u2208nobleGasMagic (e.g. 2) satisfiable; HasFrobeniusStability/NobleGasMultiOperator classes inhabitable; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:10:27.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -2078,5 +2078,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:58.919Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

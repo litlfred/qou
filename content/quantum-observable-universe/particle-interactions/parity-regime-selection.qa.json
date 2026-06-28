@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/parity-regime-selection.md"
   },
   "source_hashes": {
-    "md": "c70bb95925ff",
+    "md": "23f26640f86a",
     "ts": "9611ff875e58"
   },
   "criteria": {
@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/parity-regime-selection.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1184,7 +1184,7 @@
           "ts": "9611ff875e58"
         },
         "result": "warn",
-        "notes": "md proof of the sign identity is genuine and simple (a,b<0 ⇒ (-1)^Z(-1)^{N-1}); but the Lean only asserts it as a class field rather than deriving it.",
+        "notes": "md proof of the sign identity is genuine and simple (a,b<0 \u21d2 (-1)^Z(-1)^{N-1}); but the Lean only asserts it as a class field rather than deriving it.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1245,7 +1245,7 @@
           "ts": "9611ff875e58"
         },
         "result": "pass",
-        "notes": "Well-posed: A-parity selects Q-value regime via fermionic sign of spectator a^Z·b^{N-1}=(-1)^{A-1}; numerically verified n→p,³H,⁶He; not a fit.",
+        "notes": "Well-posed: A-parity selects Q-value regime via fermionic sign of spectator a^Z\u00b7b^{N-1}=(-1)^{A-1}; numerically verified n\u2192p,\u00b3H,\u2076He; not a fit.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "9611ff875e58"
         },
         "result": "pass",
-        "notes": "Conjunction faithfully encodes md sign identity sign=(-1)^{A-1} + three Q-regimes (odd-A,even-A,A=1) over ℝ; no :True/sorry/native_decide.",
+        "notes": "Conjunction faithfully encodes md sign identity sign=(-1)^{A-1} + three Q-regimes (odd-A,even-A,A=1) over \u211d; no :True/sorry/native_decide.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "9611ff875e58"
         },
         "result": "fail",
-        "notes": "thm := ⟨ctx.claim_i_sign_identity,ctx.claim_ii…,…⟩; claim_i (sign=(-1)^{A-1}) IS the headline theorem, projected from a class field. The a,b<0 sign derivation lives only in md.",
+        "notes": "thm := \u27e8ctx.claim_i_sign_identity,ctx.claim_ii\u2026,\u2026\u27e9; claim_i (sign=(-1)^{A-1}) IS the headline theorem, projected from a class field. The a,b<0 sign derivation lives only in md.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1852,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

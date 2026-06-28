@@ -1273,7 +1273,7 @@
           "lean": "e438d7744ca0"
         },
         "result": "pass",
-        "notes": "Vortex mass = holonomy + Σ quantum-dilog over blow-up centres is well-posed; clearly flagged conjectural with explicit proof obligations.",
+        "notes": "Vortex mass = holonomy + \u03a3 quantum-dilog over blow-up centres is well-posed; clearly flagged conjectural with explicit proof obligations.",
         "reviewed_at": "2026-06-25T17:04:36.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1397,7 +1397,7 @@
           "lean": "e438d7744ca0"
         },
         "result": "pass",
-        "notes": "Legit §3b-cond: class TopologicalDecompositionMass carries decomp (mass=holonomy+Σdilog) as the conjectural input; 5 downstream theorems (mass_nonneg, _eq_holonomy_of_flat, _gt_holonomy_of_dilog_pos, _mono_of_extra_dilog, _unique) genuinely DERIVED via add_nonneg/sum_pos/gcongr/Fin.sum_univ_castSucc. No sorry/axiom.",
+        "notes": "Legit \u00a73b-cond: class TopologicalDecompositionMass carries decomp (mass=holonomy+\u03a3dilog) as the conjectural input; 5 downstream theorems (mass_nonneg, _eq_holonomy_of_flat, _gt_holonomy_of_dilog_pos, _mono_of_extra_dilog, _unique) genuinely DERIVED via add_nonneg/sum_pos/gcongr/Fin.sum_univ_castSucc. No sorry/axiom.",
         "reviewed_at": "2026-06-25T17:04:36.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1493,7 +1493,7 @@
           "lean": "e438d7744ca0"
         },
         "result": "pass",
-        "notes": "Premises satisfiable: trivialVortex instance (holonomy=0,N=0) witnesses the class; N=0, (0<N ∧ 0<dilog), N₂=N₁+1 all realisable.",
+        "notes": "Premises satisfiable: trivialVortex instance (holonomy=0,N=0) witnesses the class; N=0, (0<N \u2227 0<dilog), N\u2082=N\u2081+1 all realisable.",
         "reviewed_at": "2026-06-25T17:04:36.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1822,7 +1822,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1846,5 +1846,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

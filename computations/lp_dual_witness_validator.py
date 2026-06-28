@@ -124,6 +124,10 @@ def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
             data = json.loads(path.read_text())
         except (json.JSONDecodeError, OSError):
             return False, ""
+        # A witness whose top-level JSON is a list (or scalar) has no hint
+        # fields and is not an LP/SDP witness — skip without crashing.
+        if not isinstance(data, dict):
+            return False, ""
         for field in ("description", "computation", "audit", "name"):
             v = data.get(field)
             if isinstance(v, str):

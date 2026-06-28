@@ -1015,7 +1015,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1025,7 +1025,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1182,7 +1182,7 @@
           "ts": "df4bb4662490"
         },
         "result": "warn",
-        "notes": "md sketch (Frobenius reciprocity + LP-active reduction) is clear, but Lean encodes none of it — only stub LP facts on a context class.",
+        "notes": "md sketch (Frobenius reciprocity + LP-active reduction) is clear, but Lean encodes none of it \u2014 only stub LP facts on a context class.",
         "reviewed_at": "2026-06-25T17:02:53.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1361,7 +1361,7 @@
           "ts": "df4bb4662490"
         },
         "result": "fail",
-        "notes": "Lean proves only LP existence facts (x*≠0, y_0*>0, active-set nonempty, active-iff-dual-pos, primal=dual); the .md master formula <O>_T=Σ u_i(G^-1)_ij<O,b_j> is not encoded — weaker/different claim.",
+        "notes": "Lean proves only LP existence facts (x*\u22600, y_0*>0, active-set nonempty, active-iff-dual-pos, primal=dual); the .md master formula <O>_T=\u03a3 u_i(G^-1)_ij<O,b_j> is not encoded \u2014 weaker/different claim.",
         "reviewed_at": "2026-06-25T17:02:52.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1414,7 +1414,7 @@
           "ts": "df4bb4662490"
         },
         "result": "fail",
-        "notes": "theorem := ⟨ctx.claim_i_primal_optimum,...,ctx.claim_v_strong_duality⟩ — conclusion is literally the 5 class fields, projected verbatim; no derivation.",
+        "notes": "theorem := \u27e8ctx.claim_i_primal_optimum,...,ctx.claim_v_strong_duality\u27e9 \u2014 conclusion is literally the 5 class fields, projected verbatim; no derivation.",
         "reviewed_at": "2026-06-25T17:02:52.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1503,7 +1503,7 @@
           "ts": "df4bb4662490"
         },
         "result": "pass",
-        "notes": "Class fields (∃ x*≠0, 0<y_0*, active set nonempty, iff, primal=dual) are jointly satisfiable; no contradictory premise.",
+        "notes": "Class fields (\u2203 x*\u22600, 0<y_0*, active set nonempty, iff, primal=dual) are jointly satisfiable; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:02:52.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1850,5 +1850,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:11:57.781Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

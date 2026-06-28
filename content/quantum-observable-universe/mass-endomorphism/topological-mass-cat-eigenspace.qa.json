@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1363,7 +1363,7 @@
           "ts": "e48e1927f7e0"
         },
         "result": "fail",
-        "notes": ".md claims m(ϱ)=‖tr(τ̂_n α)‖+‖tr(α−τ̂_n α)‖ (orthogonal trace/norm decomposition). Lean proves only α=α_descended+α_transient for OPAQUE reals via contrived intermediate_sum — no tr, norm, or descent. Degenerate weakening.",
+        "notes": ".md claims m(\u03f1)=\u2016tr(\u03c4\u0302_n \u03b1)\u2016+\u2016tr(\u03b1\u2212\u03c4\u0302_n \u03b1)\u2016 (orthogonal trace/norm decomposition). Lean proves only \u03b1=\u03b1_descended+\u03b1_transient for OPAQUE reals via contrived intermediate_sum \u2014 no tr, norm, or descent. Degenerate weakening.",
         "reviewed_at": "2026-06-25T17:03:37.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "e48e1927f7e0"
         },
         "result": "fail",
-        "notes": "Fields h_alpha(α=sum) + h_sum(desc+trans=sum) jointly ARE the conclusion; proof rw[h_alpha,h_sum] is trivial transitivity over assumed equalities (class carries the conclusion).",
+        "notes": "Fields h_alpha(\u03b1=sum) + h_sum(desc+trans=sum) jointly ARE the conclusion; proof rw[h_alpha,h_sum] is trivial transitivity over assumed equalities (class carries the conclusion).",
         "reviewed_at": "2026-06-25T17:03:37.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "e48e1927f7e0"
         },
         "result": "pass",
-        "notes": "h_alpha,h_sum jointly satisfiable (α=desc+trans=intermediate_sum); not contradictory.",
+        "notes": "h_alpha,h_sum jointly satisfiable (\u03b1=desc+trans=intermediate_sum); not contradictory.",
         "reviewed_at": "2026-06-25T17:03:37.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1839,5 +1839,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:08.364Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

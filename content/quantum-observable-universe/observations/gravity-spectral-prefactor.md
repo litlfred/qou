@@ -36,15 +36,6 @@ surviving structure is the dualizing-complex residue, whose normalisation
 is $\alpha = m_e \cdot 8 G$ by the Planck-unit convention.  Solving
 for $G$ gives the displayed expression.  $\square$
 
-**Interpretation.**
-The dimensionless coupling $8G/m_e^{-2}$ is the universal
-prefactor — the same constant for every braid $\beta_\mathcal{K}$ —
-extracted from the deep-tower Plancherel residue.  In QOU terms,
-gravity is the macroscopic-stratum signature of the categorical mass
-functional: at high curvature-rank no specific knot remains, only
-the universal Frobenius co-Casimir tail, whose normalisation defines
-$G$.
-
 **Connection to substrate geometry.**
 ([Gravity emergent](#rem:gravity-emergent)) and
 ([GR substrate geometry](#rem:gr-substrate-geometry)) describe gravity
@@ -55,7 +46,7 @@ $G$ as its universal prefactor.  The two viewpoints are dual — CR
 geometry is the substrate face, the Plancherel residue is the
 categorical face.
 
-**Consequences.**
+**Corollaries.**
 
 1. *No fitting.* $G$ is not an independent parameter; it is the
    prefactor $\alpha/8m_e$ from the spectral tail.  Its numerical

@@ -57,7 +57,7 @@ a categorical invariant of $\mathbf{C}$ with $\ordw(\Delta_q) = -3$,
 and Yang--Mills on $\mathbb{R}^4$ is the standard part of the
 $q$-deformation.
 
-**Why the template works.** The mass-gap scaling
+**Mechanism of the template.** The mass-gap scaling
 $\Delta_q \asymp \varepsilon^3$ is a *fixed structural invariant* of
 the rigid :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$: it does not change
 from problem to problem.  The Reeb-period scaling
@@ -72,7 +72,7 @@ statement into the form
 $\delta^2 / \varepsilon > \varepsilon^3$ closes the argument
 uniformly.
 
-**Philosophical upshot.** In the QOU framework, the six millennium
+**Philosophical interpretation.** In the QOU framework, the six millennium
 problems above are not independent questions but **six instances
 of the same substrate-stability requirement**: the observable
 universe can contain only those classical-limit configurations in
