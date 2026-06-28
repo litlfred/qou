@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-26
 **Scope:** reporting only — **no canonical witness regenerated.** This documents the
-live `per_observable_100x_status.py` output on current main and flags the known
+live `computations/per_observable_100x_status.py` output on current main and flags the known
 `tnjb` convention trap so the next agent does not silently overwrite the canonical
 witness.
 **Beans:** `tnjb` (per-observable-100x witness convention), `z5vu` (owner-gated
@@ -25,7 +25,7 @@ muon→proton witness migration), `kehn` (m_n Kashiwara b²).
 ## The `tnjb` caveat — m_μ is FAIL, not MET
 
 > **Update (2026-06-28 — flip-bug CLOSED in the producer; PR #2897 + this PR's
-> verification).** `per_observable_100x_status.py` no longer reads the
+> verification).** `computations/per_observable_100x_status.py` no longer reads the
 > muon-flipped `muon_check.m_mu_pred_MeV`; it **PINS** the m_μ prediction to the
 > proton-anchored `_M_MU_PRED_PROTON_MEV = 105.658397811` MeV (209.8 ppb /
 > 963.6× FAIL) in both the substrate-identity and Borromean-fallback paths. A
@@ -33,7 +33,7 @@ muon→proton witness migration), `kehn` (m_n Kashiwara b²).
 > failure mode described below is no longer reproducible. The historical
 > description is retained as the rationale for the pin.
 
-A fresh `per_observable_100x_status.py` run **once reported m_μ at ~0.05 ppb
+A fresh `computations/per_observable_100x_status.py` run **once reported m_μ at ~0.05 ppb
 (MET), inflating the count to 4/7.** This was the recurring `tnjb` bug, not a
 real result: the fresh run read a **muon-q₀** `m_mu_pred` (≈ CODATA, ~0 ppb —
 the CAL-2 calibration *tautology*) and scored it as the m_μ prediction, silently
@@ -49,7 +49,8 @@ for the *other* muon-q₀ rows, not for m_μ.
 
 ## Independent verification (2026-06-28, bean `tnjb`)
 
-Re-ran `python3 -u per_observable_100x_status.py` in an environment matching the
+Re-ran `python3 -u computations/per_observable_100x_status.py` (from the repo root)
+in an environment matching the
 canonical stack (Python 3.11.x, mpmath 1.3.0, numpy 2.4.6, sympy 1.14.0):
 
 - **m_μ row: 209.8 ppb err, 963.6× miss, `beats_100x = false` (FAIL).** Correct.
