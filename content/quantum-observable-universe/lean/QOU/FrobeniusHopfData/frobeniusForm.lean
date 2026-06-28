@@ -1,21 +1,29 @@
-import Mathlib.Tactic
+import Mathlib.Logic.Function.Basic
 
 /-!
 # QOU.FrobeniusHopfData.frobeniusForm
 
-**Placeholder canonical** for content block at
+Canonical Lean declaration for content block at
 [`quantum-observable-universe/quantum-universes/frobenius-pairing.ts`](quantum-observable-universe/quantum-universes/frobenius-pairing.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.FrobeniusHopfData.frobeniusForm` resolves to a real declaration in the `qou`
-Lake package.
+The `lean.ref` URI `qou:QOU.FrobeniusHopfData.frobeniusForm` resolves to
+`FrobeniusForm` below.
+
+The manuscript claim — that the Frobenius pairing `∫_A ∘ μ` is
+non-degenerate (induces an iso `A ≅ A^∨`) iff the snake identities
+hold — is irreducibly abstract over the opaque categorical objects `A`,
+`A^∨` and the opaque iso predicate `is_iso`.  No faithful Mathlib
+structure reduces it (it would require the full rigid-monoidal snake-
+identity apparatus on the specific quantum universe), so this is
+pattern C of the vacuity-fix playbook: the context class carries the
+pairing data and `FrobeniusForm` **names** the conditional conjecture
+as a `Prop` (honestly *not asserted* — no `theorem … := ctx.claim_*`
+self-assuming projection; an instance discharging it is the open claim).
 -/
 
 namespace QOU.FrobeniusHopfData
 
-
-/-- Abstract context for the `frobeniusForm` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Pairing data for the `frobeniusForm` claim. -/
 class FrobeniusFormContext where
   /-- Categorical object `A`. -/
   A : Type
@@ -24,52 +32,25 @@ class FrobeniusFormContext where
   /-- The Frobenius-pairing-induced map `A → A^∨`. -/
   pairing : A → A_dual
   /-- Predicate: the pairing is non-degenerate, i.e. `pairing` is
-      an isomorphism. -/
+      an isomorphism (the snake-identity / iso content). -/
   is_iso : Prop
-  /-- Manuscript identity: Frobenius pairing is non-degenerate iff
-      the snake identities hold (encoded as the iso property). -/
-  claim_frobeniusForm : is_iso ↔ Function.Bijective pairing
 
-/-- **Manuscript statement** (full body):
+/-- **Manuscript statement** (non-degeneracy of the Frobenius pairing),
+named as a `Prop`:
 
-Let $(\mathbf{C}, A, \tau)$ be a
-[quantum universe](#def:quantum-universe) with multiplication
-$\mu \colon A \otimes A \to A$ and Frobenius form
-$\int_A \colon A \to \mathbf{1}$. The *Frobenius pairing* is the
-composite
+Let `(𝐂, A, τ)` be a [quantum universe](#def:quantum-universe) with
+multiplication `μ : A ⊗ A → A` and Frobenius form `∫_A : A → 𝟏`.  The
+Frobenius pairing `∫_A ∘ μ` is *non-degenerate* — inducing an iso
+`A ≅ A^∨` (`is_iso`) — **iff** it is bijective as the underlying map
+(the snake identities, with a coevaluation `η̃ : 𝟏 → A ⊗ A` such that
+both snake composites equal `id_A`).
 
-```tex
-\begin{equation}\label{eq:frobenius-pairing}
-\begin{tikzcd}[column sep=2.5em]
-  A \otimes A \ar[r, "\mu"]
-  & A \ar[r, "\int_A"]
-  & \mathbf{1}
-\end{tikzcd}
-\end{equation}
-```
-
-We say the Frobenius pairing is *non-degenerate* when this composite
-induces an isomorphism $A \xrightarrow{ \sim } A^{\vee}$ to the
-dual object. Equivalently, the snake identities hold: there exists a
-coevaluation $\tilde{\eta} \colon \mathbf{1} \to A \otimes A$ such
-that the two composites
-
-$$
-A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
-  \xrightarrow{\mathrm{id} \otimes \tilde{\eta}} A \otimes A \otimes A
-  \xrightarrow{\alpha^{-1}} (A \otimes A) \otimes A
-  \xrightarrow{(\int_A \circ \mu) \otimes \mathrm{id}} \mathbf{1} \otimes A
-  \xrightarrow{\lambda_A} A
-$$
-
-and its mirror are both equal to $\mathrm{id}_A$.
-
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_frobeniusForm := by sorry`
-    placeholder; the `ctx.claim_frobeniusForm : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+This is the §3b "name the conditional conjecture" disposition (pattern
+C): `FrobeniusForm ctx` is the proposition the manuscript conjectures
+for the pairing data `ctx`; the open state is honestly represented by
+the absence of an instance.  It is *not* a self-assuming projection. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
-theorem frobeniusForm [ctx : FrobeniusFormContext] :
-    ctx.is_iso ↔ Function.Bijective ctx.pairing :=
-  ctx.claim_frobeniusForm
+def FrobeniusForm (ctx : FrobeniusFormContext) : Prop :=
+    ctx.is_iso ↔ Function.Bijective ctx.pairing
 
 end QOU.FrobeniusHopfData

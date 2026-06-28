@@ -1,7 +1,7 @@
 ---
 # vq06
 title: 'Vacuity fix: lean/BaryonWeight (1 defect)'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T00:00:00Z
