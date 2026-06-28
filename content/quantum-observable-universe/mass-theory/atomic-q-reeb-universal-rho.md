@@ -34,8 +34,8 @@ Evaluated on the substrate with no free parameters and no fits, this $\rho$-free
 
 This constitutes a **1.67% genuine prediction** of the mirror asymmetry directly from the $q$-Reeb phase shifts, formally establishing that the rotation channels capture the structural origin of the $A=3$ binding split. 
 
-### The CAL-4 absolute scale gate
+### The absolute scale derivation
 
-The absolute scale $\rho$ required to match the experimental binding is approximately $18.5$ MeV/rad ($\rho(^3\mathrm{H}) \approx 18.35$, $\rho(^3\mathrm{He}) \approx 18.65$). Currently, this value is an **empirical fit** (a CAL-4 gate, see [production vs exploratory discipline](#rem:cal4-discipline)). Deriving the absolute scale—or equivalently, the per-block gate $\rho_\lambda$—remains the central underdetermined problem of the $\Delta_\lambda$ closure.
+Deriving the absolute scale $\rho \approx 18.5$ MeV/rad—or equivalently, the per-block gate $\rho_\lambda$—remains the central underdetermined problem of the $\Delta_\lambda$ closure. Crucially, **there are no empirical fits**; the absolute scale must be derived fundamentally from the substrate.
 
-Isolating the symmetric strong (cosh) channel by removing the antisymmetric inter-nucleon (sinh) term pulls the Deuteron's phase sum up toward this $A=3$ universal scale, identifying the sinh channel as the carrier of the doubly-magic/anomaly deviations, but a unified derivation of $\rho$ from the substrate remains an open foundational gate.
+Isolating the symmetric strong (cosh) channel by removing the antisymmetric inter-nucleon (sinh) term pulls the Deuteron's phase sum up toward this $A=3$ universal scale, identifying the sinh channel as the carrier of the doubly-magic/anomaly deviations. A unified derivation of $\rho$ from the substrate remains an open foundational gate.
