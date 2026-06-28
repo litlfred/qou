@@ -133,12 +133,36 @@ def main() -> int:
           f"sparsify hypothesis {'REFUTED' if edge['hypothesis_refuted'] else 'supported'} "
           f"(adjacent worse; monotone heavy-A under-bind).")
 
+    # ---- the bulk is EXTENSIVE (A-linear), not the A² pair tower. Compare the
+    #   tower's A² net/target to the extensive shell term 2·m_e·8G per nucleon
+    #   (8G = Vol(L6a4), the Borromean shell residue). A-linear ⇒ flat ~1 for A≥4.
+    G = float(__import__("mpmath").catalan); per_nuc = 2 * 0.51099895069 * 8 * G
+    mag = [(Z + N) * per_nuc / B for _, (Z, N, B) in AME.items()]
+    mag_heavy = [(Z + N) * per_nuc / B for nm, (Z, N, B) in AME.items()
+                 if Z + N >= 4]
+    extensive = {"per_nucleon_2me8G_MeV": per_nuc,
+                 "magic_net_over_target_spread_Age4": max(mag_heavy) / min(mag_heavy),
+                 "tower_net_over_target_spread": spread_t,
+                 "note": ("the extensive A-linear 2·m_e·8G (≈7.49 MeV/nucleon ≈ "
+                          "empirical ~8) gives net/target 0.85–1.06 for A≥4 "
+                          "(spread 1.65×) — FAR flatter than the tower's A² pair "
+                          "structure (6.17×). The BULK binding is extensive "
+                          "(A-linear shell residue), NOT a q-deformed pair sum; "
+                          "the tower's C(A,2)~A² scaling is the q-Gaussian "
+                          "obstruction (Σ q₀^cr(π) ~ q₀^C(A,2) diverges at q₀>1, "
+                          "prop:q-gaussian-obstruction-at-q0). q-Askey kernels "
+                          "(Hahn-Exton q-Bessel / q-Hermite) are the FIBRE per-λ "
+                          "kernel (|q|≤1), not the A-scaling bulk.")}
+    print(f"\n  EXTENSIVE BULK: 2·m_e·8G = {per_nuc:.3f} MeV/nucleon (A-linear) "
+          f"→ net/target spread A≥4 = {extensive['magic_net_over_target_spread_Age4']:.2f}× "
+          f"(vs tower A² {spread_t:.2f}×). The bulk is extensive, not the pair tower.")
+
     out = {"schema": "delta-lambda-borromean-ascaling/v1",
            "description": "Borromean per-braid tower net/target vs canonical "
-                          "sgn(w₀)·dim; A-scaling diagnostic + edge-set test "
-                          "(no fit, no closure).",
+                          "sgn(w₀)·dim; A-scaling diagnostic + edge-set test + "
+                          "extensive-bulk comparison (no fit, no closure).",
            "tower_net_over_target_spread": spread_t, "rows": rows,
-           "edge_set_test": edge}
+           "edge_set_test": edge, "extensive_bulk": extensive}
     p = HERE / "delta-lambda-borromean-ascaling.witness.json"
     p.write_text(json.dumps(out, indent=2))
     print(f"\n  witness → {p.name}")

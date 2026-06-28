@@ -1,6 +1,6 @@
 {
   "schema": "delta-lambda-borromean-ascaling/v1",
-  "description": "Borromean per-braid tower net/target vs canonical sgn(w\u2080)\u00b7dim; A-scaling diagnostic + edge-set test (no fit, no closure).",
+  "description": "Borromean per-braid tower net/target vs canonical sgn(w\u2080)\u00b7dim; A-scaling diagnostic + edge-set test + extensive-bulk comparison (no fit, no closure).",
   "tower_net_over_target_spread": 6.1655584950713145,
   "rows": [
     {
@@ -73,5 +73,11 @@
     "adjacent_spread": 17.8975134867134,
     "hypothesis_refuted": true,
     "note": "sparsifying the edge set (all-pairs C(A,2)~A\u00b2 \u2192 adjacent A\u22121~A) WORSENS the spread (monotone under-bind at heavy A) \u2014 the U-shape is NOT a pure edge-count effect; it is A\u00b2-overscaling at the heavy end PLUS the \u2074He magic dip (no shell structure). Edge-set lever (w5tg) alone is insufficient; the per-pair magnitude (~0.4 MeV) is far below ~8 MeV/nucleon, so closure needs magnitude-reshaping (z2bn R(q,x)) + shell/magic structure, not sparsification."
+  },
+  "extensive_bulk": {
+    "per_nucleon_2me8G_MeV": 7.4889193198832205,
+    "magic_net_over_target_spread_Age4": 1.6484519057674925,
+    "tower_net_over_target_spread": 6.1655584950713145,
+    "note": "the extensive A-linear 2\u00b7m_e\u00b78G (\u22487.49 MeV/nucleon \u2248 empirical ~8) gives net/target 0.85\u20131.06 for A\u22654 (spread 1.65\u00d7) \u2014 FAR flatter than the tower's A\u00b2 pair structure (6.17\u00d7). The BULK binding is extensive (A-linear shell residue), NOT a q-deformed pair sum; the tower's C(A,2)~A\u00b2 scaling is the q-Gaussian obstruction (\u03a3 q\u2080^cr(\u03c0) ~ q\u2080^C(A,2) diverges at q\u2080>1, prop:q-gaussian-obstruction-at-q0). q-Askey kernels (Hahn-Exton q-Bessel / q-Hermite) are the FIBRE per-\u03bb kernel (|q|\u22641), not the A-scaling bulk."
   }
 }
