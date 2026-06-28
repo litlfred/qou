@@ -1,18 +1,18 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-28T06:43:51.852Z",
+  "generated": "2026-06-28T14:47:39.977Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 1720,
+  "scanned_files": 1724,
   "files_flagged": 52,
-  "total_defects": 10,
+  "total_defects": 9,
   "total_exempt": 56,
   "categories": {
-    "proof-claims-unencoded": 2,
+    "proof-no-provable-axiom": 1,
     "proof-no-false-premise": 7,
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
-    "total": 218,
+    "total": 217,
     "primary": [
       "AeonRecycling",
       "AlgebraicGeometricEquivalence",
@@ -26,8 +26,6 @@
       "BlowupYekutieli",
       "BorelZagierQOU",
       "BorelZagierQouVolumes",
-      "BorromeanQuark",
-      "BorromeanQuark",
       "BorromeanQuark",
       "BorromeanQuark",
       "BorromeanQuark",
@@ -53,6 +51,7 @@
       "ClassicalLimitStpart",
       "ClassicalRiemannHypothesis",
       "ComplexChiralityRotation",
+      "ComplexVolumeFibre",
       "ConfinementNfStructureForcing",
       "ContentAdditive",
       "CriticalExponent",
@@ -365,16 +364,7 @@
     ],
     "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean": [
       {
-        "line": 247,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 254,
+        "line": 74,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def orbital_fourier_decomposition_conditional_on_borromean_quark",
@@ -386,16 +376,15 @@
     ],
     "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean": [
       {
-        "line": 183,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
+        "line": 33,
+        "category": "proof-no-provable-axiom",
+        "pattern": "uncited-axiom",
+        "snippet": "axiom mode_is_so3_irrep :",
+        "decl": "mode_is_so3_irrep",
+        "severity": "critical"
       },
       {
-        "line": 190,
+        "line": 50,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def orbital_space_normal_bundle_conditional_on_borromean_quark",
