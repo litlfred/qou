@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-residue.lean"
   },
   "source_hashes": {
-    "md": "589da50ca488",
+    "md": "48f8d1d7e46a",
     "ts": "458da9987dde",
     "lean": "953f4d409272"
   },
@@ -1070,6 +1070,24 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-residue.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "48f8d1d7e46a",
+          "ts": "458da9987dde",
+          "lean": "953f4d409272"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "degree-48 Markov-normalised Habiro polynomial trace... evaluates at the substrate value u_0 = sqrt(q_0)... to the proton GB mass 2.1225825095",
+        "notes": "A degree-48 polynomial provides massive overfitting potential. Matching a scalar to this precision using 48 coefficients is numerology."
       }
     ],
     "da-non-sequitur": [
@@ -1225,5 +1243,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

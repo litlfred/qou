@@ -2087,6 +2087,24 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "3fd5852998b3",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The 'Application to the proton--electron mass ratio' section still uses the superseded $\\Phi_q$ (Faddeev quantum dilogarithm) to compute a mass ratio of 1870 (1.8% error), directly contradicting the earlier Resolution banner which states $\\Phi_q$ is structurally wrong, causes a -737 MeV mirror-nucleus pathology, and was replaced by $-\\mathrm{Li}_2^q$. The text simultaneously claims $\\Phi_q$ diverges and is a bug, yet presents its 1870 ratio calculation as a valid prediction.",
+        "notes": "Internal contradiction."
       }
     ],
     "da-vacuous": [
@@ -2225,6 +2243,24 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "3fd5852998b3",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The block claims 'No parameters are fitted. The inputs are the substrate parameter $q_0$ and the electron mass $m_e$'. The substrate parameter $q_0 \\approx 1.110$ is a continuous parameter that sets the scale of the quantum dilogarithm and Markov parameter. Denying that it is a fitted parameter hides a degree of freedom.",
+        "notes": "Post-hoc rationalization of parameter tuning."
       }
     ],
     "da-non-sequitur": [
@@ -2294,6 +2330,24 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "3fd5852998b3",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "Lean `massPoly` uses `quantumDilogPoly q z = 1 - q⁻¹ * z`, whereas `.md` proposition uses `-\\mathrm{Li}_2^q(-z)`. Lean definition only sums adjacent pairs `i` and `i+1`, whereas `.md` sums all pairs $i < j$. Signs are opposite (Lean adds, `.md` subtracts).",
+        "notes": "The formal Lean statement completely diverges from the stated formula in the text."
       }
     ],
     "da-citation-misuse": [
@@ -2508,5 +2562,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T22:44:56.705Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/knot-operator-bring-action.md"
   },
   "source_hashes": {
-    "md": "3bdf836a8bc2",
+    "md": "3cd854a9388b",
     "ts": "68b24c022e29"
   },
   "criteria": {
@@ -853,6 +853,40 @@
         "notes": "No false claims identified in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure'; the algebraic relation involving $H_3(q)$ is mathematically consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "3cd854a9388b",
+          "ts": "68b24c022e29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The text claims 'The six basis operators generate the discrete group $S_3 \\cong \\mathrm{Dih}_3$'. This is mathematically false. For $q \\neq 1$, the Hecke algebra basis elements do not form a finite group under multiplication (e.g. $\\sigma_0^2 = (q - q^{-1})\\sigma_0 + 1$). They form a 6-dimensional vector space basis for the algebra, but do not close as a group.",
+        "notes": "Mathematical error confusing an algebra basis with a group generating set."
+      },
+      {
+        "field_hash": {
+          "md": "3cd854a9388b",
+          "ts": "68b24c022e29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The text refers to 'the Bring surface's rigidity as a hyperbolic 3-manifold complement'. Bring's surface is a compact Riemann surface of genus 4 (a real 2-manifold). It is not a 3-manifold, nor is it a knot complement.",
+        "notes": "Dimensional and topological error."
       }
     ],
     "da-vacuous": [
@@ -1082,5 +1116,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:50.832Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

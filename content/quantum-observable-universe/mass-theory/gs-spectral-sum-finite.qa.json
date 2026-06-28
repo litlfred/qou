@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.md"
   },
   "source_hashes": {
-    "md": "b6ba26da9f25",
+    "md": "ae9310bdc60b",
     "ts": "d48530b9d131"
   },
   "criteria": {
@@ -969,6 +969,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ae9310bdc60b",
+          "ts": "d48530b9d131"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The Lean theorem `spectral_sum_finite` is a literal tautology `S.residue = 0 \\lor \\ell < S.levelBound` proven by `Or.inr h` where `h : \\ell < S.levelBound` is an explicitly provided hypothesis. The markdown file acknowledges this as 'vacuous'.",
+        "notes": "The formal proof avoids the physics/math content entirely."
       }
     ],
     "da-circular": [
@@ -1169,5 +1186,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:50.432Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

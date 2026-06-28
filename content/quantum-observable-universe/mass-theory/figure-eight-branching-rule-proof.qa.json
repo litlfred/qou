@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:figure-eight-branching-rule",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/figure-eight-branching-rule-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/figure-eight-branching-rule-proof.md"
+  },
+  "source_hashes": {
+    "md": "f13a05b5e184",
+    "ts": "26f4e2fb52ee"
+  },
+  "criteria": {
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f13a05b5e184",
+          "ts": "26f4e2fb52ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "Maps 'content sum c(lambda)' to 'volume/surface vs Coulomb/exchange', and 'hook partitions' to 'nuclear magic numbers'.",
+        "notes": "Extreme overfitting/numerology. The text forces a phenomenological mapping between Hecke representation combinatorics and the empirical Bethe-Weizsäcker nuclear mass formula without any underlying physical mechanism."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:55:43.946Z"
+}

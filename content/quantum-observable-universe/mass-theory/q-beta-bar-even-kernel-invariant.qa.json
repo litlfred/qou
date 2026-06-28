@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.lean"
   },
   "source_hashes": {
-    "md": "98c341e373e6",
+    "md": "84f3bbf8aea5",
     "ts": "db624ec82f98",
     "lean": "03bd5da4dd1a"
   },
@@ -2085,6 +2085,24 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "84f3bbf8aea5",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "Reference to 'numerical anchor sweep' and 'refuted-class map' for kernel candidates F(q).",
+        "notes": "Suggests searching through a large parameter space or menu of variants to find a kernel that matches targets, hiding degrees of freedom."
       }
     ],
     "da-non-sequitur": [
@@ -2145,5 +2163,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }
