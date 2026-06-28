@@ -21,7 +21,7 @@ $$
 *with kernel coefficients $\{a_j\}$ extracted from $R(q_0, \xi)$ via the
 $(u;u)_m \to u^k$ change-of-basis of the Habiro ring (Habiro 2004).*
 
-## Why this is the right structure
+## Structural justification
 
 The shape-collapse audit (PR [#1750](https://github.com/litlfred/qou/pull/1750))
 established the operator content: $T_\beta = S \cdot \mathbf{1}$, with
@@ -35,7 +35,7 @@ normalization. Together these pin $F(q) = \mathfrak{Q}_\beta(q)/[Q_A(q) \cdot \c
 as a single fibre-level Habiro object whose $q$-difference structure
 determines the $c_k$.
 
-## What the recursion buys
+## Consequences of the recursion
 
 Once a *single* $F$ is identified, the seven scalar coefficients
 $c_2, \ldots, c_8$ (required for the $1\,\mathrm{ppQ}$ truncation
@@ -54,7 +54,7 @@ or is extracted from the CODATA residual (the caveat of
 [`qbeta-1ppq-achieved.witness.json`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta-1ppq-achieved.witness.json)
 where $c_4 = -0.97157$ was a fit).
 
-## The kernel — what's known, what's open
+## The kernel — known and open components
 
 | Slot | Status | Source |
 |---|---|---|
@@ -65,7 +65,7 @@ where $c_4 = -0.97157$ was a fit).
 | Kernel $R(q,\xi)$ | structurally constrained: bar-ODD leading $a_1=-c_3$ (carrier $\kappa_{(2,1)}=(q-1)^3(q+1)/q^2$), period-3/$\zeta_6$ resonance, $\sqrt{u}$-to-$u^2$ lift. The $\zeta_4$ residue is **relaxed** — the root-of-unity residue program shows neither the content-Casimir $\mu_\lambda$ nor the framing $\cos\alpha_{\mathrm{eff}}$ supplies a bar-odd-compatible genuine $\zeta_4(q)$; it is a $\sqrt{q}$ double-cover reading of $\zeta_2$ (bar-fixed $q=-1$) or a post-$\cos$-wrap archimedean feature, **not** a fibre constraint. | [`habiro_ladder_bridge.py`](https://github.com/litlfred/qou/blob/main/computations/habiro/habiro_ladder_bridge.py), [root-of-unity program audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md) |
 | Habiro element $F(q)$ | **identified (structural analog)** | mirroring α_EM `[2]_q(1-h²α)` |
 
-## What this content block provides
+## Contents of this content block
 
 - A formal Lean structure
   `CKRecursion R` capturing the depth $d$ + kernel $\{a_j\}$ data
@@ -115,7 +115,7 @@ where $c_4 = -0.97157$ was a fit).
   demonstrating the recursion machinery on toy depth-1 and depth-2
   kernels, with the seed $c_2 = -1$.
 
-## Closing the open piece — the q-heat kernel derivation
+## Closure of the open piece — the q-heat kernel derivation
 
 The Habiro element $F(q)$ is identified as the **partition function** (the trace of the $q$-heat kernel) over the relevant Hecke modules:
 

@@ -34,7 +34,7 @@ over the **canonical $\bowtie_K$-coupled atomic word**
 $\mathcal{B}_K = \texttt{atom\_braid\_word\_3A}(Z, N)$ for
 $K \in \{D, T, {}^3\mathrm{He}\}$.
 
-## Why this is non-trivial
+## Non-triviality of the test
 
 The canonical T and ${}^3\mathrm{He}$ words differ in *interface
 type*, not just generator signs:
@@ -78,7 +78,7 @@ witness records this as the (passing) assertion
 **true by construction** when the split is large.  See *Status*
 below for the rationale.
 
-## Why Option E breaks the invariance — structural reason
+## Structural reason for the invariance breaking
 
 The Hopf antipode $S$ acts on Wedderburn blocks as the
 *transpose-partition involution*
@@ -112,7 +112,7 @@ transpose-asymmetric weighting and cannot be $S$-invariant — even
 when $\mathcal{B}_K$ and $\beta_{K^*}$ (mirror partner) realise the same
 Hopf-orbit on the Markov-trace pairing.
 
-## Refines the mirror-isobar EM-localisation theorem
+## Refinement of the mirror-isobar EM-localisation theorem
 
 This refines but does **not** falsify
 [mirror-isobar EM-localisation](#rem:isospin-mass-split-em-localisation),

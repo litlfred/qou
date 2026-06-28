@@ -39,7 +39,7 @@ $q$-Gaussian state — hence no representing probability measure — exists; the
 moment blow-up of Step 2 is the concrete witness ($T_n$ outgrows the moment
 sequence of any measure with a finite analytic moment-generating function). $\square$
 
-## Consequence
+## Corollary
 
 Braid-word fluctuation statistics at $q_0$ **cannot** be modelled by the BS
 $q$-Gaussian. The convergent substitutes are the *inner* Perron–Frobenius

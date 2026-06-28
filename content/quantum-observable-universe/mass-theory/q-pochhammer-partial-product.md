@@ -61,7 +61,7 @@ that at the QOU substrate $q_0 > 1$ the denominator zeros $q_0^{-k}$
 land in $(0, 1]$ — the cusp-shape range used by the Newton-Raphson
 seeding pipeline.*
 
-## Why a partial product
+## Rationale for the partial product
 
 The categorical Markov trace of a transient crossing word $T_w$ at
 GB-depth $k_\star(T_w) = n$ pairs to zero with every centre stratum

@@ -60,7 +60,7 @@ Schur–Weyl path ([prop:schur-weyl-mass-decomposition](#prop\:schur-weyl-mass-d
 ensuring $|\mathrm{tr}_M(\xi)| < q$ at $q = q_0$ (the $\Phi_q$
 convergence radius).*
 
-## Why this supersedes the per-generator form
+## Supersession of the per-generator form
 
 The earlier statement
 ([mass-endomorphism-tower](#prop\:mass-endomorphism-tower)) summed

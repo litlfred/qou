@@ -10,7 +10,7 @@ This remark reframes
 ([mass endomorphism tower](#prop\:mass-endomorphism-tower))
 in **jet-brane** language.
 
-## Why quadratic per jet level is enough
+## Sufficiency of quadratic terms per jet level
 
 The prop's formula keeps at most quadratic $\hat{V}_i \hat{V}_j$
 spectral coordinates (the $z^2 \Phi_q(|\hat V_i \hat V_j|)$ term)

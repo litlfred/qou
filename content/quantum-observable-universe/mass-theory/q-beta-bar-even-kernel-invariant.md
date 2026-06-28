@@ -10,7 +10,7 @@ $$
 representation (no $\sqrt{u}$ branch) if and only if $R$ is bar-even, i.e.
 $R$ is an even function of $t := q - 1$ about $q = 1$.*
 
-## Why this matters (the structural discriminant)
+## Significance (the structural discriminant)
 
 The substrate variable $u = b(q) \cdot \hbar_q^2$ has a **double zero** at
 $q = 1$:
