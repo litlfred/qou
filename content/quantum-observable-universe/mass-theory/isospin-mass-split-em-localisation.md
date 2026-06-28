@@ -46,7 +46,7 @@ $$
 **localised** in the sector of the categorical mass that breaks
 both involutions simultaneously.*
 
-## The Coulomb sector is the only candidate
+### The Coulomb sector is the only candidate
 
 The full mass functional decomposes (per the unified six-term
 formula plus shell-correction Term 7) into:
@@ -93,7 +93,7 @@ from the Markov-trace sector alone is structurally inconsistent
 with both sign-flip and Hopf-antipode invariances of the
 underlying Hecke algebra.
 
-## Computational support
+### Computational support
 
 Computational verification of the Coulomb-sector localisation is
 not yet wired into a witness — it follows from the existing

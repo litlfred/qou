@@ -96,6 +96,8 @@ export default chapter({
       blocks: [
         "standard-part-classical-limits-intro",
         "valuation-ring-finite-surreals",
+        "valuation-ring-finite-surreals-significance",
+        "valuation-ring-finite-surreals-points-topology",
         "classical-limit-stpart",
         "archimedean-stpart",
         "archimedean-stpart-strategy",
@@ -108,6 +110,7 @@ export default chapter({
         "conway-normal-form-intro",
         "conway-normal-form",
         "body-asymptotics-catalog",
+        "body-asymptotics-catalog-jet-structures",
         "body-asymptotics-catalog-table3-data",
         "body-asymptotics-catalog-table2-data",
         "body-asymptotics-catalog-table1-data",

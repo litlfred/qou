@@ -173,6 +173,7 @@ export default chapter({
         "neutron-qvalue-symbolic",
         "qbeta-counit-closed-form",
         "qbeta-counit-transition",
+        "qbeta-counit-agreement",
         "qbeta-trace-counit-convergence",
         "delta-pre-archimedean",
         // Merged from the former auto-split "Transfer matrices and beta
@@ -302,6 +303,7 @@ export default chapter({
         "brunnian-property-of-borromean",
         "delta-skein-substrate-identity",
         "figure-8-muon-mass-cross-check",
+        "figure-8-borromean-significance",
         "typed-crossing-operator",
         "nucleon-hecke-element",
         "hadron-proton-example",

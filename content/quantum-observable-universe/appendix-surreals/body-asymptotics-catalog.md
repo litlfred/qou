@@ -20,7 +20,7 @@ See [Table 2](#tbl:body-asymptotics-catalog-table2-data).
 
 See [Table 3](#tbl:body-asymptotics-catalog-table3-data).
 
-## Reading conventions
+### Reading conventions
 
 For each entry above, the classical statement and the
 $\ordw$-statement are **logically equivalent** under the dictionary
@@ -42,15 +42,3 @@ propositions can carry a single forward reference to the surreal
 appendix without rewriting their statement, and so that the
 appendix's notational machinery is visibly anchored in concrete
 body content rather than left as an isolated convention.
-
-## Engineering note
-
-The recursive jet structures (mass endomorphism brane tower,
-Yekutieli jet prolongation, NS jet correction $\delta_n$) all
-admit the same surreal reading: each level adds one factor of
-the relevant infinitesimal ($\hbar_q$ in the brane tower, $d$ in
-the NS Biot--Savart structure), so the $\ordw$ of the level-$n$
-correction is linear in $n$. This is the
-[surreal blow-up calculus](#def:surreal-blowup-calculus) at work,
-and it matches the geometric-series tail bounds in the body
-without requiring any change in body notation.

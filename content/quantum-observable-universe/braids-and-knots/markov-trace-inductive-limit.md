@@ -1,3 +1,5 @@
+## Inductive-limit Markov trace consolidating the per-$n$ classes
+
 **Markov trace on the inductive limit $\mathbf{B}_\infty = \bigcup_n \mathbf{B}_n$ — single global trace consolidating every per-$n$ `MarkovTraceN n q`.**
 
 Per Jones 1985 and Wenzl 1988, the Markov trace
@@ -16,7 +18,7 @@ $\iota_n : \mathbf{B}_n \hookrightarrow \mathbf{B}_{n+1}$
 
 with $z = 1/(\sqrt{q} + 1/\sqrt{q})$ the Markov-Jones parameter.
 
-## Contents of this block
+### Contents of this block
 
 The Lean module
 `QOU.BraidKnot.markov_trace_inductive_limit` provides:
@@ -30,7 +32,7 @@ The Lean module
  class is automatically derivable** (the per-$n$ axioms are the
  restrictions of the global ones).
 
-## Consolidation benefit
+### Consolidation benefit
 
 Without the bridge: every $n \in \{2, 3, 6, 12, \ldots\}$ requires
 its own `instance : MarkovTraceN n q` discharge. With the bridge: a

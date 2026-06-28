@@ -385,6 +385,7 @@ export default chapter({
         "breit-wheeler-pair-creation-intro",
         "pair-creation-energy",
         "breit-wheeler-observation",
+        "breit-wheeler-observation-comparison",
       ],
     }),
 

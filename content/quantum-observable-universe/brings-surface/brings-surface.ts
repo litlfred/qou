@@ -199,6 +199,7 @@ export default chapter({
         "genus-filtration-ideal-table1-data",
         "genus-filtration-ideal-proof",
         "genus-filtration-interpretation",
+        "genus-filtration-derivation-chain",
         "torus-embeddable-complete",
         "torus-embeddable-completeness-remark",
         "bring-trefoil-cinquefoil-channel",

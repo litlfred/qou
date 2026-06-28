@@ -79,6 +79,7 @@ export default chapter({
           label: "sec:categorical-braiding-markov-trace-nf",
           blocks: [
             "markov-axioms-primitive",
+            "markov-disjoint-product-factorisation",
             "markov-trace-inductive-limit",
             "trm-hopf-sigma1-sq-closed-form",
             "trm-hopf-sigma1-sq-closed-form-table2-data",

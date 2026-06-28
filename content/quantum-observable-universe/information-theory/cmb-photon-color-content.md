@@ -18,24 +18,6 @@ generator corresponds to a polarization mode on the
 exceptional divisor $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$:
 The generator $\sigma_0$ is horizontal polarization, $\sigma_1$ is vertical.
 
-## Decomposition by jet degree
-
-The four summands live at different jet degrees:
-
-| Summand | Jet degree | Role | Survives horizon? |
-|:---:|:---:|:---|:---:|
-| $\mathbf{1}$ | $0$ | Photon identity (fibre value) | **No** |
-| $\varphi_0\sigma_0$ | $1$ | Horizontal polarization (linear transport) | **Yes** |
-| $\varphi_1\sigma_1$ | $1$ | Vertical polarization (linear transport) | **Yes** |
-| $\varphi_{01}\sigma_0\sigma_1$ | $2$ | Hopf link dressing (quadratic transport) | **Yes** |
-
-At a jet horizon $\mathcal{H}$
-([jet horizon](#def:jet-horizon)), the degree-$0$
-ideal $\mathfrak{h}$ annihilates $A_0$, so the photon
-identity $\mathbf{1}$ vanishes.  But the degree-$1$ and degree-$2$ data
-$A_1/A_0$ and $A_2/A_1$ are unconstrained: the color content
-$(\varphi_0, \varphi_1, \varphi_{01})$ passes through.
-
 ## The CMB is the surviving color content
 
 The CMB boundary datum
@@ -73,23 +55,3 @@ photons — precisely the Hopf-link terms $L_{\pm} =
 formula ([color content](#rem:knot-basis-color-content)).
 These are the pairwise correlations that produce the CMB
 power spectrum.
-
-## Condensation: the first Planck step
-
-When the Reeb flow $f_q$ acts on the boundary datum
-([aeon recycling](#rem:aeon-boundary-generates-chart)),
-the degree-$1$ color content $(\varphi_0, \varphi_1)$
-reconstitutes degree-$0$ identities via the Hecke relation:
-
-$$
-  \sigma_i^2
-  = 
-  (q - q^{-1})\sigma_i + \mathbf{1}.
-$$
-
-Each color mode, iterated once, regenerates a photon
-identity $\mathbf{1}$ (the constant term) dressed by a
-residual color mode $\sigma_i$ (the linear term).  This is
-the algebraic content of "CMB condensation into particles":
-the Hecke self-energy turns surviving polarization data
-back into particle states.

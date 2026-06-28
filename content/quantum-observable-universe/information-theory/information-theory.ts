@@ -200,6 +200,8 @@ section({
         "big-bang-state",
         "cmb-boundary-datum",
         "cmb-photon-color-content",
+        "cmb-photon-color-content-jet-degree",
+        "cmb-photon-color-content-condensation",
         "hawking-radiation",
         "observable-subcategory",
         "aeon",

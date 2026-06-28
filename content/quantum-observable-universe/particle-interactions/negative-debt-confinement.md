@@ -2,7 +2,9 @@ The NF$_+$ / NF$_-$ decomposition of the nucleon normal forms
 reveals a quantitative signature of confinement: the neutron
 carries significantly more internal cancellation than the proton.
 
-## The negative coefficient debt
+## Negative coefficient debt as a confinement signature
+
+### The negative coefficient debt
 
 Each nucleon's Gröbner--Shirshov normal form in $H_3(q_0)$ splits
 into positive and negative coefficient sums:
@@ -24,7 +26,7 @@ crossing makes the Hopf-link coefficient negative in the neutron
 single channel contributes $|\Delta(L_+)|/\mathrm{net}(\mathfrak{p})
 \approx 10.9\%$ --- approximately the entire excess debt.
 
-## Confinement interpretation
+### Confinement interpretation
 
 The internal cancellation ratio
 $|\mathrm{NF}_-|/(|\mathrm{NF}_-| + \mathrm{NF}_+)$ measures

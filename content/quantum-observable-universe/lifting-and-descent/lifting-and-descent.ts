@@ -93,6 +93,7 @@ export default chapter({
         "yekutieli-lifting-kummer-motivic-intro",
         "p3-blowup-yekutieli",
         "p3-blowup-yekutieli-interpretation",
+        "p3-blowup-yekutieli-local-cohomology",
         "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
         "kummer-tower",

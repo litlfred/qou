@@ -67,7 +67,7 @@ the real-$x$ archimedean closure of $c_3$ is refuted (PR #2300), so the
 identification is **fibre-level only** and the rungs stay cal-anchored pending
 the keystone.
 
-## Synthesis
+### Synthesis
 
 The Kashiwara coupling fixes the proved data ($N=1$ envelope $b$, second rung
 $c_2 = -1$); Habiro supplies the Ohtsuki-invariant reading and the recursion's

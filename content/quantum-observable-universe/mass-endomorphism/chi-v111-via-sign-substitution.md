@@ -1,5 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
+## V_(1,1,1) per-irrep character closed form
+
 **V_(1,1,1) per-irrep character via sign-rep substitution.**
 
 Per the closure gap analysis (item 2 of ), V_(1,1,1) is the
@@ -28,7 +30,7 @@ $$
    = -\frac{(q^2 + 1)^2 (q^2 - 1)}{4 q^5}.
 $$
 
-## Conjugate-partition symmetry to V_(3)
+### Conjugate-partition symmetry to V_(3)
 
 The closed forms for V_(3) and V_(1,1,1) share the **same numerator
 polynomial** $-(q^2 + 1)^2(q^2 - 1)$; they differ only by the
@@ -42,7 +44,7 @@ $(1,1,1)$ are transpose partitions, and the sign-rep $\leftrightarrow$
 trivial-rep duality manifests as the $q \leftrightarrow -q^{-1}$
 substitution on the generator level.
 
-## Lean theorems
+### Lean theorems
 
 | theorem | content |
 |---|---|

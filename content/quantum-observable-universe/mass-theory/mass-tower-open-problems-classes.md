@@ -80,7 +80,7 @@ regulator, and an element mapping exactly to $\alpha/(4\pi)$.
 class, the next-order coefficient is a regulator output, not an
 empirical fit.
 
-## Pattern
+### Common §3b-cond pattern across the four classes
 
 Each of the four classes follows the §3b-cond template established
 by [`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):

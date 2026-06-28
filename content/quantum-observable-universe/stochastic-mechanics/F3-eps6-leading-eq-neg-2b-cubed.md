@@ -3,8 +3,6 @@
 **Lean exact-arithmetic lemma**: the leading $\varepsilon^6$ coefficient of
 $(F_3 - 1)$ at $q = 1 + \varepsilon$ equals $-2 \cdot b^3(q=1) = -3\sqrt{3}/4$.
 
-## Statement
-
 For the $F_3 = 1 - 2 b^3 \hbar_q^6$ factor in the
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
 precision ladder, the leading $\varepsilon^6$ contribution of $(F_3 - 1)$ at

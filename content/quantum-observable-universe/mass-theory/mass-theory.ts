@@ -954,6 +954,8 @@ export default chapter({
         "mass-tower-open-problems-classes",
         "crystal-basis-resolves-mass-tower-open-problems",
         "mass-tower-deeper-fillers",
+        "mass-tower-deeper-fillers-cross-paper-scan",
+        "mass-tower-deeper-fillers-remaining-work",
       ],
     }),
 

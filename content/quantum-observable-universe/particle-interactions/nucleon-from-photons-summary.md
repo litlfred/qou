@@ -1,7 +1,9 @@
 The complete derivation chain from photons to atoms, with
 conservation laws verified at each step.
 
-## Chain
+## The photon-to-atom derivation
+
+### Chain
 
 $$
   \underbrace{3(\gamma\gamma)}_{\text{6 photons}}
@@ -26,7 +28,7 @@ Baryon number ($B$), lepton number ($L$), and electric charge ($Q$)
 are conserved at every step.  The antiquarks either annihilate back
 to photons or form an antinucleon.
 
-## Key results
+### Key results
 
 1. **Confinement is derived**: $\mathcal{B}_3$ is selected by
    minimum action among operators matching the physical nucleon

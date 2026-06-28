@@ -5,7 +5,9 @@ for fitted parameters and hidden assumptions.  This block is
 purely audit; the canonical statement and proof of the closed-form
 Q-value formula live with the proposition.
 
-## Derivation chain (verified against the proposition)
+## Audit of the tritium Q-value derivation
+
+### Derivation chain (verified against the proposition)
 
 **Step 0: Substrate parameter** (1 measurement consumed).
 
@@ -83,9 +85,9 @@ $$
 
 Experimental: $Q_{\mathrm{exp}} = 0.01861$ MeV.  Error: $-3.6\%$.
 
-## Audit findings
+### Audit findings
 
-### Verified (no issues)
+#### Verified (no issues)
 
 1. **Channel sums $a$ and $b$**: confirmed from the full seminormal
    form of $H_3(q)$ using $T_{2,3}$ eigenspace projections.
@@ -94,7 +96,7 @@ Experimental: $Q_{\mathrm{exp}} = 0.01861$ MeV.  Error: $-3.6\%$.
 4. **Zero continuously-tunable fitted parameters**: the entire chain
    uses $q_0$ (from $m_\mu/m_e$) and $m_e$ (energy scale), nothing else.
 
-### Structural postulates (not fitted, but not derived)
+#### Structural postulates (not fitted, but not derived)
 
 1. **$\lambda = 1/2$ mixing**: the unique isospin-invariant choice.
    Sensitivity analysis shows the Q-value is moderately sensitive
@@ -111,7 +113,7 @@ Experimental: $Q_{\mathrm{exp}} = 0.01861$ MeV.  Error: $-3.6\%$.
    dictionary; the coupling $m_\mu \propto \mathrm{Vol}(4_1)$ is
    not derived from first principles.
 
-### Resolved: two computation paths
+#### Resolved: two computation paths
 
 The branching factorization ($-3.6\%$) and the Gröbner--Shirshov
 $H_9$ verification ($-57\%$) are **not competing models**.  They
@@ -129,7 +131,7 @@ $H_3(q)$; the Gröbner path uses the full 9-strand braid with
 Borromean confinement.  The Gröbner path's $-57\%$ error reflects
 the cruder energy scale $\kappa_q = \ln(q) m_e/3$ rather than $m_e$.
 
-### Formula is not a knot invariant
+#### Formula is not a knot invariant
 
 The expression $Q/m_e = 3(q^2-1)^3(q^2+1)^2(3q^4+4q^2+3)/(32q^7)$
 is **not** the Jones polynomial (or any Skein polynomial) of a
