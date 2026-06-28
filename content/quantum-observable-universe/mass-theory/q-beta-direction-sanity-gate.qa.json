@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean"
   },
   "source_hashes": {
-    "md": "e0b607c7bebe",
-    "ts": "bec5fd976af7",
+    "md": "e865ca997e66",
+    "ts": "c1ba44a978e8",
     "lean": "0b03f6f78070"
   },
   "criteria": {
@@ -2014,8 +2014,24 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "The mathematical claim and definitions are correctly formalised and verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "e865ca997e66",
+          "ts": "c1ba44a978e8",
+          "lean": "0b03f6f78070"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "verdict: clean"
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:43:02.109Z"
 }

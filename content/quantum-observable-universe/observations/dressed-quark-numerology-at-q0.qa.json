@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.md"
   },
   "source_hashes": {
-    "md": "9afdd48d4a2d",
+    "md": "e98add5783af",
     "ts": "d544cb4a65c4"
   },
   "criteria": {
@@ -834,6 +834,20 @@
         "reviewed_at": "2026-06-22T02:56:52.894Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1013,6 +1027,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Dressed-quark numerology at $q_0$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e98add5783af",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "file:20: M_N (anchored by CODATA) and q_0 (the substrate parameter)",
+        "notes": "If q_0 is independently fixed elsewhere, this is a valid 2-parameter model. However, if q_0 is fit specifically to match hadronic masses (like the 1.286 MeV mass splitting), then q_0 is a hidden degree of freedom and the 'parameter-free' prediction is a post-hoc rationalization."
       }
     ],
     "da-non-sequitur": [
@@ -1111,5 +1142,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "updated_at": "2026-06-28T18:05:19.348Z"
 }

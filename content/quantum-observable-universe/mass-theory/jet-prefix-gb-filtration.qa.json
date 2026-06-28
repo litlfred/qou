@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.md"
   },
   "source_hashes": {
-    "md": "5a872322125e",
+    "md": "9fae1b5327be",
     "ts": "e000f8115f63"
   },
   "criteria": {
@@ -1047,6 +1047,21 @@
         "reviewed_at": "2026-06-22T02:56:54.779Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "fit-section-chapter": [
@@ -1066,6 +1081,21 @@
         "reviewed_at": "2026-06-22T02:56:55.193Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1115,21 @@
         "reviewed_at": "2026-06-22T02:56:55.532Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-proof": [
@@ -1104,6 +1149,21 @@
         "reviewed_at": "2026-06-22T02:56:55.985Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1137,6 +1197,21 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1198,6 +1273,21 @@
           "max": 1,
           "value": 0.45
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1259,6 +1349,21 @@
           "max": 1,
           "value": 0.4
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-novelty": [
@@ -1320,6 +1425,21 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-statement-integrity": [
@@ -1373,6 +1493,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1426,6 +1561,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-trivial-true": [
@@ -1462,6 +1612,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-false-premise": [
@@ -1515,6 +1680,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1568,6 +1748,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-decide-masking": [
@@ -1604,6 +1799,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-false-claim": [
@@ -1623,6 +1833,21 @@
         "notes": "No false claims identified in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-vacuous": [
@@ -1641,6 +1866,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' presents substantial mathematical content: '$$'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-circular": [
@@ -1660,6 +1900,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)'.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-overclaim": [
@@ -1678,6 +1933,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-hidden-dof": [
@@ -1697,6 +1967,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)'.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-non-sequitur": [
@@ -1716,6 +2001,21 @@
         "notes": "The prose arguments in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1734,6 +2034,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-citation-misuse": [
@@ -1753,6 +2068,21 @@
         "notes": "No citations are present in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1772,6 +2102,21 @@
         "notes": "Key terms and symbols in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-empirical-fragility": [
@@ -1791,6 +2136,21 @@
         "notes": "The algebraic and logical relations in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-physical-implausibility": [
@@ -1810,6 +2170,21 @@
         "notes": "The physical concepts described in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "jet-prefix-gb-filtration.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-reproducibility": [
@@ -1828,6 +2203,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-referee-verdict": [
@@ -1848,8 +2238,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "9fae1b5327be",
+          "ts": "e000f8115f63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:39.158Z"
+  "updated_at": "2026-06-28T22:31:00.405Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/shell-threading-conjecture.lean"
   },
   "source_hashes": {
-    "md": "8e7ae0bc0ecc",
+    "md": "40835b1b5d0a",
     "ts": "29afbfcdeec4",
     "lean": "37ddede783d2"
   },
@@ -1070,6 +1070,24 @@
         "notes": "The algebraic and logical relations in 'Shell energy from the Skein smoothing at the beta-decay vertex' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/shell-threading-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "40835b1b5d0a",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "file:155: the corrected half-life should match the observed 5730 yr to within ~5%",
+        "notes": "While properly framed as a conjecture, building a complex topological threading construction and a modulation function f(m,k,q) to fit the single well-known 14C half-life is highly susceptible to overfitting once the computation is attempted."
       }
     ],
     "da-physical-implausibility": [
@@ -1134,5 +1152,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "updated_at": "2026-06-28T18:05:19.348Z"
 }

@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:algebraic-gns-embedding-interpretation",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/observations/algebraic-gns-embedding-interpretation.ts",
+    "md": "../qou/content/quantum-observable-universe/observations/algebraic-gns-embedding-interpretation.md"
+  },
+  "source_hashes": {
+    "md": "1421da5f9a1c",
+    "ts": "74bf7ecf05f7"
+  },
+  "criteria": {
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1421da5f9a1c",
+          "ts": "74bf7ecf05f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:08:18.384Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The identification of the GNS representation's double commutant as a type II_1 von Neumann algebra correctly reflects standard Jones subfactor theory."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T18:08:18.384Z"
+}

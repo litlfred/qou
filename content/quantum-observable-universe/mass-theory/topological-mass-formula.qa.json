@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/topological-mass-formula.lean"
   },
   "source_hashes": {
-    "md": "0d45e8da78cd",
+    "md": "778550ba36d6",
     "ts": "075466dde826",
     "lean": "a6ffe9cb6191"
   },
@@ -1397,6 +1397,24 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "778550ba36d6",
+          "ts": "075466dde826",
+          "lean": "a6ffe9cb6191"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "topological-mass-formula.md:57: \"this is Hypothesis 2 (Dilogarithm evaluation) on the Lean structure\"",
+        "notes": "scope: limited\nruling: partial\nreferee_argument: The text calls this a 'derivation' of the mass formula, but the entire heavy lifting (the dilog sum evaluating to the (1/hbar^2 - 1) correction) is openly stated to be a Hypothesis in the Lean structure. This is an overclaim of the formalization's current strength; it's a conditional derivation at best.\nrebuttal: The text is transparent about this being a hypothesis in Lean, though the phrasing 'derivation proceeds' is slightly strong."
       }
     ],
     "da-hidden-dof": [
@@ -1568,8 +1586,26 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/topological-mass-formula.lean:35:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "778550ba36d6",
+          "ts": "075466dde826",
+          "lean": "a6ffe9cb6191"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "N/A",
+        "notes": "verdict: survivable-objection\nreferee_argument: The 'derived' mass formula simply pushes the unproved physics into an assumed hypothesis (exceptional_sum_eq) in the Lean code."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:43:02.109Z"
 }

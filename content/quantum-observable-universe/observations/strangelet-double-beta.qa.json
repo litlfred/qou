@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/strangelet-double-beta.lean"
   },
   "source_hashes": {
-    "md": "8b84b855c8ef",
+    "md": "fd2371c3ad67",
     "ts": "506e985a6483",
     "lean": "d3392235e22b"
   },
@@ -1415,6 +1415,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Strangelet interactions descend from the degree-2 fiber via double beta decay' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "file:36: \\Gamma_{2\\beta} \\propto s^4 ... This is a parameter-free prediction",
+        "notes": "Claiming the double beta decay rate is determined entirely by a topological amplitude factor s^4 ignores the massive phase space integrals and nuclear matrix elements that dominate physical beta decay rates. Claiming a parameter-free prediction for the rate without phase space is physically implausible."
       }
     ],
     "da-hidden-dof": [
@@ -1554,6 +1572,24 @@
         "notes": "The physical concepts described in 'Strangelet interactions descend from the degree-2 fiber via double beta decay' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fd2371c3ad67",
+          "ts": "506e985a6483",
+          "lean": "d3392235e22b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "file:18: requires two crossing changes: a double beta decay",
+        "notes": "Equating topological crossing changes to weak interaction beta decays without accounting for the W-boson mediation or phase space kinematics reduces beta decay to a purely kinematic topological shift, which contradicts established Standard Model physics."
       }
     ],
     "da-reproducibility": [
@@ -1598,5 +1634,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "updated_at": "2026-06-28T18:05:19.348Z"
 }

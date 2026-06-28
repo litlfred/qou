@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean"
   },
   "source_hashes": {
-    "md": "36baddab11e0",
+    "md": "ac02a8bf563c",
     "ts": "c44e1aa79ce0",
     "lean": "9d533e73357e"
   },
@@ -912,6 +912,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'conjecture' match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -932,6 +948,24 @@
         "notes": "Proof does not compile due to compilation errors: content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean:64:42: error(lean.unknownIdentifier): Unknown constant `Nat.lt_max_iff`",
         "severity": "minor",
         "score": 0
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "brane-tower-z-habiro",
+        "notes": "scope: limited\nruling: partial\nreferee_argument: The conjecture that this tower maps to the brane spectrum is highly speculative and mathematically detached from the preceding formalization.\nrebuttal: "
       }
     ],
     "da-false-claim": [
@@ -952,6 +986,22 @@
         "notes": "The mathematical claims in 'Brane tower lives in the $z$-Habiro ring' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean:64:42: error(lean.unknownIdentifier): Unknown constant `Nat.lt_max_iff`.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-vacuous": [
@@ -972,6 +1022,22 @@
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-circular": [
@@ -992,6 +1058,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Brane tower lives in the $z$-Habiro ring'.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-overclaim": [
@@ -1011,6 +1093,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Brane tower lives in the $z$-Habiro ring' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-hidden-dof": [
@@ -1031,6 +1129,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Brane tower lives in the $z$-Habiro ring'.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-non-sequitur": [
@@ -1051,6 +1165,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1070,6 +1200,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-citation-misuse": [
@@ -1090,6 +1236,22 @@
         "notes": "No citations are present in 'Brane tower lives in the $z$-Habiro ring', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1110,6 +1272,22 @@
         "notes": "Key terms and symbols in 'Brane tower lives in the $z$-Habiro ring' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-empirical-fragility": [
@@ -1130,6 +1308,24 @@
         "notes": "The algebraic and logical relations in 'Brane tower lives in the $z$-Habiro ring' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "Habiro tower expansion evaluated at q_0",
+        "notes": "scope: limited\nruling: partial\nreferee_argument: The Z-Habiro evaluation relies on cherry-picked precision for q_0 and is extremely empirically fragile. A slight drift in the anchor invalidates the entire series expansion match.\nrebuttal: "
       }
     ],
     "da-physical-implausibility": [
@@ -1150,6 +1346,22 @@
         "notes": "The physical concepts described in 'Brane tower lives in the $z$-Habiro ring' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-reproducibility": [
@@ -1170,6 +1382,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "brane-tower-z-habiro.lean:1 — content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean:64:42: error(lean.unknownIdentifier): Unknown constant `Nat.lt_max_iff`"
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-referee-verdict": [
@@ -1191,8 +1419,24 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean contains compilation errors: content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean:64:42: error(lean.unknownIdentifier): Unknown constant `Nat.lt_max_iff`, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "ac02a8bf563c",
+          "ts": "c44e1aa79ce0",
+          "lean": "9d533e73357e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:30:14.200Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:38.989Z"
+  "updated_at": "2026-06-28T22:30:14.200Z"
 }

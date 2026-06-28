@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/sdp-regime-switch.md"
   },
   "source_hashes": {
-    "md": "dfdb311b7c87",
+    "md": "64b2f6f42dbb",
     "ts": "cc82ca440667"
   },
   "criteria": {
@@ -1805,6 +1805,23 @@
         "notes": "The algebraic and logical relations in 'Discrete regime switches in SDP cross-channel couplings across isotopes' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/sdp-regime-switch.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "64b2f6f42dbb",
+          "ts": "cc82ca440667"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:06:13.460Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "file:36: A regime switch occurs at (Z, N) values where c_{\\lambda\\lambda'} \\to 0",
+        "notes": "While mathematically sound within the SDP framework, mapping isolated zeros of the coupling matrix exactly to empirical nuclear shell closures, pairing transitions, and jet crossings will likely be extremely fragile when confronted with real nuclear mass data."
       }
     ],
     "da-physical-implausibility": [
@@ -1866,5 +1883,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:06:13.460Z"
 }

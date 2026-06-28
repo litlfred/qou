@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md"
   },
   "source_hashes": {
-    "md": "2cb9ab70481d",
+    "md": "a65a1fbabe4c",
     "ts": "56407025ed6f"
   },
   "criteria": {
@@ -833,6 +833,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'remark' match validated structurally for 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -852,6 +867,21 @@
         "notes": "No false claims identified in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -870,6 +900,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' presents substantial mathematical content: The three-calibration discipline ([`prop:three-calibration-discipline`](#prop:th...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -889,6 +934,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -907,6 +967,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -926,6 +1001,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -945,6 +1035,21 @@
         "notes": "The argument flow in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -963,6 +1068,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -982,6 +1102,21 @@
         "notes": "No citations are present in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1001,6 +1136,21 @@
         "notes": "Key terms and symbols in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1020,6 +1170,21 @@
         "notes": "The algebraic and logical relations in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-physical-implausibility": [
@@ -1039,6 +1204,21 @@
         "notes": "The physical concepts described in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1058,6 +1238,21 @@
         "notes": "The derivation steps and formal definitions in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1078,8 +1273,23 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a65a1fbabe4c",
+          "ts": "56407025ed6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:11.203Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T22:24:11.203Z"
 }

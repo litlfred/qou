@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean"
   },
   "source_hashes": {
-    "md": "56b7b0c739f7",
+    "md": "d26d559d0e15",
     "ts": "196db8906b33",
-    "lean": "ea00191741ff"
+    "lean": "8e6cdc077ba5"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1065,6 +1065,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1085,6 +1100,21 @@
         "reviewed_at": "2026-06-22T02:57:01.981Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1104,6 +1134,21 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1122,6 +1167,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1140,6 +1200,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean declaration matches narrative claim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1158,6 +1233,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1182,6 +1272,21 @@
         "reviewed_at": "2026-06-22T02:57:03.934Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1204,6 +1309,21 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1224,6 +1344,21 @@
         "reviewed_at": "2026-06-22T02:57:04.667Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1244,6 +1379,21 @@
         "reviewed_at": "2026-06-22T02:57:05.123Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1280,6 +1430,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1300,6 +1465,21 @@
         "reviewed_at": "2026-06-22T02:57:05.877Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1318,6 +1498,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1338,6 +1533,21 @@
         "reviewed_at": "2026-06-22T02:57:06.644Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1357,6 +1567,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1375,6 +1600,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1394,6 +1634,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1412,6 +1667,24 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "precisely the finite-basis version of the Feynman path integral",
+        "notes": "Overclaim: A categorical trace on a finite group algebra does not equate to the full path integral. This should be explicitly stated as an analogy or a toy discrete analogue, not an exact equivalence."
       }
     ],
     "da-hidden-dof": [
@@ -1431,6 +1704,21 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1450,6 +1738,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1468,6 +1771,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1487,6 +1805,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1506,6 +1839,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1525,6 +1873,21 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1544,6 +1907,24 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "precisely the finite-basis version of the Feynman path integral",
+        "notes": "Scope limitation: The standard Feynman path integral is taken over all continuous paths in configuration/phase space. Claiming that a discrete angular momentum eigenbasis sum is 'precisely' the path integral is a significant physical overclaim and stretches the definition of the path integral."
       }
     ],
     "da-reproducibility": [
@@ -1563,6 +1944,21 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-classical-limit.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1583,8 +1979,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "The mathematical claim and definitions are correctly formalised and verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "d26d559d0e15",
+          "ts": "196db8906b33",
+          "lean": "8e6cdc077ba5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:42:31.989Z"
 }

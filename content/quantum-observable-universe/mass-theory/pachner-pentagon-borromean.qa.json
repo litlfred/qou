@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.md"
   },
   "source_hashes": {
-    "md": "35c38d768b98",
+    "md": "c35f723f4e2f",
     "ts": "7551023a2ff5"
   },
   "criteria": {
@@ -943,6 +943,20 @@
         "reviewed_at": "2026-06-22T02:57:01.300Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1005,6 +1019,20 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1023,6 +1051,20 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1040,6 +1082,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1058,6 +1114,20 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1075,6 +1145,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1093,6 +1177,20 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1111,6 +1209,20 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1129,6 +1241,20 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1147,6 +1273,20 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1165,6 +1305,20 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1183,6 +1337,20 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1200,6 +1368,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1219,6 +1401,20 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing."
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1237,8 +1433,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Conjectured block 'Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c35f723f4e2f",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:48.287Z"
+  "updated_at": "2026-06-28T22:42:31.989Z"
 }

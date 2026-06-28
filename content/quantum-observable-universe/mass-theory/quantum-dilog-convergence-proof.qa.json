@@ -1,0 +1,254 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:quantum-dilog-convergence",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/quantum-dilog-convergence-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/quantum-dilog-convergence-proof.md"
+  },
+  "source_hashes": {
+    "md": "858aac7c4179",
+    "ts": "d392831954fa"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:26:39.926Z"
+}

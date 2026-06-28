@@ -1,10 +1,11 @@
 ---
 # t6ba
 title: 'Data-integrity: path_b_habiro_mass_probe crashes on A>=3 (unsubstituted check_q free symbol)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-26T14:55:05Z
-updated_at: 2026-06-26T14:55:05Z
+updated_at: 2026-06-28T18:07:59Z
 ---
 
 ## Problem (2026-06-26, PR #2849)

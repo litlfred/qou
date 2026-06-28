@@ -1,0 +1,269 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:confinement-categorical",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/confinement-categorical-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/confinement-categorical-proof.md"
+  },
+  "source_hashes": {
+    "md": "d16a41aabd4d",
+    "ts": "788b37457743"
+  },
+  "criteria": {
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "verdict: clean"
+      },
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d16a41aabd4d",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:42:53.527Z"
+}

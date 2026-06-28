@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.lean"
   },
   "source_hashes": {
-    "md": "9cdc28295f46",
-    "ts": "28b98f6f7d91",
+    "md": "0f9459448a71",
+    "ts": "1baac0216435",
     "lean": "9549aabb0b76"
   },
   "criteria": {
@@ -1339,7 +1339,7 @@
           "lean": "9549aabb0b76"
         },
         "result": "pass",
-        "notes": "genuine result: Habiro integrality anchors observable spectrum, eliminates truncation; the open c_k bridge is properly isolated as \u00a73b-cond",
+        "notes": "genuine result: Habiro integrality anchors observable spectrum, eliminates truncation; the open c_k bridge is properly isolated as §3b-cond",
         "reviewed_at": "2026-06-25T16:49:41.000Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
@@ -1399,7 +1399,7 @@
           "lean": "9549aabb0b76"
         },
         "result": "pass",
-        "notes": "termination (card=M+1) + determinacy faithfully proved sorry-free; integrality theorem is weakly encoded (eval at Z pt trivially in Z) but type already forces Z[u]; c_k bridge is honest \u00a73b-cond class, no instance",
+        "notes": "termination (card=M+1) + determinacy faithfully proved sorry-free; integrality theorem is weakly encoded (eval at Z pt trivially in Z) but type already forces Z[u]; c_k bridge is honest §3b-cond class, no instance",
         "reviewed_at": "2026-06-25T16:49:40.000Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
@@ -1844,8 +1844,24 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:habiro-precision-ladder-equivalence' incomplete."
+      },
+      {
+        "field_hash": {
+          "md": "0f9459448a71",
+          "ts": "1baac0216435",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "verdict: clean"
       }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-06-28T22:43:02.109Z"
 }

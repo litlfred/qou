@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/fine-structure-observation.md"
   },
   "source_hashes": {
-    "md": "293dc499a91f",
+    "md": "b473434bec03",
     "ts": "f2fbe56f1026"
   },
   "criteria": {
@@ -927,6 +927,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Fine structure constant: CODATA comparison'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/fine-structure-observation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b473434bec03",
+          "ts": "f2fbe56f1026"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:06:58.756Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "file:11: q \\cdot [9]_q \\cdot [10]_q = 136.823",
+        "notes": "The coupling formula requires the specific choices of T_{2,9} and T_{3,5} knots to supply the [9] and [10] factors. Unless these two specific knots are uniquely derived from first principles elsewhere, choosing them to yield 136.8 is equivalent to a hidden degree of freedom (number scanning)."
       }
     ],
     "da-non-sequitur": [
@@ -1082,5 +1099,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:06:58.756Z"
 }

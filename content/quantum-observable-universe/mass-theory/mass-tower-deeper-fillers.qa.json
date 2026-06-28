@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean"
   },
   "source_hashes": {
-    "md": "ec1ae35b9c0a",
+    "md": "998e34b1db03",
     "ts": "1b6be3943196",
-    "lean": "0db121b9e9a2"
+    "lean": "287e1cd92362"
   },
   "criteria": {
     "voice-status-leak": [
@@ -874,6 +874,22 @@
         "reviewed_at": "2026-06-22T02:57:03.782Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -892,6 +908,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-false-claim": [
@@ -912,6 +944,22 @@
         "notes": "No false claims identified in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon'; the algebraic relation involving $(B), (D), (E)$ is mathematically consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-vacuous": [
@@ -932,6 +980,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-circular": [
@@ -952,6 +1016,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon'. The construction is derived from prop:type-b-folded-crystal-combinatorics, rem:bloch-wigner-mathlib-filler.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-overclaim": [
@@ -971,6 +1051,23 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "The inclusion of 'deeper fillers' in the mass tower looks like epicycles added to fit higher-generation fermion masses (overfitting)."
       }
     ],
     "da-hidden-dof": [
@@ -991,6 +1088,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon'. All constants are canonically derived.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-non-sequitur": [
@@ -1011,6 +1124,22 @@
         "notes": "The argument flow in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' is logically sound, mapping onto the cited dependencies: prop:type-b-folded-crystal-combinatorics, rem:bloch-wigner-mathlib-filler.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-citation-misuse": [
@@ -1031,6 +1160,22 @@
         "notes": "Citations to borel1974, bloch2000, suslin1991, kashiwara1991, khovanovlauda2009, zagier1986 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1051,6 +1196,22 @@
         "notes": "Key terms and symbols (including $(B), (D), (E)$) in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-empirical-fragility": [
@@ -1071,6 +1232,22 @@
         "notes": "The algebraic and logical relations in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-physical-implausibility": [
@@ -1091,6 +1268,22 @@
         "notes": "The physical concepts described in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-reproducibility": [
@@ -1111,6 +1304,22 @@
         "notes": "The derivation steps and formal definitions in 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-referee-verdict": [
@@ -1132,8 +1341,24 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean contains 'sorry' placeholders, rendering the proof of 'Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon' incomplete."
+      },
+      {
+        "field_hash": {
+          "md": "998e34b1db03",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:49.275Z"
+  "updated_at": "2026-06-28T22:42:53.527Z"
 }

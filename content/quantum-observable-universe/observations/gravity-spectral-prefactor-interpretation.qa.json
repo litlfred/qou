@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:gravity-spectral-prefactor-interpretation",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/observations/gravity-spectral-prefactor-interpretation.ts",
+    "md": "../qou/content/quantum-observable-universe/observations/gravity-spectral-prefactor-interpretation.md"
+  },
+  "source_hashes": {
+    "md": "2230f4d1c6f2",
+    "ts": "4095bfdc1493"
+  },
+  "criteria": {
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2230f4d1c6f2",
+          "ts": "4095bfdc1493"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:06:58.756Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "file:2: The dimensionless coupling 8G/m_e^{-2} is the universal prefactor",
+        "notes": "The block asserts that gravity is the macroscopic-stratum signature of the categorical mass without providing any derivation or numerical consistency checks to back up the identification of G."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T18:06:58.756Z"
+}

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md"
   },
   "source_hashes": {
-    "md": "582e58b62bbd",
+    "md": "076305a74665",
     "ts": "1057f0b7138d"
   },
   "criteria": {
@@ -1249,6 +1249,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1281,6 +1295,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'proposition' match validated structurally for 'Borromean Markov trace $\\\\mathrm{tr}_M(\\\\beta_{\\\\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$' within chapter 'mass-theory'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1313,6 +1341,20 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1345,6 +1387,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is not found.",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1391,6 +1447,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is missing, so narrative-proof equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1409,6 +1479,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is missing, so proof strategy clarity cannot be evaluated.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1427,6 +1511,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; goal is plausible from markdown.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1452,6 +1550,20 @@
           }
         },
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1470,6 +1582,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; statement has integrity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1488,6 +1614,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1506,6 +1646,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1524,6 +1678,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false premises or conflicting hypotheses detected in the statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1542,6 +1710,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling to check for unused hypotheses.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1560,6 +1742,20 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No decide masking or native_decide bypasses detected in the formalization.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1578,6 +1774,20 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1595,6 +1805,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1613,6 +1837,20 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1630,6 +1868,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "must come from the normalization layer",
+        "notes": "The assertion 'must come from' is not physically derived but is a post-hoc requirement constructed to make the formula yield the correct mass."
       }
     ],
     "da-hidden-dof": [
@@ -1648,6 +1903,23 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "Geom-level contribution, structurally independent of the Markov trace",
+        "notes": "Suspected post-hoc rationalization (hidden DOF / numerology): The zero h^2 coefficient in the trace is mathematically sound, but claiming this 'separates the proton-mass h-dependence into clean layers' by assigning the missing part to a 'Geom-level contribution' looks like fitting a narrative to an arbitrary mathematical result to match the empirical proton mass."
       }
     ],
     "da-non-sequitur": [
@@ -1666,6 +1938,20 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1684,6 +1970,20 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1702,6 +2002,20 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1720,6 +2034,20 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1738,6 +2066,20 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1755,6 +2097,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1774,6 +2130,20 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1792,8 +2162,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "076305a74665",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-25",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:31.989Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.634Z"
+  "updated_at": "2026-06-28T22:42:31.989Z"
 }

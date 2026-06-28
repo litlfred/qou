@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean"
   },
   "source_hashes": {
-    "md": "b60bdef8d629",
+    "md": "b240e386aea3",
     "ts": "b60217ea3a77",
     "lean": "36ad3941b9cc"
   },
@@ -947,6 +947,22 @@
         "reviewed_at": "2026-06-22T02:56:54.450Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1011,6 +1027,24 @@
           "max": 1,
           "value": 0.6
         }
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "90 = 5 * 18 ... 90 = 6 * 15",
+        "notes": "Searching for integer factorizations (90 = 5*18 or 6*15) to retroactively justify the numerically fitted depth of 90 is textbook post-hoc rationalization. The text even admits the depth is derived via 'circular reading from the experimental ratio'. This undermines the framework's predictive power."
       }
     ],
     "da-false-claim": [
@@ -1031,6 +1065,22 @@
         "notes": "No false claims identified in 'Brane-tower depth from m_e to v equals 90': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -1050,6 +1100,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Brane-tower depth from m_e to v equals 90' are non-vacuous as they make concrete conjectures about 'at which the electron rest mass $m_e$ and the electroweak sc...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -1070,6 +1136,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Brane-tower depth from m_e to v equals 90'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -1089,6 +1171,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Brane-tower depth from m_e to v equals 90' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -1109,6 +1207,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Brane-tower depth from m_e to v equals 90'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "90 = 5 * 18 ... 90 = 6 * 15",
+        "notes": "Searching for integer factorizations (90 = 5*18 or 6*15) to retroactively justify the numerically fitted depth of 90 is textbook post-hoc rationalization. The text even admits the depth is derived via 'circular reading from the experimental ratio'. This undermines the framework's predictive power."
       }
     ],
     "da-non-sequitur": [
@@ -1129,6 +1245,22 @@
         "notes": "The argument flow in 'Brane-tower depth from m_e to v equals 90' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1148,6 +1280,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean uses a class-conjecture pattern, matching the conjectural nature of 'Brane-tower depth from m_e to v equals 90'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1168,6 +1316,22 @@
         "notes": "No citations are present in 'Brane-tower depth from m_e to v equals 90', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1188,6 +1352,22 @@
         "notes": "Key terms and symbols in 'Brane-tower depth from m_e to v equals 90' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1208,6 +1388,24 @@
         "notes": "The algebraic and logical relations in 'Brane-tower depth from m_e to v equals 90' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "90 = 5 * 18 ... 90 = 6 * 15",
+        "notes": "Searching for integer factorizations (90 = 5*18 or 6*15) to retroactively justify the numerically fitted depth of 90 is textbook post-hoc rationalization. The text even admits the depth is derived via 'circular reading from the experimental ratio'. This undermines the framework's predictive power."
       }
     ],
     "da-physical-implausibility": [
@@ -1228,6 +1426,22 @@
         "notes": "The physical concepts described in 'Brane-tower depth from m_e to v equals 90' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1248,6 +1462,22 @@
         "notes": "The derivation steps and formal definitions in 'Brane-tower depth from m_e to v equals 90' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1269,8 +1499,24 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Brane-tower depth from m_e to v equals 90' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b240e386aea3",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T22:26:06.236Z"
 }

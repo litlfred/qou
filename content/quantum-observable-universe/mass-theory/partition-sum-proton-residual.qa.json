@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean"
   },
   "source_hashes": {
-    "md": "a82717a74be7",
+    "md": "d16320dec332",
     "ts": "2a09407349f5",
     "lean": "b1e9ba40d0bd"
   },
@@ -1071,6 +1071,22 @@
         "reviewed_at": "2026-06-22T02:56:54.780Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "fit-section-chapter": [
@@ -1091,6 +1107,22 @@
         "reviewed_at": "2026-06-22T02:56:55.169Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-statement": [
@@ -1111,6 +1143,22 @@
         "reviewed_at": "2026-06-22T02:56:55.581Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-proof": [
@@ -1131,6 +1179,22 @@
         "reviewed_at": "2026-06-22T02:56:55.991Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1165,6 +1229,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1229,6 +1309,22 @@
           "max": 1,
           "value": 0.55
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1293,6 +1389,22 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-novelty": [
@@ -1357,6 +1469,22 @@
           "max": 1,
           "value": 0.68
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-statement-integrity": [
@@ -1413,6 +1541,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1433,6 +1577,22 @@
         "reviewed_at": "2026-06-22T02:56:58.200Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-trivial-true": [
@@ -1453,6 +1613,22 @@
         "reviewed_at": "2026-06-22T02:56:58.551Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-false-premise": [
@@ -1509,6 +1685,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1565,6 +1757,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-decide-masking": [
@@ -1603,6 +1811,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-false-claim": [
@@ -1623,6 +1847,22 @@
         "notes": "The mathematical claims in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41:27: error: failed to synthesize.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-vacuous": [
@@ -1643,6 +1883,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
         "evidence": "partition-sum-proton-residual.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-circular": [
@@ -1663,6 +1919,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$'.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-overclaim": [
@@ -1682,6 +1954,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-hidden-dof": [
@@ -1702,6 +1990,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$'.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-non-sequitur": [
@@ -1722,6 +2026,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1741,6 +2061,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-citation-misuse": [
@@ -1761,6 +2097,22 @@
         "notes": "No citations are present in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1781,6 +2133,22 @@
         "notes": "Key terms and symbols in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-empirical-fragility": [
@@ -1801,6 +2169,24 @@
         "notes": "The empirical claims in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "The residual match is bounded within experimental error.",
+        "notes": "scope: limited\nruling: partial\nreferee_argument: The evaluation of the proton residual assumes the partition sum converges rapidly, but higher-order terms could easily drift outside the stated error bars.\nrebuttal: "
       }
     ],
     "da-physical-implausibility": [
@@ -1821,6 +2207,22 @@
         "notes": "The physical concepts described in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-reproducibility": [
@@ -1841,6 +2243,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "partition-sum-proton-residual.lean:1 — content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41:27: error: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-referee-verdict": [
@@ -1862,8 +2280,24 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "d16320dec332",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:31:00.405Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:39.318Z"
+  "updated_at": "2026-06-28T22:31:00.405Z"
 }

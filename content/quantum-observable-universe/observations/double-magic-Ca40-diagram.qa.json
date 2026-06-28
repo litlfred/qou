@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/double-magic-Ca40-diagram.md"
   },
   "source_hashes": {
-    "md": "51d49a28fc83",
+    "md": "b3810902456f",
     "ts": "0cb2a58d62a4"
   },
   "criteria": {
@@ -799,6 +799,23 @@
         "notes": "No false claims identified in 'Double-magic illustration: $^{40}\\\\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid)': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/double-magic-Ca40-diagram.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b3810902456f",
+          "ts": "0cb2a58d62a4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:06:13.460Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "file:18: \\lambda_{20} = (5, 4, 4, 4, 3) = (5,4,4,4,3)'",
+        "notes": "The partition (5, 4, 4, 4, 3) is NOT self-conjugate. Its transpose is (5, 5, 5, 4, 1). A valid self-conjugate partition of 20 would be (6, 4, 4, 4, 1, 1) or (5, 5, 4, 4, 2). The core diagrammatic example of the section is mathematically false."
       }
     ],
     "da-vacuous": [
@@ -1028,5 +1045,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "updated_at": "2026-06-28T18:06:13.460Z"
 }

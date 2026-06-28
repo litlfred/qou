@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean"
   },
   "source_hashes": {
-    "md": "54622028a55b",
+    "md": "dcd325266f14",
     "ts": "a01757481f22",
     "lean": "6f895eab12cb"
   },
@@ -894,6 +894,22 @@
         "reviewed_at": "2026-06-22T02:57:03.216Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-statement": [
@@ -913,6 +929,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-false-claim": [
@@ -932,6 +964,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-vacuous": [
@@ -950,6 +998,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-circular": [
@@ -969,6 +1033,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-overclaim": [
@@ -987,6 +1067,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-hidden-dof": [
@@ -1006,6 +1102,22 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-non-sequitur": [
@@ -1025,6 +1137,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1043,6 +1171,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-citation-misuse": [
@@ -1062,6 +1206,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1081,6 +1241,23 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "notes": "The bounds on the LP duality hypothesis class are vaguely defined; could lead to overfitting if the class is arbitrarily enlarged later."
       }
     ],
     "da-empirical-fragility": [
@@ -1100,6 +1277,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-physical-implausibility": [
@@ -1119,6 +1312,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-reproducibility": [
@@ -1138,6 +1347,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1 — content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/LpDualityHypothesisClass.olean' of module QOU.BraidKnot.LpDualityHypothesisClass does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-referee-verdict": [
@@ -1158,8 +1383,24 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/LpDualityHypothesisClass.olean' of module QOU.BraidKnot.LpDualityHypothesisClass does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "dcd325266f14",
+          "ts": "a01757481f22",
+          "lean": "6f895eab12cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:42:53.527Z"
 }

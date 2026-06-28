@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/strutinsky-from-graded-trace.md"
   },
   "source_hashes": {
-    "md": "c70864d24558",
+    "md": "de53950bd087",
     "ts": "87446a3380d8"
   },
   "criteria": {
@@ -908,6 +908,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Strutinsky' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "de53950bd087",
+          "ts": "87446a3380d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:07:42.971Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "file:53: Strutinsky's method — smooth plus shell — is forced by the filtered-algebra structure, not an ansatz.",
+        "notes": "Asserting that the Strutinsky shell-correction method is 'forced' by the algebra rather than merely being 'analogous' to the graded-trace split is an overclaim, especially since the block later admits that a quantitative numerical comparison has not yet been performed."
       }
     ],
     "da-hidden-dof": [
@@ -1082,5 +1099,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:07:42.971Z"
 }

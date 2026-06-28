@@ -834,6 +834,20 @@
         "reviewed_at": "2026-06-22T02:56:27.760Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -852,6 +866,20 @@
         "notes": "No false claims identified in 'Master regime table for the substrate parameter $q$': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -869,6 +897,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Master regime table for the substrate parameter $q$' presents substantial mathematical content: All quantitative regime claims in this chapter and Ch 9 collapse into a single t...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -887,6 +929,20 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Master regime table for the substrate parameter $q$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -904,6 +960,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Master regime table for the substrate parameter $q$' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -922,6 +992,20 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Master regime table for the substrate parameter $q$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -940,6 +1024,20 @@
         "notes": "The argument flow in 'Master regime table for the substrate parameter $q$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -957,6 +1055,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -975,6 +1087,20 @@
         "notes": "No citations are present in 'Master regime table for the substrate parameter $q$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -993,6 +1119,20 @@
         "notes": "Key terms and symbols in 'Master regime table for the substrate parameter $q$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1011,6 +1151,22 @@
         "notes": "The algebraic and logical relations in 'Master regime table for the substrate parameter $q$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "Tabulating macroscopic q-deformed constants for 'Our universe' (e.g., c_q ~ 9.12, \\hbar_q ~ 0.0991) implies massive modifications to standard physics. These exact numerical parameters strongly contradict established constraints on Lorentz invariance and continuous spacetime."
       }
     ],
     "da-physical-implausibility": [
@@ -1029,6 +1185,20 @@
         "notes": "The physical concepts described in 'Master regime table for the substrate parameter $q$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1047,6 +1217,20 @@
         "notes": "The derivation steps and formal definitions in 'Master regime table for the substrate parameter $q$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/regime-table.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1066,8 +1250,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Master regime table for the substrate parameter $q$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "95eaf92e4c77",
+          "ts": "be5b716786e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T18:02:47.823Z"
 }
