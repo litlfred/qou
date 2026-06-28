@@ -51,7 +51,7 @@ namespace Cl3Zeta5GeometricRealization
 
 /-- The depth-3 Bring trilog $\mathrm{Cl}_3(2\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)
     \approx 0.18936791\ldots$, as the realised value of the $2\pi/5$ geometric invariant. -/
-noncomputable def cl3Zeta5 [W : BringTrilogDepth3Witness] (self : Cl3Zeta5GeometricRealization) : ℝ :=
+noncomputable def cl3Zeta5 [W : BringTrilogDepth3Witness] (_self : Cl3Zeta5GeometricRealization) : ℝ :=
   W.cl3Zeta5
 
 /-- **Provable content (sorry-free): the realised values satisfy the proved orbit sum.**
