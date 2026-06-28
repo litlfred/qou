@@ -148,6 +148,7 @@ export default chapter({
         "e-hartree-categorical-derivation-table13-data",
         "bohr-radius-categorical",
         "bohr-radius-categorical-interpretation",
+        "bohr-radius-round8-findings",
       ],
     }),
     section({
