@@ -405,4 +405,58 @@ def listToSYT (hl : List.Sorted (· ≥ ·) l) (a : List ℕ)
       exact ⟨c, by rw [Finset.mem_coe]; exact hc, hce.symm⟩
     exact ⟨hmaps, hinj, hsurj⟩
 
+/-! ### The forward map: a standard Young tableau gives a flat filling -/
+
+/-- Reshaping `chunk` is a left inverse of flattening rows of the right lengths. -/
+theorem chunk_flatten (l : List ℕ) (rs : List (List ℕ)) (h : rs.map (·.length) = l) :
+    chunk l rs.flatten = rs := by
+  induction rs generalizing l with
+  | nil => simp at h; subst h; simp [chunk]
+  | cons r rest ih =>
+    cases l with
+    | nil => simp at h
+    | cons len ls =>
+      simp only [List.map_cons, List.cons.injEq] at h
+      obtain ⟨hlen, hrest⟩ := h
+      simp only [List.flatten_cons, chunk]
+      rw [List.take_append_of_le_length (by omega), List.take_of_length_le (by omega)]
+      rw [List.drop_append_of_le_length (by omega), List.drop_of_length_le (by omega),
+        List.nil_append]
+      rw [ih ls hrest]
+
+/-- Row `i` of the flatten is `[e i 0, …, e i (l[i]-1)]`. -/
+def rowsOf (l : List ℕ) (e : ℕ → ℕ → ℕ) : List (List ℕ) :=
+  (List.finRange l.length).map (fun i => (List.range (l.get i)).map (e i.val))
+
+/-- **Row-major flatten** of an entry map `e` over shape `l`. -/
+def sytToList (l : List ℕ) (e : ℕ → ℕ → ℕ) : List ℕ := (rowsOf l e).flatten
+
+theorem rowsOf_map_length (l : List ℕ) (e : ℕ → ℕ → ℕ) :
+    (rowsOf l e).map (·.length) = l := by
+  unfold rowsOf
+  rw [List.map_map]
+  have : ((fun x => x.length) ∘ fun i : Fin l.length => (List.range (l.get i)).map (e i.val))
+      = fun i : Fin l.length => l.get i := by funext i; simp
+  rw [this, List.finRange_map_get]
+
+theorem chunk_sytToList (l : List ℕ) (e : ℕ → ℕ → ℕ) :
+    chunk l (sytToList l e) = rowsOf l e :=
+  chunk_flatten l (rowsOf l e) (rowsOf_map_length l e)
+
+theorem sytToList_length (l : List ℕ) (e : ℕ → ℕ → ℕ) : (sytToList l e).length = l.sum := by
+  unfold sytToList
+  rw [List.length_flatten, rowsOf_map_length]
+
+/-- **Entry roundtrip**: reshaping the flatten recovers the original entry map on cells. -/
+theorem entryFn_sytToList (l : List ℕ) (e : ℕ → ℕ → ℕ) (i j : ℕ) (hi : i < l.length)
+    (hj : j < l[i]'hi) : entryFn l (sytToList l e) i j = e i j := by
+  unfold entryFn
+  rw [chunk_sytToList]
+  have hrow : (rowsOf l e).getD i [] = (List.range (l[i]'hi)).map (e i) := by
+    unfold rowsOf
+    rw [getD_of_lt _ (by rw [List.length_map, List.length_finRange]; exact hi)]
+    rw [List.getElem_map, List.getElem_finRange]; simp
+  rw [hrow, getD_of_lt _ (by rw [List.length_map, List.length_range]; exact hj)]
+  rw [List.getElem_map, List.getElem_range]
+
 end QOU.Mathlib.SYTEnum
