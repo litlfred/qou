@@ -59,7 +59,8 @@ def termEigenvalue (coeff func : SEigenvalue) : SEigenvalue := coeff * func
 /-- **Theorem (term-by-term S-classification).** In the formula
     M = ... + α(1·Φ₁ − 2[3]_q·Φ₂ + H_A²·Φ₃), the three terms have
     eigenvalues +1, +1, −1. -/
-theorem frobenius_s_classification (c : FrobeniusClassification := {}) :
+theorem frobenius_s_classification :
+    let c : FrobeniusClassification := {}
     -- Term 1: 1 · Φ₁
     termEigenvalue .even c.Phi_1 = .even ∧
     -- Term 2: -2[3]_q · Φ₂
@@ -70,11 +71,12 @@ theorem frobenius_s_classification (c : FrobeniusClassification := {}) :
 
 /-- **Corollary.** Exactly one of the three terms is S-anti-invariant,
     namely the chirality term H_A²·Φ₃. -/
-theorem chirality_is_unique_S_odd (c : FrobeniusClassification := {}) :
+theorem chirality_is_unique_S_odd :
+    let c : FrobeniusClassification := {}
     termEigenvalue .even c.Phi_1 = .even ∧
     termEigenvalue c.q3 c.Phi_2 = .even ∧
     termEigenvalue c.H_A2 c.Phi_3 = .odd := by
-  exact frobenius_s_classification c
+  exact frobenius_s_classification
 
 /-- **Lemma (S-symmetric ansatz cannot capture chirality).**
     Any S-symmetric mixing of S-even quantities lives in the S-even

@@ -38,10 +38,10 @@ inductive S4Class
 /-- The depth-3 Wedderburn-orthogonal r_3 coefficients at q_0 (numerical). -/
 noncomputable def r_3_h4_coefficient : S4Class → ℝ
   | .e        => -0.30555901
-  | .t12      => +1.45407306
+  | .t12      => 1.45407306
   | .t12_t34  => -0.61268805
   | .c123     => -1.55928342
-  | .c1234    => +1.00000000
+  | .c1234    => 1.00000000
 
 /-- α_3 at H_4 defined as the Markov pairing
     `tr_M(r_3)` where `r_3 = Σ_C r_3_h4_coefficient(C) · T_{w_C}`
@@ -77,8 +77,7 @@ def R3OrthogonalToLowerDepthsH4 : Prop :=
     + 1.00000 ≈ -0.02346, |-0.02346| ≤ 1. -/
 -- Ref: [manuscript] explicit-alpha-k-h4.md; wedderburn-orthogonal-r-3-h4.witness.json
 theorem r_3_orthogonal_to_lower_depths : R3OrthogonalToLowerDepthsH4 := by
-  show abs ((-0.30555901 : ℝ) + 1.45407306 + (-0.61268805) +
-            (-1.55928342) + 1.00000000) ≤ 1
+  unfold R3OrthogonalToLowerDepthsH4 r_3_h4_coefficient
   norm_num
 
 /-- Markov-pairing collapse predicate.
@@ -111,8 +110,9 @@ theorem alpha_3_H4_value_at_q0_approx :
     ∃ ε : ℝ, abs (alpha_3_H4 - 0.0034625204) < ε ∧ ε < 1e-10 := by
   -- Ref: [manuscript] wedderburn-orthogonal-r-3-h4.witness.json (machine-precision)
   refine ⟨1e-11, ?_, ?_⟩
-  · show abs ((0.0034625204 : ℝ) - 0.0034625204) < 1e-11
-    simp
+  · show abs (alpha_3_H4 - 0.0034625204) < 1e-11
+    unfold alpha_3_H4
+    norm_num
   · norm_num
 
 end QOU.BraidsAndKnots
