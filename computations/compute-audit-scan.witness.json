@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-28T00:59:55.279994+00:00",
-  "commitSha": "630d2a652beafe19a85ab93233d3dfc3ba7a072a",
+  "computedAt": "2026-06-28T06:43:06.657623+00:00",
+  "commitSha": "94b3c335cc8c81883e886765e6486b3954afd376",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
@@ -24,7 +24,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 957,
+    "files_scanned": 961,
     "patterns": [
       "P15",
       "P16",
@@ -38,7 +38,7 @@
       "P15": 130,
       "P16": 264,
       "P21": 24,
-      "P30": 144,
+      "P30": 148,
       "P31": 23
     },
     "top_files": [
@@ -1001,6 +1001,13 @@
       },
       {
         "pattern": "P30",
+        "file": "delta_lambda_cancellation_ascaling_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "delta_lambda_dim_weight_proof.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -1015,7 +1022,28 @@
       },
       {
         "pattern": "P30",
+        "file": "delta_lambda_l1_ceiling_sign_prune.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "delta_lambda_magnitude_deficit_profile.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "delta_lambda_multi_atom_crosscheck.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "delta_lambda_qdim_route_probe.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
