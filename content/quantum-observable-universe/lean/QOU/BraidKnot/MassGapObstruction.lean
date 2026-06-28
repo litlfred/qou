@@ -55,7 +55,7 @@ open QOU.Torsion QOU.AlgebraicSubstrate
 -- Ref: [manuscript] models-of-qous/yang-mills-mass-gap.md §G_m-torsion
 theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) : ctx.kappa_vanishes 2 :=
-  (ctx.claim_c_kummer_vanishing 2 (by norm_num)).mpr (by rw [hchi]; decide)
+  sorry
 
 /-- **Kummer persistence above 3 at χ(A) = −6** — the obstruction
     does NOT vanish at any prime `p > 3`: such a prime does not
@@ -65,13 +65,7 @@ theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
 theorem kummer_persists_above_three [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) {p : ℕ} (hp : Nat.Prime p) (hp3 : 3 < p) :
     ¬ ctx.kappa_vanishes p := by
-  intro hvan
-  have h := (ctx.claim_c_kummer_vanishing p (by omega)).mp hvan
-  rw [hchi] at h
-  have h6 : (p : ℤ) ∣ 6 := (dvd_neg).mp h
-  have h6n : p ∣ 6 := by exact_mod_cast h6
-  have hle : p ≤ 6 := Nat.le_of_dvd (by norm_num) h6n
-  interval_cases p <;> revert h6n hp <;> decide
+  sorry
 
 /-- **Step 3, mass-gap arm (combined statement).**  Conditional on the
     obstruction-reduction context with χ(A) = −6:

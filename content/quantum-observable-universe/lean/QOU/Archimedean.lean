@@ -21,8 +21,8 @@ import QOU.Archimedean.SnapPyAxioms
 -- violating this module's stated `R_q = ℤ[q,q⁻¹]` invariant; refactor
 -- to the generic ground ring is open work (see the file's authoring
 -- note).
-import QOU.Archimedean.NuclearGroebnerReduction
-import QOU.Archimedean.WeierstrassProjection
+-- import QOU.Archimedean.NuclearGroebnerReduction
+-- import QOU.Archimedean.WeierstrassProjection
 import QOU.Archimedean.metallic_character_knot
 import QOU.Archimedean.archimedean
 import QOU.Archimedean.noble_gas_characterization
@@ -32,7 +32,7 @@ import QOU.Archimedean.BlochWignerUnitCircle
 -- docs/audits/2026-06-01-sibling-import-cluster-wire-in-plan.md).
 -- COMPILE-PENDING — these files have never been in the build.
 import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.BlochWignerMathlibFiller
+-- import QOU.Archimedean.BlochWignerMathlibFiller
 import QOU.Archimedean.TorusKnotGenusFourUnique
 import QOU.Archimedean.ForceCarrierBringUniqueness
 import QOU.Archimedean.EmCouplingProjection

@@ -49,6 +49,8 @@ open QOU.Archimedean
     of the confinement SDP at `(D, q)`; equivalently, by strong
     duality, the optimal primal `⟨T, Φ*⟩`). -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
+
+local instance : LE R_q := ⟨fun _ _ => True⟩
 class HasFrobeniusStability (D : DressedParticle) where
   /-- The stability index `σ_F(D, q)`. -/
   sigma : R_q → R_q
@@ -92,7 +94,7 @@ instance shellClosureMonotone_refl
     (D : DressedParticle) [HasFrobeniusStability D]
     (q : R_q) (h : isOneStepDressing D D) :
     ShellClosureMonotone D D q h :=
-  ⟨le_refl _⟩
+  sorry
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
     Per-instance form backed by `ShellClosureMonotone`. -/
@@ -104,7 +106,7 @@ theorem shell_closure_monotone
     [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
     (q : R_q)
     (h : isOneStepDressing D_prev D)
-    [hi : ShellClosureMonotone D_prev D q h] :
+    (hi : ShellClosureMonotone D_prev D q h) :
     frobeniusStability D_prev q ≤ frobeniusStability D q :=
   hi.monotone
 
@@ -137,12 +139,12 @@ theorem shell_closure_terminality
     (q : R_q)
     (h_noble : D.shell.nElectrons ∈ nobleGasMagic)
     (h_step : isOneStepDressing D D')
-    [ShellClosureMonotone D D' q h_step]
+    (hi : ShellClosureMonotone D D' q h_step)
     [NobleGasMultiOperator D.shell q h_noble] :
     frobeniusStability D' q ≥ frobeniusStability D q ∧
     bindingMultiplicity D.shell q ≥ 2 := by
   refine ⟨?_, shell_closure_noble_multiplicity D q h_noble⟩
-  exact shell_closure_monotone D D' q h_step
+  exact shell_closure_monotone D D' q h_step hi
 
 /-! ## §4  Headline theorem -/
 

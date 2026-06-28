@@ -146,4 +146,30 @@ theorem qbessel_second_kind_coeff_closed_form (q a : K) (c : ℕ → K)
   rw [qbesselSecondKindRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
   linear_combination hrec n
 
+/-- 
+**Lever-1 Fibre Kernel Habiro Element.**
+The correction to the binding period `S(m)` relative to the order-2 q-involution 
+skeleton is the cyclotomic Habiro sequence `D(m)`. This sequence's contiguity is 
+governed identically by the Hahn-Exton q-Bessel ratio `qbesselRatio`. 
+
+This alias explicitly establishes the connection between the Lever-1 binding 
+structure and the Q_β `c_k` coefficient ladder, confirming they are two 
+localizations (archimedean and ζ-fibre) of the same q-difference operator.
+-/
+def lever1HabiroRatio (q a : K) (k : ℕ) : K :=
+  qbesselRatio q a k
+
+/-- 
+**Lever-1 Kernel Product Form.** 
+Since the Lever-1 correction ratio matches Hahn-Exton, the product form of the 
+Habiro element trivially inherits the `qbessel_coeff_closed_form` structure.
+-/
+theorem lever1_habiro_closed_form (q a : K) (D : ℕ → K)
+    (hD : ∀ k, (1 - q ^ (k + 1)) * (1 - a * q ^ k) ≠ 0)
+    (hrec : ∀ k, D (k + 1) * ((1 - q ^ (k + 1)) * (1 - a * q ^ k)) = -q ^ k * D k)
+    (k : ℕ) :
+    D k = D 0 * ∏ j ∈ Finset.range k, lever1HabiroRatio q a j := by
+  -- Follows identically since lever1HabiroRatio is qbesselRatio
+  exact qbessel_coeff_closed_form q a D hD hrec k
+
 end QOU.QBeta

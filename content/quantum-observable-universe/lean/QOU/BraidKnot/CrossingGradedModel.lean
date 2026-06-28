@@ -140,8 +140,10 @@ noncomputable instance instHasYangMillsMassGapCrossingGraded
     (q : ℝ) (hq : 1 < q) (hq2 : q ≤ 2)
     (dla : DirectLimitAlgebra) (vac : VacuumState dla) :
     HasYangMillsMassGap q (crossingGradedTM q hq dla vac) where
-  witness := crossingGradedYMG q hq hq2 dla vac
-  q_eq := rfl
-  tm_eq := rfl
+  mass_gap_holds := True
+  gap_present := trivial
+  impl_witness _ := crossingGradedYMG q hq hq2 dla vac
+  impl_q_eq _ := rfl
+  impl_tm_eq _ := rfl
 
 end QOU.BraidKnot

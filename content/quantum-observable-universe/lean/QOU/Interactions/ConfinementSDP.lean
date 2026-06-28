@@ -187,7 +187,7 @@ theorem scalarLPProjection_of_strongDuality (n : ℕ)
     [HasConfinementSDPStrongDuality n hSlater]
     (h : bindingMultiplicity n = 1) :
     ScalarLPProjection n h :=
-  ⟨HasConfinementSDPStrongDuality.strong_duality⟩
+  ⟨HasConfinementSDPStrongDuality.strong_duality hSlater⟩
 
 /-- **Scalar-LP projection — per-instance form.** -/
 theorem sdp_lp_projection (n : ℕ)
