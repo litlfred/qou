@@ -185,6 +185,7 @@ type DefnKind =
   | "conjecture"
   | "example"
   | "remark"
+  | "proof"
   | "prose"
   | "equation"
   | "diagram"
@@ -220,6 +221,7 @@ const CRITERIA = [
   "clarity-stmt-pure",
   "clarity-grad-style",
   "clarity-rhetorical-header",
+  "clarity-proof-pure",
   "clarity-defn-misplaced",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
@@ -254,14 +256,14 @@ interface Block {
 /** non-definition kinds NOT subject to the misplaced-definition inverse audit:
  *  `definition` is the audit's own home; `diagram`/`simulator` carry no prose
  *  definitional content to mis-place. */
-const MISPLACE_SKIP: DefnKind[] = ["definition", "diagram", "simulator"];
+const MISPLACE_SKIP: DefnKind[] = ["definition", "diagram", "simulator", "proof"];
 
 // ---------------------------------------------------------------------------
 // Manifest / prose parsing — regex only, no schema import (self-contained).
 // ---------------------------------------------------------------------------
 
 const BUILDER_RE =
-  /\b(definition|theorem|lemma|proposition|corollary|conjecture|example|remark|prose|equation|diagram|simulator)\s*\(\s*\{/;
+  /\b(definition|theorem|lemma|proposition|corollary|conjecture|example|remark|proof|prose|equation|diagram|simulator)\s*\(\s*\{/;
 
 function parseKind(ts: string): DefnKind | null {
   const m = ts.match(BUILDER_RE);
@@ -711,6 +713,54 @@ function checkStmtPure(b: Block): Finding {
   return base;
 }
 
+/** The proof region of a block: the whole `.md` for a `proof` (prf:) block, or
+ *  the slice from the first inline proof marker onward for a provable block.
+ *  Returns null when a provable block carries no inline proof. */
+function proofRegion(b: Block): string | null {
+  if (b.kind === "proof") return b.md;
+  const m = b.md.match(PROOF_MARKER);
+  return m && m.index !== undefined && m.index > 0 ? b.md.slice(m.index) : null;
+}
+
+/** clarity-proof-pure: a proof should carry only its argument. Interpretation /
+ *  significance / motivation embedded in a proof ("intuitively…", a
+ *  "Physical meaning." / "Discussion." sub-section) belongs in a follow-on
+ *  `remark`, not in the proof. Same detectors as clarity-stmt-pure, applied to
+ *  the proof region (inline proof or separate `prf:` block). */
+function checkProofPure(b: Block): Finding {
+  const base = mkFinding(b, "clarity-proof-pure");
+  const region = proofRegion(b);
+  if (region === null) {
+    base.result = "n/a";
+    base.evidence = "no proof in this block";
+    return base;
+  }
+  const p = prose(region);
+  const phrases = interpretivePhrases(p);
+  const headers = interpretiveHeaders(region);
+  base.metrics = {
+    interpretivePhrases: phrases,
+    interpretiveHeaders: headers.length,
+  };
+  const impure = phrases >= T.pureLeadIns || headers.length >= 1;
+  if (impure) {
+    base.result = "fail";
+    base.severity = headers.length >= 1 || phrases >= 3 ? "major" : "minor";
+    const bits: string[] = [];
+    if (headers.length >= 1)
+      bits.push(
+        `${headers.length} interpretive sub-section${headers.length === 1 ? "" : "s"} (${headers.slice(0, 3).map((h) => `"${h}"`).join(", ")})`,
+      );
+    if (phrases >= T.pureLeadIns)
+      bits.push(`${phrases} interpretive lead-in${phrases === 1 ? "" : "s"} ("intuitively"/"in other words"/…)`);
+    base.evidence = `proof carries embedded exposition: ${bits.join("; ")} — move it to a follow-on \`remark\`, keep the proof to its argument`;
+  } else {
+    base.result = "pass";
+    base.evidence = "proof argument only — no embedded exposition";
+  }
+  return base;
+}
+
 function checkGradStyle(b: Block): Finding {
   const p = prose(b.md);
   const contractions = countMatches(p, CONTRACTION);
@@ -899,6 +949,12 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
   }
   if (!MISPLACE_SKIP.includes(b.kind) && want("clarity-defn-misplaced")) {
     out.push(checkDefnMisplaced(b));
+  }
+  if (
+    (b.kind === "proof" || PROVABLE.includes(b.kind)) &&
+    want("clarity-proof-pure")
+  ) {
+    out.push(checkProofPure(b));
   }
   return out;
 }
