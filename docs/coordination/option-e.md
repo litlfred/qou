@@ -238,3 +238,20 @@ near-match. Do NOT wire as a derivation.
 - `computations/option_e_v9_all_symmetries.py` — v9 source
 - AGENTS.md §Precision goals (L2 Δ_λ gate; Track A blocker; Subgoal-1 closure path)
 - `docs/coordination/1ppq-qbeta.md` — parallel flip-flop saga (c_k near-matches)
+
+## 2026-06-28 — z2bn fibre-kernel structure ↔ #2925 ℓ¹-ceiling (coordination)
+
+PR #2925 (Δ_λ ℓ¹-ceiling) proves sign-only Δ_λ re-derivation is capped at
+`‖c‖₁/|target| = 36–59 %` for D/T/³He/⁴He (scope (b), triangle inequality), so a
+**magnitude-adding** ingredient is necessary — and lists **z2bn (fibre R(q,x))**
+as an active magnitude-side lever that escapes the ceiling. PR #2899 (z2bn) pins
+the structure of that magnitude object: the binding period `S(m)=Σ_λ dim_q(λ)`
+has an exact q-Gaussian generating function
+`Ŝ(z)=Σ S(m)z^m/[m]_q! = exp(z + L₂(q)z² + Σ_{m≥3} L_m z^m)`, with a `(q−1)²·Φ_d`
+cyclotomic (Habiro) correction tower (sorry-free Lean
+`QOU.Mass.BindingQGaussianHabiro`), not q-holonomic of order ≤3 (held-out
+falsified). **Honest scope (a):** right *kind* of object (magnitude-side
+generating function, exact data), structure pinned; does **not** yet show it
+adds the 41–64 % ℓ¹ mass to close the deficit — closure is downstream. The
+ℓ¹-ceiling sets the bar the kernel's mass contribution must clear.
+Audit: `docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md`.
