@@ -102,6 +102,44 @@ must reproduce. I explicitly do **not** claim `D(m)` is *purely* cyclotomic — 
 carries a non-cyclotomic degree-14 cofactor; the witness records the exact
 factorizations so the full structure is auditable.
 
+## Stage 2 — the explicit order-2 kernel coefficient `W(m)`
+
+Forcing the *monic* involution form (coefficient `1` on `S(m−1)`, as in the classical
+`I(m)=I(m−1)+(m−1)I(m−2)`), the exact kernel coefficient is
+
+```
+  W(m) := (S(m) − S(m−1)) / S(m−2),   the q-deformation of "(m−1)".
+```
+
+Computed symbolically:
+
+| m | `W(m)` | Laurent poly in `q`? |
+|---|---|---|
+| 2 | `[1]_q = 1` | ✓ |
+| 3 | `[2]_q = (q²+1)/q` | ✓ |
+| 4 | `(q²+q+1)(3q²−4q+3)/(2q²)` | ✓ |
+| 5 | `(3q⁶−4q⁵+5q⁴−4q³+5q²−4q+3)/q³` | ✓ |
+| 6 | `(q⁴+1)Φ₅·(deg-6)/(q⁵·(3q⁴+4q²+3))` | ✗ — partition-sum denom |
+| 7 | `Φ₃·(deg-18)/(q⁶(q⁴+1)(3q⁴+2q³+3q²+2q+3))` | ✗ |
+| 8 | `Φ₇·(deg-22)/(q⁷(q⁴+1)(deg-10))` | ✗ |
+
+Two precise facts:
+
+1. **Seed-exact q-integer.** `W(2)=[1]_q`, `W(3)=[2]_q` *exactly* — the kernel coefficient is
+   the symmetric q-integer at the seed, and `W(m)−[m−1]_q = D(m)/S(m−2)` is the cyclotomic
+   tower of §Result divided by the partition sum.
+2. **Monic order-2 q-holonomic lift does not close.** `W(m)` stays a Laurent polynomial in `q`
+   through `m=5`, then at **`m=6`** acquires a genuine **partition-sum denominator**
+   (`S(4) = (3q⁴+4q²+3)/…` first contributes its irreducible factor). So `S(m)` is **not**
+   order-2 q-holonomic in monic form: no fixed Laurent-polynomial coefficient reproduces the
+   period past `m=5`. The true q-difference operator `R` is therefore either higher q-shift
+   order or non-monic (a `P₂(q,q^m)S(m)+P₁ S(m−1)+P₀ S(m−2)=0` with all three `P_i` nontrivial)
+   — the q-Bessel / q-Lommel class, not the simplest involution lift.
+
+This is the sharp, honest boundary of what the order-2 involution ansatz buys: the **seed**
+(`m≤3`, the calibration anchors) is the symmetric q-integer exactly; everything beyond is the
+cyclotomic/Habiro correction, and the monic-order-2 closed form fails from `m=6`.
+
 ## Why this serves all three levers
 
 - **`z2bn`** (this bean): replaces the falsified C-finite `R(q,x)` with a sharply
