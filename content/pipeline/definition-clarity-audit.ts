@@ -86,6 +86,14 @@
  *   clarity-defn-tight     clarity-stmt-tight
  *   clarity-stmt-pure      clarity-grad-style
  *   clarity-rhetorical-header   clarity-defn-misplaced
+ *   clarity-anchor-colon
+ *
+ *   clarity-anchor-colon (every prose-bearing kind) — a cross-reference link
+ *       must use the canonical unescaped colon (`[text](#prefix:name)`); a
+ *       backslash-escaped colon (`#prefix\:name`) is malformed, renders
+ *       inconsistently, and hides the dependency from `uses[]` cross-ref
+ *       greps. A `\:` inside math (a medium space) is not matched. Owner
+ *       directive 2026-06-28.
  *
  *   clarity-rhetorical-header (every prose-bearing kind) — a section header
  *       must read in noun-phrase academic register; rhetorical-question
@@ -223,6 +231,7 @@ const CRITERIA = [
   "clarity-rhetorical-header",
   "clarity-proof-pure",
   "clarity-defn-misplaced",
+  "clarity-anchor-colon",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
 
@@ -865,6 +874,36 @@ function checkDefnMisplaced(b: Block): Finding {
   return base;
 }
 
+/** Markdown link whose destination escapes its colon — `](#prefix\:name)` or
+ *  the cross-paper `](paper-dir\:prefix\:name)`. The canonical corpus form is
+ *  the unescaped colon (`#prefix:name`, used ~7100× vs ~750× escaped). The
+ *  backslash both renders the cross-ref inconsistently and hides the
+ *  dependency from `uses[]` cross-ref greps. A `\:` *inside math* (`$a \: b$`,
+ *  a medium space) is deliberately NOT matched — the detector only fires
+ *  inside a markdown link destination `](…)`. */
+const ANCHOR_ESCAPED_COLON = /\]\((#?[^)\s]*\\:[^)\s]*)\)/g;
+
+/** clarity-anchor-colon: a cross-reference link must use the canonical
+ *  unescaped colon. Applies to every prose-bearing kind (any `.md` may carry
+ *  cross-refs). Owner directive 2026-06-28 (Gemini review on PR #2958 +
+ *  corpus-wide sweep). */
+function checkAnchorColon(b: Block): Finding {
+  const base = mkFinding(b, "clarity-anchor-colon");
+  const hits: string[] = [];
+  for (const m of b.md.matchAll(ANCHOR_ESCAPED_COLON)) hits.push(m[1]);
+  base.metrics = { escapedColonAnchors: hits.length };
+  if (hits.length) {
+    base.result = "fail";
+    base.severity = "minor";
+    const show = hits.slice(0, 4).map((h) => `\`${h}\``).join(", ");
+    base.evidence = `${hits.length} cross-ref link${hits.length === 1 ? "" : "s"} with a backslash-escaped colon (${show}${hits.length > 4 ? ", …" : ""}) — unescape to the canonical \`#prefix:name\` form; the \`\\:\` hides the ref from \`uses[]\` greps and renders inconsistently`;
+  } else {
+    base.result = "pass";
+    base.evidence = "cross-ref links use the canonical unescaped colon";
+  }
+  return base;
+}
+
 function mkFinding(b: Block, criterion: Criterion): Finding {
   return {
     label: b.label || `(${b.root})`,
@@ -955,6 +994,9 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
     want("clarity-proof-pure")
   ) {
     out.push(checkProofPure(b));
+  }
+  if (want("clarity-anchor-colon")) {
+    out.push(checkAnchorColon(b));
   }
   return out;
 }
