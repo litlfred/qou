@@ -1193,7 +1193,439 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Standard scholarly mathematical and physics voice.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md:1 — **Proposition (proton-mass substrate identity at $q_0$).**"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The Lean file states the identity but relies on empirical parameters rather than formalizing the derivation of the coefficients (2, 12, or the specific mass values).",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:69 — def ProtonMassSubstrateIdentity"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The Lean proof is a simple definition and a trivial existential check, which does not prove the identity from physical principles or axioms.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:80 — theorem proton_mass_substrate_identity_empirical"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The strategy outlines how the formula is constructed using F_Bor and structural integers, but admits that the physical bridge remains conjectural/unproved.",
+        "severity": "minor",
+        "score": {
+          "value": 0.68,
+          "max": 1
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Highly novel mass formula linking proton mass, muon mass, and electron mass to knot invariants (Borromean link).",
+        "severity": "minor",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No unused hypotheses are declared.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:80 — theorem proton_mass_substrate_identity_empirical"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The numerical match of 0.24 ppm is correct as calculated, but it is an empirical match rather than a proven theorem.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "It makes a concrete numerical prediction (938.27186 MeV vs 938.27209 MeV).",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The formula involves choosing the coefficients 2 and 12 post-hoc to align with the experimental m_p/m_mu ratio.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The text describes it as a 'derivation' of the nucleon masses, when it is actually an empirical fitting or near-match with structural parameters selected to fit the target data.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The structural integers 2 and 12, although retroactively assigned representation-theoretic meanings (bar-pair partition count and Ocneanu coefficient), are essentially free parameters (hidden degrees of freedom) selected to fit the experimental data.",
+        "severity": "major"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The algebra is mathematically consistent.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The TypeScript file lacks a lean: reference field due to auditing constraints (strictly checking uses of conjectures), representing a structural divergence between Lean and the content block metadata.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:42 — // lean ref deferred"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Cites are correct.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Definitions are clear.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The identity matches CODATA to 0.24 ppm, but this is achieved through fine-tuning of the substrate parameter $q_0$ and the prefactors.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The physical units and constants are correct.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The numerical evaluation is easily reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The proposed proton mass identity $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ is an empirical near-match where the coefficients (2 and 12) and the substrate parameter $q_0$ are chosen post-hoc to reproduce the CODATA value, rather than being uniquely derived from a first-principles physical theory."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T00:51:12.985Z"
 }

@@ -799,7 +799,260 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The data and comparisons shown are mathematically consistent.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The benchmark table provides concrete comparisons to NNDC data.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The selection of unbinding, rebinding, and spectator generator classifications (\\Sigma_u, \\Sigma_r, \\Sigma_{uc}), plus the shell factors $F_{\\mathrm{deg2}}$ and $F_{\\mathrm{Pauli}}$, are chosen retrospectively to match the experimental values.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The text claims 'zero fitting parameters,' which is misleading given the post-hoc adjustment of shell factors and generator classifications.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The shell factor corrections ($0.5904$ and $0.6382$) and the classification of generators represent hidden degrees of freedom that are adjusted to bring the calculations in line with NNDC data.",
+        "severity": "major"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The calculations follow the stated formulas.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Citations are correct.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The definitions of terms are clear.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The model has a Mean Absolute Error of 4.4% and maximum error of 10.3% on a small set of only 6 benchmark nuclei, suggesting the formula is empirically fragile.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The Q-values are physically plausible and compared directly to CODATA/NNDC.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The underlying calculations and the classification of generators (\\Sigma_u, \\Sigma_r, \\Sigma_{uc}) are not fully detailed or computed by any active script in the repository, making the benchmark values difficult to reproduce directly from the codebase.",
+        "severity": "major"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "da0adbab6259",
+          "ts": "cab619aec504"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The $q$-weighted Q-value formula relies on post-hoc classifications of generator log-ratios and shell correction factors that are constructed to match the experimental NNDC data for the 6 benchmark nuclei, representing significant hidden degrees of freedom rather than a true zero-parameter prediction."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T00:51:12.985Z"
 }

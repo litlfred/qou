@@ -1213,7 +1213,439 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.md:1 — **Atlas (recursive, $q_0$-indexed).**"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The Lean file only defines two seed entries (proton, neutron) and does not represent the full periodic table atlas stated in the markdown.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean:98 — def atomKnotAtlas : List AtlasEntry"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The Lean proof only operates on the two seed entries and doesn't prove the correctness of the mass/binding energy calculations or the topological properties for the wider atlas.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean:202 — theorem principled_path_for_atom_knot"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Computational steps and methodology tags are described, but the underlying physical reason for the prefactors remains heuristic.",
+        "severity": "minor",
+        "score": {
+          "value": 0.7,
+          "max": 1
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Linking periodic table atomic masses to knot volumes and braid representations is highly novel.",
+        "severity": "minor",
+        "score": {
+          "value": 0.9,
+          "max": 1
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No unused hypotheses in the Lean file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean:202 — theorem principled_path_for_atom_knot"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The computed volumes and mathematical claims about the braid words (e.g. Borromean closure) are correct, though the physical identification is speculative.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The claims are non-vacuous as they make concrete numerical predictions.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The choice of prefactor $\\rho \\in \\{1, 2\\}$ and the magic A-formula are chosen post-hoc to match the known AME binding energies.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The text describes the predictions as 'derived' when they are parameterized/fitted with prefactors.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The prefactor $\\rho$ acts as a hidden degree of freedom without a structural/principled derivation.",
+        "severity": "major"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No obvious logical gaps in the mathematical calculations presented.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "The Lean seed entry lists a neutron predicted mass of 411.227 MeV (a 56.2% error), while the rendered markdown table claims a prediction of 939.5652 MeV (-0.251 ppm error).",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean:118 — m_pred_MeV := 411.227"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Wenzl (1988) is cited correctly for Hecke algebra Markov trace.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Braid generators and closures are standard mathematical definitions.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Binding energies are highly sensitive to the exact volume and prefactors, and the error for Be-8, C-12, etc. is around 5-10%.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "While speculative, it does not violate basic physical laws like energy conservation.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "High-precision Snappy volume calculation is reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c8c029fd0116",
+          "ts": "ba19994fffcd",
+          "lean": "cd348a430dcc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:12.985Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The binding energy formula relies on arbitrary integer prefactors $\\rho \\in \\{1, 2\\}$ and a volume proxy $A \\cdot 8G$ designed specifically to bring the predictions close to the experimental values, representing hidden degrees of freedom (numerology) rather than a principled physical derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T00:51:12.985Z"
 }

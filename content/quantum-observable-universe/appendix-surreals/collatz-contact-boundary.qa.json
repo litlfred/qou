@@ -1065,6 +1065,27 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Proof is non-trivial.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1329,7 +1350,364 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Statement contains only the bare mathematical claim.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No archimedean constants or units leaked in the statement.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No archimedean values leaked in the proof.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Narrative matches the Lean sibling structure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Proof strategy is well-structured and easy to follow.",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on",
+        "score": {
+          "value": 0.9,
+          "max": 1,
+          "rubric": {
+            "clarity": 0.9
+          }
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "Novel application of surreal numbers to mathematical physics.",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on",
+        "score": {
+          "value": 0.75,
+          "max": 1,
+          "rubric": {
+            "novelty": 0.75
+          }
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No unused hypotheses in the proof.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md:1 — **Proposition (conditional on"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-citation-misuse.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-27",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T00:51:14.515Z",
+        "reviewed_sha": "7cd90deedb375c43078a0a15cc2f3d9e851dca5b",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts:1 — import { proposition } from \"../../schema/builders\";"
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T00:51:14.515Z"
 }
