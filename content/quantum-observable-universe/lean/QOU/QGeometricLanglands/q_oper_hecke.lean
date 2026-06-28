@@ -16,6 +16,10 @@ missing proof.
 Mathlib carries no geometric-Langlands / $q$-$\mathcal{D}$-module
 machinery, so $q$-opers and eigensheaves are abstracted as class
 parameters and the irreducibility relation is the asserted content.
+
+**Mathlib gap (bean 6chz)**: Geometric Langlands objects (q-opers, Hecke
+eigensheaves, LocSys, Bun_G) are absent from Mathlib and QOU infra. This
+keystone stays structurally abstracted as a research-grade gap.
 -/
 
 namespace QOU.QGeometricLanglands

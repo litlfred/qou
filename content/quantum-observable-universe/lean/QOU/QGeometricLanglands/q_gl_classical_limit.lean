@@ -16,8 +16,11 @@ instance`'s `sorry` represents the open conjecture itself (per AGENTS.md
 The degeneration of categories is abstracted; the one leg that is
 concretely statable — the Hecke-relation degeneration — is encoded
 faithfully ($q$-Hecke eigenvalues at $q = 1$ collapse to $\pm 1$, the
-symmetric-group eigenvalues), alongside the differential and dual-group
 legs as the remaining conjectural inputs.
+
+**Mathlib gap (bean 6chz)**: Geometric Langlands objects (q-opers, Hecke
+eigensheaves, LocSys, Bun_G) are absent from Mathlib and QOU infra. This
+keystone stays structurally abstracted as a research-grade gap.
 -/
 
 namespace QOU.QGeometricLanglands

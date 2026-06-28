@@ -16,6 +16,10 @@ The moduli of $q$-local systems is abstracted as a class parameter; the
 two substantive claims encoded are (1) the level-1 sublocus is
 everything, and (3) the level-$n$ sublocus lifts through the brane tower
 iff $n \mid \chi(A)$.
+
+**Mathlib gap (bean 6chz)**: Geometric Langlands objects (q-opers, Hecke
+eigensheaves, LocSys, Bun_G) are absent from Mathlib and QOU infra. This
+keystone stays structurally abstracted as a research-grade gap.
 -/
 
 namespace QOU.QGeometricLanglands

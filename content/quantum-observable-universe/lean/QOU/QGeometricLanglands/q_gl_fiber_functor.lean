@@ -12,8 +12,12 @@ content as the `uniqueness` field ($\tau$-rigidity forces $\mathbb{L}_q$
 unique up to natural isomorphism); the `noncomputable instance`'s `sorry`
 represents the open conjecture itself (per AGENTS.md §3b), NOT a missing
 proof. The candidate equivalences are abstracted as a class parameter;
-"unique up to natural iso" is modelled as equality on the set of
+unique up to natural iso" is modelled as equality on the set of
 $\tau$/Hecke-compatible equivalences.
+
+**Mathlib gap (bean 6chz)**: Geometric Langlands objects (q-opers, Hecke
+eigensheaves, LocSys, Bun_G) are absent from Mathlib and QOU infra. This
+keystone stays structurally abstracted as a research-grade gap.
 -/
 
 namespace QOU.QGeometricLanglands
