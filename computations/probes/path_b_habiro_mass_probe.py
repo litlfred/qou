@@ -144,9 +144,18 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
     after the substitution q = u² that clears the q^{1/2} subring.  The
     Habiro expansion is p_in_u(u) = Σ_m a_m(u) · (u; u)_m.
     """
+    # The Habiro expansion variable is q^{1/2}.  The upstream coefficient
+    # producer (`habiro_coefficients_atomic.py`) names this symbol
+    # `check_q` (= q^{1/2}, the spinor rate); older witnesses named it `u`.
+    # Substitute BOTH names with the same numeric u_0 = √q_0 so the
+    # consumer is robust to either symbol convention.  Bean t6ba: the
+    # upstream producer renamed `u` → `check_q`, so the `u`-only subs left
+    # a free `check_q` that crashed `mpf()` (`-74.0*check_q - 74.0`).
     u = sp.symbols("u")
+    check_q = sp.symbols("check_q")
     u_val = mp.sqrt(q_val)
     u_val_sym = sp.Float(str(u_val), 50)
+    subs_map = {u: u_val_sym, check_q: u_val_sym}
 
     # Numerator via Habiro expansion sum_m a_m(u) (u;u)_m
     numerator = mp.mpf(0)
@@ -158,7 +167,7 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
         # complex(...) cast which drops precision from mp.mp.dps to ~15
         # digits (float64). evalf(mp.mp.dps) honours the global precision
         # floor; mp.mpf(str(...)) lifts losslessly to mpmath.
-        a_m_val = mp.mpf(str(a_m_poly.subs(u, u_val_sym).evalf(mp.mp.dps)))
+        a_m_val = mp.mpf(str(a_m_poly.subs(subs_map).evalf(mp.mp.dps)))
         pochhammer = u_pochhammer_at_u0(m, u_val)
         contribution = a_m_val * pochhammer
         numerator += contribution
@@ -173,7 +182,7 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
     denom_poly = sp.sympify(denom_str)
     # Per gemini-code-assist PR #534 high-priority review: same
     # precision-preservation as the numerator coefficient above.
-    denom_val = mp.mpf(str(denom_poly.subs(u, u_val_sym).evalf(mp.mp.dps)))
+    denom_val = mp.mpf(str(denom_poly.subs(subs_map).evalf(mp.mp.dps)))
     if abs(denom_val) < mp.mpf("1e-300"):
         return mp.mpf(0), breakdown
     tr_M = numerator / denom_val
