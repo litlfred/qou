@@ -1,7 +1,7 @@
 ---
 # vq05
 title: 'Vacuity fix: lean/ArchimedeanUniverse (4 defects)'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T00:00:00Z
