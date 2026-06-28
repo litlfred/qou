@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/figure-8-muon-mass-cross-check.lean"
   },
   "source_hashes": {
-    "md": "dcd912cba8c6",
+    "md": "5569cd0cce4d",
     "ts": "22f09cf20633",
     "lean": "90213848aac6"
   },
@@ -875,7 +875,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The arithmetic identity Vol(4_1)/ℏ_q² evaluated at q₀ equals the stated number is correct; the muon ratio claim is true as stated at the muon anchor. The Lean theorems are rfl/symm and correct. No false statement per se."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "figure-8-muon-mass-cross-check.lean:44-48 (cal2_identity_pinned := h_cal2.symm); :54-57 (muon_ratio_is_topological := rfl)",
+        "notes": "Both Lean theorems are content-free. cal2_identity_pinned just returns the symmetric of its own hypothesis (a⟹a.symm). muon_ratio_is_topological is rfl unfolding the definition (the h_q_ne_one hypothesis is unused). Neither establishes the numerical 50-dps agreement — that lives only in a comment + witness. The Lean adds no verified content over the trivial."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "figure-8-muon-mass-cross-check.md:24,:27-44; m-baryon-volume-form.witness.json muon_cross_check.agreement_assertion",
+        "notes": "The .md asserts the residual is 'structurally zero (not small)', '~10⁻³⁰ ppm', 'equality by construction' because q₀ is DEFINED as the solution of m_μ/m_e=Vol(4_1)/ℏ_q². That is the literal definition of circularity: evaluating the pinning equation at its own root. The block even admits this (lines 39-44: 'numerical certificate of the pinning procedure, not a falsifiability test'). The headline framing 'numerical cross-check / prediction' is contradicted by its own body — at the muon anchor it is a tautology, and (per the witness) at the now-canonical proton anchor it is NOT zero (see da-empirical-fragility)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "figure-8-muon-mass-cross-check.md:1-4,:46-52; m-baryon-volume-form.witness.json",
+        "notes": "Title/banner present this as a 'numerical cross-check of CAL-2' verifying the ansatz 'at the single-knot level'. But the witness states the agreement is '~2e-7 level (9.5σ cross-check, NOT the anchor)' under the proton-pinned q₀, and 'exact agreement held only under the pre-re-pin muon anchor'. The .md's 1.45×10⁻³⁰ ppm 'structurally zero' figure is the muon-anchor tautology, presented as if it verified the ansatz. A tautology dressed as a verification is an overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No hidden numeric DOF in this block; Vol(4_1)=2Cl₂(π/3), ℏ_q from q₀, both substrate. The figure-8 case explicitly degenerates to λ_scale=1, S(4_1)=0 (no free parameter here; the λ_scale≈2.46 belongs to the separate Borromean conjecture)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The internal logic (pinning equation ⟹ equality by construction) is valid; the problem is not a logical gap but that the conclusion is presented as a test (covered under da-circular/da-overclaim)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "figure-8-muon-mass-cross-check.lean:44-63 vs .md:18-24",
+        "notes": "The .md's substantive claim is the 50-dps numerical match (residual 1.45×10⁻³⁰ ppm). The Lean proves NOTHING numerical: cal2_identity_pinned is h.symm and muon_ratio_is_topological is rfl; the 50-dps numbers appear only in comments (lean:59-63). The Lean is strictly weaker/vacuously-implied vs the .md's quantitative cross-check claim — proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites: codata2022 (m_μ/m_e source) and thurston1978 (Vol(4_1)=2Cl₂(π/3) hyperbolic volume) — both correctly invoked for the quantities they supply. No mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "ℏ_q=(q−1)/q, Vol(4_1), λ_scale, S all defined or cross-linked. The CAL-2 'fixes q₀' role is stated. No undefined key term."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "figure-8-muon-mass-cross-check.md:24 (residual 1.45e-30 ppm); m-baryon-volume-form.witness.json: m_mu_over_m_e_via_volume_50dps=206.7682829893… vs codata 206.768283, 'agreement … ~2e-7 level (9.5σ), NOT the anchor … exact only under pre-re-pin muon anchor'",
+        "notes": "Stale q₀-pin: the .md reports a 10⁻³⁰ ppm 'structurally zero' residual that holds ONLY under the deprecated muon anchor. The current canonical witness (proton-pinned per the 2026-05-28 re-pin) shows the muon ratio off by ~2e-7 (≈210 ppb, 9.5σ) — a real prediction error, not zero. This is precisely the q0-repin staleness class flagged in AGENTS.md; the narrative's headline number contradicts the live witness it cites."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "m_μ/m_e≈206.768 reproduced; correct order and value. No physics conservation/unit violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "figure-8-muon-mass-cross-check.md:24 vs computations/m-baryon-volume-form.witness.json muon_cross_check",
+        "notes": "The .md value (1.45×10⁻³⁰ ppm residual) does NOT match the live witness it points to: the witness reports m_mu_over_m_e_via_volume_50dps=206.7682829893… vs CODATA 206.768283 (~2e-7 relative), explicitly because q₀ is proton-pinned. The prose approximate contradicts the current backing compute; the 10⁻³⁰ figure is reproducible only against a superseded muon-anchor run. Stale."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "figure-8-muon-mass-cross-check.md:1-4,:24,:27-44; m-baryon-volume-form.witness.json",
+        "notes": "verdict: reject-pending-revision. Strongest objection (referee_argument): the block is titled a 'numerical cross-check of CAL-2' and claims a structurally-zero 1.45×10⁻³⁰ ppm residual, but (i) its own body concedes this is 'equality by construction'/'not a falsifiability test' (a tautology — q₀ is DEFINED by this very equation), and (ii) the live witness it cites shows the agreement is actually ~2e-7 (9.5σ, a genuine prediction MISS) under the now-canonical proton anchor, with exact agreement only under the deprecated muon anchor. The Lean adds no content (h.symm + rfl). So the block simultaneously over-claims (tautology sold as verification) and is stale (q0-repin). Needs: relabel as a pinning certificate, replace the 10⁻³⁰ residual with the live proton-anchored 9.5σ figure, and either give the Lean real numerical content or mark it interpretive."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:18.520Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

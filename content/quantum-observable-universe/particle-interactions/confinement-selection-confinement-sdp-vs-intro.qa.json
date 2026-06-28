@@ -815,7 +815,220 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Navigational prose summarising the sub-section's blocks; legitimately content-free as a transition, which is the correct use of `prose` (not a vacuous proof)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:3 references 'the dissolved Encounter chapter' and 'the SDP-as-thimble flow absorbed from' it; .md:3 also names 'the n = 1 vacuous-magic case'.",
+        "notes": "A reader has no in-block pointer to where the dissolved-chapter content now lives, and 'vacuous-magic' is jargon undefined here. Minor: this is a transition paragraph, but the dangling 'dissolved Encounter chapter' reference is opaque."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5d81bece0730",
+          "ts": "f271ed543dc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict=accept. referee_argument: pure navigational prose with no mathematical claims; the only blemish is an opaque reference to a 'dissolved Encounter chapter' with no forwarding pointer (minor). No formal content to refute."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

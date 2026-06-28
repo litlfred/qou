@@ -1042,7 +1042,241 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "down-quark-properties.md:2-3 'The up and down quarks are the same knot type (unknot) in the same environment (Borromean-linked in a color tube).'",
+        "notes": "If up and down are literally the same unknot in the same Borromean environment, the only distinguisher is crossing orientation (md:6-8). But an unknot has no intrinsic crossing sign, and orientation reversal of one Borromean component does not by itself change knot/link type — so 'same knot type, differ only in crossing orientation' is in tension with the sibling down-quark.md:14-17 claiming the reversal yields a distinct Skein/charge contribution (-1/3). The mass-splitting mechanism rests on an orientation DOF whose well-definedness for an unknot is asserted, not shown. Marked warn (not fail) because it is an interpretive remark over the conjectural Borromean-quark picture, not a theorem."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Makes a substantive (if conjectural) mechanistic claim: mass splitting from skein crossing asymmetry; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical target back-fitted; qualitative mechanism (q vs q^{-1} weighting) cited from the skein-crossing-asymmetry block."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "down-quark-properties.md:2-8 attributes the d-u mass difference to crossing asymmetry, stated as the mechanism ('arises from'); the linked rem:skein-crossing-asymmetry is itself an interpretive remark, not a quantitative derivation of mu_d - mu_u.",
+        "notes": "Mechanism-as-explanation for a sign/magnitude that is not derived in-corpus to the d-u splitting; phrased causally ('arises from') rather than 'is consistent with'. Minor, since the block is an interpretive remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "down-quark-properties.md:6-8 the 'reversed-orientation component has a slightly different Skein resolution energy'; the orientation/sign of an otherwise identical unknot is a free binary label distinguishing d from u with no derived magnitude.",
+        "notes": "The crossing-orientation degree of freedom that separates up from down (and produces the -1/3 vs +2/3 charge in sibling down-quark.md:14-17) is introduced as a label with no canonical-chain-fixed quantitative content for the mass split. Reads as an undisclosed adjustable distinguisher rather than a derived parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "down-quark-properties.md:6-8 'so the reversed-orientation component has a slightly different Skein resolution energy' — the 'so' jumps from 'Skein weights +crossing by q, - by q^{-1}' to an energy difference between u and d without the intervening identity that maps Skein weight to resolution energy for an unknot.",
+        "notes": "Missing bridging lemma (Skein weight -> resolution energy -> mass). The link to rem/prop:skein-crossing-asymmetry supplies the weight rule but not the energy mapping for this specific u/d pair. Minor in an interpretive remark."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark block; no lean.ref in down-quark-properties.ts."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; only internal cross-refs to #rem:skein-crossing-asymmetry, which resolves to an existing corpus block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "down-quark-properties.md:6-8 'Skein resolution energy' is not a defined term in this block, and 'reversed-orientation component' presumes an orientation structure on the unknot/Borromean component that is not pinned here.",
+        "notes": "Key quantity ('Skein resolution energy') governing the conclusion is undefined locally; relies on reader importing it from elsewhere. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match asserted (mu_d - mu_u not quantified here, no q_0-pinned value)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "down-quark-properties.md:2-3 identifies up and down quarks with a single knot type (unknot/neutrino) distinguished only by crossing orientation; sibling down-quark.md:1-3 calls the down quark 'an unknot (neutrino)'.",
+        "notes": "A domain physicist would object that up and down quarks are distinct fundamental fermions with different electric charge (+2/3 vs -1/3), different masses by a factor ~2, and are not identifiable with a neutrino; modelling both as 'the same unknot (neutrino), opposite crossing' is a strong reinterpretation. This is framework-internal (Borromean-quark conjecture) so flagged warn rather than fail, but the physical-identification claim is the kind a referee rejects on sight without the conjecture's backing made explicit in-block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness/compute backs this interpretive remark; nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "701126cd1baf",
+          "ts": "d26d184b72b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: The remark's mass-splitting mechanism rests on a crossing-orientation degree of freedom (da-hidden-dof) that distinguishes two otherwise-identical unknots, with a causal 'so ... different Skein resolution energy' (da-non-sequitur) whose energy-mapping lemma is not supplied and whose key term 'Skein resolution energy' is undefined in-block (da-definitional-ambiguity). The strongest single objection is physical (da-physical-implausibility): identifying the up and down quarks as the same unknot/neutrino differing only by crossing orientation contradicts their status as distinct fermions with charges +2/3 and -1/3. Acceptable only as an explicitly-conjectural interpretation under conj:borromean-quark; should soften 'arises from' to 'is conjectured to arise from' and define the resolution-energy quantity it invokes."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

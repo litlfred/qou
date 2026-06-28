@@ -815,7 +815,232 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Chapter-intro prose; roadmap statements, no falsifiable proposition asserted as proved here."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive roadmap with concrete content (GS reduction, LP duality, derivations enumerated); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation performed; describes the chapter's method. No back-fitting in the prose."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "particle-interactions-intro.md:13-15 states LP 'strong duality yields the Borromean link B_3 as the unique optimum' and md:11-13 that the GS normal form 'is unique and independent of the reduction path' — both asserted flatly in the intro as established results.",
+        "notes": "These are strong claims (uniqueness of optimum, path-independence) stated without hedge or forward-reference qualifier in the roadmap. Acceptable as a chapter summary if the downstream blocks prove them, but as worded they pre-assert results the chapter is meant to derive. Minor (intro voice)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No parameter introduced; q is the substrate symbol, q0 the evaluation point — both canonical, not new DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose lists what the chapter derives; no inferential 'therefore' chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose block, no .lean sibling, no provable claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] / -- Ref: in this prose block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Notation (H_A(q), B_A, N(Z,N), B_3, q0) is standard for the chapter and consistent; no ambiguous key term introduced here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match stated; only the general statement that witness evaluations at q0 verify against experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Roadmap of derivations (nucleon structure, binding, magic numbers, beta decay); no specific physics claim to reject at the intro level."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No specific witness/compute cited in the intro."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "041413eddbb7",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Strongest objection: the intro pre-asserts two non-trivial results — GS NF uniqueness/path-independence and B_3 as the unique LP optimum (particle-interactions-intro.md:11-15) — as facts rather than as chapter goals.",
+        "notes": "verdict=accept-with-minor. referee_argument: soften to forward references (e.g. 'we will show ... is the unique optimum') so the roadmap does not read as asserting unproved uniqueness up front; otherwise the prose is appropriate chapter scaffolding."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

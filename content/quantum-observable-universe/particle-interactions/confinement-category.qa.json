@@ -930,7 +930,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition makes no provable claim that could be false; the categorical-axiom theorems (right-id, associativity) that ARE in Lean hold on the concrete model."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-category.lean:11-21 docstring + :60-92; ConfComp returns the outer morphism's KIND with new endpoints regardless of f (e.g. :74 `unfold _ _ => unfold P R`)",
+        "notes": "The Lean 'confinement category' is a degenerate stand-in: composition discards the inner morphism f entirely and just re-labels endpoints by g's constructor, so associativity/right-id close by `rfl` trivially. The docstring itself admits this (:11-21: 'concrete def that picks a single canonical witness… the genuine confinement-category content is the external research target'). The categorical structure the .md defines (unfolding⊣folding inverse, dress as Hecke embedding, tr_M functoriality) is NOT modeled — the theorems are content-free with respect to the actual definition. Honest disclosure, but a vacuous formalization of the named object."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitted numeric target; a structural definition."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-category.md:27-39 ('The Markov trace tr_M extends to a functor Conf → ℂ(q)')",
+        "notes": "Asserting tr_M 'extends to a functor' and 'is invariant under ↑/↓' presupposes prop:level-sufficiency and well-definedness of the morphism families — claims about a structure that the Lean does not actually build (see da-vacuous). The functoriality is stated as established within a definition block; it is really a claim contingent on level-sufficiency, presented without that conditionality marked."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numeric parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition; no inferential chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-category.md:1-48 (objects at all levels, three morphism families, tr_M functor) vs confinement-category.lean:38-92 (one structure with 2 fields the theorems never inspect; ConfComp ignores f)",
+        "notes": "Lean proves associativity/right-identity for a toy 'category' whose composition is not the .md's composition (concatenation of Hecke embeddings). The functoriality of tr_M — the substantive content — is entirely absent from Lean. The Lean theorem `ConfinementCategory` shares a name with the .md object but proves a strictly weaker, different statement (rfl-true axioms on a placeholder). Divergence is explicit in the docstring."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No external citations in .md or .lean (only [manuscript] self-refs)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-category.md:13 (dress: 'H_n(R,q) ↪ H_{n+m}(q)' — ring R present on source, absent on target), :21-25 ('mutually inverse when restricted to particles whose coarse representation captures the full partition content')",
+        "notes": "Base-ring inconsistency in the dress embedding notation (R appears on the domain Hecke algebra but not the codomain). 'Structure-preserving maps' left unspecified (which structure?). Inverse-on-restriction condition references level-sufficiency without stating the restriction precisely. Minor notational/definitional looseness in a definition block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The quark→nucleon→atom→molecule chain is a schematic organizing device, not a falsifiable physical prediction; no unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute witness attached to this definition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lean:11-21 docstring admitting placeholder; ConfComp ignoring f (:71-76)",
+        "notes": "verdict: minor-revision (as a definition) / major gap (as a formalization). referee_argument: The narrative definition is reasonable and self-aware, but the Lean sibling is a placeholder that proves category axioms for a model in which composition discards its inner argument — so the 'category' theorems certify nothing about the object defined. The substantive claim (tr_M is a functor, ↑/↓ invariance) is unformalized and stated as fact. Acceptable as an honest research-target definition only because the docstring discloses the gap; a referee would require either a faithful Conf model or downgrading the tr_M-functoriality sentence to conditional/conjectural."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "bf64d7a72d1b",
     "ts": "e8c10b6e76f3",
-    "lean": "6435e6e87fd5"
+    "lean": "f1bf745976d3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1616,7 +1616,245 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:33-36 / table md:54-55 — at magic Z=2 the selected operator is L₊ = σ₀σ₁ with |dem|=0 for both pp→ppn and ppn→ppnn; md:60 'transitions … at the first magic number (Z=2)'. But the step pp→ppn adds a neutron (mass number 3, He-3/H-3), and labelling Z=2 closure at A=3 conflicts with the A=2 magic boundary the block itself cites (md:26 lists 2 as magic A).",
+        "notes": "The regime-II assignment uses Z/N magic numbers and A magic numbers interchangeably (md:26 'A∈{2,8,20,...}' vs md:60 'first magic number Z=2'); the transition table's magic-closure labelling at A=3,4 is internally inconsistent with the magic-A list. Not a clean mathematical falsity, hence warn."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The proposition observes operator selection from an LP demand-minimisation; the regimes are read off results rather than assuming a target. No back-fitting in the logical structure."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nuclear-operator-regimes.md:9-13 states as a Proposition that Φ_k 'belongs to one of three regimes' across the whole inductive construction, but the evidence (md:49-57) is only the A≤6 sequence (5 steps), and the lean theorem covers only steps 0–4.",
+        "notes": "A 5-step observed sequence at A≤6 is generalised to a Proposition about the operator across nuclear growth (magic numbers up to 126 invoked in the framing). Scope-limited observation presented as a structural classification — the §'Before declaring refuted/ruled out' (a)/(b) calibration applies in mirror: this is (a)-scope evidence dressed as a general law."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:18-23 Regime I selects the torus knot T_{2,n_s} where 'n_s is the shell size', giving T_{2,5} at pp; the index 5 (= 2·n_s+1?) is asserted without a derivation tying n_s=2 to the exponent 5.",
+        "notes": "The map shell-size→torus-knot index (n_s ↦ T_{2,5}) is an unexplained choice; why the first shell yields the cinquefoil specifically is a free assignment without canonical-chain origin."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:59-64 'Key observation' narrates T_{2,5}→L₊→L₋→C_pn, but md:56 step ppnn→pppnn assigns L₋ at A=5 (not a magic A) under Regime II (magic closure), contradicting the Regime II definition md:25-27 ('at and immediately after a magic number').",
+        "notes": "Step 4→5 (A=5) is labelled Regime II magic-closure though A=5 is neither at nor immediately after a magic number in the block's own list; the regime assignment does not follow from the stated regime criterion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nuclear-operator-regimes.md:9-47 claims Φ_k is the *demand-minimising* operator in each regime, but the sibling lean theorem (nuclear-operator-regimes.lean:73-79) only asserts a fixed regime-label sequence observedRegime 0..4 with no demand/LP content; the library file NuclearOperatorRegimes.lean proves only L₊≠L₋ (hopf_ne) and braid relations, not the selection.",
+        "notes": "Both Lean artefacts prove strictly weaker statements (a hard-coded label table; operator distinctness) than the .md's optimality proposition. proof-statement-integrity fails: the substantive 'demand-minimising' claim is unformalised. Note also .ts ref qou:QOU.Interactions.nuclearOperatorRegimes resolves to the sibling (decidable table), not the richer library file."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "library NuclearOperatorRegimes.lean:41-44,97-101 attaches '[jones1987] §3/§4 … Verified against the published version' as the -- Ref: for borromean3_not_nuclear_level and the regime-transition typeclasses, but Jones 1987 (Hecke representations / link polynomials) says nothing about nuclear binding regimes or B₃-not-selected-at-nuclear-level.",
+        "notes": "The Jones citation is appropriate for the trefoil=Hopf·σ₀ and Markov-trace lemmas but is mis-attached to the nuclear-selection statements (borromean3_not_nuclear_level, RegimeTransitionZ2), which are QOU-specific and witness-backed, not in Jones."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:26 lists magic numbers for 'Z or N ∈ {2,8,20,28,…}' while md:71-76-adjacent framing and the cheat use magic A; 'shell size n_s' (md:18) is undefined; C_pp/C_pn/C_nn 'typed crossings' (md:43-47) are not defined in-block.",
+        "notes": "Magic-number domain (Z/N vs A), n_s, and the typed-crossing operators are used without local definition, and the proton-vs-mass-number ambiguity is the root of the regime-labelling inconsistencies above."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nuclear-operator-regimes.md:95 'Witness: nuclear-binding-lp.witness.json' and library lean:96,101 cite the same witness, but the file is at computations/_deprecated/nuclear-binding-lp.witness.json (moved out of the live computations/ tree).",
+        "notes": "The sole empirical backing for the |dem|=0 table (md:51-57) is a DEPRECATED witness; the block's quantitative claims rest on data the repo has retired. The |dem|=0.005 vs 0.000 distinctions cannot be re-derived from a live producer cited in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-operator-regimes.md:68-70 'the cinquefoil T_{2,5} … is the residual strong force between nucleons'; md:73-77 'the filled shell acts as a collective Hopf link.'",
+        "notes": "Identifying the residual nuclear force with a specific torus knot and shell closure with a Hopf link are strong physical pictures a nuclear-structure expert would not accept without a mapping to measured binding energies; presented as 'physical interpretation', so warn."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Backing witness nuclear-binding-lp.witness.json exists only under computations/_deprecated/ (confirmed by find); md:95 and NuclearOperatorRegimes.lean:96,101 reference it as live with no scriptHash/scriptCommitSha.",
+        "notes": "The compute backing is irreproducible from the cited path (deprecated, not in the active pipeline); the |dem| table cannot be regenerated by following the block's reference."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "f1bf745976d3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: a 5-step A≤6 observation backed by a DEPRECATED witness (computations/_deprecated/nuclear-binding-lp.witness.json) is presented as a general 'three operator regimes' Proposition, while the Lean proves only a self-checking label table; regime labels at A=3,4,5 are internally inconsistent with the block's own magic-number criterion.",
+        "notes": "verdict=major-revision. referee_argument: scope-limited, deprecated-witness-backed evidence is over-generalised to a structural proposition; the formal backing is vacuous w.r.t. the demand-minimisation claim and the witness is retired."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -835,7 +835,230 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Interpretive remark mapping four observables to four functionals; carries informational content, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "categorical-quantity-map.md:8-11 asserts each observable 'corresponds to' a single functional and gives a definite Formula (e.g. mass = |tr_M(Phi)|).",
+        "notes": "The mass map is presented flatly as m=|tr_M(Phi)|, but the corpus canonical absolute-nucleon mass is the muon-anchored Hecke energy m_p=2(m_mu*F_Bor - 6 m_e) (per AGENTS.md mass-formula guardrail), not a bare |tr_M|. The remark overstates the directness of mass<->Markov-trace; |tr_M| alone is the wrong absolute-mass form. Minor as this is an interpretive remark, not a production formula."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark, no .lean sibling and none required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; nothing to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "categorical-quantity-map.md:9 'Q = sum_lambda chi_lambda(Delta) x m_e' uses Delta and chi_lambda without definition here; line 10 'Frobenius matrix element' and line 11 'partial trace (crossing count)' rho = tr_A(varrho) leave A, varrho, Phi unbound.",
+        "notes": "Several symbols (Delta, varrho, Phi, the index set of lambda) are invoked without local definition or uses[] beyond def:categorical-action. A reader cannot reconstruct the Q-value formula from this block alone. Minor: this is an interpretive summary table pointing to def:categorical-action."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical values asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Qualitative observable<->functional correspondences are physically reasonable as a heuristic map."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness/compute backing this interpretive remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3e3527f91a87",
+          "ts": "d69f9a744a58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Two minor warns: da-overclaim (mass=|tr_M| is the wrong absolute-mass shape per guardrail) and da-definitional-ambiguity (Delta/varrho/Phi unbound).",
+        "notes": "verdict: minor-revisions. referee_argument: 'The map is a clean expository scaffold, but stating mass = |tr_M(Phi)| flatly invites the reader to use the deprecated bare-trace mass form rather than the muon-anchored canonical energy; tighten the mass row and define the symbols (Delta, varrho) it relies on.'"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.479Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

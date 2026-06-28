@@ -913,7 +913,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block is a definition (names a morphism with 4 conditions); no asserted proposition to be false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hadron-fibre-embedding.lean:37-49 — structure HadronFibreEmbedding has fields integrable/confined typed as bare `Prop` (not a stated proposition), energy : R_q with the nonneg field commented out (line 44), and theta/phi/energy carrying no constraint. The Lean encodes none of the four .md conditions (integrability, fibre confinement, Hopf compatibility, volume compatibility).",
+        "notes": "The .md definition is content-rich, but the Lean structure is a near-empty placeholder: `integrable : Prop` / `confined : Prop` are uninhabited slots that any `True` discharges, and Hopf/volume compatibility are absent entirely. For a `definition` block (Lean required) this is a vacuous formalization of a substantive definition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition, not a derivation; nothing concluded that could assume itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-fibre-embedding.md:65-70 — 'A localized hadron equipped with a fibre-compatible embedding is a physically realized hadron … faithfully embedded in the fibre geometry.' The term 'physically realized' and 'faithfully embedded' assert a physics-realization status that the abstract morphism conditions do not establish (no model is exhibited in which the four conditions are simultaneously satisfiable).",
+        "notes": "Definitional naming overreaches into a physical-realization claim without an existence demonstration. Minor: it is a definition, so this is a labeling/framing issue rather than a proved overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameter or calibration is introduced; energy bound is qualitative (E_Mob < ∞). No off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition with conditions; no inferential chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hadron-fibre-embedding.md:16-62 lists four substantive conditions (integrability intertwining the Skein action, fibre confinement via finite Möbius energy, Hopf-compatibility commuting square, hyperbolic-volume preservation). hadron-fibre-embedding.lean:37-49 defines `structure HadronFibreEmbedding` with only theta/phi/energy : R_q and two bare `Prop` fields integrable/confined — the morphism ι_p, the Skein-intertwining, the Hopf commuting square, and the volume-preservation equation are all absent. `validation: not_checked` (ts:8).",
+        "notes": "The Lean does not state, let alone enforce, the .md definition's content; it is a weaker/different object (a 5-field record vs. a constrained morphism). proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-fibre-embedding.lean:14,36 cite '[manuscript] §3 Lifting and Descent' for a definition that invokes Möbius energy and hyperbolic volume; the .md/.ts carry no external cites[] for the Möbius-energy confinement claim (line 27-34) which is a substantive analytic notion attributed to no source.",
+        "notes": "Self-citation to the manuscript only; the Möbius-energy-bounds-cusps assertion is uncited. Minor."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-fibre-embedding.md:24-26 references neighbouring fibre `E_{p'}` using the deprecated `E` symbol (AGENTS.md §7aa: '$E$ alone = not used'); the relation between `\\mathcal{S}_p` (used elsewhere) and `E_{p'}` is left implicit. 'Integrable in the sense that … can be consistently realized' (line 16-19) is informal — no precise integrability condition is given.",
+        "notes": "Key term 'integrability' is described circularly ('integrable … can be consistently realized'); fibre notation mixes S_p and E_{p'}."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match or fit; purely structural definition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Confinement-via-finite-Möbius-energy and volume preservation are qualitatively reasonable structural requirements; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness attached to this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "a2e08ca7144b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: The narrative definition is coherent, but the sibling Lean (HadronFibreEmbedding structure) formalizes essentially none of the four defining conditions — two bare `Prop` slots plus three unconstrained R_q fields — so the `lean.ref` resolves to a placeholder that any inhabitant satisfies. Either encode ι_p + the four conditions, or demote the Lean to an honest stub. Secondary: 'physically realized' overreaches a pure naming definition; fibre notation E_{p'} uses a deprecated symbol."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:18.765Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

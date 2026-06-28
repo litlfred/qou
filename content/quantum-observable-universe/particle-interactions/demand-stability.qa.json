@@ -1605,7 +1605,250 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:23-36 — beta-stability stated as 'if and only if |dem| is minimal among single p↔n exchanges at fixed A'",
+        "notes": "The iff is too strong as stated: real beta-stability of an isobar is not determined solely by a local one-step neighbor comparison of a single scalar (the most-bound isobar can be a local min while a more distant isobar at the same A is more bound, and odd-odd/even-even staggering breaks the monotone-neighbor picture). Presenting a global stability criterion as a local two-neighbor minimality iff is a likely quantifier/scope slip. Marked warn (not fail) because it is plausibly intended as a definition of 'this framework's stability', but as written it claims an iff with physical beta-stability."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive content (demand profile, criteria, worked table); not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:72-74 ('|c_{e^-}(n)|=0.044 > 0.043=|c_{e^-}(p)| and net(n)=0.811<0.999=net(p). Both conditions hold — the free neutron beta-decays.')",
+        "notes": "The neutron-decay conclusion is a known target; the demonstration cites two coefficients (0.044 vs 0.043, a 2% margin) computed within the same NF machinery whose stability criterion is being defined. Without an independent derivation of these coefficients the 'therefore the neutron decays' reads as the criterion tuned to reproduce the known answer. At minimum the razor-thin 0.044>0.043 margin invites the back-fitting concern; flag for scrutiny that the criterion was not validated against a case whose answer differs from naive expectation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:42-45 ('Doubly magic if both nucleus and atom have locally minimal tr_M'); table :48-53 lists ⁴He as 'Doubly magic (lowest tr_M)' and ³He as 'Shell-closed'",
+        "notes": "The block presents demand-profile as 'THE categorical diagnostic of stability' (:5) and supplies an iff for beta-stability, shell-closure, and double-magicity — a comprehensive predictive claim — on the strength of a 4-row table (¹H–⁴He). Extending three biconditional stability laws from four light examples is a derived-strength conclusion the evidence (4 hand-picked light atoms, no error bars, no A>4 validation here) does not support; the inductive-scaling paragraph (:77-95) asserts polynomial scaling 'for A>4' without exhibiting any A>4 result."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "demand-stability.md:50-53 demand magnitudes 0.024, 0.058, 0.000, 0.098",
+        "notes": "The four demand magnitudes are quoted to 3 decimals with no witness pin shown in-line and no stated q₀; whether they are pure outputs of a fixed pipeline or carry an implicit normalization choice is not visible. Not clearly a 4th calibration, but the unsourced precise constants are a candidate hidden degree of freedom (the demand-channel selection σ₁ / e⁻ / σ₀,L₋ also looks chosen per-atom)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:86-95 transfer-matrix identities C_pp²=H_A·C_pp+1, C_nn²=1−H_A·C_nn presented as 'instances of σ_i²=H_A σ_i+1'",
+        "notes": "C_pp²=H_A C_pp+1 is consistent with σ²=H_Aσ+1 only if C_pp=σ (the up-up case), but C_nn²=1−H_A C_nn would require C_nn=σ⁻¹ with the opposite-sign Hecke relation; calling BOTH 'instances of σ_i²=H_Aσ_i+1' is a sign mismatch — the down-down operator satisfies a DIFFERENT relation. The claim 'therefore iterated same-type pairs do not increase NF complexity beyond linear growth' is asserted without the reduction argument. Logical gap between the two displayed identities and the single cited Hecke relation, and between the identities and the linear-growth conclusion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.ts:5 ref qou:QOU.ParticleInteractions.demand_stability; no demand-stability.lean sibling exists in the block directory",
+        "notes": "The manifest declares a Lean ref (validation: not_checked) but there is no .lean sibling file for this proposition in particle-interactions/, so the three stability biconditionals are entirely unformalized. A proposition asserting iff-criteria with a Lean ref that has no proof term is a narrative-without-Lean divergence (proof-statement-integrity cannot be satisfied)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No external citations in .md (only block cross-refs and witness filenames)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "demand-stability.md:68-69 ('net(n)','net(p)') used in the decay criterion but 'net()' is not defined in this block; :42-45 'locally minimal among neighboring (Z,N)' (neighborhood unspecified)",
+        "notes": "'net(·)' appears in the central decay inequality without definition. 'locally minimal tr_M among neighboring (Z,N)' leaves the neighborhood (±1 in Z? in N? both?) unspecified. 'demand channels' column entries (σ₁, e⁻, σ₀ L₋) are not tied to a defined channel set. Several load-bearing terms are undefined within the block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:72-73 ('0.044 > 0.043', '0.811 < 0.999') — neutron decay turns on a 0.001 (≈2%) margin",
+        "notes": "The decisive beta-decay prediction rests on |c_{e^-}(n)|=0.044 vs |c_{e^-}(p)|=0.043, a one-part-in-44 margin quoted at 2 sig figs with no error estimate, no q₀ pin, and no current-witness hash. Such a margin is well inside plausible compute/round-off noise and cross-anchor (muon vs proton q₀) swing; the claim 'both conditions hold' is fragile to the second decimal. No verification that this margin is stable under the precision discipline."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:52 ('³He … Shell-closed') and :51 ('²H … Fusible'), table treats nuclear (³He,⁴He) and atomic (¹H,²H) stability on one 'demand' axis",
+        "notes": "A nuclear-physics referee would object: ³He is NOT a closed-shell, especially-stable nucleus (it is far less bound per nucleon than ⁴He; ³He is stable only because there is no lighter A=3 channel, not by 'shell closure'). Labeling ³He 'Shell-closed (demand=0)' contradicts standard nuclear systematics. Mixing atomic-shell (¹s¹ for H) and nuclear-shell language in one 'demand profile' conflates two different binding scales (eV vs MeV). The physical taxonomy in the table is questionable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "demand-stability.md:97-98 cites 'four-term-photon-to-atoms.witness.json'; that file is at computations/_deprecated/four-term-photon-to-atoms.witness.json (DEPRECATED), not at the live computations/ path",
+        "notes": "One of the two backing witnesses named by the block is deprecated/relocated — the block points at a witness no longer in the canonical computations/ tree. The quoted constants (0.024/0.058/0.000/0.098, 0.044/0.043, 0.811/0.999) cannot be reproduced from a live, current-hash witness as cited. Stale/irreproducible backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:72-73 (2% decay margin), :97-98 (deprecated witness), ts:5 (Lean ref with no .lean sibling), md:86-95 (Hecke sign mismatch)",
+        "notes": "verdict: major-revision. referee_argument: The proposition states three sweeping iff stability laws and a neutron-decay prediction, but (1) the decisive prediction hinges on a 0.044>0.043 margin with no error budget or q₀ pin (empirical fragility), (2) one backing witness is deprecated and the values are not reproducible as cited, (3) there is no Lean sibling despite a manifest ref, so nothing is formalized, and (4) the transfer-matrix 'instances of the Hecke relation' have a sign inconsistency for the down-down case. Strongest objection: the headline neutron-instability result is decided at the second decimal of unsourced, possibly-stale coefficients — not a robust derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

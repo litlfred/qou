@@ -1600,7 +1600,262 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The boxed formula kappa = -E0·log(1/h)/([2]_q[3]_q) is a well-defined real expression; numeric eval at q0 reproduces -1.0704239 MeV (independently confirmed). Not false; the objection is about provenance, not correctness."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.lean:78-81 theorem kappa_closed_form_is_categorical [c : HasMagicShellCouplingKappaClosedForm] : kappaClosed c.q c.m_e = c.kappa_empirical := c.kappa_closed_eq_empirical",
+        "notes": "Self-assuming projection: the headline 'theorem' merely returns the class field kappa_closed_eq_empirical, which IS the claim (closed form = empirical). The class carries the conclusion as a hypothesis field (line 67-68), violating §3b-cond non-degeneracy. The structural lemmas (qBracket_zero, hParam_pos, E0_pos, kappaClosed_neg) are real, but the central equality theorem is content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:45-49 'H7a energy quantum E0·log(1/h) ... identified empirically ... at the doubly-magic anchor (2,2)'.",
+        "notes": "The 'H7a quantum' factor E0·log(1/h) is stated to be 'identified empirically at anchor (2,2)' and then reused as the (2,1)/(1,2) single-magic slope. If the magnitude was fixed against magic-shell data and then declared 'categorical', the kappa match is partly tautological — the same empirical sector that supplies kappa_emp supplies the quantum. The .md asserts 'no empirical input enters' (line 38) but log(1/h) being the right magnitude rests on the (2,2) empirical identification it cites."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:70-74 'closes the open derivation ... is now a prediction of the categorical substrate, not an independently calibrated parameter'.",
+        "notes": "A single-anchor 0.034% numerical coincidence against one empirical fit is presented as a closed categorical derivation/prediction. The Lean offers no derivation (the equality is a class hypothesis), and the structural decomposition ([2]_q[3]_q as 'LR fusion for A=3') is asserted not derived. 'Prediction, not calibration' is stronger than a one-point match supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:51-55 chooses the normalizer [2]_q·[3]_q ('V2⊗V3 Schur–Weyl ... relevant LR fusion multiplicity for A=3').",
+        "notes": "The denominator [2]_q[3]_q is an off-menu structural choice selected to fit the A=3 single-magic anchor; no canonical-chain derivation forces this particular q-bracket product rather than, e.g., [2]_q^2, [3]_q, or [6]_q. With one free target (kappa_emp ≈ -1.071) and a menu of q-bracket products, hitting 0.034% is weak evidence; the chosen product is an undisclosed degree of freedom."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:51-55 'q-deformed dimension product [2]_q[3]_q — the quantum dimension of the V2⊗V3 Schur–Weyl tensor product, which is the relevant LR fusion multiplicity for A=3'.",
+        "notes": "The step from 'A=3 single-magic anchor' to 'normalize by [2]_q[3]_q' is asserted without a lemma: it is not shown that the per-excess slope must be normalized by exactly the V2⊗V3 quantum dimension. The 'therefore' linking H7a quantum × LR-normalization to kappa is missing its bridging argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.lean:78-81 vs magic-shell-coupling-kappa.md:3-13.",
+        "notes": "The .md states a derived closed form predicting the empirical slope; the Lean's central theorem assumes the equality (kappa_closed = kappa_empirical) as a class field and projects it. proof-statement-integrity fails: Lean does not derive the .md claim, it postulates it. The only sorry-free content (kappaClosed_neg sign) is a side fact, not the proposition's claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "magic-shell-coupling-kappa.ts:14 cites: []; .md references 'PR #656 v6 fit' (lean:17,47) and 'user work-list item #4' (md:70-71).",
+        "notes": "The empirical anchor is attributed to a PR number and a 'work-list item', not to any bibliographic entry; cites[] is empty. The provenance of kappa_emp ≈ -1.0707908 MeV is an internal artifact with no durable citation — not a misattributed published reference, but unverifiable from the corpus bibliography."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "magic-shell-coupling-kappa.lean:29-33 qBracket uses q^(-(n:ℤ)) (integer power), docstring says 'extended via Real.rpow'; .md:15-17 defines [n]_q with same form.",
+        "notes": "The qBracket docstring claims Real.rpow extension but the body uses zpow (integer exponent); harmless at integer n but the stated/implemented definitions diverge. Also 'H7a energy quantum' and 'magic-shell energy unit' are introduced without a prior definition block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "magic-shell-coupling-kappa.md:36-39 'ratio is 0.999657 — within 0.034%, at the precision floor of the empirical fit'.",
+        "notes": "The match is a single anchor at q0 with the comparison target itself only a fit ('at the precision floor of the empirical fit'). No cross-anchor check is given, q0 pin is not stated (muon vs proton), and 0.034% against a coarse fit with a tunable q-bracket denominator is inside fit noise. A referee reads this as a coincidence-strength match, not a 1ppQ-grade prediction."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "kappa ≈ -1.07 MeV per (n_pp - n_nn) excess is a plausible nuclear energy scale with consistent MeV units; no conservation/unit violation. Objection is statistical/derivational, not physical."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "magic-shell-coupling-kappa.ts:26-31 computation.script 'computations/probe_kappa_categorical_h7a_closed.py' and witness 'computations/kappa-categorical-h7a-closed.witness.json' status:'verified' — both files ABSENT (ls computations/ | grep -i kappa returns nothing).",
+        "notes": "The .ts marks the computation status:'verified' but neither the producer script nor the witness JSON exists in computations/. The backing compute is irreproducible from the repo; the 'verified' status is unsupported. (The numeric value itself reproduces by hand, but the declared witness pipeline is missing.) Severity raised to critical given status:'verified' on a non-existent witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "90118caa9ccd",
+          "ts": "61a751b4bb3c",
+          "lean": "bfa700953325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: 'The proposition is presented as a parameter-free categorical derivation closing the kappa work-item, but (1) the backing witness/script declared status:verified do not exist in computations/ (irreproducible), (2) the Lean theorem assumes the closed-form=empirical equality as a class field rather than deriving it (self-assuming projection), and (3) the denominator [2]_q[3]_q is an off-menu choice fitted to a single A=3 anchor at 0.034% — inside fit noise. As stated this is a one-point near-match dressed as a derivation; downgrade to a near-match observation (tiered proved/near-match/fitted per AGENTS.md c_k discipline) until the witness is restored and the LR-normalization is derived.'"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -297,7 +297,236 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "'Fix a substrate q > 1' (md:1) is the standard substrate-regime condition for the magic-strand predicate, not an archimedean leak into an algebraic identity; no Real.sqrt/MeV/numeric-q. The definition names a construction (IsAlgebraicallyPrime) rather than asserting an order-dependent identity."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The predicate is well-posed: n is prime if psi_n is not in the closed span of any non-trivial tensor decomposition. n=1 vacuously prime is correct (no k>=2 positive parts sum to 1). No false universal claim — the empirical-ladder coincidence is explicitly deferred to a separate conjecture (md:28-32)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition has genuine content (tensor-irreducibility predicate over confinement-SDP canonical states); not a ': True' or tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "A definition names a predicate; the value-at-q_0 (magic-ladder coincidence) is explicitly NOT asserted here (md:28-32), so no back-fitting of the magic ladder into the definition itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "algebraic-primality.md:17-19 'purely algebraic surrogate for a magic strand count'",
+        "notes": "Calling tensor-irreducibility 'the framework's surrogate for magic' editorializes a definition toward a result not yet established; the framing pre-suggests the (separately conjectured) coincidence. Minor — the conjecture is properly fenced off, so this is voice not content."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameter; q is a free symbol and the predicate is defined for every q>1."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The recursion-bottoms-out-at-1 argument is valid; no inferential gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "algebraic-primality.ts:6-8 lean ref qou:QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime, validation:'not_checked'; no sibling .lean present in directory listing",
+        "notes": "definition kind requires a Lean sibling; only a library ref is given with validation 'not_checked' and I could not confirm the decl exists/matches the .md predicate (closed-span over ALL decompositions k>=2). Cannot verify Lean encodes the closed-span condition vs a finite/weaker variant. Flag for verification, not a confirmed divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] on the .ts and no -- Ref: in the .md."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "algebraic-primality.md:2-3 'the confinement SDP selects a canonical state psi_n(q)'; md:8 'closed span'",
+        "notes": "'Canonical state psi_n(q)' presumes the confinement-SDP optimum is unique — if the SDP optimum is non-unique the predicate is ill-defined ('the unique X' without uniqueness). Also the ambient space for 'closed span'/tensor product (which Hilbert/topological completion) is left implicit. Base ring is fine (q>1 archimedean, stated)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match asserted in this definition block; the empirical magic ladder is referenced only as the content of a separate, deferred conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physical observable/units claim made; this is an algebraic predicate."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness/compute attached to the definition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "algebraic-primality.md:2 'canonical state' uniqueness assumption; .ts lean validation:'not_checked'",
+        "notes": "verdict: minor-revisions. referee_argument: a clean, well-fenced definition (the magic-ladder coincidence is correctly held out as a separate conjecture, vacuous primality at 1 is correct). Two soft objections: (i) 'the canonical state psi_n(q)' presumes SDP-optimum uniqueness that should be cited/established, and (ii) the Lean ref is unverified ('not_checked')."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

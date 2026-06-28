@@ -781,7 +781,227 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "As an illustrative derivation example the chain is internally coherent; no outright false mathematical statement (it is a worked normal-form example, not a theorem)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Concrete worked example with specific NF; not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hydrogen-derived-nf.md:59-63 'the e- coefficient flips from -0.043 (proton) to +0.080 (hydrogen)... The bound atom has e->0 — the beta decay channel is closed.' The interpretation (bound, beta-closed) is read off from the sign of a coefficient produced by the same construction it is meant to validate.",
+        "notes": "The physical conclusion (hydrogen is bound / beta channel closed) is inferred from the sign flip of a fitted/derived coefficient rather than independently checked, so the example partly confirms the framework using the framework's own output. Minor — it is explicitly an example/illustration, not a load-bearing derivation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "computations/_deprecated/four-term-photon-to-atoms.witness.json parameters include phi_linear=0.0487 and phi_01=0.02 alongside q0,HA,z,E_cross,E0_MeV — two phi knobs feeding the NF coefficients quoted in hydrogen-derived-nf.md:49-50.",
+        "notes": "The witness backing the quoted NF carries phi_linear and phi_01 parameters with no visible canonical-chain derivation in the block; these look like tunable inputs shaping the coefficient values (+1.018 sigma_0, -0.024 sigma_1, etc.). Potential undisclosed DOF behind the 3-decimal coefficients. The block does not surface or justify them."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hydrogen-derived-nf.md:32-33 states net(p)~+0.986 with '11 total crossings (6 B3 + 3 quarks + 2 gluon)'; line 56 net(A(1,0))~+1.489. The arithmetic linking the listed crossing counts to the specific net values is not shown.",
+        "notes": "The step from the crossing inventory and NF coefficients to the asserted net values is presented as a result with no shown reduction; a reader cannot verify net=+0.986 or +1.489 from the block. Gap is mild given it is an example pointing to Table 1/2 and the witness."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "example, no .lean sibling and none required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[]/-- Ref:; internal block cross-refs (prop:four-term-pair-nucleon etc.) resolve."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hydrogen-derived-nf.md:17 'p (+) T_{2,3} = A(1,0)' uses the trefoil T_{2,3}, the atom notation A(1,0), and net() without local definition; 'gluon sigma_0^2' (line 13) vs 'two crossings' phrasing.",
+        "notes": "Several framework-specific objects (A(1,0), net(), T_{2,3}, the (+) operation) are used without local definition; reliance on surrounding chapter context. Minor for an example."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hydrogen-derived-nf.md:49-50 quotes NF coefficients to 3 decimals (+0.090 gamma, +1.018 sigma_0, -0.024 sigma_1, +0.213 L+, +0.112 L-, +0.080 e-); the backing witness computations/_deprecated/four-term-photon-to-atoms.witness.json reports precision 'f64_numeric_fallback', truncation_eps 0.0, and q0=1.1099785955541805 which diverges from the canonical muon q0 1.10997859555733471 at the 10th significant figure.",
+        "notes": "3-decimal coefficients are quoted from an f64 numeric-fallback compute (not the canonical 50-dps mpmath path) at a q0 that does not match the canonical pin — exactly the precision/anchor fragility the framework warns against. The sign of sigma_1=-0.024 and e-=+0.080 (the load-bearing 'beta channel closed' observation) is small enough to be sensitive to the precision/anchor choice. Cherry-picked precision + non-canonical anchor."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hydrogen-derived-nf.md:5-17 derivation chain '3(gamma gamma) -> (u1,u2,d3)+(antiquarks) -> B3 -> gluon sigma_0^2 -> p -> p (+) T_{2,3} = A(1,0)'; lines 36-42 identify the electron with the trefoil T_{2,3} Hopf-linked via sigma_0.",
+        "notes": "A domain physicist would object: (i) producing a proton's three valence quarks plus the dressing from exactly three gamma-gamma (Breit-Wheeler) pair-production events is not how nucleons form (baryon/colour structure is not assembled from photon pairs); (ii) identifying the electron with a trefoil and the e--p binding with a single 'electromagnetic crossing sigma_0' conflates the ~13.6 eV atomic (QED) binding with the strong-confinement combinatorics at the same categorical level. Plausible as internal framework bookkeeping but presented with physical language ('pair production', 'beta decay channel closed') that overstates the physical correspondence. Flagged as fragile physical framing rather than a hard measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hydrogen-derived-nf.md:76 'Witness: four-term-photon-to-atoms.witness.json' resolves only to computations/_deprecated/four-term-photon-to-atoms.witness.json (deprecated, git_sha e85964c, computedAt 2026-04-13, precision f64_numeric_fallback). The .md proton net 'approx +0.986' (line 32) contradicts the witness proton_nf net 0.9991251 (a 1.3% / 0.013 discrepancy).",
+        "notes": "The cited witness is in _deprecated/ (canonical-script-not-deprecated would flag it), is f64-fallback rather than canonical precision, and its proton net (0.9991) contradicts the block's prose approximate (+0.986). The hydrogen NF coefficients in the witness do match the .md (lines 49-50), but the proton-net mismatch plus deprecated/non-canonical provenance means the block's headline numbers are not reproducibly backed on the live compute path."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "00e3c90803d8",
+          "ts": "45acd2e18260"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "da-empirical-fragility(fail), da-reproducibility(fail), da-hidden-dof(major: phi_linear/phi_01), da-physical-implausibility(major), da-circular/da-non-sequitur/da-definitional-ambiguity(minor). Core issue: 3-decimal NF quoted from a deprecated f64-fallback witness at a non-canonical q0, with prose net (+0.986) contradicting the witness net (0.9991).",
+        "notes": "verdict: major-revisions. referee_argument: 'The headline normal-form coefficients are quoted to three decimals from computations/_deprecated/four-term-photon-to-atoms.witness.json, which is deprecated, computed in f64 numeric fallback (not the canonical 50-dps path), at q0=1.10998..541805 that does not match the canonical muon pin, and whose proton net (0.9991) contradicts the block prose (+0.986). The load-bearing physical claim (e- sign flips +0.080 => beta channel closed) rests on a sub-0.1 coefficient sensitive to that precision/anchor, and the witness carries undisclosed phi_linear/phi_01 knobs. Re-run on the canonical compute, reconcile the proton-net number, surface the phi parameters, and soften the pair-production/trefoil physical framing.'"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.458Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

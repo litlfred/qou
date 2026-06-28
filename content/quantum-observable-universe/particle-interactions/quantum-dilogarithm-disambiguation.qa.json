@@ -913,7 +913,249 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "verified numerically: Φ_q(0.989)≈6.7e5 (unbounded), -Li2^q(-0.989)≈1.54 (bounded)",
+        "notes": "The central claim — the historical identity Φ_q=∫ln_q(1+t)/t dt is false, the integral equals -Li2^q(-z) — is correct; the two sides do differ by ~6 orders of magnitude at z=0.989."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "quantum-dilogarithm-disambiguation.lean:35-37 'def QuantumDilogarithm := trivial'",
+        "notes": "The sibling .lean defines 'def QuantumDilogarithm := trivial' (vacuous). Mitigated: both .md (:42-58) and the file header (:6-21) clearly mark it a re-export sibling stub whose real content (phi_q, li2_q, phi_q_ne_li2_q, towerTerm, HasCorrectedMassEndomorphismTower) lives in QOU/BraidKnot/QuantumDilogarithm.lean, which I verified exists with that content. So it is a §3b shadow stub, not a disguised claim — but ': = trivial' is still the discouraged vacuous form."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No circularity; a disambiguation/anti-regression definition."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claims about production wiring (li2q canonical, Φ_q diagnostic-only) and the Lean class are accurate and verified against the canonical .lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free parameter; a structural disambiguation."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The integral=-Li2^q(-z) identification and the 'differ by 6 orders' consequence follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "quantum-dilogarithm-disambiguation.md:48-49 describes 'phi_q_ne_li2_q' as proving the two 'are not equal'; canonical .lean:108 proves it via the z=0 witness (Φ_q(·,0)=1≠0)",
+        "notes": "The narrative says the functions are 'not equal under the historical identity'; the Lean theorem phi_q_ne_li2_q discharges inequality of functions by a single evaluation point (z=0), the weakest possible witness. It is logically sufficient for ≠ but does not capture the 6-orders-of-magnitude near-z=1 content the .md emphasizes. Honest but weaker than the prose implies."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites: [] empty; references are to internal blocks/files, none mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "quantum-dilogarithm-disambiguation.md:8 '-Li2^q(-z) ∈ [0.1, 0.82] for z∈(0,1) at q0'",
+        "notes": "The stated bounded range [0.1,0.82] for z∈(0,1) is inconsistent with the block's own probe point: at z=0.989∈(0,1) I compute -Li2^q(-0.989)≈1.54, exceeding 0.82. The 'Behaviour near z=1' cell range understates the function near the endpoint. Minor numerical-range imprecision, not affecting the core disambiguation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "Φ_q(0.989)≈6.71e5 reproduced; matches md's ≈6.7e5",
+        "notes": "The cited numeric Φ_q(0.989)≈6.7e5 reproduces; the disambiguation is robust, not a fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The -737 MeV pathology cited as the consequence of the conflation is a self-consistent diagnostic narrative; no physical claim asserted as a prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Φ_q≈6.7e5 value reproduced from the stated product form; production paths (canonical_plus_multibrane.py li2q, brane_tower_isospin_diagnosis.py diagnostic) are named."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept. referee_argument: A sound, verifiable anti-regression definition; its core claim (the historical Φ_q=∫... identity is false; the integral is the bounded -Li2^q(-z)) is numerically confirmed and its production/Lean wiring matches reality. Only nits: the sibling .lean uses the discouraged 'def := trivial' form (canonical content correctly lives elsewhere), the bounded-range cell [0.1,0.82] understates -Li2^q(-z) near z=1 (≈1.54 at z=0.989), and phi_q_ne_li2_q is proved by the weakest z=0 witness rather than the near-z=1 separation the prose stresses. None block acceptance."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.420Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

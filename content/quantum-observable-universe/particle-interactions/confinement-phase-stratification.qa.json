@@ -1656,7 +1656,257 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claims (1) openness of strict-feasibility locus, (2) real-algebraic stratification of the complement by minor-determinant zero loci, (3) local constancy of active support / μ on components are standard SDP/semialgebraic facts; no counterexample. Statement-level mathematics is sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-phase-stratification.lean:38,45,48 declare `constant confined/mu/sigmaF` (opaque); the headline theorem :69-73 is assembled from :53-55 and :60-65, both `:= by sorry`.",
+        "notes": "`mu` is an opaque `constant` with no defining equations, so `ConfinementPhaseStratification_mu_constant` cannot be proved as stated except vacuously — and indeed it is `sorry`. The docstring (:16-23) admits the 'concrete model' makes every particle confined at every q so Ω(P) is the universal set, which would make local-constancy trivially true; the actual file instead leaves both lemmas `sorry`. Either way the Lean carries no real content matching the .md's stratification claims. Also `constant` is removed in current Lean 4."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The phase-scoping argument derives openness/constancy from SDP regularity (Slater) rather than assuming the phase structure it concludes; no back-fitting to a target number."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.md:36-43 claim (4): every statement of prop:level-sufficiency, prop:shell-closure-stability 'and their corollaries' plus tr_M preservation 'holds pointwise in each Ω_α and in general fails on ∂Ω(P)'.",
+        "notes": "The blanket assertion that those theorems 'fail on the boundary' is stronger than the proof shows: claim (4)'s argument (:89-98) only shows the *proofs* assume local constancy, i.e. they are *not established* on the boundary — not that the conclusions *fail* there. 'Fails' overclaims 'not proved'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical observable or free coefficient; structural topology/stratification statement."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.md:67-74 claim (2): complement 'defined by the vanishing of a finite product of principal-minor determinants' — but deconfinement (loss of strict feasibility) is an inequality (some minor ≤ 0), not an equality.",
+        "notes": "The complement Ω(P)^c includes the open region where strict feasibility simply fails (minors negative), not only the boundary zero locus; equating the whole complement with a finite union of determinant zero sets conflates the codim-≥1 boundary ∂Ω with the full complement. The 'therefore real-algebraic stratification of the complement' step skips the inequality region."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md states 5 claims incl. real-algebraic stratification (claim 2), σ_F real-analyticity, scope/transition claims; confinement-phase-stratification.lean only attempts openness (:53) and μ-constancy (:60), both `sorry`, and the headline (:69) is their conjunction over an opaque `mu`.",
+        "notes": "Lean formalises a strict subset (claims 1 and a weakened 3) of the .md, over opaque constants, and proves none of it (two `sorry`s). The stratification (claim 2), σ_F analyticity, scope (claim 4) and transition (claim 5) content is entirely absent from the Lean. proof-statement-integrity fails: the manifest decl ConfinementPhaseStratification does not back the .md proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "confinement-phase-stratification.md:61 cites Boyd–Vandenberghe Lemma 5.4.1 for perturbation-stability of strict feasibility and §5.5.3 for optimiser continuity (references.ts:984 boyd-vandenberghe-2004); appropriate invocations of convex-optimisation results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.md:34 'σ_F(P,q) … is continuous (real-analytic in q on the interior)' while claim (3) bullet treats it as both continuous and real-analytic; and :81 invokes 'generic uniqueness' of the SDP optimiser without defining the generic set.",
+        "notes": "Real-analyticity of σ_F is asserted on 'the interior' without specifying analyticity of the SDP value function (which is generally only piecewise-analytic / continuous, not globally analytic); 'generic uniqueness' is used without pinning the genericity condition. Key regularity term left ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match quoted; qualitative topology of Ω(P). The carbon sp³/sp² and noble-gas remarks are illustrative, not numerical predictions."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.md:133-137 'Transitions between components are physically realised as chemical or nuclear rearrangements (e.g. sp³↔sp² hybridisation of carbon)'.",
+        "notes": "Identifying connected-component transitions of an SDP-feasibility locus in the abstract substrate parameter q with physical sp³↔sp² hybridisation is a strong physical interpretation a chemist would not grant without a derived link (hybridisation is not a function of a single substrate q); presented as fact in a remark. Interpretive overreach, flagged not refuted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.md:137-138 points to witness files `sdp_cross_channel.py` and `parity-regime-selection` for the regime-switch phenomenology.",
+        "notes": "The cited witnesses are named but not linked with hashes/paths in the block, and no concrete stratum/boundary value is given to reproduce; the empirical backing is gestured at rather than traceable."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean over opaque `constant`s with two `sorry`s backing a headline that omits 4 of 5 .md claims; complement-vs-boundary non-sequitur (claim 2); 'fails on boundary' overclaim (claim 4); interpretive sp³/sp² physics in the closing remark.",
+        "notes": "verdict: major-revision. referee_argument: The within-phase scoping discipline is a genuine and valuable observation and the openness/local-constancy claims are mathematically standard, but the formalisation is vacuous (opaque constants, all-sorry) and the .md conflates the SDP-infeasible region with the codim-≥1 boundary, then escalates 'unproved at the boundary' to 'fails at the boundary'. Tighten claim (2) to ∂Ω only, soften claim (4) to a scope (not failure) statement, and either formalise σ_F continuity over a concrete SDP model or mark the Lean an explicit stub."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

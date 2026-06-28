@@ -915,7 +915,263 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Definition of N(f1,f2,f3) as a product in H3(R,q) is well-formed; dim H3 = 3! = 6 (.md:65) is correct; the 6-term normal-form basis (.md:67-76) is a legitimate S3 Hecke basis. No false assertion in the definitional content."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The only Lean content is proton_ne_neutron (lean:30-34), proving protonFlavors != neutronFlavors — a trivial distinctness of two Fin 3 -> Bool tables. The substantive object (the Hecke element, its 6-term reduction, the net) is not constructed in Lean; NucleonHeckeElement (lean:12-16) is a bare structure carrying nfCoeffs : Fin 6 -> Int with no relation to the actual B_3 . C . C . C product.",
+        "notes": "Definition blocks require a sibling .lean, but here the .lean is near-content-free relative to the rich .md definition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No back-fitting in the definition itself; net values are computed outputs, not assumed targets."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:62-65 states 'each nucleon reduces to exactly six terms ... After Groebner-Shirshov reduction' as a settled fact, and .md:78-83 attaches physical meaning (photon channel, virtual crossings, Hopf links, trefoil/electron) to each basis coefficient. The 6-term count is just dim H3 = 6 (every element reduces to <=6 terms trivially); the physical labeling of basis elements as gamma / L+ / L- / e- is interpretive, presented as definitional fact.",
+        "notes": "'Exactly six terms' is true but trivial; the particle-content gloss is an overclaim of physical meaning onto a generic basis."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The crossing-to-generator assignment (1,2)->sigma_0, (1,3)->sigma_0, (2,3)->sigma_1 (.md:28-30) and the typed-crossing coefficients (-1/2 HA for mixed u/d, -HA for d/d; .md:41-43,59) are choices that fix net(p) and net(n). The factor 1/2 on HA for u-d pairs vs full HA for d-d (.md:46,59) is an undisclosed weighting with no derivation shown in-block.",
+        "notes": "The 1/2 vs 1 HA weighting is a free per-pair coefficient that determines the net asymmetry."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "The definition lays out a product and asserts a reduction; no 'therefore' inference gap inside the definitional statement."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".ts:15 declares lean ref qou:QOU.Braiding.NucleonHeckeElement, but the .lean file (lines 1-34) has NO namespace declaration — the structure is at top level, so QOU.Braiding.NucleonHeckeElement does not resolve. Moreover the .md defines N = B_3 . C(.) . C(.) . C(.) with explicit Borromean braid and typed crossings, while the Lean structure (lean:12-16) only stores flavors and an abstract nfCoeffs : Fin 6 -> Int with no construction of the product, and the only theorem proves proton != neutron. Lean formalizes essentially none of the .md definition.",
+        "notes": "Both a ref-resolution mismatch (namespace absent) and a content divergence: the named decl path does not exist and the body is far weaker than the .md claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "lean:1-4 cites jones1987 §3/§4 for the Markov trace / link polynomials, which is an apt source for Hecke-algebra link invariants. No mis-attribution.",
+        "notes": "Citation is appropriate to the Hecke/Markov-trace setting."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:24 invokes C(f_i,f_j;sigma_k) 'typed crossing operator' and B_3 = (sigma_0 sigma_1^{-1})^3 (.md:20) via cross-refs, which is fine, but uses[] (.ts:18) lists only def:typed-crossing-operator and OMITS def:borromean-baryon, which the .md depends on (.md:2,9,20-22). The dependency on the Borromean baryon definition is undeclared in the manifest, leaving B_3 partly ungrounded from the manifest's view.",
+        "notes": "Manifest uses[] is incomplete vs the .md's actual definitional dependencies."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:97-99 cites net(p) ~ +0.9991 and net(n) ~ +0.8108. These match the values in computations/_deprecated/breit-wheeler-nucleon-nf.witness.json (0.9991251, 0.8108345). The net is evaluated 'at the substrate parameter q0' (.md:93) with no statement of which q0 pin (muon vs proton anchor); the values are quoted to 4 sig figs with no error.",
+        "notes": "Quantitative nets quoted without q0 pin disclosure; backing witness is deprecated (see reproducibility)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "net(n) > net(p) ordering is not asserted here as a mass claim; the definition does not make a falsifiable physics prediction in-block. No unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The .md (.md:95-99) cites 'Witness: breit-wheeler-nucleon-nf.witness.json' for the net(p)/net(n) values, but that file exists ONLY at computations/_deprecated/breit-wheeler-nucleon-nf.witness.json — there is no live computations/breit-wheeler-nucleon-nf.witness.json (verified: 'No such file or directory'). The block's quantitative backing points at a deprecated witness.",
+        "notes": "Stale/deprecated backing: the cited witness has been moved to _deprecated, so the quoted nets are not reproducible from a live producer."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3b380ea8bd44",
+          "ts": "47fd502d2321",
+          "lean": "d85c76dae901"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: the Lean ref qou:QOU.Braiding.NucleonHeckeElement does not resolve (the .lean has no namespace) and the Lean formalizes only proton != neutron, not the Hecke element; the quantitative nets (.md:97-99) are backed by a witness that now lives only in computations/_deprecated/; and uses[] omits def:borromean-baryon. The definition's mathematical shape is sound, but its formalization and provenance are broken.",
+        "notes": "verdict: major-revise. referee_argument: (1) fix the namespace so the lean ref resolves and either formalize the product/reduction or downgrade the Lean's claimed scope; (2) re-home or regenerate a live witness for net(p)/net(n) and state the q0 pin; (3) add def:borromean-baryon to uses[]."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.196Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

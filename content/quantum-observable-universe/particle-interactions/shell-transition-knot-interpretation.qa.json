@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/shell-transition-knot-interpretation.md"
   },
   "source_hashes": {
-    "md": "71228c7d8ba7",
+    "md": "b8b6fdebb321",
     "ts": "6cadef2e0a44"
   },
   "criteria": {
@@ -835,7 +835,240 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark interpreting conj:shell-transition-knot; makes no formal proposition. The N=3 claim is conjectural framing, not a stated false theorem."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive interpretive content (crossing-number → threshold mapping), not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.md:6-12",
+        "notes": "The 'number of resonant coupling channels equals the Borromean crossing number' is asserted to land exactly at the empirically-known shell-transition value N=3. This reads as a post-hoc rationalization of a target rather than an independent derivation; the channel count is set equal to c(B_3)=3 by fiat. Gated as warn (chat-level skepticism per Critical-distance license), not a durable refutation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.md:9-12",
+        "notes": "'all 3 Borromean crossings can couple simultaneously ... producing a spin-orbit energy that exceeds the HO gap' is stated as mechanism but no quantitative spin-orbit-vs-HO-gap estimate is given; the energy comparison is asserted, not shown. Appropriate for a remark, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical calibration introduced; c is a structural crossing number, not a free fit parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.md:6-8",
+        "notes": "'The number of resonant coupling channels equals the Borromean crossing number' is the load-bearing step but has no backing lemma/citation — the identification of channels with crossings is the gap between the topology and the physical threshold. As a remark it is interpretive, so warn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No .lean sibling; remark kind requires none."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref: lines in this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.md:6-7",
+        "notes": "'resonant coupling channels', 'nuclear Hopf link', and 'orbital crossings of the nucleon' are used as if defined but no link/uses[] to a categorical definition is given beyond conj:shell-transition-knot; the channel-counting notion is informal."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match presented; N=3 is integer-valued, not a precision claim subject to q0-pin drift."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.md:8-12",
+        "notes": "Nuclear shell closures and spin-orbit 'magic' transitions occur at multiple N (2,8,20,28,...), driven by the empirical spin-orbit coupling; pinning a single threshold to c(B_3)=3 with no account of the standard shell-model magic-number sequence is a physics oversimplification a nuclear-structure referee would push on. Interpretive remark ⇒ warn."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness/compute attached to this remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.md:6-12",
+        "notes": "verdict=weak-accept-as-remark. referee_argument: the core identification 'resonant channels = Borromean crossing number = 3' is asserted without a counting lemma and conveniently reproduces a known shell value, while ignoring the broader magic-number sequence; acceptable as a conjectural interpretation (interprets conj:shell-transition-knot) but would not survive as a derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.649Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

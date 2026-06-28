@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/lp-dual-stability.md"
   },
   "source_hashes": {
-    "md": "7b2faf0b8ef8",
+    "md": "d26f7273aaad",
     "ts": "dbe01703a7f2"
   },
   "criteria": {
@@ -1605,7 +1605,239 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The four-part claim (G x*≥0, |y*|≤κ(G)‖t‖, σ0σ1⁻¹ sub-braid unstable, strong duality) is a coherent LP statement; the negative Gram eigenvalue λ_min≈-0.956 (md:45-47) is consistent with the partial-instability claim. No demonstrable falsehood."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Non-vacuous: the Lean was explicitly restructured (lp_dual_stability.lean:20-35) to remove the prior self-assuming projection; the class now carries only LP inputs and the theorem states the genuine conjunction (ending in honest sorry)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; the confinement conclusion (B_3 sub-unit unstable, full Borromean stable) is read off the computed Gram action, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lp-dual-stability.md:13-29 presented as 'Proposition … *Then:* 1…4' (assertional) while lp_dual_stability.lean:77-88 ends in sorry; lp-dual-stability.ts:5 validation: 'not_checked'",
+        "notes": "The .md states all four parts as established proposition results with 'Verified values at q_0', but the formal status is unproved (sorry) and unchecked. No §3b conditional banner. Presenting a sorry-backed, q_0-dependent numerical claim as a verified Proposition overclaims its epistemic status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "κ(G)≈7.0 and the Gram entries derive from tr_M at q_0; no off-menu free parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "lp-dual-stability.md:47-52",
+        "notes": "'The negative eigenvalue λ_min≈-0.956 is the reason the LP has a global minimum at tr_M=0 (massless). The braid group realizability constraint prevents this…' — the jump from an indefinite Gram matrix to 'global minimum at tr_M=0' and then to a length-L coefficient bound O((1+|h|)^L) excluding it is asserted without the intermediate optimization lemma. Plausible but the logical chain is compressed."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Lean theorem (lp_dual_stability.lean:77-84) states exactly the four .md claims as a conjunction over input data and ends in sorry with -- Ref: citations — a faithful 'stated, not yet proved' disposition. Lean target matches narrative claim; no divergence (the gap is provenness, captured under da-overclaim, not divergence)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "-- Ref: [bertsimas1997] for LP strong duality + dual sensitivity (lp_dual_stability.lean:75) is an appropriate source for claims (2) and (4)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "lp-dual-stability.md:9-11 (LP-confined: 'no proper sub-braid … is LP-stable'); :37 (B_3 = (σ0σ1⁻¹)^3)",
+        "notes": "'LP-confined' quantifies over sub-braids 'obtained by removing one or more generators from the braid word' — but a braid word has many sub-words and the order/which-removals are not pinned, so 'no proper sub-braid is LP-stable' is ambiguous about the quantifier domain. Also the proton is written both as B_3·uud and B_3=(σ0σ1⁻¹)^3; the generator basis for the hadron vs the sub-unit could be clarified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lp-dual-stability.md:21 (κ(G)≈7.0), :45 (Gram eigenvalues to 3 dp), :24 (σ0 component ≈ -0.106); lp-dual-stability-table-data.md (Gx components to 2 dp at q_0≈1.110)",
+        "notes": "All quoted values are at q_0≈1.110 to 2–3 significant figures, but the block does not state which q_0 pin (proton ~1.10998 vs muon ~1.10998 differing at ~11.5 ppb) nor the witness hash. With the backing witness retired (see da-reproducibility), the digits cannot be re-derived or checked for cross-anchor stability — the sign of the -0.106 σ0 component (the entire confinement claim) is the load-bearing number and is unverifiable against the live pipeline."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The confinement narrative (individual quarks LP-stable, B_3 sub-unit not, full Borromean restores stability) is a self-consistent framework statement, not a claim contradicting a measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lp-dual-stability.md:54-55 cites 'confinement-lp.witness.json' and 'confinement-operator-selection.witness.json'; confinement-lp.witness.json is at computations/_deprecated/confinement-lp.witness.json (only confinement-operator-selection.witness.json remains live in computations/)",
+        "notes": "One of the two cited witnesses (confinement-lp.witness.json) has been moved to computations/_deprecated/ — the LP-stability table values (Gx per channel, λ_min, -0.106 σ0 component) trace to a retired compute. Re-point to a live witness or regenerate; as cited, the proposition's numbers are not reproducible from the current pipeline."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d26f7273aaad",
+          "ts": "dbe01703a7f2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: The Lean side is exemplary — the prior self-assuming projection was removed and the four-part claim is honestly stated with sorry + citations. But the .md presents the proposition as a verified result ('Verified values at q_0') when its formal status is sorry/not_checked and, more seriously, one backing witness (confinement-lp.witness.json) is deprecated so the decisive -0.106 σ0 instability component cannot be reproduced or checked for q_0-pin sensitivity. Add a conditional/unproved banner, re-point to a live witness, and state which q_0 anchor the table uses."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

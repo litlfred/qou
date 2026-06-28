@@ -913,7 +913,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "dressed-particle.md:42-43 'stripping electrons changes the binding subword non-by definition via the SDP' — garbled phrase; md:71-74 'tr_M(P_dressed) = tr_M(P_bare) · ∏ w_λ^{⟨π_λ,Φ*⟩}'.",
+        "notes": "The composition law dress_{S2}∘dress_{S1} = dress_{S1⊕S2} (md:45-49) is asserted with the side condition 'when combined Z remains SDP-feasible' but no associativity/well-definedness check; the Markov-trace factorization (md:71-74) is stated as an equality with no derivation. Not provably false, but stated as definitional fact without support; and md:42 contains a textual error ('non-by definition')."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "dressed-particle.lean:62-64 axiom DressedParticle.level_canonical_under_bare; lines 69-74 theorem dressComposition concludes only P₂.level = P₀.level by projecting that axiom.",
+        "notes": "The only 'theorem' (dressComposition) proves a trivial level-equality (ℕ field equal) by applying a postulated axiom — it does not prove the dressing composition law dress_{S2}∘dress_{S1}=dress_{S1⊕S2} that the .md states. The structure DressedParticle carries plain fields (String name, ℕ level/strandCount) with no Markov/SDP content; the substantive claim is replaced by an axiom + a level-equality projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "dressed-particle.md:55-64 'Stability under dressing ... Noble-gas objects are therefore local terminal objects of the dressing sub-diagram of Conf' citing prop:shell-closure-stability '(forthcoming)'.",
+        "notes": "A categorical-stability conclusion ('local terminal objects', 'μ≥2 multi-operator fixed point of the SDP') is drawn from a proposition explicitly marked '(forthcoming)'. The definition leans on an unproved downstream result for its main interpretive payload; the terminal-object claim is stronger than the available support."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "dressed-particle.md:55-64 'each shell closure is a μ≥2 multi-operator fixed point ... and breaking the bond requires simultaneously breaking every tight dual block. Noble-gas objects are therefore local terminal objects.'",
+        "notes": "The 'therefore' from 'μ≥2 fixed point / must break every dual block' to 'local terminal objects of Conf' skips the categorical lemma that no non-identity dressing morphism leaves a closed shell — terminality is asserted, not shown."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "dressed-particle.md:45-80 (composition law + tr_M functoriality + stability) vs dressed-particle.lean:41-74 (a record DressedParticle + an axiom + dressComposition proving only level equality).",
+        "notes": "The Lean sibling formalizes essentially none of the definition's mathematical content: no dressing morphism, no shell concatenation ⊕, no Markov-trace factorization, no SDP feasibility. dressComposition proves P₂.level=P₀.level (a downstream of the postulated axiom), which is far weaker than 'dressings compose'. proof-statement-integrity: Lean ≠ .md claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and the Lean -- Ref: entries are [manuscript] self-refs only; no external reference to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "dressed-particle.md:13-29 uses A vs n_0+Z (Lean line 39 says H_{A+Z}(q), structure field is n_0+Z), and 'confined particle at level ℓ (typically ℓ=2)' references def:confined-particle / def:confinement-category without local pinning.",
+        "notes": "'level ℓ' is introduced with a 'typically ℓ=2' aside but never defined here; the strand count is written n_0+Z in .md but the Lean docstring writes A+Z; ⊕ is overloaded for both name concatenation and shell-data concatenation. Multiple lightly-defined terms make the construction's well-definedness hard to check."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The chemistry (noble-gas closures Z∈{2,10,18,36,54,86}, [He]/[Ne]/[Ar] core notation, H/He/Ne dressing examples) is physically correct."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition block, no computation/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "63f58ed38d88",
+          "ts": "830495e79fe7",
+          "lean": "fc0145c66b75"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision (definition acceptable, formalization weak). referee_argument: 'The narrative definition is coherent and chemically sound, but the Lean sibling captures almost none of its content: it introduces an axiom (level_canonical_under_bare) and a dressComposition theorem that only proves level-field equality, not the stated composition law, the Markov-trace factorization, or SDP feasibility. The interpretive stability claim leans on prop:shell-closure-stability marked (forthcoming). Either flag the Lean as a placeholder honestly or formalize the dressing morphism and ⊕; fix the textual error on md:42 (\"non-by definition\").'"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.248Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

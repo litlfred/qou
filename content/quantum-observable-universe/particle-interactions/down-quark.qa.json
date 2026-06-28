@@ -1149,7 +1149,253 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "down-quark.lean:63-65 theorem down_quark_is_unknot references Neutrino.mk; down-quark.lean:74-76 quark_crossing_asymmetry references UpQuark.mk. Neutrino is undefined anywhere in the Lean tree (grep: no `structure/def/abbrev Neutrino`), and UpQuark lives in up-quark.lean which is NOT imported here (imports are only Mathlib.Algebra.Polynomial.Laurent + Mathlib.Data.Int.Basic).",
+        "notes": "Not a false math proposition per se, but the formal statements cannot elaborate: undefined identifiers. The .md proposition (down=unknot) is plausibly true; flag is the Lean asserting it via unresolved names."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "down-quark.lean:69-70 down_quark_negative_orientation : DownQuark.mk.crossing_orientation = -1 := rfl, and :78-80 down_quark_confined := rfl, simply read back structure default fields (crossing_orientation := -1, confined := true at :48,:56).",
+        "notes": "These theorems restate field defaults by rfl — content-free projections of the structure literal, not derived facts. The physical content (-1/3 charge, confinement) is encoded as default values, not proved."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "down-quark.md:15-17 derives 'Coulomb charge contribution of -1/3' from 'contributes q^{-1} instead of q to the Skein polynomial'. The block is a definition downstream of conj:borromean-quark (via def:up-quark uses chain).",
+        "notes": "The charge value is asserted as a consequence of crossing sign without a stated map from Skein weight to fractional charge; presented declaratively though resting on a conjecture."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "down-quark.md:15-17 'This reversal contributes q^{-1} instead of q ... giving the down quark a Coulomb charge contribution of -1/3'. No lemma links Skein sign to the -1/3 value.",
+        "notes": "The 'giving ... -1/3' step has a missing bridge from crossing orientation to fractional electric charge."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "down-quark.md is a definition of a particle; down-quark.lean encodes it as a structure with default fields and four rfl/decide lemmas. The lemmas quark_crossing_asymmetry (:74) and down_quark_is_unknot (:63) reference UpQuark.mk and Neutrino.mk which are not in scope of this file's imports — the Lean as written does not compile, so it cannot back the .md claim.",
+        "notes": "Build-blocking divergence: the formalization referenced by lean.ref (qou:QOU.Archimedean.DownQuark) cannot establish the narrative content while it references unresolved Neutrino/UpQuark."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "jones1987 (Markov trace / link polynomials) and [manuscript] Ch.5 are appropriate for the Skein/Hecke context; no mis-attribution detected."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "down-quark.md:7 d = ν|_{B_3,-} uses 'negative orientation' as the sole distinguisher from up; rem:down-quark-properties.md:2-3 states up and down are 'the same knot type (unknot) in the same environment' — the only handle is the crossing-sign label, whose physical meaning (why -1 ⇒ charge -1/3) is not pinned.",
+        "notes": "'Negative orientation in B_3' is the defining datum but its translation to observable charge is left implicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match / q0-anchored value in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Identifying down with negative-orientation unknot and -1/3 charge is internally consistent with the up=+2/3 convention; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness/compute file for this definition block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e69561cafaf1",
+          "ts": "4918c572db8f",
+          "lean": "853b25fa3c51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: down-quark.lean references undefined Neutrino.mk and out-of-scope UpQuark.mk (down-quark.lean:63-76); the formalization cannot compile and several lemmas are rfl read-backs of default fields.",
+        "notes": "verdict=major-revision. referee_argument: the Lean sibling does not provide a compiling, content-bearing backing for the definition; fix imports (Neutrino, UpQuark) and replace default-field rfl lemmas with derived content, or downgrade Lean to an honest structure-only encoding."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

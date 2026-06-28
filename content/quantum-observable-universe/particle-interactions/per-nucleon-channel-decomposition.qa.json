@@ -913,7 +913,260 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "per-nucleon-channel-decomposition.lean:42-47 theorem protonChannelSum claims Σ protoChannelFactor = -(q-q⁻¹)/2 proved by 'simp [protoChannelFactor]; ring'",
+        "notes": "Symbolically the Lean protoChannelFactor sum simplifies to (q⁸−1)/(2q³), NOT -(q−q⁻¹)/2=(1−q²)/(2q) (verified with sympy; numerically Lean sum=+0.477 vs target −0.105 at q0). The theorem as written is FALSE, so 'simp;ring' cannot close it — the proof must currently fail to compile, or the protoChannelFactor definitions are wrong. The Lean factors (e.g. .triv = q³·q·(q+q⁻¹)/2 = +1.526) also disagree with the .md table value (+1.122), so the Lean encodes a different, internally-inconsistent channel decomposition."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "per-nucleon-channel-decomposition.lean:52-61 branchingFactorization just exhibits a,b with a<0,b<0",
+        "notes": "The 'full factorization' theorem branchingFactorization does NOT prove a factorization (a^Z·b^{N−1}·(a−b)); it only asserts ∃ a,b equal to two given closed forms with a<0,b<0 — a weak existence/sign statement that smuggles the definitions in as the witness. Content-light relative to its docstring's claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No circular calibration; channel values are algebraic functions of q from the T_{2,3} eigenstructure."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "per-nucleon-channel-decomposition.lean:49-50 docstring 'The full factorization: the character sum over 4^A configs factors as a^Z × b^{N−1} × (a−b)' vs the theorem body proving only ∃a,b with sign",
+        "notes": "The docstring claims the full multiplicative factorization is established; the Lean body proves only existence of a,b with the stated formulas and negativity. Conclusion (factorization) far stronger than the argument (sign of two constants). Also the .md (:92-97) claims the eight channel values 'completely determine all nuclear Q-values' — a strong universality claim not supported in-block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "per-nucleon-channel-decomposition.md:57 proton crossings use [σ1 − ½h](ud) and [σ0 − ½h](ud); :78 neutron uses [σ1 − h](dd)",
+        "notes": "The per-crossing shifts (−½h for ud, −h for dd) are introduced without derivation in-block; whether the ½ vs 1 coefficients are forced by the typed crossing operator or chosen to land the channel sums (a=−h/2, b=−0.634) is not shown. Potential undisclosed modelling freedom in the shift coefficients."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "per-nucleon-channel-decomposition.md:60-63 maps Sym/Std/Alt to the four eigenvalues; :65-70 table mixes ⟨v|Δ3|v⟩ entries with closed-form products",
+        "notes": "The standard-channel entries G_P(unconf), G_P(conf) are given only as ⟨v_i|Δ3|v_i⟩ with numeric values (−1.174, +0.858) but no closed form, while Sym/Alt are closed forms; the jump from 'four eigenvalues of T_{2,3}' to these specific expectation values is asserted without showing the v_i or the Δ3 action. The channel-sum identity a=−h/2 is then asserted 'verified algebraically' but the algebra is not exhibited and the Lean that purports to verify it is false (see da-false-claim)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".lean:25-29 protoChannelFactor .triv=q³·q·(q+q⁻¹)/2 (=+1.526) vs .md:67 Sym(Trivial) G_P = q·½[2]_q·½[2]_q (=+1.122); .lean sum=+0.477 vs .md sum=−0.105",
+        "notes": "The Lean per-channel definitions do not match the .md table either term-by-term (triv: +1.526 vs +1.122) or in total (Lean +0.477 vs md −0.105≈−h/2). The Lean sign-channel uses (−q⁻¹)³ whereas the .md uses (−q⁻¹)·(−½[2]_q)². The Lean proves a (false) statement about a different decomposition than the .md defines — a clear proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no external -- Ref: beyond [manuscript] self-references."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "per-nucleon-channel-decomposition.md:42-52 G(c)=⟨v_c|Δ3(quarks)|v_c⟩; :51-52 'v_c is the eigenvector of T_{2,3} in the seminormal basis'",
+        "notes": "In the 2-dim standard channel the eigenvector v_c is not unique (basis/normalization choice) and Δ3(quarks) is not defined in-block; 'the' expectation value ⟨v_c|Δ3|v_c⟩ depends on these unspecified choices, leaving the standard-channel entries (−1.174, +0.858) ill-pinned."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "per-nucleon-channel-decomposition.md:72-73 a=−0.1045 at q0; :89-90 b=−0.6340 at q0",
+        "notes": "The headline channel sums are reported at q0 to 4 digits but with no witness file/scriptHash; the b closed form reproduces (−0.6340) and the proton sum −0.105 matches −h/2, so the md numbers are internally consistent — but they are unpinned to a current-q0 witness and the contradicting Lean (sum +0.477) undermines confidence in which value is canonical."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Channel structure (Sym/Std×2/Alt from H3(q) on V^{⊗3}, proton=uud, neutron=udd) is the standard 3-strand decomposition; physically coherent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "per-nucleon-channel-decomposition.md:88-90 'verified' b=−0.6340; no witness path; .lean numerics contradict .md",
+        "notes": "The md values reproduce by hand (b formula → −0.6340; proton sum → −0.105) but no *.witness.json is linked, and the sibling Lean computes a contradictory sum (+0.477), so an automated reproducer would disagree with the prose. 'Verified algebraically' is unsubstantiated in-corpus and falsified by the present Lean."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "57950a90f0bb",
+          "ts": "f091a78d4b58",
+          "lean": "ca4e704491cc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "notes": "verdict: major-revisions. referee_argument: The definition's narrative table is internally consistent (proton channel sum ≈ −h/2, neutron b closed form reproduces), but the Lean sibling is broken in a way that touches correctness: protoChannelFactor encodes a DIFFERENT decomposition than the .md (triv +1.526 vs +1.122; total +0.477 vs −0.105), and theorem protonChannelSum asserts the sum equals −(q−q⁻¹)/2 when it symbolically equals (q⁸−1)/(2q³) — a false theorem whose 'simp;ring' proof cannot hold, so the file is either non-compiling or vacuously mis-stated. Compounding: branchingFactorization claims 'the full factorization' in its docstring but proves only ∃a,b with a<0,b<0. Strongest objection: the formal layer does not prove the .md's channel-sum identity and actively contradicts its numbers, so the block's central quantitative claims are unverified. Fix: align protoChannelFactor/neutronChannelFactor with the .md table (incl. the sign channel (−q⁻¹)(−½[2]_q)²), correct the protonChannelSum target, and either prove or downgrade the factorization theorem."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.121Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

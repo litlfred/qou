@@ -915,7 +915,249 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition: Z_n := ker τ = {M : τ(M)=0} with τ the graded Euler characteristic Σ(-1)^d dim M_d (md:1-24). Mathematically well-posed (graded Euler char is a standard decategorification); no false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cemetery-group.lean:37-44 structure CemeteryGroup carries nStrands,q,inCemetery:ℕ→Prop; the only logical content is axiom zero_not_in_cemetery (lean:51-52) ¬Z.inCemetery 0.",
+        "notes": "For a definition a sibling .lean is required and a light axiomatic wrapper is permitted (Brundan–Kleshchev iso not in Mathlib). But the structure stores inCemetery as an opaque ℕ→Prop with no tie to τ or graded Euler characteristic — the formal content of 'ker τ' is not encoded; the lone axiom is a convention. Acceptable as a definition wrapper, but the formalisation is thin. Minor."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition by kernel; no derivation. The remark (md:26-32) explicitly notes Z_n is emergent (defined as ker τ, not postulated)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "md:26-32 carefully scopes: 'cemetery group is emergent … defined as the kernel of τ rather than postulated', and defers computational use to conj:cemetery-group-emergence. No overclaim; the physical reading ('decoupled/non-observable channels') is offered as interpretation, not theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameters; purely categorical definition."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition; no inferential step. The 'kill switch' use is deferred to a separate conjecture."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:15-21 defines Z_n = ker τ via the explicit graded Euler characteristic τ(M)=Σ_d(-1)^d dim_R M_d (md:11-13). cemetery-group.lean models membership as an abstract predicate inCemetery:ℕ→Prop (lean:42-44) with no τ, no Euler characteristic, and only the convention axiom zero_not_in_cemetery.",
+        "notes": "The Lean does not formalise the τ-kernel content of the definition — it abstracts membership to an uninterpreted predicate. This is a legitimate 'light wrapper' (the underlying KLR/BK equivalence is not in Mathlib, stated lean:32-36) but the formal object is markedly weaker than the narrative definition. Flagged minor as honest under-formalisation rather than a false claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Cites [brundankleshchev2009] (md:7, .ts cites) for the KLR cyclotomic-quotient = H_n(R,q) equivalence and [khovanovlauda2009] for KLR categorification — both correctly attributed standard references for exactly the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:8-13 'graded Euler characteristic … τ(M):=Σ_d(-1)^d dim_R M_d ∈ R' writes dim_R M_d for graded pieces of a graded projective module, and τ:K_n→Vect (md:8) but the value lands in R (md:13).",
+        "notes": "Two small ambiguities: (i) the target of τ is stated as Vect (md:8) yet the formula yields a scalar in R (md:13) — codomain mismatch (decategorification to the Grothendieck-ring scalar vs to Vect); (ii) 'dim_R M_d' for the graded rank over a general coefficient ring R needs M_d free/finitely-generated for the dimension to be well-defined. The standard reading is clear to an expert but the in-block phrasing is loose. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical/experimental content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Physical interpretation (objects of ker τ = decoupled/non-observable channels; homologically acyclic complexes) is offered only as interpretation (md:23-24) and is consistent with τ being the observation functor. No falsifiable physics prediction to reject."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness; definition is self-contained."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Sound categorical definition (md:1-32) with correct citations; Lean is a thin abstract wrapper (inCemetery opaque predicate lean:42-44, single convention axiom lean:51-52) that omits the τ/Euler-characteristic content.",
+        "notes": "verdict=accept-with-minor-revisions. referee_argument: The definition of the cemetery group as ker τ via graded Euler characteristic is well-posed, properly emergent (not postulated), and correctly cites Brundan–Kleshchev/Khovanov–Lauda. The only issues are minor: the Lean wrapper does not encode τ (acceptable since the BK isomorphism is not in Mathlib, but it leaves the formal object weak), and the prose has a small codomain looseness (τ:K_n→Vect vs value in R) plus dim_R well-definedness over general R. None are blocking; tighten the τ codomain statement and, if feasible, encode membership via the Euler-characteristic predicate rather than an opaque ℕ→Prop."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.758Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

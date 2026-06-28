@@ -835,7 +835,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The algorithm (inductive multiply-then-reduce in H_{k+1}(q) with the standard GS basis) is a correct division-algorithm specialisation; no false step in the pseudocode."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark/algorithm description, no Lean, nothing trivialised."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Correctness invokes the GS main theorem upstream, not the algorithm's own output; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-reduction-algorithm.md:60-65 complexity claim O(A²) multiplications / O(A³) Hecke steps vs O(2^{Z·N}).",
+        "notes": "The polynomial complexity is stated as fact citing prop:inductive-gb-reduction, but the per-step reduction can itself expand intermediate terms; the O(A³) bound on *reduction steps* does not bound the *term count* carried, which the sibling proposition's own ¹⁴C example (2^13) shows can be exponential. Mild overclaim of overall polynomial tractability."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-reduction-algorithm.md:30-31 mixed crossing → σ_k − ½(q−q⁻¹).",
+        "notes": "Same ½-symmetrisation convention for mixed (pn/np) crossings as in the parent proposition, introduced without canonical-chain derivation; an undisclosed modelling weight that propagates into every computed NF. Minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Each algorithm step follows from the previous; the while-loop division logic is standard and locally justified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark with interprets: prop:nuclear-groebner-reduction; no own Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "nuclear-reduction-algorithm.md:1-3 cites leitnerpawloski2004 for the division algorithm; references.ts:1420-1430 confirms it is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (arXiv:math/0409565).",
+        "notes": "Citation correctly attributed to the GS/division-algorithm paper; matches the author-confirmed corrected bib entry."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nuclear-reduction-algorithm.md:19-21 'N_1 (the first nucleon's normal form in H_1(q): proton p or neutron n)' — H_1(q) is the trivial 1-dim algebra so 'p' and 'n' as distinct NF elements is undefined there.",
+        "notes": "H_1(q) has no σ generators, so encoding proton-vs-neutron distinction as different H_1(q) normal forms is ambiguous; the nucleon-type data must live elsewhere (in the crossing-type function), making the base case under-specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical results quoted in this block; algorithm specification only."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No standalone physical prediction; inherits the pp/nn sign convention from the parent but states no measurable here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pseudocode, no quoted numbers/witness to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f768c8299f1a",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept-with-nits. referee_argument: A clean, correctly-cited specialisation of the GS division algorithm; only nits are the polynomial-complexity overstatement, the undisclosed ½ mixed-crossing weight, and the H_1(q) base-case ambiguity. No structural defect."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.502Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

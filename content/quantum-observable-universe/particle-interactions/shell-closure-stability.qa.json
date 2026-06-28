@@ -1832,7 +1832,241 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claim (1) monotonicity is correctly framed as SDP-relaxation monotonicity with the explicit caveat (md:122-127) that it is NOT Cauchy interlacing; the headline avoids asserting the noble-gas identification as proved. No outright false statement survives."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive proof sketch with three distinct claims; not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The block explicitly declines the convenient circular move: it states the noble-gas closures are NOT reproduced by the bare categorical sigma_F (md:51-61) rather than back-fitting them. Honest non-circular framing."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "shell-closure-stability.md:144-159 (claim 3 terminality) vs ShellClosureStability.lean:133-145",
+        "notes": "Claim (3) 'Terminality' asserts noble-gas P^(Z) is a local terminal object because breaking μ≥2 tight blocks costs more than α·m_e·c_q^2 (md:152-159). This energetic-barrier inequality is the load-bearing step and is neither proved nor formalised — the Lean 'shell_closure_terminality' instead proves frobeniusStability D' q ≥ frobeniusStability D q (the upgrade is MORE stable, claim 1 direction) plus μ≥2, which is not terminality. The narrative presents terminality (and the chemical-inertness corollary) more strongly than either the sketch or Lean supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No undisclosed calibration; α, m_e, c_q^2 are canonical-chain quantities and the un-derived Madelung/2n^2 structure is openly flagged, not smuggled."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "shell-closure-stability.md:152-159",
+        "notes": "Claim (3): 'The energetic cost of breaking μ≥2 tight blocks is at least μ·ΔE_shell(q)' and then 'for q in the generic locus μ·ΔE_shell(q) > α·m_e·c_q^2, so no EM-mediated dressing can clear the barrier' — the strict inequality between the (un-quantified, 'derived categorically') shell-boundary gap and the EM binding scale is asserted with no supporting lemma, witness, or numeric bound. The 'therefore terminal' conclusion does not follow from any established step; it is the crux and is simply posited."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "ShellClosureStability.lean:154-159 (headline) and 133-145 (terminality) vs shell-closure-stability.md claims (2),(3)",
+        "notes": "The headline Lean theorem ShellClosureStability concludes only `bindingMultiplicity D.shell q ≥ 2`, supplied by the `NobleGasMultiOperator` class hypothesis and discharged by projection (shell_closure_noble_multiplicity := noble_gas_multi_operator) — it proves the multiplicity is ≥2 by assuming an instance asserting it. The .md headline ('noble-gas configurations are local terminal objects') and claims (2) local-maximum-of-Δσ_F and (3) terminality/energetic-barrier are NOT what Lean proves. shell_closure_terminality proves σ_F monotone-up + μ≥2, i.e. strictly weaker/different than the .md terminality claim. Lean ⊊ narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Boyd–Vandenberghe §5.4.1/§5.6 is correctly invoked for SDP-relaxation / value-function sensitivity monotonicity; appropriate attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-closure-stability.md:153-156 (ΔE_shell 'derived categorically'); md:42-49 (μ(S_Z,q))",
+        "notes": "ΔE_shell(q) ('the single-block shell-boundary gap, derived categorically') and the 'generic locus' of q are used quantitatively in the decisive inequality but never defined or bounded; 'binding multiplicity μ(S_Z,q)≥2' depends on a binding-multiplicity definition not given in-block. The decisive comparison rests on undefined magnitudes."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match to experiment is claimed; the block explicitly says σ_F does NOT reproduce the noble-gas peaks. No fitted number to be fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-closure-stability.md:161-168 (chemical inertness corollary); shell-closure-stability-interprets.md:60-70 (nucleon–electron parallel)",
+        "notes": "Equating electron magic numbers {2,10,18,36,54,86} with nucleon magic numbers {2,8,20,28,50,82,126} as 'the same structural phenomenon' (interprets.md:60-70) papers over that the two sequences arise from genuinely different (Coulomb vs nuclear spin-orbit) physics; the corollary deriving XeF4 from 'q far from generic locus' is a qualitative gesture, not a checkable physical claim. Conditional framing softens this to warn."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "shell-closure-stability.md:59-61 ('A high-precision categorical σ_F dressing chain confirms…')",
+        "notes": "The block asserts a high-precision categorical σ_F dressing-chain computation confirms σ_F alone does not reproduce noble-gas peaks, but cites no witness JSON for that run — the confirming compute is not pointed to and thus not reproducible from the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: The proposition is commendably honest about the un-derived Madelung/2n^2 structure and correctly distinguishes SDP-relaxation monotonicity from interlacing, but its two headline payloads — claim (2) local-maximum-at-closure and claim (3) terminality — are not established. The decisive terminality inequality μ·ΔE_shell(q) > α·m_e·c_q^2 (md:156-158) is asserted with no bound on either side, and the Lean formalisation proves only `bindingMultiplicity ≥ 2` (by projecting an assumed NobleGasMultiOperator instance) plus σ_F-monotonicity — strictly weaker than, and in claim-3's case orthogonal to, the narrative terminality claim. The .md title 'local terminal objects' therefore overstates what is proved. Restate claim (3) as conditional/open and align the Lean target with the narrative or vice versa."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md"
   },
   "source_hashes": {
-    "md": "c13c53b29cd9",
+    "md": "8483160730c1",
     "ts": "dc4928841f82"
   },
   "criteria": {
@@ -1605,7 +1605,244 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "frobenius-positivity-filter.md:22-24; frobenius_positivity_filter.lean:113-120 (sorry)",
+        "notes": "The claim 'exactly half — 2^{A-1} out of 4^A — are excluded' is asserted as an iff-determined exact count, but it is NOT proved: the Lean theorem is closed with `sorry` (lean:120), the .md gives no proof of the 2^{A-1} count, and the count depends on an unstated spectator-factor sign structure. As stated the count is a conjecture presented in a proposition; whether it is even true for all even A (vs the A=6 example) is unestablished. Cannot certify true, plausibly fragile — warn at major."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Lean is honestly non-vacuous: the genuine combinatorial claim (excludedConfigs).card=2^(A-1) is stated over a real Fintype config space and closed with a cited `sorry` (lean:113-120), and the docstring explicitly says it REPLACED a previous self-assuming class-projection. card_config (4^A) is a real sorry-free fact. Honest 'queue it' disposition, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No calibration or target back-fitted; the filter is a structural feasibility condition, not a number-matching derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "frobenius-positivity-filter.md:10-24 ('Proposition. … if and only if … Exactly half … are excluded') vs frobenius_positivity_filter.lean:113-120 sorry",
+        "notes": "The block kind is `proposition` and the .md states the exclusion count as an established proposition ('Exactly half … 2^{A-1} … are excluded'), but the count is unproved (Lean `sorry`, missing Hoefsmit G-function sign infrastructure per lean:104-119). A conditional/conjectural combinatorial count is presented as a proved proposition — conditional-as-proved overclaim. The honest Lean disposition is not mirrored by the .md's assertive 'Proposition … iff … Exactly half'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameter; the filter is a sign constraint (Gx≥0 analogue). The four channels {triv,conf,unconf,sign} are structural, not fitted."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "frobenius-positivity-filter.md:22-24,:38-47",
+        "notes": "'The sign of each configuration product is determined by the spectator factor. Exactly half … are excluded.' — the leap from 'sign determined by spectator factor' to the precise count 2^{A-1} is the entire content and is not argued; the Lean confirms the bridging lemma (Hoefsmit seminormal G-function sign + LP feasibility) is absent (lean:104-119). 'Therefore exactly half' is a missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "frobenius_positivity_filter.lean:74-91,:113-120 vs .md:10-24",
+        "notes": "The Lean states the count over an abstract ProductData P (parent/daughter products carried as arbitrary real functions), so the theorem as written is FALSE for generic P (the 2^{A-1} count needs the specific spectator-sign structure, which is only gestured at in the docstring, not hypothesized in the signature). The faithful object is the manuscript's specific G-products, but the Lean abstracts them away and then `sorry`s. So the Lean statement is simultaneously over-general (likely false as stated for arbitrary P) and unproved — a mild divergence from the .md's specific-G claim. Honest sorry mitigates to warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean -- Ref [hoefsmit1974] (seminormal representations / G-function factors of Hecke algebras of classical-type BN-pairs) is correctly invoked as the source of the spectator-factor sign structure driving the count. Appropriate attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "frobenius-positivity-filter.md:12-20",
+        "notes": "G_{n_m}(c_m) (the per-factor function), n_m vs n'_m (parent vs daughter cell counts), and the 'spectator factor' are used without in-block definition; the channels {triv,conf,unconf,sign} are named but their G-values not given. A reader cannot reconstruct the products or verify the sign claim from this block alone."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "frobenius-positivity-filter.md:39-42",
+        "notes": "The single quantitative datum, ⁶He→⁶Li Q≈3.637 MeV vs experiment 3.508 MeV (+3.68%), is an order-of-magnitude match only (3.7% ≫ the keV-scale experimental error on this Q-value), and rests on the unproved filter. One isotope is not evidence the 2^{A-1} count generalizes. Presented as a worked example, so warn."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "A positivity/feasibility filter (only non-negative mass elements contribute) is physically reasonable, and Q≈3.6 MeV for ⁶He β-decay is the right order. No conservation/unit violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "frobenius-positivity-filter.ts (no computation field); .md:39-42 quotes Q≈3.637 MeV with no witness",
+        "notes": "The .ts manifest attaches NO computation/witness, yet the .md quotes a specific computed Q≈3.637 MeV for ⁶He→⁶Li. The number has no linked reproducible backing on this block, so the 4096-config / 32-excluded / Q value cannot be checked from the block's metadata."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8483160730c1",
+          "ts": "dc4928841f82"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "frobenius-positivity-filter.md:10-24,:39-42; frobenius_positivity_filter.lean:113-120",
+        "notes": "verdict: revise — downgrade or prove. Strongest objection (referee_argument): a block typed `proposition` asserts as established 'iff … Exactly half (2^{A-1} of 4^A) are excluded', but the count is unproved (Lean `sorry`, missing the Hoefsmit G-function sign + LP-feasibility bridge), the Lean abstracts the products to arbitrary P so the stated theorem is not even true for generic P, and the sole numeric (⁶He Q +3.68%) is order-of-magnitude only and has no attached witness. The Lean's honest `sorry` + docstring (it explicitly replaced a self-assuming projection) is to its credit, but the .md's assertive proposition voice overstates the proof status. Either prove the count, restate as a conjecture/conditional, or hypothesize the specific G-sign structure in the Lean signature and attach the ⁶He witness."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -781,7 +781,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "beta-decay-braid-visualizer.md:8-12 'braid word beta = (sigma_1 sigma_2)^5 has 10 crossings' for T_{3,5}",
+        "notes": "(sigma_1 sigma_2)^5 in B_3 is a word of length 10 (10 letters/crossings) and is indeed a standard braid representative of the (3,5) torus knot — internally consistent. The standard minimal crossing number of T(3,5) is 10 only as the braid-word length here; as a knot diagram the braid closure has (3-1)*5=10 crossings, which matches. No falsity, but '10 crossings' conflates braid-word length with diagram crossing number; warn for precision."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "simulator kind; descriptive UI spec, not a proposition to be vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation; a visualizer description."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-braid-visualizer.md:56-66 crossing budget 10 = 3 (e-) + 0 (nu) + 7 (R2 re-reduction); :64-66 '7 re-reduction crossings ... producing the dominant contribution to the Q-value'",
+        "notes": "The decomposition 10 = 3+0+7 is presented as if the weak-vertex 10-crossing budget exactly accounts for the emitted e- (3) and antineutrino (0) with a residual 7 driving the Q-value. This is an arithmetic partition asserted to carry physical content (the Q-value's dominant contribution) with no derivation in-block — a strong physical claim riding on a crossing-count coincidence. Stronger than a simulator caption should assert. The Q_beta accuracy is itself a known L2-miss (CLAUDE.md), so 'dominant contribution to the Q-value' overclaims."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "beta-decay-braid-visualizer.md:60-62 'underbrace{7}_{R2 re-reduction}'",
+        "notes": "The '7 re-reduction crossings' term is introduced as the remainder needed to make the budget total 10 (10-3-0=7) and assigned a physical role; it reads as a residual chosen to balance the count rather than an independently derived quantity. Possible off-menu remainder. Minor — it is a bookkeeping identity, not a fitted constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-braid-visualizer.md:64-66 '...modify inter-nucleon crossing types ... producing the dominant contribution to the Q-value'",
+        "notes": "'7 re-reduction crossings -> dominant contribution to the Q-value' is a 'therefore' with the connecting computation absent: nothing in the block links a crossing count to an energy in MeV. The bridging lemma (crossing-count -> transfer-matrix Q-value) is invoked, not shown. Gap; warn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "simulator block; no .lean sibling and none required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] / -- Ref:; only internal cross-refs (rem:force-knot-identification, rem:building-block-knots) and uses:['def:categorical-neutron']."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "beta-decay-braid-visualizer.md:31-32 Skein relation 'q[L_+] - q^{-1}[L_-] = (q^{1/2}-q^{-1/2})[L_0]'; :30 Hecke 'T^2=(q-q^{-1})T+1' using T",
+        "notes": "Two register inconsistencies vs the repo's STRICT Hecke-Skein convention (CLAUDE.md §7a): (i) the Skein relation is written in the framed/Jones q^{1/2} normalization, whereas the canonical repo Skein is sigma_i - sigma_i^{-1} = q - q^{-1} (i.e. L_+ - L_- = (q-q^{-1})L_0); (ii) the generator is written T, but §7a mandates sigma_i (never T). Both are standard knot-theory conventions but clash with the paper's declared register, creating a defterm/regime ambiguity for the reader."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical observable value (MeV) is quoted in the block to be fit-fragile; only crossing counts (integers)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "beta-decay-braid-visualizer.md:6-7 'The weak interaction is carried by the torus knot T_{3,5}'; :19-22 antineutrino = K_{0_1} (unknot, 0 crossings)",
+        "notes": "Assigning the weak force a single fixed knot T(3,5) and the antineutrino the unknot are framework modeling conventions a Standard-Model physicist would not recognize; charge/lepton-number bookkeeping via crossing counts is non-standard. As an interactive-visualizer of an internal model this is in-scope, but the physical-mapping claims are heterodox — warn (it is the framework's own ansatz, not a measured contradiction)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "beta-decay-braid-visualizer.ts:19 html:'folio-assistant/simulators/beta_decay_braid.html'",
+        "notes": "The visualizer's correctness depends on the referenced HTML asset rendering the claimed budget/transfer-matrices; I did not confirm the HTML exists or that its transfer-matrix entries at q match the prose. No witness JSON backs the 10=3+0+7 budget or the Delta_beta equally-spaced claim (md:33-36). Flag asset/value reproduction for verification."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c3d5966cda03",
+          "ts": "491f59b82fca"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-braid-visualizer.md:56-66 crossing budget asserted to give 'dominant contribution to the Q-value'; :30-32 off-register Hecke/Skein notation",
+        "notes": "verdict: minor-to-major revisions. referee_argument: as a UI spec the block is fine, but it smuggles two substantive claims a referee would challenge: (1) the crossing budget 10=3+0+7 with the residual 7 'producing the dominant contribution to the Q-value' — a physical/energetic claim with no in-block derivation linking crossings to MeV (non-sequitur + overclaim), and (2) Skein/Hecke written in a normalization/notation (q^{1/2}, generator T) that violates the paper's STRICT §7a register. Re-scope the Q-value statement as illustrative and align notation; verify the HTML asset and transfer-matrix entries."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.377Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

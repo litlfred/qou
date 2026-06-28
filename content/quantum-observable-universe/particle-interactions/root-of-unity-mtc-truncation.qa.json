@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/root-of-unity-mtc-truncation.md"
   },
   "source_hashes": {
-    "md": "1bda54085fb4",
+    "md": "57d94da4ed16",
     "ts": "31b505cf6501"
   },
   "criteria": {
@@ -935,7 +935,235 @@
           "value": 0.75
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Stated as a conjecture (kind=conjecture), correctly. The component claims (cyclotomic-KLR quotient finite-dim at root of unity; crystal truncation; Bakalov-Kirillov MTC structure) are established literature; only the QOU-anyon-spectrum identification is conjectural, which the block states. No false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "RootOfUnityMTCTruncation.lean:103-111: the 'canonical' instance sets inTruncation v := (0 < 2), columnCount _ := 0, and discharges truncation_holds _ := Nat.zero_lt_succ 1.",
+        "notes": "The conjecture-carrying field truncation_holds is supposed to 'play the role of sorry' (line 60-62), but the canonical instance makes inTruncation a CONSTANT-TRUE predicate (0<2 ignores its argument), so truncation_holds is discharged by a trivial true proposition (Nat.zero_lt_succ 1), NOT a sorry. The conjecture is thereby vacuously satisfied: the instance exists with no open mathematical content. This is exactly the §3b-tax failure mode - a content-bearing-looking class whose canonical instance trivialises the asserted field. The .md docstring claims 'sorry = the conjecture' (line 110) but there is no sorry; the instance is fabricated to 'close' the open state, contrary to AGENTS.md §3b-tax ('do not fabricate a trivial instance to close it')."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; the conjecture posits a structural correspondence, not a numerical target tuned to data."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The block is careful: 'Why a conjecture and not a theorem' (md:31-41) correctly separates the established literature results from the conjectural QOU-spectrum identification, and gives a falsification criterion. Appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "k (truncation level / root-of-unity order) is an explicit parameter, not a hidden free DOF; it is the defining input of the conjecture."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The narrative chain (root of unity -> cyclotomic quotient finite-dim -> crystal truncates to <= k-1 columns -> MTC_k) is the standard KLR/cyclotomic story, each step cited (khovanovlauda2009, kashiwara1991, bakalovkirillov2001). No unsupported 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "root-of-unity-mtc-truncation.md asserts truncation to partitions with 'at most k-1 columns' and an MTC of non-abelian anyons; RootOfUnityMTCTruncation.lean:107 canonical instance sets columnCount _ := 0 and inTruncation v := 0<2.",
+        "notes": "The Lean class signature does faithfully encode the column-count predicate (inTruncation_iff: columnCount v < k), so the class statement is aligned. But the only provided instance trivialises both fields (columnCount := 0, inTruncation := True), so the Lean as-instantiated proves the .md's conjecture only in a degenerate model where every node has 0 columns and the truncation predicate is vacuously true. The downstream lemmas (columnCount_nodeOf_lt_k) are real consequences of the CLASS but are evidentially empty under the canonical instance. Divergence: .md claims a substantive truncation; the closed Lean witness exhibits a trivial one."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites[] (bakalovkirillov2001, khovanovlauda2009, kashiwara1991, kitaev2006, nayak2008) are correctly attributed: Bakalov-Kirillov for MTC structure, Khovanov-Lauda for KLR, Kashiwara for crystal bases, Kitaev/Nayak for non-abelian anyons. Standard and appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "root-of-unity-mtc-truncation.md:11-12 'the cyclotomic quotient of the corresponding KLR algebra realising H_n(R,q)' and md:14 'at most k-1 columns'.",
+        "notes": "Minor: the base ring R is generic [CommRing R] in the Lean while the .md specialises q = e^{2pi i/k} in S^1 (which requires an archimedean / complex base, not a generic CommRing). The class is stated over generic R with q:R, but a primitive k-th root of unity on the unit circle is a C-specific object - the regime (generic ring vs C) is glossed. Also 'the cyclotomic quotient' presumes a canonical such quotient without pinning the cyclotomic parameters."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical observable or experimental match in this conjecture; purely structural."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Non-abelian anyons from root-of-unity MTCs is standard topological-quantum-computation physics (Kitaev, Nayak). No conflict with measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute witness backing this conjecture; nothing to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "57d94da4ed16",
+          "ts": "31b505cf6501"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: The narrative conjecture is well-posed, well-cited, and honestly demarcated from established literature - as a CONJECTURE block it is exemplary. The defect is in the Lean: the 'canonical' instance (lines 103-111) fabricates a trivial model (inTruncation := 0<2, columnCount := 0) that discharges the conjecture-carrying field truncation_holds with a true proposition instead of a sorry, violating AGENTS.md §3b-tax ('do not fabricate a trivial instance to close it') and the docstring's own claim that 'sorry = the conjecture'. Fix: remove the trivial instance (leaving the content-bearing class with NO instance, the honest open state) or carry the conjecture as a genuine sorry. The class fields themselves are content-bearing and acceptable; only the discharging instance is the problem."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.044Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

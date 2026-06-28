@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean"
   },
   "source_hashes": {
-    "md": "c1629e334c47",
+    "md": "38fb253d77e3",
     "ts": "2c35a2834a2a",
     "lean": "eebe516e5768"
   },
@@ -995,7 +995,261 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cpt-orbit-closure-density.md:12-19 defines CPTSat(K) :⟺ σ(Λ)⊆Λ and the ρ_F dichotomy; worked n=3 example (md:68-90) is internally consistent with σ=transpose ((3)↔(1,1,1), (2,1) self-dual).",
+        "notes": "Stated as a conjecture; the definitional content (transpose involution, orbit-closure, the dichotomy) is mathematically coherent and the n=3 orbit decomposition is correct. No false universally-quantified claim found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "cpt-orbit-closure-density.lean:97-100 `cpt_boolean_eq_orbit_closure ... : cptSaturatedBool Λ = decide (isCPTSaturated Λ) := by rfl` where cptSaturatedBool is DEFINED as `decide (isCPTSaturated Λ)` (lean:87-88). Also lean:167-175 the §3b-cond stub: `class SymmetricCrystalPairProduction : Prop where holds : True` and `def conditional_on_SymmetricCrystalPairProduction [_inst : SymmetricCrystalPairProduction] : True := trivial`.",
+        "notes": "Two vacuities: (1) the advertised equivalence theorem cpt_boolean_eq_orbit_closure is X = X by rfl — cptSaturatedBool is literally defined as decide(isCPTSaturated), so the 'Boolean ↔ orbit-closure equivalence' (md:57-66, 'recorded by the Lean theorem') proves nothing beyond a definitional unfold; the substantive equivalence to the legacy FrobeniusPackingDensity.cptSaturated field is asserted, not proved (the legacy Bool is not even imported). (2) The §3b-cond conditional-class witness has class field `holds : True` (empty-marker style) and the witness def concludes `: True := trivial` — a self-assuming/empty-carrier pattern flagged by AGENTS.md §3b-tax (proof-no-empty-prop-carrier) and §1a (def : True). The density-value lemmas cpt_orbit_closure_density / _single_chirality (lean:117-129) ARE genuine (if_pos/if_neg), so not the whole block is vacuous — but the headline equivalence and the conditional-class stub are."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "cpt-orbit-closure-density.md:21-24 'the Frobenius packing-density rule ... becomes a derived consequence of crystal structure rather than a posited Boolean flag'; md:117-120 'Downstream proofs that branch on cptSaturated can be rewritten ... with the proposition above discharging the equivalence.'",
+        "notes": "The block claims to have DERIVED the density rule from crystal structure and to discharge the equivalence with the legacy Boolean. But (a) it is a conjecture (conditional on two conjectures, md:1), and (b) the Lean 'equivalence' is rfl on a definition that re-packages the Boolean as decide(predicate) — it does not connect to mass-volume-factorization.lean's actual cptSaturated field. 'Derived consequence' overstates: the σ→ρ_F=2m_e link is the conjectural input, not a derivation. Warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "cpt-orbit-closure-density.md:96-109 'Why the fold is the right involution' concludes σ 'is not a chosen-by-fiat Z/2 action but the intrinsic fold whose existence is guaranteed by the symmetric-crystal structure,' citing that the bar involution sends block λ to block λ^T.",
+        "notes": "The argument that the bar-involution acts as transpose on Wedderburn blocks is asserted via citations (brundankleshchev2009, khovanovlauda2009) without an in-block lemma; the step from 'KLR canonical basis is bar-invariant' to 'bar sends block(λ) to block(λ^T)' is the load-bearing identification and is not proved here (it is precisely conj:symmetric-crystal-pair-production, md:101-102). So 'guaranteed by the symmetric-crystal structure' restates the conjecture as if established. Logical gap papered over by citation; warn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "cpt-orbit-closure-density.md:56-66 says the semantic equivalence to the legacy `cptSaturated : Bool` is 'recorded by the Lean theorem cpt_boolean_eq_orbit_closure: cptSaturated = decide(isCPTSaturated populatedBlocks).' The Lean (lean:97-100) instead proves cptSaturatedBool Λ = decide(isCPTSaturated Λ) by rfl, where cptSaturatedBool is a NEW local def (lean:87-88), NOT the FrobeniusPackingDensity.cptSaturated field.",
+        "notes": "The .md claims the Lean records equivalence with the legacy Boolean flag (the whole point — 'refactoring the Boolean flag away'). The Lean proves a tautology about a locally-introduced surrogate Bool, never referencing or importing the legacy structure. So Lean proves something strictly weaker/vacuously-implied vs the .md claim (proof-statement-integrity). Additionally partitionTranspose_involutive is an axiom (lean:61) and Partition is a `constant` (lean:44) with a Classical.decEq instance — the crystal content is axiomatized, consistent with conjecture status but the .md's 'discharging the equivalence' (md:120) is not what the Lean does."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cpt-orbit-closure-density.lean:60 cites [fulton1997] for 'conjugate/transpose partition is an involution λ^{TT}=λ' backing axiom partitionTranspose_involutive; cites kassel1995 in .ts (ts:20) and md:138-139 'registered via [kassel1995]' for partition-transpose involutivity.",
+        "notes": "The transpose-involutivity (λ^{TT}=λ) is elementary partition combinatorics genuinely in Fulton 1997 (Young Tableaux), so [fulton1997] is apt. But the .md (md:138-139) attributes the same involutivity 'via [kassel1995] / standard partition combinatorics' — kassel1995 is Kassel's Quantum Groups, not the natural source for partition-conjugation involutivity; this is a loose/secondary attribution (the Lean correctly uses fulton1997 instead). Minor mis-attribution in the prose. lecouvey2007/kashiwara1991 for the fold are appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cpt-orbit-closure-density.lean:44 `constant Partition (n : ℕ) : Type` — an opaque carrier with no structure; partitionTranspose (lean:57) is also a `constant` with no definition; the worked-example claims σ=transpose identifies (k)↔(1^k) but the abstract `partitionTranspose` constant is never tied to actual transpose.",
+        "notes": "The key term 'partition transpose σ' is, in Lean, an uninterpreted constant whose only property is the axiom of involutivity; nothing forces it to be the actual Young-diagram transpose, so the n=3 worked orbits (md:73-77) are not derivable from the Lean objects. The narrative's σ (genuine transpose) and the Lean's σ (opaque involution) are different readings of 'the fold.' Minor (conjecture-level abstraction is allowed) but the gap between concrete transpose and abstract involution is a definitional ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cpt-orbit-closure-density.lean:144-148 references computations/det_pair_law.py as 'the strongest currently available shadow' checking det ρ_λ(w)·det ρ_{λ^T}(w)=±1.",
+        "notes": "No numerical match to experimental data is claimed (ρ_F ∈ {m_e, 2m_e} is structural, not fitted); the det_pair_law check is presented honestly as a 'shadow,' not a precision result. No fragility hit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cpt-orbit-closure-density.md:26-38 ρ_F ∈ {m_e, 2m_e} with the factor-2 from CPT/orbit doubling.",
+        "notes": "The factor-of-2 CPT-doubling (matter+antimatter / chirality pair) is a physically reasonable structural statement; no broken conservation or wrong-units claim. Conjectural but not implausible."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cpt-orbit-closure-density.lean:144-148 cites computations/det_pair_law.py as empirical verification but the .ts carries no computation{} block / witness; the claim 'checks det ρ_λ(w)·det ρ_{λ^T}(w)=±1 over generators' has no attached witness JSON to confirm state.",
+        "notes": "The supporting compute (det_pair_law.py) is referenced only in a Lean comment with no witness sidecar or computation manifest, so its current pass/fail state is not pinned/auditable from the block. Minor — the block is a conjecture and does not headline a numerical result, but the 'empirical verification' pointer is unbacked by a witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Block-level rollup over cpt-orbit-closure-density.{md,lean,ts}.",
+        "notes": "verdict=major-revision. referee_argument: The conjecture's idea (CPT-saturation = Type-B fold-orbit closure, ρ_F doubling from σ-orbit count) is coherent and the density-value lemmas are honestly proved, but the block's central selling point is not delivered by its Lean. The .md claims the Lean 'records the semantic equivalence' with the legacy FrobeniusPackingDensity.cptSaturated Boolean (md:56-66, 117-120), whereas cpt_boolean_eq_orbit_closure (lean:97-100) is rfl on a locally-defined surrogate cptSaturatedBool := decide(isCPTSaturated) — a tautology that never touches the legacy structure (da-vacuous + da-lean-narrative-divergence). The §3b-cond conditional-class witness uses an empty-marker `class ... where holds : True` and `def ... : True := trivial` (lean:167-175), an AGENTS.md §3b-tax/§1a anti-pattern. Partition and partitionTranspose are opaque `constant`s with involutivity as an axiom, so the worked n=3 example is not derivable from the Lean objects. Recommend: replace the surrogate-Bool rfl theorem with a genuine equivalence to the imported legacy field (or restate honestly as definitional), give SymmetricCrystalPairProduction content-bearing fields instead of `holds:True`, and tie partitionTranspose to the actual YoungDiagram transpose."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -835,7 +835,243 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The arithmetic in the table (net = NF_+ − |NF_-|; 11.3% = 0.1127/0.9991; cancellation ratios) is self-consistent and the neutron net 0.8108 matches the backing witness; no false numerical claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark reports substantive coefficient-bookkeeping content, not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No calibration target is back-fitted; the NF coefficients come from the GS reduction, not from the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "negative-debt-confinement.md:42-46 'This is a computable, algebraic manifestation of color confinement — the energy cost of holding three quarks in a color-singlet braid is larger for the neutron because the d–d interaction is more confining than u–u.'",
+        "notes": "A coefficient-cancellation ratio in a single H_3(q_0) normal form is presented as a manifestation of QCD color confinement and as evidence that 'd–d is more confining than u–u' — a strong physical conclusion far beyond what a sign-bookkeeping table on two normal forms supports. Per AGENTS.md refutation/overclaim discipline this should be scoped to 'this NF decomposition shows X about the coefficients,' not a structural confinement claim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "backing witness computations/_deprecated/four-term-photon-to-atoms.witness.json parameters: HA=0.209, z=0.499, phi_linear=0.0487, phi_01=0.02.",
+        "notes": "The reported NF coefficients depend on photon-polarization inputs (phi_linear, phi_01) and HA/z that are not surfaced in the remark; the 'negative-debt' numbers are conditioned on a specific parameter choice not disclosed in the .md."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "negative-debt-confinement.md:23-25 'This single channel contributes |Δ(L_+)|/net(p) ≈ 10.9% — approximately the entire excess debt' then :42-46 concludes color confinement.",
+        "notes": "The leap from 'the L_+ sign flip accounts for ~10.9% excess negative coefficient' to 'the d–d interaction is more confining than u–u (color confinement)' is a non-sequitur: a single-channel coefficient flip does not establish a confinement-energy ordering between quark pairs."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No external citations (cites[]/Ref) in this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "negative-debt-confinement.md title (.ts:6-7) references 'the nine-strand direction' and tag 'nine-strand', but the .md body never defines or mentions nine-strand content.",
+        "notes": "The block title and tags advertise a 'nine-strand direction' that the prose does not define or use; 'negative coefficient debt' is defined operationally but its physical meaning (energy?) is asserted rather than tied to a defined observable."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Values (neutron net 0.8108, L_+ −0.010/+0.099) trace to computations/_deprecated/four-term-photon-to-atoms.witness.json with q0=1.1099785955541805 (muon-anchor canonical pin) at git_sha e85964cd; the witness lives in _deprecated/.",
+        "notes": "Quoted precision (4 decimals on coefficient sub-sums) sits on a deprecated witness; the '11.3% / 10.9%' near-coincidence ('approximately the entire excess debt') is exactly the kind of single-anchor coefficient match the framework flags as fragile, and it is not re-validated against the current proton-pinned q0."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "negative-debt-confinement.md:43-46 ties 'energy cost of holding three quarks' to coefficient cancellation and claims d–d more confining than u–u.",
+        "notes": "A particle physicist would reject the inference that proton/neutron differ in confinement energy by quark-pair type — the p–n mass splitting is dominated by electromagnetic + light-quark-mass (m_d−m_u) effects, and isospin confinement is approximately flavor-blind; 'd–d more confining than u–u' contradicts standard QCD expectations and is asserted from algebra alone."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The sole backing compute four-term-photon-to-atoms.py / .witness.json is under computations/_deprecated/ (README: 'not imported by any live (non-_deprecated/) python file'); no live witness reproduces the table.",
+        "notes": "The numerical table is not reproducible from any live producer — its witness has been deprecated. Either restore/re-run the producer (git mv back + re-run per the _deprecated README) and refresh the numbers against the current pin, or convert the table to clearly-historical author notes."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4cca681ab31b",
+          "ts": "0a95c8fc6faa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revisions. referee_argument: the coefficient table is arithmetically self-consistent, but (1) its backing witness is deprecated and unreproducible, (2) the physical interpretation overclaims a QCD-color-confinement / 'd–d more confining than u–u' conclusion from a single-anchor sign-bookkeeping exercise, contradicting the standard EM+quark-mass account of the p–n splitting, and (3) the '11.3%/10.9% ≈ entire excess debt' coincidence is fragile and single-pin. Re-scope to a numerical observation about the NF decomposition and refresh against a live witness."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.800Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

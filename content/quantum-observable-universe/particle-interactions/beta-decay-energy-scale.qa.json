@@ -837,7 +837,245 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark; arithmetic relations (E₀=m_e/(q₀(q₀−1)), tower sum 1/(1−ħ_q²)) are stated as approximate and internally consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive content (NF decomposition, energy budget); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.md:80-92 E₀^(cal)=Q_β/|Δ(net)|≈4.155 MeV, then md:176-217 'Full energy budget' sums Δ_i×E₀ back to '+0.782 MeV' = Q_β.",
+        "notes": "The energy scale E₀^(cal) is *defined* by dividing the experimental Q_β by the Hecke NF difference; the subsequent 'full energy budget' that re-sums the six Δ_i×E₀ contributions back to +0.782 MeV is then arithmetically forced (Σ Δ_i = Δ(net) by construction), not an independent prediction. The budget table reproduces its own normalization input. The derived forms E₀^(N=0)≈4.186 and E₀^full≈4.228 ARE independent of Q_β (good), but the headline '=+0.782 MeV' budget closure is tautological."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.md:105-123 'Open finding' admits tower/Li_2^q forms move *further from* calibrated values; yet md:14-18 frames E₀ as 'derivable from CAL-1 and CAL-2 alone'.",
+        "notes": "The block honestly discloses the residual puzzle, but the 'derivable from CAL-1, CAL-2 alone; CAL-3 is the cross-check' framing overclaims given that the derived E₀ (4.186/4.228) and the calibrated E₀ (4.155) differ by ~0.2–1.2% and the more 'principled' tower correction makes agreement worse — i.e. the derivation does not actually predict the observed scale better than the leading guess."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.md:167-174 'Energy scale scenarios' table: |Δ| ∈ {0.18829, 0.11007, 0.07563, 0.10302} give E₀ ∈ {4.155, 7.108, 10.345, 7.594} MeV depending on which subset of NF terms is chosen.",
+        "notes": "The choice of WHICH Δ (all-terms net, observable ℓ≥2, positive NF₊, leptonic) defines E₀ is an undisclosed discrete degree of freedom: four different 'energy scales' spanning 4.16–10.35 MeV are all presented, and the one matching the m_e-derived 4.186 (all-terms net) is selected post-hoc. The term-by-term sign assignment (which terms are 'virtual' ℓ<2 vs 'observable' ℓ≥2, md:146-156) is a second free partition. These selections are not pinned by the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.md:24-30 'Δ=NF(n)−NF(p) equals NF(n−p) because NF is coordinate extraction ... a linear map'.",
+        "notes": "NF (Gröbner–Shirshov normal-form reduction) is linear as coordinate extraction on the already-reduced space, but NF(n−p)=NF(n)−NF(p) requires that the raw words n,p reduce within the same linear span without cross-terms; the step asserts linearity of the full reduction without citing the confluence lemma that licenses it for the specific nucleon words. Minor gap but the 'because' is doing unproved work."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No .lean sibling; remark kind."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] / -- Ref:; references are internal block labels."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "beta-decay-energy-scale.md:1-22 distinguishes 𝔈₀ from 𝔔_β(n); md:36 uses :val[confinement_B3_net_proton] but md:37 hardcodes net(p) context, and md:103 vs md:171 give the 'typed' value 4.155 with '0.6% below symbolic'.",
+        "notes": "Multiple coexisting 'E₀' objects (E₀^(N=0), E₀^full, E₀^(cal,symb), E₀^(cal,typed), E₀^full,Li2q) with small spreads are referenced interchangeably in prose; which one feeds the 'energy budget' (md:179) is ambiguous (text says 'using E₀(net)' / '4.155')."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.md:36-43 net(n)=+0.810835, Δ(net)=−0.188291 from free-neutron-decay.witness.json; md:99-103 E₀ derived values 4.186/4.228 vs calibrated 4.155 (0.17%/1.16%); md:105-110 'tower form moves further from calibrated'.",
+        "notes": "The agreement is fit-fragile: the leading derived value beats the tower-corrected value, so the more-principled correction degrades the match — a signature of a near-match rather than a derivation. The values depend on 'typed crossings' net values from a single witness (finite-size noise quoted as 0.6%). Per AGENTS.md L2 status, Q_β currently misses its 100× target by ~164× and the Habiro-exact result is stale vs the 2026-05-28 proton-anchor re-pin; this block cites q₀≈1.110 derived numbers without flagging which anchor pin produced 4.186/4.228."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.md:160-165 'observable-only Q-value ... ≈0.4573 MeV = 58.5% of Q_β'; md:146-156 partition of γ,σ₀,σ₁ as 'virtual' and L_±,e⁻ as 'observable' by word length ℓ≥2.",
+        "notes": "Labeling the photon (γ, ℓ=0) and braid generators as 'virtual' while only ℓ≥2 links are 'observable' has no standard physical correlate; the resulting 'observable Q-value' = 58.5% of Q_β is a numerology of the chosen partition, not a measurable quantity. A nuclear physicist would not recognize a Q_β decomposition into 'observable 0.457 MeV + virtual remainder'."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "beta-decay-energy-scale.ts:22-30 computation status 'experimental', script q_beta_form_a_n1_extension.py, witnesses q-beta-form-a-n1-extension.witness.json + confinement-operator-selection.witness.json; md:239 cites a *third* witness 'beta-decay-energy-scale.witness.json' not in the .ts witness[] list.",
+        "notes": "The prose (md:239) references beta-decay-energy-scale.witness.json as the source for the energy budget, but the .ts manifest's witness[] lists only q-beta-form-a-n1-extension and confinement-operator-selection — a producer/manifest mismatch. Several literals (4.155, 0.18829, 0.810835, budget +0.782) are hardcoded in prose rather than :val-pinned (only E_0_* and one net value use :val), so drift against the witnesses is not caught. Status 'experimental' acknowledged."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c09866b6dbd1",
+          "ts": "7660f12ded36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict=major-revision. Strongest objection (referee_argument): the 'full energy budget' closing to Q_β is tautological (Σ Δ_i = Δ(net), and E₀^(cal) is defined as Q_β/|Δ(net)|), so it is not an independent confirmation; meanwhile the genuinely-independent derived scales (4.186/4.228) miss the calibrated 4.155 by up to 1.16% and the more-principled tower correction makes the match WORSE. Compounded by an undisclosed discrete DOF (four 'energy-scale scenarios') and a manifest/prose witness mismatch (beta-decay-energy-scale.witness.json absent from .ts witness[]). The block is honest about the open puzzle (md:105) but oversells 'derivable from CAL-1, CAL-2 alone'."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.868Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

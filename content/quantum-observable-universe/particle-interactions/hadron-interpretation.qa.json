@@ -835,7 +835,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark interpreting def:hadron; makes no standalone truth-evaluable mathematical proposition."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Conveys real interpretive content (stability = net binding, valence-3=baryon/valence-2=meson, abstract vs localized hadron); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No derivation; an interpretive remark with no fitted target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-interpretation.md:1-4 states the stability condition admits 'only those whose R-matrix braiding produces net binding (more negative crossings than positive)' as the qualifier for hadrons — a strong necessary-and-sufficient-sounding criterion presented without the supporting stability proof in-block (it interprets def:hadron, but the 'only those' is an absolute claim).",
+        "notes": "The 'only those ... qualify as hadrons' is a sharper claim than a remark interpreting a definition should assert on its own; it leans on def:hadron's stability condition which is not restated. Minor — it is an interpretive gloss, not a new theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No numerical parameters; references def:coulomb-charge and χ(A) structurally. No free constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Claims (stability→hadron, valence→baryon/meson, abstract vs localized) are definitional assignments, not inferential 'therefore' steps with missing lemmas."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No .lean sibling for this remark; interprets def:hadron. Nothing formal to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] / -- Ref:; only internal links to def:coulomb-charge and def:localized-hadron. Nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-interpretation.md:14-15 says the specific knot content 'is determined by χ(A) in the Descartes universe' without specifying which torus knots, and md:1-2 'net binding (more negative crossings than positive)' uses 'net binding' as the stability criterion without defining the counting convention (signed crossing sum? weighted?). The hadron's 'knot eigenbasis' (md:11) is referenced but not pinned here.",
+        "notes": "Terms 'net binding', 'knot eigenbasis', and 'χ(A) determines knot content' are used without in-block definition, relying on def:hadron / Descartes-universe blocks. Acceptable for a remark but the criteria are left underspecified for a standalone reader."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical claim or witness in the block; purely qualitative interpretation."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-interpretation.md:7-8 'A hadron of valence 3 is a baryon; valence 2 is a meson' matches standard QCD (qqq baryon, qq̄ meson), but md:1-2 characterising hadron stability as simply 'more negative crossings than positive' is a topological proxy a domain expert would not equate with the actual confinement/binding mechanism (color neutrality), and no quantitative validation links it to a measured binding energy.",
+        "notes": "The valence taxonomy is physically sound; the 'net negative crossings = binding' stability criterion is a model assumption presented as the physical stability condition, which a referee would mark as an unvalidated proxy rather than established physics. Minor and consistent with the framework's stated categorical-substrate program."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness backing claimed; qualitative interpretive remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ee13d97e098f",
+          "ts": "3cf6bcac19d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor-comments. As a remark interpreting def:hadron it is coherent and correctly maps valence→baryon/meson. referee_argument: the only soft spots are the absolute 'only those ... qualify' phrasing (da-overclaim, minor) and the undefined 'net binding' counting convention (da-definitional-ambiguity, minor); neither blocks acceptance for an interpretive block."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.508Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

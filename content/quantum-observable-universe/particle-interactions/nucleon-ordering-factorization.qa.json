@@ -1605,7 +1605,237 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Sub-claim (i) (product of commuting scalars is permutation-invariant) is true and Lean-proved via List.Perm.prod_eq. The 2×2 transfer-matrix factorization (ii) and Hecke-relation eigenvalue derivation are standard and internally consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Not vacuous: the Lean main theorem carries an honest sorry (not a self-assuming projection — the class fields are free scalars, the equation relating them is the unproved content), and sub-claim (i) is genuinely discharged."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No target back-fitting; this is an algebraic/computational factorization claim, not a numerical calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-ordering-factorization.md:8 'Proposition.' header presents the full channel decomposition (master identity) as proved, but the Lean (nucleon_ordering_factorization.lean:80-89) discharges the master identity with sorry; only sub-claim (i) is proved.",
+        "notes": "The .md proof section gives narrative arguments for (i)-(iv) but the central Wedderburn-decomposition equation is not formally established (Lean sorry, Hecke engine 'not yet in Lean'). The narrative proof of (i)-(iv) is plausible/standard, so this is a status-presentation overclaim rather than a false claim: a 'Proposition' whose Lean status is conjectural-in-the-master-half. Mitigated by the honest Lean docstring."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The transfer matrices T_pp, T_nn, T_pn (md:96-110) are fixed by stated crossing conventions (md:152-157: σ0, σ0⁻¹, ½(σ0+σ0⁻¹)); no undisclosed free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-ordering-factorization.md:104-110 the proton–neutron crossing matrix T_pn uses d=−½(q−q⁻¹) justified by 'T_pn = ½(σ0+σ0⁻¹)' (md:156). Averaging the over- and under-crossing operators to model a p–n crossing is asserted, not derived from a topological rule.",
+        "notes": "The ½(σ0+σ0⁻¹) prescription for mixed nucleon crossings is a modeling choice presented as a 'crossing convention'; the step from 'p–n pair' to 'symmetric average of the two crossings' has no cited lemma. The pp/nn cases (σ0 / σ0⁻¹) are natural; the mixed case is the gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nucleon-ordering-factorization.lean:42-45 proves only scalar_channel_ordering_independent (sub-claim i); lean:80-89 the named theorem nucleon_ordering_factorization is sorry. The .md (lines 8-110) states the full four-part Proposition as the claim.",
+        "notes": "The Lean decl matching the block's lean.ref (QOU.Interactions.nucleon_ordering_factorization) is a sorry over a free-field class, so Lean does NOT establish the .md proposition — it establishes only the easy half (i). Per proof-statement-integrity this is a divergence: the formal artifact proves strictly less than the narrative claims. Honestly documented (validation:'not_checked', docstring says 'discharged by sorry'), hence major not critical, but a referee would note the proposition is not formally backed."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean cites [jones1987] (Markov trace) at the sorry — appropriate for the Markov-trace/Hecke context. No mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-ordering-factorization.md:17-19 uses W_sym/W_std/W_alt and z·a_π+b_π; md:60-69 the 'jet-descended' nucleon blocks are stated as 'fixed 2×2 transfer matrices' but the precise map from a nucleon word to (c_i,d_i) per crossing (md:75-82) is left to the cited theorems.",
+        "notes": "Channel weights W_* and the standard-channel parameter z are used without in-block definition (deferred to the Wedderburn decomposition); d_k in S(π)=∏(q+d_k) (md:31) is the per-crossing scalar but its definition relies on the unstated crossing-operator parametrization. Resolvable via uses[] links, hence minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical observable/q0-pinned value claimed; this is a structural/algorithmic factorization."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claims are algorithmic (speedup, ordering search) not direct physical predictions; ⁵⁶Fe parameter count (md:226-229) is internally consistent (6×56=336)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No *.witness.json cited in-block; the '~9× reduction' (md:187) is an analytic op-count (36→4), not a benchmarked witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cca2adeee5f8",
+          "ts": "69bd58c8cdd0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: The factorization is structurally credible and its easy half (scalar-channel ordering independence) is Lean-proved sorry-free. But the block is presented as a proved 'Proposition' while its central master identity (the Wedderburn channel decomposition) is discharged by sorry in the matching Lean decl — Lean proves strictly less than the .md claims (da-lean-narrative-divergence, major). Secondary: the mixed p–n crossing matrix uses an undeclared symmetric-average prescription ½(σ0+σ0⁻¹) (da-non-sequitur). Recommend either (a) restate the master half as conditional/conjectural pending the Hecke engine, or (b) land the Wedderburn-decomposition lemma."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

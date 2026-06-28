@@ -835,7 +835,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "gcd(2,n) component count for T(2,n) is correct (1 for odd n, 2 for even n); Vol(4_1)=2.0299 correct; crossing-energy form (1/2)(q-q^{-1}) is the stated Hecke eigenvalue split. No false math statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Interpretive remark with genuine structural content (Schur-Weyl decomposition, Markov-trace identification, fermion/boson principle). Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; the dictionary identifies knot types with particles via the braid-group action, not by fitting to measured masses."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-particle-dictionary.md:2-3 \"This dictionary is *derived* from the categorical braiding ... not postulated\"",
+        "notes": "The braid-action/Schur-Weyl machinery is derived, but the *assignment* of specific particles to specific torus knots (electron=trefoil T_{2,3}, muon=cinquefoil T_{2,5}, etc., per table1) is an identification convention chosen to match the lepton generation count, not a theorem-level consequence. 'Derived not postulated' overstates: the correspondence map itself is posited. Scope-limited; the categorical scaffolding genuinely is derived."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No off-menu numerical coefficient introduced here; q_0 value quoted is the canonical pin, masses are not computed in this block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Chain (R-matrix -> faithful B_n action -> Schur-Weyl -> Markov trace -> knot identification) is a coherent citation chain to named upstream propositions; no missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark with no sibling .lean (interprets prop:knot-particle-correspondence); nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Alexander's theorem (every oriented knot is a braid closure) and q-Schur-Weyl duality are correctly invoked as named in-corpus propositions; no external -- Ref:/cites[] to mis-attribute in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "table4-data.md:8 Hopf^2-color row labels braid 'T_{3,4}' but table1-data.md:8 lists T_{3,4}=8_{19} as the force carrier, while the up-quark 'descends from T_{2,3}' — the 'descent' relation is defined only by a refterm, not a precise map",
+        "notes": "'descent' (quark <- lepton torus knot) is introduced as a refterm but the underlying relation (what 'descends from' means categorically — restriction? branching? orientation reversal?) is not pinned in this block; the bottom-quark <- T_{2,5} <- muon row mixes generation labels (bottom is gen 3 but mapped to gen-2 muon). Reader-level ambiguity, not a math error."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "This block reports no fitted numerical match; q_0 to 50 dps is the canonical pin, Vol(4_1) is an exact hyperbolic-volume constant. No fit-noise exposure here."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-particle-dictionary.md:48-49 \"All torus knots have zero hyperbolic volume (Vol = 0), so their bare mass vanishes\"; combined with electron=T_{2,3} (a torus knot)",
+        "notes": "Consequence as stated: every lepton (all assigned torus knots T_{2,n}) has zero bare mass, so the entire lepton mass must come from crossing energy + Hopf linking. That is internally consistent with the framework but is a strong physical commitment (massless-bare leptons); a domain reader would want the crossing-energy mechanism to actually reproduce m_e/m_mu/m_tau, which this block asserts but does not show. Flagged as a claim needing the downstream mass compute, not an outright contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness attached to this remark; Jones-polynomial 'values listed' are deferred to rem:building-block-knots. Nothing stale to drift here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a41fe258bd4b",
+          "ts": "0fdf53cd23c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: minor-revision. referee_argument: the block is a sound interpretive remark whose categorical scaffolding is genuinely derived, but the headline 'derived, not postulated' (line 2-3) overstates the status of the particle<->knot *assignment*, which is a chosen identification (lepton=torus-knot-by-generation, quark-descent). Soften to 'the correspondence is constrained by the categorical braiding; the specific labelling is the framework's identification convention.' Also tighten the 'descent' relation definition and the zero-bare-mass-for-all-leptons consequence."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.949Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

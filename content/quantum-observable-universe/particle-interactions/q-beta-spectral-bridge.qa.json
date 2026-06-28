@@ -2090,7 +2090,257 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial masking; goals closed by ring/field_simp."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The three polynomial bridge identities (polynomial_bridge_identity, leading_order_ratio_identity, bridge_first_order_remainder) are proved by ring/field_simp and are correct; the leading-order ratio 1+(z−1)h/2+O(h²) is consistent with the Taylor algebra."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.lean:254-260",
+        "notes": "The §3b-cond 'audit-visibility stub' defines `class BorromeanQuark : Prop where holds : True` — an empty-marker class whose field is the tautology True (any instance ⟨trivial⟩ discharges it). The conditional theorem `q_beta_spectral_conditional [BorromeanQuark] (Q_beta_A Q_beta_B) : Q_beta_A = Q_beta_B := by sorry` is therefore a content-free conditional (it would 'prove' arbitrary reals equal, modulo a vacuous class) and is in any case left as `sorry`. This is exactly the empty-Prop-carrier anti-pattern §3b-tax forbids (proof-no-empty-prop-carrier)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The bridge derives Form A/Form B agreement from Taylor algebra, not from assuming the Q-value; no smuggled calibration in the algebraic core."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.lean:228-245 vs .md:30-44,176-178",
+        "notes": "The .md states the bridge as an identity on the actual Q-values with an O(h²) remainder and an exponential per-N remainder bound. The exported Lean `q_beta_spectral_bridge` proves ONLY the three formal polynomial identities in abstract (h,z); it does NOT connect to Real.log(1+zh), to the Q_β observables, or to the exponential-remainder bound. The analytic content is instead asserted via two `axiom`s (log_one_add_lower_taylor_bound_axiom, log_one_add_taylor_bound_axiom). So the 'bridge proposition is rigorous' claim overstates what is proved: the analytic core is axiomatized, not derived (conditional/approximate-as-proved)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "z and h are determined by q0; no off-menu coefficient. The block explicitly argues 1/z is the Markov–Jones normalization, not a calibration knob."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "q-beta-spectral-bridge.md:82-92",
+        "notes": "'the proton-to-neutron conversion affects the two generators σ₀,σ₁ ... so the total log-ratio is 2·(zh/2)=zh' then immediately '=ln(1+zh)+O(h³)'. The replacement of the summed per-generator log-ratios by ln(1+zh) (rather than 2·ln(1+zh/2)) is a non-obvious step presented as an equality; the factor-of-2/log-additivity bookkeeping is asserted without showing the intermediate identity holds beyond leading order."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.lean:228-245,157-158,205-207,254-260",
+        "notes": "Divergence on three counts: (1) the canonical export proves abstract polynomial identities, not the Q_β bridge with log/remainder the .md states; (2) the analytic Taylor bounds are introduced as `axiom`s rather than proved or honestly `sorry`'d, so `q_beta_spectral_bridge` is sorry-free only because the hard analysis was axiomatized away; (3) the appended BorromeanQuark conditional theorem (the only place Q_beta_A=Q_beta_B appears) is `sorry` over a True-marker class. The Lean does not prove the narrative proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites wenzl1988 + jones1985 (.ts) and -- Ref lines to wenzl1988/jones1985 for Hecke-skein normalization and the Markov-trace bridge; both keys exist in references.ts and are appropriately invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "q-beta-spectral-bridge.md:11-22,46-54",
+        "notes": "z is called both 'the Markov–Jones parameter' z=1/(√q+1/√q) and earlier the substrate uses a different normalization; and ln(V_pp/V_nn) is treated as exactly Σ ln(V̂_i ratios) at single wrap but the 'V_pp','V_nn' transfer-matrix volumes are not defined in this block (deferred to prop:beta-decay-transfer-matrix). The 'exact' spectral decomposition the remainder bound lives in is named only via the open conjecture, leaving the convergence object implicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.md:129,155,168-174",
+        "notes": "The accuracy claims are anchor-sensitive and partly stale: '+0.168% residual' (Form A, N=0) and 'both forms agree with CODATA 0.7823 MeV within 7%' are quoted, but per AGENTS.md the Q_β L2 target/measured values were re-pinned (proton-anchor 2026-05-28) and the Habiro-exact figures are flagged stale; the block does not state which q0 pin these residuals use. The '+1.31 keV residual at N=0' vs '+0.168%' framing mixes absolute keV and relative %, and the 7%-vs-CODATA Form B figure is much weaker than the headline 0.168%, suggesting the favorable number is selected."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Q_β≈0.78 MeV is the correct order for the neutron β-decay Q-value; no unit error or conservation violation in the stated observable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.ts:16-21 vs .md:156-162",
+        "notes": "Script/witness mismatch: the .ts `computation.script` = 'computations/gram-matrix-dual.py' with witness 'computations/gram-matrix-dual.witness.json', but the .md Provenance cites 'q_beta_spectral_bridge_witness.py' and 'q-beta-spectral-bridge.witness.json' as the verifying compute. All four files exist on disk, but the manifest and narrative point to DIFFERENT producers/witnesses for the same proposition, so an auditor cannot determine which witness actually backs the 50-dps verification claim. The committed q-beta witness (scriptHash 019fe6012756, scriptCommitSha b9e7332c…) is not the one named in the .ts."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bba5864d696c",
+          "ts": "060bdf70f453",
+          "lean": "704c5929d112"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-spectral-bridge.lean:157-158,205-207,254-260; .ts:16-21",
+        "notes": "verdict=major-revision. Strongest objection: the proposition's hard content (the analytic Form A≡Form B bridge with O(h²) and the exponential remainder) is not proved — it is split between two standalone `axiom`s (sidestepping the §1a no-axiom-dodge discipline) and a vacuous `BorromeanQuark : Prop where holds:True` + `sorry` conditional, while the sorry-free export proves only abstract ring identities. Compounded by a .ts-vs-.md script/witness mismatch and anchor-ambiguous/selected accuracy figures. The algebraic skeleton is correct, but the block overstates its rigor."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

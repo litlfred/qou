@@ -1605,7 +1605,245 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The narrative claim (nucleon NF independent of photon polarization φ once quark flavors fixed) is plausible within the construction and supported by the φ_01 sweep; no demonstrable falsehood."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinementUniversality.lean:31-35 class fields 'h_N_F : ∀ φ_0 φ_1 φ_01, N_F φ_0 φ_1 φ_01 = N_F_zero' (the conclusion) assumed; lean:68-71 theorem just 'rw [ctx.h_N_F, ctx.h_N_F_zero]'.",
+        "notes": "The independence claim IS the class hypothesis h_N_F; the 'theorem' projects it. Self-assuming projection: the conclusion (∀φ, N_F φ = N_F 0 0 0) is literally an axiomatized field, so Lean proves nothing about the actual derivation chain. Docstring (lean:7-13) admits it is a 'Placeholder canonical ... full Lean statement and proof are pending.'"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinementUniversality.lean:33-35 carries h_N_F_zero and h_N_F (the universality) as inputs; the theorem assumes exactly what it claims.",
+        "notes": "At the formal level the proof assumes its conclusion. The narrative proof (.md:27-49) is a genuine argument (stage-2 confinement consumes only quark types), but the Lean encodes universality as a premise — circular as formalized."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-universality.md:51-58 'This is the categorical expression of asymptotic freedom ... the strong interaction washes out the electromagnetic initial conditions.'",
+        "notes": "Equating φ-independence of a fixed-flavor normal form with 'asymptotic freedom' overclaims: asymptotic freedom is the running of α_s to zero at short distance, a quantitative RG statement, not the statement that a discrete construction ignores photon polarization once flavors are chosen."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No new calibration constant; φ-parameters are explicitly the inputs being marginalized over."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-universality.md:38-43 'Stage 2 takes as input only the quark types ... not the photon color weights' — asserted, with the quark-extraction step (line 41-43) selecting σ_0 vs σ_0−½H_A 'fixed by the quark flavor.'",
+        "notes": "The argument hinges on the unstated claim that quark extraction is itself φ-independent (only flavor-dependent). If the extraction map's flavor assignment depended on φ, universality could fail; this is assumed rather than shown."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-universality.md states the theorem N(φ)=N(0)=NF(B_3·crossings) derived via the two-stage chain; confinementUniversality.lean:68-71 instead assumes h_N_F (the conclusion) as a class field and rewrites with it — an explicit 'Placeholder canonical' stub (lean:7-8).",
+        "notes": "Lean proves a vacuously-implied restatement of an assumed field, not the manuscript's derivation. proof-statement-integrity fails: the Lean does not derive the .md claim from the confinement construction; it postulates it."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Breit–Wheeler and prop:four-term-pair-nucleon are internal cross-refs and aptly invoked; no external citation misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-universality.md:8 photon γ_k = 1 + φ_0σ_0 + φ_1σ_1 + φ_01σ_0σ_1 but :13 chain uses γγ→qq̄ with two photons γ_k·γ_k' (line 31) whose second polarization parameters are not named.",
+        "notes": "The statement quantifies over (φ_0,φ_1,φ_01) of one photon, but the pair-production stage uses two photons γ_k·γ_k'; the independence over the second photon's parameters is implied but not stated in the ∀."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-universality.md:60-61 cites witness four-term-photon-to-atoms.witness.json, which resides at computations/_deprecated/four-term-photon-to-atoms.witness.json.",
+        "notes": "The φ_01-sweep evidence for constant nucleon NF is a deprecated witness; the empirical support for universality is not from a live producer."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Insensitivity of a confined hadron's structure to the EM polarization of the creating photons is physically reasonable; no conservation/unit violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Cited witness four-term-photon-to-atoms.witness.json is under computations/_deprecated/ (README: not imported by any live python file); the producer .py is likewise deprecated.",
+        "notes": "The block's stated empirical backing (Phase 5 φ_01 sweep) is not reproducible from any live compute — the witness and producer are deprecated. Restore/re-run or relabel the evidence."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3a8ca0786b76",
+          "ts": "c7b4681b4542"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revisions. referee_argument: the narrative argument is reasonable, but (1) the Lean is a self-admitted placeholder that assumes its conclusion (h_N_F field) and projects it — a vacuous proof-statement-integrity failure, (2) the empirical φ-sweep backing is a deprecated/unreproducible witness, and (3) the 'asymptotic freedom' framing overclaims. Provide a non-assuming formalization (derive φ-independence from the φ-independence of quark extraction + stage-2 confinement) and refresh the witness."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

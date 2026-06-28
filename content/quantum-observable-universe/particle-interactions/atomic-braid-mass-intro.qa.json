@@ -815,7 +815,232 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose chapter intro; asserts no standalone mathematical proposition to falsify — it only enumerates downstream blocks."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Genuine navigational/orienting prose; not a ': True' carrier."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation performed in this block; it points at the derivation chain elsewhere."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-intro.md:3 'all seven mass-formula coefficients are $q$-integer products $[n]_q$ times $m_e$, derived from $q_0$ alone'",
+        "notes": "The intro states the seven-term conjecture as if settled ('derived from q_0 alone') without flagging it is a conjecture; the referenced block is itself only a conj. The '_[draft]_'/'_(draft.)_' markers partly mitigate, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameter introduced here; coefficients are explicitly attributed to q_0 and m_e (the canonical calibration inputs)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Descriptive enumeration of blocks, no inferential 'therefore' chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose block, no .lean sibling and none required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref: in this prose block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Terms ($H_{A+Z}(q)$, atomic braid, ell_*(q_0)) are introduced as named pointers to defining blocks; no incompatible readings created here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical value stated in this block; AME2020 cross-check is delegated to a rem block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Attaching Z electron strands to the nuclear braid to form an A+Z strand atomic braid is internally coherent with the framework; no units/conservation claim made."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness/compute backing attached to this intro prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fd09d28f336f",
+          "ts": "c316d69fa604"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-intro.md:1,9 draft markers; :3 conjecture stated as 'derived'",
+        "notes": "verdict: minor-revisions. referee_argument: a draft chapter-intro that is sound as navigation, but states the seven-term coefficient conjecture in derived/settled voice ('derived from q_0 alone') without a conjectural hedge — the chief objection a referee would raise. No false math, no hidden DOF."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

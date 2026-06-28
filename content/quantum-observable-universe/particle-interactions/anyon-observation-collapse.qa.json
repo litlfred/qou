@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The ladder (generic q → root of unity → q→1) maps to Hecke → MTC_ℓ → ℤ[S_n]; this is standard and correctly stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "anyon-observation-collapse.md:6 — generic-q row labeled 'Abelian anyons in H_n(R,q)'.",
+        "notes": "Braiding in H_n(q)/the braid group for n≥3 is generally NON-abelian (anyons from Hecke/Jones representations are the canonical non-abelian-anyon example). Calling the generic-q rung 'Abelian anyons' while the root-of-unity rung is 'Non-abelian anyons' (md:7) inverts the usual terminology; likely a mislabel. Minor since it is an interpretive remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical prediction or parameter in this remark."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark, no sibling .lean; interprets conj:hecke-anyonic-substrate."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "All three cross-referenced conjectures (hecke-anyonic-substrate, root-of-unity-mtc-truncation, kazhdan-lusztig-classical-limit) and def:observation, conj:crystal-graph-realization resolve in-corpus."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "anyon-observation-collapse.md:6-9 — 'Abelian anyons' vs 'Non-abelian anyons' distinction between rungs is not defined; reader cannot tell what makes the generic-q rung abelian.",
+        "notes": "The abelian/non-abelian split across rungs is asserted without a defining criterion, compounding the mislabel flagged under da-overclaim."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match in this remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "q→1 → Pauli ±1 statistics via KL/symmetric-group is standard and physically sound."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness; purely interpretive ladder."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6953cd808357",
+          "ts": "a2b6f1525434"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "verdict=minor-revision. Strongest objection: anyon-observation-collapse.md:6 'Abelian anyons in H_n(R,q)'.",
+        "notes": "referee_argument: A clean, well-cited interpretive synthesis of the three q-regimes, properly demoted to a remark interpreting conjectures. The one substantive issue is the abelian/non-abelian labeling of the generic-q rung, which reads backwards relative to standard anyon terminology (Hecke/Jones braiding is the canonical non-abelian-anyon source). Clarify the criterion or relabel."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.937Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

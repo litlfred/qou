@@ -835,7 +835,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Interpretive remark (interprets def:hadron); makes no formal mathematical assertion that could be false. The matter/antimatter-as-orientation framing is interpretive."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Has genuine interpretive content (orientation flip of the color fibre in the descent tower); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation; no smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "e-minus-one.md:4-7 states the orientation flip 'produces a bundle S_{-1} that acts as a skew or mirror image of S_1' and that descending makes it 'appear to be antimatter' — a definite mechanistic claim presented as fact within a remark with no formal backing for the orientation-reversal/antimatter identification.",
+        "notes": "As a remark it is permitted to interpret, but the CPT/antimatter-as-orientation identification is a strong physical claim stated declaratively. Title is `$E_{-1}$` while body uses `S_{-1}` (notation mismatch with the deprecated E-tuple — see AGENTS.md §7: E is 'not used', use S_p). Flag as scope/voice overreach, minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "e-minus-one.md:4-8: 'the self-duality of spacetime and color admits a flip ... This produces a bundle S_{-1}' — the inference from self-duality to the existence of a well-defined skew bundle S_{-1} is asserted without a supporting construction or reference.",
+        "notes": "The remark interprets def:hadron but the S_{-1} object it posits is not constructed/cited; the 'produces' step has no backing lemma. Minor given remark status."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark has no .lean sibling and makes no provable claim; nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; nothing to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "e-minus-one.md uses S_1 (full torsion bundle), S_0 (trivial), S_{-1} (skew) and the title `$E_{-1}$`; neither S_{-1} nor E_{-1} is given a definition or cross-ref in the block, and uses:[] is empty so no upstream construction is linked.",
+        "notes": "Key objects (S_{-1}/E_{-1}, 'self-duality flip') are undefined within the block and unlinked via uses[]; the E vs S notation also conflicts with AGENTS.md §7 (E deprecated)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "e-minus-one.md:6-8 grounds the matter/antimatter distinction in 'orientation in the descent tower' ('from ascending it appears matter; from descending, antimatter').",
+        "notes": "A particle physicist would object that matter/antimatter is a frame-independent (C-conjugation) distinction, not a perspective-dependent 'direction of traversal' artifact; the claim as worded risks implying antimatter is merely a viewpoint. Interpretive, so warn not fail, but the framing is physically contestable and stated without hedging."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b1fe9266057f",
+          "ts": "67e21b31dc21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Strongest objection: the remark posits an undefined skew bundle S_{-1}/E_{-1} and grounds antimatter in 'direction of traversal of the descent tower' (e-minus-one.md:4-8) without construction, cross-ref, or hedge.",
+        "notes": "verdict=minor-revision. referee_argument: define or cross-ref S_{-1} (and reconcile the E_{-1} title with the S-notation per §7), add uses[]/interprets backing for the orientation-flip construction, and hedge the antimatter-as-perspective claim so it does not read as denying the frame-independent C-conjugation distinction."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.164Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

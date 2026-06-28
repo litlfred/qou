@@ -1030,7 +1030,241 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Interpretive remark; claims (two functionals distinct, agree only at z=1, +0.17% residual) are qualitative and not mathematically false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Carries genuine interpretive content distinguishing tr_M (loop) from counit (transition); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Does not assume its conclusion; explicitly labels the tr_M↔counit coincidence a consistency check and flags the tower-summed derivation as open."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "qbeta-counit-transition.md:36-38 'matches to +0.17%'; :49 'coincidence ... is a consistency between two named functionals rather than a fit'",
+        "notes": "The 'not a fit' assertion is asserted, not demonstrated: the counit pairs against ω=G⁻¹·1, a choice not independently fixed in this block; with only one observable matched the distinction fit-vs-derived is not established here. The block does honestly add that the full tower-summed proof 'remains open' (:50-52), which keeps it a warn not a fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "qbeta-counit-transition.md:18-21 counit pairs against canonical integral ω=G⁻¹·1",
+        "notes": "The selection of ω (the distinguished element giving the counit) vs the unit (giving tr_M) is the only thing that turns a ~factor-2 miss into a 0.17% match; the block does not show ω is forced rather than selected to land the number. No new numeric constant, so minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "qbeta-counit-transition.md:23-28 'energy of a reduction is the number of reduction steps times energy per step, and the per-Hecke-step energy is exactly 𝔈₀'",
+        "notes": "The identification ε(Δ) = number of reduction steps, and per-step energy = 𝔈₀, is asserted without a lemma; the step from 'counit counts net reduction content' to 'Q_β = ε(Δ)·𝔈₀' is plausible but not derived in-block. Mitigated by the explicit 'remains open' flag."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark block, no .lean sibling required or present."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; cross-references (prop:qbeta-counit-closed-form, rem:energy-scale-planck, prop:neutron-qvalue-symbolic) all resolve to existing blocks."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "qbeta-counit-transition.md:19 'canonical integral ω = G⁻¹·1'; :25 'one crossing re-typed under d→u'",
+        "notes": "'Net reduction content' and 'number of reduction steps' (ε(Δ)) are used as if defined but their precise definition lives in the parent prop, not here; the counit-vs-trace agreement 'only at z=1' uses a loop variable z not introduced in this block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "qbeta-counit-transition.md:42-45 ties the +0.17% to the 𝔈₀≈4.186 vs 4.155 MeV gap",
+        "notes": "The +0.17% match is reported against q₀ but no witness pin/date is given; per AGENTS.md the Q_β L2 target is ~7.8 ppb and the dashboard shows ~1279 ppb post-2026-05-28 proton re-pin, so a 0.17% (=1700 ppb) residual is far outside target and may be stale relative to the current pin. Reported qualitatively, no fresh witness cited."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Q_β≈0.78 MeV scale and the factor-2/0.17% comparisons are dimensionally and physically reasonable for free-neutron β-decay; no conservation/units violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "qbeta-counit-transition.md:37-38,42-45 cite +0.17% and 𝔈₀≈4.186 vs 4.155 MeV with no witness file or scriptHash",
+        "notes": "Numbers are not backed by a named *.witness.json in-block; reproducibility rests on the parent prop's compute, which is not linked here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b5c8404c147c",
+          "ts": "533be71ff7b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revisions. referee_argument: Sound and honest interpretive remark — its principal value is correctly distinguishing tr_M (loop) from counit (transition) and explicitly flagging the tower-summed proof as open. Weakest point: it presents the counit functional (pairing against ω=G⁻¹·1) as the 'natural' choice that yields a 0.17% match where tr_M misses by ~2×, without demonstrating ω is structurally forced rather than selected; and the 0.17% residual is unpinned to a current-q₀ witness (Q_β target is ppb-scale, this is ~1700 ppb). Not a fail because the block self-limits ('remains open')."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

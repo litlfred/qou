@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/brunnian-property-of-borromean.lean"
   },
   "source_hashes": {
-    "md": "2a7bcfdf5346",
+    "md": "ac57e883bb6c",
     "ts": "37665212050c",
     "lean": "6a745f67f8ec"
   },
@@ -1063,7 +1063,171 @@
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
       }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Conjecture states a standard topological property (Brunnian); no back-fitting of a numerical target. The downstream-buy section is clearly framed as conditional ('would buy')."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free parameter; purely topological statement about a fixed link B_3."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The .md correctly notes naive BraidWord strand-deletion does NOT yield the unlink (gives (sigma0^-1)^3 = negative trefoil) and that R-move equivalence is needed; the logic is honest about the gap rather than asserting a false 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "The .md illustrative snippet (brunnian-property-of-borromean.md:31-34) shows `theorem borromean_brunnian : ∀ i, isUnlink (... deleteComponent i) := by sorry` with NO hypothesis, but the actual library theorem (Brunnian.lean) is `theorem borromean_brunnian [le : LinkEquivalence] : ∀ i : Fin 3, ...` — conditional on the §3b-cond class, and discharged (no `sorry`) via `le.brunnian_borromean`. The `sorry` actually lives in the class instance, not the theorem.",
+        "notes": "The narrative snippet misrepresents the formal structure (unconditional sorry'd theorem vs conditional sorry-free theorem). The sibling stub `BrunnianPropertyOfBorromean` has an empty-Prop-style field `holds : Prop` (content-free), but resolution is to the real decl per the ref, so not a vacuity violation in itself. Conjecture kind is appropriate."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "`kawauchi1996` resolves (references.ts:2466); Survey of Knot Theory is a correct source for the Brunnian-link defining property and §1.5 context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Terms (Borromean link, sub-link by component removal, U_2 unlink) are standard and unambiguously defined; `isUnlink` is explicitly the abstracted link-equivalence predicate."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical claim; purely topological conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Brunnian property is a true mathematical fact about the Borromean rings (the conjecture status is only about its Lean formalisation, not about the topology); the color-confinement interpretation is flagged as interpretive."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ac57e883bb6c",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness backing; the discharge gap is a formalisation gap (Mathlib R-move primitives), honestly documented."
+      }
     ]
   },
-  "updated_at": "2026-06-24T04:37:26Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

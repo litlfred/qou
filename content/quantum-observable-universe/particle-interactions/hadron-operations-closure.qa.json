@@ -1340,7 +1340,258 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.md:16 states the skein relation as $q\\cdot L_+ - q^{-1}\\cdot L_- = (q-q^{-1})L_0$.",
+        "notes": "AGENTS.md §7a fixes the canonical skein relation as $\\sigma_i-\\sigma_i^{-1}=q-q^{-1}$, i.e. $L_+-L_-=(q-q^{-1})L_0$ (unweighted). The block's q-weighted variant $qL_+-q^{-1}L_-$ is a non-standard normalization; not strictly false (it is a valid rescaling if the eigenvalues are $(q,-q^{-1})$) but it deviates from the repo's STRICT Hecke-Skein convention and should cite which normalization is in play. Item 1 'antisymmetric product gives $-1$ on exchanging identical constituents' is correct for fermionic Sym."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.lean:35-48 — theorem hadron_operations_closure proves only $\\forall h, \\exists h', h'=\\mathrm{op}(h)$, discharged by `⟨_, rfl⟩`.",
+        "notes": "The Lean statement is content-free: $\\exists h'.\\,h'=f(h)$ is trivially true for ANY total function f (witness = f(h)). It asserts nothing about braiding being an involution, Hopf linking being invertible, skein resolving to a q-polynomial, or fusion respecting structure — all the actual mathematical content of the .md proposition. This is the self-witnessing-existential anti-pattern."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.md:6-8 claims 'braiding descends to an involution'; .md:19 claims skein 'resolves any linked composite ... yielding the mass formula $\\mathcal{M}(\\mathfrak{H})=Q(q)\\mathcal{M}(\\mathcal{L}_{Hopf})+\\sum_i\\mathcal{M}(K_i)$'.",
+        "notes": "Four substantive structural claims (involution, two-sided inverse, skein-to-mass-formula, fusion closure) are stated as a proved Proposition, but neither the .md nor the Lean supplies a proof of any of them — the Lean (lines 35-48) proves only trivial existentials. The mass-formula identity in item 3 is an additional asserted consequence with no derivation. Conclusion is far stronger than the argument (none) supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.md:19 introduces $Q(q)$ as the skein-coefficient prefactor in the mass formula with no defining expression or canonical-chain origin.",
+        "notes": "$Q(q)$ appears as a polynomial-in-q weight multiplying $\\mathcal{M}(\\mathcal{L}_{Hopf})$ but is never pinned to a specific function of q nor traced to the canonical derivation chain. As written it is an undisclosed degree of freedom in the asserted mass formula. Minor because the block is structural rather than a precision claim, but it should name $Q(q)$ explicitly."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.md:15-19 — item 3 jumps from 'the q-skein relation resolves any linked composite into a polynomial in q times unlinked constituents' directly to the additive mass formula $\\mathcal{M}(\\mathfrak{H})=Q(q)\\mathcal{M}(\\mathcal{L}_{Hopf})+\\sum_i\\mathcal{M}(K_i)$.",
+        "notes": "The skein resolution acts on knot polynomials / Hecke-algebra elements; the leap to an additive mass decomposition presupposes a homomorphism $\\mathcal{M}$ from skein resolutions to MeV masses that is neither stated nor cited. The 'yielding' is a missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "hadron-operations-closure.lean:35-48 vs .md:6-23.",
+        "notes": "Lean proves $\\forall h\\,\\exists h'\\,(h'=\\mathrm{op}(h))$ for four opaque axiomatized ops on an `axiom Hadron : ℕ → Type`. The .md claims braiding-is-involution, Hopf-link-has-two-sided-inverse, skein-yields-mass-formula, fusion-is-a-hadron. The Lean is vacuously implied by the existence of total functions and proves none of the .md's content (proof-statement-integrity failure). Additionally `Hadron` and all four operations are `axiom`s, so the theorem is conditional on four un-defined axioms."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.lean:14,20,46 cite [kock2004] (Kock, Frobenius Algebras and 2D TQFT) for the closure theorem.",
+        "notes": "Kock 2004 concerns Frobenius algebras / 2D TQFT, not symmetric-product closure under braiding/Hopf-linking/skein/fusion of knot constituents. The citation is at best tangential to the four specific closure claims; no page/section is given. The [manuscript] Ch.4 §10 ref is the only direct backing and is unverifiable here. Minor mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.md:12 uses $\\mathcal{L}_{Hopf}$ and .md:18 uses $\\mathcal{M}(\\cdot)$ without definition in-block; 'mass' $\\mathcal{M}$ vs hadron mass $\\mathfrak{m}$ register.",
+        "notes": "$\\mathcal{M}$ (a mass functional), $\\mathcal{L}_{Hopf}$ (Hopf-link object), and $Q(q)$ are used without local definitions or `uses[]` links (uses[] lists only def:hadron). Per the notation register physical mass is $\\mathfrak{m}$ (fraktur); the calligraphic $\\mathcal{M}$ for mass is ambiguous/off-register. Reader cannot resolve the mass formula's terms from this block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-operations-closure.md:18-19 mass formula $\\mathcal{M}(\\mathfrak{H})=Q(q)\\mathcal{M}(\\mathcal{L}_{Hopf})+\\sum_i\\mathcal{M}(K_i)$.",
+        "notes": "Read as a hadron mass = sum of constituent masses + a linking term, this is a naive additive (non-binding) decomposition; real hadron/nuclear masses are dominated by binding (mass defect), which an additive '$\\sum_i \\mathcal{M}(K_i)$ plus a positive linking weight' does not obviously capture without the linking term being negative. Plausibility hinges entirely on the undefined $Q(q)\\mathcal{M}(\\mathcal{L}_{Hopf})$ carrying the binding. Flag, not reject — could be consistent if the linking term is the (negative) binding contribution."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6177719bd45d",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Rollup of the above: vacuous Lean (lines 35-48), four unproved structural claims stated as a Proposition (.md:6-23), an underived additive mass formula (.md:18-19) with an undefined $Q(q)$.",
+        "notes": "verdict: major-revision. referee_argument: The block is labelled a Proposition but contains no proof of any of its four closure claims; the Lean witness proves only the trivial self-witnessing existential $\\exists h'\\,(h'=\\mathrm{op}(h))$ over four axiomatized operations, which is vacuously true and divergent from the narrative. The asserted mass formula is a non-sequitur from skein resolution with a hidden coefficient $Q(q)$. Either demote to a remark/conjecture or supply real Lean (involution, invertibility, fusion well-definedness) and a derivation of the mass identity."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:25.525Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

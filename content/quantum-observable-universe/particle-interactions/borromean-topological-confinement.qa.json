@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/borromean-topological-confinement.md"
   },
   "source_hashes": {
-    "md": "0df9bdc1e2da",
+    "md": "7114702b2e6b",
     "ts": "708602695f34"
   },
   "criteria": {
@@ -835,7 +835,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Brunnian property of the Borromean rings (every 2-component sublink is the unlink) is a standard true topological fact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark with interprets: def:borromean-baryon; carries genuine interpretive content, not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "borromean-topological-confinement.md:17-20 'the empirical fact that quarks are never observed in isolation is exactly the Brunnian property of B_3, with no separate dynamical assumption required.'",
+        "notes": "This identifies QCD color confinement with a purely topological (Brunnian) property and claims 'no separate dynamical assumption required'. That is far stronger than the construction supports: confinement in QCD is a dynamical (linear potential / area-law) phenomenon with an energy scale; a topological non-separability statement about a link diagram does not, by itself, reproduce the energetics or the gauge-theoretic mechanism. The block itself concedes the energetics live elsewhere (lines 22-28), so the 'no dynamical assumption required' phrasing overclaims. Mitigated as a remark, but the equivalence claim ('is exactly') is too strong."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "borromean-topological-confinement.md:10-17 infers 'pulling on a single constituent cannot produce a free quark' from the Brunnian unlinking move.",
+        "notes": "The step from 'removing one component leaves a 2-component unlink' to 'one cannot isolate a single quark' presumes that quark extraction is modeled by the link-component-removal move and that no other (e.g. pair-creation) channel exists. The physical inference relies on an unstated identification of 'pull out a quark' with 'delete a link component', which is asserted rather than argued."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark has no .lean sibling; it points to conj:brunnian-property-of-borromean which the .md openly flags as a formalisation gap (no Mathlib Reidemeister primitives). No divergence to assess for this block's own Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] / -- Ref: external references in this remark or its .ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "borromean-topological-confinement.md:10-11 'An isolated quark would be the configuration produced by lifting one unknot out of B_3.'",
+        "notes": "'Isolated quark' and the 'lifting one unknot out' move are described only informally; the correspondence between a link component and a quark, and what 'lifting out' means as a topological operation, are not rigorously defined. Multiple readings are possible (component deletion vs. ambient isotopy of one strand to infinity)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical prediction in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "borromean-topological-confinement.md:17-20 equates color confinement with the Brunnian property.",
+        "notes": "A hadron/QCD expert would reject the claim that confinement 'is exactly' the Brunnian property with no dynamics: confinement is empirically tied to the string tension / area law and produces additional hadrons on separation (string breaking, jets), not three free unknots. The topological picture is a suggestive analogy, not a substitute for the dynamical confinement mechanism, and the categorical color-tube/energetics are explicitly deferred to other blocks. As a remark this is interpretation, but the as-stated physical equivalence is implausible to a domain expert."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness for this remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7114702b2e6b",
+          "ts": "708602695f34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "borromean-topological-confinement.md:17-20.",
+        "notes": "verdict: minor-revisions. referee_argument: As a topological remark the Brunnian fact is correct and the 'home in the manifest' role is legitimate, but the rhetorical identification 'color confinement is exactly the Brunnian property of B_3, with no separate dynamical assumption required' overclaims — it substitutes a static link-topology fact for QCD's dynamical confinement (string tension, hadronization). Soften 'is exactly' to 'is the topological face of' (already used in line 17) consistently and drop 'no separate dynamical assumption required', since the block itself defers the energetics."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.058Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

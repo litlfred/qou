@@ -2051,6 +2051,23 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "neutron-qvalue-symbolic.md:134-135 cites q_parameter.py; .ts computation.script=computations/codata_masses.py",
+        "notes": "Witness/script provenance is split: .md says 'verified … from q_parameter.py' while .ts binds computation to codata_masses.py / codata-masses.witness.json (which supplies m_e, not the Q_β derivation). The 0.7836 MeV value is not pinned to a Q_β-specific witness on this block; reproduction requires tracing to a separate script. Minor."
       }
     ],
     "da-empirical-fragility": [
@@ -2079,6 +2096,23 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "neutron-qvalue-symbolic.md:98-115",
+        "notes": "Q_β=0.7836 vs CODATA 0.7823 (+0.17%, +1.3 keV) is rationalised as 'brane tower correction to E₀'. Per AGENTS.md the Q_β L2 target is ~7.8 ppb but is measured ~164× off; 0.17% (1700 ppm) is far outside experimental error, so the match is order-of-magnitude only, not a precision prediction. The block evaluates at q₀=1.10997859… which is the MUON-anchor q₀, not the canonical proton-pin — a q0-repin staleness exposure. Honestly flagged as ansatz-conditional, hence warn."
       }
     ],
     "da-overclaim": [
@@ -2107,6 +2141,21 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Title says 'Symbolic Q-value'; the .md banner, .ts caveat (PR #1127), and Lean docstring all explicitly mark it conditional-on-ansatz and conditional-on-conj:borromean-quark. The +0.17% is presented as empirical support for the ansatz, not as derivation. No overclaim survives."
       }
     ],
     "da-vacuous": [
@@ -2135,6 +2184,21 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean class BorromeanQuark carries genuine content fields (NF nets, ansatz) as hypotheses and the theorems DERIVE Δ(net) and the closed form by ring/field_simp (lean lines 84-113). Non-degenerate §3b-cond pattern, not a self-projection."
       }
     ],
     "da-referee-verdict": [
@@ -2155,8 +2219,167 @@
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "neutron-qvalue-symbolic.md:117-132",
+        "notes": "verdict: accept-with-caveats. Strongest objection (referee_argument): the central claim is a 2-input closed form ONLY conditional on the unproven ansatz Q_β=|Δ(net)|·E₀, which uses the unweighted NF counit rather than the canonical mass-formula Markov trace tr_M; the +0.17% (1700 ppm) match is far outside the ~8 ppb experimental window, so it is order-of-magnitude corroboration of the ansatz, not a derivation. The block discloses all of this (banner, authorNotes, audit link), and the Lean is a sound §3b-cond conditional — so the block is honest but its predictive force is weaker than the headline 'derived from two leptonic inputs' suggests."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The symbolic algebra checks out: net(n)−net(p)=(h²−2h)/2, |Δ|·E₀ gives Q_β = m_e·(2−h)·h/(2q(q−1)). The Lean theorem neutron_qvalue_symbolic derives this sorry-free via field_simp. No false universal claim; the proposition is explicitly conditional."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "neutron-qvalue-symbolic.md:117-124, :72; ts authorNotes lines 16-32",
+        "notes": "The result is honestly flagged as conditional on the ansatz Q_β=|Δ(net)|·E₀ 'stated by construction', NOT derived from the canonical per-braid mass formula. The energy scale E₀=m_e/(q(q−1)) shares its form with the q₀-pinning denominator, so the 'derivation' partly re-uses the same substrate datum that pins q₀. The block discloses this (no circularity smuggled), hence warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Inputs are exactly m_e (CAL-1) and q₀ (CAL-2); the ansatz introduces no fitted coefficient. The single hidden assumption (the |Δ(net)|·E₀ ansatz) is disclosed, not a numeric DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "neutron-qvalue-symbolic.md:70-84",
+        "notes": "The jump from the dimensionless NF difference to MeV uses E₀=m_e/(q₀(q₀−1)) ('energy scale') without deriving why the unweighted 'net' counit (not tr_M of the mass formula) is the right functional. The block itself names this gap (counit vs tr_M, lines 124-129) and points to prop:qbeta-counit-closed-form; disclosed, so warn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean QOU.ParticleInteractions.neutron_qvalue_symbolic proves exactly Q_β = m_e·(2−h)·h/(2q(q−1)) matching .md eq line 91, as a rigorous §3b-cond conditional with the ansatz as an explicit class field (qvalue_ansatz). Lean derives, not projects. Statement integrity holds."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] on the .ts and no -- Ref: to a published result beyond [manuscript] in the Lean. Nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "neutron-qvalue-symbolic.md:81-93",
+        "notes": "|Δ(net)| absolute value requires the substrate regime 0<h<2; the .md does not state this regime explicitly (the Lean adds h_pos, h_lt_two as hypotheses). The sign resolution |q²−2q−1| is only valid for q in a band around q₀≈1.11. Minor regime-implicitness on the narrative side."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Units consistent (dimensionless NF × MeV energy scale → MeV); Q_β≈0.78 MeV is the right order for n→p+e+ν̄ (PDG 0.782 MeV). Baryon-number/charge bookkeeping not violated. No domain-expert red flag at the order-of-magnitude level."
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

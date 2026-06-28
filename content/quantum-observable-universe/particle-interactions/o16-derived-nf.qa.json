@@ -781,7 +781,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No false mathematical assertion: the block is an illustrative construction sketch, not a proved claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block has real (if unverified) content; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; magic-number facts (Z=N=8) are inputs from nuclear physics, not derived to match a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "o16-derived-nf.md:43-54 'the 15 inter-nucleon operators are predicted to follow the pattern' with a fully specified operator table (T_{2,5},L+,L-,C_pn,...); md:79-81 'then the doubly-magic nucleus has |dem|=0 — complete stability.'",
+        "notes": "The detailed operator sequence and |dem|=0 conclusion are presented as definite predictions but md:83-84 admits 'Witness: computation pending'. The strong specific table outruns the (absent) supporting computation; should be flagged hedged/expected rather than predicted."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No new calibration introduced; relies on existing prop:nuclear-operator-regimes and def:derived-atom in uses[]."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "o16-derived-nf.md:65-68 'the unreduced braid word has ~10^10 terms. The inductive approach reduces this to <=128 NF terms with <=480 Hecke steps'",
+        "notes": "The compression bound (10^10 -> 128 terms, 480 steps) is asserted with no derivation or citation; the binom(15,k) bound at md:60-61 does not obviously yield the stated <=128/<=480 figures. Step does not follow from a stated lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "example block, no sibling .lean (kind example, Lean optional/N/A)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Internal cross-refs (def:derived-atom, prop:inductive-gb-reduction, prop:nuclear-operator-regimes) match uses[]/interprets; no external -- Ref or cites[] to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "o16-derived-nf.md:73-75 '|dem| ... minimizes |dem|'; operator symbols T_{2,5}, C_pn, C_pp, C_nn, L+/L- used in md:47-50 without local definition",
+        "notes": "The demand magnitude |dem| and the inter-nucleon operator alphabet are used without on-block definition; reader must reach into prop:nuclear-operator-regimes / prop:demand-stability. Acceptable for an example but the operator-regime symbols are not pinned here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match to experiment is asserted (no MeV/binding value); the doubly-magic |dem|=0 prediction is explicitly pending, not a stated number."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Physics framing (O-16 doubly magic, 1p shell closure, 1s^2 2s^2 2p^4 config) is standard and correct; no conservation/units violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "o16-derived-nf.md:83-84 'Witness: computation pending (four-term-photon-to-atoms.py with A = 16 extension).'",
+        "notes": "The block's central quantitative claims (operator sequence, |dem|=0 closure, 10^10->128 compression) rest on a computation explicitly stated as pending/non-existent. No witness JSON backs any number; nothing is reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c38885f59392",
+          "ts": "7601599c785f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "witness pending (md:83-84) + asserted compression bound (md:65-68) + definite operator table (md:43-54)",
+        "notes": "verdict: minor-revision. referee_argument: this is an honest illustrative sketch, but it presents a detailed operator sequence and a |dem|=0 doubly-magic conclusion with the supporting computation admittedly not yet run, and an unbacked 10^10->128-term compression bound. Soften 'predicted' to 'expected/illustrative' and either run or remove the pending witness before any of the table or compression figures are cited downstream."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.127Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

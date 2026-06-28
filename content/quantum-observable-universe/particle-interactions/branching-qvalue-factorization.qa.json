@@ -1454,7 +1454,248 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:10-14 Σ Δm_e = a^Z · b^{N-1} · (a-b); proof .md:20-45 factors the product-structure character sum.",
+        "notes": "The factorization is mathematically correct for a single-nucleon N→P transition where Z proton-spectators contribute a each, N-1 neutron-spectators contribute b each, and the changed nucleon contributes (a-b). Standard distribute-over-product algebra; no quantifier slip."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "Library .lean (branching_qvalue_factorization.lean:26-45): `class BranchingQvalueContext` carries the conclusion as a field `claim_factorisation : 0 < N → totalDeltaM = a^Z·b^(N-1)·(a-b)`, and the `theorem branching_qvalue_factorization := ctx.claim_factorisation h_N_pos` merely projects that field.",
+        "notes": "This is exactly the §3b-cond 'vacuous self-assuming projection' anti-pattern: the class axiomatises the block's own conclusion and the theorem returns it unchanged. The Lean derives nothing — it assumes the factorization as a hypothesis. Fails proof-statement-integrity / da-vacuous (severity critical because the actual .md proof IS rigorous and short; the Lean should encode the per-nucleon decomposition and derive the product, not assume it)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "branching_qvalue_factorization.lean:35-45 — the theorem's only input is `ctx.claim_factorisation`, the field literally stating the theorem's conclusion. The Lean proof assumes its conclusion verbatim.",
+        "notes": "Pure circularity at the Lean level: `totalDeltaM = a^Z·b^(N-1)·(a-b)` is both the class axiom and the theorem statement. (The .md narrative proof is non-circular; the circularity is entirely in the formalisation, which self-assumes.)"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:43-44 'The factorization is exact — no approximation is involved'; title (.ts:6) 'Exact factorization'.",
+        "notes": "The exactness claim is correct for the stated combinatorial identity, but the .md silently assumes exactly one nucleon changes flavour (n'_m switches N→P 'all others unchanged', .md:32-33). For multi-nucleon or correlated transitions the simple a^Z·b^{N-1}·(a-b) form would not hold; the 'exact, no approximation' banner does not flag this single-transition restriction."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:44-45 'only inputs are the eight per-nucleon channel values G_P(c), G_N(c), rational functions of q'.",
+        "notes": "a and b are fully determined by the per-nucleon channel sums; no free parameter introduced. (The Lean class leaves a,b,totalDeltaM abstract, but that is under-specification, not a hidden tuned DOF.)"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:36-41 the step from the difference-of-products Σ(∏G_{n'} - ∏G_n) to a^Z·b^{N-1}·(a-b) is asserted as 'the sum over c_m factors independently' but the algebraic cancellation ∏-∏ = (∏spectator)·(a-b) is not shown — it relies on all spectator factors being identical between numerator and denominator.",
+        "notes": "The factorization needs ∏_{spectators}G to be the SAME in both products (only the changed nucleon differs); this is true under the single-transition assumption but the 'since the sum factors independently' justification skips the telescoping cancellation. Minor gap in an otherwise correct short proof."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md presents a genuine constructive proof (distribute character sum over per-nucleon product, .md:20-45); the .lean (branching_qvalue_factorization.lean:42-45) instead axiomatises the result as `claim_factorisation` and projects it, proving nothing the .md proves.",
+        "notes": "The Lean does not encode the per-nucleon decomposition (def:spectator-normalization, the 4^A config sum, the ∏-∏ structure) — it asserts the final equation as a class field. So the formalisation is strictly weaker/divergent: it certifies 'IF totalDeltaM equals this product THEN totalDeltaM equals this product'. The .md's actual mathematical content is unformalised."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": ".ts has no cites[]; .lean has only the [manuscript] self-ref. No external citation to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:16-18 a=Σ_c G_P(c), b=Σ_c G_N(c) reference def:spectator-normalization and def:per-nucleon-channel-decomposition (.md:24) for G_P/G_N; the exponent N-1 implicitly requires N≥1 (the .lean guards this with `0 < N`, .lean:35, but the .md does not state N>0).",
+        "notes": "The .md formula a^Z·b^{N-1}·(a-b) is undefined/edge-case for N=0 (b^{-1}); the Lean adds the `0 < N` hypothesis but the narrative proposition omits it. Also G_P(c)/G_N(c) are only defined by reference, not in-block. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure symbolic identity in q; no numerical match or anchor-dependent value asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:8 β⁻ decay (Z,N)→ single N→P transition.",
+        "notes": "Single-nucleon flavour change for β⁻ decay (n→p) is the correct physical picture; no conservation/units issue in the combinatorial statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": ".ts has no computation/witness block; symbolic proposition with no backing compute artifact to reproduce or hash-check."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict: major-revision. Strongest objection: the Lean formalisation (branching_qvalue_factorization.lean:26-45) is a vacuous self-assuming projection — the `BranchingQvalueContext.claim_factorisation` field IS the theorem's conclusion and the theorem just returns it, so the Lean proves nothing despite the .md carrying a genuine, short, correct constructive proof.",
+        "notes": "referee_argument: The mathematics is right and easily formalisable (distribute a finite character sum over a product, telescoping cancellation gives a^Z·b^{N-1}·(a-b)). But the committed Lean assumes the result as a class axiom rather than deriving it (§3b-cond non-degeneracy violation: the class carries the conclusion, not the sub-hypotheses). Rewrite the Lean to encode the per-nucleon decomposition and derive the factorization; also add the N>0 guard to the .md and flag the single-transition restriction behind the 'exact' banner."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

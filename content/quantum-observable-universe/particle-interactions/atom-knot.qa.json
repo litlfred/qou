@@ -913,7 +913,249 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition (no asserted theorem). The Markov-closure well-definedness appeal to jones-markov-trace is standard; no false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Lean `structure AtomKnot` records Z, N, three List ℕ blocks + `nStrands := 3*(Z+N)`; it is a genuine data carrier for a definition, not a vacuous `: True`."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation of an observable here; it names a construction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atom-knot.md:34-36 asserts 'The decomposition is unique up to NF rewriting (Diamond Lemma)', but the Lean structure (atom-knot.lean:23-33) imposes no constraint linking protonBlock/neutronBlock/interBlock to any NF or Diamond-Lemma normal form — the lists are unconstrained ℕ lists.",
+        "notes": "Uniqueness is asserted in prose but the formal object neither encodes the NF property nor proves uniqueness; the 'unique' wording outruns the definition's formal content."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "n(K)=3(Z+N) and the block structure follow from Z,N; no off-menu free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definitional; the Markov-invariance justification for well-definedness is a correct citation, not an inferential leap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md describes a block decomposition T_w = T_{w_qZ}·T_{w_qbarN}·T_{w_inter} with the NF/Diamond-Lemma uniqueness; lean `AtomKnot` (atom-knot.lean:23-37) only stores three raw `List ℕ` and a strand count, with no field encoding the permutation product, the Hecke NF, or uniqueness.",
+        "notes": "The Lean is a much thinner data record than the narrative definition; acceptable for a `definition` sibling but the formalisation does not capture the substantive NF-block content (Z/N counting, disjoint 3-strand blocks, shortlex-canonical NF)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites:[] is empty; cross-refs (hecke-normal-form, atomic-braid, jones-markov-trace) are internal labels, not external citations. Nothing mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atom-knot.md:22-24 defines proton-quark block via 'uud proton-quark substructure' and neutron via 'udd'; but md:27 labels w_qbar^N the 'neutron-quark block' with a bar (q-bar) notation suggesting antiquark, while the substructure listed is udd (ordinary quarks). The interplay of 'q^Z / qbar^N' barred notation vs uud/udd content is not pinned.",
+        "notes": "Reader cannot tell whether the bar denotes the bar-involution sector or antimatter; the base ring / q-regime of T_w is also unstated in the block. Minor — resolvable from upstream defs — but the notation as presented is ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical value stated."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Identifying an (Z,N) atom with a closed braid is a framework modelling choice, not a measurable physics claim that a domain expert can falsify here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness invoked by this definition block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e9e9d6ef3597",
+          "ts": "b5fbd14f1871",
+          "lean": "c876d1ded330"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Strongest objection: the narrative definition asserts a Diamond-Lemma-unique NF block decomposition (atom-knot.md:34) that the Lean structure (atom-knot.lean:23-37) does not encode or constrain.",
+        "notes": "verdict=minor-revision. referee_argument: as a naming definition it is acceptable, but the 'unique up to NF rewriting' and the disjoint-3-strand-block structure are prose-only; either strengthen the Lean to carry the NF/permutation invariants and a uniqueness witness, or soften the uniqueness wording to a forward reference to thm:jones-markov-trace / the Diamond-Lemma block."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.063Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

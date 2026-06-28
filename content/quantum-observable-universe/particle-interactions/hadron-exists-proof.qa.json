@@ -781,7 +781,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron-exists-proof.md:5-7 'its crossing energy is negative at the substrate value q_0 ... E_cross(p)<0'.",
+        "notes": "The proof asserts E_cross(p)<0 'confirmed by LP-stability analysis' but cites no witness in this block (.ts:1-7 has only uses:[prop:hadron-exists], no computation). The sign claim is plausible and likely backed elsewhere, but as stated here it is an unverified numerical assertion presented as confirmed — cannot be checked from this block. Marked warn, not fail, since the claim is qualitative (a sign) and probably correct upstream."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:7 'Similar constructions yield n (neutron) and other hadrons.'",
+        "notes": "The proof discharges existence by exhibiting one witness (the proton) — legitimate for an existence claim — but the generalisation 'similar constructions yield n and other hadrons' is an unargued hand-wave appended to the existence proof, adding no content. The core (proton-as-witness) is non-vacuous; the tail sentence is filler."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Existence-by-witness is non-circular: it exhibits the proton construction (def:categorical-proton) and asserts its crossing energy is negative, deriving existence rather than assuming it."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:7 'Similar constructions yield n (neutron) and other hadrons.'",
+        "notes": "Claims existence of 'other hadrons' generally from a single proton witness without exhibiting those constructions — scope broader than the one argued witness supports. Minor; the proven claim (a hadron exists) is fine."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameters introduced; relies on q_0 (the single canonical substrate value) and the Borromean construction, both from the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:1-7: 'p is a hadron — its crossing energy is negative ... confirmed by the LP-stability analysis on the Hecke basis. The Borromean braid B_3 plus Hopf-link gluon stabilisation ensures E_cross(p)<0.'",
+        "notes": "The proof states the conclusion (E_cross<0) and attributes it to 'LP-stability analysis' and 'Hopf-link gluon stabilisation' without exhibiting the bound, the LP, or a witness — the operative lemma (that B_3+Hopf stabilisation yields a negative crossing energy at q_0) is asserted, not shown or cited. 'ensures' carries the entire proof with a missing lemma. Major as a proof-block standard, though likely backed by prop:hadron-exists upstream."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Proof block (kind=proof) has no .lean sibling and none is required; the formal content lives with prop:hadron-exists / def:categorical-proton."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref: in this block; the only reference is the internal cross-link to def:categorical-proton, which exists. Nothing mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:5 'crossing energy E_cross' and md:6 'Hopf-link gluon stabilisation'; 'LP-stability analysis on the Hecke basis'.",
+        "notes": "'crossing energy E_cross(p)' and 'LP-stability' are invoked as if defined but the proof does not state the definition or the LP being solved; the reader must resolve them from upstream blocks. The negativity threshold and the precise q_0 used are left implicit. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:5 'crossing energy is negative at the substrate value q_0'.",
+        "notes": "The existence claim hinges on a sign at the specific anchor q_0; the block does not report the margin (how far below zero) so robustness to the muon-vs-proton q_0 pin or to q_0 uncertainty is not demonstrated here. A sign claim is usually robust, but with no witness/margin it is not auditable from this block. Minor."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "A bound nucleon having negative binding/crossing energy (relative to free constituents) is physically expected; no unit error or conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".ts:1-7 has no `computation` field; md:5 cites 'LP-stability analysis' with no witness JSON.",
+        "notes": "The proof's load-bearing numerical fact (E_cross(p)<0 via LP) is not pinned to any committed witness in this block, so it is not independently reproducible from the block alone. Likely backed by prop:hadron-exists upstream, but the proof block itself wires nothing. Minor."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "93a3cd542a8f",
+          "ts": "80656bd52aab"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:5-7 conclusion-by-assertion (E_cross<0 'ensured'/'confirmed' with no exhibited LP, bound, or witness; .ts wires no computation).",
+        "notes": "verdict=minor-revision. referee_argument: The existence-by-witness strategy is sound, but the single load-bearing claim — that the proton's crossing energy is negative at q_0 — is asserted ('ensures'/'confirmed by LP-stability') without exhibiting the LP, the numerical margin, or a backing witness in this block, and the proof tails off into an unargued 'similar constructions yield n and other hadrons'. Wire the LP-stability witness / cite the upstream computation, give the margin, and drop or substantiate the generalisation."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.736Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

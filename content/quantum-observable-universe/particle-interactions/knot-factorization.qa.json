@@ -835,7 +835,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Spin-j ↪ (spin-1/2)^{⊗2j} embedding (V_{j_i} a summand of V^{⊗2j_i}) is standard SU_q(2) rep theory; no false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Interpretive remark with real content (tensor-power factorization of hadron constituents); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation of a calibrated number; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "knot-factorization.md:33-38 'this factorization explains why ALL composite particles are ultimately built from the single two-dimensional object V: the categorical dimension 2 of V is the minimal non-trivial dimension compatible with the volume constraint, and tensor generation ensures no further building blocks are needed.'",
+        "notes": "Tensor-generation of V gives an embedding, but 'no further building blocks are needed' and 'minimal compatible with the volume constraint' are stronger structural/minimality claims not established within this remark and not cited to a proved minimality result."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical predictions or free parameters in this remark."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-factorization.md:26-31 the embedding 'is not unique ... summing over all channels weighted by the Skein polynomial, so the hadronic mass formula arises as a contraction of the universal tensor with the Hopf link invariant.'",
+        "notes": "The 'so ... arises as a contraction with the Hopf link invariant' step asserts the mass-formula construction without an intermediate lemma; it reads as a gloss rather than a derivation, though as a remark it makes no formal claim."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark, no Lean sibling required or present."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Cross-refs only to internal blocks (rem:simple-objects-V, def:hadron, prop:pawlowski-leitner-basis); no external citation to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-factorization.md:9-10 'PawLei basis provides a canonical embedding' while 26-27 says 'the choice of PawLei basis element ... corresponds to a choice of partial-wave channel.'",
+        "notes": "'Canonical embedding' vs 'the choice of PawLei basis element' (non-unique) is in tension; the term 'canonical' is used loosely for what the block itself states is a non-unique, channel-dependent embedding."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Compositeness-from-a-2d-fundamental claim is internally consistent with the framework; no broken units/conservation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness/compute for this remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9495c157343c",
+          "ts": "c0f0aa99b373"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: minor-revisions. referee_argument: as an interpretive remark it is sound rep-theory, but it over-reaches in the closing paragraph — the minimality / 'no further building blocks' claim and the 'canonical' (yet admittedly non-unique) embedding language should be hedged or backed by a cited minimality result."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.850Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

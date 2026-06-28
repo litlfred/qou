@@ -815,7 +815,241 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose section-intro; no own formal proposition (forward-references props/conj)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Expository roadmap; no formal declaration."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:1 claims the regime partition 'reproduces the empirical magic ladder 2, 8, 20, 28, 50, 82, 126 from the regime transitions'. If the regime boundaries were chosen/tuned to land on the known magic numbers, this is back-fitting; the intro presents it as a derivation without disclosing whether the transition points are independently fixed.",
+        "notes": "Cannot confirm circularity from the intro alone (the supporting prop is elsewhere), but reproducing a known 7-number ladder is a classic back-fit risk worth flagging. Draft."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:1 states the regime partition 'reproduces the empirical magic ladder 2, 8, 20, 28, 50, 82, 126' as an accomplished fact in the intro. Reproducing all seven magic numbers from regime transitions is a strong claim; presenting it flatly in a roadmap overstates what a draft intro should assert before the prop is in hand.",
+        "notes": "Magic-number reproduction is the headline claim; the intro asserts it without qualification or error/coverage caveat."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:1: the three operator regimes (torus-knot, Hopf-link, post-magic) and their transition points implicitly carry boundary parameters that select where magic closures fall; these are not disclosed in the intro.",
+        "notes": "Potential hidden knobs in the regime boundaries; needs the underlying prop to confirm. Flagged for traceability."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Roadmap prose; no inferential step to evaluate."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose kind; no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] or -- Ref: in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:1 'LP demand profile' and 'demand-minimizing locus' are used as established terms; 'demand profile alone fixes stability' relies on the LP-dual notion defined elsewhere. In-block the terms are not pinned.",
+        "notes": "Resolved by upstream LP-dual blocks; locally ambiguous. Draft."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:1 the magic ladder '2, 8, 20, 28, 50, 82, 126' is an empirically known sequence; claiming the regime transitions reproduce it exactly is an empirical-match claim with no in-block witness, error tolerance, or statement of how many free regime parameters were available vs the 7 numbers matched.",
+        "notes": "7 matched integers vs unstated number of regime DOF is the fragility; needs the backing prop + witness to assess overfit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "The magic numbers and valley of stability are real nuclear-physics features; the claims are about reproducing them, which is not physically implausible per se."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Intro cites no witness; reproducibility attaches to the downstream prop/conj blocks."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d67bab745d9f",
+          "ts": "9330b1acc846"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: the draft intro asserts as fact (.md:1) that the operator-regime partition 'reproduces the empirical magic ladder 2,8,20,28,50,82,126' — a strong empirical-match claim that risks back-fitting (regime boundaries tuned to known magic numbers) and is stated without disclosing free parameters, error, or witness.",
+        "notes": "verdict: revise-roadmap-claim. referee_argument: qualify the magic-ladder claim ('the regime transitions are shown in [prop] to fall at...'), disclose how the regime boundaries are fixed (independently vs fit), and link a witness; the valley-of-stability statement is correctly tagged (conj). Draft."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

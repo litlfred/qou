@@ -835,7 +835,228 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure scope-caveat remark: confinement theorems hold on open strata Omega_alpha and may fail on partial-Omega. This is a correct reading of the proposition it interprets (openness + local constancy proven in confinement-phase-stratification.md)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Carries real content: enumerates which theorems are phase-local vs which boundary phenomena are out of scope. Useful caveat, not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No conclusion-assuming; it restricts scope, it does not derive a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "If anything it under-claims (deliberately narrowing scope). The interpreted proposition has a full proof (openness via Boyd-Vandenberghe 5.4.1, stratification via principal-minor determinants), so the caveat is well-supported."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameters; structural scope remark."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Each listed phase-local theorem and each boundary phenomenon is correctly classified against the stratification proposition's claims (3)-(5); no logical jump."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark, no sibling .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "References are to in-corpus propositions (level-sufficiency, shell-closure-stability, parity-regime-selection); the interpreted proposition cites Boyd-Vandenberghe correctly for SDP Slater-strictness perturbation. No misattribution in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Omega_alpha(P) (connected component of confinement locus) and the implicit quantifier forall q in Omega_alpha(P) are precisely defined in the interpreted proposition. No ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Notes correctly that numerical witnesses (crt_markov.py, multi_level_sdp.py) evaluate at a single q_0~1.110 and are valid only if q_0 lies in Omega_alpha — this is an accurate, non-fragile caveat, not a fitted claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Maps phase boundaries to physical rearrangements (sp3<->sp2, isomerisation, alpha-decay channel opening) plausibly and with appropriate hedging ('typically', 'subject of separate analysis')."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No own witness; references to compute scripts are illustrative. Nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7538f3abdea5",
+          "ts": "0f1328516faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept. referee_argument: a well-scoped, honest caveat remark that correctly transmits the open-stratum restriction proven in the interpreted proposition; arguably exemplary in distinguishing within-phase results from boundary phenomena. No material objection."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.982Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

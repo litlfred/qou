@@ -1585,7 +1585,244 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atomic-lp-stability.md:9-12 'The Borromean braid (σ1σ2)^3 is the identity in the standard (degree-2) representation of H3(q).'",
+        "notes": "This load-bearing claim is asserted with no proof and is suspect: (σ1σ2)^3 is the full twist / generator of the center of B_3, and it is NOT generally the identity in the 2-dimensional irreducible Hecke representation (it acts as a nonzero scalar, a power of q). If it were literally the identity the 'change of annihilation ratio' mechanism (q^{-10}) would be undercut. The premise as stated is likely false; at minimum unproved and central."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-lp-stability.lean:53-68 the only sorry-free theorem (annihilation_ratios_distinct) proves 0.537 ≠ q0^{-10}.",
+        "notes": "The proved Lean content is the trivial numeric fact 0.537 ≠ 0.352; it does not establish either LP-(in)stability claim. Not vacuous in the ':True' sense, but the substantive proposition content is entirely deferred to two sorry theorems, so the verified part is near-content-free relative to the claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atomic-lp-stability.md:13 'so the atom is stable' and md:14-18 composite-nuclei stability, vs atomic_lp_stability.lean:93-109 both bare_is_lp_unstable and dressed_is_lp_stable end in sorry.",
+        "notes": "The .md states the bare atom is LP-unstable and the dressed atom 'is stable' as established results, but neither is proved — both Lean theorems are sorry (disposition acknowledged in the file's own 'Disposition (integrity)' note, lines 18-33). Presenting an unproved conditional as a settled proposition is an overclaim; the 'so the atom is stable' inference also rests on the suspect (σ1σ2)^3=id premise."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-lp-stability.md:11 ratio 0.537 (bare) and 0.352 = q^{-10} (dressed); 0.537 ≈ q0^{-5.96} (computed), not an obvious q-power.",
+        "notes": "The bare ratio 0.537 appears as a bare constant with no derivation shown; numerically it is ≈ q0^{-5.96}, i.e. not a clean q-power, so its origin (eigenvalue ratio of σ0 in the degree-2 rep?) is unstated. The exponent -10 in the dressed q^{-10} is likewise asserted. These look like inserted numbers rather than chain-derived quantities."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atomic-lp-stability.md:12-13 'This changes the annihilation ratio from 0.537 (bare) to q^{-10}=0.352 (dressed). The original annihilator X* cannot satisfy the dressed condition, so the atom is stable.'",
+        "notes": "The inference 'the original X* fails the dressed condition ⟹ the atom is stable' is a non-sequitur: stability requires NO normalised annihilator exists (the dressed_is_lp_stable ∀-claim), not merely that the one bare annihilator X* fails. The argument only rules out a single candidate; the universal-nonexistence step is missing (and is exactly the sorry on lean:104-109)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atomic_lp_stability.lean:93-98 bare_is_lp_unstable := sorry and :104-109 dressed_is_lp_stable := sorry; only annihilation_ratios_distinct (53-68) is sorry-free.",
+        "notes": "The Lean proves a strictly weaker statement (two specific real constants differ) than the .md proposition (existence of a bare annihilator + nonexistence of a dressed one). Both substantive predicates are sorry. proof-statement-integrity: the verified Lean does not establish the narrative claim; the ts marks validation 'not_checked', consistent with the gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean -- Ref: [bertsimas1997] (LP feasibility/kernel) and [wenzl1990] (Markov trace) are topically appropriate for the LP-kernel and Markov-trace channel claims they annotate; no evident misattribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-lp-stability.md:1-5 'LP-unstable: there exists a Markov-normalised operator X* = α·1+β·σ0 that annihilates the traced volume (V=0)'.",
+        "notes": "'Markov-normalised', 'traced volume V', and 'annihilation ratio λ_s/λ_a' are used without definitions in-block (no uses[] beyond def:atomic-braid). The sign/normalization conventions that make V=0 meaningful, and which eigenvalue is λ_s vs λ_a, are left implicit; the reader cannot reconstruct the LP without them."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No empirical/experimental comparison; the numbers are internal Hecke quantities, not data fits."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-lp-stability.md:1-13 frames bare hydrogen as needing 'B3 dressing (proton internal structure)' to be 'stable'.",
+        "notes": "Physically the hydrogen atom's stability is not contingent on proton internal (Borromean) structure; the proton being composite does not 'stabilise the atom' in any standard sense. This is a model-internal notion of 'LP stability', but the prose phrasing invites a physics reading a domain expert would reject. Flag as warn since 'stable' is defined model-internally, not claimed as the physical binding."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness declared in the .ts; ratios stated inline. The one numeric (q0^{-10}≈0.352) reproduces, but there is no witness pipeline to drift-check."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: 'The proposition asserts bare-H LP-instability and dressed-H stability as results, but both are sorry in the Lean (the file honestly says so), the only verified fact is 0.537≠0.352, and the central inference \"X* fails the dressed condition, so the atom is stable\" is a non-sequitur (ruling out one annihilator ≠ universal nonexistence). The pivotal premise \"(σ1σ2)^3 is the identity in the degree-2 rep of H3(q)\" is almost certainly false (it is the full twist, a nonzero scalar), and the bare ratio 0.537 has no shown derivation. Restate as a conjecture/conditional, fix or justify the (σ1σ2)^3 premise, and supply the universal-nonexistence argument before claiming stability.'"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

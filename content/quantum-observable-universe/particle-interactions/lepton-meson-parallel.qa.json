@@ -799,7 +799,245 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose block; makes structural/analogical claims, not a stated proposition with a truth-evaluable quantified statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Carries substantive (if speculative) structural content — a torus-knot dictionary and a highest/lowest-weight duality; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No derivation chain that assumes its conclusion; it is an exposition of an asserted parallel, not a fitted quantitative claim."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lepton-meson-parallel.md:21 places τ at the cinquefoil-successor 'septafoil T(2,7)' and assigns 'η,φ heavy-strange, 10 crossings' to the third generation; md:19-22 maps generation→crossing-count and the '3→5 flavor transition' for both sectors as if structurally established. md:42 calls L_+ the 'lowest-weight Hecke basis element' — a nonstandard use of 'lowest weight'.",
+        "notes": "The table presents a speculative analogy (torus-knot family indexing leptons AND mesons, η/φ as 'third generation mesons') with the confident register of established structure. The η,φ → '10 crossings, heavy-strange' identification and the τ=T(2,7) assignment are not derived; presented as dictionary entries they overclaim. Appropriate for a prose/heuristic block but the voice asserts more than the math supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No numerical prediction with a free coefficient; the mass-ratio cell m_K/m_π is left as '?' (md:23), so no hidden constant is smuggled."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lepton-meson-parallel.md:45-54 asserts the duality σ^n ↔ (σσ^{-1})^k·σ and concludes 'the lepton probes the top of the Hecke spectrum, the meson probes the full spectrum' — the inference from 'binding introduces σ^{-1}=σ-h' (md:37) to 'both q and -q^{-1} eigenvalues participate' is stated without the spectral computation that would establish it.",
+        "notes": "The off-diagonal Hoefsmit-block claim (md:42-43) that L_+ 'mixes both eigenspaces' is asserted, not shown; the leap to 'full spectrum' participation is a plausible-but-unjustified step. Minor for a heuristic block but it is a genuine logical gap if read as argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose block has no .lean sibling and no formal claim to compare against."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] field on the .ts and no -- Ref: in any sibling; nothing to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "lepton-meson-parallel.md:42 labels L_+ the 'lowest-weight Hecke basis element' which conflicts with the standard representation-theoretic meaning of lowest weight; md:24 'lowest weight (σ^{-1} crossings in binding)' uses 'lowest weight' in a third, informal sense. The meson braid on md:17 '(σ_1σ_2)^2·σ_2σ_1' is given without defining the resulting knot/link unambiguously.",
+        "notes": "'Highest weight' / 'lowest weight' are used loosely and inconsistently (md:10, md:24, md:30-34, md:42); a reader cannot pin a single rigorous meaning. Minor since the block is heuristic prose."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "lepton-meson-parallel.md:39 gives the meson NF coefficient h^2+1≈1.044 and calls it 'dominant'; md:23 invokes m_μ/m_e=Vol(4₁)/ℏ_q² as an established lepton-sector ratio. No witness or current-q₀ recomputation is cited.",
+        "notes": "The single numeric (h²+1≈1.044) is plausibly h²≈0.044 ⇒ h≈0.21 (≈HA at q0), so internally consistent, but no witness backs it and the block does not state the q₀ pin. Low-stakes since the only quantitative cell that matters (m_K/m_π) is left open."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lepton-meson-parallel.md:21 assigns the τ lepton to torus knot T(2,7) and groups 'η,φ' as the 'third generation' meson partners of K — but η/φ are not the third-generation strange-meson analogues of π/K in any standard sense (the natural ss̄/charm tower would be η',η_c/D), and 'third generation' for mesons is not a standard taxonomy.",
+        "notes": "A particle physicist would reject the generation-labelled meson column (π=gen1, K=gen2, η/φ=gen3) as a non-standard and physically misleading grouping; η and φ are not 'third generation' states. Flagged as physical-implausibility of the taxonomy, though the block frames it as a structural analogy rather than a measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "No witness JSON is referenced by the block; the numeric h²+1≈1.044 (md:39) and m_μ/m_e ratio (md:23) have no scriptHash/witness backing in this block.",
+        "notes": "As a prose block it has no compute obligation, but the embedded numbers are unbacked here; reproducibility rests on other blocks not linked from this one."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15e6a541c397",
+          "ts": "8a79bae823c2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: the block presents a speculative torus-knot dictionary (T(2,n) indexing BOTH leptons and η/φ-as-'gen3-mesons', md:14-24) and a 'highest/lowest weight duality' in the confident register of established structure, with a non-standard meson taxonomy (da-physical-implausibility) and an unjustified 'full-spectrum participation' inference (da-non-sequitur).",
+        "notes": "verdict: minor-revisions. The parallel is a legitimate heuristic, but the prose voice overclaims; soften the η/φ 'third generation' column and the spectral-participation conclusion, and disambiguate 'lowest weight'. referee_argument: an expert referee would accept this as motivation but require it be explicitly flagged as conjectural analogy, not structural fact."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.393Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

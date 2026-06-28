@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean"
   },
   "source_hashes": {
-    "md": "aa09144e72be",
+    "md": "0b325cd0bb97",
     "ts": "7e95c99df3e0",
     "lean": "db012297f95b"
   },
@@ -1482,7 +1482,251 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Parts (1) q-integer/Plancherel bar-invariance and (2) transpose equality are mathematically correct; verified numerically [k]_{q^-1}=[k]_q (k=1..4 at q=1.1097) and the hook-length transpose argument is standard. Part (3) is explicitly conditional on a conjecture, not asserted as fact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "bar-involution-invariance.lean:209 theorem bar_involution_invariance_witness_scope : 1+1+2+...+30 = 97 := by decide",
+        "notes": "The 'witness scope' theorem is a content-free arithmetic identity (partition-count sum) dressed as a Lean theorem; it asserts nothing about bar-invariance. The substantive theorems (parts 1,2) are non-vacuous. Minor only."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting: parts (1)/(2) are pure algebraic identities; part (3) honestly threads the upstream conjecture as a class hypothesis rather than assuming its conclusion unconditionally."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "bar-involution-invariance.md:23-35 'witness against hand-rolled CPT violations'",
+        "notes": "The framing that satisfying these invariances 'certifies' no CPT bias is necessary-not-sufficient: bar-invariance is a necessary consequence, so passing it does not rule out a chirality bias that happens to be bar-symmetric. Block does say 'necessary' (md:26) so it is mostly hedged; minor overstatement in the 'certify' language (md:34)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameters introduced; purely structural algebraic identities."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Each proof step follows: sign-flip cancellation in numerator/denominator (md:43-48), hook-length permutation invariance of products (md:55-62). Part (3) inference is explicitly conditional."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "bar-involution-invariance.lean:99-113 use removed keyword `constant` for Partition/hookLengths/partitionTranspose and `axiom hookLengths_transpose`; lean:111 axiomatises the core of part (2).",
+        "notes": "Two divergences: (a) `constant` was removed from Lean 4 — this file as written will not compile (validation:'not_checked' in .ts:9 corroborates it is unverified), so the Lean does not actually establish the .md claims; (b) part (2)'s key fact (hook lengths preserved under transpose) is taken as an axiom rather than proved, so plancherel_weight_transpose_eq is proved modulo an unproved axiom while the .md presents it as an unconditional proof (md:55-62, 'unconditional' md:73)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".ts:26-31 computation -> brundan_kleshchev_audit.py / brundan-kleshchev-audit.witness.json (described as 'Empirical-evidence dossier for the Brundan–Kleshchev isomorphism H_n(R,q)≅R_α^Λ').",
+        "notes": "The wired computation witness is the BK-isomorphism dossier, not a direct bar-invariance / Plancherel-weight check. The cite is topically adjacent (KLR/BK supports the Type-B folding context) but does not directly compute the proposition's invariance claims; the actual bar-invariance numerics are only pointed to in lean:196-203 prose (sdp-dual-without-demand). Mild attribution mismatch."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Bar involution, q-integer, Plancherel weight, transpose all explicitly defined in md (39-53) and lean. Base ring is ℝ with explicit 0<q, q≠1 hypotheses — archimedean regime declared."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claims are exact algebraic identities, not numerical fits; bar-invariance holds exactly for all q>0, so no fit-noise / cross-anchor-swing exposure."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Mathematical invariance proposition; the CPT/chirality interpretation is flagged conditional and is consistent with standard symmetric-crystal physics framing."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Wired witness brundan-kleshchev-audit.witness.json reproduces: recomputed scriptHash 5de5e544f5a4 matches the witness scriptHash; allPassed true. q-integer invariance independently reproduced numerically."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0b325cd0bb97",
+          "ts": "7e95c99df3e0",
+          "lean": "db012297f95b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lean:99-113 (`constant`+axiom), .ts:9 validation:'not_checked'",
+        "notes": "verdict=minor-revision. referee_argument: The mathematical content (parts 1 and 2) is correct and the conjectural part (3) is honestly scoped. The defects are formalization-side: the Lean uses the removed `constant` keyword (won't compile, unverified per validation:'not_checked') and axiomatises the transpose-hook fact that the .md presents as fully proved. Tighten the Lean (replace `constant`, prove or honestly mark the transpose axiom) and soften the 'certify no CPT bias' language to 'necessary cross-check'."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

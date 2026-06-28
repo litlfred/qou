@@ -1585,7 +1585,232 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "Verified symbolically: epsNPq(q)*E0 = m_e(q+1)(q^2-2q-1)/(2q^3) exactly (sympy diff=0); h^2/2 - h matches (q^2-1)(q^2-2q-1)/(2q^2) exactly; z=1/(sqrt q+1/sqrt q)<=1/2 so z=1 never attained.",
+        "notes": "All stated identities (closed form, eps vs tr_M gap h(z-1), z-bound) check out symbolically."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Non-trivial symbolic identity, proved over arbitrary field in Lean (E0_eq, Qbeta_closed via field_simp;ring) — not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Closed form is a pure algebraic consequence of the NF coefficients + energy-scale definition; no experimental Q_beta value is fed in to derive it. The CAL inputs (m_e, q0) are upstream calibrations, used not re-derived here."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claim is explicitly a symbolic closed form 'over an arbitrary field' (md:64-66); no accuracy/physical-match claim is made in this block, so no fitted-as-derived or approximate-as-absolute overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Only inputs are h=q-q^{-1} and E0=m_e/(q(q-1)) from rem:energy-scale-planck (in uses[]); no off-menu coefficient. hbar_q^E=(q-1)/q is defined, not free."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Each step (NF coeffs -> eps -> eps*E0 -> closed form; eps-tr_M=h(z-1); z<=1/2) follows; verified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "qbeta_energy_scale.lean:51-66 E0_eq and Qbeta_closed prove exactly the .md identities; epsNPq (lean:58) = (q^2-1)(q^2-2q-1)/(2q^2) equals the md's h^2/2-h (verified diff=0).",
+        "notes": "Lean theorem Qbeta_closed states the same closed form as md:10-14; eps q-form matches the md basis-vector form. ts lean.ref points to QBetaEnergyScale.Qbeta_closed, which exists. validation:'not_checked' in ts but file content matches."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Only internal ref rem:energy-scale-planck (in uses[]); no external citation to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "qbeta-counit-closed-form.md:31 'z is the Markov-Jones loop parameter' then md:41 z=1/(sqrt q+1/sqrt q); md:60-61 distinguishes hbar_q^E=(q-1)/q from h=q-q^{-1}",
+        "notes": "Two distinct 'action quanta' (hbar_q^E vs Hecke h) and the loop parameter z are introduced compactly; z's defining formula appears only at md:41 after being used at md:28. Minor: the precise definition of the Frobenius counit eps (unweighted NF-coeff sum, md:5-6) is asserted, not derived, but is consistent."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "This block makes no numerical-accuracy claim (no MeV value, no CODATA comparison). The Q_beta~0.784 MeV / L2 miss discussion lives in upstream observation blocks, not here; the closed form is exact symbolic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physical/units claim made in-block; purely algebraic. (Downstream, Q_beta=eps(Delta)*E0 evaluates to ~0.784 MeV, right order for beta-decay Q-value, but that is not asserted here.)"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Identity is symbolic and Lean-proved (field_simp;ring), independently reproduced via sympy here. No witness JSON needed; nothing stale."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d228102e6388",
+          "ts": "ca57dbc5d21b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept. referee_argument: strongest objection is only the minor compactness of the z / hbar_q^E definitions (da-definitional-ambiguity warn). The central closed-form identity is exact, Lean-verified over an arbitrary field, and independently reproduced; the counit-vs-trace distinction (gap h(z-1), z<=1/2) is correct. No false-claim, circularity, or overclaim. Clean symbolic proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

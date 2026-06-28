@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.lean"
   },
   "source_hashes": {
-    "md": "08e49610380f",
+    "md": "6aa49f1a45f0",
     "ts": "22145aceb0ff",
     "lean": "db1a73212f43"
   },
@@ -877,7 +877,261 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Core algebraic identity (m_n−m_p)/m_e = (Q_β+m_e)/m_e is the CODATA definition Q_β=m_n−m_p−m_e and is correct. ΔS=that under the common-scale hypothesis is stated explicitly as conditional. Vol(B_3)/ℏ_q²≈746.418 and tilde≈0.0033943 reproduce."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.lean:64-67 — theorem delta_skein_eq_mass_splitting : deltaMassOverMe q_beta m_e = (q_beta+m_e)/m_e := by rfl, where deltaMassOverMe is DEFINED (lines 37-38) as exactly (q_beta+m_e)/m_e.",
+        "notes": "The Lean lemma is a definitional tautology (rfl over its own def); it does NOT formalize the substantive content (Skein-difference S(n)−S(p) equals the mass splitting). That content lives only in the witness. The .md is honest that this is a conditional remark, so warn not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:86-88 itself concedes 'The 1015 ppm agreement is therefore NOT evidence for the common-scale conjecture per se: it is consistent with the existing Q_β closure precision under that hypothesis.'",
+        "notes": "The block is admirably self-aware: the 'derived' splitting reduces to the empirical (m_n−m_p)/m_e once λ_scale differences are set to zero by fiat (the common-scale conjecture). The agreement is built in, not predictive — the block says so, so this is a flagged-but-disclosed circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "delta-skein-substrate-identity.md:122-123 'The proton–neutron mass splitting is not a fit.' and .ts tags include 'no-fitting' (line 28), yet the boxed result (lines 24-31) reduces to the empirical (m_n−m_p)/m_e and the closed form depends on the substrate Q_β ansatz whose residual the block itself reports as ~760–1015 ppm.",
+        "notes": "'not a fit' overstates: the splitting equals (Q_β+m_e)/m_e where Q_β is a 3-parameter-shaped substrate ansatz that only matches to ~1000 ppm; the equality to the mass splitting is the CODATA definition, not an independent prediction. The block partly retracts this in §'Why the 1015 ppm residual', but the headline 'not a fit' + 'no-fitting' tag remain."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:19-21,82-84 — λ_scale(p)−λ_scale(n) is set 'exactly zero' by the common-scale conjecture; the absolute λ_scale (≈2.46, line 126) 'has not been derived' and is required for m_p,m_n individually.",
+        "notes": "λ_scale is an undisclosed-at-headline free quantity; the block discloses it in 'Remains open' (lines 125-129), so it is a documented (not hidden) DOF — warn."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The reduction from the two-term ΔS to the boxed closed form follows once the common-scale bracket vanishes; each step is explicitly conditional and the logic is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "delta-skein-substrate-identity.lean:64-67 proves only deltaMassOverMe q_beta m_e = (q_beta+m_e)/m_e by rfl (a renaming of a def). The .md claim (lines 9-16,24-31) is the substantive ΔS(n−p):=S(n)−S(p) = (Q_β+m_e)/m_e — i.e. that the Skein difference equals the mass splitting — which the Lean never states (S(n),S(p) do not appear in Lean).",
+        "notes": "Lean is strictly weaker than / different from the .md: it formalizes a trivial definitional rewrite, not the Skein=mass-splitting identity the remark is about. proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:63,116 label (Q_β+m_e)/m_e source as 'CAL-3' and call Q_β a CAL-3 input; AGENTS.md canonical cheat-sheet rules Q_β = ℏ/𝔇_β is the CAL-2 proxy (m_π is CAL-3).",
+        "notes": "Framework-label drift: Q_β is attributed to CAL-3 here, contradicting the standing owner ruling that Q_β is the CAL-2 proxy. cites[codata2022] itself is fine."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "delta-skein-substrate-identity.md:1-2 uses λ_scale, and the AGENTS.md banner states λ_scale was ABSORBED 2026-05-23 and must not be reintroduced; the block also reintroduces Geom-style Vol(B_3)/ℏ_q² scaling for absolute baryon mass which the canonical-mass guardrail deprecates.",
+        "notes": "λ_scale terminology is officially purged in the canonical framing yet is the central object of this remark (lines 16-21,82-84,125-129); creates an incompatible reading against current canon."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "delta-skein-substrate-identity.md:71-74 states Q_β(q0)=0.78174 MeV and a '760 ppm' residual; a fresh mpmath compute at the stated q0=1.109978595554181 with the stated formula m_e·|q²−2q−1|(q+1)/(2q³) gives Q_β=0.783646 MeV, i.e. ~1677 ppm vs 0.78233341 — not 760 ppm. The numerator (Q_β+m_e)/m_e recomputes to 2.53356, not the prose 2.53388 (line 63).",
+        "notes": "The prose Q_β value (0.78174) and its 760 ppm headline appear stale relative to the substrate Q_β ansatz at the cited q0 (which yields 0.78365 / 1677 ppm). Classic q0-repin / stale-witness drift; the witness URLs even point at two different branches (claude/neutron-mass-50dps-chain vs claude/audit-plancherel-usage-a6DgI), lines 38,57,110."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Predicting the p–n mass splitting at ~0.1% from a topological volume form is not physically absurd; units (MeV, dimensionless ratios) are consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Producer computations/derive_m_baryon_volume_form.py and witnesses exist, but the .md numbers are inconsistent with a fresh run (Q_β 0.78174 vs recomputed 0.78365; 760 ppm vs ~1677 ppm; (Q_β+m_e)/m_e 2.53388 vs 2.53356) and witness blob URLs reference two different feature branches (lines 38,57,110), neither necessarily current.",
+        "notes": "Numbers do not reproduce from the stated formula at the stated q0, and the cited witnesses live on transient feature branches — stale/irreproducible against current substrate Q_β. Re-run the producer at the canonical q0 and refresh the table + ppm claims."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean formalizes only a definitional rfl (lean:64-67), not the Skein=mass-splitting claim; prose Q_β=0.78174 / 760 ppm do not reproduce (fresh: 0.78365 / 1677 ppm); 'not a fit' headline overstates a conditional, common-scale-by-fiat reduction to the CODATA definition.",
+        "notes": "verdict=major-revision. referee_argument: The remark is unusually candid (it admits the 1015 ppm agreement is not evidence for the conjecture), but three problems remain: (1) the Lean proves a tautology, not the identity; (2) the headline numerics are stale vs the current substrate Q_β at the stated q0; (3) λ_scale and Vol(B_3)/ℏ_q² absolute-scaling are purged/deprecated by current canon. Refresh witnesses, restate the Lean to carry the actual Skein difference, and reconcile the CAL-2/CAL-3 labelling and λ_scale terminology."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.404Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

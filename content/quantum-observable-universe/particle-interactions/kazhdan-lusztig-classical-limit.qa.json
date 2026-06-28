@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.md"
   },
   "source_hashes": {
-    "md": "b1e53e3f32d5",
+    "md": "159611eb7130",
     "ts": "c10fcf81e959"
   },
   "criteria": {
@@ -935,7 +935,238 @@
           "value": 0.74
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Stated as a conjecture (kind=conjecture), explicitly flagged 'why a conjecture and not a theorem' with a falsification criterion (md:48-50). q→1 specialisation H_n(q)→ℤ[S_n] and b_w→C_w are standard (cited). No false universal claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "KazhdanLusztigClassicalLimit.lean:53-60: field `statSign_pm_one : ∀ b, statSign b = 1 ∨ statSign b = -1` and the supposed-conjecture field `kl_compatible_with_tau : ∀ T, statSign (klMap T) = 1 ∨ statSign (klMap T) = -1`",
+        "notes": "The 'conjecture proper' field kl_compatible_with_tau is a logical consequence of the already-axiomatised statSign_pm_one (apply it at b = klMap T). It asserts nothing beyond an axiom of the class, so it is content-free. The `canonical` instance (lean:96-105) discharges it with `Or.inl rfl` and NO sorry — contradicting the docstring's claim that this field 'plays the role of sorry'. Thus the Lean class does not actually axiomatise the conjecture (Pauli/Bose recovery / τ-compatibility); it axiomatises a tautology. Vacuous conjectural carrier per AGENTS.md §3b-tax 'carrier must assert something'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Conjecture does not back-fit a numerical target; it asserts a structural compatibility. No smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "kazhdan-lusztig-classical-limit.md:18-27 'KL is a monoidal functor compatible with τ ... is precisely the topological-to-classical transition'; Lean field encodes only statSign∈{±1}",
+        "notes": "The narrative asserts a monoidal functor whose action 'is precisely' the topological→classical transition recovering Pauli/Bose statistics. The Lean encoding reduces all of this to 'a sign that is ±1' — it does not encode monoidality, τ-compatibility, or the b_w↦C_w map's well-definedness. The conjecture's actual content is far richer than what is formalised; the prose claim of capturing the full statistics is stronger than the (tautological) axiom supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameters / calibrations involved; structural conjecture."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "As a conjecture it makes no derivation step claiming 'therefore'; the 'why conjecture not theorem' section correctly identifies the unproved gap (τ-compatibility on full QOU spectrum)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:18-27 (monoidal functor, τ-compatible, Pauli/Bose recovery) vs KazhdanLusztigClassicalLimit.lean:43-60 (class fields: KLBasisElt:Type, klMap, statSign∈{±1}, kl_compatible_with_tau tautological)",
+        "notes": "The Lean class proves/encodes strictly weaker and different content than the .md conjecture. The .md conjectures a *monoidal, τ-compatible functor whose image exhausts Pauli/Bose statistics*; the Lean only carries an abstract sign function constrained to ±1 plus a tautological 'conjecture' field, with the instance using PUnit and klMap≡unit. The conditional theorems (statSign_sq_eq_one) prove only '(±1)²=1', a triviality unrelated to the actual conjecture. proof-statement-integrity divergence: the formalisation does not represent the narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "kassel1995 (Hecke/Markov), khovanovlauda2009 + kashiwara1991 (KLR / crystal / canonical bases), lecouvey2007 (crystal combinatorics) are all on-topic for the q→1 / canonical-basis claims they back. Appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:15 'b_w ↦ C_w as q→1'; md:5 'KL basis C_w ⊂ ℤ[S_n]'",
+        "notes": "The map b_w↦C_w 'as q→1' conflates two distinct objects: the KLR canonical basis of H_n(R,q) and the Kazhdan–Lusztig basis of ℤ[S_n] are bases of different algebras; the precise sense in which one 'specialises to' the other (the functor's domain/codomain mod-categories vs basis elements) is stated loosely. 'monoidal functor' presumes a monoidal structure on mod ℤ[S_n] not specified. Minor — standard objects, but the bridge is under-defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match / fit; purely structural conjecture with no quoted observable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The claim that q→1 anyonic→classical recovers Pauli/Bose ±1 statistics is physically reasonable (anyon→boson/fermion limit). Stated as conjecture with falsification test. No domain-expert-fatal claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness backing this structural conjecture; nothing to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "159611eb7130",
+          "ts": "c10fcf81e959"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean tautological conjecture field + no-sorry PUnit instance (lean:59-60, 96-105); narrative↔Lean divergence (md:18-27)",
+        "notes": "verdict: major-revisions. referee_argument: As a *narrative* conjecture this is defensible and honestly labelled. But the Lean formalisation is its weakest link and actively misleading: the field advertised as 'the conjecture, plays the role of sorry' (kl_compatible_with_tau) is a tautological consequence of the class's own statSign_pm_one axiom, and the `canonical` instance closes it with `Or.inl rfl` and zero sorry. So the §3b conjectural-class machinery is not actually carrying any conjectural content — a vacuous-carrier violation (AGENTS.md §3b-tax). The conditional theorems prove only (±1)²=1. Strongest objection: the formalisation neither states nor preserves the real conjecture (monoidal τ-compatible KL functor recovering Pauli/Bose); fix by encoding the b_w↦C_w map and τ-compatibility as genuine fields with no satisfiable trivial instance."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.641Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

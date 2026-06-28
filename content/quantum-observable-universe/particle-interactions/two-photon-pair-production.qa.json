@@ -835,7 +835,237 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block is a remark (no provable claim); the structural claims (γ=∅, γγ=T_e on 2 strands, bar-invariance) are internally consistent descriptions, not false propositions."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark carries substantive interpretive content; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical target back-fitted; qualitative selection-rule narrative."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "two-photon-pair-production.md:37-46 'Falsification handle' — single-photon γ→e⁻e⁺ 'forbidden ... without invoking energy–momentum conservation as a separate axiom'; 'Empirical absence ... is consistent with the conjecture'.",
+        "notes": "The empirical absence of γ→e⁺e⁻ in vacuum is the textbook consequence of energy-momentum conservation (a real photon is null; pair production needs a recoil partner). Claiming the symmetric-crystal mechanism explains it WITHOUT that conservation law overclaims novelty: the standard explanation already fully accounts for the datum, so the observation does not discriminate the conjecture. The 'consistent with' framing is weak confirmation dressed as a falsification handle."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameters introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "two-photon-pair-production.md:14-21 — 'place this state at the high-energy boundary of a heavy nucleus ... forces the system to step down the crystal graph'.",
+        "notes": "The jump from a static bar-invariant identity element T_e (zero crossings) to a forced crystal lowering step is asserted, not derived: an element with zero crossings has no Kashiwara structure to lower, and the conjecture (#conj:symmetric-crystal-pair-production) describes lowering from a highest-weight vector, not from the trivial identity. The bridge 'energy density forces a step' has no stated lemma linking external boundary energy to a Kashiwara f̃_i application."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No .lean sibling; remark kind requires none."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] or -- Ref: in this block; it references the conjecture by label, which exists (symmetric-crystal-pair-production.md present)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.md:2-5 — 'photon γ is the empty knot ∅ ... (distinct from the unknot 0_1, which is the neutrino)'.",
+        "notes": "'empty knot ∅' as 'the identity element on n strands carrying no crossings' is the braid identity T_e, but T_e on n=2 strands is not literally 'empty' — the strands exist. The identification γ=∅ vs ν=0_1 vs T_e on 2 strands mixes three distinct objects (empty diagram, unknot, braid identity) whose distinctions are load-bearing for the argument yet not pinned down."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "two-photon-pair-production.md:33-35 — charge (−e+e=0) and chirality (−½+½=0) 'conserved structurally and not by an imposed selection rule'; lines 14-21 two-photon→nucleus.",
+        "notes": "Physically γγ→e⁺e⁻ (Breit–Wheeler) does NOT require a heavy nucleus — it proceeds in vacuum given √s>2m_e; the block ties it to 'a fixed external boundary of a heavy nucleus' supplying energy, conflating it with the Bethe–Heitler (single-γ + nucleus) channel. A domain expert would flag the nucleus requirement for two-photon pair production as incorrect. Also chirality ±½ is being used where helicity/spin is meant; e⁻/e⁺ are not eigenstates of a conserved ±½ 'chirality' charge in the naive additive sense stated."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness/compute in this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict=minor-revision. Strongest objection (referee_argument): the falsification handle is non-discriminating — the empirical absence of single-photon pair production in vacuum is already fully explained by energy-momentum conservation, so it provides no evidence for the symmetric-crystal mechanism; and the two-photon channel is wrongly stated to require a heavy-nucleus boundary (Breit–Wheeler proceeds in vacuum). The block is honestly a remark interpreting a conjecture (correct kind), so claims are appropriately hedged, but the physics framing of the 'concrete example' is inaccurate."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.850Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

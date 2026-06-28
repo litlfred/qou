@@ -835,7 +835,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "As a remark summarizing a conservation-law chain, the per-step B/L/Q bookkeeping table (md:18-23) is internally consistent (B,L,Q conserved). No standalone false mathematical claim is asserted here."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark carries genuine summary content (derivation chain + conservation table); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:31-32 'Confinement is derived: B_3 is selected by minimum action among operators matching the physical nucleon net'.",
+        "notes": "The selection is 'among operators matching the physical nucleon net' — i.e. the target net charge/baryon number is supplied as the matching criterion, so 'confinement is derived' is partly a selection against the known nucleon, not a from-scratch prediction. Hedged by the downstream prop:confinement-operator-selection link; minor."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:35-37 'beta decay channel ... is not imposed — it emerges from B_3 confinement'; md:39-41 'strong force washes out electromagnetic initial conditions'.",
+        "notes": "'emerges'/'washes out' are strong derivational claims for a summary remark; they rest on the upstream prop:four-term-pair-nucleon and confinement witnesses, not re-argued here. Acceptable as a remark interpreting an upstream prop, but the rhetoric is stronger than a summary warrants."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical constants stated in the summary; chain is qualitative/structural."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Chain steps (photons->qqbar->quark selection->B_3->atom) and the conservation table are coherent; each arrow is annotated with conserved quantities. No claimed lemma is missing within the remark's scope."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark block with no .lean sibling and none required (kind=remark)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; the two named witnesses are pointers, evaluated under da-reproducibility. Nothing mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Symbols (gamma, q/qbar, B_3, N, A) are defined in the underbraces/legend and resolve to upstream blocks; B/L/Q standard."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical predictions in the remark; mass/binding numbers live in upstream blocks."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:19-20 'gamma-gamma collision: 2 photons -> qqbar pair', and chain header 3(gamma-gamma)=6 photons -> 3 quarks forming a single nucleon.",
+        "notes": "Physically, gamma-gamma -> q-qbar produces a colour-singlet quark+antiquark, and assembling exactly 3 quarks (discarding 3 antiquarks 'either annihilate or form an antinucleon', md:26-27) into one nucleon is a schematic, not a real QED/QCD process; net baryon number from an initial B=0 photon state requires the antibaryon to be created too (acknowledged md:26-27). The bookkeeping is consistent but the 'derivation chain' is a categorical caricature of real pair production — a domain expert would not read this as a literal scattering mechanism. Minor since it is a framing remark."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:47-48 cites witnesses 'confinement-operator-selection.witness.json' (exists) and 'four-term-photon-to-atoms.witness.json' — the latter is NOT at computations/ ; it lives only under computations/_deprecated/four-term-photon-to-atoms.witness.json.",
+        "notes": "One of the two named backing witnesses has been moved to _deprecated and no live copy exists at the cited path, so the summary points at a stale/dead witness. The summary's headline 'conservation laws verified at each step' is thus partly unbacked by a current witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "49b6456a95d7",
+          "ts": "48f67a67e519"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:47-48 dead witness reference (four-term-photon-to-atoms in _deprecated); md:31-41 strong 'derived/emerges/washes out' rhetoric.",
+        "notes": "verdict=minor-revision. referee_argument: As a remark interpreting prop:four-term-pair-nucleon the content is acceptable, but (a) it cites a deprecated/missing witness (four-term-photon-to-atoms) as live verification, and (b) the gamma-gamma->3-quark->nucleon chain is a categorical caricature with derivational rhetoric ('confinement is derived', 'strong force washes out EM IC') stronger than a summary substantiates. Fix the witness pointer and soften the claims to 'as established in the upstream proposition'."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.814Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

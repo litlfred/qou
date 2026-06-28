@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/bring-z5-descent.md"
   },
   "source_hashes": {
-    "md": "184356b27986",
+    "md": "0ee46b4cf41b",
     "ts": "bc06a5c9c843"
   },
   "criteria": {
@@ -835,7 +835,225 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "bring-z5-descent.md:18-25 'Upshot' asserts the A5-invariant complement 'accommodates three color tubes' and is 'discarded', consistent with collapse to a single U(1) phase tube.",
+        "notes": "The classical S5/Sylow-5 descent (Edge) is solid; the physics gloss ('three color tubes', 'U(1) phase tube') is an interpretive overlay carried in via prop:u1-equivariant-reduction, stronger than what the cited curve-theory supports. As a remark interpreting an existing prop this is within bounds but the color-tube identification is asserted, not shown here."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark with no .lean sibling; interprets prop:x5-z5-automorphism."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites edge1978 'Bring's curve' (J. London Math. Soc. 1978, DOI 10.1112/jlms/s2-18.3.539); correctly invoked for the S5 action and genus-reduction quotients of Bring's curve."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "bring-z5-descent.md:14-16 'Up to isomorphism this genus-2 quotient is the X5: y^2=x^5-1'.",
+        "notes": "The identification 'the quotient B_Br/<tau> is X5 up to iso' is stated as a classical fact but no isomorphism is exhibited and the citation (edge1978) is invoked generically ('full treatment of genus-reduction quotients'). A referee would want the explicit hyperelliptic model match; minor since it is a remark deferring to the literature."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness; pure literature remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0ee46b4cf41b",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept-as-remark. Strongest objection: the genus-2 quotient ≅ X5 identification and the color-tube physical gloss are asserted by deferral to edge1978 rather than shown, but both are reasonable and the block is honestly framed as interpretation (referee_argument: 'show the explicit isomorphism or cite the precise theorem number')."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.892Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

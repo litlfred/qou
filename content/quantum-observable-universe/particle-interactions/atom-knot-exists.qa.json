@@ -1338,7 +1338,249 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The existence statement (for any (Z,N) with Z+N>=1 an atom-knot exists as a closed braid in H_{3(Z+N)}(q)) is plausibly true and the construction sketch (tensor of baryon NFs + inter-nucleon connector, Diamond Lemma well-definedness) is sound in outline. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atom-knot-exists.lean:16-18 proves `AtomKnot.exists (Z N : ℕ) : ∃ K : AtomKnot, K.Z = Z ∧ K.N = N` by constructing `{ Z := Z, N := N, protonBlock := [], neutronBlock := [], interBlock := [] }` and closing with `<;> rfl`.",
+        "notes": "The Lean existence proof produces an AtomKnot with EMPTY braid blocks (protonBlock/neutronBlock/interBlock all []), so it proves only that a record carrying the integer fields Z,N exists — it does NOT construct the H_{3(Z+N)}(q) element with Z protons + N neutrons + the inter-nucleon connector that the .md proposition (.md:7-23) claims. The Diamond-Lemma well-definedness argument (.md:25-28) is entirely narrative with no Lean counterpart. Existence is discharged vacuously by `rfl` on metadata fields."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting or smuggled calibration; it is a pure existence/construction claim with no numerical target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:1-2 claims existence 'as a closed braid in H_{3(Z+N)}(q) on the generic locus' with an explicit T_w construction (.md:20-23), but the Lean (lean:16-18) only exhibits a metadata record with empty braid words.",
+        "notes": "The narrative claims a verified explicit braid construction; the formalisation establishes only the existence of a typed record with matching Z,N counts. The 'closed braid in H_{3(Z+N)}(q)' content is asserted in prose, proved only as an inhabitant of an `AtomKnot` structure whose braid fields are empty. Conditional/sketch-level result presented as proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:25-28 'The Diamond Lemma for the Hecke algebra guarantees the NF is independent of NF-rewriting order, so the constructed atom-knot is well-defined.' — well-definedness of NF (rewriting confluence) is invoked to conclude existence of the closed braid, but the closure step (Markov closure to S^3, .md:22-23) is asserted separately.",
+        "notes": "The 'therefore well-defined' relies on the Diamond Lemma citation (def:hecke-normal-form) which is appropriate, but the chain from 'T_w is a well-defined element' to 'its Markov closure is a closed braid in S^3' is stated without the closure lemma. Minor gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Narrative (.md:7-23) constructs T_w = T_{w_{q^Z}} · T_{w_{bar q^N}} · T_{w_inter} ∈ H_{3(Z+N)}(q) with intra-nucleon blocks and an inter-nucleon connector permutation. Lean `AtomKnot.exists` (lean:16-18) instead returns `{ Z, N, protonBlock := [], neutronBlock := [], interBlock := [] }` — every braid-content field is the empty list.",
+        "notes": "proof-statement-integrity failure: the Lean proves a strictly weaker statement (an AtomKnot record with the right counters exists) than the .md claims (a non-trivial closed braid assembled from Z+N baryon NFs plus connector exists in the Hecke algebra). The substantive content — that the assembled braid word is a well-defined Hecke element — is absent from the Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "-- Ref: [manuscript] braids-and-knots/atom-knot (lean:15) is a self-reference to the construction; .md uses def:atom-knot, def:borromean-baryon, def:atomic-braid, def:hecke-normal-form, all internal definitions invoked appropriately. No external citation to misattribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:5 'on the generic locus' is used without defining the locus (presumably q not a root of unity / Gram non-degenerate) in-block; the Lean `AtomKnot` structure (fields Z,N,protonBlock,neutronBlock,interBlock per the constructor) carries no q or braid-validity invariant, so 'closed braid in H_{3(Z+N)}(q)' has no formal counterpart.",
+        "notes": "'Generic locus' is a load-bearing qualifier left undefined here, and the Lean structure is purely combinatorial metadata with no link to H_{3(Z+N)}(q), leaving the central object under-specified formally."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure existence proposition; no compute/witness attached, none expected."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "32bc02a8ea92",
+          "ts": "080bf3a55a04",
+          "lean": "927381cecd88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict=major-revision. referee_argument: the proposition is believable and the .md construction sketch is reasonable, but the formalisation is vacuous relative to the claim. `AtomKnot.exists` (lean:16-18) discharges existence by building an AtomKnot record with protonBlock/neutronBlock/interBlock all empty and closing by `rfl` on the Z,N fields — it proves only that a typed metadata record with the right counters is inhabited, NOT that the explicit T_w = T_{w_q^Z}·T_{w_bar-q^N}·T_{w_inter} closed braid in H_{3(Z+N)}(q) exists (the actual content of .md:7-28). The Diamond-Lemma well-definedness argument has no Lean realisation. Either formalise the genuine Hecke-element construction or downgrade the .md to a construction sketch; as stated, Lean-narrative integrity fails."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:24.158Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

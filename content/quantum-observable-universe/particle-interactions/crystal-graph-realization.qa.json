@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/crystal-graph-realization.md"
   },
   "source_hashes": {
-    "md": "2edb47581fb3",
+    "md": "7fae946d4b55",
     "ts": "f0d33541da64"
   },
   "criteria": {
@@ -951,7 +951,240 @@
           "value": 0.74
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Stated as a conjecture, honestly. The component claims (Brundan-Kleshchev iso, GS<->crystal bijection) are real literature results; the open part (shortlex GS order matches BK canonical-basis labels for the QOU ansatz) is correctly flagged conjectural in 'Why a conjecture and not a theorem.'"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "CrystalGraphRealization.lean:93-101: the `canonical` instance sets NormalForm:=PUnit, CrystalNode:=PUnit, raising:=none, so crystal_realises := rfl discharges the conjectural field vacuously.",
+        "notes": "The class itself (lines 45-60) carries genuine Prop content (crystal_realises is parameter-quantified). But the supplied `canonical` instance trivializes it via PUnit + `raising _ _ := none`, making crystal_realises provable by rfl. Any downstream [C]-conditional result is conditioned on a class for which a trivial instance exists, weakening the §3b-tax 'open primary = content-bearing class with no instance' discipline. The honest open-state would be NO instance (or a sorry-carrying one)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting: the conjecture asserts a structural correspondence (GS normal forms <-> highest-weight crystal vertices), not a numerical target. The empirical verification mentioned (witnessed normal forms) is a check, not a smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.md:13-25 ('Computational shortcut') asserts the GS engine 'may be replaced by a directed traversal on the crystal graph' and 'termination is therefore immediate and no Diamond-Lemma S-polynomial overlap analysis is required.'",
+        "notes": "This algorithmic-equivalence claim is stated assertively as a consequence, yet it rests on the very order-match (bigstar) the block itself admits is unproven (lines 27-38). The 'Status' note partly mitigates ('No new sorry is introduced... replaces a class of brute-force bounds'), but the computational-shortcut paragraph reads more definitively than the conditional backing warrants."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Structural/categorical conjecture with no numerical parameters; no calibration or free coefficient at issue."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.md:13-22: 'Consequently the GS reduction engine ... may be replaced by a directed traversal ... termination is therefore immediate.'",
+        "notes": "The inference chain from 'T_w is highest-weight' to 'GS engine replaceable by ẽ_i traversal that terminates at T_w' silently assumes the traversal direction and target alignment (the bigstar order-match). 'Consequently' / 'therefore' bridge a gap that the block elsewhere concedes is the conjectural core. As a conjecture this is acceptable but the deductive phrasing overstates the rigor of the link."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "CrystalGraphRealization.lean:93 docstring: '**Faithful instance.** Carries the explicit research-grade conjecture as a sorry.' — but the body (lines 94-101) is `crystal_realises _ _ := rfl` over PUnit, with NO sorry.",
+        "notes": "The Lean docstring claims the instance carries the conjecture 'as a sorry'; it does not — it discharges crystal_realises by rfl on a PUnit model. So the file's own self-description is false, and the instance does not represent the open conjecture the .md describes (the shortlex-order match). The .md presents a genuine open problem; the Lean supplies a vacuously-true instance whose docstring misrepresents itself as conjectural. proof-statement-integrity concern."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Citations are apt: brundankleshchev2009 (cyclotomic Hecke <-> KLR blocks), kashiwara1991 (crystal bases), lecouvey2007 (plactic/crystal combinatorics, types A-G2). Each is invoked for a result it actually contains. khovanovlauda2009/marsh2000 in cites[] support the KLR diagrammatic framing."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "crystal-graph-realization.md:9 references 'the Kashiwara crystal Cryst(𝔰𝔩_n)' and 'highest-weight vector' but the rank n and which crystal component is left implicit; the .md says (lines 18-20) the 'relevant component' is finite without specifying which weight/component.",
+        "notes": "'Highest-weight vector' is standard, but 'the' indecomposable graded projective KLR module corresponding to T_w presumes a uniqueness/canonicity that is part of what is conjectured. Minor: a referee would ask which crystal component and what pins the correspondence's labels."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical prediction in this block; 'verified empirically on the witnessed normal forms' (md:35-36) is a structural cross-check, not a fitted observable. No precision/anchor claim to stress."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure algebra/representation theory; no physical-units, conservation, or measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claim is structural with no witness JSON dependency; the 'witnessed normal forms' alluded to are GS NF computations elsewhere in the corpus. No scriptHash/scriptCommitSha drift applies. No stale-numeric reproduction claim to fail."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7fae946d4b55",
+          "ts": "f0d33541da64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict=accept-with-revisions. Strongest objection: CrystalGraphRealization.lean:93-101 — the `canonical` instance is a PUnit-model that discharges crystal_realises by rfl, while its docstring falsely claims it 'carries the explicit research-grade conjecture as a sorry.'",
+        "notes": "As a CONJECTURE block the math is honestly scoped and well-cited; no false-claim or circularity. The defensible objections a referee would raise: (1) the Lean instance trivializes the axiomatized conjecture and mislabels itself as sorry-carrying (da-lean-narrative-divergence, da-vacuous) — the honest open-state is no instance / a sorry instance; (2) the 'computational shortcut / termination is immediate' paragraph asserts an algorithmic equivalence more definitively than the unproven order-match supports (da-overclaim/non-sequitur). referee_argument: 'The conjecture is fine; the Lean axiomatization should not ship a vacuous PUnit instance dressed up as a sorry — fix the docstring and either drop the trivial instance or mark it honestly.'"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

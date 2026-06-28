@@ -913,7 +913,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "isotope-knot.md:23-28 'Markov closures of T_{w_1} and T_{w_2} generally have different Jones polynomials whenever N_1 ≠ N_2'.",
+        "notes": "Hedged with 'generally', but stated as the ground for 'isotopes are different knots'. Distinct Hecke generators in the neutron block do not guarantee distinct Jones polynomials (the Jones polynomial is not a complete invariant and the Markov trace can coincide); the definitional claim 'isotopes are knot-distinct' is therefore not established, only made plausible. Minor due to the 'generally' hedge."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition has genuine content: isotopy = agreement of NF decompositions on the proton block w_{q^Z} with N_1≠N_2; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitted numerical target; structural definition only."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "isotope-knot.md:23-24 section heading 'Two isotopes are knot-distinct' asserted as a fact, supported only by the hedged 'generally ... different Jones polynomials' (md:25-26).",
+        "notes": "A definite heading ('are knot-distinct') over a merely-generic argument; the magnitude of the claim exceeds the 'generally'-hedged support. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameter; w_{\\bar q^N}, w_inter are structural block labels, not tunable constants."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "isotope-knot.md:25-28 'different Jones polynomials whenever N_1≠N_2, since the neutron-quark blocks contribute distinct Hecke generators' — 'distinct Hecke generators' ⇒ 'distinct Jones polynomial' is the missing implication (different generators can yield the same trace).",
+        "notes": "Inference from 'distinct generators' to 'distinct Markov-trace/Jones value' lacks the injectivity lemma. Minor; the surrounding 'generally' softens it."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "isotope-knot.lean:16-18 'def AtomKnot.isIsotope (K₁ K₂ : AtomKnot) := K₁.Z = K₂.Z ∧ K₁.protonBlock = K₂.protonBlock', but AtomKnot is never defined as a structure with Z/protonBlock fields anywhere in content/quantum-observable-universe/lean (grep for 'structure AtomKnot' and 'protonBlock' both return nothing; the only AtomKnot is an abstract Type FIELD inside EquivalenceContext in the sibling IsotopeKnot/equivalence.lean). The .md definition (isotope-knot.md:1-15) requires agreement of full NF block decompositions T_w, which the Lean reduces to bare field equality of an undefined type.",
+        "notes": "Two problems: (1) the Lean as written cannot elaborate — AtomKnot.Z and AtomKnot.protonBlock are projections of a structure that does not exist (no Mathlib import, no QOU.Basic definition found), so the file is not a real resolved declaration; (2) even granting a hypothetical AtomKnot, the Lean isotope relation (Z-equality ∧ protonBlock-equality) is a weaker/different encoding than the .md's full NF-decomposition-agreement statement, which also carries the N_1≠N_2 distinctness and equivalence-relation content. .ts validation:'not_checked' confirms it was never verified."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "isotope-knot.ts cites:[] empty; isotope-knot.lean has no -- Ref:. Nothing to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "isotope-knot.md:8-13 the proton block is written 'identical w_{q^Z}' yet the NF also carries w_{\\bar q^{N_i}}^{(i)} and w_{inter}^{(i)} with superscripts (i) suggesting they may differ; 'agree on the proton-quark block' presumes a canonical block-splitting of T_w that is not uniquely defined in-block. The Lean encodes this as a single 'protonBlock' field, a different granularity.",
+        "notes": "The NF block decomposition is treated as canonical without stating that the proton/neutron/inter split of a normal form is well-defined and basis-independent. Minor; relies on def:unstable-atom and §1 reduction engine."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical value; only the qualitative 12C-stable/14C-unstable analogy (md:36-37), which is illustrative, not a fitted match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The physical analogy (12C stable, 14C not; stability computed per full NF) is consistent with nuclear data and correctly stated as an analogue, not a derived lifetime."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "isotope-knot.lean references AtomKnot.Z / AtomKnot.protonBlock; verification (grep across content/quantum-observable-universe/lean) shows no 'structure AtomKnot' and no 'protonBlock' declaration, so the lean.ref 'qou:QOU.BraidKnot.IsotopeKnot' would not compile as written. isotope-knot.ts validation:'not_checked'.",
+        "notes": "The Lean sibling is not independently reproducible/buildable in the qou package as written (undefined AtomKnot structure + missing protonBlock projection). A reviewer running lake build -R on this module would get an elaboration error. Flagged so the producer (a real AtomKnot structure with Z/protonBlock, or a corrected isotope encoding) can be supplied."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "dc9ea66511a2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-to-major-revision. referee_argument: The narrative definition of isotope-knots (agreement of NF decompositions on the proton block at fixed Z) is sound and useful, and the equivalence-relation/element-class reading is correct. The strongest objection is formal-integrity: the Lean sibling (isotope-knot.lean:16-18) defines isIsotope via K.Z and K.protonBlock on an AtomKnot type that is never declared with those fields anywhere in the qou Lean tree (no 'structure AtomKnot', no 'protonBlock'), so the declaration does not elaborate and is a weaker bare-field-equality encoding of the .md's full NF-agreement claim (da-lean-narrative-divergence, da-reproducibility). Secondary: 'two isotopes are knot-distinct' is asserted as a heading but rests on a 'generally'-hedged, non-injective 'distinct Hecke generators ⇒ distinct Jones polynomial' step (da-non-sequitur). Fix the Lean to reference a real AtomKnot structure (or restate over the EquivalenceContext used by the sibling equivalence.lean) and soften the distinctness heading."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.428Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

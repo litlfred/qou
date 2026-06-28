@@ -915,7 +915,264 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "universal-ilp-algorithm.md:54-59 (instantiation table) asserts confinement selects 𝓑₃=(σ₀σ₁⁻¹)³ at 6 crossings, gluon selects σ₀σ₀ at 2 crossings, electron σ₁⁻¹, molecule inverse-trefoil at 3 crossings. The backing witness computations/universal-ilp.witness.json (assertions array) instead computes confinement=σ₁ (1 crossing), gluon=σ₁ (1 crossing), electron=σ₁⁻¹, H-H bond=σ₁⁻¹ (1 crossing) — i.e. NONE of the multi-crossing operators in the .md table. The .md's claimed ILP outputs (B₃ 6-crossing, σ₀σ₀ 2-crossing, inverse-trefoil 3-crossing) are contradicted by the algorithm's own witness.",
+        "notes": "The definition's worked instantiations directly contradict the producer's recorded outputs. Either the .md table or the witness is wrong; as stated the .md claim that the ILP selects these specific multi-crossing operators is false against its own compute."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "universal-ilp-algorithm.lean:43-48 — theorem `universal_ilp_selects_minimum` has hypothesis `(hmin : K.crossing_number ≤ K'.crossing_number)` and conclusion `K.crossing_number ≤ K'.crossing_number := hmin`. This is `h := h`: it assumes its conclusion verbatim (a tautology), proving nothing about ILP minimum-selection. Additionally gram_matrix (lean:28-29) is defined ≡ 0, making frobenius_positive (lean:32-33) vacuously true (0·x=0≥0).",
+        "notes": "The headline Lean theorem is a self-assuming projection (conclusion = hypothesis). The Gram matrix is the zero matrix per its own docstring (lean:23-26), so the Frobenius positivity constraint — the core of the algorithm — is vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "universal-ilp-algorithm.md:52-59 — the instantiation table fixes the 'expected' operator per level (B₃, σ₀σ₀, σ₁⁻¹, inverse-trefoil) and presents the ILP as 'selecting' them; the algorithm's objective (min crossing, then min |tr_M|) is then narrated as yielding exactly the pre-named physical operators. The witness assertions array compares computed vs 'expected' with expected hard-coded, i.e. the test asserts the algorithm reproduces a chosen answer set.",
+        "notes": "The 'universal' selection is validated against hand-chosen expected operators rather than independently derived ones; mild back-fitting, though the LP machinery is genuine."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "universal-ilp-algorithm.md:1-5 — 'A single integer linear program selects the operator at every level … The same Gram matrix G, the same Frobenius check Gx≥0, and the same ILP are applied to quarks, nucleons, atoms, and molecules.' But (i) the Lean Gram matrix is ≡0 (lean:28) so no real Frobenius check is enforced, and (ii) the witness shows the SAME operator (σ₁ / σ₁⁻¹, 1 crossing) at every level, not the level-distinct operators the .md table advertises. 'Universal' is claimed; the verified content is a trivial constraint.",
+        "notes": "The universality claim is not supported: the formalized constraint is vacuous (G=0) and the witness does not reproduce the table's per-level operators. Conclusion much stronger than the argument/compute supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "universal-ilp-algorithm.md:74-87 — the 'topological constraint upgrades at each level' (Borromean property at L1, Frobenius at L2, 'pe crossing physically determined by EM' at L3, knot at L4). These per-level topological side-constraints are extra, level-specific choices that change which operator the ILP returns; they are not part of the 'single universal ILP' and act as undisclosed degrees of freedom selecting the desired operator.",
+        "notes": "The 'universal' framing hides per-level constraint changes (Borromean / knot / pe-crossing) that are the actual selectors; each is an unstated dof."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "universal-ilp-algorithm.md:40-47 — 'When the state is stable (Gx≥0): any non-trivial knot is a candidate. The LP selects the minimum-crossing one … This is the bond operator.' It does not follow that the minimum-crossing non-trivial knot under a stable state is THE physical bond operator; the inference from 'min-crossing feasible knot' to 'covalent bond' is asserted, not derived.",
+        "notes": "Gap between LP feasibility/optimality and the physical identification of the optimizer as the bond operator."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "universal-ilp-algorithm.md claims a substantive minimum-crossing Frobenius-feasible selection across four levels. universal-ilp-algorithm.lean:43-48 proves only `K.crossing_number ≤ K'.crossing_number → K.crossing_number ≤ K'.crossing_number` (identity), with gram_matrix≡0 (lean:28) and `is_knot`/`is_nontrivial`/`is_knot` as opaque Props. The Lean proves the trivially-implied tautology, not the .md's minimum-selection-with-Frobenius claim. ts validation: not_checked.",
+        "notes": "Lean theorem is vacuously-implied (hmin↦hmin) and the constraint matrix is zero; it does not formalize the narrative's algorithm. proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No external cites[] in .ts and no -- Ref: to a specific result beyond [manuscript] Ch 11; nothing mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "universal-ilp-algorithm.md:19-23 mixes 'ILP' (integer linear program, in the title/intro) with a continuous-looking 'min cr(K) s.t. K∈knots, G·NF(x·K)≥0' that is really a discrete search over knots with a tiebreaker; 'the operator' is selected by min cr then min |tr_M|, but uniqueness of the minimizer is never established ('the unique X' implicitly). 'knots \\ {1}' vs 'braid group element' (line 66-72) gives two different feasible sets at different levels.",
+        "notes": "Feasible set (knots vs braids) changes by level; minimizer uniqueness unstated; 'ILP' vs the actual combinatorial search is loose."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "universal-ilp.witness.json data — tr_M(bond_CC)=2447.01 vs tr_M(bond_HH)=0.436, three+ orders of magnitude apart, both labelled 'σ₁⁻¹, 1 crossing'; the |tr_M| tiebreaker that supposedly distinguishes operators yields wildly scale-dependent values with no error analysis. q used is muon-q₀ (1.1099785955541805).",
+        "notes": "The tr_M tiebreaker values span 0.02–2447 with no normalization/error discussion; selection robustness untested."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "universal-ilp-algorithm.md:54-59 + witness — the .md claims confinement is a 6-crossing Borromean 𝓑₃ and the gluon a 2-crossing σ₀σ₀, but the witness gives confinement=gluon=σ₁ (single crossing). Treating quark confinement, gluon exchange, electron capture, and covalent bonding as outputs of one crossing-minimizing LP with a zero Frobenius matrix is physically unsupported; the claimed operators also disagree between .md and compute, so no consistent physical picture is delivered.",
+        "notes": "Cross-scale unification (QCD confinement ↔ chemical bonding) via one trivial LP is implausible as stated, and the .md/witness operator disagreement means the physical assignment is not even internally consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "witness scriptHash '29a89211a5d1' ≠ current sha256(universal-ilp.py)[:12] '9f46ac4a6b7c'; witness scriptCommitSha '19223afb7d22…' ≠ current git log -1 of the script '7b25fc605812…'. Both staleness markers drift (AGENTS.md idle-policy §4 'Witnesses are stale when scriptCommitSha … or scriptHash drift'). The witness also records different operators than the current .md table, consistent with the producer having changed since the witness was generated.",
+        "notes": "Witness is provably stale on BOTH scriptHash and scriptCommitSha; must be regenerated. The stale witness already contradicts the .md instantiation table."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "dbd028e9bad5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "notes": "verdict: reject-as-stated / major-revision. referee_argument: This 'universal' definition fails on three independent axes. (1) Internal contradiction: the .md instantiation table (B₃ 6-crossing confinement, σ₀σ₀ gluon, inverse-trefoil molecule) is flatly contradicted by its own witness, which computes σ₁/σ₁⁻¹ (1 crossing) at every level. (2) Vacuous formalization: the Lean theorem `universal_ilp_selects_minimum` is `hmin ↦ hmin` (assumes its conclusion) and the Gram matrix is ≡0, so the Frobenius positivity check — the heart of the algorithm — is vacuously true. (3) Stale compute: the witness drifts on both scriptHash and scriptCommitSha. The universality claim is therefore unsupported by both the Lean and the (stale, contradicting) witness. Required: reconcile .md table with a fresh witness, give a non-zero Gram matrix, and prove a non-tautological minimum-selection theorem."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.611Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -1603,7 +1603,249 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-frobenius-reciprocity.md:26-28 boxed formula uses u_i* = y_i* (shadow prices), but Part 2 of the sketch (lines 101-103) silently substitutes x_i* = (G^{-1}u*)_i 'this is exactly the KKT stationarity condition'. KKT stationarity for an LP does NOT give x* = G^{-1}y*; that identity holds only for an equality-constrained quadratic, not the stated LP. The boxed primal/dual reconciliation is asserted, not proved.",
+        "notes": "Not a clean counterexample (the object is well-defined for a fixed active set), but the central identity equating primal coefficients to a Gram-inverse-weighted dual is stated as an established LP fact when it is the non-trivial claim the proposition needs. Borderline false-as-stated; flag as warn pending the missing lemma (see da-non-sequitur)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "The master formula is contentful (Gram inverse + active-set restriction + shadow-price weights); not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Derivation feeds from operator-selection LP + Frobenius Gram matrix into observables; it does not back-fit a target observable value. No smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-frobenius-reciprocity.ts:1 declares kind=proposition with a 'Proof' in .md (lines 80-110 titled 'Sketch of proof'). The .md is an explicit SKETCH ('The proof has two parts', 'this is exactly the KKT stationarity condition' asserted without derivation), and lean.validation='not_checked' (.ts:5). A sketch promoted to proposition with an asserted KKT step overclaims a proved status.",
+        "notes": "The block also claims to 'promote the binding-energy-only statement ... to the entire class of bound-state observables' (lines 53-55) — a generalization presented as established. Either downgrade the proof to a genuine derivation of the primal=G^{-1}y* step or mark the reciprocity-on-active-set identity as conjectural."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No off-menu numerical constant; all quantities (G, y*, active set) trace to the operator-selection LP and Gram matrix in the canonical chain."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-frobenius-reciprocity.md:101-103: 'Substituting x_i* = (G^{-1} u*)_i on the active set A*(T) (this is exactly the KKT stationarity condition for the dualised LP) gives the boxed formula.' This is the load-bearing step and it is asserted, not derived. The KKT conditions of the operator-selection LP do not yield x* = G^{-1}y*; that requires the Frobenius positivity constraint to be active as an equality AND a quadratic objective, neither established here.",
+        "notes": "The 'therefore' from LP duality (Part 2) to the boxed Gram-inverse/shadow-price pairing has a missing lemma identifying the dual variables with the Frobenius-dual coordinates. This is the crux of the whole 'master formula'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-frobenius-reciprocity.ts:5 lean.ref='qou:QOU.ParticleInteractions.confinement_frobenius_reciprocity' with validation='not_checked'. No .lean sibling exists in the block directory (only .md/.ts/.qa.json present per directory listing). The referenced library decl could not be confirmed to exist or to state the boxed formula.",
+        "notes": "Cannot confirm the Lean proves the .md claim; ref is package-qualified but unverified ('not_checked') and no sibling .lean carries the statement. Flag as warn (unverifiable) rather than confirmed divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-frobenius-reciprocity.ts:19 cites=['yekutieli2015','kassel1995']. kassel1995 (Kassel, Quantum Groups) supports the Hecke/Markov-trace Frobenius-form machinery, but the specific 'Frobenius reciprocity on H_n(q) ... ⟨O,T⟩_phys = ⟨O,T^∨⟩' (md:91) and the LP-active KKT reduction are not attributable to Kassel; no citation backs the LP-dual reciprocity step.",
+        "notes": "Citations are topically adjacent but the novel reciprocity-on-active-set result is uncited (it is the paper's own claim). Minor: not a misattribution of a named theorem, but the load-bearing step lacks a source."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-frobenius-reciprocity.md:31 introduces u_i* and immediately equates 'u_i* = y_i*', yet the boxed formula (line 27) and compact form (line 39) use u* as if it were the primal-side weight; the relation between the primal optimum x* (line 4) and u* is never pinned. Base ring / inner-product 〈·,·〉_{A*} on the active subspace is used (line 39) without defining the restriction of G^{-1} to A* vs the inverse of the A*-submatrix of G.",
+        "notes": "'(G^{-1})_{ij} ... on the |A*|-dimensional active subspace' is ambiguous: inverse-then-restrict ≠ restrict-then-invert, and they differ. This ambiguity directly affects the numerical value."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "The proposition is structural; no numerical observable value is asserted in the block itself (g_A is deferred to a corollary + external compute). No precision/anchor claim to stress-test here."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No specific physics magnitude/units claim made in this block; g_A is only named as a ratio instance. Nothing a domain expert would reject at the level of this statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "borromean-axial-coupling.witness.json: scriptHash 909b6880c58d MATCHES current computations/borromean-axial-coupling.py content, but scriptCommitSha '4cd856a121b359db0e954a1de30d88408718d93e' drifts from current git log -1 of the script (7b25fc605812...). Witness allPassed=true.",
+        "notes": "Content-fresh (hash matches) but commit-stale metadata; a no-op content change committed after the witness ran. Minor drift — re-stamp scriptCommitSha. The block's computation status='verified' (.ts:24) is consistent with allPassed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5d9443ba594b",
+          "ts": "df4bb4662490"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict=major-revision. Strongest objection: the boxed 'master formula' rests on the asserted identity x* = G^{-1}y* (md:101-103) presented as 'exactly the KKT stationarity condition', which it is not for the stated LP; combined with kind=proposition + a self-described 'Sketch of proof' + lean validation='not_checked'.",
+        "notes": "referee_argument: A referee would not accept a proposition whose central reciprocity step (primal coefficients = Gram-inverse-weighted dual shadow prices) is asserted via a hand-wave to KKT. Demote to conjecture, or supply the missing lemma identifying LP dual variables with Frobenius-dual coordinates on the active subspace, and resolve the inverse-then-restrict vs restrict-then-invert ambiguity. Compute backing is sound and fresh; the gap is in the proof, not the numerics."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }
