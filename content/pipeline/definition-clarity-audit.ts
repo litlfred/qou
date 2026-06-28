@@ -85,7 +85,14 @@
  *   clarity-defterm-bold   clarity-defn-single
  *   clarity-defn-tight     clarity-stmt-tight
  *   clarity-stmt-pure      clarity-grad-style
- *   clarity-defn-misplaced
+ *   clarity-rhetorical-header   clarity-defn-misplaced
+ *
+ *   clarity-rhetorical-header (every prose-bearing kind) — a section header
+ *       must read in noun-phrase academic register; rhetorical-question
+ *       headers ("Why genus 4?", "What the picture was") and colloquial
+ *       framing ("Consequence.", "The upshot.", "Why this matters") are
+ *       flagged for rewording (the content may stay). Owner directive
+ *       2026-06-27.
  *
  * @module content/pipeline/definition-clarity-audit
  */
@@ -212,6 +219,7 @@ const CRITERIA = [
   "clarity-stmt-tight",
   "clarity-stmt-pure",
   "clarity-grad-style",
+  "clarity-rhetorical-header",
   "clarity-defn-misplaced",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
@@ -339,6 +347,40 @@ function boldHeaders(md: string): string[] {
   let m: RegExpExecArray | null;
   while ((m = re.exec(md))) out.push(m[2].trim());
   return out;
+}
+
+/** ATX markdown headers (`## …`, `### …`, …) — used alongside boldHeaders so
+ *  the rhetorical-header check sees both section-header styles in this corpus. */
+function atxHeaders(md: string): string[] {
+  const out: string[] = [];
+  const re = /^#{2,6}\s+(.+?)\s*$/gm;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(md))) out.push(m[1].trim());
+  return out;
+}
+
+/** all section-header texts (bold + ATX), deduped by trimmed text. */
+function sectionHeaders(md: string): string[] {
+  return [...new Set([...boldHeaders(md), ...atxHeaders(md)])];
+}
+
+// --- clarity-rhetorical-header detectors -----------------------------------
+
+/** a header whose phrasing is rhetorical/colloquial rather than the noun-phrase
+ *  register of a graduate-level formal-math text. Owner directive (2026-06-27):
+ *  "Why…?" / "Consequence." style headers are not appropriate for one-voice
+ *  academic; they should be reworded (the content may stay). */
+function rhetoricalHeaderKind(h: string): "question" | "colloquial" | null {
+  // strip a trailing bold/emphasis and surrounding punctuation for matching
+  const t = h.replace(/[*_`]/g, "").trim();
+  // (1) rhetorical question — ends with "?", or opens with an interrogative.
+  if (/\?\s*$/.test(t)) return "question";
+  if (/^(why|what|how|when|where|which|who|whose|whom|whence|wherefore|isn'?t|aren'?t|does|do|can|could|should|would)\b/i.test(t))
+    return "question";
+  // (2) colloquial / rhetorical framing words used as a section header.
+  if (/^(consequence[s]?|the upshot|upshot|so what|takeaway|take-?away|bottom line|the point|the moral|moral of|what this means|why it matters|why this matters|the big picture|in a nutshell|the takeaway)\b/i.test(t))
+    return "colloquial";
+  return null;
 }
 
 /** every bold/defterm span inner text (for term-marking detection). */
@@ -668,6 +710,33 @@ function checkGradStyle(b: Block): Finding {
   return base;
 }
 
+function checkRhetoricalHeader(b: Block): Finding {
+  const base = mkFinding(b, "clarity-rhetorical-header");
+  const headers = sectionHeaders(b.md);
+  const flagged: { h: string; kind: "question" | "colloquial" }[] = [];
+  for (const h of headers) {
+    const k = rhetoricalHeaderKind(h);
+    if (k) flagged.push({ h, kind: k });
+  }
+  const questions = flagged.filter((f) => f.kind === "question");
+  base.metrics = {
+    headers: headers.length,
+    rhetoricalQuestions: questions.length,
+    colloquial: flagged.length - questions.length,
+  };
+  if (flagged.length) {
+    base.result = "fail";
+    // a rhetorical *question* header is the clearer violation → major.
+    base.severity = questions.length >= 1 ? "major" : "minor";
+    const show = flagged.slice(0, 4).map((f) => `"${f.h.slice(0, 50)}"`).join(", ");
+    base.evidence = `${flagged.length} rhetorical/colloquial section-header${flagged.length === 1 ? "" : "s"} (${show}) — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay`;
+  } else {
+    base.result = "pass";
+    base.evidence = "section headers in academic register";
+  }
+  return base;
+}
+
 function checkDefnMisplaced(b: Block): Finding {
   const base = mkFinding(b, "clarity-defn-misplaced");
   // Glossary blocks legitimately define terminology — exempt.
@@ -783,6 +852,9 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
   }
   if (PROSE_KINDS.includes(b.kind) && want("clarity-grad-style")) {
     out.push(checkGradStyle(b));
+  }
+  if (PROSE_KINDS.includes(b.kind) && want("clarity-rhetorical-header")) {
+    out.push(checkRhetoricalHeader(b));
   }
   if (!MISPLACE_SKIP.includes(b.kind) && want("clarity-defn-misplaced")) {
     out.push(checkDefnMisplaced(b));

@@ -27,7 +27,7 @@ description: >-
 A content block can be **schema-clean, ref-resolving, Lean-backed** and still be
 hard to read. The four QA axes that already exist guard *correctness* and
 *voice*; none guards **clarity of the statement itself**. This skill adds that
-axis — `clarity` — with seven audit parameters (four definition/statement
+axis — `clarity` — with eight audit parameters (four definition/statement
 forward checks + the purity + register checks + one inverse check).
 
 The owner's framing (2026-06-26):
@@ -40,10 +40,10 @@ The owner's framing (2026-06-26):
 > remarks or interpretation in them — it should be a follow-on remark… [each
 > content block should follow the] style of a graduate-level formal math book.*
 
-## The seven audit parameters (criterion ids)
+## The eight audit parameters (criterion ids)
 
 The first four are **forward** checks on blocks that *are* definitions/statements;
-`clarity-stmt-pure` and `clarity-grad-style` are two further forward checks; the
+`clarity-stmt-pure`, `clarity-grad-style`, and `clarity-rhetorical-header` are three further forward checks; the
 last is the **inverse** — a definition hiding in the wrong block kind.
 
 | Criterion | Applies to | Passes when | Fails when |
@@ -54,6 +54,7 @@ last is the **inverse** — a definition hiding in the wrong block kind.
 | **`clarity-stmt-tight`** | `theorem` / `proposition` / `lemma` / `corollary` | the claim is stated tightly | the statement rambles. Proofs live in separate `*-proof` blocks in this corpus, so a provable block is *just* its statement and should not ramble |
 | **`clarity-stmt-pure`** | `theorem` / `proposition` / `lemma` / `corollary` / `conjecture` | the block carries **only the claim** — hypotheses + conclusion | the statement embeds **remark / interpretation / motivation** prose — an interpretive sub-section (`**Physical meaning.**`, `**Interpretation.**`, `**Remark.**` → **major**) or interpretive lead-ins ("intuitively", "in other words", "physically", "this means that" → **minor**/**major**). Such commentary belongs in a *follow-on* `remark` block (`interprets:` the statement) |
 | **`clarity-grad-style`** | every prose-bearing kind (definition / statement / conjecture / example / remark / prose) | the prose reads in the register of a **graduate-level formal mathematics text** | informal register: contractions ("don't", "we'll", "let's"), second-person ("you"), hype adjectives ("remarkable", "beautiful", "elegant"), colloquialism ("basically", "a lot of", "of course"), exclamation marks, or emoji. An emoji or `!` is on its own a hard violation (→ **major**) |
+| **`clarity-rhetorical-header`** | every prose-bearing kind | every section header (bold `**…**` or ATX `## …`) reads in **noun-phrase academic register** | a header is a **rhetorical question** (ends with `?`, or opens with Why/What/How/When/Where/… → **major**) or **colloquial framing** (`Consequence.`, `The upshot.`, `Why this matters`, `What X actually was` → **minor**). Owner directive 2026-06-27: such headers are not graduate-academic; reword to a noun phrase (`Why genus 4?` → `The genus-4 selection.`; `Consequence.` → `Corollary.`). The *content* may stay — only the header changes |
 | **`clarity-defn-misplaced`** | **non-**`definition` kinds (remark, prose, theorem, conjecture, example, …) | the block carries no definition — no `defines[]`, no `:defterm[…]`, few defining verbs | the block secretly **is** a definition: it declares `defines[]` or marks a `:defterm[…]{#slug}` define-site (→ **major**), or leads in with ≥ 2 defining verbs (→ **minor**). **Glossary blocks** (tag `"glossary"`) are exempt (`n/a`) — they define terminology by design |
 
 ### Worked example — `def:q-dilogarithm`
@@ -187,6 +188,7 @@ heuristics are deliberately high-recall. For a durable disposition the agent:
 | `clarity-stmt-tight` | strip preamble from the statement block; the hypotheses + conclusion only. Motivation → a preceding `prose` block; consequences → a following `remark`. |
 | `clarity-stmt-pure` | cut the interpretive sub-section / lead-in from the statement block and re-home it as a **follow-on `remark`** block (`interprets: "<this label>"`), per `AGENTS.md §3a`. The provable/conjectural block keeps only its hypotheses + conclusion; the physical / geometric / intuition prose lives in the remark. (A `conjecture` may keep a short scope caveat that is *part of the claim*; what moves is *interpretation*, not the conditional banner.) |
 | `clarity-grad-style` | rewrite to the formal register: spell out contractions, drop second-person address (impersonal "one" / passive), delete hype adjectives, replace colloquialisms, remove `!`/emoji (a results-table `✓`/`✗` becomes prose or is dropped). Overlaps `one-voice-audit` Category B/E (AI-slop / emoji) — if a one-voice sidecar already flagged the same emoji, fix once. |
+| `clarity-rhetorical-header` | reword the header to a noun phrase in academic register; keep the body. `Why X is canonical.` → `Canonicity of X.`; `Why genus 4?` → `The genus-4 selection.`; `What the ML picture was.` → `Relation to the Mittag-Leffler picture.`; `Consequence.` → `Corollary.` (or fold the consequence into the preceding text / promote to its own `corollary` block). Pairs with the `clarity-stmt-pure` fix when the rhetorical header also fronts embedded interpretation. |
 | `clarity-defn-misplaced` | promote the hidden definition to its own `definition` block (with a `.lean` sibling, per the type system); leave behind a `remark`/`prose` that `uses:` (or `interprets:`) it. Move the `defines[]` entry and the `:defterm[…]` site to the new block. If the block legitimately defines terminology as a Mathlib wrapper, retag it `"glossary"` instead. |
 
 > **Content fixes are collaborator-level and graph-aware.** Splitting a block
@@ -222,7 +224,7 @@ heuristics are deliberately high-recall. For a durable disposition the agent:
 ## Registry note (folio-assistant companion)
 
 The canonical qa-sweep criterion registry lives in the external
-`litlfred/folio-assistant` repo (qou is content-only). Registering the seven
+`litlfred/folio-assistant` repo (qou is content-only). Registering the eight
 `clarity-*` ids there — so `qa-sweep.ts` / `qa-staleness.ts` schedule and
 hash-track them like every other criterion — is a **companion change out of qou
 scope**. Until it lands, this scanner is **standalone**: it produces the
