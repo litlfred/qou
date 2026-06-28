@@ -1,51 +1,40 @@
 ---
 # vtf0
-title: 'Agent-inspect + fix the 38 needs-agent vacuity candidates (true-class-field tranche + cluster-7 leftovers)'
+title: 'Fix the 2 remaining needs-agent vacuity candidates (brings-surface BorromeanQuark, pre-existing file breakage)'
 status: open
 type: task
-priority: high
+priority: normal
 created_at: 2026-06-28T02:00:00Z
-updated_at: 2026-06-28T02:00:00Z
+updated_at: 2026-06-28T03:30:00Z
 ---
 
-Newly surfaced by the upgraded vacuity heuristics (PR #2881): the
-`true-class-field` detector flags `class`/`structure` fields typed literally
-`: True` (the field-level analogue of a `: True` conclusion — §3b-tax "the
-carrier must assert something"). **36** un-annotated `: True` carrier fields
-remain (16 honest opaque-markers are already exempt), plus **2 cluster-7
-leftovers** deferred because compile-verification was cache-blocked this session.
+The `true-class-field` tranche surfaced by the upgraded heuristics (PR #2881) is
+**34/36 resolved** (the tranche-2 swarm encoded real `: True`-field content or
+honest `opaque marker` annotations, all `lake env lean` exit 0). Only **2**
+candidates remain `needs-agent` in the ledger
+([`docs/audits/lean-vacuity-review-ledger.json`](docs/audits/lean-vacuity-review-ledger.json)):
 
-**Work queue is the committed ledger:**
-[`docs/audits/lean-vacuity-review-ledger.json`](docs/audits/lean-vacuity-review-ledger.json)
-— every entry with `verdict: "needs-agent"`. Skill + protocol:
-[`.claude/skills/local/lean-proof-vacuity-audit.md` §Agent-inspection ledger](.claude/skills/local/lean-proof-vacuity-audit.md).
+- `brings-surface/orbital-fourier-decomposition.lean` :: `BorromeanQuark`
+- `brings-surface/orbital-space-normal-bundle.lean` :: `BorromeanQuark`
 
-**Lean verification IS available** — the on-disk Mathlib cache is intact;
-`lake env lean <file>` from `content/quantum-observable-universe/lean` compiles a
-single file fast. Do NOT `lake build` (rebuilds from source, wipes oleans). The
-earlier "cache-blocked" scare was one file's bad import (`Mathlib.Tactic.Omega`
-— no such module at the pinned rev; `omega` is a Lean core tactic), now fixed.
-Verify every edit `lean`-direct before committing; do NOT ship unverified Lean.
+The `BorromeanQuark` content fix itself is straightforward (mirror the canonical
+`observations/borromean-quark.lean` class — `borromean_volume`, `bare_mass`,
+`volume_calibrates_mass`). The blocker is **pre-existing, vacuity-unrelated file
+breakage**: both files have **zero / broken imports**
+(`Mathlib.LinearAlgebra.Dimension`), a stray `noncomputable section`, and
+commented-out signatures leaving orphaned proof bodies, so they do not compile
+standalone — which is why the fix was reverted rather than shipped unverified.
 
-**Per candidate (agent inspection, then fix):**
-1. **Genuine §3b-tax defect** — un-annotated `: True` field, especially a
-   `Conjectures/*` carrier that a trivial `instance … := ⟨⟩` "closes"
-   (e.g. `MagicNumbersBring`, `QuantumLanglandsDual`, `WeakSpectralCompleteness`,
-   `ShellTransitionKnot`, `KnotFactorFrobeniusPairing`). Fix: encode the real
-   property as the field type (Pattern A/B), or remove the fabricated instance
-   and leave the carrier content-bearing with **no** instance (honest open state).
-2. **Honest open infrastructure** Mathlib genuinely lacks (e.g. the KLR /
-   Kashiwara / Hecke-`H_n(q)` scaffolds) — annotate the field `opaque marker`
-   so it becomes exempt-but-tracked (do NOT fabricate content).
-3. Then write the verdict into the ledger and verify `--check-ledger` passes.
+**Do this (a working Lean cache is available — `lake env lean <file>`):**
+1. Repair each file's structural breakage (real imports; remove the stray
+   `section`; reattach or delete the orphaned proof bodies) so it compiles.
+2. Encode `BorromeanQuark`'s real content (mirror the canonical class); no
+   fabricated instance (honest open state).
+3. Consider whether these are §0a shadow-stub orphans — if the `.ts` `lean.ref`
+   resolves to the canonical library `BorromeanQuark`, the local duplicate may
+   simply be deleted instead (check the ref first).
+4. Verify `lake env lean` exit 0, then `--check-ledger` must exit 0.
 
-**Done when:** every `needs-agent` entry has a fresh agent verdict
-(`genuine`-fixed / `legit` / `advisory`-fixed) whose `.lean` sha matches, and
-`bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe --check-ledger docs/audits/lean-vacuity-review-ledger.json`
-exits 0. Commit + push to a fresh `claude/<theme>-<ymd>` branch.
-
-Also re-verify the 3 cache-blocked cluster-7 items once the cache is back:
-`q-heat-kernel-peter-weyl.lean:82` (the pattern-C `: Prop` rewrite was reverted —
-the agent edit had an unbalanced `end`; redo it), `MassGapKeystone.lean:204`
-(false-premise — likely legit), `Knots/KauffmanTL3.lean:267`
-(`borromean_crossing_minimal` native_decide → try `decide`).
+**Done when:** both entries carry a fresh `genuine`/`legit` verdict (sha-matched)
+and `bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe --check-ledger docs/audits/lean-vacuity-review-ledger.json`
+exits 0. Commit + push.

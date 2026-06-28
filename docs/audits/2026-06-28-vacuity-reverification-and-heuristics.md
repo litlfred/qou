@@ -84,3 +84,36 @@ The **38 `needs-agent`** candidates (true-field tranche + cluster-7 leftovers)
 are therefore deferred to bean **`vtf0`** — they need a working Lean cache so an
 agent can fix-and-verify rather than ship unverifiable edits. The ledger is the
 work queue; `--check-ledger` is the gate.
+
+## 5. Tranche-2 update — the true-field tranche fixed (supersedes §4)
+
+§4 above said verification was "cache-blocked" and the 38 `needs-agent`
+candidates were deferred. **Both turned out wrong/now-resolved:**
+
+- **Verification was never blocked** — the on-disk Mathlib cache is intact
+  (3099 oleans; `lake env lean <file>` works). The scare was a single file's
+  bad `import Mathlib.Tactic.Omega` (no such module at the pinned rev; `omega`
+  is a Lean *core* tactic), fixed alongside `composite-crossing-parity.lean`'s
+  other never-compiled breakage (false constant `helium 56→54`; two nonlinear
+  `omega` core proofs genuinely proved).
+- **A 7-agent tranche-2 swarm fixed the tranche**, every edit `lake env lean`
+  exit 0. Full-tree audit fell **64 → 10** candidates:
+  - **34/36** `true-class-field` carriers resolved — `: True` fields replaced
+    with the real claim-shaped content (mass-defect factorisations, quantum-torus
+    `uv = q·vu`, Bloch-Wigner regulators, Cl₂ pentagon, sign-rep antisymmetry,
+    the `Conjectures/*` carriers whose fabricated trivial `instance` was removed,
+    …), or honest `opaque marker` annotations where Mathlib lacks the infra
+    (Bloch group, Kashiwara crystal, Iwahori–Hecke trace).
+  - **8 `legit`** (recorded in the ledger with agent evidence): 7 honest-negative
+    false-premise proofs + `KauffmanTL3.borromean_crossing_minimal`
+    (`native_decide` kept — `decide` times out at 590s on ~1365 Jones-bracket
+    computations; documented axioms + Python oracle).
+  - **2 `needs-agent`** remain — the `brings-surface/orbital-*` `BorromeanQuark`
+    carriers, blocked by **pre-existing, vacuity-unrelated** file breakage
+    (zero/broken imports, orphaned proof bodies). Deferred (not shipped
+    unverified) to bean `vtf0`; the ledger gate stays red on exactly these two,
+    which is accurate.
+
+Several files additionally had pre-existing standalone-compile breakage repaired
+in passing (removed-in-Lean4 `constant`, renamed Mathlib lemmas, over-purged
+decl bodies, markdown-as-code) so the changed files verify.
