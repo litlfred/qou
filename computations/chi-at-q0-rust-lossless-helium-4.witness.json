@@ -30,5 +30,7 @@
     "n_partitions": 77,
     "tr_M_at_q0": "0.88561640150646835082823112792182169011355641811642",
     "cache_path": "/home/user/qou/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json"
-  }
+  },
+  "convention": "sign-only-crossings",
+  "convention_inferred_by": "chi_convention_audit.py --fix (producer:chi_4he_via_rust_lossless.py)"
 }

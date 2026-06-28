@@ -43,5 +43,7 @@
       }
     ],
     "total_time_sec": 0.08
-  }
+  },
+  "convention": "sign-only-crossings",
+  "convention_inferred_by": "chi_convention_audit.py --fix (producer:chi_via_rust_lossless.py)"
 }
