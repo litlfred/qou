@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:gram-determinant-plancherel-ratio",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio-proof.md"
+  },
+  "source_hashes": {
+    "md": "5cde9c3b23f3",
+    "ts": "d1483fb28366"
+  },
+  "criteria": {
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "5cde9c3b23f3",
+          "ts": "d1483fb28366"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "Gram matrix of Markov pairing expression is standard.",
+        "notes": "No obvious defects or overfitting found in this short proof block."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:55:43.946Z"
+}

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
-    "md": "cb0d32b3aa0f",
+    "md": "b228f7a7c59d",
     "ts": "a7c34f50136e",
     "lean": "039419ccded8"
   },
@@ -601,7 +601,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
+        "evidence": "quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -622,7 +622,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1809,6 +1809,24 @@
         "notes": "Physical dimensions and units in 'prop:zeta8-witness-level2-su2' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "Mathematical identities checked out for q=zeta_8.",
+        "notes": "The algebraic evaluation of the Wenzl projector at 8th root of unity and order of elements is mathematically sound."
       }
     ],
     "da-reproducibility": [
@@ -1851,5 +1869,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

@@ -849,6 +849,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-false-claim": [
@@ -883,6 +900,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-vacuous": [
@@ -916,6 +950,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-circular": [
@@ -950,6 +1001,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-overclaim": [
@@ -983,6 +1051,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The block claims a direct equivalence between a physical macroscopic mass and the evaluation of a knot polynomial (m_K \u0007pprox m_0 \\cdot |P_K(q_0)|). da-overclaim is triggered by using arbitrary parameters m_0 and q_0 to map an abstract topological invariant to physical data, indicating numerology.",
+        "notes": "Extreme numerology."
       }
     ],
     "da-hidden-dof": [
@@ -1017,6 +1102,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The block claims a direct equivalence between a physical macroscopic mass and the evaluation of a knot polynomial (m_K \u0007pprox m_0 \\cdot |P_K(q_0)|). da-hidden-dof is triggered by using arbitrary parameters m_0 and q_0 to map an abstract topological invariant to physical data, indicating numerology.",
+        "notes": "Extreme numerology."
       }
     ],
     "da-non-sequitur": [
@@ -1051,6 +1153,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1084,6 +1203,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-citation-misuse": [
@@ -1118,6 +1254,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1152,6 +1305,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-empirical-fragility": [
@@ -1186,6 +1356,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-physical-implausibility": [
@@ -1220,6 +1407,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The block claims a direct equivalence between a physical macroscopic mass and the evaluation of a knot polynomial (m_K \u0007pprox m_0 \\cdot |P_K(q_0)|). da-physical-implausibility is triggered by using arbitrary parameters m_0 and q_0 to map an abstract topological invariant to physical data, indicating numerology.",
+        "notes": "Extreme numerology."
       }
     ],
     "da-reproducibility": [
@@ -1254,6 +1458,23 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
       }
     ],
     "da-referee-verdict": [
@@ -1289,8 +1510,25 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "5f71434d1599",
+          "ts": "fbf2cb843960"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The block claims a direct equivalence between a physical macroscopic mass and the evaluation of a knot polynomial (m_K \u0007pprox m_0 \\cdot |P_K(q_0)|). da-referee-verdict is triggered by using arbitrary parameters m_0 and q_0 to map an abstract topological invariant to physical data, indicating numerology.",
+        "notes": "Extreme numerology."
       }
     ]
   },
-  "updated_at": "2026-06-28T22:44:56.705Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

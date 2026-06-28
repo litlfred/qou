@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/torus-knot-zero-volume-via-reeb.md"
   },
   "source_hashes": {
-    "md": "771cb71ddea9",
+    "md": "1c65a5a5cbb8",
     "ts": "6ea8d30b77ee"
   },
   "criteria": {
@@ -1040,6 +1040,23 @@
         "notes": "The physical concepts described in 'Torus-knot trajectories have zero hyperbolic volume via Reeb' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/torus-knot-zero-volume-via-reeb.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "1c65a5a5cbb8",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "Claims that 'torus-knot nucleons contribute zero V_hyp' as part of 'mass-volume factorization'.",
+        "notes": "If mass is derived from hyperbolic volume, this implies nucleons have zero mass. Nucleons account for ~938 MeV each (nearly all visible mass). A claim yielding exactly zero mass for them is a catastrophic physical contradiction."
       }
     ],
     "da-reproducibility": [
@@ -1082,5 +1099,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:51.008Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

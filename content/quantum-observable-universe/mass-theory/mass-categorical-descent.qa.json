@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/mass-categorical-descent.md"
   },
   "source_hashes": {
-    "md": "cd956a6d456f",
+    "md": "3fc5e0c9d854",
     "ts": "94fe9fa2e8c6"
   },
   "criteria": {
@@ -1671,6 +1671,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5e0c9d854",
+          "ts": "94fe9fa2e8c6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "Table mapping Bethe-Weizsäcker terms (Volume, Pairing, Wigner, Surface, Coulomb, Exchange, Shell, Hook) to Casimir levels and blow-up loci.",
+        "notes": "Severe post-hoc rationalization. Mapping macroscopic empirical droplet model terms perfectly to algebraic representation theory constructs is highly suspicious."
       }
     ],
     "da-hidden-dof": [
@@ -1836,5 +1853,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:50.837Z"
+  "updated_at": "2026-06-28T22:55:43.946Z"
 }

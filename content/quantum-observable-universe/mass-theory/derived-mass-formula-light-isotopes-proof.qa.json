@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:derived-mass-formula-light-isotopes",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes-proof.md"
+  },
+  "source_hashes": {
+    "md": "715054b6169e",
+    "ts": "d6b272a0edb6"
+  },
+  "criteria": {
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "715054b6169e",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "Closed-form patches... involve a discrete choice between several algebraically-natural variants — hence is technically fitted (model selection).",
+        "notes": "Although acknowledged, the model selection introduces hidden degrees of freedom."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:55:43.946Z"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:knot-factor-shell-closed",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/knot-factor-shell-closed-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/knot-factor-shell-closed-proof.md"
+  },
+  "source_hashes": {
+    "md": "22fb3442cd34",
+    "ts": "ac025a8ba0e0"
+  },
+  "criteria": {
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "22fb3442cd34",
+          "ts": "ac025a8ba0e0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "The application section claims ${}^{56}\\mathrm{Fe}$ and ${}^{208}\\mathrm{Pb}$ 'sit in this regime' of Z = N even-even. This is a false claim in basic nuclear physics: ${}^{56}\\mathrm{Fe}$ has Z=26, N=30, and ${}^{208}\\mathrm{Pb}$ has Z=82, N=126. They are not Z=N.",
+        "notes": "Elementary physics error."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:55:43.946Z"
+}
