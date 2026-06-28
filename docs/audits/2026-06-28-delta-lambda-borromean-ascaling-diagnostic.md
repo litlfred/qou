@@ -87,6 +87,54 @@ lifts the ~0.4 MeV per-pair toward the saturated nuclear scale — exactly z2bn'
 `R(q,x)`) **plus shell/magic structure** for the ⁴He-type dips. Neither pure
 all-pairs nor pure adjacent is the right combinatorics.
 
+## The bulk is EXTENSIVE (A-linear), not the A² pair tower — and q-Askey says why
+
+Quantifying the ⁴He magic dip resolves the whole A-scaling. Compare the tower's
+A² pair structure to the **extensive** shell term `2·m_e·8G` per nucleon
+(`8G = Vol(L6a4)`, the Borromean shell residue, ≈ **7.49 MeV/nucleon** ≈ the
+empirical ~8):
+
+| iso | A | tower net/target (A²) | extensive net/target (A·8G) |
+|-----|--:|--:|--:|
+| ⁴He | 4 | 0.226 | **1.059** |
+| ¹²C | 12 | 0.354 | 0.975 |
+| ¹⁶O | 16 | 0.440 | 0.939 |
+| ⁴⁰Ca | 40 | 1.004 | 0.876 |
+| ⁵⁶Fe | 56 | 1.392 | 0.852 |
+
+The extensive A-linear form gives net/target **0.85–1.06 for A≥4 (spread 1.65×)**
+— far flatter than the tower's **6.17×**. So **the bulk nuclear binding is
+extensive (A-linear, a per-nucleon shell residue), NOT a q-deformed pair sum.**
+The ⁴He "dip" is the tower missing ~23.6 MeV (83 %) of extensive bulk binding.
+(The residual heavy under-bind of the flat form — ⁵⁶Fe 0.85 — is the
+liquid-drop surface `~A^{2/3}` + Coulomb `~Z²/A^{1/3}` corrections, expected.)
+
+**q-Askey connection (answers "can q-Askey polys help?", grounded in today's
+[`q-askey-scheme-qclt-wlambda-applicability.md`](2026-06-28-q-askey-scheme-qclt-wlambda-applicability.md)).**
+The tower's `C(A,2)~A²` pair scaling **is** the **q-Gaussian obstruction**: the
+Bożejko–Speicher even moments `Σ_{π} q₀^{cr(π)} ≥ q₀^{C(n,2)} = exp(Θ(n²))`
+diverge super-exponentially at `q₀>1`
+([`prop:q-gaussian-obstruction-at-q0`](../../content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.md)).
+So the per-braid pair tower over-binds heavy nuclei for the **same proved
+reason** the q-Gaussian fails to exist at the substrate — the A² crossing-sum is
+the obstructed object. The honest q-Askey verdict for binding:
+
+- **q-Askey kernels (Hahn–Exton q-Bessel, continuous q-Hermite/Rogers–Szegő) are
+  the FIBRE per-λ binding kernel** (`|q|≤1`, via the bar involution `q₀↔1/q₀`) —
+  exactly z2bn's `R(q,x)` / `BindingQBesselKernel.lean`. They **organize** the
+  per-λ magnitude.
+- **They are NOT the A-scaling bulk.** The bulk is the extensive A-linear `8G`
+  shell residue; trying to carry it with a q-deformed pair sum hits the
+  q-Gaussian wall at `q₀>1`. q-Askey is a *fibre-kernel* lens, not a closure of
+  the A-scaling (consistent with today's audit: "helps by organizing… does not
+  close GAP 3 or GAP 5").
+
+**Net for the lever map:** closure = **extensive bulk (A-linear 8G) + a fibre
+q-Askey per-λ kernel (z2bn R(q,x), the magnitude shape) + liquid-drop
+surface/Coulomb corrections** — three pieces. The per-braid A² pair tower is
+**none** of them as the bulk; it is at most a small fibre-level correction, and
+its A² scaling is the obstructed direction.
+
 ## Conclusion (scope (a))
 
 The Borromean per-braid Li₂^q tower is a **genuine magnitude-side lever** for the
