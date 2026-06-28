@@ -44,26 +44,36 @@ namespace QOU.BraidKnot.SixTermPerDerivationWeights
     proofs that quote the assembly. -/
 opaque binding_assembly (Z N : Nat) : Float
 
-/-- Reference theorem (statement-only): the per-derivation
-    assembly recovers AME atomic mass to sub-percent accuracy
-    across the proton..⁹Be spectrum.  Concrete bound is
-    `0.0053` (= 0.53 %, the empirical max from the A ≤ 9
-    sweep).  Empirical theorem; no Lean proof attempted.
+/-- The genuinely-open empirical inputs for the sub-percent
+    accuracy claim: for an isotope `(Z, N)`, the per-derivation
+    assembled atomic mass `assembled_mass` and the measured AME
+    atomic mass `measured_mass` (both in MeV, `measured_mass > 0`).
+    A categorical derivation of these from the substrate is open;
+    they are carried as hypotheses (pattern C), not asserted. -/
+class SixTermAssemblyData where
+  /-- The per-derivation assembled atomic mass (MeV). -/
+  assembled_mass : Nat → Nat → ℝ
+  /-- The measured AME atomic mass (MeV). -/
+  measured_mass : Nat → Nat → ℝ
+  /-- Measured masses are positive. -/
+  measured_pos : ∀ Z N, 0 < measured_mass Z N
 
-    Ref: paper_six_term_isotope_sweep.py
-         (assemble_per_derivation_weights)
-    Ref: docs/audits/2026-05-04-per-derivation-weights-result.md
--/
-def binding_assembly_subpercent
-    (Z N : Nat) (hA : Z + N ≤ 9)
-    : True := by
-  -- Empirical statement; numerical witness is in the audit doc.
-  -- A genuine Lean proof would require formalising:
-  --   1. atom_per_generator_volumes ⟶ Lean
-  --   2. Li_2^q symmetric q-dilog series
-  --   3. The Kashaev integration identity
-  --   4. CODATA constants
-  -- All of which are out of scope of this stub.
-  trivial
+/-- **Six-term per-derivation weights — sub-percent accuracy.**
+
+Names (pattern C of the vacuity-fix playbook) the conditional
+conjecture that, across the proton..⁹Be spectrum (`A = Z + N ≤ 9`),
+the per-derivation assembly recovers the AME atomic mass to within
+the empirical max relative error `0.0053` (= 0.53 %, from the
+`A ≤ 9` sweep).  This is a *proposition* — honestly named, not a
+vacuous `: True := trivial`: the mass data live on
+`[SixTermAssemblyData]`, and an instance discharging the bound is
+the open empirical claim (none = honest open state).
+
+Ref: paper_six_term_isotope_sweep.py (assemble_per_derivation_weights)
+Ref: docs/audits/2026-05-04-per-derivation-weights-result.md -/
+-- Ref: [manuscript] prop:six-term-per-derivation-weights
+def binding_assembly_subpercent [data : SixTermAssemblyData]
+    (Z N : Nat) (_hA : Z + N ≤ 9) : Prop :=
+    |data.assembled_mass Z N - data.measured_mass Z N| / data.measured_mass Z N ≤ 0.0053
 
 end QOU.BraidKnot.SixTermPerDerivationWeights
