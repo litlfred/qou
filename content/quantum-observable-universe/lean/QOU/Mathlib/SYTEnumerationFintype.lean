@@ -459,4 +459,96 @@ theorem entryFn_sytToList (l : List ℕ) (e : ℕ → ℕ → ℕ) (i j : ℕ) (
   rw [hrow, getD_of_lt _ (by rw [List.length_map, List.length_range]; exact hj)]
   rw [List.getElem_map, List.getElem_range]
 
+/-! ### Reverse: building `isStdFilling` from entry-level row/column strictness -/
+
+/-- Row `i` of `chunk l a` is `[entry i 0, …, entry i (l[i]-1)]` (given `a.length = ∑l`). -/
+theorem chunk_row_eq_map (l a : List ℕ) (i : ℕ) (hi : i < l.length) (hlen : a.length = l.sum) :
+    (chunk l a).getD i [] = (List.range (l[i]'hi)).map (entryFn l a i) := by
+  apply List.ext_getElem
+  · rw [chunk_row_length l a i hi hlen, List.length_map, List.length_range]
+  · intro k hk1 _
+    rw [chunk_row_length l a i hi hlen] at hk1
+    rw [List.getElem_map, List.getElem_range, entryFn_eq_row_getElem l a i k hi hk1 hlen]
+
+/-- `(range n).map f` is `strictInc` when `f` is strictly monotone on `[0,n)`. -/
+theorem strictInc_map_range (n : ℕ) (f : ℕ → ℕ)
+    (hf : ∀ j1 j2, j1 < j2 → j2 < n → f j1 < f j2) :
+    strictInc ((List.range n).map f) = true := by
+  rw [strictInc_iff_chain, List.isChain_iff_get]
+  intro k hk
+  simp only [List.length_map, List.length_range] at hk
+  rw [List.get_eq_getElem, List.get_eq_getElem, List.getElem_map, List.getElem_map,
+    List.getElem_range, List.getElem_range]
+  exact hf k (k + 1) (by omega) (by omega)
+
+/-- `colsOK` from a per-adjacent-pair column inequality. -/
+theorem colsOK_of (rows : List (List ℕ))
+    (h : ∀ i (hi : i + 1 < rows.length) j
+      (hj2 : j < (rows[i + 1]'hi).length) (hj1 : j < (rows[i]'(by omega)).length),
+      (rows[i]'(by omega))[j]'hj1 < (rows[i + 1]'hi)[j]'hj2) :
+    colsOK rows = true := by
+  induction rows with
+  | nil => rfl
+  | cons r1 rest ih =>
+    cases rest with
+    | nil => rfl
+    | cons r2 rest' =>
+      simp only [colsOK, Bool.and_eq_true]
+      refine ⟨?_, ?_⟩
+      · rw [List.all_eq_true]
+        intro p hp
+        obtain ⟨k, hk, hpe⟩ := List.mem_iff_getElem.mp hp
+        rw [List.length_zip] at hk
+        have h0 := h 0 (by simp) k (by simpa using (by omega : k < r2.length))
+          (by simpa using (by omega : k < r1.length))
+        simp only [List.getElem_cons_zero, List.getElem_cons_succ] at h0
+        rw [List.getElem_zip] at hpe
+        rw [← hpe]; simpa using h0
+      · apply ih
+        intro i hi j hj2 hj1
+        have := h (i + 1) (by simpa using hi) j (by simpa using hj2) (by simpa using hj1)
+        simpa using this
+
+/-- **Reverse of `isStdFilling_row`/`adjcol`.** A flat list whose reshaped rows are strictly
+increasing and whose adjacent columns are strictly increasing is a standard filling. -/
+theorem isStdFilling_of_entry (l a : List ℕ) (hlen : a.length = l.sum)
+    (hrow : ∀ i j1 j2, (hi : i < l.length) → j1 < j2 → j2 < l[i]'hi →
+      entryFn l a i j1 < entryFn l a i j2)
+    (hcol : ∀ i j, (hi : i + 1 < l.length) → j < l[i + 1]'hi →
+      entryFn l a i j < entryFn l a (i + 1) j) :
+    isStdFilling l a = true := by
+  unfold isStdFilling
+  rw [Bool.and_eq_true]
+  refine ⟨?_, ?_⟩
+  · rw [List.all_eq_true]
+    intro r hr
+    obtain ⟨i, hi, hre⟩ := List.mem_iff_getElem.mp hr
+    rw [chunk_length] at hi
+    have hr_eq : r = (List.range (l[i]'hi)).map (entryFn l a i) := by
+      rw [← hre, ← getD_of_lt (chunk l a) (by rw [chunk_length]; exact hi) []]
+      exact chunk_row_eq_map l a i hi hlen
+    rw [hr_eq]
+    exact strictInc_map_range _ _ (fun j1 j2 hj hj2 => hrow i j1 j2 hi hj hj2)
+  · apply colsOK_of
+    intro i hi j hj2 hj1
+    rw [chunk_length] at hi
+    have hi0 : i < l.length := by omega
+    have hrl0 : ((chunk l a)[i]'(by omega)).length = l[i]'hi0 := by
+      rw [← getD_of_lt (chunk l a) (by omega) []]; exact chunk_row_length l a i hi0 hlen
+    have hrl1 : ((chunk l a)[i + 1]'(by rw [chunk_length]; exact hi)).length = l[i + 1]'hi := by
+      rw [← getD_of_lt (chunk l a) (by rw [chunk_length]; exact hi) []]
+      exact chunk_row_length l a (i + 1) hi hlen
+    have hj2' : j < l[i + 1]'hi := by rw [← hrl1]; exact hj2
+    have hcolfact := hcol i j hi hj2'
+    have e0 : ((chunk l a)[i]'(by omega))[j]'hj1 = entryFn l a i j := by
+      rw [entryFn_eq_row_getElem l a i j hi0 (by rw [hrl0] at hj1; exact hj1) hlen]
+      congr 1
+      rw [getD_of_lt (chunk l a) (by omega) []]
+    have e1 : ((chunk l a)[i + 1]'(by rw [chunk_length]; exact hi))[j]'hj2
+        = entryFn l a (i + 1) j := by
+      rw [entryFn_eq_row_getElem l a (i + 1) j hi hj2' hlen]
+      congr 1
+      rw [getD_of_lt (chunk l a) (by rw [chunk_length]; exact hi) []]
+    rw [e0, e1]; exact hcolfact
+
 end QOU.Mathlib.SYTEnum
