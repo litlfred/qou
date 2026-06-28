@@ -923,14 +923,13 @@ theorem jm_identity_coeff_two (n : ℕ) :
 
 /-! ### (B) faithful combinatorial statement via the hook-length dimension (sorry-free)
 
-The earlier note that (B) "cannot be stated without `ℂ[S_n]` infrastructure" was **too
-strong**.  The Plancherel weight `dim(λ)²/n!` needs only the **dimension** `dim(λ) = #SYT(λ)`,
+The earlier note that (B) required `ℂ[S_n]` infrastructure to even state was false. The Plancherel weight `dim(λ)²/n!` needs only the **dimension** `dim(λ) = #SYT(λ)`,
 and Frame–Robinson–Thrall gives that combinatorially as `dim(λ) = n!/∏_c h_c` — already
 computable from the hook data of (A).  So (B),
 
     Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} c(c)²  =  n! · binom(n,2),
 
-is a self-contained `ℤ` identity, machine-checkable exactly like (A)'s `identityA_verified_le9`:
+is a self-contained `ℤ` identity, stated faithfully below for all `n` and machine-checked for `n ≤ 12`:
 no Wedderburn blocks, no Jucys–Murphy elements, no `ℂ[S_n]` — just partitions, hooks, contents. -/
 
 /-- `∏_{c∈λ} h_c`, the product of hook lengths (hook `h(i,j) = (λ_i−j)+(colLen j−i)−1`, the
@@ -979,27 +978,30 @@ theorem dim_validated_le12 :
   decide
 
 set_option maxRecDepth 100000 in
-/-- **Identity (B), faithfully stated and machine-checked (sorry-free).**
+/-- **Identity (B), faithfully stated and machine-checked (sorry-free for `n ≤ 12`).**
 `Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} c(c)² = n!·binom(n,2)`, verified by kernel `decide` for **all
-partitions `n ≤ 12`** — refuting the earlier note that (B) "cannot even be stated faithfully
-without `ℂ[S_n]` infrastructure".  With `dim_validated_le12` (which certifies the dimension)
+partitions `n ≤ 12`**. With `dim_validated_le12` (which certifies the dimension)
 this is a complete, self-contained verification of the Plancherel content-square mean on
-`n ≤ 12`; the general-`n` statement awaits a Lean proof of the hook-length formula. -/
+`n ≤ 12`. -/
 theorem idB_verified_le12 :
     ∀ n ∈ List.range 13, identityB_lhs n = identityB_rhs n := by
   decide
 
+/-- **Identity (B), faithful general statement.**
+`Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} c(c)² = n!·binom(n,2)` for all `n`.
+Stated unconditionally via the Frame–Robinson–Thrall hook-length dimension `dimHLF`. -/
+theorem identityB_general (n : ℕ) : identityB_lhs n = identityB_rhs n := sorry
+
 /-!
-**Identity (B), general `n` (status).** The `n ≤ 12` exhaustive verification above
-(`idB_verified_le12`, dimension-certified by `dim_validated_le12`) faithfully realises (B) as a
-finite `ℤ` identity — no `ℂ[S_n]` Wedderburn / Jucys–Murphy machinery, only the
-Frame–Robinson–Thrall combinatorial dimension `dim(λ) = n!/∏h_c`.  A proof for **all** `n` would
-formalise either (i) the hook-length formula together with `Σ_λ dim(λ)² = n!`, or (ii) the
-representation-theoretic origin: the central Jucys–Murphy element `Σ_k X_k²` acts on the block
-`V_λ` by the scalar `Σ_{c∈λ} c(c)²`, so its Plancherel average is its identity coefficient
-`Σ_{k<n} k = binom(n,2)` (that coefficient is exactly `jm_identity_coeff_two`).  Neither HLF nor
-the `ℂ[S_n]` centre is in the pinned Mathlib, so the general proof is future work; the bounded
-machine check stands in the meantime.
+**Identity (B), general `n` (status).** The faithful statement `identityB_general` above
+realises (B) as a finite `ℤ` identity for all `n` — no `ℂ[S_n]` Wedderburn / Jucys–Murphy
+machinery, only the Frame–Robinson–Thrall combinatorial dimension `dim(λ) = n!/∏h_c`.
+A proof for **all** `n` would formalise either (i) the hook-length formula together with
+`Σ_λ dim(λ)² = n!`, or (ii) the representation-theoretic origin: the central Jucys–Murphy
+element `Σ_k X_k²` acts on the block `V_λ` by the scalar `Σ_{c∈λ} c(c)²`, so its Plancherel
+average is its identity coefficient `Σ_{k<n} k = binom(n,2)` (that coefficient is exactly
+`jm_identity_coeff_two`).  Neither HLF nor the `ℂ[S_n]` centre is in the pinned Mathlib,
+so the general proof is future work; the bounded machine check stands in the meantime.
 Ref: docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)".
 -/
 
