@@ -1340,7 +1340,246 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-false-claim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The axiom leading_chebyshev_coeff_is_one is a trivial identity that simply restates the recurrence relation and subtracts s^(p-1) from both sides, failing to encode the actual polynomial leading coefficient claim vacuously.",
+        "evidence": "genus-filtration-ideal.lean:1449-1456 — axiom leading_chebyshev_coeff_is_one ... heckeCoeff s p - s ^ (p - 1) = heckeCoeff s (p - 2) + s * heckeCoeff s (p - 1) - s ^ (p - 1)",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-circular evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-overclaim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-hidden-dof evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-non-sequitur evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/genus-filtration-ideal.lean:39:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-citation-misuse evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-definitional-ambiguity evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-empirical-fragility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-physical-implausibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/genus-filtration-ideal.lean:39:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal.lean:1",
+        "severity": "major"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f8e62f3ca0b2",
+          "ts": "eb6c40976f1a",
+          "lean": "19c9ff595199"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/genus-filtration-ideal.lean:39:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/genus-filtration-ideal.lean:39:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:25.277Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

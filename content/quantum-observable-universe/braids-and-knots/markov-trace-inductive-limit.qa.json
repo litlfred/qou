@@ -1045,7 +1045,158 @@
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false mathematical or physical claims detected.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block is non-vacuous as it provides concrete math content.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circularity or back-fitted arguments detected.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or undisclosed free parameters are introduced.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The steps follow logically from the premises.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No fragile numerical matches are claimed.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical claims are consistent with established physics.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.lean:98:9: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'markovZN_legacy', which is 'noncomputable'",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.lean:1",
+        "severity": "major"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

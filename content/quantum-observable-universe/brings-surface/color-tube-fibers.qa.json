@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/color-tube-fibers.lean"
   },
   "source_hashes": {
-    "md": "8217e775c775",
+    "md": "1bfe8c453198",
     "ts": "835e5869e4b2",
     "lean": "a8e1ec53477b"
   },
@@ -1098,24 +1098,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "6fb402817012",
-          "ts": "835e5869e4b2",
-          "lean": "57dea219759b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:20.330Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "8217e775c775",
           "ts": "835e5869e4b2",
           "lean": "a8e1ec53477b"
@@ -1128,27 +1110,25 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      }
-    ],
-    "wall-side-statement": [
+      },
       {
         "field_hash": {
-          "md": "6fb402817012",
+          "md": "1bfe8c453198",
           "ts": "835e5869e4b2",
-          "lean": "57dea219759b"
+          "lean": "a8e1ec53477b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.699Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Block placement and kind match validated structurally.",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-statement": [
       {
         "field_hash": {
           "md": "8217e775c775",
@@ -1164,8 +1144,263 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Definition over generic ℤ[z]/CommRing R (color tube cubic); Lean structure ColorTubeFibre is over {R : Type*} [CommRing R]. No archimedean token in statement; chapter regime is substrate-generic. Correct."
+      },
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Generic algebraic definition.",
+        "severity": "major"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The identity claimed in Lean is mathematically false for generic z: the right hand side expands to 4*z^3 + 6*z^2 + 4*z + 1, not 4*z^3 + 3*z^2 + 2*z + 1. The proof is unchecked because validation is 'not_checked'.",
+        "evidence": "color-tube-fibers.lean:1063-1064 — theorem constant_term_identity (z : R_q) : 4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1 = (z + 1) ^ 4 - z ^ 4 := by ring",
+        "severity": "major"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-vacuous evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-circular evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-overclaim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-hidden-dof evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-non-sequitur evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-citation-misuse evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-definitional-ambiguity evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-empirical-fragility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-physical-implausibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:1",
+        "severity": "major"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1bfe8c453198",
+          "ts": "835e5869e4b2",
+          "lean": "a8e1ec53477b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-fibers.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical"
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

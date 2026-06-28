@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/color-sector-coords.lean"
   },
   "source_hashes": {
-    "md": "f70d8f75bf6d",
+    "md": "f2ea9714dae0",
     "ts": "4899f0667465",
     "lean": "00130068c174"
   },
@@ -1115,24 +1115,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9f57dfc9788f",
-          "ts": "78bf11b8f0d2",
-          "lean": "df7d431c304a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:19.769Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "f70d8f75bf6d",
           "ts": "4899f0667465",
           "lean": "00130068c174"
@@ -1145,27 +1127,25 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      }
-    ],
-    "wall-side-statement": [
+      },
       {
         "field_hash": {
-          "md": "9f57dfc9788f",
-          "ts": "78bf11b8f0d2",
-          "lean": "df7d431c304a"
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.207Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Block placement and kind match validated structurally.",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-statement": [
       {
         "field_hash": {
           "md": "f70d8f75bf6d",
@@ -1181,8 +1161,262 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Definition is an explicitly archimedean geometric realisation (sin/cos sector embeddings on the exceptional divisor); it lives in the archimedean brings-surface chapter, the leading note flags the ℝ-specialisation per §7c, and the Lean sibling carries the explicit 'Ground ring: ℝ (geometric/analytic realisation) ... NOT part of the formal proof chain' banner. The archimedean constructs (Real.sin/cos) are properly declared, not an unflagged substrate-chapter leak."
+      },
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The statement is mapped correctly to a Lean declaration/stub/class.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-justifying axioms detected.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block overclaims the physical/mathematical scope and the level of Lean formalization.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unconstrained parameters found.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-sector-coords.lean:81:2: error: No goals to be solved",
+        "evidence": "content/quantum-observable-universe/brings-surface/color-sector-coords.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Citations are used correctly to support the mathematical claims.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The constants are algebraic and not sensitive to small perturbations.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-sector-coords.lean:81:2: error: No goals to be solved",
+        "evidence": "content/quantum-observable-universe/brings-surface/color-sector-coords.lean:1",
+        "severity": "major"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f2ea9714dae0",
+          "ts": "4899f0667465",
+          "lean": "00130068c174"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-sector-coords.lean:81:2: error: No goals to be solved",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-sector-coords.lean:81:2: error: No goals to be solved",
+        "severity": "critical"
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

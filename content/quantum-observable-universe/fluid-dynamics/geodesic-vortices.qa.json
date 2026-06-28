@@ -835,7 +835,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Geodesic vortices: variational characterisation and stability': mathematical reasoning is consistent.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block 'Geodesic vortices: variational characterisation and stability' presents substantial mathematical content: Geodesics of the [acoustic metric](#rem:madelung-fluid) coincide with critical p...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Geodesic vortices: variational characterisation and stability'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No overclaims: the scope of 'Geodesic vortices: variational characterisation and stability' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Geodesic vortices: variational characterisation and stability'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The argument flow in 'Geodesic vortices: variational characterisation and stability' is logically sound, mapping onto the cited dependencies.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No citations are present in 'Geodesic vortices: variational characterisation and stability', hence no citation misuse is possible.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Geodesic vortices: variational characterisation and stability' are mathematically defined and unambiguous.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Geodesic vortices: variational characterisation and stability' are independent of empirical tuning parameters.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Geodesic vortices: variational characterisation and stability' are consistent with quantum observable mechanics.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The derivation steps and formal definitions in 'Geodesic vortices: variational characterisation and stability' are reproducible.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "47d036761409",
+          "ts": "41010bf1abd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Geodesic vortices: variational characterisation and stability' are consistent.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.763Z"
+  "updated_at": "2026-06-28T07:55:42.658Z"
 }

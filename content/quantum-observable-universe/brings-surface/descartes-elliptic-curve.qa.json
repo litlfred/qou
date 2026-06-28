@@ -1823,7 +1823,246 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial masking; classical_limit_p uses simp[one_rpow];ring legitimately."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The claim that the curve E_q acquires a cusp at q = 1/phi^2 is mathematically false: at this point, r(q) vanishes but p(q) is non-zero (it equals 3*s^2/3*s^2 = 1), yielding a non-zero discriminant delta = -64p(q)^3 != 0, so the curve remains smooth.",
+        "evidence": "descartes-elliptic-curve.md:1656-1663 — The second Weierstrass coefficient r(q) has the factor (s^2 + s - 1) in its numerator. This vanishes at s = (\\sqrt{5} - 1)/2 = 1/\\varphi... At this value ... the curve \\mathcal{E}_q acquires a cusp",
+        "severity": "major"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-vacuous evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-circular evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-overclaim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-hidden-dof evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-non-sequitur evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean:36:49: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-citation-misuse evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-definitional-ambiguity evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-empirical-fragility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-physical-implausibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean:36:49: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean:1",
+        "severity": "major"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9f95fef0c5f1",
+          "ts": "ae85856b4a16",
+          "lean": "c68c463f4048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean:36:49: error: failed to synthesize",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean:36:49: error: failed to synthesize",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

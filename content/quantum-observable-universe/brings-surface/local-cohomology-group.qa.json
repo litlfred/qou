@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/local-cohomology-group.lean"
   },
   "source_hashes": {
-    "md": "67f41e092851",
+    "md": "a87f17b22cb2",
     "ts": "51d68ee91bd4",
     "lean": "a4f8aa92553a"
   },
@@ -879,43 +879,277 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "67f41e092851",
+          "md": "a87f17b22cb2",
           "ts": "51d68ee91bd4",
           "lean": "a4f8aa92553a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.412Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Block placement and kind match validated structurally.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "67f41e092851",
+          "md": "a87f17b22cb2",
           "ts": "51d68ee91bd4",
           "lean": "a4f8aa92553a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.809Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Generic categorical definition.",
+        "severity": "major"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-false-claim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-vacuous evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-circular evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-overclaim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-hidden-dof evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-non-sequitur evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling compiles clean without sorry.",
+        "evidence": "content/quantum-observable-universe/brings-surface/local-cohomology-group.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-citation-misuse evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-definitional-ambiguity evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-empirical-fragility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "da-physical-implausibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling compiles clean without sorry.",
+        "evidence": "content/quantum-observable-universe/brings-surface/local-cohomology-group.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a87f17b22cb2",
+          "ts": "51d68ee91bd4",
+          "lean": "a4f8aa92553a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "none — expository prose contains no surviving objections.",
+        "severity": "major"
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:20.809Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

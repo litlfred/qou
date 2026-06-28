@@ -1010,7 +1010,252 @@
           "value": 0.74
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Critical exponent of the enstrophy divergence at $q = 1$': mathematical reasoning is consistent.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The claims in 'Critical exponent of the enstrophy divergence at $q = 1$' are non-vacuous as they make concrete conjectures about 'The [regularity breakdown conjecture](#conj:regularity-break...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Critical exponent of the enstrophy divergence at $q = 1$'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The prose in 'Critical exponent of the enstrophy divergence at $q = 1$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Critical exponent of the enstrophy divergence at $q = 1$'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean uses a class-conjecture pattern, matching the conjectural nature of 'Critical exponent of the enstrophy divergence at $q = 1$'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No citations are present in 'Critical exponent of the enstrophy divergence at $q = 1$', hence no citation misuse is possible.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Critical exponent of the enstrophy divergence at $q = 1$' are mathematically defined and unambiguous.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Critical exponent of the enstrophy divergence at $q = 1$' are independent of empirical tuning parameters.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Critical exponent of the enstrophy divergence at $q = 1$' are consistent with quantum observable mechanics.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean fails compilation, indicating a reproducibility failure.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean:59:26: error: failed to synthesize",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9d4a37adcb5e",
+          "ts": "0daf69178cd9",
+          "lean": "806b13e66ba7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'Critical exponent of the enstrophy divergence at $q = 1$' remain unproven and are represented as sorry stubs in the formalization.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T07:55:42.658Z"
 }

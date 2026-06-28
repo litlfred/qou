@@ -1110,7 +1110,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Glossary defterm entry registering 'observed spacetime value'; placed in the glossary chapter, ties to brings-surface via uses[]. Acceptable glossary placement."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Observed spacetime value': mathematical reasoning is consistent.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block 'Observed spacetime value' presents substantial mathematical content: Let $\\mathbf{r}_z, \\mathbf{g}_z, \\mathbf{b}_z$ be the color tube coordinates at ...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Observed spacetime value'.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No overclaims: the scope of 'Observed spacetime value' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Observed spacetime value'.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The argument flow in 'Observed spacetime value' is logically sound, mapping onto the cited dependencies.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean formalization and narrative for 'Observed spacetime value' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No citations are present in 'Observed spacetime value', hence no citation misuse is possible.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Observed spacetime value' are mathematically defined and unambiguous.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Observed spacetime value' are independent of empirical tuning parameters.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Observed spacetime value' are consistent with quantum observable mechanics.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The derivation steps and formal definitions in 'Observed spacetime value' are reproducible.",
+        "evidence": "content/quantum-observable-universe/glossary/glossary-observed-value.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6390bdcfd600",
+          "ts": "25bda0f18df8",
+          "lean": "654554612a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Observed spacetime value' are consistent.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T07:55:42.658Z"
 }

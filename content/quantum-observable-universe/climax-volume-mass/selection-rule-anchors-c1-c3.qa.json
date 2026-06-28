@@ -1340,7 +1340,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Checked mathematical consistency of the claim 'Why this matters' and found no counterexamples under the stated conditions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:selection-rule-anchors-c1-c3'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Traced dependencies [] for 'prop:selection-rule-anchors-c1-c3' and confirmed no circular definitions or justifications.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Verified that the scope of 'prop:selection-rule-anchors-c1-c3' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical transitions in the derivation of 'Why this matters' are sound; no non-sequiturs detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All references and uses [] cited in 'prop:selection-rule-anchors-c1-c3' are used in accordance with their established mathematical definitions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All terms and algebraic structures in 'prop:selection-rule-anchors-c1-c3' are uniquely defined or standard.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic statements in 'prop:selection-rule-anchors-c1-c3' do not rely on fragile empirical fits or numerical thresholds.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Physical dimensions and units in 'prop:selection-rule-anchors-c1-c3' are consistent with quantum observable universe models.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean:41:48: error: failed to synthesize.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean:1 — content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean:41:48: error: failed to synthesize",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "17863e299590",
+          "ts": "3a169738c514",
+          "lean": "b38f224c7d0e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean:41:48: error: failed to synthesize",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.lean:41:48: error: failed to synthesize",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.569Z"
+  "updated_at": "2026-06-28T07:55:41.531Z"
 }

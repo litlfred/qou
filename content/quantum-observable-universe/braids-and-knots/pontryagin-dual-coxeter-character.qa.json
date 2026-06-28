@@ -1709,7 +1709,226 @@
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:1",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-justifying axioms detected.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The claims match the scope of the presented material.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unconstrained parameters found.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:81:12: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Citations are used correctly to support the mathematical claims.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The constants are algebraic and not sensitive to small perturbations.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No physical claims are made or they are standard.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "d411ab4a8756"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:81:12: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:1",
+        "severity": "major"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }
