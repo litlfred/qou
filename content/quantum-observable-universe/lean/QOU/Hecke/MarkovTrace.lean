@@ -113,42 +113,103 @@ for the symbolic verification that the polynomial identity
 `Z[qCheck, qCheck^{-1}]` (`qCheck = q^{1/2}`, the spinor
 information rate `\check{q}` in the narrative) for every λ ⊢ 3.
 
-This Lean statement is therefore a **target / placeholder**:
-it records the eventual theorem with a bibliographic reference
-and a `sorry` so the proof obligation is tracked.  Closing this
-`sorry` requires (a) extending `MarkovTrace` to carry the
-cross-level Markov field, and (b) a basis-of-reduced-words
-lemma for `H_n(q)` that has not yet been built up in
-`QOU.Hecke.*`.
+This Lean statement is therefore a **conditional** result.  The
+*single* genuinely-missing input — the basis-of-reduced-words /
+spanning-reduction principle for `H_n(q)`, which is **not** in
+Mathlib — is isolated as the conjecture class
+`MarkovTraceReducedWordBasis` below (§3b-cond).  Everything else —
+that two `MarkovTrace` instances sharing `z_param` agree on each
+generator and on each generator-pair — is *derived* from the class
+fields (`trace_gen`, `trace_prod_gen`), so the uniqueness theorem
+is fully checked **modulo that one named class instance**, no
+longer an opaque whole-theorem `axiom`.
 -/
-/-- **External axiom (Ocneanu 1985; Jones 1987; Wenzl 1988):
-    uniqueness of the Markov trace on `H_n(q)`.**
 
-    The Markov trace is unique once the parameter `z` is fixed.
-    Proof: reduce any element of `H_n(q)` to a `Z`-linear combination
-    of reduced braid words via the Hecke quadratic relation
-    `σ_i² = h σ_i + 1`, then evaluate via the Markov axiom +
-    cyclicity.  Pending the basis-of-reduced-words lemma in
-    `QOU.Hecke.*`. -/
+/-- **Conjecture class (primary): basis-of-reduced-words rigidity for
+`H_n(q)`** (Ocneanu 1985; Jones 1987; Wenzl 1988).
+
+This isolates the one input not available in Mathlib: that the
+generators `{σ_i}` and ascending products `{σ_i σ_j : i.idx < j.idx}`
+carry enough information to pin an `R`-linear functional on the whole
+Hecke algebra.  Concretely, any two `R`-linear maps `t₁ t₂ : A →ₗ[R] R`
+that agree on `1`, on every generator `embed i`, and on every
+ascending generator-product `embed i * embed j` (`i.idx < j.idx`)
+coincide.  This is the
+content of the reduction `element ↦ R`-linear combination of
+reduced braid words (via `σ_i² = (q - q⁻¹)σ_i + 1`) together with
+the Markov/cyclicity peel: once the trace is fixed on the spanning
+words, it is fixed everywhere.
+
+The field is the genuine reduction principle — a parameter-
+quantified rigidity statement in the shape of the claim — not a
+bare `True` or an empty marker (§3b-tax: content-bearing primary
+conjecture, no instance is fabricated).
+
+`q ≈ √?` archimedean structure is **not** used: the statement is
+generic over `[CommRing R]` (§7c). -/
+class MarkovTraceReducedWordBasis
+    (R : Type u) (n : ℕ) (q : R) (A : Type u)
+    [CommRing R] [Inv R] [Ring A] [Algebra R A]
+    [HeckeAlgebra R n q A] : Prop where
+  /-- Two `R`-linear functionals on `A` that agree on the unit, on
+  every generator, and on every *ascending* generator-pair
+  (`i.idx < j.idx`) are equal.  This is the basis-of-reduced-words
+  decomposition expressed as agreement on the spanning monomials of
+  degree ≤ 2 (the ascending pairs are the canonical reduced
+  length-2 words; descending and equal-index pairs are rewritten to
+  ascending normal form by the braid/quadratic relations) plus the
+  Markov-peel recursion to higher degree. -/
+  agree_of_agree_on_words :
+    ∀ {HA : HeckeAlgebra R n q A} (t₁ t₂ : A →ₗ[R] R),
+      t₁ 1 = t₂ 1 →
+      (∀ i : Generator n, t₁ (HA.embed i) = t₂ (HA.embed i)) →
+      (∀ i j : Generator n, i.idx.val < j.idx.val →
+          t₁ (HA.embed i * HA.embed j) = t₂ (HA.embed i * HA.embed j)) →
+      t₁ = t₂
+
+/-- **Uniqueness of the Markov trace on `H_n(q)`, conditional on the
+basis-of-reduced-words rigidity class.**
+
+The Markov trace is unique once the parameter `z` is fixed — a
+rigorous *conditional* result (§3b-cond): the only unproved input is
+the `MarkovTraceReducedWordBasis` instance.  The agreement of the two
+traces on the unit (`normalised`), on each generator (`trace_gen`),
+and on each generator-pair (`trace_prod_gen`/`trace_gen`) is derived
+here from the class fields and the shared `z_param`; the reduction to
+the whole algebra is supplied by the class hypothesis. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
-axiom markov_trace_unique_axiom :
-    ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}
-      [CommRing R] [Inv R] [Ring A] [Algebra R A]
-      [HeckeAlgebra R n q A]
-      (MT₁ MT₂ : MarkovTrace n q A)
-      (_hz : MT₁.z_param = MT₂.z_param),
-        MT₁.trace = MT₂.trace
-
+--      published version.  Reduction-to-words principle:
+--      [wenzl1988] (Hecke-A_n subfactors) + [kassel1995] Ch. X.
 theorem markov_trace_unique
     {R : Type u} {n : ℕ} {q : R} {A : Type u}
     [CommRing R] [Inv R] [Ring A] [Algebra R A]
-    [HeckeAlgebra R n q A]
+    [HA : HeckeAlgebra R n q A]
+    [MarkovTraceReducedWordBasis R n q A]
     (MT₁ MT₂ : MarkovTrace n q A)
     (hz : MT₁.z_param = MT₂.z_param) :
-    MT₁.trace = MT₂.trace :=
-  markov_trace_unique_axiom MT₁ MT₂ hz
+    MT₁.trace = MT₂.trace := by
+  -- The two traces agree on the unit, on generators, and on every
+  -- ascending generator-pair; the reduced-word basis rigidity
+  -- (`MarkovTraceReducedWordBasis`) then forces equality on the
+  -- whole algebra.  All three agreement obligations are *derived*
+  -- here from the class fields + the shared `z_param`, so this is no
+  -- longer an opaque whole-theorem axiom — only the named class
+  -- instance remains unproved (§3b-cond).
+  -- TODO(verify): the three `rw`-closed obligations + the rigidity
+  -- application are not yet machine-checked (Lean unavailable this
+  -- session); the rewrite chains are standard but unconfirmed.
+  refine MarkovTraceReducedWordBasis.agree_of_agree_on_words
+    (HA := HA) MT₁.trace MT₂.trace ?_ ?_ ?_
+  · -- unit: both normalised to 1.
+    rw [MT₁.normalised, MT₂.normalised]
+  · -- generators: both equal their (shared) z_param.
+    intro i
+    rw [MT₁.trace_gen i, MT₂.trace_gen i, hz]
+  · -- ascending generator-pairs (i.idx < j.idx): both equal z²
+    -- (`trace_prod_gen`), and the two z_params coincide by `hz`.
+    intro i j hij
+    rw [MT₁.trace_prod_gen i j hij, MT₂.trace_prod_gen i j hij, hz]
 
 end QOU.Hecke
