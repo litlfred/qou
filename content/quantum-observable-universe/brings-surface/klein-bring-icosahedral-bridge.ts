@@ -30,7 +30,7 @@ export default conjecture({
     {
       kind: "status",
       date: "2026-06-28",
-      body: "**primary conjecture (open QOU wiring).** Classical skeleton (Bring–Jerrard root variety, $(2,3,5)\\cong A_5$, Klein's icosahedral solution) is established; the open content is the single-sphere $A_5$ assembly of the three force operations + the identification $\\mathrm{ED}/A_5 \\cong S^2(2,3,5)$ = keystone Seifert base. Lean sibling `KleinBringIcosahedralBridge` is a §3b-tax primary-conjecture class (content-bearing, no instance) over a proved arithmetic skeleton; authored in a sandbox without a Lean toolchain — **not yet `lean`-direct verified**.",
+      body: "**primary conjecture (SHARPENED after a proof attempt).** Classical skeleton (Bring–Jerrard root variety, $(2,3,5)\\cong A_5$, Klein's icosahedral solution) is established. The proof attempt **refuted the naive assembly**: the corpus's canonical generators $\\alpha=\\exp(\\tfrac{2\\pi}{3}e_3)$, $\\beta=\\exp(\\pi e_1)$ satisfy the established dihedral relation $\\beta\\alpha\\beta^{-1}=\\alpha^{-1}$, hence $(\\beta\\alpha)^2=1$ — the $(2,3,2)$ trefoil $S_3$, NOT $(2,3,5)$ (Lean `dihedral_two_cycle_sq`, sorry-free; numerically cross-checked $\\mathrm{tr}\\,R_\\beta R_\\alpha=-1$). So the bridge needs icosahedral-angle generators distinct from the trefoil pair. Open content (sharpened): existence of that distinct icosahedral $A_5$ on $\\mathbb{P}(V)$ (Klein's resolvent) with $(c_2 c_3)^5=1$, and $\\mathbb{P}(V)/A_5\\cong S^2(2,3,5)$ = keystone Seifert base. Lean §3b-tax primary-conjecture class (content-bearing, no instance); authored without a toolchain — **not yet `lean`-direct verified**.",
     },
   ],
 });
