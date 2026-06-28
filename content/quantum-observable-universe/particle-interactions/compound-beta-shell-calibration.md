@@ -118,7 +118,7 @@ $$
 *The RHS is fully determined by AME β-decay data plus the
 categorical level-3 shadow prices — no free parameters beyond $E_0$.*
 
-**Consequences.**
+**Corollaries.**
 
 1. *Shell $y_{\mathrm{target}}$ values are not independently calibrated;
    they follow from β-decay Q-values and level-3 shadow prices.*

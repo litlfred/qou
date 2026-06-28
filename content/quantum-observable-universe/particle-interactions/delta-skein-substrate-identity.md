@@ -65,7 +65,7 @@ witness*
 | $\widetilde{\Delta S}_{\mathrm{empirical}}$ | $0.0033908\ldots$ | $\lambda_p - \lambda_n$ from CODATA $m_p$, $m_n$ |
 | relative agreement | $1\,015$ ppm | — |
 
-## Why the 1 015 ppm residual is the same as $\mathfrak{Q}_\beta$'s
+## Identity of the 1 015 ppm residual with $\mathfrak{Q}_\beta$'s
 
 The substrate $\mathfrak{Q}_\beta$ ansatz used in the compute witness predicts
 $\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical
@@ -115,7 +115,7 @@ predicts $\Delta S(n - p)$ from CAL-1 + CAL-2 + a topological
 invariant; CAL-3 enters only as a consistency cross-check
 ([prop:three-calibration-inputs](#prop:three-calibration-inputs)).*
 
-## What this rules in and what remains open
+## Scope and open questions
 
 **Ruled in.** The Borromean Vol-form mass ansatz — at least the
 *orientation-difference* part of it — is consistent with CODATA to

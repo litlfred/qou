@@ -26,7 +26,7 @@ $\mathbb{Z}_5$-representations: both Jacobians carry the same
 non-trivial $\mathbb{Z}_5$-structure, realised on abelian varieties of
 different dimensions via different underlying curve geometries.
 
-**Why it matters.**  Taken together with
+**Significance.**  Taken together with
 [prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification),
 the coordinate and Jacobian compatibilities say that the cyclic
 $\mathbb{Z}_5$-observable structure of the genus-$2$ substrate

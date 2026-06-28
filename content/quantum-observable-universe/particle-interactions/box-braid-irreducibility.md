@@ -84,7 +84,7 @@ $(\sigma_1\sigma_2)^5$, and the braid index of $T_{3,5}$ is
 $\min(3, 5) = 3$ (Morton–Williams inequality), confirming that
 $B_3$ is the minimum strand count.
 
-**Why no reduction below 10 crossings is possible:**
+**Irreducibility below 10 crossings:**
 
 **(i) Topological invariance.**  The crossing number $c(K)$
 is a knot invariant: it is the minimum number of crossings

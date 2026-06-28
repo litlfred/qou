@@ -46,7 +46,7 @@ $\chi^{(2,1)}(\pi^+, q_0^{-1}) = -(h^2+1) \approx -1.044$ (bar).
 Since $+1.892 \ne -1.044$, $C \ne \mathrm{bar}$ on $(2,1)$.
 $\square$
 
-## Why $H_2$ is unique
+## Uniqueness of $H_2$
 
 The Artin–Wedderburn decomposition forces
 $n! = \sum_\lambda (\dim V_\lambda)^2$.  For $n = 2$:

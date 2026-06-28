@@ -100,7 +100,7 @@ A correct categorical derivation must:
    value** that drives the $\theta_W$ rotation in the Standard
    Model.
 
-### Why this is plausible despite the simple-version mismatch
+### Plausibility despite the simple-version mismatch
 
 The Standard Model $\theta_W$ is determined by the ratio $g'/g$
 of the $\mathrm{U}(1)_Y$ and $\mathrm{SU}(2)_L$ gauge couplings.

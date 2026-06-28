@@ -18,7 +18,7 @@ $$
 
 *where the $+1$ is $m_{e^+}/m_e$.*
 
-## When the correction applies
+## Applicability of the correction
 
 The positron correction is needed in two regimes
 ([parity regime selection](#thm:parity-regime-selection)):

@@ -6,7 +6,7 @@ $\mathcal{X}_5 \colon y^2 = x^5 - 1$
 ([def:hyperelliptic-quintic](#def\:hyperelliptic-quintic)) --- and its
 relationship to the genus-$4$ base geometry.
 
-**What the subsection develops.**  The remainder of this subsection
+**Content of the subsection.**  The remainder of this subsection
 treats $\mathcal{X}_5$ structurally:
 
 * the strictly commutative QOU at the classical limit $q = 1$

@@ -20,7 +20,7 @@ Then:*
  image of the folded crystal-step operator
  $(\tilde f_i, \tilde f_{\bar i})$ is fixed by the bar-involution.*
 
-## Why this is a witness against hand-rolled CPT violations
+## Significance: a witness against hand-rolled CPT violations
 
 The conditions $\overline{T_w} = T_w$ and
 $w_\lambda(q^{-1}) = w_\lambda(q)$ are *necessary* consequences of

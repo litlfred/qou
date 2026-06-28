@@ -69,7 +69,7 @@ $$
 
 matching the experimental proton mass to high precision.
 
-**Why the proton is stable.**
+**Stability of the proton.**
 The proton is the lightest baryon and cannot decay into lighter
 baryons.  Topologically, this corresponds to the fact that the
 Borromean link of three unknots is the simplest non-trivial

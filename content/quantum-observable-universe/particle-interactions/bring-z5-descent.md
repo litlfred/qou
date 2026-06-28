@@ -15,7 +15,7 @@ Up to isomorphism this genus-$2$ quotient is the
 $\mathcal{X}_5 \colon y^2 = x^5 - 1$ of Definition
 [def:hyperelliptic-quintic](#def\:hyperelliptic-quintic).
 
-**Upshot.**  Taking the $S_5$-invariant quotient of Bring's
+**Conclusion.**  Taking the $S_5$-invariant quotient of Bring's
 genus-$4$ geometry and retaining the cyclic Sylow-5 residue gives
 a natural genus-$2$ shadow of the full Descartes structure.  The
 $A_5$-invariant complement --- the non-abelian structure that

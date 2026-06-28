@@ -46,7 +46,7 @@ equivalence to $U_2$ is by an explicit sequence of two R2 moves +
 one R3 move that requires the link-equivalence relation to be
 formalised first.
 
-## What discharging it would buy
+## Consequences of discharging it
 
 A sorry-free `borromean_brunnian` upgrades
 [topological mechanism of color confinement](#rem:borromean-topological-confinement)

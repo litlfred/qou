@@ -34,7 +34,7 @@ the confinement level $\ell(K, q_0)$ correspond precisely to the
 crystal extensions that fall into $\mathcal{Z}_n$, and so they
 vanish under $\tau$ rather than via term-by-term cancellation.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The defining property of $\mathcal{Z}_n$ as the kernel of $\tau$
 is true by construction.  What is conjectural is **monotonicity**
 under crystal extensions — that once a path enters $\mathcal{Z}_n$

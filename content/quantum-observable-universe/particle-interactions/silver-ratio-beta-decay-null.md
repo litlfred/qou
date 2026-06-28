@@ -117,7 +117,7 @@ recursion identities at the Hecke level that reduce to Pell at the
 silver ratio**.
 
 
-## Why $c_5$ is the outlier — involution + Leibniz interpretation
+## Outlier status of $c_5$ — involution + Leibniz interpretation
 
 The $c_5 = -(b^2 + 1/2)$ outlier has a clean categorical interpretation
 combining **involution** and **Leibniz** structure:
@@ -156,7 +156,7 @@ where $-b^2$ is the **pure-$\sigma$-action** (Kashiwara return
 amplitude squared) and $-1/2$ is the **averaged-crossing involution
 fingerprint at rung 5**.
 
-### Why other $c_k$ do not pick up the $1/2$
+### Absence of the $1/2$ in other $c_k$
 
 $c_3, c_4, c_6, c_7$ have dominant contributions from POSITIONS in
 the braid that are pure $\sigma$ or pure $\sigma^{-1}$ — not averaged.

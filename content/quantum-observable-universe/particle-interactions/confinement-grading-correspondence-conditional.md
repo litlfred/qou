@@ -21,7 +21,7 @@ $$
   \;\iff\;
   (\mathfrak{M}_K)_d = 0 \;\;\text{for}\;\; d > \ell.
 $$
-## Why the upstream class is a single conjecture
+## Single-conjecture status of the upstream class
 
 The Brundan–Kleshchev cyclotomic-Hecke / KLR isomorphism is proved
 in \cite{brundankleshchev2009} for the abstract algebras over a
@@ -63,7 +63,7 @@ KLR-grading on the QOU cyclotomic quotient), the conditional
 hypothesis will be discharged and this block becomes an
 unconditional theorem.
 
-## Computational consequence
+## Computational corollary
 
 The conditional theorem licenses the existing engine optimisation:
 the KLR grading bound is enforced before any crystal step. Given a
