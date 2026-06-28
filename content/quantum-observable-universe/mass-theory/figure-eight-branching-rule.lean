@@ -14,6 +14,9 @@
        [manuscript] §5.11, prop:figure-eight-branching-rule
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 namespace QOU.BraidKnot
 
 /-- Number of standard Young tableaux of skew shape outer/inner.
