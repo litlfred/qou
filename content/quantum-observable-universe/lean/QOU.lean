@@ -182,4 +182,5 @@ import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
 import QOU.Mathlib.SYTHookFormula
+import QOU.Mathlib.SYTHookFormulaBeta
 import QOU.Mathlib.SYTHookFormulaRows
