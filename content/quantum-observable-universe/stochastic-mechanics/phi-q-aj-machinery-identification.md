@@ -50,6 +50,6 @@ Both theorems are **fully verified by Lean** modulo the three class instances. T
 1. AJ conjecture proved for $K$ (proved for many: 2-bridge knots, twist knots, most Rolfsen-table knots; status for 𝓑_3 specifically needs literature check — Hikami / Habiro)
 2. The Faddeev / Rogers identifications used in the framework match the literature's exactly (not just up to convention)
 
-For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar-Kofman-Mullen 2008 for classical A-polynomial; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.
+For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar 2003 for classical A-polynomials and Bloch invariants of hyperbolic 3-manifolds; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.
 
 **Cross-reference:** [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §9 (AJ conjecture crosses archimedean wall) for full background.
