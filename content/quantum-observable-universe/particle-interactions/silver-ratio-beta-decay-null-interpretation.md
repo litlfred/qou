@@ -1,3 +1,8 @@
+The categorical interpretation: $q = 1 + \sqrt{2}$ is the
+**β-decay null point** — the substrate value at which proton and
+neutron are categorically indistinguishable and free-neutron
+$\beta^-$ decay is forbidden at the leading-order (Form A) level.
+
 > **Bar-symmetry class** (per [`def:bar-involution`](#def:bar-involution)):
 > $h = q - q^{-1}$ is **bar-anti-symmetric** ($\overline h = -h$);
 > $\Delta(\mathrm{net}) = h(h-2)/2$ is bar-anti-symmetric in $h$.

@@ -220,6 +220,7 @@ export default chapter({
         // trace-ratio-interpretation.md.
         "trace-ratio-interpretation-table-data",
         "diagrammatic-double-magic-lr-fusion",
+        "diagrammatic-double-magic-lr-fusion-interpretation",
         "double-magic-Ca40-diagram",
         "double-magic-Ca40-diagram-table-data",
         "double-magic-delta-i-bound",
@@ -280,6 +281,7 @@ export default chapter({
         "hydrogen-knot-structure-table2-data",
         "hydrogen-knot-structure-table3-data",
         "sdp-regime-switch",
+        "sdp-regime-switch-interpretation",
         "sdp-regime-switch-table-data",
       ],
     }),
@@ -310,6 +312,7 @@ export default chapter({
         "cfl-neutron-star-observables",
         "strangelet-merger-signature",
         "strangelet-double-beta",
+        "strangelet-double-beta-interpretation",
       ],
     }),
 
