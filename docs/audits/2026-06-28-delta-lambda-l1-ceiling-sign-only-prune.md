@@ -6,6 +6,8 @@
 **Scope tag:** (b) structural-exclusion — invariant cited (triangle / ℓ¹ bound)
 **Witness:** [`computations/delta-lambda-l1-ceiling-sign-prune.witness.json`](../../computations/delta-lambda-l1-ceiling-sign-prune.witness.json)
 **Producer:** [`computations/delta_lambda_l1_ceiling_sign_prune.py`](../../computations/delta_lambda_l1_ceiling_sign_prune.py)
+**Lean (machine-checked core):** [`QOU/BraidsAndKnots/DeltaLambdaL1Ceiling.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaL1Ceiling.lean) — `abs_weighted_sum_le_l1`, `weighted_sum_below_target`, `chirality_sum_below_target` (sorry-free, generic base ring)
+**Profile (where the levers must add mass):** [`computations/delta-lambda-magnitude-deficit-profile.witness.json`](../../computations/delta-lambda-magnitude-deficit-profile.witness.json)
 
 ## Summary
 
@@ -106,6 +108,41 @@ levers, all of which add or reshape ℓ¹ mass and so escape the ceiling:
   different (q-Reeb) object, so this is **informative, not a refutation**.
 - **PROBE-2** (ae4b/ae42/ae43, A=4 interface operator) — a genuinely new
   many-body term; adds magnitude. Not excluded.
+
+## Machine-checked core (Lean)
+
+The logical core is formalized sorry-free in
+[`QOU/BraidsAndKnots/DeltaLambdaL1Ceiling.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaL1Ceiling.lean)
+over a generic base ring `[Field R] [LinearOrder R] [IsStrictOrderedRing R]`
+(§7c; the archimedean `R := ℝ` evaluation is downstream in the witness):
+
+- `abs_weighted_sum_le_l1` — `|∑ s_i · a_i| ≤ ∑ |a_i|` for any weights with
+  `|s_i| ≤ 1` (the ℓ¹ ceiling; triangle inequality);
+- `weighted_sum_below_target` — `∑ |a_i| < T ⟹ |∑ s_i · a_i| < T` (strict
+  undershoot whenever the ceiling is below target);
+- `chirality_sum_below_target` — the specialization to genuine signs
+  `s_i = ±1`, i.e. any chirality rule replacing `sgn(w₀^{S_{λ'}})`.
+
+Verified lean-direct (v4.24.0, exit 0); wired into `QOU.lean` for CI.
+
+## Per-block deficit profile (target for the levers)
+
+[`delta-lambda-magnitude-deficit-profile.witness.json`](../../computations/delta-lambda-magnitude-deficit-profile.witness.json)
+reports the two fit-free quantities a magnitude-adding mechanism must hit
+(the per-λ *attribution* of the deficit is non-unique — 1 equation, n
+unknowns — and is deliberately omitted):
+
+| isotope | irreducible shortfall `|target|−‖c‖₁` | as % of target | blocks for 90 % of ℓ¹ | dominant blocks |
+|---------|----------:|----------:|----------:|---|
+| D   | 2.11 m_e | 48.4 % | 4 | [5,1]⁻, [4,2]⁺, [3,3]⁻ |
+| T   | 10.66 m_e | 64.2 % | 8 | [6,3]⁻, [6,2,1]⁺, [7,2]⁺ |
+| ³He | 6.17 m_e | 40.8 % | 8 | [6,3]⁻, [7,2]⁺, [5,3,1]⁻ |
+| ⁴He | 32.90 m_e | 59.4 % | 18 | [8,4]⁺, [9,3]⁻, [8,3,1]⁻ |
+
+The ℓ¹ mass concentrates in the **few-row, near-rectangular** partitions
+(top hooks); a mechanism that amplifies those blocks has the most leverage.
+The shortfall is a *lower bound* on the ℓ¹ mass to add (real closures also
+lose some to residual cancellation).
 
 ## Reproduction / provenance
 
