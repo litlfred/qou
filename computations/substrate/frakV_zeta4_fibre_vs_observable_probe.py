@@ -47,7 +47,7 @@ mp.mp.dps = 30
 q0 = mp.mpf(C.Q) if hasattr(C, "Q") else mp.mpf("1.10998")
 eta0 = mp.log(q0)
 cosh_eta0 = mp.cosh(eta0)                       # bar-even (Re channel) magnitude scale
-zeta4_rotate_real_part = mp.re(mp.cosh(eta0 + 1j * float(mp.pi) / 2))  # ~0
+zeta4_rotate_real_part = mp.re(mp.cosh(eta0 + mp.j * (mp.pi / 2)))  # ~0 (full mpmath precision)
 
 # (2) fibre/generator level: the ζ₄ moderator is exact (re-verified symbolically; Lean-certified)
 mod_ok = bool(sp.simplify(sp.cosh(eta + hpi) - I * sp.sinh(eta)) == 0)
@@ -59,7 +59,7 @@ results = {
     "observable_level": {
         "q0_real_Im_zero": True,
         "Re(zeta4_rotate_of_cosh_channel)_symbolic": str(re_part_real_eta),
-        "Re(zeta4_rotate)_numeric_at_q0": mp.nstr(mp.mpf(str(zeta4_rotate_real_part)), 8),
+        "Re(zeta4_rotate)_numeric_at_q0": mp.nstr(zeta4_rotate_real_part, mp.mp.dps),
         "degenerate": observable_real_part_zero,
         "reading": "ζ₄-rotation sends a real (Re-channel) quantity to pure imaginary; its real part is 0, so the two real observables 𝔈_bind, 𝔔_β are NOT observable-level ζ₄-rotates. Numerology trap avoided.",
     },
