@@ -28,12 +28,16 @@ production) — so we PIN the canonical value rather than recompute through
 the fit. Package constants `Q` and `Q_MP` are BOTH the muon value in the
 current checkout (proton q₀ not available as a clean constant).
 
-**STILL OPEN (this bean's other half):** the committed dashboard witness
-also has genuine **Q_β / m_n / Δ_pn upstream staleness** (the dashboard
-was not regenerated after upstream witnesses changed — `err_ppb` drifts
-~2-3%). That needs a **canonical-env regen** (mpmath 1.3.0, canonical
-upstreams) — NOT done in #2897 (a sandbox regen would bundle an mpmath
-1.4.1 engine bump). Keep this bean open for the Q_β/m_n regen.
+**Second half DONE (2026-06-28, owner-directed):** canonical-env regen of
+`per-observable-100x-status.witness.json` refreshing the stale Q_β / m_n /
+Δ_pn rows. Ran in an env matching the canonical stack **exactly** (Python
+3.11.15, mpmath 1.3.0, numpy 2.4.6, sympy 1.14.0 — installed to match) so
+there is **zero engine-version churn**. Refreshed:
+  Q_β   164.0× → 160.1×  (err_ppb 1279 → 1248)
+  m_n   185.4× → 181.0×  (err_ppb 1.066 → 1.040)
+  Δ_pn  163.3× → 159.4×  (err_ppb 773.9 → 755.6)
+m_μ stays PINNED at 209.8 ppb / 963.6× (from #2897); summary unchanged 3/7.
+Both halves shipped — ready to close.
 
 
 
