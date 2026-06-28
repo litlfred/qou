@@ -73,6 +73,16 @@ coincidental sub-family, never the whole target.
 
 ## Part (iii) — the non-excluded redirect: the ED motivates *why* S³/2I and (2,3,5)
 
+> **Erratum / re-scope (2026-06-28, same day):** the direct identification proposed
+> below — "the ED carries the icosahedral `A₅` action, `ED/A₅ ≅ S²(2,3,5)`" — was
+> chased and **does not hold as stated**. The QOU base is a `C₅/ζ₅` pentagon
+> (6 branch points `{ζ₅ᵏ, ∞}`), `S₅ ⊄ PSL(2,ℂ)`, and `A₅` has no orbit of size 6
+> on `ℂP¹` (orbit sizes `{12,20,30,60}`), so the branch divisor is not
+> `A₅`-invariant. The icosahedral link is Klein's icosahedral–quintic
+> correspondence, not a base action. Full re-scope:
+> [`2026-06-28-ed-a5-orbit-obstruction-rescope.md`](2026-06-28-ed-a5-orbit-obstruction-rescope.md).
+> Parts (i) and (ii) stand.
+
 The ED observation is not wasted; it lands on the **geometry/base**, which is
 exactly where the keystone's open object lives — and on the `V_λ`/volume side,
 consistent with (i).
