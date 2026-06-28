@@ -20,11 +20,12 @@ leftovers** deferred because compile-verification was cache-blocked this session
 — every entry with `verdict: "needs-agent"`. Skill + protocol:
 [`.claude/skills/local/lean-proof-vacuity-audit.md` §Agent-inspection ledger](.claude/skills/local/lean-proof-vacuity-audit.md).
 
-**PREREQUISITE — a working Lean cache.** This session had no `lake-cache/qou-*`
-orphan branch and an incomplete mathlib source (`Mathlib/Tactic/Omega.lean`
-missing), so `lake env lean` could not verify edits. Restore/seed a cache first
-per [`lean-environment-setup.md`](.claude/skills/local/lean-environment-setup.md);
-do NOT ship unverified Lean (the cluster-7 lesson).
+**Lean verification IS available** — the on-disk Mathlib cache is intact;
+`lake env lean <file>` from `content/quantum-observable-universe/lean` compiles a
+single file fast. Do NOT `lake build` (rebuilds from source, wipes oleans). The
+earlier "cache-blocked" scare was one file's bad import (`Mathlib.Tactic.Omega`
+— no such module at the pinned rev; `omega` is a Lean core tactic), now fixed.
+Verify every edit `lean`-direct before committing; do NOT ship unverified Lean.
 
 **Per candidate (agent inspection, then fix):**
 1. **Genuine §3b-tax defect** — un-annotated `: True` field, especially a
