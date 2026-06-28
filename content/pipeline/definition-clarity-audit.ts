@@ -895,11 +895,26 @@ function loadBlock(mdPath: string, repoRoot: string): Block | null {
 const ANCILLARY_HEADER =
   /^(examples?|worked examples?|proof(?:\s+sketch)?|sketch|derivation|references?|cross-?references?|see also|related (?:results?|work)|lean structure|notation|summary|numerical (?:check|verification|example)|sanity check|verification|witness|setup|preliminaries)\b[.:]?$/i;
 
+/** top-level `## …` ATX headers only (exactly depth 2). Deeper `###`/`####`
+ *  headers are sub-structure *within* a topic, and run-in bold spans are
+ *  usually proposition labels / emphasis (`**Proposition (Lean: …).**`) — neither
+ *  is a distinct topic, so the single-topic count uses depth-2 ATX only. */
+function topLevelHeaders(md: string): string[] {
+  const noCode = md.replace(/```[\s\S]*?```/g, "\n");
+  const out: string[] = [];
+  const re = /^##[ \t]+(.+?)\s*$/gm; // exactly `## ` (not `###`)
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(noCode))) {
+    if (!/^#/.test(m[1])) out.push(m[1].trim()); // guard against `### ` slipping in
+  }
+  return out;
+}
+
 function checkRemarkSingleTopic(b: Block): Finding {
-  const all = sectionHeaders(b.md);
-  const headers = all.filter((h) => !ANCILLARY_HEADER.test(h.replace(/[*_`]/g, "").trim()));
+  const tops = topLevelHeaders(b.md);
+  const headers = tops.filter((h) => !ANCILLARY_HEADER.test(h.replace(/[*_`]/g, "").trim()));
   const base = mkFinding(b, "clarity-remark-single-topic");
-  base.metrics = { sectionHeaders: all.length, topicalHeaders: headers.length };
+  base.metrics = { topLevelHeaders: tops.length, topicalHeaders: headers.length };
   // Glossary remarks (Ch 8 terminological wrappers) are not interpretive
   // remarks — their sub-structure is term-mapping, not multiple topics.
   if (b.isGlossary) {
