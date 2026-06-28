@@ -17,7 +17,9 @@ The reduction is **confluent**: the final normal form is independent
 of the order in which rules are applied.  The intermediate word count,
 however, depends critically on the reduction strategy.
 
-## The $H_A$-power factorisation
+## Reduction methods and reproducibility
+
+### The $H_A$-power factorisation
 
 For the $\mathfrak{p}\mathfrak{p}\cdots\mathfrak{n}\mathfrak{n}$
 ordering (all protons first, then all neutrons), every normal form
@@ -32,7 +34,7 @@ polynomial.  For atoms with mixed orderings
 ($\mathfrak{p}\mathfrak{n}\mathfrak{p}\mathfrak{n}\cdots$), the
 factorisation breaks and coefficients are general Laurent polynomials.
 
-## Computational engines
+### Computational engines
 
 Four Rust engines implement the reduction with increasing
 optimisation:
@@ -50,7 +52,7 @@ Modular multiplication uses four $\texttt{u64} \times \texttt{u64}
 \to \texttt{u128}$ products instead of the $O(128)$-step Russian
 peasant algorithm.
 
-## LP-dual reduction ordering
+### LP-dual reduction ordering
 
 Since confluent reductions permit arbitrary rule ordering, the LP
 dual determines the most efficient strategy:
@@ -69,7 +71,7 @@ dual determines the most efficient strategy:
   generators do not commute; only far-commuting pairs
   ($|i - j| \geq 2$) may be reordered.
 
-## Reproducibility
+### Reproducibility
 
 All computations are reproducible from the Rust source in
 `tools/hecke-engine/`.  Certificates (JSON files containing

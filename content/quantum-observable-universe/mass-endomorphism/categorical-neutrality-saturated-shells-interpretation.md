@@ -17,7 +17,7 @@ scalar. The transition from "supported on self-conjugates only" to
 "non-trivial full-twist action" is the categorical content of shell
 closure, replacing the *ad hoc* shell-model selection rule.
 
-## Relation to the Hoefsmit / matrix-evaluation programme
+### Relation to the Hoefsmit / matrix-evaluation programme
 
 The Hoefsmit seminormal form
 ([prop:hoefsmit-seminormal-form](#prop\:hoefsmit-seminormal-form))
@@ -32,7 +32,7 @@ verifying $\Phi_n$ at each $n$ by matrices, one verifies the
 self-conjugate-support condition by content-sum arithmetic. Saturation
 at $n \in \{50, 82, 126\}$ then follows without resort to matrices.
 
-## Locality assumption: dropped
+### Locality assumption: dropped
 
 Earlier formulations
 ([atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation))
@@ -46,7 +46,7 @@ non-trivial full-twist action would propagate unbounded ribbon /
 framing flux through the brane tower; finite observable mass forces
 **global topological neutrality** at saturation.
 
-## Operator-level support vs character sum (clarification)
+### Operator-level support vs character sum (clarification)
 
 The phrase *"$\Phi_n$ is supported on self-conjugate partitions"*
 in this block means **operator-level**: the categorical mass
@@ -69,7 +69,7 @@ by the GS-filtration Term 6 plus an `is_magic_pair`
 operator-correction with correlation $+0.74$ to the AME residual
 ([reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
 
-## Discussion
+### Discussion
 
 **Status: conjectural** under AGENTS.md §3b. Numerical witnesses at
 $k = 3, \dots, 10$ are supportive but not a proof; the conjecture

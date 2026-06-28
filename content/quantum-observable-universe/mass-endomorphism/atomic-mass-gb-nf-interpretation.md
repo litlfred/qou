@@ -13,7 +13,7 @@ The (GB-NF) form is the **abstract algebraic statement**; the
 other two are concrete evaluations that fix $\rho_K$ via different
 calibration data.
 
-## The categorical density factor $\rho_K$
+### The categorical density factor $\rho_K$
 
 By the categorical-mass identity
 ([categorical mass = Markov](#prop\:categorical-mass-markov)):
@@ -44,7 +44,7 @@ $$
 $\rho_K^{\mathrm{CODATA}}$ grows super-linearly in $A$, with
 $\rho_K(\mathrm{T}) / \rho_K(\mathfrak{p}) \approx 30.6$ for $A = 3$.
 
-## Open question: categorical derivation of $\rho_K$
+### Open question: categorical derivation of $\rho_K$
 
 The (GB-NF) form makes the **algebraic** structure manifest: $\mathcal{B}_K$
 reduces to a unique normal form $\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)$ in
@@ -176,7 +176,7 @@ formula does **not** demonstrate that $\rho_K$ is categorically
 self-determined; it demonstrates that, given CODATA nucleon masses,
 the small binding correction is captured by a clean log-volume sum.
 
-## Reading the three forms
+### Reading the three forms
 
 The three forms encode the same physical mass $\mathcal{M}(K)$
 parameterised by different calibration data:
@@ -199,7 +199,7 @@ factors through the Gröbner–Shirshov quotient — is what makes the
 applicable: the trace depends only on the braid class modulo the
 PBW relations.
 
-## Witnesses
+### Witnesses
 
 * `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
 * `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\operatorname{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.

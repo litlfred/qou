@@ -13,7 +13,7 @@ nucleon adds nearly-zero binding, and the shell is mathematically
 "full". The refactor names this directly in the spectral sequence,
 not via shell-model fitting.
 
-## Conditional content via the categorical-neutrality conjecture
+### Conditional content via the categorical-neutrality conjecture
 
 Conditional on
 [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md),
@@ -33,7 +33,7 @@ content; the homological conjecture is its *brane-tower-side* image
 under Yekutieli rigidity. A proof of either implies the other under
 the substrate axioms.
 
-## Relation to the Hoefsmit / matrix-evaluation programme
+### Relation to the Hoefsmit / matrix-evaluation programme
 
 Numerical verification at $k = 3, \dots, 10$
 ([prop:magic-numbers-from-q](../observations/magic-numbers-from-q.md))
@@ -45,7 +45,7 @@ barrier by replacing per-partition matrix computation with
 spectral-sequence arithmetic
 ([rem:k12-barrier-bypass](../observations/k12-barrier-bypass.md)).
 
-## Operator-level support (clarification)
+### Operator-level support (clarification)
 
 The "Wedderburn support of $\Phi_n$ onto self-conjugate
 partitions" in §"Conditional content" above is **operator-level**:
@@ -59,7 +59,7 @@ The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
 precisely operator-level (page collapse on the associated graded
 algebra), and is consistent with this reading.
 
-## Discussion
+### Discussion
 
 **Conjectural** under AGENTS.md §3b. The supporting evidence is:
 

@@ -38,7 +38,9 @@ recorded in the
 [m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/computations/m-baryon-volume-form.witness.json),
 with no calibration to the proton or neutron individually.*
 
-## Per-Borromean-quantum normalisation
+## Substrate prediction of $\Delta S(n-p)$
+
+### Per-Borromean-quantum normalisation
 
 The Skein contribution divided by the Borromean topological quantum
 $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ gives a dimensionless residual
@@ -65,7 +67,7 @@ witness*
 | $\widetilde{\Delta S}_{\mathrm{empirical}}$ | $0.0033908\ldots$ | $\lambda_p - \lambda_n$ from CODATA $m_p$, $m_n$ |
 | relative agreement | $1\,015$ ppm | — |
 
-## Identity of the 1 015 ppm residual with $\mathfrak{Q}_\beta$'s
+### Identity of the 1 015 ppm residual with $\mathfrak{Q}_\beta$'s
 
 The substrate $\mathfrak{Q}_\beta$ ansatz used in the compute witness predicts
 $\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical
@@ -94,7 +96,7 @@ the common-scale conjecture would require either:*
 - *substrate-only refinement of $\mathfrak{Q}_\beta$ to* $\ll 100$ *ppm at $q_0$,
   exposing a non-zero residual after the common-scale subtraction.*
 
-## Substrate-only character
+### Substrate-only character
 
 The derivation consumes exactly three substrate quantities:
 
@@ -115,7 +117,7 @@ predicts $\Delta S(n - p)$ from CAL-1 + CAL-2 + a topological
 invariant; CAL-3 enters only as a consistency cross-check
 ([prop:three-calibration-inputs](#prop:three-calibration-inputs)).*
 
-## Scope and open questions
+### Scope and open questions
 
 **Ruled in.** The Borromean Vol-form mass ansatz — at least the
 *orientation-difference* part of it — is consistent with CODATA to

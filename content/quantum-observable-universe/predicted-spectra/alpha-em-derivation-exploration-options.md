@@ -8,12 +8,14 @@ is exact at the algebraic identity
 $2/(3\pi) = 2g/(4\pi(g{-}1))$ at $g = 4$ but lacks a derivation.
 Below: what's already in place, and four concrete paths forward.
 
-## Existing infrastructure (relevant pieces)
+## Closing the $2/(3\pi)$ derivation
+
+### Existing infrastructure (relevant pieces)
 
 The QOU paper already contains the machinery needed to close this
 derivation; the missing step is connecting it to the coupling side.
 
-### 1. Hopf fibration $S^3 \to S^2$ as the substrate geometry
+#### 1. Hopf fibration $S^3 \to S^2$ as the substrate geometry
 
 The [Reeb bundle](#def:reeb-bundle) at a brane point $p$ is
 
@@ -29,7 +31,7 @@ $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$. The
 "category of base" is $\mathcal{S}_p \cong S^2$ and the "category of
 total space" is $S^3$.
 
-### 2. Three color tubes / chromaticity primaries on Bring's surface
+#### 2. Three color tubes / chromaticity primaries on Bring's surface
 
 [`rem:q-chromaticity`](#rem:q-chromaticity) identifies three
 colour primaries on Bring's surface (the three color tubes /
@@ -37,14 +39,14 @@ three $S_3$ subgroups of the Bring automorphism group). This is
 the **natural source of the "$/3$" denominator** in $2/(3\pi)$:
 photon coupling averaged over three independent chromaticity channels.
 
-### 3. GB filtration with confinement levels
+#### 3. GB filtration with confinement levels
 
 [`def:confinement-level`](#def:confinement-level) and
 [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification)
 filter $H_n(R,q)$ by GB-depth. For $H_3$, depths $\ell = 0,1,2,3$
 give a 4-step filtration (matching the "3" in $/3$? — depth $\le 3$).
 
-### 4. Spectral sequence collapse
+#### 4. Spectral sequence collapse
 
 [`prop:spectral-sequence-collapse`](#prop:spectral-sequence-collapse)
 shows Hochschild cohomology vanishes ($\mathrm{HH}^k = 0$ for
@@ -54,7 +56,7 @@ $E_\infty^{0,0} = \mathrm{HH}^0 = Z(H_n) = \bigoplus_\lambda R\cdot e_\lambda$.
 This is the **engine** that produces the closed-form mass-formula
 $\alpha_k$ via Plancherel-weighted Markov pairings on the centre.
 
-### 5. Wenzl-bridge closed form for stratum prefactors
+#### 5. Wenzl-bridge closed form for stratum prefactors
 
 [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge)
 gives an explicit q-rational expression for the Markov-trace
@@ -62,9 +64,9 @@ coefficients $y_\lambda$ entering the mass-formula $\alpha_k$.
 This same machinery can in principle be applied to the **coupling**
 side rather than the mass side.
 
-## Four exploration options
+### Four exploration options
 
-### Option A — Hopf-fibration vacuum-polarisation integral
+#### Option A — Hopf-fibration vacuum-polarisation integral
 
 **Approach.** Compute the photon vacuum-polarisation 1PI graph in the
 QOU framework with the photon propagator on the Hopf total space
@@ -96,7 +98,7 @@ graph in the categorical-Lagrangian framework, including:
 **Bounded scope:** This is a one-loop calculation on a known
 geometry. Could plausibly close in a few days of focused work.
 
-### Option B — Stratum-prefactor approach via spectral sequence collapse
+#### Option B — Stratum-prefactor approach via spectral sequence collapse
 
 **Approach.** Apply the same spectral-sequence machinery used for the
 mass formula
@@ -122,7 +124,7 @@ Wenzl-bridge closed form.
 **Bounded scope:** infrastructure already exists; need to identify
 the right $\ell$ and run the calculation. Days to a week.
 
-### Option C — Reeb-bundle holonomy + U(1) integration
+#### Option C — Reeb-bundle holonomy + U(1) integration
 
 **Approach.** The U(1) fibre of the Reeb bundle has holonomy
 $e^{2\pi i / [2]_q}$. Integrating the photon over the fibre and
@@ -142,7 +144,7 @@ equals $2/(3\pi)$ at $q = q_0$ for $g = 4$.
 
 **Bounded scope:** quick to falsify (a few hours).
 
-### Option D — Chern-Simons partition-function ratio
+#### Option D — Chern-Simons partition-function ratio
 
 **Approach.** $2/(3\pi)$ is the ratio of CS partition functions on
 distinguished 3-manifolds at the QOU substrate level $k(q)$:
@@ -166,7 +168,7 @@ that correspond to $1/\pi$ via $k+2 = \pi/\log q$.
 **Bounded scope:** standard Witten-Reshetikhin-Turaev computations.
 Days.
 
-## Recommended path
+### Recommended path
 
 **Option B** (stratum-prefactor via spectral sequence) is the most
 natural fit given the existing infrastructure and would also
@@ -190,7 +192,7 @@ A practical attack would:
    stratum-prefactor identification to the Hopf-fibration zero-mode
    integral.
 
-## Natural sources for each ingredient (summary)
+### Natural sources for each ingredient (summary)
 
 See [Table: Natural QOU sources for the $1/\alpha_{EM}$ ingredients](#tbl:alpha-em-derivation-exploration-options-table-data).
 

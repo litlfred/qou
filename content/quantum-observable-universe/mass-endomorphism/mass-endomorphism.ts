@@ -131,6 +131,7 @@ export default chapter({
       blocks: [
         "categorical-mass-markov-trace-endomorphism-intro",
         "recomputed-low-isotope-mass-table",
+        "recomputed-low-isotope-mass-table-path-a-shift-verification",
         "recomputed-low-isotope-mass-table-table4-data",
         "recomputed-low-isotope-mass-table-table3-data",
         "recomputed-low-isotope-mass-table-table2-data",

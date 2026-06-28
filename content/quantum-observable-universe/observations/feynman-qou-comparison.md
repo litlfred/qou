@@ -5,7 +5,9 @@ fitted coefficient.  The QOU three-channel Wedderburn formula
 produces binding from the Hecke algebra trace alone, with zero
 fitted parameters.
 
-## Term dictionary
+## SEMF vs QOU term-by-term comparison
+
+### Term dictionary
 
 See [Table 1](#tbl:feynman-qou-comparison-table1-data).
 
@@ -15,7 +17,7 @@ $a_C \approx 0.697$, $a_A \approx 23.29$, $\delta \approx 12$ MeV).
 The QOU formula has three channels ($\Phi_1$, $\Phi_2$, $\Phi_3$),
 each mixing multiple SEMF effects through the transfer matrix chain.
 
-## Comparison
+### Comparison
 
 See [Table 2](#tbl:feynman-qou-comparison-table2-data).
 
@@ -24,7 +26,7 @@ QOU mean: $0.074\%$ (0 fitted, 2 inputs: $q_0$, $m_e$).
 QOU wins 3/20 atoms.  Accuracy ratio: SEMF is $3.2\times$ better
 with $4\times$ more parameters.
 
-## Sources of discrepancy
+### Sources of discrepancy
 
 The QOU error has a characteristic sign pattern that tracks
 the **nuclear shell model**:
@@ -46,7 +48,7 @@ with $A \geq 4$.  It encodes **nuclear saturation**: each nucleon
 interacts only with its nearest neighbors, and the effective range
 is encoded in the transfer matrix chain length.
 
-## Improving: the pion channel
+### Improving: the pion channel
 
 The $3\times$ accuracy gap corresponds to $O(10\;\mathrm{MeV})$
 in binding energy — the shell correction.  The $[n{-}2,2]$ hook

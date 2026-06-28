@@ -29,7 +29,7 @@ electromagnetic phase. Color is the discrete grading of the algebra element
 across the $H_3(q)$ representations, before the trace collapses it to a
 scalar.
 
-## Color is not the phase
+### Color is not the phase
 
 Because the color factor $S_3$ fixes the spacetime coordinates and the
 spacetime factor $S_2$ fixes the color coordinates
@@ -49,7 +49,7 @@ relation internal to the $U(1)$ phase. Mass, electromagnetism, and color are
 one trace object read on its modulus, its spacetime phase, and its color
 grading.
 
-## Archimedean realization
+### Archimedean realization
 
 The polar split is the archimedean reading: the modulus and argument require
 the realization of the trace over $\mathbb{C}$, on the far side of the
@@ -59,7 +59,7 @@ substrate-to-archimedean wall. The structural content of
 of the two sectors, and the divisibility rigidity — is generic and needs no
 such realization.
 
-## Relation to the literature
+### Relation to the literature
 
 The individual ingredients are classical. That the imaginary partner of a
 hyperbolic volume is a Chern–Simons invariant is the Neumann–Zagier complex
@@ -87,7 +87,7 @@ group-theoretic statement that these three readings are orthogonal sectors
 of one trace object — and the rigidity that bars the continuous phase from
 being the discrete color charge.
 
-## Classical antecedents of the involutive reading
+### Classical antecedents of the involutive reading
 
 Resolving one object into observables under an involution is a recurring
 structure, and four classical instances frame the present one.

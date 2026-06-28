@@ -17,7 +17,7 @@ Hecke product that reduces to normal form via the Hecke relation
 $\sigma_i^2 = h\sigma_i + \mathbf{1}$ (where $h = q - q^{-1}$) and the Yang--Baxter relation
 $\sigma_1\sigma_0\sigma_1 = \sigma_0\sigma_1\sigma_0 = e^-$.
 
-### Block I: the photon core ($\mathbf{1}$) meets everything
+#### Block I: the photon core ($\mathbf{1}$) meets everything
 
 See [Table 1](#tbl:trivial-knot-photon-interpretation-table1-data).
 
@@ -26,26 +26,26 @@ it transmits everything it encounters without modification.
 Physically, the "pure photon" component of one photon is
 transparent to the other.
 
-### Block II: horizontal polarization ($\varphi_0\sigma_0$) meets everything
+#### Block II: horizontal polarization ($\varphi_0\sigma_0$) meets everything
 
 See [Table 2](#tbl:trivial-knot-photon-interpretation-table2-data).
 
-### Block III: vertical polarization ($\varphi_1\sigma_1$) meets everything
+#### Block III: vertical polarization ($\varphi_1\sigma_1$) meets everything
 
 See [Table 3](#tbl:trivial-knot-photon-interpretation-table3-data).
 
-### Block IV: Hopf dressing ($\varphi_{01}\sigma_0\sigma_1$) meets everything
+#### Block IV: Hopf dressing ($\varphi_{01}\sigma_0\sigma_1$) meets everything
 
 See [Table 4](#tbl:trivial-knot-photon-interpretation-table4-data).
 
-## Collecting by output channel
+### Collecting by output channel
 
 Summing all 16 terms by NF basis element recovers the full
 $T_{1,0}$ formula:
 
 See [Table 5](#tbl:trivial-knot-photon-interpretation-table5-data).
 
-## Physical interpretation of each channel
+### Physical interpretation of each channel
 
 **Vacuum channel ($\gamma$):**
 The coefficient $1 + \varphi_0\psi_0 + \varphi_1\psi_1$ is always
@@ -103,7 +103,7 @@ forms because one photon supplies two of the three crossings (via
 $L_+ = \sigma_0\sigma_1$) and the other supplies the remaining
 one ($\sigma_0$ or $\sigma_1$).
 
-## Cancellation conditions
+### Cancellation conditions
 
 **Trivial-output condition.**
 If $\varphi_0 = \varphi_1 = \varphi_{01} = \psi_0 = \psi_1 =
@@ -138,7 +138,7 @@ multiplicative (requires both to interact). The asymmetry
 disappears only when $\varphi_{01} = \psi_{01} = 0$, i.e., when
 there is no twist content at all.
 
-## The twist as polarization rotator
+### The twist as polarization rotator
 
 Terms (8) and (15) reveal a striking pattern: when Hopf dressing
 meets linear polarization, the Hecke relation absorbs the

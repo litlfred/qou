@@ -2,7 +2,9 @@ The computation `tau-leptonic-decay.py` evaluates both the
 factorized and the product models at $q_0 \approx 1.1100$ and
 compares with the PDG experimental branching ratio.
 
-## Weak vertex data
+## The $\tau \to e$ / $\tau \to \mu$ branching-ratio witness
+
+### Weak vertex data
 
 The $T_{3,5} = (\sigma_0 \sigma_1)^5$ weak vertex in $H_3(q)$
 reduces (38 Hecke + 18 Yang–Baxter steps) to **6 NF terms**
@@ -18,7 +20,7 @@ $$
   |\mathcal{W}|^2 = 0.495.
 $$
 
-## Branching ratio comparison
+### Branching ratio comparison
 
 **Factorized model** (lepton universality):
 
@@ -59,7 +61,7 @@ $$
   = \mathbf{1.025} \pm 0.003.
 $$
 
-## Result
+### Result
 
 See [Table 2](#tbl:tau-branching-ratio-witness-table2-data).
 
@@ -67,7 +69,7 @@ The factorized model, in which the Markov trace of $T_{3,5}$
 is the universal matrix element, reproduces the PDG ratio to
 $0.34\%$.  The product model is excluded by data.
 
-## Decay channel NF structure
+### Decay channel NF structure
 
 Both decay channels $\tau \to e$ and $\tau \to \mu$ reduce to
 **6 NF terms** in $H_3(q)$.  The dominant term in both channels

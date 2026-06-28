@@ -15,7 +15,9 @@ symmetry group.
 
 ***
 
-## 1. Algebraic survival, physical death
+## Consequences of the $T_{2,11}$ annihilation
+
+### 1. Algebraic survival, physical death
 
 The torus knot $T_{2,11}$ satisfies every structural relation — it is a
 valid element of the Iwahori--Hecke algebra:
@@ -44,7 +46,7 @@ filter.
 
 ***
 
-## 2. Behaviour on the jet bundle
+### 2. Behaviour on the jet bundle
 
 At each brane level $n$, the level-$n$ spectral ideal
 $\mathcal{I}_4^{(n)} = \{w \in H^{(n)}(q) : g(\hat{w}) > 4\}$
@@ -70,7 +72,7 @@ at any level.
 
 ***
 
-## 3. No :refterm[descent]{#descent} to shells
+### 3. No :refterm[descent]{#descent} to shells
 
 The shell structure is governed by the transfer matrix
 eigenvalues $\lambda_\pm$ of $T_{\gamma e}(q)$
@@ -95,7 +97,7 @@ $$
 
 ***
 
-## 4. No $S_{11}$ symmetry — crystallographic obstruction
+### 4. No $S_{11}$ symmetry — crystallographic obstruction
 
 The symmetry group of $T_{2,11}$ is **not** $S_{11}$ but the
 dihedral group:
@@ -160,7 +162,7 @@ for details.
 
 ***
 
-## 5. Skein interaction: modified crossing relation
+### 5. Skein interaction: modified crossing relation
 
 When $T_{2,11}$ appears as an $L_0$ intermediate in a Skein
 resolution of physical knots, the spectral filter projects it

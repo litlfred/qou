@@ -2,7 +2,9 @@
 of [`rem:markov-closure-map-axiomatic`](#rem:markov-closure-map-axiomatic)
 for the 2-strand case.
 
-## Constructed infrastructure
+## Track C Step A: 2-strand Braid/Link infrastructure
+
+### Constructed infrastructure
 
 A **minimal but fully Lean-proved** infrastructure:
 
@@ -13,7 +15,7 @@ A **minimal but fully Lean-proved** infrastructure:
   on the crossing count.
 - `jonesAtOne : Link → ℝ` — classical-limit Jones values.
 
-## The atomic theorem (Atom 1 discharged)
+### The atomic theorem (Atom 1 discharged)
 
 $$
 \boxed{
@@ -24,7 +26,7 @@ $$
 In Lean: `theorem closure2_at_two_crossings_eq_hopf : closure2 σ_sq = hopfLink`
 — closed by `rfl` from the explicit definition.
 
-## The composed chain
+### The composed chain
 
 For the c_3 = -2 identification, the chain:
 
@@ -41,7 +43,7 @@ theorem closure2_jones_at_one_sigma_sq_eq_neg_two :
 
 closed by `closure2_at_two_crossings_eq_hopf` + `jonesAtOne_hopf_eq_neg_two`.
 
-## Track-C atoms (Step A)
+### Track-C atoms (Step A)
 
 | Track-C atom | Lean status |
 |---|---|
@@ -52,7 +54,7 @@ closed by `closure2_at_two_crossings_eq_hopf` + `jonesAtOne_hopf_eq_neg_two`.
 **Both atomic Track-C axioms are now Lean theorems.** The 2-strand
 case is fully discharged.
 
-## Remaining n-strand case (open)
+### Remaining n-strand case (open)
 
 The QOU framework needs the analogous chain for **3-strand typed
 braids in B_3**. The categorical content there is more subtle:

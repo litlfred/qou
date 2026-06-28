@@ -20,7 +20,9 @@ arithmetic on Young's lattice — both of which are *partition-size
 agnostic*: the proofs (or class instances) carry through verbatim
 at $n = 50, 82, 126$ once the underlying conjectures are accepted.
 
-## Scope of the matrix-evaluation programme's verification
+## Bypassing the $k \geq 12$ matrix-evaluation barrier
+
+### Scope of the matrix-evaluation programme's verification
 
 The matrix-evaluation programme produces, for each
 $n \leq 10$ and each $\lambda \vdash n$:
@@ -40,7 +42,7 @@ $(Z = 8, N = 8)$ collapses to a single $\nu$, and the full-twist
 acts as the identity on the saturated $\Phi_n$. Empirical computational
 verification is therefore in hand at the small magic numbers.
 
-## Limits of the matrix-evaluation programme
+### Limits of the matrix-evaluation programme
 
 At $n = 12$ already the partition count exceeds memory budgets for
 exact-rational seminormal-form computation; at $n \geq 50$ the
@@ -51,7 +53,7 @@ fundamentally not the right tool, because the seminormal form is a
 *per-partition* object and the saturated-shell content is a
 *structural* object. Adding more compute scales the wrong axis.
 
-## Contribution of the homological / LR-fusion framework
+### Contribution of the homological / LR-fusion framework
 
 Both higher-magic conjectures are structural statements about
 combinatorial objects whose verification at large $n$ is a
@@ -72,7 +74,7 @@ seconds. The numerical *prediction* therefore exists; what is
 conjectural is the *structural identification* of these
 combinatorial objects with the categorical mass support.
 
-## Empirical-verification reframing
+### Empirical-verification reframing
 
 The historical empirical scorecard
 ([prop:magic-numbers-from-q](#prop\:magic-numbers-from-q)) records

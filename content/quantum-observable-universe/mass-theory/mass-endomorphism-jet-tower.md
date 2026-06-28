@@ -10,7 +10,9 @@ This remark reframes
 ([mass endomorphism tower](#prop\:mass-endomorphism-tower))
 in **jet-brane** language.
 
-## Sufficiency of quadratic terms per jet level
+## Jet-brane reformulation of the mass tower
+
+### Sufficiency of quadratic terms per jet level
 
 The prop's formula keeps at most quadratic $\hat{V}_i \hat{V}_j$
 spectral coordinates (the $z^2 \Phi_q(|\hat V_i \hat V_j|)$ term)
@@ -46,7 +48,7 @@ independent order-3/4 term; it ascends to jet level $n+1$ as a
 new singleton or pair, and is already captured by the
 level-$(n{+}1)$ contribution in the tower sum.
 
-## Pentagon ascension of higher-order interactions
+### Pentagon ascension of higher-order interactions
 
 The quantum dilogarithm satisfies the **pentagon identity**
 ([quantum Bloch group](#def\:quantum-bloch-group)): for operators
@@ -90,7 +92,7 @@ term (at $n=0$) and per-level transient contributions:
 where $\mathcal{P}_n$ is the set of pair blow-up centres at jet
 level $n$.
 
-## $\mathcal{P}_n$ is the full set $\{(i,j) : i < j\}$ at every level
+### $\mathcal{P}_n$ is the full set $\{(i,j) : i < j\}$ at every level
 
 The pair set is the full set of unordered pairs at every jet level,
 not only adjacent ones — the Markov-trace factorization theorem
@@ -114,7 +116,7 @@ order-$\geq 3$ defects belong at level $n+1$, not as explicit
 cubic terms at level $n$
 (see `adjacent-vs-full-probe.witness.json`).
 
-## Remaining open subconjectures
+### Remaining open subconjectures
 
 1. **Jet-level sum convergence** — *(conjectural)* path-(b) closure via
  [`conj:jet-tower-uniform-delta-max`](#conj\:jet-tower-uniform-delta-max)

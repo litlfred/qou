@@ -6,15 +6,17 @@ typed-$\mathbf{B}_3$ infrastructure in
 [`rem:typed-b3-sub-braid-extraction`](#rem:typed-b3-sub-braid-extraction)
 to an arbitrary number of strands $n \in \mathbb{N}$.
 
-## Defined objects
+## $n$-strand braid / Markov / Hecke scaffolding
+
+### Defined objects
 
 See [Table 1](#tbl:braid-group-n-strand-table1-data).
 
-## Specialisations
+### Specialisations
 
 See [Table 2](#tbl:braid-group-n-strand-table2-data).
 
-## Significance
+### Significance
 
 The categorical-derivation chain through $N=4$ in
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
@@ -31,7 +33,7 @@ each new $n$ adds an `instance HeckeQuotient n q_0` and
 `instance MarkovTraceN n q_0`, and downstream theorems
 auto-specialise.
 
-## Specialisations landed
+### Specialisations landed
 
 See [Table 3](#tbl:braid-group-n-strand-table3-data).
 
@@ -43,7 +45,7 @@ type, so the conversion `BraidWord 3 → TypedBraidWord3` is into the
 `sigma`/`sigma_inv` subset (the `averaged` channel has no counterpart
 in the generic n-strand types).
 
-## Open R&D
+### Open R&D
 
 - Per-$n$ discharge of `MarkovTraceN n q` from a fixed Markov-trace
   operator on the inductive limit $\bigcup_n \mathbf{B}_n$.

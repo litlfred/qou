@@ -4,7 +4,9 @@ arise from the eigenstructure of the Gram matrix $G$ on $H_A(q)$
 and reflect the decomposition of $H_A(q)$ into irreducible
 representations.
 
-## Eigendecomposition
+## Gram weight eigenstructure
+
+### Eigendecomposition
 
 The Gram matrix $G$ on the NF subspace of $H_A(q)$ has
 eigendecomposition
@@ -25,7 +27,7 @@ the $8$-dimensional NF subspace. For $A = 6$
 (${}^6\mathrm{He}$), the signature has hundreds of negative
 eigenvalues.
 
-## Projection of the conversion difference
+### Projection of the conversion difference
 
 The difference element $\delta_k = \mathcal{G}_{\mathrm{par}} -
 \mathcal{G}_{\mathrm{dau}}^{(k)}$ decomposes as
@@ -47,7 +49,7 @@ eigenspaces contribute negatively. The physical Frobenius norm
 $\lVert \delta_k \rVert_F = \sqrt{|\sum_\alpha \lambda_\alpha c_{k\alpha}^2|}$
 is the absolute magnitude.
 
-## Boundary vs interior suppression
+### Boundary vs interior suppression
 
 For ${}^6\mathrm{He}$ ($N = 4$ neutrons at positions
 $\{0, 2, 4, 5\}$), the computed Frobenius norms are:
@@ -68,7 +70,7 @@ algebra: the Gram inner product accordingly weights each conversion
 channel by the geometric distance (in the Frobenius metric)
 between parent and daughter in $H_A(q)$.
 
-## Connection to the Markov trace decomposition
+### Connection to the Markov trace decomposition
 
 The Markov trace decomposes over irreps as
 

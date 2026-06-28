@@ -6,7 +6,9 @@ integral* calculus lifts to $\mathbf{No}$ up to an infinitesimal
 correction. This remark records what works, and how classical
 analysis is recovered via the standard-part map.
 
-## 1. Differential calculus: Jackson derivative as the native $d/dx$
+## Calculus on $\mathbf{No}$ up to an infinitesimal correction
+
+### 1. Differential calculus: Jackson derivative as the native $d/dx$
 
 Fix an infinitesimal $\varepsilon \in \mathbf{No}$ with
 $\varepsilon > 0$ and set $q = 1 + \varepsilon$. The Jackson
@@ -42,7 +44,7 @@ extending $d/dx$ on $\mathbb{R}$, making $\mathbf{No}$ a
 differential field. Under this derivation, many transcendental
 identities ($\exp$, $\log$, $\mathrm{Li}_2$) extend accordingly.
 
-## 2. Formal integration: antiderivative exists, measure does not
+### 2. Formal integration: antiderivative exists, measure does not
 
 Berarducci--Mantova further show that $\mathbf{No}$ admits a
 *right inverse to $D$*: for every $f \in \mathbf{No}$ there
@@ -67,7 +69,7 @@ therefore:
  (algebraic, survives) or for the *standard-part* of Riemann
  sums computed on $\mathbf{No}$-valued partitions.
 
-## 3. Limits become evaluations
+### 3. Limits become evaluations
 
 Every classical sequential limit
 
@@ -94,7 +96,7 @@ classical limit exists.
  index sets require more care; the transfer principle covers
  first-order cases but not arbitrary topological statements.
 
-## 4. Formal power series: the safe regime
+### 4. Formal power series: the safe regime
 
 All formal-power-series identities used in the main paper
 ($\exp_q, \log_q, \mathrm{Li}_2^q$, quantum dilogarithm,
@@ -107,7 +109,7 @@ This means the **information-theory chapter** computations
 survive: entropies, Lyapunov exponents, and bandwidth formulas
 are rational or formal-power-series expressions in $q$.
 
-## 5. Measure up to $\varepsilon$: Loeb construction
+### 5. Measure up to $\varepsilon$: Loeb construction
 
 A technical device from NSA: given a hyperfinite partition of
 $[0, 1] \subset \mathbf{No}$ into $N = \omega$ equal subintervals,
@@ -129,7 +131,7 @@ The outcome, to infinitesimal precision, is the classical
 Möbius energy. Whether this *adds* anything over the classical
 calculation is unclear.
 
-## Summary
+### Summary
 
 See [Table](#tbl:calculus-up-to-epsilon-table-data).
 

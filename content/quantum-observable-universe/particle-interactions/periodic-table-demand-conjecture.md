@@ -14,7 +14,9 @@ where $\mathcal{A}(Z, N)$ is the derived atom
 demand magnitude
 ([demand stability](#prop:demand-stability)).
 
-## Formal statement
+## Demand-minimizing valley of stability
+
+### Formal statement
 
 Let $\mathcal{V} \subset \mathbb{Z}_{\geq 0}^2$ be the set of
 pairs $(Z, N)$ such that $\mathcal{A}(Z, N)$ is
@@ -36,7 +38,7 @@ $$
 The conjecture is then that $\mathcal{V}$ coincides with the
 experimentally observed valley of stability for all $A \leq 238$.
 
-## Subsidiary conjectures
+### Subsidiary conjectures
 
 **(i) Magic numbers from demand closure.**
 *The nuclear magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ are
@@ -57,7 +59,7 @@ where $|\mathrm{dem}(\mathcal{N}(Z, N))| \to \infty$ under
 addition of one proton (neutron): beyond this line, the
 Gröbner--Shirshov reduction cannot produce a finite-demand NF.*
 
-## Inductive verification strategy
+### Inductive verification strategy
 
 The conjecture can be verified computationally by inductive
 Gröbner--Shirshov reduction
@@ -75,7 +77,7 @@ with the existing Hecke engine.  For $A > 12$, the transfer matrix
 identities $C_{pp}^2 = H_A C_{pp} + \mathbf{1}$ and
 $C_{nn}^2 = H_A C_{nn} + \mathbf{1}$ provide further compression.
 
-## Predicted vs observed for $A \leq 4$
+### Predicted vs observed for $A \leq 4$
 
 | $A$ | Predicted $(Z_*, N_*)$ | Observed | $|\mathrm{dem}_*|$ |
 |:---:|:---|:---|---:|

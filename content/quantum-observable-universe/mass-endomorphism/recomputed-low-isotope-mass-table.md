@@ -18,11 +18,13 @@ and the* $\rho_K$ *refinement infrastructure, **three independent production pat
    [`rho_k_h3a_refinement.py`](../../../computations/rho_k_h3a_refinement.py),
    the production path for binding-fraction $\Delta_\lambda$ analysis.
 
-## Cross-check (machine epsilon for all 5 atoms)
+## The recomputed low-isotope mass table
+
+### Cross-check (machine epsilon for all 5 atoms)
 
 See [Table 1](#tbl:recomputed-low-isotope-mass-table-table1-data).
 
-## Mass-table predictions (direct binding formulation)
+### Mass-table predictions (direct binding formulation)
 
 The atomic-mass formula is
 
@@ -169,7 +171,7 @@ The accessors
 and friends raise `NotImplementedError` with pointers to these
 blockers; consumers must NOT fall back to the LO or Strategy-3 forms.
 
-## Two structural notes
+### Two structural notes
 
 **1. The 0.000 % on $p$ and $n$ is a calibration-discipline
 violation, not a prediction.** The ρ_K leading-order ansatz used
@@ -214,7 +216,7 @@ from CODATA) is the territory of:
   $\Delta_\lambda$ from first principles is an open research
   question.
 
-## Performance summary
+### Performance summary
 
 See [Table 4](#tbl:recomputed-low-isotope-mass-table-table4-data).
 
@@ -222,51 +224,6 @@ The hybrid technique (30-dps $y_\lambda$ + float64 $\chi^\lambda_q$,
 with per-`n` cache) is the **recommended default** for
 partition-sum consumers needing better than $10^{-5}$ agreement
 without the overhead of full 50-dps mpmath.
-
-## Path A categorical verification of `18` (proton)
-
-The atomic-shift exponent $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K)$
-that controls the $u$-power in the $D(u)$ denominator
-([`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md))
-is now categorically verified for the proton by direct symbolic
-Hoefsmit pole-order analysis
-([`per_irrep_pole_proton_h3.py`](../../../computations/per_irrep_pole_proton_h3.py),
-witness:
-[`per-irrep-pole-proton-h3.witness.json`](../../../computations/per-irrep-pole-proton-h3.witness.json)):
-
-$$
-  \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\mathcal{B}_p)\bigr) \;=\; 19 \;=\; 18 \cdot Z + 21 \cdot N + 1 \quad \text{at } (Z, N) = (1, 0).
-$$
-
-**Cross-confirmation:** the orthogonal computation in
-[`shift_from_nf_basis.py`](../../../computations/shift_from_nf_basis.py)
-(NF-basis decomposition, recorded in
-[`shift-from-nf-basis.witness.json`](../../../computations/shift-from-nf-basis.witness.json))
-independently reports `shift_proton_h3 = 19` — two independent
-symbolic methods agree exactly on the per-proton u-pole.
-
-**Multi-nucleon verification (deuteron):**
-[`per_irrep_pole_deuteron_h6.py`](../../../computations/per_irrep_pole_deuteron_h6.py)
-(witness:
-[`per-irrep-pole-deuteron-h6.witness.json`](../../../computations/per-irrep-pole-deuteron-h6.witness.json))
-extends Path A to $A = 2$ via three optimisations: cached
-symbolic $y_\lambda(q)$ for $n = 6$, auto-cached symbolic
-$\chi^\lambda_q(\beta_D)$
-([`chi-deuteron-h6.witness.json`](../../../computations/chi-deuteron-h6.witness.json)),
-and per-term pole order. The per-term maximum is uniquely $40$
-at $\lambda = (4, 1, 1)$, so
-
-$$
-  \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_D)\bigr) \;=\; 40 \;=\; 18 \cdot 1 + 21 \cdot 1 + 1
-$$
-
-rigorously (lower-order per-term poles cannot cancel a strict
-maximum). Multi-nucleon Path A closed.
-
-The "$18$" in $18Z + 21N + 1$ is the per-proton additive
-coefficient of the FULL summed $u$-pole order, not the q-pole
-order of any per-irrep $\chi^\lambda_q$ (per-irrep max at $H_3$
-is $11$ at $\lambda = (2, 1)$).
 
 ## Cross-references
 

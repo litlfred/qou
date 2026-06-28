@@ -23,7 +23,9 @@ $$
    = -\frac{(q^4 + 1)(q^2 - 1)}{4 q^3}.
 $$
 
-## Content of this module
+## V_(2,1) Hoefsmit matrix derivation
+
+### Content of this module
 
 | theorem | content | proof |
 |---|---|---|
@@ -35,7 +37,7 @@ $$
 
 All theorems sorry-free.
 
-## Laurent decomposition and the ε^k growth
+### Laurent decomposition and the ε^k growth
 
 The probe data shows V_(2,1) ε^k coefficients grow polynomially
 (`0, -1, 0.5, -2.5, 3.5, -5, 6.75, ...`). This follows from the
@@ -52,7 +54,7 @@ and $q^{-3}/4$), and the $q^{-3}/4$ term has $\binom{k+2}{2}$ growth
 $\sim k^2/2$. This matches the observed asymptotic $\sim k(k+3)/2$
 for the V_(2,1) coefficients (proved earlier in the conversation).
 
-## Deferred to follow-up PR
+### Deferred to follow-up PR
 
 The **full Lean matrix-product trace derivation** (computing
 $\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2$\times$2
@@ -73,7 +75,7 @@ sympy's symbolic verification in the probe, **establishes the
 closed form empirically + structurally**; the missing piece is a
 Lean-level proof tying the matrix-product to the rational form.
 
-## Full matrix-product trace theorem (statement)
+### Full matrix-product trace theorem (statement)
 
 Now formalised explicitly with the Hoefsmit 2$\times$2 matrices:
 

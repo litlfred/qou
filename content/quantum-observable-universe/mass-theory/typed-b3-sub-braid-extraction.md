@@ -4,7 +4,9 @@
 Track-C chain, narrowing the open axiomatic content to a SINGLE focused
 combinatorial fact.
 
-## Scope of this closure
+## Typed-B_3 sub-braid extraction closure
+
+### Scope of this closure
 
 Per the Track-C plan, the n-strand (= 3-strand for typed-B_3) case
 requires extracting sub-braids from the canonical 11-crossing braids
@@ -18,7 +20,7 @@ requires extracting sub-braids from the canonical 11-crossing braids
 5. Encodes the FINAL substantive axiom as a focused class field
    `DominantSubBraidAtEps6` and **proves c_3 = -2 conditionally** on it.
 
-## The chain composition
+### The chain composition
 
 Under the single axiomatic input, the full Track-C chain is fully
 Lean-proved:
@@ -32,7 +34,7 @@ The composed theorem `composed_track_C_c_3_eq_neg_two` is closed by
 `closure2_jones_at_one_sigma_sq_eq_neg_two` (already proved in
 [`rem:braid-link-types`](#rem:braid-link-types)).
 
-## The remaining axiom
+### The remaining axiom
 
 The single open axiom is:
 
@@ -58,7 +60,7 @@ The Lean discharge of this axiom requires:
 Steps 1, 2, 4 are mechanical Lean infrastructure. Step 3 is the
 substantive combinatorial content.
 
-## Cumulative Track-C atoms
+### Cumulative Track-C atoms
 
 After this file:
 

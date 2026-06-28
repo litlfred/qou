@@ -4,7 +4,9 @@ universe) and one hadronic (fixing the interaction energy scale).
 All other masses, binding energies, Q-values, and coupling
 constants are predictions.
 
-## The three inputs
+## Calibration inputs and predictive content
+
+### The three inputs
 
 | Input | What it fixes | CODATA 2022 | Rel. precision |
 |-------|--------------|-------------|:-:|
@@ -121,7 +123,7 @@ remain an input** and claims of "$\mathfrak{Q}_\beta$ derivable from CAL-1 + CAL
 are conditional on the unproved ansatz. Full audit:
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
 
-## Necessity of exactly three inputs
+### Necessity of exactly three inputs
 
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
 ([categorical action](#def:categorical-action)) lives in a
@@ -178,7 +180,7 @@ No further parameters exist because:
   orthogonality
   ([RJ canonical inner product](#prop:rj-canonical-inner-product)).
 
-## Predictions from the three inputs
+### Predictions from the three inputs
 
 **From $q_0$ alone (dimensionless):**
 - Lepton mass ratios: $m_\tau/m_e$, $m_\tau/m_\mu$
@@ -212,7 +214,7 @@ No further parameters exist because:
   each requiring a hyperbolic volume computation)
 - Binding energy per nucleon $B/A$: same Skein resolution approach
 
-## Comparison with the Standard Model
+### Comparison with the Standard Model
 
 The Standard Model has **19 free parameters** (6 quark masses,
 3 lepton masses, 3 CKM angles + 1 phase, 3 gauge couplings,

@@ -4,7 +4,7 @@ This content captures the current understanding of the $\mathfrak{Q}_\beta$
 precision-ladder coefficients $c_k$, settling the Story A vs Story B
 ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../computations/probe_q_beta_high_precision_ck.py).
 
-## The chain
+## The γγ canonical derivation chain and Story B selection
 
 Following the user's direction: the canonical $c_k$ values
 are determined by tracing through
@@ -91,7 +91,7 @@ $\mathfrak{Q}_\beta^{\text{cat}}$ precision ladder from
 | 3 | $-2 = J_{\text{Hopf}}(q{=}1)$ | classical-limit Jones polynomial of the Hopf-link substructure at 3-fold Markov closure (cross-Wedderburn-block contribution) |
 | 4 | $b^2 + \tfrac{1}{2}$ | Kashiwara + half-Hopf mixed |
 
-## Story A vs Story B resolution
+### Story A vs Story B resolution
 
 [`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py)
 runs the categorical-derivation chain end-to-end and observes:
@@ -122,7 +122,7 @@ substrate-only data via the categorical chain, not fitted.
 the categorical-chain interpretation (Story B) is canonical
 because it traces back to substrate principles, while the
 empirical-fit interpretation (Story A) has free parameters.
-## Track-C open question
+### Track-C open question
 
 The remaining open question (Track C per  plan): **can the
 $c_3 = -2$ Hopf assignment be PROVED rigorously**, not just identified
@@ -133,7 +133,7 @@ substructure identification at the categorical level — substantial
 follow-up work tracking through 's selection theorem +
 Hoefsmit machinery.
 
-## Track-B open question
+### Track-B open question
 
 Once Track C settles the structural identification, **Track B**
 extends to higher orders ($c_5, c_6, \ldots$) where the simple

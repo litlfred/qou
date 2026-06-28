@@ -13,7 +13,9 @@ This remark computes the atomic mass for $Z = 1$ through
 $Z = 10$ using the **full regular representation** of $H_3(q)$
 with all three irreducible channels tracked independently.
 
-## Three-channel decomposition
+## Full three-channel Hecke atomic mass
+
+### Three-channel decomposition
 
 See [Table: Three-channel $H_3(q)$ decomposition](#tbl:atom-mass-full-hecke-table-data).
 
@@ -48,7 +50,7 @@ multi-nucleon state, not the full $H_{3A}(q)$ Markov trace; the two coincide
 only at $A = 1$. The columns below should therefore be read as this projection
 model rather than the canonical $H_{3A}$ trace.
 
-## Mass decomposition (fibre / horizontal / mixed)
+### Mass decomposition (fibre / horizontal / mixed)
 
 For each nucleus, the mass integrand
 ([Hecke mass element](#def:hecke-mass-element)) splits along
@@ -66,7 +68,7 @@ the charge--mass duality
 3. **Mixed** (vertex operator coupling):
    $\mathfrak{m}_{\mathrm{mix}} = \mathfrak{E}_{\mathrm{cross}} \cdot (q - 1)^2$.
 
-## Results for $Z = 1$--$10$
+### Results for $Z = 1$--$10$
 
 The per-channel traces $\mathrm{tr}_{\mathrm{sym}},
 \mathrm{tr}_{\mathrm{std}}, \mathrm{tr}_{\mathrm{alt}}$ below are
@@ -90,7 +92,7 @@ the published table; an independent witness for the high-$A$ $\chi^\lambda$
 (the Gröbner--Shirshov reducer is infeasible past the light nuclei) remains
 a separate open item.
 
-## Key observations
+### Key observations
 
 1. **Standard channel suppression.**  The standard (2$\times$2) trace
    shrinks rapidly with $A$ for odd-$A$ and neutron-excess

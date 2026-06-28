@@ -6,7 +6,9 @@ $B = 1$ as required for a baryon.  The antiquark inside the meson
 cannot spontaneously convert into a quark — baryon number is
 conserved.
 
-## Mesons are unstable at $q_0$
+## Proton formation and the energy scale $\mathfrak{E}_0$
+
+### Mesons are unstable at $q_0$
 
 Before discussing proton formation, note that the meson itself is
 **not a stable bound state** at $q_0$.  The NF of the $\mathfrak{u}\bar{\mathfrak{d}}$
@@ -30,7 +32,7 @@ The only stable hadronic states are those produced by
 $\mathcal{B}_3$ confinement (proton, neutron), where the Borromean
 topology provides genuine 3-body binding.
 
-## Three pair productions $\to$ proton
+### Three pair productions $\to$ proton
 
 The proton requires three quarks ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$)
 with no antiquarks.  These come from three independent
@@ -65,7 +67,7 @@ $\bar{\mathfrak{d}}_3$) either annihilate back to photons or form
 an antiproton $\bar{\mathfrak{p}}$.  Total baryon number is conserved:
 $3 \times (1/3 - 1/3) = 0$ in, $1 + (-1) = 0$ out.
 
-## Typed crossings: the physical proton and neutron
+### Typed crossings: the physical proton and neutron
 
 The untyped composition gives $\mathrm{net} \approx 1.506$, not the
 CODATA proton net $\approx 0.999$.  The gap is closed by **typed
@@ -88,7 +90,7 @@ With typed crossings at $q_0 \approx 1.1100$:
 | Proton $\mathfrak{p}$ | $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ | $+0.9991$ |
 | Neutron $\mathfrak{n}$ | $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ | $+0.8108$ |
 
-## The scale $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
+### The scale $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
 
 The NF coefficients are dimensionless Laurent polynomials in $q$.
 To convert to physical energies (MeV), a single scale

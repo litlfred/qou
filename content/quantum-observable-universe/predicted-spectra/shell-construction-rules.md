@@ -4,7 +4,9 @@ is computed by the following algorithm.  The inputs are
 the substrate parameter $q$ and the nucleon counts $(Z, N)$.
 No external nuclear physics data is used.
 
-## Proven facts used by the algorithm
+## The $\beta^-$ $Q$-value construction algorithm
+
+### Proven facts used by the algorithm
 
 **(P1)** The Gröbner--Shirshov reduction of the nuclear braid has **zero
 Yang–Baxter steps** and **zero far-commutativity steps**
@@ -32,7 +34,7 @@ crosses at $n_s = 5$.
 Conjugation by $T_{2,9}$ preserves chirality (all same-sign
 crossings commute with the crossing reversal involution).
 
-## Conjectured (used but not yet proven)
+### Conjectured (used but not yet proven)
 
 **(C1)** The magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$
 emerge from the palindromic closure pattern.  Currently
@@ -45,14 +47,14 @@ is the largest $T_{2,n}$ with $n \leq n_s$.
 in the $Q$-value (the inner shells are the same in
 parent and daughter).
 
-## Algorithm
+### Algorithm
 
 **Input:** $(Z, N)$ with $N \geq 1$ (parent has at least one
 neutron to convert).
 
 **Output:** $Q(Z, N)$ in MeV.
 
-### Step 0: Magic number table
+#### Step 0: Magic number table
 
 $$
   \mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}
@@ -75,7 +77,7 @@ $n_{\mathrm{out}}(X) = 0$ and the outermost shell is
 **closed**.  The relevant shell size for the closure is
 $n_{\mathrm{shell}}(X)$.
 
-### Step 1: Outer shell occupancies
+#### Step 1: Outer shell occupancies
 
 Compute for parent and daughter:
 
@@ -93,7 +95,7 @@ If any of these are zero (magic closure), the corresponding
 shell is **closed** and the shell size is
 $n_{\mathrm{shell}}(X)$ instead.
 
-### Step 2: Torus knot traces
+#### Step 2: Torus knot traces
 
 For each outer shell occupancy $n_{\mathrm{out}}$, compute
 the Markov trace of $T_{2,n_{\mathrm{out}}} = \sigma^{n_{\mathrm{out}}}$
@@ -109,7 +111,7 @@ instead (the trace of the **full closed shell**).
 The traces are computed from the Chebyshev recurrence —
 no numerical reduction needed.
 
-### Step 3: Bare Skein polynomial ratio
+#### Step 3: Bare Skein polynomial ratio
 
 Compute the Level 0 transfer matrix Skein polynomials
 $P_{\mathrm{par}}(q)$ and $P_{\mathrm{dau}}(q)$ using the
@@ -127,7 +129,7 @@ $$
   R_{\mathrm{bare}} = \log_q(P_{\mathrm{dau}} / P_{\mathrm{par}})
 $$
 
-### Step 4: Outer shell correction
+#### Step 4: Outer shell correction
 
 The bare computation does not account for the torus knot
 binding within shells.  The correction:
@@ -153,7 +155,7 @@ This captures:
 - **Shell opening cost**: when the parent has a magic closure
   that the daughter breaks, $\Delta < 0$ $\to$ $Q$ increases.
 
-### Step 5: Weak vertex
+#### Step 5: Weak vertex
 
 The $T_{3,5}$ weak vertex contributes:
 
@@ -161,7 +163,7 @@ $$
   \Delta_{T_{3,5}} = \log_q \mathrm{tr}_{\mathrm{Markov}}(T_{3,5}, 3) = -3.370
 $$
 
-### Step 6: Inner shell dressing
+#### Step 6: Inner shell dressing
 
 The inner closed shells (shared between parent and daughter)
 are conjugated by $T_{2,9}$:
@@ -173,7 +175,7 @@ $$
 
 **(C3)** is used here.
 
-### Step 7: $Q$-value
+#### Step 7: $Q$-value
 
 $$
   \boxed{
@@ -192,7 +194,7 @@ $$
 where $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$,
 and $\mu_0 = m_e / (3 E_{\times})$.
 
-## Worked example: ${}^{60}\mathrm{Co}$ ($Z = 27, N = 33$)
+### Worked example: ${}^{60}\mathrm{Co}$ ($Z = 27, N = 33$)
 
 **Step 0:**
 - $m_{\leq}(27) = 20$, $m_{\leq}(33) = 28$

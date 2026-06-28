@@ -4,7 +4,9 @@ the Hecke representation. This remark makes the action explicit
 and identifies the $\mathrm{SO}(3)$ structure that the current
 pipeline exploits only partially.
 
-## The six basis operators
+## Knot-operator action on the Bring surface
+
+### The six basis operators
 
 The Hecke algebra $H_3(q)$ has dimension $3! = 6$. In the
 Gröbner-Shirshov normal form, the basis elements are:
@@ -23,7 +25,7 @@ encodes the inner-product structure: $G$ is a $6 \times 6$
 symmetric positive-definite matrix whose inverse $G^{-1}$ defines
 the Frobenius dual basis.
 
-## Action on the Bring surface
+### Action on the Bring surface
 
 Bring's surface $\Sigma_4$ has the structure of a degree-5
 algebraic curve with $S_5$ symmetry. The three quark strands of a
@@ -50,7 +52,7 @@ permutation; at $q = q_0 \neq 1$, each crossing
 shifts the root positions along the color-tube fibre by a factor
 of $q$ or $q^{-1}$.
 
-## The $S_3 \subset \mathrm{SO}(3)$ gap
+### The $S_3 \subset \mathrm{SO}(3)$ gap
 
 The six basis operators generate the **discrete** group
 $S_3 \cong \mathrm{Dih}_3$ — the group of permutations of three
@@ -101,7 +103,7 @@ $\mathrm{SO}(3) / S_3$ rotations. These would give:
    surface, expands in these harmonics — giving a spectral
    decomposition of the mass formula in angular-momentum space.
 
-## The Gram inverse on the Bring surface
+### The Gram inverse on the Bring surface
 
 The Gram inverse $G^{-1}$ defines the Frobenius dual basis:
 $b_k^\vee = \sum_j (G^{-1})_{kj} b_j$. On the Bring surface,

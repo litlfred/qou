@@ -13,7 +13,9 @@ to ${\sim} 1$ hour total.  At $H_{15}$ ($n_{\mathrm{partitions}}
 = 176$) and $H_{18}$ (${=}\,297$) the symbolic path is
 intractable in a session budget.
 
-## Crystal-bases substitution
+## Crystal-bases Path A pole-order verification
+
+### Crystal-bases substitution
 
 In the Kashiwara crystal limit $q \to 0$, the Hecke generators
 $\sigma_i$ acquire signed-permutation actions on the standard
@@ -41,7 +43,7 @@ $$
 
 with the full pole order $= -\min$ when negative.
 
-## Implementation
+### Implementation
 
 [`per_irrep_pole_atom_crystal.py`](../../../computations/per_irrep_pole_atom_crystal.py)
 implements the crystal-bases path with two layered caches:
@@ -60,7 +62,7 @@ keyed by $(n, \lambda)$.  The cache is the only sympy-heavy piece;
 once built, the per-atom verification is pure integer arithmetic
 on the SYT basis.
 
-## Verification
+### Verification
 
 See [Table 2](#tbl:crystal-bases-path-a-table2-data).
 
@@ -74,7 +76,7 @@ flagged `asserted: false` and excluded from the gate, so the
 witness remains green for the verified scope.  See *A=1 anomaly*
 below for the diagnostic interpretation.
 
-## Speedup
+### Speedup
 
 Per-atom timing (with $y_\lambda$ pole-order cache **already
 built**; per-atom cost is then pure integer arithmetic on the SYT
@@ -96,7 +98,7 @@ symbolic-q.  The crossover where crystal-bases is fastest occurs
 at $n \geq 9$; at $n \leq 6$ both paths are competitive once the
 $y_\lambda$ cache is built.
 
-## A=1 anomaly
+### A=1 anomaly
 
 The crystal-bases Path A returns $\mathrm{shift}(\mathrm{neutron}) = 19$,
 *not* the closed-form-extrapolated $22 = 18 \cdot 0 + 21 \cdot 1
