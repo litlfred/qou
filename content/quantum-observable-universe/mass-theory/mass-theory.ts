@@ -654,6 +654,13 @@ export default chapter({
         // consumes the Habiro residue sum + the H_3 Markov–Wenzl weights.
         "borromean-h4-categorical-derivation",
         "borromean-h4-categorical-derivation-proof",
+        // Re-homed orphans (2026-06-28): the Habiro precision-ladder
+        // integrality statement + the Pochhammer normalisation bridge,
+        // authored 2026-06-26 but never wired into a manifest. The
+        // bridge consumes the precision-ladder equivalence.
+        "habiro-precision-ladder-equivalence",
+        "habiro-pochhammer-bridge",
+        "habiro-pochhammer-bridge-proof",
       ],
     }),
 
@@ -686,6 +693,19 @@ export default chapter({
         "cyclotomic-orbit-sum-all-depths-table1-data",
         "cyclotomic-dimension-synthesis-all-depths",
         "cyclotomic-dimension-synthesis-all-depths-proof",
+        // Re-homed orphans (2026-06-28): the cyclotomic doubling
+        // identity Φ₈(X)=Φ₄(X²) + the a₈ partition-function identity +
+        // the ζ₈ level-2 SU(2) Verlinde witness, authored 2026-06-26
+        // but never wired. Strict dependency order: a8 and ζ8 both
+        // consume the doubling identity. The doubling block's
+        // strand-doubling *interpretation* was refuted (the algebraic
+        // identity stands); see its historical-note section.
+        "cyclotomic-strand-doubling",
+        "cyclotomic-strand-doubling-proof",
+        "a8-partition-function-identity",
+        "a8-partition-function-identity-proof",
+        "zeta8-witness-level2-su2",
+        "zeta8-witness-level2-su2-proof",
       ],
     }),
 

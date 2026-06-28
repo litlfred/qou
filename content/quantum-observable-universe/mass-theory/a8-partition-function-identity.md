@@ -18,23 +18,6 @@ $$
 (Hardy–Ramanujan, OEIS A000041):
 $p(1) = 1,\; p(2) = 2,\; p(3) = 3,\; p(4) = 5,\; p(5) = 7$.*
 
-## Proof
-
-Coefficient-by-coefficient match in descending order of $X$-power:
-
-| Power of $X$ | Coefficient in $a_8$ | $p(n)$ | $n = 5 - k$ |
-|---|---|---|---|
-| $X^4$ | $1$ | $p(1) = 1$ (match) | $n = 1$ |
-| $X^3$ | $2$ | $p(2) = 2$ (match) | $n = 2$ |
-| $X^2$ | $3$ | $p(3) = 3$ (match) | $n = 3$ |
-| $X^1$ | $5$ | $p(4) = 5$ (match) | $n = 4$ |
-| $X^0$ | $7$ | $p(5) = 7$ (match) | $n = 5$ |
-
-Each coefficient is the exact value of the integer partition
-function at the corresponding index. The identity is checked in
-$\mathbb{Z}[X]$ by `ring` after expanding
-$\sum_{n=1}^{5}$ over $\{1, 2, 3, 4, 5\}$. ∎
-
 ## Categorical interpretation
 
 The integer partition function $p(n)$ appears throughout
@@ -88,6 +71,5 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
   [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/docs/coordination/1ppq-qbeta.md)
 - This tranche's coordination ledger:
   [`docs/coordination/2026-06-01-qbeta-habiro-followup.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/docs/coordination/2026-06-01-qbeta-habiro-followup.md)
-
 
 **Mathematical Novelty:** This result records the numerical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$. It is an empirical Habiro-shell observation rather than a new deductive argument, utilizing standard partition values, with the identity proved formally via ring equivalences.

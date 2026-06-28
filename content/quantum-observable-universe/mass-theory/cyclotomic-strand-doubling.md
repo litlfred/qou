@@ -9,12 +9,6 @@ $$
 *equivalently, $X^4 + 1 = (X^2 + 1) \circ X^2$ where $\circ$ denotes
 polynomial composition.*
 
-## Proof
-
-By direct evaluation, $\Phi_4(X) = X^2 + 1$ and
-$\Phi_8(X) = X^4 + 1$. Composing $\Phi_4$ with $X^2$ gives
-$(X^2)^2 + 1 = X^4 + 1 = \Phi_8(X)$. ∎
-
 ## Empirical context (Habiro element of nucleon-binding pairs)
 
 The factor $\Phi_8^2 = (X^4 + 1)^2$ appears as a cyclotomic
@@ -90,6 +84,5 @@ useful — what's wrong is the categorical content attached to it.
 The corresponding Lean lemma
 [`cyclotomic_8_eq_cyclotomic_4_comp_X_sq`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean)
 remains valid as a pure algebraic identity over $\mathbb{Z}[X]$.
-
 
 **Mathematical Novelty:** The identity itself is a textbook algebraic cyclotomic composition identity ($\Phi_{2n}(X)=\Phi_n(X^2)$). Note that a previous categorical strand-doubling interpretation was refuted, leaving this purely as a standard but necessary foundational lemma with low inherent novelty.
