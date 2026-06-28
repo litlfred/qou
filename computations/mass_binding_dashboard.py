@@ -18,7 +18,7 @@ closed-form.md), built from the same three 2-nucleon `Lbond` constants the
 q-CLT already uses. So `B_sym` (and `m_sym_atom`) are now computed for EVERY
 isotope from a closed form; the exact p(3A) trace is still run when
 `n = 3A ≤ --max-strands` (default 21, A ≤ 7) purely to VALIDATE the chain
-(|chain − exact| ≈ 1e-13). The factorized q-CLT and ⁴He magic volume remain the
+(|chain − exact| ≈ 1e-13). The factorized q-CLT remains the
 cruder A→∞ extrapolations shown alongside for comparison.
 
 EXPLORATORY presentation tool — no production rewire, no fit, no witness emitted
@@ -198,10 +198,9 @@ def _electron_binding_mev(Z):
 
 def _constants():
     from q_parameter import Q as q0
-    from knot_volumes import VOL_BORROMEAN
     from codata_constants import M_E_MEV as me
-    me, q0, g8 = float(me), float(q0), float(VOL_BORROMEAN)
-    return me, q0, me / (q0 * (q0 - 1.0)), g8        # me, q0, E0, 8G
+    me, q0 = float(me), float(q0)
+    return me, q0, me / (q0 * (q0 - 1.0))            # me, q0, E0
 
 
 def _bond_type_L():
@@ -241,7 +240,7 @@ def _nucleon_mass_canonical(me, q0):
     return proton_neutron_mass_mev()
 
 
-def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
+def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     from q_parameter import Q as _global_q0
     q0 = float(_global_q0)
     A = Z + N
@@ -251,20 +250,11 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     sigma_ame = bame_t[1] if bame_t else None
     m_atom_ame = bame_t[2] if bame_t else None
     sigma_atom = bame_t[3] if bame_t else None
-    # ---- cheap forms (any A): factorized q-CLT + ⁴He magic volume -----------
+    # ---- cheap form (any A): factorized q-CLT --------------------------------
     n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
     sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
     Lbar = sigma_L / comb(A, 2) if A >= 2 else 0.0
     B_fac = alpha * (A - 1) * Lbar
-    # ---- B_magic GENERALIZED (owner request 2026-06-23): the doubly-magic ⁴He
-    #   magic-volume binding 2·m_e·A·8G is linear in A and exact-at-⁴He by
-    #   construction. Ungated to ALL A as the *linear magic-volume reference*
-    #   (8G = Vol(Borromean) carried per nucleon). It over-binds light nuclei
-    #   and under-binds heavy ones — it is the linear-in-A line, the complement
-    #   of the SATURATING B_lin below. Not a per-nucleus categorical derivation
-    #   beyond ⁴He; flagged as a reference extrapolation in the legend.
-    #   A=1 (lone nucleon) has no binding → None.
-    B_magic = 2.0 * me * A * g8 if A >= 2 else None
     # ---- colour-weighting decomposition of the factorized q-CLT ------------
     #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
     #   bond) + the p↔n chirality correction. The baseline IS the uniform
@@ -343,7 +333,7 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
             "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
             "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
-            "B_magic": B_magic, "E_retained": E_retained, "E_emitted": E_emitted,
+            "E_retained": E_retained, "E_emitted": E_emitted,
             "E_multilink": E_multilink, "B_sym_ent": B_sym_ent,
             "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free,
             "su4_partition": lam, "W_lam": w_lam, "E_gate": E_gate, "c_lam": c_lam}
@@ -380,7 +370,6 @@ def _print_legend() -> None:
 | `B_lin` | LINEAR/saturating binding α·s, s = 1−e^(−B_sym/α) (leading term of B_sym; bounded by α, under-binds with A) |
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
-| `B_magic` | Magic-volume binding 2·m_e·A·8G, 8G = Vol(Borromean)/nucleon (exact-at-⁴He by construction, linear-in-A reference elsewhere — over-binds light, under-binds heavy) |
 | `err sym` / `err qCLT_fac` | B_AME / B_model for the two production forms (1.00 = perfect, >1 under-binds) |
 
 **Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
@@ -389,7 +378,7 @@ def _print_legend() -> None:
 |---|---|
 | `M_meas` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
 | `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
-| `m_lin` / `m_sym` / `m_qCLT_fac` / `m_magic` | canonical bound mass m_X = m_unbnd,can − B_X for each binding form |
+| `m_lin` / `m_sym` / `m_qCLT_fac` | canonical bound mass m_X = m_unbnd,can − B_X for each binding form |
 | `err m_sym (ppb)` | mass error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
 | `err m_qCLT_fac (ppb)` | same, for the colour-weighted q-CLT binding |
 
@@ -501,12 +490,12 @@ def main(argv=None) -> int:
     sel = [nuc for nuc in (("p", 1, 0), ("n", 0, 1))
            if (nuc[1], nuc[2]) not in present] + sel
 
-    me, q0, E0, g8 = _constants()
+    me, q0, E0 = _constants()
     Lbond = _bond_type_L()
     nucleon_msym = _nucleon_msym(E0)         # per-nucleon free Kashaev mass (cheap)
     mp_can, mn_can = _nucleon_mass_canonical(me, q0)   # framework-derived rest masses
     ame = _ame_table()                       # parse AME2020 once, not per row
-    rows = [_row(nm, Z, N, E0, me, g8, Lbond, nucleon_msym, ame, args.max_strands)
+    rows = [_row(nm, Z, N, E0, me, Lbond, nucleon_msym, ame, args.max_strands)
             for (nm, Z, N) in sel]
 
     title = (args.group or ("custom" if args.isotopes else "low")).upper()
@@ -516,7 +505,7 @@ def main(argv=None) -> int:
     print(f"  B_sym/m_sym_atom: EXACT closed-form linear chain → all A; the "
           f"p(3A) trace is run for n=3A ≤ {args.max_strands} (A ≤ "
           f"{args.max_strands // 3}) only to validate the chain. "
-          f"qCLT/fac/magic + m_sym(free): combinatorial → all A.\n")
+          f"qCLT/fac + m_sym(free): combinatorial → all A.\n")
 
     _print_legend()
     import io, sys
@@ -543,8 +532,8 @@ def main(argv=None) -> int:
           f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
           f"genuine prediction).")
     print("| iso | A | M_meas | σ_exp (ppb) | m_lin | m_sym | m_qCLT_fac "
-          "| m_magic | err m_sym (ppb) | err m_qCLT_fac (ppb) |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+          "| err m_sym (ppb) | err m_qCLT_fac (ppb) |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
@@ -561,7 +550,7 @@ def main(argv=None) -> int:
             return ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
         print(f"| {r['name']} | {r['A']} | {_fmt(m_meas,9,1)} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(_can('B_lin'),9,1)} | {_fmt(_can('B_sym'),9,1)} "
-              f"| {_fmt(_can('B_qCLT_fac'),9,1)} | {_fmt(_can('B_magic'),9,1)} "
+              f"| {_fmt(_can('B_qCLT_fac'),9,1)} "
               f"| {_sci(_err_ppb('B_sym'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
 
     # 1c. ATOMIC mass comparison — the framework predicts NUCLEAR masses; add the
@@ -593,8 +582,8 @@ def main(argv=None) -> int:
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
     print("| iso | A | B_AME | σ_exp (ppb) | B_lin | B_sym | B_qCLT_fac "
-          "| B_magic | err sym | err qCLT_fac |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+          "| err sym | err qCLT_fac |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
@@ -602,7 +591,7 @@ def main(argv=None) -> int:
         e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(r['B_magic'])} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} |")
+              f"| {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} |")
 
     # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows
@@ -675,7 +664,7 @@ def main(argv=None) -> int:
 
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
-          "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · B_magic=2·m_e·A·8G (⁴He). "
+          "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩. "
           "Defn: standard-part-functor.md.")
     _out = sys.stdout.getvalue()
     sys.stdout = _old_stdout
