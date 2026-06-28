@@ -1,7 +1,7 @@
 ---
 # vqep
 title: 'EPIC fix 95 genuine Lean vacuity defects'
-status: in_progress
+status: completed
 type: epic
 priority: high
 created_at: 2026-06-28T00:00:00Z
