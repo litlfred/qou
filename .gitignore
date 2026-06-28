@@ -15,6 +15,9 @@ build/
 # Generated LaTeX chapters (from content pipeline)
 chapters/*.tex
 chapters/*.md
+
+# All-tables layout-test harness output (regenerate via scripts/make-all-tables.py)
+/qou-all-tables.tex
 *.aux
 *.log
 *.out
