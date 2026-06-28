@@ -1,12 +1,21 @@
 ---
 # vtf0
 title: 'Fix the 2 remaining needs-agent vacuity candidates (brings-surface BorromeanQuark, pre-existing file breakage)'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T02:00:00Z
-updated_at: 2026-06-28T03:30:00Z
+updated_at: 2026-06-28T07:30:00Z
 ---
+
+> **DONE (2026-06-28).** Both `brings-surface/orbital-*` `BorromeanQuark`
+> carriers fixed + compile-verified (`lake env lean` exit 0): content-bearing
+> classes (`orbitalDim` + the SO(3)/Fourier decomposition law) with conditional
+> theorems deriving `dim O_n = n²`; the pre-existing breakage (orbital-fourier
+> had no imports; orbital-space imported the split-out `Mathlib.LinearAlgebra.Dimension`;
+> orphaned proof bodies; axiom modeling) repaired. `--check-ledger` now exits 0
+> tree-wide (8 candidates remain, all `legit` with agent verdicts).
+
 
 The `true-class-field` tranche surfaced by the upgraded heuristics (PR #2881) is
 **34/36 resolved** (the tranche-2 swarm encoded real `: True`-field content or
