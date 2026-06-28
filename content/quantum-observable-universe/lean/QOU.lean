@@ -181,3 +181,4 @@ import QOU.Mathlib.SchenstedInsertion
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
+import QOU.Mathlib.SYTHookFormula
