@@ -1,1 +1,0 @@
-/Users/litlfred/space_cats/folio-assistant/content/pipeline/qa-criteria-registry.ts
