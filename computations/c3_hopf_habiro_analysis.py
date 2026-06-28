@@ -3,11 +3,19 @@
 c3_hopf_habiro_analysis.py — investigate c_3's relationship to
 Hopf link Jones polynomial and Habiro series.
 
-FINDINGS:
-  c_3 actual       = -2.00974
-  J_Hopf(q_0)      = -2.01090  (exact Hopf at q, 0.058% off)
-  -2 - hbar^2      = -2.00982  (0.004% off — BEST simple model)
+FINDINGS (refreshed 2026-06-28 after upstream N=3 operator-valued drift —
+c_3_empirical_additive moved -2.0097 -> -2.0216 in
+q-beta-operator-valued-N3.witness.json):
+  c_3 actual       = -2.02162
+  J_Hopf(q_0)      = -2.01090  (exact Hopf at q, 0.530% off)
+  -2 - hbar^2      = -2.00982  (0.584% off — best simple model)
   -2 - hbar^2*q    = -2.01090  (= J_Hopf(q), Hopf Taylor)
+
+TIERED FRAMING (AGENTS.md c_k banner): c_3 = J_Hopf(q=1) = -2 is a
+NEAR-MATCH (classical-limit identification), NOT Taylor-exact. Only
+c_2 = -1 is proved Taylor-exact. The residual below (now ~0.58%, was
+0.004% against the pre-drift upstream input) is the size of the
+near-match gap at the current upstream input, not evidence of exactness.
 
 c_3 is BETWEEN J(1)=-2 and J(q)=-2.01090.
 Uses substrate deformation hbar^2 = (1-1/q)^2 rather than
@@ -54,9 +62,12 @@ def main():
     # near-match prop, never c_3-as-Taylor-exact.
     wb.set_content_block("prop:q-beta-c3-hopf-three-fold-markov")
     wb.set_description(
-        "c_3 vs Hopf Jones evaluation and Habiro series. "
-        "c_3 = J-hbar^2 at 0.004% (best model). "
-        "J_Hopf(q_0) = -[2]_q at 0.058%. "
+        "c_3 vs Hopf Jones evaluation and Habiro series. NEAR-MATCH tier "
+        "(c_3 = J_Hopf(q=1) = -2 is a classical-limit identification, NOT "
+        "Taylor-exact; only c_2 = -1 is proved-exact). "
+        "c_3 = J-hbar^2 at ~0.58% (best model; was 0.004% before the upstream "
+        "N=3 operator-valued c_3 drifted -2.0097 -> -2.0216). "
+        "J_Hopf(q_0) = -[2]_q at ~0.53%. "
         "b^2 = (h^2+3)/(h^2+4) exact (shared denominator with tr_M)."
     )
 
@@ -88,10 +99,13 @@ def main():
     )
 
     wb.save()
+    err_best = abs(float((c3_hbar2 - c3) / c3 * 100))
+    err_jq0 = abs(float((J_hopf_q - c3) / c3 * 100))
     print("✓ c3-hopf-habiro-analysis.witness.json")
+    print(f"  c₃ actual (upstream N=3): {float(c3):.6f}")
     print(f"  b² = (h²+3)/(h²+4): EXACT")
-    print(f"  c₃ = J − ℏ²: 0.004%")
-    print(f"  c₃ vs J_Hopf(q₀): 0.058%")
+    print(f"  c₃ = J − ℏ² (NEAR-MATCH, best model): {err_best:.4f}%")
+    print(f"  c₃ vs J_Hopf(q₀): {err_jq0:.4f}%")
 
 
 if __name__ == "__main__":
