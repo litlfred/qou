@@ -8,7 +8,7 @@ export default remark({
     "prop:em-coupling-projection",
     "thm:em-spectral-completeness",
     "prop:force-carrier-bring-uniqueness",
-    "conj:em-coupling-chern-simons",
+    "rem:em-coupling-chern-simons",
     "rem:alpha-em-derivation-open-problems",
     "prop:em-coupling-bring-zero-mode",
   ],

@@ -9,7 +9,7 @@ export default proposition({
   },
   uses: [
     "thm:jones-markov-trace",
-    "prop:q-schur-y-lambda-closed-form",
+    "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:mass-endomorphism-tower",
   ],
   cites: [

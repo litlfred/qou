@@ -79,7 +79,7 @@ at the archimedean specialization with real $q_0$ and real $\hat V_i$,
 this equals $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$)
 with $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
 takes ρ\_K to $0.18\%$ mean accuracy across $Z = 1..20$
-([atomic braid mass](#prop:atomic-braid-mass)). The pair-gen and
+([atomic braid mass](#sec:atomic-braid-mass-foundations)). The pair-gen and
 higher pieces require the proper Wedderburn-coupling structure
 (open work; see [graded ρ\_K expansion](#prop:rho-k-graded-expansion)).
 

@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "thm:mass-energy-equivalence",
     "rem:pair-creation-energy",
-    "ex:mass-identity-C",
+    "cor:mass-identity-C",
   ],
   cites: ["yekutieli2015"],
 });

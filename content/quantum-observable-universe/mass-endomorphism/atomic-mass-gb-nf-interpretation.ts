@@ -18,7 +18,7 @@ export default remark({
     "prop:alpha-shift-torus-knot",
     "prop:alpha-em-shift-multiplicative-chain",
     "prop:binding-scale-catalan",
-    "prop:atomic-braid-mass",
+    "sec:atomic-braid-mass-foundations",
     "prop:per-nucleon-shift-additive-linearity",
     "thm:wedderburn-mass-formula",
     "thm:knot-mass-formula-unified",
