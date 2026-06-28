@@ -25,7 +25,7 @@ $$
 
 2. **Even $A$**: the factorization is negative.  The
    [Frobenius positivity filter](#prop:frobenius-positivity-filter)
-   restricts the sum to physically admissible configurations, and
+   restricts the sum to admissible (non-negative-trace) configurations, and
 
    $$
      Q = (\Sigma_{\mathrm{FP}} + 1) \times m_e
@@ -57,7 +57,7 @@ The even-$A$ case requires restricting to Frobenius-positive
 configurations
 ([confinement LP](#prop:confinement-lp)),
 which enforces that both parent and daughter have
-physically admissible (non-negative) Markov traces.
+non-negative Markov traces.
 
 ## Numerical verification
 

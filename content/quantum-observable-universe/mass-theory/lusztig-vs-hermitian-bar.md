@@ -79,8 +79,8 @@ $\beta_L$- and $\beta_H$-eigenvalues, with four channels:
 The interpretation of the two new channels (and whether either
 corresponds to physical structure) is **research-grade and open**.
 This proposition only records the structural existence of the
-decomposition; it does not claim either new channel is physically
-realised.
+decomposition; it does not claim either new channel corresponds to
+physical structure.
 
 ## Non-claims of this proposition (CAL-4 caveat)
 

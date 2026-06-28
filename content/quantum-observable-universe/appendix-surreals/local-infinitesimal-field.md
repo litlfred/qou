@@ -60,7 +60,7 @@ the stalk at a point $x \in X$:
  constant, and equals the paper's archimedean substrate deviation
  $q_0 - 1 \approx 0.11$.
 
-Informally: $q(x) = 1 + (q_0 - 1) + \delta(x)$ where $\delta(x)$
+Equivalently, $q(x) = 1 + (q_0 - 1) + \delta(x)$ where $\delta(x)$
 is a strictly-infinitesimal local fluctuation with zero mean and
 birthday-ordered magnitude distribution.
 

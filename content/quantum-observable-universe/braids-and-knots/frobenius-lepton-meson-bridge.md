@@ -59,8 +59,8 @@ $$
   = 1.
 $$
 
-Each lepton irrep appears **exactly once** in the restriction.
-This means:
+Each lepton irrep appears **exactly once** in the restriction,
+with the following consequences:
 
 1. The **lepton mass ratio** $m_\mu / m_\mathfrak{e}$ measures
    the separated $V_{(2)} \leftrightarrow V_{(1,1)}$ transition

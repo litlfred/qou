@@ -71,7 +71,7 @@ $$
   \exp\!\bigl(-|x|^2 / (4 \tau)\bigr),
 $$
 
-the *classical* Gaussian heat kernel in rescaled time.  Physically:
+the *classical* Gaussian heat kernel in rescaled time.
 Reeb-invariant diffusion on a QOU with substrate parameter $q$ is
 isomorphic to ordinary diffusion, with the clock running at rate
 $q^{-2}$.  At the Big Bang ($q \to \infty$) the clock freezes: heat

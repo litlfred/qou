@@ -301,7 +301,7 @@ $$
 $$
 
 Equivalently: the only braid word commuting with all generators
-is the identity. In the vertex algebra, this means there is no
+is the identity. In the vertex algebra, there is no
 nontrivial state $a \in V$ with $Y(a, z) = \lambda\mathrm{id}$
 for all $z$ — every state produces a genuinely $z$-dependent
 operator.

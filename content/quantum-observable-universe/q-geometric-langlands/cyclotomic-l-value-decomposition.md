@@ -93,7 +93,7 @@ pair).  Modulo bar-conjugation: 1 real dimension. Matches Theorem G.
 
 The graded-Mikusiński framework's depth-$n$ cyclotomic content
 **IS** the Dirichlet $L$-value content at integer $n$, up to
-$\mathbb{Q}(\zeta_K)$-linear combinations.  This means:
+$\mathbb{Q}(\zeta_K)$-linear combinations.  Three consequences follow:
 
 1. **Classical L-value identities are theorems of our framework**:
    $\beta(3) = \pi^3/32$, $\beta(5) = 5\pi^5/1536$, $L(\chi_3, 3) = ?$,
