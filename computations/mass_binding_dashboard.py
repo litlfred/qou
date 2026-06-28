@@ -57,6 +57,62 @@ SWEEP = [("2H", 1, 1), ("4He", 2, 2),
          ("16O", 8, 8), ("24Mg", 12, 12), ("40Ca", 20, 20),
          ("56Fe", 26, 30)]
 
+NUCLEAR_SPINS = {
+    "p": 0.5, "n": 0.5, "2H": 1.0, "3H": 0.5, "3He": 0.5, "4He": 0.0,
+    "6Li": 1.0, "7Li": 1.5, "9Be": 1.5, "12C": 0.0, "16O": 0.0,
+    "24Mg": 0.0, "40Ca": 0.0, "56Fe": 0.0
+}
+
+
+
+
+def q_int_float(q, n):
+    return (q**n - q**(-n)) / (q - 1.0/q)
+
+def q_fact_float(q, n):
+    res = 1.0
+    for i in range(1, n + 1):
+        res *= q_int_float(q, i)
+    return res
+
+def hook_lengths(lam):
+    hooks = []
+    lam_conj = []
+    for j in range(lam[0]):
+        lam_conj.append(sum(1 for row in lam if row > j))
+    for i, row in enumerate(lam):
+        for j in range(row):
+            h = (row - 1 - j) + (lam_conj[j] - 1 - i) + 1
+            hooks.append(h)
+    return hooks
+
+def W_lambda_float(q, lam):
+    n = sum(lam)
+    hooks = hook_lengths(lam)
+    prod_hooks_sq = 1.0
+    for h in hooks:
+        prod_hooks_sq *= (q_int_float(q, h))**2
+    return q_fact_float(q, n) / prod_hooks_sq
+
+def get_ground_state_partition(Z, N, S):
+    Nu = 2*Z + N
+    Nd = Z + 2*N
+    if Nu == 0 and Nd == 0:
+        return None
+    valid_partitions = []
+    for u_up in range(Nu + 1):
+        u_down = Nu - u_up
+        for d_up in range(Nd + 1):
+            d_down = Nd - d_up
+            if abs((u_up + d_up) - (u_down + d_down)) == 2 * S:
+                part = tuple(sorted([u_up, u_down, d_up, d_down], reverse=True))
+                part = tuple(x for x in part if x > 0)
+                if part not in valid_partitions:
+                    valid_partitions.append(part)
+    if not valid_partitions:
+        return None
+    valid_partitions.sort(key=lambda p: (p[0], p))
+    return valid_partitions[0]
 
 def _ame_table():
     """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
@@ -133,6 +189,8 @@ def _nucleon_mass_canonical(me, q0):
 
 
 def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
+    from q_parameter import Q as _global_q0
+    q0 = float(_global_q0)
     A = Z + N
     n = 3 * A
     bame_t = ame.get((Z, A))
@@ -196,6 +254,15 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     #   |chain − exact| ≈ 1e-13.
     B_sym_exact = chain_resid = None
     E_retained = E_emitted = E_multilink = B_sym_ent = None
+    S_val = NUCLEAR_SPINS.get(name, 0.0)
+    lam = get_ground_state_partition(Z, N, S_val)
+    if lam:
+        w_lam = W_lambda_float(q0, lam)
+        E_gate = alpha * math.log(1.0 / w_lam)
+        c_lam = (bame / E_gate) if bame else None
+    else:
+        lam, w_lam, E_gate, c_lam = None, None, None, None
+
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
         import mpmath as _mp
@@ -225,7 +292,8 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
             "B_magic": B_magic, "E_retained": E_retained, "E_emitted": E_emitted,
             "E_multilink": E_multilink, "B_sym_ent": B_sym_ent,
-            "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free}
+            "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free,
+            "su4_partition": lam, "W_lam": w_lam, "E_gate": E_gate, "c_lam": c_lam}
 
 
 def _fmt(v, w=8, p=2):
@@ -323,6 +391,17 @@ excised). Each bound mass m_X = m_unbnd,can − B_X.
 | `sym baseline` | isospin-symmetric baseline α·(A−1)·L_pn (every bond = the deuteron p-n bond) |
 | `+ chirality` | the p↔n colour correction B_qCLT_fac − baseline |
 | `= B_qCLT_fac` | their sum (the colour-weighted q-CLT binding) |
+
+**Table 7 — Compositional B_sym (m_sym(W) = −α·ln tr_M(W))**
+
+**Table 8 — SU(4) Dynamic Occupancy**
+
+| Header | Meaning |
+|---|---|
+| `partition λ` | the most symmetric SU(4) spin-flavor conjugate partition matching the exact quark counts (N_u=2Z+N, N_d=Z+2N) and nuclear spin |
+| `W_λ` | Plancherel weight (fractional volume) of the partition in H_{3A}(q) |
+| `E_gate (MeV)` | Total dynamic capacity = E₀·ln(1/W_λ) |
+| `c_λ` | Fractional dynamic occupancy = B_AME / E_gate (measures what fraction of the actual binding is accounted for by the cluster state) |
 
 **Table 7 — Compositional B_sym (m_sym(W) = −α·ln tr_M(W))**
 
@@ -522,6 +601,21 @@ def main(argv=None) -> int:
                  else "—  (no trace)")
         print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
               f"| {_fmt(r['m_sym_atom'],8,3)} | {_fmt(r['B_sym'],8,3)} | {resid:>16} |")
+
+
+    # 6. SU(4) DYNAMIC OCCUPANCY
+    print("\n### SU(4) Dynamic Occupancy  (E_gate = E₀·ln(1/W_λ), c_λ = B_AME/E_gate)")
+    print("| iso | A | S | partition λ | W_λ | E_gate (MeV) | B_AME (MeV) | c_λ |")
+    print("|---|--:|--:|:--|--:|--:|--:|--:|")
+    for r in rows:
+        if r['su4_partition']:
+            lam_str = str(r['su4_partition']).replace(" ", "")
+            S_val = NUCLEAR_SPINS.get(r['name'], 0.0)
+            print(f"| {r['name']} | {r['A']} | {S_val} | {lam_str} "
+                  f"| {_fmt(r['W_lam'],8,6)} | {_fmt(r['E_gate'],8,2)} "
+                  f"| {_fmt(r['B_AME'],8,2)} | {_fmt(r['c_lam'],6,4)} |")
+        else:
+            print(f"| {r['name']} | {r['A']} | {NUCLEAR_SPINS.get(r['name'], 0.0)} | — | — | — | {_fmt(r['B_AME'],8,2)} | — |")
 
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
