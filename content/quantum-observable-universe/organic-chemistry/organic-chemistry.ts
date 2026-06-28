@@ -55,6 +55,7 @@ export default chapter({
         "benzene-ring",
         "chain-ring-energy",
         "chain-ring-comparison",
+        "chain-ring-comparison-interpretation",
         "chain-ring-comparison-table3-data",
         "chain-ring-comparison-table2-data",
         "chain-ring-comparison-table1-data",

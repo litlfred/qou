@@ -123,5 +123,3 @@ $\tau_k = 1/\gamma_k^{(q)} = 4L_q^2 / (\hbar_q[k]_q^2)$.
 since $[k]_q \sim q^k$ for large $k$, high modes decay
 **doubly exponentially** in $k$ — the exponential UV cutoff
 noted in the [q-Navier--Stokes definition](#def:q-navier-stokes).
-
-**Mathematical Novelty.** While the mechanical process of $q$-deforming operators is a standard procedure, the mathematical novelty is observing that applying the exact $q$-derivative $D_q$ to classical Kelvin-wave dispersion immediately generates an exact, analytically rigorous doubly-exponential UV suppression mechanism ($\tau_k \sim q^{-2k}$) in the fluid bulk, bypassing the need for ad-hoc phenomenological regularization or arbitrary cutoffs.
