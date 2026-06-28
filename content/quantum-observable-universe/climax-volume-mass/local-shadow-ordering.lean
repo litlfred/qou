@@ -13,22 +13,38 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- **Local shadow-price ordering** at point `q : R`.
+/-- **Local shadow-price ordering** `λ₁ ≼_q λ₂` at point `q : R`.
 
-    `LocalShadowOrdering R` records two partitions and the proposition
-    that the second has at-least-equal shadow-price magnitude on a
-    neighborhood of `q`.  The "neighborhood" is a topological
-    formalisation requiring `R` to carry a topology — for `ℝ`, this is
-    the Euclidean topology; for `ℚ_p`, the `p`-adic topology. -/
-structure LocalShadowOrdering (R : Type u) [CommRing R] where
+    `LocalShadowOrdering R` records two partitions, their shadow-price
+    functions, the point `q`, and the witnessing neighborhood data:
+    a predicate `nbhd` cutting out an open set containing `q` on which
+    `|y₁| ≤ |y₂|` pointwise.  This is the `.md` definition
+    `λ₁ ≼_q λ₂ ⟺ ∃ U ∋ q open, |y_{λ₁}(q')| ≤ |y_{λ₂}(q')| ∀ q' ∈ U`,
+    with `nbhd` standing in for the open set `U` (the topological
+    openness of `U` is an external hypothesis — for `ℝ` the Euclidean
+    topology, for `ℚ_p` the `p`-adic — but the *order content*, the
+    pointwise magnitude inequality on `U`, is encoded here). -/
+structure LocalShadowOrdering (R : Type u) [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] where
   /-- Partition λ₁ ⊢ k₁. -/
   partition_low  : List ℕ
   /-- Partition λ₂ ⊢ k₂. -/
   partition_high : List ℕ
   /-- Substrate parameter at which the ordering is asserted. -/
   q : R
-  /-- The ordering holds on a neighborhood of `q`.
-      Stub: requires `R` to carry a topology to formalise. -/
-  holds_on_neighborhood : Prop := True
+  /-- Shadow price `y_{λ₁}(·)` of the low partition. -/
+  y_low  : R → R
+  /-- Shadow price `y_{λ₂}(·)` of the high partition. -/
+  y_high : R → R
+  /-- A predicate cutting out the neighborhood `U ∋ q` of the `.md`
+      definition (membership `nbhd q'` ↔ `q' ∈ U`); `mem_self`
+      records `q ∈ U`. -/
+  nbhd : R → Prop
+  /-- The point `q` lies in its own neighborhood. -/
+  mem_self : nbhd q
+  /-- **The ordering's content**: the low partition has at-most-equal
+      shadow-price magnitude throughout the neighborhood —
+      `|y_{λ₁}(q')| ≤ |y_{λ₂}(q')|` for every `q' ∈ U`. -/
+  holds_on_neighborhood : ∀ q' : R, nbhd q' → |y_low q'| ≤ |y_high q'|
 
 end QOU.BraidKnot

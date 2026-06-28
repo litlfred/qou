@@ -77,12 +77,22 @@ theorem signPlancherelWeight_3 : signPlancherelWeight 3 = 1 / 6 := by
       3. Prove the proton's substrate representation is in this class
 
     None of these are formalized yet. -/
-class FermiColorSinglet (Baryon : Type*) : Prop where
-  /-- Conjectural witness: the baryon's color action lives in the
-      sign rep V_(1,1,1) of S_3. The categorical content is
-      placeholder; the actual implementation requires substrate
-      machinery beyond what Mathlib + this scaffold provides. -/
-  color_in_sign_rep : True   -- placeholder — actual content TBD
+class FermiColorSinglet (Baryon : Type*) where
+  /-- The baryon's color action: a permutation of the three color
+      labels acts on the (one-dimensional) color amplitude. -/
+  colorAction : Equiv.Perm (Fin 3) → Baryon → Baryon
+  /-- The color amplitude that the action scales. -/
+  amplitude : Baryon → ℚ
+  /-- **Conjectural content (V_(1,1,1) sign rep).** The color action is
+      antisymmetric — every transposition `Equiv.swap i j` (`i ≠ j`)
+      negates the color amplitude, i.e. the action carries the sign
+      character of `S_3`, placing the color state in the sign rep
+      `V_(1,1,1)`. This is the substrate analogue of QCD color
+      antisymmetry (Fermi statistics); the full categorical derivation
+      is multi-session open work, so no instance is provided here. -/
+  color_in_sign_rep :
+    ∀ (b : Baryon) (i j : Fin 3), i ≠ j →
+      amplitude (colorAction (Equiv.swap i j) b) = - amplitude b
 
 /-- **Conditional theorem**: if a baryon admits a Fermi color singlet
     structure, then its sign-block Plancherel weight at H_3 = 1/6.
