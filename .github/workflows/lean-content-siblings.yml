@@ -101,14 +101,6 @@ jobs:
           export PATH="$HOME/.elan/bin:$PATH"
           ./scripts/lean-cache-restore.sh \
             || echo "cache restore unavailable — compile step will neutral-skip if oleans missing"
-      - name: Populate QOU library oleans (tolerate frontier reds)
-        if: steps.changed.outputs.files != ''
-        run: |
-          export PATH="$HOME/.elan/bin:$PATH"
-          # Build the green QOU modules so content siblings that `import QOU.*`
-          # resolve. `|| true`: a few frontier library files are red on main;
-          # a partial build still populates every green module's olean.
-          lake build QOU || true
       - name: lean-direct type-check changed content siblings
         if: steps.changed.outputs.files != ''
         run: |
