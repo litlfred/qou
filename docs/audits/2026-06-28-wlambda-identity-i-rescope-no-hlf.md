@@ -87,6 +87,32 @@ places the binding side in the **q-Askey scheme**.
   two bar-parities. (This is also why the binding `D(m)` factors are real-q `ℤ[q]` while the Q_β
   `c_k` are ζ-fibre/complex: they are `Re` and `Im` of the same `𝔙`.)
 
+## Finding 4 — `ζ₄ = i` is the moderator of `Re 𝔙` (binding) and `Im 𝔙` (Q_β)
+
+Probe [`zeta4_complex_volume_moderator_probe.py`](../../computations/substrate/zeta4_complex_volume_moderator_probe.py)
+(witness; **Lean cert** [`QOU/Mass/Zeta4ComplexVolumeModerator.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/Zeta4ComplexVolumeModerator.lean), sorry-free).
+
+The bar involution `q ↔ q⁻¹` only *splits* `𝔙 = Vol + i·CS` into `Re 𝔙 = 𝔈_bind` (bar-even cosh)
+and `Im 𝔙 = 𝔔_β` (bar-odd sinh). What *moderates* (couples) them is the `i` of `Vol + i·CS`, i.e.
+`ζ₄ = i`:
+
+- **Rotation (smooth).** `cosh(η + iπ/2) = i·sinh η` and `sinh(η + iπ/2) = i·cosh η` (sorry-free
+  Lean `cosh_zeta4_rotation` / `sinh_zeta4_rotation`). The `ζ₄` rotation `η ↦ η + iπ/2` sends the
+  bar-even (binding) channel to `i ×` the bar-odd (Q_β) channel — exactly `Re 𝔙 ↦ i·Im 𝔙`.
+- **Locus (algebraic).** `Φ₄ = q²+1` — the cyclotomic factor **shared** by the binding side (`L₂`
+  denominator `2·Φ₄`, PR #2929) and the Q_β `c_k` kernel (`a₁`'s ζ₄ residue) — has root `q = ζ₄ = i`
+  (`phi4_root_zeta4`), where the bar-even `[2]_q = q+q⁻¹` **vanishes** (`barEven_zeta4`) and the
+  bar-odd `h = q−q⁻¹ → 2i` (`barOdd_zeta4`).
+
+So the `Φ₄` shared between the two sides is **not** a coincidence of common cyclotomy: it is the
+algebraic locus of the `i = ζ₄` rotation interchanging the binding (`Re`) and Q_β (`Im`) channels of
+the one complex-volume object `𝔙`. This also explains the localisation split flagged earlier (binding
+`D(m)` real-q `ℤ[q]` vs Q_β `c_k` ζ-fibre/complex): they are `Re` and `Im` across the `ζ₄` rotation.
+
+> **Scope (a).** Pinned at the *generator* level (cosh ↔ i·sinh; the `Φ₄ = ζ₄` locus). That the
+> *full* binding and Q_β observables are exact `ζ₄`-rotates of one another is the stronger,
+> value-gated claim — not asserted.
+
 ## Consequence for the next step
 
 The Identity-I Lean closure splits into:
