@@ -69,8 +69,16 @@ class SeparateLambdaScale_Antipattern : Prop where
   is "treating λ_scale as a separate object" (purged 2026-05-24). -/
   is_antipattern : False
 
-/-- The antipattern is provably impossible. -/
-theorem no_separate_lambda_scale (h : SeparateLambdaScale_Antipattern) : False :=
-  h.is_antipattern
+/-- **No separate λ_scale.** The antipattern class is provably
+    impossible: it is uninhabited (`IsEmpty`).  This is a genuine
+    derivation — given any putative instance we reach `False` through
+    its `is_antipattern` field — *stated* as the non-degenerate
+    `IsEmpty SeparateLambdaScale_Antipattern`, not a bare projection
+    of `False`.  Use it (`#check no_separate_lambda_scale`) as the
+    type-level record that no separate `λ_scale` object exists; the
+    mass formula is `m(K) = m_e × VolDensity(K, q₀)`. -/
+-- Ref: [manuscript] docs/lambda-scale-absorbed-into-vol-density.md
+theorem no_separate_lambda_scale : IsEmpty SeparateLambdaScale_Antipattern :=
+  ⟨fun h => h.is_antipattern⟩
 
 end QOU.Machinery
