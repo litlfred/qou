@@ -115,7 +115,7 @@ bit ($k_B T \ln 2$); brane tower = energy to actually do the
 computation.  The substrate gives the vacuum for free only
 up to the Frobenius bound.*
 
-**Do other calibration values enter the brane tower?**
+**Calibration values in the brane tower.**
 
 *No.  The brane tower is expressed entirely in terms of $q$ and
 the Hecke-algebra transfer matrices: $\Phi_q$, $[k]_q$,

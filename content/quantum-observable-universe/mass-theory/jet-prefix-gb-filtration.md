@@ -55,7 +55,7 @@ $$
 *where $\mathrm{tr}_M^{[\ell]}$ is the Markov trace restricted to
 the level-$\ell$ graded piece.*
 
-**Why GB filtration and not geometric cutoffs.**
+**GB filtration versus geometric cutoffs.**
 *The three failed conventions all use geometric cutoffs
 (nucleon count, strand count, generator index). The GB filtration
 is **algebraically** defined by the knot-operator energies

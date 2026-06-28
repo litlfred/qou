@@ -51,7 +51,7 @@ would require:*
 [opaque-declarations audit](../../computations/AUDIT-gb-residue-opaque-declarations.md)
 for the full Mathlib gap analysis.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *Existence and reality of the residue are rigorous in the analytic
 literature (Kashaev, Habiro, Garoufalidis–Lê); a Lean proof requires
 the meromorphic-function infrastructure listed above.  Until that

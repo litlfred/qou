@@ -44,7 +44,7 @@ the substantive content — that `levelBound` truly is the confinement
 level $\ell(K, q_0)$ and that residues above it vanish for the
 underlying analytic objects — is the conjectural part.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status rather than theorem.**
 *The Lean tautology relies on the instance supplying `levelBound`
 correctly.  A proof that the confinement level truly bounds the
 support of the residue function requires:*

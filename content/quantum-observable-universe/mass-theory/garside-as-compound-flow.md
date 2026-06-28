@@ -37,7 +37,7 @@ interpretation: it is the equality of two compound Reeb
 trajectories with matching boundary data but disagreeing
 interior content.
 
-**Why this is not a single closed-form flow.**  Unlike the two
+**Absence of a single closed-form flow.**  Unlike the two
 3-cycles, whose Reeb trajectory is a uniform global vortex with
 constant rate $\dot\psi = \pm q$ across all three sectors, the
 Garside flow is *piecewise*: the angular rate $\dot\psi^{(g)}$ on

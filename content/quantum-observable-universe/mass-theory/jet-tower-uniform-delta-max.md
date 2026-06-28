@@ -85,7 +85,7 @@ with a uniform-bound
 $\Delta_{\max}$ that holds exactly, with the geometric decay
 coming entirely from the $\hbar_q^{2n}$ prefactor.
 
-## What the conjecture commits to
+## Commitments of the conjecture
 
 Per AGENTS.md §3b, the formal status of `prop:jet-tower-convergence`
 is **conditional** on this conjecture: any provable result that

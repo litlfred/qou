@@ -23,7 +23,7 @@
   TQFT terminology); "co-" because it is the Frobenius-pairing
   dual of the unit $1 = \sum_\lambda p_\lambda$, **not** the
   standard quadratic Casimir $\Omega = \sum_i e_i \otimes e^i$.
-  See §"Why $C_{\dim_q}$ and not something else?" below.
+  See §"Uniqueness of $C_{\dim_q}$" below.
 
 **Setup.**
 Let $(A, \tau)$ be a finite-dimensional semisimple self-dual
@@ -82,7 +82,7 @@ $$
 
 *$\square$*
 
-**Why $C_{\dim_q}$ and not some other element? (categorical + unique)**
+**Uniqueness of $C_{\dim_q}$ (categorical + forced).**
 
 *Two answers.  **Uniqueness**: the map
 $Z(A) \ni z \mapsto \tau(z) \in \mathbb{C}$ is a linear functional

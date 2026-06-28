@@ -95,7 +95,7 @@ the geometric signature of the **transposition class** of
 $\sigma_1\sigma_2\sigma_1 = (rb)$ in $S_3$, as predicted by the
 boundary-permutation table.
 
-**Why this is not a PDE.**  The Reeb-flow trajectory lives on
+**Reduction from PDE to piecewise ODE.**  The Reeb-flow trajectory lives on
 the formal-algebraic side of the Archimedean wall.  The flow
 equation $\dot\psi = k\,q$ is an ODE in the angular coordinate,
 not a PDE — and within each sub-interval the rate $k$ is constant.
@@ -107,7 +107,7 @@ because the substrate dynamics live in the Habiro ring before any
 archimedean realisation, the "solution" is a formal-algebraic
 expression, not a transcendental analytic object.
 
-**Consequence for the JSJ verdict.**  The Garside trajectory
+**Implication for the JSJ verdict.**  The Garside trajectory
 crosses both Heegaard tori of $\mathcal{R}_p \cong S^3$ — once
 at the $I_1 \to I_2$ boundary (red-green pair gives way to
 green-blue pair) and once at the $I_2 \to I_3$ boundary

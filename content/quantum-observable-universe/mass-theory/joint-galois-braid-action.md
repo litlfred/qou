@@ -34,7 +34,7 @@ group action when restricted to the bi-filtration, and the joint
 group $G_{\mathrm{mot}} \times B_{n_K}$ stabilises each
 $\mathcal{H}_q^{(n, K)}$ stratum.*
 
-### Why this is the right structural prediction
+### Structural motivation for the prediction
 
 Three motivations:
 

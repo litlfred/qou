@@ -14,7 +14,7 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
 *The two fields encode the Schrijver §7.2 strong-duality theorem and
 the Schrijver §7.4 complementary-slackness theorem respectively.*
 
-## Why this exists
+## Motivation
 
 The two routine LP-theory inputs are currently **two free-standing
 top-level `sorry`s** in

@@ -120,7 +120,7 @@ The entire $h$-dependence of such traces is carried by the single
 standard-channel character; the Borromean closed form is this identity
 evaluated at $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$.
 
-## Why the weights are not uniform — chirality of the Jones trace
+## Non-uniformity of the weights — chirality of the Jones trace
 
 A bar-involution argument would suggest $y_{(3)} = y_{(1^3)}$ (the
 transpose pair). It fails: the transpose symmetry $\lambda
