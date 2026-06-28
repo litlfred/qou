@@ -61,6 +61,25 @@ the additive route double-counts and is refuted here. Concretely:
 - **lift** slightly at heavy A (`1.17`), where the bulk under-binds — the regime
   the liquid-drop surface/Coulomb piece (the third element) refines.
 
+## Closure check pre-wired — and R(q,x) has not landed
+
+The direct test "R(q,x) vs r(K)" cannot run yet: the z2bn Lever-1 fibre kernel is
+the **open keystone**. `z2bn_prolongation_qdifference_constraint.py` proves (b)
+that the λ_SW prolongation must be q-difference (not classical jet); the
+single-element / contiguity form is refuted (#3009, #2985); the core `R_m(q)` is
+characterized (Stage 8) — but the explicit operator producing per-isotope binding
+via `a_D^(n)=∮λ_SW^(n)` is flagged the open keystone (`mba-step09b`), with the
+anchors `a_D^(2)=1`, `a_D^(3)=(q+1)²/(3q)`, `a_D^(4)=Family-A` still wired (a_D^(4)
+a CODATA near-match). There is no per-isotope `R_eff(K)` to test, and nothing to
+cherry-pick.
+
+So [`delta_lambda_rK_closure_test.py`](../../computations/delta_lambda_rK_closure_test.py)
+pre-wires the check: pass any candidate `R_eff(Z,N)` to `check()`; it reports
+max/RMS deviation from r(K). The baseline `R_eff≡1` (extensive bulk alone) is
+**max|Δ|=0.85, RMS=0.35** — the deuteron drives the gap (r=0.15 vs 1). **Bridge
+spec for when R(q,x) lands:** `R(q,x) → a_D^(n)=∮λ_SW^(n) jet anchors →
+per-isotope binding (mba-step09b) → R_eff(K)`, which must reproduce r(K).
+
 ## Scope guard
 
 `r(K)` is a **measured residual target**, explicitly *not* a fitted kernel — per
