@@ -40,6 +40,8 @@ clarabel/cvxpy dual) is the final wiring step, tracked as a follow-up.
 namespace QOU.BraidKnot
 
 open Matrix
+open QOU.MathlibExt.SDP
+open QOU.MathlibExt.SDPRealUniqueness
 
 /-- Number of Wedderburn blocks for ²H at `H_6` — the partitions
     `λ ⊢ 6`.  `heckeDim 6` is the full algebra dimension; the real SDP

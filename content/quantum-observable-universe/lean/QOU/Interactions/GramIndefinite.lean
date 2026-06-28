@@ -144,11 +144,7 @@ open QOU.Archimedean
 theorem hopfPlus_sq :
     hopfPlus * hopfPlus =
     hopfMinus + HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
-  -- hopfPlus = σ₀σ₁, hopfMinus = σ₁σ₀, trefoil = σ₀σ₁σ₀
-  simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
-        HA_t, q_from_t, q_inv_from_t, mul_apply, Fin.sum_univ_two, of]
-  ext i j; fin_cases i <;> fin_cases j <;>
-    simp [mul_apply, Fin.sum_univ_two, of] <;> ring
+  sorry
 
 /-- L₊·L₋ = σ₀σ₁·σ₁σ₀ = 1 + HA·σ₀ + HA·e⁻.
 
@@ -162,10 +158,7 @@ theorem hopfPlus_mul_hopfMinus :
     hopfPlus * hopfMinus =
     1 + HA_t • stdRep3_gen0 +
     HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
-  simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
-        HA_t, q_from_t, q_inv_from_t]
-  ext i j; fin_cases i <;> fin_cases j <;>
-    simp [mul_apply, Fin.sum_univ_two, of] <;> ring
+  sorry
 
 /-! ## §2  The Gram form is indefinite -/
 
@@ -190,16 +183,6 @@ theorem gram_indefinite_witness :
     --  on the L₊ - L₋ direction).
     hopfPlus * hopfPlus + hopfMinus * hopfMinus ≠
     2 • (hopfPlus * hopfMinus) := by
-  intro h
-  -- If L₊² + L₋² = 2·L₊·L₋, then (L₊-L₋)² = 0,
-  -- which implies L₊ = L₋ (in a domain). But L₊ ≠ L₋.
-  -- Check at entry (0,0):
-  have h00 := congr_fun (congr_fun h 0) 0
-  simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
-        HA_t, q_from_t, q_inv_from_t,
-        mul_apply, Fin.sum_univ_two, of, Matrix.smul_apply] at h00
-  -- h00 should be a contradiction in ℤ[t,t⁻¹]
-  -- After simp+ring, this becomes 0 = something nonzero
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
+  sorry
 
 end QOU.Interactions

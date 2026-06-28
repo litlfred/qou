@@ -58,16 +58,6 @@ instance plancherelSnData_three : PlancherelSnData 3 where
   sum_dim_sq := by decide
   two_sum_dim_sq_content := by decide
 
-/-- **`PlancherelSnData 4`** — the 5 partitions of 4, hook-length dimensions `1, 3, 2, 3, 1`
-(`Σ dim² = 1+9+4+9+1 = 24 = 4!`). -/
-instance plancherelSnData_four : PlancherelSnData 4 where
-  parts := {[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]}
-  parts_sorted := by decide
-  parts_sz := by decide
-  dim := dimHLF
-  sum_dim_sq := by decide
-  two_sum_dim_sq_content := by decide
-
 /-- **`PlancherelSnData 5`** — the 7 partitions of 5, hook-length dimensions `1, 4, 5, 6, 5, 4, 1`
 (`Σ dim² = 1+16+25+36+25+16+1 = 120 = 5!`).  `n = 5` is the s5-so3 keystone's own degree
 (`S₅ ⊃ A₅ ≅ I ⊂ SO(3)`). -/

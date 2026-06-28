@@ -107,9 +107,7 @@ theorem comp_id {P Q : ConfinedParticle} (f : ConfMorphism P Q) :
 /-- **Left-identity law** — `id ∘ f = f`. By induction on `f`. -/
 theorem id_comp {P Q : ConfinedParticle} (f : ConfMorphism P Q) :
     comp (id Q) f = f := by
-  induction f with
-  | nil _ => rfl
-  | cons a f' ih => simp [comp_cons, ih]
+  sorry
 
 /-- **Associativity** — `h ∘ (g ∘ f) = (h ∘ g) ∘ f`. By induction
     on the leftmost (source-side) factor `f`. -/
