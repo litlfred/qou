@@ -1338,7 +1338,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' presents substantial mathematical content: be the typed Garside element (typed Garside element) of the parent nucleus in $H_A(q)$, and let $G$ be the Gram matri...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 — content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15b0649aa99f",
+          "ts": "a77c2a816d41",
+          "lean": "381c8d255021"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean for 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' fails compilation with error: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split. This invalidates the claim of formal verification."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.411Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

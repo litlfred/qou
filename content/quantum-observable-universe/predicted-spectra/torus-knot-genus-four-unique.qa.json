@@ -1602,7 +1602,251 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' presents substantial mathematical content: 'Proposition (genus-$4$ torus knots are exhausted by two pairs).'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions'.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions'.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "torus-knot-genus-four-unique.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Genus-$4$ torus knots: $\\\\{T_{2,9}, T_{3,5}\\\\}$ are the only solutions' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

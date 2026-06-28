@@ -913,7 +913,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/QuantumDilogarithm.olean' of module QOU.BraidKnot.QuantumDilogarithm does not exist.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' presents substantial mathematical content: not be conflated: | Name | Symbol | Closed form | Behaviour near $z = 1$ | |---|---|---|---| | Quantum dilogarithm pr...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1 — content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/QuantumDilogarithm.olean' of module QOU.BraidKnot.QuantumDilogarithm does not exist"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e391769fc62f",
+          "ts": "3d9e06f1e047",
+          "lean": "24f82797f4da"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean fails compilation: content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/QuantumDilogarithm.olean' of module QOU.BraidKnot.QuantumDilogarithm does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean for 'Quantum dilogarithm disambiguation: $\\\\Phi_q$ (product form) vs $-\\\\mathrm{Li}_2^q(-z)$ (Kashaev integration limit)' fails compilation with error: content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/QuantumDilogarithm.olean' of module QOU.BraidKnot.QuantumDilogarithm does not exist. This invalidates the claim of formal verification."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.420Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

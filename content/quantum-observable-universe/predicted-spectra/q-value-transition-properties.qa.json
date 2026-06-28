@@ -1,0 +1,278 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:Q-value-transition-properties",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/q-value-transition-properties.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/q-value-transition-properties.md"
+  },
+  "source_hashes": {
+    "md": "a805ecb6badf",
+    "ts": "092d940bd418"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Block placement and kind 'remark' match validated structurally.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' presents substantial mathematical content: 'The following develops the [$Q$-value of a nuclear'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$'.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$'.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "q-value-transition-properties.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a805ecb6badf",
+          "ts": "092d940bd418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\\\\mathcal{Q}_q$' are consistent."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T11:12:00.041Z"
+}

@@ -913,7 +913,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The definition 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' is formulated via non-circular relations to existing primitives.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$'.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "antineutrino-knot.lean:1 — content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2485e16f5463",
+          "ts": "e70c8eb7a09c",
+          "lean": "beb88684a2b2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:48.337Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

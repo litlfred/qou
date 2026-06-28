@@ -1635,7 +1635,252 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' presents substantial mathematical content: | Cell | Value | |---|---| | $G[0,0]$ | $1$ | | $G[0,1] = G[0,2]$ | $u/(u^2+1) = \\sqrt{q}/(q+1)$ | | $G[0,3] = G[0,4]...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean is missing, leading to complete divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to halverson_ram_1998 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean is missing entirely, preventing formal verification of the claims in 'Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\\\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.'."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

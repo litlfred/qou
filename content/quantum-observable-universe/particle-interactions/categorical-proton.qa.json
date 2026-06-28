@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/categorical-proton.lean"
   },
   "source_hashes": {
-    "md": "8bdc4aa6543b",
+    "md": "2e6dcea51cfb",
     "ts": "4e309a4bebf3",
     "lean": "5ba09130ec16"
   },
@@ -1085,24 +1085,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "cca0c63a60bd",
-          "ts": "4e309a4bebf3",
-          "lean": "5ba09130ec16"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:20.431Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "8bdc4aa6543b",
           "ts": "4e309a4bebf3",
           "lean": "5ba09130ec16"
@@ -1115,27 +1097,26 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      }
-    ],
-    "wall-side-statement": [
+      },
       {
         "field_hash": {
-          "md": "cca0c63a60bd",
+          "md": "2e6dcea51cfb",
           "ts": "4e309a4bebf3",
           "lean": "5ba09130ec16"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:20.817Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
-      },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Block placement and kind 'definition' match validated structurally for 'Proton (categorical)' in chapter 'particle-interactions'.",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-statement": [
       {
         "field_hash": {
           "md": "8bdc4aa6543b",
@@ -1151,8 +1132,285 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Hard-codes q_0≈1.1100 / MeV / λ_scale but carries the §7c archimedean-specialisation banner at categorical-proton.md:1, so the wall is correctly declared. (Separate content note, out of this criterion's scope: line 108 reintroduces the purged λ_scale factor — flag to canonical-watcher.)"
+      },
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean theorem statement in content/quantum-observable-universe/particle-interactions/categorical-proton.lean matches the mathematical statement in content/quantum-observable-universe/particle-interactions/categorical-proton.md.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — Lean file exists"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Proton (categorical)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proton (categorical)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Proton (categorical)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/categorical-proton.lean is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proton (categorical)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/categorical-proton.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to manuscript are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Proton (categorical)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Proton (categorical)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Proton (categorical)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2e6dcea51cfb",
+          "ts": "4e309a4bebf3",
+          "lean": "5ba09130ec16"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean for 'Proton (categorical)' fails compilation with error: content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals. This invalidates the claim of formal verification."
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

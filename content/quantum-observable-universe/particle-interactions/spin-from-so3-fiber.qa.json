@@ -976,7 +976,266 @@
           "value": 0.72
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations': the formalization compiles successfully without errors.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations'.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations'.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling contains 'sorry' placeholders, which might diverge from the complete narrative claims.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The citations klein1884vorlesungen, kashiwara1991, khovanov-lauda2009, wigner1937 in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling contains sorry placeholders, indicating incomplete reproducibility.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.lean:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.347Z"
+  "updated_at": "2026-06-28T11:11:58.919Z"
 }

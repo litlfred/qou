@@ -976,7 +976,265 @@
           "value": 0.7
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (contains sorry).",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are non-vacuous as they make concrete conjectures about 'Hecke algebra $H_n(q)$ folds into a Type-B Cartan datum $\\mathrm{B}_{n/2}$ under the involution $\\iota: \\alpha_i \\lef...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean uses a class-conjecture pattern, matching the conjectural nature of 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kashiwara1991, khovanov-lauda2009, brundan-kleshchev2009, lecouvey2007 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.998Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

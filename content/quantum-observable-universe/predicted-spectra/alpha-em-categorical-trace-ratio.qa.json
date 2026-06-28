@@ -1779,7 +1779,266 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$'.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$'.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "alpha-em-categorical-trace-ratio.lean:1 — content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7cbe950a3b3f",
+          "ts": "ca5be552846c",
+          "lean": "1b96b846264b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

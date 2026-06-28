@@ -1340,7 +1340,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean:67:17: error: omega could not prove the goal:.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form'.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Shell closure as symmetric Poincaré distribution in the Hecke normal form' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form'.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Shell closure as symmetric Poincaré distribution in the Hecke normal form' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "shell-closure-normal-form.lean:1 — content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean:67:17: error: omega could not prove the goal:"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "464aaffbfe70",
+          "ts": "67bd68ac5939",
+          "lean": "8d1c16f639e7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean fails compilation: content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean:67:17: error: omega could not prove the goal:",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean:67:17: error: omega could not prove the goal:, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.779Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

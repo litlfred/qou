@@ -1789,7 +1789,266 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide; trailing rfl closes a genuine list-equality after the substantive rewrite, not a masked vacuous goal."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean:72:2: error: No goals to be solved.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$'.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$'.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Multiplicative-chain form: $\\\\alpha_{EM}^{-1} = q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{2,9})]_q \\\\cdot [\\\\alpha_{\\\\mathrm{shift}}(T_{3,5})]_q$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "alpha-em-shift-multiplicative-chain.lean:1 — content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean:72:2: error: No goals to be solved"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0514ddc7efbc",
+          "ts": "08949c5b9c0d",
+          "lean": "6d61396e48fa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean:72:2: error: No goals to be solved",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean:72:2: error: No goals to be solved, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

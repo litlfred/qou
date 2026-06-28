@@ -873,7 +873,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean:41:20: error(lean.unknownIdentifier): Unknown identifier `qInt`.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "em-coupling-chern-simons.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)'.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)'.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Conjectured Chern-Simons correction form $1/\\\\alpha = q[9]_q[10]_q\\\\cdot(1+\\\\delta_{CS}+\\\\kappa\\\\,\\\\delta_{CS}^2)$ (Gram-determinant $\\\\kappa$ unproved)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "em-coupling-chern-simons.lean:1 — content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean:41:20: error(lean.unknownIdentifier): Unknown identifier `qInt`"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "12a33dd5968f",
+          "ts": "abadb3b00f1d",
+          "lean": "db1148093749"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:47.711Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

@@ -995,7 +995,265 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are non-vacuous as they make concrete conjectures about 'transpose involution $\\lambda \\mapsto \\lambda^{T}$ — the Dynkin involution on the $A_{n-1}$ crystal that, after foldi...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean uses a class-conjecture pattern, matching the conjectural nature of 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kashiwara1991, lecouvey2007, brundankleshchev2009, khovanovlauda2009, kassel1995 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 — content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c1629e334c47",
+          "ts": "2c35a2834a2a",
+          "lean": "eebe516e5768"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

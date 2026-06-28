@@ -2051,6 +2051,23 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Symbolic $Q$-value of free neutron decay' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -2079,6 +2096,23 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Symbolic $Q$-value of free neutron decay' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
       }
     ],
     "da-overclaim": [
@@ -2106,6 +2140,22 @@
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Symbolic $Q$-value of free neutron decay' is appropriately qualified.",
         "severity": "minor"
       }
     ],
@@ -2135,6 +2185,22 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Symbolic $Q$-value of free neutron decay' presents substantial mathematical content: The $Q$-value of free neutron $\\beta^-$-decay $n \\to p + e^- + \\bar\\nu_e$ is derived symbolically from the categorica...",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -2155,8 +2221,177 @@
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing entirely, preventing formal verification of the claims in 'Symbolic $Q$-value of free neutron decay'."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Symbolic $Q$-value of free neutron decay': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Symbolic $Q$-value of free neutron decay'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symbolic $Q$-value of free neutron decay'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Symbolic $Q$-value of free neutron decay' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing, leading to complete divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Symbolic $Q$-value of free neutron decay', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Symbolic $Q$-value of free neutron decay' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Symbolic $Q$-value of free neutron decay' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:11:57.781Z"
 }

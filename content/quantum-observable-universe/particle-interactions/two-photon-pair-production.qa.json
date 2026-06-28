@@ -835,7 +835,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' presents substantial mathematical content: '$\\gamma\\gamma \\to e^- e^+$'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step'.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step'.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "two-photon-pair-production.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4e24cb54bede",
+          "ts": "4a96e264849a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Two photons hitting a heavy nucleus: $\\\\gamma\\\\gamma \\\\to e^- e^+$ as a forced symmetric-crystal step' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.850Z"
+  "updated_at": "2026-06-28T11:11:58.919Z"
 }

@@ -1358,7 +1358,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean:116:42: error: don't know how to synthesize placeholder for argument `elem`.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$'.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$'.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Shell binding from the torus knot hierarchy: $T_{2,3} \\\\to T_{2,5} \\\\to T_{2,7} \\\\to T_{2,9}$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "torus-knot-shell-binding.lean:1 — content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean:116:42: error: don't know how to synthesize placeholder for argument `elem`"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a957c2014121",
+          "ts": "56a7e34106f1",
+          "lean": "bb259e2862ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean fails compilation: content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean:116:42: error: don't know how to synthesize placeholder for argument `elem`",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean:116:42: error: don't know how to synthesize placeholder for argument `elem`, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:53.461Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }
