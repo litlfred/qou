@@ -807,7 +807,7 @@
 | [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 22 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 10 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
 | [conj:q-gl-kummer-filtration](#conj:q-gl-kummer-filtration) | Kummer filtration on $q$-local systems | Ch 20 | `qou:QOU.QGeometricLanglands.q_gl_kummer_filtration` |
-| [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90) | Ch 13 | `qou:QOU.Observations.n_v_leading_order` |
+| [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order $N_v = |S_5| \cdot q_0^{90}$ (= $120 \cdot q_0^{90}$) | Ch 13 | `qou:QOU.Observations.n_v_leading_order` |
 | [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 16 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 10 | `qou:QOU.ParticleInteractions.LiftedCrossingLocality` |
 | [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1` |
