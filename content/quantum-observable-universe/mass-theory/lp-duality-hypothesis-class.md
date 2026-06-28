@@ -54,7 +54,7 @@ two consumer theorems, making the existing top-level `sorry`s
 disappear (the `sorry` lives only in the trivial-model class
 instance, with proper Schrijver citation).
 
-## When this becomes unconditional
+## Conditions for an unconditional result
 
 When Mathlib lands a finite-dim LP-duality library
 (`Mathlib.Analysis.Convex.LinearProgramming` or similar — none
