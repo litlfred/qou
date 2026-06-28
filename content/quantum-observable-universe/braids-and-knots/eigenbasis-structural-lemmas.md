@@ -36,6 +36,6 @@ matter/antimatter symmetry of the channel weights, and the framing rational (3)
 fixes how reframing a confined braid redistributes weight across the tower.
 Each lemma is a rigorous conditional on a clearly stated categorical input (the
 ribbon eigenvalue; the seminormal bar–conjugate relation), with the structural
-conclusion derived — not assumed. The exact-symbolic verification is the probe
-`eigenbasis-structural-lemmas` (merged in PR #2502); the present remark records
-the Lean formalisation that closes its `lean_followup`.
+conclusion derived — not assumed. The companion compute probe supplies the
+exact-symbolic verification, and the Lean formalisation establishes the same
+lemmas categorically.

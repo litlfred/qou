@@ -62,7 +62,7 @@ that production evaluates without truncation
 | $k = 0$ | $c_0 = 0$ | proved (Form A baseline, $q = 1$) |
 | 1-d irreps | $F_\lambda \equiv 1$ | proved ($V_{(n)}, V_{(1^n)}$: $b_\lambda = 0$) |
 | $N=1$ envelope | $\cos(\alpha - b\hbar_q^2/2)$, coupling $b$ | proved (Hoefsmit $\tilde f_1$ matrix element) |
-| $k = 2$ | $c_2 = -1$, factor $(1 - b^2\hbar_q^4)$ | proved seed (bar-even, PR #1602); **wired** ($\mathfrak{Q}_\beta$ production) |
+| $k = 2$ | $c_2 = -1$, factor $(1 - b^2\hbar_q^4)$ | proved seed (bar-even); **wired** ($\mathfrak{Q}_\beta$ production) |
 | $k = 3$ | $c_3 \approx -2$, factor $(1 - 2b^3\hbar_q^6)$ | near-match (recursion + open kernel) |
 | $k \geq 4$ | $c_k^{(\lambda)}$ | recursion-generated; kernel open |
 
