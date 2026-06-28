@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/reeb-operations-per-planck.md"
   },
   "source_hashes": {
-    "md": "7045356458f2",
+    "md": "380cb7d99c67",
     "ts": "cc7a8a9a9443"
   },
   "criteria": {
@@ -1047,6 +1047,22 @@
         "reviewed_at": "2026-06-22T02:56:27.583Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "notes": "Proposition contains interpretative physics text."
       }
     ],
     "fit-section-chapter": [
@@ -1066,6 +1082,20 @@
         "reviewed_at": "2026-06-22T02:56:28.026Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1115,20 @@
         "reviewed_at": "2026-06-22T02:56:28.415Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1104,6 +1148,21 @@
         "reviewed_at": "2026-06-22T02:56:28.758Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Missing proof."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1137,6 +1196,20 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Information/reeb_operations_per_planck.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1198,6 +1271,20 @@
           "max": 1,
           "value": 0.66
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1259,6 +1346,20 @@
           "max": 1,
           "value": 0.72
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1320,6 +1421,20 @@
           "max": 1,
           "value": 0.58
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1373,6 +1488,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1426,6 +1555,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1462,6 +1605,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1515,6 +1672,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1568,6 +1739,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1604,6 +1789,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1622,6 +1821,20 @@
         "notes": "No false claims identified in 'Discrete iterations per Reeb circuit': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1639,6 +1852,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Discrete iterations per Reeb circuit' presents substantial mathematical content: be the Planck time ([Planck time](#def:planck-time)).  The number of discrete $f...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1657,6 +1884,20 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete iterations per Reeb circuit'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1674,6 +1915,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Discrete iterations per Reeb circuit' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1692,6 +1947,20 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete iterations per Reeb circuit'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1710,6 +1979,20 @@
         "notes": "The argument flow in 'Discrete iterations per Reeb circuit' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1727,6 +2010,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The referenced Lean file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1745,6 +2042,20 @@
         "notes": "No citations are present in 'Discrete iterations per Reeb circuit', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1763,6 +2074,20 @@
         "notes": "Key terms and symbols in 'Discrete iterations per Reeb circuit' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1781,6 +2106,20 @@
         "notes": "The algebraic and logical relations in 'Discrete iterations per Reeb circuit' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1799,6 +2138,23 @@
         "notes": "The physical concepts described in 'Discrete iterations per Reeb circuit' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "n_R(q) = t_P(q) = 1/\\hbar_q",
+        "notes": "Equating a discrete mapping count exactly to Planck time asserts a rigid, specific discretisation of time. Without incorporating G, c, and standard \\hbar explicitly, this is physically implausible."
       }
     ],
     "da-reproducibility": [
@@ -1817,6 +2173,20 @@
         "notes": "The derivation steps and formal definitions in 'Discrete iterations per Reeb circuit' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/reeb-operations-per-planck.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1836,8 +2206,22 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing, preventing formal verification of the claims in 'Discrete iterations per Reeb circuit'."
+      },
+      {
+        "field_hash": {
+          "md": "380cb7d99c67",
+          "ts": "cc7a8a9a9443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:59:01.740Z"
 }

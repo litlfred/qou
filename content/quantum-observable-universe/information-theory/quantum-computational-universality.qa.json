@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/quantum-computational-universality.lean"
   },
   "source_hashes": {
-    "md": "5ea6884d5d4e",
+    "md": "0ba5e33b47c1",
     "ts": "24454eb49dde",
     "lean": "50a93f63783a"
   },
@@ -913,6 +913,21 @@
         "reviewed_at": "2026-06-22T02:56:27.549Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -977,6 +992,22 @@
           "max": 1,
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Goal is plausible based on known topological quantum computing properties."
       }
     ],
     "da-false-claim": [
@@ -996,6 +1027,21 @@
         "notes": "No false claims identified in 'Quantum computational universality via descent to roots of unity': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1014,6 +1060,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'Quantum computational universality via descent to roots of unity' are non-vacuous as they make concrete conjectures about 'encoding a reversible computation of $N$ Toffoli gates ([Tof...'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1033,6 +1094,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum computational universality via descent to roots of unity'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1051,6 +1127,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Quantum computational universality via descent to roots of unity' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1070,6 +1161,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum computational universality via descent to roots of unity'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "notes": "The exact mapping from generic SU(2^n) approximations to 'information content' c^2 - 1 seems to assume optimal braiding compilers which hide substantial complexity."
       }
     ],
     "da-non-sequitur": [
@@ -1089,6 +1197,21 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/quantum-computational-universality.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1107,6 +1230,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-computational-universality.lean uses a class-conjecture pattern, matching the conjectural nature of 'Quantum computational universality via descent to roots of unity'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1126,6 +1264,22 @@
         "notes": "Citations to freedman2003 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Properly cites freedman2003 for topological quantum universality."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1145,6 +1299,21 @@
         "notes": "Key terms and symbols in 'Quantum computational universality via descent to roots of unity' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1164,6 +1333,21 @@
         "notes": "The algebraic and logical relations in 'Quantum computational universality via descent to roots of unity' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1183,6 +1367,21 @@
         "notes": "The physical concepts described in 'Quantum computational universality via descent to roots of unity' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1202,6 +1401,21 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-computational-universality.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1222,8 +1436,23 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Quantum computational universality via descent to roots of unity' remain unproven and are represented as sorry stubs in the formalization."
+      },
+      {
+        "field_hash": {
+          "md": "0ba5e33b47c1",
+          "ts": "24454eb49dde",
+          "lean": "50a93f63783a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:58:02.504Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:58:02.504Z"
 }

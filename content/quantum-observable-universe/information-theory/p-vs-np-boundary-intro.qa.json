@@ -814,6 +814,20 @@
         "reviewed_at": "2026-06-22T02:56:27.579Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -832,6 +846,20 @@
         "notes": "No false claims identified in 'sec:p-vs-np-boundary-intro': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -849,6 +877,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'sec:p-vs-np-boundary-intro' presents substantial mathematical content: _[draft]_ The jet horizon of §1 separates degree-$0$ data from degree $\\geq 1$ l...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -867,6 +909,20 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:p-vs-np-boundary-intro'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -884,6 +940,22 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'sec:p-vs-np-boundary-intro' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "Recasting the entire P vs NP problem as a jet horizon opacity claim is an enormous theoretical overreach that trivializes the core computational difficulty into geometric language."
       }
     ],
     "da-hidden-dof": [
@@ -902,6 +974,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:p-vs-np-boundary-intro'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "notes": "The exact geometric correspondence likely hides the combinatorial hardness of NP-complete problems in the 'opacity' parameter."
       }
     ],
     "da-non-sequitur": [
@@ -920,6 +1008,20 @@
         "notes": "The argument flow in 'sec:p-vs-np-boundary-intro' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -937,6 +1039,20 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -955,6 +1071,20 @@
         "notes": "No citations are present in 'sec:p-vs-np-boundary-intro', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -973,6 +1103,20 @@
         "notes": "Key terms and symbols in 'sec:p-vs-np-boundary-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -991,6 +1135,20 @@
         "notes": "The algebraic and logical relations in 'sec:p-vs-np-boundary-intro' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1009,6 +1167,20 @@
         "notes": "The physical concepts described in 'sec:p-vs-np-boundary-intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1027,6 +1199,20 @@
         "notes": "The derivation steps and formal definitions in 'sec:p-vs-np-boundary-intro' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1046,8 +1232,22 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:p-vs-np-boundary-intro' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "da9e30d6d938",
+          "ts": "50f6befeb328"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:59:01.740Z"
 }
