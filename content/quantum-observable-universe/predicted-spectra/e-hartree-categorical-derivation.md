@@ -43,7 +43,7 @@ $\rho_{(2,2)}$ up to the CAL-1 energy unit $m_e c^{2}$.*
 > above is the live statement; the $y_{\mathrm{cov}}$ form is retained
 > only in the investigation log.
 
-## Standing — a conditional theorem
+## Status: a conditional theorem
 
 Every *mechanism* question is resolved: the coupling-parity routes are
 refuted (below), the $\alpha_{EM}^{2}$ scaling is exact in $R$, the
@@ -68,7 +68,7 @@ residual is exactly **three named items**, none a hidden gap:
    complexity (the honest successor to the refuted quadratic-form
    Mechanism B below).
 
-## What is rigorous
+## Rigorous results
 
 1. **The bare LP/SDP framework.** The $H_2$ molecular braid and its
    primal/dual program are set up rigorously in
@@ -193,7 +193,7 @@ gives the dimensionless ratio $E_{\mathrm{bind}}/E_{\mathrm{Hartree}} \approx 0.
 of order unity (matching the standard-physics $H_2$ ratio $\approx 1/6$),
 consistent with Mechanism D without any $J^{1}$-vanishing miracle.
 
-## No coupling-level involution flips $\alpha_{EM}$
+## Absence of a coupling-level involution flipping $\alpha_{EM}$
 
 A natural follow-up to Mechanism C asks whether some involution $\iota$ of
 $R$ other than $q \leftrightarrow q^{-1}$ flips the sign of $\alpha_{EM}$.
@@ -234,7 +234,7 @@ that linear-Stark vanishing — see
 [antiparticle crossing reversal](#prop:antiparticle-crossing-reversal) for
 the QOU analogue of charge-conjugation parity.
 
-## What is still missing for closure
+## Items still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
 requires three concrete, tractable items, all beyond the present block's
@@ -255,7 +255,7 @@ scope:
    statement about $\rho_\infty$ verifiable without experimental Hartree
    values.
 
-## What this block does not claim
+## Non-claims of this block
 
 - It does **not** claim a proof of $E_h \propto \alpha_{EM}^{2}$ from QOU
   principles; it claims only that this scaling is the expected leading

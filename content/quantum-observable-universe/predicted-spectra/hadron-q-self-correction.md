@@ -49,7 +49,7 @@ $\ell_{\mathrm{net}} < 0$ and the local $q$ is slightly *reduced*.
 For proton-rich nuclei, $\ell_{\mathrm{net}} > 0$ and $q$ is
 slightly increased.
 
-**Why the net signed crossing.**
+**Net signed crossing.**
 The $q$-deformed wedge product $\wedge_q$ in the gauge sector of the
 canonical action
 ([canonical action](#prop:qou-canonical-action))

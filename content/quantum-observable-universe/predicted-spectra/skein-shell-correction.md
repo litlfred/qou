@@ -107,7 +107,7 @@ even-even dominance.  It is **locally maximised** at the
 stability pairs, where the factorization is "complete" in a
 sense to be made precise.
 
-**What needs to be shown.**
+**Remaining obligations.**
 
 1. **Skein factorization**: prove that the Skein polynomial
    $J_{\mathcal{N}(Z, N)}(q)$ factors when $(p, n)$ admits

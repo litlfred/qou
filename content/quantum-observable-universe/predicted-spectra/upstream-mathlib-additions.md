@@ -9,7 +9,7 @@ provides three real Mathlib-targeted additions, each sorry-free:
 
 See [Table 1](#tbl:upstream-mathlib-additions-table1-data).
 
-## What this advances
+## Advances
 
 **(A) Towards `Real.dilog`/`Complex.dilog` Mathlib contribution.**
 The `complexLiTwo` definition is a concrete `tsum`-based dilogarithm

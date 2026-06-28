@@ -2,7 +2,7 @@ The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$
 ([canonical action](#prop:qou-canonical-action)) evaluated on a nuclear
 link $\mathcal{N}(Z, N)$ produces observables at two levels.
 
-**What $q$ alone determines.**
+**Observables determined by $q$ alone.**
 
 These are computed from the Iwahori--Hecke algebra $H_A(q)$ at the single
 parameter the substrate $q$, the Descartes condition $\chi(A) = -6$,
@@ -10,7 +10,7 @@ and the categorical definitions:
 
 See [Table](#tbl:topology-geometry-boundary-table-data).
 
-**What is not yet computed from $q$ alone.**
+**Observables not yet computed from $q$ alone.**
 
 The **$Q$-value** for nuclei beyond the deuteron.  The $Q$-value
 is the mass difference $M(\text{parent}) - M(\text{daughter}) - m_e$.

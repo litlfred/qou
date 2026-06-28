@@ -25,7 +25,7 @@ $$
   \underbrace{T_{2,3} \oplus T_{2,3}}_{1s^2\text{ shell (closed)}}
 $$
 
-**Why the shell is closed.**  The linking matrix of the
+**Closure of the shell.**  The linking matrix of the
 two-electron Hopf link is
 
 $$
