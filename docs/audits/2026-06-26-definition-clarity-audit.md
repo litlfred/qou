@@ -18,10 +18,10 @@ over-length statement) are cheaper, lower-stakes fixes.
 | `clarity-stmt-tight` | 244 | 195 | 222 | 0 |
 | `clarity-stmt-pure` | 733 | 44 | 31 | 0 |
 | `clarity-grad-style` | 2109 | 0 | 0 | 0 |
-| `clarity-rhetorical-header` | 1680 | 386 | 43 | 0 |
+| `clarity-rhetorical-header` | 1699 | 386 | 24 | 0 |
 | `clarity-defn-misplaced` | 1836 | 2 | 5 | 25 |
 
-Blocks scanned: **2109**. Total candidate fails: **1182**.
+Blocks scanned: **2109**. Total candidate fails: **1163**.
 
 ## `clarity-defterm-bold` — 128 candidate(s)
 
@@ -158,13 +158,13 @@ Blocks scanned: **2109**. Total candidate fails: **1182**.
 
 _No candidates._
 
-## `clarity-rhetorical-header` — 429 candidate(s)
+## `clarity-rhetorical-header` — 410 candidate(s)
 
 | block | sev | evidence | metrics |
 |---|---|---|---|
 | [`rem:markov-trace-inductive-limit`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.md) | major | 1 rhetorical/colloquial section-header ("What this block provides") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=2, rhetoricalQuestions=1, colloquial=0 |
 | [`prop:habiro-precision-ladder-equivalence`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.md) | major | 2 rhetorical/colloquial section-headers ("Why this resolves the "axiom vs theorem" question", "What the exact evaluation does and does not give") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=5, rhetoricalQuestions=2, colloquial=0 |
-| [`prop:hecke-satisfies-blitvic-hypothesis`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis.md) | major | 2 rhetorical/colloquial section-headers ("Why Hecke generators satisfy it.", "Consequence: the q-CLT input is verified.") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=5, rhetoricalQuestions=1, colloquial=1 |
+| [`prop:hecke-satisfies-blitvic-hypothesis`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis.md) | major | 1 rhetorical/colloquial section-header ("Why Hecke generators satisfy it.") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=5, rhetoricalQuestions=1, colloquial=0 |
 | [`rem:braid-group-n-strand`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/braid-group-n-strand.md) | major | 2 rhetorical/colloquial section-headers ("What's defined", "Why this matters") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=6, rhetoricalQuestions=2, colloquial=0 |
 | [`rem:braid-link-types`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/braid-link-types.md) | major | 2 rhetorical/colloquial section-headers ("What this builds", "What remains for the n-strand case (open)") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=9, rhetoricalQuestions=2, colloquial=0 |
 | [`rem:h3-hecke-idempotents`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.md) | major | 1 rhetorical/colloquial section-header ("What remains") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=4, rhetoricalQuestions=1, colloquial=0 |
@@ -187,7 +187,7 @@ _No candidates._
 | [`sec:cp-violation-evidence`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/observations/cp-violation-evidence.md) | major | 1 rhetorical/colloquial section-header ("What is CP violation?") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=7, rhetoricalQuestions=1, colloquial=0 |
 | [`rem:shell-threading-energy`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/observations/shell-threading-conjecture.md) | major | 1 rhetorical/colloquial section-header ("What needs to be computed.") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=7, rhetoricalQuestions=1, colloquial=0 |
 | [`rem:strutinsky-from-graded-trace`](https://github.com/litlfred/qou/blob/claude/clarity-rhetorical-header-2026-06-27/content/quantum-observable-universe/observations/strutinsky-from-graded-trace.md) | major | 2 rhetorical/colloquial section-headers ("Why the analogy is exact, not just suggestive.", "What this buys.") — reword to a noun-phrase academic header (e.g. "Why X is canonical." → "Canonicity of X."; "Consequence." → "Corollary."); the content may stay | headers=5, rhetoricalQuestions=2, colloquial=0 |
-| … and 404 more | | | |
+| … and 385 more | | | |
 
 ## `clarity-defn-misplaced` — 7 candidate(s)
 
