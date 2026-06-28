@@ -24,6 +24,7 @@ export default chapter({
         "substrate-consistency-window-table2-data",
         "substrate-consistency-window-table1-data",
         "three-calibration-discipline",
+        "three-calibration-discipline-proof",
       ],
     }),
 
@@ -37,6 +38,7 @@ export default chapter({
         "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
+        "s5-equivariant-torus-knots-proof",
         "s5-equivariant-torus-knots-table-data",
         "symmetry-preserving-leptons",
       ],
@@ -115,6 +117,7 @@ export default chapter({
         "feynman-qou-comparison-table2-data",
         "feynman-qou-comparison-table1-data",
         "neutron-proton-mass-splitting",
+        "neutron-proton-mass-splitting-proof",
         "photon-channel-wedderburn-chain",
         "mass-formula-validation",
 
@@ -215,6 +218,7 @@ export default chapter({
         "beta-decay-magic-shells-intro",
         "nitrogen-14-threading",
         "trace-ratio-observable",
+        "trace-ratio-observable-proof",
         "trace-ratio-interpretation",
         // Detangler R3 (2026-05-23): 6-row verification-nuclei
         // trace-ratio table extracted from
@@ -256,6 +260,7 @@ export default chapter({
         "cmb-torsion-data",
         "gravity-emergent",
         "gravity-spectral-prefactor",
+        "gravity-spectral-prefactor-proof",
         "gravity-spectral-prefactor-interpretation",
         "g-q-closed-form",
         "gravity-emergent-data",
@@ -298,15 +303,18 @@ export default chapter({
 
         // — Why strange matter binds harder (and why it's not the ground state)
         "strangelet-crossing-energy",
+        "strangelet-crossing-energy-proof",
         "strangelet-witten-stability",
 
         // — Phase diagram: deconfinement, CFL, equation of state
         "deconfinement-golden-threshold",
         "hopf-diquark",
         "borromean-hopf-energy-crossover",
+        "borromean-hopf-energy-crossover-proof",
         "borromean-hopf-energy-crossover-factor-250",
         "color-superconductivity-borromean",
         "eos-borromean-cfl",
+        "eos-borromean-cfl-proof",
         "eos-borromean-cfl-table-data",
 
         // — Observable signatures
