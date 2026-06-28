@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/electron-immortality.md"
   },
   "source_hashes": {
-    "md": "ca40db0fc89e",
+    "md": "f075210e54df",
     "ts": "96c1f616bb4c"
   },
   "criteria": {
@@ -853,6 +853,21 @@
         "notes": "No false claims identified in 'Electrons are immortal: no beta decay for elementary trefoils': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/electron-immortality.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f075210e54df",
+          "ts": "96c1f616bb4c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:08:18.384Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The topological argument for the electron's stability against beta decay correctly follows from the model's taxonomy (the trefoil has no internal crossing orientation partition to rearrange)."
       }
     ],
     "da-vacuous": [
@@ -1082,5 +1097,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:08:18.384Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean"
   },
   "source_hashes": {
-    "md": "88af01c41620",
+    "md": "cd0c06e0b8ab",
     "ts": "b4efc8678c15",
     "lean": "fd1ae30a7336"
   },
@@ -913,6 +913,21 @@
         "reviewed_at": "2026-06-22T02:56:59.121Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -937,6 +952,21 @@
         "reviewed_at": "2026-06-22T02:56:59.549Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -956,6 +986,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -974,6 +1019,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -993,6 +1053,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1011,6 +1086,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-hidden-dof": [
@@ -1030,6 +1122,23 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-non-sequitur": [
@@ -1049,6 +1158,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1067,6 +1191,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1086,6 +1225,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1105,6 +1259,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1124,6 +1293,23 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-physical-implausibility": [
@@ -1143,6 +1329,23 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-reproducibility": [
@@ -1162,6 +1365,21 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:1 — content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1182,8 +1400,25 @@
         "severity": "minor",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`"
+      },
+      {
+        "field_hash": {
+          "md": "cd0c06e0b8ab",
+          "ts": "b4efc8678c15",
+          "lean": "fd1ae30a7336"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:34:58.468Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/nitrogen-14-threading.md"
   },
   "source_hashes": {
-    "md": "368e64e82030",
+    "md": "9cd366565318",
     "ts": "a260d2776d59"
   },
   "criteria": {
@@ -780,6 +780,21 @@
         "reviewed_at": "2026-06-22T02:56:54.057Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -799,6 +814,21 @@
         "notes": "No false claims identified in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -817,6 +847,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' presents substantial mathematical content: Both ${}^{14}\\mathrm{N}$ and ${}^{14}\\mathrm{C}$ have mass number $A = 14$ and s...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -836,6 +881,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -854,6 +914,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -873,6 +948,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -892,6 +982,21 @@
         "notes": "The argument flow in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -910,6 +1015,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -929,6 +1049,21 @@
         "notes": "No citations are present in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -948,6 +1083,21 @@
         "notes": "Key terms and symbols in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -967,6 +1117,23 @@
         "notes": "The algebraic and logical relations in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "e(I)/e(R) = 0.1563, matching the Q-value of 0.156 MeV",
+        "notes": "The Q-value match of 0.156 MeV to the fractional ideal volume 0.1563 is very suspicious. Is this a coincidence or derived from a robust universal scale? Without the explicit conversion factor, this looks like an empirical coincidence."
       }
     ],
     "da-physical-implausibility": [
@@ -986,6 +1153,21 @@
         "notes": "The physical concepts described in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1005,6 +1187,21 @@
         "notes": "The derivation steps and formal definitions in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1025,8 +1222,23 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9cd366565318",
+          "ts": "a260d2776d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T22:24:43.835Z"
 }

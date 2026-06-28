@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/centered-hecke-variance-positive.md"
   },
   "source_hashes": {
-    "md": "4878cd76a53e",
+    "md": "9fc31e6d5efb",
     "ts": "25afe31a8f87"
   },
   "criteria": {
@@ -1623,6 +1623,21 @@
         "notes": "No false claims identified in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/centered-hecke-variance-positive.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9fc31e6d5efb",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:08:18.384Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The algebraic derivation of the centered Hecke variance is mathematically exact: expanding (\\sigma_i - z)^2 under the Hecke quadratic relation precisely yields (q - q^{-1})z + 1 - z^2."
       }
     ],
     "da-vacuous": [
@@ -1852,5 +1867,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:08:18.384Z"
 }

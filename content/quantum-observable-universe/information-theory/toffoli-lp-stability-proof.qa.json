@@ -1,0 +1,241 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:toffoli-lp-stability",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md"
+  },
+  "source_hashes": {
+    "md": "79ffed3ede9d",
+    "ts": "9811870e3ce7"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Accurately identifies the indefinite pairing and negative minimum eigenvalue, correctly evaluating LP stability despite the physical issues of the indefinite metric."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "79ffed3ede9d",
+          "ts": "9811870e3ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T18:00:05.797Z"
+}

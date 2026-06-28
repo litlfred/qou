@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/archimedean-macroscopic-washout.md"
   },
   "source_hashes": {
-    "md": "c5605181b436",
+    "md": "2296a5aeca5f",
     "ts": "21b96ec89d1f"
   },
   "criteria": {
@@ -1021,6 +1021,21 @@
         "notes": "The algebraic and logical relations in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2296a5aeca5f",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:08:18.384Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The invocation of q-Gaussians as the CLT attractor for the globally correlated Hecke algebra is a well-founded application of the referenced Tsallis/Marsh literature and establishes a falsifiable O(10^-3) tail deviation."
       }
     ],
     "da-physical-implausibility": [
@@ -1082,5 +1097,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:08:18.384Z"
 }

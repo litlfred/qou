@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean"
   },
   "source_hashes": {
-    "md": "7ef738a57cd7",
+    "md": "160600108807",
     "ts": "31803b06c884",
     "lean": "ed6947a2fe36"
   },
@@ -1283,6 +1283,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "fit-section-chapter": [
@@ -1302,6 +1318,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'proposition' match validated structurally for 'Mass-side $\\\\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\\\\mathfrak{Q}_\\\\beta$ `BarEvenKernel` typeclass' within chapter 'mass-theory'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-statement": [
@@ -1321,6 +1353,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-proof": [
@@ -1339,6 +1387,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1358,6 +1422,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Narrative in content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.md matches the Lean sibling structure in content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1376,6 +1456,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1395,6 +1491,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Proof compiles successfully, confirming goal plausibility.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-novelty": [
@@ -1417,6 +1529,22 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-statement-integrity": [
@@ -1436,6 +1564,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The signature is stable and matches the narrative statement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1455,6 +1599,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-trivial-true": [
@@ -1474,6 +1634,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-false-premise": [
@@ -1493,6 +1669,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false premises or conflicting hypotheses detected in the statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1511,6 +1703,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-decide-masking": [
@@ -1530,6 +1738,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No decide masking or native_decide bypasses detected in the formalization.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-false-claim": [
@@ -1549,6 +1773,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-vacuous": [
@@ -1567,6 +1807,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-circular": [
@@ -1586,6 +1842,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-overclaim": [
@@ -1604,6 +1876,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-hidden-dof": [
@@ -1623,6 +1911,22 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-non-sequitur": [
@@ -1642,6 +1946,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1660,6 +1980,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-citation-misuse": [
@@ -1679,6 +2015,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1698,6 +2050,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-empirical-fragility": [
@@ -1717,6 +2085,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-physical-implausibility": [
@@ -1736,6 +2120,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-reproducibility": [
@@ -1755,6 +2155,22 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-referee-verdict": [
@@ -1775,8 +2191,24 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "160600108807",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.634Z"
+  "updated_at": "2026-06-28T22:44:56.705Z"
 }

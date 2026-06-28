@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/physics-names-knot-operations.md"
   },
   "source_hashes": {
-    "md": "abad431995e6",
+    "md": "45064574dd77",
     "ts": "9917745ad953"
   },
   "criteria": {
@@ -908,6 +908,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "file:42: The 'alpha particle' identification, for instance, requires w_(3,3,3,3)(q_0) to dominate",
+        "notes": "Assigning physical identities like 'alpha particle' purely based on the maximal Plancherel weight in a Hecke algebra block without exhibiting dynamical binding or physical scattering behavior is a massive leap and borders on numerology."
       }
     ],
     "da-hidden-dof": [
@@ -983,6 +1000,23 @@
         "notes": "No citations are present in 'Physics names $\\\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/physics-names-knot-operations.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "45064574dd77",
+          "ts": "9917745ad953"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "file:14: [cite knot-operation-cache.json](#)",
+        "notes": "Missing or bare citation/link to the discovery cache. It should be a proper path link or formatted citation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1082,5 +1116,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "updated_at": "2026-06-28T18:05:19.348Z"
 }

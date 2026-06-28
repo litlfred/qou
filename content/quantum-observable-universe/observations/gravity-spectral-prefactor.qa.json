@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean"
   },
   "source_hashes": {
-    "md": "1e2d128eeea7",
+    "md": "a74f492cd22c",
     "ts": "4940a5f54ccb",
     "lean": "029bafd43a58"
   },
@@ -1067,6 +1067,22 @@
         "reviewed_at": "2026-06-22T02:56:53.982Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "fit-section-chapter": [
@@ -1087,6 +1103,22 @@
         "reviewed_at": "2026-06-22T02:56:54.372Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "wall-side-statement": [
@@ -1107,6 +1139,22 @@
         "reviewed_at": "2026-06-22T02:56:54.778Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "wall-side-proof": [
@@ -1127,6 +1175,22 @@
         "reviewed_at": "2026-06-22T02:56:55.201Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1147,6 +1211,22 @@
         "reviewed_at": "2026-06-22T02:56:55.491Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1171,6 +1251,22 @@
         "reviewed_at": "2026-06-22T02:56:55.859Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1195,6 +1291,22 @@
         "reviewed_at": "2026-06-22T02:56:56.222Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-novelty": [
@@ -1219,6 +1331,22 @@
         "reviewed_at": "2026-06-22T02:56:56.603Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-statement-integrity": [
@@ -1239,6 +1367,22 @@
         "reviewed_at": "2026-06-22T02:56:56.953Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1259,6 +1403,22 @@
         "reviewed_at": "2026-06-22T02:56:57.404Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-trivial-true": [
@@ -1279,6 +1439,22 @@
         "reviewed_at": "2026-06-22T02:56:57.772Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-false-premise": [
@@ -1299,6 +1475,22 @@
         "reviewed_at": "2026-06-22T02:56:58.268Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1319,6 +1511,22 @@
         "reviewed_at": "2026-06-22T02:56:58.747Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-decide-masking": [
@@ -1339,6 +1547,22 @@
         "reviewed_at": "2026-06-22T02:56:59.156Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -1359,6 +1583,22 @@
         "notes": "The claim in 'Newton' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -1378,6 +1618,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Newton' presents substantial mathematical content: $\\mathfrak{m}^{\\geq 4}_{q,\\mathcal{K}}(\\mathcal{T})$ of the unified mass formula...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -1398,6 +1654,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Newton'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -1417,6 +1689,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Newton' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -1437,6 +1725,24 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Newton'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "alpha = m_e * 8G",
+        "notes": "Severe numerology / post-hoc rationalization suspected. The relation alpha = m_e * 8G (where G=1 in Planck units) implies alpha = 8 m_e, which seems dimensionally arbitrary and physically unmotivated. The factor of 8 appears fitted."
       }
     ],
     "da-non-sequitur": [
@@ -1457,6 +1763,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1476,6 +1798,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1496,6 +1834,22 @@
         "notes": "No citations are present in 'Newton', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1516,6 +1870,22 @@
         "notes": "Key terms and symbols in 'Newton' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1536,6 +1906,24 @@
         "notes": "The algebraic and logical relations in 'Newton' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "alpha = m_e * 8G",
+        "notes": "Severe numerology / post-hoc rationalization suspected. The relation alpha = m_e * 8G (where G=1 in Planck units) implies alpha = 8 m_e, which seems dimensionally arbitrary and physically unmotivated. The factor of 8 appears fitted."
       }
     ],
     "da-physical-implausibility": [
@@ -1556,6 +1944,24 @@
         "notes": "The physical concepts described in 'Newton' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "alpha = m_e * 8G",
+        "notes": "Severe numerology / post-hoc rationalization suspected. The relation alpha = m_e * 8G (where G=1 in Planck units) implies alpha = 8 m_e, which seems dimensionally arbitrary and physically unmotivated. The factor of 8 appears fitted."
       }
     ],
     "da-reproducibility": [
@@ -1576,6 +1982,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:1 — content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:26:2: error: typeclass instance problem is stuck, it is often due to metavariables"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1597,8 +2019,24 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean contains compilation errors: content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:26:2: error: typeclass instance problem is stuck, it is often due to metavariables, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "a74f492cd22c",
+          "ts": "4940a5f54ccb",
+          "lean": "029bafd43a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:24:43.835Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T22:24:43.835Z"
 }

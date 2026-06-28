@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean"
   },
   "source_hashes": {
-    "md": "0e5712eb1a3e",
+    "md": "be277d2a19dc",
     "ts": "077e5535a601",
     "lean": "cfc0f13ed6d7"
   },
@@ -1310,6 +1310,24 @@
         "notes": "The physical concepts described in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "be277d2a19dc",
+          "ts": "077e5535a601",
+          "lean": "cfc0f13ed6d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:06:58.756Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "file:101: Q_top^sea \\approx (\\alpha_W / 2\\pi) x^2 ... This drives \\delta q below 10^-6 at the LHC",
+        "notes": "The claim relies on a massive double standard regarding parton kinematics. It treats the CDF pp-bar annihilation as a 'compact two-body vertex' without x^2 suppression, yet applies x^2 suppression to LHC pp annihilation because it uses 'sea quarks'. In reality, valence quarks at CDF also carry fractional momentum x < 1 (x ~ 0.04 to produce an 80 GeV W boson at 1.96 TeV). Suppressing the LHC prediction via x^2 while leaving CDF unsuppressed is factually wrong under standard QCD parton models."
       }
     ],
     "da-reproducibility": [
@@ -1354,5 +1372,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:06:58.756Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean"
   },
   "source_hashes": {
-    "md": "daccd98548f7",
+    "md": "07b0bbb6ea25",
     "ts": "02426d0b9faf",
     "lean": "ec4641481b87"
   },
@@ -1065,6 +1065,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "fit-section-chapter": [
@@ -1084,6 +1100,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'proposition' match validated structurally for 'Crystal-limit isospin degeneracy: $S_{\\\\mathrm{crystal}}$ is invariant under $\\\\sigma_i \\\\leftrightarrow \\\\sigma_i^{-1}$' within chapter 'mass-theory'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-statement": [
@@ -1103,6 +1135,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-proof": [
@@ -1122,6 +1170,22 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean:1 — content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean:152:4: error: Invalid field `charLetter`: The environment does not contain `QOU.BraidKnot.CrystalEigenlineSignBlind.charLetter`",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1140,6 +1204,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1158,6 +1238,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1177,6 +1273,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean code in content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean is broken and does not compile, hence goal plausibility cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-novelty": [
@@ -1199,6 +1311,22 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-statement-integrity": [
@@ -1218,6 +1346,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling fails compilation, preventing statement verification.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1237,6 +1381,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-trivial-true": [
@@ -1256,6 +1416,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-false-premise": [
@@ -1275,6 +1451,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false premises or conflicting hypotheses detected in the statements.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1293,6 +1485,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-decide-masking": [
@@ -1312,6 +1520,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No decide masking or native_decide bypasses detected in the formalization.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-false-claim": [
@@ -1331,6 +1555,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-vacuous": [
@@ -1349,6 +1589,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-circular": [
@@ -1368,6 +1624,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-overclaim": [
@@ -1386,6 +1658,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-hidden-dof": [
@@ -1405,6 +1693,22 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-non-sequitur": [
@@ -1424,6 +1728,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1442,6 +1762,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-citation-misuse": [
@@ -1461,6 +1797,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1480,6 +1832,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-empirical-fragility": [
@@ -1499,6 +1867,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-physical-implausibility": [
@@ -1518,6 +1902,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-reproducibility": [
@@ -1537,6 +1937,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean:1 — content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean:152:4: error: Invalid field `charLetter`: The environment does not contain `QOU.BraidKnot.CrystalEigenlineSignBlind.charLetter`",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-referee-verdict": [
@@ -1557,8 +1973,24 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean:152:4: error: Invalid field `charLetter`: The environment does not contain `QOU.BraidKnot.CrystalEigenlineSignBlind.charLetter`"
+      },
+      {
+        "field_hash": {
+          "md": "07b0bbb6ea25",
+          "ts": "02426d0b9faf",
+          "lean": "ec4641481b87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.634Z"
+  "updated_at": "2026-06-28T22:42:53.527Z"
 }

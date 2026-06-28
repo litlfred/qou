@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/markov-pair-z2.md"
   },
   "source_hashes": {
-    "md": "bbd1022f7fa4",
+    "md": "d977c0a21d15",
     "ts": "ba43c46409fc"
   },
   "criteria": {
@@ -1097,6 +1097,21 @@
         "reviewed_at": "2026-06-22T02:56:54.700Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "fit-section-chapter": [
@@ -1117,6 +1132,21 @@
         "reviewed_at": "2026-06-22T02:56:55.124Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-statement": [
@@ -1137,6 +1167,21 @@
         "reviewed_at": "2026-06-22T02:56:55.479Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-proof": [
@@ -1157,6 +1202,21 @@
         "reviewed_at": "2026-06-22T02:56:55.859Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1177,6 +1237,21 @@
         "reviewed_at": "2026-06-22T02:56:56.206Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1201,6 +1276,21 @@
         "reviewed_at": "2026-06-22T02:56:56.576Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1225,6 +1315,21 @@
         "reviewed_at": "2026-06-22T02:56:57.006Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-novelty": [
@@ -1249,6 +1354,21 @@
         "reviewed_at": "2026-06-22T02:56:57.413Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-statement-integrity": [
@@ -1269,6 +1389,21 @@
         "reviewed_at": "2026-06-22T02:56:57.826Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1289,6 +1424,21 @@
         "reviewed_at": "2026-06-22T02:56:58.409Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-trivial-true": [
@@ -1309,6 +1459,21 @@
         "reviewed_at": "2026-06-22T02:56:58.678Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-false-premise": [
@@ -1329,6 +1494,21 @@
         "reviewed_at": "2026-06-22T02:56:59.064Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1349,6 +1529,21 @@
         "reviewed_at": "2026-06-22T02:56:59.494Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-decide-masking": [
@@ -1369,6 +1564,21 @@
         "reviewed_at": "2026-06-22T02:56:59.817Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-false-claim": [
@@ -1388,6 +1598,21 @@
         "notes": "No false claims identified in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-vacuous": [
@@ -1406,6 +1631,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' presents substantial mathematical content: 'Let $H_n(R, q)$ be the Iwahori--Hecke algebra with Markov trace'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-circular": [
@@ -1425,6 +1665,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$'.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-overclaim": [
@@ -1443,6 +1698,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-hidden-dof": [
@@ -1462,6 +1732,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$'.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-non-sequitur": [
@@ -1481,6 +1766,21 @@
         "notes": "The prose arguments in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1499,6 +1799,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-citation-misuse": [
@@ -1518,6 +1833,21 @@
         "notes": "The citations kassel1995, jones1987 in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1537,6 +1867,21 @@
         "notes": "Key terms and symbols in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-empirical-fragility": [
@@ -1556,6 +1901,21 @@
         "notes": "The algebraic and logical relations in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-physical-implausibility": [
@@ -1575,6 +1935,21 @@
         "notes": "The physical concepts described in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "markov-pair-z2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-reproducibility": [
@@ -1593,6 +1968,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ],
     "da-referee-verdict": [
@@ -1613,8 +2003,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "d977c0a21d15",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:29:29.406Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:38.167Z"
+  "updated_at": "2026-06-28T22:29:29.406Z"
 }

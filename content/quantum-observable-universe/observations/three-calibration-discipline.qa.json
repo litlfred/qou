@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/three-calibration-discipline.lean"
   },
   "source_hashes": {
-    "md": "150fe9663849",
+    "md": "306f855e1d6c",
     "ts": "22487e0d576f",
     "lean": "4902f3e9c3c5"
   },
@@ -1971,6 +1971,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:07:42.971Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The block establishes a strict and falsifiable calibration discipline (exactly three inputs: m_e, m_\\mu/m_e, m_\\pi) explicitly designed to prohibit hidden degrees of freedom in the model."
       }
     ],
     "da-citation-misuse": [
@@ -2200,5 +2216,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:07:42.971Z"
 }

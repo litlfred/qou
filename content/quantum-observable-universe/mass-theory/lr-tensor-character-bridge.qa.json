@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean"
   },
   "source_hashes": {
-    "md": "a0e49112026d",
-    "ts": "628b6a75557a",
+    "md": "4ea106b7e138",
+    "ts": "2eb44d95f68e",
     "lean": "07f0966a3392"
   },
   "criteria": {
@@ -1307,6 +1307,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "fit-section-chapter": [
@@ -1343,6 +1359,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "In its own section 'The LR-tensor character bridge'; the LR comultiplication speedup for tensor-product Hecke characters is the section's subject. Correctly placed; kind=corollary matches (specialisation of prop:hecke-branching-trace-decomposition)."
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-statement": [
@@ -1378,6 +1410,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-proof": [
@@ -1413,6 +1461,22 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1465,6 +1529,22 @@
         "severity": "major",
         "evidence": "lr-tensor-character-bridge.lean:113: \"1 = 1 := sorry\"; lr-tensor-character-bridge.md:193: \"the companion Lean ... currently records a placeholder conclusion (`1 = 1`) ... deferred via `sorry`\"",
         "notes": "The .md asserts a real LR character-bridge identity (chi^nu = Sum c^nu prod chi^lambda) but the Lean theorem lr_tensor_character_bridge concludes the placeholder `1 = 1` via `sorry` — a True-placeholder while the narrative asserts a substantive result. This is a genuine unformalised placeholder (no library decl exists for the full statement), so it is flagged as unformalised, not blessed. The .md self-discloses the gap honestly, but per the rubric the Lean does not encode the same claim."
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1483,6 +1563,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1547,6 +1643,22 @@
           "max": 1,
           "value": 0.82
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-novelty": [
@@ -1569,6 +1681,22 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-statement-integrity": [
@@ -1625,6 +1753,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1681,6 +1825,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-trivial-true": [
@@ -1719,6 +1879,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-false-premise": [
@@ -1775,6 +1951,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1793,6 +1985,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-decide-masking": [
@@ -1831,6 +2039,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-false-claim": [
@@ -1850,6 +2074,22 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-vacuous": [
@@ -1868,6 +2108,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-circular": [
@@ -1887,6 +2143,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-overclaim": [
@@ -1905,6 +2177,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-hidden-dof": [
@@ -1924,6 +2212,22 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-non-sequitur": [
@@ -1943,6 +2247,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1961,6 +2281,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-citation-misuse": [
@@ -1980,6 +2316,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1999,6 +2351,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-empirical-fragility": [
@@ -2018,6 +2386,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-physical-implausibility": [
@@ -2037,6 +2421,22 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-reproducibility": [
@@ -2056,6 +2456,22 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean:1 — content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean:57:20: error: unexpected token 'λ'; expected '_' or identifier",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-referee-verdict": [
@@ -2076,8 +2492,24 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.lean:57:20: error: unexpected token 'λ'; expected '_' or identifier"
+      },
+      {
+        "field_hash": {
+          "md": "4ea106b7e138",
+          "ts": "2eb44d95f68e",
+          "lean": "07f0966a3392"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T22:44:56.705Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean"
   },
   "source_hashes": {
-    "md": "079f0ca38d01",
+    "md": "346fc8b6a744",
     "ts": "3e86217c7233",
     "lean": "b22dd80a8177"
   },
@@ -1065,6 +1065,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1085,6 +1100,21 @@
         "reviewed_at": "2026-06-22T02:56:59.783Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1104,6 +1134,21 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1123,6 +1168,21 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean:1 — content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean:27:51: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1155,6 +1215,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1173,6 +1248,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1237,6 +1327,21 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1259,6 +1364,21 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1315,6 +1435,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1335,6 +1470,21 @@
         "reviewed_at": "2026-06-22T02:57:02.811Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1355,6 +1505,21 @@
         "reviewed_at": "2026-06-22T02:57:03.203Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1411,6 +1576,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1429,6 +1609,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1467,6 +1662,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1496,6 +1706,21 @@
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1525,6 +1750,21 @@
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1554,6 +1794,23 @@
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
         "severity": "medium"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-physical-implausibility": [
@@ -1582,6 +1839,23 @@
         },
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-referee-verdict": [
@@ -1603,6 +1877,23 @@
         },
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       }
     ],
     "da-false-claim": [
@@ -1622,6 +1913,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1641,6 +1947,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1660,6 +1981,23 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-non-sequitur": [
@@ -1679,6 +2017,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1697,6 +2050,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1716,6 +2084,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1735,6 +2118,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1754,8 +2152,25 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "346fc8b6a744",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:34:58.468Z"
 }

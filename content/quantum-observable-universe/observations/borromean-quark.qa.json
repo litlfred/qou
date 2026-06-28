@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/borromean-quark.lean"
   },
   "source_hashes": {
-    "md": "071d159a6d32",
+    "md": "e5a99d1e9c67",
     "ts": "f3dcffe5770a",
     "lean": "bde8b0982bfa"
   },
@@ -1373,6 +1373,24 @@
         "notes": "Key terms and symbols in 'Quarks as Borromean-linked unknots in the exceptional divisor' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/borromean-quark.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e5a99d1e9c67",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:07:42.971Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "file:103: This explains why quarks are never observed in isolation... Pulling a quark out... unlinks the remaining two",
+        "notes": "While the Borromean unlinking property is mathematically exact, mapping it 1:1 to QCD color confinement and hadronization is a significant interpretative leap that relies on equating topological breakage with particle pair-production thresholds."
       }
     ],
     "da-empirical-fragility": [
@@ -1457,5 +1475,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:07:42.971Z"
 }

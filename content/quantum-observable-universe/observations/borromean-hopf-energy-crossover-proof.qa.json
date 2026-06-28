@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:borromean-hopf-energy-crossover",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/observations/borromean-hopf-energy-crossover-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/observations/borromean-hopf-energy-crossover-proof.md"
+  },
+  "source_hashes": {
+    "md": "7cee014f739f",
+    "ts": "014a4019f5f7"
+  },
+  "criteria": {
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7cee014f739f",
+          "ts": "014a4019f5f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:07:42.971Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The proof sketch aligns logically with the framework's definitions of Borromean and Hopf volumes without making apparent mathematical errors."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T18:07:42.971Z"
+}

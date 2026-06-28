@@ -1,0 +1,254 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:q-beta-radius-of-convergence-gate",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate-proof.md"
+  },
+  "source_hashes": {
+    "md": "8a3cdbfc4f5d",
+    "ts": "18b2be0cba08"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8a3cdbfc4f5d",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:44:56.705Z"
+}

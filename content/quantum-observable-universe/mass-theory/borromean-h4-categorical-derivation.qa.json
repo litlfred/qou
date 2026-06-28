@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean"
   },
   "source_hashes": {
-    "md": "79c65c0ccf6b",
+    "md": "658bfb1834fa",
     "ts": "ee1167836df1",
     "lean": "b8b8e9a17483"
   },
@@ -1069,6 +1069,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "fit-section-chapter": [
@@ -1089,6 +1105,22 @@
         "reviewed_at": "2026-06-22T02:57:03.340Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-statement": [
@@ -1108,6 +1140,22 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-proof": [
@@ -1127,6 +1175,22 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:1 — content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean:45:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean' of module Mathlib does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1159,6 +1223,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1177,6 +1257,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1241,6 +1337,22 @@
           "max": 1,
           "value": 0.8
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-novelty": [
@@ -1263,6 +1375,22 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-statement-integrity": [
@@ -1319,6 +1447,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1375,6 +1519,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-trivial-true": [
@@ -1413,6 +1573,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-false-premise": [
@@ -1469,6 +1645,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1487,6 +1679,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-decide-masking": [
@@ -1525,6 +1733,22 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1560,6 +1784,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-overclaim": [
@@ -1592,6 +1832,24 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "The derivation is purely categorical — no empirical fitting",
+        "notes": "Red flag for post-hoc rationalization. The choice of the Borromean link specifically to yield -3/4 may be back-fitted to match an empirical mass ratio, despite the 'no free parameters' claim for the derivation itself."
       }
     ],
     "da-vacuous": [
@@ -1624,6 +1882,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-false-claim": [
@@ -1656,6 +1930,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-hidden-dof": [
@@ -1688,6 +1978,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-reproducibility": [
@@ -1720,6 +2026,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-referee-verdict": [
@@ -1741,6 +2063,22 @@
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-circular": [
@@ -1760,6 +2098,22 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-non-sequitur": [
@@ -1779,6 +2133,22 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-citation-misuse": [
@@ -1798,6 +2168,22 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1817,6 +2203,22 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-empirical-fragility": [
@@ -1836,6 +2238,22 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-physical-implausibility": [
@@ -1855,8 +2273,24 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "658bfb1834fa",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-26",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes without major issues."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:42:53.527Z"
 }

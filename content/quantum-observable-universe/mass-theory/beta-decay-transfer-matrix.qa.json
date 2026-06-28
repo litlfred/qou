@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean"
   },
   "source_hashes": {
-    "md": "d5c6bbd0a7aa",
+    "md": "8b1dfd38c9f3",
     "ts": "1e95851efe5a",
     "lean": "71c0aed8e9bb"
   },
@@ -1063,6 +1063,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1083,6 +1098,21 @@
         "reviewed_at": "2026-06-22T02:56:59.278Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1102,6 +1132,21 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1120,6 +1165,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1138,6 +1198,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean declaration matches narrative claim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1156,6 +1231,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1180,6 +1270,21 @@
         "reviewed_at": "2026-06-22T02:57:01.193Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1202,6 +1307,21 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1222,6 +1342,21 @@
         "reviewed_at": "2026-06-22T02:57:01.925Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1242,6 +1377,21 @@
         "reviewed_at": "2026-06-22T02:57:02.319Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1262,6 +1412,21 @@
         "reviewed_at": "2026-06-22T02:57:02.768Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1282,6 +1447,21 @@
         "reviewed_at": "2026-06-22T02:57:03.069Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1300,6 +1480,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1320,6 +1515,21 @@
         "reviewed_at": "2026-06-22T02:57:03.913Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1339,6 +1549,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1357,6 +1582,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1376,6 +1616,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1394,6 +1649,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1413,6 +1683,21 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1432,6 +1717,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1450,6 +1750,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1469,6 +1784,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1488,6 +1818,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1507,6 +1852,21 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1526,6 +1886,21 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1545,6 +1920,21 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1565,8 +1955,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "The mathematical claim and definitions are correctly formalised and verified in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "8b1dfd38c9f3",
+          "ts": "1e95851efe5a",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:34:58.468Z"
 }

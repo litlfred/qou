@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:plancherel-weight-boundedness",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness-proof.md"
+  },
+  "source_hashes": {
+    "md": "693760a49b87",
+    "ts": "291fae885949"
+  },
+  "criteria": {
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "693760a49b87",
+          "ts": "291fae885949"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "verdict: clean"
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T22:43:02.109Z"
+}

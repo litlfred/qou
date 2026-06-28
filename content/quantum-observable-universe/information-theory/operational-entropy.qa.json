@@ -890,6 +890,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Operational entropy of the Reeb dynamics'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -909,6 +924,21 @@
         "notes": "The Lean theorem statement in content/quantum-observable-universe/information-theory/operational-entropy.lean matches the mathematical statement in content/quantum-observable-universe/information-theory/operational-entropy.md.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1 — Lean file exists"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -928,6 +958,21 @@
         "notes": "The claim in 'Operational entropy of the Reeb dynamics' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -946,6 +991,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Operational entropy of the Reeb dynamics' presents substantial mathematical content: Let $f_q(z) = z^2 + c_q$ be the quadratic iteration on the exceptional divisor $...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -965,6 +1025,23 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Operational entropy of the Reeb dynamics'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "notes": "Asserts the formula is 'forced' by G_Planck = 1, but G_Planck itself was likely derived from these internal definitions, bordering on circular self-consistency rather than independent physical derivation."
       }
     ],
     "da-overclaim": [
@@ -983,6 +1060,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Operational entropy of the Reeb dynamics' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1002,6 +1094,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Operational entropy of the Reeb dynamics'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1021,6 +1128,21 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/operational-entropy.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1039,6 +1161,21 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1058,6 +1195,21 @@
         "notes": "No citations are present in 'Operational entropy of the Reeb dynamics', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1077,6 +1229,21 @@
         "notes": "Key terms and symbols in 'Operational entropy of the Reeb dynamics' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1096,6 +1263,21 @@
         "notes": "The algebraic and logical relations in 'Operational entropy of the Reeb dynamics' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1115,6 +1297,21 @@
         "notes": "The physical concepts described in 'Operational entropy of the Reeb dynamics' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1134,6 +1331,21 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1154,8 +1366,23 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "0820074a60af",
+          "ts": "2fd5d03865fc",
+          "lean": "3f551f054a4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T18:02:47.823Z"
 }

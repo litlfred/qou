@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/hecke-quandle.md"
   },
   "source_hashes": {
-    "md": "e9f23765aba8",
+    "md": "766cd8901b37",
     "ts": "fb4a2edf091b"
   },
   "criteria": {
@@ -834,6 +834,21 @@
         "reviewed_at": "2026-06-22T02:56:54.472Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -853,6 +868,21 @@
         "notes": "No false claims identified in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -871,6 +901,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' presents substantial mathematical content: 'A quandle $(Q, \\triangleright)$ is a set $Q$ with a binary'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -890,6 +935,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules'.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -908,6 +968,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -927,6 +1002,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules'.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -946,6 +1036,21 @@
         "notes": "The prose arguments in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -964,6 +1069,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -983,6 +1103,21 @@
         "notes": "The citations joyce1982, matveev1982, jones1987,  in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1002,6 +1137,21 @@
         "notes": "Key terms and symbols in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1021,6 +1171,21 @@
         "notes": "The algebraic and logical relations in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-physical-implausibility": [
@@ -1040,6 +1205,21 @@
         "notes": "The physical concepts described in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "hecke-quandle.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1058,6 +1238,21 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1078,8 +1273,23 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The Hecke quandle $Q_H(q)$ and flavour-parameterised crossing rules' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "766cd8901b37",
+          "ts": "fb4a2edf091b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:37.346Z"
+  "updated_at": "2026-06-28T22:26:39.926Z"
 }

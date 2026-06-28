@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/cp-violation-evidence.md"
   },
   "source_hashes": {
-    "md": "85a84c868923",
+    "md": "19fcb766732a",
     "ts": "66d7b6967a20"
   },
   "criteria": {
@@ -888,6 +888,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'sec:cp-violation-evidence' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "19fcb766732a",
+          "ts": "66d7b6967a20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-21",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T18:06:58.756Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "The text accurately acknowledges the quantitative gap in describing baryogenesis and avoids overclaiming its predictions for CP violation, clearly stating its framework is too small by several orders of magnitude."
       }
     ],
     "da-hidden-dof": [
@@ -1062,5 +1077,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T18:06:58.756Z"
 }

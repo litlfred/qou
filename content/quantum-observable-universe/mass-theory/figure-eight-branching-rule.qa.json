@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean"
   },
   "source_hashes": {
-    "md": "960ef29bc002",
+    "md": "ed16dc4401a9",
     "ts": "ff6f70be63c8",
     "lean": "1cdc10d1104b"
   },
@@ -1065,6 +1065,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1085,6 +1100,21 @@
         "reviewed_at": "2026-06-22T02:56:59.022Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1104,6 +1134,21 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean:1 — Lean file exists",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1123,6 +1168,21 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean:1 — content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean:33:50: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1141,6 +1201,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1159,6 +1234,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1183,6 +1273,21 @@
         "reviewed_at": "2026-06-22T02:57:00.905Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1205,6 +1310,21 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1225,6 +1345,21 @@
         "reviewed_at": "2026-06-22T02:57:01.601Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1245,6 +1380,21 @@
         "reviewed_at": "2026-06-22T02:57:01.909Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1265,6 +1415,21 @@
         "reviewed_at": "2026-06-22T02:57:02.267Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1285,6 +1450,21 @@
         "reviewed_at": "2026-06-22T02:57:02.778Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1303,6 +1483,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1323,6 +1518,21 @@
         "reviewed_at": "2026-06-22T02:57:03.463Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1342,6 +1552,21 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1360,6 +1585,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1379,6 +1619,21 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1397,6 +1652,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-hidden-dof": [
@@ -1416,6 +1688,23 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-non-sequitur": [
@@ -1435,6 +1724,21 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1453,6 +1757,21 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1472,6 +1791,21 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1491,6 +1825,21 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1510,6 +1859,23 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-physical-implausibility": [
@@ -1529,6 +1895,23 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-reproducibility": [
@@ -1548,6 +1931,21 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean:1 — content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean:33:50: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1568,8 +1966,25 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean:33:50: error: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "ed16dc4401a9",
+          "ts": "ff6f70be63c8",
+          "lean": "1cdc10d1104b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T22:34:58.468Z"
 }
