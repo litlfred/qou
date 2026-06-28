@@ -140,7 +140,7 @@ $$
   \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^4).
 $$
 
-### Consequences
+### Corollaries
 
 1. **Atom-braid trace factorisation.** For any canonical atomic braid:
    $$

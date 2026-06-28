@@ -48,7 +48,7 @@ archimedean_agreement :
 substrate axiom (`sorry` per AGENTS.md §3b), backed by the empirical
 cross-pipeline witness.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *A Lean proof reduces to (and requires):*
 
 1. *[Spectral decomposition existence](#conj:gs-spectral-decomposition-existence)

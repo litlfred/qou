@@ -17,7 +17,7 @@ $h_q = q - q^{-1}$,
 *are the substrate Planck constant, the Hecke crossing scale, and
 the doublet quantum integer respectively.*
 
-## Why "splitting-only"
+## Rationale for the splitting-only form
 
 The theorem statement bounds the **difference**
 $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ rather than the

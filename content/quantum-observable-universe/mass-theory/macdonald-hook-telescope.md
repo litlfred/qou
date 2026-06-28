@@ -55,7 +55,7 @@ future Mathlib lift of Schur / principal-specialisation
 infrastructure would supply a constructive instance, with the
 downstream API unchanged.
 
-## Why this is the right shortcut
+## Justification of the shortcut
 
 The classical principal-specialisation identity (Stanley,
 *Enumerative Combinatorics II* Cor. 7.12.5; Macdonald, *Symmetric

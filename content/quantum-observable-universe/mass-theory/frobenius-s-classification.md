@@ -90,7 +90,7 @@ is by construction $S$-invariant.  Equivalently, the average
 $\Phi_1 := \tfrac12 (\Phi_1(\beta) + \Phi_1(S(\beta)))$ is the
 projection onto the $S$-even subspace.  $\square$
 
-**Consequence.** The signed sum
+**Corollary.** The signed sum
 
 $$
   \mathfrak{m}(S(\beta)) - \mathfrak{m}(\beta)

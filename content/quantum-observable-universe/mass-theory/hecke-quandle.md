@@ -71,7 +71,7 @@ are studied in the literature as
 parameterisation is a specific instance where the parameter space
 is the $\mathrm{SU}(3)_{\mathrm{flavour}}$ representation.
 
-## Why quandles matter for the mass formula
+## Relevance of quandles to the mass formula
 
 ### 1. Completeness beyond polynomials
 
@@ -130,7 +130,7 @@ it is an optimisation over quandle-cocycle invariants. The quandle
 framework gives the Gram matrix a REPRESENTATION-THEORETIC
 interpretation beyond the Hecke-algebra computation.
 
-## What the quandle framework opens
+## Directions opened by the quandle framework
 
 1. **Non-polynomial invariants for the mass formula.** The quandle
    coloring number and cocycle invariants are strictly finer than

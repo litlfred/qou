@@ -51,7 +51,7 @@ $$
   \end{cases}
 $$
 
-## Why interleaving minimises $\Phi_q$
+## Minimisation of $\Phi_q$ under interleaving
 
 The vertex volume at generator $i$ is
 $\hat{V}_i = z \cdot a_i + b_i$, where $(a_i, b_i)$ is the

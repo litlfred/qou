@@ -7,7 +7,7 @@ Q3 — *do distinct Bring-embeddable knots always produce distinct
 Jones polynomials?* — is **theorem-level for crossing number
 $\leq 8$**.
 
-### What is theorem
+### Theorem-level results
 
 **Hoste–Thistlethwaite–Weeks knot enumeration (1998)** classified
 all prime knots up to crossing number 16 and verified that

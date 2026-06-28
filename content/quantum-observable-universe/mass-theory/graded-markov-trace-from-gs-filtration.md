@@ -88,7 +88,7 @@ quotient lands in $\mathbb{Q}(q)$.  Uniqueness follows from the
 universal property of the quotient: any two maps that agree on
 $J^\ell$ and vanish on $J^{\ell+1}$ agree on $J^\ell / J^{\ell+1}$.*
 
-## Why this replaces the Lean `opaque`
+## Replacement of the Lean `opaque`
 
 The Lean declaration
 

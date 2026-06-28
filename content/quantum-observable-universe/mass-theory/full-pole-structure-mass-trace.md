@@ -100,7 +100,7 @@ Property (1) is immediate from $(q;q)_m(\zeta_n^{(j)}) = 0$ for
 $n \leq m$. Property (2) is the definition of the Habiro topology.
 Property (3) is the termination clause of the atomic case. $\square$
 
-## Why the previous wording was misleading
+## Inadequacy of the previous wording
 
 Two specific failures of the "meromorphic on $\mathbb{C}$" picture:
 

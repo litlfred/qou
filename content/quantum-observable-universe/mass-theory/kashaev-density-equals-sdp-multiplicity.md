@@ -79,7 +79,7 @@ per AGENTS.md §3b ("class is inhabited"); the only `sorry` is the
 class instance, which closes when R5-full canonical knot solver
 produces certified $\nu_{\mathrm{SDP}}$ values.
 
-## Why this resolves the Rule-14 escalation
+## Resolution of the Rule-14 escalation
 
 Pre- the
 [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)

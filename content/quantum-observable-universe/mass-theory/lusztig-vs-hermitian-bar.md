@@ -82,7 +82,7 @@ This proposition only records the structural existence of the
 decomposition; it does not claim either new channel is physically
 realised.
 
-## What this proposition does not claim (CAL-4 caveat)
+## Non-claims of this proposition (CAL-4 caveat)
 
 - It does **not** claim $\mathrm{Im}(q_0) \neq 0$.
 - It does **not** claim the two new channels carry physical content.

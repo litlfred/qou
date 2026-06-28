@@ -45,7 +45,7 @@ graded — this depends on Mathlib infrastructure for filtered
 algebras and is tracked downstream
 ([audit](../../computations/AUDIT-gb-residue-opaque-declarations.md)).*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The narrative claim is rigorous over any commutative ring $R$ for which
 the Markov trace and the filtration $J^\bullet(q)$ are defined; what
 remains conjectural is its formal Lean realisation.  Promoting to a

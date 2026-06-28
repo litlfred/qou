@@ -55,7 +55,7 @@ requires either:*
 [opaque-declarations audit](../../computations/AUDIT-gb-residue-opaque-declarations.md);
 this is a feasible standalone follow-up.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The numerical agreement is empirically certified to machine precision
 in `markov-pipeline-cross-validation.witness.json` (proton
 $\mathrm{rel\_diff} = 0$ at machine precision); a rigorous Lean proof
