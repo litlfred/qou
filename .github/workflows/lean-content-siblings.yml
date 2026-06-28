@@ -121,4 +121,9 @@ jobs:
             echo "::warning::olean cache unavailable (${mathlib_oleans:-0} mathlib oleans) — skipping content-sibling compile check"
             exit 0
           fi
-          scripts/lean-verify.sh ${{ steps.changed.outputs.files }}
+          # lean-verify-siblings.sh fails ONLY on genuine errors (parse /
+          # elaboration / type). A file importing a Mathlib or QOU module
+          # outside the cached olean cone (the cache ships only QOU's
+          # dependency subset, not all of Mathlib) is neutral-skipped with a
+          # ::warning so a cache-subset miss never false-blocks the PR.
+          scripts/lean-verify-siblings.sh ${{ steps.changed.outputs.files }}
