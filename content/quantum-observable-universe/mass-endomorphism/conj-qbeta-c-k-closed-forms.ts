@@ -11,8 +11,8 @@ export default proposition({
   uses: ["rem:per-block-hopf-jones-absorption-pattern"],
   cites: [
     "khovanov2000",
-    "khovanov-rozansky-2008",
-    "khovanov-lauda-2009",
+    "khovanov-rozansky2008",
+    "khovanovlauda2009",
     "wenzl1988",
     "hoefsmit1974",
     "jones1985",

@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:y-lambda-recipe-from-partition"],
-  cites: ["wenzl1988", "halverson-ram-1995", "ram1991"],
+  cites: ["wenzl1988", "halverson_ram_1998", "ram1991"],
   tags: [
     "wenzl-bridge",
     "q-murnaghan-nakayama",
