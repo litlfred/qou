@@ -238,3 +238,35 @@ keystone's non-compact `E_q(2)`/q-Bessel arena as a standard scheme
 degeneration. It does **not** close GAP 3 or GAP 5; the BS q-Gaussian form is
 proved-obstructed at q₀, and the W_λ closure remains the (authorized, research-DG)
 geometric index plus the Schur–Weyl duality guard.
+
+## 6. Can any of this improve compute? (assessment — one real lever, one speculative)
+
+Sober answer: the findings are mostly geometric/structural, but there is **one
+genuine compute lever** and **one speculative** one. Neither is implemented here
+(no compute env in this sandbox; route any implementation through
+`local/compute-author`).
+
+- **Lever (real, modest): Kerov-polynomial / free-cumulant recursion for the
+  `W_λ` defect ladder.** Since `W_λ = dim_q²/[n]_q!` is the q-Plancherel measure
+  (§2), the defect coefficients `c_{2k}(n)` — the degree-`3k` polynomials the
+  keystone currently obtains by per-order Richardson/Taylor extraction
+  ([keystone ledger #2744](../coordination/s5-so3-keystone.md)) — *are* its
+  Plancherel/Kerov moments. They can be generated from the **Kerov-polynomial /
+  free-cumulant recursion** (one recursion → all orders + a closed form) instead
+  of extracting each order numerically. The ledger already notes the ladder is
+  "expected from Plancherel-moment / Kerov-polynomial theory"; this is
+  *implementing* that observation. Producer to touch:
+  `keystone_wlambda_defect_coeff_ladder.py`.
+
+- **Speculative (needs checking): icosahedral `A₅`-orbit reduction.** The
+  `A₅` symmetry constructed here lives at the **base / ℙ(V) (n=2)** level, with
+  orbits `{12,20,30}`. A compute that genuinely carried this symmetry could fold
+  ~`60×`. But the load-bearing `W_λ`/`tr_M` compute is over **partitions `λ`**,
+  where the exploitable symmetry is `W_λ = W_{λ'}` (conjugation, already used) —
+  **not** the base-level `A₅`. So the orbit reduction does **not** obviously
+  apply to the partition compute; it would only help a base-level (`ℙ(V)`)
+  computation if one exists. Flag, do not assume.
+
+The exact Klein forms / syzygy (`klein_syzygy`) are symbolic identities — no
+runtime relevance beyond replacing numerical icosahedral root-finding with exact
+polynomial evaluation (negligible).
