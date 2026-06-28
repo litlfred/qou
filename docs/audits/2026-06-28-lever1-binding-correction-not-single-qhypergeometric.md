@@ -1,0 +1,102 @@
+# Lever-1 fibre kernel, Stage 6: the binding correction tower is not a single low-order q-hypergeometric element
+
+**Date:** 2026-06-28
+**Bean:** `z2bn` (Lever 1 [FOCUS] — fibre q-difference kernel `R(q,x)` for the binding genfun)
+**Compute:** [`computations/substrate/lever1_binding_habiro_single_element_test.py`](../../computations/substrate/lever1_binding_habiro_single_element_test.py)
+**Witness:** [`computations/substrate/lever1-binding-habiro-single-element-test.witness.json`](../../computations/substrate/lever1-binding-habiro-single-element-test.witness.json)
+**Serves:** `kehn` (Q_β / m_n c_k closure via a Habiro element), `s5bb` (the Habiro-element keystone blocker)
+**Precedes:** [`2026-06-27-lever1-qinvolution-cyclotomic-kernel.md`](2026-06-27-lever1-qinvolution-cyclotomic-kernel.md) §"Next decidable steps" item 1.
+
+## What was already established (Stages 1–5)
+
+The binding selection-rule period `S(m) = Σ_{λ⊢m} dim_q(λ)` (with `lw(c) = S(c+1)/(c+1)`) is:
+
+- the **q-involution skeleton** `S(m) = S(m−1) + [m−1]_q·S(m−2)`, exact at the calibration seed
+  (`m ≤ 3`), `q=1` → the involution numbers `1,1,2,4,10,26,76,…`;
+- dressed by a **cyclotomic (Habiro) correction** `D(m) := S(m) − (S(m−1) + [m−1]_q·S(m−2))` with a
+  universal `(q−1)²` prefactor and `Φ_d` factor tower (Stage 1);
+- **not** q-holonomic of small order (≤3) and bidegree — no finite low-order q-difference operator
+  reproduces it (Stages 3–4);
+- with an explicit q-EGF `Ŝ(z) = Σ S(m) z^m/[m]_q! = exp(Σ_m L_m z^m)`, a q-Gaussian
+  (`L_1,L_2 → 1,½` at `q=1`) plus a suppressed Habiro tail `L_{≥3} ∼ (q−1)^{2⌊(m−1)/2⌋}` with
+  cyclotomic denominators including the `Φ₄ = ζ₄` residue (Stage 5).
+
+The single stated next-decidable step was: *fit the `D(m)` cyclotomic cofactors to a **single**
+q-hypergeometric / Habiro element (contiguity-ratio template), verified on held-out `m`.* This audit
+executes that step.
+
+## The test (decidable, no fit to a physical target)
+
+A sequence `T(m)` is **q-hypergeometric** iff its ratio `T(m+1)/T(m)` is a *fixed* rational function
+`R(q, q^m)` — equivalently there exist fixed bivariate Laurent polynomials `A(q,X), B(q,X)`
+(`X := q^m`), of bounded bidegree, with
+
+```
+  A(q, q^m)·T(m+1) + B(q, q^m)·T(m) = 0   for all m.
+```
+
+This is **homogeneous-linear** in the coefficients of `A, B`. The probe fits the nullspace on three
+consecutive training pairs and then **verifies each candidate relation on the held-out indices**
+(never used in the fit) — the Stages 3–4 guess-and-verify methodology applied to the order-1
+(q-hypergeometric) case, on the correction towers rather than on `S(m)` itself. Two towers tested:
+the additive `D(m)` (nonzero `m = 4..10`) and the log-EGF `L_m` (nonzero `m = 1..10`). The literal
+audit contiguity template `r_k = −q^k/[(1−q^{k+1})(1−a q^k)]` (one parameter `a`) is tested
+separately: solve `(a, C)` from the first two ratio pairs, verify the rest.
+
+Symbolic, exact in `q` (sympy 1.14), `S(m)` up to `m = 10` via the shared cached `young_qdim`.
+
+## Result — negative, and sharp
+
+| tower | bidegree (q±dq, X≤dX) | unknowns / constraints | train nullspace | held-out survivors |
+|---|---|---:|---:|---:|
+| `D(m)` | (±1, 1) | 12 / 66 | 0 | 0 |
+| `D(m)` | (±2, 2) | 30 / 87 | 0 | 0 |
+| `D(m)` | (±2, 3) | 40 / 102 | 0 | 0 |
+| `D(m)` | (±3, 3) | 56 / 108 | 0 | 0 |
+| `L_m` | (±1, 1) | 12 / 41 | 0 | 0 |
+| `L_m` | (±2, 2) | 30 / 53 | 0 | 0 |
+| `L_m` | (±2, 3) | 40 / 59 | 0 | 0 |
+| `L_m` | (±3, 3) | 56 / 65 | 3 | **0** |
+| contiguity template (1 param `a`) | — | — | — | **0** (both towers) |
+
+At every **strongly over-determined** bidegree the training nullspace is **empty** — no order-1
+q-difference relation even fits the training window. The only nonzero nullspace (`L_m` at the
+near-square (±3, 3), 56 unknowns vs 65 constraints — effectively under-constrained) is a fit
+artifact: **all three candidates fail the held-out test**. The literal one-parameter contiguity
+template fails held-out for both towers.
+
+## Interpretation and scope (AGENTS.md refuted-claim discipline)
+
+- **(a) scope-limited negative** on the *single-low-order-q-hypergeometric* ansatz: neither the
+  additive `D(m)` nor the log-EGF `L_m` tower is the coefficient sequence of a single ₂φ₁-type
+  element of bidegree up to (q±3, X≤3), order 1. This **sharpens** the Stages 3–4 finding: not only
+  is `S(m)` not low-order q-holonomic, its Habiro *correction* towers are not single low-order
+  q-hypergeometric elements either.
+- **Not a (b) structural exclusion.** No proved invariant forbids a *higher-order* or
+  *cyclotomic-completion* element. The Habiro-ring class is **not** refuted — the test constrains the
+  element's order/shape (the bounded-bidegree order-1 window is empty), exactly as the formalize-
+  first discipline intends: it prunes the cheap hypothesis so the search narrows to the genuine
+  cyclotomic-completion object.
+
+This is consistent with — and reinforces — the Stage 5 picture: the explicit binding-side object is
+the q-Gaussian `exp(z + L₂ z²)` dressed by a genuinely non-q-hypergeometric Habiro tail. The exact
+data (`D(m)`, `L_m` symbolic in `q`) remains the parameter-free target any candidate kernel must
+reproduce.
+
+## What this does and does not change
+
+- **Does not wire anything**; no production consumer touched; no tier change.
+- **Does not** touch the owner-gated geometric side (the `λ_SW`-holonomy keystone / `tr B`); this is
+  the algebraic correction-tower face, with exact data.
+- **Does** close off "the binding correction is a single low-order ₂φ₁" as a productive hypothesis,
+  leaving the higher-order / cyclotomic-completion element (the `kehn` / `s5bb` shared object) as the
+  remaining live target.
+
+## Next decidable step (not run here)
+
+The element, if it exists in closed form, is **not** order-1 q-hypergeometric — so the productive
+remaining attack is the **cyclotomic-expansion** form directly: expand `D(m)` (or the correction
+generating function `C(z) = Σ_{m≥3} L_m z^m`) in the Habiro basis `(q;q)_n = ∏_{k≤n}(1−q^k)` and test
+whether the basis coefficients stabilise / follow a single rule across `m` (the canonical Habiro-ring
+fingerprint), rather than searching for a finite q-difference operator that Stages 3–6 have now shown
+does not exist at low order.
