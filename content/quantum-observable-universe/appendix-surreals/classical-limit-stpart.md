@@ -1,4 +1,4 @@
-**Where this fits.** Three blocks in this paper address the
+**Placement in the paper.** Three blocks in this paper address the
 $q \to 1$ classical limit:
 
 | Block                                                                    | Scope                                                                                                 | Status                                                                                          |
@@ -87,7 +87,7 @@ A first step would be to prove the conjecture for
 $\mathbf{C}_q = \mathrm{Rep}(\mathrm{SU}_q(2))$ — the case of
 direct interest for QOU.
 
-## Why this matters
+## Significance
 
 The paper treats the $q \to 1$ classical limit
 *archimedean-topologically*: as a limit of real numbers in a

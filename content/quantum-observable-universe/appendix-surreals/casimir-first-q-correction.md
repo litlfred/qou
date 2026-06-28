@@ -17,7 +17,7 @@ J_{4_1}(q) \;=\; q^{-2} - q^{-1} + 1 - q + q^{2}
 \qquad h = q - q^{-1}.
 $$
 
-## Why the leading term carries no $q$
+## Absence of $q$ in the leading term
 
 The leading parallel-plate term is assembled from free photon modes:
 each is the identity braid, whose Markov closure is a disjoint union
@@ -67,7 +67,7 @@ knot that defines the framework's one calibrated deformation
 parameter is also the carrier of the vacuum's first substrate
 correction — the correction introduces no independent scale.
 
-## What is open (the actual conjecture)
+## Open conjecture
 
 Two items, both requiring the interacting-mode mode-sum — the
 Yekutieli-homotopy lift of the parent conjecture's mode-count

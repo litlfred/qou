@@ -87,7 +87,7 @@ trace of a *specific* Hecke element. This is doable:
   each can be realised as a Markov trace of an explicit braid in
   some $H_n(q)$.
 
-### What this would discharge / not discharge
+### Scope of the discharge
 
 If Avenue A or B succeeds:
 

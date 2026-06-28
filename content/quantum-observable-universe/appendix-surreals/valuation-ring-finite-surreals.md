@@ -31,7 +31,7 @@ is canonically isomorphic to the real numbers, and the projection
 $\mathcal{O} \twoheadrightarrow \mathcal{O}/\mathfrak{m}$ is exactly
 $\mathrm{st}$.
 
-## Why this framing matters
+## Significance of this framing
 
 The appendix's functorial constructions (point-evaluation of
 schemes, categorical enrichments, surreal-coefficient sheaves)

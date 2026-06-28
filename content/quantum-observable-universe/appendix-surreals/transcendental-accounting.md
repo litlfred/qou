@@ -9,7 +9,7 @@ which periods, where, how related, and whether their post-archimedean
 relations are forced by pre-archimedean $q$-rational structure or
 are archimedean accidents.
 
-### Why this matters (the user's wall-crossing question)
+### Significance (the wall-crossing question)
 
 A relation $R(\alpha_1, \ldots, \alpha_m) = 0$ in $\mathbb{Z}[q^{\pm 1}]$
 on the algebraic side **survives** under the archimedean realization
@@ -62,7 +62,7 @@ post-archimedean equality forced by $q$-rational structure** —
 exactly the "wall-crossing" prediction the keystone
 framework should make explicit.
 
-### What does *not* survive: archimedean accidents
+### Non-surviving relations: archimedean accidents
 
 The 5-term Bloch–Wigner relation
 
@@ -83,7 +83,7 @@ Similar wall-crossing accidents at depth 3:
   a separate iterated integral that just happens to evaluate to
   the single zeta).
 
-### Open: post-archimedean structure forced by Bring's $S_5$
+### Open question: post-archimedean structure forced by Bring's $S_5$
 
 Because Bring's curve has $S_5$ symmetry, the cyclotomic field
 $\mathbb{Q}(\zeta_5)$ acts on the Bring-natural depth-3 grouplikes.

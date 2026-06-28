@@ -71,7 +71,7 @@ recovers ordinary $2$-adic valuation.  The number
 $n = 24 = 2^3 \cdot 3$ has $v_2(24) = 3$: three halvings
 before hitting an odd number.
 
-### Why the orbit needs to touch the divisor
+### Necessity of orbit–divisor contact
 
 The Skein-Collatz map
 ([conj:q-collatz](#conj:q-collatz)) has two branches:

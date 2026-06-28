@@ -58,7 +58,7 @@ with relaxed observability and a non-trivial $\xi$? If so, the
 relaxation is a strict generalisation; if not, the relaxation is
 a tautology.
 
-## Why this matters
+## Significance
 
 The observability axiom controls *what counts as an observable*
 in QOU: if $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$, every

@@ -72,7 +72,7 @@ conjecture is:
    $\varepsilon$ is a quantitative deviation from the singular
    $\mathbf{BigBang}$ functor.
 
-## What this would buy
+## Consequences of the conjecture
 
 If the conjecture holds, the cosmological endpoints become
 *objects* in the category of archimedean QOUs rather than

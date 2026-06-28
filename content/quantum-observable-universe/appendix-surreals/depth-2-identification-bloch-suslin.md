@@ -121,7 +121,7 @@ is **bijective after tensoring with $\mathbb{R}$** by the
 combination of Suslin's isomorphism and Borel's regulator
 injectivity. $\square$
 
-### What this proves and what it doesn't
+### Scope of the result
 
 **Proved**:
 - $G^{(2)}(\mathcal{H}_q)\big|_F \big/ \mathcal{P}_1$ has dimension
