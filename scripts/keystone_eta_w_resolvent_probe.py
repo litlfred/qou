@@ -42,16 +42,15 @@ def so3_coaxial_obstruction():
     alpha, pent = Rz(2 * math.pi / 3), Rz(2 * math.pi / 5)  # both about e₃
     I = Rz(0.0)
     elems = {key(I): I}
-    changed = True
-    while changed:
-        changed = False
-        for M in list(elems.values()):
-            for g in (alpha, pent):
-                P = mul(M, g)
-                k = key(P)
-                if k not in elems:
-                    elems[k] = P
-                    changed = True
+    queue = [I]                          # queue-based BFS: each element multiplied once
+    while queue:
+        M = queue.pop()
+        for g in (alpha, pent):
+            P = mul(M, g)
+            k = key(P)
+            if k not in elems:
+                elems[k] = P
+                queue.append(P)
     commute = key(mul(alpha, pent)) == key(mul(pent, alpha))
     return len(elems), commute
 
@@ -75,28 +74,22 @@ def klein_icosahedral_target():
             for j in range(2):
                 if abs(M[i][j]) > 1e-9:
                     lam = M[i][j]
-                    N = [[M[a][b] / lam for b in range(2)] for a in range(2)]
-                    return tuple(complex(round(N[a][b].real, tol), round(N[a][b].imag, tol)) for a in range(2) for b in range(2))
+                    N = [[M[r][c] / lam for c in range(2)] for r in range(2)]
+                    return tuple(complex(round(N[r][c].real, tol), round(N[r][c].imag, tol)) for r in range(2) for c in range(2))
         return None
 
     ST = mm(S, T)  # order-3, non-coaxial
     gens = [S, ST]
     I = [[1, 0], [0, 1]]
     elems = {pkey(I): I}
-    frontier = [I]
-    # BFS in PSL(2,C) (projective)
-    changed = True
-    count = 0
-    while changed and count < 200:
-        changed = False
-        count += 1
-        for M in list(elems.values()):
-            for g in gens:
-                P = mm(M, g)
-                k = pkey(P)
-                if k not in elems:
-                    elems[k] = P
-                    changed = True
+    queue = [I]                          # queue-based BFS in PSL(2,C) (projective)
+    for M in queue:
+        for g in gens:
+            P = mm(M, g)
+            k = pkey(P)
+            if k not in elems:
+                elems[k] = P
+                queue.append(P)
     return len(elems)
 
 
