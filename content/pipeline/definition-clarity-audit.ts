@@ -359,12 +359,31 @@ function atxHeaders(md: string): string[] {
   return out;
 }
 
-/** all section-header texts (bold + ATX), deduped by trimmed text. Fenced
- *  code/tex blocks are stripped first so `##`/`**` inside Lean / shell / tex
- *  samples are not mistaken for section headers. */
+/** line-initial bold spans that read like *section headers* (a label), not
+ *  inline emphasis. A bold span is header-like iff it is the whole line
+ *  (nothing but the span on its line) OR its text ends with terminal
+ *  punctuation (`.`/`:`/`?`/`!`) — the shape of a header label such as
+ *  "Consequence." / "Why this matters." This excludes mid-sentence emphasis
+ *  like `**does not** apply …` or a line-initial `**consequence**` used in
+ *  running prose, which are not headers. */
+function headerLikeBold(md: string): string[] {
+  const out: string[] = [];
+  const re = /(^|\n)[ \t]*\*\*([^*\n]{2,80}?)\*\*([^\n]*)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(md))) {
+    const inner = m[2].trim();
+    const rest = m[3].trim();
+    if (rest === "" || /[.:?!]$/.test(inner)) out.push(inner);
+  }
+  return out;
+}
+
+/** all section-header texts (header-like bold + ATX), deduped by trimmed text.
+ *  Fenced code/tex blocks are stripped first so `##`/`**` inside Lean / shell /
+ *  tex samples are not mistaken for section headers. */
 function sectionHeaders(md: string): string[] {
   const noCode = md.replace(/```[\s\S]*?```/g, "\n");
-  return [...new Set([...boldHeaders(noCode), ...atxHeaders(noCode)])];
+  return [...new Set([...headerLikeBold(noCode), ...atxHeaders(noCode)])];
 }
 
 // --- clarity-rhetorical-header detectors -----------------------------------
