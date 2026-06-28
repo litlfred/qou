@@ -30,59 +30,24 @@ No fit; sympy symbolic in q + mpmath 50-dps at q0; (a)/(b)-scoped verdict per AG
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sympy as sp
 import mpmath as mp
 from qou_substrate import constants as C
 
-q = sp.Symbol("q", positive=True)
-
-
-def qint_sym(k):
-    """Symmetric q-integer [k]_q = (q^k - q^-k)/(q - q^-1)."""
-    return (q**k - q**(-k)) / (q - 1 / q)
+# Shared, cached Young-diagram / symmetric quantum-dimension machinery (bean z3a2; PR #2952).
+# Replaces the formerly inline qint_sym/qfact/partitions/hooks/dim_q/S — same symbolic results,
+# lru_cache-memoised. The probe-specific qint_asym (Gaussian convention) stays local below.
+from young_qdim import q, qint, qfact, S  # noqa: E402
 
 
 def qint_asym(k):
-    """Asymmetric (Gaussian) q-integer (1 - q^k)/(1 - q)."""
+    """Asymmetric (Gaussian) q-integer (1 - q^k)/(1 - q). Probe-specific (young_qdim has the
+    symmetric `qint` only); kept local for the H1a variant."""
     return (1 - q**k) / (1 - q)
 
 
-def qfact(n):
-    r = sp.Integer(1)
-    for k in range(1, n + 1):
-        r *= qint_sym(k)
-    return r
-
-
-def partitions(n):
-    if n == 0:
-        yield []
-        return
-    for first in range(n, 0, -1):
-        for rest in partitions(n - first):
-            if not rest or rest[0] <= first:
-                yield [first] + rest
-
-
-def hooks(lam):
-    conj = [sum(1 for r in lam if r > c) for c in range(lam[0])]
-    return [(row - j) + (conj[j] - i) - 1 for i, row in enumerate(lam) for j in range(row)]
-
-
-def dim_q(lam):
-    d = qfact(sum(lam))
-    for h in hooks(lam):
-        d /= qint_sym(h)
-    return sp.cancel(sp.together(d))
-
-
-def S(m):
-    """S(m) = Sum_{lam |- m} dim_q(lam)  (q=1 -> #involutions I(m))."""
-    if m == 0:
-        return sp.Integer(1)
-    return sp.cancel(sp.together(sum(dim_q(l) for l in partitions(m))))
-
-
+# qint (symmetric [k]_q), qfact, dim_q, partitions, S now come from young_qdim (imported above).
 MMAX = 8
 Sm = {m: S(m) for m in range(0, MMAX + 1)}
 
@@ -93,7 +58,7 @@ q1_ok = all(sp.cancel(Sm[m].subs(q, 1) - INVOL[m]) == 0 for m in range(0, MMAX +
 # --- Hypothesis H1: S(m) = S(m-1) + [m-1]_q_sym * S(m-2) ---
 res_sym = {}
 for m in range(2, MMAX + 1):
-    r = sp.cancel(Sm[m] - (Sm[m - 1] + qint_sym(m - 1) * Sm[m - 2]))
+    r = sp.cancel(Sm[m] - (Sm[m - 1] + qint(m - 1) * Sm[m - 2]))
     res_sym[m] = r
 H1_exact = all(res_sym[m] == 0 for m in range(2, MMAX + 1))
 
@@ -132,7 +97,7 @@ all_have_qm1_sq = all(has_double_root_at_1(Dm[m]) for m in range(2, MMAX + 1) if
 Wm = {m: sp.cancel((Sm[m] - Sm[m - 1]) / Sm[m - 2]) for m in range(2, MMAX + 1)}
 Wm_factored = {m: sp.factor(Wm[m]) for m in range(2, MMAX + 1)}
 W_seed_exact = bool(
-    sp.cancel(Wm[2] - qint_sym(1)) == 0 and sp.cancel(Wm[3] - qint_sym(2)) == 0
+    sp.cancel(Wm[2] - qint(1)) == 0 and sp.cancel(Wm[3] - qint(2)) == 0
 )
 # W(m) is a Laurent polynomial in q (no partition-sum denominator) only at the seed:
 def is_laurent_poly_in_q(expr):

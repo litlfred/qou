@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-28T06:54:32Z
-updated_at: 2026-06-28T15:06:10Z
+updated_at: 2026-06-28T23:55:00Z
 ---
 
 
@@ -14,3 +14,5 @@ updated_at: 2026-06-28T15:06:10Z
 
 
 **2026-06-28:** lever1_lw_depth2 migrated (lw via S). 4/7 probes now migrated; remaining 3 (qinvolution qint_asym, qaskey qpoch, wlambda f_lambda) are symmetric-only partials — follow-on.
+
+**2026-06-28 (cont.):** lever1_qinvolution_kernel_test migrated — symmetric machinery (qint/qfact/dim_q/partitions/S) now imported from young_qdim; the probe-specific qint_asym (Gaussian) kept local. Verified: probe re-run → witness BYTE-IDENTICAL (stored values are q0 numeric evals + sp.factor canonical strings, form-independent). Source −35 lines (10 ins / 45 del). **5/7 migrated**; remaining 2 symmetric-only partials: binding_qaskey_product_probe (qpoch), wlambda_identity_i_structure_probe (classical f_lambda).
