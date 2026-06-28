@@ -10,6 +10,7 @@
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
@@ -25,12 +26,13 @@ noncomputable def qInteger (n : ℕ) : ℝ := (q^n - q⁻¹^n) / (q - q⁻¹)
 theorem hecke_times_qInteger (n : ℕ) (hh : q - q⁻¹ ≠ 0) :
     (q - q⁻¹) * qInteger q n = q^n - q⁻¹^n := by
   unfold qInteger
-  field_simp
+  rw [mul_div_cancel₀ _ hh]
 
 /-- [2]_q = q + q⁻¹. -/
 theorem qInteger_two (hq : q ≠ 0) (hh : q - q⁻¹ ≠ 0) :
     qInteger q 2 = q + q⁻¹ := by
   unfold qInteger
+  rw [div_eq_iff hh]
   field_simp
   ring
 
@@ -38,6 +40,7 @@ theorem qInteger_two (hq : q ≠ 0) (hh : q - q⁻¹ ≠ 0) :
 theorem qInteger_three (hq : q ≠ 0) (hh : q - q⁻¹ ≠ 0) :
     qInteger q 3 = q^2 + 1 + q⁻¹^2 := by
   unfold qInteger
+  rw [div_eq_iff hh]
   field_simp
   ring
 
@@ -69,9 +72,11 @@ theorem hecke_times_qInteger_five (hh : q - q⁻¹ ≠ 0) :
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem qLambert_single_term (n : ℕ) (hh : q - q⁻¹ ≠ 0) :
     qInteger q n * (q - q⁻¹) * q⁻¹^n = 1 - q⁻¹^(2*n) := by
+  have hq : q ≠ 0 := by
+    rintro rfl
+    simp at hh
   unfold qInteger
-  rw [two_mul, pow_add]
-  field_simp
-  ring
+  rw [div_mul_cancel₀ _ hh, sub_mul, ← mul_pow, mul_inv_cancel₀ hq,
+      one_pow, ← pow_add, two_mul]
 
 end QOU.BraidsAndKnots
