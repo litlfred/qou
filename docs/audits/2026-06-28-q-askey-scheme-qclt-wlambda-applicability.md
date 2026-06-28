@@ -16,6 +16,19 @@ Bożejko–Speicher q-Gaussian / continuous q-Hermite as a *real measure* — is
 
 ---
 
+> **Coordination (2026-06-28).** A sibling landed the same core placement on
+> `main` (`10365a4362`, `feat(qaskey/frakV)`): `W_λ = d_q²/D²` is the
+> Plancherel measure of the q-Hermite/Rogers–Szegő family, binding `= q-Hermite
+> moments`, arena `= Hahn–Exton q-Bessel (E_q(2))`, bridge `=` three-term
+> recurrence/orthogonality (not a product GF) — **fully consistent** with §1–§3
+> here, plus a richer `𝔙 = Re(binding)+i·Im(Q_β)` cosh/sinh synthesis and a
+> product-form refutation (a). This audit is the *assessment* complement: the
+> **GAP-3 BS-obstruction + Féray–Méliot CLT framing** (§1), the **GAP-3 ≡ GAP-5
+> measure identity** (§2), and the **compute lever** (§6) are the additive parts;
+> the bare "W_λ = q-Plancherel measure / q-Bessel arena" placement is now also
+> on `main`. The brings-surface Klein bridge (`conj:klein-bring-icosahedral-bridge`)
+> is independent of both.
+
 ## 0. Why this audit (and a self-correction)
 
 A chat assessment on this branch initially flagged "q-CLT ↔ continuous
