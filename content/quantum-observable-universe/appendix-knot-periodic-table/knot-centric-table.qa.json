@@ -833,7 +833,230 @@
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Like in the knot-periodic-table, it repeats the false mathematical claim that the exponential decay $\\lambda_+^{-n}$ behaves like the Rydberg power-law $1/n^2$ for low shells.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/knot-centric-table.md:29 — $\\lambda_+ = 1.1073$ governs shell energy scaling via a Chebyshev recurrence."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The block details concrete organizing principles for the table.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No circularity is present.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "It claims to organize the elements by the 'underlying knot topology' that 'determines' shell structures and magic numbers, which is an overclaim since these are matched post-hoc.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No hidden parameters are introduced.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The logical structure is sound.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No divergence is found.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The citations are correct.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The terms are defined.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The parameters are stable.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Mayer-Jensen shell capacities ($2j+1$) and spin-orbit splitting are explained topologically as 'nuclear Borromean shell structure' and '$\\mathcal{B}_3$ crossing number = 3', which lacks a physical derivation.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The visualization and table specs are consistent.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c07ba90cf3fd",
+          "ts": "63478dc13e42"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "severity": "major",
+        "verdict": "survivable-objection",
+        "referee_argument": "The claim that the exponential decay $\\lambda_+^{-n}$ approximates the Rydberg power-law $1/n^2$ is mathematically incorrect, and the topological explanation of Mayer-Jensen shell capacities lacks physical backing."
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:50:23.590Z"
+  "updated_at": "2026-06-28T07:05:42.356Z"
 }

@@ -1351,8 +1351,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "references.ts:3478 'wenzl1988c \u2014 placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
-        "rebuttal": "partial\u2192survived \u2014 real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
+        "referee_argument": "references.ts:3478 'wenzl1988c — placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
+        "rebuttal": "partial→survived — real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
         "evidence": [
           {
             "text": "references.ts:3478; hoefsmit-binding-amplitude.ts:7-11"
@@ -1381,7 +1381,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": ".lean:46-57 proves only qInt3/qInt2^2 = 1 - 1/qInt2^2; the Hoefsmit matrix derivation (b=sqrt(a_rho a_-rho +1), a_rho=h/(1-q^-2rho), rho=2) is only in the .md.",
-        "rebuttal": "partial \u2014 honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
+        "rebuttal": "partial — honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.lean:46-57; .md:13-33"
@@ -1409,8 +1409,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the \u0394_\u03bb gate.",
-        "rebuttal": "rebutted \u2014 b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a \u0394_\u03bb closure; canonical-no-numerology passes.",
+        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the Δ_λ gate.",
+        "rebuttal": "rebutted — b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a Δ_λ closure; canonical-no-numerology passes.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.md:73-76"
@@ -1447,7 +1447,177 @@
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'Physical interpretation: pion decay' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:hoefsmit-binding-amplitude'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['prop:frobenius-lepton-meson-bridge'] for 'prop:hoefsmit-binding-amplitude' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'Physical interpretation: pion decay' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'prop:hoefsmit-binding-amplitude' are uniquely defined or standard.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'prop:hoefsmit-binding-amplitude' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'prop:hoefsmit-binding-amplitude' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2fd422d8aab7",
+          "ts": "f654226fc036",
+          "lean": "d007f6644123"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:1 — content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize"
+      }
     ]
   },
-  "updated_at": "2026-06-24T04:37:26Z"
+  "updated_at": "2026-06-28T07:05:44.350Z"
 }

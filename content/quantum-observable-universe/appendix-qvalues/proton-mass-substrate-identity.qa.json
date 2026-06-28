@@ -1772,7 +1772,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No `decide`/`trivial` used; the existential is closed by an explicit witness + unfold (rfl)."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-circular.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-citation-misuse.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:1 — content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44",
+          "lean": "a918c3906e2f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:50:23.590Z"
+  "updated_at": "2026-06-28T07:05:43.329Z"
 }
