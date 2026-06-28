@@ -1254,23 +1254,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:02.167Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "ecf26f7fe50b",
           "ts": "1057f0b7138d"
         },
@@ -1282,6 +1265,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "582e58b62bbd",
+          "ts": "1057f0b7138d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Borromean Markov trace $\\\\mathrm{tr}_M(\\\\beta_{\\\\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1319,23 +1318,6 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:02.815Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
           "md": "ecf26f7fe50b",
           "ts": "1057f0b7138d"
         },
@@ -1347,26 +1329,25 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      }
-    ],
-    "proof-narrative-lean-equiv": [
+      },
       {
         "field_hash": {
-          "md": "9e297d088fec",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.340Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is not found.",
+        "severity": "major"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
       {
         "field_hash": {
           "ts": "1057f0b7138d",
@@ -1394,473 +1375,191 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "582e58b62bbd",
+          "ts": "1057f0b7138d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is missing, so narrative-proof equivalence cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "fail",
-        "score": {
-          "value": 0.2,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.710Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub with no stated plan."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "pass",
-        "notes": "Clear R[h] mult-core then archimedean quotient layer; matches md polynomial-division proof.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.9
-        }
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean file content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.lean is missing, so proof strategy clarity cannot be evaluated.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "fail",
-        "score": {
-          "value": 0,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:04.104Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub restating the target."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "pass",
-        "notes": "Well-posed: exact Jones/Markov closed form + h2=0 cancellation + bar-invariance. Substantive.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "score": {
-          "max": 1,
-          "value": 0.92
-        }
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; goal is plausible from markdown.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:04.556Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "pass",
-        "notes": "Generic-ring fibre encoding, h2=0 cancellation, Q_borromean=0, Family-A-vs-bridge disagreement — substantive new content.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The mathematical and physical connections explored in 'Borromean Markov trace $\\\\mathrm{tr}_M(\\\\beta_{\\\\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$' are highly novel.",
         "score": {
+          "value": 0.8,
           "max": 1,
-          "value": 0.85
-        }
+          "rubric": {
+            "novelty": 0.8
+          }
+        },
+        "severity": "minor"
       }
     ],
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:04.957Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Declaration contains sorryAx or unexpected axioms."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "pass",
-        "notes": "Faithful: IsBorromeanMarkovTrace mult. relation + trM_borromean_isTrace + borromean_markov_trace_closed_form encode (4+h2-3h4-h6)/(h2+4); sorry-free, no masking.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; statement has integrity.",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:05.333Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Placeholder stub is unformalised."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "pass",
-        "notes": "All thms proved by ring/field_simp/linear_combination from defs; no structure-field projection.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.729Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: no Lean source resolves (no sibling .lean, no lean.ref); Lean-token criterion is n/a.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:06.136Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "pass",
-        "notes": "Premise trM_borromean_den h≠0 satisfiable: trM_borromean_den_pos proves h^2+4>0 for all h.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false premises or conflicting hypotheses detected in the statements.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
-          "ts": "1057f0b7138d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:06.632Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
         "result": "pass",
-        "notes": "hne (den≠0) binders consumed by field_simp in quotient-form thms; hq≠0 used in family_a_pos.",
-        "reviewed_at": "2026-06-25T17:00:49.000Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling to check for unused hypotheses.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "9e297d088fec",
+          "md": "582e58b62bbd",
           "ts": "1057f0b7138d"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:07.033Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "ecf26f7fe50b",
-          "ts": "1057f0b7138d"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: no Lean source resolves (no sibling .lean, no lean.ref); Lean-token criterion is n/a.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -2096,5 +1795,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:48.506Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

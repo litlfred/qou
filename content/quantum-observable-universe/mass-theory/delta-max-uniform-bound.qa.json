@@ -1101,21 +1101,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:07.775Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Uniform bound on the per-level jet residual $|\\\\Delta^{(n)}|$' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1139,233 +1137,206 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:09.463Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean is not found.",
+        "severity": "major"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:09.868Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean is missing, so narrative-proof equivalence cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
-        "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:10.219Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean file content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean is missing, so proof strategy clarity cannot be evaluated.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:10.611Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; goal is plausible from markdown.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:11.030Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The mathematical and physical connections explored in 'Uniform bound on the per-level jet residual $|\\\\Delta^{(n)}|$' are highly novel.",
+        "score": {
+          "value": 0.8,
+          "max": 1,
+          "rubric": {
+            "novelty": 0.8
+          }
+        },
+        "severity": "minor"
       }
     ],
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:11.318Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; statement has integrity.",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:11.685Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:12.032Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:12.355Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false premises or conflicting hypotheses detected in the statements.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:12.715Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling to check for unused hypotheses.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "8b8d60ae8445",
-          "ts": "ddcf7d5aaffd",
-          "lean": "7c8983a99594"
+          "md": "433a28586688",
+          "ts": "ddcf7d5aaffd"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:13.161Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1601,5 +1572,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:50.923Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

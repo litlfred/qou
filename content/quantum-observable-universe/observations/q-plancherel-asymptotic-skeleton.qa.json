@@ -1635,7 +1635,252 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false claims identified in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' presents substantial mathematical content: q-deformed Wedderburn weight on partitions of $n$ ([Wedderburn weight canonical ...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No overclaims: the scope of 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The argument flow in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The referenced Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Citations to kerov1981, biane1998, feray2010 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The derivation steps and formal definitions in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ba6a588ef1f5",
+          "ts": "6f2f30f26fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing.",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, preventing formal verification of the claims in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:04:37.262Z"
 }

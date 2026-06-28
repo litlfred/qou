@@ -1068,21 +1068,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:01.540Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Chirality $a_K = \\\\prod_{pn} (1 + \\\\mathrm{sign}\\\\cdot h)$ from symmetric-channel trace duality' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1162,25 +1161,20 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.389Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean code in content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.lean is broken and does not compile, hence goal plausibility cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
@@ -1208,81 +1202,77 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:04.134Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling fails compilation, preventing statement verification.",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:04.489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:04.813Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.169Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false premises or conflicting hypotheses detected in the statements.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1306,21 +1296,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "e958bb998d7f",
+          "md": "49e7bc9ea384",
           "ts": "f07a17747bd8",
           "lean": "9e704af9bf8e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.891Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1569,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

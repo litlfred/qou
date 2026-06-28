@@ -1013,23 +1013,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "cab5d225f90a",
-          "ts": "9efc9d55778a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:08.319Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "5647d70a60b9",
           "ts": "9efc9d55778a"
         },
@@ -1042,6 +1025,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark interprets def:mass-identity, cataloguing the three calibration inputs (q0, m_e, Q_β) and predictive content — squarely mass-theory scope; it makes no new provable claim (kind=remark with interprets is correct, not a misfiled proposition)."
+      },
+      {
+        "field_hash": {
+          "md": "a380560be11f",
+          "ts": "9efc9d55778a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'remark' match validated structurally for 'Calibration inputs and predictive content' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1290,5 +1289,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:51.746Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

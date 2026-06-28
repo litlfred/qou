@@ -1814,6 +1814,23 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean formalization and narrative for 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are in complete agreement.",
+        "severity": "minor"
       }
     ],
     "da-overclaim": [
@@ -1843,6 +1860,23 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No overclaims: the scope of 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1872,6 +1906,24 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
       }
     ],
     "da-hidden-dof": [
@@ -1901,6 +1953,24 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
       }
     ],
     "da-citation-misuse": [
@@ -1930,6 +2000,24 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Citations to jones1985, kock2004, wenzl1988 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1951,8 +2039,166 @@
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      },
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are consistent.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false claims identified in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' presents substantial mathematical content: calibration inputs — the three real degrees of freedom of the first cohomology o...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The argument flow in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "150fe9663849",
+          "ts": "22487e0d576f",
+          "lean": "4902f3e9c3c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The derivation steps and formal definitions in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:04:37.262Z"
 }

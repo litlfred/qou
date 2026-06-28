@@ -1070,21 +1070,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.255Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'corollary' match validated structurally for 'Chirality term vanishes in the commutative QOU limit' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1163,25 +1162,20 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.112Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Proof compiles successfully, confirming goal plausibility.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
@@ -1209,81 +1203,77 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.896Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The signature is stable and matches the narrative statement.",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:06.321Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:06.677Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:07.127Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false premises or conflicting hypotheses detected in the statements.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1307,21 +1297,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:07.791Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1570,5 +1559,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

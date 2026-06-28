@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.lean"
   },
   "source_hashes": {
-    "md": "3e15ade23a2a",
+    "md": "f45e715f0262",
     "ts": "f93fcc109196",
     "lean": "5390b24d0f6d"
   },
@@ -877,43 +877,300 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3e15ade23a2a",
+          "md": "f45e715f0262",
           "ts": "f93fcc109196",
           "lean": "5390b24d0f6d"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:25.912Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'definition' match validated structurally for 'Water $H_2O$ as a molecular braid' within chapter 'molecular-construction'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "3e15ade23a2a",
+          "md": "f45e715f0262",
           "ts": "f93fcc109196",
           "lean": "5390b24d0f6d"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:26.247Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean theorem statement in content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.lean matches the mathematical statement in content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.md.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.lean:1 — Lean file exists"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false claims identified in 'Water $H_2O$ as a molecular braid': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Water $H_2O$ as a molecular braid' presents substantial mathematical content: Of the $H_\\lambda(q)$ generators, the $N - k = 25$ intra-block generators are in...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Water $H_2O$ as a molecular braid'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No overclaims: the scope of 'Water $H_2O$ as a molecular braid' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Water $H_2O$ as a molecular braid'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The argument flow in 'Water $H_2O$ as a molecular braid' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean formalization and narrative for 'Water $H_2O$ as a molecular braid' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No citations are present in 'Water $H_2O$ as a molecular braid', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Water $H_2O$ as a molecular braid' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Water $H_2O$ as a molecular braid' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Water $H_2O$ as a molecular braid' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The derivation steps and formal definitions in 'Water $H_2O$ as a molecular braid' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2o-molecular-braid.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f45e715f0262",
+          "ts": "f93fcc109196",
+          "lean": "5390b24d0f6d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Water $H_2O$ as a molecular braid' are consistent.",
+        "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.247Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

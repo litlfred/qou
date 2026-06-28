@@ -1100,24 +1100,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9afd18f58291",
-          "ts": "077f57784289",
-          "lean": "463181fa3454"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:10.445Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "63a2abbc64a0",
           "ts": "077f57784289",
           "lean": "463181fa3454"
@@ -1131,31 +1113,26 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "conjecture cataloguing the substrate Im(q) role sits naturally in mass-theory alongside the mass-formula modulus-projection discussion it references; no sibling carries the same three-candidate catalogue."
-      }
-    ],
-    "proof-rater-goal-plausibility": [
+      },
       {
         "field_hash": {
-          "md": "9afd18f58291",
+          "md": "325603da6854",
           "ts": "077f57784289",
           "lean": "463181fa3454"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:10.836Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
-      },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'conjecture' match validated structurally for 'Physical role of $\\\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).' within chapter 'mass-theory'.",
+        "severity": "minor"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
       {
         "field_hash": {
           "md": "63a2abbc64a0",
@@ -1171,6 +1148,23 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.2; this is an open conjecture (kind=conjecture) — its Lean placeholders (im_q_observable_pairing roles all = True; mass_observable_conj_invariance closed via `right; trivial`) are honest non-proofs of a core open question, so plausibility of closing the genuine content is low. Correctly a conjecture, not a vacuity violation under the criteria reviewed here."
+      },
+      {
+        "field_hash": {
+          "md": "325603da6854",
+          "ts": "077f57784289",
+          "lean": "463181fa3454"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean code in content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.lean is broken and does not compile, hence goal plausibility cannot be verified.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1419,5 +1413,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

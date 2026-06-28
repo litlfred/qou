@@ -893,21 +893,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9994c6446432",
+          "md": "32a873d7b6a2",
           "ts": "8b545ff822a2",
-          "lean": "806ceca9fee7"
+          "lean": "11a6a9f9658e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.541Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'remark' match validated structurally for '$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\\\mathbf{B}_3$ word: the closed forms $c_k \\\\in \\\\{b, b^2, -2, b^2+1/2\\\\}$ are derivable outputs, not phenomenological identifications' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1168,5 +1167,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:49.835Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

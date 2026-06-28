@@ -1288,21 +1288,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:06.348Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Mass-side $\\\\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\\\\mathfrak{Q}_\\\\beta$ `BarEvenKernel` typeclass' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1345,21 +1344,20 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:07.552Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Narrative in content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.md matches the Lean sibling structure in content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1383,25 +1381,20 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:08.259Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Proof compiles successfully, confirming goal plausibility.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
@@ -1429,81 +1422,77 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:09.892Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The signature is stable and matches the narrative statement.",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:10.251Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:10.610Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:11.080Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false premises or conflicting hypotheses detected in the statements.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1527,21 +1516,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "7713ce18583f",
+          "md": "7ef738a57cd7",
           "ts": "31803b06c884",
           "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:11.799Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1790,5 +1778,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

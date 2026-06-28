@@ -255,7 +255,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Constructive vs analytic handles on the same Habiro object' are consistent."
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'remark' match validated structurally for 'Constructive vs analytic handles on the same Habiro object' within chapter 'mass-theory'.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:58:53.117Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

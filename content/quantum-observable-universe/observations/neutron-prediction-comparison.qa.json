@@ -1338,7 +1338,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The claim in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' presents substantial mathematical content: At $q = q_0$, the beta-stability formula ([beta-stability](#prop:beta-stability)...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The prose presents 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/neutron-prediction-comparison.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No citations are present in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1 — content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "00aeecef7f55",
+          "ts": "b10175ad859c",
+          "lean": "c5b84d3cd97c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation: content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean contains compilation errors: content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize, invalidating the claimed formalization.",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:58.558Z"
+  "updated_at": "2026-06-28T11:04:37.262Z"
 }

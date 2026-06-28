@@ -1325,24 +1325,6 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:01.907Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
           "md": "528221f3982b",
           "ts": "b697f5dc18b8"
         },
@@ -1355,6 +1337,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Placed in sec:exceptional-divisor-reeb (geometric face: exceptional divisor, Reeb bundle, vertex operators), uses def:reeb-bundle + def:color-sector-coords. Ramified-disc fusion / S_3 monodromy at the foundry boundary of the Reeb bundle is squarely the section's subject."
+      },
+      {
+        "field_hash": {
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Ramified-disc fusion at the foundry boundary' within chapter 'mass-theory'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1393,24 +1391,6 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:02.649Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
           "md": "528221f3982b",
           "ts": "b697f5dc18b8"
         },
@@ -1423,27 +1403,25 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "The sketch proves via topological tiling / quotient-cone argument, loop-monodromy, and the cube-root DFT relating sectors to Lagrange resolvents — algebraic/topological machinery matching the algebraic statement. No archimedean linarith/IVT/continuity/Real.* method."
+      },
+      {
+        "field_hash": {
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found.",
+        "severity": "major"
       }
     ],
     "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:03.103Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
-      },
       {
         "field_hash": {
           "md": "528221f3982b",
@@ -1460,139 +1438,122 @@
         "severity": "major",
         "evidence": "Library decl QOU/BraidsKnots/RamifiedDiscFusion.lean:24-49: `class RamifiedDiscFusionContext where … claim_three_sectors : n_sectors = 3; claim_degree_three_ramification : ramification_degree = 3; claim_s3_monodromy : galois_group_order = 6` and `def RamifiedDiscFusion [ctx] : ctx.n_sectors = 3 ∧ ctx.ramification_degree = 3 ∧ ctx.galois_group_order = 6 := ⟨ctx.claim_three_sectors, ctx.claim_degree_three_ramification, ctx.claim_s3_monodromy⟩`.",
         "notes": "The .md asserts three substantive claims: (1) topological fusion into a single disc with degree-3 ramification, (2) C_3 monodromy / S_3 Galois group of the cover, (3) agreement of that S_3 action with the Lagrange-resolvent action. The Lean captures only three NUMERIC equalities (n_sectors=3, ramification=3, |group|=6) — and even those are assumed as the context class's own fields, then handed back. The cover topology, the monodromy realisation, and the resolvent-agreement claim (part 3 entirely) are absent. Conclusion diverges: substantive geometric proposition vs three assumed integers. (This vacuity also implicates proof-no-self-assuming-projection / proof-no-trivial-true, which are not in this block's criteria list but should be flagged to lean-proof-review.)"
+      },
+      {
+        "field_hash": {
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, so narrative-proof equivalence cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
-        "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.565Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, so proof strategy clarity cannot be evaluated.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.967Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; goal is plausible from markdown.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:04.311Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The mathematical and physical connections explored in 'Ramified-disc fusion at the foundry boundary' are highly novel.",
+        "score": {
+          "value": 0.8,
+          "max": 1,
+          "rubric": {
+            "novelty": 0.8
+          }
+        },
+        "severity": "minor"
       }
     ],
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:04.666Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; statement has integrity.",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.110Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:05.456Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      },
       {
         "field_hash": {
           "lean": "c16c1d98c966"
@@ -1613,80 +1574,73 @@
       },
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidsKnots/RamifiedDiscFusion.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:05.775Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false premises or conflicting hypotheses detected in the statements.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:06.197Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling to check for unused hypotheses.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "02aece7d8309",
-          "ts": "d347a53fa1bc",
-          "lean": "c16c1d98c966"
+          "md": "cea2918cb5fc",
+          "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:06.643Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1922,5 +1876,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:48.456Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }

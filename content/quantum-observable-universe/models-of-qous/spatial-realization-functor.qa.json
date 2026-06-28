@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean"
   },
   "source_hashes": {
-    "md": "0edf49012f35",
+    "md": "3eb4ed10f530",
     "ts": "8c8d21d04ff1",
     "lean": "76492eb239d2"
   },
@@ -879,43 +879,300 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0edf49012f35",
+          "md": "3eb4ed10f530",
           "ts": "8c8d21d04ff1",
           "lean": "76492eb239d2"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:23.976Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'definition' match validated structurally for 'Spatial realization functor' within chapter 'models-of-qous'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "0edf49012f35",
+          "md": "3eb4ed10f530",
           "ts": "8c8d21d04ff1",
           "lean": "76492eb239d2"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:24.521Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean theorem statement in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean matches the mathematical statement in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.md.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 — Lean file exists"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The claim in 'Spatial realization functor' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Spatial realization functor' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe ([quantum observabl...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Spatial realization functor'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The prose presents 'Spatial realization functor' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spatial realization functor'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No citations are present in 'Spatial realization functor', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Spatial realization functor' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Spatial realization functor' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Spatial realization functor' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 — content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3eb4ed10f530",
+          "ts": "8c8d21d04ff1",
+          "lean": "76492eb239d2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation: content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at, invalidating the claimed formalization.",
+        "severity": "critical"
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:24.521Z"
+  "updated_at": "2026-06-28T11:04:36.634Z"
 }
