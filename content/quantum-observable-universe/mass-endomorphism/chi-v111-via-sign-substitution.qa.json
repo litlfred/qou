@@ -875,7 +875,246 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "All four Lean theorems verified independently: χ_(1,1,1) difference = −(q²+1)²(q²−1)/(4q⁵) (md:26-29) matches sympy-simplified β_n−β_p exactly; conjugate identity =χ_(3)/q⁴ holds; q=2 value −75/128 confirmed; q=1 vanishing confirmed."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The Lean theorems (chi-v111-via-sign-substitution.lean:65-110) state real rational-function identities proved by field_simp+ring / norm_num — non-trivial closed-form equalities, not `: True` or tautologies."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The closed form is derived top-down from the sign-rep generator action σ_i↦−q⁻¹ on the typed-B_3 braid words (md:14-22); no target back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "authorNotes claims 'V_(1,1,1) FULLY DERIVED IN LEAN ... closes both 1-d irreps of H_3(q) from first principles' (ts:20). The derivation assumes specific crossing multiplicities for the proton/neutron typed-B_3 braids (6σ+3σ⁻¹+2 avg; 5σ+4σ⁻¹+2 avg, md:16-18) as given inputs, which are not derived in this block.",
+        "notes": "The character closed-form *is* fully proved sorry-free; the 'first principles' phrasing is in metadata (authorNotes), not rendered prose, and the braid-word multiplicities are upstream typed-braid data. Minor over-statement, hence warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No free parameter; the sign-rep scalars (−q⁻¹, −q, −(q+q⁻¹)/2) are fixed by the antisymmetric 1-d irrep, and the averaged value is the symmetric mean. No off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Each step (generator scalars → product over crossing types → difference → factorisation → conjugate identity) is mechanically verified; field_simp+ring discharges the algebra. No logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The Lean defs chi_V111_beta_p/_n (lean:42-48) literally encode the .md products (md:21-22), and the proved theorems match the .md table (md:47-52) one-to-one; the narrative closed form equals the Lean chi_V111_difference_factored."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "cites kassel1995, hoefsmit1974, jones1985 (ts:9); the Lean -- Ref [kassel1995] GTM 155 §V.5 'sign-rep character substitution' (lean:62) is the correct location for Iwahori-Hecke sign-rep characters. Appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The 'averaged' generator value −(q+q⁻¹)/2 (md:13,18) is used without definition of what 'averaged' crossings are or why two appear in each braid word; the symmetric-average convention is implicit. Base ring is ℝ (lean:42) per §7c with the generic-content note in md:1.",
+        "notes": "The σ↦−q⁻¹, σ⁻¹↦−q sign-rep actions are unambiguous; only the 'averaged' bookkeeping term lacks a local definition. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Exact symbolic identities and an exact rational value at q=2; no float fit, no q0 evaluation, no experimental comparison."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The only physical gloss is χ-diff vanishing at q=1 = 'isospin invariance' (md:51, lean:106-108), which is consistent: at the classical point proton and neutron character contributions coincide. No units/conservation claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No external witness needed — the content is sorry-free Lean (lean:65-110, all closed by field_simp+ring/norm_num) and I reproduced all four identities symbolically. Self-contained and reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Clean, fully-proved, independently-reproduced character closed-form with the conjugate-partition symmetry to V_(3) made explicit and Lean-verified.",
+        "notes": "verdict: accept. referee_argument: the only quibbles are the metadata phrase 'from first principles' (the braid-word crossing multiplicities are upstream inputs) and the undefined 'averaged' term; neither affects the proved closed forms. Strong block."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.445Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

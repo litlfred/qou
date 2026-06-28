@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Interpretive remark (interprets def:recursive-brane-tower); makes no provable mathematical claim to falsify."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Provides genuine physical interpretation (mass as propagation resistance / Frobenius-Hopf variation across fibres); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-geometric-drag.md:6-8 asserts 'the mass quantifies this variation [of the Frobenius–Hopf structure on each fibre]' as a definite identification, but the block is a remark with no formula or interprets-target carrying that quantitative equation; the 'quantifies' is an interpretive claim presented without the backing measure being named here.",
+        "notes": "Minor: as a remark it is allowed interpretive latitude, and it interprets def:recursive-brane-tower; but 'mass quantifies this variation' phrased as fact slightly outruns what the cited definition states in-block."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No parameters introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Narrative chain (varying q ⇒ required variation of Frobenius–Hopf structure ⇒ mass measures it) is interpretive motivation, not a deductive step claiming a missing lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "remark, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref:; nothing to misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-geometric-drag.md:3-5 says 'the substrate parameter q varies from fibre to fibre' but def:substrate-parameter pins q to a single substrate modulus q_0; the per-fibre-varying-q reading here is a distinct (jet-bundle) usage not disambiguated in-block, and 'resistance' / 'drag' are used as undefined physical metaphors.",
+        "notes": "Minor: 'q varies from fibre to fibre' versus the canonical fixed q_0 needs the J^1 S_n context to reconcile; the metaphor 'drag/resistance' is interpretive, not defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Mass-as-propagation-resistance is a standard physical metaphor (cf. inertia/Higgs-drag intuitions); nothing a domain expert would reject at the qualitative level the remark claims."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f94858efa296",
+          "ts": "f295e358ff03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: accept. referee_argument: A short, legitimate interpretive remark properly anchored via interprets:def:recursive-brane-tower. Only minor quibbles — 'mass quantifies this variation' is stated more definitely than the in-block backing, and 'q varies from fibre to fibre' should be reconciled with the fixed-q_0 convention — neither rising above minor."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.198Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

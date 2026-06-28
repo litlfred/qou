@@ -815,7 +815,224 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose preamble (kind=prose); makes no logical claim so vacuity is not the relevant standard. It is genuine navigational exposition, not a disguised statement."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "categorical-mass-markov-trace-endomorphism-intro.md:6 \"the Markov-trace machinery that pins the mass spectrum\"; :23 \"closed-form Markov-trace evaluation of the categorical mass element at every Wedderburn block\"",
+        "notes": "Preamble asserts the arc delivers a closed-form mass-spectrum pin 'at every Wedderburn block', but downstream blocks (e.g. qbeta-per-block-chi) explicitly retract the y_λ-weighted Δτ_M closed form (needs √q handling, out of scope). Minor: it is scene-setting prose, but it overstates the resolved scope."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No Lean (prose block)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Terms ('categorical mass element', 'φ_n global section', 'Wedderburn block') are defined in sibling blocks of the arc this preamble introduces; no standalone definition is claimed here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness backing on a prose preamble."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0897466c6ddd",
+          "ts": "05a252094757"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: accept. Harmless navigational preamble; only objection is a minor scope-overstatement ('pins the mass spectrum ... at every Wedderburn block') that the arc's own blocks later qualify. referee_argument: a referee would not block on a section intro, but would ask that 'pins'/'closed-form at every block' be softened to match the retracted Δτ_M closed form downstream."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

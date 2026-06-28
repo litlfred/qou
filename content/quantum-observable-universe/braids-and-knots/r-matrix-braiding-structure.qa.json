@@ -1340,7 +1340,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "YBE R12 R13 R23 = R23 R13 R12 and the braid relation Ř1Ř2Ř1=Ř2Ř1Ř2 are correct standard statements; eigenvalues q, -q⁻¹ with Hecke relation σ²=(q-q⁻¹)σ+1 are correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "r-matrix-braiding-structure.lean:60-66 declares `claim_yang_baxter` and `claim_braid_relation` as fields of `class RMatrixBraidingContext`; lines 75-79 `def r_matrix_braiding_structure := ctx.claim_yang_baxter` and lines 90-94 `def braid_rep_from_R_check := ctx.claim_braid_relation`.",
+        "notes": "Both 'theorems' are self-assuming projections: the YBE and the braid relation are taken as CLASS FIELDS (assumed), then the named def merely returns the field. This is exactly the vacuous self-assuming-projection anti-pattern (§3b-cond non-degeneracy / proof-statement-integrity): the Lean does not DERIVE YBE or the braid relation from R-matrix axioms — it postulates them. The genuine content (YBE ⟹ braid relation, the standard equivalence) is never proved; both are independent hypotheses. The eigenvalue lemma `su2_fundamental_r_matrix` (lines 123-134) IS substantive (proves hecke_prod = -1 via ring from q·qInv=1), so the block is not wholly vacuous, but the two headline defs are."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding-structure.lean:75-79, 90-94 — conclusion = assumed field.",
+        "notes": "Borderline with da-vacuous: the proof of the braid relation is circular in that it assumes the braid relation as `claim_braid_relation`. Filed primarily under da-vacuous; flagged here as the same projection viewed as 'derivation assumes its conclusion'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding-structure.lean:30-32 docstring claims the stub 'states either claim' as theorems improving on a prior malformed carrier.",
+        "notes": "The Lean docstring frames the two defs as the load-bearing theorems being stated 'as theorems', but they are assumed-field projections, not derivations. The .md 'Mathematical Novelty' note honestly scopes the content as standard quantum-group theory with the eigenvalue identification as the tie-in — that part is not overclaimed. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical free parameters; q is the formal indeterminate of R_q = ℤ[q,q⁻¹]."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding-structure.md:11-15 — 'the braid operator Ř = P∘R … furnishes a representation of the braid group' asserted without the YBE⟹braid-relation step shown.",
+        "notes": "In the .md the jump from YBE to 'furnishes a braid-group representation' is the standard Ř-braid-relation equivalence, left unstated. Standard and true, but the connecting lemma is exactly what the Lean was supposed to supply and instead assumed. Minor (it is textbook)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "r-matrix-braiding-structure.md:5-9 states YBE and (lines 11-15) that Ř gives a braid representation; r-matrix-braiding-structure.lean:75-94 'proves' both only by returning assumed class fields `claim_yang_baxter`/`claim_braid_relation`.",
+        "notes": "proof-statement-integrity divergence: the .md presents YBE and the braid-representation property as established results, but the Lean derives neither — it axiomatizes both as `RMatrixBraidingContext` fields and projects them out. Lean is strictly weaker (vacuously-implied) than the narrative claim. Note also .ts:8 validation:'not_checked', so the tag at least does not assert leanok — partial mitigation, but the structural divergence stands."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "[drinfeld1985] (quantum YBE / Hopf algebras), [kassel1995] Ch.VIII Quantum SL(2) + Ch.XIII braided categories, [manuscript] Ch.4 — all correctly attributed to the YBE / braid-rep / eigenvalue content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding-structure.lean:46-66 — `class RMatrixBraidingContext` types V3, R12/R13/R23, Rcheck1/2 as elements of one type `V3` with an opaque binary `comp : V3→V3→V3`.",
+        "notes": "The Lean abstraction collapses operators-on-V⊗V⊗V and the operators themselves into a single type `V3` with a free `comp`, with no axioms tying R12/R13/R23 to actual leg-placements or tying Rcheck_i to P∘R. So 'R12', 'Rcheck1' are uninterpreted constants — the equations are formal strings, not the genuine R-matrix structure. The .md objects are well-defined; the Lean abstraction is under-specified to the point the named fields could mean anything. Minor (it is explicitly an 'abstract context')."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical-prediction claim in this block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6656a60c5cc8",
+          "ts": "c9c4ec59f6d3",
+          "lean": "571e0acd5d70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revision (Lean only). referee_argument: the MATHEMATICS is correct standard quantum-group theory, but the Lean formalization is hollow — `r_matrix_braiding_structure` and `braid_rep_from_R_check` 'prove' the Yang–Baxter and braid relations by ASSUMING them as `RMatrixBraidingContext` class fields and projecting them out (lean:60-66, 75-94). No derivation, in particular not the YBE⟹braid-relation equivalence that is the only non-trivial content. The `su2_fundamental_r_matrix` eigenvalue lemma is genuinely proved and salvageable. Fix: either prove the braid relation from the YBE on a concrete R, or honestly demote the two projection defs (they are §1a-style self-assuming projections)."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.057Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -835,7 +835,223 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "π_1(S³∖trefoil) = ⟨x,y | xyx=yxy⟩ ≅ B_3 is a standard correct fact; xyx=yxy is the braid relation. Trefoil K_{3,2}=T(2,3) (or equivalently T(3,2)) is the simplest nontrivial torus knot — correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trefoil-knot-group.md:11-14 'This relation xyx=yxy is the braid relation: it encodes the fact that the three-strand braid may be closed into the trefoil by identifying the top and bottom of the braid.'",
+        "notes": "The trefoil is the closure of the 2-braid σ_1^3 (a 2-strand closure), not naturally 'the closure of the three-strand braid'. The isomorphism π_1≅B_3 is correct, but the causal gloss ('closed into the trefoil by identifying top and bottom of the [three-strand] braid') conflates the B_3 group isomorphism with the geometric closure, which for the trefoil is a 2-strand operation. Minor expository imprecision in a remark."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "remark block, no Lean sibling (interprets def:braid-group)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] / -- Ref:; interprets:def:braid-group and uses:[def:braid-group] both resolve (braid-group.ts present)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "x,y are the two meridian/braid generators, standard; relation explicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1f83f465fd37",
+          "ts": "cdfaa4dac97c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: accept. referee_argument: mathematically correct standard remark (trefoil group ≅ B_3 via the braid relation). The only nit is the geometric-closure gloss, which describes the trefoil as a three-strand-braid closure when it is the 2-braid σ_1^3 closure; the group isomorphism it states is nonetheless correct."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.796Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

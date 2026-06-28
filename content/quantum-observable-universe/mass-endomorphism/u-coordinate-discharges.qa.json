@@ -909,7 +909,245 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Identities check: b²=(u²+u+1)/(u+1)² (lean:50), dim_q²=u+2+u⁻¹ (lean:66), q(q−q⁻¹)=u−1 (lean:78), Wedderburn sum u+4+u⁻¹ (lean:113) are correct over u=q²; all close field_simp+ring."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "u-coordinate-discharges.md:30-35 frames these as 'substantively backing' abstract class fields whose declared content is residual = 0 (⟨0, rfl⟩). The Lean theorems are genuine rational identities, but their connection to the class-field discharges is rhetorical (md:'point to ... as their substantive backing') rather than a Lean dependency — the ⟨0, rfl⟩ discharges remain definitionally trivial.",
+        "notes": "Not vacuous in themselves (the u-identities are real content); the warn is that the block's stated purpose — making the ⟨0, rfl⟩ class discharges 'non-vacuous' — is achieved only by adjacency/citation, not by the abstract residual proofs actually consuming these identities."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "u-coordinate-discharges.md:22-36 ('Why this matters') claims these identities turn abstractly-trivial residual discharges into substantive content; but the residual=0 class fields (e.g. hecke_quad_residual_eq_zero) are not re-proved from the u-identities — the link is asserted (md:33 'is then concretely captured by hecke_root_sum_times_q').",
+        "notes": "Mild overclaim of the epistemic upgrade: an adjacent true identity does not retroactively make a separate ⟨0, rfl⟩ projection non-vacuous unless the projection is restated in terms of it."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The .md describes rational u=q² identities and the .lean proves exactly those (hoefsmit_b_sq_in_u, dimQ_V21_sq_in_u, hecke_root_sum_times_q, dimQ_sq_sum_H3_in_u, per-block eigenvalue squares), all sorry-free; .md and .lean agree."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites macdonald1995 (Macdonald coordinate u — references.ts:477), hoefsmit1974, wenzl1988 — appropriate for the q-symmetric-function / Hoefsmit / Hecke context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "u-coordinate-discharges.md:14-17 says 'See Table' and references #tbl:u-coordinate-discharges-table-data, but the .md never lists the identities inline — the 'six concrete scalar identities' (ts authorNotes) are only in the .lean and an external table-data block; the claimed 'b²=(u^2+u+1)/(u+1)^2, dim_q² V_(2,1)=u+2+u⁻¹' in the .ts title must be cross-checked against the table.",
+        "notes": "Minor: the narrative defers all concrete content to a separate table block, so the .md alone is content-thin. The identities themselves are unambiguous in the .lean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "exact symbolic identities; no numerical/experimental match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness declared on this block; backing is Lean theorems that close by field_simp+ring (self-contained, no external witness to drift). The .lean imports QBetaCategoricalPrecisionLadder, HoefsmitV21CosSymmetrization, H3HeckeIdempotents for dimQ_*/sigma_eigval_* definitions."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e51a8961aff1",
+          "ts": "2499a8a1f2f6",
+          "lean": "6249c514947f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Sorry-free correct rational identities, but the block's stated value-add (md:22-36) — upgrading ⟨0, rfl⟩ class discharges from 'abstractly trivial' to 'substantive' — is rhetorical, not realized as a Lean dependency.",
+        "notes": "verdict: accept-with-nits. referee_argument: 'The six u=q² identities are correct and genuinely non-trivial rational facts. The only soft spot is the framing: the abstract residual=0 class fields they claim to back are not actually re-derived from these identities, so the ⟨0, rfl⟩ discharges remain definitionally trivial in Lean. Tighten the prose to claim adjacency/illustration rather than substantive backing, or wire the identities into the class instances.'"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -835,7 +835,226 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "π_1(S³∖K) and its PSL(2,ℂ) representations characterising the geometric (hyperbolic) structure on the complement are standard correct facts."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-complement-group.md:11-13 'The image of ρ characterises the geometric structure on the knot complement.'",
+        "notes": "A generic representation ρ: π_1 → PSL(2,ℂ) does not by itself 'characterise the geometric structure'; it is specifically the discrete faithful (holonomy) representation of a hyperbolic complement that does so (Mostow rigidity), and only for hyperbolic knots — the trefoil/Hopf (Vol=0) have no such structure. The statement as written over-generalises. Minor / expository in a remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "remark block, no Lean sibling (interprets def:localized-knot)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] / -- Ref:; interprets:def:localized-knot resolves (kronheimer-mrowka.ts defines it); uses:[] empty."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-complement-group.md:1-2 writes K⊂S³ '(or, more generally, K⊂ℙ¹(ℂ))' and then π_1(ℙ¹(ℂ)∖K).",
+        "notes": "ℙ¹(ℂ) is the Riemann sphere S² (real dimension 2), not S³; a knot is a 1-submanifold of a 3-manifold, so 'K⊂ℙ¹(ℂ)' and π_1(ℙ¹(ℂ)∖K) are dimensionally non-standard. This is framework-specific notation (localized-knot lives on the projective line as the substrate base), but as written it risks conflating the complex projective line with the 3-sphere ambient. The PSL(2,ℂ) acts on ℙ¹(ℂ) as Möbius transformations (md:11), which is consistent with the ℙ¹ reading — so the two halves use ℙ¹(ℂ) in compatible but unstated-regime ways. Minor definitional/regime ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fc4214f97bd9",
+          "ts": "014ee4d2a470"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: minor-revisions. referee_argument: the core content (knot-complement fundamental group + PSL(2,ℂ) representations) is standard and correct. Two minor objections: (1) 'the image of ρ characterises the geometric structure' over-generalises — only the discrete faithful holonomy rep of a hyperbolic complement does, and only for hyperbolic knots; (2) the K⊂ℙ¹(ℂ) framing with π_1(ℙ¹(ℂ)∖K) is dimensionally non-standard relative to the S³ convention and would benefit from a one-line note tying it to the substrate base."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:20.961Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

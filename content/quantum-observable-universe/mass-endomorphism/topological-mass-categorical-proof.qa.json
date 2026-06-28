@@ -781,7 +781,234 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:7-12 splits m(ϱ)=‖tr(τ̂(α))‖ + ‖tr(α−τ̂(α))‖ as an additive NORM sum from an 'orthogonal' decomposition",
+        "notes": "Orthogonality yields a Pythagorean split ‖x+y‖²=‖x‖²+‖y‖², not a linear ‖x+y‖=‖x‖+‖y‖. The proof inherits this from lem:topological-mass-cat-eigenspace (which states the additive-norm form), so the proof is faithful to its cited lemma; the defect lives upstream. Flagged as warn here because the proof reproduces a norm identity that does not follow from orthogonality alone."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Genuine three-lemma assembly (eigenspace split → descended=base mass → transient localisation); not self-assuming or tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Decomposition is assembled from three independent lemmas; no back-fit to a numerical target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Concludes exactly 'the claimed decomposition'; scope matches thm:topological-mass."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free parameters introduced; N (number of blow-up points p_i) is structural, inherited from the transient lemma."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Each step cites the supporting lemma it consumes (eigenspace, descended, transient); the 'combining yields' is a valid substitution of the two summands' identities."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling on the proof block (proof blocks carry no Lean requirement); the formalization lives on thm:topological-mass and its lemmas, not assessed here."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[]/-- Ref:; only internal lemma cross-references, which resolve to existing sibling blocks."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:9-11 uses ‖·‖ and tr without specifying the norm (Frobenius? operator?) in-block; md:14 α=(∫_A⊗id)∘Δ∘ϱ relies on undefined-in-block ∫_A, Δ",
+        "notes": "The norm and the integral/comultiplication operators are defined upstream (frobenius-pairing, descent), not in the proof; acceptable for a proof block but the reader cannot verify the norm split without the upstream definitions."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Purely structural proof; no numerical match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Categorical decomposition of a mass functional; no units/conservation/measurement claim to test."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fba5de6ce2e3",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:7-12 additive-norm split inherited from eigenspace lemma",
+        "notes": "verdict=accept-with-minor. referee_argument: The three-lemma assembly is logically sound and faithful to its cited lemmas, but it propagates a questionable additive-norm identity ‖x+y‖=‖x‖+‖y‖ that orthogonality alone does not give (Pythagoras gives the squared form). This should be reconciled in lem:topological-mass-cat-eigenspace; the proof itself is otherwise a clean substitution."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.670Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1605,7 +1605,241 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "topological-mass-cat-eigenspace.md:9-15; proof topological-mass-cat-eigenspace-proof.md:32-52",
+        "notes": "The stated identity m(rho)=||tr(tau_hat(alpha))|| + ||tr(alpha - tau_hat(alpha))|| is not generally true. m(rho)=||tr(alpha)|| (def:mass-identity) and tr is linear, so tr(alpha)=tr(tau_hat alpha)+tr(alpha - tau_hat alpha); the triangle inequality gives ||tr(alpha)|| <= ||tr(tau_hat alpha)|| + ||tr(alpha-tau_hat alpha)|| with EQUALITY only when the two trace-images are non-negatively parallel — an unproven and generically false condition. Counterexample: if tr(tau_hat alpha) and tr(alpha-tau_hat alpha) are equal-magnitude opposite complex numbers, LHS=0 but RHS>0. The orthogonality the proof invokes is in the Frobenius inner product on the ALGEBRA (alpha-level), which yields ||alpha||^2 = ||tau_hat alpha||^2 + ||alpha-tau_hat alpha||^2 (Pythagoras, sum of squares) — it does NOT yield a sum of norms of the TRACES, which are scalars in a different space."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "cat_eigenspace_decomposition.lean:41-63",
+        "notes": "The Lean carries the manuscript equation honestly but over a context class whose tr, nrm, tau_hat are arbitrary unconstrained ℝ->ℝ functions and m_rho an arbitrary ℝ, with the theorem body `sorry`. As stated it is FALSE for generic such data (it constrains m_rho to a specific value), so it is not vacuous-true — but it is content-free as a verification: nothing about the actual Frobenius/descent structure is encoded, the operators are opaque, and the single sorry hides the entire claim. Honest per §1a (stated-not-proved) but supplies zero structural guarantee."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Derivation does not assume its own conclusion (the prior laundered-tautology version was removed per the Lean notes); the flaw is a non-sequitur, not circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-cat-eigenspace-proof.md:40-52",
+        "notes": "The proof proves a sum-of-squares orthogonality (Pythagoras at the algebra level) but the lemma states and the proof concludes a sum-of-norms-of-traces equality 'by linearity of the categorical trace'. Linearity gives tr(alpha)=tr(tau_hat alpha)+tr(alpha-tau_hat alpha) (a sum INSIDE the norm), not ||tr(alpha)|| = ||tr(tau_hat alpha)|| + ||tr(alpha-tau_hat alpha)|| (norms added OUTSIDE). The conclusion is strictly stronger than the orthogonality argument supports — approximate/inequality stated as exact equality."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical free parameter; structural lemma."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-cat-eigenspace-proof.md:40-52",
+        "notes": "The step 'and by the linearity of the categorical trace:' jumping from ||alpha||^2 = ||tau_hat alpha||^2 + ||alpha-tau_hat alpha||^2 to m(rho) = ||tr(tau_hat alpha)|| + ||tr(alpha-tau_hat alpha)|| is a missing-lemma gap on two counts: (a) it switches from squared norms to first-power norms, and (b) it moves from norms of algebra elements to norms of their traces, with no lemma relating ||tr(.)|| to ||.|| or establishing that the trace preserves the orthogonal split additively. Linearity of trace yields the sum inside one norm, not the sum of two norms."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "cat_eigenspace_decomposition.lean:59-63",
+        "notes": "The Lean theorem statement faithfully mirrors the (flawed) .md equation, so there is no statement DIVERGENCE per se; but the Lean discharges it with `sorry`, so it proves nothing. Net: the .md asserts a proof (square QED) while the Lean concedes the claim is unproved — the narrative claims a completed proof that the formalization does not back, and (per da-false-claim) the manuscript proof is itself invalid."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and the Lean -- Ref: is [manuscript] self-reference; nothing external to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-cat-eigenspace.md:1-15",
+        "notes": "||.|| is used for both the Frobenius algebra norm (in the Pythagoras step) and the norm of a trace scalar (in the conclusion) without distinguishing them; 'orthogonal decomposition into descended and transient components' is invoked but the transient component is just the algebraic complement alpha - tau_hat(alpha), whose orthogonality to im(tau_hat) requires the *-compatibility hypothesis that is stated but its scope (which inner product) is left implicit. The overloaded ||.|| is the crux of the false-claim."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No specific physics prediction; the mass = sum of two norm-contributions framing is structurally motivated (descended + transient) and not in conflict with a measurement at this abstraction level."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing witness/compute; Lean is sorry'd, no producer to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0914a3cb9015",
+          "ts": "e48e1927f7e0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=major-revision. referee_argument: The lemma's headline equation m(rho) = ||tr(tau_hat alpha)|| + ||tr(alpha - tau_hat alpha)|| does not follow from the orthogonal decomposition. The proof correctly derives the algebra-level Pythagoras ||alpha||^2 = ||tau_hat alpha||^2 + ||alpha - tau_hat alpha||^2, then illegitimately rewrites it as a SUM OF NORMS OF TRACES via 'linearity of the trace'. Linearity gives tr(alpha) = tr(tau_hat alpha) + tr(alpha - tau_hat alpha) (sum inside the norm; only a triangle INEQUALITY for the norms), and the squared-norm additivity does not transfer through tr at all. A concrete counterexample (anti-parallel trace images) gives LHS=0, RHS>0. The Lean honestly sorries the same statement, so nothing is salvaged by formalization. Fix: either restate as ||alpha||^2 = ||tau_hat alpha||^2 + ||alpha-tau_hat alpha||^2 at the algebra level, or add the hypothesis that the two trace images are non-negatively parallel and prove it."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

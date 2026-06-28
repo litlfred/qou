@@ -1340,7 +1340,247 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-unique.lean:67-86: the theorem `unique_up_to_scalar` is a one-line projection of `unique_up_to_scalar_axiom`. The axiom takes only a centrality hypothesis `_hC` (named with underscore = unused) and asserts the scalar-equivalence conclusion directly.",
+        "notes": "Not vacuous in the `: True` sense — it is an honestly-declared external axiom (Kassel VI.4.9) with the real proposition as its conclusion, and the .md flags it as axiomatized standard quantum-group result. But the 'theorem' adds zero deductive content over the axiom; the centrality hypothesis is never used to derive anything (it is consumed wholesale by the axiom). This is the permitted 'axiomatize a standard external result' pattern, hence warn not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-unique.lean:53-71 axiomatizes the entire uniqueness claim; the .md title/body present it as a 'proposition' with a proof block (q-casimir-unique-proof.md). The actual Lean content is `axiom`, not a derivation.",
+        "notes": "The .md is honest ('It is axiomatized here', 'no novel mathematical argument is claimed'), so this is not a hidden overclaim. The narrative proof block (Joseph-Letzter centre argument) is a sketch, not formalized. Minor: a reader sees a 'proposition' + 'proof' but Lean carries an axiom. Accurately scoped in prose, hence warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-unique-proof.md:7-13: 'Fixing the eigenvalue on V_j to be [j]_q[j+1]_q ... pins down b=1 and a=0' — the b=1 step is asserted, not shown. The centre is R[C_q], so a general central element is a polynomial p(C_q); the proof restricts to linear a+bC_q without justifying why the eigenvalue normalization forbids higher-degree central elements with the same V_j spectrum.",
+        "notes": "The .md proposition statement itself restricts to the form `FE + φ(K,K⁻¹)` (degree ≤ 1 in C_q), so the linear restriction is a hypothesis, not a gap, for the stated proposition. The proof block's 'b=1' pin is plausible (leading coefficient matching) but stated without the explicit eigenvalue-matching computation. Minor logical gap in the narrative sketch only."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:1-5 claims uniqueness for central elements 'of the form FE + φ(K,K⁻¹) ... whose eigenvalue on the spin-j irrep is [j]_q[j+1]_q'. The Lean axiom `unique_up_to_scalar_axiom` (lean:67-71) hypothesizes ONLY centrality (`∀ a, C*a = a*C`); the eigenvalue-normalization condition and the `FE + φ(K,K⁻¹)` form restriction are NOT encoded as hypotheses.",
+        "notes": "Without the eigenvalue/form hypotheses the Lean claim is literally FALSE as a faithful encoding — two arbitrary central elements of U_q(su2) need NOT differ by a scalar (the centre is a full polynomial ring R[C_q], so C_q and C_q² are both central and do not differ by a scalar). The Lean docstring acknowledges 'carries the same spin-j eigenvalue normalisation' but the `axiom` signature drops that hypothesis, making the axiom as-stated over-strong / false. Since it is an opaque external axiom (no proof to verify against), severity is bounded to minor here, but this is a genuine .md-vs-Lean divergence: the Lean omits the two hypotheses that make the narrative claim true."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Kassel §VI.4.9 (Joseph-Letzter centre, Z(U_q(sl2)) = R[C_q]) is correctly invoked for the up-to-scalar uniqueness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:3 'φ(K,K⁻¹) (Laurent polynomial in K)' — the admissible degree of φ is unbounded, yet the uniqueness argument (q-casimir-unique-proof.md) treats the element as linear-in-C_q. The mapping between 'Laurent polynomial in K' and 'linear in C_q' is not stated.",
+        "notes": "C_q = FE + (qK + q⁻¹K⁻¹ - 2)/(q-q⁻¹)² (standard), so 'FE + φ(K)' with φ a degree-1 Laurent poly is exactly linear-in-C_q only for that specific φ; a higher-degree φ(K) need not be central. The class of elements the proposition quantifies over is mildly ambiguous. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness; pure algebra axiomatized from Kassel."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b92d3ca2f5a4",
+          "ts": "ac04cbbb4422",
+          "lean": "5a5dcdde2b66"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor-revisions. referee_argument: The block honestly axiomatizes a standard quantum-group result (Joseph-Letzter centre, Kassel VI.4.9) and the .md is candid that no novel argument is claimed. The one substantive objection is da-lean-narrative-divergence: the Lean `axiom QCasimir.unique_up_to_scalar_axiom` hypothesizes only centrality and DROPS both the eigenvalue-normalization and the `FE+φ(K)` form restriction that the .md statement carries — so the axiom as written is over-strong (two arbitrary central elements of U_q(su2) do not differ by a scalar, since the centre is the full polynomial ring R[C_q]). The axiom should carry the eigenvalue-normalization hypothesis to faithfully encode the narrative. Otherwise sound."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.384Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

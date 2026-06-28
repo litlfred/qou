@@ -1045,7 +1045,237 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark in sec:complex-volume interpreting prop:color-spacetime-s5-factorization (interprets set). Topic (modulus=mass / phase=EM / S3=color reading of one trace) is squarely the complex-volume section scope; correctly a remark (interpretation, no new provable claim), no sibling redundancy."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No false math claim. The three identifications (modulus=mass, arg=CS phase, S_3 grading=color) are interpretive labels grounded in prop:color-spacetime-s5-factorization (verified faithful S2xS3->S5, orthogonality, R->finite trivial). No falsifiable equation is asserted."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Substantive interpretive content (orthogonal-sectors statement + rigidity barring phase=color) tied to a proved proposition; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Interpretation built on the independently-proved s5-factorization; no back-fitting or smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-modulus-em-phase-color-grading.md:81-88",
+        "notes": "The block honestly self-labels two identifications (modulus=mass, S3-grading=color) as 'the framework's own' vs two as restatements of cited results. That candor mostly defuses overclaim, but lines 48-50 ('Mass, electromagnetism, and color are one trace object read on its modulus, its spacetime phase, and its color grading') states the synthesis as settled fact rather than as the framework's interpretive proposal. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free numerical parameter introduced; purely structural/interpretive remark."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-modulus-em-phase-color-grading.md:44-48",
+        "notes": "'an electromagnetic-to-color relation is therefore an S_5 statement, realized by those off-block generators' — the existence/realizability of a concrete EM->color relation via the off-block S_5 generators is asserted, not demonstrated; no lemma exhibits such a generator carrying the U(1) phase into a color character. The orthogonality result only shows the two are independent, not that a bridging relation exists. Minor gap in an interpretive remark."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "remark block, no Lean sibling; interprets a separately-formalized proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Citations (neumann-zagier1985 complex volume, witten1989 Jones-as-CS, reshetikhin1991 framing anomaly, frobenius-schur1906, takesaki1970, gamow1928/breit-wigner1936 complex-energy) are each invoked for results they genuinely contain; the block explicitly separates restated-from-literature vs framework-original identifications."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-modulus-em-phase-color-grading.md:9-11,19",
+        "notes": "tr_M is written as a single complex scalar with a polar form ||tr_M|| exp(i arg tr_M), yet the table assigns the S_3 'grading' to 'the algebra element ... before the trace collapses it to a scalar' (line 28-30). So 'color' lives on the pre-trace algebra element while modulus/argument live on the post-trace scalar — the three 'readings of one trace' are not all readings of the same object (two are of the scalar, one of its preimage). The term 'one trace' is overloaded across two levels; mild ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical prediction or fit in this block; purely structural."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-modulus-em-phase-color-grading.md:23-31",
+        "notes": "Identifying arg(tr_M) with 'the electromagnetic phase / U(1)' is physically suggestive but the U(1) here is the Chern-Simons framing/ribbon-twist phase q^{2w c(lambda)}, not the gauge U(1) of electromagnetism; equating a framing anomaly phase with the physical EM phase is an interpretive leap a domain expert would push back on (a framing phase is metric/framing-dependent, the EM gauge phase is not). The block hedges ('read as') but the headline label is strong. Minor."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness referenced; relies on cited literature + an upstream proposition, both present in-corpus."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "933d4e2f83c1",
+          "ts": "c789bc9601ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict=minor-revision. referee_argument: A sound, well-cited interpretive remark that honestly demarcates framework-original vs restated identifications. The strongest objection is the EM-phase identification: arg(tr_M) is the Chern-Simons/framing-twist phase, and calling it 'the electromagnetic phase' conflates a framing-dependent ribbon anomaly with the physical gauge U(1); plus the asserted EM->color S_5 relation (md:44-48) is claimed-realizable without an exhibited generator. Neither sinks the remark since it interprets a genuinely-proved proposition and flags its own novel claims."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

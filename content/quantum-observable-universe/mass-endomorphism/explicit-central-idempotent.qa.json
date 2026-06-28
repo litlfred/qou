@@ -1979,7 +1979,251 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The boxed displayed formula (md:26-32) already ranges the inner Lagrange product over C(n) = union of q-contents across all μ⊢n, which the probe verifies to ~1e-50 (own/off-block/completeness residue 0). The earlier literal-λ-only scope (which fails, off-block residue ≈32) is explicitly flagged as superseded in the Scope correction note (md:44-57). Statement as displayed is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "explicit-central-idempotent.lean:58-59 declares `centralIdempotent` as an `opaque` constant returning R; the theorem (lean:76-90) proves only `centralIdempotent * centralIdempotent = centralIdempotent` for that opaque value, discharged by `sorry`. The `example` (lean:97-103) repeats this for [2,2].",
+        "notes": "The Lean does not encode the Lagrange/Murphy formula at all — `centralIdempotent` is an opaque black box, so `e*e=e` asserts nothing about the actual construction. The proposition's real content (the explicit interpolation formula, orthogonality, bar-pairing) is unformalized; only a content-free idempotency shell is stated. Honest insofar as it carries `-- Ref:` and `sorry`, but the Lean is near-vacuous relative to the .md claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lagrange-interpolation construction of e_λ from JM eigenvalues is a standard self-contained algebraic derivation; no observable target is back-fitted. No calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:84-108 'Significance' asserts τ_arch(e_{(2,2)}·Li_2^q(ζ_6)) = 2Cl_2(π/3) = Vol(S³∖4_1) as an equality, and md:42 'gives a complete explicit construction of Z(H_n(q))'.",
+        "notes": "The Vol(4_1) identification depends on conj:gb-depth-period-correspondence and conj:bring-figure-eight-depth-2-witness (both conjectural, only 'verified numerically'), yet is written with '=' in the Significance section. The idempotent construction itself is solid; the period-class consequence is conditional-on-conjecture but phrased as established. Minor: it is hedged by 'verified numerically in conj:...'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free parameter: q is the substrate modulus, C(n) is determined by n, the Lagrange factors are fully fixed by the JM spectrum. No off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The four cross-checks (sum-to-identity, orthogonality, self/bar) follow from Lagrange interpolation in commuting JM variables; standard and gap-free at the narrative level."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "explicit-central-idempotent.lean:76-90 — the .md claims (md:25-42) an explicit Lagrange formula for e_λ plus orthogonality/self-adjointness/bar-pairing; the Lean only states idempotency `centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q` of an `opaque` constant (lean:58), proving none of the formula, orthogonality, or bar-pairing.",
+        "notes": "proof-statement-integrity: Lean proves something strictly weaker than and structurally divergent from the .md claim — idempotency of an undefined opaque element, not the Murphy-Lagrange construction. validation is 'not_checked' (ts:9), consistent with this being a stub. Both proof obligations are `sorry`."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "explicit-central-idempotent.ts:19 `cites: []`, yet the prose (md:112-118) and Lean (lean:79-81) attribute the construction to [murphy1981] and [dipper-james1986]. Both keys exist in references.ts (lines 4647, 4812).",
+        "notes": "The keys are correctly attributed (Murphy 1981 symmetric-group, Dipper–James 1986 Hecke) and resolve; the issue is the `cites` manifest field is empty so the provenance is not machine-discoverable from the .ts. Minor metadata gap rather than a mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "q-content c_T(k;q)=q^{2(j-i)}, C(n), SYT, the bar involution are all defined inline or by cross-reference (prop:hoefsmit-seminormal-form). Base ring R generic [CommRing]/[Field] in Lean is appropriate. The Scope correction note disambiguates the one genuine ambiguity (inner-product range)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The probe verifies an exact algebraic identity (residues = 0 to ~1e-50) at q_0, not a fit to experimental data; there is no fit-noise window or cross-anchor swing to exploit. The literal-scope residue ≈32 is reported as a genuine failure of the old scope, not cherry-picked."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure representation-theoretic statement about central idempotents in H_n(q); makes no physical/units/conservation claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Witness explicit-central-idempotent-probe.witness.json carries scriptHash 82e53cf5 and scriptCommitSha 4cd856a1; assertions allPassed, residues 0 to tol 1e-40, q_0 = 1.10997859555733... (muon-pin). Witness value matches prose claim (~1e-50). Reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict: accept-with-revisions. Strongest objection: the Lean (explicit-central-idempotent.lean) is near-vacuous — it asserts only `e*e=e` for an `opaque` undefined constant, formalizing none of the actual Lagrange/Murphy formula, orthogonality, or bar-pairing claimed by the .md.",
+        "notes": "referee_argument: The mathematics is standard and correct (the corrected-scope formula is probe-verified to 1e-50), so the proposition is sound. But the formalization is a stub that diverges from the narrative claim, and the Vol(4_1) 'Significance' identification is conditional on two conjectures yet written with '='. Revise: (1) either formalize the Lagrange formula or label the Lean an explicit placeholder; (2) hedge the conjecture-dependent period identity; (3) populate cites[]."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

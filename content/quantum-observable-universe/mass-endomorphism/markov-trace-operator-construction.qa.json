@@ -1112,7 +1112,246 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark in sec:hecke-chi-closed-forms; interprets rem:markov-trace-inductive-limit. Markov-trace operator (vN-factor) construction scaffold sits with the Markov-trace/Hecke machinery of the mass-endomorphism chapter. Correctly a remark (forward-reference, makes no logical claim per authorNotes); no sibling redundancy."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "remark; the .ts authorNotes (markov-trace-operator-construction.ts:34) state 'This block is retained as an interpretive forward-reference; it makes no logical claim.' No proposition to falsify."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The Lean scaffold classes (markov-trace-operator-construction.lean:51-81) encode the substantive operator-algebra content as trivially-dischargeable residual fields, e.g. `positivity_residual : ℝ` + `positivity_residual_eq_zero : positivity_residual = 0` and likewise faithfulness/embedding — any instance picks residual = 0, so the classes assert nothing about GNS/bicommutant.",
+        "notes": "Honestly tagged 'Scaffolding only' (lean:85) and 'open' for the substantive instances (lean:90-93); the .md (lines 11-16) calls it a class scaffold and per the WIP-scaffolding discipline the primary content was moved to an audit doc. Vacuous-by-design but disclosed — warn, not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No derivation; interpretive forward-reference describing a five-stage construction plan (md:6-9)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The .md says τ_M 'is the unique faithful normal trace up to scaling' on M (md:9) but attributes it to the standard inductive-limit II_1 construction (Jones 1985/Wenzl 1988); the block explicitly defers the actual construction to open R&D (lean:90-93, ts:34). No proved-claim overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No numerical prediction or calibration; pure infrastructure scaffold."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The five-stage outline (per-n rep → embedding → inductive limit → trace state → bicommutant) is the standard GNS/bicommutant route; no false 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The .md narrates a full operator-theoretic construction (GNS state, bicommutant closure, II_1 factor), but the Lean (lean:37-81) only declares three residual-field classes and proves nothing — the substantive construction is absent (every residual is set to 0).",
+        "notes": "Disclosed: the .md (lines 11-16) and Lean status section (lines 83-97) both state the operator-algebra steps are supplied externally / open. Divergence is acknowledged scaffolding, hence warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "cites jones1985, wenzl1988, kassel1995 (ts:12-16) — the canonical sources for the Markov trace M1-M4 axioms and the inductive-limit II_1 factor. Correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Terms (M1-M4 axioms, inductive limit V_∞, bicommutant M=(∪H_n)'') are standard and pinned to Jones/Wenzl; base ring is ℝ throughout the scaffold classes."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No numerical match asserted; infrastructure remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No physics claim; operator-algebra infrastructure."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No backing compute/witness; pure Lean scaffold + literature pointer."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9737507090d1",
+          "ts": "cadb65697e87",
+          "lean": "d210f24ba2a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Honest interpretive forward-reference that makes no logical claim (ts:34) and routes the substantive open R&D to an audit doc per WIP-scaffolding discipline.",
+        "notes": "verdict: accept. referee_argument: the only objection is that the Lean classes are vacuous-by-construction residuals, but this is disclosed as open scaffolding and the block carries no provable claim, so it is appropriate as-is."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

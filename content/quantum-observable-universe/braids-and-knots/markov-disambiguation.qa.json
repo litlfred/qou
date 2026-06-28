@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Three Markov constructions (trace, chain, moves) are correctly characterised; Markov's theorem (1935) statement (two braids → same link iff related by stabilisation+conjugation) is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Genuine disambiguation content (3 distinct objects: functional / measure / equivalence relation), not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation; notational clarification."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Uniqueness claim 'The unique trace functional ... satisfying cyclicity, the Markov axiom, and tr_M(1)=1' (md:6-9) is the standard Ocneanu/Jones uniqueness and is correct, not an overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The mass-formula snippet (md:11-12) m=m_e·|tr_M|·VolDensity is cited illustratively; z (stabilisation weight) is a named Markov parameter, not a hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No multi-step inference; each of the three items is a standalone characterisation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] field and no -- Ref: (no .lean). Markov 1935 is named in prose, not as a structured citation key."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-disambiguation.md:16-20 defines the Markov-chain transition probability p_{w→w'} = tr_M(ρ(w'))·conj(tr_M(ρ(w'))) / Σ tr_M(ρ(w''))·conj(...) — the numerator depends only on w' (the target), not on the source w, so the 'transition' is independent of the originating state w.",
+        "notes": "As written the transition kernel p_{w→w'} has no w-dependence, making it a fixed target distribution rather than a genuine Markov transition; likely a typo where one factor should be tr_M(ρ(w)) or a Hecke matrix element ⟨w|·|w'⟩. The reduction 'at real q0 reduces to |tr_M|^2' is consistent with this reading. Minor — disambiguation intent is clear, but the displayed kernel is ill-typed as a transition probability."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical value in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical prediction; the mass-formula reference is illustrative of where tr_M feeds, not a numerical claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "daba095efe74",
+          "ts": "952efa9e8938"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor-revisions. referee_argument: A clean, correct three-way disambiguation. The one substantive defect is the Markov-chain transition kernel (md:16-20): p_{w→w'} as written depends only on the target w', so it is a stationary target distribution, not a source-dependent transition probability — the source factor appears to be dropped. The Perron–Frobenius convergence claim that rests on it (md:22-23) presumes a genuine w-dependent kernel. Fix the kernel formula; everything else (trace uniqueness, Markov's theorem) is standard and correct."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.260Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

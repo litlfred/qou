@@ -1342,7 +1342,257 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass.md:18-29 (eq:topological-mass-decomp) states the mass as an EXACT additive equality 𝔪(ϱ)=‖tr_desc‖+Σ‖tr_trans‖. This holds only under Frobenius-orthogonality (norm-additivity), which the .md itself flags conditionally at lines 54-56 ('When the splitting is orthogonal...'). The headline equation is stated unconditionally; the general triangle inequality gives only ≤ (as the sibling Lean mass_upper_bound, topological-mass.lean:68-73, proves).",
+        "notes": "Not strictly false because the conditional is mentioned later, but the displayed theorem equation overstates equality where only ≤ is generally valid — borderline false-as-stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The lean.ref target QOU.Torsion.mass_decomposition_categorical (lean/QOU/Torsion/mass_decomposition_categorical.lean:56-58) concludes `ctx.mass = Σ mass_level n` solely by `ctx.impl_mass_decomposition_categorical ctx.decomposition_active`, where impl_mass_decomposition_categorical (lines 36-38) is a class field carrying that exact conclusion. This is a self-assuming projection (the class axiomatises the conclusion, not hypotheses) — §3b-cond non-degeneracy / proof-statement-integrity violation.",
+        "notes": "The file's own docstring (lines 6-13) calls it a 'Placeholder canonical' stub; the theorem derives nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The decomposition is structural (idempotent splitting + trace linearity), not back-fitted to a measured mass."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "theorem kind (topological-mass.ts:3, label thm:topological-mass) asserts an exact decomposition, but (i) the unconditional truth is only the ≤ bound (mass_upper_bound), (ii) the exact form needs non-negativity/orthogonality hypotheses not in the headline statement (topological-mass.lean:94-102 norm_additivity_of_nonneg_traces), and (iii) the canonical lean.ref decl proves a DIFFERENT, vacuously-supplied identity (Σ mass_level n, no norms, no desc/trans split).",
+        "notes": "Conditional/approximate result presented as an absolute theorem; the strongest formal artifact for it is either an inequality or a self-assuming stub."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No undisclosed parameter; N (tower depth) and blow-up centres p_i are declared (topological-mass.md:6-9,42-49)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass.md:51-56 — 'The decomposition follows from the idempotent splitting ... and linearity of the trace' yields trace additivity, but the leap to NORM additivity 𝔪=‖·‖+Σ‖·‖ requires the orthogonality condition, introduced only as a 'When ...' aside (lines 54-55). The 'as stated' additive equation does not follow from trace linearity alone.",
+        "notes": "Missing lemma: norm additivity is not a consequence of trace additivity without orthogonality/non-negativity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The .md exact-equality claim 𝔪=‖tr_desc‖+Σ_{i=1}^N‖tr_trans(p_i)‖ diverges from BOTH Lean candidates: (a) the lean.ref decl mass_decomposition_categorical proves `ctx.mass = Σ_{n=0}^{N-1} mass_level n` (no norms, no desc/trans split, self-assuming); (b) the sibling topological-mass.lean proves only mass_upper_bound (≤) unconditionally and exact equality only under added 0≤desc,0≤trans hypotheses.",
+        "notes": "Neither Lean object is the .md theorem; the resolved ref is the weaker self-assuming one."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "-- Ref: [kock2004] / [manuscript] §3 (topological-mass.lean:67,92-93) appropriately back the Frobenius-norm and idempotent-splitting machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "'When the splitting is orthogonal with respect to the Frobenius norm' (topological-mass.md:54) is a hypothesis stated as a parenthetical condition rather than as part of the theorem hypotheses; tr_desc / tr_trans are defined via im τ̂_n / ker τ̂_n but the Frobenius-orthogonality of those subspaces is not established here.",
+        "notes": "The regime under which the headline equality holds is under-specified in the statement."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "This block is structural; the attached witness (mass-from-q-symbolic.witness.json) cross-checks q₀-derived quantities (ℏ_q², m_μ/m_e self-consistency) at tol 1e-15, all passed — no fragile experimental fit asserted in the block itself."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Decomposing mass into baseline-drag + transient localised contributions is internally consistent; no unit/conservation violation in the block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "computation.witness mass-from-q-symbolic.witness.json carries computedAt 2026-04-14 and commitSha a37c160f...; the witness is muon-q₀ pinned (q₀=1.1099785955541805, ℏ_q²=0.00981718851347867) — consistent with the AGENTS.md computations-layer muon convention. No scriptHash/scriptCommitSha drift field is present to confirm currency against the current producer.",
+        "notes": "Witness lacks scriptHash/scriptCommitSha; cannot mechanically confirm it is current. Values self-consistent, so this is a staleness-visibility warn, not a contradiction."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e05785ace224",
+          "ts": "2b468bbae01e",
+          "lean": "04a422ad3fc4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict=major-revision. Strongest objection: a `theorem` block asserts an EXACT additive mass decomposition, yet (1) the unconditional truth is only the ≤ triangle bound, (2) exact equality needs non-negativity/orthogonality hypotheses absent from the headline, and (3) the resolved lean.ref (mass_decomposition_categorical) is a self-assuming placeholder proving a different norm-free identity.",
+        "notes": "referee_argument: Either downgrade the headline to the inequality / state the orthogonality hypothesis explicitly in the theorem, OR upgrade the canonical Lean ref to genuinely derive 𝔪=‖tr_desc‖+Σ‖tr_trans‖ from non-vacuous hypotheses. As stands, the strongest formal backing is vacuous and the narrative equality is conditional-presented-as-absolute."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:47.279Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

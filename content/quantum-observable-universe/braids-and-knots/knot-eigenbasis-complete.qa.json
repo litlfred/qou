@@ -1357,7 +1357,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "knot-eigenbasis-complete.lean:281-290 — the `complete v` premise is destructured but the conclusion `∃ μ, ∃ _:μ∈partitions, ∃ β, tr(braid_rep β)≠0` is just `summands_detected` re-exported (line 292-298 `knot_eigenbasis_density` IS `kec.summands_detected` verbatim). The hypothesis `(v : tensorPower)` is consumed only to pick an arbitrary μ; it never constrains the witness.",
+        "notes": "Not `:True:=trivial`, but the main theorem is a thin projection of a bundled axiom field (`summands_detected`). The structures (SchurWeylDecomposition.complete, AlexanderSurjectivity.surjective, MarkovTrace, summands_detected) are all assumed data fields, so the theorem proves nothing about Rep(SU_q(2)) beyond 'given these as hypotheses, compose them'. Honest as a combining lemma per its own docstring, hence warn not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backfitted numerical target; the completeness is a structural assertion built from standard results (q-Schur-Weyl, Alexander, Markov), not a smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "knot-eigenbasis-complete.md:24-39 claims the knot-type→summand map 'has image containing every irreducible summand' and:40-47 that knot types 'span V_phys'. The Lean only certifies, per summand, that SOME braid has nonzero trace (summands_detected), assuming that field. The strong 'eigenbasis / spanning / replaces Feynman's continuum integral' framing exceeds what the conditional combining theorem establishes.",
+        "notes": "The .md prose presents a sweeping completeness/spanning result; the formal content is conditional-on-bundled-data. 'replaces Feynman's continuum integral' (md:249-250 in lean docstring, md:Novelty) is interpretive overreach for a proposition whose Lean is a 4-line composition of hypotheses."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable / calibration in this block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-eigenbasis-complete.md:40-47 — step (3) 'spanning' is asserted to 'follow' from (1) complete decomposition + (2) labelling, but the inference that the *labelled* summands SPAN the colimit (rather than merely indexing it) is not argued; semisimplicity (1) already gives spanning by the summands themselves, and (2)'s knot-labelling is an injection of labels, not a spanning claim. The 'therefore … spans' conflates 'every summand has a knot label' with 'knot operators span'.",
+        "notes": "Minor: the conclusion is true under the assumed fields but the prose elides the distinction between indexing and spanning."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "knot-eigenbasis-complete.md:24-47 claims surjectivity onto every summand + spanning of V_phys. knot-eigenbasis-complete.lean:281-290 `knot_eigenbasis_complete` concludes only `∃ μ ∈ partitions, ∃ β, tr(braid_rep β) ≠ 0` — a single-existential 'some summand is detected', NOT 'every element v is reached' nor 'every summand'. The `(v : tensorPower)` binder is vacuous (used only to invoke `complete v` for an arbitrary μ; the resulting μ is unrelated to v's actual summand). The genuinely universal statement is `knot_eigenbasis_density`/`jones_nontrivial_all_summands`, but those are literally `:= kec.summands_detected` — i.e. the conclusion is an assumed structure field, not derived.",
+        "notes": "proof-statement-integrity: the headline Lean theorem is weaker than the .md (∃ vs ∀, and v-independent), and the ∀ version is a verbatim re-export of an axiomatised hypothesis. The .md should either state the conditional-on-bundled-data scope or the Lean should derive (not assume) summand detection from semisimplicity + Markov non-degeneracy."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "jones1985/jones1987/kassel1995/chari1994guide/alexander1923 are correctly attributed to q-Schur-Weyl, Markov trace=Jones polynomial, and Alexander's theorem respectively; standard and apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-eigenbasis-complete.lean:62-63 — the hypothesis 'q is not a root of unity' (central to the .md:5 statement and to semisimplicity) is commented OUT in HeckeAlgebra ('archimedean; not meaningful over R_q'). So the Lean structure carries NO root-of-unity exclusion, yet the .md leans on it for semisimplicity. The base-ring R_q = ℤ[q,q⁻¹] makes 'not a root of unity' formally inexpressible, so the key regime hypothesis is silently dropped on the Lean side.",
+        "notes": "The semisimplicity that drives the whole proposition is conditional on q not a root of unity (md:5), but that condition is unrepresentable/absent in the Lean model. Regime mismatch between narrative and formalisation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No falsifiable physics quantity asserted; the 'replaces Feynman integral' is a framing remark, not a measurable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing witness/compute; pure formal block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=minor-revision. referee_argument: The proposition's prose advertises a strong completeness/spanning ('knot types form a complete eigenbasis for colim V^⊗n, replacing Feynman's continuum integral'), but the Lean theorem `knot_eigenbasis_complete` proves only a v-independent single-existential, and the universal 'every summand detected' is an axiomatised structure field re-exported verbatim (`:= kec.summands_detected`), not derived. Additionally the load-bearing 'q not a root of unity' hypothesis is commented out / inexpressible over R_q. The block is honest AS a conditional combining lemma but the narrative over-states; align the .md scope to the conditional Lean content or strengthen the Lean to derive detection."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.548Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -2006,7 +2006,242 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial masking; closed by field_simp+ring on a real identity."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:9-13 tr_M(σ_1^2) = (q^{5/2}-q^{1/2}+q^2+q)/(q^2+q) = 1+(q-1)/q^{1/2}; md:54-57 tr_M-1 = ε(1+ε)^{-1/2}",
+        "notes": "Verified symbolically (sympy): both boxed forms equal the derived (q-q^{-1})z+1 with z=1/(q^{1/2}+q^{-1/2}), difference identically 0; numeric agreement to 30 dps at q=1.1097. Taylor identity ε(1+ε)^{-1/2} reproduced (ε -ε^2/2 +3ε^3/8 ...). All true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Genuine non-trivial closed form with a real proof from the Hecke quadratic relation + Markov axioms; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Derived from tr_M(1)=1 and tr_M(σ_1)=z (Markov axioms) via the Hecke relation; no target back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:6 'for every n ≥ 2' value 'independent of n'; md:39-46 stabilisation argument",
+        "notes": "The n-independence is stated as 'no stabilisation factor enters because the new strand is unlinked from the closure of σ_1^2'. This is correct for tr_M(σ_1^2) as an element-level value, but the phrasing conflates the link-closure picture (σ_1^2 closes to Hopf ⊔ unknots in H_n) with the trace normalisation; the claim is true but the justification is loose ('no stabilisation factor enters' is really because tr_M is defined compatibly across n). Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free parameter; z and the result are fixed by the Markov axioms."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Each step (Hecke relation → linear combination of tr_M(σ_1), tr_M(1) → simplify) follows; verified the algebra."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:118-130 'Lean ... specialises q to ℝ in q>1 ... substitution u:=√q (Real.sqrt) ... field_simp; ring' vs md:1-6 claim over ℚ(q^{1/2}) 'for all q'",
+        "notes": "The .md proposition is the identity over the formal field ℚ(q^{1/2}) for ALL q; the Lean realisation (per the block's own Note 4) specialises to ℝ with q>1 and u=√q. So the Lean proves a strictly weaker (archimedean, q>1) instance than the narrative's all-q formal claim. The block discloses this honestly (Note 4), so it is a disclosed weakening rather than a hidden divergence — warn, not fail."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:5,25,39 cites thm:jones-markov-trace for tr_M(1)=1, tr_M(σ_1)=z, stabilisation",
+        "notes": "The Markov-trace axioms invoked (normalisation, σ_1 value z, stabilisation property 3) are exactly what a Jones–Markov-trace theorem supplies; correctly used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:26 z := 1/(q^{1/2}+q^{-1/2}); branch of q^{1/2} not fixed; field stated as ℚ(q^{1/2})",
+        "notes": "q^{1/2} is used throughout (z, the closed form, Note 2's general identity) without fixing a branch/sign convention; over the formal field ℚ(q^{1/2}) this is fine, but the archimedean Lean realisation must pick the positive root (u>0), which the .md only mentions in Note 4. The σ_1 eigenvalue/Markov normalisation convention (q vs q^{-1}) is also assumed compatible with the repo's STRICT Hecke convention without restating it. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:69-94 c_2=b^2, c_3=-2b^3, c_4=b^2+1/2; states 'bare-Markov ε^{2n} coeffs are NOT equal to these'",
+        "notes": "The block's own headline finding is a NEGATIVE (the bare-Markov coefficients are not the Q_β ladder c_n), which is robust and not fit-fragile. But it then attaches the c_3 = J_Hopf(q=1) = -2 'structural identification' (l.90-94) — per the repo's own STRICT framing (AGENTS.md Q_β c_k section) c_3=-2 is a NEAR-MATCH that swings up to ~3% cross-anchor, not Taylor-exact. The block correctly routes this behind §3b-cond and the exploratory-removed audit, so the fragility is disclosed, not asserted as derived. Warn for surfacing the c_3=-2 identification at all in a proposition context."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure algebraic trace identity; no physical observable predicted in-block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:64-67,116 cite 'computations/probe_F_n_categorical_derivation.py' and 'computations/F-n-categorical-derivation-probe.witness.json (2/2 assertions pass)'; actual: producer script probe_F_n_categorical_derivation.py NOT FOUND anywhere under computations/, and the witness exists only at computations/_deprecated/F-n-categorical-derivation-probe.witness.json",
+        "notes": "The block's numerical/empirical backing is broken: the cited producer script does not exist in the repo, and the cited witness path is wrong — the file lives under computations/_deprecated/, i.e. it is a DEPRECATED witness. The '2/2 assertions pass' and 'verified across H_3..H_6' claims (l.64-67, l.113-116) and Note 1's three-implementation 50-dps cross-check are not reproducible from the cited artifacts as written. (The core closed form is independently verified symbolically here, so the math stands; the citation/reproducibility scaffolding does not.)"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ca545c81dfcd",
+          "ts": "594d979e3907"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trm-hopf-sigma1-sq-closed-form.md:64-67 + computations/_deprecated/F-n-categorical-derivation-probe.witness.json",
+        "notes": "verdict=minor-revision. referee_argument: The proposition and its closed form are correct and independently re-derived (both boxed forms and the ε(1+ε)^{-1/2} Taylor expansion verified to 30 dps). The substantive defect is reproducibility: the .md cites a producer script (probe_F_n_categorical_derivation.py) that does not exist and a witness path that actually resolves only to a _deprecated/ copy, so the '2/2 pass' and multi-algebra cross-check claims are unbacked as cited. Fix the citations to a live producer+witness (or regenerate them) and tone down the c_3=-2 'structural identification' to the near-match status the repo's own canonical framing mandates."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

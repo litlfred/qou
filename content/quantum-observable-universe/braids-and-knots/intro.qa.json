@@ -815,7 +815,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose intro; no formal proposition. Framework identifications stated as exposition, not theorems."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Scene-setting prose with substantive content (path-integral -> finite sum, braid action, knot<->particle map). Not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation; motivational framing."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "intro.md:17-22 states as fact: unknot 'is identified with the neutrino', trefoil 3_1 'is identified with the electron', mu/tau 'appear as higher torus knots T_{2,2k+1}', quarks 'sit inside a Borromean braid'.",
+        "notes": "These knot<->particle identifications are the framework's central conjectural claims, asserted flatly in declarative prose without hedging or pointer to where they are established/conjectured (the forward refs at md:23-25 point to Ch9/Ch11 for geometry/predictions, not to a proof of the identification). A referee reads 'is identified with the electron' as a settled result. As a chapter intro some assertion is expected, but the certainty exceeds the framework's actual (conjectural) status. Warn rather than fail given the prose/intro register."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters introduced in the intro."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Expository transitions; no formal inference chain asserted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose block; no .lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[]; internal forward-references to Ch9/Ch11 only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "intro.md:1-4 'the base space B and each fibre are finite' and 'continuum measure D-phi collapses to a combinatorial sum'; 'finite' is asserted without definition or cross-ref.",
+        "notes": "The finiteness of B and the fibres (the load-bearing premise that 'eliminates renormalisation') is stated without a pointer to where the discrete fibre structure is defined, leaving 'finite' ambiguous (finite set? finite-dimensional?) at the point of first use. Minor in an intro but the renormalisation claim rests on it."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match in the intro."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "intro.md:3-4 'eliminating the need for renormalisation of divergent integrals' by replacing D-phi with a finite combinatorial sum.",
+        "notes": "A domain expert would push back: renormalisation in QFT is not merely an artefact of infinite-dimensional measures that finiteness removes; it encodes scale-dependent physics (running couplings) confirmed experimentally. Claiming finiteness 'eliminates the need for renormalisation' is a strong physical assertion that a referee would challenge as conflating UV regularisation with renormalisation. Stated baldly in the intro without qualification."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness for an intro."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0da666f92643",
+          "ts": "277896e5c6fd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Strongest objection: intro.md:17-22 the knot<->particle dictionary (trefoil=electron, etc.) is asserted as established fact; secondary: intro.md:3-4 'eliminating renormalisation' physics overreach.",
+        "notes": "Verdict: accept-with-revisions (intro register). referee_argument: the introduction states the framework's central conjectural identifications (unknot=neutrino, trefoil=electron, quarks=Borromean) in flat declarative voice and claims finiteness eliminates renormalisation — both are contestable framework theses presented without hedging. Appropriate for motivational prose but should signal conjectural status / forward-reference the establishing chapters for the identifications themselves, not only for downstream predictions."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

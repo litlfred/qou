@@ -1353,7 +1353,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The d∘d=0 / E_infty convergence statements (Cartan-Eilenberg, Weibel §5.5) are standard once the filtered Hochschild complex is granted; no false mathematical assertion identified."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Sibling gb-spectral-sequence.lean:19-21 is `theorem gb_spectral_sequence : True := by trivial`. The real lib file GBSpectralSequence.lean:74-78 proves `gb_spectral_sequence ... : ∀ x, differential ℓ (differential ℓ x) = 0 := s.d_squared_zero ℓ` — a bare projection of a class FIELD (`d_squared_zero`) that is assumed, not proved (GBSpectralSequence.lean:52-53).",
+        "notes": "The substantive content (d²=0, convergence) is carried as class axioms; the 'theorem' is a self-assuming projection. Under §3b-cond this is acceptable ONLY if downstream consumers thread the instance and the .md banners conditionality — but the .md is stated as an unconditional Proposition (see da-overclaim)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Block kind is `proposition` (gb-spectral-sequence.ts:3) and title asserts 'spectral sequence and E_infty convergence of the 6-term mass', yet the .md repeatedly concedes the result is open: 'Why this is still only a partial rigorisation' (md:194), 'the work is open' (md:210), 'research-level formalisation task — likely a multi-week project' (md:208-209), 'matching of its pages to the six mass-formula terms remains the open identification problem' (md:189-192).",
+        "notes": "A proposition whose own body declares the headline identification (6 terms ↔ E_infty pages) unproved is an overclaimed kind. The existence-of-SS half is derivable; the load-bearing claim (six mass terms ARE the SS pages) is conjectural and should not sit under `proposition`. Restructure: the identification belongs in a conjecture/remark."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "gb-spectral-sequence.md:166-169 'the total Hochschild cohomology equals the sum over pages. When paired with the Markov-trace cocycle tr_M, this gives the six-term decomposition of the mass claimed in the proposition statement.' The jump from 'total cohomology = sum of E_infty pages' to 'this gives the specific six-term mass decomposition' is exactly the step the .md elsewhere admits is open (md:176-192).",
+        "notes": "Internal contradiction: md:166-169 asserts the six-term decomposition follows, while md:189-192 says the page↔term matching 'remains the open identification problem.' The 'this gives' is a non-sequitur relative to the block's own open-items list."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The .md claims (proposition) the six-term mass decomposition via SS pairing. The Lean (real lib GBSpectralSequence.lean) proves only `differential²=0` as a projection of an assumed class field plus an E_2-collapse bijection from another assumed field (convergeTo_injective, line 98). Neither the Markov-trace pairing nor the six-term mass identification appears in Lean; tr_M, T_w, and the mass terms are entirely absent from the formalisation.",
+        "notes": "Lean proves a vacuously-conditional fragment (d²=0 modulo the class) far weaker than the .md's headline; sibling stub is `: True`. proof-statement-integrity not satisfied for the stated proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Cartan-Eilenberg 1956, Weibel 1994 §5.5, Burciu-Scheimbauer (2019) are correctly invoked for the generic Hochschild/SS facts they support; no mis-attribution found (these are real results, used at the level of existence not the contested identification)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "gb-spectral-sequence.md:9-25 defines a 'differential' d = d_H + d_F + d_YB from rewriting rules, then md:65-68 concedes 'The rewriting rules ... define a reduction procedure, not a genuine differential on a chain complex' and switches to the Hochschild differential. The symbol d is used for two different objects (rewriting d vs Hochschild d).",
+        "notes": "The bait-and-switch on what 'd' means (and on which complex d²=0 holds) is acknowledged but leaves the original 'filtered differential algebra' definition (md:9-25) ill-posed as stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical predictions in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Purely algebraic; no direct physical-measurement claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached to this block (lean validation: not_checked, no compute field)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "caa98e08d547",
+          "ts": "3fded86d4015",
+          "lean": "87bb2a357a63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Kind=proposition with a `: True` sibling stub and a real Lean that only projects assumed class fields; the .md's own §'What remains open' / §'Why this is still only a partial rigorisation' concede the headline identification is unproved.",
+        "notes": "verdict: major-revisions. referee_argument: the block is presented as a proven Proposition but its central claim — that the six mass-formula terms ARE the E_infty pages of the GB spectral sequence — is conceded open in the same .md (md:189-192, 208-210). The existence of the SS is granted via standard Hochschild theory, but the load-bearing physics identification is conjectural. Demote to conjecture (or split: derive the SS-existence as a conditional theorem, leave the term↔page matching as a conjecture), align the Lean to state the actual conditional claim, and remove the `: True` shadow stub."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

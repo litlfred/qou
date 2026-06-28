@@ -1789,7 +1789,248 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; closed by linear_combination/nlinarith on a real goal."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Numerically verified the figure-eight operator (σ_1σ_2⁻¹)² on the 2-dim rep at q_0≈1.10998: det=1.0, real trace≈-0.911 (tr²≈0.83<4), eigenvalues -0.455±0.890i with |λ|=1.0. The proposition's conclusion (unit-modulus eigenvalues e^{±iθ}) is TRUE."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The Lean lemma unit_modulus_of_det_one_small_trace is genuine non-trivial content (real/imaginary-part argument, discriminant case split), not a self-assuming projection; it replaces an earlier placeholder '(-1)^4=1 ∧ 2=2' (noted at lean:87)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "figure-eight-reeb-rotation.md:11-13,49-52 identify the eigenvalue phase θ=arg(λ) with 'the accumulated q-Reeb rotation angle 2hπ' of the alternating braid.",
+        "notes": "The unitarity (|λ|=1) is established, but the identification of the specific phase θ with the q-Reeb advance 2hπ is asserted, not derived — md:46-47 computes net Reeb advance (q-q⁻¹)π=hπ per pair heuristically, and the block's own closing note (md:101-102) concedes 'this connection is asserted conceptually rather than fully established in the formalization'. So the Reeb-phase reading is presented as the proposition's content but is at conceptual-conjecture status. The block discloses this, hence warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "figure-eight-reeb-rotation.md:33-36 'Since det(M_{4_1})=1, and the trace tr(M_{4_1}) is real ..., the eigenvalues are complex conjugates on the unit circle.'",
+        "notes": "det=1 + real trace alone does NOT force |λ|=1: a real 2×2 matrix with det=1 and real trace |t|>2 has real reciprocal eigenvalues (e.g. 2,1/2) off the unit circle. The conclusion needs the extra hypothesis t²<4 (|trace|<2). The Lean lemma correctly carries this as hypothesis ht:t²<4, but the .md proof sketch omits it from the 'Since ... therefore' step, making the narrative argument a non-sequitur as stated. The numeric trace (≈-0.91, |t|<2) does satisfy it, so the result holds — but the stated proof step has a missing-lemma gap. Minor."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Lean figure_eight_unitary_on_standard (figure-eight-reeb-rotation.lean:90-94) takes (t:ℝ)(ht:t²<4)(lam:ℂ)(hroot: lam²-t·lam+1=0) and concludes ‖lam‖=1 — a generic conditional lemma about ANY 2×2 real matrix with det=1 and |trace|<2; figure_eight_det_one (lean:21) is merely (-1:ℝ)^4=1.",
+        "notes": "The Lean does not instantiate the lemma for the actual figure-eight operator M_{4_1}=(σ_1σ_2⁻¹)²: it never constructs the Hoefsmit matrices, never proves the operator's characteristic polynomial is x²-t·x+1 with that specific real t, and never discharges t²<4 for the figure-eight trace. The two load-bearing facts (det=1 for THIS operator beyond the bare (-1)^4, and t²<4 for THIS operator) are asserted in the .md but assumed as hypotheses in Lean. So Lean proves a strictly weaker, hypothesis-laden statement than the .md proposition ('The knot operator M_{4_1} ... has eigenvalues of unit modulus'). The .md §Lean realisation (md:84-99) is reasonably honest about the archimedean specialisation but does not flag that the operator-specific instantiation is absent. Genuine proof-statement-integrity gap → major."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites jones1987 (Hecke algebra representations of braid groups — appropriate for the V_(2,1)/Hoefsmit rep), wenzl1988c, kashaev1997 (volume-conjecture asymptotics, invoked at md:60-61,72). -- Ref: tags in the .lean match. Citations are topically appropriate; kashaev1997 backs the Kashaev/volume-conjecture statement actually made."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "figure-eight-reeb-rotation.md:42-47 'the positive crossing σ_a advances by +qπ and the negative crossing σ_b⁻¹ advances by -q⁻¹π. The net Reeb advance per alternating pair is (q-q⁻¹)π=hπ.'",
+        "notes": "The Reeb 'advance per crossing' of ±qπ / ∓q⁻¹π is introduced here without a precise definition tying it to the q-Reeb flow (the referenced ex:q-reeb-flow advances by q·t per crossing, but the π factor and the sign assignment per crossing sign are stated ad hoc). The phase θ is alternately called arg(λ_{4_1}) and 'the accumulated Reeb phase' and linked to Vol(4_1) via the Volume Conjecture — three not-obviously-identical quantities used interchangeably. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No fragile numerical match: the proposition is a qualitative |λ|=1 statement, verified exactly (eigenvalues on unit circle independent of the precise q_0). The Vol(4_1)≈2.0299 figure is a robust topological invariant."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The muon-anchor identity m_μ/m_e=Vol(4_1)/ℏ_q² is invoked (md:68-70) as established framework content; the block does not introduce a new physically-implausible claim. The Volume-Conjecture link between finite-q phase and asymptotic volume (md:71-74) is correctly flagged as conjectural."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Eigenvalue/unitarity claim independently reproduced numerically (det=1, |λ|=1) from the reduced-Burau B_3 operator; no stale witness or scriptHash dependency in this proposition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7d751cd8549b",
+          "ts": "3916b2547bf3",
+          "lean": "685b2fd1a808"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: revisions-required. referee_argument: The central proposition (figure-eight operator unitary on V_(2,1), |λ|=1) is TRUE and numerically confirmed. The strongest objection is da-lean-narrative-divergence: the Lean (figure_eight_unitary_on_standard) proves only a generic conditional lemma ('a 2×2 real matrix with det=1 and trace²<4 has unit-modulus eigenvalues') and never instantiates it for the actual figure-eight operator — the operator-specific det=1 and t²<4 facts are assumed as hypotheses, not derived, so Lean is strictly weaker than the .md claim. Secondary: the .md proof sketch's 'det=1 + real trace ⇒ unit circle' step drops the essential t²<4 hypothesis (non-sequitur as written), and the q-Reeb-phase identification θ=2hπ↔Vol(4_1) is conceptual/asserted (the block concedes this at md:101-102). Recommend: instantiate the Lean lemma for M_{4_1} (or relabel the proposition as conditional), and add t²<4 to the .md sketch."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

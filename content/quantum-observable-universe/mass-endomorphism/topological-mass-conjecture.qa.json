@@ -1598,7 +1598,252 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Stated as a conjecture (decomposition equation); not asserted as proved, so falsity is not the right axis. The decomposition shape itself is not obviously false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-conjecture.lean:178-186 instance trivialVortex sets holonomy=0, N=0, mass=0, decomp := by simp",
+        "notes": "The downstream theorems (mass_unique, mass_nonneg, mass_eq_holonomy_of_flat, mass_gt_holonomy_of_dilog_pos, mass_mono_of_extra_dilog) are genuine and proved from decomp. But the only supplied instance is the trivial N=0/mass=0 vortex, which encodes none of the conjectural content (the docstring admits this). The conjecture class itself is content-bearing (carries the decomp field), so this is a warn, not a fail: the §3b-cond hypothesis is discharged only by a degenerate instance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting: the decomposition is an open conjecture with three explicit proof obligations (.md lines 39-53), not a derivation that assumes its target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".ts:4 label 'prop:topological-decomposition-mass' + builder proposition(); title 'Conjectural Topological Decomposition of Mass'; .md:29 'The present conjecture'; .lean:7 'conjectural' and axiomatized as a class",
+        "notes": "Block kind is 'proposition' and label prefix 'prop:' but the content is explicitly a conjecture (title, .md prose, Lean class-axiomatization all say conjectural). Per AGENTS.md §3b, a statement carrying an unproved conjectural claim should be kind 'conjecture' (conj: prefix). Labelling it a proposition overclaims its epistemic status. The Lean correctly axiomatizes it as a class, but the .ts manifest's provable kind is inconsistent."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:45-48 'N is determined by the genus of ϱ's brane'; .md:50-53 z_i = |V̂_i(q)| algebraic-volume magnitude",
+        "notes": "N (number of exceptional divisors) and the blow-up centres z_i are asserted to be determined by the brane genus / generator volumes but the determination is itself proof obligation 2 and 3 (unproved). Not a calibration leak into a numerical prediction; flagged minor as an under-specified-but-disclosed parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation chain inside the block — it is a conjecture statement plus relationship discussion; the three proof obligations are openly listed as unproved."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".lean:68-82 class TopologicalDecompositionMass with decomp field; downstream theorems lines 94-168 proved unconditionally from decomp",
+        "notes": "The Lean does NOT prove the conjecture (correctly — it axiomatizes it as a class hypothesis). The downstream theorems prove only generic consequences of an abstract 'mass = holonomy + Σ dilog' equation over an OrderedAddCommMonoid; they do not touch the substantive content (holonomy = descent trace, dilog = Φ_q evaluation, finite blow-up locus). This is acceptable §3b-cond conditional-class practice, but the Lean's structural results are far weaker than the .md's three proof obligations suggest, and the sole instance is trivial — warn for the gap between Lean coverage and narrative claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "uses cor:quantum-dilogarithm; -- Ref: are [manuscript] internal labels, not external misattributions. No external citation invoked for an unsupported result."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:10 ‖Hol_∇(ϱ₀;G)‖ Killing-form norm; .md:47 'contributing non-by definition' (garbled phrase); .md:53 z_i = |V̂_i(q)|",
+        "notes": ".md:47 contains a corrupted phrase 'contributing non-by definition to m(ϱ)' (apparently 'non-trivially' was mangled), leaving the finiteness criterion ambiguous. The 'algebraic-volume magnitude' V̂_i is not defined in-block. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match claimed; pure structural conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "mass = holonomy + Σ non-negative transients is dimensionally and physically coherent (mass ≥ 0, additive over localized contributions). No conservation/units violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing; conjecture with Lean-only formalization (validation: not_checked in .ts:8)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ddadbea91ba4",
+          "ts": "8077656e4dff",
+          "lean": "e438d7744ca0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "VERDICT: minor-revision. referee_argument: The block is honest as a conjecture in its prose and Lean (correctly class-axiomatized with proved downstream consequences). The principal objection is the kind/label mismatch — it is filed as a 'proposition' (prop:) while every textual and Lean signal says 'conjecture'; per AGENTS.md §3b an unproved claim of this kind must be kind 'conjecture'. Secondary: the only Lean instance (trivialVortex) is degenerate (mass=0), so no non-trivial witness of the decomposition exists, and a garbled clause at .md:47 obscures the finiteness criterion. Re-kind to conjecture and supply (or honestly defer) a non-trivial instance."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

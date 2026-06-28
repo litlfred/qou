@@ -1785,7 +1785,253 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "decide is used only for spacetime_color_card (Fintype.card (Fin 2 ⊕ Fin 3) = 5), a justified finite computation, not masking an incomplete structural goal. Other proofs are genuine simp/Mathlib-lemma derivations."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "All three propositional claims are correct and sorry-free in Lean: faithfulness (colorSpacetimeEmbed_injective, color-spacetime-s5-factorization.lean:61-65), orthogonal fixing (color_fixes_spacetime / spacetime_fixes_color, lines 71-79), and divisibility-triviality of ℝ→finite homs (winding_hom_to_finite_trivial, lines 109-119). The 2+3=5 count is `decide` (line 51)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The Lean lemmas are non-trivial (group-embedding injectivity, fixed-point computations, divisible-group character vanishing); none is `: True` or self-assuming."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Pure group/representation combinatorics; no target value is assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The Proposition title and prose claim 'color and spacetime are orthogonal factors of the Bring Galois group' and identify (x0,x1)=spacetime, (x2,x3,x4)=color, mass=‖tr_M‖, EM=arg tr_M (color-spacetime-s5-factorization.md:1-13, lean:14-29). The Lean only proves the abstract group facts about S₂×S₃↪S₅ and ℝ→finite triviality; it does NOT establish that the H₂⊕H₃ irreps ARE Bring's coordinates, that the (2|3) assignment to spacetime|color is forced, or that arg tr_M is the EM phase. Those physical identifications are asserted, not derived.",
+        "notes": "The combinatorial core is sound; the conclusion 'these five match Bring's five coordinates, split into spacetime/color' (md:21-26) is an interpretive overlay beyond what the proposition's Lean proves."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No free parameter; the (2,3) block sizes come from prop:cohomological-embedding strand counts (md:20-23)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:39-40 'Color and the spacetime sector are therefore independent coordinates on one object — coupled only by the S₅ elements outside S₂×S₃, which rotate spacetime indices into color indices' — the 'therefore' is supported by parts (1)-(2) for the SUBGROUP S₂×S₃ only; the claim that the OUTSIDE elements 'rotate spacetime into color' is an additional assertion about S₅\\(S₂×S₃) not proved by the listed lemmas.",
+        "notes": "Minor gap: the coupling-channel claim goes slightly beyond the fixed-point lemmas."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The .md Proposition asserts a physics-laden statement (color/spacetime sectors of the Bring Galois group acting on tr_M, mass=modulus, EM=phase), but the Lean (color-spacetime-s5-factorization.lean) proves strictly the group-theoretic skeleton: S₂×S₃↪S₅ faithful + orthogonal fixing + polar decomposition of a generic ℂ scalar (trace_polar, lines 87-89) + ℝ→finite triviality. The 'mass/EM/color = three structures on the one trace object' framing (lean docstring lines 14-29) is documentation, not a proved bridge to H₂(q)⊕H₃(q).",
+        "notes": "validation:'validated' on the ts (line 9) is defensible for the three stated propositional parts; the divergence is that the rich .md narrative is broader than the lemmas. The lemmas faithfully cover parts (1),(2),(3) as the .md §Lean section (md:54-62) claims."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "-- Ref: [jones1985], [neumann-zagier1985] (lean:36-37) are appropriate for Markov-trace / hyperbolic-volume context; not load-bearing for the proved group lemmas but not mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The assignment of WHICH 2 of the 5 irreps are 'spacetime' and which 3 are 'color' is fixed by fiat (the H₂ block vs H₃ block, md:21-28) rather than by an intrinsic invariant; 'the substrate Galois group S₅' acting on Bring's coordinates is asserted as background (md:7-8) without definition in-block.",
+        "notes": "The split is convention-driven; a referee would ask what forces (x0,x1)=spacetime rather than the labelling being chosen to match."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical/experimental match in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Identifying a rank-2 trace block with 'spacetime' and a rank-3 block with 'color' (SU(3) has 3 colors — plausible) and arg tr_M with electromagnetism (md:9-13, lean:16-21) are bold physical identifications; the color=3 matching is suggestive but the spacetime=2 identification (vs 4 spacetime dimensions) is the kind of mapping a domain expert would question.",
+        "notes": "Speculative physical labelling; the math (orthogonal S₂×S₃ factors) is solid, the physics dictionary is the contestable part."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Lean lemmas are machine-checkable (sorry-free, validation:'validated'); no external witness needed and none claimed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e32326931ff8",
+          "ts": "84093ac161cd",
+          "lean": "211d78726285"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict=accept-with-revisions. Strongest objection: the Lean proves a clean, correct group-theory skeleton (S₂×S₃↪S₅ faithful + orthogonal fixing + ℝ→finite triviality), but the Proposition's headline and prose load it with physical identifications (these 5 irreps ARE Bring's coordinates; 2=spacetime, 3=color; mass=‖tr_M‖, EM=arg tr_M) that the lemmas do not establish.",
+        "notes": "referee_argument: The three formal parts are genuine and sorry-free — credit where due. But the proposition should either (i) restrict its claim to the proved group facts, or (ii) supply the missing bridge lemmas tying H₂(q)⊕H₃(q) irreps to Bring's coordinate split and tr_M's modulus/argument to mass/EM. As written, the math is over-narrated as physics."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

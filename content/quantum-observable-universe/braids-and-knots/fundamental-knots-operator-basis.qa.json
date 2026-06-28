@@ -280,7 +280,236 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Spot-checked knot facts: trefoil 3_1=T(2,3) braid σ_1^3 with Vol=0 (correct, torus); Hopf=T(2,2)=σ_1^2 Vol=0 (correct); figure-eight 4_1 (σ_1σ_2⁻¹)² Vol≈2.0299 (correct); Borromean L6a4 (σ_1σ_2⁻¹)³ Vol≈7.328=8G — verified 8·Catalan=7.327724753 (correct); dim H_3(q)=3!=6 (correct)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "fundamental-knots-operator-basis.md:26 'The photon is ... the four-term element of H_3(q) whose two-photon products generate the rest of the spectrum.'",
+        "notes": "The generation claim ('two-photon products generate the rest of the spectrum') is a strong structural assertion stated as established fact in a reference table with no in-block proof or witness pointer. Minor because the block is explicitly a reference/dictionary summary ('the cast of characters that the rest of the paper computes with')."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "fundamental-knots-operator-basis.md:19 photon row carries free coefficients φ_0, φ_1, φ_01 in 1 + φ_0σ_0 + φ_1σ_1 + φ_01σ_0σ_1.",
+        "notes": "The φ_i are undetermined coefficients introduced in the dictionary with no canonical-chain origin or value given in this block. Likely fixed elsewhere, but as presented they are free parameters. Minor / expository."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "prose block, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[]; only internal table data."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "fundamental-knots-operator-basis.md uses the label 'e^-' twice with different meanings: dictionary table (md:15) e^- = trefoil 3_1 with braid σ_1^3, vs operator-basis table (md:37) e^- = σ_0σ_1σ_0 (longest word).",
+        "notes": "The block itself flags this collision honestly at md:44-46 ('the basis operator e^- = σ_0σ_1σ_0 is the longest word, not the trefoil-electron of the dictionary above'), so the ambiguity is disclosed rather than hidden — hence warn, not fail."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "tr_M values quoted to 3 decimals (1.000/0.499/0.499/0.249/0.249/0.551); these are coarse, non-cherry-picked, and consistent with Markov-trace H_3 compute infra in computations/ (alpha-k-jones-markov-h3.witness.json). No precision overclaim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "fundamental-knots-operator-basis.md:15,21-23 assigns the electron to the trefoil 3_1 (Vol=0, 'massless force-carrying sector') while md:23 says mass arises as Vol(K)/ℏ_q² (positive only for hyperbolic knots).",
+        "notes": "A Vol=0 electron in the 'massless' torus sector sits in tension with the electron being massive; the block does not explain how the (Vol=0) trefoil-electron acquires mass. The framework resolves lepton mass via the Vol(4_1) muon-anchor machinery elsewhere, so this is an expository gap in this table block rather than a contradiction. Minor."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "fundamental-knots-operator-basis.md:30-37 tabulates tr_M-at-q_0 values with no witness/script reference in the block or its .ts manifest (no computation/cites fields).",
+        "notes": "Per witnessed-values discipline the numeric tr_M column would ideally be pinned to a witness; values appear consistent with computations/alpha-k-jones-markov-h3.witness.json but are not linked. Minor — reference table, low-precision."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b1e074e396d8",
+          "ts": "d375765f5b33"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: minor-revisions. referee_argument: the knot/braid/volume facts and dim H_3(q)=6 are all correct and the e^- double-use is disclosed honestly. The actionable objections are all minor/expository: (1) the φ_0,φ_1,φ_01 photon coefficients are undetermined free parameters as presented; (2) the 'two-photon products generate the rest of the spectrum' claim is asserted without in-block backing; (3) the tr_M table is unpinned to a witness; (4) the Vol=0 'massless' electron-trefoil assignment sits unexplained against the massive electron. None undermine the table's role as a reference dictionary."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

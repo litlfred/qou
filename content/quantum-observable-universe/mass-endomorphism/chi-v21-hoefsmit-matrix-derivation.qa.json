@@ -877,7 +877,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The closed form χ_(2,1)(β_n)−χ_(2,1)(β_p) = −(q⁴+1)(q²−1)/(4q³) and its Laurent form check out: at q=1 →0 (md:34, lean:135), at q=2 →−51/32 (lean:141); chi_V21_laurent_decomposition's q⁻¹^3 term parses as (q⁻¹)³=q⁻³, matching the .md, closes by field_simp+ring."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.lean:292-296 chi_v21_closed_form_u_coord unfolds chi_V21_difference_factored and closes by rfl — it restates the definition to itself (lean:96-97 def = the same RHS), so the 'theorem' is definitionally vacuous.",
+        "notes": "The headline content (matrix-product trace = closed form) is the sorry'd chi_v21_matrix_trace_identity (lean:243-251). The sorry-free theorems are genuine rational identities (factored↔polynomial, Laurent, q=1/q=2), but chi_v21_closed_form_u_coord:= rfl adds no content. The .md/.ts honestly scope this ('partial closure', 'sorry'); not an audit-dodge."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.md:71-74 claims the scalar/rational level 'establishes the closed form empirically + structurally'; but the structural (matrix-product⇒rational) link is exactly the sorry'd chi_v21_matrix_trace_identity (lean:243). The proved theorems are rational-identity consequences of an assumed closed form, not a derivation of it.",
+        "notes": "Honestly hedged elsewhere ('the missing piece is a Lean-level proof tying the matrix-product to the rational form', md:73-74), so this is a minor warn — the abstract verb 'establishes ... structurally' slightly overstates what the sorry-free content shows."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The Laurent-growth explanation (md:38-53) coherently maps each Laurent term to its ε^k growth; rational identities follow by field_simp+ring as stated."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.md:36 table asserts 'All theorems sorry-free'; the .lean's central matrix-product trace theorem chi_v21_matrix_trace_identity is a sorry (lean:251). The .md tooltip table (md:28-36) lists only the 5 rational identities, but the bald line 'All theorems sorry-free' (md:36) is false for the file as a whole.",
+        "notes": "The block-level claim that maps to the actual headline (matrix trace = closed form) is unproved in Lean and backed only by sympy. The .ts authorNotes scope this honestly ('proof marked sorry'), but the .md line 36 'All theorems sorry-free' contradicts lean:251 and would mislead a reader who stops at the table."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites hoefsmit1974 (Hoefsmit seminormal form — references.ts:3408), jones1985 (Markov trace — :1487), wenzl1988 (Hecke A_n — :3443); all appropriate for the V_(2,1) Hoefsmit irrep / Hecke representation context."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.md:3 title text '— partial closure (item 1 of ).' has a dangling empty cross-reference ('item 1 of '). Also lean:19-22 notes d_1/d_2 are 'swapped relative to the YB-cubic-compatible form' — two incompatible conventions for the same matrix entries coexist, reconciled only by the invariance remark.",
+        "notes": "The d_1↔d_2 swap is flagged and argued harmless (character difference invariant under swap), so it is documented ambiguity rather than an error. The empty '(item 1 of )' reference is a minor authoring defect."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The closed form is exact-symbolic (sympy.cancel+factor), not a numerical near-match; no q0-anchor dependence (the identity is in formal q)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "pure representation-theoretic identity; no direct physical observable claim in this block."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "chi-v21-hoefsmit-matrix-derivation.ts:18-20 sets computation.script = 'computations/probe_per_wedderburn_block_ck.py' and lean:99/237 cite per-wedderburn-block-ck.witness.json as the empirical backing for the sorry'd theorem; but both files now live under _deprecated/ (./_deprecated/probes/probe_per_wedderburn_block_ck.py, ./computations/_deprecated/per-wedderburn-block-ck.witness.json) — the active paths do not exist.",
+        "notes": "The sole evidence for the headline (sorry'd) matrix-trace identity is a deprecated/relocated probe+witness. The .ts computation.script path is dead, so a reader cannot reproduce. The witness itself (computedAt 2026-05-17, commit c2f93bb) predates its move to _deprecated. Either restore/repoint the script+witness or downgrade the claim to unbacked."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0b05c10e0f08",
+          "ts": "3d8e4b7c6100",
+          "lean": "ed2cbf043c9f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The headline matrix-product⇒closed-form claim is a Lean sorry (lean:251) backed only by a now-deprecated probe+witness (ts:18-20 path dead under _deprecated/), while md:36 states 'All theorems sorry-free'.",
+        "notes": "verdict: minor-revision. referee_argument: 'The sorry-free Lean content (5 rational identities) is correct and genuinely substantive, but it is downstream of an *assumed* closed form, not a derivation of it. The actual claim — that the 11-crossing Hoefsmit matrix-product trace yields −(q⁴+1)(q²−1)/(4q³) — is sorry and its only evidence (probe_per_wedderburn_block_ck.py + per-wedderburn-block-ck.witness.json) is deprecated/relocated. Fix: (1) repoint computation.script to the live path or restore the witness; (2) correct the .md line 36 to scope sorry-freeness to the rational identities only.' The block is honestly self-described in .ts authorNotes; the defects are the dead compute path and the over-broad 'all sorry-free' line."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:42.208Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -2004,6 +2004,24 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "qbeta-per-block-chi-closed-forms.ts:19-21 vs .lean:122,320-329",
+        "notes": "The .ts lean.ref points to qou:QOU.BraidKnot.chi_block_antipode_pairing (the main proved theorem), good. But the Lean file also contains delta_tau_M_surrogate_taylor_coeff_2 (line 320) which is a `sorry` with a [manuscript] Ref — and crucially the surrogate Delta-tau_M machinery (Extensions #1,#2,#5) proves facts about a NON-CANONICAL object the .md itself says is not the real Markov trace. The .md claims 'Sorry tally: zero' (md:151) which is FALSE: the Lean has an explicit sorry at line 329 (taylor_coeff_2). That is a direct narrative-vs-Lean divergence on a verifiable claim."
       }
     ],
     "da-false-claim": [
@@ -2039,6 +2057,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "qbeta-per-block-chi-closed-forms.lean:122-126",
+        "notes": "Verified by CAS: chi_(1,1,1) = q^-4 * chi_(3) holds identically; all three blocks vanish at q=1; antipode pairing and (q^2-1)-factor theorems are correct and proved sorry-free in Lean by field_simp/ring. The .md proof line 'simplifies to 1/q^5 = q^{-4}.1/q' is correct (q^{-4}.q^{-1}=q^{-5})."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2071,6 +2106,22 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "chi_lambda(Delta_{T_beta})(q) base ring is ℝ with q>0 stated; archimedean constructs (Real.sqrt in markov_parameter) are confined to Extension #4 behind a conditional class per §3b-cond. Regime and base ring are explicit."
       }
     ],
     "da-reproducibility": [
@@ -2103,6 +2154,24 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "qbeta-per-block-chi-closed-forms.md:151-156; .lean:320-329",
+        "notes": "Witnesses qbeta-per-block-paper-closed-forms.witness.json and qbeta-c3-multiblock-recursion-attack.witness.json both exist; the proved closed forms reproduce under CAS. However the .md's explicit 'Sorry tally: zero' (md:151) contradicts the live `sorry` at .lean:329 — a reproducibility/accuracy defect in the prose's self-report of the Lean state. Did not verify scriptHash/scriptCommitSha drift on the two witnesses (not loaded), so flag only the prose contradiction."
       }
     ],
     "da-vacuous": [
@@ -2135,6 +2204,22 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proved content (three exact rational closed forms, antipode pairing, vanishing-at-1, q^2-1 factor) is non-trivial and discharged by genuine ring/field_simp arithmetic, not tautology. The one `sorry` (taylor_coeff_2) is honest and cited."
       }
     ],
     "da-hidden-dof": [
@@ -2167,6 +2252,22 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The surrogate y_lambda weights are introduced explicitly and labelled non-canonical diagnostic, not smuggled as a derived ingredient. No off-menu free coefficient enters a production prediction."
       }
     ],
     "da-citation-misuse": [
@@ -2199,6 +2300,23 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "qbeta-per-block-chi-closed-forms.ts:10; .lean:59,70,82,93",
+        "notes": "[hoefsmit1974] is correctly invoked for the seminormal representation matrices of H_3 from which the per-block characters are computed; appropriate attribution."
       }
     ],
     "da-referee-verdict": [
@@ -2220,8 +2338,117 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict=minor-revision. referee_argument: Mathematically the strongest block of the five — three exact per-block character closed forms, the antipode pairing chi_(1,1,1)=q^-4 chi_(3), vanishing at q=1, and the q^2-1 factor are all CAS-verified and proved sorry-free in Lean, with exemplary scope discipline disavowing the open Delta-tau_M / c_3 closures. The only real objection is bookkeeping: the .md asserts 'Sorry tally: zero' while the Lean contains a live cited `sorry` (delta_tau_M_surrogate_taylor_coeff_2, line 329) and a large body of NON-CANONICAL surrogate-Delta-tau_M machinery whose relevance to the canonical chain is, by the block's own admission, only diagnostic. Correct the sorry-count claim and the block is clean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Closed forms are sourced from the seminormal Hoefsmit matrices (witness) and proved as q-identities; no back-fitting to an experimental Q_beta target. The block explicitly disavows the c_3=-2 closure."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "qbeta-per-block-chi-closed-forms.md:43-64",
+        "notes": "Unusually disciplined scope control: the .md and Lean headers explicitly list what is NOT established (Delta-tau_M closed form open, c_3=-2 only NEAR-MATCH, f-map open, surrogate y_lambda non-canonical). The surrogate is repeatedly flagged non-canonical. No overclaim."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Each proved step is a verified rational identity; the 'structural insight' about the shared -2 ε-order coefficient ((3) and (1,1,1) both -2, verified by CAS) follows from the antipode pairing as claimed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "qbeta-per-block-chi-closed-forms.md:58-64",
+        "notes": "The block does not stake a precision claim; it explicitly routes the fragile c_3=-2/cross-anchor-swing issue to the 1ppq-qbeta ledger and labels it NEAR-MATCH, exactly per the AGENTS.md tiered-reporting discipline. The proved facts are exact algebraic identities, not numerical matches."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pre-archimedean algebraic identities; no direct physical-observable claim in this block."
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

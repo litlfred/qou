@@ -835,7 +835,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:30-39 'A chiral example: trefoil': states CS(3_1) = ±π²/6 is 'the chirality-twisted depth-3 period in P_3/P_2'. The trefoil is non-hyperbolic (Vol=0, md:33), so D(z)=0 and the period-theoretic content is degenerate; AGENTS.md §7b explicitly flags trefoil Bloch–Wigner/CS arguments as a recurrent failure mode ('non-hyperbolic → D(z)=0').",
+        "notes": "As a remark it makes no formal claim, but the trefoil CS example asserts a depth-3 period structure on an object the corpus's own guidance (§7b audit precedent) warns is degenerate. The claim 'CS(3_1)=±π²/6 is sign-flipped under bar' is the torus-knot CS value, but tying it to a P_3/P_2 motivic period via the same e_λ pairing is not established (the depth-3 witness is conjectural). Soft flag — remark register."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The remark has genuine interpretive content (bar-grading of Goncharov period classes, self-conjugate↔amphichiral correspondence) and correctly sets interprets: prop:hecke-baer-star-generic (ts:7). Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation of a target value; the remark organizes known period/chirality structure under the bar involution. No back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:43-62 asserts the bar involution preserves the depth filtration and each G^{(n)} splits into ± eigenspaces mapping under τ_arch to P_n(ℝ) / i·P_n(ℝ), with 'Hyperbolic volume sits in P_2^+, Chern–Simons in P_3^-' stated flatly. This entire structure is predicated on conj:gb-depth-period-correspondence + conj:bring-trilog-depth-3-witness (md:12-13, both conjectural).",
+        "notes": "The remark presents a conjecture-conditional categorical lift (the τ_arch → period map is itself conjectural) as an established 'inherited bar-grading' on Goncharov classes. Even granting the remark register, statements like 'So each Goncharov period class P_n/P_{n-1} inherits a bar-grading' (md:59) are written as derived consequences, not as conjectural interpretations. The falsifiability section (md:74-88, status 'open') is the appropriate hedge but the body does not consistently carry it."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter introduced; the bar involution and depth filtration are fixed structures. No DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:18-21 table: the row pairs self-conjugate λ ↔ amphichiral knot and chiral λ-pair ↔ chiral knot, asserting *(e_λ)=e_{λ'} mirrors K↔K̄. The link from 'bar acts by partition transpose on e_λ' to 'this categorifies orientation reversal of the knot' is asserted, not derived — the correspondence between Young-diagram transpose and knot mirror is the conjectural content (conj:gb-depth-period-correspondence).",
+        "notes": "The inference 'bar↔transpose, therefore self-conjugate↔amphichiral↔real period' chains through the unproven depth-period correspondence. Plausible analogy, but the 'therefore' carrying transpose-symmetry to knot-amphichirality is a conjectural bridge presented as structural. Remark register softens this."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark block, no .lean sibling and none required (kind=remark). Nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites:[bloch2000] (ts:9); bloch2000 exists (references.ts:579) and Bloch's higher-regulator/period work is appropriate backing for the Goncharov period-class / Bloch-regulator framing. Correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:48,59 uses G^{(n)}(H_q) (depth filtration), P_n(ℝ), 'Tate twist', and τ_arch without in-block definition; md:55-58 'imaginary periods (Tate-twisted)' equates G^{(n),-} → i·P_n(ℝ). The precise meaning of 'period with a Tate twist' (md:20) and the (2πi)^n factor is gestured rather than defined.",
+        "notes": "Several load-bearing objects (depth filtration G^{(n)}, the τ_arch period map, the Tate-twist normalization) are used as known but defined only by cross-reference to conjectural blocks. A reader cannot pin whether G^{(n),-}→i·P_n is a definition or a claim. Minor in remark register."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The one numerical anchor (Vol(4_1)=2Cl_2(π/3), md:27; 5_2 Vol≈2.8281, CS≈-0.1530π², md:79) are exact/known topological constants, not fits. The 5_2 test is explicitly proposed as an open falsifiability check (md:74-88), not claimed as a match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Mathematical/topological remark (knot chirality, period classes); no physical-observable claim with units to check."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached (ts has no computation field); cited topological constants (Vol(4_1), 5_2 invariants) are standard and externally verifiable. Nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "abb8ea6565e3",
+          "ts": "f97a07b047d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict: accept-as-remark-with-hedging. Strongest objection: the bar-grading of Goncharov period classes and the self-conjugate↔amphichiral correspondence are presented as inherited/structural consequences but rest entirely on two conjectures (gb-depth-period-correspondence, bring-trilog-depth-3-witness), and the trefoil depth-3 CS example sits on the §7b-flagged non-hyperbolic degeneracy.",
+        "notes": "referee_argument: As an interpretive remark with interprets: set, this is legitimate and the bar↔transpose action on e_λ is solid (from the idempotent block). The problem is tone: conjectural categorical lifts ('inherits a bar-grading', P_2^+/P_3^- assignments) are stated declaratively. Revise to mark the depth-period map and the period-class grading as conjecture-conditional, and either drop the non-hyperbolic trefoil example or label its degeneracy per §7b."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.980Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

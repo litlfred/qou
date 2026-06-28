@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/quantum-su2.lean"
   },
   "source_hashes": {
-    "md": "8f6bdc1a23d2",
+    "md": "a99db54a94e4",
     "ts": "99f98f943a98",
     "lean": "787bf59c0448"
   },
@@ -915,7 +915,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The U_q(su(2)) relations (md:6-13) KEK⁻¹=q²E, KFK⁻¹=q⁻²F, [E,F]=(K−K⁻¹)/(q−q⁻¹) are the standard Jimbo–Drinfeld presentation; correct. Lean qInt_one/qInt_two ([1]_q=1, [2]_q=q+1) verified by field_simp;ring."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Definition block with real content (generator data + relations); qInt theorems are non-trivial small lemmas, not :True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Definition names a construction; no claim beyond the standard quantum group."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "quantum-su2.md:16-18 'In the classical limit q→1, K reduces to exp(he_3) and the relations recover the su(2) commutation relations.' The q→1 limit of [E,F]=(K−K⁻¹)/(q−q⁻¹) recovering [E,F]=H requires the standard Taylor argument (K=q^H), which is asserted without the intermediate step; 'reduces to exp(he_3)' introduces an h-parametrisation not defined in this block.",
+        "notes": "Standard fact, but the limit statement skips the K=q^H identification and the parameter h is undefined here. Minor expository gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "quantum-su2.md states the FULL relations including KEK⁻¹=q²E, KFK⁻¹=q⁻²F, [E,F]=(K−K⁻¹)/(q−q⁻¹). quantum-su2.lean:36-51 `QuantumSu2` encodes ONLY K_inv_left/K_inv_right (KK⁻¹=1); the E/F generators are declared but the defining relations KEK⁻¹=q²E, KFK⁻¹=q⁻²F, [E,F]=… are ABSENT from the structure. The Lean models a near-trivial 'ring with two distinguished invertible-pair elements', not U_q(su(2)).",
+        "notes": "proof-statement-integrity: the Lean definition is materially weaker than the narrative definition — the characteristic q-deformed relations (the whole point of the object) are not encoded. A `definition` block requires its Lean to capture the named construction; here it captures a small fragment. The qInt lemmas are about the scalar [n]_q, not about the algebra relations, so they do not compensate."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "lusztig1993 (Introduction to Quantum Groups) correctly grounds the U_q presentation and q-integers."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "quantum-su2.md:1 declares q∈ℂ* with 0<|q|≤1 (archimedean, complex). quantum-su2.lean:30 sets R_q=LaurentPolynomial ℤ and q_ne_one (formal indeterminate, no |q|≤1 / 0<q expressible). The regime '0<|q|≤1' from the narrative is not represented; also qInt uses division in R_q (a non-field) — qInt_two relies on q−1≠0 but R_q=ℤ[q,q⁻¹] is not a field, so (qⁿ−1)/(q−1) is only well-defined as a Laurent polynomial when the division is exact (it is, but the `/` is the GroupWithZero/junk-division on a non-field).",
+        "notes": "Base-ring/regime mismatch between |q|≤1 complex (md) and formal ℤ[q,q⁻¹] (lean); minor since the q-integer identities hold as polynomial identities."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "rendered SVG hash e090dbcaa151 present; no compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a99db54a94e4",
+          "ts": "99f98f943a98",
+          "lean": "787bf59c0448"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=minor-revision. referee_argument: The narrative definition is correct and standard, but the Lean sibling (required for a `definition` block) under-encodes the object: it captures only KK⁻¹=1 and omits the three defining q-relations (KEK⁻¹=q²E, KFK⁻¹=q⁻²F, [E,F]=(K−K⁻¹)/(q−q⁻¹)) that make it U_q(su(2)). The structure as written would be satisfied by many algebras that are not the quantum group. Add the relation fields (over generic R or with E,F,K in the Algebra) so the formalisation matches the named construction."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.900Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

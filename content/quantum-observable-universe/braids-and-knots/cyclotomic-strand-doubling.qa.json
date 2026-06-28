@@ -1656,7 +1656,249 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Main claim Φ_8(X)=Φ_4(X²) i.e. X⁴+1=(X²+1)∘X² is a true textbook identity; the refuted strand-doubling *categorical* hypothesis is explicitly flagged REFUTED in the .md, not stated as a live claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proposition is a genuine algebraic identity with a real proof; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "cyclotomic-strand-doubling.lean:85-94 theorem cyclotomic_pow_two_strand_doubling, docstring lines 78-84",
+        "notes": "The general 'powers-of-two strand-doubling' theorem Φ_{2^{k+1}}=Φ_{2^k}∘X² is stated with sorry and its docstring presents the powers-of-two cyclotomic tower as a real 'structural pattern hypothesised for atomic-step pairs' — the very tower the .md (lines 76-88) marks REFUTED. The pure algebraic identity is actually true for k≥1 (since 2|2^k), but the docstring over-attaches the falsified physical interpretation. Not block-level (lean.ref targets only the valid main theorem)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free parameter; pure ℤ[X] identity. The Φ_8² empirical prefactor is honestly labeled 'mechanism OPEN'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Proof (Φ_4=X²+1, Φ_8=X⁴+1, compose) is a valid 3-step computation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "cyclotomic-strand-doubling.lean:62-69 docstring of cyclotomic_8_eq_cyclotomic_4_comp_X_sq vs cyclotomic-strand-doubling.md:68-88",
+        "notes": "The Lean docstring of the lean.ref target asserts the refuted interpretation as live fact: 'The substitution X → X² is the strand-doubling map lifting B_2 (2-strand single nucleon) to B_4 (4-strand deuteron, 2 nucleons × 2 isospin channels)' and calls the identity 'load-bearing ... for the categorical interpretation of Φ_8²'. The .md (Historical note, lines 68-88) declares exactly this strand-doubling categorical hypothesis FALSE. The Lean statement proved (the algebraic identity) is correct and weaker-than-narrative is not the issue; the issue is the docstring carries a falsified categorical claim the .md retracts — a stale Lean/narrative divergence the QA reader will hit. Likewise cyclotomic_8_irreducible docstring (lines 139-142) restates the Φ_8² 'multiplicity-2 structural' reading without the OPEN/REFUTED caveat."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "cyclotomic-strand-doubling.ts:13-15 cites:[habiro2000]; cyclotomic-strand-doubling.lean:34,92; references.ts:1676,1706",
+        "notes": "cites habiro2000 (DOI 10.2140/gt.2000.4.227 = 'colored Jones of simple links') for Habiro-RING / cyclotomic-integrality content. references.ts notes (lines 1676,1706) explicitly state QOU citers intending the Habiro ring Ẑ[q] (q-Pochhammer/cyclotomic completion) 'were re-keyed to habiro2004cyclotomic' — habiro2000 does not contain the cyclotomic-ring/integrality result invoked here. Lean line 92 also cites '[habiro2000] §3 — the substitution X → X^p as a strand-multiplication map on braid generators', an attribution not supported by that paper. Use habiro2004cyclotomic / habiro2002."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Φ_n, composition ∘, ℤ[X] all standard and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "cyclotomic-strand-doubling.md:24-34 (3-row Φ_8² table)",
+        "notes": "The 'convention-invariant Φ_8² across all atomic-step pairs' is an empirical observation over only three pairs (D−n, ³He−D, ⁴He−³He) with no error bars and an explicitly OPEN mechanism; the cited support is audit .md docs, not a reproducible witness in the block. The claim is honestly hedged as OPEN so this is a minor robustness note, not a derived-as-fitted failure."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Block makes no standalone physical-observable claim; the physics-interpretation is flagged OPEN/refuted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Cited witnesses resolve: computations/habiro/habiro-coefficients-atomic.witness.json and computations/probes/habiro-expansion-atomic-probe.witness.json exist (in subdirs). Main identity is decide-verifiable. No stale-value contradiction in the proposition itself."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2d601314ddf7",
+          "ts": "797e41f50237",
+          "lean": "8c827f239e76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: minor-revision. The core proposition Φ_8=Φ_4(X²) is correct, sorry-free, and well-scoped (the falsified strand-doubling reading is openly retracted in the .md). Strongest objection (referee_argument): the Lean file's docstrings (main theorem lines 62-69, the sorry'd general theorem 78-94, irreducibility 139-142) still narrate the FALSIFIED strand-doubling/Φ_8²-multiplicity interpretation as live fact, contradicting the .md retraction — fix the docstrings to match the .md, drop or honestly-caveat the sorry'd cyclotomic_pow_two_strand_doubling, and re-key habiro2000→habiro2004cyclotomic."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

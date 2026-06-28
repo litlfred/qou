@@ -1357,7 +1357,242 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "σ(w_k)=ζ^{-k}w_k verified directly: substituting x_j↦x_{j+1} and reindexing gives the ζ^{-k} phase; the Lean theorem lagrange_resolvent_diagonal_action proves exactly this. w_0=0 from Σx_i=0 also correct (lean:79-85)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean proofs are substantive (root-of-unity reductions + fin_cases + ring), not trivial."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "lagrange-resolvent-transform.md:26-31 states three n=5 constraints (w_0=0, quadric w_1w_4+w_2w_3=0, cubic w_1²w_3+w_4²w_2+w_2²w_1+w_3²w_4=0), and md:34 calls the n=5 formalization a 'non-trivial mathematical contribution.' But only w_0=0 and the diagonal action are formalized in the .lean; the quadric and cubic transforms are not proved (the md itself parenthetically admits this at line 34).",
+        "notes": "Self-flagged, so minor: the 'formalization' novelty claim is broader than what the Lean delivers (2 of the 3 stated constraint transforms are unformalized)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The .md proposition asserts the quadric (md:28-29) and cubic (md:30-31) constraint transforms as part of the proposition's claim, but lagrange-resolvent-transform.lean only proves lagrange_resolvent_w0_vanishes (part 1, special k=0) and lagrange_resolvent_diagonal_action (part of the general statement). The constraint-transform claims (item 2, n=5 quadric/cubic) have no Lean counterpart.",
+        "notes": "Lean proves a strict subset of the .md proposition. Honestly noted in md:34, so minor, but it is a genuine narrative⊋Lean gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "bring1786 cited for the Bring-surface context (lean:22) and the DFT/Lagrange-resolvent attribution is standard; no misattribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "ζ=e^{2πi/5} fixed; the √n normalization and the action σ:x_j↦x_{j+1} are explicit. Base ring is ℂ (lean uses Complex), md:1 flags the ℝ-specialisation note appropriately."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure Lean; no witness/compute. lean.validation is 'not_checked' (lagrange-resolvent-transform.ts:9) but that is a build-status flag, not a reproducibility concern for the math."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "1e37cd51a4d3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Verdict: minor-revision. Core results (diagonal action, w_0 vanishing) are correctly stated and formalized. Strongest objection: the proposition advertises three n=5 constraint transforms and a novel formalization (md:30-34) while the .lean formalizes only the diagonalization and one linear constraint; the quadric/cubic transforms are asserted, not derived.",
+        "notes": "referee_argument: scope of the formalized claim is narrower than the proposition's stated content; tighten the novelty wording or formalize the remaining constraints."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.881Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

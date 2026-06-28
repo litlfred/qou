@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The Kronheimer–Mrowka theorem (every nontrivial knot group has a nonabelian SU(2) rep, hence PSL(2,ℂ)) is correctly stated. Standard result (Ann. Math. 2004)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Interpretive remark with real content connecting K-M to nonabelian gauge holonomy."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "kronheimer-mrowka.md:5-7 'this guarantees that every non-trivial knot type contributing to the fibre bundle carries a non-abelian gauge holonomy'",
+        "notes": "K-M guarantees *existence* of a nonabelian SU(2) representation of the knot group; the leap to 'every non-trivial knot type ... carries a non-abelian gauge holonomy' in the QOU fibre bundle presumes the QOU holonomy realizes that particular representation. That identification is asserted, not argued — a mild interpretive overreach. Acceptable hedging for a remark but flagged."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "kronheimer-mrowka.md:7-9 'The restriction to traceless elements of SU(2) aligns with the category-theoretic setup ... where the representation factors through the adjoint form.'",
+        "notes": "K-M produce a rep with traceless meridian image, but 'factors through the adjoint form' is a separate categorical claim about the QOU setup asserted without a connecting lemma; the 'aligns with' does work the argument does not supply. Minor logical gap typical of a remark."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark, no .lean sibling required or present."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "kronheimer-mrowka.ts: no cites[]; kronheimer-mrowka.md:1 names 'Kronheimer and Mrowka' with no bibliographic key",
+        "notes": "The remark invokes a specific deep theorem ('Witten conjecture'/instanton knot homology, K-M Ann. Math. 2004) by author name but the .ts cites[] is empty and the .md gives no citation. Not a mis-attribution, but the load-bearing external result is uncited — a reader cannot verify it. Add the K-M reference to cites[]."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "'non-trivial knot', SU(2), PSL(2,ℂ), traceless are standard and unambiguous in context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No quantitative physical claim; 'non-abelian gauge holonomy' is qualitative and not in tension with any measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "78b222bd04a5",
+          "ts": "ca47f996ee20"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: minor-revision. Correctly states a deep external theorem and uses it as motivation. Strongest objection (referee_argument): the load-bearing K-M theorem is invoked with no bibliographic citation (empty cites[]), and the two QOU bridges ('every knot type carries nonabelian holonomy', 'factors through the adjoint form') are asserted by 'guarantees'/'aligns with' rather than argued. Add the K-M citation and soften/justify the two interpretive leaps."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.450Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

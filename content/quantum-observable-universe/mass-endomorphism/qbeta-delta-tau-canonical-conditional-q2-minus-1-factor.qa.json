@@ -1784,7 +1784,243 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial. Proof is obtain + refine + unfold + rw + ring — genuine structural derivation."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Δτ_M^can(q) = (q²−1)·P^can(q) for q>0 is true: each χ_λ carries the (q²−1) factor (verified in parent Lean chi_blocks_have_q2_minus_1_factor, sorry-free field_simp), so any weighted sum factors it. Math sanity-checked numerically (chi_block_3/(q²−1) finite at q0)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "qbeta-per-block-chi-closed-forms.lean:400 normalisation axiom sum_dim_normalised is the only field of CanonicalMarkovWeightsH3 actually constraining weights, but the theorem (.lean:58-67) never uses it — the (q²−1) factorisation holds for ANY y3,y21,y111",
+        "notes": "The conditional theorem is genuinely proved (refine + rw + ring), so not vacuous in the ':=trivial' sense. But the [CanonicalMarkovWeightsH3] hypothesis is near-decorative for THIS conclusion: the proof uses only the per-block factorisation, not the normalisation axiom, so the result holds for arbitrary weights. The 'conditional on canonical weights' framing is heavier than the content requires."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting: the (q²−1) factor is a structural polynomial property of the Hoefsmit per-block characters, independent of any q_0 calibration target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Honest scope: the .md 'What this block does NOT establish' section (md:43-56) correctly disclaims the concrete weights instance, the order-1+ Taylor coeffs, and the c_k bridge. Conditional-as-conditional, not conditional-as-proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No undisclosed parameter; weights y_λ are explicit class fields and the result is parameter-free in them."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "'Substitute χ_λ=(q²−1)P_λ and factor' is a valid one-line argument; the Lean proof (rw [h3,h21,h111]; ring) discharges it without gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean theorem delta_tau_M_canonical_has_q2_minus_1_factor (.lean:58-67) proves exactly ∃P, Δτ_M^can q = (q²−1)*P under [CanonicalMarkovWeightsH3], hq:0<q — matches the .md claim including the q>1 vs q>0 regime (q>0) and the at-q=1 vanishing corollary."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites:[wenzl1988, hoefsmit1974] — Wenzl for Markov-trace weights y_λ and Hoefsmit for the H_3 seminormal χ_λ matrices; both correctly attributed for the objects used."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "P_λ defined as the parent-block witnesses (chi_blocks_have_q2_minus_1_factor), base ring ℝ with q>0 explicit, Δτ_M^can given by the displayed weighted sum. No 'the unique X' without uniqueness."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure algebraic identity; no numerical match to experiment, no q_0-pin dependence."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pre-archimedean structural statement; no physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No live computation field on this block; backing is the parent Lean (sorry-free field_simp identities), which is self-checking."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9a38424e73ec",
+          "ts": "5e14094e0626",
+          "lean": "d44acfb69d51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: accept. A clean, honestly-scoped §3b-cond conditional theorem with a real sorry-free Lean proof. referee_argument (minor): the [CanonicalMarkovWeightsH3] hypothesis is heavier than the conclusion needs — the (q²−1) factorisation never invokes the normalisation axiom and holds for arbitrary weights, so the 'conditional on canonical Markov weights' framing could be tightened (or the result stated unconditionally in the weights)."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

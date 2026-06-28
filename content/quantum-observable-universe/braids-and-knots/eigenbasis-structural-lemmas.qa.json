@@ -286,7 +286,232 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "L1 (support parity), L2 (bar=conjugation duality, stated conditional), L3 (framing GF single-pole rational) are standard ribbon/seminormal facts; eps_lambda = s^L derived, not asserted false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean names (character_support_parity, character_bar_conjugate, framing_gf_closed_form) encode substantive content; L2 explicitly a rigorous conditional on the seminormal bar-conjugate relation, not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Structural lemmas about chi_lambda; no calibration target smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Block carefully labels L2/L3 as 'rigorous conditional on a clearly stated categorical input' (md:37-39); does not claim unconditional theorem status. Conditional-as-conditional, appropriately scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "theta_lambda = q^{2c(lambda)} fixed by content c(lambda); no free coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Each lemma's conclusion derived from the named input; the 'structural backbone' interpretive paragraph (md:32-36) does not assert new logical steps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "eigenbasis-structural-lemmas.md:8 'All three are now formalised sorry-free in Lean (QOU.BraidKnot.EigenbasisStructuralLemmas)'; .ts has no sibling .lean and lean.ref is absent",
+        "notes": "The remark asserts sorry-free Lean formalisation in a named module, but the block carries no lean.ref in its .ts and no sibling .lean; the claim is unverifiable from this block's manifest. If the module is genuinely sorry-free elsewhere this is fine, but the narrative 'sorry-free' status is not backed by any lean field on this remark and cannot be checked from the triple."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Block has no cites[] and no -- Ref: (it is an interpretive remark; uses prop:confinement-categorical)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Ribbon eigenvalue theta_lambda = q^{2c(lambda)}, content c(lambda), and the seminormal bar-conjugate relation are all named; eps_lambda in {+-1} pinned to s^L."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Exact-symbolic structural lemmas; no numerical-fit claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Matter/antimatter-symmetry interpretation of L2 (md:34) is an analogy on channel weights, not a measurable physics claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "computations/eigenbasis-structural-lemmas.witness.json present, scriptCommitSha 730c1e6, scriptHash d7311af514a3",
+        "notes": "Backing probe witness exists (PR #2502 per md:40); no detected staleness drift from the block prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a6b94d9e6ef7",
+          "ts": "d0430cdd83af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor. Strongest objection (referee_argument): the remark claims 'All three are now formalised sorry-free in Lean (QOU.BraidKnot.EigenbasisStructuralLemmas)' but the block's .ts carries no lean.ref and no sibling .lean, so the sorry-free status is not auditable from this triple. Add the lean.ref or cite the file path. Otherwise the lemmas are correctly stated and appropriately scoped as conditionals."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

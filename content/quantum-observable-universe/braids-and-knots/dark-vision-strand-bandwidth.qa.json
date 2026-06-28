@@ -835,7 +835,237 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No formal mathematical proposition; explicit self-disclaimer line 31-33 'makes no further mathematical claim beyond observation'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "A remark interpreting def:observation; non-vacuous as an interpretive narrative. interprets field set correctly."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation of a target value; qualitative interpretation only."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "dark-vision-strand-bandwidth.md:27-31",
+        "notes": "Casts an empirical phenomenology ('we cannot see in the dark') as a 'structural truncation of the observation channel' with 'information capacity proportional to topological complexity'. The proportionality is asserted, not derived, and rests on two open conjectures (confinement-grading, crystal-graph). Hedged by the self-disclaimer, so warn not fail."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters or calibrations introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "dark-vision-strand-bandwidth.md:19-25",
+        "notes": "Step 2 ('maximal admissible KLR grading shift bounded above by available strand count') leans on conj:confinement-grading-correspondence, which is itself unproven; the chain low-n -> shallow crystal -> low-degree polynomial -> 'cannot encode scene' is plausibility, not an entailment. Acceptable in a remark but the 'therefore' (line 27) overstates the rigor."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark, no Lean sibling and none required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "kashiwara1991 cited for the Kashiwara crystal Cryst(sl_n); appropriate attribution for crystal-basis theory."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "dark-vision-strand-bandwidth.md:7",
+        "notes": "Writes the Hecke algebra as $H_n(R,q)$ but the chapter convention is $H_n(q)$ over a generic ring; 'information capacity' and 'crossing complexity the channel can support' are used informally without a quantitative definition. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match or fitted value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "dark-vision-strand-bandwidth.md:2-9",
+        "notes": "Physical picture (photons as unknotted strands braided by reflection; 'an act of seeing applies tau') is metaphorical. A vision scientist would object that dark-adaptation thresholds are governed by photon shot noise and rod sensitivity, not 'strand count' — the claim reframes known photometry in categorical language without a competing prediction. Interpretive remark, so warn."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0df76a04782",
+          "ts": "e783e0ee0b45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: minor-revision. referee_argument: A self-disclaimed interpretive remark that re-describes the empirical fact of dark-blindness in categorical metaphor, resting on two open conjectures. No false claim, but the 'therefore not a failure of the retina but a structural truncation' (l.27) reads as an explanatory overclaim. Acceptable as a remark; tighten the 'information capacity proportional to topological complexity' to a hypothesis."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:20.979Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

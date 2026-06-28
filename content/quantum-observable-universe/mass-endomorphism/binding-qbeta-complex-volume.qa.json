@@ -1100,8 +1100,199 @@
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      },
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revision (as a conjecture, accept-with-caveats). referee_argument: The honest core — define 𝔙∈ℂ, set binding=Re, Q_β=Im, observe the trivial reconstruction is provable, axiomatise the physical match as a class — is methodologically clean and correctly typed conjectural. Two substantive objections: (1) lean.ref/narrative divergence — the ref names the unproved ComplexVolumeMatch class while the prose's 'proved sorry-free' attaches to the trivial Re/Im identity, so 'proved' oversells what Lean delivers (major, da-lean-narrative-divergence); (2) the 'single normalisation' must match both Re and Im simultaneously yet is an unpinned free scale (hidden-dof, warn), and Im(q_0)=0 means the Q_β channel only exists at an unspecified off-q_0 evaluation (definitional-ambiguity). The c_2≈−8 / c_2=−1 'exactly what Re/Im predict' inference is weaker than stated. Fix: repoint lean.ref or re-word 'proved' to scope it to the definitional identity; pin the normalisation and the Q_β evaluation point."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "As a conjecture it is correctly typed; the only unconditional algebraic claims (bar-parity split q^{±1}=(q+q^{-1})/2±(q-q^{-1})/2; 𝔈_bind+i𝔔_β=𝔙 via Complex.re_add_im) are true. The unification is explicitly conjectural, not stated as proved fact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "binding-qbeta-complex-volume.lean:94-98 complex_volume_unification is just z=Re z+i·Im z (Complex.re_add_im); .md:89-94 advertises it as 'the complex reconstruction ... follows'",
+        "notes": "The headline 'proved sorry-free' theorem is the trivial identity that every complex number equals Re+i·Im — content-free in isolation. It is honestly labelled definitional (lean:18-21, authorNotes), and the genuine content sits in the ComplexVolumeMatch class, so this is not a disguised-vacuity violation; but a reader skimming 'proved sorry-free' should note the proved part carries no physics. The class itself is content-bearing (volume_match field), satisfying §3b-tax."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The conjecture posits binding=Re𝔙, Q_β=Im𝔙 at one normalisation; it does not derive a target from itself. The compute corroboration (c_2≈−8 net-route vs c_2=−1 brane-tower) is presented as suggestive evidence for two-real-components, not as a fitted closure."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "binding-qbeta-complex-volume.md:101-102 'at a single normalization' / lean:128 volume_match: measured_volume = fibreDefect E0 trDefect",
+        "notes": "The 'single normalisation' that aligns measured 𝔙_obs with E_0·defect is a free real (or complex) scale not pinned in-block; whether one real normalisation can simultaneously match BOTH Re (binding) and Im (Q_β) is the crux and is left open. This is a potential hidden DOF (the normalisation could absorb a mismatch in one channel), correctly fenced as conjectural rather than smuggled — hence warn not fail."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "binding-qbeta-complex-volume.md:114-124 'Two different real c_2's for the two parities are exactly what Re/Im components of one complex c_2 predict.'",
+        "notes": "The corroboration argues that finding c_2≈−8 (net-route) and c_2=−1 (brane-tower) supports 'one complex c_2 with two real parts.' But two distinct real numbers from two different routes are equally consistent with two unrelated real observables; nothing forces them to be Re/Im of a single analytic c_2 (no demonstrated Cauchy–Riemann / shared-modulus link). The 'exactly what ... predict' overstates the inferential force. Hedged within a conjecture block, so warn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".ts:8 lean.ref 'qou:QOU.MassEndomorphism.ComplexVolumeMatch' resolves to a content-bearing class, but the .md headline result advertised as proved (.md:91-94, 141-147) is complex_volume_unification / invol_descent / recurrence_invol_descent; ComplexVolumeMatch (lean:119-128) is the UNPROVED conjectural class (no instance).",
+        "notes": "The lean.ref points at the conjectural class ComplexVolumeMatch (which has no instance — it is the open input), while the prose's 'proved sorry-free' claims attach to complex_volume_unification (the trivial Re/Im identity) and invol_descent/recurrence_invol_descent (generic ring identities). The Lean theorem that the ref names does not exist as a proved statement of the .md's headline (the unification); what is proved is strictly weaker/definitional than the narrative unification claim, and the named ref is the unproved class. Mismatch between advertised-proved and what Lean actually establishes = proof-statement-integrity gap."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "binding-qbeta-complex-volume.md:103-112 fibre-level (Im(q)≠0) vs archimedean (Im(q_0)=0); .md:7 𝔙=E_0·tr_M((Π_free−1)∘𝓜)∈ℂ",
+        "notes": "𝔙 is asserted to live in ℂ at fibre level, yet at the observable level Im(q_0)=0 makes the defect real, so 𝔔_β=Im𝔙 would vanish on observables unless evaluated at a (root-of-unity) point distinct from q_0. The precise evaluation point that yields a nonzero Im (the actual measured Q_β) is not pinned — the same Re/Im-at-which-q ambiguity flagged for the intro. The STRICT caveat names it but the operational evaluation map remains underspecified."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Disclaims 'no complex mass'; observables stay real. Identifying β-decay (weak, bar-odd/sinh) with an imaginary/CS channel and binding (strong, bar-even/cosh) with a real/volume channel is a structural analogy, not a units/conservation claim a domain expert would reject outright."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".ts:19-26 computation status 'verified' witness computations/qbeta/qbeta-ck-sseries-operator-match.witness.json (exists); .md:118-119 cites c_2≈−8.0 and c_2=−1",
+        "notes": "Witness file is present, but the .ts marks computation.status:'verified' while the conjecture's lean.validation is 'not_checked'; the c_2≈−8 vs c_2=−1 numbers are cited from a Stage-B audit doc rather than re-derived in-block, and no scriptHash/scriptCommitSha freshness was confirmed here. Recommend a freshness check on the witness (q0-repin staleness class per AGENTS.md). Marked warn pending hash verification, not a confirmed staleness fail."
       }
     ]
   },
-  "updated_at": "2026-06-24T13:22:51Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

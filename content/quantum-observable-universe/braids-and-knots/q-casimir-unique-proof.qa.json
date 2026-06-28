@@ -781,7 +781,243 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "q-casimir-unique.lean:67-71 axiom QCasimir.unique_up_to_scalar_axiom has hypothesis only `_hC : forall a, C*a = a*C` (centrality) and concludes CasimirScalarEquiv d (QCasimir qs d) C — i.e. C = QCasimir + iota(r). It DROPS the eigenvalue-normalisation hypothesis the .md requires",
+        "notes": "As axiomatized, the Lean claim is mathematically FALSE: it asserts every central element differs from C_q by a ground-ring scalar. But Z(U_q(su2)) is the polynomial ring R_q[C_q] (the proof block's own md:1-2 and lean:27 say so), so C_q^2 is central yet is NOT of the form C_q + r*1. Counterexample: C := QCasimir^2 satisfies hC (central) but C - QCasimir is not in the image of iota. The narrative proposition (q-casimir-unique.md:1-6) correctly restricts to central elements OF THE FORM FE + phi(K) with the prescribed eigenvalue; the Lean axiom forgot that restriction, making the formalized statement false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-unique.lean:83-86 theorem QCasimir.unique_up_to_scalar := QCasimir.unique_up_to_scalar_axiom; the proof block prf:q-casimir-unique has no sibling .lean of its own",
+        "notes": "The 'proof' is a one-line delegation to a declared axiom, so no proof obligation is discharged. The proof-block .md (q-casimir-unique-proof.md, referenced via prf:q-casimir-unique) gives a narrative argument (centre is R_q[C_q], pin b=1 and a=0) but the Lean records it as an axiom. Combined with the false-claim above, the axiom is not merely vacuous but wrong-strength."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-unique-proof.md (prf body) pins a=0 by 'V_0: [0]_q[1]_q = 0'",
+        "notes": "Mild: the proof fixes the normalisation constant by demanding the eigenvalue vanish on V_0, which is the same normalisation built into the definition of C_q. This is self-consistent (it is how 'such a central element' is characterised) rather than viciously circular, but the uniqueness is essentially definitional pinning, not an independent derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-unique.md:7 'Mathematical Novelty: ... no novel mathematical argument is claimed'; prop .ts lean.validation 'not_checked'",
+        "notes": "The .md honestly disclaims novelty, but the proposition+proof are presented as a Lean-formalized 'theorem' (prop:q-casimir-unique with proofs:[prf:q-casimir-unique]); in reality the entire content is one external axiom whose statement is over-broad (see da-false-claim). The block overclaims to have a faithful formal uniqueness statement."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter; the scalar r is the intended degree of freedom, openly the 'up to scalar' content."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-unique-proof.md: 'Any central element therefore belongs to R_q[C_q]; in particular, the identity plus a linear term a + b C_q is the only linear-in-C_q central element'",
+        "notes": "The narrative correctly needs the 'linear-in-C_q' (degree <=1) restriction to get uniqueness — a central element of R_q[C_q] can be any polynomial. The Lean axiom omits this restriction, so the .md argument (which uses it) does not support the broader Lean statement; the 'therefore unique' step is valid only under the degree restriction the formalization dropped."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-unique.md:1-6 restricts to central elements 'of the form FE + phi(K,K^{-1}) whose eigenvalue on spin-j is [j]_q[j+1]_q'; q-casimir-unique.lean:83-86 theorem hypothesis is only (hC : forall a, C*a = a*C) with NO eigenvalue/form constraint",
+        "notes": "Direct proof-statement-integrity failure: the Lean theorem proves (via axiom) a strictly stronger and false statement (every central C differs from C_q by a scalar), while the .md states the correct weaker one (only central elements with the prescribed eigenvalue normalisation do). The Lean does not faithfully encode the narrative claim. The docstring (lean:23-31) even acknowledges 'fixed to be degree <= 1 in C_q with vanishing eigenvalue on V_0' but the axiom signature encodes none of those qualifiers."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Kassel VI.4.9 (Joseph-Letzter centre = R_q[C_q]) is the correct citation for the centre being a polynomial ring; kassel1995 resolves in references.ts."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-unique.lean:49-51 CasimirScalarEquiv y = x + d.iota r — 'scalar multiple of the identity' encoded as 'plus an embedded ground-ring element', and the eigenvalue-normalisation predicate that should restrict C is never defined",
+        "notes": "'Differ by a scalar multiple of the identity' (md) is rendered as an additive shift by iota(r) (lean), conflating 'r*1' with the general image of iota; more importantly the key restricting predicate ('has eigenvalue [j]_q[j+1]_q on every V_j') is left undefined in Lean, so 'the unique such element' has no formal referent for 'such'."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physics claim; pure algebra."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute witness; backing is the (over-broad) Lean axiom."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "51266a11086f",
+          "ts": "24e34f370b52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "notes": "verdict: major-revision. Strongest objection (referee_argument): the Lean formalization of uniqueness (q-casimir-unique.lean axiom unique_up_to_scalar_axiom, used by theorem unique_up_to_scalar) drops the eigenvalue-normalisation / degree-<=1 hypothesis that the narrative depends on. As stated in Lean it asserts EVERY central element of U_q(su2) differs from C_q by a ground-ring scalar — which is false, since the centre is the polynomial ring R_q[C_q] (so C_q^2 is a central counterexample). The .md is correct; the formal statement is wrong-strength and false. Fix by adding the eigenvalue-normalisation predicate (or the explicit FE + phi(K) form) as a hypothesis to the axiom/theorem so the formal claim matches the narrative."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.203Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

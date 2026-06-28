@@ -938,7 +938,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Block kind=conjecture (mass-endomorphism-conjecture.ts:3); it asserts an open existence claim (closed-form Φ_mass NF), not a theorem. The supporting facts (Vol(trefoil)=0 vs J(trefoil;q), mass-endomorphism-conjecture.md:138-139) are correct — trefoil is a torus knot, non-hyperbolic, so Vol=0 is right."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The Lean class MassEndomorphism (MassEndomorphismConjecture.lean:53-60) carries a content-bearing conjectural field vol_eq : tr_transient = vol_identity - tr_descended; the conditional downstream theorems (fullMass_eq_volume etc.) are genuinely derived from it, not self-assuming. Honest §3b axiomatisation."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The conjecture is explicitly scoped as a 'convenience target, not load-bearing' (mass-endomorphism-conjecture.md:25-71); the load-bearing infinite-series identity is routed separately, so the closed-form claim is not assumed by the derivations that would use it."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Negative results are correctly scope-limited: claim (b) n_star level-selection is 'refuted across six probed families ... by the conjecture's own ~5% falsifiability criterion' (mass-endomorphism-conjecture.md:281-292) while 'Claim (a) ... is untouched' — a clean (a)-style scope-limited negative, not a structural exclusion overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The dressed quark mass μ_u≈311 MeV input for m_p is openly disclosed as 'calibrated from CODATA m_p' / 'the absolute scale is calibrated' (mass-endomorphism-conjecture.md:356-362) — a declared calibration, not a hidden DOF."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The Steps 1-3 'What is known' chain (mass-endomorphism-conjecture.md:118-159) clearly separates proved (categorical→Markov), archimedean (tower→Vol), and the open gap (Markov≠Vol, bridged only by the Volume Conjecture); the gap is labelled as a gap, not papered over."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The .ts lean.ref is `qou:QOU.MassEndomorphism.MassEndomorphism` (mass-endomorphism-conjecture.ts:7), which resolves to the library file QOU/MassEndomorphism/MassEndomorphismConjecture.lean (namespace QOU.MassEndomorphism). The co-located sibling mass-endomorphism-conjecture.lean uses namespace QOU.WedderburnMass and does NOT carry the ref'd decl path — a latent naming inconsistency (two parallel copies, only one matching the ref namespace).",
+        "notes": "Not a vacuity/divergence in content (both encode the same content-bearing class with vol_eq); the divergence is namespace duplication. The library copy's docstring (lines 20-24) acknowledges the stub uses WedderburnMass 'for legacy reasons'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "cites: kashaev1997, murakami-murakami2001 (mass-endomorphism-conjecture.ts:33-36) correctly underpin the Volume Conjecture statement invoked at md:141-150."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-conjecture.md:228 has a typo 'clarificationf'; and the spectral coordinates z_i are said to be 'determined by the braid word and the Briggs–Klein chart' (line 93-94) without that determination being made explicit, leaving the z_i in the central identity under-specified.",
+        "notes": "Minor: the conjectural object's key inputs (z_i) are gestured at rather than defined; typo in a section header."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The single-level verification table (mass-endomorphism-conjecture.md:345-349) reports proton/neutron numbers (|tr_M| ratio 0.782 vs CODATA 1.001; Φ_q/ℏ_q² = -89.8/-125.2) but the .md does not pin these to a witness file or a q₀ convention, and explicitly concedes 'None of these single-level computations reproduce the neutron-to-proton mass ratio' (line 351-352).",
+        "notes": "The numbers are presented honestly as failing, so this is a transparency-positive; warn only because the table lacks a witness/q₀-pin anchor for reproducibility."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-endomorphism-conjecture.md:407-416 speculates 'The Higgs field is the dominant contribution to Φ_mass for leptons' and 'The graviton would be the residual of Φ_mass after subtracting the Higgs contribution' — strong physics identifications a domain expert would challenge, presented as candidate consequences.",
+        "notes": "Flagged as candidate/speculative ('would be'), so within a conjecture's remit; a referee would still object to the Higgs/graviton identification as under-justified."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Numeric tables (descended/transient 203×/1137×, md:330-334; single-level p/n, md:345-349; tower convergence %, md:103-108) cite no witness JSON or producer script; only the cross-referenced probe_phiq_yekutieli_truncation.py (md:255) and a PR-branch URL are given, on a feature branch (claude/continue-pr-442-DJRWm) not main.",
+        "notes": "Conjecture prose, so lighter standard; the embedded quantitative claims are not witness-anchored."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2a87296d8062",
+          "ts": "9483045ba9e2",
+          "lean": "6eacd3dbcd0d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "verdict=accept-as-conjecture. Strongest objection: the block is an honest, well-scoped open problem with a content-bearing Lean class and correctly (a)-scoped negatives, but it accretes speculative physics identifications (Higgs=dominant Φ_mass, graviton=residual) and witness-unanchored numeric tables.",
+        "notes": "referee_argument: Exemplary conjecture discipline (convenience-vs-load-bearing split, proved/open Steps 1-3, refuted-claim-(b) scope-limited). Tidy the namespace duplication (WedderburnMass vs MassEndomorphism), anchor the p/n and descended/transient tables to a witness, fix 'clarificationf', and label the Higgs/graviton lines as speculative."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.389Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

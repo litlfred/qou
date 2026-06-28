@@ -1605,7 +1605,234 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Identity ‖MI∫_{E_i}(...)‖ = Φ_q(z_i) is an asserted (sorry'd) identification, not demonstrably false; no counterexample available since both sides are opaque non-Mathlib objects."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean theorem tm_dilogarithm_evaluation : ∀ i, MI i = Phi_q (z i) is a genuine identity between named opaque reals discharged by honest sorry + 3 -- Ref: citations (tm_dilogarithm_evaluation.lean:50-57). Not a True-trivial; honest 'queue it' disposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical target or calibration involved; pure structural identity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lemma is honestly unproved (sorry); md does not claim it is established. The proof.md defers to 'the Corollary below', a forward-reference, but does not overstate proof status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free numerical parameters; structural identity, not a calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-dilogarithm-proof.md:1-6",
+        "notes": "The 'Proof' merely says the identification 'follows from the Corollary below' — a one-line deferral to an unnamed forward Corollary, not an argument. Combined with the Lean sorry this is an honest gap, but the prose 'Proof. ... $\\square$' presents a QED for what is actually unproved. Minor: the Lean is honest, but the .md proof block claims closure it does not provide."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean statement ∀ i, MI i = Phi_q (z i) (tm_dilogarithm_evaluation.lean:53) faithfully encodes the .md boxed identity over opaque objects, discharged by sorry. No weakening/divergence; the .md does not claim Lean-proved status (validation: not_checked in .ts)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "-- Ref: [faddeev_kashaev1994] (quantum dilogarithm Φ_q) and [yekutieli2015] (multiplicative integration) are exactly the two missing-from-Mathlib ingredients the identity needs; correctly attributed (tm_dilogarithm_evaluation.lean:50-52)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-dilogarithm.md:7-13",
+        "notes": "ln_q (q-logarithm) and Φ_q (quantum dilogarithm) are used without in-block definition; the 'Briggs–Klein chart' and 'spectral coordinates z_i' are named but not defined here. Resolution depends on upstream uses[] (topological-mass-holonomy, -transient-localisation); a reader cannot pin the q-deformation convention of ln_q from this block alone."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match or q0-anchored value asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Norm = quantum-dilogarithm integral is dimensionally a pure-number identification in spectral coordinates; no units/conservation claim a domain expert would reject."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached in .ts; nothing to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e61b3167d76a",
+          "ts": "c1484aeb0564"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-dilogarithm-proof.md:1-6; tm_dilogarithm_evaluation.lean:53-57",
+        "notes": "verdict: minor-revision. referee_argument: the identity is honestly queued in Lean (sorry + correct citations) and the .ts marks it not_checked, but the .md 'Proof ... $\\square$' asserts a QED by deferring to an unnamed 'Corollary below', and key q-objects (ln_q, Φ_q, Briggs–Klein chart) are undefined in-block. Strongest objection: the prose proof claims closure the formalization does not provide — relabel as proof sketch / forward-reference rather than 'Proof ... $\\square$'."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

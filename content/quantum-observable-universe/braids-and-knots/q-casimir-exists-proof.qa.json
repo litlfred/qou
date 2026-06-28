@@ -781,7 +781,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "q-casimir-exists-proof.md:9-12",
+        "notes": "C_q v_j = [j]_q[j+1]_q v_j via Kv_j=q^{2j}v_j, Ev_j=0 is the standard correct eigenvalue; centrality of C_q in U_q(su2) is a true theorem (Kassel VI.4). No false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-exists.lean:30-39",
+        "notes": "The proof's Lean backing (parent prop:q-casimir-exists) is an AXIOM: QCasimir.exists_axiom asserts Nonempty (QCasimirData qs) and the 'theorem' QCasimir.exists := QCasimir.exists_axiom qs is a trivial projection of that axiom. So the .md narrates a 'direct verification' / 'standard computation' that is in fact assumed, not proved, in Lean (validation: not_checked). The existence claim is content-bearing mathematically but the formal proof is vacuous (axiom + projection)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting; the eigenvalue is derived from the highest-weight action, not assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-exists-proof.md:4-7 vs q-casimir-exists.lean:21-39",
+        "notes": "The proof prose states 'Centrality is verified directly using the Hecke relation ... the computation is standard (Kassel VI.4)' — presenting the existence/centrality as established by direct computation. But the only formal backing is an axiom (QCasimir.exists_axiom) with the parent prop's validation 'not_checked'. An axiomatized-existence presented as a 'directly verified' proof is conditional-as-proved: the centrality computation is cited, not carried out here or in Lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free parameters; q is the formal quantum-group parameter, (q-q^{-1}) invertibility stated."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "q-casimir-exists-proof.md:9-12",
+        "notes": "The eigenvalue derivation (evaluate on highest-weight vector, Ev_j=0, Kv_j=q^{2j}v_j, simplify K+K^{-1}) correctly yields [j]_q[j+1]_q. Steps follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-exists.lean:30,38-39; q-casimir-exists.ts validation:'not_checked'",
+        "notes": "The .md proof claims direct verification of centrality and the [j]_q[j+1]_q eigenvalue. The Lean proves only Nonempty (QCasimirData qs) — and even that is by an axiom, not a proof. The eigenvalue action ([j]_q[j+1]_q) is asserted in prose but ABSENT from the Lean entirely. The Lean is strictly weaker than (and largely orthogonal to) the narrative: it neither verifies centrality nor the eigenvalue, it postulates inhabitation. proof-statement-integrity gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-exists-proof.md:4",
+        "notes": "The prose calls [E,F]=(K-K^{-1})/(q-q^{-1}) the 'Hecke relation'. It is the U_q(su2) commutation (Serre-type) relation, not a Hecke-algebra relation; the sibling def:q-casimir.md correctly calls it 'the commutation relation'. Mislabel of the invoked identity. Kassel VI.4 attribution itself is correct."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "(q-q^{-1}) invertibility / q^2 != 1 regime is stated; base ring R and the F_p/Q_p/C_p generalization spelled out (line 14-16). No ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness; correctness is a textbook proof (Kassel)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "05fab4776db2",
+          "ts": "7ad41da86ed7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: The mathematics is textbook-correct (Kassel VI.4: C_q central, acts as [j]_q[j+1]_q). The defect is formal honesty: the .md proof says centrality is 'verified directly' / 'the computation is standard', but the Lean backing is an AXIOM (QCasimir.exists_axiom) projected into QCasimir.exists, with the parent proposition's validation 'not_checked', and the [j]_q[j+1]_q eigenvalue is entirely absent from Lean. So (a) the proof is axiom-backed, not verified, and (b) the Lean is strictly weaker/divergent from the narrative claim. Fixes: relabel '[E,F]' as the U_q(su2) commutation relation (not 'Hecke'), and either formalize the centrality+eigenvalue or restate the .md as a literature-cited (axiom-pending) existence rather than a 'directly verified' proof."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.548Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

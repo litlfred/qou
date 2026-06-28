@@ -781,7 +781,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "trefoil-operator-algebra.md:1-25 claims that with α=diag(e^{iπ/3},e^{-iπ/3}) and β=[[0,i],[i,0]] the trefoil braid relation αβα=βαβ holds and 'both products evaluate to [[0,ie^{2iπ/3}],[ie^{-2iπ/3},0]]'. Direct computation: αβα=[[0,i],[i,0]] (off-diagonal) while βαβ=diag(-1/2+i√3/2, -1/2-i√3/2) (diagonal) — they are NOT equal, and neither equals the claimed matrix. These Dic₃ generators (from def:su2-generators) satisfy the DIHEDRAL relation βαβ^{-1}=α^{-1} (verified), not the braid relation.",
+        "notes": "Decisive counterexample. The block confuses the binary-dihedral Dic₃ representation (dihedral relation) with a braid representation. The trefoil braid relation is NOT realized by these matrices."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Not vacuous — it makes a concrete (and false) matrix claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trefoil-operator-algebra.md:1-8 elevates a false identity to 'the operator identity' realizing 'the trefoil braid relation xyx=yxy', then md:27-28 builds a physics claim on it ('eigenvalues of αβ govern the phases acquired when quarks exchange colour charges along the trefoil path'). The braiding interpretation is asserted as established on top of an unverified (false) relation.",
+        "notes": "Overclaim is downstream of the false-claim: a physical braiding mechanism is hung on an operator identity that does not hold."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trefoil-operator-algebra.md:19-25 'both products evaluate to [single matrix] = βαβ' — the 'therefore equal' step does not follow; the two products are computed to different matrices (one off-diagonal, one diagonal). The asserted equality is the missing/false lemma.",
+        "notes": "Same defect as da-false-claim viewed as a logical gap: the equality is stated without a correct evaluation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "example block, no .lean sibling and no lean.ref in trefoil-operator-algebra.ts. Nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref:; nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trefoil-operator-algebra.md:10-11 uses 'the generators α and β' citing def:su2-generators, but writes the trefoil relation with abstract x,y (md:3) then α,β — and the SU(2) α,β there satisfy α^3=β^2=-I and the dihedral (not braid) relation. The intended representation (braid vs dihedral) is left ambiguous, which is exactly what the false-claim exploits.",
+        "notes": "The block needs to state which representation it claims realizes the braid relation; the Dic₃ matrices it picks do not."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable / q_0 evaluation; the eigenvalue/phase remark is qualitative."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trefoil-operator-algebra.md:27-28 'The eigenvalues of the composite αβ govern the phases acquired when quarks exchange colour charges along the trefoil path.' This physical braiding-phase claim rests on a false operator identity and is asserted without a quantitative or measurable consequence; a physicist would reject the mechanism as stated since the underlying braid relation is not satisfied by the chosen matrices.",
+        "notes": "Plausibility is undermined by the broken algebra it depends on, not by an independent measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing; the matrix arithmetic is self-contained (and reproduced here, showing it is wrong — captured under da-false-claim)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8c5fbbbf1874",
+          "ts": "c514fd0decc3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "Rollup of da-false-claim + da-non-sequitur + da-overclaim.",
+        "notes": "verdict=reject-as-stated. referee_argument: The central worked example is wrong. With the stated Dic₃ matrices α=diag(e^{iπ/3},e^{-iπ/3}), β=[[0,i],[i,0]], one computes αβα=[[0,i],[i,0]] but βαβ=diag(-1/2±i√3/2); the two are unequal and neither equals the printed common value. These generators obey the dihedral relation βαβ^{-1}=α^{-1}, NOT the braid relation αβα=βαβ. The example must either choose a genuine braid representation (e.g. the Burau/Jones SU(2) rep with the correct phases) or be relabelled as the Dic₃/dihedral algebra; as written it cannot support the colour-exchange phase interpretation."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.303Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

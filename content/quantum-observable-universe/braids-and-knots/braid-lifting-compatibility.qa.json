@@ -835,7 +835,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Standard claim: jet prolongation J¹(A)=A⊗Ω¹(A) inherits a braiding in a braided monoidal C, so the brane-tower braid reps are transition-compatible and the direct limit carries a B_n-action. As a remark interpreting prop:braid-action-tensor + prop:jet-prolongation, no false assertion; consistent with braided-monoidal functoriality."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark carries genuine content (compatibility of braid reps with tower transition maps); not a tautology. interprets:prop:braid-action-tensor present, so non-dangling."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation that assumes its conclusion; it composes two upstream props."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-lifting-compatibility.md:5-8",
+        "notes": "'the direct-limit algebra A_∞ = lim Γ(J¹ S_n, SU_{q_n}(2)) carries a well-defined B_n-action for every n' is asserted as a consequence but the colimit-compatibility (that the B_n-actions commute with all transition maps to give a well-defined action on the limit) is stated, not shown, in this remark. Mitigated: it is a remark interpreting props, where proof lives upstream."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter; q_n is the tower's substrate sequence, not a free fit constant introduced here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-lifting-compatibility.md:4-8",
+        "notes": "'Consequently the braid-group representations ρ_n … are compatible with the transition maps' — the inheritance of a braiding on J¹(A) does not by itself force ρ_n to be intertwined by the tower transition maps; that needs the transition maps to be braided-monoidal functors, which is implicit but not stated. Small logical gap for a 'consequently'. Minor given remark status."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling; kind=remark, Lean optional/not required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref:. Nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-lifting-compatibility.md:6-8",
+        "notes": "'$B_n$-action for every $n$' uses index n ambiguously: the direct limit is over n (the tower level), yet B_n also depends on n as the braid group on n strands; the sentence says 'a well-defined B_n-action for every n' where the two n's are conflated. Reader must disambiguate tower-level vs strand-count. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical/observable match; purely structural remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical-observable claim; categorical/algebraic statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1272eb49792e",
+          "ts": "d4614930b14d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-lifting-compatibility.md:4-8",
+        "notes": "verdict: accept. Reasonable remark composing two props. Strongest objection (referee_argument): two 'consequently/well-defined' steps (transition-map intertwining of ρ_n; existence of the B_n-action on the colimit) are asserted rather than shown and the index n is overloaded (tower level vs strand count) — appropriate to spell out, but acceptable for a remark whose proof obligations sit in the cited propositions."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.266Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

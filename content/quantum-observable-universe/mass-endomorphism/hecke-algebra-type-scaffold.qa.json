@@ -1112,7 +1112,248 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Interpretive forward-reference remark for the Hecke-algebra type scaffold underpinning the Markov-trace mass machinery; makes no logical claim. Within chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Block is a remark making no logical claim (interprets: rem:braid-group-n-strand; authorNotes: 'makes no logical claim'). The R1-R3 Hecke relations and Wedderburn statement quoted are standard and correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-algebra-type-scaffold.lean:63-89",
+        "notes": "The HeckeRelations class encodes each of the three defining relations as a single opaque scalar field (quadratic_residual : ℝ) plus an axiom that it equals 0 — and likewise HeckeWedderburn carries one plancherel_residual : ℝ = 0. These 'explicit-residual' fields are not parameterized over any generator/word/representation data, so an instance is discharged by ⟨0, rfl, 0, rfl, 0, rfl⟩: the class asserts essentially nothing about an actual Hecke algebra (cf AGENTS.md §3b-tax 'class fields must carry the conjecture's content'). The block is honestly tagged scaffolding, but the Lean classes are near-vacuous content-wise."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation/target; pure type scaffolding."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "hecke-algebra-type-scaffold.lean:91-103; hecke-algebra-type-scaffold.ts:20-31",
+        "notes": "Status sections in both .lean and .ts are explicit that this is 'scaffolding only', the real Mathlib lift is 'remaining substantive R&D', and per-n discharge (n=2 trivial, n=3 partial, n≥6 open) is honestly recorded. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters; abstract typeclass scaffold."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No multi-step argument; descriptive remark + type definitions."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The .md describes exactly what the .lean provides (HeckeGen/HeckeWord/HeckeRelations/HeckeWedderburn as class hypotheses for downstream theorems). No claim that anything is proved; remark and scaffold are consistent."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites [kassel1995], [wenzl1988], [hoefsmit1974] are the standard Hecke-algebra / seminormal-form references appropriate to the scaffolded structure."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "hecke-algebra-type-scaffold.lean:34-37,63",
+        "notes": "HeckeGen indexes generators σ_0..σ_{n-2} via Fin (n-1), but HeckeRelations is a class over (n : ℕ)(q : ℝ) with no tie to HeckeGen, HeckeWord, or any carrier algebra — 'the' Hecke algebra H_n(R,q) is referenced but never actually constructed as a type, so what the residual fields are residuals OF is left implicit. base ring fixed to ℝ (q : ℝ) where a generic CommRing would suffice for the relations (AGENTS.md §7c)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physics claim; pure algebra scaffold."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-algebra-type-scaffold.lean:63-89",
+        "notes": "verdict: minor-revision. referee_argument: honestly-labelled WIP scaffold (no logical claim, primary content moved to an audit doc), so no false-claim/overclaim risk. Strongest objection: the HeckeRelations / HeckeWedderburn classes encode the three defining relations and Plancherel completeness as bare scalar-residual = 0 fields with no binding to any generator/word/representation data, so they are content-thin (instances are ⟨0,rfl,...⟩) and provide weaker downstream guarantees than the prose 'encodes the three defining relations' implies. Tighten the fields to carry actual relation data per AGENTS.md §3b-tax before downstream theorems lean on them."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

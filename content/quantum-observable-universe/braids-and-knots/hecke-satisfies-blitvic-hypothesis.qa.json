@@ -1605,7 +1605,241 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-satisfies-blitvic-hypothesis.md:38-44 moment formula = sum_{pi in P2(k)} W(pi;q) prod_{{a,b} in pi} delta_{i_a=i_b}; the proof block (hecke-satisfies-blitvic-hypothesis-proof.md) handles |i-j|>=2 and i=j but silently omits the adjacent case |i-j|=1",
+        "notes": "For adjacent generators sigma_i, sigma_{i+1} (|i-j|=1) the braid relation makes them non-commuting and tr_M(sigma_i sigma_{i+1}) need NOT equal z^2, so the centred pairwise moment for adjacent distinct indices is not obviously 0 — yet the asserted formula forces it to vanish via delta_{i=j}. The proof's case split (proof.md) covers only |i-j|>=2 and i=j, leaving a gap exactly where the algebra is nontrivial. The proposition inherits this as a possibly-false (or at least unproved) special case."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Proposition makes a substantive structural claim (moments are pair-partition-determined); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No calibration/observable target back-fitted; this is an algebraic-combinatorial verification feeding the q-CLT conjecture."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-satisfies-blitvic-hypothesis.md:51 'Status: provable.' and :58 'No new mathematics introduced; the proof ... is an explicit reduction'; tags include 'established'; lean.validation 'not_checked'",
+        "notes": "The block is tagged 'established' and labels the result 'provable / explicit reduction', but (a) the adjacent-index case is not handled (see da-false-claim), and (b) the proof leans on prop:trace-locality-meets-gs-non-locality ('Wenzl product factorisation') to do the actual matching work, which is asserted not shown here. Presenting an incomplete reduction as 'established/provable, no new mathematics' overclaims; the genuine combinatorial identity (crossing-weighted pair partitions for the Hecke Markov trace) is nontrivial."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "q is the substrate parameter; t=1 is fixed; no off-menu coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-satisfies-blitvic-hypothesis.md:23-29 'each non-trivial Markov pairing sigma_i <-> sigma_i^{-1} contributes a fixed scalar ... and each unmatched generator contributes zero (by trace centring under the bar-involution adjoint)'",
+        "notes": "The step from 'Hecke relation reduces words to square-free products' + 'Markov peels generators' to 'the moment is a pair-partition sum with weight depending only on pi and q' is asserted, not derived. In particular the claim that the weight depends ONLY on the partition pi (not on the specific index sequence i_1..i_k) requires the adjacent-index braiding contributions to organize into pure crossing counts — exactly the unestablished step. The 'therefore' to Blitvic's kernel (md:47-49) jumps over this missing lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "hecke-satisfies-blitvic-hypothesis.ts lean.ref qou:QOU.Observations.hecke_satisfies_blitvic_hypothesis, validation 'not_checked'; no sibling .lean in the triple",
+        "notes": "A lean.ref is declared but validation is not_checked and there is no sibling .lean to inspect from this triple, so whether the Lean decl encodes the full pair-partition claim (including the adjacent case) or a weaker marker cannot be verified. Flagged as a divergence risk pending inspection of the referenced library decl."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "hecke-satisfies-blitvic-hypothesis.md:63-64 'Blitvic's CLT [blitvic2012, Theorem 1.1]'; references.ts:4472 blitvic2012 = 'The (q,t)-Gaussian process', and references.ts:4501 blitvic2012-clt (arXiv:1205.4003) is the separate CLT paper, with a note that the (q,t)-Gaussian key is distinct from the CLT key",
+        "notes": "The CLT (Theorem 1.1) is attributed to blitvic2012, but per references.ts the CLT result lives in blitvic2012-clt; blitvic2012 is the (q,t)-Gaussian-process paper. The proof block's 'eq. (1.2)' moment-formula cite to blitvic2012 is plausibly correct, but the Theorem-1.1 CLT cite should be blitvic2012-clt. Mis-keyed reference."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "hecke-satisfies-blitvic-hypothesis.md:47-49 'W(pi;q) is Blitvic's (q,t)-Gaussian moment kernel at t=1'; proof-block remark 't=1 ... is the standard fermionic/Hecke case'",
+        "notes": "The (q,t)-Gaussian weight is q^{crossings} t^{nestings}; setting t=1 yields the q-Gaussian (Bozejko-Speicher) case, NOT the 'fermionic' case (fermionic = q=-1). Calling t=1 'the standard fermionic/Hecke case' (proof block) misidentifies the limit and leaves ambiguous which combinatorial statistic (crossings vs nestings) the Hecke crossing-count cr(pi) actually maps to. The parameter dictionary Blitvic-q <-> QOU-q <-> Tsallis-q (md:70) is itself flagged as an open identification, compounding the ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical-fit-vs-experiment claim; algebraic/combinatorial proposition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No direct physical-observable claim (feeds the q-CLT conjecture, not a measured quantity)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical witness asserted by this proposition; backing is the (incomplete) algebraic proof block, not a compute artifact, so no scriptHash/scriptCommitSha staleness applies."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revision. Strongest objection (referee_argument): the proposition asserts that all Hecke Markov-trace joint moments decompose as a pair-partition sum with weight depending only on the partition (md:38-44) and labels this 'established/provable, no new mathematics', but the accompanying proof omits the adjacent-index case |i-j|=1 (precisely where sigma_i, sigma_{i+1} braid non-trivially), and the key 'weight depends only on pi' step is asserted via an appeal to Wenzl product factorisation rather than shown. Additionally the CLT is mis-cited to blitvic2012 instead of blitvic2012-clt, and t=1 is mis-described as the 'fermionic' case. The result is plausible and likely true for the q-Gaussian (t=1) reduction, but it is not yet an explicit established reduction; downgrade 'established' tag and complete the adjacent-index case + parameter dictionary."
+      }
     ]
   },
-  "updated_at": "2026-06-24T17:45:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

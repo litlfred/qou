@@ -799,7 +799,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Notation conventions (K_x^±, mirror=charge conjugation, T_{m,n}^σ=T_{m,-n}, connected sum #, σ_i Hecke/Skein relations) are standard and internally consistent. No false mathematical statement in the conventions themselves."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose convention block with real notational content; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation; pure notation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-notation-convention.md:1, 16-17",
+        "notes": "'particles ARE their knots' and the specific identifications (electron = left trefoil T_{2,3}, etc.) are asserted as flat convention in a prose block; these are substantive framework claims dressed as notation. Minor in a notation section, but a referee would note the ontological 'are' is doing heavy lifting without backing here."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free numerical parameter in the notation block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No multi-step derivation; conventions are stipulated, not inferred."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling; kind=prose, Lean not required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] / -- Ref:; AGENTS.md §7a is referenced as a convention pointer, not a bibliographic citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-notation-convention.md:38-45",
+        "notes": "The hadron/proton notation is internally inconsistent: prose says 'the subscript c indicates colour-tube coupling' but every written instance uses subscript p ([K_u,K_u,K_d]_p, [K_1,K_2,K_3]_p) — 'c' vs 'p' subscript mismatch. Also ⊕ is called 'the linking operation' here while elsewhere ⊕ is direct sum; potential collision. Minor but a real ambiguity in the canonical notation block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable match in the block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-notation-convention.md:21-26",
+        "notes": "Neutrino chirality 'origin': 'left-handed ν_L and right-handed ν_R^σ are the same unknot with opposite framings.' Positing a right-handed (Dirac) neutrino as a framing partner is a strong physics stance (RH neutrinos are not established); a domain referee would flag this as model-dependent rather than convention. Minor since framed as the framework's geometric reading."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9855270f4a2b",
+          "ts": "2f204223fff4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-notation-convention.md:38-45, 60-64",
+        "notes": "verdict: minor-revision. Mostly clean notation. Strongest objection (referee_argument): the hadron subscript is described as 'c' but written as 'p' everywhere (internal inconsistency in the canonical notation block), and the block restates the mass formula as m(K)=Vol(K)/ℏ_q² with ℏ_q=1−q⁻¹, omitting the m_e and ρ(K) factors of the AGENTS.md canonical m(K)=m_e·Vol(K)·ρ(K)/ℏ_q² (and pinning ℏ_q at general q rather than q_0) — fix the subscript and reconcile the mass-formula shorthand with the guardrail; both cosmetic-to-minor."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.046Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }
