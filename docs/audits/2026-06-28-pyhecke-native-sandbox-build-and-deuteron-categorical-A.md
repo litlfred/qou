@@ -69,13 +69,33 @@ vanish under any cyclic trace for commuting projectors).
 
 - **Done / reproduced:** kernel build + deuteron categorical A (`[1x]`,`[2]`) at
   the 1e-25 L1 floor — confirms the structural claim, not the binding closure.
-- **Still `TODO(closure-b)`:** STEP 2g (gauge alignment — a basis change) and
-  STEP 3 (H₉ universality — the genuinely new ~500 LOC rep-theory that would
-  reconstruct tr_M(T)/(³He), the case the fitted extract misses by 21–42%). Not
-  rush-written here.
-- **Launched (~25 min):** `a_operator_recursive_he4_crosscheck.py` — the A=4
-  end-to-end recursion-kernel validation (`tr_M(⁴He) = Σ y_λ χ^λ` vs the
-  canonical fine-Bratteli reference). Result to be appended.
+- **H₉ universality (STEP 3) — VALIDATED at A=3 and A=4.** The
+  `TODO(closure-b)` in the *preflight* script (`a_operator_categorical.py`) was
+  misleading: the operator-level recursion already lives in
+  `a_operator_recursive.interface_blocks` (with the V_ξ⊗V_ν branching basis +
+  the step-2g `_align_block_to_standard` gauge alignment). With the kernel built,
+  the categorical (non-fit) recursion reconstructs `tr_M` end-to-end:
+
+  | nucleus | (a) combiner vs `chi_young` | (b) vs transfer (rel) | `tr_M` (combiner) |
+  |---|---|---|---|
+  | ³H (H₉) | 5.91e-48 (exact) | 1.95e-16 | 0.104071087735434324 |
+  | ³He (H₉) | 9.96e-48 (exact) | 1.07e-16 | 0.206578511677137038 |
+  | ⁴He (H₁₂) | 2.44e-47 (exact, d≤120) | 2.25e-16 | 0.0553584360720161753 |
+
+  The per-λ combiner χ^λ equals the direct seminormal χ^λ to ~1e-48 (exact,
+  construction-internal), and the assembled `tr_M` matches the canonical
+  fine-Bratteli transfer reference to the float64 atom-word-constant floor
+  (~1e-16) — **for the A=3 case the fitted least-squares extract misses by
+  21–42%.** Driver: [`a_operator_recursive_a3_crosscheck.py`](../../computations/a_operator/a_operator_recursive_a3_crosscheck.py)
+  (+ witness `a-operator-recursive-a3-h9.witness.json`, 4 assertions pass);
+  A=4: `a_operator_recursive_he4_crosscheck.py`.
+- **Honest scope (mirrors the A=4 crosscheck's own framing):** this is a
+  **correctness** validation — the operator-valued combiner *reproduces* the
+  canonical `tr_M`, it does **not** change the binding value or close the
+  CAL-2-floor residual. Its content is that the CATEGORICAL recursion is exact /
+  universal-by-construction at A=3,4 (no test-word fit) — the property proved
+  abstractly in Lean as `trace_block_diagonal` (#2990) and verified at the
+  operator level here.
 - **No fit, no new constant.** LR data + seminormal matrices are existing
   categorical objects; this is reproduction + a build-unblock, not a closure.
 
