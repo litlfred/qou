@@ -799,7 +799,262 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The derivation chain is circular: Step 5 uses the geometry of Bring's surface (which has genus 4) to justify |chi(A)| = 6, and then Step 7 uses chi(A) = -6 to conclude that the genus is 4, which yields Bring's surface.",
+        "severity": "major",
+        "evidence": "chi-minus-six-chain.md:1957-1963 — Step 5: ... Weierstrass points of Bring's surface. This fixes |\\chi(A)| = 6. ... Step 7: Therefore g = 4. The unique maximally symmetric genus-4 curve is Bring's surface..."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-false-claim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-vacuous evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-overclaim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-hidden-dof evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-non-sequitur evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-citation-misuse evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-definitional-ambiguity evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-empirical-fragility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-physical-implausibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-reproducibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a6a596d8a5f1",
+          "ts": "161b6118bbf2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Rollup: open-objection",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The derivation of \\chi(A) = -6 is circular: Step 5 justifies |\\chi(A)| = 6 using the orbits on the Weierstrass points of Bring's surface, which requires the curve to already be Bring's surface (genus 4), but then Step 7 uses this Euler characteristic to conclude that the genus must be 4."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:05:35.459Z"
 }

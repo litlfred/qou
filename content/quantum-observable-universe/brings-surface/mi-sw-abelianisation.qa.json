@@ -1177,7 +1177,467 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Contains only the mathematical statement.",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Statement is explicitly archimedean (complex projective space, Seiberg-Witten period) but lacks a conditional banner or wall field.",
+        "severity": "minor",
+        "evidence": "mi-sw-abelianisation.md:2016 — Let \\mathcal{S}_c \\cong \\mathbb{P}^1(\\mathbb{C}) be the exceptional divisor"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Lean proof is archimedean-compatible.",
+        "severity": "major"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The Lean proof does not verify the actual Seiberg-Witten period abelianisation identity; it is simply assumed as a field in a structure and projected vacuously.",
+        "severity": "major",
+        "evidence": "mi-sw-abelianisation.lean:2088-2089 — abelianisation : mi_norm = sw_period"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Lean proof strategy is completely vacuous.",
+        "severity": "minor",
+        "score": {
+          "value": 0,
+          "max": 1,
+          "rubric": {
+            "clarity": 0
+          }
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Redundant/vacuous projection.",
+        "severity": "minor",
+        "score": {
+          "value": 0,
+          "max": 1,
+          "rubric": {
+            "novelty": 0
+          }
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "No unused hypotheses.",
+        "severity": "major"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Proof is completely vacuous, projecting a self-assuming field in the structure.",
+        "severity": "major",
+        "evidence": "mi-sw-abelianisation.lean:2093-2100 — theorem sw_determines_mi (data : MISWAbelianisation) : data.mi_norm = data.sw_period := data.abelianisation"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Divergence between narrative's analytical claim and Lean's vacuous projection.",
+        "severity": "major",
+        "evidence": "mi-sw-abelianisation.lean:2088-2100 — theorem sw_determines_mi ..."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-false-claim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-circular evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-overclaim evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-hidden-dof evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-non-sequitur evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-citation-misuse evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-definitional-ambiguity evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-empirical-fragility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-physical-implausibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "da-reproducibility evaluated: pass.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "000f295e1759",
+          "ts": "5ff5a6da4937",
+          "lean": "3b32effef2f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:35.459Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Rollup: open-objection",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The proof of the Seiberg-Witten abelianisation is vacuously formalised: the relation is assumed as a field (abelianisation) in the MISWAbelianisation structure, and the theorem sw_determines_mi simply projects this field, proving nothing of the actual analytic equality."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:05:35.459Z"
 }

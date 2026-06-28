@@ -966,7 +966,296 @@
         "reviewed_at": "2026-06-27T23:32:41.399Z",
         "reviewed_sha": "7218d122e4d7e72817bf33ccfdb95a25b0594aab"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The Lean file contains severe syntax errors and does not compile, contradicting the narrative's claim of a sorry-free formalization.",
+        "severity": "major",
+        "evidence": "orbital-fourier-decomposition.lean:22 — def qInt is commented out but the body is left active."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The Lean file is syntactically broken and does not define the functions/theorems, making the proof vacuous.",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "No circular reasoning or self-justifying axioms detected.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The block overclaims the physical/mathematical scope and the level of Lean formalization.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "No hidden degrees of freedom or unconstrained parameters found.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Complete divergence as the Lean file fails to compile.",
+        "severity": "major"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Citations are used correctly to support the mathematical claims.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The constants are algebraic and not sensitive to small perturbations.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
+        "severity": "major"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "The Lean file fails to compile, making it non-reproducible.",
+        "severity": "major"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:05:34.038Z",
+        "reviewed_sha": "d004d3c7e6bd51447c0a3ad7c2d5565f40ce27c9",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling is syntactically broken and fails to compile because several definition and theorem headers are commented out while their bodies are left active. Furthermore, the physical claim that the hydrogen atom quantum numbers and Rydberg formula are derived from the Fourier decomposition of the normal bundle of a trefoil knot on Bring's surface is a highly speculative overclaim lacking dynamical backing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling is syntactically broken and fails to compile because several definition and theorem headers are commented out while their bodies are left active. Furthermore, the physical claim that the hydrogen atom quantum numbers and Rydberg formula are derived from the Fourier decomposition of the normal bundle of a trefoil knot on Bring's surface is a highly speculative overclaim lacking dynamical backing."
+      }
     ]
   },
-  "updated_at": "2026-06-27T23:32:41.399Z"
+  "updated_at": "2026-06-28T01:05:34.038Z"
 }
