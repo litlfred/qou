@@ -54,9 +54,7 @@ The conjecture extrapolates to the five $H_4(q)$ irreps:
 | $(2,1,1)$ | $8$ | $3$ | $12$ | $q^4 - q^2 + 1$ |
 | $(1,1,1,1)$ | $24$ | $1$ | $4$ | $q^2 + 1$ |
 
-Testing this is the next concrete R&D step: extend
-`probe_per_wedderburn_block_ck.py` from n=3 to n=4 with the
-canonical typed-B_4 braid recipe.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Significance
 

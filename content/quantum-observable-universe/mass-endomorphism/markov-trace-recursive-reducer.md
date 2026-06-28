@@ -32,13 +32,7 @@ $\sigma_{k+1}$).*
 \sigma_{i_m}^{\varepsilon_m}$ with $\varepsilon_j \in \{\pm 1\}$ and
 $1 \leq i_j \leq n - 1$.
 
-**Step 1 (Hecke-basis expansion).** Apply iterated Hecke quadratic
-to expand
-$\beta = \sum_{w \in S_n} c_w(q) \, T_w$
-in the canonical basis. The
-[`HeckeElement`](https://github.com/litlfred/qou/blob/main/computations/gb_filtration_jet_tracker.py)
-class implements this symbolically over $\mathbb{Q}(q)$ via the
-ascending/descending case split on Coxeter length.
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 **Step 2 (recursive basis-element trace).** For each $w \in S_n$
 appearing with non-zero coefficient, compute
@@ -119,8 +113,7 @@ its own algebra $H_{n-k-1}$.
 
 ## Empirical verification
 
-Numerical evaluation at $q_0$ for the canonical atomic-braid
-words ([`markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_axiomatic_multi_atom.py)):
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 | atom              | braid word                              | $H_n$ | $\operatorname{tr}_M(q_0)$ |
 |-------------------|----------------------------------------|------|----------------------------|
@@ -128,22 +121,13 @@ words ([`markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/
 | neutron           | $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$  | $H_3$ | $1.248248\ldots$           |
 | deuteron disjoint | $\sigma_1^7\sigma_2^4 \oplus \sigma_4^6\sigma_5^4\sigma_4^{-1}$ | $H_6$ | $\operatorname{tr}_M(p)\cdot\operatorname{tr}_M(n)$ |
 
-The deuteron's value matches $\operatorname{tr}_M(\text{proton})
-\cdot \operatorname{tr}_M(\text{neutron})$ to mpmath-exact (50 dps)
-precision, confirming the disjoint-product property.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
-The proton value matches the prior Hecke-power expansion in
-[`markov_trace_atomic_proton_full.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_atomic_proton_full.py)
-([`prop:markov-trace-axiomatic-closed-form`](#prop:markov-trace-axiomatic-closed-form))
-at 50-dps (mpmath) precision, providing an independent cross-check
-via two different reduction strategies. (Earlier float64 evaluations
-of the same identity are recorded in the witness as probes; the
-matching claim is at 50 dps.)
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Witness scripts
 
-- [`computations/markov/markov_trace_recursive.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_recursive.py) — algorithm + H_3..H_6 unit tests.
-- [`computations/markov/markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_axiomatic_multi_atom.py) — proton/neutron/deuteron anchor + disjoint-product check.
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

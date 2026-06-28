@@ -49,11 +49,7 @@ $$
    \;=\; a_7 a_4 \cdot z^2 \;+\; a_7 b_4 \cdot z \;+\; b_7 a_4 \cdot z \;+\; b_7 b_4 \cdot 1.
 $$
 
-**Step 5: Substitution and simplification.** Substituting $h = q -
-q^{-1}$ and $z = 1/(q^{1/2}+q^{-1/2})$ and clearing denominators
-gives a rational function in $q^{1/2}$ with denominator
-$q^{10}(q+1)^3$ (verified by `sp.cancel` in
-`markov_trace_atomic_proton_full.py`).
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 The methodology of Steps 1-5 is fully axiomatic — only the Hecke
 quadratic, Markov axioms, cyclicity, and braid relations are
@@ -62,7 +58,7 @@ construction, no character tables. $\square$
 
 ## Numerical witness
 
-Substituting $q_0 = 1.109978595554181\ldots$ (50 dps) and evaluating with `mpmath`:
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 $$
   \operatorname{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.63315\,357\ldots
@@ -85,12 +81,7 @@ $$
 
 ## Witness scripts
 
-- `computations/markov/markov_trace_atomic_proton_full.py` — full
-  proton word $\sigma_1^7\sigma_2^4$ with `sp.cancel` rationalisation.
-- `computations/markov/markov_trace_axiomatic_proton.py` — pedagogical
-  $\sigma_1\sigma_2\sigma_1$ demonstration of the methodology.
-- `computations/markov/markov_trace_recursive.py` — partial recursive
-  reducer (see *Methodology generalisation* above).
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

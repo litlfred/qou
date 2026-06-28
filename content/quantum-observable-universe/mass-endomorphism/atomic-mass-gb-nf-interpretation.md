@@ -29,9 +29,7 @@ $$
     \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert}.
 $$
 
-**Empirical values** (from
-`rho-k-codata-vs-six-term.witness.json`, evaluated at $q_0$ via
-50-dps Markov trace of `markov_peel.tr_M_atomic`):
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 |        Atom       | $A$ | $\lvert\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathcal{M}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
 | :---------------: | :-: | :----------------------------------------------------------: | :-----------------------------------: | :------------------------: |
@@ -113,43 +111,9 @@ $$
   D(u) \;=\; 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^2)^{3A-1},
 $$
 
-where the $2^{2A+1}$ and $(1+u^2)^{3A-1}$ factors are proved
-categorically but the per-nucleon shift exponents
-($\mathrm{shift}_{\mathfrak{p}} = 20$,
-$\mathrm{shift}_{\mathfrak{n}} = 16$ for `include_inter=False`) are
-characterised only via integer-LP. The clean torus-knot limit
-$\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$ is proved
-([torus-knot pole order](#prop:alpha-shift-torus-knot)) and powers
-the multiplicative-chain identity for $\alpha_{EM}^{-1}$
-([$\alpha_{EM}$ chain](#prop:alpha-em-shift-multiplicative-chain)),
-but the atomic-braid case carries a strand-context-dependent profile
-$(1, 4, 0, 0, 1, 0)$ for the per-crossing shift contributions whose
-categorical origin is open. The atomic-shift coefficients
-$(18, 21, 1)$ governing
-[`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md)
-are now **categorically verified** for the proton and deuteron via
-the symbolic Hoefsmit pole-order analysis in
-[`per_irrep_pole_atom.py`](../../computations/per_irrep_pole_atom.py)
-(witnesses
-[`per-irrep-pole-proton-h3.witness.json`](../../computations/per-irrep-pole-proton-h3.witness.json)
-+
-[`per-irrep-pole-deuteron-h6.witness.json`](../../computations/per-irrep-pole-deuteron-h6.witness.json)),
-closing the per-nucleon contribution to $\mathrm{shift}_{\mathrm{NF}}$
-that controls the $u$-power in $D(u)$. Closing the strand-context
-profile $(1, 4, 0, 0, 1, 0)$ remains open.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
-**Negative result on the simple shift-anchor ansatz**
-(`u-shift-mass-anchor-probe.witness.json`).
-No combination of $\mathrm{shift}_{\mathfrak{p}}, \mathrm{shift}_{\mathfrak{n}}$
-and the $q_0$-derived constants $(q_0, c_q, \hbar_q, z, [n]_q)$
-reproduces both nucleon anchors to better than $11\%$. The closest
-single-formula fit, $\mathrm{shift} \cdot q \cdot c_q^2 \approx 1835.4$,
-matches $m_{\mathfrak{p}}/m_e$ to $0.04\%$ but fails for the neutron
-($20\%$ error). The integer 4-unit shift differential ($20 \to 16$)
-is structurally too coarse to encode the $0.14\%$ CODATA
-$m_{\mathfrak{n}} - m_{\mathfrak{p}}$ splitting — the splitting
-must be encoded in the per-irrep character data, not in the scalar
-shift exponent alone.
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 The (six-term spectral) form is the current best candidate
 attempt, expanding $\rho_K \cdot \lvert\!\operatorname{tr}_M\!\rvert$

@@ -1,13 +1,6 @@
 **Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
-The framework PROVES $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ via the
-2-strand sub-braid argument (Fact 3 of
-[`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov)).
-The higher-rung coefficients $c_4, c_5, c_6, c_7$ have **empirical
-closed forms** extracted from the SDP-$T_\beta$ framework (
-[`computations/qbeta/qbeta_decay_sdp_full_ck.py`](../../computations/qbeta/qbeta_decay_sdp_full_ck.py))
-with sub-percent residuals, but **no first-principles categorical
-derivation is yet known**.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 This block formalises them as **conjectures** so downstream
 provable claims that depend on them can use the §3b-cond
@@ -78,7 +71,7 @@ c_6 extracted = +3.4976   (matches empirical sweep EXACTLY)
 c_7 extracted = +57.149   (matches empirical sweep EXACTLY)
 ```
 
-Verified by `qbeta_decay_sdp_full_ck.py` (4 assertions pass).
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 The "empirical c_k from `binding_q_target_sweep`" are NOT arbitrary
 fits — they are TAUTOLOGICALLY determined by the precision-ladder

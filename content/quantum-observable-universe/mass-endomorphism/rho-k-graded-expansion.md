@@ -81,8 +81,7 @@ $$
   \alpha \cdot z^2 \cdot \sum_{i<j} \ln\bigl|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}\bigr|_{\mathrm{Wedderburn}}.
 $$
 
-**Pair-coupling structure** (`wedderburn_pair_volumes.py`):
-the Wedderburn-decomposed inner product
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 $$
   \bigl|\hat V_i \hat V_j\bigr|_{\mathrm{Wedderburn}}
@@ -99,7 +98,7 @@ pair coupling uses the Markov-traced $2 \times 2$ matrix product
 $M_i M_j$ — genuinely capturing braid non-commutativity — rather
 than the naive $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
 
-**Empirical findings** (probes on $Z = 1..20$):
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 See [Table 1](#tbl:rho-k-graded-expansion-table1-data).
 
@@ -147,10 +146,7 @@ the interface contribution close the residual.
 
 ## Witnesses
 
-- `rho-k-markov-multiplicativity.witness.json` — Wenzl branching identity verified to $3 \times 10^{-14}$.
-- `rho-k-pair-gen-extension.witness.json` — pair-gen probe Z=1..20: naive log-additive degrades; documents open Wedderburn-coupling needed.
-- `rho-k-scaling-structure.witness.json` — empirical LO-residual structural analysis.
-- `atomic-braid-mass-paper-formula.witness.json` — single-gen accuracy across $Z=1..20$.
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

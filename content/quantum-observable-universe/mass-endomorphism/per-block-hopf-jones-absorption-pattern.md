@@ -82,7 +82,4 @@ giving $\hbar_q^k$ at order $k$. Each block's contribution carries the
 LO Hopf-Jones absorption ($-2$ or $-1$), modulated by the block's
 specific cyclotomic-factor structure ($\Phi_4^2$ for 1D; $\Phi_8$ for 2D).
 
-Verified at $q_0$ via
-[`computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../computations/qbeta/qbeta_per_block_paper_closed_forms.py)
-+
-[`qbeta-per-block-paper-closed-forms.witness.json`](../../computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json).
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.

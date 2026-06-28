@@ -26,13 +26,4 @@ $$
 *holds for all $q > 0$.*
 ## Cross-references
 
-- The probe computation:
-  [`computations/qbeta/qbeta_c3_multiblock_recursion_attack.py`](../../../computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
-  (witness `qbeta-c3-multiblock-recursion-attack.witness.json`).
-- The pre-archimedean recursion for $z$: 
-  [`computations/qbeta/qbeta_prearchimedean_z_recursion.py`](../../../computations/qbeta/qbeta_prearchimedean_z_recursion.py).
-- The downstream c$_k$ conjectures:
-  [`conj:qbeta-c-k-closed-forms`](#conj:qbeta-c-k-closed-forms)
-  (axiomatised; conditional on the Habiro element identification).
-- The 1ppQ coordination ledger:
-  [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).
+- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.

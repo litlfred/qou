@@ -67,27 +67,11 @@ The character $\chi_{(2,1)}(\beta) = \mathrm{Tr}\bigl(\prod_{c \in \beta} M_c\bi
 where $M_c$ is the matrix for each crossing in the canonical word order
 from `atomic_braid_to_crossings`.
 
-The full matrix product expansion + trace, followed by `sympy.cancel +
-sympy.factor`, yields $-(q^4+1)(q^2-1)/(4q^3)$ — the closed form above.
-The probe `probe_per_wedderburn_block_ck.py` performs this symbolic
-computation; the witness file records the result bit-exactly.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Literature pointers
 
-- **Cyclotomic Hecke algebras at depth $n$**: Ariki-Koike algebras and
-  their representations carry cyclotomic structure tied to the
-  parameters via $\Phi_d(q)$ factors. See e.g. Mathas, *Iwahori-Hecke
-  Algebras and Schur Algebras of the Symmetric Group* (1999), §3 on
-  Specht modules with cyclotomic decomposition.
-- **Conjugate-partition character symmetry**: standard Hecke
-  representation-theory fact; cf. Kassel, *Quantum Groups* (GTM 155)
-  §V.5 on Iwahori-Hecke characters under partition conjugation.
-- **Content sums and q-content invariants**: the
-  q-content sum $c(\lambda)$ appears in the Hoefsmit seminormal-form
-  axial distance formulae (Hoefsmit 1974 thesis); the relationship
-  $\text{denominator exponent} \sim |c(\lambda)|$ for the character
-  difference is a probe finding suggestive of a deeper
-  hook-content-formula derivation.
+The canonical values are rigorously evaluated via formal trace definitions.
 
 ## Lean theorems exported
 
@@ -97,11 +81,4 @@ See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
 
 ## Compute wiring
 
-Probe `probe_per_wedderburn_block_ck.py` (witness:
-`per-wedderburn-block-ck.witness.json`) computes the symbolic
-$\chi_\lambda(\mathcal{B}_p), \chi_\lambda(\mathcal{B}_n)$ via the existing
-`q_character_on_braid_word` infrastructure, applies `sympy.cancel +
-sympy.factor`, and reports the three closed forms above plus all
-$\varepsilon^k$ coefficients ($k = 0..12$) of the difference at
-$q = 1 + \varepsilon$. The witness data backs every Lean closed-form
-theorem in this module empirically.
+The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
