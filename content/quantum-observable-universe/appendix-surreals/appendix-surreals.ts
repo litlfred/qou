@@ -160,7 +160,9 @@ export default chapter({
       label: "sec:surreal-rate-calculus",
       blocks: [
         "surreal-rate-calculus",
+        "surreal-rate-calculus-interpretation",
         "surreal-squeeze",
+        "surreal-squeeze-interpretation",
       ],
     },
     {

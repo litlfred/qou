@@ -63,23 +63,6 @@ Hence $\partial_t G_q = -\Delta_q G_q$.  The initial-data condition
 $G_q(t,\cdot) \to \delta_0$ as $t \downarrow 0$ is the standard
 property of the Gaussian heat kernel.  $\qed$
 
-**Time rescaling interpretation.**  Since $-\Delta_q = q^{-2}\nabla^2$
-on Reeb-invariant forms, writing $\tau = q^{-2} t$ gives
-
-$$
-  G_q(t, x) \;=\; \bigl(4\pi \tau\bigr)^{-n/2}
-  \exp\!\bigl(-|x|^2 / (4 \tau)\bigr),
-$$
-
-the *classical* Gaussian heat kernel in rescaled time.
-Reeb-invariant diffusion on a QOU with substrate parameter $q$ is
-isomorphic to ordinary diffusion, with the clock running at rate
-$q^{-2}$.  At the Big Bang ($q \to \infty$) the clock freezes: heat
-cannot spread on the base, because all the "diffusive budget" is
-absorbed by the Reeb-fibre direction (which $G_q$ ignores).  At heat
-death ($q \to 1$) the clock runs at unit rate and $G_q$ recovers the
-classical Gaussian.
-
 **Existence at arbitrary $q > 0$.**  The formula for $G_q$ is a
 *classical* Gaussian with variance $\sigma^2 = t/q^2$.  It is
 convergent and strictly positive for every $q > 0$ and every $t > 0$.
