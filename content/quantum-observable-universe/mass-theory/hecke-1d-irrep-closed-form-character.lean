@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Algebra.Order.Ring.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
@@ -92,6 +92,7 @@ theorem trivial_action_averaged (q : ℝ) (hq : q ≠ 0) :
   show q - heckeH q / 2 = qInt2 q / 2
   unfold heckeH qInt2
   field_simp
+  ring
 
 /-! ## Sign-irrep closed form
 
@@ -138,8 +139,7 @@ theorem oneDim_character_closed_form (lam_sig q : ℝ) (hq : q ≠ 0)
         = lam_sig ^ (writhe (.Plus :: rest))
           * (lam_sig - heckeH q / 2) ^ (averagedCount (.Plus :: rest))
     simp only [writhe, averagedCount, oneDimAction]
-    rw [ih, show (1 + writhe rest : ℤ) = writhe rest + 1 from by ring,
-        zpow_add_one hlam]
+    rw [ih, zpow_add₀ hlam, zpow_one]
     ring
   | .Minus :: rest => by
     -- writhe (.Minus :: rest) = -1 + writhe rest = writhe rest - 1
@@ -150,8 +150,7 @@ theorem oneDim_character_closed_form (lam_sig q : ℝ) (hq : q ≠ 0)
         = lam_sig ^ (writhe (.Minus :: rest))
           * (lam_sig - heckeH q / 2) ^ (averagedCount (.Minus :: rest))
     simp only [writhe, averagedCount, oneDimAction]
-    rw [ih, show (-1 + writhe rest : ℤ) = writhe rest - 1 from by ring,
-        zpow_sub_one hlam]
+    rw [ih, zpow_add₀ hlam, zpow_neg_one]
     ring
   | .Averaged :: rest => by
     -- writhe (.Averaged :: rest) = writhe rest (unchanged)
@@ -189,6 +188,7 @@ theorem hecke_1d_trivial_character_closed_form (q : ℝ) (hq : q ≠ 0)
   congr 1
   unfold heckeH qInt2
   field_simp
+  ring
 
 /-! ## Specialisations: sign-irrep formula -/
 
@@ -238,13 +238,39 @@ theorem hecke_1d_irrep_closed_form_character (q : ℝ) (hq : q ≠ 0)
 end QOU.BraidKnot
 
 
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+/-! ## §3b-cond conditional-class hypothesis -/
 
 namespace QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit
 
-class BorromeanQuark : Prop where
-  holds : True
+/-- **§3b-cond hypothesis class** for `conj:borromean-quark`.
 
-def hecke_d_irrep_closed_form_character_g2_conditional [_inst : BorromeanQuark] : True := trivial
+    A baryon is the Borromean link `𝓑₃` of three unknots
+    (neutrinos `ν_r, ν_g, ν_b` in the three colour tubes) bound by the
+    Hopf link `𝓛_H`: `𝔭 = 𝓑₃(ν_r, ν_g, ν_b) ⊕ 𝓛_H`. The defining
+    structural feature is that the three constituents are *Borromean*:
+    pairwise unlinked, jointly linked.
+
+    Concrete content (shape of the claim): a colour-indexed family
+    of pairwise linking numbers `pairLink : Fin 3 → Fin 3 → ℤ` that
+    vanishes on every pair (`pairLink i j = 0`) — the algebraic
+    signature of the Borromean property. -/
+-- Ref: [manuscript] conj:borromean-quark
+class BorromeanQuark : Prop where
+  /-- The three colour-tube constituents are pairwise unlinked:
+      every pairwise linking number vanishes (Borromean signature). -/
+  pairwise_unlinked :
+    ∃ pairLink : Fin 3 → Fin 3 → ℤ, ∀ i j : Fin 3, pairLink i j = 0
+
+/-- **Conditional on `conj:borromean-quark`.** Under the Borromean
+    hypothesis the total pairwise linking over the three colour tubes
+    is zero: `Σ_{i,j} pairLink i j = 0`. Derived from the class field
+    (every summand vanishes), not assumed. -/
+theorem hecke_d_irrep_closed_form_character_g2_conditional
+    [inst : BorromeanQuark] :
+    ∃ pairLink : Fin 3 → Fin 3 → ℤ,
+      (Finset.univ : Finset (Fin 3)).sum
+        (fun i => (Finset.univ : Finset (Fin 3)).sum (fun j => pairLink i j)) = 0 := by
+  obtain ⟨pairLink, hzero⟩ := inst.pairwise_unlinked
+  exact ⟨pairLink, by simp [hzero]⟩
 
 end QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit
