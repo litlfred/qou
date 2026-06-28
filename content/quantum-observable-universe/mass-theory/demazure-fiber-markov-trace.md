@@ -99,7 +99,7 @@ this gives the Demazure-fiber resonance width of the alt block at
 each filtration depth — the exact analogue of a resonance width
 without phenomenological cutoffs.
 
-## Why the Demazure operator is the right functional
+## Structural justification of the Demazure operator
 
 By Kashiwara's refined Demazure character formula
 \cite{kashiwara1991}, $D_w(\lambda)$ is the character of the

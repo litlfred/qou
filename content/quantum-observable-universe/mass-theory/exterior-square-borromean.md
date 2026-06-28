@@ -67,7 +67,7 @@ in $\binom{10}{2} \cdot [3]_q \cdot (1 + \delta_{CS} + \cdots)$.
 This is consistent with $45$ being the q-deformation-INVARIANT
 underlying combinatorial count.*
 
-**Why $V_{\mathrm{nat}}^{10}$ specifically.**
+**Origin of $V_{\mathrm{nat}}^{10}$.**
 
 The atomic braid for a 4-nucleon system (e.g. $^4$He) lives on $3 \cdot 4 = 12$
 strands; for a 3-nucleon system on $9$.  The "10" comes from the

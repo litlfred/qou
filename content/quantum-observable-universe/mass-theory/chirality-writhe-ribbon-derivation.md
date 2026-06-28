@@ -135,7 +135,7 @@ crossings are included, while paper assigns $a_D = 1 + h \approx
 1.24$ is within $2.5\%$ of paper's $1 + h = 1.21$ — coincidentally
 close but without deeper structural justification at $A=1$.*
 
-**What this test establishes.**
+**Findings of the test.**
 *The **structural form** $a_K = 1 + w \cdot (\text{something}) \cdot h
 + O(h^2)$ is correct (linear in $h$ and writhe). The **coefficient
 "something"** is NOT the Wedderburn-averaged content
@@ -214,7 +214,7 @@ adjustment.*
 *`computations/ribbon_content_average.py` +
 `ribbon-content-average.witness.json`.*
 
-**Variant sweep — all fail.**
+**Variant sweep.**
 *Script `chirality_variants_probe.py` tested 8 candidate writhe-
 ribbon formulas (varying weighting, writhe convention, and
 normalisation) against paper's assigned factors for $D$, $T$.

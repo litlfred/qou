@@ -37,7 +37,7 @@ The algebraic identity $\frac{[3]_q \cdot [2]_q}{[4]_q} = \frac{3 + h^2}{2 + h^2
 is Lean-proved in
 [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean).
 
-### Why $d_q((n, 1))$ (S_{n+1} standard rep dim)?
+### Role of $d_q((n, 1))$ (S_{n+1} standard rep dim)
 
 The conjecture extends to all leptons by recognising:
 

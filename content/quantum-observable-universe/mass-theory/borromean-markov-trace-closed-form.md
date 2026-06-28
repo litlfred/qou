@@ -156,7 +156,7 @@ $$
 $(5/128, -20/128, 15/128)$, also summing to zero — but it decomposes
 the bridge-normalised trace, a different functional.)
 
-## Why $h^2 = 0$: universal identity + Borromean symmetry
+## Vanishing of $h^2$: universal identity + Borromean symmetry
 
 The cancellation follows from two independent facts:
 
@@ -184,7 +184,7 @@ Combining: at $h^2$ order, $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ reduces
 to $\sum_\lambda [h^2\text{-coeff of }y_\lambda] \cdot d_\lambda = 0$
 by Fact 1, since each $\chi^\lambda / d_\lambda \to 1$ at $h = 0$.
 
-## Generalization: when does $h^2 = 0$ hold?
+## Generalization: conditions for $h^2 = 0$
 
 The mechanism generalizes to any braid $\beta \in B_n$ satisfying:
 

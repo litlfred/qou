@@ -303,7 +303,7 @@ on the substrate's specific ribbon structure (specifically on the
 behavior of $c_{A, A}$ under iteration and on its relation to the
 Frobenius pairing); they are open per the status section below.
 
-### Why this is the right operation for the Higgs mechanism
+### Suitability for the Higgs mechanism
 
 Per [`conj:categorical-higgs-mechanism`](#conj:categorical-higgs-mechanism)
 Step C, the Higgs mechanism's "Goldstone-eating" lifts a gauge

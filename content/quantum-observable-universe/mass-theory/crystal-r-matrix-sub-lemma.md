@@ -39,7 +39,7 @@ $$
 
 *is the **axial distance** between the cells of $i$ and $i + 1$ in $T$.*
 
-## Why this closes the W-3 residual
+## Closure of the W-3 residual
 
 The
 [scalar form of Sub-lemma 2.1](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md)

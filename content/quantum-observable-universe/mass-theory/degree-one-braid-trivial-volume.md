@@ -60,7 +60,7 @@ gauge boson of any physical theory; that identification is interpretive
 and is discussed in [breit-wheeler-vertex](#rem:breit-wheeler-vertex)
 and the photon-energy section of the manuscript.
 
-**What this rules out.** Any candidate algebraic photon constructed as
+**Exclusion.** Any candidate algebraic photon constructed as
 a degree-one element of the Hecke algebra is *automatically*
 volume-trivial, hence cannot acquire mass through the
 $\tau_{\mathrm{arch}}\circ\mathrm{Vol}_q$ pipeline. Mass generation

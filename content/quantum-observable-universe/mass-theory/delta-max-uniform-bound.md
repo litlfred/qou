@@ -143,7 +143,7 @@ is bounded by $\approx 1.07 \times 10^{-6}$ in categorical
 units, i.e. **sub-ppm binding precision** when calibrated by
 $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
 
-## Consequence for the binding energy
+## Corollary for the binding energy
 
 Combining with the jet-tower tail bound
 ([jet-tower convergence](#prop\:jet-tower-convergence)), the
@@ -164,7 +164,7 @@ deuteron, tritium, and ${}^3\mathrm{He}$
 (cf. `computations/unified_lift.py` with
 `JET_TARGET_PPM`).
 
-## What remains open
+## Remaining open items
 
 This proposition closes the **archimedean / rank-1 SDP**
 regime of the convergence conjecture

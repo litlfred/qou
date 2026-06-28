@@ -110,7 +110,7 @@ $q = 1/\varphi^2$ ([golden-ratio degeneration](#prop:descartes-elliptic-curve)) 
 The GB framework is the **real-axis degeneration** of the
 volumized theory.
 
-## Why this is a conjecture
+## Conjectural status
 
 This statement is a **conjecture** rather than a theorem because:
 

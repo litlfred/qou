@@ -67,7 +67,7 @@ The binding-energy gap $|B_{\mathrm{pred}}(K) - B_{\mathrm{AME}}(K)|$ lives in t
 2. The PSD-dominant block is the structural "obstruction fingerprint" but does NOT carry the residual mass deficit.
 3. The Δ_λ-gating problem (per AGENTS.md "Precision goals" section) is concretely about which low-row 2-row partitions contribute to the cancellation/imbalance of $\mathrm{tr}_M$.
 
-## What this conjecture does NOT claim
+## Non-claims of this conjecture
 
 - It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,3,3,3,2,2,2) (the rectangular-form conjecture was [empirically falsified at A=6](../../../docs/audits/-dominant-partition-nucleon-structure.md#gap-narrowing-probe-4c)).
 - It does NOT claim a categorical proof — only an empirical pattern across A=4 and A=6 supported by Lanczos LinearOperator probes.

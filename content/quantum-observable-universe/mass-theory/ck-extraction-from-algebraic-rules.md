@@ -43,7 +43,7 @@ agreement equality by `rfl` against the inline coefficients used in
 The synthesis theorem `ckFromReduction_matches_ladder` records the
 joint statement under all four class instances.
 
-## Why this reframing matters
+## Significance of the reframing
 
 The earlier framing (alternating Kashiwara $\times$ Jones at even/odd $k$)
 captured the *empirical pattern* but underspecified the *derivation*.

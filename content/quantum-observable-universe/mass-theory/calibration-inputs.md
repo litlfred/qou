@@ -105,7 +105,7 @@ silent absorber of the tower correction; the residual is
 explicit and the direction puzzle is on the books for the
 categorical-derivation review (Workplan 2 Phase 2).
 
-**Deeper fitting concern .** Above the
+**Deeper fitting concern.** Above the
 tower-direction puzzle sits a more fundamental gap: the relation
 $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
 derive the framework's $\mathfrak{Q}_\beta$ prediction is itself an **ansatz**,
@@ -121,7 +121,7 @@ remain an input** and claims of "$\mathfrak{Q}_\beta$ derivable from CAL-1 + CAL
 are conditional on the unproved ansatz. Full audit:
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
 
-## Why exactly three
+## Necessity of exactly three inputs
 
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
 ([categorical action](#def:categorical-action)) lives in a
@@ -178,7 +178,7 @@ No further parameters exist because:
   orthogonality
   ([RJ canonical inner product](#prop:rj-canonical-inner-product)).
 
-## What is predicted (given the three inputs)
+## Predictions from the three inputs
 
 **From $q_0$ alone (dimensionless):**
 - Lepton mass ratios: $m_\tau/m_e$, $m_\tau/m_\mu$
