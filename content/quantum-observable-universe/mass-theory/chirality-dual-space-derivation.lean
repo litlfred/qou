@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 /-!
 # Chirality from symmetric-channel trace duality (Term 5)
@@ -35,6 +37,7 @@ namespace QOU.BraidKnot
 inductive CrossingSign : Type
   | pos : CrossingSign
   | neg : CrossingSign
+  deriving DecidableEq
 
 /-- Numeric value of a crossing sign. -/
 def CrossingSign.toReal : CrossingSign → ℝ
@@ -96,7 +99,7 @@ theorem chiralityFactor_cons (h : ℝ) (c : CrossingSign)
     For a product braid word the trace multiplies: τ_sym on a
     word `σ_{i_1}^{ε_1} ⋯ σ_{i_k}^{ε_k}` is
     `q^{ε_1 + ⋯ + ε_k}` — which equals `q^(writhe)`. -/
-def tauSym (q : ℝ) (signs : List CrossingSign) : ℝ :=
+noncomputable def tauSym (q : ℝ) (signs : List CrossingSign) : ℝ :=
   signs.foldl (fun acc c => acc * (q ^ (1 : ℕ))^(if c = CrossingSign.pos then 1 else -1 : ℤ)) 1
 
 /-- **Key identity: per-generator symmetric-channel deviation.**
