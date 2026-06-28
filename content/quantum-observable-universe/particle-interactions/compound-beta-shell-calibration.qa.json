@@ -601,7 +601,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -622,7 +622,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1522,254 +1522,260 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The central claim (magic-shell y_target is derivable from chain Q-values rather than independently calibrated) is structural and qualified as 'Open' (md:129-131); no specific false numerical assertion."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Compound \u03b2-decay calibration across magic shells' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean:52:44: error: Type mismatch.",
+        "severity": "minor",
+        "evidence": "compound-beta-shell-calibration.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "compound-beta-shell-calibration.lean:39-43 magic_crossing_Q_value proves '∃ Q_beta, Q_beta = E_0*(...)' by sorry; lines 48-53 compound_beta_y_target_extraction proves '∃ y_target, y_target = (...)/(...)' by sorry; lines 58-60 single_calibration_framework proves chain.reference_E_0_MeV = 0.782 by sorry.",
-        "notes": "The two extraction theorems are vacuous in form: '∃ x, x = <expression>' is trivially true (witness = the expression) — they assert no constraint, just name a quantity. They are nonetheless left as sorry rather than discharged by ⟨_, rfl⟩, so they are simultaneously trivial-if-proved AND unproved. single_calibration_framework asserts a Float equality to a hardcoded 0.782 via sorry. The Lean encodes no real content; the substance is entirely in md prose."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "compound-beta-shell-calibration.lean:1"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Compound \u03b2-decay calibration across magic shells'.",
         "severity": "minor",
-        "evidence": "compound-beta-shell-calibration.md:121-127 (Consequences 2): 'The shell sector introduces no new calibration' because y_target is extracted from chain Q-values — but the extraction (md:106-116) itself uses E_0=Q_β as the normalizing scale and the level-3 shadow prices, and the whole chain-Q sum is anchored to AME data through the magic anchor whose binding is what is being derived.",
-        "notes": "Not strictly circular — the residual-subtraction scheme (md:43-53) is in principle a genuine derivation — but the 'no new calibration' consequence is asserted before the implementation exists (md:129 marks it Open), so the no-DOF claim rests on an unbuilt derivation. Risk of hidden recalibration when the chain separation is actually implemented."
+        "evidence": "compound-beta-shell-calibration.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "compound-beta-shell-calibration.md:126-127 Consequence 3: 'Predictions for all magic-anchor binding energies (4He, 16O, 40Ca, 56Ni, 208Pb) are parameter-free given the β-decay table' — yet md:129-131 'Open: full implementation of the chain-Q-value derivation ... is the next step.' The Lean backing is three sorry stubs.",
-        "notes": "The block claims parameter-free predictions for the entire magic-shell tower while simultaneously admitting the derivation is not implemented and the Lean is unproved. This is a conditional-as-proved / not-yet-built-as-delivered overclaim. The proposition kind asserts a result; the actual status is a research program."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Compound \u03b2-decay calibration across magic shells' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "compound-beta-shell-calibration.lean:58-60 single_calibration_framework hardcodes reference_E_0_MeV = 0.782; the md uses E_0=Q_β=0.782 MeV as the H² calibration. The 'level-3 shadow prices Q_β^(3)' (md:51-53,114) are an additional input set whose values are not pinned in-block.",
-        "notes": "The claimed single archimedean input (E_0) is honest, but the 'level-3 (non-magic) shadow prices' that the residual subtraction depends on (md:48-53) are an undisclosed family of quantities — if any are fit to data rather than derived, they are hidden DOF. The block asserts they are 'predictable from the pair-coupling shadow price' but provides no witness. Until wired, this is a potential hidden-DOF reservoir."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Compound \u03b2-decay calibration across magic shells'.",
+        "severity": "minor",
+        "evidence": "compound-beta-shell-calibration.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean.",
         "severity": "minor",
-        "evidence": "compound-beta-shell-calibration.md:74-76: 'The naïve ratios are all ≪1, confirming that Q_β directly does not give y_target — the missing piece is the knot-operator transition.' Ratios being ≪1 shows the naïve formula fails; it does NOT by itself establish that the specific missing piece is the knot-operator difference.",
-        "notes": "The diagnosis (knot-operator transition) is plausible but the inference 'ratios ≪1 therefore the missing piece is the parent/daughter operator difference' skips the lemma that no other mechanism (e.g. overall scale) accounts for the gap. Affirming a preferred explanation from a single negative check."
+        "evidence": "compound-beta-shell-calibration.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The .ts lean.ref is qou:QOU.BraidKnot.CompoundBetaShellCalibration — a NAMESPACE, not a declaration (compound-beta-shell-calibration.lean:17 'namespace QOU.BraidKnot', no decl named CompoundBetaShellCalibration). The three actual theorems (magic_crossing_Q_value, compound_beta_y_target_extraction, single_calibration_framework) are all sorry, and each proves only a trivial '∃ x, x = expr' or a hardcoded Float equality — far weaker than the md's tower-of-predictions claim.",
-        "notes": "Two divergences: (1) ref resolves to a namespace, not a declaration, so no decl actually backs the block; (2) even the sorry'd theorems, if completed, would be trivial existence/definitional statements, not the parameter-free predictive claim the md makes. proof-statement-integrity fails on both counts."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites: [] is empty (compound-beta-shell-calibration.ts:14); -- Ref: [manuscript] only. No external citation to misuse. AME 2020 referenced in prose (md:56) without a formal cite entry, a minor bib gap but not a misattribution."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Compound \u03b2-decay calibration across magic shells', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "compound-beta-shell-calibration.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Compound \u03b2-decay calibration across magic shells' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "compound-beta-shell-calibration.md:51-53 'Q_β^(3) are the level-3 (non-magic) Q-values predictable from the pair-coupling shadow price' — 'level-3' and 'pair-coupling shadow price' are used as established terms but not defined or linked in-block; md:96-98 'shell-transition knot' links to a conj:, i.e. itself conjectural.",
-        "notes": "Key load-bearing quantities (level-3 shadow prices, shell operator tr_M^parent/daughter) are referenced informally. The y_target the proposition purports to derive is itself only loosely tied to 'shell binding target' without a precise in-block definition. tr_M^{e^-+ν̄} as a leptonic-channel trace (md:91) is unusual and undefined here."
+        "evidence": "compound-beta-shell-calibration.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical prediction is actually computed in this block — the naïve ratios and chain sums are deferred to Tables 1-3 (separate data blocks) and the derivation is marked Open. Nothing to assess for fit noise / precision here; the empirical content is in the table siblings."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Compound \u03b2-decay calibration across magic shells' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "compound-beta-shell-calibration.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Compound \u03b2-decay calibration across magic shells' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "compound-beta-shell-calibration.md:82-93: Q_β(magic-crossing) = E_0·(|tr_M^parent| - |tr_M^daughter| - |tr_M^{e^-+ν̄}|). Writing a β-decay Q-value as a difference of absolute-value Markov traces times a single scale E_0, including a leptonic trace term, is a strong structural ansatz unverified against the known nuclear mass differences.",
-        "notes": "Not refutable from the block (no numbers), but a domain expert would note that β-decay Q-values are mass-energy differences fixed by AME to keV precision; recasting them as |tr_M| differences must reproduce those values, which the block does not demonstrate. The |·| on each trace (rather than a signed sum) is physically suspicious for an energy-conservation relation. Flagged warn pending the deferred implementation."
+        "evidence": "compound-beta-shell-calibration.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f6ceaf87a859",
-          "ts": "81b5947fae0f",
-          "lean": "80a41d426a8c"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "compound-beta-shell-calibration.qa.json is not separately read here, but the .ts declares no computation:/witness and the .lean is all-sorry; the numerical claims live in the table-data sibling blocks (compound-beta-shell-calibration-table{1,2,3}-data) not audited in this pass.",
-        "notes": "The derivation is explicitly Open (md:129) so there is no compute to reproduce yet; the AME reference data in the tables is in principle checkable but the chain-Q extraction itself is unbuilt. Reproducibility is moot-but-pending rather than broken; flagged warn because the parameter-free-prediction claim has no backing witness."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "f6ceaf87a859",
+          "md": "db39ac757660",
           "ts": "81b5947fae0f",
           "lean": "80a41d426a8c"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "compound-beta-shell-calibration.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean:52:44: error: Type mismatch"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "db39ac757660",
+          "ts": "81b5947fae0f",
+          "lean": "80a41d426a8c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation.",
         "severity": "major",
-        "notes": "verdict: major-revision (demote toward research-program framing). referee_argument: this is a promising research sketch presented as a proved proposition. The strongest objections: (1) the lean.ref points to a namespace, not a declaration, and all three theorems are sorry stubs that — even if discharged — would prove only trivial '∃x,x=expr' / hardcoded-Float statements, not the headline claim; (2) Consequence 3 asserts parameter-free predictions for the full magic tower (4He…208Pb) while md:129 concedes the derivation is unimplemented — a not-yet-built-as-delivered overclaim; (3) the 'no new calibration' claim depends on undisclosed level-3 shadow prices that could harbor hidden DOF; (4) the |tr_M| difference ansatz for β Q-values is unverified against keV-precision AME data. Recommend: relabel as conjecture/research-program, fix the lean.ref to a real decl, and either discharge the existence lemmas honestly or remove them."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

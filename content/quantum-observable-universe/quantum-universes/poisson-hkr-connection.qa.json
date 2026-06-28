@@ -835,7 +835,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "No false claims identified in 'The [internal Poisson object](#def:poisson-object) makes explicit a': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The [internal Poisson object](#def:poisson-object) makes explicit a'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'The [internal Poisson object](#def:poisson-object) makes explicit a' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The [internal Poisson object](#def:poisson-object) makes explicit a'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "The argument flow in 'The [internal Poisson object](#def:poisson-object) makes explicit a' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "Citations to yekutieli2010, fred2005 are correct and contextually appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "Key terms and symbols in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "The algebraic and logical relations in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "The physical concepts described in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
+        "notes": "The derivation steps and formal definitions in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "186afcabc7f4",
+          "ts": "a1c70209183a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.md:1 — The [internal Poisson object](#def:poisson-object) makes explicit a",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.527Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

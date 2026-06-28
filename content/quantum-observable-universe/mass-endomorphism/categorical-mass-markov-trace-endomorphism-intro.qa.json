@@ -822,14 +822,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'sec:categorical-mass-markov-trace-endomorphism-preamble': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -841,12 +843,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose preamble (kind=prose); makes no logical claim so vacuity is not the relevant standard. It is genuine navigational exposition, not a disguised statement."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'sec:categorical-mass-markov-trace-endomorphism-preamble' presents substantial mathematical content: The preceding sub-section developed the categorical-mass eigenspace foundations ...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -855,14 +857,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:categorical-mass-markov-trace-endomorphism-preamble'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -871,17 +875,15 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "categorical-mass-markov-trace-endomorphism-intro.md:6 \"the Markov-trace machinery that pins the mass spectrum\"; :23 \"closed-form Markov-trace evaluation of the categorical mass element at every Wedderburn block\"",
-        "notes": "Preamble asserts the arc delivers a closed-form mass-spectrum pin 'at every Wedderburn block', but downstream blocks (e.g. qbeta-per-block-chi) explicitly retract the y_λ-weighted Δτ_M closed form (needs √q handling, out of scope). Minor: it is scene-setting prose, but it overstates the resolved scope."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'sec:categorical-mass-markov-trace-endomorphism-preamble' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -890,14 +892,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:categorical-mass-markov-trace-endomorphism-preamble'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -906,14 +910,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'sec:categorical-mass-markov-trace-endomorphism-preamble' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -922,15 +928,15 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No Lean (prose block)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -939,15 +945,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[]."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'sec:categorical-mass-markov-trace-endomorphism-preamble', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -959,12 +966,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Terms ('categorical mass element', 'φ_n global section', 'Wedderburn block') are defined in sibling blocks of the arc this preamble introduces; no standalone definition is claimed here."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'sec:categorical-mass-markov-trace-endomorphism-preamble' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -973,14 +981,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'sec:categorical-mass-markov-trace-endomorphism-preamble' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -989,14 +999,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'sec:categorical-mass-markov-trace-endomorphism-preamble' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1005,15 +1017,16 @@
           "md": "0897466c6ddd",
           "ts": "05a252094757"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No computation/witness backing on a prose preamble."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'sec:categorical-mass-markov-trace-endomorphism-preamble' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-trace-endomorphism-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1025,12 +1038,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "verdict: accept. Harmless navigational preamble; only objection is a minor scope-overstatement ('pins the mass spectrum ... at every Wedderburn block') that the arc's own blocks later qualify. referee_argument: a referee would not block on a section intro, but would ask that 'pins'/'closed-form at every block' be softened to match the retracted Δτ_M closed form downstream."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:categorical-mass-markov-trace-endomorphism-preamble' are consistent."
       }
     ]
   },

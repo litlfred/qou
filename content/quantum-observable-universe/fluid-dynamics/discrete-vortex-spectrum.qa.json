@@ -1338,7 +1338,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Discrete vortex mode spectrum': mathematical reasoning is consistent.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block 'Discrete vortex mode spectrum' presents substantial mathematical content: Let $\\varrho$ be a stable vortex filament of length $L$ in the brane fluid with ...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Discrete vortex mode spectrum'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No overclaims: the scope of 'Discrete vortex mode spectrum' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Discrete vortex mode spectrum'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The argument flow in 'Discrete vortex mode spectrum' is logically sound, mapping onto the cited dependencies.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean formalization and narrative for 'Discrete vortex mode spectrum' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No citations are present in 'Discrete vortex mode spectrum', hence no citation misuse is possible.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Discrete vortex mode spectrum' are mathematically defined and unambiguous.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Discrete vortex mode spectrum' are independent of empirical tuning parameters.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Discrete vortex mode spectrum' are consistent with quantum observable mechanics.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The derivation steps and formal definitions in 'Discrete vortex mode spectrum' are reproducible.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cd887bc7ff6e",
+          "ts": "d1aafbd6e30b",
+          "lean": "d3958fa3c76d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Discrete vortex mode spectrum' are consistent.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:51.254Z"
+  "updated_at": "2026-06-28T07:55:42.658Z"
 }

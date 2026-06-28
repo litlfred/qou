@@ -1585,7 +1585,255 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "No false claims identified in the prose of 'Volume constraint forces $\\\\det(g_V) = 1$'; the mathematical reasoning concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "The block 'Volume constraint forces $\\\\det(g_V) = 1$' presents substantial mathematical content: 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Volume constraint forces $\\\\det(g_V) = 1$' (which asserts 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "The remarks and narrative scope in 'Volume constraint forces $\\\\det(g_V) = 1$' concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Volume constraint forces $\\\\det(g_V) = 1$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "The prose arguments in 'Volume constraint forces $\\\\det(g_V) = 1$' proceed logically through the stated steps: 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Volume constraint forces $\\\\det(g_V) = 1$' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "No citations are present in 'Volume constraint forces $\\\\det(g_V) = 1$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "Key terms and symbols in 'Volume constraint forces $\\\\det(g_V) = 1$' (e.g. from 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "The algebraic and logical relations in 'Volume constraint forces $\\\\det(g_V) = 1$' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "The physical concepts described in 'Volume constraint forces $\\\\det(g_V) = 1$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "su2-emergence-volume-determinant.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Volume constraint forces $\\\\det(g_V) = 1$' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Volume constraint forces $\\\\det(g_V) = 1$' (concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -1136,7 +1136,139 @@
         "reviewed_at": "2026-06-24T04:12:24Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cc02ba388aeb",
+          "ts": "fd7d9254e456",
+          "lean": "08b12db0dea1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean:1 — content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.olean' of module QOU.BraidKnot.KnotFactorFrobeniusPairing does not exist",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }

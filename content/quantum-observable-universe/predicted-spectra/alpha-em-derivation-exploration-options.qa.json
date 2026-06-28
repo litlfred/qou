@@ -1043,7 +1043,251 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Remark mapping GB/spectral-sequence/Hopf infrastructure to the open 1/α_EM derivation; sits in the 'EM completeness and gauge coupling' section, interprets prop:em-coupling-bring-zero-mode. No new provable claim. Well placed."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' presents substantial mathematical content: 'Remark (exploration options to close the $1/\\alpha_{EM}$ derivation).'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation'.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation'.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "alpha-em-derivation-exploration-options.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0011ee5369d6",
+          "ts": "f59bde020f59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\\\alpha_{EM}$ derivation' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

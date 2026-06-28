@@ -926,12 +926,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "C_q formula, eigenvalue [j]_q[j+1]_q on V_j, EF/FE equivalence, classical limit j(j+1) are standard (Kassel VI.4) and correct."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'The **$q$-Casimir element** is the distinguished central element of the' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-vacuous": [
@@ -941,15 +942,15 @@
           "ts": "7e71ae2f47e6",
           "lean": "b100fd02b9b2"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Definition is contentful; the Lean QCasimirData bundle + QCasimir element + proved QCasimir_eq_EF / QCasimir_comm_K are genuine."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "severity": "major"
       }
     ],
     "da-circular": [
@@ -962,12 +963,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pure quantum-group definition; no observable target."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['def:quantum-su2'] for 'def:q-casimir' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-overclaim": [
@@ -977,17 +979,15 @@
           "ts": "7e71ae2f47e6",
           "lean": "b100fd02b9b2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "q-casimir.md:28-29 'The element is central: it commutes with each generator, i.e. C_q E = E C_q, C_q F = F C_q, and C_q K = K C_q' stated flatly; but q-casimir.lean:614 axiom QCasimir_comm_E_axiom and :632 axiom QCasimir_comm_F_axiom — two of the three centrality directions are AXIOMATIZED, not proved",
-        "notes": "Only QCasimir_comm_K (q-casimir.lean:339) is actually Lean-proved; commutation with E and F are recorded as external axioms (the ~80-line calc chain was not ported, :623-627). The narrative presents centrality as an established proved property with no banner. Per the corpus's own 'def : True'/axiom-honesty disciplines this is an axiom dressed as a theorem; the .md should flag that E,F-centrality is axiom-backed pending the full port. (Existence is also axiom-backed: q-casimir-exists.lean:30.)"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'def:q-casimir' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1000,12 +1000,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free numeric parameter; normalisation -(q+q^{-1}) is the standard Kassel choice, justified (md:17-19)."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1018,12 +1019,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "EF-form derivation from [E,F] commutator (md:20-26) is the standard and correct manipulation; matches Lean QCasimir_eq_EF proof."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'The **$q$-Casimir element** is the distinguished central element of the' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1033,17 +1035,15 @@
           "ts": "7e71ae2f47e6",
           "lean": "b100fd02b9b2"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "q-casimir.lean:614-622 QCasimir_comm_E is `:= QCasimir_comm_E_axiom`, :632-642 QCasimir_comm_F likewise; :743 qNumberSym_classical_limit_axiom",
-        "notes": "The Lean 'theorems' QCasimir_comm_E / QCasimir_comm_F / qNumberSym_classical_limit are thin wrappers over declared `axiom`s, so they Lean-typecheck but discharge no proof obligation. The .md presents the same statements (centrality, classical limit) as established facts. The divergence: narrative reads as proved; Lean reaches the conclusion by fiat. lean.validation is 'not_checked', so this is not caught by a build gate."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1056,12 +1056,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "kassel1995 (Quantum Groups, VI.4) and lusztig1993 both resolve in references.ts and are the correct sources for the q-Casimir."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses ['def:quantum-su2'] cited in 'def:q-casimir' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1071,17 +1072,16 @@
           "ts": "7e71ae2f47e6",
           "lean": "b100fd02b9b2"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'def:q-casimir' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "q-casimir.md:8-9 requires only 'q^2 != 1 (so that q - q^{-1} is invertible)'; eigenvalue/qNumberSym in q-casimir.lean:675 additionally needs q != 0 and the spin convention K v_j = q^{2j} v_j (lean:683) which is not stated in the .md",
-        "notes": "The .md gives the eigenvalue [j]_q[j+1]_q without stating the highest-weight convention (K v_j = q^{2j}) that fixes it, and the half-integer spin case is handled in Lean by reparametrising with q^{1/2} (lean:684) — a base-ring/regime detail (R_q vs a field) invisible in the narrative. Minor: a careful reader cannot reconstruct the eigenvalue normalisation from the .md alone."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1091,15 +1091,16 @@
           "ts": "7e71ae2f47e6",
           "lean": "b100fd02b9b2"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical/experimental claim."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'def:q-casimir' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1112,12 +1113,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Terminology note (md:56-62) correctly distinguishes q-Casimir element from the Casimir effect; no implausible physics."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'def:q-casimir' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1127,15 +1129,16 @@
           "ts": "7e71ae2f47e6",
           "lean": "b100fd02b9b2"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Definition block, no compute witness; backing is Lean (partly axiomatized, see da-overclaim)."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       }
     ],
     "da-referee-verdict": [
@@ -1148,13 +1151,14 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "notes": "verdict: minor-revision. Strongest objection (referee_argument): the narrative asserts full centrality of C_q ('it commutes with each generator') as established, but in the Lean two of the three commutation results (with E and with F) plus existence and the classical limit are declared `axiom`s wrapped as theorems (q-casimir.lean:614,632,743; q-casimir-exists.lean:30) — only K-centrality is genuinely proved. The mathematics is standard and true, but the block presents axiom-backed results as proved without a banner, and lean.validation is 'not_checked'. Add an authorNotes/status banner flagging the axiomatized E/F-centrality + existence pending the full Kassel VI.4 port."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       }
     ]
   },

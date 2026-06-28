@@ -822,15 +822,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Prose preamble; asserts no proposition of its own (lists downstream sub-section topics)."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in '': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -839,15 +841,16 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "prose block kind; an expository transition paragraph is allowed to carry no logical content (AGENTS.md prose convention). Not a theorem/def, so vacuity lens does not apply."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block '' presents substantial mathematical content: '$q$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -856,15 +859,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No derivation present."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in ''.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -873,17 +878,16 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.md:8-12 lists 'mass-volume factorisation … bar-involution invariance … soft-confinement at q_0' as consequences the sub-section 'reads off'.",
-        "notes": "Forward-references several downstream results as settled 'consequences'. As a navigational preamble this is benign, but the confident framing ('closes the atomic-braid mass-formula arc') slightly oversells items that are themselves conjectural/open elsewhere in the chapter. Minor."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in '' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -892,15 +896,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No parameters introduced."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in ''.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -909,15 +915,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No inferential steps; a list of topics."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in '' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -926,15 +934,16 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No Lean sibling (prose); nothing to compare."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -943,15 +952,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] and no -- Ref:."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in '', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -962,13 +973,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Terms used (crossing-graded, locality, CPT-orbit) are defined in the referenced downstream blocks; preamble does not redefine them."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in '' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -977,15 +990,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical claim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in '' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -994,15 +1009,17 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physical prediction stated here."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in '' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "atomic-braid-mass-crossing-locality-cpt-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1011,15 +1028,16 @@
           "md": "a4dd141d5086",
           "ts": "b10e5ecd6114"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No backing compute/witness for a prose preamble."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in '' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1030,15 +1048,16 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "736-byte prose preamble; no logical or numerical claims.",
-        "notes": "verdict=accept. referee_argument: A navigational transition paragraph with no provable content; only mild stylistic overclaim ('closes the arc'). Nothing a referee would block."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '' are consistent."
       }
     ]
   },

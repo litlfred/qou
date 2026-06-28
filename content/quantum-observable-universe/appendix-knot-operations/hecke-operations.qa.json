@@ -837,7 +837,229 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Iwahori-Hecke algebra relations presented are correct.",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The block lists concrete relations and the Borromean braid NF.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No circularity is present in the algebraic relations.",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The claim that the near-cancellation of L+ and L- coefficients reflects the physical color neutrality of the baryon is a speculative physical overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No hidden parameters are introduced in the algebraic presentation.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic steps are sound.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No divergence is found.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The citation is correct.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The terms B3 (Borromean braid), γ, L+, and L- are introduced and assigned coefficients without being defined in this block.",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebra is exact in q.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Assigning physical meaning to individual coefficients in a Hecke algebra normal form as 'gluon content' and 'color neutrality' lacks any connection to physical quantum chromodynamics.",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The normal form calculations are verified by the basis_knot_tables script.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3a942e1ecdde",
+          "ts": "f1dd84811c9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The elements $B_3$, $\\gamma$, $L_+$, and $L_-$ are not mathematically defined, and the physical interpretation of normal-form Hecke algebra coefficients as 'gluon content' is speculative and lacks QFT justification."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.327Z"
+  "updated_at": "2026-06-28T07:05:42.356Z"
 }

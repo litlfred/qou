@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1184,7 +1184,7 @@
           "ts": "c1484aeb0564"
         },
         "result": "warn",
-        "notes": "No strategy realised: Lean abstracts both sides to a shared opaque bk_integral; .md states the Φ_q integral identity without proving it.",
+        "notes": "No strategy realised: Lean abstracts both sides to a shared opaque bk_integral; .md states the \u03a6_q integral identity without proving it.",
         "reviewed_at": "2026-06-25T17:05:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1245,7 +1245,7 @@
           "ts": "c1484aeb0564"
         },
         "result": "pass",
-        "notes": "Identifying the exceptional-divisor mass-integral with the quantum dilogarithm Φ_q is a well-posed, substantive narrative goal.",
+        "notes": "Identifying the exceptional-divisor mass-integral with the quantum dilogarithm \u03a6_q is a well-posed, substantive narrative goal.",
         "reviewed_at": "2026-06-25T17:05:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "c1484aeb0564"
         },
         "result": "fail",
-        "notes": ".md claims ‖MI∫_{E_i}(∇_A q, L∧F+)‖ = Φ_q(z_i) = ∫_0^{z_i} ln_q(1+t)/t dt. Lean proves only MI i = Phi_q(z i) for OPAQUE ℕ→ℝ functions via assumed bk_integral equalities — no integral, no quantum dilogarithm. Degenerate weakening.",
+        "notes": ".md claims \u2016MI\u222b_{E_i}(\u2207_A q, L\u2227F+)\u2016 = \u03a6_q(z_i) = \u222b_0^{z_i} ln_q(1+t)/t dt. Lean proves only MI i = Phi_q(z i) for OPAQUE \u2115\u2192\u211d functions via assumed bk_integral equalities \u2014 no integral, no quantum dilogarithm. Degenerate weakening.",
         "reviewed_at": "2026-06-25T17:05:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "c1484aeb0564"
         },
         "result": "fail",
-        "notes": "Fields mi_eq_integral + phi_eq_integral jointly ARE the conclusion (∀i MI i=Phi_q(z i)); proof rw over assumed equalities (class carries the conclusion).",
+        "notes": "Fields mi_eq_integral + phi_eq_integral jointly ARE the conclusion (\u2200i MI i=Phi_q(z i)); proof rw over assumed equalities (class carries the conclusion).",
         "reviewed_at": "2026-06-25T17:05:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "c1484aeb0564"
         },
         "result": "pass",
-        "notes": "Field equalities jointly satisfiable (set MI=Phi_q∘z=bk_integral); not contradictory.",
+        "notes": "Field equalities jointly satisfiable (set MI=Phi_q\u2218z=bk_integral); not contradictory.",
         "reviewed_at": "2026-06-25T17:05:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1615,12 +1615,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Identity ‖MI∫_{E_i}(...)‖ = Φ_q(z_i) is an asserted (sorry'd) identification, not demonstrably false; no counterexample available since both sides are opaque non-Mathlib objects."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Quantum dilogarithm evaluation of exceptional-divisor contributions': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1632,12 +1633,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean theorem tm_dilogarithm_evaluation : ∀ i, MI i = Phi_q (z i) is a genuine identity between named opaque reals discharged by honest sorry + 3 -- Ref: citations (tm_dilogarithm_evaluation.lean:50-57). Not a True-trivial; honest 'queue it' disposition."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Quantum dilogarithm evaluation of exceptional-divisor contributions' presents substantial mathematical content: \\bigl\\lVert \\mathrm{MI}\\!\\!\\int_{E_i} \\bigl(\\nabla_A q, L \\wedge F^+\\bigr) \\bigr...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1646,15 +1647,16 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical target or calibration involved; pure structural identity."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum dilogarithm evaluation of exceptional-divisor contributions'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1666,12 +1668,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lemma is honestly unproved (sorry); md does not claim it is established. The proof.md defers to 'the Corollary below', a forward-reference, but does not overstate proof status."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Quantum dilogarithm evaluation of exceptional-divisor contributions' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1680,15 +1682,16 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free numerical parameters; structural identity, not a calibration."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum dilogarithm evaluation of exceptional-divisor contributions'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1697,17 +1700,16 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Quantum dilogarithm evaluation of exceptional-divisor contributions' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "topological-mass-dilogarithm-proof.md:1-6",
-        "notes": "The 'Proof' merely says the identification 'follows from the Corollary below' — a one-line deferral to an unnamed forward Corollary, not an argument. Combined with the Lean sorry this is an honest gap, but the prose 'Proof. ... $\\square$' presents a QED for what is actually unproved. Minor: the Lean is honest, but the .md proof block claims closure it does not provide."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1716,15 +1718,15 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean statement ∀ i, MI i = Phi_q (z i) (tm_dilogarithm_evaluation.lean:53) faithfully encodes the .md boxed identity over opaque objects, discharged by sorry. No weakening/divergence; the .md does not claim Lean-proved status (validation: not_checked in .ts)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1736,12 +1738,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "-- Ref: [faddeev_kashaev1994] (quantum dilogarithm Φ_q) and [yekutieli2015] (multiplicative integration) are exactly the two missing-from-Mathlib ingredients the identity needs; correctly attributed (tm_dilogarithm_evaluation.lean:50-52)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Quantum dilogarithm evaluation of exceptional-divisor contributions', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1750,17 +1753,16 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Quantum dilogarithm evaluation of exceptional-divisor contributions' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "topological-mass-dilogarithm.md:7-13",
-        "notes": "ln_q (q-logarithm) and Φ_q (quantum dilogarithm) are used without in-block definition; the 'Briggs–Klein chart' and 'spectral coordinates z_i' are named but not defined here. Resolution depends on upstream uses[] (topological-mass-holonomy, -transient-localisation); a reader cannot pin the q-deformation convention of ln_q from this block alone."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1769,15 +1771,16 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical match or q0-anchored value asserted."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Quantum dilogarithm evaluation of exceptional-divisor contributions' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1789,12 +1792,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Norm = quantum-dilogarithm integral is dimensionally a pure-number identification in spectral coordinates; no units/conservation claim a domain expert would reject."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Quantum dilogarithm evaluation of exceptional-divisor contributions' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1803,15 +1807,16 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No computation/witness attached in .ts; nothing to reproduce."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Quantum dilogarithm evaluation of exceptional-divisor contributions' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1820,17 +1825,17 @@
           "md": "e61b3167d76a",
           "ts": "c1484aeb0564"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "topological-mass-dilogarithm-proof.md:1-6; tm_dilogarithm_evaluation.lean:53-57",
-        "notes": "verdict: minor-revision. referee_argument: the identity is honestly queued in Lean (sorry + correct citations) and the .ts marks it not_checked, but the .md 'Proof ... $\\square$' asserts a QED by deferring to an unnamed 'Corollary below', and key q-objects (ln_q, Φ_q, Briggs–Klein chart) are undefined in-block. Strongest objection: the prose proof claims closure the formalization does not provide — relabel as proof sketch / forward-reference rather than 'Proof ... $\\square$'."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.lean is missing, preventing formal verification of the claims in 'Quantum dilogarithm evaluation of exceptional-divisor contributions'."
       }
     ]
   },

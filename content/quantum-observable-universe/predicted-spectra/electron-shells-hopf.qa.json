@@ -1077,7 +1077,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Electron shells as closed sub-Hopf links of the trefoil chain' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "electron-shells-hopf.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Electron shells as closed sub-Hopf links of the trefoil chain'.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Electron shells as closed sub-Hopf links of the trefoil chain' as verified, but the sibling Lean proof contains sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electron shells as closed sub-Hopf links of the trefoil chain'.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Electron shells as closed sub-Hopf links of the trefoil chain', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Electron shells as closed sub-Hopf links of the trefoil chain' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Electron shells as closed sub-Hopf links of the trefoil chain' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Electron shells as closed sub-Hopf links of the trefoil chain' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "electron-shells-hopf.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains sorry, indicating incomplete verification.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9bbf3730634e",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

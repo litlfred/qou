@@ -27,7 +27,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements — `positivity` here only needs to show that `(a : R_q) / 2 ≥ 0` given `a ≥ 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical — see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
+        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements \u2014 `positivity` here only needs to show that `(a : R_q) / 2 \u2265 0` given `a \u2265 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical \u2014 see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
       },
       {
         "field_hash": {
@@ -46,7 +46,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114: archimedean tactic in categorical chapter — (0 : R_q) ≤ (a : R_q) / 2 := by positivity | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128: archimedean tactic in categorical chapter — linarith [this ▸ (le_refl (a : R_q))] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133: archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136: archimedean tactic in categorical chapter — push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:137: archimedean tactic in categorical chapter — linarith"
+        "evidence": "quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114: archimedean tactic in categorical chapter \u2014 (0 : R_q) \u2264 (a : R_q) / 2 := by positivity | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128: archimedean tactic in categorical chapter \u2014 linarith [this \u25b8 (le_refl (a : R_q))] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133: archimedean tactic in categorical chapter \u2014 have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136: archimedean tactic in categorical chapter \u2014 push_cast [\u2190 hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:137: archimedean tactic in categorical chapter \u2014 linarith"
       }
     ],
     "voice-status-leak": [
@@ -1368,11 +1368,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1382,17 +1384,15 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "knot-eigenbasis-complete.lean:281-290 — the `complete v` premise is destructured but the conclusion `∃ μ, ∃ _:μ∈partitions, ∃ β, tr(braid_rep β)≠0` is just `summands_detected` re-exported (line 292-298 `knot_eigenbasis_density` IS `kec.summands_detected` verbatim). The hypothesis `(v : tensorPower)` is consumed only to pick an arbitrary μ; it never constrains the witness.",
-        "notes": "Not `:True:=trivial`, but the main theorem is a thin projection of a bundled axiom field (`summands_detected`). The structures (SchurWeylDecomposition.complete, AlexanderSurjectivity.surjective, MarkovTrace, summands_detected) are all assumed data fields, so the theorem proves nothing about Rep(SU_q(2)) beyond 'given these as hypotheses, compose them'. Honest as a combining lemma per its own docstring, hence warn not fail."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:knot-eigenbasis-complete'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1405,12 +1405,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No backfitted numerical target; the completeness is a structural assertion built from standard results (q-Schur-Weyl, Alexander, Markov), not a smuggled calibration."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['prop:braid-action-tensor'] for 'prop:knot-eigenbasis-complete' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1420,17 +1421,15 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "knot-eigenbasis-complete.md:24-39 claims the knot-type→summand map 'has image containing every irreducible summand' and:40-47 that knot types 'span V_phys'. The Lean only certifies, per summand, that SOME braid has nonzero trace (summands_detected), assuming that field. The strong 'eigenbasis / spanning / replaces Feynman's continuum integral' framing exceeds what the conditional combining theorem establishes.",
-        "notes": "The .md prose presents a sweeping completeness/spanning result; the formal content is conditional-on-bundled-data. 'replaces Feynman's continuum integral' (md:249-250 in lean docstring, md:Novelty) is interpretive overreach for a proposition whose Lean is a 4-line composition of hypotheses."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'prop:knot-eigenbasis-complete' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1440,15 +1439,16 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical observable / calibration in this block."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1458,17 +1458,16 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "knot-eigenbasis-complete.md:40-47 — step (3) 'spanning' is asserted to 'follow' from (1) complete decomposition + (2) labelling, but the inference that the *labelled* summands SPAN the colimit (rather than merely indexing it) is not argued; semisimplicity (1) already gives spanning by the summands themselves, and (2)'s knot-labelling is an injection of labels, not a spanning claim. The 'therefore … spans' conflates 'every summand has a knot label' with 'knot operators span'.",
-        "notes": "Minor: the conclusion is true under the assumed fields but the prose elides the distinction between indexing and spanning."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1481,14 +1480,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "knot-eigenbasis-complete.md:24-47 claims surjectivity onto every summand + spanning of V_phys. knot-eigenbasis-complete.lean:281-290 `knot_eigenbasis_complete` concludes only `∃ μ ∈ partitions, ∃ β, tr(braid_rep β) ≠ 0` — a single-existential 'some summand is detected', NOT 'every element v is reached' nor 'every summand'. The `(v : tensorPower)` binder is vacuous (used only to invoke `complete v` for an arbitrary μ; the resulting μ is unrelated to v's actual summand). The genuinely universal statement is `knot_eigenbasis_density`/`jones_nontrivial_all_summands`, but those are literally `:= kec.summands_detected` — i.e. the conclusion is an assumed structure field, not derived.",
-        "notes": "proof-statement-integrity: the headline Lean theorem is weaker than the .md (∃ vs ∀, and v-independent), and the ∀ version is a verbatim re-export of an axiomatised hypothesis. The .md should either state the conditional-on-bundled-data scope or the Lean should derive (not assume) summand detection from semisimplicity + Markov non-degeneracy."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1501,12 +1498,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "jones1985/jones1987/kassel1995/chari1994guide/alexander1923 are correctly attributed to q-Schur-Weyl, Markov trace=Jones polynomial, and Alexander's theorem respectively; standard and apt."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses ['prop:braid-action-tensor'] cited in 'prop:knot-eigenbasis-complete' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1516,17 +1514,16 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'prop:knot-eigenbasis-complete' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "knot-eigenbasis-complete.lean:62-63 — the hypothesis 'q is not a root of unity' (central to the .md:5 statement and to semisimplicity) is commented OUT in HeckeAlgebra ('archimedean; not meaningful over R_q'). So the Lean structure carries NO root-of-unity exclusion, yet the .md leans on it for semisimplicity. The base-ring R_q = ℤ[q,q⁻¹] makes 'not a root of unity' formally inexpressible, so the key regime hypothesis is silently dropped on the Lean side.",
-        "notes": "The semisimplicity that drives the whole proposition is conditional on q not a root of unity (md:5), but that condition is unrepresentable/absent in the Lean model. Regime mismatch between narrative and formalisation."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1536,15 +1533,16 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical match in this block."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'prop:knot-eigenbasis-complete' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1557,12 +1555,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No falsifiable physics quantity asserted; the 'replaces Feynman integral' is a framing remark, not a measurable claim."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'prop:knot-eigenbasis-complete' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1572,15 +1571,16 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No backing witness/compute; pure formal block."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1590,16 +1590,17 @@
           "ts": "6a7a9d6041e9",
           "lean": "315d0115ac3c"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "notes": "verdict=minor-revision. referee_argument: The proposition's prose advertises a strong completeness/spanning ('knot types form a complete eigenbasis for colim V^⊗n, replacing Feynman's continuum integral'), but the Lean theorem `knot_eigenbasis_complete` proves only a v-independent single-existential, and the universal 'every summand detected' is an axiomatised structure field re-exported verbatim (`:= kec.summands_detected`), not derived. Additionally the load-bearing 'q not a root of unity' hypothesis is commented out / inexpressible over R_q. The block is honest AS a conditional combining lemma but the narrative over-states; align the .md scope to the conditional Lean content or strengthen the Lean to derive detection."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ]
   },

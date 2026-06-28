@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean"
   },
   "source_hashes": {
-    "md": "3d7d326e9612",
+    "md": "d6e97bbcdeae",
     "ts": "9ea0b7550371",
     "lean": "7586a453eae6"
   },
@@ -898,47 +898,301 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3d7d326e9612",
+          "md": "d6e97bbcdeae",
           "ts": "9ea0b7550371",
           "lean": "7586a453eae6"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:55.753Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:58:41.458Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'conjecture' match validated structurally.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "3d7d326e9612",
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.464Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Proof does not compile due to compilation errors: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "severity": "minor",
+        "score": 0
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.470Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Crossing-graded expansion of the categorical mass endomorphism' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
           "ts": "9ea0b7550371",
           "lean": "7586a453eae6"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:56.149Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T10:58:41.476Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.482Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Crossing-graded expansion of the categorical mass endomorphism'.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.488Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Crossing-graded expansion of the categorical mass endomorphism' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.494Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Crossing-graded expansion of the categorical mass endomorphism'.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.500Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.506Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.512Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations thurston1978 in 'Crossing-graded expansion of the categorical mass endomorphism' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.518Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Crossing-graded expansion of the categorical mass endomorphism' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.524Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Crossing-graded expansion of the categorical mass endomorphism' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.530Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Crossing-graded expansion of the categorical mass endomorphism' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.536Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "crossing-graded-mass-expansion.lean:1 — content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d6e97bbcdeae",
+          "ts": "9ea0b7550371",
+          "lean": "7586a453eae6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.542Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean contains compilation errors: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern, invalidating the claimed formalization."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:56.149Z"
+  "updated_at": "2026-06-28T10:58:41.556Z"
 }

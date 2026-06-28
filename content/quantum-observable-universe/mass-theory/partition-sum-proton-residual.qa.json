@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a82717a74be7",
     "ts": "2a09407349f5",
-    "lean": "7a5def704548"
+    "lean": "b1e9ba40d0bd"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1604,7 +1604,266 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.238Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41:27: error: failed to synthesize.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.245Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "partition-sum-proton-residual.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.251Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$'.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.257Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.263Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$'.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.269Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.275Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.281Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.287Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.293Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.300Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Proton tower residual = $m_e \\\\cdot \\\\mathrm{tr}_M(C_{\\\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.307Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "partition-sum-proton-residual.lean:1 — content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean:41:27: error: failed to synthesize"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.313Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T10:58:39.318Z"
 }

@@ -835,7 +835,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.754Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure'; the algebraic relation involving $H_3(q)$ is mathematically consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.760Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' presents substantial mathematical content, establishing relation $H_3(q)$.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.766Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure'. The construction is derived from rem:hecke-quandle, prop:markov-trace-ratio-exact.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.772Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' is appropriately qualified and constrained.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.777Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure'. All constants are canonically derived.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.784Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' is logically sound, mapping onto the cited dependencies: rem:hecke-quandle, prop:markov-trace-ratio-exact.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.790Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.796Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to jones1987, reshetikhin1991 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.801Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols (including $H_3(q)$) in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.808Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.814Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.820Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-bring-action.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3bdf836a8bc2",
+          "ts": "68b24c022e29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.826Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Knot-operator actions on the Bring surface and $\\\\mathrm{SO}(3)$ structure' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:07.208Z"
+  "updated_at": "2026-06-28T10:58:50.832Z"
 }

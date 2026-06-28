@@ -1956,7 +1956,253 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' (though incomplete).",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:51:06.075Z"
 }

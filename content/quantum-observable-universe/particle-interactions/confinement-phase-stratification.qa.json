@@ -601,7 +601,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -622,7 +622,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1277,7 +1277,7 @@
           "lean": "006ae4472536"
         },
         "result": "pass",
-        "notes": "SDP confinement locus open + μ/σ_F locally constant on phases (Boyd-Vandenberghe §5.6) is well-posed, substantive phase-scoping result.",
+        "notes": "SDP confinement locus open + \u03bc/\u03c3_F locally constant on phases (Boyd-Vandenberghe \u00a75.6) is well-posed, substantive phase-scoping result.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1401,7 +1401,7 @@
           "lean": "006ae4472536"
         },
         "result": "fail",
-        "notes": "Sibling proves headline (IsOpen + μ-constant) via two sorry's; library projects typeclass Prop fields that ARE the conclusions (locus_open:=h.locus_open). Statement faithful but not derived (not downstream of a conj, so conclusion-as-axiom is degenerate).",
+        "notes": "Sibling proves headline (IsOpen + \u03bc-constant) via two sorry's; library projects typeclass Prop fields that ARE the conclusions (locus_open:=h.locus_open). Statement faithful but not derived (not downstream of a conj, so conclusion-as-axiom is degenerate).",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1457,7 +1457,7 @@
           "lean": "006ae4472536"
         },
         "result": "fail",
-        "notes": "Library theorems phase_locus_open/_mu_constant/_sigmaF return HasPhaseStratification fields whose types ARE the conclusions; conclusion axiomatized as class field then projected (§3b-cond non-degeneracy item-5 violated).",
+        "notes": "Library theorems phase_locus_open/_mu_constant/_sigmaF return HasPhaseStratification fields whose types ARE the conclusions; conclusion axiomatized as class field then projected (\u00a73b-cond non-degeneracy item-5 violated).",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1551,7 +1551,7 @@
           "lean": "006ae4472536"
         },
         "result": "pass",
-        "notes": "Premises (connected C ⊆ locus, real-axis data) satisfiable (unit-particle model: universal locus); no contradiction.",
+        "notes": "Premises (connected C \u2286 locus, real-axis data) satisfiable (unit-particle model: universal locus); no contradiction.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1607,7 +1607,7 @@
           "lean": "006ae4472536"
         },
         "result": "pass",
-        "notes": "All binders (P, [HasRealAxisData], [HasPhaseStratification], C, hC, hsub, q₁q₂, h₁h₂) referenced; Fact-instance fields all consumed.",
+        "notes": "All binders (P, [HasRealAxisData], [HasPhaseStratification], C, hC, hsub, q\u2081q\u2082, h\u2081h\u2082) referenced; Fact-instance fields all consumed.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1664,15 +1664,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Claims (1) openness of strict-feasibility locus, (2) real-algebraic stratification of the complement by minor-determinant zero loci, (3) local constancy of active support / μ on components are standard SDP/semialgebraic facts; no counterexample. Statement-level mathematics is sound."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Confinement phases are open strata of the generic $q$-locus' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean:37:79: error: unexpected identifier; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1684,15 +1686,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "confinement-phase-stratification.lean:38,45,48 declare `constant confined/mu/sigmaF` (opaque); the headline theorem :69-73 is assembled from :53-55 and :60-65, both `:= by sorry`.",
-        "notes": "`mu` is an opaque `constant` with no defining equations, so `ConfinementPhaseStratification_mu_constant` cannot be proved as stated except vacuously — and indeed it is `sorry`. The docstring (:16-23) admits the 'concrete model' makes every particle confined at every q so Ω(P) is the universal set, which would make local-constancy trivially true; the actual file instead leaves both lemmas `sorry`. Either way the Lean carries no real content matching the .md's stratification claims. Also `constant` is removed in current Lean 4."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.lean:1"
       }
     ],
     "da-circular": [
@@ -1704,13 +1706,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The phase-scoping argument derives openness/constancy from SDP regularity (Slater) rather than assuming the phase structure it concludes; no back-fitting to a target number."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement phases are open strata of the generic $q$-locus'.",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1720,17 +1724,16 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "confinement-phase-stratification.md:36-43 claim (4): every statement of prop:level-sufficiency, prop:shell-closure-stability 'and their corollaries' plus tr_M preservation 'holds pointwise in each Ω_α and in general fails on ∂Ω(P)'.",
-        "notes": "The blanket assertion that those theorems 'fail on the boundary' is stronger than the proof shows: claim (4)'s argument (:89-98) only shows the *proofs* assume local constancy, i.e. they are *not established* on the boundary — not that the conclusions *fail* there. 'Fails' overclaims 'not proved'."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Confinement phases are open strata of the generic $q$-locus' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1740,15 +1743,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical observable or free coefficient; structural topology/stratification statement."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement phases are open strata of the generic $q$-locus'.",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1758,17 +1763,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean.",
         "severity": "minor",
-        "evidence": "confinement-phase-stratification.md:67-74 claim (2): complement 'defined by the vanishing of a finite product of principal-minor determinants' — but deconfinement (loss of strict feasibility) is an inequality (some minor ≤ 0), not an equality.",
-        "notes": "The complement Ω(P)^c includes the open region where strict feasibility simply fails (minors negative), not only the boundary zero locus; equating the whole complement with a finite union of determinant zero sets conflates the codim-≥1 boundary ∂Ω with the full complement. The 'therefore real-algebraic stratification of the complement' step skips the inequality region."
+        "evidence": "confinement-phase-stratification.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1780,15 +1785,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md states 5 claims incl. real-algebraic stratification (claim 2), σ_F real-analyticity, scope/transition claims; confinement-phase-stratification.lean only attempts openness (:53) and μ-constancy (:60), both `sorry`, and the headline (:69) is their conjunction over an opaque `mu`.",
-        "notes": "Lean formalises a strict subset (claims 1 and a weakened 3) of the .md, over opaque constants, and proves none of it (two `sorry`s). The stratification (claim 2), σ_F analyticity, scope (claim 4) and transition (claim 5) content is entirely absent from the Lean. proof-statement-integrity fails: the manifest decl ConfinementPhaseStratification does not back the .md proposition."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1800,13 +1804,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "confinement-phase-stratification.md:61 cites Boyd–Vandenberghe Lemma 5.4.1 for perturbation-stability of strict feasibility and §5.5.3 for optimiser continuity (references.ts:984 boyd-vandenberghe-2004); appropriate invocations of convex-optimisation results."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Confinement phases are open strata of the generic $q$-locus', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1816,17 +1822,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Confinement phases are open strata of the generic $q$-locus' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "confinement-phase-stratification.md:34 'σ_F(P,q) … is continuous (real-analytic in q on the interior)' while claim (3) bullet treats it as both continuous and real-analytic; and :81 invokes 'generic uniqueness' of the SDP optimiser without defining the generic set.",
-        "notes": "Real-analyticity of σ_F is asserted on 'the interior' without specifying analyticity of the SDP value function (which is generally only piecewise-analytic / continuous, not globally analytic); 'generic uniqueness' is used without pinning the genericity condition. Key regularity term left ambiguous."
+        "evidence": "confinement-phase-stratification.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1836,15 +1842,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match quoted; qualitative topology of Ω(P). The carbon sp³/sp² and noble-gas remarks are illustrative, not numerical predictions."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Confinement phases are open strata of the generic $q$-locus' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "confinement-phase-stratification.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1854,17 +1862,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Confinement phases are open strata of the generic $q$-locus' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "confinement-phase-stratification.md:133-137 'Transitions between components are physically realised as chemical or nuclear rearrangements (e.g. sp³↔sp² hybridisation of carbon)'.",
-        "notes": "Identifying connected-component transitions of an SDP-feasibility locus in the abstract substrate parameter q with physical sp³↔sp² hybridisation is a strong physical interpretation a chemist would not grant without a derived link (hybridisation is not a function of a single substrate q); presented as fact in a remark. Interpretive overreach, flagged not refuted."
+        "evidence": "confinement-phase-stratification.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1874,17 +1882,17 @@
           "ts": "08d5240ba178",
           "lean": "006ae4472536"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "confinement-phase-stratification.md:137-138 points to witness files `sdp_cross_channel.py` and `parity-regime-selection` for the regime-switch phenomenology.",
-        "notes": "The cited witnesses are named but not linked with hashes/paths in the block, and no concrete stratum/boundary value is given to reproduce; the empirical backing is gestured at rather than traceable."
+        "evidence": "confinement-phase-stratification.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean:37:79: error: unexpected identifier; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1896,15 +1904,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation.",
         "severity": "major",
-        "evidence": "Lean over opaque `constant`s with two `sorry`s backing a headline that omits 4 of 5 .md claims; complement-vs-boundary non-sequitur (claim 2); 'fails on boundary' overclaim (claim 4); interpretive sp³/sp² physics in the closing remark.",
-        "notes": "verdict: major-revision. referee_argument: The within-phase scoping discipline is a genuine and valuable observation and the openness/local-constancy claims are mathematically standard, but the formalisation is vacuous (opaque constants, all-sorry) and the .md conflates the SDP-infeasible region with the codim-≥1 boundary, then escalates 'unproved at the boundary' to 'fails at the boundary'. Tighten claim (2) to ∂Ω only, soften claim (4) to a scope (not failure) statement, and either formalise σ_F continuity over a concrete SDP model or mark the Lean an explicit stub."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

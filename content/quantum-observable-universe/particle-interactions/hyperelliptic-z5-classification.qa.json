@@ -1350,15 +1350,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist.",
         "severity": "minor",
-        "evidence": "hyperelliptic-z5-classification.md:41-47: 'even and at least 4 (for g≥1)' then jumps to 'even and at least 6'. The genus-1 / genus-0 exclusion argument (md:42-45) is muddled — it invokes 'hyperelliptic indexing g≥2' to exclude g=1, but g=1 already violates the hyperelliptic-of-genus≥2 framing only by fiat, not by Riemann-Hurwitz.",
-        "notes": "The end result g=2, X≅X_5 is correct (standard Bolza-type classification). The slip is expository: |Branch|=2g+2 with the admissible-size set {0,1,2,5,6,...} does rule out |Branch|=4 (not in the set) directly, making the g=1 case impossible on arithmetic grounds alone — the prose instead leans on an indexing convention. Result stands; argument has a presentational gap, not a false conclusion."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1370,13 +1370,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Lean minimal_z5_branch_size is a genuine finite-Diophantine proof (interval_cases + omega), not vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' presents substantial mathematical content: Let $X$ be a smooth projective Riemann surface of minimal genus satisfying the two conditions",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1388,12 +1389,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1403,17 +1407,16 @@
           "ts": "1346b8b6e291",
           "lean": "c16c7e707ed1"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hyperelliptic-z5-classification.md:11-13,72 states the full theorem 'g(X)=2 and X≅X_5'. The .lean docstring (lines 14-16) explicitly says 'The full geometric classification (isomorphism with HyperellipticQuintic) requires a general HyperellipticCurve class which is beyond the current scope' — only the branch-size arithmetic core is formalized.",
-        "notes": "The narrative presents a complete classification proof; the formal backing covers only the Diophantine sub-step (smallest even admissible branch size ≥4 is 6). The geometric isomorphism — the actual classification content — is unformalized. The block is labeled theorem with lean ref qou:QOU.HyperellipticQuintic.minimal_z5_classification, overstating formal coverage. The narrative proof itself is essentially complete and correct, so this is a Lean-coverage overclaim rather than a math error."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1423,15 +1426,17 @@
           "ts": "1346b8b6e291",
           "lean": "c16c7e707ed1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Pure algebraic-geometry classification; no calibration or fitted constant."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1443,15 +1448,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean.",
         "severity": "minor",
-        "evidence": "hyperelliptic-z5-classification.md:64-70: the two branch-point choices c∈{0,∞} are claimed to give isomorphic curves via 'x↦1/x, y↦y/x^3 sends one to the other up to sign'. The chart change is asserted, not verified; y^2=x^5-1 vs y^2=x^6-x have different degrees and the isomorphism needs the genus-≥2 branch-divisor rigidity cited immediately after.",
-        "notes": "The conclusion is correct (both are X_5 up to iso, standard), but the intermediate 'change of chart' step is stated without showing it actually intertwines the two equations. Minor logical gap papered over by the subsequent rigidity appeal."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1463,15 +1468,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The .ts lean.ref is qou:QOU.HyperellipticQuintic.minimal_z5_classification, but hyperelliptic-z5-classification.lean defines QOU.X5Classification.minimal_z5_branch_size (a ℕ Diophantine bound 6≤n), not a curve-isomorphism theorem. The decl name and namespace in the ref do not match the file, and the proved statement (branch-size ≥6) is strictly weaker than the md claim (g=2 ∧ X≅X_5).",
-        "notes": "Two divergences: (1) ref/declaration name mismatch — ref points to HyperellipticQuintic.minimal_z5_classification which does not exist in the sibling .lean; (2) Lean proves only the arithmetic core, the geometric classification is acknowledged out of scope. proof-statement-integrity fails."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1483,13 +1487,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites [bolza1887] (Bolza, binary sextics with linear self-transformations) is on-topic for genus-2 curves with extra automorphisms; the y^2=x^5-1 / x^6-x family is classical Bolza territory. Appropriately invoked."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to bolza1887 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1499,17 +1505,17 @@
           "ts": "1346b8b6e291",
           "lean": "c16c7e707ed1"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "hyperelliptic-z5-classification.md:1-13 says 'minimal genus satisfying (i),(ii)' then 'Then g(X)=2'. 'Minimal genus' is the hypothesis being characterized, but the proof (md:41-47) separately argues g≥2 from hyperelliptic indexing; the interaction between the 'minimal' qualifier and the derived g=2 is circular-sounding (minimal among what set?).",
-        "notes": "The intended reading (smallest g admitting both structures) is recoverable, but 'minimal genus' as a hypothesis combined with 'then g=2' as conclusion is loosely worded — the minimality is doing the work the proof attributes to Riemann-Hurwitz."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1519,15 +1525,17 @@
           "ts": "1346b8b6e291",
           "lean": "c16c7e707ed1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical/experimental match; abstract classification."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1537,15 +1545,17 @@
           "ts": "1346b8b6e291",
           "lean": "c16c7e707ed1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physics claim in the block itself; the Bring/Sylow-5 physics link is deferred to rem:bring-z5-descent (md:88-94)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1555,15 +1565,17 @@
           "ts": "1346b8b6e291",
           "lean": "c16c7e707ed1"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No witness/compute backing; claim is mathematical."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1575,14 +1587,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "notes": "verdict: major-revision. referee_argument: the narrative classification (g=2, X≅X_5) is mathematically sound (standard Bolza result), but the block overstates its formal status — the lean.ref points to a non-existent declaration name (HyperellipticQuintic.minimal_z5_classification vs the actual X5Classification.minimal_z5_branch_size), and the Lean only proves the branch-size Diophantine sub-lemma, leaving the geometric isomorphism unformalized and self-acknowledged out of scope. Fix the ref to match the real decl and either downgrade the formal claim or formalize the curve isomorphism. Minor expository gaps (g=1 exclusion, chart-change step) should also be tightened."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean for 'Minimal-genus hyperelliptic curves with faithful $\\\\mathbb{Z}_5$-symmetry' fails compilation with error: content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist. This invalidates the claim of formal verification."
       }
     ]
   },

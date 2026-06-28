@@ -1273,7 +1273,7 @@
           "lean": "e438d7744ca0"
         },
         "result": "pass",
-        "notes": "Vortex mass = holonomy + Σ quantum-dilog over blow-up centres is well-posed; clearly flagged conjectural with explicit proof obligations.",
+        "notes": "Vortex mass = holonomy + \u03a3 quantum-dilog over blow-up centres is well-posed; clearly flagged conjectural with explicit proof obligations.",
         "reviewed_at": "2026-06-25T17:04:36.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1397,7 +1397,7 @@
           "lean": "e438d7744ca0"
         },
         "result": "pass",
-        "notes": "Legit §3b-cond: class TopologicalDecompositionMass carries decomp (mass=holonomy+Σdilog) as the conjectural input; 5 downstream theorems (mass_nonneg, _eq_holonomy_of_flat, _gt_holonomy_of_dilog_pos, _mono_of_extra_dilog, _unique) genuinely DERIVED via add_nonneg/sum_pos/gcongr/Fin.sum_univ_castSucc. No sorry/axiom.",
+        "notes": "Legit \u00a73b-cond: class TopologicalDecompositionMass carries decomp (mass=holonomy+\u03a3dilog) as the conjectural input; 5 downstream theorems (mass_nonneg, _eq_holonomy_of_flat, _gt_holonomy_of_dilog_pos, _mono_of_extra_dilog, _unique) genuinely DERIVED via add_nonneg/sum_pos/gcongr/Fin.sum_univ_castSucc. No sorry/axiom.",
         "reviewed_at": "2026-06-25T17:04:36.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1493,7 +1493,7 @@
           "lean": "e438d7744ca0"
         },
         "result": "pass",
-        "notes": "Premises satisfiable: trivialVortex instance (holonomy=0,N=0) witnesses the class; N=0, (0<N ∧ 0<dilog), N₂=N₁+1 all realisable.",
+        "notes": "Premises satisfiable: trivialVortex instance (holonomy=0,N=0) witnesses the class; N=0, (0<N \u2227 0<dilog), N\u2082=N\u2081+1 all realisable.",
         "reviewed_at": "2026-06-25T17:04:36.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1606,15 +1606,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Stated as a conjecture (decomposition equation); not asserted as proved, so falsity is not the right axis. The decomposition shape itself is not obviously false."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Conjectural Topological Decomposition of Mass': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1624,17 +1625,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "topological-mass-conjecture.lean:178-186 instance trivialVortex sets holonomy=0, N=0, mass=0, decomp := by simp",
-        "notes": "The downstream theorems (mass_unique, mass_nonneg, mass_eq_holonomy_of_flat, mass_gt_holonomy_of_dilog_pos, mass_mono_of_extra_dilog) are genuine and proved from decomp. But the only supplied instance is the trivial N=0/mass=0 vortex, which encodes none of the conjectural content (the docstring admits this). The conjecture class itself is content-bearing (carries the decomp field), so this is a warn, not a fail: the §3b-cond hypothesis is discharged only by a degenerate instance."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1"
       }
     ],
     "da-circular": [
@@ -1647,12 +1647,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No back-fitting: the decomposition is an open conjecture with three explicit proof obligations (.md lines 39-53), not a derivation that assumes its target."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Conjectural Topological Decomposition of Mass'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1662,17 +1663,15 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".ts:4 label 'prop:topological-decomposition-mass' + builder proposition(); title 'Conjectural Topological Decomposition of Mass'; .md:29 'The present conjecture'; .lean:7 'conjectural' and axiomatized as a class",
-        "notes": "Block kind is 'proposition' and label prefix 'prop:' but the content is explicitly a conjecture (title, .md prose, Lean class-axiomatization all say conjectural). Per AGENTS.md §3b, a statement carrying an unproved conjectural claim should be kind 'conjecture' (conj: prefix). Labelling it a proposition overclaims its epistemic status. The Lean correctly axiomatizes it as a class, but the .ts manifest's provable kind is inconsistent."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Conjectural Topological Decomposition of Mass' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1682,17 +1681,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conjectural Topological Decomposition of Mass'.",
         "severity": "minor",
-        "evidence": ".md:45-48 'N is determined by the genus of ϱ's brane'; .md:50-53 z_i = |V̂_i(q)| algebraic-volume magnitude",
-        "notes": "N (number of exceptional divisors) and the blow-up centres z_i are asserted to be determined by the brane genus / generator volumes but the determination is itself proof obligation 2 and 3 (unproved). Not a calibration leak into a numerical prediction; flagged minor as an under-specified-but-disclosed parameter."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1702,15 +1700,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "n/a",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No derivation chain inside the block — it is a conjecture statement plus relationship discussion; the three proof obligations are openly listed as unproved."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1720,17 +1719,15 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".lean:68-82 class TopologicalDecompositionMass with decomp field; downstream theorems lines 94-168 proved unconditionally from decomp",
-        "notes": "The Lean does NOT prove the conjecture (correctly — it axiomatizes it as a class hypothesis). The downstream theorems prove only generic consequences of an abstract 'mass = holonomy + Σ dilog' equation over an OrderedAddCommMonoid; they do not touch the substantive content (holonomy = descent trace, dilog = Φ_q evaluation, finite blow-up locus). This is acceptable §3b-cond conditional-class practice, but the Lean's structural results are far weaker than the .md's three proof obligations suggest, and the sole instance is trivial — warn for the gap between Lean coverage and narrative claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1743,12 +1740,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "uses cor:quantum-dilogarithm; -- Ref: are [manuscript] internal labels, not external misattributions. No external citation invoked for an unsupported result."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Conjectural Topological Decomposition of Mass', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1758,17 +1756,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Conjectural Topological Decomposition of Mass' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:10 ‖Hol_∇(ϱ₀;G)‖ Killing-form norm; .md:47 'contributing non-by definition' (garbled phrase); .md:53 z_i = |V̂_i(q)|",
-        "notes": ".md:47 contains a corrupted phrase 'contributing non-by definition to m(ϱ)' (apparently 'non-trivially' was mangled), leaving the finiteness criterion ambiguous. The 'algebraic-volume magnitude' V̂_i is not defined in-block. Minor."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1778,15 +1775,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical match claimed; pure structural conjecture."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Conjectural Topological Decomposition of Mass' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1799,12 +1797,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "mass = holonomy + Σ non-negative transients is dimensionally and physically coherent (mass ≥ 0, additive over localized contributions). No conservation/units violation."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Conjectural Topological Decomposition of Mass' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1814,15 +1813,16 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No witness/compute backing; conjecture with Lean-only formalization (validation: not_checked in .ts:8)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1832,16 +1832,17 @@
           "ts": "8077656e4dff",
           "lean": "e438d7744ca0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "notes": "VERDICT: minor-revision. referee_argument: The block is honest as a conjecture in its prose and Lean (correctly class-axiomatized with proved downstream consequences). The principal objection is the kind/label mismatch — it is filed as a 'proposition' (prop:) while every textual and Lean signal says 'conjecture'; per AGENTS.md §3b an unproved claim of this kind must be kind 'conjecture'. Secondary: the only Lean instance (trivialVortex) is degenerate (mass=0), so no non-trivial witness of the decomposition exists, and a garbled clause at .md:47 obscures the finiteness criterion. Re-kind to conjecture and supply (or honestly defer) a non-trivial instance."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist, invalidating the claimed formalization."
       }
     ]
   },

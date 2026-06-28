@@ -131,6 +131,7 @@ import QOU.BraidKnot.JonesViaMarkovTrace
 -- the two moves together make tr_M a link invariant. (Also pulls IwahoriHeckeAPI
 -- into the in-build set.)
 import QOU.BraidKnot.MarkovTraceLinkInvariance
+import QOU.BraidsAndKnots.YLambdaQSchur
 
 /-!
 # BraidKnot — Module Index

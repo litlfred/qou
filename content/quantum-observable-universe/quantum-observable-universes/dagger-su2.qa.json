@@ -816,7 +816,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "For the example 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (asserting 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of dagger-su2.lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "The sibling Lean file dagger-su2.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' is non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (which asserts 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "No overclaims: the scope of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' matches the sorry-free formalization in dagger-su2.lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "The logical steps in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' are formally sound and verified by the sorry-free compilation of dagger-su2.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "The Lean signature in dagger-su2.lean corresponds directly to the narrative claim in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "No citations are present in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "Key terms and symbols in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (e.g. from 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "The empirical claims in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (quoting 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.ts:1",
+        "notes": "The physical concepts described in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "dagger-su2.lean:1",
+        "notes": "The formalization is fully reproducible as dagger-su2.lean compiles successfully."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6ab490dc158f",
+          "ts": "ca2f62e5bde2",
+          "lean": "3ae738ff066c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (concerning 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:36.973Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

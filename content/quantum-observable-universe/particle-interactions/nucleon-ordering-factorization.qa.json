@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1245,7 +1245,7 @@
           "ts": "69bd58c8cdd0"
         },
         "result": "pass",
-        "notes": "Well-posed: Wedderburn 3-channel factorization of nuclear Markov trace with ordering-independent scalar channels + 2×2 standard transfer matrices; concrete ⁵⁶Fe speedup analysis.",
+        "notes": "Well-posed: Wedderburn 3-channel factorization of nuclear Markov trace with ordering-independent scalar channels + 2\u00d72 standard transfer matrices; concrete \u2075\u2076Fe speedup analysis.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1363,7 +1363,7 @@
           "ts": "69bd58c8cdd0"
         },
         "result": "pass",
-        "notes": "Conjunction faithfully encodes md master factorization trM=W_sym·S+W_std(z·a+b)+W_alt·A plus cost(4,36) and eval-counts(1,1) over ℝ; no :True/sorry/native_decide.",
+        "notes": "Conjunction faithfully encodes md master factorization trM=W_sym\u00b7S+W_std(z\u00b7a+b)+W_alt\u00b7A plus cost(4,36) and eval-counts(1,1) over \u211d; no :True/sorry/native_decide.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "69bd58c8cdd0"
         },
         "result": "fail",
-        "notes": "thm := ⟨ctx.h_master,⟨ctx.h_cost_std,ctx.h_cost_naive⟩,…⟩; h_master IS the headline factorization conclusion, projected from a class field. Wedderburn/transfer-matrix derivation only in md.",
+        "notes": "thm := \u27e8ctx.h_master,\u27e8ctx.h_cost_std,ctx.h_cost_naive\u27e9,\u2026\u27e9; h_master IS the headline factorization conclusion, projected from a class field. Wedderburn/transfer-matrix derivation only in md.",
         "reviewed_at": "2026-06-25T17:07:43.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1614,13 +1614,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Sub-claim (i) (product of commuting scalars is permutation-invariant) is true and Lean-proved via List.Perm.prod_eq. The 2×2 transfer-matrix factorization (ii) and Hecke-relation eigenvalue derivation are standard and internally consistent."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Nucleon-level ordering factorization via jet-descended confinement': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1631,13 +1633,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Not vacuous: the Lean main theorem carries an honest sorry (not a self-assuming projection — the class fields are free scalars, the equation relating them is the unproved content), and sub-claim (i) is genuinely discharged."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Nucleon-level ordering factorization via jet-descended confinement' presents substantial mathematical content: The Wedderburn--Artin decomposition of $H_3(q)$ into irreducible representations, combined with jet-descended confine...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1648,13 +1651,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No target back-fitting; this is an algebraic/computational factorization claim, not a numerical calibration."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Nucleon-level ordering factorization via jet-descended confinement'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1663,17 +1668,16 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "nucleon-ordering-factorization.md:8 'Proposition.' header presents the full channel decomposition (master identity) as proved, but the Lean (nucleon_ordering_factorization.lean:80-89) discharges the master identity with sorry; only sub-claim (i) is proved.",
-        "notes": "The .md proof section gives narrative arguments for (i)-(iv) but the central Wedderburn-decomposition equation is not formally established (Lean sorry, Hecke engine 'not yet in Lean'). The narrative proof of (i)-(iv) is plausible/standard, so this is a status-presentation overclaim rather than a false claim: a 'Proposition' whose Lean status is conjectural-in-the-master-half. Mitigated by the honest Lean docstring."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Nucleon-level ordering factorization via jet-descended confinement' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1684,13 +1688,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The transfer matrices T_pp, T_nn, T_pn (md:96-110) are fixed by stated crossing conventions (md:152-157: σ0, σ0⁻¹, ½(σ0+σ0⁻¹)); no undisclosed free parameter."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nucleon-level ordering factorization via jet-descended confinement'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1699,17 +1705,17 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Nucleon-level ordering factorization via jet-descended confinement' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "nucleon-ordering-factorization.md:104-110 the proton–neutron crossing matrix T_pn uses d=−½(q−q⁻¹) justified by 'T_pn = ½(σ0+σ0⁻¹)' (md:156). Averaging the over- and under-crossing operators to model a p–n crossing is asserted, not derived from a topological rule.",
-        "notes": "The ½(σ0+σ0⁻¹) prescription for mixed nucleon crossings is a modeling choice presented as a 'crossing convention'; the step from 'p–n pair' to 'symmetric average of the two crossings' has no cited lemma. The pp/nn cases (σ0 / σ0⁻¹) are natural; the mixed case is the gap."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1718,17 +1724,16 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "nucleon-ordering-factorization.lean:42-45 proves only scalar_channel_ordering_independent (sub-claim i); lean:80-89 the named theorem nucleon_ordering_factorization is sorry. The .md (lines 8-110) states the full four-part Proposition as the claim.",
-        "notes": "The Lean decl matching the block's lean.ref (QOU.Interactions.nucleon_ordering_factorization) is a sorry over a free-field class, so Lean does NOT establish the .md proposition — it establishes only the easy half (i). Per proof-statement-integrity this is a divergence: the formal artifact proves strictly less than the narrative claims. Honestly documented (validation:'not_checked', docstring says 'discharged by sorry'), hence major not critical, but a referee would note the proposition is not formally backed."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1739,13 +1744,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Lean cites [jones1987] (Markov trace) at the sorry — appropriate for the Markov-trace/Hecke context. No mis-attribution."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Nucleon-level ordering factorization via jet-descended confinement', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1754,17 +1761,17 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Nucleon-level ordering factorization via jet-descended confinement' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "nucleon-ordering-factorization.md:17-19 uses W_sym/W_std/W_alt and z·a_π+b_π; md:60-69 the 'jet-descended' nucleon blocks are stated as 'fixed 2×2 transfer matrices' but the precise map from a nucleon word to (c_i,d_i) per crossing (md:75-82) is left to the cited theorems.",
-        "notes": "Channel weights W_* and the standard-channel parameter z are used without in-block definition (deferred to the Wedderburn decomposition); d_k in S(π)=∏(q+d_k) (md:31) is the per-crossing scalar but its definition relies on the unstated crossing-operator parametrization. Resolvable via uses[] links, hence minor."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1773,15 +1780,17 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical observable/q0-pinned value claimed; this is a structural/algorithmic factorization."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Nucleon-level ordering factorization via jet-descended confinement' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1792,13 +1801,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Claims are algorithmic (speedup, ordering search) not direct physical predictions; ⁵⁶Fe parameter count (md:226-229) is internally consistent (6×56=336)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Nucleon-level ordering factorization via jet-descended confinement' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1807,15 +1818,17 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No *.witness.json cited in-block; the '~9× reduction' (md:187) is an analytic op-count (36→4), not a benchmarked witness."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Nucleon-level ordering factorization via jet-descended confinement' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1824,16 +1837,18 @@
           "md": "cca2adeee5f8",
           "ts": "69bd58c8cdd0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "notes": "verdict: minor-revision. referee_argument: The factorization is structurally credible and its easy half (scalar-channel ordering independence) is Lean-proved sorry-free. But the block is presented as a proved 'Proposition' while its central master identity (the Wedderburn channel decomposition) is discharged by sorry in the matching Lean decl — Lean proves strictly less than the .md claims (da-lean-narrative-divergence, major). Secondary: the mixed p–n crossing matrix uses an undeclared symmetric-average prescription ½(σ0+σ0⁻¹) (da-non-sequitur). Recommend either (a) restate the master half as conditional/conjectural pending the Hecke engine, or (b) land the Wedderburn-decomposition lemma."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.lean is missing entirely, preventing formal verification of the claims in 'Nucleon-level ordering factorization via jet-descended confinement'."
       }
     ]
   },

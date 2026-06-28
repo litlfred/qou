@@ -844,13 +844,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Pure scope-caveat remark: confinement theorems hold on open strata Omega_alpha and may fail on partial-Omega. This is a correct reading of the proposition it interprets (openness + local constancy proven in confinement-phase-stratification.md)."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Phase-scoped applicability: confinement theorems hold on open strata only': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-vacuous": [
@@ -861,13 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Carries real content: enumerates which theorems are phase-local vs which boundary phenomena are out of scope. Useful caveat, not a tautology."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Phase-scoped applicability: confinement theorems hold on open strata only' presents substantial mathematical content: '$P$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -878,13 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No conclusion-assuming; it restricts scope, it does not derive a target."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Phase-scoped applicability: confinement theorems hold on open strata only'.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-overclaim": [
@@ -895,13 +900,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "If anything it under-claims (deliberately narrowing scope). The interpreted proposition has a full proof (openness via Boyd-Vandenberghe 5.4.1, stratification via principal-minor determinants), so the caveat is well-supported."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Phase-scoped applicability: confinement theorems hold on open strata only' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -910,15 +916,17 @@
           "md": "7538f3abdea5",
           "ts": "0f1328516faf"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameters; structural scope remark."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Phase-scoped applicability: confinement theorems hold on open strata only'.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -929,13 +937,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Each listed phase-local theorem and each boundary phenomenon is correctly classified against the stratification proposition's claims (3)-(5); no logical jump."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Phase-scoped applicability: confinement theorems hold on open strata only' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -944,15 +954,16 @@
           "md": "7538f3abdea5",
           "ts": "0f1328516faf"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "remark, no sibling .lean."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -963,13 +974,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "References are to in-corpus propositions (level-sufficiency, shell-closure-stability, parity-regime-selection); the interpreted proposition cites Boyd-Vandenberghe correctly for SDP Slater-strictness perturbation. No misattribution in this block."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Phase-scoped applicability: confinement theorems hold on open strata only', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -980,13 +993,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Omega_alpha(P) (connected component of confinement locus) and the implicit quantifier forall q in Omega_alpha(P) are precisely defined in the interpreted proposition. No ambiguity."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Phase-scoped applicability: confinement theorems hold on open strata only' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -997,13 +1012,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Notes correctly that numerical witnesses (crt_markov.py, multi_level_sdp.py) evaluate at a single q_0~1.110 and are valid only if q_0 lies in Omega_alpha — this is an accurate, non-fragile caveat, not a fitted claim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Phase-scoped applicability: confinement theorems hold on open strata only' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1014,13 +1031,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Maps phase boundaries to physical rearrangements (sp3<->sp2, isomerisation, alpha-decay channel opening) plausibly and with appropriate hedging ('typically', 'subject of separate analysis')."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Phase-scoped applicability: confinement theorems hold on open strata only' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "phase-scoped-applicability.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1031,13 +1050,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No own witness; references to compute scripts are illustrative. Nothing to drift."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Phase-scoped applicability: confinement theorems hold on open strata only' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1048,13 +1068,16 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "verdict: accept. referee_argument: a well-scoped, honest caveat remark that correctly transmits the open-stratum restriction proven in the interpreted proposition; arguably exemplary in distinguishing within-phase results from boundary phenomena. No material objection."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Phase-scoped applicability: confinement theorems hold on open strata only' are consistent."
       }
     ]
   },

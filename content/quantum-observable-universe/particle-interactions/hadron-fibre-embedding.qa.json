@@ -921,15 +921,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Block is a definition (names a morphism with 4 conditions); no asserted proposition to be false."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Fibre-compatible hadron embedding' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:1"
       }
     ],
     "da-vacuous": [
@@ -939,17 +941,16 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-fibre-embedding.lean:37-49 — structure HadronFibreEmbedding has fields integrable/confined typed as bare `Prop` (not a stated proposition), energy : R_q with the nonneg field commented out (line 44), and theta/phi/energy carrying no constraint. The Lean encodes none of the four .md conditions (integrability, fibre confinement, Hopf compatibility, volume compatibility).",
-        "notes": "The .md definition is content-rich, but the Lean structure is a near-empty placeholder: `integrable : Prop` / `confined : Prop` are uninhabited slots that any `True` discharges, and Hopf/volume compatibility are absent entirely. For a `definition` block (Lean required) this is a vacuous formalization of a substantive definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Fibre-compatible hadron embedding' presents substantial mathematical content: Let $\\mathfrak{H} \\in \\mathrm{Sym}^n(K) \\otimes \\mathcal{L}_{\\mathrm{Hopf}}$ be a hadron (Definition) and let $\\mathc...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -959,15 +960,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition, not a derivation; nothing concluded that could assume itself."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Fibre-compatible hadron embedding'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.ts:1"
       }
     ],
     "da-overclaim": [
@@ -979,15 +982,14 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "hadron-fibre-embedding.md:65-70 — 'A localized hadron equipped with a fibre-compatible embedding is a physically realized hadron … faithfully embedded in the fibre geometry.' The term 'physically realized' and 'faithfully embedded' assert a physics-realization status that the abstract morphism conditions do not establish (no model is exhibited in which the four conditions are simultaneously satisfiable).",
-        "notes": "Definitional naming overreaches into a physical-realization claim without an existence demonstration. Minor: it is a definition, so this is a labeling/framing issue rather than a proved overclaim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Fibre-compatible hadron embedding' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -999,13 +1001,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameter or calibration is introduced; energy bound is qualitative (E_Mob < ∞). No off-menu constant."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Fibre-compatible hadron embedding'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1015,15 +1019,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "n/a",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition with conditions; no inferential chain to break."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1035,15 +1041,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-fibre-embedding.md:16-62 lists four substantive conditions (integrability intertwining the Skein action, fibre confinement via finite Möbius energy, Hopf-compatibility commuting square, hyperbolic-volume preservation). hadron-fibre-embedding.lean:37-49 defines `structure HadronFibreEmbedding` with only theta/phi/energy : R_q and two bare `Prop` fields integrable/confined — the morphism ι_p, the Skein-intertwining, the Hopf commuting square, and the volume-preservation equation are all absent. `validation: not_checked` (ts:8).",
-        "notes": "The Lean does not state, let alone enforce, the .md definition's content; it is a weaker/different object (a 5-field record vs. a constrained morphism). proof-statement-integrity divergence."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1053,17 +1058,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Fibre-compatible hadron embedding', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "hadron-fibre-embedding.lean:14,36 cite '[manuscript] §3 Lifting and Descent' for a definition that invokes Möbius energy and hyperbolic volume; the .md/.ts carry no external cites[] for the Möbius-energy confinement claim (line 27-34) which is a substantive analytic notion attributed to no source.",
-        "notes": "Self-citation to the manuscript only; the Möbius-energy-bounds-cusps assertion is uncited. Minor."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1073,17 +1078,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Fibre-compatible hadron embedding' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "hadron-fibre-embedding.md:24-26 references neighbouring fibre `E_{p'}` using the deprecated `E` symbol (AGENTS.md §7aa: '$E$ alone = not used'); the relation between `\\mathcal{S}_p` (used elsewhere) and `E_{p'}` is left implicit. 'Integrable in the sense that … can be consistently realized' (line 16-19) is informal — no precise integrability condition is given.",
-        "notes": "Key term 'integrability' is described circularly ('integrable … can be consistently realized'); fibre notation mixes S_p and E_{p'}."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1093,15 +1098,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match or fit; purely structural definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Fibre-compatible hadron embedding' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1113,13 +1120,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Confinement-via-finite-Möbius-energy and volume preservation are qualitatively reasonable structural requirements; no broken conservation or unit error."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Fibre-compatible hadron embedding' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1129,15 +1138,17 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No computation/witness attached to this block."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1147,16 +1158,18 @@
           "ts": "c95e35a30deb",
           "lean": "a2e08ca7144b"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "notes": "verdict: minor-revision. referee_argument: The narrative definition is coherent, but the sibling Lean (HadronFibreEmbedding structure) formalizes essentially none of the four defining conditions — two bare `Prop` slots plus three unconstrained R_q fields — so the `lean.ref` resolves to a placeholder that any inhabitant satisfies. Either encode ι_p + the four conditions, or demote the Lean to an honest stub. Secondary: 'physically realized' overreaches a pure naming definition; fibre notation E_{p'} uses a deprecated symbol."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean fails compilation: content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean for 'Fibre-compatible hadron embedding' fails compilation with error: content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
       }
     ]
   },

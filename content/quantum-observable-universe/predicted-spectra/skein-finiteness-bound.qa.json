@@ -1338,7 +1338,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean:37:29: error: Function expected at.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary'.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary'.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "skein-finiteness-bound.lean:1 — content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean:37:29: error: Function expected at"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "05ab3d49cef5",
+          "ts": "148396442a19",
+          "lean": "339b8364e782"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean fails compilation.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:51.954Z"
+  "updated_at": "2026-06-28T11:11:58.919Z"
 }

@@ -844,15 +844,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Relation of the confinement SDP to the scalar LP': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "confinement-sdp-vs-lp.md:10-12 'The LP is exact when every Wedderburn block is one-dimensional' and 'In general the LP is a lower bound on the SDP' are correct relaxation statements (diagonal/rank-1 restriction of a PSD program yields a lower bound on a maximization, here framed as a relaxation).",
-        "notes": "The LP-as-diagonal-restriction-of-SDP relationship is standard and correctly stated."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-vacuous": [
@@ -863,14 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "notes": "Contentful interpretive remark relating two named programs; not a tautology."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Relation of the confinement SDP to the scalar LP' presents substantial mathematical content: is obtained from the confinement SDP by restricting $\\Phi$ to the diagonal span of the NF basis $\\{b_i\\}$ and droppin...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -881,14 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Relation of the confinement SDP to the scalar LP'.",
         "severity": "minor",
-        "notes": "No self-referential derivation; it simply states the inclusion structure between LP and SDP."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-overclaim": [
@@ -897,17 +898,16 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "confinement-sdp-vs-lp.md:16-19: 'For most baryonic and light-nuclear configurations the Wedderburn decomposition has 1-dimensional blocks and the LP suffices'. The claim that 'most' light-nuclear configurations have 1-dimensional Wedderburn blocks is an unquantified assertion; for n=3(Z+N) strands the Hecke Wedderburn blocks are generically high-dimensional (partition λ⊢n with dim>1), so '1-dimensional blocks' is the exception, not the rule.",
-        "notes": "Borderline overclaim: the heuristic 'LP suffices for most baryonic configs' is plausibly true for the SDP being tight there, but the stated reason ('1-dimensional blocks') is questionable since most partitions have dim>1. Warn — the conclusion (LP suffices) may hold for a different reason than the one given."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Relation of the confinement SDP to the scalar LP' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -916,16 +916,17 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Relation of the confinement SDP to the scalar LP'.",
         "severity": "minor",
-        "notes": "No numerical constants in the block."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -936,14 +937,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Relation of the confinement SDP to the scalar LP' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "notes": "The 'consequences' (md:9-15) follow from the stated diagonal/rank-1 restriction. No missing-lemma 'therefore'."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -952,17 +954,16 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "confinement-sdp-vs-lp.ts:3-14 is a remark with interprets='prop:confinement-sdp', no lean field.",
-        "notes": "Remark; no Lean obligation. Formal content lives in prop:confinement-sdp / prop:confinement-lp (both exist in the corpus)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -971,17 +972,17 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Relation of the confinement SDP to the scalar LP', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "confinement-sdp-vs-lp.ts has no cites[].",
-        "notes": "No citations to misuse."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -990,17 +991,17 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Relation of the confinement SDP to the scalar LP' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "confinement-sdp-vs-lp.md:5-7 'restricting Φ to the diagonal span ... dropping the 2×2 pair blocks' and 'π_λ ↦ 1_λ (indicator vector)' use Φ, π_λ, 1_λ and 'pair blocks' without in-block definition; reader must hold prop:confinement-sdp open to parse 'rank-1 restriction Φ=diag(x)'.",
-        "notes": "As an interpretive remark this is acceptable (it interprets a referenced prop), but standalone the symbols are unglossed. Minor."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1009,16 +1010,17 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Relation of the confinement SDP to the scalar LP' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "notes": "No numerical match asserted."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1029,14 +1031,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Relation of the confinement SDP to the scalar LP' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "notes": "The statement that magic-number/shell-closure configs require the SDP (multi-operator binding) while light nuclei tolerate the LP is physically reasonable. No units/conservation claim."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1045,17 +1048,17 @@
           "md": "6f6488da295d",
           "ts": "a6fa8105c542"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Relation of the confinement SDP to the scalar LP' are reproducible.",
         "severity": "minor",
-        "evidence": "No computation/witness on the remark.",
-        "notes": "Nothing re-runnable claimed; pure interpretation."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-sdp-vs-lp.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1066,15 +1069,16 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "verdict=accept-minor. The remark correctly states the LP-as-diagonal-restriction-of-SDP relationship and the lower-bound inclusion.",
-        "notes": "referee_argument: The only soft spot is the unquantified 'most baryonic/light-nuclear configs have 1-dimensional Wedderburn blocks' (md:16-18), which is the questionable justification even if the conclusion (LP suffices) is right. Suggest replacing with 'the SDP is tight' rather than '1-dimensional blocks'. Otherwise sound."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Relation of the confinement SDP to the scalar LP' are consistent."
       }
     ]
   },

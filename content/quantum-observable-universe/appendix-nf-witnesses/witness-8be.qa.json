@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.lean"
   },
   "source_hashes": {
-    "md": "fe54a6f9560d",
+    "md": "6761d76e4479",
     "ts": "69fe0042ecdb",
     "lean": "df000f64ae0e"
   },
@@ -879,43 +879,285 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "fe54a6f9560d",
+          "md": "6761d76e4479",
           "ts": "69fe0042ecdb",
           "lean": "df000f64ae0e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:52.077Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Block placement and kind match validated structurally.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "fe54a6f9560d",
+          "md": "6761d76e4479",
           "ts": "69fe0042ecdb",
           "lean": "df000f64ae0e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:52.482Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.lean:1 — Lean file exists"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-circular.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-citation-misuse.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6761d76e4479",
+          "ts": "69fe0042ecdb",
+          "lean": "df000f64ae0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:52.482Z"
+  "updated_at": "2026-06-28T07:05:43.329Z"
 }

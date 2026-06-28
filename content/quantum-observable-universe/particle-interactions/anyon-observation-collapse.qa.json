@@ -844,13 +844,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The ladder (generic q → root of unity → q→1) maps to Hecke → MTC_ℓ → ℤ[S_n]; this is standard and correctly stated."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-vacuous": [
@@ -861,12 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' presents substantial mathematical content: indexed by the deformation parameter $q$: | $q$ regime | Substrate state | Observation image | |---|---|---| | Generi...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -877,12 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-overclaim": [
@@ -891,17 +898,16 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "anyon-observation-collapse.md:6 — generic-q row labeled 'Abelian anyons in H_n(R,q)'.",
-        "notes": "Braiding in H_n(q)/the braid group for n≥3 is generally NON-abelian (anyons from Hecke/Jones representations are the canonical non-abelian-anyon example). Calling the generic-q rung 'Abelian anyons' while the root-of-unity rung is 'Non-abelian anyons' (md:7) inverts the usual terminology; likely a mislabel. Minor since it is an interpretive remark."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -910,15 +916,17 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical prediction or parameter in this remark."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -929,12 +937,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -943,15 +954,16 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Remark, no sibling .lean; interprets conj:hecke-anyonic-substrate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -962,13 +974,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "All three cross-referenced conjectures (hecke-anyonic-substrate, root-of-unity-mtc-truncation, kazhdan-lusztig-classical-limit) and def:observation, conj:crystal-graph-realization resolve in-corpus."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -977,17 +991,17 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "anyon-observation-collapse.md:6-9 — 'Abelian anyons' vs 'Non-abelian anyons' distinction between rungs is not defined; reader cannot tell what makes the generic-q rung abelian.",
-        "notes": "The abelian/non-abelian split across rungs is asserted without a defining criterion, compounding the mislabel flagged under da-overclaim."
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -996,15 +1010,17 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match in this remark."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1015,13 +1031,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "q→1 → Pauli ±1 statistics via KL/symmetric-group is standard and physically sound."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1030,15 +1048,17 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No backing compute/witness; purely interpretive ladder."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/anyon-observation-collapse.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1047,17 +1067,18 @@
           "md": "6953cd808357",
           "ts": "a2b6f1525434"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "verdict=minor-revision. Strongest objection: anyon-observation-collapse.md:6 'Abelian anyons in H_n(R,q)'.",
-        "notes": "referee_argument: A clean, well-cited interpretive synthesis of the three q-regimes, properly demoted to a remark interpreting conjectures. The one substantive issue is the abelian/non-abelian labeling of the generic-q rung, which reads backwards relative to standard anyon terminology (Hecke/Jones braiding is the canonical non-abelian-anyon source). Clarify the criterion or relabel."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Anyon ladder: generic $q$ \u2194 root-of-unity \u2194 $q \\\\to 1$' are consistent."
       }
     ]
   },

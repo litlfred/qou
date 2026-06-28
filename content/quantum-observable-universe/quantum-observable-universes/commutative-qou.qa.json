@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean"
   },
   "source_hashes": {
-    "md": "1a417abf87ed",
+    "md": "519a773fcae2",
     "ts": "989439101922",
     "lean": "7863dd762845"
   },
@@ -877,43 +877,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1a417abf87ed",
+          "md": "519a773fcae2",
           "ts": "989439101922",
           "lean": "7863dd762845"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:35.942Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1a417abf87ed",
+          "md": "519a773fcae2",
           "ts": "989439101922",
           "lean": "7863dd762845"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:36.339Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.lean:1",
+        "notes": "The Lean theorem/definition statement in commutative-qou.lean matches the mathematical statement in commutative-qou.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.lean:1",
+        "notes": "The mathematical claims in 'Commutative specialisation of a QOU' regarding 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf' are unverified due to compilation errors in the Lean sibling file commutative-qou.lean: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "The sibling Lean file commutative-qou.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Commutative specialisation of a QOU' (which asserts 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "The prose presents 'Commutative specialisation of a QOU' as verified, but the sibling Lean file commutative-qou.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Commutative specialisation of a QOU'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Commutative specialisation of a QOU' due to compilation failure in commutative-qou.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.lean:1",
+        "notes": "The Lean sibling commutative-qou.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "No citations are present in 'Commutative specialisation of a QOU', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "Key terms and symbols in 'Commutative specialisation of a QOU' (e.g. from 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "The algebraic and logical relations in 'Commutative specialisation of a QOU' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.ts:1",
+        "notes": "The physical concepts described in 'Commutative specialisation of a QOU' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "commutative-qou.lean:1",
+        "notes": "The Lean sibling commutative-qou.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "519a773fcae2",
+          "ts": "989439101922",
+          "lean": "7863dd762845"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Commutative specialisation of a QOU' (asserting 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist. A competent referee cannot accept this as a verified mathematical claim."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:36.339Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -310,6 +310,22 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -345,6 +361,23 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Boxed core statement H_{n+1}=H_n is a generic-ring identity; Lean is [CommRing R]. The cosh/hyperbolic reading appears only in the 'Fork consequence' paragraph, explicitly flagged as the archimedean reading, not in the proposition statement."
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.lean:1 — Lean file exists",
+        "severity": "minor"
       }
     ],
     "wall-side-proof": [
@@ -363,6 +396,23 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Single-step identity closed by `ring` after substituting the recurrence; induction for the constancy. No archimedean machinery."
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.lean:1 — sorry placeholder present",
+        "severity": "major"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -399,6 +449,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Plan stated: substitute recurrence then `ring`; constancy by induction discharged via the single-step lemma. score 1.0"
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -435,6 +501,26 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Standard Lucas/Chebyshev first-integral identity, cleanly applied to SW periods; not duplicated elsewhere. score 0.6"
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The mathematical and physical connections explored in this block are highly novel.",
+        "severity": "minor",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -524,6 +610,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "hrec is used (h := hrec n; rw [h]); n is the index."
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No unused hypotheses are present in the Lean proof.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
@@ -543,7 +645,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof uses `unfold`/`rw`/`ring`/induction, not `decide`/`trivial` masking."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }

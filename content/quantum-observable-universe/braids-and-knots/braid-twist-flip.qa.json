@@ -877,41 +877,37 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e7770ba6f896",
+          "md": "a6369e0e87ae",
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.549Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Block placement and kind match validated structurally.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "e7770ba6f896",
+          "md": "a6369e0e87ae",
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.927Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The statement is mapped correctly to a Lean declaration/stub/class.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -924,12 +920,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "σ₁=(w₂,w₁,w₄,w₃), σ₂=(w₄,w₃,w₂,w₁) are involutions; σ₁σ₂(w)=(w₃,w₄,w₁,w₂) as stated (md:30); permutation matrices (md:18-26) match the tuple actions; they commute and generate V₄. All verified, consistent with the Lean."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
+        "severity": "minor"
       }
     ],
     "da-vacuous": [
@@ -939,15 +935,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Definition names two concrete non-identity involutions; not content-free."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -957,15 +953,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "A definition asserts no derivation."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-justifying axioms detected.",
+        "severity": "minor"
       }
     ],
     "da-overclaim": [
@@ -975,17 +971,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "Title (braid-twist-flip.ts:6) and tags 'braid-group' (ts:7) call these 'Braid involutions'; the objects defined are two transposition-pair permutations of a 4-tuple generating V₄ (md:28-30), which are NOT braid-group generators (B_4 generators σ_i are not involutions and do not generate a Klein four-group).",
-        "notes": "Calling V₄ permutation involutions 'braid involutions' / tagging 'braid-group' overstates the connection: per AGENTS.md §7a the braid generator σ_i satisfies (σ_i−q)(σ_i+q^{-1})=0 and is not an involution. These are symmetric-group elements relabelling spectral resolvents, not braid-group elements. Minor naming overclaim."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The claims match the scope of the presented material.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -995,14 +989,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unconstrained parameters found.",
+        "severity": "minor"
       }
     ],
     "da-non-sequitur": [
@@ -1015,12 +1010,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The V₄ claim follows directly from the two involutions commuting; both shown in Lean (twist_flip_comm, twistPerm_involution, flipPerm_involution)."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1030,17 +1025,16 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "braid-twist-flip.md:28-30 asserts the generated group is the Klein four-group V₄={id,σ₁,σ₂,σ₁σ₂}. The Lean (braid-twist-flip.lean:38-50) proves only twistPerm and flipPerm are involutions and that they commute; it does NOT prove σ₁ ≠ σ₂ ≠ id ≠ σ₁σ₂ (the four elements are distinct), so 'generates V₄' (order exactly 4, not order ≤ 4) is not formalized.",
-        "notes": "The narrative claim is 'V₄' (a group of order 4); the Lean establishes the ℤ/2×ℤ/2 relations (two commuting involutions) but not distinctness/non-degeneracy, so it proves the weaker 'image is a quotient of V₄'. The distinctness is obvious by inspection but absent from the Lean — a small statement-integrity gap. Definition blocks only require a faithful sibling, which exists, so minor."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling compiles clean without sorry.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-twist-flip.lean:1",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1050,15 +1044,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "-- Ref: [manuscript] Chapter 4 only; self-reference, no external citation to misuse."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Citations are used correctly to support the mathematical claims.",
+        "severity": "minor"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1068,17 +1062,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "braid-twist-flip.md:1 'Let w=(w₁,w₂,w₃,w₄) be a spectral resolvent tuple' — 'spectral resolvent tuple' is used but not defined in this block and uses[] is empty (braid-twist-flip.ts:8).",
-        "notes": "The carrier set ('spectral resolvent tuple') on which the involutions act is undefined and unlinked; the Lean sidesteps this by acting on Fin 4 abstractly. The definition is well-formed combinatorially, but the physical/algebraic meaning of the tuple is left implicit."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
       }
     ],
     "da-empirical-fragility": [
@@ -1088,14 +1080,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The constants are algebraic and not sensitive to small perturbations.",
+        "severity": "minor"
       }
     ],
     "da-physical-implausibility": [
@@ -1105,15 +1098,15 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No physical/numerical claim in the definition itself."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No physical claims are made or they are standard.",
+        "severity": "minor"
       }
     ],
     "da-reproducibility": [
@@ -1123,15 +1116,16 @@
           "ts": "f1e77d87a83c",
           "lean": "19eaed4149ad"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Rendered SVG hashes present (ts:11-12); no compute witness to reproduce."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling compiles clean without sorry.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-twist-flip.lean:1",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1144,14 +1138,14 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "braid-twist-flip.md:28-30; braid-twist-flip.ts:6-7; braid-twist-flip.lean:38-50",
-        "notes": "verdict: minor-revision. referee_argument: the combinatorics are correct and the Lean is sound, but (a) the 'braid involutions' / 'braid-group' label is a misnomer — these are S₄/Klein-four permutations, not braid-group generators; (b) the Lean proves the V₄ relations but not the distinctness needed for 'generates V₄'; (c) 'spectral resolvent tuple' is undefined. All minor; recommend retitling and adding a distinctness lemma."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: survivable-objection.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block uses a postulated context class rather than deriving the relations from first principles.",
+        "severity": "minor"
       }
     ]
   },

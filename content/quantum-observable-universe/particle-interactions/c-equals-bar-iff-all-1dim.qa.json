@@ -1344,249 +1344,259 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The biconditional (C=bar on all irreducible characters ⟺ every irrep 1-dim) is correct: on a 1-dim rep σ⁻¹ and bar both send q↦q⁻¹/−q⁻¹↦−q; the reverse direction via the 2-dim Hoefsmit block at H₃ is a valid counterexample. The Artin–Wedderburn dimension argument (2=1²+1² unique) is correct."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "c-equals-bar-iff-all-1dim.lean:37,46-50",
-        "notes": "`exactly_two_one_dim_irreps : (2:ℕ)=2 := rfl` is a vacuous tautology standing in for the real claim 'S_n has exactly two 1-dim irreps'. The eigenvalue lemmas (lines 46-50) are stated over ℤ with the hypothesis h = q-(-q) = 2q, which is NOT the Hecke h=q−q⁻¹; they prove integer arithmetic facts, not the H_n(q) eigenvalue statement they purport to model. These are content-substitutes, not the asserted mathematics."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Charge conjugation equals bar involution iff all irreps are one-dimensional' presents substantial mathematical content: $C\\colon \\sigma_i \\mapsto \\sigma_i^{-1}$ and the bar involution $\\mathrm{bar}\\colon q \\mapsto q^{-1}$ agree on all ir...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No back-fitting; the argument is structural representation theory."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Charge conjugation equals bar involution iff all irreps are one-dimensional'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "c-equals-bar-iff-all-1dim.md:84-98",
-        "notes": "The corollary's physical extrapolations ('why leptons are simpler', 'why mesons need CAL-3', 'the mass-carrying partition is the same partition that breaks C=bar') are presented as consequences of the algebraic proposition, but the proposition only establishes the C-vs-bar character split; the CAL-3 necessity and mass-locus claims are asserted, not derived here."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Charge conjugation equals bar involution iff all irreps are one-dimensional' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free parameter; purely structural (factorial/partition dimensions)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Charge conjugation equals bar involution iff all irreps are one-dimensional'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Forward and reverse directions each follow; the n!=Σ(dim)² Artin–Wedderburn step and the unique-decomposition-of-2 step are valid."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "c-equals-bar-iff-all-1dim.ts:5 (lean.ref → two_only_unit_squares); .lean:19-50",
-        "notes": "The lean.ref resolves to `two_only_unit_squares` (a^2+b^2=2 → a=1∧b=1), which proves only the n=2 uniqueness lemma — NOT the proposition's biconditional 'C=bar ⟺ all irreps 1-dim'. No Lean declaration in the file states the C=bar characterization at all; the eigenvalue lemmas are over ℤ with h=2q (wrong h), and `exactly_two_one_dim_irreps` is `2=2:=rfl`. The Lean is strictly weaker than and divergent from the .md claim (proof-statement-integrity failure)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites jones1987 + wenzl1988c (.ts) / jones1987 + wenzl1988c (.lean -- Ref); both exist in references.ts and are appropriate for Hecke-algebra representation theory / Hoefsmit seminormal form."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to jones1987, wenzl1988c are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
-          "ts": "7f74fbf6f8a9",
-          "lean": "30987cd7e5d9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "c-equals-bar-iff-all-1dim.md:34-39",
-        "notes": "The reverse-direction off-diagonal entry b = √(a_ρ·a_{−ρ}+1) and the claim 'C: σ₁↦σ₁−h·I does NOT conjugate b' depend on the unspecified Hoefsmit normalization (which a_ρ convention); without pinning the seminormal basis, 'b is irrational in q' and the χ values are not uniquely determined. The base ring for the eigenvalue argument is also left implicit (the Lean shifts to ℤ, the .md to real q at q0)."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "fedfa1386b3c",
-          "ts": "7f74fbf6f8a9",
-          "lean": "30987cd7e5d9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "c-equals-bar-iff-all-1dim.md:42-46",
-        "notes": "The explicit numbers χ^(2,1)(π⁺,q0)≈−1.044, χ^(2,1)(π⁻,q0)≈+1.892, χ^(2,1)(π⁺,q0⁻¹)≈−1.044 are quoted to establish C≠bar but have no backing witness in the manifest (.ts has no computation field). The −1.044 = −(h²+1) value checks out (−1.0437 at q0), but the +1.892 charge-conjugate value is unverified and unreproducible here."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The CPT/matter-antimatter framing is interpretive overlay on a correct algebraic statement; no quantitative physics prediction to contradict a measurement."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Charge conjugation equals bar involution iff all irreps are one-dimensional' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "fedfa1386b3c",
-          "ts": "7f74fbf6f8a9",
-          "lean": "30987cd7e5d9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "c-equals-bar-iff-all-1dim.ts:1-22",
-        "notes": "No computation/witness attached despite quoting q0-dependent character values to 3-4 sig figs; the numeric assertions (esp. +1.892) cannot be regenerated from the block."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "fedfa1386b3c",
+          "md": "304a48a0ab77",
           "ts": "7f74fbf6f8a9",
           "lean": "30987cd7e5d9"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "c-equals-bar-iff-all-1dim.ts:5; .lean:19-50",
-        "notes": "verdict=revision-required. The mathematical proposition is correct and the narrative proof is sound, but the formalization does not back it: lean.ref points to a uniqueness lemma (two_only_unit_squares) that does not state the biconditional, the supporting eigenvalue lemmas use the wrong h (=2q over ℤ) and a vacuous 2=2:=rfl, and the quoted character numbers lack any witness. Strongest objection: this is a proof-statement-integrity gap — the claimed iff is not the theorem Lean proves."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "304a48a0ab77",
+          "ts": "7f74fbf6f8a9",
+          "lean": "30987cd7e5d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean fails compilation: content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean for 'Charge conjugation equals bar involution iff all irreps are one-dimensional' fails compilation with error: content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim.lean:13:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist. This invalidates the claim of formal verification."
       }
     ]
   },

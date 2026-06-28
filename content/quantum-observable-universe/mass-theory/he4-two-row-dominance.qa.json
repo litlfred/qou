@@ -1618,7 +1618,266 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.632Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean:97:3: error: unknown tactic.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.638Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "he4-two-row-dominance.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.645Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)'.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.651Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.658Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)'.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.664Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.670Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.676Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.682Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.688Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.694Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Two-row stratum carries $\\\\ge 80\\\\%$ of $\\\\mathrm{tr}_M(\\\\beta_{^4\\\\mathrm{He}})$ at $q_0$ (86.6\\\\% empirically)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.700Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "he4-two-row-dominance.lean:1 — content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean:97:3: error: unknown tactic"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "70516e4f08ca",
+          "ts": "fef370cfd5bb",
+          "lean": "2a804f266520"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.707Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T10:58:40.713Z"
 }

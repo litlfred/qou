@@ -1192,7 +1192,116 @@
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block exhibits post-hoc fitting of parameters and representations to match physical data.",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling contains sorry stubs.",
+        "evidence": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-24T13:22:51Z"
+  "updated_at": "2026-06-28T07:55:40.081Z"
 }

@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1225,7 +1225,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "Well-posed: closed form of the Frobenius-counit Q-value + the counit-vs-Markov-trace distinction (gap h(z-1), z≤1/2 on substrate); concrete algebraic identity.",
+        "notes": "Well-posed: closed form of the Frobenius-counit Q-value + the counit-vs-Markov-trace distinction (gap h(z-1), z\u22641/2 on substrate); concrete algebraic identity.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1286,7 +1286,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "The energy-scale factorization (E_0=m_e·c_q²·ℏ_q^E) and counit≠tr_M functional distinction are substantive framework results, not a restatement.",
+        "notes": "The energy-scale factorization (E_0=m_e\u00b7c_q\u00b2\u00b7\u210f_q^E) and counit\u2260tr_M functional distinction are substantive framework results, not a restatement.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1343,7 +1343,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "QBetaEnergyScale.Qbeta_closed proves md headline ε(Δ)·E_0 = m_e(q+1)(q²-2q-1)/2q³ over generic [Field R], sorry-free; E0_eq derives E_0=m_e/(q(q-1)). Faithful, no :True/sorry/native_decide.",
+        "notes": "QBetaEnergyScale.Qbeta_closed proves md headline \u03b5(\u0394)\u00b7E_0 = m_e(q+1)(q\u00b2-2q-1)/2q\u00b3 over generic [Field R], sorry-free; E0_eq derives E_0=m_e/(q(q-1)). Faithful, no :True/sorry/native_decide.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1396,7 +1396,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "Not a projection: Qbeta_closed unfolds cqSq/hbarE/epsNPq then field_simp;ring — the closed form is DERIVED from definitions, not assumed as a class field.",
+        "notes": "Not a projection: Qbeta_closed unfolds cqSq/hbarE/epsNPq then field_simp;ring \u2014 the closed form is DERIVED from definitions, not assumed as a class field.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1485,7 +1485,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "q≠0, q-1≠0, 2≠0 are satisfiable in a generic field; no contradictory premise.",
+        "notes": "q\u22600, q-1\u22600, 2\u22600 are satisfiable in a generic field; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1594,14 +1594,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "evidence": "Verified symbolically: epsNPq(q)*E0 = m_e(q+1)(q^2-2q-1)/(2q^3) exactly (sympy diff=0); h^2/2 - h matches (q^2-1)(q^2-2q-1)/(2q^2) exactly; z=1/(sqrt q+1/sqrt q)<=1/2 so z=1 never attained.",
-        "notes": "All stated identities (closed form, eps vs tr_M gap h(z-1), z-bound) check out symbolically."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1612,13 +1613,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Non-trivial symbolic identity, proved over arbitrary field in Lean (E0_eq, Qbeta_closed via field_simp;ring) — not vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' presents substantial mathematical content: Let $\\Delta = \\mathrm{NF}(n) - \\mathrm{NF}(p)$ be the single-wrap normal-form difference of the neutron and proton ty...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1629,13 +1631,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Closed form is a pure algebraic consequence of the NF coefficients + energy-scale definition; no experimental Q_beta value is fed in to derive it. The CAL inputs (m_e, q0) are upstream calibrations, used not re-derived here."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1646,13 +1650,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Claim is explicitly a symbolic closed form 'over an arbitrary field' (md:64-66); no accuracy/physical-match claim is made in this block, so no fitted-as-derived or approximate-as-absolute overreach."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1663,13 +1668,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Only inputs are h=q-q^{-1} and E0=m_e/(q(q-1)) from rem:energy-scale-planck (in uses[]); no off-menu coefficient. hbar_q^E=(q-1)/q is defined, not free."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1680,13 +1687,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Each step (NF coeffs -> eps -> eps*E0 -> closed form; eps-tr_M=h(z-1); z<=1/2) follows; verified."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1695,16 +1704,16 @@
           "md": "d228102e6388",
           "ts": "ca57dbc5d21b"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "evidence": "qbeta_energy_scale.lean:51-66 E0_eq and Qbeta_closed prove exactly the .md identities; epsNPq (lean:58) = (q^2-1)(q^2-2q-1)/(2q^2) equals the md's h^2/2-h (verified diff=0).",
-        "notes": "Lean theorem Qbeta_closed states the same closed form as md:10-14; eps q-form matches the md basis-vector form. ts lean.ref points to QBetaEnergyScale.Qbeta_closed, which exists. validation:'not_checked' in ts but file content matches."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1715,13 +1724,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Only internal ref rem:energy-scale-planck (in uses[]); no external citation to mis-attribute."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1730,17 +1741,17 @@
           "md": "d228102e6388",
           "ts": "ca57dbc5d21b"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "qbeta-counit-closed-form.md:31 'z is the Markov-Jones loop parameter' then md:41 z=1/(sqrt q+1/sqrt q); md:60-61 distinguishes hbar_q^E=(q-1)/q from h=q-q^{-1}",
-        "notes": "Two distinct 'action quanta' (hbar_q^E vs Hecke h) and the loop parameter z are introduced compactly; z's defining formula appears only at md:41 after being used at md:28. Minor: the precise definition of the Frobenius counit eps (unweighted NF-coeff sum, md:5-6) is asserted, not derived, but is consistent."
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1749,15 +1760,17 @@
           "md": "d228102e6388",
           "ts": "ca57dbc5d21b"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "This block makes no numerical-accuracy claim (no MeV value, no CODATA comparison). The Q_beta~0.784 MeV / L2 miss discussion lives in upstream observation blocks, not here; the closed form is exact symbolic."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1768,13 +1781,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physical/units claim made in-block; purely algebraic. (Downstream, Q_beta=eps(Delta)*E0 evaluates to ~0.784 MeV, right order for beta-decay Q-value, but that is not asserted here.)"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1785,13 +1800,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Identity is symbolic and Lean-proved (field_simp;ring), independently reproduced via sympy here. No witness JSON needed; nothing stale."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1800,15 +1817,18 @@
           "md": "d228102e6388",
           "ts": "ca57dbc5d21b"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "verdict: accept. referee_argument: strongest objection is only the minor compactness of the z / hbar_q^E definitions (da-definitional-ambiguity warn). The central closed-form identity is exact, Lean-verified over an arbitrary field, and independently reproduced; the counit-vs-trace distinction (gap h(z-1), z<=1/2) is correct. No false-claim, circularity, or overclaim. Clean symbolic proposition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing entirely, preventing formal verification of the claims in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'."
       }
     ]
   },

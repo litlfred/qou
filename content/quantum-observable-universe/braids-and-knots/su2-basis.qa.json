@@ -924,12 +924,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "e_a=-(i/2)τ_a with [e_a,e_b]=ε_{abc}e_c (md:1-15) is the correct su(2) structure; the Lean Su2Basis structure fields comm_12/23/31 encode [e_1,e_2]=e_3 etc. consistently."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'Write $\\tau_1,\\tau_2,\\tau_3$ for the Pauli matrices and set' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-vacuous": [
@@ -942,12 +943,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "su2-basis.lean:37-49 is a genuine data structure (carrier, basis, bracket, three commutator equations), not ': True := trivial'; for a definition block an axiomatised structure is the correct (non-vacuous) form."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:su2-basis'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -960,12 +961,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pure definition; no derivation to circle."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies [] for 'def:su2-basis' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-overclaim": [
@@ -978,12 +980,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "States only the basis definition and bracket; no claim beyond it."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'def:su2-basis' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -996,12 +998,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free parameter; structure constants are the Levi-Civita symbol."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1014,12 +1017,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No inferential chain."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'Write $\\tau_1,\\tau_2,\\tau_3$ for the Pauli matrices and set' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1029,17 +1033,15 @@
           "ts": "7fce0bc6c6f3",
           "lean": "d753c7db8893"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The .md (su2-basis.md:1-15) defines e_a=-(i/2)τ_a (explicit Pauli matrices, an ℝ/ℂ-matrix object). The Lean (su2-basis.lean:37-49 Su2Basis) abstracts this to an opaque structure with carrier LieAlg:Type*, basis:Fin 3→LieAlg, and only the three bracket equations — it never realises e_a as Pauli matrices nor proves the bracket from -(i/2)τ_a; it *posits* the relations as fields. Additionally Su2KillingForm.normalised (lean:58) fixes ⟨e_a,e_a⟩=-1/2 as an axiom field, a specific normalisation not derived from the Pauli realisation.",
-        "notes": "The Lean is strictly weaker than the .md: it axiomatises the abstract su(2) bracket data rather than constructing the Pauli-matrix model and proving the commutators. For a 'definition' block this abstraction is defensible (it names the construction), but the narrative promises a concrete Pauli basis the Lean does not instantiate, and the Killing-form normalisation -1/2 is asserted, not derived. Warn, not fail — definitional, no false statement, but md↔Lean are not the same object."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1052,12 +1054,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "su2-basis.lean:17,36,53 cite [manuscript] Chapter 4 §SU(2)–SO(3); [manuscript] is the sanctioned key for unpublished internal results, appropriately used for a basis convention."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses [] cited in 'def:su2-basis' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1067,17 +1070,16 @@
           "ts": "7fce0bc6c6f3",
           "lean": "d753c7db8893"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'def:su2-basis' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "su2-basis.lean:30-32 introduces R_q = LaurentPolynomial ℤ and q_param/q_inv_param, and Su2KillingForm.killing maps to R_q (lean:56), but the su(2) basis and bracket (md + Su2Basis) carry no q-dependence at all — q is irrelevant to 𝔰𝔲(2)'s real/complex structure constants.",
-        "notes": "The base ring R_q=ℤ[q,q^{-1}] is imported for the Killing form (lean:51-60), but 𝔰𝔲(2) structure constants are integers and the Killing-form value -1/2 is rational; pinning the form's codomain to a Laurent-polynomial ring in q is gratuitous (cf. §7c base-ring convention: prefer the weakest ring; no q-deformation is present here). Minor base-ring ambiguity — the q-ring carries no content for this object."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1087,15 +1089,16 @@
           "ts": "7fce0bc6c6f3",
           "lean": "d753c7db8893"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical match/fit."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'def:su2-basis' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1108,12 +1111,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Standard 𝔰𝔲(2) generator normalisation; no physical inconsistency."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'def:su2-basis' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1123,15 +1127,16 @@
           "ts": "7fce0bc6c6f3",
           "lean": "d753c7db8893"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No witness/compute backing; lean.validation is 'not_checked' (su2-basis.ts:5) but that is a status field, not a reproducibility claim on a witness."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/su2-basis.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1141,16 +1146,17 @@
           "ts": "7fce0bc6c6f3",
           "lean": "d753c7db8893"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "notes": "verdict: accept-with-minor-revisions. referee_argument: The 𝔰𝔲(2) basis definition is mathematically correct and the Lean Su2Basis structure is non-vacuous. Two minor revisions: (1) the Lean axiomatises the abstract bracket data and never instantiates the concrete Pauli-matrix model the .md specifies (e_a=-(i/2)τ_a), nor derives the Killing-form value -1/2 — md and Lean are not the same object; (2) the Killing-form codomain is pinned to R_q=ℤ[q,q^{-1}] though 𝔰𝔲(2) has no q-deformation here, a gratuitous base ring per §7c. No false claim; definitional polish only."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/su2-basis.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ]
   },

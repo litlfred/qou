@@ -815,7 +815,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "No false claims identified in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "The argument flow in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "No citations are present in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "Key terms and symbols in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "The algebraic and logical relations in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "The physical concepts described in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.ts:1",
+        "notes": "The derivation steps and formal definitions in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cb3c7fc99928",
+          "ts": "b18db4ca5665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/quantum-universe-intro.md:1 — _[draft]_ With the rigid monoidal scaffold in place, we add the data tha...",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '_[draft]_ With the rigid monoidal scaffold in place, we add the data tha...' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

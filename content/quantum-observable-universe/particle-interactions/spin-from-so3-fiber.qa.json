@@ -980,257 +980,260 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations': the formalization compiles successfully without errors.",
         "severity": "minor",
-        "evidence": "spin-from-so3-fiber.md:30-38 itself flags the false sub-claim ('This ℓ-truncation premise is false', character-table check) and the authorNotes (.ts:33-40) record the falsification. The block is a conjecture and openly states which sub-claims were refuted.",
-        "notes": "The block does not assert the false ℓ-truncation premise as true; it documents it as falsified. Honest. No live false claim."
+        "evidence": "spin-from-so3-fiber.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "spin-from-so3-fiber.lean:26-28: 'class SpinFromSo3Fiber where holds : Prop' is an empty/placeholder carrier — a single Prop field 'holds' with no content, exactly the empty-marker anti-pattern §3b-tax warns against (proof-no-empty-prop-carrier). Also md:132-133 'combined_with_isospin_yields_wigner_su4 : True -- placeholder'.",
-        "notes": "The sibling .lean class asserts nothing (any instance ⟨p⟩ discharges it), and one sketched field is literally ': True'. The conjecture's content lives only in prose; the Lean carrier is vacuous. Warn (not fail) because it is explicitly a conjectural stub, but it does not encode the conjecture's content per §3b-tax."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.lean:1"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations'.",
         "severity": "minor",
-        "notes": "No back-fitting: the block's whole point is that the ℓ=2 ⇒ h^4=-3/4 link is 'not derivable as written' (md:46-56). It does not assume its conclusion; it concedes the gap."
+        "evidence": "spin-from-so3-fiber.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "spin-from-so3-fiber.md:73-77 lists as 'conjectural content' that 'The ℓ=2 contribution at the Borromean linking weight produces the h^4=-3/4 coefficient', while md:46-56 and authorNotes (.ts:38) state this exact link is 'not derivable as written' (5 strands A_5⊂S_5 vs 3 strands H_3, no canonical map). The title 'Spin SU(2)_S from full SO(3) fiber action' asserts a mechanism whose load-bearing step is self-admittedly broken.",
-        "notes": "Tension between the conjecture's stated content (ℓ=2 ⇒ h^4) and its own refutation. The conjecture kind softens this, but the title + content section still present the h^4 mechanism as the conjecture's substance after the body has falsified the path to it. Warn: re-scope the conjecture statement to the surviving positive (spin = ribbon/framing, 2I≠S_5) rather than the refuted ℓ=2⇒h^4 link."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations'.",
         "severity": "minor",
-        "notes": "No numerical free parameter introduced; h^4=-3/4 is a target structural value from the Borromean Markov trace, not a fitted DOF."
+        "evidence": "spin-from-so3-fiber.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
-          "ts": "a815f88c9895",
-          "lean": "01a66001ac03"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "spin-from-so3-fiber.md:73-77 (conjectural content item 3) claims ℓ=2 of SO(3) on the 3-color tensor space 'produces' the H_3 Borromean h^4=-3/4, but md:49-54 states the icosahedral construction lives on A_5⊂S_5 (5 strands) while h^4 lives on the 3-strand H_3 trace — 'different representation rings with no canonical map between them'. The 'produces' is a non-sequitur across two unconnected representation rings.",
-        "notes": "This is the block's own diagnosis: the inferential step from the SO(3)/S_5 ℓ-level to the 3-strand Wedderburn coefficient is exactly the missing functor (md:53-56). The conjecture honestly names the gap, but as a logical step it does not follow — recording as fail per the lens (gap is real and load-bearing) even though the block discloses it."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "1c96ca191cff",
-          "ts": "a815f88c9895",
-          "lean": "01a66001ac03"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "spin-from-so3-fiber.ts:8 lean.ref='qou:QOU.BraidsAndKnots.SpinFromSo3Fiber'; the sibling spin-from-so3-fiber.lean:26-28 defines 'class SpinFromSo3Fiber where holds : Prop' — an empty marker that proves/encodes nothing of the rich .md conjecture (SO(3) fiber action, ℓ-decomposition, h^4 coefficient). The richer sketched class in md:118-134 (SpinFromSO3Fiber, different casing, with real-looking fields) is NOT what the .lean sibling contains.",
-        "notes": "The Lean carrier is vacuously weaker than the .md claim: 'holds : Prop' captures none of the conjecture's structural content (spherical_harmonic_decomp, ell_two_yields_h4_coefficient). Also a casing/name mismatch between the .md sketch (SpinFromSO3Fiber) and the sibling (SpinFromSo3Fiber). Divergence is real."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "1c96ca191cff",
-          "ts": "a815f88c9895",
-          "lean": "01a66001ac03"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "spin-from-so3-fiber.ts:15-20 cites klein1884vorlesungen, kashiwara1991, khovanov-lauda2009, wigner1937. klein1884 (icosahedron/quintic) and wigner1937 (SU(4) supermultiplet) are apt, but kashiwara1991 (crystal bases) and khovanov-lauda2009 (KLR) are invoked for machinery the block does not actually use to derive anything (the §7b crystal/KLR techniques are mentioned only as authoring guidance, and the h^4 path is refuted).",
-        "notes": "The Kashiwara/KL citations decorate a mechanism the block concedes is not derivable; topically adjacent but not load-bearing. Minor."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "1c96ca191cff",
-          "ts": "a815f88c9895",
-          "lean": "01a66001ac03"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "spin-from-so3-fiber.md:8 'the full continuous SO(3)' acting on '3 color sheets' vs 'the icosahedral I⊂SO(3)' (discrete) vs 'S_3 subgroup' — three different groups are conflated as 'the fiber action'. h (in h^2,h^4) is used without in-block definition (it is q-q⁻¹ elsewhere). The map S_5→A_5≅I⊂SO(3) (md:6-8) and the action on 3 sheets is asserted but the '5 strands vs 3 strands' mismatch (md:49) shows the carrier space is itself ambiguous.",
-        "notes": "The block partly resolves this in its critique (naming the 5-vs-3 strand mismatch), but the headline construction still leaves 'which group acts on which space' under-pinned."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "1c96ca191cff",
-          "ts": "a815f88c9895",
-          "lean": "01a66001ac03"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "notes": "No numerical observable match asserted; h^4=-3/4 is a structural target, and the block concludes the mechanism producing it is not yet derivable. No fit to stress-test."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' proceed logically through the stated steps.",
         "severity": "minor",
-        "notes": "Spin = lift of SO(3) rotation, and the surviving observation that spin-Z_2 ≠ sign-Z_2 (2I perfect, |2I|=120, 2I≇S_5; authorNotes .ts:38) is a legitimate group-theoretic point. Nothing a domain expert rejects on physics grounds in the surviving claims."
+        "evidence": "spin-from-so3-fiber.ts:1"
       }
     ],
-    "da-reproducibility": [
+    "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1c96ca191cff",
-          "ts": "a815f88c9895",
-          "lean": "01a66001ac03"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "spin-from-so3-fiber.ts has no computation/witness field; it is an open conjecture with an R&D section (md:136-150) listing the compute as future work.",
-        "notes": "No backing witness to be stale; the character-table refutation is cited to an audit doc (md:33). Nothing re-runnable claimed."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "1c96ca191cff",
+          "md": "75a74ab0dc67",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling contains 'sorry' placeholders, which might diverge from the complete narrative claims.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The citations klein1884vorlesungen, kashiwara1991, khovanov-lauda2009, wigner1937 in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Spin $\\\\mathrm{SU}(2)_S$ from full $\\\\mathrm{SO}(3)$ fiber action on color-sheet rotations' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling contains sorry placeholders, indicating incomplete reproducibility.",
+        "severity": "minor",
+        "evidence": "spin-from-so3-fiber.lean:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "75a74ab0dc67",
+          "ts": "a815f88c9895",
+          "lean": "01a66001ac03"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean contains 'sorry' placeholders.",
         "severity": "major",
-        "evidence": "verdict=major-revision (as a conjecture, not a rejection). Strongest objection: the conjecture's stated content (md:73-77, ℓ=2 ⇒ h^4=-3/4) is internally contradicted by its own body (md:49-56, 5-strand vs 3-strand, 'no canonical map') and authorNotes (.ts:38), and the sibling .lean (lean:26-28) is an empty 'holds : Prop' carrier that encodes none of it.",
-        "notes": "referee_argument: This is an honestly-flagged open conjecture, which is acceptable as a conjecture kind — but it should be RE-STATED around its surviving positive (spin is a ribbon/framing Z_2 distinct from sign, 2I≇S_5) and the refuted ℓ=2⇒h^4 mechanism demoted to 'open R&D', not 'conjectural content'. The Lean carrier must encode actual content (§3b-tax) instead of 'holds : Prop'. Name/casing mismatch between .md sketch and .lean sibling should be fixed."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
       }
     ]
   },

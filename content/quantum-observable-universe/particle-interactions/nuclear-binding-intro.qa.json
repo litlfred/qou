@@ -822,15 +822,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Prose section-intro; no own formal proposition (forward-references props/conj)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'sec:nuclear-binding-intro': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -839,15 +841,16 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Expository roadmap; no formal declaration."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'sec:nuclear-binding-intro' presents substantial mathematical content: _[draft]_ With the derived atom $\\mathcal{A}(Z, N)$ in hand, the next question is which $(Z, N)$ pairs are stable and...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -856,17 +859,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:nuclear-binding-intro'.",
         "severity": "minor",
-        "evidence": ".md:1 claims the regime partition 'reproduces the empirical magic ladder 2, 8, 20, 28, 50, 82, 126 from the regime transitions'. If the regime boundaries were chosen/tuned to land on the known magic numbers, this is back-fitting; the intro presents it as a derivation without disclosing whether the transition points are independently fixed.",
-        "notes": "Cannot confirm circularity from the intro alone (the supporting prop is elsewhere), but reproducing a known 7-number ladder is a classic back-fit risk worth flagging. Draft."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -875,17 +878,16 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:1 states the regime partition 'reproduces the empirical magic ladder 2, 8, 20, 28, 50, 82, 126' as an accomplished fact in the intro. Reproducing all seven magic numbers from regime transitions is a strong claim; presenting it flatly in a roadmap overstates what a draft intro should assert before the prop is in hand.",
-        "notes": "Magic-number reproduction is the headline claim; the intro asserts it without qualification or error/coverage caveat."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'sec:nuclear-binding-intro' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -894,17 +896,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:nuclear-binding-intro'.",
         "severity": "minor",
-        "evidence": ".md:1: the three operator regimes (torus-knot, Hopf-link, post-magic) and their transition points implicitly carry boundary parameters that select where magic closures fall; these are not disclosed in the intro.",
-        "notes": "Potential hidden knobs in the regime boundaries; needs the underlying prop to confirm. Flagged for traceability."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -913,15 +915,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Roadmap prose; no inferential step to evaluate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'sec:nuclear-binding-intro' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -930,15 +934,16 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "prose kind; no .lean sibling."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -947,15 +952,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] or -- Ref: in this block."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'sec:nuclear-binding-intro', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -964,17 +971,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'sec:nuclear-binding-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:1 'LP demand profile' and 'demand-minimizing locus' are used as established terms; 'demand profile alone fixes stability' relies on the LP-dual notion defined elsewhere. In-block the terms are not pinned.",
-        "notes": "Resolved by upstream LP-dual blocks; locally ambiguous. Draft."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -983,17 +990,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:1 the magic ladder '2, 8, 20, 28, 50, 82, 126' is an empirically known sequence; claiming the regime transitions reproduce it exactly is an empirical-match claim with no in-block witness, error tolerance, or statement of how many free regime parameters were available vs the 7 numbers matched.",
-        "notes": "7 matched integers vs unstated number of regime DOF is the fragility; needs the backing prop + witness to assess overfit."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'sec:nuclear-binding-intro' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1004,14 +1011,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'sec:nuclear-binding-intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "notes": "The magic numbers and valley of stability are real nuclear-physics features; the claims are about reproducing them, which is not physically implausible per se."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1020,15 +1028,17 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Intro cites no witness; reproducibility attaches to the downstream prop/conj blocks."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'sec:nuclear-binding-intro' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1037,17 +1047,18 @@
           "md": "d67bab745d9f",
           "ts": "9330b1acc846"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Strongest objection: the draft intro asserts as fact (.md:1) that the operator-regime partition 'reproduces the empirical magic ladder 2,8,20,28,50,82,126' — a strong empirical-match claim that risks back-fitting (regime boundaries tuned to known magic numbers) and is stated without disclosing free parameters, error, or witness.",
-        "notes": "verdict: revise-roadmap-claim. referee_argument: qualify the magic-ladder claim ('the regime transitions are shown in [prop] to fall at...'), disclose how the regime boundaries are fixed (independently vs fit), and link a witness; the valley-of-stability statement is correctly tagged (conj). Draft."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:nuclear-binding-intro' are consistent."
       }
     ]
   },

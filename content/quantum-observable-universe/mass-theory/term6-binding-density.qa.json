@@ -1198,7 +1198,177 @@
         "reviewed_at": "2026-06-24T06:07:15Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.629Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$'; the algebraic relation involving $(Z, N)$ is mathematically consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.636Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$'. The construction is derived from prop:wigner-np-pairing, prop:categorical-neutrality-saturated-shells.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.642Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$'. All constants are canonically derived.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.648Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' is logically sound, mapping onto the cited dependencies: prop:wigner-np-pairing, prop:categorical-neutrality-saturated-shells.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.654Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.660Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to bethe1936, weizsacker1935, geckpfeiffer2000 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.666Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols (including $(Z, N)$) in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.672Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.678Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:58:49.684Z"
 }

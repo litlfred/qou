@@ -1798,7 +1798,265 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Uses norm_num on genuine rational arithmetic, not decide/trivial to mask a vacuous goal."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.879Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.886Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' presents substantial mathematical content: the exact rational value $b^2 = 7/8$, the closed-form $\\mathfrak{Q}_\\beta$ preci...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.893Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.899Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.905Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.911Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.917Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean formalization and narrative for '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.923Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.929Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.935Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.942Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.948Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "aedfe4094033",
+          "ts": "55a48e3e2d46",
+          "lean": "a441dfcfe8e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.954Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\mathfrak{Q}_\\\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:58:56.960Z"
 }

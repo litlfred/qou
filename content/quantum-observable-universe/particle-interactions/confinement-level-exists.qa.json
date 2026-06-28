@@ -1346,15 +1346,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The narrative claim — for a finite Hecke NF the minimal filtration level exists — is true: it is a min over a finite nonempty set. No counterexample."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Existence of the confinement level' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean:20:14: error: Function expected at.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1366,15 +1368,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "confinement-level-exists.lean:19-21 proves only `Nonempty (ConfinementLevel R)` by exhibiting the arbitrary record `{ braidIndex := 0, nStrands := 1, q := 0, level := 0 }`.",
-        "notes": "`ConfinementLevel` (ConfinementLevel.lean:25-33) is a plain 4-field record; `Nonempty` of it is trivially true for ANY field values and encodes nothing about T_w lying in J^ℓ(q) or the minimum being achieved. Self-assuming/content-free relative to the stated proposition."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.lean:1"
       }
     ],
     "da-circular": [
@@ -1384,15 +1386,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical target or calibration; pure finiteness argument. No back-fitting."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the confinement level'.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1402,17 +1406,16 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "confinement-level-exists.md:18 `ℓ(K,q)=m in the worst case … = 0 when T_w lies entirely in the trivial 1-dimensional blocks`.",
-        "notes": "The body asserts specific worst/best-case values of ℓ without proof; the actual argument only establishes existence/finiteness. The numeric characterisation `ℓ=m` is stated, not derived. Minor since it is illustrative."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Existence of the confinement level' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1422,15 +1425,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physical constant or coefficient introduced; combinatorial existence statement."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the confinement level'.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1440,17 +1445,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean.",
         "severity": "minor",
-        "evidence": "confinement-level-exists.md:13-16: jump from 'partitions finite' to 'filtration has finitely many distinct levels' to 'minimum achieved by ℓ∈{0,…,m} where m = number of distinct nonzero shadow-price values'.",
-        "notes": "The identification of the level bound with 'distinct nonzero shadow-price values' is asserted without a lemma linking the partition count to the shadow-price multiset; the conclusion (existence) is fine but this intermediate equation is an unjustified 'therefore'."
+        "evidence": "confinement-level-exists.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1462,15 +1467,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:1-5 claims 'for any closed braid K … the confinement level ℓ(K,q) exists and is finite'; confinement-level-exists.lean:19-21 proves `Nonempty (ConfinementLevel R)`.",
-        "notes": "Lean proves a strictly weaker/different statement (the record type is inhabited) than the .md (a particular braid's minimal filtration level exists). proof-statement-integrity violated: no T_w, no J^ℓ, no minimality in the Lean."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1480,15 +1484,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Lean -- Ref: [manuscript] is a self-citation placeholder; no external reference invoked to mis-attribute."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Existence of the confinement level', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1498,17 +1504,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Existence of the confinement level' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:11-12 'generic locus' and :15-16 'distinct nonzero shadow-price values at q' used without local definition; def:confinement-level referenced but not in uses[] (confinement-level-exists.ts:9 `uses: []`).",
-        "notes": "The proposition depends on def:confinement-level and the shadow-price/SDP machinery yet declares `uses: []`, leaving the key terms (generic locus, shadow-price) unanchored in the manifest."
+        "evidence": "confinement-level-exists.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1518,15 +1524,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match to experiment; q-independent finiteness claim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Existence of the confinement level' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1536,15 +1544,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physical/dimensional claim; purely algebraic existence."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Existence of the confinement level' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1554,15 +1564,17 @@
           "ts": "009b9fc85a42",
           "lean": "7c11db6308a5"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No backing witness/compute; analytic statement with no numbers to reproduce."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean:20:14: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -1574,15 +1586,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation.",
         "severity": "major",
-        "evidence": "Lean witness is vacuous (Nonempty of an arbitrary record) and diverges from the .md existence-of-minimal-level claim; uses[] empty despite dependence on def:confinement-level.",
-        "notes": "verdict: minor-revision. referee_argument: The mathematical content (finiteness ⇒ min exists) is correct and easy, but the formalisation does not formalise it — it proves type-inhabitation instead, so the block is unbacked. Either state `∃ ℓ, IsLeast {ℓ : T_w ∈ J^ℓ} ℓ` in Lean or demote the Lean to a documented stub, and populate uses[]."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

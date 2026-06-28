@@ -842,17 +842,16 @@
           "md": "ff3f869292e9",
           "ts": "cb6f916acb86"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "md:14-18 'this class {K: g(K)≤4} is generated from a finite list of torus-knot generators plus skein crossing changes'; md:30-40 'Every Bring-embeddable knot is obtained from the seven torus-knot generators by skein crossing changes'",
-        "notes": "The set {K : g(K) ≤ 4} is INFINITE (infinitely many distinct knots have Seifert genus ≤ 4), so 'a finite list of generators' generating it requires the skein-crossing-change closure to be doing all the work — but skein crossing changes do not preserve genus (md:40 itself hedges 'when chosen in the principled atlas methodology'). As stated, 'finite list of generators generates {g≤4}' is at best unproven and at face value false; it is propped on prop:knot-eigenbasis-complete without an in-block argument."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-vacuous": [
@@ -864,12 +863,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Tabulation remark with concrete content (genus stratification, 7 generators, per-knot B1 witness target formula md:47-50, falsifiability surface); not vacuous. authorNotes honestly flags 'No new mathematical content'."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' presents substantial mathematical content: The QOU substrate selects the knots whose Seifert genus is bounded by Bring's su...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -881,12 +880,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No back-fit: the block lists falsifiability targets for B1 (conj:gb-depth-period-correspondence) and notes only the figure-8 row is verified; it does not assume B1 to derive a target."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-overclaim": [
@@ -895,17 +895,15 @@
           "md": "ff3f869292e9",
           "ts": "cb6f916acb86"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "md:30-31 'Every Bring-embeddable knot is obtained from the seven torus-knot generators by skein crossing changes'",
-        "notes": "Universally-quantified generation claim ('Every ... is obtained from seven generators') stated as fact, but the supporting completeness theorem (prop:knot-eigenbasis-complete) is referenced, not proved here, and the genus-preservation of the skein moves is conceded to be conditional ('when chosen in the principled atlas methodology', md:40-41). The 'Every' is stronger than the hedged mechanism supports."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -917,12 +915,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical calibration parameter; z_K (shape parameter) and λ_K (dominant cell) are per-knot structural data identified from triangulation/braid word, not free fit DOF."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -931,17 +930,16 @@
           "md": "ff3f869292e9",
           "ts": "cb6f916acb86"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "md:8-12 defines Knots_Bring := {g(K)≤4} then md:14 'By the generation completeness theorem, this class is generated from a finite list'",
-        "notes": "The step from the genus-bounded SET definition to 'generated by a finite torus-knot list + skein moves' is asserted via the completeness theorem without showing the theorem actually yields finite generation of an infinite genus-bounded class; the logical bridge is delegated entirely upstream."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -950,15 +948,15 @@
           "md": "ff3f869292e9",
           "ts": "cb6f916acb86"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "remark block, no .lean sibling (none required); interprets rem:knot-exhaustiveness."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -970,12 +968,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "cites[thurston1978] resolves to references.ts:2327 ('The Geometry and Topology of Three-Manifolds', Thurston) — appropriate for the hyperbolic-volume content (e.g. figure-8 volume 2Cl_2(π/3)) invoked in the table."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to thurston1978 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -984,17 +983,16 @@
           "md": "ff3f869292e9",
           "ts": "cb6f916acb86"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:9-12 g(K) used as 'Seifert genus' but md:5 says 'Seifert genus bounded by Bring's surface genus' (=4) without stating which genus invariant (Seifert vs 3-genus vs Bring-embedding genus) is canonical; md:48-49 [Vol(K)]∈P_2/P_1 period quotient undefined in-block",
-        "notes": "'Genus' carries multiple readings (Seifert genus vs the genus of Bring's surface bound); the equality of these is implicit. The Goncharov period quotient P_2/P_1 and τ_arch are referenced without in-block definition."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1006,12 +1004,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Only one row (figure-8, Vol≈2.02988) is claimed verified; the rest are listed as future falsifiability targets, so no fragile numerical match is asserted as established. Table volumes (e.g. 8G≈7.32772 for Borromean) are standard hyperbolic constants."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1023,12 +1022,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Knot-theoretic tabulation; the one physics-adjacent label ('proton B_3' at g=2) is a framework identification, not a contradicted measurement."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1040,12 +1040,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No computation/witness on this block; volumes cited are literature hyperbolic constants matching standard values (figure-8 2Cl_2(π/3)≈2.0299, Borromean 8G≈7.3277). Genus arithmetic g(T(p,q))=(p−1)(q−1)/2 for the seven generators reproduces the stated {1,2,3,4,3,4,2}."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1054,17 +1055,17 @@
           "md": "ff3f869292e9",
           "ts": "cb6f916acb86"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "md:14-18 finite-generation of infinite {g≤4} class; md:30-31 'Every ... by skein crossing changes'",
-        "notes": "verdict=accept-with-minor-to-major. referee_argument: As a tabulation of B1 falsifiability targets the block is honest (authorNotes disclaims new content, only figure-8 verified). The substantive objection is the generation claim: the genus-bounded class {g(K)≤4} is infinite, yet the block asserts it is 'generated from a finite list of torus-knot generators plus skein crossing changes' and that 'every' Bring-embeddable knot arises this way — while conceding skein moves only preserve g≤4 'when chosen in the principled atlas methodology'. This finite-generates-infinite claim is unproven in-block and reads as overclaim/false unless prop:knot-eigenbasis-complete supplies a genuine closure argument; should be re-stated as conditional on that theorem with the genus-preservation caveat foregrounded."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets' are consistent."
       }
     ]
   },

@@ -1794,7 +1794,266 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; closure is rfl in an anonymous constructor (vacuity already captured by proof-no-trivial-true)."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean:63:3: error(lean.unknownIdentifier): Unknown constant `Real.log`.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$'.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$'.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Spectral decomposition of the $\\\\mathcal{Q}_q$-value over the torus knot basis of $\\\\Sigma_4$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "spectral-decomposition-qvalue.lean:1 — content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean:63:3: error(lean.unknownIdentifier): Unknown constant `Real.log`"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9edb6dd00b44",
+          "ts": "871bc0fc6bb0",
+          "lean": "928e5b3a4cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean fails compilation: content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean:63:3: error(lean.unknownIdentifier): Unknown constant `Real.log`",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean:63:3: error(lean.unknownIdentifier): Unknown constant `Real.log`, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

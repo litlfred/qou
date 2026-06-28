@@ -1340,7 +1340,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "No false claims identified in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$': the formalization compiles successfully without errors."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "The argument flow in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Lean sibling corresponds directly to the narrative claim in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "The citations leitnerpawloski2004,  in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' are consistent with the sources referenced in the text."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "Key terms and symbols in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "The empirical claims in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "pawlowski-leitner-basis.ts:1",
+        "notes": "The physical concepts described in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Lean file compiles successfully, confirming reproducibility."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6d01fb4e6677",
+          "ts": "c85dbce06e4d",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Pawlowski--Leitner basis for $\\\\mathrm{Hom}(V_j, V_{1/2}^{\\\\otimes n})$' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:37.682Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

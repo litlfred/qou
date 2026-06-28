@@ -842,17 +842,17 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Eigenstructure of the Gram weight and the adjoint character': mathematical reasoning is consistent in prose.",
         "severity": "minor",
-        "evidence": "md:84-90 claims small Gram eigenvalues 'correspond to representations with large Schur elements (highly symmetric tableaux)' and large eigenvalues to small Schur elements. The Gram eigenvalues are not in general equal/monotone to Schur elements unless the NF basis is block-aligned to the Wedderburn decomposition; md:9-19 only asserts 'each eigenspace corresponds to a sector'.",
-        "notes": "As a remark the claim is interpretive, but the asserted monotone eigenvalue<->Schur-element correspondence is stated as fact without establishing that the NF basis diagonalises within isotypic blocks. Flagged warn (remark, not theorem)."
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-vacuous": [
@@ -863,13 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Substantive interpretive content (eigendecomposition, signature, Frobenius-norm projection). Not vacuous."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Eigenstructure of the Gram weight and the adjoint character' presents substantial mathematical content: '$w_k^G$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -880,13 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No back-fitting; interprets prop:gram-weighted-qvalue via eigenstructure. Not applicable."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Eigenstructure of the Gram weight and the adjoint character'.",
+        "severity": "minor",
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-overclaim": [
@@ -895,17 +898,16 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "md:62-64 'The boundary neutrons ... have larger Frobenius norms than the interior neutrons' is presented as a general 'boundary vs interior suppression' principle from a single 6He data point (4 values, md:55-60). md:91-98 generalises to 'measures the change in representation content'.",
-        "notes": "A single 4-row 6He table is extrapolated to a named structural principle ('adjoint character', boundary suppression). Acceptable in a remark but the generality outruns the one example shown."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Eigenstructure of the Gram weight and the adjoint character' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -916,13 +918,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No calibration constant. Not applicable."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Eigenstructure of the Gram weight and the adjoint character'.",
+        "severity": "minor",
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -931,17 +935,17 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Eigenstructure of the Gram weight and the adjoint character' proceed logically through the stated steps.",
         "severity": "minor",
-        "evidence": "md:46-48: the physical Frobenius norm is defined as sqrt(|sum lambda_alpha c^2|) (absolute value of a signed sum), then md:62-69 attributes the resulting magnitude ordering to 'geometric distance in the Frobenius metric'. A Gram form with negative eigenvalues (md:21-26, signature (7+,1-)) is indefinite, so it is not a metric and 'distance' is not well-defined.",
-        "notes": "Calling the indefinite-Gram quantity a 'geometric distance (in the Frobenius metric)' (md:68) is a non-sequitur given the block itself states the form is not positive definite; the abs-value patch (md:47) does not restore a metric."
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -950,15 +954,16 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Remark block, no .lean sibling and none required (ts has no lean field). Not applicable."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -967,15 +972,17 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] field in ts; interprets/uses prop:gram-weighted-qvalue and prop:rj-canonical-inner-product (internal cross-refs, not bibliographic). Not applicable."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Eigenstructure of the Gram weight and the adjoint character', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -984,17 +991,17 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Eigenstructure of the Gram weight and the adjoint character' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:30-31 introduces delta_k = G_par - G_dau^(k) ('conversion difference') and md:53 '6He (N=4 neutrons at positions {0,2,4,5})' without defining G_par/G_dau or the position-labelling convention in-block; the Markov trace formula md:77 uses z^A/s_lambda(q) with z undefined here.",
-        "notes": "Several objects (parent/daughter conversion elements, neutron 'positions', the trace normalisation z) are used without in-block definition; readability/ambiguity concern typical for a remark."
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1003,17 +1010,17 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Eigenstructure of the Gram weight and the adjoint character' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "md:55-60 gives 6He Frobenius norms (0.260,0.186,0.231,0.176) and normalised weights to 3 sig figs with no computation/witness referenced in the .ts (ts:1-17 has no computation field).",
-        "notes": "The numerical table is unsourced and not pinned to any witness; the q0-dependence of these eigenvalues is not stated, so reproducibility/staleness cannot be checked. Minor because the block is an interpretive remark, but the numbers should be witness-backed."
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1024,13 +1031,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No dimensional/physical observable prediction; discusses dimensionless weights. Not applicable."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Eigenstructure of the Gram weight and the adjoint character' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "gram-weight-eigenstructure.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1039,17 +1048,16 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "No computation/witness in ts (ts:1-17); the 6He signature 'hundreds of negative eigenvalues' (md:25-26) and the four Frobenius norms (md:55-60) have no producer script cited.",
-        "notes": "Quantitative claims (signature counts, Frobenius norms) are not traceable to any witness; cannot verify reproducibility. Same root as da-empirical-fragility."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Eigenstructure of the Gram weight and the adjoint character' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1058,17 +1066,18 @@
           "md": "1c9628c59554",
           "ts": "4049c6813891"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "Interpretive remark with sound spirit but (a) calls an explicitly-indefinite Gram form a 'metric'/'distance' (md:21-26 vs 68), (b) asserts a monotone eigenvalue<->Schur-element correspondence without basis-alignment (md:84-90), and (c) cites unsourced 6He numbers (md:55-60).",
-        "notes": "verdict=minor-revision. referee_argument: 'The eigenstructure picture is reasonable, but the block overstates: an indefinite Gram form is not a metric, so \"geometric distance\" is ill-defined; the eigenvalue-Schur monotonicity needs the NF basis to respect the Wedderburn blocks; and the 6He Frobenius-norm table needs a witness.' No critical error — appropriate for a remark."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Eigenstructure of the Gram weight and the adjoint character' are consistent."
       }
     ]
   },

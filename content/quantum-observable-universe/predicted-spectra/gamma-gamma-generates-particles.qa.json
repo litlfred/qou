@@ -546,7 +546,264 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; proofs are simp + explicit term construction."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in '$\\\\gamma\\\\gamma$ production generates the operator basis': the formalization compiles successfully without errors.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block '$\\\\gamma\\\\gamma$ production generates the operator basis' presents substantial mathematical content: '$\\gamma\\gamma$'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in '$\\\\gamma\\\\gamma$ production generates the operator basis' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in '$\\\\gamma\\\\gamma$ production generates the operator basis' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean sibling corresponds directly to the narrative claim in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in '$\\\\gamma\\\\gamma$ production generates the operator basis', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in '$\\\\gamma\\\\gamma$ production generates the operator basis' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in '$\\\\gamma\\\\gamma$ production generates the operator basis' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in '$\\\\gamma\\\\gamma$ production generates the operator basis' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean file compiles successfully, confirming reproducibility.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\gamma\\\\gamma$ production generates the operator basis' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:11:58.919Z"
 }

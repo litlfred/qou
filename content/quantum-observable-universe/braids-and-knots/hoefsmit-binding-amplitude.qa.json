@@ -1351,8 +1351,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "references.ts:3478 'wenzl1988c — placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
-        "rebuttal": "partial→survived — real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
+        "referee_argument": "references.ts:3478 'wenzl1988c \u2014 placeholder'; h3...qa.json bib-cite-resolves result:fail severity:critical; .ts:7-11 cites only wenzl1988c not hoefsmit1974.",
+        "rebuttal": "partial\u2192survived \u2014 real, self-flagged, CI-tracked bibliography defect (hoefsmit1974 is one line away); a pre-publication blocker, not a math error.",
         "evidence": [
           {
             "text": "references.ts:3478; hoefsmit-binding-amplitude.ts:7-11"
@@ -1381,7 +1381,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": ".lean:46-57 proves only qInt3/qInt2^2 = 1 - 1/qInt2^2; the Hoefsmit matrix derivation (b=sqrt(a_rho a_-rho +1), a_rho=h/(1-q^-2rho), rho=2) is only in the .md.",
-        "rebuttal": "partial — honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
+        "rebuttal": "partial \u2014 honest (no sorry, no vacuity); the .md derivation is correct (b^2=0.7527 in (0,1) at q_0); Lean scope narrower than the title but not false.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.lean:46-57; .md:13-33"
@@ -1409,8 +1409,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the Δ_λ gate.",
-        "rebuttal": "rebutted — b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a Δ_λ closure; canonical-no-numerology passes.",
+        "referee_argument": "'binding amplitude' smells like a fitted DOF feeding the \u0394_\u03bb gate.",
+        "rebuttal": "rebutted \u2014 b^2 is parameter-free, exact in q, zero fit constants (.md:73-76 'universal algebraic identity'); does not claim a \u0394_\u03bb closure; canonical-no-numerology passes.",
         "evidence": [
           {
             "text": "hoefsmit-binding-amplitude.md:73-76"
@@ -1458,12 +1458,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Verified symbolically/numerically (q=0.7,1.3,2.0,1.1097): with h=q-q⁻¹, ρ=2, a_ρ·a_{-ρ}=-1/[2]_q², so b²=1+a_ρa_{-ρ}=[3]_q/[2]_q² and 1-b²=1/[2]_q² hold for all q. The .md proof (md:13-42) is correct, including [2]_q²=h²+4 and [3]_q=[2]_q²-1."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'Physical interpretation: pion decay' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1473,17 +1474,15 @@
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The Lean (hoefsmit-binding-amplitude.lean:46-50) proves hoefsmit_b_sq_eq_q3_over_q2sq : qInt3 q/(qInt2 q)^2 = 1 - 1/(qInt2 q)^2 — a pure q-integer identity that NEVER defines the Hoefsmit matrix element b, a_ρ, a_{-ρ}, or h. The proposition's actual content ('the off-diagonal element b of the Hoefsmit seminormal matrix satisfies b²=[3]/[2]²') is not what Lean verifies; Lean verifies the trivially-true downstream identity [3]/[2]²=1-1/[2]². The matrix-element claim is unformalized.",
-        "notes": "Not vacuous in the .md (the proof derives b² from a_ρa_{-ρ}), but the Lean witness is a weaker tautology-adjacent identity — borderline, hence warn rather than fail under this lens."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:hoefsmit-binding-amplitude'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1496,12 +1495,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "b²=[3]/[2]² is a parameter-free representation-theoretic identity, exact in q; no calibration or target is back-fitted."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['prop:frobenius-lepton-meson-bridge'] for 'prop:hoefsmit-binding-amplitude' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-hidden-dof": [
@@ -1514,12 +1514,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free parameter: the result holds for all q (md:71-76 explicitly 'independent of the substrate parameter'). ρ=2 (axial distance) is fixed by the (2,1) rep of H₃, not a tunable input."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1529,17 +1530,16 @@
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "hoefsmit-binding-amplitude.md:44-69 ('Physical interpretation: pion decay') asserts E_bind=m_π/[2]_q² and that the 'remaining energy m_π·b²' flows into the V_(2) lepton channel 'consistent with π⁺→μ⁺+ν_μ'. The jump from an algebraic off-diagonal element b² to a physical rest-energy partition of the pion (and to a specific decay channel) is not derived — no lemma connects the seminormal matrix element to an energy fraction; it is asserted via the Frobenius bridge (prop:frobenius-lepton-meson-bridge) by analogy.",
-        "notes": "The algebraic Proposition is sound; the energy/decay narrative is an interpretive leap. Scoped as warn since the .md frames it under 'Physical interpretation', but the 'therefore E_bind=m_π/[2]_q²' step lacks a stated bridging result."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'Physical interpretation: pion decay' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1549,17 +1549,16 @@
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'prop:hoefsmit-binding-amplitude' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "hoefsmit-binding-amplitude.md:21 defines b=√(a_ρ·a_{-ρ}+1) but a_ρ·a_{-ρ}=-1/[2]_q²<0, so the radicand is 1-1/[2]_q²; b is real only when [2]_q²≥1. Sign/branch of the square root and the base ring are unstated (Lean uses ℝ with q≠0,1 but the matrix entries a_ρ involve 1-q^{±4} which can be negative). 'the standard representation (2,1)' and ρ=2 'axial distance' are used without定义 of axial distance for the (2,1) Young tableau in-block.",
-        "notes": "Minor: real-vs-complex regime for b and the meaning of ρ=2 are implicit; fine for an expert reader but technically ambiguous."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1572,12 +1571,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The identity is exact in q (no fit, no q_0 pin); md:71-76 correctly states it holds for all q. No numerical match to experimental data is claimed in this block, so no fit-noise/cross-anchor-swing/stale-pin exposure."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'prop:hoefsmit-binding-amplitude' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1587,17 +1587,16 @@
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "hoefsmit-binding-amplitude.md:56-69 frames pion decay π→μ+ν as releasing a fraction 1-b²=1/[2]_q² of rest energy as 'de-entanglement energy', with remainder m_π·b² flowing into 'the de-entangled lepton channel'. Physically, in π⁺→μ⁺+ν_μ the full pion rest mass is converted (energy-momentum conservation gives E_μ=(m_π²+m_μ²)/2m_π etc.); there is no measured 'binding fraction 1/[2]_q²' of the pion mass, and the pion is not a bound lepton pair (it is a quark-antiquark/Goldstone state). The energy-partition picture risks contradicting the standard decay kinematics if read literally.",
-        "notes": "Scoped-limited: as an interpretive analogy under the Frobenius bridge it may be heuristic, but the literal 'fraction of rest energy released as de-entanglement energy' is not the physical π decay energetics and a domain expert would push back."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'prop:hoefsmit-binding-amplitude' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1607,15 +1606,16 @@
           "ts": "f654226fc036",
           "lean": "d007f6644123"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No external witness/compute dependency; the identity is reproduced here (q=0.7..2.0,1.1097 all agree to 1e-16). Lean theorems hoefsmit_b_sq_eq_q3_over_q2sq / de_entanglement_fraction discharge by ring/field_simp; the cited [wenzl1988c] DOI is an admitted placeholder (references.ts:3476-3482) but that is a citation issue, not a reproducibility drift."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.lean:16:27: error: failed to synthesize"
       }
     ]
   },

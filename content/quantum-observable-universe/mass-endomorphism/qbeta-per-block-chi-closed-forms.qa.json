@@ -1394,7 +1394,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is 'For all q>0, chi_lambda(q) = <rational function>' — an algebraic rational identity with only the q>0 well-definedness hypothesis (denominators 4q^k). Tagged pre-archimedean; q>0 is the natural domain of the rational form, not an archimedean-only order claim. No Real.sqrt/MeV/numeric q in the statement."
+        "notes": "Statement is 'For all q>0, chi_lambda(q) = <rational function>' \u2014 an algebraic rational identity with only the q>0 well-definedness hypothesis (denominators 4q^k). Tagged pre-archimedean; q>0 is the natural domain of the rational form, not an archimedean-only order claim. No Real.sqrt/MeV/numeric q in the statement."
       }
     ],
     "wall-side-proof": [
@@ -1430,7 +1430,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is field_simp; ring after q>0 denominator positivity witnesses — pure algebraic machinery matching the algebraic statement. No linarith/IVT/continuity/numeric-q on the ref'd statement (chi_block_antipode_pairing). The √q markov_parameter and HasDerivAt extensions are separately scoped Extension blocks, properly archimedean."
+        "notes": "Proof is field_simp; ring after q>0 denominator positivity witnesses \u2014 pure algebraic machinery matching the algebraic statement. No linarith/IVT/continuity/numeric-q on the ref'd statement (chi_block_antipode_pairing). The \u221aq markov_parameter and HasDerivAt extensions are separately scoped Extension blocks, properly archimedean."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1480,7 +1480,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "lean.ref = chi_block_antipode_pairing: narrative antipode claim 'chi_(1,1,1)(q) = q^{-4}·chi_(3)(q) for all q>0' matches Lean 'chi_block_111 q = q⁻¹^4 * chi_block_3 q (hq : 0 < q)'. The three closed forms + vanishing-at-1 also have matching Lean defs/theorem (chi_blocks_vanish_at_one). Quantifier (∀ q>0), hypothesis (0<q), conclusion all match."
+        "notes": "lean.ref = chi_block_antipode_pairing: narrative antipode claim 'chi_(1,1,1)(q) = q^{-4}\u00b7chi_(3)(q) for all q>0' matches Lean 'chi_block_111 q = q\u207b\u00b9^4 * chi_block_3 q (hq : 0 < q)'. The three closed forms + vanishing-at-1 also have matching Lean defs/theorem (chi_blocks_vanish_at_one). Quantifier (\u2200 q>0), hypothesis (0<q), conclusion all match."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1659,7 +1659,7 @@
           "lean": "d0a02ca00bd4"
         },
         "result": "pass",
-        "notes": "Antipode pairing chi_(111)=q^-4·chi_(3) + shared -2 order-w coefficient is a genuine structural finding; §3b-cond canonical class scaffolds future closure.",
+        "notes": "Antipode pairing chi_(111)=q^-4\u00b7chi_(3) + shared -2 order-w coefficient is a genuine structural finding; \u00a73b-cond canonical class scaffolds future closure.",
         "reviewed_at": "2026-06-25T17:02:28.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1764,7 +1764,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "chi_block_antipode_pairing proves an equality by unfold + field_simp over concrete rational defs — derives, does not project a field equal to its own conclusion. No self-assuming structure."
+        "notes": "chi_block_antipode_pairing proves an equality by unfold + field_simp over concrete rational defs \u2014 derives, does not project a field equal to its own conclusion. No self-assuming structure."
       }
     ],
     "proof-no-trivial-true": [
@@ -1815,7 +1815,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goal is a substantive rational equality (chi_block_111 = q⁻¹^4·chi_block_3), not True/x=x. The one sorry (delta_tau_M_surrogate_taylor_coeff_2) is an honest cited sorry on a real f''(1)/2=5/6 goal, not a vacuous-True dodge; the ref'd decl is sorry-free."
+        "notes": "Goal is a substantive rational equality (chi_block_111 = q\u207b\u00b9^4\u00b7chi_block_3), not True/x=x. The one sorry (delta_tau_M_surrogate_taylor_coeff_2) is an honest cited sorry on a real f''(1)/2=5/6 goal, not a vacuous-True dodge; the ref'd decl is sorry-free."
       }
     ],
     "proof-no-false-premise": [
@@ -1862,7 +1862,7 @@
           "lean": "d0a02ca00bd4"
         },
         "result": "pass",
-        "notes": "Sole premise 0<q is satisfiable (physical regime); class fields (normalisation) are consistent — instance exhibited in sibling block.",
+        "notes": "Sole premise 0<q is satisfiable (physical regime); class fields (normalisation) are consistent \u2014 instance exhibited in sibling block.",
         "reviewed_at": "2026-06-25T17:02:27.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1918,7 +1918,7 @@
           "lean": "d0a02ca00bd4"
         },
         "result": "pass",
-        "notes": "hq:0<q used in antipode_pairing/q2-1-factor via ne_of_gt+field_simp; vanish_at_one has no hyp. §3b-cond [CanonicalMarkovWeightsH3] instance used by delta_tau_M_canonical_vanish_at_one.",
+        "notes": "hq:0<q used in antipode_pairing/q2-1-factor via ne_of_gt+field_simp; vanish_at_one has no hyp. \u00a73b-cond [CanonicalMarkovWeightsH3] instance used by delta_tau_M_canonical_vanish_at_one.",
         "reviewed_at": "2026-06-25T17:02:27.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1972,8 +1972,8 @@
       {
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "qbeta-per-block-chi-closed-forms.md:151 '**Sorry tally: zero.** All theorems are sorry-free' + :156 'The three originally-deferred sorries … were each subsequently discharged'. The §0a sibling-first resolution of lean.ref qou:QOU.BraidKnot.chi_block_antipode_pairing lands on the sibling qbeta-per-block-chi-closed-forms.lean (defines chi_block_antipode_pairing @122), whose line 329 is a bare tactic-position `sorry` (theorem delta_tau_M_surrogate_taylor_coeff_2). The 'Sorry tally: zero' is literally false against the file the ref resolves to.",
-        "rebuttal": "surviving — §0a candidate-1 sibling has the sorry @329; the library twin lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean IS sorry-free (line-329 sorry replaced by a full 2nd-derivative HasDerivAt proof + linarith) but §0a checks sibling BEFORE library, so it does not save the resolved ref; diff confirms divergence; no corpus path reconciles the prose with the live sibling sorry.",
+        "referee_argument": "qbeta-per-block-chi-closed-forms.md:151 '**Sorry tally: zero.** All theorems are sorry-free' + :156 'The three originally-deferred sorries \u2026 were each subsequently discharged'. The \u00a70a sibling-first resolution of lean.ref qou:QOU.BraidKnot.chi_block_antipode_pairing lands on the sibling qbeta-per-block-chi-closed-forms.lean (defines chi_block_antipode_pairing @122), whose line 329 is a bare tactic-position `sorry` (theorem delta_tau_M_surrogate_taylor_coeff_2). The 'Sorry tally: zero' is literally false against the file the ref resolves to.",
+        "rebuttal": "surviving \u2014 \u00a70a candidate-1 sibling has the sorry @329; the library twin lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean IS sorry-free (line-329 sorry replaced by a full 2nd-derivative HasDerivAt proof + linarith) but \u00a70a checks sibling BEFORE library, so it does not save the resolved ref; diff confirms divergence; no corpus path reconciles the prose with the live sibling sorry.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.lean:329"
@@ -2014,14 +2014,12 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "qbeta-per-block-chi-closed-forms.ts:19-21 vs .lean:122,320-329",
-        "notes": "The .ts lean.ref points to qou:QOU.BraidKnot.chi_block_antipode_pairing (the main proved theorem), good. But the Lean file also contains delta_tau_M_surrogate_taylor_coeff_2 (line 320) which is a `sorry` with a [manuscript] Ref — and crucially the surrogate Delta-tau_M machinery (Extensions #1,#2,#5) proves facts about a NON-CANONICAL object the .md itself says is not the real Markov trace. The .md claims 'Sorry tally: zero' (md:151) which is FALSE: the Lean has an explicit sorry at line 329 (taylor_coeff_2). That is a direct narrative-vs-Lean divergence on a verifiable claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean proof in content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains a sorry, representing a divergence from the fully claimed narrative.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -2029,7 +2027,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": "md:96 'The Lean theorem delta_tau_M_surrogate_eq_sum discharges this identity sorry-free via field_simp; ring' is true, but the global summary :151 'Sorry tally: zero' is false: theorem delta_tau_M_surrogate_taylor_coeff_2 (lean:320-329) concludes `deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5/6` with body `sorry`. A reader trusting the 'closed-form + sorry-free' labels is misled about the resolved sibling's formalization state.",
-        "rebuttal": "surviving — the count claim is falsifiable and false against the sibling; grep shows exactly one tactic sorry (line 329) plus comment-only 'sorry-free' status strings. The twin's fix is real but unreachable under sibling-first resolution.",
+        "rebuttal": "surviving \u2014 the count claim is falsifiable and false against the sibling; grep shows exactly one tactic sorry (line 329) plus comment-only 'sorry-free' status strings. The twin's fix is real but unreachable under sibling-first resolution.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.md:151"
@@ -2067,21 +2065,21 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "qbeta-per-block-chi-closed-forms.lean:122-126",
-        "notes": "Verified by CAS: chi_(1,1,1) = q^-4 * chi_(3) holds identically; all three blocks vanish at q=1; antipode pairing and (q^2-1)-factor theorems are correct and proved sorry-free in Lean by field_simp/ring. The .md proof line 'simplifies to 1/q^5 = q^{-4}.1/q' is correct (q^{-4}.q^{-1}=q^{-5})."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "md:45-57 + lean:26-34 assert the canonical Δτ_M 'is a rational function of √q, NOT of q alone … Proving its sum form requires square-root handling beyond ring … out of scope / open.' docs/audits/2026-06-13-deep-audit-qbeta-symbolic-trace.md:12-13 falsifies this: 1-D sign characters are exact integers + unnormalized q-dims are pure rational polynomials, so 'the entire trace difference is a pure rational function of q' and the √q problem is 'an artifact of forcing into the Jones z-parameterization'. The 'what is open' narrative is stale.",
-        "rebuttal": "partial — does NOT touch the three χ_λ closed forms (correct + witnessed); impugns only the .md's downstream 'Δτ_M open / needs √q' scope claim. The audit §4 records the item as not-yet-reconciled ('invalidate the .qa.json once the exact rational formulation is committed') — a documented open re-scope, not a refutation of this proposition's stated results.",
+        "referee_argument": "md:45-57 + lean:26-34 assert the canonical \u0394\u03c4_M 'is a rational function of \u221aq, NOT of q alone \u2026 Proving its sum form requires square-root handling beyond ring \u2026 out of scope / open.' docs/audits/2026-06-13-deep-audit-qbeta-symbolic-trace.md:12-13 falsifies this: 1-D sign characters are exact integers + unnormalized q-dims are pure rational polynomials, so 'the entire trace difference is a pure rational function of q' and the \u221aq problem is 'an artifact of forcing into the Jones z-parameterization'. The 'what is open' narrative is stale.",
+        "rebuttal": "partial \u2014 does NOT touch the three \u03c7_\u03bb closed forms (correct + witnessed); impugns only the .md's downstream '\u0394\u03c4_M open / needs \u221aq' scope claim. The audit \u00a74 records the item as not-yet-reconciled ('invalidate the .qa.json once the exact rational formulation is committed') \u2014 a documented open re-scope, not a refutation of this proposition's stated results.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.md:45"
@@ -2116,20 +2114,21 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "chi_lambda(Delta_{T_beta})(q) base ring is ℝ with q>0 stated; archimedean constructs (Real.sqrt in markov_parameter) are confined to Extension #4 behind a conditional class per §3b-cond. Regime and base ring are explicit."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "qa.json proof-no-bare-sorries=pass against source_hashes.lean 58ad5eee5eed, but the live sibling hashes to d0a02ca00bd4 — the sidecar audit was run on a stale Lean version, so its PASS does not certify the current file.",
-        "rebuttal": "rebutted — staleness confirmed, but it does not survive as an independent defect: the fresher agent rows (2026-06-22, sha b4ea04) in the SAME sidecar correctly FAIL (proof-narrative-lean-equiv 'Lean uses a sorry stub'; proof-statement-integrity 'contains sorryAx'). The QA system already caught the divergence; the surviving objection is the narrative one. The witness is fresh (2026-05-31, allPassed) and matches the χ forms exactly.",
+        "referee_argument": "qa.json proof-no-bare-sorries=pass against source_hashes.lean 58ad5eee5eed, but the live sibling hashes to d0a02ca00bd4 \u2014 the sidecar audit was run on a stale Lean version, so its PASS does not certify the current file.",
+        "rebuttal": "rebutted \u2014 staleness confirmed, but it does not survive as an independent defect: the fresher agent rows (2026-06-22, sha b4ea04) in the SAME sidecar correctly FAIL (proof-narrative-lean-equiv 'Lean uses a sorry stub'; proof-statement-integrity 'contains sorryAx'). The QA system already caught the divergence; the surviving objection is the narrative one. The witness is fresh (2026-05-31, allPassed) and matches the \u03c7 forms exactly.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.qa.json:13"
@@ -2161,25 +2160,24 @@
           "ts": "752273daa093",
           "lean": "d0a02ca00bd4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are reproducible.",
         "severity": "minor",
-        "evidence": "qbeta-per-block-chi-closed-forms.md:151-156; .lean:320-329",
-        "notes": "Witnesses qbeta-per-block-paper-closed-forms.witness.json and qbeta-c3-multiblock-recursion-attack.witness.json both exist; the proved closed forms reproduce under CAS. However the .md's explicit 'Sorry tally: zero' (md:151) contradicts the live `sorry` at .lean:329 — a reproducibility/accuracy defect in the prose's self-report of the Lean state. Did not verify scriptHash/scriptCommitSha drift on the two witnesses (not loaded), so flag only the prose contradiction."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "C1 trap: is the line-329 sorry hiding behind a :True / 0=0 / Nat.zero_le / §3b-cond rule-5 self-assuming projection?",
-        "rebuttal": "rebutted — the sorry is HONEST: theorem delta_tau_M_surrogate_taylor_coeff_2 states the real proposition deriv(deriv delta_tau_M_surrogate) 1 / 2 = 5/6 (a genuine order-2 Taylor coeff), carries -- Ref: [manuscript] per §1, and chooses a cited sorry over a :True dodge. The CanonicalMarkovWeightsH3 class is a non-degenerate §3b-cond axiomatisation. proof-no-trivial-true + proof-no-self-assuming-projection PASS correctly. The defect is the label overclaim, not vacuity.",
+        "referee_argument": "C1 trap: is the line-329 sorry hiding behind a :True / 0=0 / Nat.zero_le / \u00a73b-cond rule-5 self-assuming projection?",
+        "rebuttal": "rebutted \u2014 the sorry is HONEST: theorem delta_tau_M_surrogate_taylor_coeff_2 states the real proposition deriv(deriv delta_tau_M_surrogate) 1 / 2 = 5/6 (a genuine order-2 Taylor coeff), carries -- Ref: [manuscript] per \u00a71, and chooses a cited sorry over a :True dodge. The CanonicalMarkovWeightsH3 class is a non-degenerate \u00a73b-cond axiomatisation. proof-no-trivial-true + proof-no-self-assuming-projection PASS correctly. The defect is the label overclaim, not vacuity.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.lean:319-320"
@@ -2211,23 +2209,24 @@
           "ts": "752273daa093",
           "lean": "d0a02ca00bd4"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The proved content (three exact rational closed forms, antipode pairing, vanishing-at-1, q^2-1 factor) is non-trivial and discharged by genuine ring/field_simp arithmetic, not tautology. The one `sorry` (taylor_coeff_2) is honest and cited."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean:1"
       }
     ],
     "da-hidden-dof": [
       {
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "are the per-block χ closed forms a fitted DOF? the .md introduces surrogate y_lambda_surrogate + an order-2 coefficient 5/6.",
-        "rebuttal": "rebutted — the three χ_λ are derived from Hoefsmit seminormal H_3(q) matrices (cites hoefsmit1974; witness data/paper_closed_forms reproduces them character-for-character), no free parameter. The surrogate y_λ are repeatedly flagged 'NOT canonical / NEAR-MATCH diagnostic' (md:53, lean:188-194), and the downstream c_3 is correctly TIERED NEAR-MATCH per 1ppq-qbeta.md. No hidden DOF laundered into a canonical claim.",
+        "referee_argument": "are the per-block \u03c7 closed forms a fitted DOF? the .md introduces surrogate y_lambda_surrogate + an order-2 coefficient 5/6.",
+        "rebuttal": "rebutted \u2014 the three \u03c7_\u03bb are derived from Hoefsmit seminormal H_3(q) matrices (cites hoefsmit1974; witness data/paper_closed_forms reproduces them character-for-character), no free parameter. The surrogate y_\u03bb are repeatedly flagged 'NOT canonical / NEAR-MATCH diagnostic' (md:53, lean:188-194), and the downstream c_3 is correctly TIERED NEAR-MATCH per 1ppq-qbeta.md. No hidden DOF laundered into a canonical claim.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.ts:10"
@@ -2262,20 +2261,21 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The surrogate y_lambda weights are introduced explicitly and labelled non-canonical diagnostic, not smuggled as a derived ingredient. No off-menu free coefficient enters a production prediction."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-citation-misuse": [
       {
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "qa.json:835 bib-cite-resolves=fail (critical) — '\\cite{hoefsmit1974}/-- Ref: [hoefsmit1974] does not resolve in references.ts'. The proposition's sole citation is reported unresolved against the bibliography source of truth.",
-        "rebuttal": "partial — flagged by the sidecar's own checker as a live critical fail, but a bibliography-registration defect (key missing/mismatched), not a content misuse (Hoefsmit seminormal matrices ARE the correct provenance for H_3 characters). Rides alongside the primary objection; fix in the same pass. Could not independently confirm vs references.ts (miga relocated the bib pipeline to folio-assistant); deferring to the checker.",
+        "referee_argument": "qa.json:835 bib-cite-resolves=fail (critical) \u2014 '\\cite{hoefsmit1974}/-- Ref: [hoefsmit1974] does not resolve in references.ts'. The proposition's sole citation is reported unresolved against the bibliography source of truth.",
+        "rebuttal": "partial \u2014 flagged by the sidecar's own checker as a live critical fail, but a bibliography-registration defect (key missing/mismatched), not a content misuse (Hoefsmit seminormal matrices ARE the correct provenance for H_3 characters). Rides alongside the primary objection; fix in the same pass. Could not independently confirm vs references.ts (miga relocated the bib pipeline to folio-assistant); deferring to the checker.",
         "evidence": [
           {
             "text": "qbeta-per-block-chi-closed-forms.qa.json:835"
@@ -2310,19 +2310,19 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "qbeta-per-block-chi-closed-forms.ts:10; .lean:59,70,82,93",
-        "notes": "[hoefsmit1974] is correctly invoked for the seminormal representation matrices of H_3 from which the per-block characters are computed; appropriate attribution."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "verdict": "open-objection",
-        "referee_argument": "The proposition's mathematical core is sound — the three per-block χ_λ(Δ_{T_β}) closed forms verify exactly (vanish at q=1, antipode χ_(1,1,1)=q⁻⁴·χ_(3), witness matches character-for-character, ε¹ coeffs {-2,-1,-2}) — and the C1 'sorry' flag is NOT the usual false positive: the sorry is honest and cited. The surviving objection is a §0a Lean-narrative divergence: lean.ref qou:QOU.BraidKnot.chi_block_antipode_pairing resolves SIBLING-FIRST to mass-endomorphism/qbeta-per-block-chi-closed-forms.lean, which carries a live tactic sorry at line 329 (delta_tau_M_surrogate_taylor_coeff_2), while the .md asserts 'Sorry tally: zero. All theorems are sorry-free' (:151) and 'the three originally-deferred sorries were each subsequently discharged' (:156). The completed sorry-free twin exists in lean/QOU/BraidKnot/ but sibling-first resolution never reaches it, and the sidecar's reassuring proof-no-bare-sorries PASS is stale (58ad5eee5eed vs live d0a02ca00bd4) — the fresher agent rows correctly FAIL. A NEW sub-pattern: a stale sibling shadowing its own completed library twin. Fix is mechanical (sync sibling↔twin or soften the 'Sorry tally: zero' prose), but as the branch stands the label-vs-Lean contradiction is real and live.",
+        "referee_argument": "The proposition's mathematical core is sound \u2014 the three per-block \u03c7_\u03bb(\u0394_{T_\u03b2}) closed forms verify exactly (vanish at q=1, antipode \u03c7_(1,1,1)=q\u207b\u2074\u00b7\u03c7_(3), witness matches character-for-character, \u03b5\u00b9 coeffs {-2,-1,-2}) \u2014 and the C1 'sorry' flag is NOT the usual false positive: the sorry is honest and cited. The surviving objection is a \u00a70a Lean-narrative divergence: lean.ref qou:QOU.BraidKnot.chi_block_antipode_pairing resolves SIBLING-FIRST to mass-endomorphism/qbeta-per-block-chi-closed-forms.lean, which carries a live tactic sorry at line 329 (delta_tau_M_surrogate_taylor_coeff_2), while the .md asserts 'Sorry tally: zero. All theorems are sorry-free' (:151) and 'the three originally-deferred sorries were each subsequently discharged' (:156). The completed sorry-free twin exists in lean/QOU/BraidKnot/ but sibling-first resolution never reaches it, and the sidecar's reassuring proof-no-bare-sorries PASS is stale (58ad5eee5eed vs live d0a02ca00bd4) \u2014 the fresher agent rows correctly FAIL. A NEW sub-pattern: a stale sibling shadowing its own completed library twin. Fix is mechanical (sync sibling\u2194twin or soften the 'Sorry tally: zero' prose), but as the branch stands the label-vs-Lean contradiction is real and live.",
         "result": "fail",
         "field_hash": {
           "md": "74210ffeacbe",
@@ -2345,16 +2345,17 @@
           "ts": "752273daa093",
           "lean": "d0a02ca00bd4"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "notes": "verdict=minor-revision. referee_argument: Mathematically the strongest block of the five — three exact per-block character closed forms, the antipode pairing chi_(1,1,1)=q^-4 chi_(3), vanishing at q=1, and the q^2-1 factor are all CAS-verified and proved sorry-free in Lean, with exemplary scope discipline disavowing the open Delta-tau_M / c_3 closures. The only real objection is bookkeeping: the .md asserts 'Sorry tally: zero' while the Lean contains a live cited `sorry` (delta_tau_M_surrogate_taylor_coeff_2, line 329) and a large body of NON-CANONICAL surrogate-Delta-tau_M machinery whose relevance to the canonical chain is, by the block's own admission, only diagnostic. Correct the sorry-count claim and the block is clean."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean contains 'sorry' placeholders, rendering the proof of 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' incomplete."
       }
     ],
     "da-circular": [
@@ -2367,12 +2368,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Closed forms are sourced from the seminormal Hoefsmit matrices (witness) and proved as q-identities; no back-fitting to an experimental Q_beta target. The block explicitly disavows the c_3=-2 closure."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-overclaim": [
@@ -2382,16 +2384,15 @@
           "ts": "752273daa093",
           "lean": "d0a02ca00bd4"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "qbeta-per-block-chi-closed-forms.md:43-64",
-        "notes": "Unusually disciplined scope control: the .md and Lean headers explicitly list what is NOT established (Delta-tau_M closed form open, c_3=-2 only NEAR-MATCH, f-map open, surrogate y_lambda non-canonical). The surrogate is repeatedly flagged non-canonical. No overclaim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-non-sequitur": [
@@ -2404,12 +2405,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Each proved step is a verified rational identity; the 'structural insight' about the shared -2 ε-order coefficient ((3) and (1,1,1) both -2, verified by CAS) follows from the antipode pairing as claimed."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -2422,13 +2424,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "qbeta-per-block-chi-closed-forms.md:58-64",
-        "notes": "The block does not stake a precision claim; it explicitly routes the fragile c_3=-2/cross-anchor-swing issue to the 1ppq-qbeta ledger and labels it NEAR-MATCH, exactly per the AGENTS.md tiered-reporting discipline. The proved facts are exact algebraic identities, not numerical matches."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -2438,15 +2440,16 @@
           "ts": "752273daa093",
           "lean": "d0a02ca00bd4"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pre-archimedean algebraic identities; no direct physical-observable claim in this block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Per-block character closed forms for $\\\\chi_\\\\lambda(\\\\Delta_{T_\\\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts:1"
       }
     ]
   },

@@ -839,240 +839,246 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Algebra checks: E0 = m_e c_q² ℏ_q = m_e/(q(q-1)); at q0≈1.110 gives ≈4.186 MeV (m_e/(1.110·0.110)=4.185). Amplification ∂lnE0/∂lnq0 = −1 − q/(q−1) = (1−2q)/(q−1) ≈ −11.09 at q0=1.110, matching .md:26. No false identity."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Energy scale $E_0$ and the Planck time': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Remark block, no Lean, no trivial-proof issue."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Energy scale $E_0$ and the Planck time' presents substantial mathematical content: The energy scale $E_0$ is derived from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone \u2014 no \u03b2-decay calibration consumed. It ha...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:1-6 claims E0 is 'derived from CAL-1 (m_e) and CAL-2 (q0) alone — no β-decay calibration consumed', while .md:83-91 'Why free neutron decay calibrates this' sets E0 = Q_β/|Δnet| ≈ 4.179 MeV from the measured Q_β.",
-        "notes": "The block presents two definitions of the same E0: a 'derived' one (4.186) and a Q_β-calibrated one (4.155-4.179). The 'derived not calibrated' framing is in tension with the section that uses neutron decay to fix the scale; the 0.74% gap is then re-labelled a 'truncation residual'. This risks smuggling the β-decay scale back in while claiming independence — circularity flag, not yet a proven defect since the derived form is genuinely m_e,q0-only."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Energy scale $E_0$ and the Planck time'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:48-53 attributes the 0.74% derived-vs-cross-check gap to 'the brane-tower truncation residual at N=0 … O(ℏ_q²/(1-ℏ_q²)) ≈ 1%'.",
-        "notes": "A 0.74% numerical discrepancy is explained post-hoc as a known truncation effect by matching it to a separate ≈1% bound; this is an after-the-fact rationalisation of a mismatch rather than a derived prediction (the residual is asserted 'identical to' the Q_β +0.17% residual without showing the two share the mechanism). Conclusion stronger than the argument."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Energy scale $E_0$ and the Planck time' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy scale $E_0$ and the Planck time'.",
         "severity": "minor",
-        "evidence": ".md:97-108 table assigns m_e→H^0, m_μ/m_e→H^1, Q_β→H^2 as 'the three calibration inputs'.",
-        "notes": "The H^0/H^1/H^2 degree assignment contradicts the AGENTS.md canonical ruling that the three calibrations are the three real DOF of a single H^1(Bring)=2W (not distinct H^0/H^1/H^2 degrees). Using a distinct-cohomological-degree story can read as implying more independent structure than the framework's own count allows — a presentational hidden-DOF risk. Minor since it is exposition, not a new free parameter."
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Energy scale $E_0$ and the Planck time' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": ".md:62-65 equates m_e c_q² ℏ_q with m_e c_q²/t_P via 'ℏ_q = action per Planck tick' and 't_P = 1/ℏ_q'.",
-        "notes": "The identification ℏ_q (a dimensionless q-deformation 1−1/q) simultaneously as 'action per tick' and as 1/t_P is dimensionally loose; calling the product 'electron rest energy per Planck time' does not follow without a stated unit convention tying ℏ_q to a time. Heuristic, flagged as a gap not an error."
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No Lean sibling (remark, interprets rem:beta-decay-energy-scale)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No external -- Ref:/cites[] invoked; cross-refs to in-corpus props (three-calibration-discipline, per-braid-mass-tower) are internal."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Energy scale $E_0$ and the Planck time', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Energy scale $E_0$ and the Planck time' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:88-91 '|Δnet| ≈ 0.188' vs :91 'E0 = Q_β/|Δnet| ≈ 4.179' and :43-44 cross-check '≈ 4.155'; three slightly different E0 numbers (4.155, 4.179, 4.186) appear.",
-        "notes": "'E0' is used for the derived value, the Q_β/|Δnet| value, and the historical calibrated value with no single canonical definition flagged; |Δnet| ≈ 0.188 vs ≈ 0.188 appears but the resulting 4.179 ≠ the 4.155 cross-check, leaving which number is 'the' E0 ambiguous to the reader."
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:22 E0≈4.186 from q0≈1.110; the q0 amplification is −11.09, so E0 inherits ~11× the q0 fractional error.",
-        "notes": "E0 is highly sensitive to the q0 pin (factor −11.09); with the live muon-vs-proton q0 ambiguity (~11.5 ppb offset, AGENTS.md), the quoted 4.186 and the 0.74% gap to 4.155 could shift. The block does not state which q0 pin produced 4.186, so the headline gap is fragile to the pin choice."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Energy scale $E_0$ and the Planck time' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Energy scale $E_0$ and the Planck time' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": ".md:67-73 'electron's rest energy per Planck time', c_q=1/(q−1), t_P=1/ℏ_q ≈ 10.1 'Reeb operations'.",
-        "notes": "Identifying E0≈4.19 MeV as 'rest energy per Planck time' with a Planck time of ~10 dimensionless Reeb operations is a heuristic re-labelling that a physicist would not accept as a literal Planck scale (the SI Planck energy is ~10^19 GeV); the analogy conflates the framework's internal q-Planck units with the physical Planck scale named in the title. Presentational, flagged."
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Energy scale $E_0$ and the Planck time' are reproducible.",
         "severity": "minor",
-        "evidence": ".md:22,33,36 quote E0≈4.186 MeV, σ_E0/E0≈13.5 ppb, σ_E0≈5.7e-8 MeV with no witness/script reference.",
-        "notes": "The error-propagation numbers and E0 value are stated without a backing witness JSON; reproducible by hand from the given formula, but not traceable to a committed compute, and the q0 input value is not pinned in the block."
+        "evidence": "content/quantum-observable-universe/particle-interactions/energy-scale-planck.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "698bcc75d607",
+          "md": "4071dec2a146",
           "ts": "e48607b3f49e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Derived/calibrated E0 dual-definition tension (.md:1-6 vs :83-91), post-hoc truncation-residual explanation of the 0.74% gap (:48-53), and H^0/H^1/H^2 labelling at odds with the single-H^1 canonical count (:97-108).",
-        "notes": "verdict: minor-revision. referee_argument: The algebra is correct and the sensitivity analysis is honest, but the rhetorical claim that E0 is 'derived, no β-decay consumed' sits uneasily beside the section that calibrates E0 on neutron decay and explains away the residual gap; and the cohomological-degree table contradicts the framework's own DOF accounting. Tighten to a single E0 definition, label the q0 pin, and reconcile the H^k table."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Energy scale $E_0$ and the Planck time' are consistent."
       }
     ]
   },

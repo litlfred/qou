@@ -921,17 +921,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Isotope as a knot variant of fixed proton block' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/isotope-knot.lean:17:2: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
-        "evidence": "isotope-knot.md:23-28 'Markov closures of T_{w_1} and T_{w_2} generally have different Jones polynomials whenever N_1 ≠ N_2'.",
-        "notes": "Hedged with 'generally', but stated as the ground for 'isotopes are different knots'. Distinct Hecke generators in the neutron block do not guarantee distinct Jones polynomials (the Jones polynomial is not a complete invariant and the Markov trace can coincide); the definitional claim 'isotopes are knot-distinct' is therefore not established, only made plausible. Minor due to the 'generally' hedge."
+        "evidence": "isotope-knot.lean:1"
       }
     ],
     "da-vacuous": [
@@ -941,15 +941,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition has genuine content: isotopy = agreement of NF decompositions on the proton block w_{q^Z} with N_1≠N_2; not a tautology."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "isotope-knot.lean:1"
       }
     ],
     "da-circular": [
@@ -961,13 +963,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No back-fitted numerical target; structural definition only."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Isotope as a knot variant of fixed proton block'.",
+        "severity": "minor",
+        "evidence": "isotope-knot.ts:1"
       }
     ],
     "da-overclaim": [
@@ -977,17 +981,16 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "isotope-knot.md:23-24 section heading 'Two isotopes are knot-distinct' asserted as a fact, supported only by the hedged 'generally ... different Jones polynomials' (md:25-26).",
-        "notes": "A definite heading ('are knot-distinct') over a merely-generic argument; the magnitude of the claim exceeds the 'generally'-hedged support. Minor."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Isotope as a knot variant of fixed proton block' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -999,13 +1002,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free numerical parameter; w_{\\bar q^N}, w_inter are structural block labels, not tunable constants."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Isotope as a knot variant of fixed proton block'.",
+        "severity": "minor",
+        "evidence": "isotope-knot.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1015,17 +1020,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/isotope-knot.lean.",
         "severity": "minor",
-        "evidence": "isotope-knot.md:25-28 'different Jones polynomials whenever N_1≠N_2, since the neutron-quark blocks contribute distinct Hecke generators' — 'distinct Hecke generators' ⇒ 'distinct Jones polynomial' is the missing implication (different generators can yield the same trace).",
-        "notes": "Inference from 'distinct generators' to 'distinct Markov-trace/Jones value' lacks the injectivity lemma. Minor; the surrounding 'generally' softens it."
+        "evidence": "isotope-knot.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1037,15 +1042,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "isotope-knot.lean:16-18 'def AtomKnot.isIsotope (K₁ K₂ : AtomKnot) := K₁.Z = K₂.Z ∧ K₁.protonBlock = K₂.protonBlock', but AtomKnot is never defined as a structure with Z/protonBlock fields anywhere in content/quantum-observable-universe/lean (grep for 'structure AtomKnot' and 'protonBlock' both return nothing; the only AtomKnot is an abstract Type FIELD inside EquivalenceContext in the sibling IsotopeKnot/equivalence.lean). The .md definition (isotope-knot.md:1-15) requires agreement of full NF block decompositions T_w, which the Lean reduces to bare field equality of an undefined type.",
-        "notes": "Two problems: (1) the Lean as written cannot elaborate — AtomKnot.Z and AtomKnot.protonBlock are projections of a structure that does not exist (no Mathlib import, no QOU.Basic definition found), so the file is not a real resolved declaration; (2) even granting a hypothetical AtomKnot, the Lean isotope relation (Z-equality ∧ protonBlock-equality) is a weaker/different encoding than the .md's full NF-decomposition-agreement statement, which also carries the N_1≠N_2 distinctness and equivalence-relation content. .ts validation:'not_checked' confirms it was never verified."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1055,15 +1059,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "isotope-knot.ts cites:[] empty; isotope-knot.lean has no -- Ref:. Nothing to misuse."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Isotope as a knot variant of fixed proton block', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "isotope-knot.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1073,17 +1079,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Isotope as a knot variant of fixed proton block' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "isotope-knot.md:8-13 the proton block is written 'identical w_{q^Z}' yet the NF also carries w_{\\bar q^{N_i}}^{(i)} and w_{inter}^{(i)} with superscripts (i) suggesting they may differ; 'agree on the proton-quark block' presumes a canonical block-splitting of T_w that is not uniquely defined in-block. The Lean encodes this as a single 'protonBlock' field, a different granularity.",
-        "notes": "The NF block decomposition is treated as canonical without stating that the proton/neutron/inter split of a normal form is well-defined and basis-independent. Minor; relies on def:unstable-atom and §1 reduction engine."
+        "evidence": "isotope-knot.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1093,15 +1099,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical value; only the qualitative 12C-stable/14C-unstable analogy (md:36-37), which is illustrative, not a fitted match."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Isotope as a knot variant of fixed proton block' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "isotope-knot.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1113,13 +1121,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The physical analogy (12C stable, 14C not; stability computed per full NF) is consistent with nuclear data and correctly stated as an analogue, not a derived lifetime."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Isotope as a knot variant of fixed proton block' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "isotope-knot.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1129,17 +1139,17 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "isotope-knot.lean references AtomKnot.Z / AtomKnot.protonBlock; verification (grep across content/quantum-observable-universe/lean) shows no 'structure AtomKnot' and no 'protonBlock' declaration, so the lean.ref 'qou:QOU.BraidKnot.IsotopeKnot' would not compile as written. isotope-knot.ts validation:'not_checked'.",
-        "notes": "The Lean sibling is not independently reproducible/buildable in the qou package as written (undefined AtomKnot structure + missing protonBlock projection). A reviewer running lake build -R on this module would get an elaboration error. Flagged so the producer (a real AtomKnot structure with Z/protonBlock, or a corrected isotope encoding) can be supplied."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "isotope-knot.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/isotope-knot.lean:17:2: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       }
     ],
     "da-referee-verdict": [
@@ -1149,16 +1159,18 @@
           "ts": "ea199463e079",
           "lean": "dc9ea66511a2"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot.lean fails compilation.",
         "severity": "major",
-        "notes": "verdict: minor-to-major-revision. referee_argument: The narrative definition of isotope-knots (agreement of NF decompositions on the proton block at fixed Z) is sound and useful, and the equivalence-relation/element-class reading is correct. The strongest objection is formal-integrity: the Lean sibling (isotope-knot.lean:16-18) defines isIsotope via K.Z and K.protonBlock on an AtomKnot type that is never declared with those fields anywhere in the qou Lean tree (no 'structure AtomKnot', no 'protonBlock'), so the declaration does not elaborate and is a weaker bare-field-equality encoding of the .md's full NF-agreement claim (da-lean-narrative-divergence, da-reproducibility). Secondary: 'two isotopes are knot-distinct' is asserted as a heading but rests on a 'generally'-hedged, non-injective 'distinct Hecke generators ⇒ distinct Jones polynomial' step (da-non-sequitur). Fix the Lean to reference a real AtomKnot structure (or restate over the EquivalenceContext used by the sibling equivalence.lean) and soften the distinctness heading."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

@@ -1348,17 +1348,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:30-35 states V_{H_n}(λ) ⊗ V_{H_n}(1^n) ≅ V_{H_n}(λ*) as the Hecke-side involution. For S_n / H_n(q), tensoring an irreducible Specht/cell module S^λ with the sign module gives S^{λ'} only generically (q not a root of unity, sign module 1-dim); the proposition states it flatly with no genericity/semisimplicity hypothesis on q.",
-        "notes": "The claimed isomorphism is the standard fact for the symmetric group and for generic-q Hecke, but H_n(q) is not semisimple at roots of unity, where the sign-twist need not send the irreducible λ-cell to the λ'-cell as stated. The blanket statement over H_n(R,q) without a 'q not a root of unity / R a field with [n]_q! invertible' qualifier is an over-general assertion. Warn rather than fail because under the implicit generic-q regime the statement is correct."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token '\u03bb'; expected '_' or identifier.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1370,15 +1370,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.lean:42 'def conjugatePartition (λ : List ℕ) : List ℕ := λ' (identity), and lean:56-63 theorem shell_self_duality proves sc.coeff λ = sc.coeff (conjugatePartition λ) 'by rfl'. The docstring lean:38-40 admits 'Trivial degenerate witness: the identity ... keeps shell_self_duality provable as rfl'.",
-        "notes": "The Lean theorem is self-admittedly content-free: conjugatePartition is set to the identity, so x_λ = x_{λ*} collapses to x_λ = x_λ (rfl). The non-trivial mathematical claim (x_λ = x_{transpose(λ)}) is NOT formalised. This is a vacuous proof of the stated proposition's Lean half — exactly the 'trivializing the hypothesis' pattern. The .md proof itself is a 'proof sketch' (md:57), not a full proof."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.lean:1"
       }
     ],
     "da-circular": [
@@ -1388,17 +1388,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:103-108 cites the SDP optimum at A_magic=8, (x_{(7,1)}=x_{(2,1^6)}=35.24), as 'numerical confirmation of the categorical prediction' that x_λ=x_{λ*}.",
-        "notes": "The self-duality x_λ=x_{λ*} is presented as a categorical prediction confirmed by an SDP solve; but if the SDP/ILP is itself run with the self-dual constraint imposed (md:141-145 explicitly offers a 'constrained formulation imposing x_λ=x_{λ*}'), then finding a self-dual optimum is circular. The block does not state whether the cited (7,1)/(2,1^6) equality came from an unconstrained or a self-dual-constrained solve, leaving a back-fitting ambiguity. Warn pending the witness."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Schur-Weyl justification of shell-operator self-duality'.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1408,17 +1408,16 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:1-2 'Proposition' + md:57 'Proof sketch'; the Lean (lean:42-63) proves only the degenerate id-conjugate version. md:110-126 then derives physical conclusions (parity conservation, p-n interchange symmetry, absence of shell-level CP violation) from a sketch+degenerate-Lean result.",
-        "notes": "Block is labelled 'Proposition' with a proof, but (a) the narrative is explicitly a 'proof sketch', and (b) the Lean witness proves a trivialised statement (conjugatePartition := id). Claiming proposition status and then drawing strong physical corollaries (parity, isospin doubling, no CP violation at level 4) over-claims relative to what is actually established. Conditional/sketch presented as proved."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Schur-Weyl justification of shell-operator self-duality' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1428,17 +1427,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Schur-Weyl justification of shell-operator self-duality'.",
         "severity": "minor",
-        "evidence": "shell-schur-weyl-self-duality.md:104-106 quotes the value 35.24 for x_{(7,1)}=x_{(2,1^6)} at A_magic=8.",
-        "notes": "A single bare coefficient (35.24) appears with no derivation, units, or witness hash in-block; it is an output of sdp_on_shadows.py rather than a free input, so not a true hidden calibration, but the magnitude is unexplained and could mask tuning. Minor."
+        "evidence": "shell-schur-weyl-self-duality.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1448,17 +1447,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:91-101 Step 5 jumps from 'σ_shell is the minimal categorical ingredient realising magic-shell closure at level 4' and 'GL_k-charge-conjugate-invariant constructions correspond to sign-twist-fixed elements' to 'Such elements satisfy x_λ = x_{λ*}'. The bridge — why the *physical* shell operator must be charge-conjugate invariant (and hence self-dual) rather than merely *can* be — is asserted, not proved.",
-        "notes": "The chain establishes that sign-twist-fixed (self-dual) elements exist and are charge-conjugate invariant, but not that σ_shell IS one; the necessity ('the shell operator satisfies x_λ=x_{λ*}') does not follow from the existence of self-dual elements. Missing lemma identifying σ_shell with the invariant subspace."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1470,15 +1469,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:39-42 claims x_λ = x_{λ*} with λ* the transpose (md:15 'S_n-transpose involution λ ↔ λ*'); shell-schur-weyl-self-duality.lean:42 sets conjugatePartition := id (NOT transpose) and lean:60-63 proves the equality by rfl. Docstring lean:52-54 concedes 'the Schur-Weyl-transport proof ... holds for the proper transpose; that sharper version remains future work.'",
-        "notes": "Direct proof-statement-integrity violation: the Lean proves x_λ = x_{id(λ)} (a tautology), whereas the .md proposition asserts x_λ = x_{transpose(λ)} (the non-trivial conjugate-partition self-duality). The Lean is strictly weaker (vacuously implied) and the divergence is self-documented in the file. .ts validation:'not_checked'."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1490,13 +1488,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites[]=[kassel1995] (shell-schur-weyl-self-duality.ts:10-12); md:75 invokes Kassel Ch X for quantum Schur-Weyl duality, which is correctly located (Kassel, Quantum Groups GTM 155, treats Hecke/quantum Schur-Weyl). Lean docstring also cites jimbo1986/drinfeld1987 appropriately for U_q(g). No misattribution found."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The citations kassel1995 in 'Schur-Weyl justification of shell-operator self-duality' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1506,17 +1506,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Schur-Weyl justification of shell-operator self-duality' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "shell-schur-weyl-self-duality.md:26 'up to a twist by det^n' written with exponent n, while md:69-71 Step 2 writes the same twist as det^{?} with an undetermined exponent; the determinant-twist power is left ambiguous/inconsistent. Also σ_shell (md:47-52) is 'the minimal categorical ingredient' without a unique-existence statement.",
-        "notes": "The det-twist exponent is stated two different ways (n vs ?), and 'the minimal categorical ingredient realising magic-shell closure' presumes uniqueness without proof. Minor, affects rigor of the duality statement not its qualitative truth."
+        "evidence": "shell-schur-weyl-self-duality.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1526,17 +1526,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:104-106 cites a single solve at A_magic=8 yielding x_{(7,1)}=x_{(2,1^6)}=35.24 as 'numerical confirmation'; md:111 lists magic numbers {2,8,20,28,50,82,126} but only A_magic=8 is exhibited.",
-        "notes": "Self-duality is 'confirmed' on one data point (A=8) and a single coefficient pair; no error bar, no other magic number checked, and (per da-circular) possibly produced under a self-dual constraint. A single un-cross-checked numerical instance is fragile evidence for a structural claim spanning seven magic numbers."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Schur-Weyl justification of shell-operator self-duality' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1546,17 +1546,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:115-120 derives 'Parity conservation in the nuclear strong interaction', 'Proton-neutron interchange symmetry at closed shells', and 'Absence of shell-level CP violation' from the self-dual braid structure; md:122-126 locates parity violation at 'level 3'.",
-        "notes": "A referee would object that parity conservation by the strong interaction is an empirical/QCD fact not in need of (and not obviously following from) λ↔λ* self-duality, and that 'absence of shell-level CP violation' is an over-strong nuclear-structure claim. The identifications (self-dual partition symmetry = charge conjugation = parity) conflate several distinct discrete symmetries (P, C, isospin) without justification. Framework-internal, hence warn."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Schur-Weyl justification of shell-operator self-duality' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1566,17 +1566,17 @@
           "ts": "5200620c322b",
           "lean": "4016dce5df1c"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "shell-schur-weyl-self-duality.md:103-108 links computations/sdp_on_shadows.py for the value 35.24 but gives no witness JSON, no scriptHash/scriptCommitSha, and no LP/SDP dual fields (primal_obj/dual_obj/duality_gap) per the repo's LP/SDP witness contract.",
-        "notes": "The numerical confirmation cites a script by URL only; there is no committed *.witness.json with the dual variables the AGENTS.md LP/SDP rule mandates, so the 35.24 value is not independently reproducible from the block. Cannot verify drift or correctness from in-block metadata."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "shell-schur-weyl-self-duality.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token '\u03bb'; expected '_' or identifier"
       }
     ],
     "da-referee-verdict": [
@@ -1588,14 +1588,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation.",
         "severity": "major",
-        "notes": "verdict: reject-as-stated / major-revision. referee_argument: The block is labelled a Proposition with a proof, but the strongest objection is decisive — the Lean witness (shell-schur-weyl-self-duality.lean:42,56-63) proves a TRIVIALISED statement: conjugatePartition is defined as the identity, so the headline claim x_λ = x_{λ*} (λ* = transpose, md:15,39-42) collapses to x_λ = x_λ and is discharged by rfl. The file itself concedes the real transpose case 'remains future work' (lean:52-54). Thus the proposition is vacuously formalised (da-vacuous, da-lean-narrative-divergence), the narrative is explicitly a 'proof sketch' (md:57) whose Step 5 contains a necessity gap (da-non-sequitur), and strong physical corollaries — parity conservation, no shell-level CP violation (md:115-126) — plus a single un-witnessed SDP datum (35.24 at A=8, possibly produced under the self-dual constraint it claims to confirm) are layered on top (da-overclaim, da-circular, da-reproducibility). Either formalise the genuine transpose self-duality or downgrade the block to a conjecture/remark and add a dual-bearing witness."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

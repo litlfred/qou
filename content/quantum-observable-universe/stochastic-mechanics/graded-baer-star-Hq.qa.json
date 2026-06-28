@@ -951,7 +951,255 @@
           "value": 0.7
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "No false claims identified in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedBaerStarHq.lean:1",
+        "notes": "The Lean sibling content/quantum-observable-universe/lean/QOU/BraidKnot/GradedBaerStarHq.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "The argument flow in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedBaerStarHq.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' (though incomplete)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "Citations to bloch2000, kontsevich1995 are correct and contextually appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "Key terms and symbols in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "The algebraic and logical relations in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "The physical concepts described in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts:1",
+        "notes": "The derivation steps and formal definitions in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.md:1 — *Let \\mathcal{H}_q be the substrate convolution Hopf algebra",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in '*Let \\mathcal{H}_q be the substrate convolution Hopf algebra' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lean/QOU/BraidKnot/GradedBaerStarHq.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

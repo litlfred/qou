@@ -883,15 +883,16 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The V_(3) derivation is correct: χ(βp)=q⁶·q⁻³·((q+q⁻¹)/2)² = q³(q+q⁻¹)²/4, χ(βn)=q(q+q⁻¹)²/4, difference (q−q³)(q+q⁻¹)²/4 = −(q²+1)²(q²−1)/(4q); the ε^k≥6 = (−1)^k/4 claim checks (k=6→+1/4). All Lean theorems field_simp+ring/norm_num sound; chi_V3_difference_at_two = −75/8 verified."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:1"
       }
     ],
     "da-vacuous": [
@@ -901,17 +902,15 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "chi-v3-closed-form-proof.lean:45-50 DEFINES chi_V3_beta_p/n as the assumed scalar products on V_(3) (σ→q etc.), then chi_V3_difference_eq_factored (:77-82) proves the difference of these definitions equals the asserted closed form by field_simp+ring. The 'each Hecke generator acts as scalar q on V_(3)' step (the only non-trivial input) is asserted in the docstring (:20-24), not proved.",
-        "notes": "As with the cyclotomic block, Lean verifies algebra among definitions encoding the answer; the representation-theoretic fact (V_(3) is 1-d with σ_i↦q) is the substantive content and is assumed, not formalised. Honest but the proved theorems are largely algebraic."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' presents substantial mathematical content: Following the user direction \"first prove formally V\" + \"V_3 \u03b5^k pattern\" on the...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -924,12 +923,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No observable back-fitted; pure character computation on a fixed braid word."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts:1"
       }
     ],
     "da-overclaim": [
@@ -942,14 +942,12 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": ".md:3/:17 title 'complete formal proof of the V_(3) component' and .md:86-87 'All theorems are sorry-free, closed by field_simp + ring'. But the formal proof covers only the algebraic identities given the assumed scalar action; the claim that chi_V3_beta_p/n equal the actual Hecke characters on the canonical typed-B_3 braids is asserted (.md:19-34), not Lean-proved.",
-        "notes": "'Complete formal proof of the V_(3) component' overclaims: the rep-theoretic premise (scalar-q action) and braid-word crossing counts are inputs, not theorems. The formal part is the rational-function algebra."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -962,12 +960,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Parameter-free in q; crossing counts (6σ+3σ⁻¹+2avg / 5σ+4σ⁻¹+2avg) are fixed canonical inputs, not tunable knobs."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -977,15 +976,16 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The factorization and ε^k decomposition steps each follow; the degree-5-polynomial-vanishes-for-k≥6 plus geometric-tail argument (.md:64-72) is logically sound."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -995,17 +995,15 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".md:64-74 makes the headline ε^k claim: '[ε^k](χn−χp)|_{q=1+ε} = (−1)^k/4 for k≥6', presented as a proven pattern matching the probe. The Lean file proves chi_V3_difference_decomposition (:155-160) and only sample-point checks (q=1, q=2; :170-190) — there is NO Lean theorem establishing the general ε^k≥6 = (−1)^k/4 coefficient claim. The general statement is argued only in prose/docstring (.lean:122-139).",
-        "notes": "Lean proves a strictly weaker set (decomposition identity + two numeric points) than the .md's general-k coefficient theorem; the central ε^k pattern is not formalised, only sample-checked."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1018,12 +1016,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "cites jones1985/wenzl1988/hoefsmit1974 and -- Ref:[jones1985] doi:10.2307/1971403 (.lean:75) are appropriate sources for Jones/Hecke character data; no mis-attribution detected for the V_(3) scalar computation."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to jones1985, wenzl1988, hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1033,17 +1032,16 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".lean:46 writes chi_V3_beta_p := q^6 * q⁻¹^3 * (...) — q⁻¹^3 over ℝ is well-defined only for q≠0, threaded as hypothesis hq in theorems (:77 etc.), but the noncomputable defs themselves carry the q=0 ambiguity (q⁻¹=0 in Mathlib). The 'averaged' crossing convention ½(σ+σ⁻¹) and the canonical word crossing-counts are stated in prose, defined externally (rem:typed-b3-sub-braid-extraction).",
-        "notes": "Minor: q≠0 regime only enforced at theorem level; crossing-count conventions are external to the block."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1056,12 +1054,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Exact symbolic identity with sample-point cross-checks (q=2 → −75/8); the probe comparison is to exact ε^k coefficients (+1/4,−1/4,...), not a fit-noise near-match."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1074,12 +1073,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "χ_V3 difference → 0 at q=1 ('isospin invariance', .lean:115-120) is physically sensible; no unit/conservation problem."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Formal proof of the V_(3) per-irrep character difference closed form: $\\\\chi_{(3)}(\\\\beta_n) - \\\\chi_{(3)}(\\\\beta_p) = -(q^2 + 1)^2 (q^2 - 1)/(4q) = -(q^5 + q^3 - q - q^{-1})/4$, with explicit $\\\\varepsilon^k$ pattern via polynomial + geometric decomposition' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1089,17 +1089,16 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": ".ts:22-26 names probe_per_wedderburn_block_ck.py (status:'experimental') as backing the ε^k pattern '+1/4,−1/4,+1/4' (.md:74); no scriptHash/scriptCommitSha is recorded on the block to detect drift, and the general-k probe match is asserted, not pinned to a witnessed value.",
-        "notes": "The probe-vs-closed-form ε^k agreement is reproducible in principle but not hash-tracked; same experimental-witness drift exposure as the sibling cyclotomic block."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:171:36: error: unsolved goals"
       }
     ],
     "da-referee-verdict": [
@@ -1109,17 +1108,17 @@
           "ts": "2a8cc6b6c276",
           "lean": "806aabd3058a"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "verdict: minor-revision. Strongest objection: 'complete formal proof' (.md:3) overstates — the Lean assumes the V_(3) scalar-q action and proves only algebraic identities + two sample points; the headline general ε^k≥6=(−1)^k/4 pattern (.md:64-74) is NOT a Lean theorem, only prose + q=2 check.",
-        "notes": "referee_argument: 'The mathematics is correct, but \"complete formal proof of the V_(3) component\" promises more than the file delivers: the representation-theoretic premise is assumed and the general-k coefficient claim is not formalised (only the decomposition identity and isolated sample points are). Either prove the general ε^k statement in Lean or downgrade the prose to \"sample-verified pattern\".'"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:171:36: error: unsolved goals",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.lean:171:36: error: unsolved goals, invalidating the claimed formalization."
       }
     ]
   },

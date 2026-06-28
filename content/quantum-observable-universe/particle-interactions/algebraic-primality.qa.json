@@ -306,13 +306,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The predicate is well-posed: n is prime if psi_n is not in the closed span of any non-trivial tensor decomposition. n=1 vacuously prime is correct (no k>=2 positive parts sum to 1). No false universal claim — the empirical-ladder coincidence is explicitly deferred to a separate conjecture (md:28-32)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Algebraic primality of a strand count': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-vacuous": [
@@ -323,13 +325,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition has genuine content (tensor-irreducibility predicate over confinement-SDP canonical states); not a ': True' or tautology."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Algebraic primality of a strand count' presents substantial mathematical content: Fix a substrate $q > 1$. For each strand count $n \\geq 1$ the confinement SDP selects a canonical state $\\psi_n(q)$. ...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -340,13 +343,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "A definition names a predicate; the value-at-q_0 (magic-ladder coincidence) is explicitly NOT asserted here (md:28-32), so no back-fitting of the magic ladder into the definition itself."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Algebraic primality of a strand count'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-overclaim": [
@@ -355,17 +360,16 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "algebraic-primality.md:17-19 'purely algebraic surrogate for a magic strand count'",
-        "notes": "Calling tensor-irreducibility 'the framework's surrogate for magic' editorializes a definition toward a result not yet established; the framing pre-suggests the (separately conjectured) coincidence. Minor — the conjecture is properly fenced off, so this is voice not content."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Algebraic primality of a strand count' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -376,13 +380,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free numerical parameter; q is a free symbol and the predicate is defined for every q>1."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Algebraic primality of a strand count'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -393,13 +399,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The recursion-bottoms-out-at-1 argument is valid; no inferential gap."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Algebraic primality of a strand count' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -408,17 +416,16 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "algebraic-primality.ts:6-8 lean ref qou:QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime, validation:'not_checked'; no sibling .lean present in directory listing",
-        "notes": "definition kind requires a Lean sibling; only a library ref is given with validation 'not_checked' and I could not confirm the decl exists/matches the .md predicate (closed-span over ALL decompositions k>=2). Cannot verify Lean encodes the closed-span condition vs a finite/weaker variant. Flag for verification, not a confirmed divergence."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -427,15 +434,17 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] on the .ts and no -- Ref: in the .md."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Algebraic primality of a strand count', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -444,17 +453,17 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Algebraic primality of a strand count' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "algebraic-primality.md:2-3 'the confinement SDP selects a canonical state psi_n(q)'; md:8 'closed span'",
-        "notes": "'Canonical state psi_n(q)' presumes the confinement-SDP optimum is unique — if the SDP optimum is non-unique the predicate is ill-defined ('the unique X' without uniqueness). Also the ambient space for 'closed span'/tensor product (which Hilbert/topological completion) is left implicit. Base ring is fine (q>1 archimedean, stated)."
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -463,15 +472,17 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match asserted in this definition block; the empirical magic ladder is referenced only as the content of a separate, deferred conjecture."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Algebraic primality of a strand count' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -482,13 +493,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physical observable/units claim made; this is an algebraic predicate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Algebraic primality of a strand count' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -497,15 +510,17 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No witness/compute attached to the definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Algebraic primality of a strand count' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/algebraic-primality.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -514,17 +529,18 @@
           "md": "afc4acf17179",
           "ts": "b4e0e947c6e1"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "algebraic-primality.md:2 'canonical state' uniqueness assumption; .ts lean validation:'not_checked'",
-        "notes": "verdict: minor-revisions. referee_argument: a clean, well-fenced definition (the magic-ladder coincidence is correctly held out as a separate conjecture, vacuous primality at 1 is correct). Two soft objections: (i) 'the canonical state psi_n(q)' presumes SDP-optimum uniqueness that should be cited/established, and (ii) the Lean ref is unverified ('not_checked')."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/algebraic-primality.lean is missing entirely, preventing formal verification of the claims in 'Algebraic primality of a strand count'."
       }
     ]
   },

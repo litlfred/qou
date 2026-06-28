@@ -1455,195 +1455,411 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
-        "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:16.785Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
+        "reviewed_at": "2026-06-28T10:58:56.960Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean file content/quantum-observable-universe/mass-theory/three-calibration-inputs.lean is missing, so proof strategy clarity cannot be evaluated.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:17.201Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T10:58:56.967Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; goal is plausible from markdown.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:17.617Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
+        "reviewed_at": "2026-06-28T10:58:56.973Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical and physical connections explored in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' are highly novel.",
+        "severity": "minor",
+        "score": 0.8
       }
     ],
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:18.128Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T10:58:56.979Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:18.443Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T10:58:56.986Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:18.876Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T10:58:56.992Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:19.253Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T10:58:56.998Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:19.631Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
+        "reviewed_at": "2026-06-28T10:58:57.005Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling to check for unused hypotheses.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "26fa8e649ea7",
-          "ts": "da6a29fcff4a",
-          "lean": "83d0d0eb1799"
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:20.055Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T10:58:57.011Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.017Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.023Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' presents substantial mathematical content: Beyond these three, no further empirical, fitting, or numerological input is per...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.029Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.035Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.041Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.048Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.054Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/three-calibration-inputs.lean is missing, leading to complete divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.060Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to codata2022 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.067Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.073Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.079Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.086Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8cb14572196e",
+          "ts": "da6a29fcff4a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:57.092Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/three-calibration-inputs.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-theory/three-calibration-inputs.lean is missing, preventing formal verification of the claims in 'Exactly three calibration inputs ($m_e$, $m_\\\\mu/m_e$, $\\\\mathfrak{Q}_\\\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$'."
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:58:57.098Z"
 }

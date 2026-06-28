@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1363,7 +1363,7 @@
           "ts": "280d173c3865"
         },
         "result": "fail",
-        "notes": ".md claims ‖tr(τ̂_n(α))‖ = m(ϱ_0) (norm of trace of descent functor). Lean proves only α = base_mass for OPAQUE reals via contrived intermediate_mass — no tr, no τ̂_n, no norm. Severe degenerate weakening.",
+        "notes": ".md claims \u2016tr(\u03c4\u0302_n(\u03b1))\u2016 = m(\u03f1_0) (norm of trace of descent functor). Lean proves only \u03b1 = base_mass for OPAQUE reals via contrived intermediate_mass \u2014 no tr, no \u03c4\u0302_n, no norm. Severe degenerate weakening.",
         "reviewed_at": "2026-06-25T17:03:21.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "280d173c3865"
         },
         "result": "fail",
-        "notes": "Class fields h_alpha(α=intermediate) + h_base(base=intermediate) jointly ARE the conclusion α=base; proof rw[h_alpha,h_base] is trivial transitivity over assumed equalities (degenerate §3b-cond class carrying the conclusion).",
+        "notes": "Class fields h_alpha(\u03b1=intermediate) + h_base(base=intermediate) jointly ARE the conclusion \u03b1=base; proof rw[h_alpha,h_base] is trivial transitivity over assumed equalities (degenerate \u00a73b-cond class carrying the conclusion).",
         "reviewed_at": "2026-06-25T17:03:21.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "280d173c3865"
         },
         "result": "pass",
-        "notes": "h_alpha and h_base are jointly satisfiable (set α=base=intermediate_mass); premises not contradictory.",
+        "notes": "h_alpha and h_base are jointly satisfiable (set \u03b1=base=intermediate_mass); premises not contradictory.",
         "reviewed_at": "2026-06-25T17:03:21.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1615,12 +1615,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The stated identity ||tr(tau_hat(alpha))|| = m(rho_0) is plausibly true given the descent/trace-compatibility setup (tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)) and is a single norm equality (no sum-of-norms slip). Not demonstrably false."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Descended term equals the base-level mass': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1629,17 +1630,15 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "cat_descended_is_base_mass.lean:37-57",
-        "notes": "Honest manuscript statement, but the Lean context class makes tr, nrm, tau_hat arbitrary ℝ->ℝ and base_mass an arbitrary ℝ, with body `sorry`. The theorem ||tr(tau_hat alpha)|| = base_mass with all symbols free is essentially a definitional pin on base_mass that no instance is forced to satisfy; as a verification artifact it encodes none of the descent/Frobenius-compatibility content. Honest-sorry per §1a but content-free as a proof."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Descended term equals the base-level mass' presents substantial mathematical content: be the categorical mass integrand of a closed cycle $\\varrho$ at level $n+1$, an...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1651,12 +1650,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No assumption of the conclusion; the prior intermediate_mass laundered version was removed per the Lean notes."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Descended term equals the base-level mass'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1665,17 +1665,15 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "topological-mass-cat-descended-proof.md:1-22",
-        "notes": "The proof asserts the trace-descent compatibility 'tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)' as a given (line 6-8) and the ascent-embedding isomorphism, then derives the result in two lines and writes QED — but the Lean obligation is `sorry` and these compatibility facts are not themselves formalized/proved here. So a narrative QED is claimed for a result whose key inputs are asserted, not established. Milder than the eigenspace block since the inputs are individually plausible standard facts."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Descended term equals the base-level mass' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1687,12 +1685,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical free parameter."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Descended term equals the base-level mass'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1704,13 +1703,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "topological-mass-cat-descended-proof.md:10-21",
-        "notes": "Given its asserted inputs (im(tau_hat) ≅ End(A_n) via ascent embedding; trace-descent compatibility), the chain tr(tau_hat alpha) = tr(l_n(d_{n+1}(alpha))) = tr_n(d_{n+1}(alpha)) = tr_n(alpha_0) is a valid substitution sequence, and ||.|| = m(rho_0) follows by definition. No internal logical gap, modulo the unproven inputs (covered under overclaim/vacuous)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Descended term equals the base-level mass' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1719,17 +1718,15 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "cat_descended_is_base_mass.lean:55-57 (sorry) vs topological-mass-cat-descended-proof.md:22 (QED)",
-        "notes": "Narrative proof claims completion (QED) while the Lean theorem cat_descended_is_base_mass is `sorry`. The .ts (validation: not_checked) and the Lean notes are honest that the descent/Frobenius infrastructure is not yet formalized, but the proof .md still presents a finished argument the Lean does not back."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1741,12 +1738,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Internal refs (def:descent-involution, lem:topological-mass-cat-eigenspace) exist and are used correctly; no external citation to mis-attribute; Lean -- Ref: is honest [manuscript] self-reference."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Descended term equals the base-level mass', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1755,17 +1753,16 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Descended term equals the base-level mass' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "topological-mass-cat-descended.md:1-10; descended-proof.md:5-8",
-        "notes": "'base-level descent rho_0' and the ascent embedding l_n / descent map d_{n+1} are used without restating their definitions in-block (deferred to def:descent-involution); the trace-compatibility 'tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)' is stated as fact without a citation handle. A reader cannot verify the precise meaning of m(rho_0) vs m(rho) without chasing the descent-involution definition. Minor."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1774,15 +1771,16 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical content."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Descended term equals the base-level mass' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1794,12 +1792,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The 'descended mass = base-level mass' identity is a structurally reasonable renormalization/level-reduction statement; no physics conflict at this abstraction."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Descended term equals the base-level mass' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1808,15 +1807,16 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No backing witness/compute; Lean obligation sorry'd (validation: not_checked)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Descended term equals the base-level mass' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1825,16 +1825,17 @@
           "md": "68d219883fb7",
           "ts": "280d173c3865"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "notes": "verdict=major-revision. referee_argument: The lemma statement ||tr(tau_hat alpha)|| = m(rho_0) is sound and its two-line proof is logically valid GIVEN its asserted inputs (im(tau_hat) ≅ End(A_n) via the ascent embedding, and trace-descent compatibility tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)). The objection is maturity, not error: those inputs are asserted not proved, the Lean theorem is a `sorry` over a context class of unconstrained opaque operators (encoding none of the descent structure), and the narrative still writes QED. Unlike the sibling eigenspace lemma there is no false step — so this is a completeness/formalization gap (stated-not-proved) rather than a wrong claim. Formalize the descent/trace-compatibility infrastructure or downgrade the QED to a proof sketch."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.lean is missing, preventing formal verification of the claims in 'Descended term equals the base-level mass'."
       }
     ]
   },

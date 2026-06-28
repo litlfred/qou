@@ -875,7 +875,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.258Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)'; the algebraic relation involving $K_S$ is mathematically consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.264Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.271Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)'. The construction is derived from prop:phi-q-tower-algebraic-stratification, conj:kashaev-volume-conjecture, cor:quantum-dilogarithm, prop:gb-spectral-sequence, prop:graded-trace-residue-split.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.277Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.283Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)'. All constants are canonically derived.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.289Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean:1"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.295Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to kashaev1997, murakami-murakami2001, thurston1978, neumann-zagier1985, zagier1986 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.302Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols (including $K_S$) in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.309Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.315Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Φ$_q$ tower equals $\\\\rho_q \\\\cdot \\\\sum_S \\\\mathrm{Vol}(K_S)$ (archimedean bridge)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.321Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean:1 — ../mass-theory/phi-q-tower-jsj-bridge.lean:40:30: error: unknown tactic"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bbb8e85aa5af",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:50.327Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean fails compilation: ../mass-theory/phi-q-tower-jsj-bridge.lean:40:30: error: unknown tactic",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean contains compilation errors: ../mass-theory/phi-q-tower-jsj-bridge.lean:40:30: error: unknown tactic, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:06.467Z"
+  "updated_at": "2026-06-28T10:58:50.334Z"
 }

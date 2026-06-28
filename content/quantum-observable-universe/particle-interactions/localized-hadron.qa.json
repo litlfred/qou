@@ -921,15 +921,17 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "A definition (naming a morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind); a naming act makes no truth claim that could be false."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Localized hadron' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.lean:1"
       }
     ],
     "da-vacuous": [
@@ -941,13 +943,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The Lean `structure LocalizedHadron extends Hadron` adds genuine fields (point_theta, point_phi, binding) over the ground ring R_q — not a True/trivial body. Non-vacuous as a definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Localized hadron' presents substantial mathematical content: A localized hadron is a hadron (Definition) that has been placed at a categorical point $p$ of the projective line $\\...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -959,13 +962,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Built on def:hadron and projective-line/Hopf-link primitives; no self-reference."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Localized hadron'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-overclaim": [
@@ -975,15 +980,16 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition makes no derived claim to overstate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Localized hadron' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -995,13 +1001,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "point_theta/point_phi are the base-point coordinates intrinsic to localization, not undisclosed fit parameters."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Localized hadron'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1011,15 +1019,17 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "n/a",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No inferential chain in a definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/localized-hadron.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1029,17 +1039,16 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "localized-hadron.md:5-13 morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind vs localized-hadron.lean:35-41 structure with fields point_theta,point_phi:R_q and binding:HadronBinding",
-        "notes": "The Lean models the localized hadron as a record carrying a base point (two R_q coordinates) + binding data, not as a categorical morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind. The 'morphism from 𝟙' that the .md calls the distinguishing feature (md:14-19) is not represented in the structure (no hom field, no Sym^n object). The formalisation captures the data of a point but not the universal/morphism content of the definition. Minor for a definition block, but a real narrative-vs-Lean gap."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1049,15 +1058,17 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No external cites[]; Lean -- Ref is a [manuscript] self-reference (§3 Lifting and Descent), not an attributable external result."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Localized hadron', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1067,17 +1078,17 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Localized hadron' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "localized-hadron.md:11 'Sym^n(𝒦_p)' (n unbound); md:11 '𝒦_p the fibre of knot types at p'; md:12 'ℒ_p^bind the binding Hopf link'",
-        "notes": "The exponent n in Sym^n(𝒦_p) is unquantified (the hadron's constituent count? fixed? bound to def:hadron?) — not stated in this block. 'Fibre of knot types' and 'binding Hopf link' are used as if defined but not linked here (no #ref). The Lean also drops Sym^n entirely. Mild under-specification of the object being named."
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1087,15 +1098,17 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical content."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Localized hadron' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1107,13 +1120,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Localizing a hadron at a categorical point of ℙ(V) is a coherent modelling choice; no physical claim to reject."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Localized hadron' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1123,15 +1138,17 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No compute/witness backing a definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/localized-hadron.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1141,17 +1158,18 @@
           "ts": "b781de4a81d6",
           "lean": "7ae48ef8907f"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "localized-hadron.md:5-19 morphism definition vs localized-hadron.lean:35-41 point-record structure; md:11 unbound n in Sym^n",
-        "notes": "verdict: accept-with-minor-revision. referee_argument: a clean definition whose only defects are (1) the Lean structure records a base point + binding data but omits the very feature the prose calls distinguishing — the morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind (no hom/Sym^n field), and (2) the constituent count n in Sym^n(𝒦_p) is unbound and the supporting objects 𝒦_p / ℒ_p^bind are not cross-linked in this block. Tighten the Lean to carry the morphism (or note the abstraction explicitly) and bind n. The definition is otherwise sound and non-vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean fails compilation: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/localized-hadron.lean for 'Localized hadron' fails compilation with error: content/quantum-observable-universe/particle-interactions/localized-hadron.lean:26:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
       }
     ]
   },

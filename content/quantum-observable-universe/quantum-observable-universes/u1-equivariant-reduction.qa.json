@@ -1338,7 +1338,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.lean:1",
+        "notes": "The mathematical claims in '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' regarding 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...' are unverified due to compilation errors in the Lean sibling file u1-equivariant-reduction.lean: content/quantum-observable-universe/quantum-observable-universes/u1-equivariant-reduction.lean:26:48: error(lean.unknownIdentifier): Unknown constant `Real.pi`."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "The sibling Lean file u1-equivariant-reduction.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' (which asserts 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "The prose presents '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' as verified, but the sibling Lean file u1-equivariant-reduction.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.lean:1",
+        "notes": "Logical gaps exist in the formalization of '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' due to compilation failure in u1-equivariant-reduction.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.lean:1",
+        "notes": "The Lean sibling u1-equivariant-reduction.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "No citations are present in '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "Key terms and symbols in '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' (e.g. from 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "The empirical claims in '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' (quoting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.ts:1",
+        "notes": "The physical concepts described in '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "u1-equivariant-reduction.lean:1",
+        "notes": "The Lean sibling u1-equivariant-reduction.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/u1-equivariant-reduction.lean:26:48: error(lean.unknownIdentifier): Unknown constant `Real.pi`."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f47cd13607e8",
+          "ts": "ede9d0b1156b",
+          "lean": "d78150a636de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/u1-equivariant-reduction.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/u1-equivariant-reduction.lean:26:48: error(lean.unknownIdentifier): Unknown constant `Real.pi`",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for '$\\\\mathrm{U}(1)$-equivariant reduction of the exceptional divisor' (asserting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/u1-equivariant-reduction.lean:26:48: error(lean.unknownIdentifier): Unknown constant `Real.pi`. A competent referee cannot accept this as a verified mathematical claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.669Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

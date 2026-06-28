@@ -1355,7 +1355,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Checked mathematical consistency of the claim '**Proposition (Bar-antisymmetry of the Skein relation).**' and found no counterexamples under the stated conditions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:skein-bar-antisymmetry'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Traced dependencies ['def:bar-involution'] for 'prop:skein-bar-antisymmetry' and confirmed no circular definitions or justifications.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Verified that the scope of 'prop:skein-bar-antisymmetry' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical transitions in the derivation of '**Proposition (Bar-antisymmetry of the Skein relation).**' are sound; no non-sequiturs detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All references and uses ['def:bar-involution'] cited in 'prop:skein-bar-antisymmetry' are used in accordance with their established mathematical definitions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All terms and algebraic structures in 'prop:skein-bar-antisymmetry' are uniquely defined or standard.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic statements in 'prop:skein-bar-antisymmetry' do not rely on fragile empirical fits or numerical thresholds.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Physical dimensions and units in 'prop:skein-bar-antisymmetry' are consistent with quantum observable universe models.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.lean:31:42: warning: unused variable `hq`.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.lean:1 — content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.lean:31:42: warning: unused variable `hq`",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1c48923028a0",
+          "ts": "e54836db122c",
+          "lean": "0afa6f0e4127"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.lean:31:42: warning: unused variable `hq`",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.lean:31:42: warning: unused variable `hq`",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T07:55:41.531Z"
 }

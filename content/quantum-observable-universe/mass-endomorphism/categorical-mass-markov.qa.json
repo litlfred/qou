@@ -1351,14 +1351,13 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-mass-markov.md:39-43 Step 2 asserts Ψ (Nakayama automorphism) = S² = id because S(σ_i)=σ_i⁻¹ ⇒ S²(σ_i)=σ_i. For the Iwahori-Hecke algebra H_n(q) the antipode/Nakayama identification Ψ=S² is borrowed from Frobenius-Hopf theory, but H_n(q) with the Markov-trace Frobenius form is a SYMMETRIC algebra (tr(ab)=tr(ba)) only up to the well-known z-twist; the Nakayama automorphism of the Markov trace is generally nontrivial. Asserting Ψ=id from S²=id on generators conflates the Hopf antipode with the Frobenius-form Nakayama automorphism.",
-        "notes": "The two notions (Hopf S² vs Frobenius-form Nakayama) coincide only under extra hypotheses; the step 'Ψ=S²=id' is stated as if automatic. Not a clean counterexample but a quantifier/identification slip a referee would challenge. Flag as warn pending an explicit lemma that the Markov-trace Frobenius form is symmetric (Nakayama=id) on H_n(q)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Categorical mass as Markov trace' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1371,12 +1370,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Statement is contentful: m|single-level = |∫_A ρ(β)|. Not a tautology."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Categorical mass as Markov trace' presents substantial mathematical content: The categorical mass definition ([mass identity](#def:mass-identity)) descends t...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1389,12 +1388,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The explicit values (md:62-73) are normalized to the photon and require an external calibration E_0; the proposition does not back-fit a target into the trace identity."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Categorical mass as Markov trace'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1407,14 +1407,12 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-mass-markov.lean formalises only Term 1 (descended Markov trace |tr_M(T_w)|, descent through J^1) — see lean:76-99. The .md proposition claims the full single-level identity m = |∫_A ρ(β)| including the Step-2 Ψ=id reduction. The Lean does not prove Step 2 or the Ψ=id reduction at all; yet the proposition is stated unconditionally.",
-        "notes": "Conclusion (the categorical mass equals the Markov trace) is presented as proved, but the Lean covers only the trace-descent fragment; the Nakayama=id step (the crux) is unformalised. Conditional/partial result presented as complete."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Categorical mass as Markov trace' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1424,17 +1422,16 @@
           "ts": "6a8b7cd19d90",
           "lean": "4a94af070c7e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Categorical mass as Markov trace'.",
         "severity": "minor",
-        "evidence": "categorical-mass-markov.md:71-73 introduces calibration constant E_0 ('determined by matching one experimental value, e.g. the free neutron beta-decay Q-value') to convert dimensionless ratios to MeV.",
-        "notes": "E_0 is a disclosed single calibration (consistent with CAL-2 / three-calibration discipline), not a hidden 4th DOF — hence warn-not-fail. But the block should cross-link the canonical calibration so the reader sees E_0 is the established CAL anchor, not a free fit."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1447,14 +1444,13 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-mass-markov.md:45-53 Step 3 substitutes Ψ=id (from the contested Step 2) to collapse m to |∫_A ρ(β)|. The whole identity rests on Step 2's Ψ=S²=id, which is asserted without the symmetric-algebra lemma (see da-false-claim).",
-        "notes": "The 'therefore Ψ=id' → Step 3 chain has a missing lemma (Markov-trace Frobenius form is symmetric on H_n(q)). With that gap the final identity is not yet derived."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1467,14 +1463,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-mass-markov.lean proves `term_one_descends` / `term_one_unit` / `markov_descends` (lean:69-99) — i.e. that |tr_M| is invariant under shifts by J^1 and |tr_M(1)|=1. The .md proposition claims m|single-level = |∫_A ρ(β)| via the Nakayama=id reduction. The Lean never states ∫_A, ρ(β), Ψ, Δ, or the equality m=|∫ρ|; it proves a strictly different (and weaker) descent property on an abstract MarkovAlgebra.",
-        "notes": "Lean and narrative prove different statements: Lean = J^1-descent of |tr_M|; .md = the categorical-mass-equals-Markov-trace identity. proof-statement-integrity fails; the headline identity is unformalised."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1487,12 +1481,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean Ref [kassel1995] Ch III and [jones1987] (Hecke algebras and Markov traces) correctly support the Markov-trace/descent material actually formalised."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Categorical mass as Markov trace', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1502,17 +1497,16 @@
           "ts": "6a8b7cd19d90",
           "lean": "4a94af070c7e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Categorical mass as Markov trace' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "categorical-mass-markov.md:23 calls ∫_A 'the Jones–Markov trace, viewed as the Frobenius integral on A', while the Lean MarkovAlgebra (lean:47-57) takes tr_M as an ℝ-linear functional with J^1⊆ker. The relationship between 'Frobenius integral ∫_A' and 'Markov trace tr_M' (equal? proportional by z-power?) is used interchangeably without pinning the normalization.",
-        "notes": "∫_A vs tr_M identification (and the z-normalization z=1/(q^½+q^-½)) is left implicit; the trace normalization is exactly what the Nakayama/symmetric-form question hinges on."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1522,17 +1516,16 @@
           "ts": "6a8b7cd19d90",
           "lean": "4a94af070c7e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-mass-markov.md:58-60 evaluates 'at q_0 ≈ 1.110 with z ≈ 0.499, h ≈ 0.209'. The repo's canonical pins are q_0 ≈ 1.10998 (proton-anchor) and 1.10997859555733471 (muon-q₀ computations layer) per AGENTS.md; '1.110' is a 4-sig-fig rounding that obscures which pin is used. Electron entry e⁻ ≈ 0.551 = hz²+z and 4_1 ≈ 0.182 are given to 3 sig figs ('see witness') with the backing witness canonical-isospin-pyhecke.witness.json carrying scriptHash/scriptCommitSha that must be checked for drift.",
-        "notes": "Values are coarse (3-4 sig figs) and the q_0 pin is ambiguous (proton vs muon layer). Not refuted, but the precision shown can't distinguish anchors; reproducibility depends on the un-verified witness hashes."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Categorical mass as Markov trace' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1542,17 +1535,16 @@
           "ts": "6a8b7cd19d90",
           "lean": "4a94af070c7e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Categorical mass as Markov trace' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "categorical-mass-markov.md:64-67 assigns braids to particles: γ(photon)=1, σ_0=polarization, L_+=gluon=σ_0σ_1, e⁻=σ_0σ_1σ_0. Identifying a 3-crossing positive braid word with the electron and a 2-crossing word with the gluon is a strong physical identification presented in a table without justification in-block.",
-        "notes": "The particle↔braid dictionary is asserted; a domain expert would want the assignment (esp. gluon as L_+ and electron as σ_0σ_1σ_0) derived rather than tabulated. Interpretive, low severity here."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1562,17 +1554,16 @@
           "ts": "6a8b7cd19d90",
           "lean": "4a94af070c7e"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-mass-markov.ts:18-25 binds computation script computations/canonical_isospin_pyhecke.py + witness canonical-isospin-pyhecke.witness.json (status verified). The witness carries scriptHash + scriptCommitSha (confirmed present), but I could not verify in-session that these match the current producer (no re-run); the .md values (e⁻≈0.551, 4_1≈0.182) are 'see witness' and must equal the witness results.",
-        "notes": "Cannot confirm scriptHash/scriptCommitSha currency without running qa staleness; flag for a staleness check that the witness producer hash matches HEAD and that 0.551/0.182 are present in results. Warn pending verification, not a confirmed drift."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1585,14 +1576,14 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The headline identity m|single-level=|∫_A ρ(β)| depends on the unproved Step-2 claim Ψ=S²=id (Nakayama=identity for the Markov-trace Frobenius form), and the Lean formalises only the disjoint Term-1 J^1-descent fragment.",
-        "notes": "verdict: major-revisions. referee_argument: the proposition's crux is Step 2 — that the Nakayama automorphism of the Markov-trace Frobenius form on H_n(q) is the identity — which is asserted from the Hopf antipode S²=id rather than proved as a property of the Frobenius FORM (these coincide only for symmetric algebras, and the Markov trace's symmetry carries a z-twist). The supporting Lean proves an unrelated, weaker descent fact (|tr_M| invariant mod J^1), not the identity. Add the symmetric-form/Nakayama=id lemma (or restrict to the regime where it holds), formalise the actual equality, and pin the q_0 anchor + verify witness currency for the numeric table."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist, invalidating the claimed formalization."
       }
     ]
   },

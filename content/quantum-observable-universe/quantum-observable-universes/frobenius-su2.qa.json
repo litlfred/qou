@@ -818,7 +818,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "For the example 'Frobenius relation for $\\\\mathrm{SU}(2)$' (asserting 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of frobenius-su2.lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "The sibling Lean file frobenius-su2.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Frobenius relation for $\\\\mathrm{SU}(2)$' is non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Frobenius relation for $\\\\mathrm{SU}(2)$' (which asserts 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "No overclaims: the scope of 'Frobenius relation for $\\\\mathrm{SU}(2)$' matches the sorry-free formalization in frobenius-su2.lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Frobenius relation for $\\\\mathrm{SU}(2)$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "The logical steps in 'Frobenius relation for $\\\\mathrm{SU}(2)$' are formally sound and verified by the sorry-free compilation of frobenius-su2.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "The Lean signature in frobenius-su2.lean corresponds directly to the narrative claim in 'Frobenius relation for $\\\\mathrm{SU}(2)$'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "No citations are present in 'Frobenius relation for $\\\\mathrm{SU}(2)$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "Key terms and symbols in 'Frobenius relation for $\\\\mathrm{SU}(2)$' (e.g. from 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "The empirical claims in 'Frobenius relation for $\\\\mathrm{SU}(2)$' (quoting 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.ts:1",
+        "notes": "The physical concepts described in 'Frobenius relation for $\\\\mathrm{SU}(2)$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "frobenius-su2.lean:1",
+        "notes": "The formalization is fully reproducible as frobenius-su2.lean compiles successfully."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "85b0c4bca98f",
+          "ts": "50d470b5c468",
+          "lean": "d6a3200d3b66"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Frobenius relation for $\\\\mathrm{SU}(2)$' (concerning 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:33.796Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

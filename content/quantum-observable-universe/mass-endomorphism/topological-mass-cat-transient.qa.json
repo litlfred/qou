@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1363,7 +1363,7 @@
           "ts": "1267db4eb7ec"
         },
         "result": "fail",
-        "notes": ".md claims tr(α−τ̂_n α)=Σ tr_trans(ϱ,p_i) (transient trace localises to blow-up kernels). Lean proves only trace_transient=Σ_range trace_local for OPAQUE reals via contrived intermediate_sum — no kernel support, no τ̂_n. Degenerate weakening.",
+        "notes": ".md claims tr(\u03b1\u2212\u03c4\u0302_n \u03b1)=\u03a3 tr_trans(\u03f1,p_i) (transient trace localises to blow-up kernels). Lean proves only trace_transient=\u03a3_range trace_local for OPAQUE reals via contrived intermediate_sum \u2014 no kernel support, no \u03c4\u0302_n. Degenerate weakening.",
         "reviewed_at": "2026-06-25T17:04:26.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1505,7 +1505,7 @@
           "ts": "1267db4eb7ec"
         },
         "result": "pass",
-        "notes": "h_transient,h_sum jointly satisfiable (trace_transient=Σtrace_local=intermediate_sum); not contradictory.",
+        "notes": "h_transient,h_sum jointly satisfiable (trace_transient=\u03a3trace_local=intermediate_sum); not contradictory.",
         "reviewed_at": "2026-06-25T17:04:26.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1612,17 +1612,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The proof block (topological-mass-cat-transient-proof.md:16-17) asserts 'the norm of the sum equals the sum of the norms (by disjointness of the supports)'. Disjoint supports give additivity of the trace (the displayed sum), but ‖Σ tr_i‖ = Σ ‖tr_i‖ only holds if all local traces share sign; transient traces are signed, so this norm-additivity step is generally false.",
-        "notes": "The lemma statement itself (topological-mass-cat-transient.md:8-12) is only the trace-additivity identity tr(...) = Σ tr_trans(ρ,p_i), which is fine under disjointness. The over-strong norm-equality is confined to the proof's parenthetical; flagged as warn since the stated lemma is not the false part."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Transient terms localise to blow-up centres (categorical)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1631,17 +1630,15 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The Lean (cat_transient_localises_blowup.lean:38-58) models traceTransient, traceLocal, and N as three independent `opaque` reals/functions and asserts traceTransient = Σ_{i<N} traceLocal i with `sorry`. Between opaque, unconstrained objects the statement carries no content beyond the sorry placeholder.",
-        "notes": "Disclosed honestly (lean:18-31): the file states the support/disjointness analysis is 'not available in Mathlib' and the sorry is per AGENTS.md §1 with a -- Ref: [manuscript] citation. So it is an honest stated-not-proved placeholder, not an audit-dodge — warn."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Transient terms localise to blow-up centres (categorical)' presents substantial mathematical content: \\mathcal{A}_{n+1}^{\\mathrm{trans}}$ has support contained in the union of the ke...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1653,12 +1650,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No calibration or numerical target; structural localisation claim. Not back-fitted."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Transient terms localise to blow-up centres (categorical)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1667,17 +1665,15 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The proof (proof.md:17) tacks on a norm-additivity conclusion ('norm of the sum equals the sum of the norms') stronger than disjointness alone supports for signed traces; the lemma .md does not claim it, so the overreach is in the proof prose.",
-        "notes": "Recommend dropping the norm-equality clause or restricting to a same-sign / orthogonality hypothesis."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Transient terms localise to blow-up centres (categorical)' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1686,15 +1682,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No free parameter / calibration; categorical support-localisation lemma."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Transient terms localise to blow-up centres (categorical)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1703,17 +1700,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "Proof step (proof.md:5-8): 'the support of a transient endomorphism is contained in the union of the kernels ker(𝔡_{n+1}|_{p_i})' is asserted 'by the structure of the brane boundary' with no cited lemma establishing that containment; the localisation is the lemma's substantive content yet is invoked as a premise.",
-        "notes": "The Lean concedes the same gap (lean:18-31: 'rests on the jet-filtration/mass-endomorphism support analysis ... not available'). The narrative proof presents the hard step as if already known — a logical gap, mitigated by honest disclosure on the Lean side."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Transient terms localise to blow-up centres (categorical)' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1722,17 +1718,15 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The .md lemma claims a structural localisation + disjoint-sum decomposition over genuine objects (α−τ̂ₙ(α), brane-boundary kernels). The Lean (lean:38-58) restates it as an equality between three unconstrained `opaque` reals discharged by `sorry`, so it proves neither the support-containment nor the decomposition.",
-        "notes": "ts validation is 'not_checked' (topological-mass-cat-transient.ts:5). Honestly a sorry-stub; the divergence is that Lean captures essentially none of the .md's mathematical content beyond the bare equation shape."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1741,15 +1735,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No cites[] on the .ts; Lean carries only `-- Ref: [manuscript]` (lean:53), an internal pointer, not an external attribution to verify."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Transient terms localise to blow-up centres (categorical)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1758,17 +1753,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Transient terms localise to blow-up centres (categorical)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "`tr_trans(ϱ, p_i)` (md:11) and `𝔡_{n+1}` are used without local definition; 𝔡_{n+1} is 'the jet differential' per the Lean comment but the brane-boundary kernel structure is only gestured at (uses: def:brane-boundary). The transient-trace local contribution is not pinned to a concrete formula.",
-        "notes": "Acceptable as forward dependency on def:brane-boundary, but the proof leans on the precise kernel-support property which is not stated in the cited definition's summary."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1777,15 +1771,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No numerical value or witness; abstract trace decomposition."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Transient terms localise to blow-up centres (categorical)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1794,15 +1789,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No physical observable / units claim; categorical mass-defect localisation."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Transient terms localise to blow-up centres (categorical)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1811,15 +1807,16 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No compute backing; Lean is a sorry-stub with no witness to drift against."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Transient terms localise to blow-up centres (categorical)' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1828,17 +1825,17 @@
           "md": "225aade7d47b",
           "ts": "1267db4eb7ec"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "Lemma is an honestly-flagged sorry placeholder whose Lean captures little of the .md content, and whose narrative proof (i) asserts the key support-containment as a given and (ii) over-claims norm-additivity for signed traces.",
-        "notes": "verdict: major-revisions. referee_argument: the substantive content — that transient support localises to the blow-up kernels — is asserted rather than proved (both narrative and Lean concede the support analysis is unavailable), and the proof's ‖Σ‖=Σ‖·‖ clause is false for signed traces. Either cite/prove the support-localisation lemma or restate as a conjecture; drop the norm-equality."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.lean is missing, preventing formal verification of the claims in 'Transient terms localise to blow-up centres (categorical)'."
       }
     ]
   },

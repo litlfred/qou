@@ -816,7 +816,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.lean:1",
+        "notes": "The mathematical claims in '$q$-Deformed Reeb flow' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$q$-Deformed Reeb flow'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents '$q$-Deformed Reeb flow' as verified, but the sibling Lean file fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-Deformed Reeb flow'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.lean:1",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "No citations are present in '$q$-Deformed Reeb flow', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "Key terms and symbols in '$q$-Deformed Reeb flow' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "The algebraic and logical relations in '$q$-Deformed Reeb flow' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.ts:1",
+        "notes": "The physical concepts described in '$q$-Deformed Reeb flow' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-reeb-flow.lean:1 — content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean fails compilation, indicating a reproducibility failure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5e8d12c86010",
+          "ts": "7110a0d457ab",
+          "lean": "c875b68840e2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:32.375Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

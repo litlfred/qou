@@ -939,232 +939,246 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Correctly typed as a conjecture (kind=conjecture); the central claim (Type-B folding forces conjugate-pair production) is presented as conjectural, not asserted true. The supporting det-pair identity det rho_lambda(w)*det rho_lambda'(w)=+-1 is a genuine fact (md:51-56)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The conjecture asserts substantive content (paired Kashiwara operators, bar-conjugate descendants); the Lean class carries content fields (verified stub at QOU.BraidKnot.SymmetricCrystalPairProduction with bar-image field), not an empty marker."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are non-vacuous as they make concrete conjectures about 'with Hecke normal forms $\\{T_w\\}$, and let $\\mathrm{Cryst}(\\mathfrak{sl}_n)$ be its associated Kashiwara crystal unde...'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No back-fitting; the conjecture states an open structural claim and is honest that the matter/antimatter correspondence 'remains conjectural' (md:41-50)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "md:51-57 'The empirical evidence is the det rho_lambda(w)*det rho_lambda'(w)=+-1 identity ... is the bar-involution acting on Wedderburn blocks and is the strongest available shadow of the conjecture'.",
-        "notes": "The det-product=+-1 identity is a determinant/sign fact about conjugate partitions; calling it the 'bar-involution acting on Wedderburn blocks' and 'shadow of the conjecture' is interpretive — it evidences a sign-pairing but does not specifically support the dynamical claim that pair-production is forced/atomically paired. Conjecture status mitigates; minor overclaim of evidential strength."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameters; purely structural (folding, crystal operators)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "md:10-26: from 'symmetric crystal admits no unimodal f_i step from a bar-invariant source; every step is a paired operator' it is inferred that descendants come in bar-conjugate pairs.",
-        "notes": "The step from 'folded operators come in pairs (f_i, f_{ibar})' to 'a transition from a bar-invariant highest weight produces two descendants that are exact bar-conjugates, T_{v-}bar=T_{v+}' is the crux and is asserted, not derived — precisely what the block concedes is conjectural (md:41-50). As a conjecture this is acceptable, so warn not fail."
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": ".ts:7 lean ref qou:QOU.BraidKnot.SymmetricCrystalPairProduction validation:'stub'; lean class is generic over {R:CommRing}(q:R) whereas md states it for H_n(R,q) and the CPT-pair correspondence.",
-        "notes": "The Lean is a class-axiomatisation stub (validation:'stub'), so it encodes the conjecture as hypotheses rather than proving anything — appropriate for a conjecture. Minor divergence: the Lean stub captures the bar-invariance-of-GS-image content but not the full v0->v-||v+ pair-production dynamics described in the md; the formalised content is narrower than the narrative conjecture. Honest for a conjecture stub."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjectured block 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' has no Lean sibling, representing a minor structural gap.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites kashiwara1991, lecouvey2007, khovanovlauda2009, brundankleshchev2009 — all genuinely support Type-B crystal folding / KLR bar-involution context; invoked for the 'established at generic level' claim, not for the conjectural step. Appropriate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kashiwara1991, lecouvey2007, khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:7-8 Dynkin involution 'i -> ibar = n - i'; md:11 'Cryst^sym(so_{2n+1})'.",
-        "notes": "The folding index map i -> n-i and the resulting type (so_{2n+1} vs the type B/C subtleties of folding A_{n-1}) are stated tersely; 'no Kashiwara lowering operator as a unimodal step from a bar-invariant source' is a non-standard phrasing whose precise meaning is not pinned down. Reader must trust the cited literature for the exact construction. Minor, expected for a conjecture sketch."
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The cited det-product=+-1 identity is an exact algebraic sign identity (det in {+-1}), not a precision-sensitive numerical fit; no q0-anchor swing exposure."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The matter/antimatter-pairing / CPT framing is physically reasonable and explicitly flagged as the conjectural identification; no contradiction with measurement is claimed as established."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are reproducible.",
         "severity": "minor",
-        "evidence": "md:53-54 references computations/det_pair_law.py as the empirical shadow; the .ts has no `computation` block wiring a witness.",
-        "notes": "det_pair_law.py exists at computations/det_pair_law.py, but the conjecture .ts wires no witness (no computation field), so the 'empirical evidence' is cited in prose without a pinned witness JSON. The script is present (reproducible in principle) but unbacked by a committed witness reference. Minor."
+        "evidence": "content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "77a62a5f2555",
+          "md": "cc99bece9117",
           "ts": "4ec73eb5f097"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "verdict=accept-as-conjecture. referee_argument: The block is honestly typed and scoped as a conjecture, concedes exactly which step is unproved (the cyclotomic-quotient folding -> CPT-pair correspondence), and cites appropriate literature plus a genuine sign-identity shadow. The only soft spots (evidential overstatement of det-pair identity, no wired witness, narrower Lean stub) are minor and consistent with conjecture status."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic and physical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
       }
     ]
   },

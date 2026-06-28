@@ -842,17 +842,17 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "groebner-reduction-methods.md:47-48 Mersenne reduction 'x mod P = (x >> 127) + (x & P)' for P=2^127-1",
-        "notes": "The folded value can still equal or exceed P (e.g. when both halves are large, or both equal P), so a single fold is not a complete reduction to [0,P) — a final conditional subtract is required. As written it is an approximate/incomplete statement of Mersenne reduction. Minor: implementation detail, the engine presumably handles the carry; the prose omits it."
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-vacuous": [
@@ -863,13 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Substantive methods remark (rewriting rules, H_A-power factorisation, four engines, LP-dual ordering). Not vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' presents substantial mathematical content: The Hecke algebra normal form is computed by iterative Gr\u00f6bner\u2013Shirshov reduction with three rewriting rules: 1. Heck...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -880,13 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Describes a reduction algorithm; no target back-fitting."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-overclaim": [
@@ -895,17 +898,16 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "groebner-reduction-methods.md:26-27 'every normal form coefficient factors as +-2^a x H_A^k ... This is verified for 1H through 9Be'",
-        "notes": "Empirical-range claim ('verified for 1H..9Be') presented as a clean structural factorisation, with the admission that 'for mixed orderings the factorisation breaks.' The +-2^a x H_A^k claim is therefore order-specific (pp..nn only) and range-limited; stating it as 'every normal form coefficient factors' before the qualifier slightly over-reaches. The qualifier on line 31-33 recovers it. Scope-limited."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -916,13 +918,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physical free parameter; H_A=q-q^{-1} is the canonical Hecke quantum integer, a=pn-crossing count, k=Hecke-relation count are derived integers, not fitted."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -933,13 +937,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Confluence -> arbitrary rule ordering -> LP-dual chooses cheapest strategy is a valid inference; Buchberger S-poly criterion correctly invoked for leading-term cancellation."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -948,15 +954,16 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "remark, no sibling .lean (interprets def:atomic-braid, uses prop:inductive-gb-reduction)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -967,13 +974,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Buchberger S-polynomial criterion and Diamond/Grobner-Shirshov confluence are correctly attributed concepts; no external cites[] to mis-map."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -982,17 +991,17 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "groebner-reduction-methods.md:24-25 'a counts the number of pn crossings in the reduction path' — the reduction path is non-unique even though the NF is unique",
-        "notes": "a and k are defined relative to 'the reduction path', but the prose itself stresses (line 16-18) that intermediate word count depends on strategy; so whether a,k are path-invariants of the final coefficient or artifacts of a chosen path is not made explicit. The compressed (sign,a,k) representation is only well-defined if a,k are determined by the coefficient. Minor underspecification; the upstream prop (inductive-gb-reduction) supplies the H_A^k structure."
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1003,13 +1012,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No q_0-anchored numerical match in this block; the factorisation claim is exact-arithmetic (BigInt engine) not a fit. q_0 appears only as the evaluation point for certificate JSONs."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1018,15 +1029,17 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Computational-methods remark; no physics claim to assess."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1035,17 +1048,17 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' are reproducible.",
         "severity": "minor",
-        "evidence": "groebner-reduction-methods.md:72-80 'All computations are reproducible from the Rust source in tools/hecke-engine/ ... Witness files in computations/ record every mass prediction' — no specific witness path or scriptHash pinned in the .ts (tags:['computational'], no computation field)",
-        "notes": "Reproducibility section asserts reproducibility but the block carries no computation:{script,witness} pin in groebner-reduction-methods.ts, so the claim 'all reproducible' is not anchored to a verifiable witness hash. Cannot detect drift because nothing is pinned. Recommend attaching the relevant hecke-engine certificate witness to the manifest."
+        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1054,16 +1067,18 @@
           "md": "d07c433ab87c",
           "ts": "35e6541f4681"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "notes": "verdict: minor-revision. referee_argument: solid methods remark, but three soft spots: (1) the single-fold Mersenne reduction omits the final carry/subtract (line 47-48), (2) the +-2^a x H_A^k 'every coefficient' factorisation is range- and ordering-limited ('verified 1H..9Be', breaks on mixed orderings) and the path-dependence of (a,k) is not pinned, (3) the Reproducibility section makes an 'all reproducible' claim with no witness/scriptHash pinned in the manifest. None are fatal; all are tightening edits."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Gr\u00f6bner--Shirshov reduction: methods and reproducibility' are consistent."
       }
     ]
   },

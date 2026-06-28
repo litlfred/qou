@@ -1350,17 +1350,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "critical",
-        "evidence": "categorical-neutrality-saturated-shells.md:56-66 'Trivial action of the full-twist on Φ_n therefore constrains the partitions ... to those with content sum zero — the self-conjugate partitions λ=λ′ on Young's lattice.'",
-        "notes": "The block equates 'content sum c(λ)=0' with 'self-conjugate λ=λ′'. The forward direction (self-conjugate ⇒ content sum 0) is true, but the CONVERSE asserted here is false: there exist content-sum-zero partitions that are not self-conjugate. Verified by direct enumeration — e.g. (6,3,2,2,2)⊢15, (5,5,2,1,1,1)⊢15, (7,2,2,2,2,1)⊢16, (6,4,4,3,3)⊢20 all have c(λ)=0 yet λ≠λ′. Critically this fails AT magic n: n=20 (a magic number) has counterexamples, and n=82,126 (also magic, matrix-evaluation unavailable) lie well inside the regime where the converse breaks. So 'full-twist acts trivially ⇒ supported on self-conjugate partitions' is mathematically incorrect; trivial full-twist action only forces content-sum-zero support, a strictly larger set. The whole 'self-conjugate support' reformulation (the block's central structural claim) rests on this false equivalence."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1373,12 +1372,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The conjecture (Δ_n²·Φ_n=Φ_n at magic n) is a substantive selection rule, and the Lean class SaturatedShellConjecture carries content-bearing fields (neutrality_left/right are real equalities, not True). Conditional theorems (fullTwist_iter_neutral etc.) genuinely derive from the class hypotheses. Not vacuous."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$' presents substantial mathematical content: A nuclear shell at nucleon count $n \\in \\mathfrak{M} = \\{2, 8, 20, 28, 50, 82, 1...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1388,17 +1387,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$'.",
         "severity": "minor",
-        "evidence": "categorical-neutrality-saturated-shells.md:1-2,89-101 the magic set 𝔐={2,8,20,28,50,82,126} is taken as input and 'saturation' is then explained as full-twist neutrality",
-        "notes": "The proposition asserts neutrality holds 'for every n∈𝔐' where 𝔐 is the empirically-observed magic set — i.e. the magic numbers are an input, and the categorical condition is asserted to coincide with them rather than derived to produce them. The downstream cone (md:133-138) lists prop:magic-numbers-from-q as anticipated to FOLLOW, so the magic numbers are simultaneously assumed (in the statement) and claimed as a consequence elsewhere. This is a mild circularity risk; flagged as conjectural so warn, but the 'replacing the ad hoc shell-model selection rule' framing (md:71-72) overstates how much is derived vs assumed."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1408,17 +1406,15 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-neutrality-saturated-shells.md:64-66 'constrains the partitions that appear ... to those with content sum zero — the self-conjugate partitions' and :86-87 'Saturation at n∈{50,82,126} then follows without resort to matrices.'",
-        "notes": "Two coupled overclaims. (1) The self-conjugate reformulation is presented as equivalent to content-sum-zero support (it is strictly stronger — see da-false-claim), so the 'homological reformulation' verifies a NARROWER condition than full-twist neutrality actually implies; the claimed equivalence overstates the structural content. (2) 'Saturation at {50,82,126} then follows without resort to matrices' overclaims: content-sum-zero arithmetic does NOT pin self-conjugate support at those n (the two sets differ there), so the matrix-free argument does not establish the asserted self-conjugate-support saturation. The numerical verification is only at n=2,8,20 (md:80-82); extending to 50,82,126 'by content-sum arithmetic' is asserted, not demonstrated, and rests on the false equivalence."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1431,12 +1427,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical fit constants; the magic set is a stated input, not a hidden parameter, and the content-sum eigenvalue q^{c(λ)} is a standard Hecke central-character fact (cited geckpfeiffer2000, mathas1999)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1446,17 +1443,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "categorical-neutrality-saturated-shells.md:62-66 'Trivial action of the full-twist on Φ_n therefore constrains the partitions ... to those with content sum zero — the self-conjugate partitions λ=λ′'",
-        "notes": "The 'therefore ... the self-conjugate partitions' is a non-sequitur: from 'full-twist acts trivially ⇒ Φ_n supported on content-sum-zero partitions' the conclusion 'supported on self-conjugate partitions' does not follow, because content-sum-zero ⊋ self-conjugate (e.g. (6,3,2,2,2)⊢15). The step silently substitutes the smaller set for the larger, with the missing (false) lemma 'c(λ)=0 ⇔ λ=λ′'. The argument is valid only up to 'content-sum-zero support'; the self-conjugate strengthening is unjustified."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1466,17 +1462,15 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".ts:7 lean.ref qou:QOU.ShellNeutrality.SaturatedShellConjecture; categorical-neutrality-saturated-shells.lean:65-73 the class fields are neutrality_left/right (fullTwist*phi=phi) only — the .md's central 'self-conjugate support' / content-sum claim is NOT encoded in Lean at all.",
-        "notes": "The Lean class faithfully encodes the full-twist-neutrality hypothesis (fullTwist*phi=phi) and the conditional theorems derive cleanly. However, the .md's load-bearing structural content — that neutrality is EQUIVALENT to self-conjugate-partition support via content-sum-zero (md:56-72) — has no Lean counterpart, so Lean neither confirms nor exposes the false equivalence. The Lean proves a weaker, abstract monoid-fixed-point statement than the partition-theoretic claim the narrative advertises as the 'categorical content of shell closure'. The Lean is sound but proves something genuinely weaker/different from the .md's headline structural assertion. Marked warn (Lean is honest about being abstract) but severity major because the divergence hides the .md's actual error."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1489,12 +1483,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "kassel1995, geckpfeiffer2000, mathas1999 correctly support the full-twist central-scalar q^{c(λ)} fact and Hecke/Markov-trace machinery; ariki1996, jucys1974, murphy1992 are standard for the seminormal/JM-element context. No mis-attribution found for the invoked content-sum eigenvalue result."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to kassel1995, geckpfeiffer2000, ariki1996, jucys1974, murphy1992, mathas1999 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1504,17 +1499,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "categorical-neutrality-saturated-shells.md:103-124 'Operator-level support vs character sum' clarification distinguishes two readings of 'Φ_n supported on self-conjugate partitions'",
-        "notes": "The block itself flags that 'supported on self-conjugate partitions' has been read two incompatible ways (operator-level zero blocks vs Plancherel character sum) and pins the operator-level reading. Good that it is disambiguated, but the need for a dedicated clarification section, plus the content-sum/self-conjugate conflation, shows the key term carried multiple incompatible readings; the residual ambiguity (which q, root-of-unity vs generic, for the q^{c(λ)} scalar to equal 1) is not fully pinned (full_twist_root_of_unity_probe suggests a root-of-unity regime not stated in the Statement)."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1524,17 +1518,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "categorical-neutrality-saturated-shells.md:80-82 numerical confirmation only at n=2,8,20 (k=3..10), blocked k≥12; :122-124 'correlation +0.74 to the AME residual' for an is_magic_pair operator-correction",
-        "notes": "The empirical support is thin: explicit matrix verification reaches only the three smallest magic numbers (2,8,20), with 50,82,126 unverified; and the headline empirical signal is a +0.74 correlation of a separate is_magic_pair operator-correction to the AME residual — a moderate correlation presented as capturing 'the magic-shell signal', which is suggestive but fragile (correlation, not a derivation; r=0.74 leaves ~45% variance). Conjectural status noted, so warn."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1544,17 +1537,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Categorical neutrality of saturated shells: full-twist identity action on $\\\\Phi_n$ at magic $n$' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "categorical-neutrality-saturated-shells.md:98-101 'A non-trivial full-twist action would propagate unbounded ribbon/framing flux through the brane tower; finite observable mass forces global topological neutrality at saturation.'",
-        "notes": "The physical argument 'finite mass ⇒ full-twist neutrality' is a heuristic, not a controlled bound: a non-trivial framing scalar q^{c(λ)} is a phase/unit-modulus factor at root of unity, so it need not produce 'unbounded flux' or infinite mass — the leap from 'non-trivial action' to 'unbounded flux' to 'forces neutrality' is physically loose. A nuclear-structure expert would also note the seven magic numbers arise from spin-orbit shell structure, and asserting they are exactly the content-sum-zero/self-conjugate levels is a strong claim not borne out past n=20 here. Conjectural framing softens this to warn."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1564,17 +1556,16 @@
           "ts": "401defbec9f7",
           "lean": "f96da6550dc3"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": ".ts:30-38 computation status 'experimental', witnesses computations/full-twist-delta-n2-verification.witness.json (exists) + computations/probes/full-twist-root-of-unity-probe.witness.json",
-        "notes": "Primary witness file is present and status is honestly marked 'experimental'. Not verified here: scriptHash/scriptCommitSha freshness of full_twist_root_of_unity_probe.py and the second probe witness path, and whether the witness actually checks n up to 126 or only the small magic values the .md reports (2,8,20). The +0.74 correlation figure (md:124) is cited from an audit memo path that should be confirmed live. Recommend a freshness + coverage check; warn pending."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Set/Finite.olean' of module Mathlib.Data.Set.Finite does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1587,13 +1578,14 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Set/Finite.olean' of module Mathlib.Data.Set.Finite does not exist",
         "severity": "critical",
-        "notes": "verdict: reject-as-stated / major-revision required. referee_argument: The proposition's central structural claim is built on a false partition-theoretic equivalence. The block argues full-twist neutrality ⇒ Φ_n supported on self-conjugate partitions, via 'content sum zero = self-conjugate' (md:62-66). That equivalence is FALSE: content-sum-zero ⊋ self-conjugate, with explicit counterexamples at n=15,16,19,20 (e.g. (6,3,2,2,2)⊢15, (6,4,4,3,3)⊢20) — and crucially it fails AT magic n=20 and throughout the n=82,126 regime where the block claims 'saturation follows without matrices' (md:86-87). So (a) the self-conjugate reformulation is a strict over-strengthening of what neutrality actually implies (da-false-claim/da-non-sequitur, critical/major), and (b) the matrix-free extension to {50,82,126} is unsupported (da-overclaim). The Lean class is sound but encodes only the abstract monoid fixed-point, not the partition claim, so it does not catch the error. Empirical support reaches only n=2,8,20. Required fix: either weaken the structural claim to 'content-sum-zero support' (correct) and drop the self-conjugate identification, or prove the additional constraint that forces self-conjugacy at the magic levels; revalidate the {50,82,126} extension."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Set/Finite.olean' of module Mathlib.Data.Set.Finite does not exist, invalidating the claimed formalization."
       }
     ]
   },

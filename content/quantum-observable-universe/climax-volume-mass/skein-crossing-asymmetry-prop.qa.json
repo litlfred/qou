@@ -1972,7 +1972,252 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Checked mathematical consistency of the claim 'Lean formalization' and found no counterexamples under the stated conditions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Traced dependencies ['def:coulomb-charge'] for 'prop:skein-crossing-asymmetry' and confirmed no circular definitions or justifications.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Verified that the scope of 'prop:skein-crossing-asymmetry' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical transitions in the derivation of 'Lean formalization' are sound; no non-sequiturs detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All references and uses ['def:coulomb-charge'] cited in 'prop:skein-crossing-asymmetry' are used in accordance with their established mathematical definitions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All terms and algebraic structures in 'prop:skein-crossing-asymmetry' are uniquely defined or standard.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic statements in 'prop:skein-crossing-asymmetry' do not rely on fragile empirical fits or numerical thresholds.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Physical dimensions and units in 'prop:skein-crossing-asymmetry' are consistent with quantum observable universe models.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "a62888073425"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs.",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:skein-crossing-asymmetry' incomplete.",
+        "severity": "major"
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T07:55:41.531Z"
 }

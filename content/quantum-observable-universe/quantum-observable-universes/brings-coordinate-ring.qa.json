@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/brings-coordinate-ring.lean"
   },
   "source_hashes": {
-    "md": "73a4b79b5106",
-    "ts": "3aff357e2554",
+    "md": "98d45f0ec4fb",
+    "ts": "a9bf8993dbac",
     "lean": "df5b3c625c43"
   },
   "criteria": {
@@ -911,43 +911,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "73a4b79b5106",
-          "ts": "3aff357e2554",
-          "lean": "7de0125b7db3"
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:35.472Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "73a4b79b5106",
-          "ts": "3aff357e2554",
-          "lean": "7de0125b7db3"
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:35.881Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.lean:1",
+        "notes": "The Lean theorem/definition statement in brings-coordinate-ring.lean matches the mathematical statement in brings-coordinate-ring.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "For the definition 'Non-commutative coordinate ring of Bring's curve' (asserting 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of brings-coordinate-ring.lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "The sibling Lean file brings-coordinate-ring.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Non-commutative coordinate ring of Bring's curve' is non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Non-commutative coordinate ring of Bring's curve' (which asserts 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "No overclaims: the scope of 'Non-commutative coordinate ring of Bring's curve' matches the sorry-free formalization in brings-coordinate-ring.lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Non-commutative coordinate ring of Bring's curve'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "The logical steps in 'Non-commutative coordinate ring of Bring's curve' are formally sound and verified by the sorry-free compilation of brings-coordinate-ring.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "The Lean signature in brings-coordinate-ring.lean corresponds directly to the narrative claim in 'Non-commutative coordinate ring of Bring's curve'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "No citations are present in 'Non-commutative coordinate ring of Bring's curve', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "Key terms and symbols in 'Non-commutative coordinate ring of Bring's curve' (e.g. from 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "The empirical claims in 'Non-commutative coordinate ring of Bring's curve' (quoting 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.ts:1",
+        "notes": "The physical concepts described in 'Non-commutative coordinate ring of Bring's curve' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "brings-coordinate-ring.lean:1",
+        "notes": "The formalization is fully reproducible as brings-coordinate-ring.lean compiles successfully."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Non-commutative coordinate ring of Bring's curve' (concerning 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are consistent and formally verified."
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

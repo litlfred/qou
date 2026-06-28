@@ -835,7 +835,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "No false claims identified in 'Before stating the formal definition, we pause to explain why a rigid': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'Before stating the formal definition, we pause to explain why a rigid' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Before stating the formal definition, we pause to explain why a rigid'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'Before stating the formal definition, we pause to explain why a rigid' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Before stating the formal definition, we pause to explain why a rigid'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "The argument flow in 'Before stating the formal definition, we pause to explain why a rigid' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "Citations to coecke2017, haag1996 are correct and contextually appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "Key terms and symbols in 'Before stating the formal definition, we pause to explain why a rigid' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "The algebraic and logical relations in 'Before stating the formal definition, we pause to explain why a rigid' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "The physical concepts described in 'Before stating the formal definition, we pause to explain why a rigid' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Before stating the formal definition, we pause to explain why a rigid' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cd2e8548d9e7",
+          "ts": "cf2de759b551"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/monoidal-justification.md:1 — Before stating the formal definition, we pause to explain why a rigid",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Before stating the formal definition, we pause to explain why a rigid' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.536Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

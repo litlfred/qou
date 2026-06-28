@@ -913,7 +913,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.lean:1",
+        "notes": "The mathematical claims in '$q$-Exponential (grouplike)' regarding 'Let $\\mathcal{H}_q$ be the $q$-shuffle Hopf algebra of a quantum observable' are unverified due to compilation errors in the Lean sibling file q-exponential.lean: content/quantum-observable-universe/quantum-observable-universes/q-exponential.lean:57:58: error: unexpected token '/--'; expected 'lemma'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "major",
+        "evidence": "q-exponential.lean:1",
+        "notes": "The sibling Lean file q-exponential.lean contains 'sorry' placeholders, rendering the formal verification of '$q$-Exponential (grouplike)' vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of '$q$-Exponential (grouplike)' (which asserts 'Let $\\mathcal{H}_q$ be the $q$-shuffle Hopf algebra of a quantum observable')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "The prose presents '$q$-Exponential (grouplike)' as verified, but the sibling Lean file q-exponential.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of '$q$-Exponential (grouplike)'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.lean:1",
+        "notes": "Logical gaps exist in the formalization of '$q$-Exponential (grouplike)' due to compilation failure in q-exponential.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.lean:1",
+        "notes": "The Lean sibling q-exponential.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "No citations are present in '$q$-Exponential (grouplike)', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "Key terms and symbols in '$q$-Exponential (grouplike)' (e.g. from 'Let $\\mathcal{H}_q$ be the $q$-shuffle Hopf algebra of a quantum observable') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "The algebraic and logical relations in '$q$-Exponential (grouplike)' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.ts:1",
+        "notes": "The physical concepts described in '$q$-Exponential (grouplike)' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exponential.lean:1",
+        "notes": "The Lean sibling q-exponential.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/q-exponential.lean:57:58: error: unexpected token '/--'; expected 'lemma'."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "734f014b178f",
+          "ts": "1b2b2ea6a99e",
+          "lean": "6315c041da97"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "major",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-exponential.lean contains 'sorry' placeholders.",
+        "verdict": "open-objection",
+        "referee_argument": "The sibling Lean file q-exponential.lean contains sorry placeholders, meaning the main result of '$q$-Exponential (grouplike)' is unproved and the formalization of 'Let $\\mathcal{H}_q$ be the $q$-shuffle Hopf algebra of a quantum observable' is currently vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:36.548Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -993,7 +993,266 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.477Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'From Hoefsmit scattering weights to physical mass via the observation frame' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.484Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.490Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'From Hoefsmit scattering weights to physical mass via the observation frame'.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.496Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'From Hoefsmit scattering weights to physical mass via the observation frame' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.503Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'From Hoefsmit scattering weights to physical mass via the observation frame'.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.509Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.515Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.522Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations hoefsmit1974, wenzl1988 in 'From Hoefsmit scattering weights to physical mass via the observation frame' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.528Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'From Hoefsmit scattering weights to physical mass via the observation frame' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.535Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'From Hoefsmit scattering weights to physical mass via the observation frame' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.541Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'From Hoefsmit scattering weights to physical mass via the observation frame' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.548Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "hoefsmit-scattering-pipeline.lean:1 — content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean:27:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/ConditionalClasses.olean' of module QOU.BraidKnot.ConditionalClasses does not exist"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a35d093445cf",
+          "ts": "09b4aaa9737a",
+          "lean": "b71ee2b59807"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.554Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T10:58:39.560Z"
 }

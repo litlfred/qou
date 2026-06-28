@@ -873,7 +873,264 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.140Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Im(q) is not the EM / P_skew channel — distinct mechanisms': the formalization compiles successfully without errors.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.146Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.152Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Im(q) is not the EM / P_skew channel — distinct mechanisms'.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.158Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Im(q) is not the EM / P_skew channel — distinct mechanisms' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.164Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Im(q) is not the EM / P_skew channel — distinct mechanisms'.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.170Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Im(q) is not the EM / P_skew channel — distinct mechanisms' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.176Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Im(q) is not the EM / P_skew channel — distinct mechanisms', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.182Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Im(q) is not the EM / P_skew channel — distinct mechanisms' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.188Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Im(q) is not the EM / P_skew channel — distinct mechanisms' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.194Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Im(q) is not the EM / P_skew channel — distinct mechanisms' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "rem-im-q-vs-p-skew.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.200Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean file compiles successfully, confirming reproducibility.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:46.206Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Im(q) is not the EM / P_skew channel — distinct mechanisms' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:00.957Z"
+  "updated_at": "2026-06-28T10:58:46.212Z"
 }

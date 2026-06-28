@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.lean"
   },
   "source_hashes": {
-    "md": "8d178e42f258",
+    "md": "1f4906f6df76",
     "ts": "c50d12b2c47f",
     "lean": "f2e050968e34"
   },
@@ -877,43 +877,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "8d178e42f258",
+          "md": "1f4906f6df76",
           "ts": "c50d12b2c47f",
           "lean": "f2e050968e34"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:33.909Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "8d178e42f258",
+          "md": "1f4906f6df76",
           "ts": "c50d12b2c47f",
           "lean": "f2e050968e34"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:34.237Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.lean:1",
+        "notes": "The Lean theorem/definition statement in q-heat-equation.lean matches the mathematical statement in q-heat-equation.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.lean:1",
+        "notes": "The mathematical claims in '$q$-Heat equation' regarding 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a quantum observable' are unverified due to compilation errors in the Lean sibling file q-heat-equation.lean: content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.lean:54:2: error: Type mismatch."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "The sibling Lean file q-heat-equation.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of '$q$-Heat equation' (which asserts 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a quantum observable')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "The prose presents '$q$-Heat equation' as verified, but the sibling Lean file q-heat-equation.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of '$q$-Heat equation'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.lean:1",
+        "notes": "Logical gaps exist in the formalization of '$q$-Heat equation' due to compilation failure in q-heat-equation.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.lean:1",
+        "notes": "The Lean sibling q-heat-equation.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "No citations are present in '$q$-Heat equation', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "Key terms and symbols in '$q$-Heat equation' (e.g. from 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a quantum observable') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "The algebraic and logical relations in '$q$-Heat equation' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.ts:1",
+        "notes": "The physical concepts described in '$q$-Heat equation' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-heat-equation.lean:1",
+        "notes": "The Lean sibling q-heat-equation.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.lean:54:2: error: Type mismatch."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1f4906f6df76",
+          "ts": "c50d12b2c47f",
+          "lean": "f2e050968e34"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.lean:54:2: error: Type mismatch",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for '$q$-Heat equation' (asserting 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a quantum observable') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/q-heat-equation.lean:54:2: error: Type mismatch. A competent referee cannot accept this as a verified mathematical claim."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:34.237Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

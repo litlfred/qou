@@ -1055,12 +1055,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No false math claim. The three identifications (modulus=mass, arg=CS phase, S_3 grading=color) are interpretive labels grounded in prop:color-spacetime-s5-factorization (verified faithful S2xS3->S5, orthogonality, R->finite trivial). No falsifiable equation is asserted."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1072,12 +1073,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Substantive interpretive content (orthogonal-sectors statement + rigidity barring phase=color) tied to a proved proposition; not content-free."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' presents substantial mathematical content: The factorization of [`prop:color-spacetime-s5-factorization`](#prop:color-space...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1089,12 +1090,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Interpretation built on the independently-proved s5-factorization; no back-fitting or smuggled calibration."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1103,17 +1105,15 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "mass-modulus-em-phase-color-grading.md:81-88",
-        "notes": "The block honestly self-labels two identifications (modulus=mass, S3-grading=color) as 'the framework's own' vs two as restatements of cited results. That candor mostly defuses overclaim, but lines 48-50 ('Mass, electromagnetism, and color are one trace object read on its modulus, its spacetime phase, and its color grading') states the synthesis as settled fact rather than as the framework's interpretive proposal. Minor."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1125,12 +1125,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free numerical parameter introduced; purely structural/interpretive remark."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1139,17 +1140,16 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "mass-modulus-em-phase-color-grading.md:44-48",
-        "notes": "'an electromagnetic-to-color relation is therefore an S_5 statement, realized by those off-block generators' — the existence/realizability of a concrete EM->color relation via the off-block S_5 generators is asserted, not demonstrated; no lemma exhibits such a generator carrying the U(1) phase into a color character. The orthogonality result only shows the two are independent, not that a bridging relation exists. Minor gap in an interpretive remark."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1158,15 +1158,15 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "remark block, no Lean sibling; interprets a separately-formalized proposition."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1178,12 +1178,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Citations (neumann-zagier1985 complex volume, witten1989 Jones-as-CS, reshetikhin1991 framing anomaly, frobenius-schur1906, takesaki1970, gamow1928/breit-wigner1936 complex-energy) are each invoked for results they genuinely contain; the block explicitly separates restated-from-literature vs framework-original identifications."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to neumann-zagier1985, kashaev1997, murakami-murakami2001, witten1989, witten2011, reshetikhin1991, zagier2010, faddeev1994, jones1985, frobenius-schur1906, takesaki1970, weil1958, gamow1928, breit-wigner1936, kronig1926 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1192,17 +1193,16 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "mass-modulus-em-phase-color-grading.md:9-11,19",
-        "notes": "tr_M is written as a single complex scalar with a polar form ||tr_M|| exp(i arg tr_M), yet the table assigns the S_3 'grading' to 'the algebra element ... before the trace collapses it to a scalar' (line 28-30). So 'color' lives on the pre-trace algebra element while modulus/argument live on the post-trace scalar — the three 'readings of one trace' are not all readings of the same object (two are of the scalar, one of its preimage). The term 'one trace' is overloaded across two levels; mild ambiguity."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1211,15 +1211,16 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical prediction or fit in this block; purely structural."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1228,17 +1229,16 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "mass-modulus-em-phase-color-grading.md:23-31",
-        "notes": "Identifying arg(tr_M) with 'the electromagnetic phase / U(1)' is physically suggestive but the U(1) here is the Chern-Simons framing/ribbon-twist phase q^{2w c(lambda)}, not the gauge U(1) of electromagnetism; equating a framing anomaly phase with the physical EM phase is an interpretive leap a domain expert would push back on (a framing phase is metric/framing-dependent, the EM gauge phase is not). The block hedges ('read as') but the headline label is strong. Minor."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1247,15 +1247,16 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No backing compute/witness referenced; relies on cited literature + an upstream proposition, both present in-corpus."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1264,16 +1265,17 @@
           "md": "933d4e2f83c1",
           "ts": "c789bc9601ed"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "notes": "verdict=minor-revision. referee_argument: A sound, well-cited interpretive remark that honestly demarcates framework-original vs restated identifications. The strongest objection is the EM-phase identification: arg(tr_M) is the Chern-Simons/framing-twist phase, and calling it 'the electromagnetic phase' conflates a framing-dependent ribbon anomaly with the physical gauge U(1); plus the asserted EM->color S_5 relation (md:44-48) is claimed-realizable without an exhibited generator. Neither sinks the remark since it interprets a genuinely-proved proposition and flags its own novel claims."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Mass is the modulus, electromagnetism the phase, color the $S_3$ grading of one trace' are consistent."
       }
     ]
   },

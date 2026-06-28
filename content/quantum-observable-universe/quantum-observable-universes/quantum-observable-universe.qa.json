@@ -913,7 +913,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.lean:1",
+        "notes": "The mathematical claims in 'Quantum Observable Universe' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "The definition 'Quantum Observable Universe' is formulated via non-circular relations to existing primitives."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents 'Quantum Observable Universe' as verified, but the sibling Lean file fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum Observable Universe'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.lean:1",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "No citations are present in 'Quantum Observable Universe', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "Key terms and symbols in 'Quantum Observable Universe' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "The algebraic and logical relations in 'Quantum Observable Universe' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.ts:1",
+        "notes": "The physical concepts described in 'Quantum Observable Universe' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "quantum-observable-universe.lean:1 — content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean fails compilation, indicating a reproducibility failure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "64fbd18be237",
+          "ts": "1925177ebb74",
+          "lean": "09b66e78b048"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:32.048Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

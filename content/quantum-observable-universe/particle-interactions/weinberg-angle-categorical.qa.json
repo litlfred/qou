@@ -940,253 +940,259 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Block is kind=conjecture and explicitly self-reports the simple-multiplicity reading numerically FAILS (md:83-85, q_0^-4≈0.6594 vs target 1.823). It conjectures a corrected derivation rather than asserting a false theorem. Honest open statement."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "weinberg-angle-categorical.lean:33-34,57-58,63-64 define LkDischarged/HiggsVEVAutomorphism/WeinbergAngleNumerical as ':= True'; instance canonical (lean:98-104) discharges all four obligations by 'trivial'. Per §3b-tax this carrier asserts essentially nothing (3 of 4 fields are True, and a trivial inhabiting instance exists).",
-        "notes": "The Lean class is largely a content-free §3b-tax violation: the conjecture's real content (linking operation, vev automorphism, numerical match) is encoded as `True`, and a `trivial` instance is fabricated to 'close' it. Only hoefsmit_discharged carries genuine FarCommutes content. The .md correctly flags it as Open, so the narrative is honest, but the Lean carrier is vacuous and self-satisfiable."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are non-vacuous as they make concrete conjectures about 'generic (not a root of unity in $R$, $q \\neq 1$). Under the Hoefsmit cell-content identification of the EW triplet in...'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
         "severity": "minor",
-        "evidence": "weinberg-angle-categorical.lean:63-64 WeinbergAngleNumerical := True is named as 'matches CODATA sin²θ_W'; md:99-101 proposes possibly weighting the trace by the Higgs vev 'that drives the θ_W rotation'.",
-        "notes": "No active circularity since nothing is derived, but the proposed repair path (add non-uniform multiplicities + linking + Higgs-vev weighting until the ratio hits CODATA 1.823) is an invitation to back-fit the target. The conjecture should be watched for da-circular if/when promoted; as written it is only a flag."
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Conjecture kind + authorNotes 'Open' + md:87 'simple uniform-multiplicity reading is wrong' — scope is correctly limited; no proved/derived claim is asserted."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:93-101 the proposed repair introduces non-uniform multiplicities (4,2,1,3,3,1,2,4), a categorical-linking operation, AND a Higgs-vev trace weighting — three degrees of freedom to fit a single number cot θ_W≈1.823.",
-        "notes": "θ_W is one experimental ratio (~10^-3 precision per authorNotes). The correction menu supplies multiple tunable structures to reach it, which is the classic hidden-DOF overfitting risk the repo's discipline warns about. Currently only a conjecture so not yet a live violation, but the fit budget vastly exceeds the one target datum."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean.",
         "severity": "minor",
-        "evidence": "md:103-117 argues 'plausible despite mismatch' because θ_W is a coupling ratio g'/g and couplings are Hecke-eigenvalue products (md:105-111).",
-        "notes": "The plausibility paragraph asserts structural consistency but supplies no lemma connecting g'/g to the specific tr_M ratio; it is motivational rather than inferential. Acceptable for a conjecture's 'why plausible' section, flagged as a gap to close on promotion."
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md states cos θ_W/sin θ_W as explicit Markov-trace ratios (md:11-30) and that the simple reading fails; weinberg-angle-categorical.lean encodes none of this — WeinbergAngleNumerical:=True (lean:63-64) and the 'instance canonical' proves WeinbergAngleCategorical for ALL R,q by trivial (lean:98-104).",
-        "notes": "The Lean proves a strictly weaker/vacuous statement than the .md: the .md's mathematical content (the trace-ratio formula and its CODATA target) is absent; the Lean's only non-trivial field is FarCommutes. The 'instance canonical' even asserts inhabitance unconditionally, which is the §3b 'fabricate a trivial instance to close an open primary' anti-pattern. proof-statement-integrity divergence."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean and narrative statements for 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are structurally aligned.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "lean:14-17 cites [peskin1995] §20 for EWSB/Weinberg angle — correctly attributed standard QFT reference. No misuse."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c1279456f803",
-          "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "md:27-29 'e_W^+, e_B^+ are the Hoefsmit-projector idempotents on the symmetric channels … (the latter understood pre-EWSB before W^3/B mixing)'; md:42-43 separately maps σ_5^8 to B 'pre-mixing' while md:37 maps σ_5^8 to H.",
-        "notes": "σ_5^8 is identified both with the Higgs H slot (md:37) and with the U(1)_Y B generator pre-mixing (md:42-43); the W^3-vs-B slot assignment is explicitly deferred to thm:hoefsmit-ew-cell-content. The key projector identifications are ambiguous/under-pinned, which the block itself acknowledges (md:91-98). Minor since flagged."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "c1279456f803",
-          "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:60-85 the only concrete numerical evaluation gives q_0^-4≈0.6594 vs CODATA target 1.823 — a gross mismatch, not a fit-noise match.",
-        "notes": "No empirical success is claimed (the number openly fails), so this is not cherry-picked precision. The fragility flag is forward-looking: any future 'match' will come from the multi-DOF correction menu (see da-hidden-dof), so a later numerical agreement should be treated as fit, not derivation. As written, honest negative."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "c1279456f803",
-          "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "md:35-37 assigns fixed integer powers σ_1^4 (W), σ_3^6 (Z), σ_5^8 (H) to the EW bosons; md:113-117 treats the Higgs vev breaking as 'a specific automorphism of the Hoefsmit projector decomposition'.",
-        "notes": "The power pattern (4,6,8) and the slot-to-particle map are asserted without a physical selection principle; a domain expert would ask why the W/Z/H masses or the SU(2)×U(1) structure pick exactly these crossing exponents. Speculative but framed as conjecture, so not a hard implausibility — flagged."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The single numerical claim (q_0^-4 at q_0≈1.10998 ≈0.6594) is trivially reproducible by hand and the md states it as approximate; no witness JSON is invoked, so no scriptHash/scriptCommitSha drift to check."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
       }
     ],
-    "da-referee-verdict": [
+    "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "5c81290fc07d",
+          "ts": "4eaaf360a48d",
+          "lean": "c550806b5636"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5c81290fc07d",
+          "ts": "4eaaf360a48d",
+          "lean": "c550806b5636"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5c81290fc07d",
           "ts": "4eaaf360a48d",
           "lean": "c550806b5636"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Vacuous Lean carrier with trivial instance (lean:98-104), three-DOF fit menu against one datum (md:93-101), Lean/narrative divergence (lean:63-64 vs md:11-30).",
-        "notes": "verdict=major-revision. referee_argument: As a CONJECTURE the .md is honest and acceptable — it openly reports the simple reading fails. The defect is the Lean sibling: it axiomatises the conjecture's real content as `True` and supplies an unconditional `trivial` instance, so the §3b-cond 'class instance is the only sorry' protection is hollow and any downstream [WeinbergAngleCategorical R q] consumer inherits a vacuous hypothesis. Repair: encode the genuine sub-hypotheses (or leave the class instance-free as an open primary), and remove the fabricated `instance canonical`. The numerical promotion path must also avoid the multi-DOF back-fit."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5c81290fc07d",
+          "ts": "4eaaf360a48d",
+          "lean": "c550806b5636"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean contains compilation errors.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean for conjecture 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' fails to compile: content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
       }
     ]
   },

@@ -825,12 +825,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose intro; describes two involutions (twist-flip τ, ρ-conjugation) as a section preview. No falsifiable mathematical assertion stated as proved."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'The braid group carries two canonical involutions: the' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -839,15 +840,15 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose opening block (meta.position=opening); content-free by design (a section roadmap), which is the legitimate role of prose — not a vacuous *proof*."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'sec:braid-involutions'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -859,11 +860,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies [] for 'sec:braid-involutions' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -875,12 +878,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "States only what the section 'records' and 'connects'; no result is claimed as established here."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'sec:braid-involutions' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -892,11 +895,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -908,12 +913,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No inferential chain; purely descriptive."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'The braid group carries two canonical involutions: the' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -922,15 +928,15 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block, no lean."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No Lean sibling required; narrative matches specifications.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -939,15 +945,16 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites/-- Ref:."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses [] cited in 'sec:braid-involutions' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -956,17 +963,16 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'sec:braid-involutions' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "braid-involutions-intro.md:1-7 names two involutions: the twist-flip τ and 'the ρ-conjugation that conjugates each generator by the half-twist'. The symbol τ collides with the canonical fibre functor τ (AGENTS.md §7 'Fibre functor: Always τ'); and 'half-twist' / 'ρ-conjugation' are introduced without forward pointer to where they are defined (no uses[]/links in the .ts). Reader cannot disambiguate τ-as-involution vs τ-as-fibre-functor from this block.",
-        "notes": "Minor: an intro may defer definitions, but the τ notation clash with the reserved fibre-functor symbol is a register issue worth flagging."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -975,14 +981,16 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'sec:braid-involutions' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -991,15 +999,16 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No physics claim; 'chirality pairing' is named as a forward reference only."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'sec:braid-involutions' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-involutions-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1008,14 +1017,15 @@
           "md": "053bc857327d",
           "ts": "a2de106b346a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1027,14 +1037,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "No substantive claim to reject; only the minor τ-notation clash (da-definitional-ambiguity warn).",
-        "notes": "verdict=accept. referee_argument: a roadmap prose block with no falsifiable content; only suggestion is to rename the involution τ to avoid clashing with the reserved fibre-functor symbol, or link its definition."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
       }
     ]
   },

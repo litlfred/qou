@@ -921,15 +921,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "S(Z,N-1)=a^Z b^{N-1} with a=-h/2, b=-3(q²-1)(q²+1)²/(4q³); sign(a^Z b^{N-1})=(-1)^{A-1} follows correctly given a,b<0 (A=Z+N+... bookkeeping aside). The negativity a<0,b<0 for q>1 is genuinely true (proved in Lean spectatorSign, sorry-free)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Spectator normalization factor' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:13:57: error: failed to synthesize.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:1"
       }
     ],
     "da-vacuous": [
@@ -941,13 +943,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition introduces non-trivial channel sums and a real factorization; spectatorSign theorem has genuine content (both sums negative). Not vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Spectator normalization factor' presents substantial mathematical content: The spectator normalization captures the contribution of unchanged nucleons to the Q-value character sum.  In a beta ...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -959,13 +962,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No target back-fitting; a and b are defined from per-nucleon channel decomposition, sign result derived from them."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Spectator normalization factor'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.ts:1"
       }
     ],
     "da-overclaim": [
@@ -977,15 +982,14 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "spectator-normalization.md:38-44 'This sign determines the parity regime for the Q-value'",
-        "notes": "The block computes sign(a^Z b^{N-1})=(-1)^{A-1} and asserts it 'determines the parity regime' (thm:parity-regime-selection). The factorization S=a^Z b^{N-1} treating spectators as multiplicatively independent per-nucleon channel sums is an assumption (mean-field-like) not justified in-block; calling the resulting sign the determinant of the physical Q-value parity slightly overstates a definitional convention. Minor."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Spectator normalization factor' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -997,13 +1001,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "a and b are fixed rational functions of q with stated origin (per-nucleon Garside channel sums); no free parameter. h=q-q⁻¹ defined."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spectator normalization factor'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1013,15 +1019,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "sign(a^Z b^{N-1})=(-1)^Z(-1)^{N-1}=(-1)^{A-1} is a valid step given a,b<0. No logical gap in the stated chain."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/spectator-normalization.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1031,17 +1039,16 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "spectator-normalization.lean:73-101 theorem spectatorSignPattern proves `0 < spectatorNorm q Z N ↔ Even (Z+N)`; the .md (md:38-41) claims sign = (-1)^{A-1} with A=Z+N+1",
-        "notes": "The Lean spectatorSignPattern proves positivity ↔ Even(Z+N), i.e. sign=(-1)^{Z+N}, NOT the .md's (-1)^{A-1}=(-1)^{Z+N} for A=Z+N+1 — these coincide only under the A=Z+N+1 bookkeeping, which Lean does not state (it uses bare Z,N, not the spectator counts Z, N-1, and not A). More importantly, this main parity theorem's proof is suspect: it uses `Nat.Even.add_odd_or_odd_add`, `Even.pow_pos`, `Odd.pow_neg`, `Nat.even_add.mp ... .elim` in a brittle way and the file's preamble comment (lean:46-54) admits 'Lean verification deferred to lean-build-fix pass (Mathlib API alignment)' for the parity result. The lemma neg_pow_pos_iff (lean:56-67) is a tangled term-mode proof of dubious validity. Likely does not compile as written; ts validation='not_checked'. The clean, genuinely-proved content is only spectatorSign (a,b<0)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/spectator-normalization.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1051,15 +1058,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] and the Lean -- Ref: are [manuscript] self-references (Ch 11 §9), not external results; nothing to mis-attribute."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Spectator normalization factor', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1069,17 +1078,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Spectator normalization factor' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "spectator-normalization.md:14 S(Z,N-1)=a^Z·b^{N-1} but .ts/.lean use spectatorNorm q Z N = a^Z·b^N (lean:22-23)",
-        "notes": "Index/argument mismatch: the .md defines S with exponents Z and N-1 (Z protons, N-1 spectator neutrons after one neutron converts), but the Lean spectatorNorm takes generic (Z_spec, N_spec) → a^Z·b^N. The slot N-1 vs N and the A=Z+N+1 relation are never reconciled in one place, leaving the precise exponent convention ambiguous between narrative and formalisation. 'Channel sum Σ_c' index set c is also unspecified in-block."
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1089,15 +1098,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical value or fit; a,b are exact symbolic functions of q. Nothing empirical to be fragile."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Spectator normalization factor' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1107,17 +1118,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Spectator normalization factor' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "md:31-35 'each spectator contributes a sign flip ... fermionic character'",
-        "notes": "Identifying the negativity of a per-nucleon Garside channel sum with the 'fermionic character' / Pauli sign of a nucleon is an interpretive leap a referee may question: a<0,b<0 is an algebraic fact about q-rational functions, not obviously the (-1) exchange sign of fermion statistics. The multiplicative S=a^Z b^{N-1} ansatz also treats nucleons as non-interacting spectators, a strong physical idealisation. Minor (interpretation, not a hard contradiction)."
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1127,15 +1138,17 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "a and b are closed symbolic expressions; spectatorSign (the genuinely-verified part) needs no external compute. No stale witness involved."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/spectator-normalization.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:13:57: error: failed to synthesize"
       }
     ],
     "da-referee-verdict": [
@@ -1145,17 +1158,18 @@
           "ts": "464134b42e61",
           "lean": "a68e84f590c0"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "spectator-normalization.lean:46-54 self-admitted deferred parity proof; md:14 vs lean:22 exponent mismatch",
-        "notes": "verdict: minor-revisions. referee_argument: The core definition and the sorry-free spectatorSign (a,b<0 for q>1) are sound. The block's weaknesses are formalisation hygiene and interpretation: (1) the headline parity theorem spectatorSignPattern carries a brittle, self-admittedly-deferred ('Mathlib API alignment') proof whose neg_pow_pos_iff lemma is a tangled term-mode construction likely not compiling (validation=not_checked); (2) a Z/N vs N-1 exponent mismatch between .md and .lean; (3) the 'fermionic character' physical reading of an algebraic sign is asserted, not derived. Strongest objection: do not advertise the parity-regime sign result as established until spectatorSignPattern actually checks. The clean fix is to rely on spectatorSign + a standard Even/Odd.neg_pow argument and reconcile the A=Z+N+1 indexing."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/spectator-normalization.lean fails compilation: content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:13:57: error: failed to synthesize",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/spectator-normalization.lean for 'Spectator normalization factor' fails compilation with error: content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:13:57: error: failed to synthesize. This invalidates the claim of formal verification."
       }
     ]
   },

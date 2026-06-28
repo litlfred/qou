@@ -954,7 +954,265 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.lean:1",
+        "notes": "The mathematical claims in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories' are formally unproved due to 'sorry' stubs in the sibling Lean file."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "major",
+        "evidence": "mirror-3d-3d-correspondence.lean:1",
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories' as verified, but the sibling Lean proof contains sorry stubs."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.lean:1",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean contains sorry, causing divergence from the fully-verified narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.ts:1",
+        "notes": "The citations dimofte-gaiotto-gukov2014, terashima-yamazaki2011, neumann-zagier1985,  in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories' are consistent with the sources referenced in the text."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.ts:1",
+        "notes": "Key terms and symbols in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.ts:1",
+        "notes": "The empirical claims in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories' are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "mirror-3d-3d-correspondence.ts:1",
+        "notes": "The physical concepts described in '3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\\\\mathcal{N}{=}2$ gauge theories' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean contains sorry, indicating incomplete verification."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "365349f12227",
+          "ts": "091ba0c008b5",
+          "lean": "e183bb05f2cd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "major",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean contains 'sorry' placeholders.",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:43.768Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

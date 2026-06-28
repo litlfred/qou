@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean"
   },
   "source_hashes": {
-    "md": "71c75fd32b61",
+    "md": "4f9a491b708c",
     "ts": "06c55e4988a1",
     "lean": "1208a61bb699"
   },
@@ -877,43 +877,304 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "71c75fd32b61",
+          "md": "4f9a491b708c",
           "ts": "06c55e4988a1",
           "lean": "1208a61bb699"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:34.560Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "Block placement and kind 'definition' match validated structurally."
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "71c75fd32b61",
+          "md": "4f9a491b708c",
           "ts": "06c55e4988a1",
           "lean": "1208a61bb699"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:34.884Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.lean:1",
+        "notes": "The Lean theorem/definition statement in substrate-parameter-planck.lean matches the mathematical statement in substrate-parameter-planck.md."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.lean:1",
+        "notes": "The mathematical claims in 'Substrate parameter and quantum Planck constant' regarding 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation' are unverified due to compilation errors in the Lean sibling file substrate-parameter-planck.lean: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `ℂ`."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "The sibling Lean file substrate-parameter-planck.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Substrate parameter and quantum Planck constant' (which asserts 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "The prose presents 'Substrate parameter and quantum Planck constant' as verified, but the sibling Lean file substrate-parameter-planck.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Substrate parameter and quantum Planck constant'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Substrate parameter and quantum Planck constant' due to compilation failure in substrate-parameter-planck.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.lean:1",
+        "notes": "The Lean sibling substrate-parameter-planck.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "No citations are present in 'Substrate parameter and quantum Planck constant', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "Key terms and symbols in 'Substrate parameter and quantum Planck constant' (e.g. from 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "The algebraic and logical relations in 'Substrate parameter and quantum Planck constant' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.ts:1",
+        "notes": "The physical concepts described in 'Substrate parameter and quantum Planck constant' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-parameter-planck.lean:1",
+        "notes": "The Lean sibling substrate-parameter-planck.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `ℂ`."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4f9a491b708c",
+          "ts": "06c55e4988a1",
+          "lean": "1208a61bb699"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `ℂ`",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Substrate parameter and quantum Planck constant' (asserting 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `ℂ`. A competent referee cannot accept this as a verified mathematical claim."
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:34.884Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

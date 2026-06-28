@@ -1874,7 +1874,251 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' presents substantial mathematical content: 'Lean sibling: QOU.Archimedean.PhotonIRZeroMode. The topological/geometric cor...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$'.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$'.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "photon-ir-zero-mode-bring.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Photon IR zero-mode on Bring's surface: $\\\\delta(1/\\\\alpha_{EM})_{\\\\mathrm{IR}} = b_1/\\\\mathrm{Area} = 2g/(4\\\\pi(g-1))$' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

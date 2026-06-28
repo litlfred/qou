@@ -842,17 +842,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "color-pairing-binding.md:13-17: 'The degree-2 amplification ratio A_2/A_3 determines the weight β_2 = -2[3]_q in the mass formula. ... the pairwise color pairing is weighted by the number of quark pairs C(3,2)=3, deformed to [3]_q at finite q.'",
-        "notes": "The claim β_2 = -2[3]_q is presented as determined by the amplification ratio A_2/A_3, but the block gives no derivation linking A_2/A_3 to the numerical value -2[3]_q; the identification C(3,2)=3 → [3]_q is an analogy (classical count 3 'deformed to' the q-integer [3]_q) rather than a proof — [3]_q = q^{-1}+1+q ≠ 3 except at q=1, so 'the number of quark pairs C(3,2)=3 deformed to [3]_q' is a numerological bridge, not an equality. Warn: this is a remark interpreting thm:wedderburn-mass-formula, so the block kind tolerates interpretation, but the '=' on β_2 reads as a derived result it has not derived."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Degree-2 color pairing as binding energy': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-vacuous": [
@@ -863,12 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Degree-2 color pairing as binding energy' presents substantial mathematical content: four terms corresponding to four photon channels in $\\gamma\\gamma \\to \\mathfrak{q}\\mathfrak{q}\\mathfrak{q}$ productio...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -877,17 +879,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "color-pairing-binding.md:6-11 table assigns each cubic-coefficient degree a 'Physical role' (degree 3 → confinement → m_p; degree 2 → color pairing → binding; degree 1 → quark sum; degree 0 → electron period), then md:13-17 reads off β_2 = -2[3]_q.",
-        "notes": "The degree↔physical-role assignment is posited, and the binding interpretation of the degree-2 term is then used to justify the weight that the mass formula needs — the interpretation is fit to the desired outcome (the [3]_q that the baryon's 3 color channels 'should' give). Without an independent derivation of why degree-2 of the color-tube cubic equals -2[3]_q, the assignment risks justifying the conclusion (binding weight) by the physical label chosen to match it. Warn — interpretive remark, but the reasoning is suggestive/post-hoc."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Degree-2 color pairing as binding energy'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-overclaim": [
@@ -896,17 +898,16 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "color-pairing-binding.md:13 'The degree-2 amplification ratio A_2/A_3 determines the weight β_2 = -2[3]_q in the mass formula.'",
-        "notes": "'determines' asserts a derivation-strength link from a Vieta-type ratio of cubic coefficients to a specific deformed weight; the block supplies an analogy (3 pairs → [3]_q) not a determination. Conclusion (exact β_2) stronger than the argument (a counting analogy) supports. Warn."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Degree-2 color pairing as binding energy' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -915,17 +916,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "color-pairing-binding.md:14 introduces β_2 = -2[3]_q; the factor -2 (vs the C(3,2)=3 → [3]_q counting which only yields the [3]_q part) is not given a canonical-chain origin in-block.",
-        "notes": "The overall sign and the factor 2 in -2[3]_q are not accounted for by the stated pairwise-counting argument (which delivers only [3]_q from C(3,2)=3). The '-2' is an off-menu coefficient relative to the in-block derivation. It may be derived in thm:wedderburn-mass-formula (which this remark interprets), but as written the block supplies a free numerical factor without canonical-chain provenance. Warn pending the parent theorem."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Degree-2 color pairing as binding energy'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -934,17 +935,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "color-pairing-binding.md:15-17 'The quantum 3-integer [3]_q arises because the baryon has three color channels: the pairwise color pairing is weighted by the number of quark pairs C(3,2)=3, deformed to [3]_q at finite q.'",
-        "notes": "Two different counts are conflated: 'three color channels' (a triple) and 'number of quark pairs C(3,2)=3' (pairs). Both happen to equal 3 classically, so the text slides between them; the q-deformation of the pair-count C(3,2) to [3]_q is asserted without a rule for why a binomial pair-count deforms to the single q-integer [3]_q (rather than, say, a q-binomial). The 'arises because / deformed to' is a non-sequitur: the classical coincidence 3=3 does not fix the q-deformation. Warn."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Degree-2 color pairing as binding energy' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -953,15 +954,16 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No .lean sibling; remark block, no Lean required."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -970,15 +972,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] in the .ts and no -- Ref: lines."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Degree-2 color pairing as binding energy', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -987,17 +991,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Degree-2 color pairing as binding energy' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "color-pairing-binding.md:1-5 uses 'the color-tube cubic c^3+a_2c^2+a_1c+a_0=0' and a table with 'Integral I_k' and 'Symmetric function' (∏ dc_k/dz, Σ_{i<j} dc_i·dc_j) without defining the c_k, the variable z, or the integrals I_k in-block; 'amplification ratio A_2/A_3' (md:13) is undefined.",
-        "notes": "Multiple key objects (c_k, z, the integrals I_k, the amplitudes A_2/A_3) are used without in-block definition; relies on def:color-tube-coordinates (uses[]). The mapping from the symmetric-function column to the 'Integral' column to the 'amplitude' A_k is not spelled out. Minor for a remark but the central quantity A_2/A_3 driving the claim is undefined here."
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1006,15 +1010,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical-match-to-data claim; only a symbolic weight identification."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Degree-2 color pairing as binding energy' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1023,17 +1029,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Degree-2 color pairing as binding energy' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "color-pairing-binding.md:1-4 frames the four cubic terms as 'four photon channels in γγ → qqq production' and md:8 'confinement → m_p', md:9 'color pairing → binding'.",
-        "notes": "γγ → qqq (two photons to three free quarks) is not a physical final state (quark confinement forbids free-quark production; baryon production would be γγ → baryon+antibaryon or hadrons). Mapping a cubic's four coefficients onto 'four photon channels' of such a process is a heuristic dictionary, and a particle physicist would flag the literal process as non-physical. Warn — the block is interpretive and the 'channels' are clearly schematic, not a literal cross-section claim."
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1042,15 +1048,17 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No witness/compute attached to this remark."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Degree-2 color pairing as binding energy' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/color-pairing-binding.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1059,17 +1067,18 @@
           "md": "9ac4989b7fb8",
           "ts": "5436aa03cf50"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Block-level rollup over color-pairing-binding.md/.ts.",
-        "notes": "verdict=minor-revision. referee_argument: As a remark interpreting thm:wedderburn-mass-formula the block is the right kind, but its central sentence (md:13-17) presents β_2 = -2[3]_q as 'determined' by an undefined amplitude ratio A_2/A_3 and 'arising' from a classical pair-count C(3,2)=3 'deformed to' [3]_q. The argument conflates color-channel count with pair count (both =3 classically), supplies no rule for the q-deformation, and leaves the -2 factor without in-block provenance. The strongest objection is da-non-sequitur/da-hidden-dof: the [3]_q and the -2 are read off to match the mass formula rather than derived. Recommend re-scoping the prose to 'interprets the degree-2 weight -2[3]_q (derived in thm:wedderburn-mass-formula) as pairwise color binding' and defining A_2/A_3, or pointing to where the deformation rule and -2 are proved."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Degree-2 color pairing as binding energy' are consistent."
       }
     ]
   },

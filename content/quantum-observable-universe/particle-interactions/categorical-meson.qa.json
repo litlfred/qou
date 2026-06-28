@@ -925,15 +925,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Meson (categorical)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch.",
         "severity": "minor",
-        "evidence": "categorical-meson.md:33-59",
-        "notes": "The hand-done Hecke reduction is presented as exact but is not machine-checked and contains loosely-labelled collection steps (e.g. the Step 2 table row 'two braid + Hecke steps: h²e⁻ + hL₊ + hL₋ + σ₁' then a 'Collecting' that introduces (h²+1) and (h³+h) coefficients). At least the bookkeeping is unverified; a referee cannot confirm NF(M₊) without redoing it. Flagged warn pending an independent trace/witness."
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.lean:1"
       }
     ],
     "da-vacuous": [
@@ -943,17 +943,16 @@
           "ts": "56c0fb142de4",
           "lean": "80c3e9043b0a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "categorical-meson.lean:23-37",
-        "notes": "The Lean `structure CategoricalMeson` is a bare data carrier: fields are all of an opaque `InvariantType` with no relation tying `composite` to `T01`, `hopfBinding`, `T10`; the only proposition is `valence_eq : valence = 2 := rfl`, a trivial reflexivity. The structure encodes none of the .md's braid-word identity (σ₀σ₁)²·σ₁σ₀ or the NF reduction, so the formal content is essentially vacuous relative to the definition's mathematical claims. Acceptable as a definition stub but worth flagging."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Meson (categorical)' presents substantial mathematical content: A meson is a hadron (hadron) of valence $2$: a quark\u2013antiquark pair bound by the Hopf link $\\mathcal{L}_H$. The meson...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -965,13 +964,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definitional block; no derivation that assumes its conclusion."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Meson (categorical)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.ts:1"
       }
     ],
     "da-overclaim": [
@@ -983,15 +984,14 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "categorical-meson.md:80-88",
-        "notes": "'Particle content' paragraph reads physical meaning into NF coefficients (dominant L₊ = 'Hopf binding', e⁻ = 'residual lepton channel', the bare pair 'yields a neutrino ν component') without any cross-check that these categorical components correspond to the named physical particles; the interpretive labels are asserted as if established."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Meson (categorical)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1003,13 +1003,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free numerical parameter; q0≈1.1100 is the substrate value, h follows from it. The numbers are evaluations, not fits."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Meson (categorical)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1021,15 +1023,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/categorical-meson.lean.",
         "severity": "minor",
-        "evidence": "categorical-meson.md:84-88",
-        "notes": "'showing that the Hopf link binding replaces the neutrino channel with Hopf content and increases the net by ≈0.097' — the inference from a 1.515 vs 1.418 net difference to a physical 'neutrino→Hopf replacement' is a leap; the connection between net-value arithmetic and channel identity is not established."
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1039,17 +1041,16 @@
           "ts": "56c0fb142de4",
           "lean": "80c3e9043b0a"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "categorical-meson.lean:23-37 vs .md:8-26",
-        "notes": "The .md defines the meson as the specific braid word M = T₀₁·L_H·T₁₀ = (σ₀σ₁)²·σ₁σ₀ in H₃(q) with an explicit normal form. The Lean `CategoricalMeson` structure carries unconstrained opaque fields and a trivial valence=2 fact; it does not state that composite = T01·hopfBinding·T10, nor anything about σ-generators, the Hopf link, or the braid word. The formal object is much weaker than (and structurally divergent from) the narrative definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1061,13 +1062,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites jones1985 (.ts) and -- Ref: [jones1985] in .lean for the Markov-trace/Jones-polynomial invariant; correctly attributed. References.ts contains jones1985."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Meson (categorical)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1077,17 +1080,17 @@
           "ts": "56c0fb142de4",
           "lean": "80c3e9043b0a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Meson (categorical)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "categorical-meson.md:16-23",
-        "notes": "Notational tension: T₀₁=σ₀σ₁ is called 'the positive Hopf link L₊' AND L_H=σ₀σ₁ is 'the Hopf link binding' — the same word σ₀σ₁ is given two distinct roles/names, and T₁₀=σ₁σ₀=L₋ is called 'the negative Hopf link', though σ₁σ₀ is not the mirror of σ₀σ₁ in general. The reader cannot tell whether these are equal-as-elements or distinct labels for the same generator product."
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1099,13 +1102,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Numbers are exact symbolic-then-evaluated NF coefficients at q0, not experimental matches; no precision/anchor-drift claim is made (no comparison to a measured meson mass here)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Meson (categorical)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1115,17 +1120,17 @@
           "ts": "56c0fb142de4",
           "lean": "80c3e9043b0a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Meson (categorical)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "categorical-meson.md:1-6,83",
-        "notes": "Physically, a meson is a quark–antiquark color singlet; modelling it as a valence-2 hadron 'bound by the Hopf link' and finding a 'residual lepton channel (e⁻)' inside its normal form is a strong, non-standard identification a particle-physics referee would challenge (mesons have no lepton content). Presented as definitional fiat, hence warn."
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1135,17 +1140,17 @@
           "ts": "56c0fb142de4",
           "lean": "80c3e9043b0a"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "categorical-meson.ts:1-11",
-        "notes": "No `computation`/witness attached, yet the .md gives 50-dps-style numerical NF coefficients (1.044, 0.044, 0.218, net 1.515, 1.418). These numbers have no backing witness JSON in the manifest, so they cannot be independently reproduced from the block; they are hand-asserted."
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-meson.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch"
       }
     ],
     "da-referee-verdict": [
@@ -1155,17 +1160,18 @@
           "ts": "56c0fb142de4",
           "lean": "80c3e9043b0a"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "categorical-meson.lean:23-37; categorical-meson.md:80-88",
-        "notes": "verdict=minor-to-major-revision. Strongest objection: the Lean formalization is a vacuous data carrier (valence_eq:=rfl) that captures none of the defining braid-word/NF content, so the 'definition' is formally hollow; the .md's physical reading (e⁻ lepton channel, neutrino replacement inside a meson) is non-standard and unbacked by any witness. The braid algebra itself is plausible but unverified and unreproducible from the manifest."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean for 'Meson (categorical)' fails compilation with error: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch. This invalidates the claim of formal verification."
       }
     ]
   },

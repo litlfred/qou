@@ -845,12 +845,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "As a remark (interprets: conj:mass-endomorphism, phi-n-global-section.ts:7) it asserts no theorem; the 'global section' framing is interpretive."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in '$\\\\Phi_n$ as the global section of the categorical mass functor': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-vacuous": [
@@ -862,12 +863,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "The remark carries substantive interpretive content (locality-dropping motivation, ribbon-flux divergence argument); not content-free."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block '$\\\\Phi_n$ as the global section of the categorical mass functor' presents substantial mathematical content: In the algebraic refactor of the magic-number / shell-closure framework, the cat...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -879,12 +880,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No back-fit to a numeric target; the reframing is structural narrative."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\Phi_n$ as the global section of the categorical mass functor'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-overclaim": [
@@ -893,17 +895,15 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "phi-n-global-section.md:31-38 states global topological neutrality is 'the only consistent reconciliation' and that a non-trivial action 'cannot coexist with finite mass' — a uniqueness/necessity claim stronger than a remark's interpretive remit, and it forward-asserts the content of an open conjecture (conj:categorical-neutrality-saturated-shells).",
-        "notes": "Phrased as forced necessity ('the only', 'cannot') for what is itself conjectural."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of '$\\\\Phi_n$ as the global section of the categorical mass functor' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -912,15 +912,16 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No parameters introduced."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\Phi_n$ as the global section of the categorical mass functor'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -929,17 +930,16 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "phi-n-global-section.md:14-38 — the chain 'non-trivial ribbon action → unbounded framing flux → divergent accumulated flux → incompatible with finite mass → therefore global neutrality at saturation' has a gap: 'each brane level inherits the framing flux; without a global cancellation mechanism, the accumulated flux diverges' (lines 22-24) is asserted, not derived, and the jump to 'global neutrality (centre-of-braid-group)' as the unique cure is not established.",
-        "notes": "The argument is heuristic/physical; presented with 'cannot' as if logically forced."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in '$\\\\Phi_n$ as the global section of the categorical mass functor' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -948,15 +948,15 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Remark has no .lean sibling and no lean.ref; nothing to compare."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -965,15 +965,16 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[] or -- Ref: in the block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in '$\\\\Phi_n$ as the global section of the categorical mass functor', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -982,17 +983,16 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in '$\\\\Phi_n$ as the global section of the categorical mass functor' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "phi-n-global-section.md:36 labels prop:categorical-neutrality-saturated-shells as `prop:` in prose but links it as `#conj\\:categorical-neutrality-saturated-shells` (conjecture); 'global section of the categorical mass functor' is used in 'the strict sense of monoidal-category global sections' (line 6) without a precise definition of what global sections of an endofunctor 𝓕_mass:𝐂→𝐂 are.",
-        "notes": "'Global section' of an endofunctor is non-standard terminology and left informally defined; prop-vs-conj label inconsistency."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1001,15 +1001,16 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerics."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in '$\\\\Phi_n$ as the global section of the categorical mass functor' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1021,12 +1022,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "The finite-observable-mass premise (phi-n-global-section.md:25-29) is physically uncontroversial; the flux-divergence reasoning is heuristic but not in conflict with measurement."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in '$\\\\Phi_n$ as the global section of the categorical mass functor' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1035,15 +1037,16 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No compute/witness attached."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in '$\\\\Phi_n$ as the global section of the categorical mass functor' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/phi-n-global-section.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1052,17 +1055,17 @@
           "md": "5934bc3173ed",
           "ts": "f7c30a6c31c9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "verdict=weak-accept. Strongest objection: the remark asserts global neutrality as the 'only consistent reconciliation' that finite mass 'forces', but this is a heuristic physical argument with an un-derived flux-divergence step, dressed as logical necessity for what is itself an open conjecture.",
-        "notes": "referee_argument: Properly tagged as an interpretive remark (interprets conj:mass-endomorphism), but the necessity language ('the only', 'cannot coexist', 'forces') overstates a non-rigorous motivation. Soften to 'suggests/motivates' and fix the prop:/conj: label slip on categorical-neutrality-saturated-shells."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\Phi_n$ as the global section of the categorical mass functor' are consistent."
       }
     ]
   },

@@ -1356,7 +1356,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Orbital shells from eigenvalues of the photon-electron transfer matrix' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean:54:2: error: linarith failed to find a contradiction.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Orbital shells from eigenvalues of the photon-electron transfer matrix'.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Orbital shells from eigenvalues of the photon-electron transfer matrix' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Orbital shells from eigenvalues of the photon-electron transfer matrix'.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Orbital shells from eigenvalues of the photon-electron transfer matrix', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Orbital shells from eigenvalues of the photon-electron transfer matrix' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Orbital shells from eigenvalues of the photon-electron transfer matrix' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Orbital shells from eigenvalues of the photon-electron transfer matrix' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "shell-structure-eigenvalues.lean:1 — content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean:54:2: error: linarith failed to find a contradiction"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7b7cbb195b24",
+          "ts": "39e7d8b4a105",
+          "lean": "d51506e0885c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean fails compilation: content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean:54:2: error: linarith failed to find a contradiction",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean:54:2: error: linarith failed to find a contradiction, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

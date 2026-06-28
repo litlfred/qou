@@ -1348,15 +1348,17 @@
           "ts": "f9d0c15fe9f4",
           "lean": "fed3f7829291"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The .md existence claim (a composite satisfying E_cross<0 exists) is not mathematically false; the proton witness plausibly satisfies it. No counterexample."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Existence of hadrons' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/hadron-exists.lean:36:3: error: invalid {...} notation, expected type is not of the form (C ...).",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1366,17 +1368,16 @@
           "ts": "f9d0c15fe9f4",
           "lean": "fed3f7829291"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-exists.lean:35-39 proves `Hadron.exists : Nonempty Hadron` with a two-`unknot` witness the docstring (lines 27-32) admits 'does not satisfy the physical stability condition E_cross < 0'.",
-        "notes": "The Lean witness is a degenerate inhabitant carrying none of the stability content the proposition asserts. Not `: True := trivial`, but the proved statement (mere nonemptiness) is much weaker than the .md claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Existence of hadrons' presents substantial mathematical content: There exists a composite $\\mathfrak{H}_p = [K_1, \\ldots, K_n]_p \\oplus \\mathcal{L}$ satisfying the hadron stability c...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1388,13 +1389,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No back-fitting; existence is argued from a constructed witness (proton in .md, degenerate in .lean). No smuggled calibration."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of hadrons'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1404,17 +1407,16 @@
           "ts": "f9d0c15fe9f4",
           "lean": "fed3f7829291"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-exists.md:4 claims existence satisfying `E_cross(H_p) < 0`; the formal backing hadron-exists.lean:35-39 establishes only `Nonempty Hadron` with a witness that explicitly fails E_cross<0 (lean docstring lines 28-32).",
-        "notes": "The stability-satisfying existence is asserted but the only formal object provided is a degenerate non-stable witness. The 'stable hadron exists' strengthening is deferred by the lean docstring itself, so the proposition as stated is not established formally."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Existence of hadrons' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1426,13 +1428,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No undisclosed parameter introduced by this block; q0/E_cross are upstream constructs, not free knobs added here."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of hadrons'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1444,15 +1448,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/hadron-exists.lean.",
         "severity": "minor",
-        "evidence": "hadron-exists-proof.md asserts E_cross(p)<0 'confirmed by the LP-stability analysis on the Hecke basis' without citing the witness/compute that exhibits the negative value.",
-        "notes": "The negativity step is asserted, not derived in-chain; acceptable as a narrative proof sketch but the load-bearing inequality has no in-block evidence."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1464,15 +1468,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md claims existence with E_cross<0; lean (QOU.Hadron.exists) proves `Nonempty Hadron` via [unknot,unknot] (hadron-exists.lean:35-39), a witness the docstring states does NOT satisfy E_cross<0.",
-        "notes": "Classic proof-statement-integrity gap: Lean proves a strictly weaker proposition (bare nonemptiness) than the .md proposition (stable existence). The validation field is 'not_checked'; additionally the file imports only QOU.Basic, which does not import the Hadron structure (HadronDisplay.lean) or `unknot` (KnotTheory.lean), so it likely does not even type-check as written."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-exists.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1484,13 +1487,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "`-- Ref: [atiyah1990]` resolves to references.ts:1120 (Atiyah, Geometry and Physics of Knots), a defensible general citation for knot-existence context."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Existence of hadrons', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1500,17 +1505,17 @@
           "ts": "f9d0c15fe9f4",
           "lean": "fed3f7829291"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Existence of hadrons' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:4 invokes `E_cross(H_p) < 0` (the [hadron] stability condition) but the Lean Hadron structure (HadronDisplay.lean:30-38) carries only theta, phi, constituents — no E_cross field is defined on it.",
-        "notes": "The stability predicate referenced by the proposition is not represented in the formal Hadron type, leaving 'satisfies E_cross<0' formally undefined for the Lean witness."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1520,15 +1525,17 @@
           "ts": "f9d0c15fe9f4",
           "lean": "fed3f7829291"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match stated in this block; E_cross<0 is a sign claim deferred to LP analysis, not a precision figure."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Existence of hadrons' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1540,13 +1547,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Existence of a stable hadron (proton) is physically uncontroversial; no unit/conservation violation."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Existence of hadrons' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1556,17 +1565,17 @@
           "ts": "f9d0c15fe9f4",
           "lean": "fed3f7829291"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "hadron-exists-proof.md asserts E_cross(p)<0 'confirmed by the LP-stability analysis' but cites no witness JSON; ts validation is 'not_checked' and the lean file imports QOU.Basic which lacks Hadron/unknot.",
-        "notes": "The claimed LP-stability confirmation is not backed by a linked witness, and the Lean is not verified, so the existence-with-stability claim is not reproducibly established."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hadron-exists.lean:36:3: error: invalid {...} notation, expected type is not of the form (C ...)"
       }
     ],
     "da-referee-verdict": [
@@ -1578,15 +1587,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Strongest objection: .md proposition (stable hadron, E_cross<0) is not what the Lean proves (Nonempty Hadron via a non-stable degenerate witness; hadron-exists.lean:35-39), and the file likely does not type-check (imports QOU.Basic, not HadronDisplay/KnotTheory).",
-        "notes": "verdict=major-revision. referee_argument: the formal artifact establishes only nonemptiness with an admittedly non-physical witness, so the stability-satisfying existence asserted in prose remains unproved; either strengthen the Lean to construct the proton witness with E_cross<0, or downgrade the proposition to bare existence and move stability to a separate (conditional) claim. Also fix the imports/validation."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/hadron-exists.lean fails compilation: content/quantum-observable-universe/particle-interactions/hadron-exists.lean:36:3: error: invalid {...} notation, expected type is not of the form (C ...)",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-exists.lean for 'Existence of hadrons' fails compilation with error: content/quantum-observable-universe/particle-interactions/hadron-exists.lean:36:3: error: invalid {...} notation, expected type is not of the form (C ...). This invalidates the claim of formal verification."
       }
     ]
   },

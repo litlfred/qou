@@ -816,7 +816,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.lean:1",
+        "notes": "The mathematical claims in '$q$-Deformed exterior derivative' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$q$-Deformed exterior derivative'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents '$q$-Deformed exterior derivative' as verified, but the sibling Lean file fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-Deformed exterior derivative'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.lean:1",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "No citations are present in '$q$-Deformed exterior derivative', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "Key terms and symbols in '$q$-Deformed exterior derivative' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "The algebraic and logical relations in '$q$-Deformed exterior derivative' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.ts:1",
+        "notes": "The physical concepts described in '$q$-Deformed exterior derivative' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-ext-deriv.lean:1 — content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean fails compilation, indicating a reproducibility failure."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7dbe41d7452e",
+          "ts": "eb44d15821b0",
+          "lean": "384cf78a9ecb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-ext-deriv.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:33.268Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

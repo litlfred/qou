@@ -1273,24 +1273,6 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4805d7159427",
-          "ts": "e01ee62c8912",
-          "lean": "3526fbb82bce"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:06.757Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      },
-      {
-        "field_hash": {
           "md": "72f6c4e4e63e",
           "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
@@ -1324,6 +1306,22 @@
         "severity": "minor",
         "evidence": "mass-endomorphism-tower.md:366-407: \"## Application to the proton--electron mass ratio\" ... \"No parameters are fitted. The inputs are the substrate parameter q_0 and the electron mass m_e\"",
         "notes": "The boxed Proposition statement is clean, but the same block carries substantive downstream-consequence/physical content (proton-electron ratio ~1870 vs CODATA, gluon LP-dual derivation) plus the SUPERSEDED/audit/diagnosis discussion, none routed to a companion interprets: remark. Borderline: the ratio section reads as a worked application (legitimate) rather than mislocated interpretation, and the SUPERSEDED banners are author-tracking (one-voice territory). Warn rather than fail."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -1365,24 +1363,6 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "4805d7159427",
-          "ts": "e01ee62c8912",
-          "lean": "3526fbb82bce"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:07.567Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
-      },
-      {
-        "field_hash": {
           "md": "72f6c4e4e63e",
           "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
@@ -1396,27 +1376,26 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "The boxed Proposition is the algebraic R-side tower (Li_2^q over the substrate, Markov parameter z); it carries no Real.sqrt/order/MeV. The Lean cleanly splits Pre (generic [Field R]) from Arch (R, 1<q); the q_0~1.11 / MeV numerics live only in the Application/diagnosis prose, which is the archimedean-realisation side and is flagged as such ('archimedean specialisation')."
-      }
-    ],
-    "wall-side-proof": [
+      },
       {
         "field_hash": {
-          "md": "4805d7159427",
-          "ts": "e01ee62c8912",
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.921Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean:1 — Lean file exists",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-proof": [
       {
         "field_hash": {
           "md": "72f6c4e4e63e",
@@ -1432,6 +1411,23 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "The proof derives the integration identity int_0^V ln_q(1+t)/t dt = -Li_2^q(-V) by termwise differentiation/integration of the q-series — algebraic. The q_0-numeric checks are presented as verification of the archimedean realisation, and the proof names the tau: R -> C archimedean crossing for |S|>=3 extension. Method matches the stated side."
+      },
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean:1 — sorry placeholder present",
+        "severity": "major"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1489,65 +1485,19 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "4805d7159427",
-          "ts": "e01ee62c8912",
-          "lean": "3526fbb82bce"
-        },
-        "result": "fail",
-        "score": {
-          "value": 0.2,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:09.654Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub with no stated plan."
-      },
-      {
-        "field_hash": {
           "md": "72f6c4e4e63e",
           "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
         },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "72f6c4e4e63e",
-          "ts": "d50dd8322129",
-          "lean": "3526fbb82bce"
+          "id": "local/qa-agent-drain"
         },
-        "result": "pass",
-        "notes": ".md proof (descent involution -> blow-up centres; Briggs-Klein integral = -Li_2^q; Markov z^2 weight per pair) is detailed and numerically cross-checked.",
-        "reviewed_at": "2026-06-25T17:11:01.000Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1617,64 +1567,22 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "4805d7159427",
-          "ts": "e01ee62c8912",
-          "lean": "3526fbb82bce"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:10.437Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "72f6c4e4e63e",
-          "ts": "d50dd8322129",
-          "lean": "3526fbb82bce"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
           "md": "72f6c4e4e63e",
           "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
         },
         "result": "pass",
-        "notes": "Brane-tower blow-up decomposition of mass with per-generator q-dilog corrections; p/e ratio 1870 vs 1836 (1.8%) parameter-free. Substantive.",
-        "reviewed_at": "2026-06-25T17:11:01.000Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "id": "local/qa-agent-drain"
         },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The mathematical and physical connections explored in this block are highly novel.",
+        "severity": "minor",
         "score": {
-          "max": 1,
-          "value": 0.72
+          "value": 0.8,
+          "max": 1
         }
       }
     ],
@@ -1869,57 +1777,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "4805d7159427",
-          "ts": "e01ee62c8912",
-          "lean": "3526fbb82bce"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:12.233Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "72f6c4e4e63e",
-          "ts": "d50dd8322129",
-          "lean": "3526fbb82bce"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
           "md": "72f6c4e4e63e",
           "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
         },
         "result": "pass",
-        "notes": "proton_electron_ratio statement references frobeniusNorm,q,v,n,V and q>1 in the conclusion massPoly...>0; no dead binder (sorry body is the integrity issue, not unused-hyp).",
-        "reviewed_at": "2026-06-25T17:11:01.000Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No unused hypotheses are present in the Lean proof.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
@@ -1959,7 +1829,252 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "72f6c4e4e63e",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

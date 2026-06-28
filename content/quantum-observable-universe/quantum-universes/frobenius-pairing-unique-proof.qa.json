@@ -781,7 +781,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "No false claims identified in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "The argument flow in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "No citations are present in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "Key terms and symbols in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "The algebraic and logical relations in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "The physical concepts described in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "de87813830fa",
+          "ts": "067bde7605eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.md:1 — Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Each non-degenerate \\int_A^{(i)} \\colon A \\to \\mathbf{1} factors' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.292Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

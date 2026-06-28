@@ -16,7 +16,7 @@ export default proposition({
   ],
   cites: ["jones1987", "wenzl1988", "habiro2004"],
   computation: {
-    engine: "python+sympy+mpmath",
+    engine: "python+mpmath",
     script:
       "computations/qbeta/qbeta_q_eq_one_shadow_gate_probe.py",
     witness:

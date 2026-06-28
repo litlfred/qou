@@ -1338,7 +1338,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.lean:1",
+        "notes": "The mathematical claims in 'Existence of the weight decomposition' regarding 'Let $(\\mathbf{C}, A, \\tau)$ be a' are unverified due to compilation errors in the Lean sibling file weight-decomposition-exists.lean: content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean:48:10: error: Function expected at."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "The sibling Lean file weight-decomposition-exists.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Existence of the weight decomposition' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "The prose presents 'Existence of the weight decomposition' as verified, but the sibling Lean file weight-decomposition-exists.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Existence of the weight decomposition'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Existence of the weight decomposition' due to compilation failure in weight-decomposition-exists.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.lean:1",
+        "notes": "The Lean sibling weight-decomposition-exists.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "No citations are present in 'Existence of the weight decomposition', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "Key terms and symbols in 'Existence of the weight decomposition' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "The algebraic and logical relations in 'Existence of the weight decomposition' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.ts:1",
+        "notes": "The physical concepts described in 'Existence of the weight decomposition' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "weight-decomposition-exists.lean:1",
+        "notes": "The Lean sibling weight-decomposition-exists.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean:48:10: error: Function expected at."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a5b26f674d7a",
+          "ts": "84aa43c272e3",
+          "lean": "72bc99f19748"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean:48:10: error: Function expected at",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Existence of the weight decomposition' (asserting 'Let $(\\mathbf{C}, A, \\tau)$ be a') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-exists.lean:48:10: error: Function expected at. A competent referee cannot accept this as a verified mathematical claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:39.295Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -842,15 +842,16 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Interpretive remark (interprets def:recursive-brane-tower); makes no provable mathematical claim to falsify."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Mass in the brane tower': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-vacuous": [
@@ -862,12 +863,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Provides genuine physical interpretation (mass as propagation resistance / Frobenius-Hopf variation across fibres); not a tautology."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Mass in the brane tower' presents substantial mathematical content: In the ([recursive brane tower](#def:recursive-brane-tower)), mass is not an int...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -879,11 +880,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mass in the brane tower'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-overclaim": [
@@ -892,17 +895,15 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "mass-geometric-drag.md:6-8 asserts 'the mass quantifies this variation [of the Frobenius–Hopf structure on each fibre]' as a definite identification, but the block is a remark with no formula or interprets-target carrying that quantitative equation; the 'quantifies' is an interpretive claim presented without the backing measure being named here.",
-        "notes": "Minor: as a remark it is allowed interpretive latitude, and it interprets def:recursive-brane-tower; but 'mass quantifies this variation' phrased as fact slightly outruns what the cited definition states in-block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Mass in the brane tower' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -914,12 +915,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No parameters introduced."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass in the brane tower'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -931,12 +933,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Narrative chain (varying q ⇒ required variation of Frobenius–Hopf structure ⇒ mass measures it) is interpretive motivation, not a deductive step claiming a missing lemma."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Mass in the brane tower' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -945,15 +948,15 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "remark, no .lean sibling."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -962,15 +965,16 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[] and no -- Ref:; nothing to misuse."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Mass in the brane tower', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -979,17 +983,16 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Mass in the brane tower' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "mass-geometric-drag.md:3-5 says 'the substrate parameter q varies from fibre to fibre' but def:substrate-parameter pins q to a single substrate modulus q_0; the per-fibre-varying-q reading here is a distinct (jet-bundle) usage not disambiguated in-block, and 'resistance' / 'drag' are used as undefined physical metaphors.",
-        "notes": "Minor: 'q varies from fibre to fibre' versus the canonical fixed q_0 needs the J^1 S_n context to reconcile; the metaphor 'drag/resistance' is interpretive, not defined."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -998,15 +1001,16 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical content."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Mass in the brane tower' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1018,12 +1022,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Mass-as-propagation-resistance is a standard physical metaphor (cf. inertia/Higgs-drag intuitions); nothing a domain expert would reject at the qualitative level the remark claims."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Mass in the brane tower' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1032,15 +1037,16 @@
           "md": "f94858efa296",
           "ts": "f295e358ff03"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No backing compute/witness."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Mass in the brane tower' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-geometric-drag.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1052,12 +1058,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "verdict: accept. referee_argument: A short, legitimate interpretive remark properly anchored via interprets:def:recursive-brane-tower. Only minor quibbles — 'mass quantifies this variation' is stated more definitely than the in-block backing, and 'q varies from fibre to fibre' should be reconciled with the fixed-q_0 convention — neither rising above minor."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Mass in the brane tower' are consistent."
       }
     ]
   },

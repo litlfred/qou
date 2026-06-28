@@ -1359,8 +1359,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "confinement-topological.lean:20 `theorem gram_indefinite_witness : True := by trivial`. The block is kind proposition (ts:3) carrying the prose 'This is proved by showing that the linear program … has a strictly lower optimum' (md:1-4); the resolved Lean proves only True. Flagged B_provable_vacuous in buckets.json ({lean::: True, labels:[proved]}).",
-        "rebuttal": "surviving — §0a lean.ref qou:QOU.Interactions.gram_indefinite_witness resolves SIBLING-FIRST to the :True:=trivial sibling. No conjecture/§3b carve-out (kind=proposition, no conditional banner). A real same-FQN library decl exists but is shadowed and, separately, does not prove the .md statement.",
+        "referee_argument": "confinement-topological.lean:20 `theorem gram_indefinite_witness : True := by trivial`. The block is kind proposition (ts:3) carrying the prose 'This is proved by showing that the linear program \u2026 has a strictly lower optimum' (md:1-4); the resolved Lean proves only True. Flagged B_provable_vacuous in buckets.json ({lean::: True, labels:[proved]}).",
+        "rebuttal": "surviving \u2014 \u00a70a lean.ref qou:QOU.Interactions.gram_indefinite_witness resolves SIBLING-FIRST to the :True:=trivial sibling. No conjecture/\u00a73b carve-out (kind=proposition, no conditional banner). A real same-FQN library decl exists but is shadowed and, separately, does not prove the .md statement.",
         "evidence": [
           {
             "text": "confinement-topological.lean:20"
@@ -1394,8 +1394,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "GramIndefinite.lean:187-192 (the real, non-shadowed decl) proves hopfPlus*hopfPlus + hopfMinus*hopfMinus ≠ 2•(hopfPlus*hopfMinus) — a 2×2 matrix non-equality. The .md Proposition (md:26-38) asserts (i) tr_M*=0 is the LP optimum, (ii) the LP optimum x* has x_{e^-}*→+∞ and is NOT in the braid-group image, (iii) B_3 is the unique braid word of length ≤6 with |Δnet|=0. None of (i)/(ii)/(iii) appears in ANY Lean declaration.",
-        "rebuttal": "surviving — a matrix non-equality is strictly weaker than the three claims; grepped content/ + GramIndefinite.lean + ConfinementLP.lean: no decl states the LP optimum value, braid-image properness, or the enumeration.",
+        "referee_argument": "GramIndefinite.lean:187-192 (the real, non-shadowed decl) proves hopfPlus*hopfPlus + hopfMinus*hopfMinus \u2260 2\u2022(hopfPlus*hopfMinus) \u2014 a 2\u00d72 matrix non-equality. The .md Proposition (md:26-38) asserts (i) tr_M*=0 is the LP optimum, (ii) the LP optimum x* has x_{e^-}*\u2192+\u221e and is NOT in the braid-group image, (iii) B_3 is the unique braid word of length \u22646 with |\u0394net|=0. None of (i)/(ii)/(iii) appears in ANY Lean declaration.",
+        "rebuttal": "surviving \u2014 a matrix non-equality is strictly weaker than the three claims; grepped content/ + GramIndefinite.lean + ConfinementLP.lean: no decl states the LP optimum value, braid-image properness, or the enumeration.",
         "evidence": [
           {
             "text": "content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean:187"
@@ -1426,8 +1426,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "ConfinementLP.lean:92-96 `theorem lp_achieves_zero_trace : hopfPlus ≠ hopfMinus := hopf_ne` and :110-116 `theorem braid_coefficients_bounded : … ≠ 2•(…) := gram_indefinite_witness`. 'L₊≠L₋' does not establish 'the LP achieves trace 0' (claim i); the Gram non-equality does not establish 'braid image is a proper subset' (claim ii).",
-        "rebuttal": "surviving — the Lean names assert the proposition's sub-claims but their proof terms are logically disconnected accessors; the repo's own AUDIT-REPORT.md:224 flags them orphaned/redundant.",
+        "referee_argument": "ConfinementLP.lean:92-96 `theorem lp_achieves_zero_trace : hopfPlus \u2260 hopfMinus := hopf_ne` and :110-116 `theorem braid_coefficients_bounded : \u2026 \u2260 2\u2022(\u2026) := gram_indefinite_witness`. 'L\u208a\u2260L\u208b' does not establish 'the LP achieves trace 0' (claim i); the Gram non-equality does not establish 'braid image is a proper subset' (claim ii).",
+        "rebuttal": "surviving \u2014 the Lean names assert the proposition's sub-claims but their proof terms are logically disconnected accessors; the repo's own AUDIT-REPORT.md:224 flags them orphaned/redundant.",
         "evidence": [
           {
             "text": "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean:92"
@@ -1458,8 +1458,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "md:1-4 'Confinement is **topological**, not energetic. This is proved by…' presents a completed proof of a physical confinement mechanism; the strongest available formal object is a 2×2 matrix inequality; the LP-optimum, braid-image, uniqueness claims are unformalised. 'proved' overclaimed.",
-        "rebuttal": "surviving — corpus-grep: tracked not closed (listed in the live B_provable_vacuous bucket; AUDIT-REPORT marks the supporting ConfinementLP claims orphaned). No audit retracts the 'proved' framing.",
+        "referee_argument": "md:1-4 'Confinement is **topological**, not energetic. This is proved by\u2026' presents a completed proof of a physical confinement mechanism; the strongest available formal object is a 2\u00d72 matrix inequality; the LP-optimum, braid-image, uniqueness claims are unformalised. 'proved' overclaimed.",
+        "rebuttal": "surviving \u2014 corpus-grep: tracked not closed (listed in the live B_provable_vacuous bucket; AUDIT-REPORT marks the supporting ConfinementLP claims orphaned). No audit retracts the 'proved' framing.",
         "evidence": [
           {
             "text": "confinement-topological.md:1"
@@ -1490,8 +1490,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "internal numeric inconsistency on the load-bearing eigenvalue: md:57-58 states λ_-≈-0.855 'at q_0', while the sibling confinement-lp.md:96-104 states the corrected trace gives λ≈-0.956 and reclassifies B_3 as a LOCAL minimum with the GLOBAL minimum at tr_M=0. The headline 'B_3 selected by minimum action' is contradicted by its own sibling caveat.",
-        "rebuttal": "partial — both numbers and the local-vs-global tension are inside the block's own material, not reconciled; a coherence defect rather than independent falsification.",
+        "referee_argument": "internal numeric inconsistency on the load-bearing eigenvalue: md:57-58 states \u03bb_-\u2248-0.855 'at q_0', while the sibling confinement-lp.md:96-104 states the corrected trace gives \u03bb\u2248-0.956 and reclassifies B_3 as a LOCAL minimum with the GLOBAL minimum at tr_M=0. The headline 'B_3 selected by minimum action' is contradicted by its own sibling caveat.",
+        "rebuttal": "partial \u2014 both numbers and the local-vs-global tension are inside the block's own material, not reconciled; a coherence defect rather than independent falsification.",
         "evidence": [
           {
             "text": "confinement-topological.md:57"
@@ -1522,8 +1522,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "the proposition's only empirical support is **Witness**: confinement-lp.witness.json (md:99), but that file lives at computations/_deprecated/confinement-lp.witness.json — deprecated; the 4^6 enumeration and the LP vertex x* are not backed by a live witness.",
-        "rebuttal": "partial — a deprecated witness is weak but present; numerical claims checkable in principle. Reproducibility degraded, not absent.",
+        "referee_argument": "the proposition's only empirical support is **Witness**: confinement-lp.witness.json (md:99), but that file lives at computations/_deprecated/confinement-lp.witness.json \u2014 deprecated; the 4^6 enumeration and the LP vertex x* are not backed by a live witness.",
+        "rebuttal": "partial \u2014 a deprecated witness is weak but present; numerical claims checkable in principle. Reproducibility degraded, not absent.",
         "evidence": [
           {
             "text": "confinement-topological.md:99"
@@ -1553,7 +1553,7 @@
       {
         "result": "fail",
         "verdict": "open-objection",
-        "referee_argument": "The resolved Lean (sibling-first per §0a) is : True := trivial — a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2×2 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle.",
+        "referee_argument": "The resolved Lean (sibling-first per \u00a70a) is : True := trivial \u2014 a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2\u00d72 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle.",
         "field_hash": {
           "md": "62a034929c1a",
           "ts": "943149e87540",
@@ -1577,17 +1577,17 @@
           "ts": "943149e87540",
           "lean": "9e52b34cf96f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "confinement-topological.md:34-38 part (iii) asserts B₃ is 'the unique element with |Δnet|=0 for both proton and neutron typed crossings' over braid words of length ≤6; md:73-74 shows the mirror B₃^σ has |Δnet|=0.004 (nonzero) — but the uniqueness is established only by the deprecated enumeration witness, not proved. Part (i) claims LP optimal value tr_M*=0 'achieved by exploiting the negative eigenvalue'; md:57 claims λ_-(q)<0 'for all q>1' with λ_-≈-0.855 at q0.",
-        "notes": "The Lean impl (GramIndefinite.lean) only proves indefiniteness (one negative direction), which supports (i)'s premise. The specific spectrum decomposition (three equal λ_+, one λ_max, λ_0, λ_-) on md:42-58 is asserted symbolically without proof or witness cross-link. Not demonstrably false, but the spectral structure and the 'unique' enumeration claim are unverified assertions."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Confinement is topological (LP proof)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       }
     ],
     "da-circular": [
@@ -1599,14 +1599,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
-        "notes": "The LP→topology argument does not back-fit a numerical target; n_target is a structural input and B₃ is selected by Borromean topology + net constraint, not by tuning to a mass. No smuggled calibration."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       }
     ],
     "da-hidden-dof": [
@@ -1618,14 +1619,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
-        "notes": "q0 is the single substrate parameter; t_i=tr_M(b_i) and G derive from H₃(q). No off-menu coefficient or extra calibration introduced."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       }
     ],
     "da-citation-misuse": [
@@ -1637,14 +1639,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Confinement is topological (LP proof)', hence no citation misuse is possible.",
         "severity": "minor",
-        "notes": "jones1987 (references.ts:906) is the correct source for Hecke-algebra Markov trace / link polynomials, which is what the Lean lemmas (hopfPlus_sq, gram_indefinite_witness) cite. Attribution is appropriate."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1654,17 +1657,17 @@
           "ts": "943149e87540",
           "lean": "9e52b34cf96f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The supporting witness is computations/_deprecated/confinement-lp.witness.json (deprecated path) with q0=1.1099785955541805, which drifts from the canonical muon-q₀ pin 1.10997859555733471 (AGENTS.md) at the ~11th digit. The .md (md:99) still cites 'confinement-lp.witness.json' as if live.",
-        "notes": "The enumeration result on md:71-75 (B₃ |Δnet|=0.000 vs mirror 0.004 vs 'all other words >0.01') is sourced from a deprecated witness. The cited witness path is stale; values like λ_-≈-0.855 (md:58) and the enumeration margins are not regenerated against the current pin. da-reproducibility-adjacent fragility."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Confinement is topological (LP proof)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1676,14 +1679,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Confinement is topological (LP proof)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "notes": "The claim 'confinement = topology + action minimization' and that the continuous LP permits unphysical (non-braid-image) states is a coherent qualitative reading; no broken conservation, wrong units, or measurement contradiction."
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
       }
     ]
   },

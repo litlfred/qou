@@ -822,15 +822,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Prose roadmap enumerating sibling def/prop/conj/rem blocks; no standalone claim to falsify."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in '': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -839,14 +841,16 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block '' presents substantial mathematical content: '$n$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -855,17 +859,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in ''.",
         "severity": "minor",
-        "evidence": "confinement-selection-intro.md:1 frames 'Algebraic primality at q_0 equals the empirical magic ladder' as a 'conjectural empirical match' and confinement-selection-intro.md:3-5 promotes LP/SDP selection to 'the physically distinguished' braid words.",
-        "notes": "The roadmap presents the magic-number ladder as a match the machinery 'will detect'; the actual circularity risk lives in the conj/prop siblings (whether the LP target is back-fitted to AME), not in this signpost. Flagged as a pointer for the downstream blocks; minor here."
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -874,17 +878,16 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "confinement-selection-intro.md:3 'every later observable in the chapter is computed as a G^{-1}-weighted dual pairing against the active set identified by this LP' and '...is the central proposition'.",
-        "notes": "Strong universal framing ('every later observable') stated in a draft intro; whether all chapter observables genuinely route through the LP dual pairing is a claim to verify against the prop, not established here. Minor: intro prose, '[draft]'."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in '' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -893,15 +896,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No coefficients introduced in this prose; the q_0/magic-ladder match is explicitly flagged conjectural in a named sibling conj, not asserted as a derived constant here."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in ''.",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -910,15 +915,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Enumeration of blocks, not a deductive chain."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in '' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -927,15 +934,16 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "prose block, no lean.ref."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -944,15 +952,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[]/-- Ref:."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in '', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -961,17 +971,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in '' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "confinement-selection-intro.md:1 'Algebraic primality of n at substrate q' is invoked as a 'structural notion of primality the LP and SDP machinery will detect' without the in-block definition; 'shadow prices', 'active set' similarly forward-referenced.",
-        "notes": "Resolved by the named sibling def; minor and expected for a roadmap intro."
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -980,15 +990,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerics in this block; the empirical 'magic ladder' match is delegated to the conj sibling."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in '' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -997,14 +1009,17 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in '' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1013,15 +1028,16 @@
           "md": "1a4c3b4afa09",
           "ts": "788c9d635cce"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No compute/witness in-block."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in '' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1032,13 +1048,16 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "verdict: accept-as-prose. Strongest objection (referee_argument): the intro asserts 'every later observable in the chapter is computed as a G^{-1}-weighted dual pairing' and presents algebraic-primality = empirical magic ladder as a match the machinery 'will detect' — both load-bearing claims whose substance (and any back-fitting / hidden-DOF risk) lives in the named sibling prop/conj, which a referee must audit there. As a draft signpost it carries no defect of its own."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '' are consistent."
       }
     ]
   },

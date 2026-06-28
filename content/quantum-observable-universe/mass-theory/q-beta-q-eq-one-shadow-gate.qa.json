@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "b5a5ba36f05a",
-    "ts": "ce3265f713a2",
+    "ts": "206ac0135c70",
     "lean": "43eb64fb0ba1"
   },
   "criteria": {
@@ -1788,7 +1788,265 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.402Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.408Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' presents substantial mathematical content: $\\mathfrak{Q}_\\beta(q) = Q_A(q) \\cdot \\cos(\\alpha_{\\text{eff}}(q)) \\cdot \\prod_{...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.414Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.421Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.427Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.433Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.439Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean formalization and narrative for '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' are in complete agreement.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.446Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to jones1987, wenzl1988, habiro2004 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.452Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.459Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.465Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.472Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b5a5ba36f05a",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.478Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\mathfrak{Q}_\\\\beta$ precision-ladder $\\\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\\\to -1$ (the structural N=2 anchor) and $c_3 \\\\to J_{\\\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:58:56.485Z"
 }

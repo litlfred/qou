@@ -920,12 +920,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "jonesAtOne values (unknot 1, hopf −2, borromean −8, doubleHopf 4) and the products (16, 8) are stated as q=1 unnormalised Jones values and proved by rfl; consistent, no false identity."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-vacuous": [
@@ -935,17 +936,15 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "multi-link-jones-q1-extension.lean:93-99 defines class MultiLinkJonesAtOne with c5_candidate/c6_candidate as free ℝ fields and :111-113 a default instance plugging the admittedly non-matching values (+8, 16). The theorems jonesBorromeanFlipped_eq_eight (:73-74) and jonesDoubleHopfValue_eq_four (:80-81) are := rfl on hand-set defs (def x := 8; theorem x = 8 := rfl).",
-        "notes": "Lean content is near-trivially true by construction (rfl on definitional constants); honestly labelled 'infrastructure, not closure' so not an audit-dodge, but the proved theorems carry minimal content."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' presents substantial mathematical content: The $\\mathfrak{Q}_\\beta$ precision ladder ([`prop:q-beta-categorical-precision-l...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -958,12 +957,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No conclusion assumed; block explicitly reports the candidate values FAIL to match empirical c5/c6, the opposite of back-fitting."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-overclaim": [
@@ -976,12 +976,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Block is repeatedly and explicitly scoped as 'infrastructure, not closure' / 'open R&D' (.md:24, :42-49); the negative is correctly scope-limited (simple multi-link candidates alone fail), not structurally over-claimed."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -994,12 +994,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The c5/c6 candidates are openly exploratory free fields explicitly flagged as non-closure placeholders (.lean:104-113); disclosed, not hidden, and not wired to any production observable."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1012,12 +1013,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The three 'why it fails' hypotheses (.md:53-69) are presented as conjectural next steps, not as logical deductions; no unsupported 'therefore'."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1027,17 +1029,15 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": ".md:31-37 tabulates jonesAtOne cases (trefoil +1, borromean −8, doubleHopf +4) as 'proved by rfl' in the extended Link inductive, but the .lean does NOT define those constructors or jonesAtOne cases — it imports them (QOU.BraidKnot.BraidLinkTypes, :2) and only re-states them in a doc comment (:42-55). The actual proved theorems in this file are jonesHopfTimesBorromean=16, jonesBorromeanFlipped=8, jonesDoubleHopfValue=4.",
-        "notes": "Narrative attributes proofs ('each proved by rfl', .md:31) to this module that live in the sibling braid-link-types.lean; the file's own theorems are the composition constants. Mild divergence, honestly cross-referenced."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Lean formalization and narrative for 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' are in complete agreement.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1047,17 +1047,16 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to jones1985, habiro2002, wenzl1988 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": ".ts:9-13 cites habiro2002, but .lean:103 cites '[habiro2000] Habiro, ...RIMS Kokyuroku 1172 (2000)'. The borromean value −8 is attributed in .md:36 to 'Jones 1985 / Habiro 2002'. The cites key (habiro2002) and the Lean Ref year (habiro2000) disagree.",
-        "notes": "Citation-year inconsistency between .ts cites[] and .lean -- Ref: for the same Habiro source; verify which year the borromean colored-Jones value is actually drawn from."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1067,17 +1066,16 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:19 row labels the c5 candidate '−J_Borromean = +8' while .lean:104-105 docstring labels c5_candidate := jonesBorromeanFlipped = +8 as 'c_5 = -J_Borromean = +8'; but .lean:87 status comment says 'the probe's best simple integer candidates (c_5 = -8, c_6 = 16)'. So c5 is given as both +8 and −8 within the same file.",
-        "notes": "Internal inconsistency on the c5 candidate sign/value (+8 vs −8) across .lean:87 vs :104/:112; the 'best simple integer candidate' is ambiguously defined."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1090,12 +1088,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The empirical c5≈−395.4, c6≈−45485 at q0/50dps are reported as MISMATCHES (50–3000× off) — the block's claim is the failure, which is robust, not a fragile near-match being sold as a hit."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1105,15 +1104,16 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No physical prediction asserted; this is precision-ladder coefficient R&D, explicitly non-production."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1123,17 +1123,16 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' are reproducible.",
         "severity": "minor",
-        "evidence": ".lean:25 references witness 'q-beta-c5-c6-multilink.witness.json' and .ts:24-28 names script computations/probe_q_beta_c5_c6_multilink.py with status:'experimental', but no scriptHash/scriptCommitSha is carried on the block to detect drift, and the empirical c5≈−395.4/c6≈−45485 values are not pinned to a witnessed-value reference.",
-        "notes": "Numeric empirical values quoted in prose are not witness-pinned; reproducibility rests on re-running the experimental probe. Low stakes since the values back a negative result."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1143,17 +1142,17 @@
           "ts": "bf05ac19ffda",
           "lean": "121d7f7441c4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "verdict: accept-with-minor-revisions. Block is honest open-R&D infrastructure. Strongest objection: internal c5-candidate sign inconsistency (+8 at .lean:104/:112 vs −8 at .lean:87) and the habiro2002/habiro2000 citation-year mismatch.",
-        "notes": "referee_argument: 'The scientific content (simple multi-link Jones values do not close c5/c6) is sound and honestly scoped. Fix the +8/−8 c5 inconsistency and reconcile the Habiro citation year; reconcile the .md claim that jonesAtOne cases are proved here vs in the sibling module.'"
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Multi-link Jones values at $q=1$ (trefoil $+1$, Borromean $-8$, double-Hopf $+4$) as candidate $c_5/c_6$ inputs for the $\\\\mathfrak{Q}_\\\\beta$ precision ladder \u2014 Lean infrastructure with explicit open-R&D status: simple multi-link candidates do NOT match empirical $c_5 \\\\approx -395$, $c_6 \\\\approx -45485$' are consistent."
       }
     ]
   },

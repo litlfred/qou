@@ -835,7 +835,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.255Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.267Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' presents substantial mathematical content: 'The hyperbolic volume $\\mathrm{Vol}(S^3 \\setminus K)$ of a hyperbolic'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.280Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$'.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.293Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.305Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$'.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.315Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.328Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.339Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations zagier1986, neumann-zagier1985, kontsevich1995,  in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.354Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.367Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.380Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "vol-as-motivic-period.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.393Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1f7bacc8a7db",
+          "ts": "9f74af66fcae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.403Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\\\\tau_{\\\\mathrm{arch}}$' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:58.726Z"
+  "updated_at": "2026-06-28T10:58:44.410Z"
 }

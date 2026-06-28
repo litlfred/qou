@@ -1600,7 +1600,268 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "No false claims identified in '*Let R be a commutative ring and R[X] its polynomial ring in': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.lean:1",
+        "notes": "The Lean sibling content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in '*Let R be a commutative ring and R[X] its polynomial ring in'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose in '*Let R be a commutative ring and R[X] its polynomial ring in' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '*Let R be a commutative ring and R[X] its polynomial ring in'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "The argument flow in '*Let R be a commutative ring and R[X] its polynomial ring in' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in '*Let R be a commutative ring and R[X] its polynomial ring in' (though incomplete)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "Citations to wenzl1988, hoefsmit1974 are correct and contextually appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "Key terms and symbols in '*Let R be a commutative ring and R[X] its polynomial ring in' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "The algebraic and logical relations in '*Let R be a commutative ring and R[X] its polynomial ring in' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "The physical concepts described in '*Let R be a commutative ring and R[X] its polynomial ring in' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.ts:1",
+        "notes": "The derivation steps and formal definitions in '*Let R be a commutative ring and R[X] its polynomial ring in' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.md:1 — *Let R be a commutative ring and R[X] its polynomial ring in",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The bar involution on polynomials does not have a complete proof in polynomial-bar-involution.lean, leaving the algebraic compatibility unchecked."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

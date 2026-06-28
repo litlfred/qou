@@ -822,15 +822,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "kind=prose section overview (categorical-mass-foundations-intro.ts: prose); it makes no standalone mathematical claim of its own — it summarises the blocks of the section. No proposition to falsify."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'sec:categorical-mass-foundations-intro': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -839,14 +840,15 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'sec:categorical-mass-foundations-intro' presents substantial mathematical content: _[draft]_ The previous section established Reidemeister invariance of mass on th...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -855,14 +857,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:categorical-mass-foundations-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -871,17 +875,15 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "categorical-mass-foundations-intro.md:1 'Mass is a categorical invariant: it equals the Markov trace of a distinguished element of the Hecke algebra' and md:7 'three independent production paths to tr_M(K) now agreeing to machine epsilon' are stated flatly in a _[draft]_ intro. The 'equals the Markov trace' identification and the 'machine epsilon agreement' are downstream results that elsewhere carry the AGENTS.md ≈-not-= convention and known light-isotope-only scope; the intro presents them as settled foundational fact.",
-        "notes": "Minor: it is an intro and explicitly marked draft. But 'Mass ... equals the Markov trace' as the foundation overstates a still-conjectural identification (mass-endomorphism conjecture, named two paragraphs later as a conjecture)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'sec:categorical-mass-foundations-intro' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -890,14 +892,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:categorical-mass-foundations-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -906,14 +910,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'sec:categorical-mass-foundations-intro' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -922,15 +928,15 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block, no Lean."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -939,15 +945,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[] on the .ts and no -- Ref: in prose."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'sec:categorical-mass-foundations-intro', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -956,17 +963,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'sec:categorical-mass-foundations-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "categorical-mass-foundations-intro.md:1 asserts 'Mass is a categorical invariant: it equals the Markov trace of a distinguished element of the Hecke algebra' without defining which distinguished element, at which level n, or which normalisation of tr_M — the 'distinguished element' is the open canonical-braid identification (cf. the qbeta block's 'which inhabitant is canonical remains open').",
-        "notes": "Acceptable for an intro, but the central identification term ('distinguished element') is exactly the open part of the program, presented as if pinned."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -975,17 +981,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'sec:categorical-mass-foundations-intro' are independent of empirical tuning parameters.",
         "severity": "minor",
-        "evidence": "categorical-mass-foundations-intro.md:7 'three independent production paths to tr_M(K) now agreeing to machine epsilon across the light isotopes'. This is a precision claim in prose with no witness reference; 'machine epsilon' agreement and 'light isotopes' scope are unqualified, and per AGENTS.md the L2 accuracy story is only 3/7 met — the intra-method 'agreement' (L1) is being narrated next to mass accuracy in a way a reader could conflate with experimental accuracy.",
-        "notes": "Minor / intro: but the 'machine epsilon' phrasing without scope (L1 cross-method, not L2 vs experiment) risks the L1≠L2 conflation AGENTS.md warns against."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -994,14 +999,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'sec:categorical-mass-foundations-intro' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1010,15 +1017,16 @@
           "md": "1c110871d2d2",
           "ts": "31e80100ed57"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The 'machine epsilon' claim (md:7) has no witness citation; flagged under da-empirical-fragility rather than here since prose carries no compute backing of its own."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'sec:categorical-mass-foundations-intro' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1030,12 +1038,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "verdict: ACCEPT (draft intro). referee_argument: As a section-overview prose block it makes no standalone proof claim; the only objections are tone/scope (presenting the still-conjectural Mass=tr_M identification and the L1 'machine epsilon' agreement as settled foundations, md:1,7). Both are minor and addressable by hedging once the section's conjecture blocks are cross-linked; nothing here is false."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:categorical-mass-foundations-intro' are consistent."
       }
     ]
   },

@@ -875,7 +875,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No false claims identified in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$': mathematical reasoning is consistent.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean:1",
+        "severity": "major"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The prose in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$'.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Citations to townsend1951, saffman1992, moffatt1994 are correct and contextually appropriate.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Key terms and symbols in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$' are mathematically defined and unambiguous.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic and logical relations in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$' are independent of empirical tuning parameters.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical concepts described in 'Townsend evolution under Biot--Savart strain: the first-order flattening $\\\\kappa \\\\to 0$' are consistent with quantum observable mechanics.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean fails compilation, indicating a reproducibility failure.",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean:96:2: error: No goals to be solved",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ed9daf004d98",
+          "ts": "a74b7f9e684a",
+          "lean": "bf2bc1887daf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean:96:2: error: No goals to be solved",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.lean:96:2: error: No goals to be solved, invalidating the claimed formalization.",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.482Z"
+  "updated_at": "2026-06-28T07:55:42.658Z"
 }

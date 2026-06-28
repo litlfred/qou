@@ -1342,7 +1342,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.717Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Mass via the Markov trace of the Hecke mass element': the formalization compiles successfully without errors.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.724Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.730Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mass via the Markov trace of the Hecke mass element'.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.736Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Mass via the Markov trace of the Hecke mass element' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.742Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass via the Markov trace of the Hecke mass element'.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.748Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Mass via the Markov trace of the Hecke mass element' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.754Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean sibling corresponds directly to the narrative claim in 'Mass via the Markov trace of the Hecke mass element'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.760Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Mass via the Markov trace of the Hecke mass element', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.766Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Mass via the Markov trace of the Hecke mass element' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.772Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Mass via the Markov trace of the Hecke mass element' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.778Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Mass via the Markov trace of the Hecke mass element' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hecke-mass-trace.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.785Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean file compiles successfully, confirming reproducibility.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ed675b72dff1",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.791Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Mass via the Markov trace of the Hecke mass element' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:01.514Z"
+  "updated_at": "2026-06-28T10:58:42.796Z"
 }

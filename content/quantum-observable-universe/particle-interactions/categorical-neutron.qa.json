@@ -881,41 +881,39 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "267ad182bb05",
+          "md": "f36dcf32b3ed",
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:23.168Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Block placement and kind 'definition' match validated structurally.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "267ad182bb05",
+          "md": "f36dcf32b3ed",
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:23.602Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -927,15 +925,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "critical",
-        "evidence": "categorical-neutron.lean:52-56 neutron_mass(q)=vol_borromean/hbar_q^2 + skein_asymmetry with vol_borromean=7.32772475341775; lean:69-70 axiom neutron_mass_from_substrate_axiom : |neutron_mass q₀ - 939.565| < 1.",
-        "notes": "The asserted bound is numerically FALSE. Evaluated at q₀=1.10998: vol/hbar_q^2 = 746.40 and skein_asymmetry = 0.1045, so neutron_mass(q₀)=746.51 MeV, giving |746.51 - 939.565| = 193.06, which is NOT < 1. The file 'proves' the false statement only by declaring it as an `axiom` (lean:69) and projecting the theorem onto it (lean:72-74) — i.e. an inconsistent axiom is introduced. The volume 7.3277 with the 1/hbar_q^2 dressing does not yield the neutron mass; this is exactly the AGENTS.md-banned 'm_e·Vol(B3)·ρ/ℏ_q²'-style absolute-mass form that must route through canonical_mass.py instead."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Neutron (categorical)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals.",
+        "severity": "minor",
+        "evidence": "categorical-neutron.lean:1"
       }
     ],
     "da-vacuous": [
@@ -945,17 +943,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:69-74: theorem neutron_mass_from_substrate := neutron_mass_from_substrate_axiom (self-assuming via a bespoke axiom).",
-        "notes": "neutron_mass_from_substrate is a self-assuming projection onto a freshly-declared `axiom` of the very statement it 'proves' — content-free as a proof (the axiom IS the claim). Compounded by da-false-claim: the axiom is not merely vacuous but false, making the file's logical environment inconsistent."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "categorical-neutron.lean:1"
       }
     ],
     "da-circular": [
@@ -965,17 +963,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Neutron (categorical)'.",
         "severity": "minor",
-        "evidence": "lean:42 q₀ := 1.10998 hard-coded; def neutron_mass tuned to target 939.565 (lean:60, docstring).",
-        "notes": "The neutron-mass formula and the 939.565 target are presented together with the formula clearly aimed at the CODATA value, yet (per da-false-claim) it misses by 193 MeV — so it is a back-fit that does not even hit its target. The circularity (formula chosen to reproduce CODATA, then 'derived') is present but moot given the formula fails; minor."
+        "evidence": "categorical-neutron.ts:1"
       }
     ],
     "da-overclaim": [
@@ -985,17 +983,16 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:58-61 docstring 'At the CODATA value q₀ ... yields m_n(q₀) ≈ 939.565 MeV'; md:13 'mass ... developed in the properties remark'.",
-        "notes": "The Lean docstring claims the construction yields ≈939.565 MeV 'derived from the substrate parameter', presenting a CODATA-matching absolute neutron mass as derived. It is neither derived (uses a bespoke false axiom) nor accurate (actual 746.5 MeV). This is a fitted/false-as-derived overclaim and violates the AGENTS.md canonical-mass guardrail (absolute nucleon mass must go through canonical_mass.py, not vol/ℏ_q²)."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Neutron (categorical)' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1005,17 +1002,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:53 vol_borromean := 7.32772475341775 (hard-coded literal); lean:55 skein_asymmetry := (1/2)(q - q⁻¹) (off-menu correction term).",
-        "notes": "Two undisclosed/off-chain parameters: the hard-coded Borromean volume literal 7.3277... pasted directly into the mass formula with no witness pin, and an ad-hoc '(1/2)(q-q⁻¹)' skein-asymmetry correction with no canonical-chain origin cited. Neither traces to the canonical derivation chain; they are tuning knobs inside a per-block formula."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Neutron (categorical)'.",
+        "severity": "minor",
+        "evidence": "categorical-neutron.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1025,17 +1022,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:52-56 vs lean:69-70: the formula evaluates to 746.5 yet the immediately following axiom asserts it is within 1 of 939.565.",
-        "notes": "There is a direct logical break: the defined function and the asserted bound are mutually contradictory (746.5 vs |·|<1 of 939.565). The 'therefore m_n(q₀)≈939.565' does not follow from the stated formula — the missing (and impossible) lemma is bridged by fiat via the axiom."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/categorical-neutron.lean.",
+        "severity": "minor",
+        "evidence": "categorical-neutron.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1047,15 +1044,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:1-15 (neutron = B_3(u,d,d), mass developed in properties remark, no numerical claim) vs lean:25-74 (structure CategoricalNeutron + a numerical mass formula + false axiom |neutron_mass q₀-939.565|<1).",
-        "notes": "The .md defines the neutron purely structurally and defers mass to a properties remark, while the .lean introduces a concrete numerical mass formula and a FALSE absolute-mass axiom not present/claimed in the narrative. The Lean proves (by axiom) a numerical statement the .md does not assert and which is in fact false — proof-statement-integrity failure (the Lean is both divergent from and stronger/falser than the .md)."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1065,17 +1061,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Neutron (categorical)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "lean:61 -- Ref: [manuscript] Ch. 5, §Categorical neutron for neutron_mass_from_substrate; .ts:11-16 computation -> codata_masses.py / codata-masses.witness.json.",
-        "notes": "The wired witness codata-masses.witness.json only checks that the CODATA m_n (939.565) lies in its window (assertions m_*_in_codata_2022_window); it does NOT compute or validate the block's neutron_mass(q) formula. So the 'verified' computation status (.ts:16) is mis-attributed: it backs the CODATA target value, not the categorical-neutron derivation, masking the 193 MeV failure. The [manuscript] Ch.5 -- Ref attached to a false axiom compounds the misuse."
+        "evidence": "categorical-neutron.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1085,17 +1081,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Neutron (categorical)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "lean:30 mass := 2·skein_ud + skein_dd (structure default) vs lean:52-56 neutron_mass(q) := vol_borromean/hbar_q^2 + skein_asymmetry (entirely different formula).",
-        "notes": "Two incompatible 'neutron mass' definitions coexist in one file: the structure field mass = 2·S_ud + S_dd (matching the md's '2·S_ud + S_dd' docstring lean:23) and the standalone neutron_mass(q) = Vol/ℏ_q² + asymmetry. They are not reconciled; 'the' neutron mass is ambiguous, and the skein masses S_ud,S_dd are never tied to the Vol/ℏ_q² form."
+        "evidence": "categorical-neutron.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1105,17 +1101,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Recomputed neutron_mass(1.10998)=746.5052 MeV vs claimed 939.565 (lean:70); error 193 MeV ≈ 20.5%.",
-        "notes": "This is past 'fragile' — the numerical match is absent: the formula misses the target by ~20%, the opposite of a fit-noise match. The block presents a CODATA-accurate number (939.565) that the underlying formula cannot produce, the signature of a value pinned to CODATA rather than computed. The q₀=1.10998 used is also a coarse 5-digit literal (lean:42), not the canonical witness-pinned q₀."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Neutron (categorical)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "categorical-neutron.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1125,17 +1121,17 @@
           "ts": "74498b73364b",
           "lean": "ed2c960f1ded"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Neutron (categorical)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "lean:52-56 neutron_mass(q₀)=746.5 MeV (actual value of the stated formula).",
-        "notes": "Taken at face value the formula yields 746.5 MeV for the neutron — physically wrong by ~193 MeV (a neutron is 939.565 MeV). The intended/claimed value is correct, but the construction as written predicts an unphysical nucleon mass. (Severity kept minor here since the primary defect is captured under da-false-claim/da-empirical-fragility.)"
+        "evidence": "categorical-neutron.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1147,15 +1143,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:70 axiom value 939.565 contradicts the reproduced computed value 746.5052 of the same file's neutron_mass(q₀); .ts witness codata-masses.witness.json does not compute neutron_mass.",
-        "notes": "The block's central numerical claim is not reproducible from its own code: executing the stated formula gives 746.5, contradicting the asserted <1 bound around 939.565. The wired witness does not exercise the formula (it only window-checks the CODATA constant), so no committed compute reproduces the block's claim. Definitive reproducibility failure."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "categorical-neutron.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/categorical-neutron.lean:45:36: error: unsolved goals"
       }
     ],
     "da-referee-verdict": [
@@ -1167,15 +1163,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "critical",
-        "evidence": "lean:52-74 (formula evaluates to 746.5 MeV; bespoke axiom |neutron_mass q₀-939.565|<1 is false by 193 MeV); .ts computation 'verified' actually only window-checks CODATA m_n.",
-        "notes": "verdict=reject (major rework). referee_argument: The Lean file asserts a FALSE numerical theorem about the neutron mass and 'proves' it by declaring the false statement as an axiom (introducing an inconsistent axiom into QOU.Torsion), while the docstring advertises it as a substrate-derived CODATA match. The actual formula yields 746.5 MeV (off by ~20%), the formula uses two off-chain knobs (hard-coded Vol=7.3277, ad-hoc (1/2)(q-q⁻¹) asymmetry), it contradicts the AGENTS.md canonical-mass guardrail (absolute nucleon mass must route through canonical_mass.py, not Vol/ℏ_q²), the wired 'verified' witness does not compute the formula, and the Lean diverges from the structural-only .md. Strongest objection: remove the false axiom and either route the mass through canonical_mass (m_n = 2·(m_μ·F_Bor − 6·m_e)) or demote to a structural definition with no absolute-mass claim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-neutron.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

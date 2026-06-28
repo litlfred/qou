@@ -11,4 +11,5 @@ export default definition({
     "def:categorical-connection",
     "def:substrate-parameter",
   ],
+  defines: ["categorical-dirac-operator"],
 });

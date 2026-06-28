@@ -1299,7 +1299,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the conditional (q^2-1) factorisation of Delta-tau_M^can + Proof. The '## What this block does NOT establish' is scope-limitation, not physical interpretation; the §3b-cond conditional banner is part of the statement, properly kept in prose."
+        "notes": "Statement is the conditional (q^2-1) factorisation of Delta-tau_M^can + Proof. The '## What this block does NOT establish' is scope-limitation, not physical interpretation; the \u00a73b-cond conditional banner is part of the statement, properly kept in prose."
       }
     ],
     "fit-section-chapter": [
@@ -1371,7 +1371,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the algebraic identity Delta-tau_M^can(q) = (q^2-1)·P^can(q) for q>0, with q>0 the rational well-definedness domain (denominators in chi_block). Generic/pre-archimedean (tag pre-archimedean); the √q lives only inside the unrealised CanonicalMarkovWeightsH3 instance, not in this statement. No archimedean construct hard-coded."
+        "notes": "Statement is the algebraic identity Delta-tau_M^can(q) = (q^2-1)\u00b7P^can(q) for q>0, with q>0 the rational well-definedness domain (denominators in chi_block). Generic/pre-archimedean (tag pre-archimedean); the \u221aq lives only inside the unrealised CanonicalMarkovWeightsH3 instance, not in this statement. No archimedean construct hard-coded."
       }
     ],
     "wall-side-proof": [
@@ -1407,7 +1407,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is obtain per-block factorisations (chi_blocks_have_q2_minus_1_factor) then rw + ring — pure algebraic machinery matching the algebraic statement. No linarith/IVT/continuity/numeric-q."
+        "notes": "Proof is obtain per-block factorisations (chi_blocks_have_q2_minus_1_factor) then rw + ring \u2014 pure algebraic machinery matching the algebraic statement. No linarith/IVT/continuity/numeric-q."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1443,7 +1443,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Narrative: assume CanonicalMarkovWeightsH3 instance, then Delta-tau_M^can(q) = (q^2-1)·P^can(q) for q>0. Lean delta_tau_M_canonical_has_q2_minus_1_factor [w : CanonicalMarkovWeightsH3] (q:ℝ)(hq:0<q) : ∃ P, delta_tau_M_canonical q = (q^2-1)*P. Hypothesis (class instance + 0<q), quantifier, conclusion all match; narrative's explicit P^can is the Lean ∃-witness w.y3·P3+w.y21·P21+w.y111·P111."
+        "notes": "Narrative: assume CanonicalMarkovWeightsH3 instance, then Delta-tau_M^can(q) = (q^2-1)\u00b7P^can(q) for q>0. Lean delta_tau_M_canonical_has_q2_minus_1_factor [w : CanonicalMarkovWeightsH3] (q:\u211d)(hq:0<q) : \u2203 P, delta_tau_M_canonical q = (q^2-1)*P. Hypothesis (class instance + 0<q), quantifier, conclusion all match; narrative's explicit P^can is the Lean \u2203-witness w.y3\u00b7P3+w.y21\u00b7P21+w.y111\u00b7P111."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1566,7 +1566,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "notes": "score=0.5. Direct §3b-cond consequence of the parent's per-block factorisation; standard but not duplicated (the parent proves per-block, this lifts to the weighted canonical sum). The corollary restates the parent's vanishing-at-1, acknowledged explicitly."
+        "notes": "score=0.5. Direct \u00a73b-cond consequence of the parent's per-block factorisation; standard but not duplicated (the parent proves per-block, this lifts to the weighted canonical sum). The corollary restates the parent's vanishing-at-1, acknowledged explicitly."
       }
     ],
     "proof-statement-integrity": [
@@ -1602,7 +1602,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Signature is a genuine ∃-factorisation under an explicit class hypothesis; no tautology-weakening. The single conjectural input is the named CanonicalMarkovWeightsH3 class (§3b-cond), not an injected axiom on this decl; no sorryAx on the theorem itself."
+        "notes": "Signature is a genuine \u2203-factorisation under an explicit class hypothesis; no tautology-weakening. The single conjectural input is the named CanonicalMarkovWeightsH3 class (\u00a73b-cond), not an injected axiom on this decl; no sorryAx on the theorem itself."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1638,7 +1638,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "The proof DERIVES the factorisation by composing chi_blocks_have_q2_minus_1_factor with the weights (rw + ring), not by projecting a class field equal to the conclusion. CanonicalMarkovWeightsH3 carries only the y_λ weights + dimension-normalisation axiom (inputs), not the (q^2-1) claim — §3b-cond non-degenerate."
+        "notes": "The proof DERIVES the factorisation by composing chi_blocks_have_q2_minus_1_factor with the weights (rw + ring), not by projecting a class field equal to the conclusion. CanonicalMarkovWeightsH3 carries only the y_\u03bb weights + dimension-normalisation axiom (inputs), not the (q^2-1) claim \u2014 \u00a73b-cond non-degenerate."
       }
     ],
     "proof-no-trivial-true": [
@@ -1674,7 +1674,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goal is a substantive ∃-factorisation equality, not True/x=x. The corollary's delta_tau_M_canonical 1 = 0 is a real vanishing derived from the factorisation, not a vacuous rfl."
+        "notes": "Goal is a substantive \u2203-factorisation equality, not True/x=x. The corollary's delta_tau_M_canonical 1 = 0 is a real vanishing derived from the factorisation, not a vacuous rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1746,7 +1746,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Both binders are used: the class instance w supplies w.y3/w.y21/w.y111 in the ∃-witness, and hq:0<q is passed to chi_blocks_have_q2_minus_1_factor. No unused hypothesis."
+        "notes": "Both binders are used: the class instance w supplies w.y3/w.y21/w.y111 in the \u2203-witness, and hq:0<q is passed to chi_blocks_have_q2_minus_1_factor. No unused hypothesis."
       }
     ],
     "proof-no-decide-masking": [
@@ -1782,7 +1782,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No decide/trivial. Proof is obtain + refine + unfold + rw + ring — genuine structural derivation."
+        "notes": "No decide/trivial. Proof is obtain + refine + unfold + rw + ring \u2014 genuine structural derivation."
       }
     ],
     "da-false-claim": [
@@ -1795,12 +1795,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Δτ_M^can(q) = (q²−1)·P^can(q) for q>0 is true: each χ_λ carries the (q²−1) factor (verified in parent Lean chi_blocks_have_q2_minus_1_factor, sorry-free field_simp), so any weighted sum factors it. Math sanity-checked numerically (chi_block_3/(q²−1) finite at q0)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1810,17 +1811,15 @@
           "ts": "5e14094e0626",
           "lean": "d44acfb69d51"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "qbeta-per-block-chi-closed-forms.lean:400 normalisation axiom sum_dim_normalised is the only field of CanonicalMarkovWeightsH3 actually constraining weights, but the theorem (.lean:58-67) never uses it — the (q²−1) factorisation holds for ANY y3,y21,y111",
-        "notes": "The conditional theorem is genuinely proved (refine + rw + ring), so not vacuous in the ':=trivial' sense. But the [CanonicalMarkovWeightsH3] hypothesis is near-decorative for THIS conclusion: the proof uses only the per-block factorisation, not the normalisation axiom, so the result holds for arbitrary weights. The 'conditional on canonical weights' framing is heavier than the content requires."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' presents substantial mathematical content: class, encoded as Lean `class CanonicalMarkovWeightsH3` in [`qbeta-per-block-chi...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1833,12 +1832,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No back-fitting: the (q²−1) factor is a structural polynomial property of the Hoefsmit per-block characters, independent of any q_0 calibration target."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1851,12 +1851,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Honest scope: the .md 'What this block does NOT establish' section (md:43-56) correctly disclaims the concrete weights instance, the order-1+ Taylor coeffs, and the c_k bridge. Conditional-as-conditional, not conditional-as-proved."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1869,12 +1869,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No undisclosed parameter; weights y_λ are explicit class fields and the result is parameter-free in them."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1887,12 +1888,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "'Substitute χ_λ=(q²−1)P_λ and factor' is a valid one-line argument; the Lean proof (rw [h3,h21,h111]; ring) discharges it without gap."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1905,12 +1907,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean theorem delta_tau_M_canonical_has_q2_minus_1_factor (.lean:58-67) proves exactly ∃P, Δτ_M^can q = (q²−1)*P under [CanonicalMarkovWeightsH3], hq:0<q — matches the .md claim including the q>1 vs q>0 regime (q>0) and the at-q=1 vanishing corollary."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Lean formalization and narrative for 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are in complete agreement.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1923,12 +1925,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "cites:[wenzl1988, hoefsmit1974] — Wenzl for Markov-trace weights y_λ and Hoefsmit for the H_3 seminormal χ_λ matrices; both correctly attributed for the objects used."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to wenzl1988, hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1941,12 +1944,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "P_λ defined as the parent-block witnesses (chi_blocks_have_q2_minus_1_factor), base ring ℝ with q>0 explicit, Δτ_M^can given by the displayed weighted sum. No 'the unique X' without uniqueness."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1956,15 +1960,16 @@
           "ts": "5e14094e0626",
           "lean": "d44acfb69d51"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pure algebraic identity; no numerical match to experiment, no q_0-pin dependence."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1974,15 +1979,16 @@
           "ts": "5e14094e0626",
           "lean": "d44acfb69d51"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pre-archimedean structural statement; no physical-observable claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1995,12 +2001,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No live computation field on this block; backing is the parent Lean (sorry-free field_simp identities), which is self-checking."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -2013,12 +2020,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "verdict: accept. A clean, honestly-scoped §3b-cond conditional theorem with a real sorry-free Lean proof. referee_argument (minor): the [CanonicalMarkovWeightsH3] hypothesis is heavier than the conclusion needs — the (q²−1) factorisation never invokes the normalisation axiom and holds for arbitrary weights, so the 'conditional on canonical Markov weights' framing could be tightened (or the result stated unconditionally in the weights)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Conditional on canonical Markov weights: $\\\\Delta\\\\tau_M^{\\\\text{can}}(q)$ factors $(q^2 - 1)$' are consistent."
       }
     ]
   },

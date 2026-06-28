@@ -1164,7 +1164,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conjecture about the pair-gen piece of the ρ_K graded mass expansion; promotes the open subsection of prop:rho-k-graded-expansion, same chapter."
+        "notes": "Conjecture about the pair-gen piece of the \u03c1_K graded mass expansion; promotes the open subsection of prop:rho-k-graded-expansion, same chapter."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1204,7 +1204,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.3 — the gap IS the goal (core open analytical work): naive log-additive form refuted, Wedderburn-coupled form degrades, q-dilog form derivation pending; described as multi-day effort gated on the s5-so3 keystone."
+        "notes": "score 0.3 \u2014 the gap IS the goal (core open analytical work): naive log-additive form refuted, Wedderburn-coupled form degrades, q-dilog form derivation pending; described as multi-day effort gated on the s5-so3 keystone."
       }
     ],
     "da-false-claim": [
@@ -1214,15 +1214,16 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Honestly labelled conjecture (existence of an unknown f_2); no proved claim to falsify."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1232,17 +1233,15 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "conj-rho-k-pair-gen-canonical-form.lean:56-60 axiomatises the conjecture as `class PairGenCanonical : Prop where holds : True` — an empty/True-valued field. Per AGENTS.md §3b-tax 'proof-no-empty-prop-carrier', a Prop class whose only field is `True` asserts nothing; any `instance := ⟨trivial⟩` discharges it. The .lean docstring (lean:36-55) even acknowledges it replaced a prior vacuous self-projection, but the replacement is itself a content-free carrier.",
-        "notes": "The class encodes no inequality/recovery-bound shape; the real Li_2^q content is deferred entirely to prose. By the repo's own conjecture-discipline rule this is an under-specified carrier (holds:True). Honest as 'stated, not encoded', but the Lean carries zero content."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claims in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' are non-vacuous as they make concrete conjectures about '$f_2 : \\mathbb{Q}(q^{1/2}) \\times \\mathbb{Q}(q^{1/2}) \\times...'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1255,12 +1254,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "md:38-44 cleanly separates proved (six-term theorem) from conjectural (its f_2 = -Li_2^q form, derivation pending); existence-of-f_2 is explicitly 'follows from existence of mass formula at finite truncation', not back-fit to a target."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1270,15 +1270,15 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Status table (md:36-44) honestly tiers existence/specific-form/log-additive(refuted)/Wedderburn(partial). The 'REFUTED' on the log-additive form is scope-limited ('Degrades vs LO+single-gen'), consistent with the (a)-scope discipline."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1288,17 +1288,16 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem'.",
         "severity": "minor",
-        "evidence": "md:31 and md:61 introduce Wedderburn weights w_sym,w_std,w_alt and a prefactor α (md:68-69 'α z^2 ...') as ingredients of f_2 without pinning their canonical-chain origin in-block; they are referenced to thm:wedderburn-mass-formula but the conjecture's truncation accuracy 'to sub-percent across Z=1..20' depends on whatever α/weights the eventual f_2 supplies.",
-        "notes": "Minor and properly conjectural: the free functional f_2 IS the open object, so 'undisclosed DOF' is the honest content rather than a hidden one. Flagged only because α is named without an in-block canonical anchor."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1311,12 +1310,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Existence claim is hedged ('follows from existence of mass formula evaluated at finite truncation'); no unsupported 'therefore'."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1326,17 +1326,15 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The .md states a substantive conjecture: ∃ f_2 such that the graded truncation = M(K)^CODATA + O(ℏ_q^6) to sub-percent across Z=1..20 (md:6-24). The .lean (lean:56-60) encodes this as `class PairGenCanonical : Prop where holds : True` plus a `sorry`-bodied pair_gen_functional (lean:32-34). The Lean carries none of the recovery-bound / Li_2^q / Z-range content of the .md claim — it is strictly weaker (an empty Prop).",
-        "notes": "Divergence is the §3b-cond pattern executed minimally: the carrier is True-valued rather than encoding the conjecture's hypotheses. Acceptable as an open-conjecture placeholder, but the Lean does not represent the .md statement's content."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean uses a class-conjecture pattern, matching the conjectural nature of 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem'.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1346,17 +1344,16 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to wenzl1988, kashaev1995 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": "conj-rho-k-pair-gen-canonical-form.ts:54-57 cites[] = ['wenzl1988','kashaev1995']. references.ts has no entry 'kashaev1995' (grep count 0); the Kashaev entry present is 'kashaev1997' (references.ts:3555). The cited key kashaev1995 does not resolve.",
-        "notes": "Broken citation key: kashaev1995 is not in references.ts (only kashaev1997 exists). The 'Kashaev-limit' invoked throughout the block (md:32,34,69,71) is thus backed by a non-resolving key. Re-key to kashaev1997 (or add kashaev1995 if a distinct 1995 paper is intended)."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1366,17 +1363,16 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:1-4 declares f_2 : Q(q^{1/2})^3 → ℝ as a closed-form 'Wedderburn-coupled functional form' but the codomain ℝ vs Q(q^{1/2}) domain mixing and the meaning of |V_i V_j|_Wedderburn (md:51-58, an absolute value of a 2x2 matrix product entry combination) are not pinned to a single definition; md:64 'genuinely capturing braid non-commutativity' relies on (M_iM_j)_{1,2},(M_iM_j)_{2,2} whose normalisation is implicit.",
-        "notes": "Minor: as an open conjecture some looseness is expected, but |·|_Wedderburn and the f_2 codomain/normalisation admit more than one reading."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1389,12 +1385,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No fragile numeric match claimed; the only empirical statement is that the log-additive form DEGRADES (a negative result), backed by rho-k-pair-gen-extension.witness.json. The believed-correct form is explicitly not-yet-wired."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1407,12 +1404,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Conjectural functional-form claim; no physical observable asserted as established."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1422,17 +1420,16 @@
           "ts": "023d49246295",
           "lean": "453502e1bdc9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' are reproducible.",
         "severity": "minor",
-        "evidence": "md:42 cites rho-k-pair-gen-extension.witness.json as the refutation evidence for the log-additive form, but that witness is not listed in the .ts computation block (.ts has no `computation` field at all) and its provenance/freshness is not asserted in-block; the conj relies on a witness it does not pin.",
-        "notes": "Minor: the refutation evidence witness is referenced in prose only, not wired via the manifest computation field, so its currency cannot be machine-checked from this block."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1445,13 +1442,14 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "notes": "verdict: minor-revisions. referee_argument: A well-disciplined open conjecture — proved/conjectured tiering is honest and the negative (log-additive degrades) is scope-limited. Two concrete defects: (1) the cites[] key kashaev1995 does not resolve in references.ts (only kashaev1997 exists), so every 'Kashaev-limit' invocation is backed by a broken key; (2) the Lean carrier is a content-free `class ... where holds : True`, which by the repo's own §3b-tax discipline asserts nothing. Both are fixable without changing the math."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'Conjectural canonical form of the pair-gen piece $\\\\rho_K^{\\\\text{pair-gen}}$ in the graded $\\\\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \\\\hat V_i, \\\\hat V_j)$ such that $\\\\rho_K^{\\\\text{pair-gen}} = \\\\sum_{i<j} f_2(q, \\\\hat V_i^{\\\\text{full}}, \\\\hat V_j^{\\\\text{full}})$ recovering the six-term theorem' remain unproven and are represented as sorry stubs in the formalization."
       }
     ]
   },

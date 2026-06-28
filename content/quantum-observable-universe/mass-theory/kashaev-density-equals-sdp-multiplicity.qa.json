@@ -978,7 +978,265 @@
           "value": 0.74
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.299Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.305Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.311Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)'.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.318Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)' as verified, but the sibling Lean proof contains sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.324Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)'.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.330Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.336Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.342Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations kashaev1997, murakami-murakami2001, iwahori1964, wenzl1988,  in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.348Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.355Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.361Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\\\rho_F = \\\\nu_{\\\\mathrm{SDP}}$)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "kashaev-density-equals-sdp-multiplicity.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.367Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean contains sorry, indicating incomplete verification.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c1b8f898a3d9",
+          "ts": "35333a370a98",
+          "lean": "f2da9d1c427b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.373Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:55.954Z"
+  "updated_at": "2026-06-28T10:58:41.378Z"
 }

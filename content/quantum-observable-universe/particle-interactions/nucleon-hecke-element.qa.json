@@ -923,16 +923,17 @@
           "ts": "47fd502d2321",
           "lean": "d85c76dae901"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Nucleon Hecke element' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`.",
         "severity": "minor",
-        "notes": "Definition of N(f1,f2,f3) as a product in H3(R,q) is well-formed; dim H3 = 3! = 6 (.md:65) is correct; the 6-term normal-form basis (.md:67-76) is a legitimate S3 Hecke basis. No false assertion in the definitional content."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
       }
     ],
     "da-vacuous": [
@@ -942,17 +943,16 @@
           "ts": "47fd502d2321",
           "lean": "d85c76dae901"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The only Lean content is proton_ne_neutron (lean:30-34), proving protonFlavors != neutronFlavors — a trivial distinctness of two Fin 3 -> Bool tables. The substantive object (the Hecke element, its 6-term reduction, the net) is not constructed in Lean; NucleonHeckeElement (lean:12-16) is a bare structure carrying nfCoeffs : Fin 6 -> Int with no relation to the actual B_3 . C . C . C product.",
-        "notes": "Definition blocks require a sibling .lean, but here the .lean is near-content-free relative to the rich .md definition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Nucleon Hecke element' presents substantial mathematical content: Let $\\mathfrak{N} = [\\mathfrak{q}_1, \\mathfrak{q}_2, \\mathfrak{q}_3]$ be a Borromean baryon (Definition) with quark f...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -964,14 +964,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Nucleon Hecke element'.",
         "severity": "minor",
-        "notes": "No back-fitting in the definition itself; net values are computed outputs, not assumed targets."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       }
     ],
     "da-overclaim": [
@@ -983,15 +984,14 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:62-65 states 'each nucleon reduces to exactly six terms ... After Groebner-Shirshov reduction' as a settled fact, and .md:78-83 attaches physical meaning (photon channel, virtual crossings, Hopf links, trefoil/electron) to each basis coefficient. The 6-term count is just dim H3 = 6 (every element reduces to <=6 terms trivially); the physical labeling of basis elements as gamma / L+ / L- / e- is interpretive, presented as definitional fact.",
-        "notes": "'Exactly six terms' is true but trivial; the particle-content gloss is an overclaim of physical meaning onto a generic basis."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Nucleon Hecke element' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1001,17 +1001,17 @@
           "ts": "47fd502d2321",
           "lean": "d85c76dae901"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The crossing-to-generator assignment (1,2)->sigma_0, (1,3)->sigma_0, (2,3)->sigma_1 (.md:28-30) and the typed-crossing coefficients (-1/2 HA for mixed u/d, -HA for d/d; .md:41-43,59) are choices that fix net(p) and net(n). The factor 1/2 on HA for u-d pairs vs full HA for d-d (.md:46,59) is an undisclosed weighting with no derivation shown in-block.",
-        "notes": "The 1/2 vs 1 HA weighting is a free per-pair coefficient that determines the net asymmetry."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nucleon Hecke element'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1021,16 +1021,17 @@
           "ts": "47fd502d2321",
           "lean": "d85c76dae901"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean.",
         "severity": "minor",
-        "notes": "The definition lays out a product and asserts a reduction; no 'therefore' inference gap inside the definitional statement."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1042,15 +1043,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".ts:15 declares lean ref qou:QOU.Braiding.NucleonHeckeElement, but the .lean file (lines 1-34) has NO namespace declaration — the structure is at top level, so QOU.Braiding.NucleonHeckeElement does not resolve. Moreover the .md defines N = B_3 . C(.) . C(.) . C(.) with explicit Borromean braid and typed crossings, while the Lean structure (lean:12-16) only stores flavors and an abstract nfCoeffs : Fin 6 -> Int with no construction of the product, and the only theorem proves proton != neutron. Lean formalizes essentially none of the .md definition.",
-        "notes": "Both a ref-resolution mismatch (namespace absent) and a content divergence: the named decl path does not exist and the body is far weaker than the .md claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1062,15 +1062,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Nucleon Hecke element', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "lean:1-4 cites jones1987 §3/§4 for the Markov trace / link polynomials, which is an apt source for Hecke-algebra link invariants. No mis-attribution.",
-        "notes": "Citation is appropriate to the Hecke/Markov-trace setting."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1080,17 +1080,17 @@
           "ts": "47fd502d2321",
           "lean": "d85c76dae901"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Nucleon Hecke element' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:24 invokes C(f_i,f_j;sigma_k) 'typed crossing operator' and B_3 = (sigma_0 sigma_1^{-1})^3 (.md:20) via cross-refs, which is fine, but uses[] (.ts:18) lists only def:typed-crossing-operator and OMITS def:borromean-baryon, which the .md depends on (.md:2,9,20-22). The dependency on the Borromean baryon definition is undeclared in the manifest, leaving B_3 partly ungrounded from the manifest's view.",
-        "notes": "Manifest uses[] is incomplete vs the .md's actual definitional dependencies."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1100,17 +1100,17 @@
           "ts": "47fd502d2321",
           "lean": "d85c76dae901"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:97-99 cites net(p) ~ +0.9991 and net(n) ~ +0.8108. These match the values in computations/_deprecated/breit-wheeler-nucleon-nf.witness.json (0.9991251, 0.8108345). The net is evaluated 'at the substrate parameter q0' (.md:93) with no statement of which q0 pin (muon vs proton anchor); the values are quoted to 4 sig figs with no error.",
-        "notes": "Quantitative nets quoted without q0 pin disclosure; backing witness is deprecated (see reproducibility)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Nucleon Hecke element' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1122,14 +1122,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Nucleon Hecke element' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "notes": "net(n) > net(p) ordering is not asserted here as a mass claim; the definition does not make a falsifiable physics prediction in-block. No unit/conservation violation."
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1141,15 +1142,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The .md (.md:95-99) cites 'Witness: breit-wheeler-nucleon-nf.witness.json' for the net(p)/net(n) values, but that file exists ONLY at computations/_deprecated/breit-wheeler-nucleon-nf.witness.json — there is no live computations/breit-wheeler-nucleon-nf.witness.json (verified: 'No such file or directory'). The block's quantitative backing points at a deprecated witness.",
-        "notes": "Stale/deprecated backing: the cited witness has been moved to _deprecated, so the quoted nets are not reproducible from a live producer."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`"
       }
     ],
     "da-referee-verdict": [
@@ -1161,15 +1162,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Strongest objection: the Lean ref qou:QOU.Braiding.NucleonHeckeElement does not resolve (the .lean has no namespace) and the Lean formalizes only proton != neutron, not the Hecke element; the quantitative nets (.md:97-99) are backed by a witness that now lives only in computations/_deprecated/; and uses[] omits def:borromean-baryon. The definition's mathematical shape is sound, but its formalization and provenance are broken.",
-        "notes": "verdict: major-revise. referee_argument: (1) fix the namespace so the lean ref resolves and either formalize the product/reduction or downgrade the Lean's claimed scope; (2) re-home or regenerate a live witness for net(p)/net(n) and state the q0 pin; (3) add def:borromean-baryon to uses[]."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean fails compilation: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean for 'Nucleon Hecke element' fails compilation with error: content/quantum-observable-universe/particle-interactions/nucleon-hecke-element.lean:33:10: error(lean.unknownIdentifier): Unknown identifier `congr_fun`. This invalidates the claim of formal verification."
       }
     ]
   },

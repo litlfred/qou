@@ -1112,7 +1112,265 @@
         "evidence": "predicted-spectra.ts:253-263: block 'elliptic-stability-locus' is placed in section 'Atomic shells: construction foundations'; its content (nuclear degeneracy locus in the (p,A)-plane, β-stability cubic, color-fiber isogeny) interprets prop:integer-stability, which lives in the 'Integer stability and the Diophantine valley' section (predicted-spectra.ts:201).",
         "notes": "Still in-chapter (Ch 13), so not misfiled to a different chapter, but a different EXISTING section ('Integer stability and the Diophantine valley', or 'Nuclear stability and decay') is a strictly better home for a nuclear-stability/elliptic-curve conjecture than 'Atomic shells: construction foundations'."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "elliptic-stability-locus.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface'.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface' as verified, but the sibling Lean proof contains sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface'.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'The nuclear degeneracy locus is an elliptic curve over the Bring's surface' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "elliptic-stability-locus.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean contains sorry, indicating incomplete verification.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8a0d256daa7a",
+          "ts": "d411208b0265",
+          "lean": "d48eeabcb12c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

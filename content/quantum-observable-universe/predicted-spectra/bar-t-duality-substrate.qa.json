@@ -1789,7 +1789,266 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide; proofs use unfold + named Mathlib lemmas and nlinarith. trivial not used to mask a goal."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean:84:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$'.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$'.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Substrate-level bar T-duality: $\\\\mathcal{E}_q \\\\leftrightarrow \\\\mathcal{E}_{1/q}$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "bar-t-duality-substrate.lean:1 — content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean:84:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5379afc03afb",
+          "ts": "9b1588d9f537",
+          "lean": "6497091e635b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean fails compilation: content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean:84:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate.lean:84:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T11:12:00.041Z"
 }

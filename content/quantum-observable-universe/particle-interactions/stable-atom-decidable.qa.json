@@ -1350,15 +1350,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "stable-atom-decidable.md:20-23 invokes 'Lenstra's theorem, ILP feasibility in fixed dimension is decidable in polynomial time'",
-        "notes": "The narrative claim 'stability is decidable' is plausible, but the decidability argument silently assumes (i) NF reduction terminates with the chosen GS order, (ii) the LP-dual matrix G(q) has integer/rational entries amenable to ILP (q is in a 'generic locus' / transcendental — entries are polynomials in q, not integers, so 'ILP over Z_{≥0}^N with G(q)x≥0' is not literally an integer program unless G(q) is rationalised). Not provably false, but the special-case where G(q) entries are irrational is unaddressed; downgraded to warn."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Stability is decidable for any (Z, N) at fixed q' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1368,17 +1368,16 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "stable-atom-decidable.lean:23-25 'theorem StableAtom.decidable ... : Nonempty (StableAtom R) := by exact ⟨{ knot := K, q := q, feasible := false }⟩'",
-        "notes": "The Lean 'decidable' theorem proves only Nonempty (StableAtom R) by constructing one StableAtom with feasible hardcoded to false. It is a self-supplying existence proof — it asserts nothing about an algorithm, a Decidable instance, or stability. Content-free relative to its name 'decidable'."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Stability is decidable for any (Z, N) at fixed q' presents substantial mathematical content: of type $(Z, N)$ and a substrate parameter $q$ in the generic locus, returns True if $K$ is stable at $q$ and False o...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1390,13 +1389,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The decidability argument composes independently-justified decidable steps; it does not assume the atom is stable. (The Lean separately fails on vacuity, not circularity.)"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Stability is decidable for any (Z, N) at fixed q'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1406,17 +1407,16 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "title 'Stability is decidable for any (Z,N) at fixed q' (stable-atom-decidable.ts:5) vs lean StableAtom.decidable proving only Nonempty (stable-atom-decidable.lean:23-25)",
-        "notes": "Block-level: the title/proposition claims a decision algorithm for stability; the formal artifact establishes only inhabitation of a structure. The 'decidable in polynomial time (Lenstra)' framing is asserted, not formalised — conditional/asserted-as-proved."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Stability is decidable for any (Z, N) at fixed q' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1426,15 +1426,17 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical calibration; pure decidability claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Stability is decidable for any (Z, N) at fixed q'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1446,15 +1448,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean.",
         "severity": "minor",
-        "evidence": "stable-atom-decidable.md:25 'Each step is decidable; their composition is decidable.'",
-        "notes": "Composition-of-decidable-steps is sound in principle, but step 4 reduces stability to ILP feasibility over a matrix G(q) whose entries are functions of a generic (possibly transcendental) q; the 'therefore an integer program' step skips the lemma that G(q) can be replaced by an integer/rational system preserving feasibility. Minor logical gap."
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1466,15 +1468,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "stable-atom-decidable.lean:23-25 proves Nonempty (StableAtom R) with feasible:=false; .md:2-5 claims an algorithm returning True/False for stability",
-        "notes": "proof-statement-integrity violation: the Lean statement (a structure is inhabited) is strictly weaker than and different from the .md claim (decidability / existence of a deciding algorithm). The Lean does not derive the narrative claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1484,17 +1485,17 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Stability is decidable for any (Z, N) at fixed q', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "stable-atom-decidable.lean:22 '-- Ref: [lenstra1983]'; .md:20-23 invokes Lenstra for 'polynomial time in fixed dimension'",
-        "notes": "Lenstra 1983 establishes ILP feasibility is poly-time when the DIMENSION (number of variables) is fixed. The .md uses N = number of primitive operators as the dimension and treats it as 'fixed' for nuclear cases, but N = O(k_max^2) grows with the nucleus — so the cited poly-time result does not apply to the family as A→∞, only to each fixed instance. Mild mis-attribution of scope."
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1504,17 +1505,17 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Stability is decidable for any (Z, N) at fixed q' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "stable-atom-decidable.md:4 'substrate parameter q in the generic locus'",
-        "notes": "'Generic locus' is invoked as the hypothesis ensuring finiteness/termination but is not pinned (which q are excluded?). Base ring of G(q) (R^{N×N}, line 17) is ℝ in narrative vs generic CommRing R in Lean — the ILP step implicitly needs an ordered/computable ring. Multiple readings of 'decidable' (Decidable instance vs informal algorithm) coexist."
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1524,15 +1525,17 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical observable matched."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Stability is decidable for any (Z, N) at fixed q' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1544,13 +1547,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "A decidability/complexity claim, not a physical prediction; no units or conservation to violate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Stability is decidable for any (Z, N) at fixed q' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1560,15 +1565,17 @@
           "ts": "a834a728b15a",
           "lean": "4552777843b1"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No witness JSON / compute backing this proposition; lean is not_checked but that is covered under vacuity/divergence."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -1580,15 +1587,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "stable-atom-decidable.lean:25 feasible:=false; .ts:6-8 validation 'not_checked'",
-        "notes": "verdict: major-revision. referee_argument: the strongest objection is that the Lean sibling is vacuous — it proves a structure is inhabited (with stability hardcoded false), not that stability is decidable; there is no Decidable instance and no formalised reduction to Lenstra's theorem. The narrative argument is reasonable but the formal claim diverges from and under-delivers on the stated proposition. Resolve by formalising a genuine Decidable (or decision procedure) and pinning the 'generic locus' / G(q) rationalisation."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean fails compilation: content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean for 'Stability is decidable for any (Z, N) at fixed q' fails compilation with error: content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at. This invalidates the claim of formal verification."
       }
     ]
   },

@@ -1156,7 +1156,252 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.4 — supporting weight-expansion lemmas (jones41_taylor etc.) are sorry-free; the carrier identification is class-axiomatised (FirstInteractingCasimirCorrection, §3b-cond) with the open mode-sum as the remaining instance — a core, non-routine gap, but the Lean class stub is honestly an open conjecture rather than a false closure."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-false-claim.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-circular.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-hidden-dof.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-non-sequitur.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-citation-misuse.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-empirical-fragility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-physical-implausibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4cb6e46c93b8",
+          "ts": "13213c9a85e1",
+          "lean": "2a00c9b32eb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T07:05:43.329Z"
 }

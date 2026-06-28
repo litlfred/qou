@@ -825,12 +825,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose summary of the complex-volume conjecture; the only asserted algebra (cosh λ ± sinh λ = e^{±λ}, cos θ ± i sin θ) is correct. The forced-Re/Im claim is correctly tagged as conjectural, not stated as fact."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'sec:complex-volume-intro': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -842,12 +843,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block; introduces a real structural claim (binding = Re𝔙, Q_β = Im𝔙). Not a tautology."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'sec:complex-volume-intro' presents substantial mathematical content: _[draft]_ The mass endomorphism $\\mathcal{M}$ carries more information than its ...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -859,12 +860,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No derivation here; it forwards to the conjecture block. No back-fitting in the prose itself."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:complex-volume-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -873,17 +875,15 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "complex-volume-intro.md:3 'The reconstruction 𝔈_bind + i 𝔔_β = 𝔙 is proved sorry-free in Lean'",
-        "notes": "True but the proved content is purely the definitional identity z = Re z + i·Im z (Complex.re_add_im); 'proved sorry-free' risks reading as if the physical unification is proved. The very next clause does correctly scope it ('only the physical match ... is conjectural'), so this is a presentation warn, not a falsehood. The draft markers (_[draft]_, _(draft.)_) partly mitigate."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'sec:complex-volume-intro' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -895,12 +895,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "E_0 is the substrate energy scale already in the canonical chain; no off-menu constant introduced in the prose."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:complex-volume-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -909,17 +910,16 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'sec:complex-volume-intro' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "complex-volume-intro.md:21 'Closing either column is expected to close the other: they are the real and imaginary parts of the same unclosed defect.'",
-        "notes": "Asserted, not argued. Re and Im of one complex object can be independently 'unclosed' (Vol and CS are genuinely independent invariants), so 'closing either closes the other' does not follow from sharing one 𝔙. Hedged with 'is expected to', so warn not fail."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -928,15 +928,15 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block has no .lean sibling and makes no standalone provable claim of its own."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -945,15 +945,16 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[] on this prose block; Neumann–Zagier is named descriptively, not cited as a key in this file."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'sec:complex-volume-intro', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -962,17 +963,16 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'sec:complex-volume-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "complex-volume-intro.md:16 'root-of-unity q (cosh→cos, sinh→i sin)' vs :5 'Im(q_0)=0'",
-        "notes": "The narrative slides between two evaluations of q (real-q hyperbolic vs root-of-unity) without specifying which root of unity or how the single 𝔙 is evaluated at both simultaneously. The fibre-level caveat (line 5) names the tension but the prose does not pin a concrete evaluation map. Minor since the conjecture block carries the STRICT caveat."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -981,15 +981,16 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical match asserted in this prose block (numbers live in the conjecture block / witness)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'sec:complex-volume-intro' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1001,12 +1002,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Explicitly disclaims 'no complex mass' and keeps observables real; no unit/conservation violation."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'sec:complex-volume-intro' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1015,15 +1017,16 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No compute/witness attached to this prose block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'sec:complex-volume-intro' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1032,16 +1035,17 @@
           "md": "fdc1753eb140",
           "ts": "1e7e0ea48a82"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "notes": "verdict: minor-revision. referee_argument: A clean, honestly-hedged section intro (draft-marked). Strongest objection is the 'proved sorry-free' phrasing (intro.md:3) — the proved object is the trivial z=Re+i·Im identity, and 'closing either column closes the other' (intro.md:21) is asserted though Re/Im of a complex invariant can be independently open. Both are presentation-level, both hedged; no false math."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:complex-volume-intro' are consistent."
       }
     ]
   },

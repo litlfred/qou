@@ -968,7 +968,7 @@
         "scope": "structural",
         "ruling": "rebutted",
         "referee_argument": "Brunnian.lean:83 opaque isUnlink, :94-95 class field = conclusion, :111-114 theorem = exact le.brunnian_borromean (self-assuming projection).",
-        "rebuttal": "rebutted — explicit AGENTS.md §3b-cond-sanctioned conditional-on-class conjecture; block kind conjecture, validation:stub, sorry carries -- Ref:[kawauchi1996], status banners honestly state the Mathlib R-move gap. Within policy.",
+        "rebuttal": "rebutted \u2014 explicit AGENTS.md \u00a73b-cond-sanctioned conditional-on-class conjecture; block kind conjecture, validation:stub, sorry carries -- Ref:[kawauchi1996], status banners honestly state the Mathlib R-move gap. Within policy.",
         "evidence": [
           {
             "text": "Brunnian.lean:83,94-95,111-114"
@@ -997,7 +997,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "borromean-topological-confinement.md:18-20 'quarks never observed in isolation is exactly the Brunnian property ... no separate dynamical assumption required'.",
-        "rebuttal": "partial→survived — Brunnian-ness is a kinematic analogy; real confinement is dynamical (energetic). Contained by the remark/interprets kind + the explicit deferral of the energetic cost to the mass-formula/Bloch conjectures (lines 22-28), but 'exactly ... no dynamical assumption' overstates — recommend softening 'exactly'.",
+        "rebuttal": "partial\u2192survived \u2014 Brunnian-ness is a kinematic analogy; real confinement is dynamical (energetic). Contained by the remark/interprets kind + the explicit deferral of the energetic cost to the mass-formula/Bloch conjectures (lines 22-28), but 'exactly ... no dynamical assumption' overstates \u2014 recommend softening 'exactly'.",
         "evidence": [
           {
             "text": "borromean-topological-confinement.md:18-20"
@@ -1025,8 +1025,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "Linking-number-zero / Milnor μ-bar_123≠0 characterization not stated.",
-        "rebuttal": "rebutted — the deletion arithmetic ((σ0σ1^-1)^3 -> σ0^-3 -> negative trefoil) and the L6a4 closure are correct; kawauchi1996 is a valid Brunnian reference; no counterexample.",
+        "referee_argument": "Linking-number-zero / Milnor \u03bc-bar_123\u22600 characterization not stated.",
+        "rebuttal": "rebutted \u2014 the deletion arithmetic ((\u03c30\u03c31^-1)^3 -> \u03c30^-3 -> negative trefoil) and the L6a4 closure are correct; kawauchi1996 is a valid Brunnian reference; no counterexample.",
         "evidence": [
           {
             "text": "Brunnian.lean:104-105"
@@ -1052,7 +1052,7 @@
         },
         "result": "pass",
         "verdict": "clean",
-        "referee_argument": "The borromean_brunnian 'theorem' is a one-line projection off an opaque isUnlink and a conjectural class whose single field is the conclusion — so the Lean proves nothing; and the physics remark asserts confinement 'with no separate dynamical assumption required', promoting a topological metaphor toward derived physics.",
+        "referee_argument": "The borromean_brunnian 'theorem' is a one-line projection off an opaque isUnlink and a conjectural class whose single field is the conclusion \u2014 so the Lean proves nothing; and the physics remark asserts confinement 'with no separate dynamical assumption required', promoting a topological metaphor toward derived physics.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1067,165 +1067,180 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Conjecture states a standard topological property (Brunnian); no back-fitting of a numerical target. The downstream-buy section is clearly framed as conditional ('would buy')."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink'.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free parameter; purely topological statement about a fixed link B_3."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink'.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The .md correctly notes naive BraidWord strand-deletion does NOT yield the unlink (gives (sigma0^-1)^3 = negative trefoil) and that R-move equivalence is needed; the logic is honest about the gap rather than asserting a false 'therefore'."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "The .md illustrative snippet (brunnian-property-of-borromean.md:31-34) shows `theorem borromean_brunnian : ∀ i, isUnlink (... deleteComponent i) := by sorry` with NO hypothesis, but the actual library theorem (Brunnian.lean) is `theorem borromean_brunnian [le : LinkEquivalence] : ∀ i : Fin 3, ...` — conditional on the §3b-cond class, and discharged (no `sorry`) via `le.brunnian_borromean`. The `sorry` actually lives in the class instance, not the theorem.",
-        "notes": "The narrative snippet misrepresents the formal structure (unconditional sorry'd theorem vs conditional sorry-free theorem). The sibling stub `BrunnianPropertyOfBorromean` has an empty-Prop-style field `holds : Prop` (content-free), but resolution is to the real decl per the ref, so not a vacuity violation in itself. Conjecture kind is appropriate."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling contains 'sorry' placeholders, which might diverge from the complete narrative claims.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "`kawauchi1996` resolves (references.ts:2466); Survey of Knot Theory is a correct source for the Brunnian-link defining property and §1.5 context."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The citations kawauchi1996 in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Terms (Borromean link, sub-link by component removal, U_2 unlink) are standard and unambiguously defined; `isUnlink` is explicitly the abstracted link-equivalence predicate."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
-          "ts": "37665212050c",
-          "lean": "6a745f67f8ec"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical claim; purely topological conjecture."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The Brunnian property is a true mathematical fact about the Borromean rings (the conjecture status is only about its Lean formalisation, not about the topology); the color-confinement interpretation is flagged as interpretive."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2a7bcfdf5346",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Brunnian property of $\\\\mathcal{B}_3$: every two-component sub-link is the unlink' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "ac57e883bb6c",
+          "md": "2a7bcfdf5346",
           "ts": "37665212050c",
           "lean": "6a745f67f8ec"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No compute/witness backing; the discharge gap is a formalisation gap (Mathlib R-move primitives), honestly documented."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling contains sorry placeholders, indicating incomplete reproducibility.",
+        "severity": "minor",
+        "evidence": "brunnian-property-of-borromean.lean:1"
       }
     ]
   },

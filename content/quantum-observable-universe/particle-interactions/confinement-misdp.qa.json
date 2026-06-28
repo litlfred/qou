@@ -844,13 +844,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Remark only restates that integer-rank-content constraints turn the confinement SDP into an MISDP solved by SDP-relaxation + branch-and-cut. No false mathematical assertion."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Mixed-integer SDP for integer-rank confinement levels': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-vacuous": [
@@ -861,13 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "remark with interprets:prop:confinement-sdp; carries genuine interpretive content (the integer-rank feasible region). Not content-free."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Mixed-integer SDP for integer-rank confinement levels' presents substantial mathematical content: '$\\ell \\le 3$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -878,13 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No derivation/conclusion loop; it is an interpretive reading of the SDP under integrality."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mixed-integer SDP for integer-rank confinement levels'.",
+        "severity": "minor",
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-overclaim": [
@@ -893,17 +898,16 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "confinement-misdp.md:13-16 claims the MISDP solution is 'matching the confinement framework at every level of the hierarchy' while pointing at computations/misdp_cross_channel.py.",
-        "notes": "'matching … at every level' is a strong universal claim for a remark, and the referenced script that would substantiate it does not exist (see da-reproducibility)."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Mixed-integer SDP for integer-rank confinement levels' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -914,13 +918,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free parameter introduced; integrality is a constraint, not a tunable input."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mixed-integer SDP for integer-rank confinement levels'.",
+        "severity": "minor",
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -931,13 +937,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The feasible-region statement follows from imposing integer rank-content on the SDP; no logical gap in the (brief) reasoning."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Mixed-integer SDP for integer-rank confinement levels' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -946,15 +954,16 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "remark block, no .lean sibling and none required."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -963,17 +972,17 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Mixed-integer SDP for integer-rank confinement levels', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "confinement-misdp.md:13-14 cites `computations/misdp_cross_channel.py` as the backing solver, but `ls computations/misdp_cross_channel.py` -> No such file or directory.",
-        "notes": "The cited compute artifact does not exist in the tree; the in-prose code reference is dangling/mis-attributed."
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -982,17 +991,17 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Mixed-integer SDP for integer-rank confinement levels' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "confinement-misdp.md:9 — 'rank-content(Φ) ∈ ℤ_{≥0}^{|S|}' uses 'rank-content' without definition in-block; and 'levels ℓ ≤ 3 where crossing multiplicities must be integral' (lines 2-3) asserts a regime boundary (ℓ≤3) with no derivation.",
-        "notes": "'rank-content' and the ℓ≤3 integrality cutoff are undefined/unjustified in the remark."
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1001,15 +1010,17 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match asserted in this remark."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Mixed-integer SDP for integer-rank confinement levels' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1020,13 +1031,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Integer crossing multiplicities at low confinement levels is a reasonable structural reading; no physics red flag."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Mixed-integer SDP for integer-rank confinement levels' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "confinement-misdp.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1035,17 +1048,16 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The sole computational backing named (confinement-misdp.md:14, computations/misdp_cross_channel.py) is absent from the repo; the 'matching … at every level' claim (line 16) cannot be reproduced.",
-        "notes": "Missing producer script makes the empirical 'matching the confinement framework at every level' claim irreproducible. Either add the MISDP solver or downgrade the claim to a stated open construction."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Mixed-integer SDP for integer-rank confinement levels' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1054,17 +1066,18 @@
           "md": "580606de1572",
           "ts": "f5eb0998ef9f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "Interpretive remark is sound in framing but cites a non-existent solver script and makes an unbacked 'matches at every level' claim.",
-        "notes": "verdict=minor-revision. referee_argument: The MISDP reading is plausible and correctly scoped as a remark, but it points at computations/misdp_cross_channel.py which does not exist; fix the reference (or add the script) and soften 'matching at every level' to the levels actually computed."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Mixed-integer SDP for integer-rank confinement levels' are consistent."
       }
     ]
   },

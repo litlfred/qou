@@ -1572,7 +1572,127 @@
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false claims identified in 'Substrate-pure derivation of the $u$--$d$ flavor split': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Substrate-pure derivation of the $u$--$d$ flavor split'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The argument flow in 'Substrate-pure derivation of the $u$--$d$ flavor split' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Substrate-pure derivation of the $u$--$d$ flavor split' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Substrate-pure derivation of the $u$--$d$ flavor split' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The derivation steps and formal definitions in 'Substrate-pure derivation of the $u$--$d$ flavor split' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate.ts:1"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:29:19Z"
+  "updated_at": "2026-06-28T11:04:36.980Z"
 }

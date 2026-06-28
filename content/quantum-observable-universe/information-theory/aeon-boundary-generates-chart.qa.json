@@ -873,7 +873,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean proof in content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean contains a sorry, representing a divergence from the fully claimed narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a8b3cf137d00",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean contains 'sorry' placeholders, rendering the proof of 'Aeon recycling: $\\\\Phi_1^q \\\\circ \\\\mathrm{CMB}$ lands in $\\\\mathrm{Bun}^{\\\\circ}$' incomplete."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:27.712Z"
+  "updated_at": "2026-06-28T10:51:03.753Z"
 }

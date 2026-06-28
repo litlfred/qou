@@ -835,7 +835,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "No false claims identified in the prose of 'Finite-field obstruction for $\\\\exp_q$'; the mathematical reasoning concerning 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "The block 'Finite-field obstruction for $\\\\exp_q$' presents substantial mathematical content: 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Finite-field obstruction for $\\\\exp_q$' (which asserts 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "The remarks and narrative scope in 'Finite-field obstruction for $\\\\exp_q$' concerning 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Finite-field obstruction for $\\\\exp_q$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "The prose arguments in 'Finite-field obstruction for $\\\\exp_q$' proceed logically through the stated steps: 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Finite-field obstruction for $\\\\exp_q$' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "No citations are present in 'Finite-field obstruction for $\\\\exp_q$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "Key terms and symbols in 'Finite-field obstruction for $\\\\exp_q$' (e.g. from 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "The algebraic and logical relations in 'Finite-field obstruction for $\\\\exp_q$' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "The physical concepts described in 'Finite-field obstruction for $\\\\exp_q$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-exp-finite-field-obstruction.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Finite-field obstruction for $\\\\exp_q$' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ce546279e0db",
+          "ts": "71476e72d94d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Finite-field obstruction for $\\\\exp_q$' (concerning 'The categorical $q$-exponential ([$q$-exponential](#def:q-exponential))') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:35.595Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

@@ -8,5 +8,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:quantum-observable-universe"],
+  defines: ["categorical-action"],
   examples: ["ex:categorical-action-notation-su2", "rem:physicist-translation", "ex:photon-wavefront"],
 });

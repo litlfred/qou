@@ -1290,7 +1290,7 @@
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
         "evidence": "Statement + coefficient-match proof are followed by a 'Categorical interpretation' section (lines 38-57) with interpretive prose ('strongly suggests that the m=8 shell of the Habiro tower is counting partitions', 'a_8 is the dimension-generating function of partitions'). No companion interprets: remark.",
-        "notes": "The interpretation is borderline — partly mathematical context (where p(n) appears in representation theory) and partly speculative significance. Flagged warn rather than fail since the content is mathematical-structural rather than physical-meaning prose."
+        "notes": "The interpretation is borderline \u2014 partly mathematical context (where p(n) appears in representation theory) and partly speculative significance. Flagged warn rather than fail since the content is mathematical-structural rather than physical-meaning prose."
       },
       {
         "field_hash": {
@@ -1306,7 +1306,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the polynomial identity + proof; the 'Categorical interpretation' section is clearly delineated interpretive commentary after the proof, but the rubric targets interpretation injected INTO the statement of a provable block — the proposition statement itself is bare. Pass."
+        "notes": "Statement is the polynomial identity + proof; the 'Categorical interpretation' section is clearly delineated interpretive commentary after the proof, but the rubric targets interpretation injected INTO the statement of a provable block \u2014 the proposition statement itself is bare. Pass."
       }
     ],
     "fit-section-chapter": [
@@ -1378,7 +1378,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is a polynomial identity in ℤ[X] — purely algebraic, generic-ring; no archimedean tokens."
+        "notes": "Statement is a polynomial identity in \u2124[X] \u2014 purely algebraic, generic-ring; no archimedean tokens."
       }
     ],
     "wall-side-proof": [
@@ -1414,7 +1414,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is coefficient-matching closed by ring over ℤ[X]; no archimedean machinery."
+        "notes": "Proof is coefficient-matching closed by ring over \u2124[X]; no archimedean machinery."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1464,7 +1464,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "md a_8(X)=Σ_{n=1..5} p(n) X^{5-n} matches Lean a_8_eq_partition_sum: a_8_poly = Σ n ∈ Finset.Icc 1 5, partitionCount n • X^(5-n). partitionCount value table (1,2,3,5,7) = p(1..5). Quantifier-free identity, conclusion matches."
+        "notes": "md a_8(X)=\u03a3_{n=1..5} p(n) X^{5-n} matches Lean a_8_eq_partition_sum: a_8_poly = \u03a3 n \u2208 Finset.Icc 1 5, partitionCount n \u2022 X^(5-n). partitionCount value table (1,2,3,5,7) = p(1..5). Quantifier-free identity, conclusion matches."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1544,7 +1544,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.95 — plan explicit: expand Icc, evaluate partitionCount, match by ring (docstring + comments)."
+        "notes": "score=0.95 \u2014 plan explicit: expand Icc, evaluate partitionCount, match by ring (docstring + comments)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1624,7 +1624,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.9 — the main identity a_8_eq_partition_sum is sorry-free; the only sorry-like residue is the Mathlib bridge placeholder (def ...: True := trivial), which is documented as not on the critical path and routine to close."
+        "notes": "score=0.9 \u2014 the main identity a_8_eq_partition_sum is sorry-free; the only sorry-like residue is the Mathlib bridge placeholder (def ...: True := trivial), which is documented as not on the critical path and routine to close."
       }
     ],
     "proof-rater-novelty": [
@@ -1704,7 +1704,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.4 — it records a numerical coincidence (a_8 coeffs match p(1..5)) using standard partition values; empirical Habiro-shell observation, low deductive novelty (md self-describes as such)."
+        "notes": "score=0.4 \u2014 it records a numerical coincidence (a_8 coeffs match p(1..5)) using standard partition values; empirical Habiro-shell observation, low deductive novelty (md self-describes as such)."
       }
     ],
     "proof-statement-integrity": [
@@ -1850,7 +1850,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -1868,7 +1868,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
         "evidence": "a8-partition-function-identity.lean:179-180 'def partitionCount_eq_fintype_card_partition_small : True := trivial  -- placeholder'",
-        "notes": "The proposition's resolved decl (a_8_eq_partition_sum) is a genuine non-trivial identity — PASS on the proposition itself. But the same file carries a `def ... : True := trivial` Mathlib-bridge stub. Per CLAUDE.md §1a this is the def-disguised-True anti-pattern (a sorry-workaround: it states a real semantic claim, partitionCount n = Fintype.card (Nat.Partition n), but discharges `True` instead). It is documentation-honest (comment + Refs) and off the critical path, so warn rather than fail; the honest disposition is a sorry'd theorem with the real statement, not `: True := trivial`."
+        "notes": "The proposition's resolved decl (a_8_eq_partition_sum) is a genuine non-trivial identity \u2014 PASS on the proposition itself. But the same file carries a `def ... : True := trivial` Mathlib-bridge stub. Per CLAUDE.md \u00a71a this is the def-disguised-True anti-pattern (a sorry-workaround: it states a real semantic claim, partitionCount n = Fintype.card (Nat.Partition n), but discharges `True` instead). It is documentation-honest (comment + Refs) and off the critical path, so warn rather than fail; the honest disposition is a sorry'd theorem with the real statement, not `: True := trivial`."
       }
     ],
     "proof-no-false-premise": [
@@ -2041,7 +2041,7 @@
           "lean": "1faef5e3fd91"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (§1a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
+        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
         "reviewed_at": "2026-06-25T12:27:24.000Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
@@ -2066,7 +2066,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "decide is used only to compute the concrete Finset (Icc 1 5 = {1,2,3,4,5}), a justified finite enumeration; the substantive step is ring, not decide. The bridge stub uses trivial on True but that is the §no-trivial-true concern already flagged, not decide-masking of a structural goal."
+        "notes": "decide is used only to compute the concrete Finset (Icc 1 5 = {1,2,3,4,5}), a justified finite enumeration; the substantive step is ring, not decide. The bridge stub uses trivial on True but that is the \u00a7no-trivial-true concern already flagged, not decide-masking of a structural goal."
       }
     ],
     "da-false-claim": [
@@ -2079,12 +2079,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "X⁴+2X³+3X²+5X+7 = Σ_{n=1..5} p(n)X^{5-n} with p=(1,2,3,5,7) is a true polynomial identity in ℤ[X]; Lean a_8_eq_partition_sum proves it (push_cast; ring). p(1..5)=(1,2,3,5,7) are correct Hardy–Ramanujan values."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'Proof' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-vacuous": [
@@ -2094,17 +2095,15 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "a8-partition-function-identity.lean:179-180",
-        "notes": "The main identity is genuine. But the bridge decl partitionCount_eq_fintype_card_partition_small is `def ... : True := trivial` — a vacuous placeholder. The .md (line 74-80) and Lean docstring claim a 'semantic bridge' to Fintype.card (Nat.Partition n); the named bridge proves nothing. Honest as a placeholder (comment says so) but the prose oversells it as 'recorded'."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "severity": "major"
       }
     ],
     "da-circular": [
@@ -2117,12 +2116,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "partitionCount is an independent value table (1,1,2,3,5,7); identity is checked against a_8, not back-fitted. The a_8 coefficients come from the empirical Habiro probe, p(n) from OEIS — independent sources, so the match is not self-referential."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['prop:cyclotomic-strand-doubling'] for 'prop:a-8-partition-function-identity' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-overclaim": [
@@ -2132,17 +2132,15 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "a8-partition-function-identity.md:52-56",
-        "notes": "Categorical-interpretation section escalates a 5-coefficient numerical coincidence to 'a_8(X) is the dimension-generating function of partitions fitting within the m=8 shell' ('strongly suggests… counting partitions'). This is a conjectural reading stated as near-fact inside a proposition whose proved content is only the arithmetic identity. The .md §Mathematical Novelty (line 93) does correctly downgrade it to 'numerical coincidence', so partly self-mitigated."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'prop:a-8-partition-function-identity' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -2152,17 +2150,16 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "a8-partition-function-identity.md:1-9, 59-68",
-        "notes": "a_8 is the 'top-shared (m=8) integer Habiro coefficient' in the 'Habiro-witness convention (include_inter=True)'. The match is convention-dependent: a different convention could yield a different a_8, so 'which convention' is an undisclosed degree of freedom in whether the (1,2,3,5,7) pattern even appears. The block flags convention-stability as a claim but does not bound the convention space."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -2175,12 +2172,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The coefficient-by-coefficient table and ring proof are airtight for the stated identity. The categorical leap is flagged separately under da-overclaim, not here (it is presented as 'suggests', not 'therefore')."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'Proof' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2190,15 +2188,15 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean a_8_eq_partition_sum (the ref target) proves exactly the .md identity a_8(X)=Σ p(n)X^{5-n}. The vacuous bridge def is a separate, honestly-labelled placeholder and is not the lean.ref target; the proposition's claim is fully matched."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -2211,12 +2209,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "cites[habiro2000]; Habiro ring is the genuine context for the coefficient. Lean -- Ref: hardy-ramanujan1918 / andrews1976 / OEIS A000041 correctly back the p(n) values. No misattribution."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses ['prop:cyclotomic-strand-doubling'] cited in 'prop:a-8-partition-function-identity' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -2226,17 +2225,16 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'prop:a-8-partition-function-identity' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "a8-partition-function-identity.md:2-5",
-        "notes": "'a_8' defined only by reference to an audit doc and the 'canonical Habiro-witness convention'; the polynomial is stated but its provenance/derivation is off-block. Reader cannot reconstruct a_8 from this block alone — the key object is convention-dependent and externally defined."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -2246,17 +2244,16 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "a8-partition-function-identity.md:60-68, 86",
-        "notes": "The (1,2,3,5,7)↔p(1..5) match is a 5-point integer coincidence drawn from one Habiro-witness convention; empirical source is a probe (qbeta_habiro_recursion_probe.py) and an audit doc, both on an unmerged feature branch (claude/qbeta-habiro-followup-2026-06-01 per the links). Convention-robustness is asserted ('expected to survive Phase 5q switch') but not demonstrated for the polynomial — fragile to convention choice and not yet on main."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'prop:a-8-partition-function-identity' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -2266,15 +2263,16 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No direct physical-observable claim; statement is a polynomial identity with a combinatorial gloss."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'prop:a-8-partition-function-identity' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -2284,17 +2282,16 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress.",
         "severity": "minor",
-        "evidence": "a8-partition-function-identity.md:73-80, 86",
-        "notes": "The arithmetic identity is trivially reproducible (ring). But the upstream a_8 value rests on qbeta_habiro_recursion_probe.py and an audit doc referenced via blob URLs on a feature branch, not main; no witness JSON pin for a_8 itself. The provenance compute is not verified-reproducible from this block."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress"
       }
     ],
     "da-referee-verdict": [
@@ -2304,17 +2301,17 @@
           "ts": "bd37ef54d0ea",
           "lean": "1faef5e3fd91"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "a8-partition-function-identity.md:52-56, 73-80",
-        "notes": "verdict: minor-revision. The proved arithmetic identity is correct and Lean-verified. Strongest objection (referee_argument): the proposition wraps a genuine 2-line identity in a convention-dependent, externally-defined a_8 plus a conjectural 'dimension-generating function' reading that a referee would read as numerology (5 integer coincidences); and the advertised Mathlib bridge is a `def : True := trivial` placeholder, so the 'semantic link' is not actually established. Recommend re-scoping the categorical claim to an observation and either proving or removing the bridge stub."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean:108:2: error: `simp` made no progress"
       }
     ]
   },

@@ -789,239 +789,246 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'The proton as a Borromean hadron': mathematical reasoning is consistent.",
         "severity": "minor",
-        "evidence": "hadron-proton-example.md:60-62 'The Borromean link has braid representation beta_Bor = (sigma_1^{-1} sigma_2)^3'",
-        "notes": "(sigma_1^{-1} sigma_2)^3 in B_3 is the standard braid whose closure is the Borromean rings — this is correct. But line 34-35 then states pairwise linking numbers are all zero 'yet ... non-vanishing Milnor triple linking number mu-bar(123)=+-1', which is the correct Borromean signature. No false statement here; flagged only because line 14-19 writes p = [u,u,d]_p (+) L_Bor as an equation mixing a particle with a link via direct sum, which is notational shorthand, not a literal identity. Minor."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Concrete worked example with real topological content (Borromean removal property, Milnor invariant, mass decomposition). Not vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'The proton as a Borromean hadron' presents substantial mathematical content: The proton is a hadron \u2014 a stable knot composite \u2014 whose three constituents are linked in a Borromean configuration.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "critical",
-        "evidence": "hadron-proton-example.md:66-70 'the full computation yields m_p(q) ≈ :val[m_p_MeV]{witness=computations/codata-masses.witness.json} MeV, matching the experimental proton mass to high precision'; witness data.m_p_MeV='938.27208816' is sourced from codata_masses.py:42 'from codata_constants import ... M_P_MEV' (CODATA 2022 experimental value)",
-        "notes": "The :val pin resolves to a re-export of the CODATA experimental proton mass (codata_masses.py docstring:13-30 + banner:1-11 explicitly label it a 'CLASS-A acknowledged-anchor / hardcoded CODATA-precision literal'), NOT to any Borromean-braid computation. So 'the full computation yields [938.272] matching experimental to high precision' is circular: the displayed predicted value IS the experimental input. The block presents a measured constant as the output of a derivation it does not perform."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The proton as a Borromean hadron'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-proton-example.md:65-70 'At the substrate parameter q≈1.110, the full computation yields m_p(q) ≈ 938.272 MeV, matching the experimental proton mass to high precision'",
-        "notes": "Overclaim on two counts: (1) 'the full computation yields' asserts a derived prediction where the witness only re-exports CODATA (see da-circular); (2) it contradicts the AGENTS.md guardrail that m_e·Vol(B_3)·rho/hbar_q^2 (the Borromean volume-density mass invoked here via crossing/linking energy) is NOT the canonical absolute nucleon mass — the canonical route is the muon-anchored Hecke energy m_p=2(m_mu·F_Bor - 6 m_e). Presenting the Borromean-linking energy as yielding m_p to high precision is the exact trap that guardrail closes."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'The proton as a Borromean hadron' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The proton as a Borromean hadron'.",
         "severity": "minor",
-        "evidence": "hadron-proton-example.md:51-56 E_bind 'binding energy from the Borromean linking' dominates; m(u),m(d) 'a few MeV each in QCD terms'",
-        "notes": "The decomposition m_p = 2m(u)+m(d)+E_bind has E_bind as an unconstrained residual that is whatever makes the total equal the (experimental) m_p — since the displayed total is CODATA itself, E_bind is a back-solved free quantity, not a quantity independently computed from the linking braid in this block. Effectively a hidden degree of freedom absorbing the gap. Minor relative to the da-circular core finding."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'The proton as a Borromean hadron' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "hadron-proton-example.md:58-63 'The binding energy is computed from the crossing energy of beta_Bor=(sigma_1^{-1}sigma_2)^3 ... contributing mutual crossings that make E_cross(p) < 0' then :66 'the full computation yields' m_p",
-        "notes": "The step from 'crossing energy of beta_Bor is negative' to 'the full computation yields m_p≈938.272' is a non-sequitur: no lemma/number bridges the negative crossing energy to the specific 938.272 MeV value (which, again, is just CODATA). The arithmetic that would close 2m(u)+m(d)+E_bind to 938.272 is not shown."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "example block, no sibling .lean (interprets def:hadron, uses ex:crossing-energy-trefoil)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No external cites[]/-- Ref: in this block; the witness is correctly cited as the value source (the problem is what the witness contains, covered under da-circular/da-reproducibility, not misattribution of a reference)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'The proton as a Borromean hadron', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'The proton as a Borromean hadron' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "hadron-proton-example.md:40-49 'Mass from the linking matrix' uses E_bind, then :58 E_cross(p); two distinct binding/crossing energy symbols used without a stated relation",
-        "notes": "E_bind (line 51) and E_cross(p) (line 63) are used as if interchangeable in the mass decomposition but never identified; and the up/down quark mass m(u),m(d) 'in QCD terms' mixes the categorical-knot register with QCD current-quark masses without a conversion. Reader-level ambiguity about which energy enters m_p."
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-proton-example.md:66-70 m_p(q)≈938.272 'matching the experimental proton mass to high precision'; witness computedAt 2026-06-02, scriptHash 1b1548c0d133, value = CODATA re-export at q-independent constant",
-        "notes": "The 'high precision match' is empirically empty: the displayed value does not depend on q (it is a hardcoded CODATA constant per codata_masses.py), so there is no genuine prediction to assess for fit-noise — the match is exact by construction (the prediction equals the measurement). This is the strongest form of empirical fragility: 100% 'agreement' that carries zero predictive content. Also note the q-pin convention (proton vs muon anchor, AGENTS.md) means even a real Borromean compute here would need its q-anchor stated."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'The proton as a Borromean hadron' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The physics narrative (proton mass dominated by binding not constituent masses; proton stable as lightest baryon; Borromean confinement) is broadly consistent with the standard picture (most of m_p is QCD binding/gluonic energy). No domain-expert-rejected claim; the issue is the derivation status, not the physics."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'The proton as a Borromean hadron' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hadron-proton-example.ts:9-14 computation:{script:'computations/codata_masses.py', witness:'computations/codata-masses.witness.json', status:'verified'}; codata_masses.py only re-exports CODATA constants and asserts they lie in CODATA windows (lines 54-56), it does not compute m_p from the Borromean braid",
-        "notes": "The attached compute is mislabelled relative to the prose: status:'verified' + 'the full computation yields' implies a Borromean-mass computation, but the witness merely re-exports/range-checks CODATA constants (assertions are 'm_p_in_codata_2022_window' tautologies). So the example's central numeric claim is not reproducibly backed by the cited script — the script proves the value equals CODATA, which is the opposite of an independent prediction. Recommend either attaching the canonical_mass.py muon-anchored compute or re-scoping the prose to 'compared against the experimental value' rather than 'the full computation yields'."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'The proton as a Borromean hadron' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-proton-example.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "81dfeef6be24",
+          "md": "01698765f821",
           "ts": "26e900730e4a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "critical",
-        "notes": "verdict: reject-pending-major-revision. referee_argument: the example's topology (Borromean removal property, Milnor triple linking, braid word (sigma_1^{-1}sigma_2)^3) is correct and pedagogically good, but its central quantitative claim is circular and overclaimed: 'the full computation yields m_p≈938.272 MeV matching experiment to high precision' (md:66-70) pins to computations/codata-masses.witness.json, whose value 938.27208816 is a re-export of the CODATA *experimental* proton mass (codata_masses.py:42, banner:1-11 'CLASS-A acknowledged-anchor / hardcoded CODATA literal'), not an output of any Borromean-braid compute. The prediction equals the measurement by construction (zero predictive content), E_bind is a back-solved residual, and the framing contradicts the AGENTS.md guardrail that the Borromean volume-density form is NOT the canonical absolute nucleon mass (use muon-anchored canonical_mass.py). Required fix: either attach the canonical muon-anchored compute and report the genuine residual, or re-word to 'the experimental proton mass is m_p≈938.272 MeV' and drop 'the full computation yields ... matching to high precision'."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'The proton as a Borromean hadron' are consistent."
       }
     ]
   },

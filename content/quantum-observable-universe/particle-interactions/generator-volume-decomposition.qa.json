@@ -805,7 +805,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -826,7 +826,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1289,7 +1289,7 @@
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
-        "evidence": "Extensive physical-interpretation prose (beta decay as 1-jet, double beta decay as 2-jet, 0νββ neutrino propagator, jet bundle, Reeb decomposition connection) follows the proposition in the same block; no `interprets:` remark.",
+        "evidence": "Extensive physical-interpretation prose (beta decay as 1-jet, double beta decay as 2-jet, 0\u03bd\u03b2\u03b2 neutrino propagator, jet bundle, Reeb decomposition connection) follows the proposition in the same block; no `interprets:` remark.",
         "notes": "Bulk is mathematical structure (jet expansion, transfer matrix), but the decay-physics/jet-bundle framing is interpretive. WARN."
       },
       {
@@ -1308,7 +1308,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "generator-volume-decomposition.md:108 '## Beta decay as the 1-jet variation', :126 '## Double beta decay as the 2-jet variation', :274 '## Connection to the Reeb decomposition'",
-        "notes": "Extensive physical interpretation (single/double beta decay, 0νββ neutrino propagator, Reeb-flow correspondence) follows the proposition statement in the same block with no companion interprets: remark. Much is mathematical (jet expansion), but the decay-physics and Reeb-connection sections are interpretive and better placed in a linked remark."
+        "notes": "Extensive physical interpretation (single/double beta decay, 0\u03bd\u03b2\u03b2 neutrino propagator, Reeb-flow correspondence) follows the proposition statement in the same block with no companion interprets: remark. Much is mathematical (jet expansion), but the decay-physics and Reeb-connection sections are interpretive and better placed in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1379,7 +1379,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Carries the §7c archimedean-specialisation banner at md:1; the transfer-matrix/jet content is combinatorial with a declared ℝ realisation."
+        "notes": "Carries the \u00a77c archimedean-specialisation banner at md:1; the transfer-matrix/jet content is combinatorial with a declared \u211d realisation."
       }
     ],
     "wall-side-proof": [
@@ -1415,7 +1415,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is the Hecke relation + far commutativity (span closure, step count) — algebraic, matches the statement."
+        "notes": "Proof is the Hecke relation + far commutativity (span closure, step count) \u2014 algebraic, matches the statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1466,8 +1466,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : ℝ) (A : ℕ) (nuclear_energy : ℝ) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
-        "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum — it does not encode 'the nuclear energy decomposes as Σ generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 — a probable build error.)"
+        "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : \u211d) (A : \u2115) (nuclear_energy : \u211d) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
+        "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum \u2014 it does not encode 'the nuclear energy decomposes as \u03a3 generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 \u2014 a probable build error.)"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1518,7 +1518,7 @@
           "lean": "14e75b4042a7"
         },
         "result": "pass",
-        "notes": "Clear: Hecke σ²=(q-q⁻¹)σ+1 closes {1,σ}; transfer recurrence; far-commutativity ⇒ additivity; β-locality from tail cancellation — all reflected in Lean lemmas.",
+        "notes": "Clear: Hecke \u03c3\u00b2=(q-q\u207b\u00b9)\u03c3+1 closes {1,\u03c3}; transfer recurrence; far-commutativity \u21d2 additivity; \u03b2-locality from tail cancellation \u2014 all reflected in Lean lemmas.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1582,7 +1582,7 @@
           "lean": "14e75b4042a7"
         },
         "result": "pass",
-        "notes": "Binding energy = Σ generator volumes via 2×2 transfer-matrix recurrence, O(A²); jet expansion = β/2β decay orders. Well-posed, substantive.",
+        "notes": "Binding energy = \u03a3 generator volumes via 2\u00d72 transfer-matrix recurrence, O(A\u00b2); jet expansion = \u03b2/2\u03b2 decay orders. Well-posed, substantive.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1646,7 +1646,7 @@
           "lean": "14e75b4042a7"
         },
         "result": "pass",
-        "notes": "Jet-bundle reading (1-jet=β, 2-jet=2β nuclear matrix element, ∞-jet=exact) of the transfer-matrix product is a genuinely novel decomposition.",
+        "notes": "Jet-bundle reading (1-jet=\u03b2, 2-jet=2\u03b2 nuclear matrix element, \u221e-jet=exact) of the transfer-matrix product is a genuinely novel decomposition.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1965,255 +1965,260 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "generator-volume-decomposition.md:23-33 (md coefficients (c_j,d_j): NN=(1,-(q-q⁻¹)), mixed=(1,-½(q-q⁻¹))) vs generator-volume-decomposition.lean:59-65 (crossingNN=(q²,-q(q_half-1/q_half)), crossingMixed=((1+q²)/2,…))",
-        "notes": "The two crossing-factor definitions are inconsistent between narrative and Lean — they are not the same linear forms (md leading coeff c_j=1 always; lean leading coeff q² or (1+q²)/2). At most one can be the correct Hecke reduction, so one of the two stated coefficient sets is wrong. Cannot confirm which without recomputing, hence warn not fail; but a genuine contradiction exists."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The proven Lean lemmas (generatorVolume_nonneg by positivity, energy_additive by rfl over List.sum, beta_decay_locality by genuine take/drop argument) are real, non-vacuous statements — though energy_additive is near-trivial (definitional)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The transfer-matrix recurrence and Σk_i = C(A,2) count are derived combinatorics, not back-fitted to a target."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "generator-volume-decomposition.md:163-166 '...This is the nuclear matrix element M^{(2ν)} of double beta decay.' and md:296-327 'Proof' presenting three claims as proved while lean generator_volume_decomposition_prop is sorry (lean:131)",
-        "notes": "The block identifies its 2-jet cross-term with the physical 2νββ nuclear matrix element and the 0νββ structure (md:168-173) as established consequences, and the §Proof asserts the decomposition holds — but the top-level proposition's Lean proof is sorry (lean:127-131). A combinatorial bookkeeping identity is over-claimed as deriving the physical double-beta-decay matrix elements."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence'.",
         "severity": "minor",
-        "evidence": "generator-volume-decomposition.md:205 'z = 1/(q^{1/2}+q^{-1/2}) is the Markov parameter'; md:30-32 mixed coefficient uses an undisclosed 1/2 weighting",
-        "notes": "The mixed-pair crossing is defined as ½(σ+σ⁻¹) (a chosen averaging) — an undisclosed modelling choice rather than a canonical-chain-derived form; no derivation of why proton-neutron crossings are the symmetric average. Minor hidden choice, not a 4th calibration."
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "generator-volume-decomposition.md:199-211 defines energy as ½ln(tr·conj tr)=½Σln(V̂_i·conj V̂_i) with V̂_i=z·a_i+b_i, but lean nuclearEnergy=Σ generatorVolume with generatorVolume=|a|+|b| (lean:31-44)",
-        "notes": "The narrative 'energy' is ½Σln(|V̂_i|²) (a log-modulus sum of z·a_i+b_i), whereas the Lean 'nuclearEnergy' is Σ(|a_i|+|b_i|). These are different functionals; the step from 'transfer-matrix volume' to 'binding energy' uses the log/Markov form in prose but the Lean additivity lemma is about the |a|+|b| form. The 'therefore additive energy decomposition' is proved only for the simpler functional, not the one the prose calls the energy."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:127-131 generator_volume_decomposition_prop is `sorry`; the proved lemmas use generatorVolume=|a|+|b| (lean:31) while md energy is ½ln(V̂·conj V̂) (md:209); crossing coeffs differ (md:23-33 vs lean:59-65); lean references undefined `q_half` (lean:60,65 — no value definition in scope, grep found only Real.q_half_denom theorem)",
-        "notes": "Multiple divergences: (1) top proposition is sorry; (2) the 'energy' functional differs between md and lean; (3) crossing coefficients differ; (4) lean crossingNN/crossingMixed reference `q_half` which has no value definition in the file or imports, so the file as written does not type-check (consistent with validation:not_checked). The Lean does not faithfully formalise the .md proposition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No bibliographic cites[]; Lean -- Ref entries are all [manuscript] self-references, which cannot be mis-attributed to an external result."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "generator-volume-decomposition.ts:20 uses:['thm:groebner-shirshov-energy'] but md:11,314 references #prop:nuclear-groebner-reduction; 'color degree' (md:71) and 'jet' used informally",
-        "notes": "(1) The .ts `uses` cites thm:groebner-shirshov-energy while the .md body cites prop:nuclear-groebner-reduction — the manifest dependency does not match the narrative dependency. (2) 'color degree = jet order' is asserted by definition (md:71) without an independent definition tying it to the color/SU(3) sense used elsewhere. (3) Base ring: md says G/coefficients over a generic commutative ring (md:1) but lean is ℝ-specialised with √q via q_half."
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "generator-volume-decomposition.md:235-248 verification table: ²H E=1.174, ⁴He=4.136, ... ²¹⁰Bi E=8.25×10¹³, ΔE=-6.24×10¹²",
-        "notes": "The 'E' column carries no units and no comparison to AME/experimental binding energies; the values (²¹⁰Bi 'energy' 8×10¹³) cannot be MeV binding energies (²¹⁰Bi binding ≈ 1640 MeV). Either dimensionless or a different quantity entirely. The table is presented as 'computational verification' but verifies only internal self-consistency (all ΔE<0), not any measured datum — empirically uninformative, and the scale is implausible if read as energy. No witness JSON is referenced to reproduce these numbers."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "generator-volume-decomposition.md:243 ²¹⁰Bi E(parent)=8.25×10¹³, ΔE=-6.24×10¹²; md:209 calls ½ln(tr·conj tr) the 'nuclear energy'",
-        "notes": "If the 'nuclear energy' / ΔE columns are meant as physical energies, the magnitudes are off by ~10 orders from real nuclear binding energies and β-decay Q-values (MeV scale), and ²¹⁰Bi's ΔE=-6×10¹² has no physical correlate. The identification of a trace-log bookkeeping number with 'nuclear binding energy' and the 2-jet term with the 2νββ matrix element is the kind of physics claim a domain expert would reject absent a unit-bearing calibration to MeV."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4f91ccd515da",
-          "ts": "7a2938350d81",
-          "lean": "14e75b4042a7"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "generator-volume-decomposition.md:233-248 'Computational verification' table with no .witness.json cited; lean validation 'not_checked' (.ts:18) and file references undefined q_half (lean:60,65)",
-        "notes": "The verification table presents specific numbers (down to 3 decimals) as compute output but no producer script or witness JSON is linked, so the values are not reproducible from the corpus as given. Separately the Lean sibling references an undefined `q_half`, so even the formal artifact is not in a checkable state."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "4f91ccd515da",
+          "md": "1e2bb983b50a",
           "ts": "7a2938350d81",
           "lean": "14e75b4042a7"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "lean:131 sorry; lean:60,65 undefined q_half; md:209 vs lean:31 differing energy functionals; md:235-248 unit-less verification table",
-        "notes": "verdict: major-revision. referee_argument: the strongest objection is that the central proposition is not actually established — the top Lean theorem is `sorry`, the Lean references an undefined identifier (q_half) so it does not compile, the 'energy' functional in the prose (½Σln|z·a+b|²) differs from the one the proved lemmas use (Σ|a|+|b|), the md and Lean crossing coefficients contradict each other, and the 'computational verification' table is unit-less, unreproduced, and physically implausible at scale (²¹⁰Bi ΔE≈-6×10¹²). The combinatorial Σk_i=C(A,2) identity and the take/drop locality lemma are correct, but the physical claims (binding energy, 2νββ/0νββ matrix elements) are over-claimed on top of a non-compiling, sorry-bearing formalisation."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1e2bb983b50a",
+          "ts": "7a2938350d81",
+          "lean": "14e75b4042a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean for 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' fails compilation with error: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`. This invalidates the claim of formal verification."
       }
     ]
   },

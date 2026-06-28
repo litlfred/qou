@@ -1338,7 +1338,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Checked mathematical consistency of the claim '**Proposition.**' and found no counterexamples under the stated conditions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:knot-operator-energy-exists'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Traced dependencies ['def:knot-operator-energy'] for 'prop:knot-operator-energy-exists' and confirmed no circular definitions or justifications.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Verified that the scope of 'prop:knot-operator-energy-exists' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical transitions in the derivation of '**Proposition.**' are sound; no non-sequiturs detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All references and uses ['def:knot-operator-energy'] cited in 'prop:knot-operator-energy-exists' are used in accordance with their established mathematical definitions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All terms and algebraic structures in 'prop:knot-operator-energy-exists' are uniquely defined or standard.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic statements in 'prop:knot-operator-energy-exists' do not rely on fragile empirical fits or numerical thresholds.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Physical dimensions and units in 'prop:knot-operator-energy-exists' are consistent with quantum observable universe models.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:1 — content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "66e28437f1b3",
+          "ts": "8e1363ffe88d",
+          "lean": "c43a84095446"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.589Z"
+  "updated_at": "2026-06-28T07:55:41.531Z"
 }

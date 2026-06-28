@@ -1340,7 +1340,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.lean:1",
+        "notes": "The mathematical claims in 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' regarding 'Let $\\nabla$ be a categorical connection on an adjoint bundle over the' are unverified due to compilation errors in the Lean sibling file categorical-lichnerowicz.lean: content/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz.lean:51:48: error: invalid binder annotation, type is not a class instance."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "The sibling Lean file categorical-lichnerowicz.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' (which asserts 'Let $\\nabla$ be a categorical connection on an adjoint bundle over the')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "The prose presents 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' as verified, but the sibling Lean file categorical-lichnerowicz.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' due to compilation failure in categorical-lichnerowicz.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.lean:1",
+        "notes": "The Lean sibling categorical-lichnerowicz.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "The citations (lichnerowicz1963, woronowicz1989, ) in 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' are consistent with the sources referenced in the text."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "Key terms and symbols in 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' (e.g. from 'Let $\\nabla$ be a categorical connection on an adjoint bundle over the') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "The algebraic and logical relations in 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.ts:1",
+        "notes": "The physical concepts described in 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-lichnerowicz.lean:1",
+        "notes": "The Lean sibling categorical-lichnerowicz.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz.lean:51:48: error: invalid binder annotation, type is not a class instance."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "35f2f281de10",
+          "ts": "1ea7de4cef06",
+          "lean": "87165aa222b7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz.lean:51:48: error: invalid binder annotation, type is not a class instance",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Categorical Lichnerowicz: $\\\\Delta_\\\\nabla^q = \\\\mathfrak{D}_\\\\nabla^2 + \\\\tfrac{1}{4}\\\\,\\\\mathrm{Sc}_q$' (asserting 'Let $\\nabla$ be a categorical connection on an adjoint bundle over the') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz.lean:51:48: error: invalid binder annotation, type is not a class instance. A competent referee cannot accept this as a verified mathematical claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:39.760Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

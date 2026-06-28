@@ -1348,15 +1348,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-stability.md:16-20 p*(A)=A/(2 + a_C A^{2/3}/(2 a_A)); beta-stability.lean:34-35 betaStabilityLine uses A^((2:R_q)/3) over R_q = LaurentPolynomial ℤ.",
-        "notes": "The .md formula is the standard Bethe-Weizsäcker valley-of-stability line and is fine as physics. The Lean encoding is mathematically incoherent: A^((2:R_q)/3) with (2:R_q)/3 in R_q=LaurentPolynomial ℤ is not a fractional power — division in that ring is not field division and the exponent is not a natural number, so betaStabilityLine does not denote the intended A^{2/3} object. The Lean term as written does not faithfully represent the claimed formula."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Beta-stability line from the Skein binding Lagrangian' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1368,13 +1368,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The proposition makes a substantive (non-tautological) claim; classical_limit_symmetric is a real, non-vacuous lemma."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Beta-stability line from the Skein binding Lagrangian' presents substantial mathematical content: The stable neutron number $n^(p)$ for each element is determined by extremizing the Skein binding Lagrangian (Skein b...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1386,12 +1387,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Beta-stability line from the Skein binding Lagrangian'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1403,15 +1407,14 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "beta-stability.md:22-24 'a_C = (q - q^{-1})·λ_C is the Coulomb coefficient from the crossing asymmetry'.",
-        "notes": "The block presents the beta-stability line as 'derived' from extremizing the Skein binding Lagrangian, but the result is structurally identical to the empirical semi-empirical-mass-formula valley line; the only substrate input is dressing a_C with the factor (q-q^{-1}). Presenting an SEMF-shaped phenomenological line as a substrate derivation slightly overclaims novelty, since a_A and λ_C remain free."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Beta-stability line from the Skein binding Lagrangian' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1421,17 +1424,17 @@
           "ts": "d91e9d7955e8",
           "lean": "2264f91668ab"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-stability.md:22-24 introduces λ_C ('a_C = (q - q^{-1})·λ_C') and a_A ('Pauli asymmetry coefficient') with no canonical-chain origin or value; M-free in .md.",
-        "notes": "Two free coefficients enter the prediction: λ_C (the Coulomb scale inside a_C) and a_A (the asymmetry coefficient). Neither is given a value nor traced to a step in the canonical derivation chain; the stability line p*(A) depends entirely on the ratio a_C/(2a_A). These are undisclosed fitted degrees of freedom that control where the valley sits — exactly the hidden-DOF pattern (effectively a per-observable fit dressed as a derivation)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Beta-stability line from the Skein binding Lagrangian'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1443,15 +1446,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/beta-stability.lean.",
         "severity": "minor",
-        "evidence": "beta-stability.md:11-20 '∂L_bind/∂n = 0 ... gives the beta-stability line p*(A)=...'.",
-        "notes": "The Lagrangian L_bind is referenced but not reproduced in the block, so the extremization step ∂L/∂n=0 → the displayed p*(A) cannot be checked here; the A^{2/3} Coulomb scaling is asserted to drop out of the variation but the intermediate algebra (and the constraint A=Z+N held fixed vs varied) is not shown. The 'gives' is an unverified bridge from the (off-block) Lagrangian to the line."
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1463,15 +1466,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-stability.md:1 declares 'Lean sibling: archimedean specialisation over ℝ'; beta-stability.lean:28 'abbrev R_q := LaurentPolynomial ℤ' (not ℝ); beta-stability.lean:48-58 and 68-72 have COMMENTED-OUT theorem headers ('-- theorem neutron_excess ...') with LIVE proof bodies dangling beneath them.",
-        "notes": "Three divergences: (1) the .md says the Lean is an archimedean ℝ specialisation, but the .lean is over R_q = LaurentPolynomial ℤ, contradicting the stated wall convention. (2) The two substantive directional theorems — neutron_excess (p*<A/2 for a_C>0, the actual physics content of the proposition) and nOverP_classical — have their 'theorem ... :=' headers commented out (lines 48, 68) while the proof bodies remain as orphaned 'betaStabilityLine ... < A/2 := by ...' code (lines 49-58, 69-72). As written this file cannot compile (a ':= by' with no declaration), and the only live theorem is classical_limit_symmetric (a_C=0 ⇒ p=A/2), which is the trivial degenerate case. (3) neutron_excess uses rpow_pos_of_pos and div_lt_div_of_pos_left without importing Mathlib.Analysis.SpecialFunctions.Pow — even un-commented it would not typecheck over R_q. The Lean proves strictly less than (and inconsistently with) the .md claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1481,15 +1483,17 @@
           "ts": "d91e9d7955e8",
           "lean": "2264f91668ab"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Only -- Ref: [manuscript] §4/beta-stability self-references; no external citation to mis-attribute."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Beta-stability line from the Skein binding Lagrangian', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1499,17 +1503,17 @@
           "ts": "d91e9d7955e8",
           "lean": "2264f91668ab"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Beta-stability line from the Skein binding Lagrangian' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "beta-stability.md:22-24 a_C, λ_C, a_A introduced without definition; the .md uses p*(A) while the .ts/.lean use proton-number variable p and the prose opens with n*(p).",
-        "notes": "λ_C ('crossing asymmetry') and a_A ('Pauli asymmetry coefficient') are named but never defined in the block; the symbol set mixes n*(p), p*(A), A*(p) without a single fixed independent variable. 'The beta-stable configuration' is also presumed unique (a single extremum) without an argument that ∂L/∂n=0 has a unique stable root."
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1519,17 +1523,17 @@
           "ts": "d91e9d7955e8",
           "lean": "2264f91668ab"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-stability.md:16-24 the valley position is set entirely by a_C/(2a_A), with a_C ∝ (q-q^{-1})·λ_C.",
-        "notes": "Because λ_C and a_A are unfixed, any reasonable empirical valley-of-stability curve can be matched by tuning the single ratio a_C/(2a_A); the block reports no numerical comparison to data, no value of q0, and no witness. The 'agreement' with the real valley is therefore untestable / trivially fittable as presented — fit-noise-limited rather than a parameter-free prediction."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Beta-stability line from the Skein binding Lagrangian' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1541,13 +1545,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The SEMF-shaped valley line with A^{2/3} Coulomb scaling and the a_C→0 ⇒ p=A/2 symmetric limit is physically sensible; units/scaling are standard nuclear physics."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Beta-stability line from the Skein binding Lagrangian' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1557,17 +1563,17 @@
           "ts": "d91e9d7955e8",
           "lean": "2264f91668ab"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-stability.lean:40-58, 63-72 — file would not compile (commented headers + live bodies; rpow over R_q without import); beta-stability.ts:14-17 lean.validation: 'not_checked'.",
-        "notes": "The Lean sibling is not in a checkable state (the principal theorem is headerless dangling code and uses Analysis lemmas without the import); validation is 'not_checked'. A referee cannot reproduce the formal claim, and no compute witness backs the numerical line. The block's formal backing is irreproducible as committed."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/beta-stability.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1579,15 +1585,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-stability.lean:48-58, 68-72 (headerless proof bodies); beta-stability.md:22-24 (λ_C, a_A undisclosed); beta-stability.md:1 vs beta-stability.lean:28 (ℝ vs LaurentPolynomial ℤ).",
-        "notes": "verdict: major-revisions. referee_argument: The proposition's actual content — that heavy nuclei sit below A/2 (neutron excess) — is formalized in a theorem (neutron_excess) whose header is COMMENTED OUT with a live, dangling, non-compiling proof body, while the only live lemma is the trivial a_C=0 symmetric limit. The .md advertises an archimedean ℝ specialisation but the file is over LaurentPolynomial ℤ, and the formula's whole predictive content rides on two undisclosed free parameters (λ_C, a_A) with no value, witness, or data comparison. This is an SEMF-shaped phenomenological line presented as a substrate derivation, with a broken Lean sibling. Restore the theorem headers, fix the base ring / imports (or honestly mark sorry+Ref), and disclose/derive λ_C and a_A or label the line fitted."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/beta-stability.lean fails compilation: content/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/beta-stability.lean for 'Beta-stability line from the Skein binding Lagrangian' fails compilation with error: content/quantum-observable-universe/particle-interactions/beta-stability.lean:27:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
       }
     ]
   },

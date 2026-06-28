@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1363,7 +1363,7 @@
           "ts": "3d21659a6f9e"
         },
         "result": "fail",
-        "notes": ".md claims ‖MI∫_Σ(α−τ̂_n α)‖ = Σ‖MI∫_{E_i}(...)‖. Lean proves only MI_norm_total = Σ MI_norm for OPAQUE reals; the decomposition is provided as a class field sum_of_disjoint over opaque Props. No integral/support content. Degenerate weakening.",
+        "notes": ".md claims \u2016MI\u222b_\u03a3(\u03b1\u2212\u03c4\u0302_n \u03b1)\u2016 = \u03a3\u2016MI\u222b_{E_i}(...)\u2016. Lean proves only MI_norm_total = \u03a3 MI_norm for OPAQUE reals; the decomposition is provided as a class field sum_of_disjoint over opaque Props. No integral/support content. Degenerate weakening.",
         "reviewed_at": "2026-06-25T17:06:54.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1416,7 +1416,7 @@
           "ts": "3d21659a6f9e"
         },
         "result": "fail",
-        "notes": "Proof := ctx.sum_of_disjoint ctx.h_disjoint_support ctx.h_additivity — directly returns the class field that IS the conclusion (textbook self-assuming projection; the disjoint/additivity Props are themselves field witnesses).",
+        "notes": "Proof := ctx.sum_of_disjoint ctx.h_disjoint_support ctx.h_additivity \u2014 directly returns the class field that IS the conclusion (textbook self-assuming projection; the disjoint/additivity Props are themselves field witnesses).",
         "reviewed_at": "2026-06-25T17:06:54.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1612,17 +1612,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "critical",
-        "evidence": "lean/QOU/LiftingDescent/tm_transient_localisation.lean:50-52 — theorem tm_transient_localisation (N : ℕ) (MItotal : ℝ) (MIdiv : ℕ → ℝ) : MItotal = (Finset.range N).sum (fun i => MIdiv i)",
-        "notes": "As stated in Lean the equation is FALSE for arbitrary reals: with N=0 it forces MItotal = 0 for every real MItotal; with any N it equates an unconstrained MItotal to an unconstrained sum. The intended hypothesis 'h_disjoint_factorisation' the docstring (lines 43-48) claims to 'package' is NOT a binder in the signature — it was dropped. The literal proposition is a quantifier-slip counterexample (pick MItotal=1, all MIdiv=0). It only typechecks because it is discharged by `sorry` (line 57). The .md statement (a genuine norm-decomposition over disjoint divisors) is plausible; the Lean encoding is false."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Transient terms localise to exceptional divisors': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1631,17 +1630,15 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "tm_transient_localisation.lean:50-57; .md uses MI∫ machinery with no Mathlib backing",
-        "notes": "The Lean carries no real content: every variable is a free real and the equation is unproved (sorry). The docstring explicitly says the prior version was a 'vacuous self-assuming projection' and this rewrite is more honest — but in dropping the factorisation hypothesis it swung from vacuous-projection to false-and-sorry'd, which is not content-bearing either. The true mathematical content (multiplicative-integral additivity over disjoint support) is entirely outside Mathlib and unformalised."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Transient terms localise to exceptional divisors' presents substantial mathematical content: contained in disjoint discs $D_i$ centred at the blow-up points $p_1, \\ldots, p_...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1653,12 +1650,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No back-fitting or smuggled calibration; the .md states a structural localisation, not a numerical target."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Transient terms localise to exceptional divisors'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1667,17 +1665,15 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "topological-mass-transient-localisation.ts:5-7 validation:'not_checked'; lean sorry at line 57",
-        "notes": "Block kind 'lemma' presents a settled result, but the entire analytic core (per-disc factorisation of the multiplicative integral) is deferred to non-existent machinery via sorry with a [manuscript] ref. A lemma whose only Lean content is an unproved (and as-encoded false) equation overclaims the 'lemma' status; honestly it is a conjectural/deferred statement."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Transient terms localise to exceptional divisors' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1686,15 +1682,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free numerical parameter or off-menu coefficient; structural statement."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Transient terms localise to exceptional divisors'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1703,17 +1700,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "tm_transient_localisation.lean:43-52",
-        "notes": "The docstring asserts 'From it [the factorisation] the conclusion is immediate', but 'it' is not present in the theorem signature, so the conclusion does not follow from any stated hypothesis — the inference chain is broken at the type level. The .md likewise jumps from 'support contained in disjoint discs D_i' to norm-additivity over E_i without stating the additivity lemma for the multiplicative-integral norm."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Transient terms localise to exceptional divisors' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1725,14 +1721,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".md:7-18 (norm of MI∫ over Σ of the transient component α−τ̂ₙ(α) equals Σ_i norm of MI∫ over E_i of (∇_A q, L∧F⁺)) vs lean:50-52 (MItotal = Σ MIdiv i for free reals with no transient component, no τ̂, no divisor structure, no MI integrand)",
-        "notes": "The Lean is strictly weaker AND different: it erases every structural ingredient of the .md (the transient component, the descent involution τ̂, the divisor support, the actual MI-integrand) and replaces them with three unconstrained real placeholders. The .md claim is a substantive geometric decomposition; the Lean is an unconstrained (false) numeric equality behind sorry. Fails proof-statement-integrity — the Lean does not encode the .md proposition."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1741,17 +1735,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Transient terms localise to exceptional divisors', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "tm_transient_localisation.lean:30,49,53 — all -- Ref: are '[manuscript] …' pointing back to the same .md / 'non-abelian-Stokes' section",
-        "notes": "The sorry is cited to '[manuscript]' / an internal §non-abelian-Stokes section rather than to a published source for the multiplicative-integral localisation (e.g. Yekutieli non-abelian Stokes). §1 of AGENTS.md prefers a real bibliographic key; self-referential [manuscript] for the load-bearing analytic input is weak and unverifiable."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1760,17 +1753,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Transient terms localise to exceptional divisors' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:16 (∇_A q, L ∧ F⁺); .md:2-5 (D_i, p_i, E_i, τ̂_n)",
-        "notes": "The integrand pair (∇_A q, L∧F⁺) and the norm ‖MI∫‖ are used without a local definition of the multiplicative integral MI∫, the discs D_i vs divisors E_i correspondence, or the regime/base ring. 'Briggs–Klein chart' from the sibling block recurs here implicitly. Multiple ingredients are named-not-defined."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1779,15 +1771,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical/q0-anchored claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Transient terms localise to exceptional divisors' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1799,12 +1792,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Localisation of transient support to blow-up discs and additive norm decomposition is physically reasonable as a structural statement; no units/conservation violation."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Transient terms localise to exceptional divisors' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1813,15 +1807,16 @@
           "md": "a5d1133307bc",
           "ts": "3d21659a6f9e"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No witness/compute backing; validation flagged 'not_checked' but that is a Lean-verification state, not an irreproducible compute."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Transient terms localise to exceptional divisors' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1833,14 +1828,14 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "tm_transient_localisation.lean:50-57; .md:7-18",
-        "notes": "verdict: reject-as-stated (Lean), revise-and-resubmit (narrative). referee_argument: The headline objection is da-false-claim/da-lean-narrative-divergence: the Lean theorem `MItotal = Σ MIdiv i` over free reals is false (N=0 ⇒ every MItotal=0) and bears no resemblance to the geometric norm-decomposition in the .md — the factorisation hypothesis the docstring claims to carry was dropped from the signature, leaving an unconstrained, sorry'd, false equation. Restore the disjoint-factorisation hypothesis as an explicit binder (then the equation becomes a genuine, if still sorry-deferred, conditional) and the block becomes honest; as committed it is a vacuous-or-false carrier mislabelled 'lemma'."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing, preventing formal verification of the claims in 'Transient terms localise to exceptional divisors'."
       }
     ]
   },

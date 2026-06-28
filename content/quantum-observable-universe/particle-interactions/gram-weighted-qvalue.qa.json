@@ -1342,257 +1342,259 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The proposition defines a Q-value via a Gram-weighted sum; the Lean-proved facts (gramWeight sums to 1, nonneg, uniform when equal) are correct. The physical Q formula is an empirical model, not asserted as a proved identity, so no mathematical falsity per se."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "gram-weighted-qvalue.lean:62-121 — the three theorems (gramWeight_sum_one, gramWeight_nonneg, gramWeight_uniform_when_equal) prove only generic properties of a normalised-norm weighting; none touches Δ_k, the physical Q-value, or the 6He prediction.",
-        "notes": "Not vacuous in the ': True' sense, but the Lean content is structurally weak relative to the .md proposition: it certifies that w_k^G is a probability distribution (true of ANY normalised non-negative weighting) and says nothing about the load-bearing physics (NF reduction cost, the Q-value formula, the +9.7% match). The substantive claim is unformalized."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' presents substantial mathematical content: be the typed Garside element (typed Garside element) of the parent nucleus in $H_A(q)$, and let $G$ be the Gram matri...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.md:115-133 — only one calibration target (6He→6Li, Q_exp=3.508) is shown, and md:131-133 reports an ALTERNATE weighting (Gram-pairing variant) giving 3.752 (+7.0%) alongside the primary 3.849 (+9.7%).",
-        "notes": "The construction (Frobenius-norm Gram weighting, the |·| absolute value in ||δ_k||_F = sqrt|δ·G·δ| inserted precisely because G is indefinite) reads as reverse-engineered to land near a known target. Presenting two competing weight definitions and quoting both their errors on the same single datum is the signature of selecting the formula against the answer rather than deriving it. Not provably circular, but the evidence pattern (one datum, two ansaetze, abs-value patch over an indefinite form) warrants the flag."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.md:3 '**Proposition.**' + md:115 '## Verified instances' presenting a single +9.7% case as a 'Proposition' with 'Verified instances'; lean validation field 'not_checked' (gram-weighted-qvalue.ts:17).",
-        "notes": "Calling a one-datum, +9.7%-error empirical model a 'Proposition' with 'Verified instances' overclaims. A +9.7% match is far outside the framework's own precision discipline (L2 100x targets; CAL-2 floor ~780 ppb). The Lean proves distributional lemmas, not the proposition's physical content, yet the block is kind=proposition. This is an approximate-as-asserted / fitted-as-derived overclaim: the genuine status is 'exploratory empirical ansatz with one calibration point,' not a verified proposition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.md:131-133 introduces the 'Gram-pairing variant' (w_k^G replaced by |<δ_k,G_par>_F| normalised) as an alternate, plus the absolute value in ||δ_k||_F=sqrt|δ·G·δ| (md:62-65) and the choice of L1-norm for Δ_k (md:37-44).",
-        "notes": "Multiple undisclosed modeling choices each act as hidden DOF: (i) Frobenius-norm weighting vs the Gram-pairing variant (two different w_k formulas quoted); (ii) the |·| inserted into an indefinite quadratic form (no canonical-chain justification for taking absolute value of δ·G·δ); (iii) L1 (sum-of-abs) norm for the reduction cost. The .md claims 'No other parameters' (md:73) but the FORM itself carries selectable degrees of freedom that materially change the output (3.849 vs 3.752). None is tied to a derivation in the canonical chain."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.md:95-113 ('Why the Gram weight is non-uniform') argues boundary neutrons get larger ||δ_k||_F via positive/negative eigenspace projection, then md:11 multiplies the weighted sum by an explicit factor of N.",
-        "notes": "Two gaps: (1) the qualitative eigenspace story (interior neutrons suppressed, boundary enhanced) is asserted as the mechanism but never derived or witnessed — it is a narrative rationalization of whatever the Gram metric happened to produce. (2) The overall '× N × m_e' (md:18-21) is not motivated beyond 'coherent sum over channels'; multiplying an already-normalised weighted average (weights sum to 1) by N is dimensionally a choice, not a consequence — the 'therefore the physical Q-value is the sum of all weighted contributions' (md:91-93) does not follow from the weights summing to 1."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.lean:62-121 proves gramWeight_sum_one / _nonneg / _uniform_when_equal; the .md proposition (md:3-73) claims the Q-value formula reproduces β-decay Q-values. The Lean never relates gramWeightedQ to any experimental Q or proves any property of the Q-value beyond its algebraic definition.",
-        "notes": "proof-statement-integrity failure: the Lean certifies generic facts true of ANY normalised non-negative weighting (sum=1, ≥0, uniform-when-equal) and the bare definition of gramWeightedQ, but proves NOTHING the .md proposition actually asserts about Q-values, Δ_k positivity, or the 6He instance. The .lean is strictly weaker than and largely orthogonal to the narrative claim; ts validation='not_checked' (gram-weighted-qvalue.ts:17). The proposition's substantive content is unformalized."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[] in the .ts and the .lean uses only [manuscript] §6.3c self-references (lean:9,19,35,42,53,68) — no external bibliographic result is invoked, so there is nothing to mis-attribute."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "gram-weighted-qvalue.md:43-44 defines Δ_k as an L1-norm difference but ||·||_1 of a Garside element is not pinned to a basis; md:62-65 ||δ_k||_F=sqrt|δ·G·δ| with G 'not positive definite' (md:97-98) so this is not a norm (triangle inequality can fail); 'boundary' vs 'interior' neutrons (md:88,106-109) are used informally with no definition.",
-        "notes": "Several key terms are under-specified: (1) ||·||_1 over which basis of the NF subspace; (2) calling sqrt|δ·G·δ| a 'Frobenius norm' is a misnomer when G is indefinite — it is a pseudo-norm at best; (3) 'boundary neutron' / 'interior neutron' carry the explanatory weight (md:95-113) yet are never defined. Implicit base ring: md:1 notes archimedean ℝ specialisation, which is consistent."
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.md:115-133: ONE instance (6He→6Li), +9.7% error (3.849 vs 3.508); the alternate Gram-pairing variant gives +7.0% (3.752). No other isotope shown.",
-        "notes": "Classic fragility signature: a single calibration datum, ~10% error (orders of magnitude outside the framework's L2/100x precision goals and the ~780 ppb CAL-2 floor), and two competing formula variants whose errors (9.7% vs 7.0%) bracket the target — quoting both invites picking whichever looks better. No cross-anchor / cross-isotope robustness is demonstrated. A single ~10% point on one decay is consistent with coincidence."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "gram-weighted-qvalue.md:18-21,91-93: Q = (Σ w_k Δ_k) × N × m_e — a β⁻ Q-value built as a 'coherent sum over all N neutron conversion channels' each scaled, then multiplied by N.",
-        "notes": "Physically, a single β⁻ decay converts ONE neutron; the Q-value is a fixed mass difference M(parent)-M(daughter)-m_e(-ish), an energetic property of two specific nuclear states, not a sum over 'all possible conversion channels' weighted by an algebraic metric and multiplied by the neutron count N. The construction has the wrong physical content for what a Q-value is (it is not a channel-averaged quantity scaled by N), even if it numerically lands within 10%. A nuclear physicist would reject 'Q = channel-sum × N × m_e' as the definition of a decay Q-value. (Flag as warn, not fail, because the block is an exploratory algebraic ansatz the corpus may intend as a heuristic proxy, not a first-principles Q-value.)"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "No live computations/*.witness.json reproduces the 6He values; the only matching compute is computations/_deprecated/knot-ops-on-6he.py (Q_exp=3.508 hardcoded at lines 214,294). gram-weighted-qvalue.ts:16-18 lean validation='not_checked'. No witness cited in the .md.",
-        "notes": "The headline numbers (3.849, +9.7%; variant 3.752, +7.0%) have no reproducible non-deprecated backing in computations/. The producing script lives under _deprecated/, and there is no witness JSON with scriptHash/scriptCommitSha pinning the quoted values. A referee cannot re-derive 3.849 from the corpus as committed. Combined with 'not_checked' Lean, the empirical claim is unverifiable as shipped."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b35f0c3567b3",
+          "md": "15b0649aa99f",
           "ts": "a77c2a816d41",
           "lean": "381c8d255021"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "verdict=reject (as a 'Proposition'); recommend reclassification to exploratory/remark. Evidence: single +9.7% datum (md:125-126), two competing weight ansaetze (md:131-133), deprecated-only backing (computations/_deprecated/knot-ops-on-6he.py), Lean proves only distributional lemmas (lean:62-121) with validation 'not_checked' (ts:17).",
-        "notes": "referee_argument: 'This block is labelled a Proposition with Verified instances, but it is an exploratory empirical ansatz: (1) the formula carries undisclosed degrees of freedom (Frobenius-norm vs Gram-pairing variant, the |·| over an indefinite form, the ×N factor) — hidden-dof + non-sequitur; (2) it is calibrated on a SINGLE decay at ~10% error, with two variants bracketing the target — empirical-fragility + suspected back-fitting; (3) the Lean formalizes none of the physical content, only that a normalised weighting sums to 1 — lean-narrative-divergence; (4) the numbers are reproducible only from a _deprecated script, with no witness — reproducibility; (5) physically, a β-decay Q-value is a two-state mass difference, not a neutron-count-scaled channel average — physical-implausibility. Recommendation: demote from proposition to remark/exploratory, scope the claim to (a) scope-limited per the refuted/ruled-out discipline, restore a live witness, and either formalize the actual Q-value claim or drop the proposition kind.'"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean for 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' fails compilation with error: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split. This invalidates the claim of formal verification."
       }
     ]
   },

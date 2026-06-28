@@ -920,7 +920,7 @@
           "ts": "c10fcf81e959"
         },
         "result": "pass",
-        "notes": "Conjecture: q→1 KLR canonical basis b_w → KL basis C_w of ℤ[S_n], classical-limit functor monoidal + τ-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
+        "notes": "Conjecture: q\u21921 KLR canonical basis b_w \u2192 KL basis C_w of \u2124[S_n], classical-limit functor monoidal + \u03c4-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
         "reviewed_at": "2026-06-25T17:08:56.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -939,232 +939,246 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Stated as a conjecture (kind=conjecture), explicitly flagged 'why a conjecture and not a theorem' with a falsification criterion (md:48-50). q→1 specialisation H_n(q)→ℤ[S_n] and b_w→C_w are standard (cited). No false universal claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "KazhdanLusztigClassicalLimit.lean:53-60: field `statSign_pm_one : ∀ b, statSign b = 1 ∨ statSign b = -1` and the supposed-conjecture field `kl_compatible_with_tau : ∀ T, statSign (klMap T) = 1 ∨ statSign (klMap T) = -1`",
-        "notes": "The 'conjecture proper' field kl_compatible_with_tau is a logical consequence of the already-axiomatised statSign_pm_one (apply it at b = klMap T). It asserts nothing beyond an axiom of the class, so it is content-free. The `canonical` instance (lean:96-105) discharges it with `Or.inl rfl` and NO sorry — contradicting the docstring's claim that this field 'plays the role of sorry'. Thus the Lean class does not actually axiomatise the conjecture (Pauli/Bose recovery / τ-compatibility); it axiomatises a tautology. Vacuous conjectural carrier per AGENTS.md §3b-tax 'carrier must assert something'."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are non-vacuous as they make concrete conjectures about '\\cite{khovanovlauda2009, kashiwara1991} associated to the anyonic Hecke substrate, and let $\\{C_w\\} \\subset \\mathbb{Z...'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Conjecture does not back-fit a numerical target; it asserts a structural compatibility. No smuggled calibration."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "kazhdan-lusztig-classical-limit.md:18-27 'KL is a monoidal functor compatible with τ ... is precisely the topological-to-classical transition'; Lean field encodes only statSign∈{±1}",
-        "notes": "The narrative asserts a monoidal functor whose action 'is precisely' the topological→classical transition recovering Pauli/Bose statistics. The Lean encoding reduces all of this to 'a sign that is ±1' — it does not encode monoidality, τ-compatibility, or the b_w↦C_w map's well-definedness. The conjecture's actual content is far richer than what is formalised; the prose claim of capturing the full statistics is stronger than the (tautological) axiom supports."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameters / calibrations involved; structural conjecture."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "As a conjecture it makes no derivation step claiming 'therefore'; the 'why conjecture not theorem' section correctly identifies the unproved gap (τ-compatibility on full QOU spectrum)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:18-27 (monoidal functor, τ-compatible, Pauli/Bose recovery) vs KazhdanLusztigClassicalLimit.lean:43-60 (class fields: KLBasisElt:Type, klMap, statSign∈{±1}, kl_compatible_with_tau tautological)",
-        "notes": "The Lean class proves/encodes strictly weaker and different content than the .md conjecture. The .md conjectures a *monoidal, τ-compatible functor whose image exhausts Pauli/Bose statistics*; the Lean only carries an abstract sign function constrained to ±1 plus a tautological 'conjecture' field, with the instance using PUnit and klMap≡unit. The conditional theorems (statSign_sq_eq_one) prove only '(±1)²=1', a triviality unrelated to the actual conjecture. proof-statement-integrity divergence: the formalisation does not represent the narrative claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjectured block 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' has no Lean sibling, representing a minor structural gap.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "kassel1995 (Hecke/Markov), khovanovlauda2009 + kashiwara1991 (KLR / crystal / canonical bases), lecouvey2007 (crystal combinatorics) are all on-topic for the q→1 / canonical-basis claims they back. Appropriate."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kassel1995, khovanovlauda2009, kashiwara1991, lecouvey2007 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:15 'b_w ↦ C_w as q→1'; md:5 'KL basis C_w ⊂ ℤ[S_n]'",
-        "notes": "The map b_w↦C_w 'as q→1' conflates two distinct objects: the KLR canonical basis of H_n(R,q) and the Kazhdan–Lusztig basis of ℤ[S_n] are bases of different algebras; the precise sense in which one 'specialises to' the other (the functor's domain/codomain mod-categories vs basis elements) is stated loosely. 'monoidal functor' presumes a monoidal structure on mod ℤ[S_n] not specified. Minor — standard objects, but the bridge is under-defined."
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match / fit; purely structural conjecture with no quoted observable."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The claim that q→1 anyonic→classical recovers Pauli/Bose ±1 statistics is physically reasonable (anyon→boson/fermion limit). Stated as conjecture with falsification test. No domain-expert-fatal claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No compute/witness backing this structural conjecture; nothing to reproduce."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "159611eb7130",
+          "md": "b1e53e3f32d5",
           "ts": "c10fcf81e959"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Lean tautological conjecture field + no-sorry PUnit instance (lean:59-60, 96-105); narrative↔Lean divergence (md:18-27)",
-        "notes": "verdict: major-revisions. referee_argument: As a *narrative* conjecture this is defensible and honestly labelled. But the Lean formalisation is its weakest link and actively misleading: the field advertised as 'the conjecture, plays the role of sorry' (kl_compatible_with_tau) is a tautological consequence of the class's own statSign_pm_one axiom, and the `canonical` instance closes it with `Or.inl rfl` and zero sorry. So the §3b conjectural-class machinery is not actually carrying any conjectural content — a vacuous-carrier violation (AGENTS.md §3b-tax). The conditional theorems prove only (±1)²=1. Strongest objection: the formalisation neither states nor preserves the real conjecture (monoidal τ-compatible KL functor recovering Pauli/Bose); fix by encoding the b_w↦C_w map and τ-compatibility as genuine fields with no satisfiable trivial instance."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic and physical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
       }
     ]
   },

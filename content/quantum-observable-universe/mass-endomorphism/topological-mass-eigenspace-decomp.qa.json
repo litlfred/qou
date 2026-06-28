@@ -1346,17 +1346,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "critical",
-        "evidence": "topological-mass-eigenspace-decomp.md:10-20 m(ϱ) = ‖MI∫ τ̂ₙ(α)‖ + ‖MI∫(α−τ̂ₙ(α))‖, justified (in the proof sibling) by ‖α‖² = ‖τ̂ₙ(α)‖² + ‖α−τ̂ₙ(α)‖²",
-        "notes": "The lemma asserts a LINEAR sum of norms m = ‖A‖ + ‖B‖ where A = MI∫τ̂ₙ(α), B = MI∫(α−τ̂ₙ(α)), but the only orthogonality available (Killing-form, idempotent τ̂ₙ) gives the Pythagorean identity ‖α‖² = ‖τ̂ₙα‖² + ‖α−τ̂ₙα‖², i.e. m = √(‖A‖²+‖B‖²). For A,B ≠ 0 one has √(a²+b²) < a+b, so the stated equality is false except in the degenerate single-nonzero case. (The proof sibling even compounds this by mapping the L2-orthogonal additivity onto a multiplicative-integral PRODUCT, then claiming the product's norm is the sum of norms.)"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Eigenspace decomposition of the mass integrand (descent involution)' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1369,12 +1368,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The .md lemma makes a substantive (and, per da-false-claim, over-strong) normed claim — not vacuous. (The Lean sibling is separately weak; see da-lean-narrative-divergence.)"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Eigenspace decomposition of the mass integrand (descent involution)' presents substantial mathematical content: mass identity for a vortex $\\varrho$, and let $\\hat{\\tau}_n$ be the :refterm[des...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1387,12 +1386,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No assumption of the conclusion; the decomposition is derived from descent-eigenspace orthogonality."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Eigenspace decomposition of the mass integrand (descent involution)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1402,17 +1402,15 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".md:6-8 'multiplicative-integral additivity over orthogonal direct sums gives' the linear sum identity",
-        "notes": "Even setting aside the L1/L2 issue, the lemma asserts that the nonabelian multiplicative integral is additive over orthogonal direct sums in a way that yields ‖∫(A⊕B)‖ = ‖∫A‖ + ‖∫B‖. The nonabelian MI is multiplicative (group-valued, see the proof sibling eq:mi-decomp which correctly writes a PRODUCT), so 'additivity → sum of norms' overclaims: the genuine content is at best ‖∫α‖ ≤ ‖∫τα‖·‖∫(α−τα)‖ submultiplicativity, which does not give an equality of sum-of-norms."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Eigenspace decomposition of the mass integrand (descent involution)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1422,15 +1420,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical parameter; structural lemma."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Eigenspace decomposition of the mass integrand (descent involution)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1440,17 +1439,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".md:3-8: 'Killing-form orthogonality ... together with multiplicative-integral additivity ... gives' the linear normed identity (proof sibling derives ‖α‖²=‖τα‖²+‖α−τα‖² then jumps to m=‖∫τα‖+‖∫(α−τα)‖)",
-        "notes": "The inference from (a) L2 Pythagorean orthogonality and (b) MI multiplicativity to (c) a LINEAR sum of norms of the two integrals is a non-sequitur: neither premise supplies ‖A‖+‖B‖. The proof sibling's chain (lines 28-66) explicitly states the L2 identity, then a multiplicative product MI∫, then 'taking norms ... using submultiplicativity (which is an equality for the orthogonal decomposition of an idempotent)' — the parenthetical is the unjustified leap converting a product/L2 structure into an L1 sum."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1463,14 +1461,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "topological-mass-eigenspace-decomp.lean:44-54 tm_eigenspace_decomp proves only x = descendedPart n x + transientPart n x := JetChain.decomposition; JetProlongation.lean:155-158 decomposition := by simp [descendedPart, transientPart] where transientPart n x := x − τ̂ₙ x",
-        "notes": "The Lean theorem proves the TRIVIAL identity x = τ̂ₙ(x) + (x − τ̂ₙ(x)), which holds for ANY function τ̂ₙ (the simp proof uses no orthogonality, no norm, no multiplicative integral). The .md lemma's actual content — the NORMED equality m(ϱ) = ‖MI∫τ̂ₙα‖ + ‖MI∫(α−τ̂ₙα)‖ from Killing-form orthogonality + MI additivity — is entirely absent from Lean. The Lean sibling proves a strictly weaker (and tautological) statement than the .md claims; proof-statement-integrity fails."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1480,17 +1476,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to yekutieli2015 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": ".ts:15 cites yekutieli2015; proof sibling .md:38 invokes '[Proposition 5.3, yekutieli2015]' for 'additivity of the nonabelian multiplicative integral over orthogonal direct sums'",
-        "notes": "Yekutieli's nonabelian multiplicative integral is multiplicative (group-valued), not additive over direct sums; attributing a sum-of-norms additivity to a specific Yekutieli proposition is a likely misattribution of the cited result's actual content (the genuine Yekutieli statement gives a product, as the proof's own eq:mi-decomp shows). Cannot verify Prop 5.3's exact wording here, so warn."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1500,17 +1495,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Eigenspace decomposition of the mass integrand (descent involution)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:2 integrand α=(∇_A q, L∧F⁺); .md:6-7 ‖·‖ Killing-form norm but applied to a group-valued MI∫ output",
-        "notes": "The norm ‖·‖ is introduced as the Killing-form norm on su(2) (a Lie-ALGEBRA norm), yet it is applied to MI∫ outputs that live in the GROUP SU_q(2) (per the proof sibling eq:mi-decomp 'product is in the group'). Algebra-norm vs group-element-norm is conflated; this ambiguity is what enables the L2→L1 slip."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1520,15 +1514,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical content."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Eigenspace decomposition of the mass integrand (descent involution)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1541,12 +1536,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Decomposing vortex mass into descended + transient parts is physically sensible; the issue is mathematical (L1 vs L2), not a physics/units violation."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Eigenspace decomposition of the mass integrand (descent involution)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1556,15 +1552,16 @@
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean-only formalization (validation: not_checked, .ts:6); no compute witness."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1577,13 +1574,14 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist",
         "severity": "critical",
-        "notes": "VERDICT: reject-as-stated / major-revision. referee_argument: The lemma asserts a LINEAR sum-of-norms decomposition m(ϱ) = ‖MI∫τ̂ₙα‖ + ‖MI∫(α−τ̂ₙα)‖, but every supporting ingredient delivers something else: Killing-form orthogonality gives the Pythagorean L2 identity ‖α‖²=‖τ̂ₙα‖²+‖α−τ̂ₙα‖² (so m=√(‖A‖²+‖B‖²), not ‖A‖+‖B‖), and Yekutieli's nonabelian multiplicative integral is MULTIPLICATIVE (a product, as the proof's own eq:mi-decomp writes), not additive. The 'submultiplicativity is an equality for an idempotent' parenthetical is the unjustified leap. Compounding this, the Lean sibling tm_eigenspace_decomp proves only the trivial x = τ̂ₙx + (x−τ̂ₙx) (a simp tautology valid for any map), so the formalization does NOT back the lemma's substantive normed claim. Either restate as a Pythagorean (L2) identity and formalize the orthogonality genuinely, or supply the missing lemma making ‖A‖+‖B‖ correct (e.g. A,B non-negative scalars / colinear)."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist, invalidating the claimed formalization."
       }
     ]
   },

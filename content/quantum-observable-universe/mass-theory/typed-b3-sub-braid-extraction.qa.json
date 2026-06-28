@@ -911,7 +911,264 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.362Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The claim in 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.368Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$' presents substantial mathematical content: Track-C chain, narrowing the open axiomatic content to a SINGLE focused combinat...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.375Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.381Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.387Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.393Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean:1"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.399Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to jones1985 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.405Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.411Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.417Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Track C n-strand: typed-B_3 sub-braid extraction reduces to the 2-strand chain via a single focused combinatorial axiom (`DominantSubBraidAtEps6`); composes to fully Lean-proved $c_3 = -2$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.423Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean:1 — content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean:216:2: error: No goals to be solved"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.429Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean fails compilation: content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean:216:2: error: No goals to be solved",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean contains compilation errors: content/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.lean:216:2: error: No goals to be solved, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T10:58:54.435Z"
 }

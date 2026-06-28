@@ -835,7 +835,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.473Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.479Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' presents substantial mathematical content: 'H_2 molecular bound state — $\\lambda^{(T_{3,5})} = (3, 1)$ and'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.485Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair'.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.492Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.498Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair'.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.504Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.510Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.516Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.522Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.528Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.535Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.541Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9572ff9d4227",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.547Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:58.849Z"
+  "updated_at": "2026-06-28T10:58:44.553Z"
 }

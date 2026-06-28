@@ -801,7 +801,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "No false claims identified in 'Affine light cone on Bring's brane (formal math-book style)': mathematical reasoning is consistent in prose."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The block 'Affine light cone on Bring's brane (formal math-book style)' presents substantial mathematical content: 'brane locus in the spacetime affine chart $z = x_0/x_1 \\in \\mathbb{CP}^1$,'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Affine light cone on Bring's brane (formal math-book style)'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The remarks and narrative scope in 'Affine light cone on Bring's brane (formal math-book style)' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Affine light cone on Bring's brane (formal math-book style)'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "The prose arguments in 'Affine light cone on Bring's brane (formal math-book style)' proceed logically through the stated steps."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No Lean sibling required; narrative matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "No citations are present in 'Affine light cone on Bring's brane (formal math-book style)', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "Key terms and symbols in 'Affine light cone on Bring's brane (formal math-book style)' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "The empirical claims in 'Affine light cone on Bring's brane (formal math-book style)' are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "affine-light-cone-figure.ts:1",
+        "notes": "The physical concepts described in 'Affine light cone on Bring's brane (formal math-book style)' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The derivation steps and formal definitions in 'Affine light cone on Bring's brane (formal math-book style)' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "95830e8d63f3",
+          "ts": "3e0fc42a9e22"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Affine light cone on Bring's brane (formal math-book style)' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:32.474Z"
+  "updated_at": "2026-06-28T11:19:33.145Z"
 }

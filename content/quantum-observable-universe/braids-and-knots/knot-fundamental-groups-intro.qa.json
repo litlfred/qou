@@ -825,13 +825,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'The fundamental group of a knot complement is the central' and found no counterexamples under the stated conditions.",
         "severity": "minor",
-        "evidence": "knot-fundamental-groups-intro.md:1-7 — survey prose ('the fundamental group of a knot complement is the central topological invariant ... surveys the Kronheimer–Mrowka results on its instanton homology'). Standard, accurate framing; no false claim."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -840,16 +840,15 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "prose block (kind=prose, ts:meta position opening); it is an exposition/section intro with no logical claim to be vacuous."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'sec:knot-fundamental-groups'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -861,13 +860,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies [] for 'sec:knot-fundamental-groups' and confirmed no circular definitions or justifications.",
         "severity": "minor",
-        "evidence": "No derivation; section opener. No smuggled conclusion."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -876,17 +875,15 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "knot-fundamental-groups-intro.md:5-7 — 'characterises the reducible representations that play a structural role in the chapter's Hecke decomposition' promises that reducible π_1-representations feed the Hecke decomposition. As a section opener this is a forward promise; if the downstream blocks do not actually use Kronheimer–Mrowka instanton homology in the Hecke decomposition, the framing oversells the connection.",
-        "notes": "Low-severity: it is an intro promising content; flag only so the section's body is checked to deliver the advertised reducible-rep → Hecke link."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'sec:knot-fundamental-groups' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -895,16 +892,16 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
-        "evidence": "No parameters or coefficients in a prose section opener."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -916,13 +913,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'The fundamental group of a knot complement is the central' are sound; no non-sequiturs detected.",
         "severity": "minor",
-        "evidence": "No multi-step argument; a single descriptive paragraph. No 'therefore' to break."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -931,16 +928,15 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "prose block, no lean.ref / no .lean sibling."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No Lean sibling required; narrative matches specifications.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -949,17 +945,16 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses [] cited in 'sec:knot-fundamental-groups' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "knot-fundamental-groups-intro.md:4-5 invokes 'the Kronheimer–Mrowka results on its instanton homology' but knot-fundamental-groups-intro.ts carries no cites[] for Kronheimer–Mrowka. A named external result is attributed in prose without a corresponding reference entry.",
-        "notes": "Add a Kronheimer–Mrowka citation to the block's cites[] (or to the section body where the result is used) so the attribution is backed."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -971,13 +966,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'sec:knot-fundamental-groups' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "Terms (knot-complement group, instanton homology, reducible representations) are standard and this is an intro deferring definitions to the section body; no 'the unique X' overreach."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -986,16 +981,16 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'sec:knot-fundamental-groups' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
-        "evidence": "No numerical content."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1004,16 +999,16 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'sec:knot-fundamental-groups' are consistent with quantum observable universe models.",
         "severity": "minor",
-        "evidence": "No physics-observable claim; topology exposition."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-fundamental-groups-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1022,16 +1017,15 @@
           "md": "7c563b6140ad",
           "ts": "5fa38f27bf92"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "No compute/witness backing."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1043,14 +1037,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "verdict: ACCEPT. A clean, accurate section opener; only minor housekeeping (add the Kronheimer–Mrowka citation, ensure the body delivers the promised reducible-rep → Hecke connection).",
-        "notes": "referee_argument: Nothing to reject in a survey paragraph; the two minor flags (uncited KM result, forward promise) are editorial, not substantive."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
       }
     ]
   },

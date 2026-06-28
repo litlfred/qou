@@ -881,15 +881,17 @@
           "ts": "889074e6b2fe",
           "lean": "cca953416544"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Correctly framed as a conjecture (md:1 'Conjecture.'); subsidiary claims (i)-(iii) are conjectural, not asserted as proved. The A<=4 prediction table matches observed stable isotopes."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1"
       }
     ],
     "da-vacuous": [
@@ -899,17 +901,17 @@
           "ts": "889074e6b2fe",
           "lean": "cca953416544"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "periodic-table-demand-conjecture.lean:103 'theorem magic_numbers_contain_two : 2 in [2,8,20,28,50,82,126] := by simp'; lean:29-46 main + sub-claims are 'opaque ... : Prop' markers",
-        "notes": "The provable Lean theorem in the file (magic_numbers_contain_two) is a trivial list-membership filler unrelated to the conjecture's content. The four claims are opaque Props (content-bearing only by name, body is opaque), so the class encodes assertion-by-fiat; acceptable for a conjecture stub but the only non-sorry theorem is content-free."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1"
       }
     ],
     "da-circular": [
@@ -921,13 +923,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Conjecture is forward-looking (predict valley of stability from demand minimization); the A<=4 table compares prediction to observation rather than fitting. No smuggled calibration."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.ts:1"
       }
     ],
     "da-overclaim": [
@@ -939,15 +943,14 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "periodic-table-demand-conjecture.md:37-38 'V coincides with the experimentally observed valley of stability for all A <= 238'; md:42-47 magic numbers {2,8,20,28,50,82,126} 'are' demand-closure values",
-        "notes": "The A<=238 universality and the exact magic-number/noble-gas reproduction are stated as the conjecture's content but supported only by an A<=4 table (md:81-86). For a conjecture this scope is permissible, yet it is a very strong all-A claim resting on 4 data points; the subsidiary claims assert exact set equality with no partial evidence beyond A<=4."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -959,13 +962,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No new calibration; demand magnitude derives from def:derived-atom / prop:demand-stability (in uses[])."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -977,15 +982,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean.",
         "severity": "minor",
-        "evidence": "periodic-table-demand-conjecture.md:88-91 'He-3 achieves exact demand closure (|dem|=0). He-4 has nonzero demand but minimal Markov trace — the doubly magic stability arises from action minimization, not demand closure.'",
-        "notes": "The main conjecture is stated as demand-magnitude MINIMIZATION, but He-4 (md:86 |dem|=0.098) is admitted to NOT minimize demand to zero, requiring an ad-hoc switch to 'Markov-trace/action minimization' as the stability criterion. The selection rule silently changes between rows of the same table, which undercuts the single-criterion 'arg min |dem|' statement of md:6-11."
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -997,15 +1002,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "periodic-table-demand-conjecture.lean:75 'end QOU.PeriodicTableDemand' then lean:87-99 three theorems referencing PeriodicTableDemand.valley_of_stability_matches OUTSIDE that namespace, then lean:106 a SECOND 'end QOU.PeriodicTableDemand' closing an already-closed namespace.",
-        "notes": "The Lean file has an unbalanced/duplicated namespace close: the namespace opened at lean:24 is closed at lean:75, yet lean:87-103 declarations (he4/o16/pb208_doubly_magic, magic_numbers_contain_two) sit outside it while still using unqualified PeriodicTableDemand and ValleyOfStabilityMatchesHolds, and lean:106 issues a redundant 'end'. As written this would fail to elaborate (unknown identifier / no namespace to end). ts validation is 'not_checked', so this defect is unverified and likely uncompiled. The .md's conditional 'doubly magic' interpretations therefore lack a working Lean backing."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1017,13 +1021,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "-- Ref: [manuscript] used for sorry's (lean:64-72) per AGENTS.md sorry-citation rule; references are internal manuscript labels, correctly attributed."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1033,17 +1039,17 @@
           "ts": "889074e6b2fe",
           "lean": "cca953416544"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "periodic-table-demand-conjecture.md:6-11 'the unique minimizer' but md:20-35 defines V as a set {(Z,N): |dem| <= |dem(Z',N')|} allowing ties",
-        "notes": "The headline claims a UNIQUE minimizer (md:8 'the unique minimizer'), but the formal set V (md:24-35) is defined with '<=', i.e. the set of all minimizers, which need not be a singleton (e.g. odd-A nuclei with two stable isobars). Uniqueness is asserted in prose but not enforced by the formal object; 'demand closure dem=empty-set' vs '|dem|=0' (md:46 vs md:81) also mixes two notions of closure."
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1053,17 +1059,17 @@
           "ts": "889074e6b2fe",
           "lean": "cca953416544"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "periodic-table-demand-conjecture.md:81-86 demand values 0.024, 0.058, 0.000, 0.098 for A=1..4 with no witness/script cited; md:88 'He-3 ... |dem|=0'",
-        "notes": "The four |dem| numbers backing the conjecture have no witness JSON or producer script referenced anywhere in the block or .ts. They cannot be reproduced or checked, and the favourable He-3 |dem|=0.000 vs He-4 0.098 pattern (with He-4 then rescued by a different criterion) is exactly the cherry-pick-prone situation; no error bars, no q0-pin provenance."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1075,13 +1081,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Mapping demand-minimization to the valley of stability and the magic-number/noble-gas/drip-line lists is physically reasonable framing; the magic numbers {2,8,20,28,50,82,126} and noble-gas Z list are correct. No conservation/units error."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1093,15 +1101,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "periodic-table-demand-conjecture.md:81-86 demand table with no '-- Witness'/script reference; lean:66 comment '-- Witness: computations/none'",
-        "notes": "No computation backs the demand values; the Lean instance itself annotates 'Witness: computations/none' (lean:66). Combined with the namespace-broken Lean (not_checked), neither the numbers nor the formal claims are reproducible/verified."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1111,17 +1119,18 @@
           "ts": "889074e6b2fe",
           "lean": "cca953416544"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "broken Lean namespace (lean:75 vs 106), uncited |dem| table (md:81-86), criterion-switch He-3 vs He-4 (md:88-91), uniqueness-vs-set mismatch (md:8 vs md:24-35)",
-        "notes": "verdict: major-revision. referee_argument: as a conjecture the framing is legitimate, but three concrete defects need fixing before acceptance: (1) the sibling Lean file is structurally broken — namespace closed at line 75, then conditional theorems and a duplicate 'end' follow, so it does not compile and validation is not_checked; (2) the four |dem| values that constitute the only empirical support are uncited and irreproducible (instance says Witness: none); (3) the stability criterion silently changes from 'min |dem|' to 'min Markov trace' between He-3 and He-4 within the same table, undercutting the single arg-min statement. Also reconcile 'unique minimizer' (prose) with the tie-permitting set V (formal)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean fails compilation: content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean for 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' fails compilation with error: content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist. This invalidates the claim of formal verification."
       }
     ]
   },

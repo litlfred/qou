@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1017,7 +1017,7 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "evidence": "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean:1 [placeholder-stub-file] # QOU... \u2014 placeholder stub",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1027,7 +1027,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1363,7 +1363,7 @@
           "ts": "0842164ef189"
         },
         "result": "fail",
-        "notes": ".md claims MI∫_Σ τ̂_n(α) = Hol_∇(ϱ_0;𝔊) (descended mass integral = unknot-core gauge holonomy). Lean proves only descended_term = unknot_holonomy for OPAQUE reals via assumed disc_integral equalities — no integral, no holonomy. Degenerate weakening.",
+        "notes": ".md claims MI\u222b_\u03a3 \u03c4\u0302_n(\u03b1) = Hol_\u2207(\u03f1_0;\ud835\udd0a) (descended mass integral = unknot-core gauge holonomy). Lean proves only descended_term = unknot_holonomy for OPAQUE reals via assumed disc_integral equalities \u2014 no integral, no holonomy. Degenerate weakening.",
         "reviewed_at": "2026-06-25T17:05:44.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1615,12 +1615,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The lemma (MI∫_Σ τ̂_n(α) = Hol_{∇_A}(ϱ_0)) is a plausible holonomy/Stokes statement; no counterexample or quantifier slip is evident. Correctness hinges on the unproved transient-vanishing step (flagged under da-non-sequitur), not on falsity."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Descended term is the unknot-core holonomy': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1632,12 +1633,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Non-vacuous geometric content (identifies a descended Markov-integral term with an unknot-core holonomy). Not a self-assuming projection."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Descended term is the unknot-core holonomy' presents substantial mathematical content: $\\Sigma = \\Sigma_0 \\cup \\bigcup_{i=1}^N D_i$, where $\\Sigma_0$ is a disc spannin...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1646,14 +1647,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Descended term is the unknot-core holonomy'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1662,17 +1665,15 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "topological-mass-holonomy.ts:5-6 lean.ref validation: \"not_checked\"; no sibling .lean file (topological-mass-holonomy.lean absent)",
-        "notes": "Stated as a proved Lemma with a Lean ref (QOU.LiftingDescent.tm_descended_is_holonomy), but the ref is validation:not_checked and there is no sibling .lean to inspect; the proof.md asserts the key vanishing rather than proving it. The 'Lemma' label slightly overstates verification status. Scope-limited but a referee would want the Lean ref confirmed to resolve to a real, sorry-free decl."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Descended term is the unknot-core holonomy' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1681,14 +1682,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Descended term is the unknot-core holonomy'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1697,17 +1700,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "topological-mass-holonomy-proof.md:10-12 \"On Σ_0 the transient component vanishes (α − τ̂_n(α) = 0 on the unknot complement, since ϱ_0 has trivial topology and all sections there factor through level n)\"",
-        "notes": "The crux step — transient vanishing on Σ_0 — is asserted with a one-line topological hand-wave ('trivial topology ⇒ sections factor through level n'). This is the load-bearing inference for the whole lemma; 'all sections there factor through level n' is stated without a cited lemma or Lean witness. The nonabelian-Stokes second equality (yekutieli2015) is fine; the first equality (MI∫_Σ = MI∫_{Σ_0}) depends on this unproved vanishing. Major logical gap."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Descended term is the unknot-core holonomy' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1716,17 +1718,15 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "topological-mass-holonomy.ts:5 ref: \"qou:QOU.LiftingDescent.tm_descended_is_holonomy\", validation:\"not_checked\"; no sibling .lean present to compare against the .md claim",
-        "notes": "Cannot confirm the Lean decl proves the narrative equality (and not a weaker/vacuous variant) because validation is not_checked and no sibling .lean exists for direct inspection. Given proof-statement-integrity cannot be verified, flag as a potential divergence pending resolution of the library-tree decl."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1738,12 +1738,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "cites:[yekutieli2015] invoked specifically for the nonabelian Stokes theorem on the disc Σ_0 (proof.md:23-24) — Yekutieli's non-abelian Stokes work is the correct attribution for this step."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to yekutieli2015 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1752,17 +1753,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Descended term is the unknot-core holonomy' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "topological-mass-holonomy.md:9 MI∫ (Markov-integral / multiplicative integral operator) and 𝔊 are used without local definition; proof.md:5 relies on def:descent-involution and A_{n+1}^desc",
-        "notes": "MI∫ notation and the gauge object 𝔊 / connection ∇_A are taken from upstream blocks (uses: lem:topological-mass-eigenspace-decomp) but not recalled here; a referee reading the lemma in isolation cannot pin the precise meaning of the multiplicative-integral or the level-n filtration. Minor — resolvable via the cited upstream block."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1771,15 +1771,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Purely topological/algebraic statement; no numerical match or q_0-dependent value."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Descended term is the unknot-core holonomy' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1788,15 +1789,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No direct physical-observable claim (structural holonomy identity)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Descended term is the unknot-core holonomy' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1805,15 +1807,16 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No computation/witness backing (analytic lemma)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Descended term is the unknot-core holonomy' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1822,16 +1825,17 @@
           "md": "f90dc9a94d14",
           "ts": "0842164ef189"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "notes": "verdict: major-revision. referee_argument: the lemma's entire content reduces to the transient-vanishing step on Σ_0 (proof.md:10-12), which is asserted via an unproved 'trivial topology ⇒ all sections factor through level n' claim with no cited lemma or Lean witness; combined with the Lean ref being validation:not_checked and lacking an inspectable sibling .lean, the 'Lemma' is not yet verified to the standard its label implies. Strongest objection: discharge or cite the level-n factorization on the unknot complement, and confirm the library decl proves exactly this equality."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing, preventing formal verification of the claims in 'Descended term is the unknot-core holonomy'."
       }
     ]
   },

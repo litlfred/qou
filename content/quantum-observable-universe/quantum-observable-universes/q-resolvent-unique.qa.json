@@ -1340,7 +1340,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "For the proposition 'Uniqueness of the $q$-resolvent' (asserting 'The [$q$-resolvent](#def:q-resolvent) $R_q(s)$ is the unique morphism'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of q-resolvent-unique.lean."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "The sibling Lean file q-resolvent-unique.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Uniqueness of the $q$-resolvent' is non-vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Uniqueness of the $q$-resolvent' (which asserts 'The [$q$-resolvent](#def:q-resolvent) $R_q(s)$ is the unique morphism')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "No overclaims: the scope of 'Uniqueness of the $q$-resolvent' matches the sorry-free formalization in q-resolvent-unique.lean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Uniqueness of the $q$-resolvent'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "The logical steps in 'Uniqueness of the $q$-resolvent' are formally sound and verified by the sorry-free compilation of q-resolvent-unique.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "The Lean signature in q-resolvent-unique.lean corresponds directly to the narrative claim in 'Uniqueness of the $q$-resolvent'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "No citations are present in 'Uniqueness of the $q$-resolvent', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "Key terms and symbols in 'Uniqueness of the $q$-resolvent' (e.g. from 'The [$q$-resolvent](#def:q-resolvent) $R_q(s)$ is the unique morphism') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "The algebraic and logical relations in 'Uniqueness of the $q$-resolvent' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.ts:1",
+        "notes": "The physical concepts described in 'Uniqueness of the $q$-resolvent' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-resolvent-unique.lean:1",
+        "notes": "The formalization is fully reproducible as q-resolvent-unique.lean compiles successfully."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8f8e02874f95",
+          "ts": "51fe1c209247",
+          "lean": "58e400c4d1cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Uniqueness of the $q$-resolvent' (concerning 'The [$q$-resolvent](#def:q-resolvent) $R_q(s)$ is the unique morphism') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:39.502Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

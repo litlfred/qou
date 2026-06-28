@@ -937,7 +937,251 @@
           "value": 0.78
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.428Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.435Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' presents substantial mathematical content: 'Conjecture (Confinement $\\to$ NF-structure forcing).'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.441Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap'.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.447Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.453Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap'.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.459Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.466Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.471Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.478Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.485Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.491Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "confinement-nf-structure-forcing.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.497Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6576e8e8eb19",
+          "ts": "d236eea63bd8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:37.503Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Confinement → NF-structure forcing: $\\\\mathrm{shift}_{\\\\mathrm{NF}}(\\\\beta_1 \\\\star I \\\\star \\\\beta_2) = \\\\alpha_{\\\\mathrm{shift}}(I) + \\\\Delta$ with $|\\\\Delta|$ bounded by the LP duality gap' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.940Z"
+  "updated_at": "2026-06-28T10:58:37.509Z"
 }

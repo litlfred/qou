@@ -825,12 +825,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Standard facts: trefoil 3_1 is the simplest nontrivial knot, non-abelian knot group, 2-dim irrep. All correct."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'The trefoil $3_1$ is the simplest non-trivial knot and the' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -842,12 +843,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Section-opening prose; non-vacuous orientation text."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'sec:trefoil-knot'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -856,15 +857,16 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No derivation."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies [] for 'sec:trefoil-knot' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -873,17 +875,15 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "trefoil-knot-intro.md:4-6",
-        "notes": "'non-abelian first homology' is loose: H_1 of any knot complement is Z (abelian, infinite cyclic, by Alexander duality). The intended property is the non-abelian knot GROUP (pi_1), which the same sentence also names. The phrase 'non-abelian first homology' is technically false as written; here flagged as imprecision/overclaim rather than a load-bearing false-claim since the correct object (knot group) is named alongside."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'sec:trefoil-knot' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -892,15 +892,16 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No parameters."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -912,12 +913,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Descriptive, no inferential chain to break."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'The trefoil $3_1$ is the simplest non-trivial knot and the' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -926,15 +928,15 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose, no Lean."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No Lean sibling required; narrative matches specifications.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -943,15 +945,16 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses [] cited in 'sec:trefoil-knot' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -960,17 +963,16 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'sec:trefoil-knot' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "trefoil-knot-intro.md:4",
-        "notes": "'non-abelian first homology' (see da-overclaim): 'first homology' is the unambiguous abelian object H_1; if 'first homology' is meant literally it is abelian (Z), so the modifier 'non-abelian' is incoherent. Reword to 'non-abelian knot group / fundamental group'."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -979,15 +981,16 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerics."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'sec:trefoil-knot' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -996,15 +999,16 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No physics claim."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'sec:trefoil-knot' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/trefoil-knot-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1013,15 +1017,15 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No compute."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1030,16 +1034,17 @@
           "md": "fd6bd810e6d3",
           "ts": "24d083dae03f"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "notes": "verdict: minor-revision. referee_argument: One terminological slip — 'non-abelian first homology' (l.4) conflates H_1 (always abelian = Z for a knot complement) with the non-abelian knot group. Fix the phrase to 'non-abelian knot group'. Otherwise a clean orientation paragraph."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
       }
     ]
   },

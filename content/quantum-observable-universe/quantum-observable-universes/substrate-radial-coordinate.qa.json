@@ -1338,7 +1338,268 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.lean:1",
+        "notes": "The mathematical claims in 'Substrate parameter as the radial coordinate' regarding 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...' are unverified due to compilation errors in the Lean sibling file substrate-radial-coordinate.lean: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "The sibling Lean file substrate-radial-coordinate.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Substrate parameter as the radial coordinate' (which asserts 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "The prose presents 'Substrate parameter as the radial coordinate' as verified, but the sibling Lean file substrate-radial-coordinate.lean fails to compile."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Substrate parameter as the radial coordinate'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.lean:1",
+        "notes": "Logical gaps exist in the formalization of 'Substrate parameter as the radial coordinate' due to compilation failure in substrate-radial-coordinate.lean."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.lean:1",
+        "notes": "The Lean sibling substrate-radial-coordinate.lean fails compilation, causing divergence from the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "No citations are present in 'Substrate parameter as the radial coordinate', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "Key terms and symbols in 'Substrate parameter as the radial coordinate' (e.g. from 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "The empirical claims in 'Substrate parameter as the radial coordinate' (quoting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are structurally anchored to the QOU mass framework and are stable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.ts:1",
+        "notes": "The physical concepts described in 'Substrate parameter as the radial coordinate' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "substrate-radial-coordinate.lean:1",
+        "notes": "The Lean sibling substrate-radial-coordinate.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c3e8a3390b24",
+          "ts": "cf7113d6a47d",
+          "lean": "6b36e06e35e6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic",
+        "verdict": "open-objection",
+        "referee_argument": "The proposed formalization for 'Substrate parameter as the radial coordinate' (asserting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic. A competent referee cannot accept this as a verified mathematical claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.391Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

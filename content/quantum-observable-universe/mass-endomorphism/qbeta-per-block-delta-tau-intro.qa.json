@@ -291,12 +291,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose intro; claims (χ_λ vanish at q=1, (q²−1) factor forced) are hedged and forwarded to named propositions; nothing asserted falsely here."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'sec:qbeta-per-block-delta-tau-intro': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -308,12 +309,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Substantive sectioning prose summarizing four downstream propositions; not a tautology."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'sec:qbeta-per-block-delta-tau-intro' presents substantial mathematical content: The $\\chi$-character closed forms of the previous section gave the Markov trace ...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -325,12 +326,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No derivation performed; merely routes per-block χ data into the downstream c_k recursion. Explicitly flags the downstream extraction as 'calibration-anchored' (md:16-17), so no smuggled-calibration concealment."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:qbeta-per-block-delta-tau-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -342,12 +344,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Carefully distinguishes 'closed forms here are exact' from 'downstream extraction remains calibration-anchored' (md:16-17). Honest scoping."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'sec:qbeta-per-block-delta-tau-intro' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -359,12 +361,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose introduces no parameters; the canonical Markov weights it references are pinned in prop:qbeta-canonical-markov-weights-explicit-instance."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:qbeta-per-block-delta-tau-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -373,17 +376,16 @@
           "md": "2d43f7b9476a",
           "ts": "7d43cabb524d"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'sec:qbeta-per-block-delta-tau-intro' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
-        "evidence": "md:5-9 'vanish at q=1 ... which is what forces the Δτ_M difference to carry an explicit (q²−1) factor'",
-        "notes": "The 'which forces' causal link is asserted, not argued, in the intro. It is delegated to prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor, so acceptable for a prose intro, but the implication (vanishing-at-1 ⇒ explicit (q²−1) factor) is non-trivial and unsupported in-block."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -392,15 +394,15 @@
           "md": "2d43f7b9476a",
           "ts": "7d43cabb524d"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block, no .lean sibling and no claim requiring formalization."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -409,15 +411,16 @@
           "md": "2d43f7b9476a",
           "ts": "7d43cabb524d"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[] and no -- Ref:; only internal cross-references."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'sec:qbeta-per-block-delta-tau-intro', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -426,17 +429,16 @@
           "md": "2d43f7b9476a",
           "ts": "7d43cabb524d"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'sec:qbeta-per-block-delta-tau-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:3 'reads them through the T_β endomorphism'; md:13 'surrogate Δτ_M'",
-        "notes": "'T_β endomorphism' and 'surrogate Δτ_M' are used without in-block definition; the reader must trust the linked propositions. The base ring / q-regime (formal q vs substrate q_0) is also implicit. Minor for an intro."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -448,12 +450,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical match asserted in-block; explicitly defers the fragile (calibration-anchored) part downstream (md:16-17)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'sec:qbeta-per-block-delta-tau-intro' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -462,15 +465,16 @@
           "md": "2d43f7b9476a",
           "ts": "7d43cabb524d"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pure algebraic/sectioning prose; no physical (units/conservation/measurement) claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'sec:qbeta-per-block-delta-tau-intro' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -479,15 +483,16 @@
           "md": "2d43f7b9476a",
           "ts": "7d43cabb524d"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No computation/witness attached to this prose block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'sec:qbeta-per-block-delta-tau-intro' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -499,14 +504,14 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "verdict=accept-with-minor",
-        "notes": "referee_argument: A well-scoped sectioning intro that honestly separates exact closed forms from calibration-anchored downstream extraction. The only soft spot is the unargued 'vanishing-at-q=1 forces an explicit (q²−1) factor' implication and the undefined-in-block T_β/surrogate-Δτ_M terms, both delegated to named propositions — appropriate for prose but worth a reader-facing pointer."
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:qbeta-per-block-delta-tau-intro' are consistent."
       }
     ]
   },

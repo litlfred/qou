@@ -976,7 +976,265 @@
           "value": 0.74
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.965Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.971Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "binding-manybody-jet-filtration.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.976Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$'.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.982Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' as verified, but the sibling Lean proof contains sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.988Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$'.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:40.994Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.000Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.006Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.013Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.019Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.025Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Binding many-body series equals the jet-order filtration: $B(K)=\\\\sum_n m_e\\\\,a_D^{(n)}$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "binding-manybody-jet-filtration.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.031Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry, indicating incomplete verification.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.037Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:55.819Z"
+  "updated_at": "2026-06-28T10:58:41.043Z"
 }

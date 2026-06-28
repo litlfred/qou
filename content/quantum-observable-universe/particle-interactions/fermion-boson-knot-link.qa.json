@@ -1348,15 +1348,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:39-52 'Spin–statistics from topology': 'a knot (1 component) requires a 4π rotation' and 'a link (2 components) returns after 2π'. md:54-64 'the proton … is a composite fermion because the Borromean structure, when resolved via the Skein relation, reduces to an odd number of knot components.'",
-        "notes": "The core T(2,n) component count (gcd(2,n); odd⇒knot, even⇒link) is correct and Lean-proved. But two statements are not established: (i) the spin-statistics paragraph asserts the 4π/2π rotation property follows from component count — component count alone does not determine framing/spin (a knot can have any framing); this is asserted, not derived. (ii) 'Skein resolution reduces Borromean to an odd number of knot components' is stated without proof and is dubious as phrased (Skein resolution of the Borromean link yields a signed sum of diagrams, not a definite component parity). Flag as warn since the headline proposition itself is sound."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Fermions are knots, bosons are links' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1368,13 +1368,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "fermion-boson-knot-link.lean:16-54 proves fermion_iff_odd and boson_iff_even with genuine gcd/divisibility arguments (omega/Nat.gcd lemmas), not trivial. Non-vacuous."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Fermions are knots, bosons are links' presents substantial mathematical content: The fermion--boson decomposition (fermion--boson decomposition) coincides with the knot--link decomposition of the $T...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1386,13 +1387,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Proof derives component count from gcd(2,n) (a genuine topological fact) and maps to fermion/boson via π_V vanishing; no target is assumed."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Fermions are knots, bosons are links'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1402,17 +1405,16 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:39-52 elevates the component-count result to a derivation of the spin–statistics theorem ('The spin–statistics theorem … becomes a topological statement'); md:61-64 concludes the proton 'is a composite fermion'.",
-        "notes": "The proved content is only: T(2,n) has gcd(2,n) components, and π_V cancels for the even case. Claiming this establishes spin-statistics (half-integer vs integer spin, 4π vs 2π monodromy) overclaims — spin/framing is not a function of component number. The proton-fermion conclusion rides on the unproved Skein-parity claim. Conclusion stronger than the gcd argument supports."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Fermions are knots, bosons are links' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1422,15 +1424,17 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameters or calibration; pure combinatorial/topological statement."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Fermions are knots, bosons are links'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1440,17 +1444,17 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md:30-33 even case: claims the two link components have 'opposite vertical winding' (+1 and -1) 'related by the fiber adjoint involution' so π_V cancels — asserted, no lemma. md:43-47 'the monodromy of the fiber adjoint involution has order 2 (not 1)' offered as the half-integer-spin reason.",
-        "notes": "The crucial step π_V(α^(1))+π_V(α^(2))=0 (the boson direction of the equivalence) rests on an unproven claim that the two T(2,even) components carry exactly opposite Reeb winding; the Lean only proves the components COUNT (gcd), never the winding cancellation. 'Therefore boson' does not follow from the formalised content — the spin-statistics bridge lemma is missing."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1462,15 +1466,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "md asserts fermion⇔nonzero π_V winding, boson⇔π_V cancellation, plus spin–statistics and the proton-fermion corollary (md:7-64). fermion-boson-knot-link.lean:16-54 proves ONLY components=1↔n%2=1 and components=2↔n%2=0 — a statement purely about Nat.gcd(2,n).",
-        "notes": "The Lean proves the gcd component count; it formalises none of the π_V/Reeb-winding content, the fiber-adjoint involution, the spin-statistics claim, or the proton corollary that the .md presents as the proposition's substance. The narrative claim is substantially stronger than the Lean — proof-statement-integrity divergence (Lean is the weaker, purely arithmetic shadow)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1482,13 +1485,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "fermion-boson-knot-link.lean:1 cites [manuscript] Ch.6 §3 only; no external reference is invoked for a specific result, so no misuse."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Fermions are knots, bosons are links', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1498,17 +1503,17 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Fermions are knots, bosons are links' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "md:1-8 keys fermion/boson on 'α_V ≠ 0' (vertical projection π_V), referencing def:fermion-boson-decomposition and def:categorical-reeb; the Lean structure (lean:9-13) instead carries only components+genus with no π_V field.",
-        "notes": "The 'vertical projection π_V' / α_V that defines the fermion-boson split in prose has no representation in the formal object, and the Reeb-direction winding is invoked but not pinned in this block. The operative term (α_V) is defined elsewhere; here it floats. Minor."
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1518,15 +1523,17 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical/experimental match claimed."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Fermions are knots, bosons are links' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1536,17 +1543,17 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Fermions are knots, bosons are links' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "md:39-52 identifies half-integer spin with knot (1-component) and integer spin with link (2-component) via 4π/2π rotation; md:54-64 calls the proton a 'composite fermion' from a 3-component Borromean structure.",
-        "notes": "A physicist would object that spin is not determined by the number of link components (the photon and gluon are bosons but the framework would need them as 2-component links; the quark color/Borromean picture has 3 components yet the proton must be spin-1/2). The mapping is suggestive but the spin assignment mechanism is not physically grounded. Flagged, not fatal, since the block is framed structurally."
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1556,15 +1563,17 @@
           "ts": "f437221f9042",
           "lean": "d5bf216192af"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No witness/compute backing; the gcd result is checkable directly from the Lean."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument"
       }
     ],
     "da-referee-verdict": [
@@ -1576,15 +1585,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Lean proves only Nat.gcd component count (lean:16-54) while md claims spin-statistics + proton-fermion (md:39-64); boson direction relies on unproven opposite-winding cancellation (md:30-33).",
-        "notes": "verdict=major-revision. referee_argument: The proposition has a correct, cleanly-proved core (T(2,n) is a knot iff n odd, a link iff n even — gcd(2,n)). But the .md overreaches: it markets this gcd fact as (a) the fermion/boson split via π_V winding cancellation, (b) the spin–statistics theorem, and (c) the proton-as-composite-fermion corollary, none of which the Lean formalises and the last two of which lack a supporting lemma (spin is not a function of component count; the Skein-parity claim is unsubstantiated). Repair: either restrict the proposition's stated scope to the gcd/component-count fact, or formalise the π_V cancellation and demote the spin-statistics/proton paragraphs to clearly-labelled remarks."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean fails compilation: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean for 'Fermions are knots, bosons are links' fails compilation with error: content/quantum-observable-universe/particle-interactions/fermion-boson-knot-link.lean:11:30: error: Application type mismatch: The argument. This invalidates the claim of formal verification."
       }
     ]
   },

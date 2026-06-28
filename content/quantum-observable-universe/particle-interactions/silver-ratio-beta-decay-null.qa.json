@@ -1054,551 +1054,526 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9fd659699664",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:23.505Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9fd659699664",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:23.875Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Block placement and kind 'proposition' match validated structurally.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.194Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.463Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.661Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
-      }
-    ],
-    "proof-rater-strategy-clarity": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.933Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.159Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.360Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
-      }
-    ],
-    "proof-statement-integrity": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.481Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
-      }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.640Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.699Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
-    "proof-no-false-premise": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.742Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.781Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
-      }
-    ],
-    "proof-no-decide-masking": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:25.812Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
-      }
-    ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": ".md:13-28 (proposition box + 'vanishes if and only if h=2 if and only if q=1±√2') vs .lean:42-54 `beta_decay_null_iff_h_zero_or_two`, which proves Δ(net)=0 ↔ h=0 ∨ h=2.",
-        "notes": "The narrative 'iff h=2' is strictly false as an iff: Δ(net)=h(h-2)/2 also vanishes at h=0 (q=1). The Lean states the correct two-root condition; the prose drops the h=0 root. h=0 is the undeformed substrate, physically excluded but mathematically a real second null — so the 'if and only if' is an over-tightened biconditional."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": ".lean:30-117 four theorems (silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic_silver_ratio_self_referential, hoefsmit_b_squared_at_silver_ratio) are real arithmetic statements with genuine proofs (no sorry, no `: True`).",
-        "notes": "Substantive Lean content; b²=7/8 derivation verified by hand (q²=3+2√2, num=7(3+2√2), den=8(3+2√2))."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The silver-ratio null is derived from the symbolic net table (prop:neutron-qvalue-symbolic), not back-fitted to data; no calibration smuggled."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:105-110 '**Four of five** c_k values at the silver ratio are Pell-Lucas rationals' presented as structural evidence the framework is 'complete' (.md:174-179 'The categorical chain IS complete'), while authorNotes (.ts:38-40) admit 'This is a structural identification, not a derivation … the actual closed forms for c_4..c_7 remain empirical conjectures'.",
-        "notes": "§121-184 ('Why c_5 is the outlier — involution + Leibniz') reads as a derivation ('c_5 = -b² - 1/2 where -b² is the pure-σ action and -1/2 is the averaged-crossing fingerprint'), but the closed forms it 'explains' are themselves empirical fits per the authorNotes. Explaining a fit with a post-hoc story and concluding 'the chain IS complete' overclaims relative to the conjectural inputs."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": ".md:97-103 c_k 'Closed form' column: c_5 = -(b²+1/2). The +1/2 'averaged-crossing involution fingerprint' (.md:156-157) is introduced to explain why c_5 breaks the Pell-Lucas pattern.",
-        "notes": "The -1/2 term has a narrative origin (involution projector P_avg) but no derivation tying its magnitude to the precision-ladder combinatorics; it functions as the free correction that makes the c_5 empirical form land. Flagged as an off-menu coefficient whose value is asserted, not computed."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": ".md:143-171 'Leibniz propagation: how h/2 reaches c_5' — the claim that the proton's single averaged σ₁ position 'propagates through higher rungs … via Leibniz/product-expansion combinatorics' to land specifically at rung k=5 has no computation; line 170-171 asserts 'the cross-term combinatorics in the b⁵ℏ_q^{10} rung amplify the h/2 contribution' without a lemma.",
-        "notes": "The 'therefore c_5 picks up 1/2 and c_3,c_4,c_6,c_7 do not' conclusion is a plausibility narrative; no explicit rung-by-rung expansion is shown. Gap between the involution observation and the rung-5-specific selection."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "The .md proposition headline (.md:13-45) and title (.ts:9-10) make a biconditional 'vanishes iff h=2 iff q=1±√2' claim plus net(p)=net(n)=0 and Form-A vanishing; the .lean proves Δ(net)=0 ↔ h=0 ∨ h=2 (.lean:42), i.e. a DIFFERENT (correct, two-root) condition, and does NOT formalise the net(p)=net(n)=0 / Form-A-vanishing / Pell-Lucas-c_k content at all.",
-        "notes": "Lean proves a corrected and narrower set of facts than the .md asserts: (1) the h=0 root contradicts the .md 'iff h=2'; (2) the c_k Pell-Lucas table, the §c_5-outlier derivation, and the SU(2)_L paragraph have no Lean backing. proof-statement-integrity: Lean ≠ md claim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress",
+        "severity": "minor"
       }
     ],
-    "da-citation-misuse": [
+    "wall-side-proof": [
       {
         "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean proof contains compilation errors.",
+        "severity": "minor"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
+        "severity": "minor"
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
+        "severity": "minor"
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Proof does not compile due to compilation errors: content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress",
+        "severity": "minor"
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical and physical connections explored in this block are highly novel.",
+        "severity": "minor"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress",
+        "severity": "minor"
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No self-assuming projections are used in the proof.",
+        "severity": "minor"
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The proof relies on sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The proof assumptions are consistent and do not contain false premises.",
+        "severity": "minor"
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Broken proof compilation.",
+        "severity": "minor"
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The proof does not use decide tactics to mask verification steps.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress.",
         "severity": "minor",
-        "evidence": "cites (.ts:12-14) wenzl1988, hoefsmit1974; .lean:17-18 Ref wenzl1988 (Hecke Markov trace), hoefsmit1974 (seminormal forms).",
-        "notes": "Wenzl (Hecke algebra trace / index) and Hoefsmit (seminormal representations of Hecke algebras) are correctly invoked for the Markov trace and b² off-diagonal coupling. No misattribution."
+        "evidence": "silver-ratio-beta-decay-null.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable'.",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable'.",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean.",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cc1dbffda5cd",
+          "ts": "dd0d9de57ef0",
+          "lean": "2ce5e645356e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The citations wenzl1988, hoefsmit1974 in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:39 'net(p) = net(n) = 1 - h/2 = 0' — the proton net is 1-h/2 but the equation chains it with neutron net (1-3h/2+h²/2); both equal 0 at h=2 but are not the same function, so '=1-h/2' is the proton form only. Also .md:40 'Form A' $\\mathfrak{Q}_\\beta^A$ is named but its definition lives in another block.",
-        "notes": "The shorthand 'net(p)=net(n)=1-h/2' is ambiguous: it reads as both equal to the single expression 1-h/2, which holds only at the null point, not identically. Minor; the table at .md:52-55 disambiguates."
+        "evidence": "silver-ratio-beta-decay-null.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": ".md:107-110 c_5 'OUTLIER (11 not Pell)' and authorNotes (.ts:35 item 3) tie this to a '2.4% residual gap for c_5 at q_0'. The c_k closed forms (c_3=-2, c_4=c_3·b⁴, c_5=-(b²+1/2), c_6=c_3²·b², c_7=c_3³) are flagged repo-wide as q₀-dependent NEAR-MATCHES (AGENTS.md c_k banner: c_3=-2 swings up to 3.47% across anchors).",
-        "notes": "The 'four of five are Pell-Lucas clean' pattern is read off forms that are themselves empirical near-matches with documented cross-anchor swing; counting 4/5 'clean' is sensitive to which empirical closed form is plugged in. The block itself concedes (.md:108-110) the c_5 form 'may not be the categorically correct form', i.e. the pattern rests on fitted inputs."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "silver-ratio-beta-decay-null.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in '**Silver-ratio $\\\\beta$-decay null**: at $q = 1 \\\\pm \\\\sqrt{2}$, the categorical $\\\\beta$-decay $Q$-value vanishes; the Hecke generator $\\\\sigma$ has eigenvalues = $1 \\\\pm \\\\sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": ".md:42-45 'q=1+√2 is the β-decay null point … at which proton and neutron are categorically indistinguishable and free-neutron β⁻ decay is forbidden'.",
-        "notes": "This is a property of a hypothetical substrate value q=1+√2≈2.414, far from the physical q₀≈1.110; the framing is an algebraic curiosity, not a physical prediction (the physical neutron does decay). Stated as 'categorical interpretation' so not asserted as physics, but the 'β-decay is forbidden' phrasing could be misread as a claim about the real neutron."
+        "evidence": "silver-ratio-beta-decay-null.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": ".ts:24-31 computation script computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py and witness qbeta-silver-ratio-pell-lucas-ck.witness.json both exist; status 'experimental'. authorNotes item 3 (.ts:35) cross-references a '2.4% residual gap for c_5 at q_0' — the c_k forms are subject to the q₀-repin staleness class per AGENTS.md.",
-        "notes": "Script + witness present (good), but the c_k closed forms feeding the Pell-Lucas table are q₀-anchor-dependent and the corpus flags them as near-matches with cross-anchor swing; without a hash check against the current pin the 4/5 count may reflect a stale-anchor evaluation. Did not run the script to confirm hashes."
+        "evidence": "silver-ratio-beta-decay-null.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "145ba850aa24",
+          "md": "cc1dbffda5cd",
           "ts": "dd0d9de57ef0",
           "lean": "2ce5e645356e"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation.",
         "severity": "major",
-        "evidence": "verdict: minor-revision. Strongest objection: the Lean (.lean:42, Δ(net)=0 ↔ h=0 ∨ h=2) proves a different/corrected condition than the .md proposition's 'iff h=2' (.md:27), and the load-bearing c_k Pell-Lucas narrative (.md:93-184) is built on empirical near-match closed forms (authorNotes concede this) yet concludes 'the categorical chain IS complete'.",
-        "notes": "referee_argument: The core algebra (silver-ratio null, b²=7/8) is correct and Lean-verified, but (1) the headline biconditional drops the h=0 root, (2) the c_5-outlier 'derivation' over-narrates fitted inputs into a completeness claim, and (3) most of the .md content has no Lean backing. Re-scope the proposition to match the Lean and demote the c_5 §to a remark."
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

@@ -1353,14 +1353,13 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "topological-mass.md:18-29 (eq:topological-mass-decomp) states the mass as an EXACT additive equality 𝔪(ϱ)=‖tr_desc‖+Σ‖tr_trans‖. This holds only under Frobenius-orthogonality (norm-additivity), which the .md itself flags conditionally at lines 54-56 ('When the splitting is orthogonal...'). The headline equation is stated unconditionally; the general triangle inequality gives only ≤ (as the sibling Lean mass_upper_bound, topological-mass.lean:68-73, proves).",
-        "notes": "Not strictly false because the conditional is mentioned later, but the displayed theorem equation overstates equality where only ≤ is generally valid — borderline false-as-stated."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Topological Decomposition of Mass' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1370,17 +1369,15 @@
           "ts": "2b468bbae01e",
           "lean": "04a422ad3fc4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The lean.ref target QOU.Torsion.mass_decomposition_categorical (lean/QOU/Torsion/mass_decomposition_categorical.lean:56-58) concludes `ctx.mass = Σ mass_level n` solely by `ctx.impl_mass_decomposition_categorical ctx.decomposition_active`, where impl_mass_decomposition_categorical (lines 36-38) is a class field carrying that exact conclusion. This is a self-assuming projection (the class axiomatises the conclusion, not hypotheses) — §3b-cond non-degeneracy / proof-statement-integrity violation.",
-        "notes": "The file's own docstring (lines 6-13) calls it a 'Placeholder canonical' stub; the theorem derives nothing."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Topological Decomposition of Mass' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a ([quantum observable universe](#def\\:quantum-ob...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1393,12 +1390,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "The decomposition is structural (idempotent splitting + trace linearity), not back-fitted to a measured mass."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Topological Decomposition of Mass'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1408,17 +1406,15 @@
           "ts": "2b468bbae01e",
           "lean": "04a422ad3fc4"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "theorem kind (topological-mass.ts:3, label thm:topological-mass) asserts an exact decomposition, but (i) the unconditional truth is only the ≤ bound (mass_upper_bound), (ii) the exact form needs non-negativity/orthogonality hypotheses not in the headline statement (topological-mass.lean:94-102 norm_additivity_of_nonneg_traces), and (iii) the canonical lean.ref decl proves a DIFFERENT, vacuously-supplied identity (Σ mass_level n, no norms, no desc/trans split).",
-        "notes": "Conditional/approximate result presented as an absolute theorem; the strongest formal artifact for it is either an inequality or a self-assuming stub."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Topological Decomposition of Mass' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1431,12 +1427,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No undisclosed parameter; N (tower depth) and blow-up centres p_i are declared (topological-mass.md:6-9,42-49)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Topological Decomposition of Mass'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1449,14 +1446,13 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "topological-mass.md:51-56 — 'The decomposition follows from the idempotent splitting ... and linearity of the trace' yields trace additivity, but the leap to NORM additivity 𝔪=‖·‖+Σ‖·‖ requires the orthogonality condition, introduced only as a 'When ...' aside (lines 54-55). The 'as stated' additive equation does not follow from trace linearity alone.",
-        "notes": "Missing lemma: norm additivity is not a consequence of trace additivity without orthogonality/non-negativity."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/topological-mass.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1469,14 +1465,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The .md exact-equality claim 𝔪=‖tr_desc‖+Σ_{i=1}^N‖tr_trans(p_i)‖ diverges from BOTH Lean candidates: (a) the lean.ref decl mass_decomposition_categorical proves `ctx.mass = Σ_{n=0}^{N-1} mass_level n` (no norms, no desc/trans split, self-assuming); (b) the sibling topological-mass.lean proves only mass_upper_bound (≤) unconditionally and exact equality only under added 0≤desc,0≤trans hypotheses.",
-        "notes": "Neither Lean object is the .md theorem; the resolved ref is the weaker self-assuming one."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1489,12 +1483,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "-- Ref: [kock2004] / [manuscript] §3 (topological-mass.lean:67,92-93) appropriately back the Frobenius-norm and idempotent-splitting machinery."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Topological Decomposition of Mass', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1504,17 +1499,16 @@
           "ts": "2b468bbae01e",
           "lean": "04a422ad3fc4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Topological Decomposition of Mass' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "'When the splitting is orthogonal with respect to the Frobenius norm' (topological-mass.md:54) is a hypothesis stated as a parenthetical condition rather than as part of the theorem hypotheses; tr_desc / tr_trans are defined via im τ̂_n / ker τ̂_n but the Frobenius-orthogonality of those subspaces is not established here.",
-        "notes": "The regime under which the headline equality holds is under-specified in the statement."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1527,12 +1521,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "This block is structural; the attached witness (mass-from-q-symbolic.witness.json) cross-checks q₀-derived quantities (ℏ_q², m_μ/m_e self-consistency) at tol 1e-15, all passed — no fragile experimental fit asserted in the block itself."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Topological Decomposition of Mass' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1545,12 +1540,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "Decomposing mass into baseline-drag + transient localised contributions is internally consistent; no unit/conservation violation in the block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Topological Decomposition of Mass' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1560,17 +1556,16 @@
           "ts": "2b468bbae01e",
           "lean": "04a422ad3fc4"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "computation.witness mass-from-q-symbolic.witness.json carries computedAt 2026-04-14 and commitSha a37c160f...; the witness is muon-q₀ pinned (q₀=1.1099785955541805, ℏ_q²=0.00981718851347867) — consistent with the AGENTS.md computations-layer muon convention. No scriptHash/scriptCommitSha drift field is present to confirm currency against the current producer.",
-        "notes": "Witness lacks scriptHash/scriptCommitSha; cannot mechanically confirm it is current. Values self-consistent, so this is a staleness-visibility warn, not a contradiction."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass.lean:34:22: error: invalid binder annotation, type is not a class instance"
       }
     ],
     "da-referee-verdict": [
@@ -1583,14 +1578,14 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "verdict=major-revision. Strongest objection: a `theorem` block asserts an EXACT additive mass decomposition, yet (1) the unconditional truth is only the ≤ triangle bound, (2) exact equality needs non-negativity/orthogonality hypotheses absent from the headline, and (3) the resolved lean.ref (mass_decomposition_categorical) is a self-assuming placeholder proving a different norm-free identity.",
-        "notes": "referee_argument: Either downgrade the headline to the inequality / state the orthogonality hypothesis explicitly in the theorem, OR upgrade the canonical Lean ref to genuinely derive 𝔪=‖tr_desc‖+Σ‖tr_trans‖ from non-vacuous hypotheses. As stands, the strongest formal backing is vacuous and the narrative equality is conditional-presented-as-absolute."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass.lean:34:22: error: invalid binder annotation, type is not a class instance",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass.lean:34:22: error: invalid binder annotation, type is not a class instance, invalidating the claimed formalization."
       }
     ]
   },

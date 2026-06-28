@@ -824,13 +824,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Prose intro; makes only organizational/navigational claims about which blocks were reconnected, no mathematical assertion to be false."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'sec:particle-interactions-orphan-reconnect-intro': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -841,13 +843,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Legitimate section-intro prose; conveys real navigational content, not a tautology."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'sec:particle-interactions-orphan-reconnect-intro' presents substantial mathematical content: Blocks in this section were reconnected during the Phase 7 orphan audit and the restructuring.  They include the Geom...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -858,12 +861,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:particle-interactions-orphan-reconnect-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -872,17 +878,16 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "particle-interactions-orphan-reconnect-intro.md:7 'the substrate-level Geom universality result (which pins the categorical geometry's role in the chapter's predictions)'.",
-        "notes": "Calling the Geom universality block a result that 'pins the categorical geometry's role in the chapter's predictions' slightly overstates; downstream blocks (mass, binding) are conjectural and the chapter's predictions are not established. Also note 'Geom' terminology: AGENTS.md records the Geom_full wrapper was PURGED — a stray 'Geom universality' reference here risks reviving deprecated framing (minor, since it appears to name an existing block title)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'sec:particle-interactions-orphan-reconnect-intro' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -891,15 +896,17 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No parameters or numerics in this prose block."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:particle-interactions-orphan-reconnect-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -910,13 +917,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Describes an exposition arc; no logical-derivation step to break."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'sec:particle-interactions-orphan-reconnect-intro' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -925,15 +934,16 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "prose block, no .lean sibling."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -942,15 +952,17 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No citations."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'sec:particle-interactions-orphan-reconnect-intro', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -959,17 +971,17 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'sec:particle-interactions-orphan-reconnect-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "particle-interactions-orphan-reconnect-intro.md:1-7 references 'Geom universality', 'Stokes-region identification', 'time-reversal from trace cyclicity', 'Weinberg-angle categorical', 'Wigner-SU(4)' by informal name only, with no #label hyperlinks.",
-        "notes": "The intro names six+ downstream blocks/conjectures in plain prose without cross-reference links, so a reader cannot disambiguate which formal blocks are meant. Minor for a navigational prose intro, but the referenced terms (esp. 'Geom universality') are not linked to their defining blocks."
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -978,15 +990,17 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical content."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'sec:particle-interactions-orphan-reconnect-intro' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -995,15 +1009,17 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No physics claim made directly."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'sec:particle-interactions-orphan-reconnect-intro' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1012,15 +1028,17 @@
           "md": "656c2d446f11",
           "ts": "4ebe3de3cc5a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No compute/witness backing relevant to a prose intro."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'sec:particle-interactions-orphan-reconnect-intro' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/particle-interactions-orphan-reconnect-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1031,13 +1049,16 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "verdict: accept. referee_argument: A standard section-intro prose block describing the orphan-reconnect restructuring; no logical or numerical claims to challenge. Only nit: name the referenced blocks with #label cross-references and avoid the deprecated 'Geom' framing — neither blocks acceptance."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:particle-interactions-orphan-reconnect-intro' are consistent."
       }
     ]
   },

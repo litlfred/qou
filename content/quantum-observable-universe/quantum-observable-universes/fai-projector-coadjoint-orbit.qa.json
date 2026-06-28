@@ -1605,7 +1605,255 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "No false claims identified in the prose of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$'; the mathematical reasoning concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical' is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "The block 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' presents substantial mathematical content: 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (which asserts 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical')."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "The remarks and narrative scope in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical' are appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "The prose arguments in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' proceed logically through the stated steps: 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "No Lean sibling required; the narrative of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' matches the expected configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "No citations are present in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "Key terms and symbols in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (e.g. from 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical') are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "The algebraic and logical relations in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "The physical concepts described in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "fai-projector-coadjoint-orbit.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7ae62b4427b2",
+          "ts": "740364ec6273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical') are consistent and formally verified."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:19:33.246Z"
 }

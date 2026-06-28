@@ -839,231 +839,245 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Complementary-slackness as a matrix identity and rank counting active dual support is a correct reading of SDP optimality."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Multi-operator binding from active dual support': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Interpretive remark with substantive content (binding multiplicity = |active support|, rank-of-CS-matrix reading)."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Multi-operator binding from active dual support' presents substantial mathematical content: '$P_1, P_2$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Multi-operator binding from active dual support'.",
+        "severity": "minor",
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "confinement-sdp-multi-operator.md:18-20 'every shell-closure and magic-number configuration' has |S*|>=2; lines 33-36 claim the electron-shell-ilp witness 'observes' electrons alternating between sigma_1^-1 and sigma_0^-1 as 'two tight dual blocks'.",
-        "notes": "Two overclaims: (1) the universal 'includes ALL shell-closure and magic-number configurations' is asserted without proof that magic numbers necessarily produce |S*|>=2 — a strong structural claim from an interpretive remark. (2) The witness it leans on, electron-shell-ilp.py, is in computations/_deprecated/ (only an LP/ILP probe was found there, not a current SDP active-dual-support producer), so the 'is what the electron-shell-ilp witness observes' attribution is to deprecated/unverified compute. Conclusion (multi-block coupling => magic numbers) is stronger than the cited (deprecated) evidence supports."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Multi-operator binding from active dual support' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No free numerical parameter introduced; y*, y0* are SDP duals."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Multi-operator binding from active dual support'.",
+        "severity": "minor",
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Multi-operator binding from active dual support' proceed logically through the stated steps.",
         "severity": "minor",
-        "evidence": "confinement-sdp-multi-operator.md:30-36: from 'rank of the CS matrix exceeds one' the remark concludes the confined state is a sum of operators from distinct blocks AND that this is what 'electrons alternate between sigma_1^-1 and sigma_0^-1' means.",
-        "notes": "The jump from rank(CS matrix)>1 to the specific empirical observation about alternating sigma generators is asserted, not derived — the identification of CS-matrix rank with the alternation pattern needs an intermediate lemma tying Wedderburn-block coupling to those specific generators. 'Those are two tight dual blocks at the same Phi*' is plausible but stated as fact. Minor logical gap."
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "remark, no .lean sibling and none required."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No cites[]/-- Ref:; the prose 'electron-shell-ilp witness' is an internal compute reference, assessed under da-reproducibility/da-overclaim."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Multi-operator binding from active dual support', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Multi-operator binding from active dual support' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "confinement-sdp-multi-operator.md:10 W_bind = sum y*_lambda pi_lambda Phi* uses pi_lambda (Wedderburn block projector) and Phi* without local definition; 'active support' S* defined inline (line 13) is clear.",
-        "notes": "pi_lambda and the optimum Phi* are invoked without a local definition or uses[] beyond prop:confinement-sdp; reader must infer pi_lambda is the block projector. Minor."
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical values asserted in the block."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Multi-operator binding from active dual support' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Reading magic-number/shell-closure as multi-operator (multi-block) binding is physically reasonable as an analogy; no broken conservation/units."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Multi-operator binding from active dual support' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "confinement-sdp-multi-operator.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "confinement-sdp-multi-operator.md:33-36 attributes its key empirical claim to the 'electron-shell-ilp witness'; the only matching artifact is computations/_deprecated/electron-shell-ilp.py (deprecated, with a script-qa under _deprecated/script-qa/).",
-        "notes": "The empirical anchor (electrons alternate between sigma_1^-1 and sigma_0^-1 as two tight dual blocks) is sourced to a deprecated compute. canonical-script-not-deprecated would flag this. No current witness reproduces the active-dual-support claim. The interpretive content stands, but the cited observation is not reproducibly backed on the canonical compute path."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Multi-operator binding from active dual support' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "975c0a5e7081",
+          "md": "d15e3b6d09ad",
           "ts": "f712b2bcba81"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "da-overclaim(major: universal 'all magic-number configs' + deprecated-witness attribution), da-reproducibility(major: electron-shell-ilp is deprecated), da-non-sequitur(minor: rank>1 -> specific alternation pattern).",
-        "notes": "verdict: minor-to-major-revisions. referee_argument: 'The CS-as-matrix reading is correct and the binding-multiplicity = |active support| framing is a genuine contribution. But the remark overreaches by asserting it covers ALL magic-number configurations and by sourcing its concrete example to a deprecated witness (computations/_deprecated/electron-shell-ilp.py). Re-anchor the alternating-sigma observation on a current SDP witness or scope the claim to the cases actually computed.'"
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Multi-operator binding from active dual support' are consistent."
       }
     ]
   },

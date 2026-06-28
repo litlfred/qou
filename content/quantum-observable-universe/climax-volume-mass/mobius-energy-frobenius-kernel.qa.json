@@ -1605,7 +1605,238 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Checked mathematical consistency of the claim '**Lemma.**' and found no counterexamples under the stated conditions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'lem:mobius-energy-frobenius-kernel'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Traced dependencies ['def:frobenius-pairing'] for 'lem:mobius-energy-frobenius-kernel' and confirmed no circular definitions or justifications.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Verified that the scope of 'lem:mobius-energy-frobenius-kernel' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical transitions in the derivation of '**Lemma.**' are sound; no non-sequiturs detected.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Divergence detected: Lean reference 'qou:QOU.BraidsKnots.mobius_frobenius_kernel' is specified but the file content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.lean is missing.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All references and uses ['def:frobenius-pairing'] cited in 'lem:mobius-energy-frobenius-kernel' are used in accordance with their established mathematical definitions.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All terms and algebraic structures in 'lem:mobius-energy-frobenius-kernel' are uniquely defined or standard.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic statements in 'lem:mobius-energy-frobenius-kernel' do not rely on fragile empirical fits or numerical thresholds.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Physical dimensions and units in 'lem:mobius-energy-frobenius-kernel' are consistent with quantum observable universe models.",
+        "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:mobius-energy-frobenius-kernel'.",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file is missing for 'lem:mobius-energy-frobenius-kernel', preventing formal verification of the claims.",
+        "severity": "critical"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T07:55:41.531Z"
 }

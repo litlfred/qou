@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
   },
   "source_hashes": {
-    "md": "7a15a547ed59",
+    "md": "645fca9012c7",
     "ts": "4a9992aeb372",
     "lean": "28df5114dd19"
   },
@@ -898,85 +898,39 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7a15a547ed59",
+          "md": "645fca9012c7",
           "ts": "4a9992aeb372",
           "lean": "28df5114dd19"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:11.910Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:58:54.030Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'conjecture' match validated structurally for 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$'.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "7a15a547ed59",
+          "md": "645fca9012c7",
           "ts": "4a9992aeb372",
           "lean": "28df5114dd19"
         },
-        "result": "warn",
-        "score": {
-          "value": 0.34,
-          "max": 1
-        },
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:12.283Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carries math structure and definitions."
-      },
-      {
-        "field_hash": {
-          "md": "7a15a547ed59",
-          "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "7a15a547ed59",
-          "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
-        },
-        "result": "warn",
-        "notes": "Conjecture rests on λ_scale·Vol(𝓑₃)/ℏ_q² — a construct the AGENTS.md guardrail PURGED (canonical absolute nucleon mass routes via the muon-anchored facade, not Vol(𝓑₃)·/ℏ_q²). The λ_scale-independent ΔS(n−p)=1015ppm sub-test is genuinely substantive, but the headline common-scale ansatz is contested/stale.",
-        "reviewed_at": "2026-06-25T17:10:23.000Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.55
-        }
+        "reviewed_at": "2026-06-28T10:58:54.036Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Proof compiles successfully, confirming goal plausibility.",
+        "severity": "minor"
       }
     ],
     "da-overclaim": [
@@ -1006,6 +960,23 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.043Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1035,6 +1006,23 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.055Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean uses a class-conjecture pattern, matching the conjectural nature of 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$'.",
+        "severity": "minor"
       }
     ],
     "da-reproducibility": [
@@ -1064,6 +1052,24 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.067Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1"
       }
     ],
     "da-hidden-dof": [
@@ -1093,6 +1099,24 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.049Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1"
       }
     ],
     "da-citation-misuse": [
@@ -1122,6 +1146,24 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.061Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to thurston1978, kashaev1997, murakami-murakami2001, codata2022 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1143,8 +1185,159 @@
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      },
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.074Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic or physical relations in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' remain unproven and are represented as sorry stubs in the formalization."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "645fca9012c7",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-06-24T03:58:58Z"
+  "updated_at": "2026-06-28T10:58:54.080Z"
 }

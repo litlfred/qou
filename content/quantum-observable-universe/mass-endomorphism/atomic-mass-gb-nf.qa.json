@@ -1348,15 +1348,16 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "The (GB-NF) statement M(K)=m_e·ρ_K·|tr_M(NF_GS(B_K))| (atomic-mass-gb-nf.md:50-55) is definitionally true given ρ_K defined as the quotient (md:88-91); it is a tautological repackaging, not a falsifiable derivation, so nothing false is asserted."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1"
       }
     ],
     "da-vacuous": [
@@ -1366,17 +1367,15 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The (GB-NF) headline formula is vacuous as stated: ρ_K is *defined* as M(K)/(m_e·|tr_M(NF_GS)|) (md:88-91), so M = m_e·ρ_K·|tr_M| is an identity by construction with no predictive content; the .md itself says ρ_K 'packages this calibration' and is 'currently empirical' (md:69,84-85).",
-        "notes": "Honestly disclosed — md:73-75 calls (GB-NF) 'the abstract algebraic statement' and the §Open question section concedes ρ_K is not derivable from braid data. The non-vacuous content (Markov descent through NF, Wenzl LO multiplicativity) is real and proved; the headline equation alone is definitional. Warn, since scope is explicit."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' presents substantial mathematical content: ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) \u2014 LO piece (Markov-...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1386,17 +1385,16 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form'.",
         "severity": "minor",
-        "evidence": "For the (constituent) and (six-term spectral) forms the calibration is anchored on the very quantity predicted: ρ_K^CODATA is built from CODATA M (md:88-103 table) and E_0 is fixed by the proton mass (md:28-30,250-251), so 'predicting' the proton recovers it by construction (md:225 row shows 0.0% 'calibrated').",
-        "notes": "Explicitly acknowledged as a Class-A opt-out / smuggled calibration (md:13-38, 231-238): 'the (constituent) formula does not demonstrate that ρ_K is categorically self-determined'. Disclosure downgrades to warn rather than a hidden-circularity fail."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1406,15 +1404,15 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "The block scrupulously labels each form's status: (GB-NF) algebraic/ρ_K empirical, (constituent) uses CODATA inputs, (six-term) 25% under at ⁴He (md:67-71), and the LO-piece promotion to 'no longer an ansatz' is justified by Wenzl 1988 multiplicativity verified to 3.2e-14 (md:125-129). No fitted-as-derived overreach survives."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1427,13 +1425,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "ρ_K is a per-braid-class free factor, but it is openly declared as such (md:77-107, 'currently empirical') and the constituent/six-term calibrations are labelled Class-A opt-outs (4th/5th calibration injection, md:14-16). The extra DOF are disclosed, not hidden.",
-        "notes": "Per AGENTS.md three-calibration discipline the block itself states these forms 'violate the rule by admitting additional calibrations' (md:32-34) — exemplary disclosure."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1443,15 +1441,16 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "The LO-piece derivation (md:131-135) follows from disjoint-braid Markov multiplicativity (witnessed) plus additivity; the mirror-pair compensation argument (md:147-154) is arithmetically consistent (ρ_K(T)/ρ_K(³He)=1.9853 vs |tr_M| ratio 1.9850). No unsupported 'therefore'."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1461,17 +1460,15 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The Lean (atomic-mass-gb-nf.lean) defines atomicMassGBNF := m_e·ρ_K·|tr_M(NF_GS β_K)| (lines 86-87) and proves only `markov_descends_through_NF` (trace factors through NF, line 68) and `atomicMassGBNF_descends` (mass invariant under ker NF_GS additions, lines 92-101). It proves the descent/invariance, NOT the mass formula's physical content; the .md proposition's substance (that this equals the atomic mass) is asserted, not Lean-derived.",
-        "notes": "ts validation 'not_checked' (atomic-mass-gb-nf.ts:24). GBNFAlgebra extends MarkovAlgebra (lean:53) which lives in the sibling categorical-mass-markov.lean, not the QOU library tree — so the file is content-block-local and the trace structure itself is axiomatised. The Lean is honest but proves a much weaker statement than the .md headline."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1484,12 +1481,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "cites kassel1995, jones1987 (ts:11) and the Lean -- Ref lines (lean:38-39) attribute Hecke/Markov-trace and Quantum-Groups Ch.III appropriately for the descent content; unital-groebner-bases:cor:pbw (uses, ts:9) is the correct PBW normal-form source."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to kassel1995, jones1987 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1499,17 +1497,16 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "'categorical density ρ_K' is named as a single braid-class invariant (md:84-85) yet is given three incompatible operational definitions across the three forms (CODATA-quotient, six-term-derived, abstract), and the mirror-pair note (md:150-154) shows ρ_K alone is not a function of (A,n). The single symbol carries multiple readings.",
-        "notes": "The block does clarify ρ_K·|tr_M| is the well-defined mirror-symmetric quantity; the residual ambiguity is which ρ_K a downstream consumer should use."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1519,17 +1516,16 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "The advertised accuracies are calibration-dependent: (constituent) 0.18% is 'dominated by the CODATA constituent sum' with only ~−7 MeV of categorical correction (md:234-238); (six-term) under-predicts ρ_K by 22%–31% for A∈{2,3} and 25% at ⁴He (md:71,217-229). The headline sub-percent figure is not a parameter-free prediction.",
-        "notes": "Disclosed plainly by the block (md:231-238); the fragility is that removing CODATA inputs collapses the accuracy (six-term gap), which the block itself documents as the open bottleneck."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1542,13 +1538,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "Predictions track CODATA atomic masses with correct MeV units (md table:97-103); the constituent decomposition Z m_p + N m_n + Z m_e + binding is physically standard. No conservation/units violation.",
-        "notes": "The deprecated-mass-formula banner in AGENTS.md warns m_e·Vol·ρ/ℏ² is the wrong absolute-mass route, but this block routes mass through tr_M(NF_GS)·ρ_K with explicit ρ_K calibration, and flags the nucleon-anchor derivation as open (md:156-167), so it does not assert the disallowed absolute form."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Atomic mass as Markov trace of the Gr\u00f6bner\u2013Shirshov normal form' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1558,17 +1554,16 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "Five witnesses are cited (md:263-269) and the .ts pins computation.script=canonical_mass_table_extended.py with status 'experimental' (ts:25-32), but the .ts witness (canonical-mass-table-extended.witness.json) differs from the witnesses named in the .md (rho-k-codata-vs-six-term, paper-six-term-isotope-sweep, etc.), so the manifest's backing compute is not the one the prose values come from.",
-        "notes": "Could not confirm scriptHash currency for the .md-cited witnesses within scope; the manifest/prose witness mismatch is the concrete reproducibility flag. status:'experimental' is correctly set."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1578,17 +1573,17 @@
           "ts": "2cc7d546b1e3",
           "lean": "06a845f0f0eb"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "A carefully-disclosed proposition whose headline (GB-NF) formula is definitional (ρ_K back-defined), whose accuracy claims lean on CODATA/proton calibration, and whose Lean proves only NF-descent, not the mass identity.",
-        "notes": "verdict: accept-with-revisions (as honest WIP). referee_argument: the genuine content (Markov descent through GS normal form + Wenzl LO multiplicativity) is sound and proved; but the proposition as a *mass* result is not parameter-free — ρ_K is either back-defined or CODATA/proton-anchored, and the substrate-pure nucleon anchors remain the open bottleneck (md:156-167). Tighten the manifest witness to match the prose-cited witnesses and align the Lean's proved statement with the narrative claim's scope."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent.olean' of module Mathlib.LinearAlgebra.LinearIndependent does not exist, invalidating the claimed formalization."
       }
     ]
   },

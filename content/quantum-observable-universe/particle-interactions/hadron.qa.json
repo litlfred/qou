@@ -921,15 +921,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definitional block: a hadron is a stable composite with E_cross<0. No universally-quantified claim that could be false; it names a construction. The Lean Hadron.meson_or_baryon_or_exotic is a true omega fact."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Hadron (stable knot composite)' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/hadron.lean:28:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "hadron.lean:1"
       }
     ],
     "da-vacuous": [
@@ -939,15 +941,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Lean QOU.Hadron is a content-bearing structure (theta, phi, constituents, constituents_nonempty:length≥2) with real downstream theorems (meson_or_baryon_or_exotic via omega, baryon_ge_two). Not ':True:=trivial', not a tautology."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "hadron.lean:1"
       }
     ],
     "da-circular": [
@@ -957,15 +961,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "A definition asserts no derivation; nothing back-fitted. No calibration smuggled."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Hadron (stable knot composite)'.",
+        "severity": "minor",
+        "evidence": "hadron.ts:1"
       }
     ],
     "da-overclaim": [
@@ -977,13 +983,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The .md states a definition with a stability condition; it does not claim to prove existence or uniqueness (those live in sibling blocks hadron-exists/hadron-unique). Scope is appropriately narrow."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Hadron (stable knot composite)' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -995,13 +1002,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameters; the localization point p and linking L are declared structural data, with the .md explicitly noting colour-tube coupling 'is not an independent datum — inherited from p'. No hidden free parameter."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hadron (stable knot composite)'.",
+        "severity": "minor",
+        "evidence": "hadron.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1011,15 +1020,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Definition, no inferential chain to break."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/hadron.lean.",
+        "severity": "minor",
+        "evidence": "hadron.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1029,17 +1040,16 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "hadron.md:13-17 vs hadron.lean:35-44, :82-91",
-        "notes": "The .md defines a hadron by the STABILITY condition E_cross(H_p)<0. The Lean structure Hadron encodes NO stability/negativity field — constituents_nonempty:length≥2 is the only constraint, and HadronBinding.bindingMass_nonneg is commented out as 'not meaningful over R_q' (lean:91). So the Lean 'Hadron' is just 'a ≥2-constituent localized composite', strictly weaker than the .md's defining stability predicate. The structural heart of the definition (E_cross<0) is absent from the formalization."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1051,13 +1061,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Lean -- Ref entries cite [manuscript] §3 and [kock2004] (Frobenius algebras, CUP). [kock2004] is an appropriate general reference for the Frobenius/monoidal substrate; no specific result is mis-attributed."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Hadron (stable knot composite)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "hadron.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1067,17 +1079,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Hadron (stable knot composite)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "hadron.md:9-25",
-        "notes": "H_p=[K1,…,Kn]_p ⊕ L mixes notations: ⊕ is said to denote 'the linking operation' yet is the direct-sum symbol; 'prime knot types' vs the Lean's BraidWord constituents; and the .md gives no arity bound while the Lean fixes length≥2. The defining E_cross depends on def:crossing-energy which must carry the sign convention. Mild ambiguity, definition still usable."
+        "evidence": "hadron.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1087,15 +1099,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match asserted in this definition block."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Hadron (stable knot composite)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "hadron.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1107,13 +1121,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Hadron = stable bound composite with negative binding energy; mesons=2, baryons=3 constituents matches QCD valence counting. Physically standard."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Hadron (stable knot composite)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hadron.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1123,15 +1139,17 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No computation/witness attached to this definition block."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "hadron.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hadron.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1141,17 +1159,18 @@
           "ts": "2e8f7e22e9e6",
           "lean": "11b9d81d4401"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "hadron.md:13-17; hadron.lean:35-44",
-        "notes": "verdict: accept-with-minor-revisions. Strongest objection (referee_argument): the .md DEFINES a hadron by the stability inequality E_cross<0, but the Lean structure Hadron omits this predicate entirely (the only constraint is ≥2 constituents; the nonneg-mass field is commented out as meaningless over the Laurent ground ring). The formal object is therefore a 'localized ≥2-knot composite', not the 'stable composite' of the prose — the central defining condition is unformalized. Definition is otherwise coherent and physically standard."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
     ]
   },

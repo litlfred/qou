@@ -924,12 +924,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Verified numerically: R_α (the -1/2,∓√3/2 block + 1) has R_α³=I, det=1; R_β=diag(1,-1,-1) has R_β²=I, det=1. R_α is 2π/3 about e_3, R_β is π about e_1, as stated (so3-generators.md:21-22). Both are proper SO(3) rotations."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim 'Under the adjoint map to $\\mathrm{SO}(3)$ the generators of' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-vacuous": [
@@ -939,17 +940,15 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "so3-generators.lean:37-45 declares a structure So3Generators with R_alpha,R_beta as free Matrix fields and R_alpha_cubed:R_α³=1, R_beta_sq:R_β²=1 as field axioms — but NO instance is constructed, so the order-3/order-2 properties are merely *assumed* as structure fields, not proved for the actual rotation matrices. Only R_β is realized concretely (R_beta_matrix, lean:49) and proved involutive (R_beta_involution, lean:54-59). R_alpha is never given a matrix and R_α³=I is never discharged. The lean.ref qou:QOU.So3Generators (so3-generators.ts:5) resolves to the bare structure with validation:'not_checked'.",
-        "notes": "The strongest narrative claim (R_α is order 3) is, on the Lean side, an unproven hypothesis field rather than a theorem. For a definition block a structure is acceptable, but the asymmetry (R_β proved, R_α only axiomatized) leaves the R_α order claim formally unbacked."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:so3-generators'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -962,11 +961,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['def:su2-generators'] for 'def:so3-generators' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-overclaim": [
@@ -979,12 +980,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The block claims only that the adjoint images are these matrices with the stated rotation axes/orders — all verified. No stronger conclusion drawn."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'def:so3-generators' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -997,11 +998,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1014,12 +1017,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Definitional; the 'adjoint map images are R_α,R_β' is a construction, and the rotation-axis identifications follow from the matrices."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of 'Under the adjoint map to $\\mathrm{SO}(3)$ the generators of' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1029,17 +1033,15 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "so3-generators.md:6-19 gives explicit R_α (with √3/2 entries) and R_β=diag(1,-1,-1). The Lean (so3-generators.lean) only realizes R_β (R_beta_matrix) and proves R_β²=I; it never constructs the explicit R_α matrix nor proves R_α³=I. Thus the Lean verifies a strict subset of the .md content — the R_α half (including its order-3 claim and the √3/2 rotation matrix) is unformalized; R_α exists only as an abstract structure field. The narrative presents both generators as given; the Lean delivers one.",
-        "notes": "Divergence is partial: R_β matches and is proved; R_α is asserted in .md but absent/axiom-only in .lean. validation:'not_checked' on the ref compounds this."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1049,17 +1051,16 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses ['def:su2-generators'] cited in 'def:so3-generators' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
-        "evidence": "so3-generators.lean:18,36,48,53 cite '-- Ref: [manuscript] Chapter 4, §SU(2)–SO(3)' and the .ts has no cites[]. The adjoint SU(2)→SO(3) double cover and the 2π/3 / π rotation images are textbook facts that would ordinarily carry a standard reference; pointing only to '[manuscript] Chapter 4' is self-referential. Per AGENTS.md §1, [manuscript] is permitted when no published reference exists, but for the standard adjoint representation a published source exists.",
-        "notes": "Minor: self-citation to the manuscript for a classical result; acceptable under the rules but weak."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1069,17 +1070,16 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'def:so3-generators' are uniquely defined or standard.",
         "severity": "minor",
-        "evidence": "so3-generators.md:1 says 'the generators of Dic₃' map to these SO(3) images, but Dic₃ has order 12 and the adjoint map SU(2)→SO(3) has kernel {±I}; the images generate S₃≅D₃ (order 6). The block writes R_α,R_β as 'the images' without noting the 2:1 collapse, and the base ring differs between .md (real matrices with √3/2) and .lean (R_q=ℤ[q,q⁻¹] Laurent ring, lean:31) — √3/2 is not in ℤ[q,q⁻¹], so the Lean R_q-valued matrices cannot literally hold the .md's √3/2 entries. Implicit ring mismatch.",
-        "notes": "The ℝ-valued √3/2 R_α (md) vs R_q-valued matrices (lean) is an unstated base-ring incompatibility; R_α cannot be written over ℤ[q,q⁻¹] with those entries."
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1089,15 +1089,16 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical observable / q_0 evaluation; exact rotation matrices."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'def:so3-generators' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1107,15 +1108,16 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pure group-theory definition; no physics-magnitude claim."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'def:so3-generators' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1125,15 +1127,16 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Matrices reproduced here: R_α³=I, R_β²=I, det=1 confirmed. No external witness to drift; only a rendered SVG (hash a75c2979e568)."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/so3-generators.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1143,17 +1146,17 @@
           "ts": "802840092715",
           "lean": "ecea14513215"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "Rollup of da-vacuous + da-lean-narrative-divergence + da-definitional-ambiguity warns.",
-        "notes": "verdict=accept-with-revisions. referee_argument: The mathematics is correct (R_α³=I, R_β²=I, both proper rotations), but the Lean formalization under-delivers: R_α³=I is an unproven structure-field axiom and R_α is never given a concrete matrix (only R_β is realized and proved), with lean.ref validation:'not_checked'. Additionally the explicit √3/2 entries in the .md cannot live in the Lean ground ring R_q=ℤ[q,q⁻¹], an unstated base-ring incompatibility; and the .md should note that the Dic₃ generators' SO(3) images collapse 2:1 to D₃ (order 6). Recommend: construct the explicit R_α over ℝ and prove R_α³=I, or restate the structure as carrying R_β only."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/so3-generators.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ]
   },

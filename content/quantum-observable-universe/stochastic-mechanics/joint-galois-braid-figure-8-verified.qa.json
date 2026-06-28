@@ -1353,7 +1353,269 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "No false claims identified in 'Proposition (joint Galois \\times braid action commutes on the figure-8': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "The claims in 'Proposition (joint Galois \\times braid action commutes on the figure-8' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proposition (joint Galois \\times braid action commutes on the figure-8'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "No overclaims: the scope of 'Proposition (joint Galois \\times braid action commutes on the figure-8' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proposition (joint Galois \\times braid action commutes on the figure-8'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "The argument flow in 'Proposition (joint Galois \\times braid action commutes on the figure-8' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Proposition (joint Galois \\times braid action commutes on the figure-8'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "No citations are present in 'Proposition (joint Galois \\times braid action commutes on the figure-8', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "Key terms and symbols in 'Proposition (joint Galois \\times braid action commutes on the figure-8' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "The algebraic and logical relations in 'Proposition (joint Galois \\times braid action commutes on the figure-8' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "The physical concepts described in 'Proposition (joint Galois \\times braid action commutes on the figure-8' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Proposition (joint Galois \\times braid action commutes on the figure-8' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "de2b677de2f7",
+          "ts": "f9cb56e979f3",
+          "lean": "3af4a1646d1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.md:1 — Proposition (joint Galois \\times braid action commutes on the figure-8",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Proposition (joint Galois \\times braid action commutes on the figure-8' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

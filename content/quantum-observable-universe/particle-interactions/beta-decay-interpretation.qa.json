@@ -842,17 +842,17 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-decay-interpretation.md:1-17 states universality Δ_β^{nn→mix}=Δ_β^{mix→pp} 'is a consequence of the crossing coefficients being equally spaced: T_mix=½(T_pp+T_nn).' But T_mix being the midpoint only yields equal MATRIX displacements T_nn→T_mix and T_mix→T_pp; the block then applies this to V̂ values (md:45-64) where V̂_0^par=0.7684→V̂_0^dau=0.7510 (Δ=-0.0174) and V̂_1: 1.3029→1.2036 (Δ=-0.0993) — the induced observable changes are NOT equal, so 'the same universal amount Δ_β' does not hold at the observable (V̂) level even though it holds for the raw transfer matrix.",
-        "notes": "The universality is true for the linear transfer-matrix step but the worked example shows the downstream V̂/Skein effects differ by crossing (md:84-87: σ₀ -0.0229 vs σ₁ -0.0792). Calling Δ_β a 'universal amount' affecting observables (md:18-20) is a quantifier slip between matrix-level and observable-level invariance."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Beta decay universality, tritium example, and double beta decay': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-vacuous": [
@@ -863,14 +863,14 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "notes": "Substantive worked computation (tritium Skein ratio, double-beta cross-term); not content-free."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Beta decay universality, tritium example, and double beta decay' presents substantial mathematical content: '$\\Delta_\\beta^{nn \\to \\mathrm{mix}} = \\Delta_\\beta^{\\mathrm{mix} \\to pp}$'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -881,14 +881,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Beta decay universality, tritium example, and double beta decay'.",
         "severity": "minor",
-        "notes": "No target back-fitting; the example computes a ratio forward from transfer matrices."
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-overclaim": [
@@ -897,17 +898,16 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-decay-interpretation.md:108-116 claims the 2β nuclear matrix element 'depends only on C_i — the unchanged matrices between the two converting nucleons' and is 'computable from the nucleon types in that region', dropping the '+ (linear terms)' written on md:104. The 'depends only on C_i' conclusion ignores the linear terms it just acknowledged.",
-        "notes": "The reduction to 'only C_i' overclaims: md:100-104 explicitly has L_i·Δ_β·C_i·Δ_β·R_i + (linear terms); the subsequent 'depends only on C_i' (md:113-116) silently discards the linear and boundary (L_i,R_i) contributions. Also md:91 'consistent with the generator volume profile for heavier nuclei' generalises from one tritium example."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Beta decay universality, tritium example, and double beta decay' are appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -918,14 +918,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Beta decay universality, tritium example, and double beta decay'.",
         "severity": "minor",
-        "notes": "Δ_β, T_pp, T_nn, T_mix derive from the transfer-matrix construction at q0; no off-menu free parameter introduced in this block."
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -934,17 +935,17 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-decay-interpretation.md:88-91 concludes 'Generator σ₁ contributes 78% of the total --- consistent with the generator volume profile for heavier nuclei' — a single tritium (A=3) datum is presented as consistent with a 'heavier nuclei' profile, a generalisation that does not follow from the one example. Separately md:8-17 'this is a consequence of ... equally spaced' presents the midpoint identity as causally explaining observable universality without the bridging step.",
-        "notes": "Two gaps: (1) one A=3 example → claim about heavier nuclei; (2) matrix-midpoint → observable-universality lacks the linearisation lemma. Both are 'therefore' steps missing a connecting argument."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Beta decay universality, tritium example, and double beta decay' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -953,15 +954,16 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "remark block with no .lean sibling; it interprets prop:beta-decay-transfer-matrix. Nothing formal in this block to diverge."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -972,14 +974,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Beta decay universality, tritium example, and double beta decay', hence no citation misuse is possible.",
         "severity": "minor",
-        "notes": "No cites[] / -- Ref: in the block; uses[] points to def:Q-value-transition and interprets prop:beta-decay-transfer-matrix (both internal). No external citation to mis-attribute."
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -988,17 +991,17 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Beta decay universality, tritium example, and double beta decay' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "beta-decay-interpretation.md uses V̂_0, V̂_1 ('hat V') values (md:45-64) without defining V̂ in-block; the symbol's meaning (a per-generator volume? a normalised transfer-matrix invariant?) is left to prop:generator-volume-decomposition (linked md:111) but not stated here, so the worked numbers are not self-interpretable.",
-        "notes": "V̂ and the precise meaning of 'net' / the transfer-matrix normalisation are assumed-known; a reader of this block alone cannot reconstruct what V̂_0^par=0.7684 measures. Minor (resolvable via the linked prop)."
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1007,17 +1010,17 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-decay-interpretation.md:66-80 reports P(³He)/P(³H)=0.9029 and ln=-0.1021 to 4 sig figs, and V̂ values to 4 decimals (md:45-64), with no witness JSON cited and no q₀ pin stated. These precise numbers are unbacked by any *.witness.json reference in the block or its .ts.",
-        "notes": "The 4-decimal V̂ and ratio values carry implied precision but have no reproducible compute backing in-block (the .ts uses[] has no witness). Cannot check for cross-anchor swing or staleness; the precision is asserted, not certified."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Beta decay universality, tritium example, and double beta decay' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1026,17 +1029,17 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "beta-decay-interpretation.md:1-6 models β decay as 'converting one nucleon from n to p' affecting Skein/transfer matrices, and md:93-116 treats 2β decay as a product of two Δ_β perturbations; but the block computes only a Skein-polynomial RATIO P(³He)/P(³H)=0.9029 (md:74) and never connects it to the physical observable (Q-value ≈0.529 MeV for ³H, half-life). A physicist would note ³H→³He is a real decay but the block's 'P ratio' is not tied to any measured quantity.",
-        "notes": "The mapping from a Jones/Skein-polynomial ratio to a physical β-decay observable is asserted but not validated against the known ³H Q-value or half-life; the 'physical interpretation' (md:18-24) remains qualitative. Plausibility of the physical link is unestablished rather than outright wrong."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Beta decay universality, tritium example, and double beta decay' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "beta-decay-interpretation.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1045,17 +1048,16 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "No witness file is referenced by beta-decay-interpretation.ts (uses: def:Q-value-transition only) nor in the .md; the quantitative results (V̂ values md:45-64, ratio 0.9029 md:74, per-generator fractions md:84-87) have no scriptHash/scriptCommitSha backing and cannot be re-derived from a cited producer.",
-        "notes": "For a remark carrying 4-decimal compute numbers, the absence of any witness link makes the values irreproducible from the corpus as presented. Either link the producing witness or demote the precision."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Beta decay universality, tritium example, and double beta decay' are reproducible.",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1064,17 +1066,18 @@
           "md": "58a71d5266c7",
           "ts": "c61c78baeb46"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "Strongest objection (da-false-claim + da-reproducibility): the block's headline 'universality' is established only at the linear transfer-matrix level but is presented as observable-level (the worked V̂ deltas are unequal, md:45-64), and all quantitative results (ratio 0.9029, V̂ values, per-generator fractions) are unbacked by any cited witness.",
-        "notes": "verdict: minor-revisions. The worked example is internally coherent but (1) over-states 'universal Δ_β' as an observable invariant, (2) drops linear terms when reducing 2β to 'only C_i', and (3) cites no reproducible witness for its 4-decimal numbers. referee_argument: a referee would require the universality scope clarified (matrix vs observable), the 2β reduction's neglected terms justified, and a witness link for the tritium numbers."
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Beta decay universality, tritium example, and double beta decay' are consistent."
       }
     ]
   },

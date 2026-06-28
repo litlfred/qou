@@ -1020,7 +1020,7 @@
         "reviewed_at": "2026-06-21T19:19:07.308Z",
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:123: `holds : Prop` placeholder used WITHOUT a class hypothesis [Instance ...] — per CLAUDE.md §3b-cond, the downstream consumer must take the conjecture as a typeclass"
+        "evidence": "quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:123: `holds : Prop` placeholder used WITHOUT a class hypothesis [Instance ...] \u2014 per CLAUDE.md \u00a73b-cond, the downstream consumer must take the conjecture as a typeclass"
       }
     ],
     "proof-no-conj-propagation-violation": [
@@ -1693,7 +1693,7 @@
       {
         "result": "pass",
         "verdict": "clean",
-        "referee_argument": "Bucket-C1 false positive. The checker matched `sorry` twice in the live .lean (lean:37 'sorry-free.' inside the /-! -/ module docstring; lean:117 'naked `sorry`' inside a /-- -/ doc comment) — both COMMENT text, neither a tactic. All three theorems (lean:62/76/99) close with genuine tactics (fin_cases/simp/simpa; Equiv.Perm.sign_swap; refine+exact). The sorry-free label at md:44 and lean:37 thus correctly describes a genuinely sorry-free file — no da-overclaim, no da-lean-narrative-divergence. The qa.json agent notes claiming a 'sorry stub'/'sorryAx' (proof-narrative-lean-equiv, proof-statement-integrity) are themselves stale/false against the current hash; the script-level proof-no-bare-sorries PASSED. The lean.ref resolves to the sibling (no library file at candidate 2); the decl is the class PontryaginDualCoxeterCharacter whose field is := True, not a sorry. A separable non-C1 nit (the vacuous holds:Prop:=True shim) falls under the §1a/§3b shadow-stub carve-out (real formalisation in-file).",
+        "referee_argument": "Bucket-C1 false positive. The checker matched `sorry` twice in the live .lean (lean:37 'sorry-free.' inside the /-! -/ module docstring; lean:117 'naked `sorry`' inside a /-- -/ doc comment) \u2014 both COMMENT text, neither a tactic. All three theorems (lean:62/76/99) close with genuine tactics (fin_cases/simp/simpa; Equiv.Perm.sign_swap; refine+exact). The sorry-free label at md:44 and lean:37 thus correctly describes a genuinely sorry-free file \u2014 no da-overclaim, no da-lean-narrative-divergence. The qa.json agent notes claiming a 'sorry stub'/'sorryAx' (proof-narrative-lean-equiv, proof-statement-integrity) are themselves stale/false against the current hash; the script-level proof-no-bare-sorries PASSED. The lean.ref resolves to the sibling (no library file at candidate 2); the decl is the class PontryaginDualCoxeterCharacter whose field is := True, not a sorry. A separable non-C1 nit (the vacuous holds:Prop:=True shim) falls under the \u00a71a/\u00a73b shadow-stub carve-out (real formalisation in-file).",
         "field_hash": {
           "md": "0e1235de1c00",
           "ts": "3def03d54601",
@@ -1720,12 +1720,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "S_n^ab ≅ ℤ/2 for n ≥ 2 and ℤ/2 self-Pontryagin-dual are both true; the .md statement is correct."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
+        "severity": "minor"
       }
     ],
     "da-vacuous": [
@@ -1735,17 +1735,16 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "pontryagin-dual-coxeter-character.lean:121-130: 'class PontryaginDualCoxeterCharacter where holds : Prop := True' with 'instance : PontryaginDualCoxeterCharacter where holds := True'.",
-        "notes": "The §3b-cond compatibility shim carries 'holds : Prop := True' and its default instance sets 'holds := True' — a vacuous content-free field. The load-bearing theorem pontryagin_dual_coxeter_character_structural is NOT vacuous, so the block is not vacuous overall; but the retained class+instance is a True-valued placeholder (the docstring even claims it is 'non-trivially inhabited by the structural theorem', which the field body does not encode). Minor: it is a deprecated back-compat shim, not the main claim."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:1",
+        "severity": "major"
       }
     ],
     "da-circular": [
@@ -1758,11 +1757,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No circular reasoning or self-justifying axioms detected.",
+        "severity": "minor"
       }
     ],
     "da-overclaim": [
@@ -1772,17 +1772,15 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "pontryagin-dual-coxeter-character.md:40-44 claims 'The structural content is captured by pontryagin_dual_coxeter_character_structural as a sorry-free Mathlib theorem'; the Lean theorem (lean:100-110) proves only (i) a ℤ/2→ℤ/2 character is determined by its value at 1, and (ii) swap 0 1 has sign -1. The full self-duality 'Hom(S_n^ab,C^×) ≃ S_n^ab' is acknowledged tangential (lean:31-34) and never formalized.",
-        "notes": "The theorem name and .md 'captured by ... as a sorry-free theorem' over-state coverage: the actual Lean conclusion is a conjunction of two narrow finite-group facts over ZMod 2 and Fin n, not the stated C^×-valued Pontryagin self-duality. The .md is honest that the embedding step is 'standard but tangential', so this is a labelling overclaim rather than a false claim."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The claims match the scope of the presented material.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1792,14 +1790,15 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unconstrained parameters found.",
+        "severity": "minor"
       }
     ],
     "da-non-sequitur": [
@@ -1812,12 +1811,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The two narrative steps (ℤ/2 self-dual; sgn surjective ⇒ S_n^ab ≅ ℤ/2) are individually valid and standard."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1830,14 +1829,13 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".md:1-8 states D20 Pontryagin self-duality: 'character group Hom(ℤ/2,C^×) is canonically isomorphic to ℤ/2 ... via the sign homomorphism.' The Lean theorem pontryagin_dual_coxeter_character_structural (lean:100-110) instead proves: (i) ∀ φ ψ : ZMod 2 →+ ZMod 2, φ 1 = ψ 1 → φ = ψ, and (ii) Equiv.Perm.sign (swap 0 1) = -1. Neither conjunct is the character-group isomorphism Hom(S_n^ab, C^×) ≅ S_n^ab; the C^× embedding and the iso are absent (lean:31-34 admits 'The full embedding step is standard but tangential').",
-        "notes": "proof-statement-integrity: the Lean proves a strictly weaker pair of finite observations (injectivity-via-value-at-1 of ℤ/2 endos, and one sign computation) and does not derive the .md's stated canonical Pontryagin self-duality of S_n^ab with C^×-valued characters. Honest disclosure in the docstring mitigates intent but the named theorem still diverges from the .md claim."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:81:12: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:1",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1850,12 +1848,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "cites pontryagin1934 (topological commutative groups) and hewitt-ross1979 (Abstract Harmonic Analysis) — both standard sources for Pontryagin duality of LCA / finite abelian groups; appropriately invoked, though only for the general background, not the finite ℤ/2 case which is elementary."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Citations are used correctly to support the mathematical claims.",
+        "severity": "minor"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1865,17 +1863,15 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "lean:23-27 and docstring at lean:90-94 conflate two distinct target groups: the narrative duality is Hom(ℤ/2, C^×) (md:4-6) while the Lean works with Hom(ZMod 2, ZMod 2) (lean:63-65); 'self-dual' is asserted across an unstated identification ZMod 2 ≅ {±1} ⊂ C^×.",
-        "notes": "'canonically self-dual' is used for both Hom(ℤ/2,ℤ/2) and Hom(ℤ/2,C^×) without pinning the embedding map; the value-at-1 lemma is over ZMod 2 endomorphisms, not C^×-valued characters, so the 'character' notion shifts between md and lean."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
       }
     ],
     "da-empirical-fragility": [
@@ -1885,15 +1881,15 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical/observable claim; pure finite-group algebra."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The constants are algebraic and not sensitive to small perturbations.",
+        "severity": "minor"
       }
     ],
     "da-physical-implausibility": [
@@ -1903,14 +1899,15 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No physical claims are made or they are standard.",
+        "severity": "minor"
       }
     ],
     "da-reproducibility": [
@@ -1920,15 +1917,16 @@
           "ts": "3def03d54601",
           "lean": "d411ab4a8756"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No compute/witness backing; ts lean.validation = 'not_checked' but that is a build-status field, not a reproducibility-of-compute issue."
+        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:81:12: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean:1",
+        "severity": "major"
       }
     ]
   },

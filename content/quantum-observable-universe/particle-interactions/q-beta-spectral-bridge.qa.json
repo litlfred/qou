@@ -1308,7 +1308,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "q-beta-spectral-bridge.md:131 '## Reading' and :141-142 'Form A and Form B are not competing predictions but a single observable expressed in two bases'",
-        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline — the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
+        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline \u2014 the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
       }
     ],
     "fit-section-chapter": [
@@ -1379,7 +1379,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Explicitly archimedean block (Q_β, MeV, q_0, Real.log) carrying the §3b-cond conditional banner at md:1; matches its archimedean regime."
+        "notes": "Explicitly archimedean block (Q_\u03b2, MeV, q_0, Real.log) carrying the \u00a73b-cond conditional banner at md:1; matches its archimedean regime."
       }
     ],
     "wall-side-proof": [
@@ -1415,7 +1415,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Taylor expansion + ratio algebra over the archimedean statement — proof method matches the archimedean side."
+        "notes": "Taylor expansion + ratio algebra over the archimedean statement \u2014 proof method matches the archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1466,8 +1466,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (∀ h z, (h(2-h)/2)·z = (1-h/2)(zh)) ∧ ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
-        "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h²) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence → warn."
+        "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (\u2200 h z, (h(2-h)/2)\u00b7z = (1-h/2)(zh)) \u2227 ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
+        "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h\u00b2) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence \u2192 warn."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1548,7 +1548,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "notes": "score=0.9. Plan explicit: refine ⟨_,_,_⟩ delegating to three named lemmas (polynomial_bridge_identity / leading_order_ratio_identity / bridge_first_order_remainder), each a one-line ring/field_simp."
+        "notes": "score=0.9. Plan explicit: refine \u27e8_,_,_\u27e9 delegating to three named lemmas (polynomial_bridge_identity / leading_order_ratio_identity / bridge_first_order_remainder), each a one-line ring/field_simp."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1599,7 +1599,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Well-posed: Form A (NF-counit) ≡ Form B (transfer-matrix) as one observable in two bases, ratio=1+(z-1)h/2+O(h²); 50-dps witness; resolves an apparent prediction inconsistency.",
+        "notes": "Well-posed: Form A (NF-counit) \u2261 Form B (transfer-matrix) as one observable in two bases, ratio=1+(z-1)h/2+O(h\u00b2); 50-dps witness; resolves an apparent prediction inconsistency.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1680,7 +1680,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Genuine bridge identity unifying two Q_β closed forms via Markov-Jones z-normalization; substantive, with exponential-remainder framing.",
+        "notes": "Genuine bridge identity unifying two Q_\u03b2 closed forms via Markov-Jones z-normalization; substantive, with exponential-remainder framing.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1829,7 +1829,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Not a projection: the three ∀(h z:ℝ) identities are derived via ring/field_simp, no class-field assumption of the conclusion. Honest sorry only in the separate §3b-cond audit stub.",
+        "notes": "Not a projection: the three \u2200(h z:\u211d) identities are derived via ring/field_simp, no class-field assumption of the conclusion. Honest sorry only in the separate \u00a73b-cond audit stub.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1937,7 +1937,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Non-degeneracy hypotheses (h≠0,z≠0,1-zh/2≠0) are satisfiable for real q_0; no contradictory premise.",
+        "notes": "Non-degeneracy hypotheses (h\u22600,z\u22600,1-zh/2\u22600) are satisfiable for real q_0; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1962,7 +1962,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h≠0, z≠0, 1-zh/2≠0) are satisfiable at the substrate."
+        "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h\u22600, z\u22600, 1-zh/2\u22600) are satisfiable at the substrate."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -2034,7 +2034,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Top decl has no hypotheses; the inner ∀-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
+        "notes": "Top decl has no hypotheses; the inner \u2200-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
       }
     ],
     "proof-no-decide-masking": [
@@ -2098,15 +2098,17 @@
           "ts": "060bdf70f453",
           "lean": "704c5929d112"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The three polynomial bridge identities (polynomial_bridge_identity, leading_order_ratio_identity, bridge_first_order_remainder) are proved by ring/field_simp and are correct; the leading-order ratio 1+(z−1)h/2+O(h²) is consistent with the Taylor algebra."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
       }
     ],
     "da-vacuous": [
@@ -2118,15 +2120,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:254-260",
-        "notes": "The §3b-cond 'audit-visibility stub' defines `class BorromeanQuark : Prop where holds : True` — an empty-marker class whose field is the tautology True (any instance ⟨trivial⟩ discharges it). The conditional theorem `q_beta_spectral_conditional [BorromeanQuark] (Q_beta_A Q_beta_B) : Q_beta_A = Q_beta_B := by sorry` is therefore a content-free conditional (it would 'prove' arbitrary reals equal, modulo a vacuous class) and is in any case left as `sorry`. This is exactly the empty-Prop-carrier anti-pattern §3b-tax forbids (proof-no-empty-prop-carrier)."
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
       }
     ],
     "da-circular": [
@@ -2138,13 +2140,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The bridge derives Form A/Form B agreement from Taylor algebra, not from assuming the Q-value; no smuggled calibration in the algebraic core."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       }
     ],
     "da-overclaim": [
@@ -2154,17 +2158,16 @@
           "ts": "060bdf70f453",
           "lean": "704c5929d112"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:228-245 vs .md:30-44,176-178",
-        "notes": "The .md states the bridge as an identity on the actual Q-values with an O(h²) remainder and an exponential per-N remainder bound. The exported Lean `q_beta_spectral_bridge` proves ONLY the three formal polynomial identities in abstract (h,z); it does NOT connect to Real.log(1+zh), to the Q_β observables, or to the exponential-remainder bound. The analytic content is instead asserted via two `axiom`s (log_one_add_lower_taylor_bound_axiom, log_one_add_taylor_bound_axiom). So the 'bridge proposition is rigorous' claim overstates what is proved: the analytic core is axiomatized, not derived (conditional/approximate-as-proved)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -2176,13 +2179,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "z and h are determined by q0; no off-menu coefficient. The block explicitly argues 1/z is the Markov–Jones normalization, not a calibration knob."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -2194,15 +2199,15 @@
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean.",
         "severity": "minor",
-        "evidence": "q-beta-spectral-bridge.md:82-92",
-        "notes": "'the proton-to-neutron conversion affects the two generators σ₀,σ₁ ... so the total log-ratio is 2·(zh/2)=zh' then immediately '=ln(1+zh)+O(h³)'. The replacement of the summed per-generator log-ratios by ln(1+zh) (rather than 2·ln(1+zh/2)) is a non-obvious step presented as an equality; the factor-of-2/log-additivity bookkeeping is asserted without showing the intermediate identity holds beyond leading order."
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2214,15 +2219,14 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:228-245,157-158,205-207,254-260",
-        "notes": "Divergence on three counts: (1) the canonical export proves abstract polynomial identities, not the Q_β bridge with log/remainder the .md states; (2) the analytic Taylor bounds are introduced as `axiom`s rather than proved or honestly `sorry`'d, so `q_beta_spectral_bridge` is sorry-free only because the hard analysis was axiomatized away; (3) the appended BorromeanQuark conditional theorem (the only place Q_beta_A=Q_beta_B appears) is `sorry` over a True-marker class. The Lean does not prove the narrative proposition."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -2234,13 +2238,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites wenzl1988 + jones1985 (.ts) and -- Ref lines to wenzl1988/jones1985 for Hecke-skein normalization and the Markov-trace bridge; both keys exist in references.ts and are appropriately invoked."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to wenzl1988, jones1985 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -2250,17 +2256,17 @@
           "ts": "060bdf70f453",
           "lean": "704c5929d112"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "q-beta-spectral-bridge.md:11-22,46-54",
-        "notes": "z is called both 'the Markov–Jones parameter' z=1/(√q+1/√q) and earlier the substrate uses a different normalization; and ln(V_pp/V_nn) is treated as exactly Σ ln(V̂_i ratios) at single wrap but the 'V_pp','V_nn' transfer-matrix volumes are not defined in this block (deferred to prop:beta-decay-transfer-matrix). The 'exact' spectral decomposition the remainder bound lives in is named only via the open conjecture, leaving the convergence object implicit."
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -2270,17 +2276,17 @@
           "ts": "060bdf70f453",
           "lean": "704c5929d112"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "q-beta-spectral-bridge.md:129,155,168-174",
-        "notes": "The accuracy claims are anchor-sensitive and partly stale: '+0.168% residual' (Form A, N=0) and 'both forms agree with CODATA 0.7823 MeV within 7%' are quoted, but per AGENTS.md the Q_β L2 target/measured values were re-pinned (proton-anchor 2026-05-28) and the Habiro-exact figures are flagged stale; the block does not state which q0 pin these residuals use. The '+1.31 keV residual at N=0' vs '+0.168%' framing mixes absolute keV and relative %, and the 7%-vs-CODATA Form B figure is much weaker than the headline 0.168%, suggesting the favorable number is selected."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -2292,13 +2298,15 @@
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Q_β≈0.78 MeV is the correct order for the neutron β-decay Q-value; no unit error or conservation violation in the stated observable."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -2310,15 +2318,15 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "q-beta-spectral-bridge.ts:16-21 vs .md:156-162",
-        "notes": "Script/witness mismatch: the .ts `computation.script` = 'computations/gram-matrix-dual.py' with witness 'computations/gram-matrix-dual.witness.json', but the .md Provenance cites 'q_beta_spectral_bridge_witness.py' and 'q-beta-spectral-bridge.witness.json' as the verifying compute. All four files exist on disk, but the manifest and narrative point to DIFFERENT producers/witnesses for the same proposition, so an auditor cannot determine which witness actually backs the 50-dps verification claim. The committed q-beta witness (scriptHash 019fe6012756, scriptCommitSha b9e7332c…) is not the one named in the .ts."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
       }
     ],
     "da-referee-verdict": [
@@ -2330,15 +2338,16 @@
         },
         "result": "fail",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:157-158,205-207,254-260; .ts:16-21",
-        "notes": "verdict=major-revision. Strongest objection: the proposition's hard content (the analytic Form A≡Form B bridge with O(h²) and the exponential remainder) is not proved — it is split between two standalone `axiom`s (sidestepping the §1a no-axiom-dodge discipline) and a vacuous `BorromeanQuark : Prop where holds:True` + `sorry` conditional, while the sorry-free export proves only abstract ring identities. Compounded by a .ts-vs-.md script/witness mismatch and anchor-ambiguous/selected accuracy figures. The algebraic skeleton is correct, but the block overstates its rigor."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean for '$\\\\mathfrak{Q}_\\\\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases' fails compilation with error: content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved. This invalidates the claim of formal verification."
       }
     ]
   },

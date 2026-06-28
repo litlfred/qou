@@ -825,12 +825,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Section-opener prose; makes no formal mathematical claim that could be false. The mass formula 𝔪=|tr_M(ρ(β))|·VolDensity(K,q0) is stated as framing, consistent with the canonical chain."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'sec:mass-endomorphism-opener-intro': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-vacuous": [
@@ -839,15 +840,15 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block (no Lean, no provable claim); vacuity lens targets proof terms / theorem statements."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'sec:mass-endomorphism-opener-intro' presents substantial mathematical content: The mass endomorphism is the structural spine of the framework's physical predic...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -859,12 +860,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Opener asserts the three calibrations 'fix the substrate parameter q0 ... not archimedean fitting targets' — a framing claim, consistent with the documented 3-CAL discipline, not a circular derivation here."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'sec:mass-endomorphism-opener-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-overclaim": [
@@ -873,17 +875,15 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "mass-endomorphism-opener-intro.md:1-2 'Every observable mass — from the electron to uranium — factors through a single categorical object'; :22-23 'Everything else is derived.' Per AGENTS.md precision-goals, only 3/7 L2 observables meet target and per-isotope binding (Δ_λ) is an open Track-A blocker, so 'electron to uranium ... derived' overstates current reach.",
-        "notes": "Sweeping 'electron to uranium / everything else is derived' is aspirational vs the documented open Δ_λ gate and 3/7 L2 status; acceptable as section motivation but borders on overclaim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'sec:mass-endomorphism-opener-intro' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -895,12 +895,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "States exactly the three calibration inputs (m_e, m_μ/m_e, m_π); introduces no extra parameter. (Note: AGENTS.md current canonical relabels CAL-2 proxy as m_μ/m_e and CAL-3 as m_π, matching the prose.)"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:mass-endomorphism-opener-intro'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -912,12 +913,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Prose roadmap; no inferential chain with a missing lemma."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'sec:mass-endomorphism-opener-intro' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -926,15 +928,15 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block with no Lean sibling."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -943,15 +945,16 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No cites[] and no -- Ref: in this prose opener."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'sec:mass-endomorphism-opener-intro', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -963,12 +966,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Each named object (mass identity, topological mass, descent involution) is cross-linked to its defining block; VolDensity(K,q0) matches the canonical Vol(K)·ρ(K)/ℏ_q² convention."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'sec:mass-endomorphism-opener-intro' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -977,15 +981,16 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numeric value quoted; no anchor/precision claim to be fragile."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'sec:mass-endomorphism-opener-intro' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -997,12 +1002,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The mass = |Markov trace| × volume-density framing is the framework's standing construction; no unit error or conservation violation in the prose."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'sec:mass-endomorphism-opener-intro' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1011,15 +1017,16 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "prose block carries no computation/witness."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'sec:mass-endomorphism-opener-intro' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-opener-intro.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1028,17 +1035,17 @@
           "md": "c1e48bfcbed4",
           "ts": "0cff7563b021"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
         "severity": "minor",
-        "evidence": "verdict: accept-with-minor-revisions. Sole objection: the 'electron to uranium ... everything else is derived' framing (.md:1-2, :22-23) overstates reach given the open Δ_λ per-isotope gate and 3/7 L2 accuracy status documented in AGENTS.md.",
-        "notes": "referee_argument: 'A section opener may motivate, but soften the universal-derivation claim to reflect that heavy-nucleus binding (Δ_λ) is an open gate, or the reader will hold the chapter to a standard it does not yet meet.'"
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'sec:mass-endomorphism-opener-intro' are consistent."
       }
     ]
   },

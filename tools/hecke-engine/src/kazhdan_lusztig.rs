@@ -173,37 +173,55 @@ impl Polynomial {
 pub struct KLContext {
     n: usize,
     cache: HashMap<(Perm, Perm), Polynomial>,
-    perms: Vec<Perm>,
+    intervals: HashMap<Perm, Vec<Perm>>,
 }
 
 impl KLContext {
     pub fn new(n: usize) -> Self {
-        // Generate permutations
-        let mut perms = Vec::new();
-        let mut current: Vec<u8> = (1..=(n as u8)).collect();
-        // Heap's algorithm
-        fn generate(k: usize, arr: &mut [u8], perms: &mut Vec<Perm>, n: usize) {
-            if k == 1 {
-                perms.push(Perm::new(n, arr));
-            } else {
-                generate(k - 1, arr, perms, n);
-                for i in 0..(k - 1) {
-                    if k % 2 == 0 {
-                        arr.swap(i, k - 1);
-                    } else {
-                        arr.swap(0, k - 1);
-                    }
-                    generate(k - 1, arr, perms, n);
-                }
-            }
-        }
-        generate(n, &mut current, &mut perms, n);
-
         KLContext {
             n,
             cache: HashMap::new(),
-            perms,
+            intervals: HashMap::new(),
         }
+    }
+    
+    fn get_lower_interval(&mut self, w: Perm) -> Vec<Perm> {
+        if let Some(interval) = self.intervals.get(&w) {
+            return interval.clone();
+        }
+        
+        // Find a reduced word for w
+        let mut word = Vec::new();
+        let mut current = w;
+        while current != Perm::identity(self.n) {
+            if let Some(s) = current.right_descent(self.n) {
+                word.push(s);
+                current = current.apply_simple_reflection(self.n, s);
+            } else {
+                break;
+            }
+        }
+        word.reverse();
+        
+        let mut interval_set = std::collections::HashSet::new();
+        interval_set.insert(Perm::identity(self.n));
+        let mut current_set = vec![Perm::identity(self.n)];
+        
+        for &s in &word {
+            let mut next_set = current_set.clone();
+            for &v in &current_set {
+                let vs = v.apply_simple_reflection(self.n, s);
+                if vs.length(self.n) > v.length(self.n) {
+                    if interval_set.insert(vs) {
+                        next_set.push(vs);
+                    }
+                }
+            }
+            current_set = next_set;
+        }
+        
+        self.intervals.insert(w, current_set.clone());
+        current_set
     }
 
     pub fn kl_polynomial(&mut self, x: Perm, w: Perm) -> Polynomial {
@@ -238,14 +256,13 @@ impl KLContext {
         let lw = w.length(self.n);
         let mut correction = Polynomial::zero();
         
-        for i in 0..self.perms.len() {
-            let z = self.perms[i];
+        let interval_ws = self.get_lower_interval(ws);
+        for &z in &interval_ws {
             if !z.has_right_descent(self.n, s) { continue; }
             if z == ws { continue; }
             let lz = z.length(self.n);
             if lw < lz { continue; }
             if (lw - lz) % 2 != 0 { continue; }
-            if !bruhat_le(&z, &ws, self.n) { continue; }
             if !bruhat_le(&x, &z, self.n) { continue; }
             
             let p_z_ws = self.kl_polynomial(z, ws);

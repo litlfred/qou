@@ -879,41 +879,38 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "00237e2bb3c8",
+          "md": "7de2afcbb12d",
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:42.221Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Block placement and kind 'definition' match validated structurally for 'Mass (categorical trace)'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "00237e2bb3c8",
+          "md": "7de2afcbb12d",
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:42.641Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-endomorphism/mass-identity.lean matches the mathematical statement in content/quantum-observable-universe/mass-endomorphism/mass-identity.md.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -923,15 +920,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "A definition, not a claim — it names the inertial mass m(γ) = ‖tr((∫_A ⊗ id)∘Δ∘γ)‖. Nothing is asserted to be true/false; the construction is well-typed given the rigid Frobenius–Hopf structure."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Mass (categorical trace)' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1"
       }
     ],
     "da-vacuous": [
@@ -941,17 +939,15 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "mass-identity.lean:71-74 frobeniusMass … := frobenius_form x x; lean:104-106 massComposite := fh.comul ≫ (fh.frobeniusForm ▷ fh.obj)",
-        "notes": "frobeniusMass is a thin wrapper: it just applies the supplied frobenius_form to (x,x), so all real content (the actual Frobenius pairing, the trace) is pushed onto the caller-supplied arguments — the Lean def encodes the *shape* ‖x‖_F² = ⟨x,x⟩_F but performs no categorical trace. Acceptable as a pre-Archimedean stub (honestly labelled, lean:18-31), but it is close to content-free in isolation; the genuine definitional work (Δ, ∫_A, tr) is in the .md prose only."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Mass (categorical trace)' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a ([quantum observable universe](#def\\:quantum-ob...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -964,12 +960,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Definitional; no target value back-fitted, no calibration smuggled."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mass (categorical trace)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.ts:1"
       }
     ],
     "da-overclaim": [
@@ -979,15 +976,15 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The block is appropriately scoped as a definition; the Lean explicitly separates the pre-Archimedean frobeniusMass from the post-τ scalarMass and disclaims that scalarMass is the Archimedean bridge (lean:76-91). No over-strong claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Mass (categorical trace)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1000,12 +997,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free numerical parameter; m_e/q0 calibration lives elsewhere in the chain. The definition is parameter-free up to the supplied Frobenius form."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass (categorical trace)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1015,15 +1013,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No inference chain to break — it is a definition stating a construction, not deriving a consequence."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/mass-identity.lean.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1036,14 +1035,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "mass-identity.ts:5 lean.ref 'qou:QOU.categoricalMass' but mass-identity.lean defines only frobeniusMass/scalarMass/massComposite (no categoricalMass); QOU.categoricalMass actually lives in lean/QOU/PhotonThreading.lean:81 with a DIFFERENT definition (crossingEnergy-based, valued in ℝ × (q-1)²)",
-        "notes": "The block's lean.ref resolves NOT to the sibling mass-identity.lean (which has no categoricalMass) but to QOU.categoricalMass in PhotonThreading.lean — a different file whose categoricalMass = crossing-energy-of-braid construction, not the Frobenius-trace ‖tr((∫_A⊗id)∘Δ∘γ)‖ of this .md. So the manifest points the definition at a Lean decl that encodes a different notion of mass. Either the ref is wrong or the sibling decl is mis-named; as wired, the cited Lean does not formalise this .md definition (proof/definition-statement-integrity failure)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-identity.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1053,17 +1050,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Mass (categorical trace)', hence no citation misuse is possible.",
         "severity": "minor",
-        "evidence": "mass-identity.md:7 'admits a categorical trace tr: End_C(A) → R (cf. \\cite{stolz-teichner-2012})'",
-        "notes": "Stolz–Teichner (2012, supersymmetric field theories / cohomology) is cited for the existence of the categorical/rigid trace tr: End(A)→R. The categorical trace in a rigid monoidal category is standard (Joyal–Street / Kelly–Laplaza), not specifically a Stolz–Teichner result; the citation is tangential to the invoked fact. Minor mis-attribution of a standard trace construction."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1073,17 +1069,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Mass (categorical trace)' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "mass-identity.md:42-43 '‖·‖ is the norm on R induced by the Frobenius pairing'; lean:60-74 frobeniusMass returns ⟨x,x⟩_F ∈ R (a square, not a norm)",
-        "notes": "The .md calls ‖·‖ a 'norm on R' but the Lean frobeniusMass returns frobenius_form x x = ⟨x,x⟩_F (the squared pairing, valued in R) without a square-root or positivity structure — over a general CommRing there is no norm. So 'norm' is used loosely: pre-Archimedean it is really the quadratic Frobenius form ⟨x,x⟩, and only post-τ (scalarMass over NormedCommRing) is it an actual norm. The single symbol ‖·‖ conflates the R-valued quadratic form and the ℝ-valued Archimedean norm. The Lean docstring (lean:18-31) flags this, but the .md does not."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1093,15 +1088,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No numerical value or q0 anchor in this definition block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Mass (categorical trace)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1111,17 +1107,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Mass (categorical trace)' are consistent with quantum observable mechanics.",
         "severity": "minor",
-        "evidence": "mass-identity.md:27-45 'inertial mass of a morphism ϱ … measures the resistance of the Frobenius–Hopf structure to transporting the cycle ϱ through the comultiplication'",
-        "notes": "The identification of a categorical-trace norm with *inertial mass* is a strong physical interpretation laid on a formal quantity, with no units argument and no link in this block to MeV/the m_e scale (that lives downstream via scalarMass and the canonical_mass facade). As a definition this is permissible naming, but the 'inertial mass' label is interpretive over-reach for a bare ⟨x,x⟩_F until the Archimedean realisation and dimensional calibration are supplied; a physicist would ask where the mass dimension enters."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1131,15 +1126,16 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No compute/witness backing; definition block."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-identity.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:58:21: error: unexpected token '/--'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1149,17 +1145,17 @@
           "ts": "310953b4475e",
           "lean": "a3129939acc8"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "mass-identity.ts:5 (lean.ref → QOU.categoricalMass in PhotonThreading.lean, not the sibling); lean:71-74, 89-91; .md:42-43",
-        "notes": "verdict: minor-revisions. referee_argument: The definition itself is clean and honestly split into pre-/post-Archimedean pieces, but the strongest objection is da-lean-narrative-divergence: the manifest lean.ref 'qou:QOU.categoricalMass' resolves to a DIFFERENT construction (crossing-energy mass in PhotonThreading.lean) than the Frobenius-trace mass defined in the sibling mass-identity.lean and the .md. Fix the ref to point at frobeniusMass (or rename), align the ‖·‖ 'norm' language with the R-valued quadratic Frobenius form, and treat the Stolz–Teichner citation for the categorical trace as tangential. None of these are fatal, but the ref mismatch means the definition's stated formalisation is currently the wrong decl."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-identity.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:58:21: error: unexpected token '/--'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/mass-identity.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/mass-identity.lean:58:21: error: unexpected token '/--'; expected 'lemma', invalidating the claimed formalization."
       }
     ]
   },

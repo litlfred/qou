@@ -1636,7 +1636,268 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "No false claims identified in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:1",
+        "notes": "The Lean sibling content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "The argument flow in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' (though incomplete)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "Citations to garoufalidis2004, faddeev1995, kashaev1997, murakami-murakami2001, champanerkar-kofman-mullen2008 are correct and contextually appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "Key terms and symbols in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "The algebraic and logical relations in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "The physical concepts described in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md:1 — Let K be a hyperbolic knot complement and J_N(K; q) \\in \\mathbb{Z}[q^{\\p...",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The identification of the phi_q function with AJ machinery relies on sorry stubs, leaving the main equivalence unproven in phi-q-aj-machinery-identification.lean."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T11:19:33.342Z"
 }

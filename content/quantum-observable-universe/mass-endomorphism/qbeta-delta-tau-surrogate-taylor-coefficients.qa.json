@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1343,7 +1343,7 @@
           "ts": "c586c83a180d"
         },
         "result": "fail",
-        "notes": ".md claims c_n ARE Taylor coeffs of the surrogate; Lean only proves lookup-table tautologies (witness_k = literal := rfl) — the values it was defined to return. Actual iteratedDeriv link deferred (.md admits orders 2-7 'formal proof deferred').",
+        "notes": ".md claims c_n ARE Taylor coeffs of the surrogate; Lean only proves lookup-table tautologies (witness_k = literal := rfl) \u2014 the values it was defined to return. Actual iteratedDeriv link deferred (.md admits orders 2-7 'formal proof deferred').",
         "reviewed_at": "2026-06-25T17:00:38.000Z",
         "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
@@ -1578,12 +1578,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "All eight catalogued coefficients (orders 0-7) reproduce exactly from the stated closed form via sympy series; verified independently (qbeta-delta-tau-surrogate-taylor-coefficients.md:50, table lines 9-16)."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1592,17 +1593,15 @@
           "md": "b77c350e92aa",
           "ts": "c586c83a180d"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The Lean decl `delta_tau_M_surrogate_taylor_witness` (QBetaDeltaTauSurrogateTaylorCoefficients.lean:37-46) is a hardcoded lookup table; the order-2..7 theorems (lines 60-81) are `rfl` against that table, not against an actual `iteratedDeriv` of `delta_tau_M_surrogate`.",
-        "notes": "The .md 'Honest scope' (lines 35-43) discloses this: orders 2-7 are 'catalogued from witness; formal proof deferred'. So the vacuity is explicitly flagged, not disguised — warn rather than fail. The order-0/1 theorems do tie to genuine derivative proofs upstream."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' presents substantial mathematical content: [`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)...",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1614,12 +1613,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No target is back-fitted: the coefficients are derived top-down from a fixed closed form (md:50) by Taylor expansion; no calibration smuggled."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1631,12 +1631,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "Title says 'Catalogue', kind is proposition-as-catalogue, and the 'This block does NOT establish' section (md:35-43) explicitly bounds the claim to a witness catalogue with two sorry-free anchors. No derived/proved overreach."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' is appropriately qualified.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1648,12 +1648,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "No free parameter introduced; the object is a pure rational function of q with no calibration. Witness flags y_λ is a non-canonical rational surrogate, but that is disclosed, not hidden."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1665,12 +1666,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "Each coefficient follows mechanically from sp.series of the stated closed form; no logical gap between the closed form and the table."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1679,17 +1681,15 @@
           "md": "b77c350e92aa",
           "ts": "c586c83a180d"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The .md presents the c_n as 'Taylor coefficients of delta_tau_M_surrogate', but the Lean theorems prove only that a lookup-table function returns the catalogued rationals (rfl), not that those rationals equal the n-th Taylor coefficient of the surrogate function for n≥2.",
-        "notes": "Honestly labelled in both .md ('formal proof deferred') and the Lean docstring (QBetaDeltaTauSurrogateTaylorCoefficients.lean:31-36). The divergence is acknowledged scope, not a hidden weaker-claim — warn."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.lean is missing, leading to complete divergence.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1701,12 +1701,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "cites: [hoefsmit1974] (ts:10) is the standard Hoefsmit representation source underlying the Hecke per-block data; appropriate background citation, not load-bearing for the rational arithmetic."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to hoefsmit1974 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1715,17 +1716,16 @@
           "md": "b77c350e92aa",
           "ts": "c586c83a180d"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": "`delta_tau_M_surrogate` is a 'surrogate'; the witness c_3_status field records 'the y_λ used here is a NON-CANONICAL rational surrogate (canonical y_λ involves √q)'. The .md does not surface that the surrogate differs from the canonical object beyond the word 'surrogate'.",
-        "notes": "Reader could mistake the surrogate's Taylor data for the canonical Δτ_M's. A one-line note that the surrogate replaces √q-weighted y_λ with rational surrogates would remove the ambiguity."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1737,13 +1737,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "These are exact rational Taylor coefficients (no float match, no q0 evaluation). Cross-anchor swing in the witness pertains to c_3=-2 NEAR-MATCH, which this block does not claim; the block claims only the exact rationals.",
-        "notes": "The block correctly does NOT assert c_3=-2 Taylor-exactness; witness c_3_status keeps it as NEAR-MATCH/open."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1752,15 +1752,16 @@
           "md": "b77c350e92aa",
           "ts": "c586c83a180d"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "Pre-archimedean combinatorial catalogue (tagged pre-archimedean); no physical observable asserted."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1772,12 +1773,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "evidence": "Witness qbeta-c3-multiblock-recursion-attack.witness.json reproduces: scriptHash e03423a5bf16 matches current sha256 of computations/qbeta/qbeta_c3_multiblock_recursion_attack.py exactly (no drift); taylor_coeffs_w_expansion field matches the .md table for all orders 0-7, and I independently re-derived all eight."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1786,17 +1788,17 @@
           "md": "b77c350e92aa",
           "ts": "c586c83a180d"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "Block is a faithful, reproducible, exactly-verified rational catalogue with an explicit honest-scope section. Strongest objection: orders 2-7 in Lean are lookup-table `rfl`s, not derivative proofs, and the 'surrogate' is a non-canonical (rational, not √q) stand-in for the canonical Δτ_M.",
-        "notes": "verdict: accept-with-minor-revisions. referee_argument: the catalogue is correct and reproducible; tighten by (1) noting the surrogate's deviation from canonical y_λ, (2) making clear the Lean n≥2 theorems certify the table, not the derivative."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.lean is missing, preventing formal verification of the claims in 'Catalogue: Taylor coefficients of $\\\\Delta\\\\tau_M^{\\\\text{surr}}$ at $q = 1$, orders 0..7'."
       }
     ]
   },

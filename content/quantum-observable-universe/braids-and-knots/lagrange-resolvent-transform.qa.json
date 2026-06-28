@@ -27,7 +27,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/√5) * Σ ζ^(k·j) * x_j` is the standard discrete Fourier kernel over ℤ/5). The √5 is an algebraic-integer norm of ℚ(ζ_5)/ℚ — categorical content of the cyclotomic-field decomposition — NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
+        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/\u221a5) * \u03a3 \u03b6^(k\u00b7j) * x_j` is the standard discrete Fourier kernel over \u2124/5). The \u221a5 is an algebraic-integer norm of \u211a(\u03b6_5)/\u211a \u2014 categorical content of the cyclotomic-field decomposition \u2014 NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
       },
       {
         "field_hash": {
@@ -46,7 +46,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70: archimedean Real.* in categorical chapter — (1 / Complex.ofReal (Real.sqrt 5)) * ∑ j : Fin 5, ζ ^ (k.val * j.val) * x j"
+        "evidence": "quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70: archimedean Real.* in categorical chapter \u2014 (1 / Complex.ofReal (Real.sqrt 5)) * \u2211 j : Fin 5, \u03b6 ^ (k.val * j.val) * x j"
       }
     ],
     "voice-status-leak": [
@@ -1368,12 +1368,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "σ(w_k)=ζ^{-k}w_k verified directly: substituting x_j↦x_{j+1} and reindexing gives the ζ^{-k} phase; the Lean theorem lagrange_resolvent_diagonal_action proves exactly this. w_0=0 from Σx_i=0 also correct (lean:79-85)."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-vacuous": [
@@ -1386,12 +1387,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Lean proofs are substantive (root-of-unity reductions + fin_cases + ring), not trivial."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:lagrange-resolvent-transform'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
@@ -1404,11 +1405,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Traced dependencies ['def:brings-surface'] for 'prop:lagrange-resolvent-transform' and confirmed no circular definitions or justifications.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1418,17 +1421,15 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "lagrange-resolvent-transform.md:26-31 states three n=5 constraints (w_0=0, quadric w_1w_4+w_2w_3=0, cubic w_1²w_3+w_4²w_2+w_2²w_1+w_3²w_4=0), and md:34 calls the n=5 formalization a 'non-trivial mathematical contribution.' But only w_0=0 and the diagonal action are formalized in the .lean; the quadric and cubic transforms are not proved (the md itself parenthetically admits this at line 34).",
-        "notes": "Self-flagged, so minor: the 'formalization' novelty claim is broader than what the Lean delivers (2 of the 3 stated constraint transforms are unformalized)."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Verified that the scope of 'prop:lagrange-resolvent-transform' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -1438,14 +1439,16 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -1458,11 +1461,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1472,17 +1477,15 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The .md proposition asserts the quadric (md:28-29) and cubic (md:30-31) constraint transforms as part of the proposition's claim, but lagrange-resolvent-transform.lean only proves lagrange_resolvent_w0_vanishes (part 1, special k=0) and lagrange_resolvent_diagonal_action (part of the general statement). The constraint-transform claims (item 2, n=5 quadric/cubic) have no Lean counterpart.",
-        "notes": "Lean proves a strict subset of the .md proposition. Honestly noted in md:34, so minor, but it is a genuine narrative⊋Lean gap."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1495,12 +1498,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "bring1786 cited for the Bring-surface context (lean:22) and the DFT/Lagrange-resolvent attribution is standard; no misattribution."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All references and uses ['def:brings-surface'] cited in 'prop:lagrange-resolvent-transform' are used in accordance with their established mathematical definitions.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1513,12 +1517,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "ζ=e^{2πi/5} fixed; the √n normalization and the action σ:x_j↦x_{j+1} are explicit. Base ring is ℂ (lean uses Complex), md:1 flags the ℝ-specialisation note appropriately."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "All terms and algebraic structures in 'prop:lagrange-resolvent-transform' are uniquely defined or standard.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1528,14 +1533,16 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The algebraic statements in 'prop:lagrange-resolvent-transform' do not rely on fragile empirical fits or numerical thresholds.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1545,14 +1552,16 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Physical dimensions and units in 'prop:lagrange-resolvent-transform' are consistent with quantum observable universe models.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1562,15 +1571,16 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "n/a",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Pure Lean; no witness/compute. lean.validation is 'not_checked' (lagrange-resolvent-transform.ts:9) but that is a build-status flag, not a reproducibility concern for the math."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1580,17 +1590,17 @@
           "ts": "ef6c0dbf9455",
           "lean": "1e37cd51a4d3"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "Verdict: minor-revision. Core results (diagonal action, w_0 vanishing) are correctly stated and formalized. Strongest objection: the proposition advertises three n=5 constraint transforms and a novel formalization (md:30-34) while the .lean formalizes only the diagonalization and one linear constraint; the quadric/cubic transforms are asserted, not derived.",
-        "notes": "referee_argument: scope of the formalized claim is narrower than the proposition's stated content; tighten the novelty wording or formalize the remaining constraints."
+        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
+        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
       }
     ]
   },

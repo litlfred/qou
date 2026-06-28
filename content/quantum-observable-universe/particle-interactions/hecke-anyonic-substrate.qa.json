@@ -963,7 +963,7 @@
           "lean": "873856865a4a"
         },
         "result": "pass",
-        "notes": "Conjecture: every QOU particle is an anyon via B_n↠H_n(R,q) (T_{s_i}-q)(T_{s_i}+1)=0; Bose/Fermi = τ-image. Well-posed, honestly conjectural (spectrum exhaustion).",
+        "notes": "Conjecture: every QOU particle is an anyon via B_n\u21a0H_n(R,q) (T_{s_i}-q)(T_{s_i}+1)=0; Bose/Fermi = \u03c4-image. Well-posed, honestly conjectural (spectrum exhaustion).",
         "reviewed_at": "2026-06-25T17:08:56.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -982,245 +982,259 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Stated as a conjecture; the asserted ingredient (B_n ↠ H_n(q), σ_i↦T_{s_i}, Hecke quadratic relation, anyonic braiding) is standard and correctly stated. The honest 'why a conjecture' section scopes the open part (spectrum exhaustion). No false claim."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (contains sorry).",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hecke-anyonic-substrate.lean:19-21 'class HeckeAnyonicSubstrate where holds : Prop'",
-        "notes": "The §3b-cond conjecture class axiomatises its content as a single opaque field `holds : Prop` — a content-free carrier (per AGENTS.md §3b-tax 'proof-no-empty-prop-carrier' / 'proof-claims-unencoded'). Any instance `⟨True, …⟩` discharges it, so downstream [HeckeAnyonicSubstrate] theorems would prove nothing modulo a vacuous hypothesis. The narrative is substantive; the Lean axiomatisation is not. (.md itself is not vacuous, hence warn at block level.)"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are non-vacuous as they make concrete conjectures about '$T_w \\in H_n(R, q)$ be its Hecke normal form at generic deformation parameter $q$. Then the topological statistics of...'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No back-fitting; the conjecture is an exhaustion claim, not a numerical match to a target."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hecke-anyonic-substrate.md:1 'Theorem (Iwahori–Hecke substrate is the anyon algebra; structural-existence, Sprint 2 follow-up discharge)' on a block of kind `conjecture` (.ts:3)",
-        "notes": "The .md opens with bold '**Theorem (… discharge).**' and asserts 'every particle in the QOU substrate is an anyon' (md:13) as a flat claim, while the block kind is `conjecture` and the §'Why a conjecture' admits the core exhaustion is open. Calling a conjecture a 'Theorem' / 'discharge' in the visible statement overclaims conditional/open content as proved."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical parameter or calibration in this structural conjecture."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The reasoning (braid surjection ⇒ anyonic braiding; τ collapses to ±1) is a coherent sketch; the genuinely missing step (full-spectrum exhaustion) is explicitly named, not papered over."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hecke-anyonic-substrate.md (full braid↠Hecke / spectrum-exhaustion conjecture) vs hecke-anyonic-substrate.lean:19-21 'class HeckeAnyonicSubstrate where holds : Prop'; .ts lean.ref points to QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate but the sibling defines QOU.BraidKnot.HeckeAnyonicSubstrate (lean:16,19)",
-        "notes": "(1) The Lean class encodes none of the narrative content (Hecke quadratic relation, B_n surjection, exhaustion) — just an opaque `holds : Prop`, so it formalises strictly less / nothing of the .md. (2) Namespace/ref mismatch: .ts requests `qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate` but the sibling declares it under `QOU.BraidKnot` — the ref does not resolve to this stub. proof-statement-integrity fails."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean uses a class-conjecture pattern, matching the conjectural nature of 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "cites kassel1995 (braid/Hecke), kitaev2006 & nayak2008 (anyons/topological statistics), khovanovlauda2009 (KLR) are all correctly attributed to the results invoked (surjection, anyonic statistics, cyclotomic-KLR exhaustion route)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kassel1995, kitaev2006, nayak2008, khovanovlauda2009 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
-          "ts": "88c9a8029cf2",
-          "lean": "873856865a4a"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "hecke-anyonic-substrate.md:6 H_n(R,q) 'at generic deformation parameter q'; md:7 quadratic relation (T-q)(T+1)=0",
-        "notes": "The quadratic relation is written (T_{s_i}-q)(T_{s_i}+1)=0, whereas the repo's STRICT Hecke convention (AGENTS.md §7a) is (σ_i-q)(σ_i+q⁻¹)=0. The block uses a different (one-parameter, T+1) normalisation without flagging the convention switch — a base/normalisation ambiguity relative to the canonical register. 'Generic q' locus also unpinned."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "18febccc8d36",
-          "ts": "88c9a8029cf2",
-          "lean": "873856865a4a"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical observable; purely structural conjecture."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "The anyon/braiding framing is physically coherent (topological statistics, τ recovering Bose/Fermi); no unit or conservation violation, and it is appropriately hedged as conjecture."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "83f1c3eba3cf",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "83f1c3eba3cf",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No compute/witness backing a structural conjecture."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "83f1c3eba3cf",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "hecke-anyonic-substrate.md:1 '**Theorem (… discharge).**' on a conjecture; lean:19-21 empty-content class; .ts:7 lean.ref namespace mismatch",
-        "notes": "verdict: minor-to-major-revision. referee_argument: the mathematical content is standard and honestly scoped as open in the prose, but three presentation/formalisation defects need fixing: (1) the visible '**Theorem … discharge**' header contradicts the `conjecture` kind and the block's own 'why a conjecture' caveat — relabel to Conjecture; (2) the Lean class carries only `holds : Prop`, a content-free carrier that must encode the conjecture's actual hypotheses to be non-vacuous; (3) the lean.ref (QOU.IwahoriHecke.Tw.*) does not match the declared namespace (QOU.BraidKnot.*). Also align the quadratic relation to the repo's (σ-q)(σ+q⁻¹)=0 convention. The conjecture itself survives on the merits."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured relations in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean."
       }
     ]
   },

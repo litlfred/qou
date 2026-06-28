@@ -857,21 +857,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1c67d1ed606a",
+          "md": "3f06ea90c387",
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:40.772Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Block placement and kind 'remark' match validated structurally for 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum'.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -884,12 +882,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "The three closed forms and the cyclotomic factorizations are algebraically consistent: (q²+1)²(q²−1)=q⁶+q⁴−q²−1 and (q⁴+1)(q²−1)=q⁶−q⁴+q²−1 match the polynomial-form theorems (.lean:65-86); chi_V111 = chi_V3/q⁴ checks (denominator q vs q⁵). field_simp+ring discharges are sound."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-vacuous": [
@@ -899,17 +898,16 @@
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": "The Lean theorems (.lean:65-150) are all rational-function identities discharged by field_simp+ring on hand-written defs (chi_Vλ_diff_closed). The .lean Status (:152-167) and .md:73 concede 'these specific rational functions ARE the per-irrep character differences ... follows from the q_character_on_braid_word symbolic evaluation in the companion probe' — i.e. the substantive content (that these are the actual characters) is NOT in Lean, only the algebraic re-expressions are.",
-        "notes": "Lean proves form↔form↔cyclotomic equalities among definitions the author wrote; the load-bearing claim (these defs equal the true χλ differences) is backed only empirically by sympy, so the Lean theorems are algebraic tautologies relative to the assumed closed forms."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean:1"
       }
     ],
     "da-circular": [
@@ -922,12 +920,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No physical target back-fitted; these are representation-theoretic character computations, not calibrated against an observable."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-overclaim": [
@@ -940,14 +939,12 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "minor",
-        "evidence": ".md:48-54 'observation 3' asserts 'Denominator power tracks the content sum' with formula p = 3 − (2/3)c(λ) fitted to exactly three data points {c=3,0,−3}→{p=1,3,5}. .md:46 ties V_(2,1)'s Φ_8 to 'Clifford depth' as a structural claim. authorNotes concedes the V_(2,1) matrix-derivation is only 'backed empirically by sympy', not derived in Lean.",
-        "notes": "The content-sum/denominator-power 'pattern' is a 3-point linear fit presented as structural; the Clifford-depth and hook-content-formula links are suggestive ('suggestive of a deeper derivation', .md:90), not derived. Honestly hedged but borders on pattern-as-law."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
@@ -960,12 +957,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "No free numerical parameter; the closed forms are parameter-free rational functions of q. The crossing-count braid words (6σ+3σ⁻¹+2avg etc.) are fixed inputs, not tunable."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-non-sequitur": [
@@ -978,14 +976,13 @@
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean.",
         "severity": "minor",
-        "evidence": ".md:42-44 'observation 1' claims V_(1,1,1)=V_(3)/q⁴ IS 'the conjugate-partition symmetry' arising from 'the q ↔ −q⁻¹ substitution'. But chi_V111 = chi_V3/q⁴ is proved (.lean:95-99) by direct ring identity on the closed forms, NOT via a q↔−q⁻¹ argument; the asserted mechanism is not the proof.",
-        "notes": "The narrative attributes the /q⁴ relation to a conjugate-partition q↔−q⁻¹ mechanism, but the Lean derives it purely algebraically; the claimed structural cause is asserted, not shown to produce the relation."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean:1"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -995,17 +992,15 @@
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": ".md:3 / title claim 'character-difference closed forms' for the actual χλ(βn)−χλ(βp). The Lean file (.lean:44-59) DEFINES chi_Vλ_diff_closed as the asserted rational functions and proves only identities AMONG these definitions (polynomial form, cyclotomic form, /q⁴, vanish at q=1). No Lean theorem connects chi_Vλ_diff_closed to an actual Hecke-character trace; the .lean Status (:163-167) admits this link is only sympy-backed.",
-        "notes": "Lean proves a strictly weaker statement than the .md headline: it verifies algebraic re-expressions of postulated closed forms, not that those forms equal the per-irrep character differences. The substantive claim is empirically (not formally) backed."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1015,17 +1010,16 @@
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Citations to jones1985, wenzl1988, hoefsmit1974, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
-        "evidence": ".ts:9-14 cites jones1985, wenzl1988, hoefsmit1974, kassel1995. .md:80-84 attributes 'conjugate-partition character symmetry' to 'Kassel, Quantum Groups (GTM 155) §V.5' and cyclotomic Specht decomposition to 'Mathas (1999) §3' — but Mathas is NOT in cites[]. The Ariki–Koike/cyclotomic-Hecke framing (.md:77) is invoked for an ordinary (non-cyclotomic) Hecke algebra H_3(q); Φ_d(q) factors of a character difference are not per se the cyclotomic-Hecke-algebra structure of Ariki–Koike.",
-        "notes": "Mathas cited in prose but absent from cites[]; and the Ariki–Koike 'cyclotomic Hecke algebra' literature is loosely invoked — the Φ_d factors here arise from ordinary symmetric-group Hecke characters, a different sense of 'cyclotomic' than Ariki–Koike."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1035,17 +1029,16 @@
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum' are mathematically defined and unambiguous.",
         "severity": "minor",
-        "evidence": ".md:62 gives the V_(2,1) Hoefsmit σ₁ matrix with b = √(d₁d₂+1); with d₁=q³/(q²+1), d₂=−q⁻¹/(q²+1), d₁d₂+1 can be negative for some real q, making b complex — yet the block is declared an ℝ specialisation (.md:1). The '2 averaged' crossing convention (½(σ+σ⁻¹)) and the canonical word order from atomic_braid_to_crossings (.md:68) are referenced but not defined in-block.",
-        "notes": "The square-root b over ℝ has an implicit positivity/regime assumption that is not stated; key braid-word conventions are external. Base-ring archimedean caveat (√) under §7c is glossed."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-empirical-fragility": [
@@ -1058,12 +1051,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "Claims are exact symbolic rational identities cross-checked at sample points (q=2), not q0-anchored numeric near-matches; no fit-noise or anchor-swing exposure."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-physical-implausibility": [
@@ -1076,12 +1070,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "notes": "χλ(q=1)=0 'proton/neutron indistinguishable at classical limit' (.lean:108-117) is physically reasonable (isospin restored at q→1); no broken-conservation or wrong-units claim."
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'All three $V_\\\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ \u2192 $\\\\Phi_4^2$; $V_{(2,1)}$ \u2192 $\\\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1091,17 +1086,16 @@
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": ".ts:23-27 / .md:100-107 name probe_per_wedderburn_block_ck.py + per-wedderburn-block-ck.witness.json (status:'experimental') as the empirical backing for the closed forms, but no scriptHash/scriptCommitSha is recorded on the block and the V_(2,1) matrix-product result is the only evidence the asserted closed form is the true character.",
-        "notes": "The substantive (non-algebraic) content depends on an experimental sympy probe with no drift-tracking hash; reproducibility of the V_(2,1) closed form rests entirely on re-running it."
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean:99:2: error: No goals to be solved"
       }
     ],
     "da-referee-verdict": [
@@ -1111,17 +1105,17 @@
           "ts": "20e8bef25008",
           "lean": "ec692003b445"
         },
-        "result": "warn",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T05:36:08.012Z",
-        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
-        "severity": "major",
-        "evidence": "verdict: minor-revision. Strongest objection: the Lean theorems verify only algebraic identities among author-postulated closed forms; the claim that these rational functions ARE the per-irrep χλ differences is backed only by an experimental sympy probe (.lean:163-167), so the formal content is weaker than the .md headline.",
-        "notes": "referee_argument: 'Your Lean proves form↔form re-expressions, not that chi_Vλ_diff_closed equals the Hecke character difference — that link is sympy-only. Either formalise q_character_on_braid_word so the closed forms are theorems about actual characters, or state plainly that the closed forms are empirically-validated conjectures. Also: add Mathas to cites[], reconcile the Ariki–Koike framing, and pin the witness hash.'"
+        "reviewed_at": "2026-06-28T10:51:08.364Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean:99:2: error: No goals to be solved",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.lean:99:2: error: No goals to be solved, invalidating the claimed formalization."
       }
     ]
   },

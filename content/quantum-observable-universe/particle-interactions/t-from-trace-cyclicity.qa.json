@@ -980,250 +980,259 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean is incomplete (contains sorry).",
         "severity": "minor",
-        "evidence": "t-from-trace-cyclicity.md:33-34 ('the reversed word produces the mirror-orientation link, which has the same Jones polynomial as the original by trace cyclicity')",
-        "notes": "Word reversal of a braid β and Markov-trace cyclicity are distinct: tr_M(ab)=tr_M(ba) (cyclic rotation) does NOT give tr_M(β)=tr_M(β^T) (full reversal) in general — reversal is an anti-automorphism, not a cyclic rotation. The claim that the reversed-word link has the same Jones polynomial 'by trace cyclicity' is a non-trivial fact (true for these symmetric Markov traces, but it follows from the trace being symmetric/the Hecke algebra having a trace-preserving anti-involution, not from cyclicity). The stated justification is wrong even if the conclusion holds; as a conjecture this is softened to warn. Confirmed open: corpus carries this as conj:t-from-trace-cyclicity (open-problem tag), so flagging the cyclicity↔reversal conflation, not declaring the conclusion false."
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean:1"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "t-from-trace-cyclicity.lean:26-28 ('class TFromTraceCyclicity where  holds : Prop')",
-        "notes": "The Lean carrier is an under-specified/empty conjecture class: its only field is `holds : Prop` with no content — the actual content (t_action, t_involution, t_preserves_tr_M, bar_eq_p_c_t sketched in the .md:67-79) is NOT encoded. Per AGENTS.md §3b-tax this is the 'class fields must carry the conjecture's content, never a bare True or an empty/opaque body' failure (proof-no-empty-prop-carrier / proof-claims-unencoded): the docstring/​.md promise ≥4 named properties while the class encodes none. Any [TFromTraceCyclicity] instance discharges `holds` trivially, so downstream conditionals would prove nothing modulo it."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are non-vacuous as they make concrete conjectures about 'on braid words at the Markov-trace level:'.",
+        "severity": "minor"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Conjecture, openly stated; no derivation claims its own conclusion."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
         "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "t-from-trace-cyclicity.md:79 (bar_eq_p_c_t: bar_involution = p_action ∘ c_action ∘ t_action) and md:48-51",
-        "notes": "The factorisation 'bar-involution = CPT = C·P·T' with T = word-reversal is asserted as the content of the conjecture; presenting the clean equality bar = P∘C∘T as the 'smallest possible closure' (md:88-90) somewhat understates that this composite identity is itself unproved and is the substantive open claim, not merely an axiomatic restatement of trace cyclicity."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
-          "ts": "3d8814fbfe00",
-          "lean": "57e6c0c798e1"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical observable / calibration in this categorical conjecture."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "926fd931d77b",
-          "ts": "3d8814fbfe00",
-          "lean": "57e6c0c798e1"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "t-from-trace-cyclicity.md:12-18, 33-34",
-        "notes": "'By the Markov trace cyclicity axiom tr_M(ab)=tr_M(ba) … word reversal is trace-invariant' — cyclicity gives invariance under cyclic permutation, not under full reversal; the step from cyclicity to reversal-invariance skips the trace-symmetry/anti-involution lemma. The 'therefore' is missing that lemma."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "926fd931d77b",
-          "ts": "3d8814fbfe00",
-          "lean": "57e6c0c798e1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "evidence": "t-from-trace-cyclicity.lean:26-28 vs t-from-trace-cyclicity.md:67-79",
-        "notes": "The .md 'Lean axiomatisation (sketch)' specifies a rich class (t_action, t_involution, t_preserves_generators, t_preserves_tr_M, bar_eq_p_c_t). The actual sibling .lean encodes none of these — only `holds : Prop`. The Lean is therefore strictly weaker/vacuous relative to the narrative class it claims to formalise. The .lean docstring even concedes the real class file is 'pending'. Lean ⊊ narrative (vacuous stub vs sketched content)."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "926fd931d77b",
-          "ts": "3d8814fbfe00",
-          "lean": "57e6c0c798e1"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "t-from-trace-cyclicity.ts:17-21 cites jones1987, kassel1995, wenzl1988; .md:13 attaches [jones1987] to 'Markov trace cyclicity axiom'",
-        "notes": "Trace cyclicity tr_M(ab)=tr_M(ba) is standard (Jones/Kassel), but the block's actual non-trivial claim (reversal-invariance of the Markov trace / Jones polynomial) is attributed to '[jones1987] cyclicity' — a mis-attribution, since cyclicity alone does not yield reversal-invariance (that needs the trace anti-involution, cf. Kassel1995). wenzl1988 is listed but not invoked for any specific step."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "926fd931d77b",
-          "ts": "3d8814fbfe00",
-          "lean": "57e6c0c798e1"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "minor",
-        "evidence": "t-from-trace-cyclicity.md:1-18, 79",
-        "notes": "'Time-reversal T' is defined as braid-word reversal, but the .md slides between three objects — reversal at the braid-word level, at the Markov-trace level, and the 'mirror-orientation link' — without pinning which is T. 'Mirror-orientation' is also potentially confusable with the P (mirror, σ_i↦σ_i⁻¹) action defined two rows below in the same table (md:44). The C/P/T separation hinges on these being cleanly distinct, yet the orientation-reversal vs generator-mirror distinction is left implicit."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "926fd931d77b",
-          "ts": "3d8814fbfe00",
-          "lean": "57e6c0c798e1"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No numerical match claimed; the 'Open R&D' item to verify |tr_M| invariance numerically is explicitly flagged as not-yet-done, not asserted."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "Framing T (time reversal) as a discrete combinatorial involution within a CPT decomposition is internally coherent; no contradiction with a measurement is asserted (it is explicitly conjectural)."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f9c74a80ea17",
+          "ts": "3d8814fbfe00",
+          "lean": "57e6c0c798e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f9c74a80ea17",
+          "ts": "3d8814fbfe00",
+          "lean": "57e6c0c798e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean uses a class-conjecture pattern, matching the conjectural nature of 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f9c74a80ea17",
+          "ts": "3d8814fbfe00",
+          "lean": "57e6c0c798e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to jones1987, kassel1995, wenzl1988 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f9c74a80ea17",
+          "ts": "3d8814fbfe00",
+          "lean": "57e6c0c798e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f9c74a80ea17",
+          "ts": "3d8814fbfe00",
+          "lean": "57e6c0c798e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f9c74a80ea17",
+          "ts": "3d8814fbfe00",
+          "lean": "57e6c0c798e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "notes": "No backing witness / compute; conjecture with a pending Lean class. Nothing to reproduce."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.ts:1"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "926fd931d77b",
+          "md": "f9c74a80ea17",
           "ts": "3d8814fbfe00",
           "lean": "57e6c0c798e1"
         },
-        "result": "fail",
+        "result": "warn",
         "reviewer": {
-          "kind": "agent",
-          "id": "qa-da-adversarial-audit",
-          "version": "1.0"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-28T06:58:25.303Z",
-        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
-        "severity": "major",
-        "notes": "verdict: major-revision. referee_argument: As a flagged conjecture the open status is honest, but two structural defects remain. (1) The Lean carrier `class TFromTraceCyclicity where holds : Prop` is an empty/under-specified conjecture class (AGENTS.md §3b-tax proof-no-empty-prop-carrier) — it encodes none of the four properties the .md sketch and docstring promise, so it asserts nothing and any downstream [TFromTraceCyclicity]-conditional result is vacuous. (2) The core justification conflates Markov-trace cyclicity (tr_M(ab)=tr_M(ba)) with word-reversal invariance (tr_M(β)=tr_M(β^T)); the latter needs the trace anti-involution, not cyclicity, so the [jones1987] attribution is misplaced. Encode the real class fields and correct the cyclicity↔reversal justification before promotion."
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured relations in 'Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean."
       }
     ]
   },
