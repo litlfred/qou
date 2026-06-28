@@ -1,0 +1,57 @@
+{
+ "engine": "mpmath",
+ "engineVersion": "mpmath 50dps on canonical witnesses",
+ "computedAt": "2026-06-28T05:59:20.297032+00:00",
+ "computation": "delta-lambda-qdim-route-probe",
+ "scriptFile": "delta_lambda_qdim_route_probe.py",
+ "scriptHash": "948999b156ce",
+ "description": "Route-(i) probe: replace |\u0394_\u03bb|=dim_\u03bb by the balanced quantum dimension dim_q,\u03bb=[n]_q!/\u220f[hook]_q at q_0 and recompute the \u2113\u00b9 ceiling. \u2016c_q\u2016\u2081/|target| \u2208 [0.46,0.79] < 1 for D/T/\u00b3He/\u2074He \u27f9 balanced-q-dim reweighting alone does NOT supply the shortfall, but lifts the heavy-isotope ceiling a lot (\u2074He 0.41\u21920.79) \u2014 constructive evidence for the fibre q-kernel (z2bn #2899). SCOPE (a) scope-limited negative: this convention as SOLE fix only; other q-dim conventions and route (i)+(ii)/(iii) NOT excluded; no invariant \u27f9 not a (b) exclusion.",
+ "scope": "(a) scope-limited-negative \u2014 balanced-[k]_q quantum dimension as the sole magnitude fix",
+ "qdim_convention": "balanced [k]_q=(q^k-q^-k)/(q-q^-1); dim_q,\u03bb=[n]_q!/\u220f_cells[hook]_q",
+ "parameters": {
+  "q_0": 1.1099785955573347,
+  "m_e_MeV": 0.51099895069
+ },
+ "data": {
+  "rows": [
+   {
+    "atom": "D",
+    "B_AME_MeV": 2.224566,
+    "target_units_m_e": 4.353367060727183,
+    "l1_classic": 2.246626166084354,
+    "l1_qdim": 2.384743688691243,
+    "qdim_over_classic": 1.0614777503671715,
+    "qdim_ceiling_over_target": 0.5477929279624993
+   },
+   {
+    "atom": "T",
+    "B_AME_MeV": 8.481798,
+    "target_units_m_e": 16.59846461239707,
+    "l1_classic": 5.934980036613723,
+    "l1_qdim": 7.711000299532652,
+    "qdim_over_classic": 1.2992462067205637,
+    "qdim_ceiling_over_target": 0.4645610590857577
+   },
+   {
+    "atom": "3He",
+    "B_AME_MeV": 7.718043,
+    "target_units_m_e": 15.10383336321602,
+    "l1_classic": 8.938724763901604,
+    "l1_qdim": 11.58618050338668,
+    "qdim_over_classic": 1.2961782367633283,
+    "qdim_ceiling_over_target": 0.7671019816468411
+   },
+   {
+    "atom": "4He",
+    "B_AME_MeV": 28.295673,
+    "target_units_m_e": 55.37325069218333,
+    "l1_classic": 22.475975244771508,
+    "l1_qdim": 44.01349634660421,
+    "qdim_over_classic": 1.958246343808502,
+    "qdim_ceiling_over_target": 0.7948512286423757
+   }
+  ],
+  "all_qdim_ceilings_below_target": true
+ },
+ "allPassed": true
+}
