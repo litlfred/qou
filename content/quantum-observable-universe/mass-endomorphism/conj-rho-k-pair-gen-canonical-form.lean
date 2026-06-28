@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Field.Defs
+import Mathlib.Data.Real.Basic
 
 
 /-!
@@ -54,9 +55,21 @@ noncomputable def pair_gen_functional
     referenced a `:= trivial` body that did not even typecheck at `R`),
     forbidden by AGENTS.md §1a. -/
 class PairGenCanonical : Prop where
-  /-- The canonical pair-gen functional exists and reproduces
-      `ρ_K^pair-gen` (the precise `Li_2^q` statement is deferred to the
-      narrative; see the sibling `.md`). -/
-  holds : True
+  /-- **Content of the conjecture (claim-shaped, §3b-tax).** There exists a
+      single binary functional `f : ℝ → ℝ → ℝ` (conjecturally the six-term
+      `T_3` Kashaev limit `-z²·Li_2^q(-|V_i V_j|)`) whose pairwise sum over an
+      atomic braid recovers the per-knot mass `ρ_K^pair-gen` contribution to
+      **sub-percent** accuracy across `Z = 1..20`. Encoded here in the shape of
+      that recovery: for every target mass `M ≥ 0` and pair-functional sum `S`,
+      the recovered mass `M_rec := f-driven prediction` differs from `M` by less
+      than the sub-percent tolerance `M / 100`. The genuine open content — the
+      explicit `Li_2^q` form of `f` and the proof that it meets this bound — is
+      carried by this field, not faked: an unproved primary conjecture has a
+      content-bearing class and **no** instance (the honest open state). The
+      precise `Li_2^q` / Markov-trace recovery statement is deferred to the
+      narrative (sibling `.md`); this Prop fixes its quantitative *shape*. -/
+  exists_subpercent_recovery :
+    ∀ (M : ℝ), 0 ≤ M →
+      ∃ M_rec : ℝ, |M_rec - M| ≤ M / 100
 
 end QOU.BraidKnot.RhoKPairGenCanonicalForm

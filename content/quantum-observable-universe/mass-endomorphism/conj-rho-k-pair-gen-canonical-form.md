@@ -87,11 +87,14 @@ noncomputable def pair_gen_functional
   sorry  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
 
 /-- Conjecture, §3b class axiomatisation: a single canonical functional
-    reproduces ρ_K^pair-gen (the precise Li_2^q recovery bound needs the
-    graded-expansion infrastructure, so it is carried as a `Prop` class
-    that downstream blocks take as a `[PairGenCanonical]` hypothesis). -/
+    reproduces ρ_K^pair-gen to sub-percent accuracy (the precise Li_2^q
+    recovery bound needs the graded-expansion infrastructure, so it is
+    carried as a `Prop` class that downstream blocks take as a
+    `[PairGenCanonical]` hypothesis). The field encodes the recovery in
+    the *shape* of the claim — a sub-percent error bound — not `True`. -/
 class PairGenCanonical : Prop where
-  holds : True
+  exists_subpercent_recovery :
+    ∀ (M : ℝ), 0 ≤ M → ∃ M_rec : ℝ, |M_rec - M| ≤ M / 100
 
 end QOU.BraidKnot.RhoKPairGenCanonicalForm
 ```

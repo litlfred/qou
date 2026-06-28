@@ -1,6 +1,8 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Data.Int.Basic
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 
 /-!
@@ -75,15 +77,27 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
   unfold muLambda contentSumClassical contentSumQCasimir
   simp [jacksonInt]
 
-/-- **Peter-Weyl heat kernel existence** (conjecture, archimedean):
-    for q > 0, q ≠ 1, the series Σ d_λ(q) exp(-μ_λ(q) t) converges
-    absolutely for every t > 0. -/
+/-- **Peter-Weyl heat-kernel convergence** (conjecture, archimedean).
+
+    The named statement of `prop:q-heat-kernel-peter-weyl`: for `0 < q`,
+    `q ≠ 1` and a heat time `t > 0`, the spectral series
+
+      `Σ_{λ} d_λ(q) · exp(-μ_λ(q) · t)`
+
+    of the `q`-heat kernel is (absolutely) summable over the Wedderburn
+    blocks `λ` (indexed by `YoungDiagram`), where `μ_λ(q) = muLambda q λ`
+    is the content-Casimir eigenvalue and `dLambda λ` is the Steinberg
+    `q`-hook dimension of the block.
+
+    This is the Mercer-type convergence whose justification (`μ_λ ≍ n²/q²`
+    for `λ ⊢ n` against polynomial-in-`n` dimensions) is given in the
+    narrative but not yet formalised; per AGENTS.md §1a / §3b (Pattern C)
+    we **name** the conditional conjecture as a `Prop` rather than fake a
+    proof. The carrier asserts the real `Summable` claim — there is no
+    instance / proof term, the honest open state. -/
 -- Ref: [manuscript] §9
-def qHeatKernelPeterWeyl (q t : ℝ)
-    (hq : 0 < q) (hq1 : q ≠ 1) (ht : 0 < t) :
-    True := by
-  -- Ref: [manuscript] §9 — Mercer-type convergence follows from
-  -- μ_λ ≍ n²/q² for λ ⊢ n, with polynomial-in-n dimensions.
-  trivial
+def qHeatKernelPeterWeyl (q t : ℝ) (dLambda : YoungDiagram → ℝ)
+    (_hq : 0 < q) (_hq1 : q ≠ 1) (_ht : 0 < t) : Prop :=
+  Summable (fun lam : YoungDiagram => dLambda lam * Real.exp (-(muLambda q lam) * t))
 
 end QOU
