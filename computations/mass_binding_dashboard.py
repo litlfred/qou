@@ -114,6 +114,59 @@ def get_ground_state_partition(Z, N, S):
     valid_partitions.sort(key=lambda p: (p[0], p))
     return valid_partitions[0]
 
+
+def format_md_tables(text):
+    lines = text.split('\n')
+    out = []
+    i = 0
+    while i < len(lines):
+        if lines[i].startswith('|') and lines[i].endswith('|') and i+1 < len(lines) and lines[i+1].startswith('|') and '---' in lines[i+1]:
+            # Found a table
+            table_lines = []
+            while i < len(lines) and lines[i].startswith('|') and lines[i].endswith('|'):
+                table_lines.append(lines[i])
+                i += 1
+            # Parse table
+            rows = []
+            max_cols = 0
+            for line in table_lines:
+                cells = [cell.strip() for cell in line[1:-1].split('|')]
+                max_cols = max(max_cols, len(cells))
+                rows.append(cells)
+            
+            # Compute max widths
+            widths = [0] * max_cols
+            for r_idx, row in enumerate(rows):
+                for c_idx, cell in enumerate(row):
+                    if r_idx == 1: continue # skip separator
+                    widths[c_idx] = max(widths[c_idx], len(cell))
+            
+            # Format table
+            for r_idx, row in enumerate(rows):
+                parts = []
+                for c_idx in range(max_cols):
+                    cell = row[c_idx] if c_idx < len(row) else ""
+                    w = widths[c_idx]
+                    if r_idx == 1:
+                        # Separator
+                        if cell.endswith(':'):
+                            if cell.startswith(':'): parts.append(':' + '-'*(max(1, w-2)) + ':')
+                            else: parts.append('-'*(max(1, w-1)) + ':')
+                        else:
+                            parts.append('-'*max(1, w))
+                    else:
+                        align = '<'
+                        if 1 < len(rows) and c_idx < len(rows[1]):
+                            sep = rows[1][c_idx]
+                            if sep.endswith(':') and not sep.startswith(':'):
+                                align = '>'
+                        parts.append(f"{cell:{align}{w}}")
+                out.append('| ' + ' | '.join(parts) + ' |')
+        else:
+            out.append(lines[i])
+            i += 1
+    return '\n'.join(out)
+
 def _ame_table():
     """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
     vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
@@ -466,6 +519,9 @@ def main(argv=None) -> int:
           f"qCLT/fac/magic + m_sym(free): combinatorial → all A.\n")
 
     _print_legend()
+    import io, sys
+    _old_stdout = sys.stdout
+    sys.stdout = io.StringIO()
 
     # 1. MASS  M = (constituents) − B  (shown first, per owner request 2026-06-24)
     #    Two-column convention (owner-set 2026-06-22): wherever the nucleon masses
@@ -621,6 +677,9 @@ def main(argv=None) -> int:
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
           "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · B_magic=2·m_e·A·8G (⁴He). "
           "Defn: standard-part-functor.md.")
+    _out = sys.stdout.getvalue()
+    sys.stdout = _old_stdout
+    print(format_md_tables(_out), end="")
     return 0
 
 
