@@ -1,8 +1,8 @@
 {
  "generated_at": "2026-06-28",
- "total_gaps": 25653,
- "total_blocks": 2005,
- "total_batches": 102,
+ "total_gaps": 26661,
+ "total_blocks": 2085,
+ "total_batches": 106,
  "batches": [
   {
    "batch_id": 1,
@@ -435,11 +435,6 @@
      "chapter": "appendix-knot-periodic-table",
      "kind": "proposition",
      "need": [
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -554,6 +549,8 @@
      "chapter": "appendix-nf-witnesses",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -601,11 +598,6 @@
      "chapter": "appendix-qvalues",
      "kind": "proposition",
      "need": [
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -728,7 +720,6 @@
      "chapter": "appendix-surreals",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -749,6 +740,7 @@
      "chapter": "appendix-surreals",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -829,8 +821,6 @@
      "chapter": "appendix-surreals",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
-      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -1271,7 +1261,6 @@
      "chapter": "appendix-surreals",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -1845,7 +1834,6 @@
      "chapter": "appendix-surreals",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -1893,7 +1881,6 @@
      "chapter": "appendix-surreals-archimedean",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -2425,20 +2412,6 @@
      "chapter": "braids-and-knots",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -2519,20 +2492,6 @@
      "chapter": "braids-and-knots",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -2880,13 +2839,6 @@
      "chapter": "braids-and-knots",
      "kind": "theorem",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -2967,7 +2919,6 @@
      "chapter": "braids-and-knots",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3208,6 +3159,20 @@
      "chapter": "braids-and-knots",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3288,6 +3253,8 @@
      "chapter": "braids-and-knots",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3328,7 +3295,6 @@
      "chapter": "braids-and-knots",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3396,20 +3362,6 @@
      "chapter": "braids-and-knots",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3510,6 +3462,8 @@
      "chapter": "braids-and-knots",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3670,6 +3624,8 @@
      "chapter": "braids-and-knots",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3766,20 +3722,27 @@
      "chapter": "braids-and-knots",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/braids-and-knots/bar-involution-properties",
+     "chapter": "braids-and-knots",
+     "kind": "remark",
+     "need": [
       "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3869,7 +3832,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 16,
+   "chapter": "braids-and-knots",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit",
      "chapter": "braids-and-knots",
@@ -3884,14 +3854,7 @@
       "da-physical-implausibility",
       "da-reproducibility"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 16,
-   "chapter": "braids-and-knots",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/braids-and-knots/quaternion-so3-motivation",
      "chapter": "braids-and-knots",
@@ -3917,7 +3880,6 @@
      "chapter": "braids-and-knots",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -3992,6 +3954,8 @@
      "chapter": "braids-and-knots",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4339,7 +4303,6 @@
      "chapter": "brings-surface",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4460,6 +4423,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4480,7 +4445,6 @@
      "chapter": "brings-surface",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4501,20 +4465,6 @@
      "chapter": "brings-surface",
      "kind": "theorem",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4635,6 +4585,20 @@
      "chapter": "brings-surface",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4731,6 +4695,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/brings-surface/torus-embeddable-completeness-remark",
+     "chapter": "brings-surface",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/brings-surface/levi-form-defect",
      "chapter": "brings-surface",
      "kind": "definition",
@@ -4755,6 +4740,20 @@
      "chapter": "brings-surface",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -4815,20 +4814,6 @@
      "chapter": "brings-surface",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5023,7 +5008,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 19,
+   "chapter": "brings-surface",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/brings-surface/color-sector-coords",
      "chapter": "brings-surface",
@@ -5045,19 +5037,26 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 19,
-   "chapter": "brings-surface",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/brings-surface/x5-bring-weight-identification",
      "chapter": "brings-surface",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5194,7 +5193,6 @@
      "chapter": "brings-surface",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5215,6 +5213,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5235,7 +5235,6 @@
      "chapter": "brings-surface",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5336,6 +5335,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5392,6 +5393,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/brings-surface/x5-bring-weight-geometric-content",
+     "chapter": "brings-surface",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/brings-surface/generation-completeness",
      "chapter": "brings-surface",
      "kind": "theorem",
@@ -5416,6 +5438,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5436,7 +5460,6 @@
      "chapter": "brings-surface",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5457,7 +5480,6 @@
      "chapter": "brings-surface",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5498,20 +5520,33 @@
      "chapter": "brings-surface",
      "kind": "lemma",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    }
+   ]
+  },
+  {
+   "batch_id": 20,
+   "chapter": "brings-surface",
+   "status": "pending",
+   "blocks": [
+    {
+     "block": "content/quantum-observable-universe/brings-surface/descartes-braid-structure",
+     "chapter": "brings-surface",
+     "kind": "corollary",
+     "need": [
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5528,10 +5563,11 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/brings-surface/descartes-braid-structure",
+     "block": "content/quantum-observable-universe/brings-surface/x5-z5-automorphism-interpretation",
      "chapter": "brings-surface",
-     "kind": "corollary",
+     "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5566,14 +5602,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 20,
-   "chapter": "brings-surface",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/brings-surface/color-tube-fibers",
      "chapter": "brings-surface",
@@ -5761,6 +5790,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5801,20 +5832,6 @@
      "chapter": "brings-surface",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5855,6 +5872,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5895,7 +5914,6 @@
      "chapter": "brings-surface",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5916,7 +5934,6 @@
      "chapter": "brings-surface",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -5957,6 +5974,8 @@
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6032,7 +6051,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 21,
+   "chapter": "brings-surface",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition",
      "chapter": "brings-surface",
@@ -6058,7 +6084,6 @@
      "chapter": "brings-surface",
      "kind": "proof",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6093,20 +6118,33 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 21,
-   "chapter": "brings-surface",
-   "status": "pending",
-   "blocks": [
+    },
+    {
+     "block": "content/quantum-observable-universe/brings-surface/torus-knot-generators-interpretation",
+     "chapter": "brings-surface",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
     {
      "block": "content/quantum-observable-universe/brings-surface/brings-smoothness",
      "chapter": "brings-surface",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6187,20 +6225,6 @@
      "chapter": "brings-surface",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6441,7 +6465,6 @@
      "chapter": "brings-surface",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6536,7 +6559,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 22,
+   "chapter": "brings-surface",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/brings-surface/cohomological-defect-intro",
      "chapter": "brings-surface",
@@ -6616,19 +6646,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 22,
-   "chapter": "brings-surface",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/brings-surface/briggs-klein-chart",
      "chapter": "brings-surface",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6836,12 +6861,6 @@
      "chapter": "climax-volume-mass",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -6922,6 +6941,8 @@
      "chapter": "climax-volume-mass",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -7189,6 +7210,8 @@
      "chapter": "climax-volume-mass",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -7736,11 +7759,6 @@
      "chapter": "fluid-dynamics",
      "kind": "theorem",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -7881,11 +7899,6 @@
      "chapter": "fluid-dynamics",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -8173,6 +8186,8 @@
      "chapter": "fluid-dynamics",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -9127,7 +9142,6 @@
      "chapter": "glossary",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -9609,7 +9623,6 @@
      "chapter": "information-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -9830,7 +9843,6 @@
      "chapter": "information-theory",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -9898,6 +9910,8 @@
      "chapter": "information-theory",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10158,7 +10172,6 @@
      "chapter": "information-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10199,6 +10212,27 @@
      "chapter": "information-theory",
      "kind": "proposition",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/information-theory/operational-entropy-properties",
+     "chapter": "information-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10259,6 +10293,7 @@
      "chapter": "information-theory",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10299,7 +10334,6 @@
      "chapter": "information-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10354,7 +10388,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 33,
+   "chapter": "information-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/information-theory/big-bang-info",
      "chapter": "information-theory",
@@ -10374,14 +10415,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 33,
-   "chapter": "information-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/information-theory/jet-horizon",
      "chapter": "information-theory",
@@ -10407,6 +10441,48 @@
      "chapter": "information-theory",
      "kind": "prose",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/information-theory/gravitational-constant-properties",
+     "chapter": "information-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/information-theory/information-theoretic-time-properties",
+     "chapter": "information-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10507,7 +10583,6 @@
      "chapter": "information-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10741,6 +10816,8 @@
      "chapter": "information-theory",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -10815,7 +10892,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 34,
+   "chapter": "information-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/information-theory/photon-threading-mass",
      "chapter": "information-theory",
@@ -10875,14 +10959,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 34,
-   "chapter": "information-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/information-theory/substrate-computation",
      "chapter": "information-theory",
@@ -10908,7 +10985,6 @@
      "chapter": "information-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -11289,6 +11365,8 @@
      "chapter": "information-theory",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -11323,7 +11401,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 35,
+   "chapter": "information-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/information-theory/info-time-computation-intro",
      "chapter": "information-theory",
@@ -11367,7 +11452,7 @@
    ]
   },
   {
-   "batch_id": 35,
+   "batch_id": 36,
    "chapter": "introduction",
    "status": "pending",
    "blocks": [
@@ -11375,27 +11460,6 @@
      "block": "content/quantum-observable-universe/introduction/intro",
      "chapter": "introduction",
      "kind": "prose",
-     "need": [
-      "fit-section-chapter",
-      "da-false-claim",
-      "da-vacuous",
-      "da-circular",
-      "da-overclaim",
-      "da-hidden-dof",
-      "da-non-sequitur",
-      "da-lean-narrative-divergence",
-      "da-citation-misuse",
-      "da-definitional-ambiguity",
-      "da-empirical-fragility",
-      "da-physical-implausibility",
-      "da-reproducibility",
-      "da-referee-verdict"
-     ]
-    },
-    {
-     "block": "content/quantum-observable-universe/introduction/roadmap-diagram",
-     "chapter": "introduction",
-     "kind": "diagram",
      "need": [
       "da-false-claim",
       "da-vacuous",
@@ -11415,7 +11479,7 @@
    ]
   },
   {
-   "batch_id": 36,
+   "batch_id": 37,
    "chapter": "lifting-and-descent",
    "status": "pending",
    "blocks": [
@@ -11644,6 +11708,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -11784,11 +11850,6 @@
      "chapter": "lifting-and-descent",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -11809,6 +11870,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -11927,7 +11990,7 @@
    ]
   },
   {
-   "batch_id": 37,
+   "batch_id": 38,
    "chapter": "lifting-and-descent",
    "status": "pending",
    "blocks": [
@@ -12236,14 +12299,6 @@
      "chapter": "lifting-and-descent",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -12442,7 +12497,7 @@
    ]
   },
   {
-   "batch_id": 38,
+   "batch_id": 39,
    "chapter": "lifting-and-descent",
    "status": "pending",
    "blocks": [
@@ -12851,11 +12906,6 @@
      "chapter": "lifting-and-descent",
      "kind": "theorem",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -12954,7 +13004,7 @@
    ]
   },
   {
-   "batch_id": 39,
+   "batch_id": 40,
    "chapter": "lifting-and-descent",
    "status": "pending",
    "blocks": [
@@ -13003,6 +13053,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13083,6 +13135,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13123,6 +13177,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13325,6 +13381,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13463,7 +13521,7 @@
    ]
   },
   {
-   "batch_id": 40,
+   "batch_id": 41,
    "chapter": "lifting-and-descent",
    "status": "pending",
    "blocks": [
@@ -13532,6 +13590,8 @@
      "chapter": "lifting-and-descent",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13590,7 +13650,7 @@
    ]
   },
   {
-   "batch_id": 41,
+   "batch_id": 42,
    "chapter": "mass-endomorphism",
    "status": "pending",
    "blocks": [
@@ -13639,7 +13699,6 @@
      "chapter": "mass-endomorphism",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13860,20 +13919,7 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
       "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13894,7 +13940,6 @@
      "chapter": "mass-endomorphism",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -13991,6 +14036,7 @@
      "chapter": "mass-endomorphism",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14091,7 +14137,6 @@
      "chapter": "mass-endomorphism",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14110,7 +14155,7 @@
    ]
   },
   {
-   "batch_id": 42,
+   "batch_id": 43,
    "chapter": "mass-endomorphism",
    "status": "pending",
    "blocks": [
@@ -14119,11 +14164,6 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14244,7 +14284,6 @@
      "chapter": "mass-endomorphism",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14345,20 +14384,6 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14439,20 +14464,6 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14553,8 +14564,6 @@
      "chapter": "mass-endomorphism",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
-      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14653,7 +14662,7 @@
    ]
   },
   {
-   "batch_id": 43,
+   "batch_id": 44,
    "chapter": "mass-endomorphism",
    "status": "pending",
    "blocks": [
@@ -14722,6 +14731,20 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14762,7 +14785,6 @@
      "chapter": "mass-endomorphism",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14863,13 +14885,6 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -14910,20 +14925,6 @@
      "chapter": "mass-endomorphism",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15024,6 +15025,8 @@
      "chapter": "mass-endomorphism",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15176,7 +15179,7 @@
    ]
   },
   {
-   "batch_id": 44,
+   "batch_id": 45,
    "chapter": "mass-endomorphism",
    "status": "pending",
    "blocks": [
@@ -15223,7 +15226,7 @@
    ]
   },
   {
-   "batch_id": 45,
+   "batch_id": 46,
    "chapter": "mass-theory",
    "status": "pending",
    "blocks": [
@@ -15312,20 +15315,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15386,6 +15375,20 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15482,10 +15485,45 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/operator-selection-lp-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness",
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15582,6 +15620,8 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15602,6 +15642,8 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15622,6 +15664,7 @@
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15716,7 +15759,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 47,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/mass-bridge-orphan-reconnect-intro",
      "chapter": "mass-theory",
@@ -15736,14 +15786,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 46,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline",
      "chapter": "mass-theory",
@@ -15789,6 +15832,27 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/frobenius-antipode-unifies-chirality-and-tower-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15869,7 +15933,6 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -15950,20 +16013,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16044,14 +16093,33 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
+      "da-circular",
+      "da-overclaim",
       "da-hidden-dof",
       "da-non-sequitur",
+      "da-lean-narrative-divergence",
       "da-citation-misuse",
+      "da-definitional-ambiguity",
       "da-empirical-fragility",
       "da-physical-implausibility",
-      "da-reproducibility"
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -16059,13 +16127,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16126,11 +16187,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-circular",
       "da-non-sequitur",
@@ -16153,6 +16209,27 @@
       "da-empirical-fragility",
       "da-physical-implausibility",
       "da-reproducibility"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator-properties",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -16194,12 +16271,21 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 48,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion",
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16254,14 +16340,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 47,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/six-term-crystal-isospin-chirality-option-e-isospin-intro",
      "chapter": "mass-theory",
@@ -16367,6 +16446,8 @@
      "chapter": "mass-theory",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16387,6 +16468,8 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16487,6 +16570,8 @@
      "chapter": "mass-theory",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16623,6 +16708,14 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/qz-bicompletion",
+     "chapter": "mass-theory",
+     "kind": "definition",
+     "need": [
+      "fit-section-chapter"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/corrected-markov-trace",
      "chapter": "mass-theory",
      "kind": "proposition",
@@ -16657,11 +16750,18 @@
      "need": [
       "da-lean-narrative-divergence"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 49,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
-     "block": "content/quantum-observable-universe/mass-theory/qbeta-formalize-first-gates-intro",
+     "block": "content/quantum-observable-universe/mass-theory/categorical-linking-operation-interpretation",
      "chapter": "mass-theory",
-     "kind": "prose",
+     "kind": "remark",
      "need": [
       "fit-section-chapter",
       "da-false-claim",
@@ -16680,12 +16780,23 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction",
+     "block": "content/quantum-observable-universe/mass-theory/qbeta-formalize-first-gates-intro",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "prose",
      "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv"
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -16693,6 +16804,27 @@
      "chapter": "mass-theory",
      "kind": "proof",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/qz-bicompletion-properties",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -16727,14 +16859,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 48,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/derivation-audit-intro",
      "chapter": "mass-theory",
@@ -16848,6 +16973,18 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
@@ -16872,6 +17009,29 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/bound-state-frobenius-self-dual-channel",
      "chapter": "mass-theory",
      "kind": "remark",
@@ -16889,6 +17049,35 @@
       "da-physical-implausibility",
       "da-reproducibility",
       "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-narrative-lean-equiv",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking",
+      "da-false-claim",
+      "da-vacuous",
+      "da-overclaim",
+      "da-lean-narrative-divergence",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility"
      ]
     },
     {
@@ -16940,12 +17129,24 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0",
+     "block": "content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference-interpretation",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "remark",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv"
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -17007,12 +17208,31 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 50,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation",
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
@@ -17022,6 +17242,20 @@
      "kind": "proposition",
      "need": [
       "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/explicit-alpha-k-h4",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
      ]
     },
     {
@@ -17049,6 +17283,7 @@
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -17105,6 +17340,21 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-narrative-lean-equiv",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/frobenius-gram-matrix",
      "chapter": "mass-theory",
      "kind": "proposition",
@@ -17127,14 +17377,7 @@
      "need": [
       "da-lean-narrative-divergence"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 49,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof",
      "chapter": "mass-theory",
@@ -17156,12 +17399,55 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/exterior-square-borromean",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/binding-error-amplification",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/descended-level-zero",
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv"
+      "proof-narrative-lean-equiv",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
      ]
     },
     {
@@ -17213,6 +17499,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/rem-im-q-vs-p-skew",
      "chapter": "mass-theory",
      "kind": "remark",
@@ -17229,6 +17536,41 @@
       "da-physical-implausibility",
       "da-reproducibility",
       "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/wigner-2-coefficient-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
      ]
     },
     {
@@ -17252,30 +17594,6 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/confinement-sdp",
-     "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv"
-     ]
-    },
-    {
-     "block": "content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation",
-     "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
-     ]
-    },
-    {
      "block": "content/quantum-observable-universe/mass-theory/mass-physical-face-intro",
      "chapter": "mass-theory",
      "kind": "prose",
@@ -17294,7 +17612,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 51,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation",
      "chapter": "mass-theory",
@@ -17304,11 +17629,24 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form",
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -17345,6 +17683,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/phi-q-categorical-truncation-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/mass-algebraic-consolidated-intro",
      "chapter": "mass-theory",
      "kind": "prose",
@@ -17365,11 +17724,19 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/categorical-linking-operation",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/garside-as-compound-flow",
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -17470,6 +17837,26 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking",
+      "da-overclaim",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form",
      "chapter": "mass-theory",
      "kind": "proposition",
@@ -17477,6 +17864,15 @@
       "fit-section-chapter",
       "wall-side-proof",
       "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
@@ -17505,6 +17901,18 @@
      "chapter": "mass-theory",
      "kind": "theorem",
      "need": [
+      "fit-section-chapter",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
@@ -17515,14 +17923,7 @@
      "need": [
       "da-lean-narrative-divergence"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 50,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse-general",
      "chapter": "mass-theory",
@@ -17564,6 +17965,29 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/transfer-matrix-identities",
      "chapter": "mass-theory",
      "kind": "proposition",
@@ -17571,6 +17995,28 @@
       "da-lean-narrative-divergence"
      ]
     },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-narrative-lean-equiv",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    }
+   ]
+  },
+  {
+   "batch_id": 52,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/mass-tower-syt-cells",
      "chapter": "mass-theory",
@@ -17620,11 +18066,46 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes",
+     "chapter": "mass-theory",
+     "kind": "corollary",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/hecke-generator-poly-reduction",
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
       "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -17755,18 +18236,12 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity",
+     "block": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "conjecture",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
+      "proof-rater-goal-plausibility"
      ]
     },
     {
@@ -17783,6 +18258,27 @@
      "kind": "proposition",
      "need": [
       "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -17834,13 +18330,28 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/categorical-transfer-matrix",
+     "chapter": "mass-theory",
+     "kind": "definition",
+     "need": [
+      "fit-section-chapter"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment",
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
       "da-lean-narrative-divergence"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 53,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/multi-level-jet-sum-sim",
      "chapter": "mass-theory",
@@ -17860,20 +18371,12 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 51,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/term6-binding-density",
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-circular",
       "da-hidden-dof",
@@ -17886,18 +18389,11 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate",
+     "block": "content/quantum-observable-universe/mass-theory/delta-q-decoration",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "definition",
      "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
+      "fit-section-chapter"
      ]
     },
     {
@@ -17925,12 +18421,34 @@
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
       "da-overclaim",
       "da-hidden-dof",
       "da-non-sequitur",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
       "da-citation-misuse",
       "da-definitional-ambiguity",
       "da-empirical-fragility",
@@ -18003,12 +18521,45 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/lr-tensor-character-bridge",
+     "block": "content/quantum-observable-universe/mass-theory/pieri-photon-shift-interpretation",
      "chapter": "mass-theory",
-     "kind": "corollary",
+     "kind": "remark",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv"
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/categorical-transfer-matrix-properties",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -18047,6 +18598,20 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/pieri-photon-shift",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/categorical-mass-positivity",
      "chapter": "mass-theory",
      "kind": "remark",
@@ -18072,15 +18637,6 @@
      "kind": "proposition",
      "need": [
       "da-lean-narrative-divergence"
-     ]
-    },
-    {
-     "block": "content/quantum-observable-universe/mass-theory/mass-endomorphism-tower",
-     "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv"
      ]
     },
     {
@@ -18198,7 +18754,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 54,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/mass-categorical-descent",
      "chapter": "mass-theory",
@@ -18228,32 +18791,31 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant",
+     "block": "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "conjecture",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
+      "proof-rater-goal-plausibility"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 52,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/mass-theory/delta-max-uniform-bound",
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
@@ -18290,7 +18852,30 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -18311,21 +18896,6 @@
       "da-physical-implausibility",
       "da-reproducibility",
       "da-referee-verdict"
-     ]
-    },
-    {
-     "block": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth",
-     "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
      ]
     },
     {
@@ -18490,7 +19060,6 @@
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -18561,13 +19130,55 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/wigner-2-coefficient",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/joint-galois-braid-action",
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
       "da-lean-narrative-divergence"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 55,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/sdp-degeneracy-at-metallic-coincidence",
      "chapter": "mass-theory",
@@ -18601,6 +19212,8 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-lean-narrative-divergence"
      ]
     },
@@ -18624,28 +19237,6 @@
       "da-referee-verdict"
      ]
     },
-    {
-     "block": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity",
-     "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
-     ]
-    }
-   ]
-  },
-  {
-   "batch_id": 53,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof",
      "chapter": "mass-theory",
@@ -18699,6 +19290,18 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
@@ -18804,7 +19407,6 @@
      "chapter": "mass-theory",
      "kind": "proof",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -18848,6 +19450,14 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator",
+     "chapter": "mass-theory",
+     "kind": "definition",
+     "need": [
+      "fit-section-chapter"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/mass-formula-derivation-commutative-chirality-vanishes-intro",
      "chapter": "mass-theory",
      "kind": "prose",
@@ -18888,20 +19498,32 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/symbolic-character-table",
+     "block": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "remark",
      "need": [
-      "da-lean-narrative-divergence"
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity",
+     "block": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "lemma",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv",
       "proof-rater-goal-plausibility",
       "proof-statement-integrity",
       "proof-no-self-assuming-projection",
@@ -18910,6 +19532,49 @@
       "proof-no-decide-masking"
      ]
     },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/symbolic-character-table",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/phi-q-categorical-truncation",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    }
+   ]
+  },
+  {
+   "batch_id": 56,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/vertex-factorisation-feynman-intro",
      "chapter": "mass-theory",
@@ -18931,11 +19596,39 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/knot-factor-amphicheiral",
      "chapter": "mass-theory",
      "kind": "corollary",
      "need": [
       "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -18963,6 +19656,8 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-lean-narrative-divergence"
      ]
     },
@@ -18971,6 +19666,7 @@
      "chapter": "mass-theory",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -19014,28 +19710,6 @@
       "da-referee-verdict"
      ]
     },
-    {
-     "block": "content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse",
-     "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
-     ]
-    }
-   ]
-  },
-  {
-   "batch_id": 54,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/three-parameters-wedderburn",
      "chapter": "mass-theory",
@@ -19132,6 +19806,15 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/dim-master-pentagon",
+     "chapter": "mass-theory",
+     "kind": "conjecture",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder",
      "chapter": "mass-theory",
      "kind": "proposition",
@@ -19148,18 +19831,12 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate",
+     "block": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra",
      "chapter": "mass-theory",
-     "kind": "proposition",
+     "kind": "conjecture",
      "need": [
       "fit-section-chapter",
-      "proof-narrative-lean-equiv",
-      "proof-rater-goal-plausibility",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-decide-masking"
+      "proof-rater-goal-plausibility"
      ]
     },
     {
@@ -19180,6 +19857,21 @@
       "da-physical-implausibility",
       "da-reproducibility",
       "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/chirality-residue-mass-term",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-narrative-lean-equiv",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
      ]
     },
     {
@@ -19249,7 +19941,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 57,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/np-discrepancy-resolution",
      "chapter": "mass-theory",
@@ -19303,8 +20002,21 @@
      "chapter": "mass-theory",
      "kind": "definition",
      "need": [
-      "fit-section-chapter",
       "da-lean-narrative-divergence"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
      ]
     },
     {
@@ -19348,11 +20060,41 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification",
+     "chapter": "mass-theory",
+     "kind": "proposition",
+     "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/operator-selection-lp",
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "da-lean-narrative-divergence"
+      "fit-section-chapter",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
+      "da-vacuous",
+      "da-overclaim",
+      "da-lean-narrative-divergence",
+      "da-reproducibility",
+      "da-referee-verdict"
      ]
     },
     {
@@ -19376,35 +20118,13 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "fit-section-chapter",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-decide-masking",
       "da-lean-narrative-divergence"
      ]
     },
     {
-     "block": "content/quantum-observable-universe/mass-theory/vol-through-tau",
+     "block": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation",
      "chapter": "mass-theory",
-     "kind": "proposition",
-     "need": [
-      "fit-section-chapter",
-      "proof-narrative-lean-equiv"
-     ]
-    }
-   ]
-  },
-  {
-   "batch_id": 55,
-   "chapter": "mass-theory",
-   "status": "pending",
-   "blocks": [
-    {
-     "block": "content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro",
-     "chapter": "mass-theory",
-     "kind": "prose",
+     "kind": "remark",
      "need": [
       "fit-section-chapter",
       "da-false-claim",
@@ -19420,6 +20140,41 @@
       "da-physical-implausibility",
       "da-reproducibility",
       "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro",
+     "chapter": "mass-theory",
+     "kind": "prose",
+     "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule",
+     "chapter": "mass-theory",
+     "kind": "theorem",
+     "need": [
+      "fit-section-chapter",
+      "proof-narrative-lean-equiv",
+      "proof-rater-goal-plausibility",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking"
      ]
     },
     {
@@ -19506,6 +20261,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation",
+     "chapter": "mass-theory",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/mass-theory/mass-application-orphan-reconnect-intro",
      "chapter": "mass-theory",
      "kind": "prose",
@@ -19530,8 +20306,6 @@
      "chapter": "mass-theory",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
-      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -19552,20 +20326,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -19600,7 +20360,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 58,
+   "chapter": "mass-theory",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price",
      "chapter": "mass-theory",
@@ -19626,7 +20393,6 @@
      "chapter": "mass-theory",
      "kind": "proof",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -19687,20 +20453,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -19721,11 +20473,6 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "proof-rater-strategy-clarity",
       "proof-rater-goal-plausibility",
       "proof-rater-novelty",
@@ -19795,6 +20542,20 @@
      "chapter": "mass-theory",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -19853,7 +20614,7 @@
    ]
   },
   {
-   "batch_id": 56,
+   "batch_id": 59,
    "chapter": "measurement-observation",
    "status": "pending",
    "blocks": [
@@ -20040,7 +20801,7 @@
    ]
   },
   {
-   "batch_id": 57,
+   "batch_id": 60,
    "chapter": "models-of-qous",
    "status": "pending",
    "blocks": [
@@ -20289,6 +21050,8 @@
      "chapter": "models-of-qous",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -20547,7 +21310,7 @@
    ]
   },
   {
-   "batch_id": 58,
+   "batch_id": 61,
    "chapter": "models-of-qous",
    "status": "pending",
    "blocks": [
@@ -20716,6 +21479,8 @@
      "chapter": "models-of-qous",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -20916,13 +21681,6 @@
      "chapter": "models-of-qous",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -21001,7 +21759,7 @@
    ]
   },
   {
-   "batch_id": 59,
+   "batch_id": 62,
    "chapter": "molecular-construction",
    "status": "pending",
    "blocks": [
@@ -21090,6 +21848,8 @@
      "chapter": "molecular-construction",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -21508,7 +22268,7 @@
    ]
   },
   {
-   "batch_id": 60,
+   "batch_id": 63,
    "chapter": "molecular-construction",
    "status": "pending",
    "blocks": [
@@ -21717,6 +22477,8 @@
      "chapter": "molecular-construction",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -21757,6 +22519,8 @@
      "chapter": "molecular-construction",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -21917,6 +22681,8 @@
      "chapter": "molecular-construction",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -21997,6 +22763,8 @@
      "chapter": "molecular-construction",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -22015,7 +22783,7 @@
    ]
   },
   {
-   "batch_id": 61,
+   "batch_id": 64,
    "chapter": "molecular-construction",
    "status": "pending",
    "blocks": [
@@ -22042,7 +22810,7 @@
    ]
   },
   {
-   "batch_id": 62,
+   "batch_id": 65,
    "chapter": "notation",
    "status": "pending",
    "blocks": [
@@ -22069,7 +22837,7 @@
    ]
   },
   {
-   "batch_id": 63,
+   "batch_id": 66,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -22118,7 +22886,6 @@
      "chapter": "observations",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -22459,6 +23226,8 @@
      "chapter": "observations",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -22559,13 +23328,6 @@
      "chapter": "observations",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -22584,7 +23346,7 @@
    ]
   },
   {
-   "batch_id": 64,
+   "batch_id": 67,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -22753,7 +23515,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -23090,7 +23851,7 @@
    ]
   },
   {
-   "batch_id": 65,
+   "batch_id": 68,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -23432,7 +24193,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -23553,13 +24313,6 @@
      "chapter": "observations",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-trivial-true",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -23580,7 +24333,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -23599,7 +24351,7 @@
    ]
   },
   {
-   "batch_id": 66,
+   "batch_id": 69,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -23768,7 +24520,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -23909,7 +24660,6 @@
      "chapter": "observations",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -23970,7 +24720,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -24051,20 +24800,6 @@
      "chapter": "observations",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -24123,7 +24858,7 @@
    ]
   },
   {
-   "batch_id": 67,
+   "batch_id": 70,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -24352,7 +25087,6 @@
      "chapter": "observations",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -24373,13 +25107,6 @@
      "chapter": "observations",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-trivial-true",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -24515,6 +25242,7 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -24633,7 +25361,7 @@
    ]
   },
   {
-   "batch_id": 68,
+   "batch_id": 71,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -24922,7 +25650,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -25083,7 +25810,6 @@
      "chapter": "observations",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -25142,7 +25868,7 @@
    ]
   },
   {
-   "batch_id": 69,
+   "batch_id": 72,
    "chapter": "observations",
    "status": "pending",
    "blocks": [
@@ -25429,7 +26155,7 @@
    ]
   },
   {
-   "batch_id": 70,
+   "batch_id": 73,
    "chapter": "organic-chemistry",
    "status": "pending",
    "blocks": [
@@ -25756,7 +26482,7 @@
    ]
   },
   {
-   "batch_id": 71,
+   "batch_id": 74,
    "chapter": "particle-interactions",
    "status": "pending",
    "blocks": [
@@ -25945,11 +26671,6 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -26126,6 +26847,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/particle-interactions/categorical-neutron-properties",
+     "chapter": "particle-interactions",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/particle-interactions/dressed-particle",
      "chapter": "particle-interactions",
      "kind": "definition",
@@ -26244,7 +26986,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 75,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure",
      "chapter": "particle-interactions",
@@ -26264,14 +27013,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 72,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation",
      "chapter": "particle-interactions",
@@ -26317,6 +27059,7 @@
      "chapter": "particle-interactions",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -26337,8 +27080,6 @@
      "chapter": "particle-interactions",
      "kind": "definition",
      "need": [
-      "fit-section-chapter",
-      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -26539,8 +27280,6 @@
      "chapter": "particle-interactions",
      "kind": "definition",
      "need": [
-      "fit-section-chapter",
-      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -26755,7 +27494,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 76,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/particle-interactions/hadron-proton-example",
      "chapter": "particle-interactions",
@@ -26775,14 +27521,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 73,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/groebner-reduction-methods",
      "chapter": "particle-interactions",
@@ -27168,7 +27907,6 @@
      "chapter": "particle-interactions",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27209,20 +27947,6 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27263,20 +27987,6 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27291,7 +28001,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 77,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm",
      "chapter": "particle-interactions",
@@ -27311,14 +28028,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 74,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/cemetery-group",
      "chapter": "particle-interactions",
@@ -27524,8 +28234,6 @@
      "chapter": "particle-interactions",
      "kind": "definition",
      "need": [
-      "fit-section-chapter",
-      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27668,20 +28376,6 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27742,11 +28436,6 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27821,7 +28510,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 78,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/particle-interactions/negative-debt-confinement",
      "chapter": "particle-interactions",
@@ -27841,19 +28537,33 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 75,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/up-quark-properties",
      "chapter": "particle-interactions",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/particle-interactions/quark-antiquark-production-reduction",
+     "chapter": "particle-interactions",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -27987,11 +28697,6 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -28306,13 +29011,19 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 79,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/particle-interactions/knot-particle-generation-interpretation",
      "chapter": "particle-interactions",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -28333,6 +29044,20 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -28347,14 +29072,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 76,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/skein-binding-lagrangian",
      "chapter": "particle-interactions",
@@ -28660,6 +29378,8 @@
      "chapter": "particle-interactions",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -28814,7 +29534,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 80,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/particle-interactions/beta-decay-braid-visualizer",
      "chapter": "particle-interactions",
@@ -28854,14 +29581,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 77,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/hadron-unique",
      "chapter": "particle-interactions",
@@ -29227,6 +29947,8 @@
      "chapter": "particle-interactions",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29321,6 +30043,34 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
+    }
+   ]
+  },
+  {
+   "batch_id": 81,
+   "chapter": "particle-interactions",
+   "status": "pending",
+   "blocks": [
+    {
+     "block": "content/quantum-observable-universe/particle-interactions/categorical-proton-properties",
+     "chapter": "particle-interactions",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
     },
     {
      "block": "content/quantum-observable-universe/particle-interactions/nuclear-reduction-algorithm",
@@ -29347,6 +30097,20 @@
      "chapter": "particle-interactions",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29361,14 +30125,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 78,
-   "chapter": "particle-interactions",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/particle-interactions/brunnian-property-of-borromean",
      "chapter": "particle-interactions",
@@ -29508,7 +30265,7 @@
    ]
   },
   {
-   "batch_id": 79,
+   "batch_id": 82,
    "chapter": "predicted-spectra",
    "status": "pending",
    "blocks": [
@@ -29557,6 +30314,27 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/noble-gas-characterization-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29677,7 +30455,6 @@
      "chapter": "predicted-spectra",
      "kind": "prose",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29718,7 +30495,6 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29739,20 +30515,6 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29793,6 +30555,8 @@
      "chapter": "predicted-spectra",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29853,6 +30617,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29909,6 +30687,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/cs-evaluation-faithfulness",
      "chapter": "predicted-spectra",
      "kind": "proposition",
@@ -29949,15 +30748,11 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/predicted-spectra/metallic-character-knot",
+     "block": "content/quantum-observable-universe/predicted-spectra/hadron-half-life-novelty",
      "chapter": "predicted-spectra",
-     "kind": "proposition",
+     "kind": "remark",
      "need": [
-      "voice-statement-no-interpretation",
       "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -29973,6 +30768,47 @@
       "da-referee-verdict"
      ]
     },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/metallic-character-knot",
+     "chapter": "predicted-spectra",
+     "kind": "proposition",
+     "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    }
+   ]
+  },
+  {
+   "batch_id": 83,
+   "chapter": "predicted-spectra",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/predicted-spectra/topological-mass-galois-baryons-intro",
      "chapter": "predicted-spectra",
@@ -30032,19 +30868,33 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 80,
-   "chapter": "predicted-spectra",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/knot-formula-table",
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/em-coupling-projection-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30125,6 +30975,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30225,7 +31089,6 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30246,6 +31109,8 @@
      "chapter": "predicted-spectra",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30316,10 +31181,45 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/bar-self-dual-confinement-band-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/hadron-half-life",
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30340,8 +31240,6 @@
      "chapter": "predicted-spectra",
      "kind": "definition",
      "need": [
-      "fit-section-chapter",
-      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30456,7 +31354,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 84,
+   "chapter": "predicted-spectra",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation",
      "chapter": "predicted-spectra",
@@ -30482,6 +31387,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30502,7 +31421,6 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30523,8 +31441,6 @@
      "chapter": "predicted-spectra",
      "kind": "definition",
      "need": [
-      "fit-section-chapter",
-      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30559,14 +31475,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 81,
-   "chapter": "predicted-spectra",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists",
      "chapter": "predicted-spectra",
@@ -30672,6 +31581,26 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/gauge-conformal-invariance-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
       "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
@@ -30693,20 +31622,27 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/parity-violation-skein-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
       "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30803,10 +31739,45 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/golden-quartet-galois-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/golden-skew-dual-node",
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30847,6 +31818,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30903,6 +31888,34 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    }
+   ]
+  },
+  {
+   "batch_id": 85,
+   "chapter": "predicted-spectra",
+   "status": "pending",
+   "blocks": [
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/antineutrino-knot",
      "chapter": "predicted-spectra",
      "kind": "definition",
@@ -30927,6 +31940,7 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30947,7 +31961,6 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30968,6 +31981,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -30988,6 +32015,27 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31064,24 +32112,11 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain",
+     "block": "content/quantum-observable-universe/predicted-spectra/integer-stability-novelty",
      "chapter": "predicted-spectra",
-     "kind": "proposition",
+     "kind": "remark",
      "need": [
-      "voice-statement-no-interpretation",
       "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31096,14 +32131,27 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 82,
-   "chapter": "predicted-spectra",
-   "status": "pending",
-   "blocks": [
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain",
+     "chapter": "predicted-spectra",
+     "kind": "proposition",
+     "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/lepton-tower-witness",
      "chapter": "predicted-spectra",
@@ -31125,7 +32173,48 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/force-knot-identification",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/nuclear-spin-parity-novelty",
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
@@ -31304,6 +32393,29 @@
      "chapter": "predicted-spectra",
      "kind": "conjecture",
      "need": [
+      "fit-section-chapter",
+      "proof-rater-goal-plausibility",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/q-value-transition-properties",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31338,26 +32450,61 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
+    }
+   ]
+  },
+  {
+   "batch_id": 86,
+   "chapter": "predicted-spectra",
+   "status": "pending",
+   "blocks": [
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
     },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue",
      "chapter": "predicted-spectra",
      "kind": "corollary",
      "need": [
-      "voice-statement-no-interpretation",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
       "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31378,6 +32525,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31418,11 +32579,6 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31463,6 +32619,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31499,10 +32669,52 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique",
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/hadron-q-self-correction-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31539,11 +32751,31 @@
      ]
     },
     {
-     "block": "content/quantum-observable-universe/predicted-spectra/nf-computation-strategy",
+     "block": "content/quantum-observable-universe/predicted-spectra/bohr-radius-round8-findings",
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
       "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/nf-computation-strategy",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31585,6 +32817,7 @@
      "kind": "conjecture",
      "need": [
       "fit-section-chapter",
+      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31605,6 +32838,20 @@
      "chapter": "predicted-spectra",
      "kind": "theorem",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31639,14 +32886,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 83,
-   "chapter": "predicted-spectra",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/fundamental-particles-intro",
      "chapter": "predicted-spectra",
@@ -31672,6 +32912,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31732,6 +32986,8 @@
      "chapter": "predicted-spectra",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31749,6 +33005,33 @@
     },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/linking-relations-table",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    }
+   ]
+  },
+  {
+   "batch_id": 87,
+   "chapter": "predicted-spectra",
+   "status": "pending",
+   "blocks": [
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/beta-decay-skein-properties",
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
@@ -31793,7 +33076,6 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31854,6 +33136,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31934,6 +33230,8 @@
      "chapter": "predicted-spectra",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -31954,6 +33252,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32030,10 +33342,52 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/predicted-spectra/lepton-number-categorical-properties",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists",
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/metallic-character-knot-novelty",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32094,6 +33448,20 @@
      "chapter": "predicted-spectra",
      "kind": "corollary",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32134,20 +33502,6 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32162,14 +33516,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 84,
-   "chapter": "predicted-spectra",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/predicted-spectra/tau-branching-ratio-witness",
      "chapter": "predicted-spectra",
@@ -32229,9 +33576,57 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 88,
+   "chapter": "predicted-spectra",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/golden-skew-dual-node-interpretation",
+     "chapter": "predicted-spectra",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production-derivation",
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
@@ -32256,7 +33651,6 @@
      "chapter": "predicted-spectra",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32297,6 +33691,20 @@
      "chapter": "predicted-spectra",
      "kind": "proposition",
      "need": [
+      "voice-statement-no-interpretation",
+      "fit-section-chapter",
+      "wall-side-statement",
+      "wall-side-proof",
+      "proof-narrative-lean-equiv",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-unused-hypotheses",
+      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32315,7 +33723,7 @@
    ]
   },
   {
-   "batch_id": 85,
+   "batch_id": 89,
    "chapter": "q-geometric-langlands",
    "status": "pending",
    "blocks": [
@@ -32504,6 +33912,8 @@
      "chapter": "q-geometric-langlands",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -32814,7 +34224,7 @@
    ]
   },
   {
-   "batch_id": 86,
+   "batch_id": 90,
    "chapter": "q-geometric-langlands",
    "status": "pending",
    "blocks": [
@@ -33063,6 +34473,8 @@
      "chapter": "q-geometric-langlands",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33183,6 +34595,8 @@
      "chapter": "q-geometric-langlands",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33261,7 +34675,7 @@
    ]
   },
   {
-   "batch_id": 87,
+   "batch_id": 91,
    "chapter": "quantum-observable-universes",
    "status": "pending",
    "blocks": [
@@ -33270,6 +34684,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33490,6 +34906,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33610,6 +35028,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33768,7 +35188,7 @@
    ]
   },
   {
-   "batch_id": 88,
+   "batch_id": 92,
    "chapter": "quantum-observable-universes",
    "status": "pending",
    "blocks": [
@@ -33797,6 +35217,27 @@
      "chapter": "quantum-observable-universes",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-properties",
+     "chapter": "quantum-observable-universes",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33857,6 +35298,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33897,6 +35340,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -33997,6 +35442,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -34251,7 +35698,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 93,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists-proof",
      "chapter": "quantum-observable-universes",
@@ -34271,14 +35725,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 89,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-exists-proof",
      "chapter": "quantum-observable-universes",
@@ -34524,6 +35971,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -34544,6 +35993,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -34744,6 +36195,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -34758,7 +36211,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 94,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/base-field-independence",
      "chapter": "quantum-observable-universes",
@@ -34778,14 +36238,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 90,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit-proof",
      "chapter": "quantum-observable-universes",
@@ -35011,13 +36464,6 @@
      "chapter": "quantum-observable-universes",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -35038,6 +36484,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -35078,6 +36526,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -35272,7 +36722,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 95,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1",
      "chapter": "quantum-observable-universes",
@@ -35292,14 +36749,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 91,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula",
      "chapter": "quantum-observable-universes",
@@ -35405,6 +36855,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -35565,6 +37017,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -35705,6 +37159,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -35779,7 +37235,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 96,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique-proof",
      "chapter": "quantum-observable-universes",
@@ -35799,14 +37262,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 92,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/variational-equations-intro",
      "chapter": "quantum-observable-universes",
@@ -35832,6 +37288,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36132,6 +37590,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36286,12 +37746,21 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 97,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck",
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36306,14 +37775,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 93,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/two-observer-parallelogram",
      "chapter": "quantum-observable-universes",
@@ -36339,7 +37801,6 @@
      "chapter": "quantum-observable-universes",
      "kind": "remark",
      "need": [
-      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36420,6 +37881,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36440,6 +37903,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36600,20 +38065,6 @@
      "chapter": "quantum-observable-universes",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
-      "proof-rater-strategy-clarity",
-      "proof-rater-goal-plausibility",
-      "proof-rater-novelty",
-      "proof-statement-integrity",
-      "proof-no-self-assuming-projection",
-      "proof-no-trivial-true",
-      "proof-no-false-premise",
-      "proof-no-unused-hypotheses",
-      "proof-no-decide-masking",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36634,6 +38085,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36754,11 +38207,6 @@
      "chapter": "quantum-observable-universes",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -36813,7 +38261,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 98,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists-proof",
      "chapter": "quantum-observable-universes",
@@ -36833,14 +38288,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 94,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/simplicity-from-category",
      "chapter": "quantum-observable-universes",
@@ -36906,6 +38354,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37066,8 +38516,6 @@
      "chapter": "quantum-observable-universes",
      "kind": "conjecture",
      "need": [
-      "fit-section-chapter",
-      "proof-rater-goal-plausibility",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37088,6 +38536,27 @@
      "chapter": "quantum-observable-universes",
      "kind": "remark",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-properties",
+     "chapter": "quantum-observable-universes",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37148,6 +38617,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37168,6 +38639,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37248,6 +38721,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37302,7 +38777,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 99,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/q-exponential",
      "chapter": "quantum-observable-universes",
@@ -37342,19 +38824,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 95,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-action",
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37475,6 +38952,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37655,6 +39134,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37735,6 +39216,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37809,12 +39292,21 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 100,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/projective-line-object",
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -37849,14 +39341,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 96,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate-proof",
      "chapter": "quantum-observable-universes",
@@ -37938,10 +39423,33 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-properties",
+     "chapter": "quantum-observable-universes",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv",
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -38118,6 +39626,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-properties",
+     "chapter": "quantum-observable-universes",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-exists-proof",
      "chapter": "quantum-observable-universes",
      "kind": "proof",
@@ -38162,6 +39691,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -38262,6 +39793,8 @@
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -38276,12 +39809,21 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 101,
+   "chapter": "quantum-observable-universes",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor",
      "chapter": "quantum-observable-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -38356,14 +39898,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 97,
-   "chapter": "quantum-observable-universes",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists-proof",
      "chapter": "quantum-observable-universes",
@@ -38389,6 +39924,27 @@
      "chapter": "quantum-observable-universes",
      "kind": "proof",
      "need": [
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
+     "block": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties",
+     "chapter": "quantum-observable-universes",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -38707,7 +40263,7 @@
    ]
   },
   {
-   "batch_id": 98,
+   "batch_id": 102,
    "chapter": "quantum-universes",
    "status": "pending",
    "blocks": [
@@ -38916,11 +40472,6 @@
      "chapter": "quantum-universes",
      "kind": "proposition",
      "need": [
-      "voice-statement-no-interpretation",
-      "fit-section-chapter",
-      "wall-side-statement",
-      "wall-side-proof",
-      "proof-narrative-lean-equiv",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -38941,6 +40492,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39181,6 +40734,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39219,7 +40774,7 @@
    ]
   },
   {
-   "batch_id": 99,
+   "batch_id": 103,
    "chapter": "quantum-universes",
    "status": "pending",
    "blocks": [
@@ -39308,6 +40863,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39528,6 +41085,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39588,6 +41147,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39608,6 +41169,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39628,6 +41191,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39648,6 +41213,8 @@
      "chapter": "quantum-universes",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39726,7 +41293,7 @@
    ]
   },
   {
-   "batch_id": 100,
+   "batch_id": 104,
    "chapter": "quantum-universes",
    "status": "pending",
    "blocks": [
@@ -39793,7 +41360,7 @@
    ]
   },
   {
-   "batch_id": 101,
+   "batch_id": 105,
    "chapter": "stochastic-mechanics",
    "status": "pending",
    "blocks": [
@@ -39802,6 +41369,8 @@
      "chapter": "stochastic-mechanics",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -39862,6 +41431,8 @@
      "chapter": "stochastic-mechanics",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -40022,6 +41593,8 @@
      "chapter": "stochastic-mechanics",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -40158,6 +41731,27 @@
      ]
     },
     {
+     "block": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction-properties",
+     "chapter": "stochastic-mechanics",
+     "kind": "remark",
+     "need": [
+      "fit-section-chapter",
+      "da-false-claim",
+      "da-vacuous",
+      "da-circular",
+      "da-overclaim",
+      "da-hidden-dof",
+      "da-non-sequitur",
+      "da-lean-narrative-divergence",
+      "da-citation-misuse",
+      "da-definitional-ambiguity",
+      "da-empirical-fragility",
+      "da-physical-implausibility",
+      "da-reproducibility",
+      "da-referee-verdict"
+     ]
+    },
+    {
      "block": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis",
      "chapter": "stochastic-mechanics",
      "kind": "conjecture",
@@ -40202,6 +41796,8 @@
      "chapter": "stochastic-mechanics",
      "kind": "definition",
      "need": [
+      "fit-section-chapter",
+      "wall-side-statement",
       "da-false-claim",
       "da-vacuous",
       "da-circular",
@@ -40276,7 +41872,14 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "batch_id": 106,
+   "chapter": "stochastic-mechanics",
+   "status": "pending",
+   "blocks": [
     {
      "block": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases",
      "chapter": "stochastic-mechanics",
@@ -40296,14 +41899,7 @@
       "da-reproducibility",
       "da-referee-verdict"
      ]
-    }
-   ]
-  },
-  {
-   "batch_id": 102,
-   "chapter": "stochastic-mechanics",
-   "status": "pending",
-   "blocks": [
+    },
     {
      "block": "content/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity",
      "chapter": "stochastic-mechanics",

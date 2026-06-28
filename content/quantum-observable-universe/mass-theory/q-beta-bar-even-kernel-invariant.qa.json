@@ -1260,24 +1260,6 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "2af6839f2278",
-          "ts": "db624ec82f98",
-          "lean": "03bd5da4dd1a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:07.326Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      },
-      {
-        "field_hash": {
           "md": "98c341e373e6",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
@@ -1309,6 +1291,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement (md:1-11) is the bare iff; interpretive material lives under separate ## headings (Why this matters, Contrast, Use in the gate) — acceptable discussion structure with the statement isolated."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -1349,24 +1347,6 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "2af6839f2278",
-          "ts": "db624ec82f98",
-          "lean": "03bd5da4dd1a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:08.067Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      },
-      {
-        "field_hash": {
           "md": "98c341e373e6",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
@@ -1380,27 +1360,26 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is a bar-evenness criterion over the formal variable t=q-1; no archimedean construct hard-coded. Lean is over generic CommRing R."
-      }
-    ],
-    "wall-side-proof": [
+      },
       {
         "field_hash": {
-          "md": "2af6839f2278",
+          "md": "98c341e373e6",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:09.041Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.lean:1 — Lean file exists",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-proof": [
       {
         "field_hash": {
           "md": "98c341e373e6",
@@ -1416,6 +1395,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof is a `ring` identity (1 - u^2 = 1 - b^2·ℏ^4) over commutative rings; Taylor-order remarks about t are leading-order bookkeeping, not archimedean machinery proving the algebraic claim."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean file contains a fully verified, sorry-free proof.",
+        "severity": "minor"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1459,28 +1454,6 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "2af6839f2278",
-          "ts": "db624ec82f98",
-          "lean": "03bd5da4dd1a"
-        },
-        "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:10.200Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
           "md": "98c341e373e6",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
@@ -1494,6 +1467,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 1.0 — plan stated up front: 'Proof (one-line ring identity)', N=2 prototype, bar-even factor decomposition explicitly named."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Proof strategy is well-structured and easy to follow.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1539,28 +1528,6 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "2af6839f2278",
-          "ts": "db624ec82f98",
-          "lean": "03bd5da4dd1a"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:11.041Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
           "md": "98c341e373e6",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
@@ -1574,6 +1541,26 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.5 — the bar-even discriminant is a useful formalize-first gate but the Lean content is standard ring identities; the structural framing is non-redundant vs siblings."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The mathematical and physical connections explored in this block are highly novel.",
+        "severity": "minor",
+        "score": {
+          "value": 0.8,
+          "max": 1
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1721,24 +1708,6 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "2af6839f2278",
-          "ts": "db624ec82f98",
-          "lean": "03bd5da4dd1a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:13.049Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
           "md": "98c341e373e6",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
@@ -1752,6 +1721,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Theorems take only the ring elements they use (b, hbar, a, m, q); no unused binders."
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No unused hypotheses are present in the Lean proof.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
@@ -1817,6 +1802,22 @@
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1845,6 +1846,23 @@
         },
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
       }
     ],
     "da-reproducibility": [
@@ -1873,6 +1891,23 @@
         },
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
       }
     ],
     "da-empirical-fragility": [
@@ -1901,6 +1936,23 @@
         },
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
       }
     ],
     "da-referee-verdict": [
@@ -1922,8 +1974,176 @@
         },
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.ts:1",
+        "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

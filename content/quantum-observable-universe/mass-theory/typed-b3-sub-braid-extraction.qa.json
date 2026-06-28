@@ -911,7 +911,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9524e709eb51",
+          "ts": "4ec08033b286",
+          "lean": "f364b3cd067f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

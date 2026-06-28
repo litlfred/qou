@@ -7,6 +7,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:brings-coordinate-ring", "def:substrate-parameter-planck"],
+  defines: ["local-q-zeta-function"],
   tags: [
     "zeta-function",
     "local",

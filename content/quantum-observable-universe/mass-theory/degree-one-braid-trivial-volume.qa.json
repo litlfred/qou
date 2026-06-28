@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.lean"
   },
   "source_hashes": {
-    "md": "fdd9b0df2ab5",
+    "md": "d92fb2ff7745",
     "ts": "6f9075679021",
     "lean": "5ec28f84ce81"
   },
@@ -1052,7 +1052,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1061,8 +1061,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
       }
@@ -1090,7 +1090,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1099,8 +1099,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.lean:1 — Lean file exists",
         "severity": "minor"
@@ -1109,7 +1109,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1118,8 +1118,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.lean:1",
         "severity": "minor"
@@ -1128,7 +1128,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1137,8 +1137,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
       }
@@ -1146,7 +1146,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1155,8 +1155,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
       }
@@ -1188,7 +1188,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1197,8 +1197,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
         "score": {
@@ -1290,7 +1290,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1299,8 +1299,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
       }
@@ -1328,7 +1328,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1337,8 +1337,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1347,7 +1347,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1356,8 +1356,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
       }
@@ -1365,7 +1365,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1374,8 +1374,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1384,7 +1384,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1393,8 +1393,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
       }
@@ -1402,7 +1402,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1411,8 +1411,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1421,7 +1421,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1430,8 +1430,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1440,7 +1440,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1449,8 +1449,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
       }
@@ -1458,7 +1458,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1467,8 +1467,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1477,7 +1477,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1486,8 +1486,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1496,7 +1496,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1505,8 +1505,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1515,7 +1515,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1524,8 +1524,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.ts:1",
         "severity": "minor"
@@ -1534,7 +1534,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1543,8 +1543,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.lean:1 — content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.lean:77:12: error: failed to synthesize",
         "severity": "minor"
@@ -1553,7 +1553,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "fdd9b0df2ab5",
+          "md": "d92fb2ff7745",
           "ts": "6f9075679021",
           "lean": "5ec28f84ce81"
         },
@@ -1562,8 +1562,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume.lean:77:12: error: failed to synthesize",
         "severity": "critical",
         "verdict": "open-objection",
@@ -1571,5 +1571,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T01:37:45.956Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean"
   },
   "source_hashes": {
-    "md": "9994c6446432",
+    "md": "32a873d7b6a2",
     "ts": "8b545ff822a2",
     "lean": "11a6a9f9658e"
   },
@@ -909,7 +909,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "32a873d7b6a2",
+          "ts": "8b545ff822a2",
+          "lean": "11a6a9f9658e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }

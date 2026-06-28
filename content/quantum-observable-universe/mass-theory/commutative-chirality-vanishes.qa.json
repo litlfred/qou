@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.lean"
   },
   "source_hashes": {
-    "md": "744c75e7f9bf",
+    "md": "15367e1ff0aa",
     "ts": "92fd01dddcfd",
     "lean": "caf133244e54"
   },
@@ -1052,7 +1052,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1061,8 +1061,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
       }
@@ -1090,7 +1090,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1099,8 +1099,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.lean:1 — Lean file exists",
         "severity": "minor"
@@ -1109,7 +1109,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1118,8 +1118,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
       }
@@ -1127,7 +1127,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1136,8 +1136,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean declaration matches narrative claim.",
         "severity": "minor"
       }
@@ -1145,7 +1145,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1154,8 +1154,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
       }
@@ -1187,7 +1187,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1196,8 +1196,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
         "score": {
@@ -1289,7 +1289,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1298,8 +1298,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
       }
@@ -1327,7 +1327,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1336,8 +1336,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1346,7 +1346,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1355,8 +1355,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
       }
@@ -1364,7 +1364,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1373,8 +1373,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1383,7 +1383,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1392,8 +1392,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
       }
@@ -1401,7 +1401,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1410,8 +1410,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1420,7 +1420,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1429,8 +1429,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1439,7 +1439,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1448,8 +1448,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
       }
@@ -1457,7 +1457,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1466,8 +1466,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1476,7 +1476,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1485,8 +1485,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1495,7 +1495,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1504,8 +1504,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1514,7 +1514,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1523,8 +1523,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1533,7 +1533,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1542,8 +1542,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts:1",
         "severity": "minor"
@@ -1552,7 +1552,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "744c75e7f9bf",
+          "md": "15367e1ff0aa",
           "ts": "92fd01dddcfd",
           "lean": "caf133244e54"
         },
@@ -1561,8 +1561,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
         "verdict": "clean",
@@ -1570,5 +1570,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T01:37:43.186Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }

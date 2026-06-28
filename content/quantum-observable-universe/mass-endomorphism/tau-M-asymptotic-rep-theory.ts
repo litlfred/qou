@@ -14,7 +14,6 @@ export default proposition({
     "prop:q-beta-categorical-precision-ladder",
     "prop:q-beta-cos-resummation",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
-    "prop:habiro-precision-ladder-equivalence",
     "prop:hecke-1d-irrep-closed-form-character",
   ],
   cites: [

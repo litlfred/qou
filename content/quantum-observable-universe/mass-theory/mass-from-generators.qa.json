@@ -1099,7 +1099,25 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark in the 'Open problems: mass-tower structure and crystal basis' section; interprets def:knot-particle-generation, traces the generator->linking->mass pipeline. Topic squarely in mass-theory chapter scope; kind=remark with interprets is appropriate (it interprets, asserts no new proved claim)."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9da8bcd93c77",
+          "ts": "b7382bbd1091",
+          "lean": "43fe1c2fd866"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

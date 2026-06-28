@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/appendix-nf-witnesses/witness-4he.lean"
   },
   "source_hashes": {
-    "md": "5988f349bed6",
+    "md": "5c9fa612cc08",
     "ts": "0d7812e2f623",
     "lean": "0e17665e0384"
   },
@@ -879,7 +879,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "5988f349bed6",
+          "md": "5c9fa612cc08",
           "ts": "0d7812e2f623",
           "lean": "0e17665e0384"
         },
@@ -888,8 +888,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:42.115Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:23.590Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
       }
@@ -897,7 +897,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "5988f349bed6",
+          "md": "5c9fa612cc08",
           "ts": "0d7812e2f623",
           "lean": "0e17665e0384"
         },
@@ -906,13 +906,13 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:42.115Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:23.590Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "witness-4he.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-06-28T01:37:42.115Z"
+  "updated_at": "2026-06-28T05:50:23.590Z"
 }

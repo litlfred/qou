@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/delta-q-decoration.lean"
   },
   "source_hashes": {
-    "md": "3b98281110fe",
+    "md": "be103c5dbef7",
     "ts": "443585624d26",
     "lean": "07d23508e991"
   },
@@ -901,7 +901,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -910,8 +910,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.lean:1 — Lean file exists",
         "severity": "minor"
@@ -920,7 +920,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -929,8 +929,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -939,7 +939,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -948,8 +948,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
       }
@@ -957,7 +957,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -966,8 +966,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -976,7 +976,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -985,8 +985,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
       }
@@ -994,7 +994,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1003,8 +1003,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -1013,7 +1013,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1022,8 +1022,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -1032,7 +1032,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1041,8 +1041,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
       }
@@ -1050,7 +1050,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1059,8 +1059,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -1069,7 +1069,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1078,8 +1078,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -1088,7 +1088,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1097,8 +1097,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -1107,7 +1107,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1116,8 +1116,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.ts:1",
         "severity": "minor"
@@ -1126,7 +1126,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1135,8 +1135,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/delta-q-decoration.lean:1 — content/quantum-observable-universe/mass-theory/delta-q-decoration.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/Basic.olean' of module Mathlib.RepresentationTheory.Basic does not exist",
         "severity": "minor"
@@ -1145,7 +1145,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3b98281110fe",
+          "md": "be103c5dbef7",
           "ts": "443585624d26",
           "lean": "07d23508e991"
         },
@@ -1154,8 +1154,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/delta-q-decoration.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/Basic.olean' of module Mathlib.RepresentationTheory.Basic does not exist",
         "severity": "critical",
         "verdict": "open-objection",
@@ -1163,5 +1163,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T01:37:43.186Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }

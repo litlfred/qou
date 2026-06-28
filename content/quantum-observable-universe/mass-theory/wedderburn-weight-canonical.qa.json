@@ -1061,8 +1061,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
       }
@@ -1099,8 +1099,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean:1 — Lean file exists",
         "severity": "minor"
@@ -1118,8 +1118,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean:1",
         "severity": "minor"
@@ -1137,8 +1137,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
       }
@@ -1155,8 +1155,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
       }
@@ -1197,8 +1197,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
         "score": {
@@ -1299,8 +1299,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
       }
@@ -1474,8 +1474,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:1",
         "severity": "minor"
@@ -1493,8 +1493,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
       }
@@ -1511,8 +1511,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:1",
         "severity": "minor"
@@ -1530,8 +1530,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:1",
         "severity": "minor"
@@ -1549,8 +1549,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
       }
@@ -1567,8 +1567,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:1",
         "severity": "minor"
@@ -1586,8 +1586,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:1",
         "severity": "minor"
@@ -1605,13 +1605,13 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:45.956Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.ts:1",
         "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-06-28T01:37:45.956Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

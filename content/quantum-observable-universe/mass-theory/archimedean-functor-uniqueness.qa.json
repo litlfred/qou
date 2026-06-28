@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean"
   },
   "source_hashes": {
-    "md": "20a0f1af68a4",
+    "md": "f75cd50e16cc",
     "ts": "603fb337038e",
     "lean": "2810d8047e3d"
   },
@@ -1054,7 +1054,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1063,8 +1063,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
       }
@@ -1092,7 +1092,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1101,8 +1101,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean:1 — Lean file exists",
         "severity": "minor"
@@ -1111,7 +1111,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1120,8 +1120,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean:1 — sorry placeholder present",
         "severity": "major"
@@ -1144,7 +1144,7 @@
       },
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1153,8 +1153,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is a structural stub, which does not fully capture the narrative proof.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean:1 — sorry present",
         "severity": "minor"
@@ -1163,7 +1163,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1172,8 +1172,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
         "severity": "minor"
       }
@@ -1245,7 +1245,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1254,8 +1254,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
         "score": {
@@ -1419,7 +1419,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1428,8 +1428,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
       }
@@ -1640,7 +1640,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1649,8 +1649,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1",
         "severity": "minor"
@@ -1659,7 +1659,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1668,8 +1668,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
       }
@@ -1677,7 +1677,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1686,8 +1686,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1",
         "severity": "minor"
@@ -1696,7 +1696,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1705,8 +1705,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1",
         "severity": "minor"
@@ -1715,7 +1715,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1724,8 +1724,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1",
         "severity": "minor"
@@ -1734,7 +1734,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1743,8 +1743,8 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1",
         "severity": "minor"
@@ -1753,7 +1753,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "20a0f1af68a4",
+          "md": "f75cd50e16cc",
           "ts": "603fb337038e",
           "lean": "2810d8047e3d"
         },
@@ -1762,13 +1762,13 @@
           "kind": "agent",
           "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T01:37:43.186Z",
-        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1",
         "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-06-28T01:37:43.186Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }

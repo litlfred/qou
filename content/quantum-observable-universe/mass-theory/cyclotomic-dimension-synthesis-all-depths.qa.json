@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md"
   },
   "source_hashes": {
-    "md": "4e76f4347021",
+    "md": "53c7bf20e299",
     "ts": "c7d34067c0e3"
   },
   "criteria": {
@@ -1082,21 +1082,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4e76f4347021",
-          "ts": "c7d34067c0e3",
-          "lean": "dbbcfe40d1e6"
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.359Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Contains borderline interpretive prose."
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -1122,21 +1119,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "4e76f4347021",
-          "ts": "c7d34067c0e3",
-          "lean": "dbbcfe40d1e6"
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:11.100Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.lean is missing entirely.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.md:1",
+        "severity": "minor"
       }
     ],
     "wall-side-proof": [
@@ -1370,7 +1365,221 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "53c7bf20e299",
+          "ts": "c7d34067c0e3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:50:25.638Z"
 }

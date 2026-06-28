@@ -1086,19 +1086,17 @@
         "field_hash": {
           "md": "4a4b78db05cf",
           "ts": "7d011309058a",
-          "lean": "23bba852477d"
+          "lean": "fdcbf8cb00fa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:58.217Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -1126,19 +1124,18 @@
         "field_hash": {
           "md": "4a4b78db05cf",
           "ts": "7d011309058a",
-          "lean": "23bba852477d"
+          "lean": "fdcbf8cb00fa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:59.069Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean:1 — Lean file exists",
+        "severity": "minor"
       }
     ],
     "wall-side-proof": [
@@ -1146,19 +1143,18 @@
         "field_hash": {
           "md": "4a4b78db05cf",
           "ts": "7d011309058a",
-          "lean": "23bba852477d"
+          "lean": "fdcbf8cb00fa"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:59.450Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean:1 — sorry placeholder present",
+        "severity": "major"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1200,63 +1196,17 @@
         "field_hash": {
           "md": "4a4b78db05cf",
           "ts": "7d011309058a",
-          "lean": "23bba852477d"
+          "lean": "fdcbf8cb00fa"
         },
         "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:00.175Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carrying structure."
-      },
-      {
-        "field_hash": {
-          "md": "4a4b78db05cf",
-          "ts": "7d011309058a",
-          "lean": "fdcbf8cb00fa"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "4a4b78db05cf",
-          "ts": "7d011309058a",
-          "lean": "fdcbf8cb00fa"
-        },
-        "result": "pass",
-        "notes": "Clear: factor B through α_shift at a force-carrier knot, prove conditional uniqueness; candidate (p,k) table + concrete instance; Phase-3 minimisation target named.",
-        "reviewed_at": "2026-06-25T17:08:50.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.72
-        }
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1328,62 +1278,20 @@
         "field_hash": {
           "md": "4a4b78db05cf",
           "ts": "7d011309058a",
-          "lean": "23bba852477d"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:00.933Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "4a4b78db05cf",
-          "ts": "7d011309058a",
-          "lean": "fdcbf8cb00fa"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "4a4b78db05cf",
-          "ts": "7d011309058a",
           "lean": "fdcbf8cb00fa"
         },
         "result": "pass",
-        "notes": "Reuses α_shift=k(p-1) to scaffold A≥3 binding as a per-rep Reeb-phase uniqueness; candidate-knot identifications are hypotheses not derivations, so modest.",
-        "reviewed_at": "2026-06-25T17:08:50.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "id": "local/qa-agent-drain"
         },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The mathematical and physical connections explored in this block are highly novel.",
+        "severity": "minor",
         "score": {
-          "max": 1,
-          "value": 0.68
+          "value": 0.8,
+          "max": 1
         }
       }
     ],
@@ -1544,55 +1452,17 @@
         "field_hash": {
           "md": "4a4b78db05cf",
           "ts": "7d011309058a",
-          "lean": "23bba852477d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:02.799Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "4a4b78db05cf",
-          "ts": "7d011309058a",
-          "lean": "fdcbf8cb00fa"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "4a4b78db05cf",
-          "ts": "7d011309058a",
           "lean": "fdcbf8cb00fa"
         },
         "result": "pass",
-        "notes": "binding_unique_via_alpha_shift uses all of [hB],[hB'],[hFC],[hFC'] in the rw chain; binding_subsingleton likewise. p,k threaded through the force-carrier classes. No unused binder.",
-        "reviewed_at": "2026-06-25T17:08:50.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No unused hypotheses are present in the Lean proof.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
@@ -1854,7 +1724,121 @@
         "reviewed_at": "2026-06-24T13:22:51Z",
         "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
       }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.ts:1",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:50:24.256Z"
 }
