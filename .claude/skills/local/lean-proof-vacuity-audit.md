@@ -236,6 +236,68 @@ projecting it. That converts a *visible* gap (`sorry`) into an *invisible* one.
    with the goal (up to bound variables), and whether sibling fields are used.
    Apply the legit-vs-anti discriminator above. Record verdict + evidence.
 
+### 7. `: True` carrier field — `proof-claims-unencoded` / pattern `true-class-field`
+
+A `class`/`structure` field typed literally `: True` (or `True ∧ … ∧ True`, or a
+`Prop := True` default) carries **zero** content — every instance satisfies it,
+so a downstream consumer that takes the field as a hypothesis assumes nothing.
+This is the *field-level* analogue of a `: True` conclusion, and it is the gap
+that the empty-prop-carrier (zero-field) and claims-unencoded (≥2 enumerated
+bullets) detectors both structurally miss: a **single** `: True` field on an
+otherwise-populated carrier. Exemplar: `mass-theory/confinement-categorical.lean`
+`hh_vanish : True`; worst case: a `Conjectures/*` carrier with `holds : True` that
+a trivial `instance … := ⟨⟩` then "closes" (fabricating a content-free instance of
+an open conjecture — the §3b-tax violation). **Honest fix:** encode the real
+property as the field type, or — for genuinely-open infrastructure Mathlib lacks
+— annotate the field `opaque marker` / `@marker` (then it is **exempt-but-tracked**,
+consistent with the empty-carrier opt-out), never leave a bare un-annotated `: True`.
+
+> **Escalation signal on trivial-true (2026-06-28).** A `placeholder-true` /
+> `def-disguised-true` whose docstring carries theorem-assertion language
+> (`**Theorem**` / `**Lemma**` / `**Proposition**`) and is **not** a conjecture
+> carrier is annotated *"docstring asserts a provable claim while the Lean
+> concludes `True`"* — the `q_gl_obstruction_calc` failure mode (a real claim
+> hidden behind a tautology), distinct from an honest open conjecture. This is
+> the heuristic that the 2026-06-26 triage missed on `q_gl_obstruction_calc`,
+> `confinement-categorical`, the fluid-dynamics conditionals, and others.
+
+## Agent-inspection ledger — making agent confirmation mandatory (2026-06-28)
+
+The detector is **high-recall by design**; the legit-vs-genuine call requires
+agent inspection (a `decide` on a true concrete fact is legit; a `: True` hiding
+a real theorem is not). For **content blocks** that verdict lands on the
+`<block>.qa.json` sidecar (above). But a **standalone library `.lean`**
+(`content/**/lean/QOU/**/*.lean` with no `.ts`/`.md` sibling) has **no sidecar**,
+so an agent verdict had nowhere durable to live — detection stayed purely
+machine, and a one-off triage doc could silently mis-call a candidate "legit"
+(as happened). The **review ledger** closes that gap:
+
+```bash
+# Seed/refresh: new + file-changed candidates become `needs-agent`.
+bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe \
+  --review-ledger docs/audits/lean-vacuity-review-ledger.json
+# Enforce: exit 1 if ANY non-exempt candidate lacks a FRESH agent verdict.
+bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe \
+  --check-ledger docs/audits/lean-vacuity-review-ledger.json
+```
+
+- **Ledger** (`lean-vacuity-review/v1`, committed): keyed by
+  `<relpath>::<decl>::<category>`; each entry records the agent `verdict`
+  (`genuine` | `legit` | `advisory` | `needs-agent`), optional `disposition` /
+  `evidence` / `reviewer`, and the **`.lean` sha at review time**.
+- **Staleness = re-review.** If the `.lean` changes after a verdict, `file_sha`
+  drifts and `--review-ledger` resets the entry to `needs-agent`
+  (preserving `stale_prev_verdict`). A verdict only counts while it matches the
+  file it was made against — the machine cannot bless a candidate, only an agent
+  verdict can, and only while fresh.
+- **Resolved candidates are pruned** automatically (a fixed file no longer
+  flags, so its key drops out).
+- **The agent workflow:** run `--review-ledger` to materialise the queue, inspect
+  each `needs-agent` entry per the legit-vs-anti discriminators above, write the
+  verdict (+ disposition/evidence) into the ledger, fix every `genuine` /
+  `advisory` candidate, then `--check-ledger` must pass. This is the
+  "agent inspection, not just machine" gate.
+
 ## QA criteria (sidecar params) — wiring
 
 Mirrors the existing `proof-statement-integrity` model (Agent-checked,
