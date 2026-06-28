@@ -66,6 +66,7 @@ export default chapter({
             "jones-markov-trace",
             "markov-disambiguation",
             "bar-involution",
+            "bar-involution-properties",
             "braid-group-n-strand",
             "h3-hecke-idempotents",
             "braid-link-types",
