@@ -22,7 +22,7 @@ the laboratory continuum, accessible only through the
 [classical limit functor](#def:classical-limit-functor) and the
 [archimedean realization functor](#def:archimedean-realization-functor).
 
-**Why adeles.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
+**Motivation for the adelic substrate.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
 structural tension already noted in
 [classical limit (preamble)](#sec:classical-limit-preamble): the
 local $q$-geometries at each prime do not assemble into a continuous

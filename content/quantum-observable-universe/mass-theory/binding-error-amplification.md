@@ -53,7 +53,7 @@ therefore yields a binding energy wrong by tens of percent
 ($0.1\% \times 843 \approx 84\%$ for the deuteron). The amplification is
 worst for the lightest, most weakly bound nuclei.
 
-**Consequence.** The per-knot mass-prediction accuracy (the step-9a frontier)
+**Corollary.** The per-knot mass-prediction accuracy (the step-9a frontier)
 and the binding-energy accuracy (the step-9b frontier) are not independent
 problems. Binding is the amplified shadow of the bound-state mass error: any
 residual in the predicted nuclear mass is magnified by $\mathcal{A}$ in the

@@ -92,7 +92,7 @@ $$
 where $r_2^{(2)}$ is the order-$h^2$ correction to the leading
 $r_2$ regulator.  Equivalently: $r_2^{(2)}[\mathcal{B}_3] = -6G$.
 
-## Why this is high-value
+## Significance
 
 Per
 [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)

@@ -105,7 +105,7 @@ $[3A]_q! / [3A-3]_q!$. Empirically it holds to 4 digits at $q_0 \approx
 duality for $H_n(q)$ acting on tensor products of $\mathrm{U}_q(\mathfrak{sl}_n)$-
 modules is pending.
 
-### Why this matters
+### Significance
 
 Block-multiplicativity reduces the $T_1^{\text{free}}$ term of the
 mass-endomorphism tower

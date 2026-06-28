@@ -168,7 +168,7 @@ Three ingredients close the conditional statement.
    match the standard Bloch-Wigner normalisation
    $D(z) = \mathrm{Im}\,\mathrm{Li}_2(z) + \log|z|\arg(1-z)$.
 
-## Consequences
+## Corollaries
 
 **(a) Resolves the pre-archimedean concern in
 [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).**
