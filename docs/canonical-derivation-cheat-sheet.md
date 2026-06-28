@@ -66,6 +66,32 @@ wiring choice, and flip+re-pin is **refuted** (`R(K)` runs 2.3→63× with A;
 [decision package](audits/2026-06-13-step9a-flip-decision-package.md)).
 Do not re-litigate per-knot production flips against this gate.
 
+> **Brane-tower convergence law + Borromean single pipeline (2026-06-28, PR
+> #3016 / bean `km42`).** The per-braid brane tower (`prop:per-braid-mass-tower`,
+> Li₂^q form) **converges iff the nucleon trace `< 1`**. The colour-weighted
+> **atom-word** proton has `tr_p = 1.0653 > 1`, so the free pp pair `tr_p² =
+> 1.135 > q₀` exceeds the Li₂^q radius and the tower **diverges for Z ≥ 2** (the
+> same divergence class as the superseded per-generator form — formalize-first
+> *refuted* the standing `|tr_M(ξ)| < q` premise, counterexample exact at ⁴He
+> H₁₂). The **Borromean** nucleon `τ = |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4) =
+> 0.9986 < 1` (Lean `BorromeanMarkovTrace`) makes every free pair `< q₀` ⇒
+> **converges ∀Z**. This is the *single pipeline* (no special-casing): nucleon
+> mass (`F_Bor`, bean `ovud`) and per-isotope binding both flow from the one `τ`
+> ([`borromean_binding_recompute.py`](../computations/borromean_binding_recompute.py)).
+> **It is the per-knot answer to "why Bor"**: `β_Bor` is the *nucleon's own knot*
+> (a baryon **is** `𝓑₃(3 colour tubes)`; Borromean = confinement), the A=1
+> instance of the per-knot rule — *not* a global assumption (that bug is the 9a
+> uniform-`Vol(𝓑₃)`). **Result:** converges ∀Z, right *shape* (binding grows with
+> pair count: ¹⁶O err 31×→2.3×), **wrong normalization** (under-binds mid-mass,
+> over-binds ⁵⁶Fe) — i.e. the missing **Δ_λ** per-partition weight (the tower
+> applies a uniform `E₀` where `B = m_e·Σ_λ y_λ χ^λ Δ_λ` carries a per-λ weight).
+> Conventions derived from the categorical action (`g(x)=−Li₂^q(−x)` bar-even
+> channel; A=2 pair included). Full record:
+> [`formalize-first plan`](audits/2026-06-28-brane-tower-formalize-first-plan.md),
+> [`higher-order finding`](audits/2026-06-28-brane-tower-higher-order-deuteron.md).
+> Cross-link #2985 (binding correction tower is not a single low-order
+> q-hypergeometric element — consistent; no single-element closure).
+
 > ## ⚠ Critical framing — do NOT treat `λ_scale` as a separate object
 >
 > **`λ_scale` was ABSORBED into `VolDensity(K)` on 2026-05-23 (commit ffdd84409).** The numerical factor that older docs call `λ_scale` is *what the canonical `VolDensity(K)` evaluation produces per knot/link*. It is **not** a separate constant to derive, calibrate, or "close". There is **one** canonical mass formula:
