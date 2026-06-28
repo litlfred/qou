@@ -5575,6 +5575,40 @@ export const references: CSLData[] = [
     note: "Verified 2026-06-23 (doth): Halverson & Ram, 'Murnaghan–Nakayama rules…', Trans. Amer. Math. Soc. 348(10), 3967–3995 — year corrected 1998→1996 (the '-96-' DOI segment + Arun Ram's author-site filename 1996TAMSv348n10p3967.pdf both confirm 1996). The id 'halverson_ram_1998' is retained for cross-ref stability despite the corrected year. DOI→page binding not landing-page-confirmed (sandbox 403). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
   }),
 
+  // ── Juyumaya 2004 — Markov trace on the Yokonuma–Hecke algebra ─
+  ref({
+    id: "juyumaya2004",
+    type: "article-journal",
+    title: "Markov trace on the Yokonuma–Hecke algebra",
+    author: [
+      { family: "Juyumaya", given: "Jesús" },
+    ],
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    volume: "13",
+    issue: "1",
+    page: "25-39",
+    issued: { "date-parts": [[2004]] },
+    DOI: "10.1142/S0218216504003020",
+    URL: "https://doi.org/10.1142/S0218216504003020",
+    note: "Verified 2026-06-28 (bib-cite-resolves): Juyumaya, 'Markov trace on the Yokonuma–Hecke algebra', JKTR 13(1), 25–39. Proves the Yokonuma–Hecke algebra supports a Markov trace. DOI from the World Scientific landing page (web search); not landing-page-confirmed in sandbox.",
+  }),
+
+  // ── Orellana 1999 — weights of Markov traces on Hecke algebras ─
+  ref({
+    id: "orellana1998",
+    type: "article-journal",
+    title: "Weights of Markov traces on Hecke algebras",
+    author: [
+      { family: "Orellana", given: "Rosa C." },
+    ],
+    "container-title": "Journal für die reine und angewandte Mathematik",
+    volume: "508",
+    page: "157-178",
+    issued: { "date-parts": [[1999]] },
+    URL: "https://arxiv.org/abs/math/9806163",
+    note: "Verified 2026-06-28 (bib-cite-resolves): Orellana, 'Weights of Markov traces on Hecke algebras', Crelle's J. 508 (1999), 157–178; arXiv:math/9806163 (1998). Computes Markov-trace weights for Hecke algebras of type B and D. The id 'orellana1998' (arXiv submission year) is retained for cross-ref stability though the journal version is 1999. Journal DOI not captured in sandbox; arXiv URL is authoritative.",
+  }),
+
   // ── James 1984 — representation theory of S_n ─────────────────
   ref({
     id: "james1984representation",
