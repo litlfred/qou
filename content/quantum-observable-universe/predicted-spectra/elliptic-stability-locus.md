@@ -66,7 +66,7 @@ genus-$0$ component (the pairing-free stability curve), the
 residual factor is a degree-6 curve in $(p, u)$ — generically
 of genus $1$.
 
-**Conjecture.**
+**Proposal (elliptic degeneracy locus).**
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus
 (D$'$) reduced by the pairing-free stability curve (S).  Then:*
 

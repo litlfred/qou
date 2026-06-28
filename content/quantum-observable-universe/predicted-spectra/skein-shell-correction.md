@@ -27,7 +27,7 @@ the multi-nucleon link $\mathcal{N}(Z, N)$
 ([stable nucleus](#def:stable-nucleus)) has special topological
 structure.
 
-**Conjecture: shell correction from closed sub-links.**
+**Proposed shell-correction form: closed sub-links.**
 
 *For the multi-nucleon link
 $\mathcal{N}(Z, N) = Z\mathfrak{p} \oplus N\mathfrak{n}$,

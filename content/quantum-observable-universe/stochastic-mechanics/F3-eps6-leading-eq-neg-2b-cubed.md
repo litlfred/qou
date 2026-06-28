@@ -21,7 +21,7 @@ This is verified at sympy precision in [`probe_q_beta_cat_per_factor_decompositi
 with **algebraic equality** (no numerical rounding) — and now also in Lean
 [`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean).
 
-## Proof
+## Derivation
 
 The Hoefsmit off-diagonal coupling is $b = \sqrt{q^4+q^2+1}/(q^2+1)$. At
 $q = 1$:

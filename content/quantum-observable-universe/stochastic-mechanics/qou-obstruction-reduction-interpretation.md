@@ -59,9 +59,9 @@ are **proportional**: there is a single real number (the Euler
 characteristic $\chi(A) = -6$) that controls whether all three
 millennium problems persist through the classical limit.
 
-**Corollary.** If any one of the three millennium problems is
-resolved (in either direction), the resolution constrains the
-other two. Specifically: if the classical limit functor
+A consequence of this shared origin is that if any one of the three
+millennium problems is resolved (in either direction), the resolution
+constrains the other two. Specifically: if the classical limit functor
 $\mathcal{L}$ preserves the property $\mathcal{P}$ for one
 problem, then the same functor either preserves or violates
 $\mathcal{P}$ for the other two — the mechanism is the same,

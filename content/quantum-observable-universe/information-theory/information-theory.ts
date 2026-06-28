@@ -207,6 +207,7 @@ section({
         "horizon-functor",
         "cmb-functor",
         "aeon-boundary-generates-chart",
+        "aeon-recycling",
         "horizon-conformal-invariance",
         "horizon-conformal-invariance-interpretation",
         "qou-is-ccc",

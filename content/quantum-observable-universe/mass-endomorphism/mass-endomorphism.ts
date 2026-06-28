@@ -175,6 +175,7 @@ export default chapter({
         "chi-v111-via-sign-substitution",
         "chi-v21-hoefsmit-matrix-derivation",
         "phi-d-syt-count-conjecture",
+        "phi-d-syt-count",
         "categorical-chain-convergence-mechanisms",
         "categorical-chain-convergence-mechanisms-table-data",
         "tau-M-asymptotic-rep-theory",

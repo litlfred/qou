@@ -6,11 +6,11 @@ consequences at every level of the theory.
 
 ## The crystallographic obstruction
 
-**Theorem (Crystallographic Restriction).**
-*A lattice $\Lambda \subset \mathbb{R}^n$ is invariant under
-a rotation of order $k$ only if $k \in \{1, 2, 3, 4, 6\}$
-(for $n = 2$) or $k \in \{1, 2, 3, 4, 5, 6\}$ (for $n = 3$,
-where $5$-fold is allowed only for non-lattice symmetry).*
+By the crystallographic restriction theorem, a lattice
+$\Lambda \subset \mathbb{R}^n$ is invariant under a rotation of order
+$k$ only if $k \in \{1, 2, 3, 4, 6\}$ (for $n = 2$) or
+$k \in \{1, 2, 3, 4, 5, 6\}$ (for $n = 3$, where $5$-fold is allowed
+only for non-lattice symmetry).
 
 Periodic lattices — the mathematical substrate of crystals —
 cannot have $5$-fold rotational symmetry.  This is why:

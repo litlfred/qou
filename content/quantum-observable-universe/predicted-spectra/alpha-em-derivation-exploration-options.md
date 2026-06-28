@@ -66,7 +66,7 @@ side rather than the mass side.
 
 ### Option A — Hopf-fibration vacuum-polarisation integral
 
-**Claim:** Compute the photon vacuum-polarisation 1PI graph in the
+**Approach.** Compute the photon vacuum-polarisation 1PI graph in the
 QOU framework with the photon propagator on the Hopf total space
 $S^3$ and external legs (force-carrier knots) projecting via $\pi_H$
 to the base $\mathcal{S}_p \cong S^2$. The zero-mode contribution
@@ -98,7 +98,7 @@ geometry. Could plausibly close in a few days of focused work.
 
 ### Option B — Stratum-prefactor approach via spectral sequence collapse
 
-**Claim:** Apply the same spectral-sequence machinery used for the
+**Approach.** Apply the same spectral-sequence machinery used for the
 mass formula
 ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula))
 to the **coupling** side. The $\alpha_{EM}$ correction
@@ -124,7 +124,7 @@ the right $\ell$ and run the calculation. Days to a week.
 
 ### Option C — Reeb-bundle holonomy + U(1) integration
 
-**Claim:** The U(1) fibre of the Reeb bundle has holonomy
+**Approach.** The U(1) fibre of the Reeb bundle has holonomy
 $e^{2\pi i / [2]_q}$. Integrating the photon over the fibre and
 averaging over the base gives a finite phase-volume factor that
 equals $2/(3\pi)$ at $q = q_0$ for $g = 4$.
@@ -144,7 +144,7 @@ equals $2/(3\pi)$ at $q = q_0$ for $g = 4$.
 
 ### Option D — Chern-Simons partition-function ratio
 
-**Claim:** $2/(3\pi)$ is the ratio of CS partition functions on
+**Approach.** $2/(3\pi)$ is the ratio of CS partition functions on
 distinguished 3-manifolds at the QOU substrate level $k(q)$:
 
 $$

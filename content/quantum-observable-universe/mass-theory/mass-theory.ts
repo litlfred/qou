@@ -500,6 +500,7 @@ export default chapter({
         "pieri-photon-shift",
         "pieri-photon-shift-interpretation",
         "phi-q-tower-jsj-bridge",
+        "phi-q-tower-jsj-bridge-conjecture",
         "dilogarithm-archimedean-limit",
         "phi-q-wkb-greens-function",
         "algebraic-geometric-dilog-equivalence",

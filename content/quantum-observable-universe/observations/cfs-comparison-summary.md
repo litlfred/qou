@@ -102,7 +102,7 @@ are confirmed as **distinct continuum theories of the same
 operator-algebra substrate**, differing by a named correction term
 in their action functionals.
 
-**Corollary for QOU.** The framework developed in this section —
+**Implication for QOU.** The framework developed in this section —
 non-commutative probability, q-CLT, Jones–Wenzl carrier, Plancherel
 asymptotics — stands independently of any CFS comparison. The
 specific QOU phenomena that CFS cannot natively express (knot

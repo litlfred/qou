@@ -14,7 +14,7 @@ $\mathrm{CS}(T_{m, n})$ through the single RT construction.  The
 proposition's numerical prediction specialises the shared object rather
 than combining two independently postulated quantities.
 
-**Conjecture (Chern-Simons :refterm[descent]{#descent} correction, $\kappa$ unproved).**
+**Proposed correction (Chern-Simons :refterm[descent]{#descent}, $\kappa$ unproved).**
 *The fine structure constant is conjectured to receive corrections from
 the Chern–Simons invariants of the force-carrier torus knots
 $T_{2,9}$ and $T_{3,5}$ on Bring's surface:*
@@ -50,7 +50,7 @@ Witten value by $\sim 10\%$ — indicating that either the Gram-determinant
 identification of $\kappa$ is wrong, or that the order-$\delta_{CS}^2$
 truncation is incomplete and missing higher-order contributions.*
 
-*Proof sketch (does not close $\kappa$).*
+*Derivation sketch (does not close $\kappa$).*
 The bare coupling $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ comes
 from the antisymmetric braiding eigenvalue (Layer 2 of
 [EM coupling projection](#prop\:em-coupling-projection))

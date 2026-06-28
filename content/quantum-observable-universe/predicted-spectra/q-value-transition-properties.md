@@ -78,7 +78,7 @@ $$
   d_q^2  \neq  0 \quad \text{for } q \neq 1
 $$
 
-**Corollary:** The total $q$-energy of the products need not
+Consequently, the total $q$-energy of the products need not
 equal the total $q$-energy of the parent. There is a
 **$q$-anomaly**:
 

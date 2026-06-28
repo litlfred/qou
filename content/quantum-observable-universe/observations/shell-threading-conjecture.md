@@ -26,7 +26,7 @@ three terms in the Skein relation are:
 - $L_0$: the **smoothing** — the threading link that interpolates
   between parent and daughter.
 
-**Conjecture.**
+**Proposal (shell energy scale).**
 *The shell energy scale is the crossing energy of the threading
 link $L_0$:*
 

@@ -1,7 +1,6 @@
-**Conjecture.**
-*For each mass number $A = Z + N$, the experimentally observed
-stable isotope $(Z_*, N_*)$ is the unique minimizer of the
-demand magnitude:*
+The conjectural reading of demand stability is that, for each mass
+number $A = Z + N$, the experimentally observed stable isotope
+$(Z_*, N_*)$ is the unique minimizer of the demand magnitude:
 
 $$
   (Z_*, N_*)
@@ -10,10 +9,10 @@ $$
   |\mathrm{dem}(\mathcal{A}(Z, N))|
 $$
 
-*where $\mathcal{A}(Z, N)$ is the derived atom
+where $\mathcal{A}(Z, N)$ is the derived atom
 ([derived atom](#def:derived-atom)) and $|\mathrm{dem}|$ is the
 demand magnitude
-([demand stability](#prop:demand-stability)).*
+([demand stability](#prop:demand-stability)).
 
 ## Formal statement
 
@@ -34,8 +33,8 @@ $$
   \right\}.
 $$
 
-**Conjecture.** *$\mathcal{V}$ coincides with the experimentally
-observed valley of stability for all $A \leq 238$.*
+The conjecture is then that $\mathcal{V}$ coincides with the
+experimentally observed valley of stability for all $A \leq 238$.
 
 ## Subsidiary conjectures
 

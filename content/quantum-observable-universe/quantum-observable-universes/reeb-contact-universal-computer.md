@@ -20,7 +20,7 @@ construction (after Wilson and Kuperberg) glued into a contact
 3-ball; the plug is contact-embeddable in any contact
 3-manifold.
 
-**Corollary for the QOU substrate.**
+**The consequence for the QOU substrate.**
 Because $\xi_q$ is the Reeb derivation of a contact form
 $\varTheta$ on the state bundle, every fibre $\mathcal{S}_p$
 inherits — by the Cardona–Miranda–Peralta-Salas–Presas

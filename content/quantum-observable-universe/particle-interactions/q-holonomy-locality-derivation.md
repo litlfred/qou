@@ -22,17 +22,17 @@ $$
 where $\Omega_{ij}$ is the Casimir element acting on factors
 $i, j$ of $V^{\otimes n}$.
 
-**Theorem** (Kohno-Drinfeld \cite{kohno1987}).
-*The KZ connection is flat:*
+By the Kohno-Drinfeld theorem \cite{kohno1987}, the KZ connection is
+flat:
 $$
   [\nabla_i, \nabla_j] \;=\; 0
   \quad\Longleftrightarrow\quad
   [\Omega_{ij}, \Omega_{kl}] = 0 \text{ for disjoint pairs,}
   \text{ and infinitesimal braid relations.}
 $$
-*The monodromy representation of $\pi_1(X_n / S_n) = B_n$
+Moreover the monodromy representation of $\pi_1(X_n / S_n) = B_n$
 on $V^{\otimes n}$ coincides with the quantum-group R-matrix
-representation of $U_q(\mathfrak{sl}_2)$.*
+representation of $U_q(\mathfrak{sl}_2)$.
 
 ## Applying to the mass endomorphism
 
@@ -46,9 +46,8 @@ $S \subseteq \mathrm{Cr}(\mathcal{K})$ is the trace of the resulting
 braid-word operator, which is computed by parallel transport along
 the closure of the braid word in $X_n / S_n$.
 
-**Claim.**
-*At generic $q$, the parallel transport factorizes over disjoint
-punctures:*
+The locality hypothesis is, in this language, the statement that at
+generic $q$ the parallel transport factorizes over disjoint punctures:
 $$
   \mathrm{Tr}\!\left[
     \prod_{c \in S} \Phi_q(z_c) \cdot \rho(\beta)
@@ -57,9 +56,9 @@ $$
   \mathrm{Tr}[\rho(\beta)] \cdot \prod_{c \in S}
   \eta(c),
 $$
-*where $\eta(c)$ is the single-crossing expectation value.*
+where $\eta(c)$ is the single-crossing expectation value.
 
-**Proof sketch.**
+The factorization is read off from flatness as follows:
 1. By flatness (Kohno-Drinfeld), any two closed loops
    $\gamma_i, \gamma_j$ encircling separated subsets
    $S_i, S_j \subseteq S$ have commuting holonomies:
@@ -72,7 +71,7 @@ $$
    single-crossing expectations.
 
 The scalar obstruction — the only failure mode — would be a
-non-abelian monodromy, ruled out by flatness. $\square$
+non-abelian monodromy, ruled out by flatness.
 
 ## Failure of flatness
 

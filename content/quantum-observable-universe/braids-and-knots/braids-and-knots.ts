@@ -67,6 +67,7 @@ export default chapter({
             "markov-disambiguation",
             "bar-involution",
             "bar-involution-properties",
+            "bar-grading-algebra",
             "braid-group-n-strand",
             "h3-hecke-idempotents",
             "braid-link-types",
