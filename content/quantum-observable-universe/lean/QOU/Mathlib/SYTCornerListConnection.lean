@@ -1,4 +1,4 @@
-import QOU.Mathlib.SYTHookGNW
+import QOU.Mathlib.SYTListCorner
 import QOU.Mathlib.SYTBranchingRule
 import QOU.Mathlib.SYTEnumerationFintype
 
