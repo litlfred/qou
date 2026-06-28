@@ -1,6 +1,7 @@
 import QOU.Basic
-import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.FieldTheory.RatFunc.Basic
 import Mathlib.Data.Int.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -16,20 +17,28 @@ LaTeX label: `def:quantum-su2`
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring**: `R_q = ℚ(q) = RatFunc ℚ` (the field of rational
+functions in the indeterminate `q` over ℚ). The quantum-group relation
+`[E,F] = (K − K⁻¹)/(q − q⁻¹)` and the `q`-integers
+`[n]_q = (qⁿ − 1)/(q − 1)` both divide by elements that are *not*
+invertible in `ℤ[q, q⁻¹]` (which is only a `CommRing`); the field of
+fractions `ℚ(q)` is the smallest ground ring in which these formal
+quotients are literal. Part of the formal proof chain. The parameter
+`q` is the canonical indeterminate of `R_q`. Specialise via
+`ι : R_q → ℝ, q ↦ q₀` for numerical evaluation.
 -/
 
 namespace QOU
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+-- Ground ring `R_q = ℚ(q) = RatFunc ℚ` (rational functions over ℚ).
+-- See `QOU.Archimedean.GroundRing` for the compiled definition.
+abbrev R_q := RatFunc ℚ
+
+/-- The canonical indeterminate `q` of `R_q = ℚ(q)`. -/
+noncomputable def q_param : R_q := RatFunc.X
+
+/-- The formal inverse `q⁻¹` of the indeterminate in `R_q = ℚ(q)`. -/
+noncomputable def q_inv_param : R_q := RatFunc.X⁻¹
 
 /-- **Quantum group 𝒰_q(𝔰𝔲(2))** generator data. -/
 -- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
