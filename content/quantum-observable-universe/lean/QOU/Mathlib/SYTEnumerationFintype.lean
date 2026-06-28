@@ -551,4 +551,37 @@ theorem isStdFilling_of_entry (l a : List ℕ) (hlen : a.length = l.sum)
       rw [getD_of_lt (chunk l a) (by rw [chunk_length]; exact hi) []]
     rw [e0, e1]; exact hcolfact
 
+/-! ### The list roundtrip `sytToList ∘ entryFn = id` on valid fillings -/
+
+/-- Flattening the reshaped rows recovers the original flat list (when `a.length = ∑l`). -/
+theorem flatten_chunk (l a : List ℕ) (hlen : a.length = l.sum) :
+    (chunk l a).flatten = a := by
+  induction l generalizing a with
+  | nil =>
+    simp only [List.sum_nil] at hlen
+    rw [List.length_eq_zero_iff.mp hlen]; simp [chunk]
+  | cons len ls ih =>
+    simp only [chunk, List.flatten_cons, List.sum_cons] at *
+    rw [ih (a.drop len) (by rw [List.length_drop]; omega), List.take_append_drop]
+
+/-- The rows produced from `entryFn l a` are exactly the reshaped rows of `a`. -/
+theorem rowsOf_entryFn (l a : List ℕ) (hlen : a.length = l.sum) :
+    rowsOf l (entryFn l a) = chunk l a := by
+  apply List.ext_getElem
+  · rw [chunk_length]; unfold rowsOf; rw [List.length_map, List.length_finRange]
+  · intro i hi1 hi2
+    unfold rowsOf at hi1 ⊢
+    rw [List.length_map, List.length_finRange] at hi1
+    rw [List.getElem_map, List.getElem_finRange]
+    simp only [Fin.cast_mk, List.get_eq_getElem]
+    rw [← getD_of_lt (chunk l a) (by rw [chunk_length]; exact hi1) []]
+    rw [chunk_row_eq_map l a i hi1 hlen]
+
+/-- **List roundtrip**: reshaping `a` into an entry map and flattening it back is the identity (on
+fillings of the right length). -/
+theorem sytToList_entryFn (l a : List ℕ) (hlen : a.length = l.sum) :
+    sytToList l (entryFn l a) = a := by
+  unfold sytToList
+  rw [rowsOf_entryFn l a hlen, flatten_chunk l a hlen]
+
 end QOU.Mathlib.SYTEnum
