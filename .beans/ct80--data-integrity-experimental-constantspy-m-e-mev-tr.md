@@ -1,10 +1,11 @@
 ---
 # ct80
 title: 'Data-integrity: experimental_constants.py M_E_MEV truncated vs codata_constants sibling (me3r follow-up)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-06-24T17:51:20Z
-updated_at: 2026-06-24T17:51:20Z
+updated_at: 2026-06-28T14:07:57Z
 ---
 
 **Finding (me3r follow-up).** `computations/substrate/experimental_constants.py:41`

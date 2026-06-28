@@ -1,11 +1,11 @@
 ---
 # ce18
 title: 'Data-integrity: binding_alpha_shift_witness.py uses stale CODATA-2018 m_e (0.5109989461)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-28T05:50:00Z
-updated_at: 2026-06-28T05:50:00Z
+updated_at: 2026-06-28T14:07:56Z
 ---
 
 ## Finding (surfaced 2026-06-28, Δ_λ ℓ¹-ceiling session, while triaging the data-integrity queue)
