@@ -19,7 +19,7 @@ A property $\mathcal{P}(q)$ that holds for $q \in \mathbb{G}_m^{\mathrm{nt}}$
 (generic non-torsion) persists through $q = 1$ if and only if its
 **obstruction class** $[\mathcal{P}] \in HH^2(\mathrm{Ad})$ vanishes.
 
-**Why $HH^2$ controls the classical limit.**
+**Control of the classical limit by $HH^2$.**
 The classical limit $q \to 1$ is a deformation-theoretic
 specialisation: the family $\{A_q\}_{q \in \mathbb{G}_m}$ is a
 flat deformation of $A_1$ over the formal neighborhood of

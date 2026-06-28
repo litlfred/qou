@@ -58,7 +58,7 @@ The birthday trajectory discriminates algebraic from transcendental:
    algebraic); for transcendental $\alpha$, $a_j$ may grow
    unboundedly.
 
-## Why this is natural
+## Naturality of the construction
 
 Surreal construction is *exactly* the continued-fraction-like
 recursive construction of reals:
@@ -75,7 +75,7 @@ measures it algebraically (via birthday trajectory).
 The alignment is not coincidental — both are studying the same
 object: **how efficiently rationals approach a real**.
 
-## Consequences if true
+## Conjectural consequences
 
 1. **New proof strategy for Roth's theorem**: Roth's theorem
    becomes a statement about the birthday-growth rate of

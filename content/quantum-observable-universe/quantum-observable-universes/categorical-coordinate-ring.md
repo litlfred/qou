@@ -49,7 +49,7 @@ $\mathbb{G}_m$, which transports through the quantum-plane relation
 $y x = q\, x y$ to give $\iota \cdot q \cdot \iota^{-1} = q^{-1}$
 on the chart-transition coefficient.
 
-**Why semidirect, not direct.**  Composing the three maps in the
+**Semidirect, not direct.**  Composing the three maps in the
 chart-transition group on the affine coordinate $z$:
 
 $$

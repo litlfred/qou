@@ -21,7 +21,7 @@ $$
 with $e_+$ projecting onto $\mathrm{Sym}^2$ (bosonic) and
 $e_-$ onto $\bigwedge^2$ (fermionic).
 
-**How observation acts on each sector.**
+**Action of observation on each sector.**
 
 - **On bosons** ($\mathrm{Sym}^2$): the observation preserves
   the eigenspace.  The $\mathrm{Ad}$ action commutes with

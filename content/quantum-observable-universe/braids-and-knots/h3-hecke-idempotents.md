@@ -76,7 +76,7 @@ Two practical consequences:
    $q^{2\ell(w_0)} = q^6$; using the bare balanced factorial for
    *both* blocks makes neither projector idempotent.
 
-## What remains
+## Remaining work
 
 The abstract $H_n(q)$ type (the quotient-of-`FreeAlgebra`
 presentation a Mathlib lift would provide) is still outside the

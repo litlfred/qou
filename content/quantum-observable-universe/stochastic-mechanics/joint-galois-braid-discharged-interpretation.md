@@ -1,6 +1,6 @@
-**Remark (the conjecture was open in form, not content; what it discharges).**
+**Remark (the conjecture was open in form, not content; its discharge).**
 
-### Why the conjecture was open in form, not in content
+### Open in form, not in content
 
 The conjecture was *structurally automatic*: bar, cyclotomic Galois,
 and the rest of $G_{\mathrm{mot}}$ act on the *coefficient ring + shape
@@ -17,7 +17,7 @@ The proof took two ingredients already in the paper:
    ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)
    Cross-check 3).
 
-### What this discharges
+### Content discharged
 
 | Claim | Status before | Status after |
 |---|---|---|
@@ -25,7 +25,7 @@ The proof took two ingredients already in the paper:
 | Joint-action conjecture, *all* cells | conjectural ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)) | **theorem** (this prop.) |
 | Joint-action sharpness predictions | conditional | **conditional theorem** (depends only on the depth predictions of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) |
 
-### Significance: another conjecture moves to theorem
+### Significance: a further conjecture promoted to theorem
 
 The joint-action conjecture is now fully discharged. Combined with
 the small-cases bridge verification

@@ -36,7 +36,7 @@ The companion file [`markov-closure-map-axiomatic.lean`](markov-closure-map-axio
 
 - Proves `track_C_c_3_eq_neg_two`: under both classes, $c_3 = -2$.
 
-## What this achieves
+## Result
 
 **Before**: the `ThreeFoldMarkovHopfExtraction` class had a single
 broad axiomatic field encoding "the substantive 2-strand sub-braid

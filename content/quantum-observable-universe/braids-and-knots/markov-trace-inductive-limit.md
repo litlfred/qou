@@ -16,7 +16,7 @@ $\iota_n : \mathbf{B}_n \hookrightarrow \mathbf{B}_{n+1}$
 
 with $z = 1/(\sqrt{q} + 1/\sqrt{q})$ the Markov-Jones parameter.
 
-## What this block provides
+## Contents of this block
 
 The Lean module
 `QOU.BraidKnot.markov_trace_inductive_limit` provides:

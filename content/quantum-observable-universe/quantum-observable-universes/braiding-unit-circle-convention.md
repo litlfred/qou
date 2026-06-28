@@ -5,7 +5,7 @@ This labelling is a **convention**: one could equally define
 $q := \lambda_- = -q^{-1}$. The present choice is the
 **inside-unit-circle convention**.
 
-**Why $\lambda_+$ and not $\lambda_-$.** The
+**Choice of $\lambda_+$ over $\lambda_-$.** The
 [substrate parameter existence](#thm:substrate-parameter-exists)
 proof requires $q > 1$ over $\mathbb{R}$ (the `field_ge_one`
 positivity axiom). Under the Hecke relation

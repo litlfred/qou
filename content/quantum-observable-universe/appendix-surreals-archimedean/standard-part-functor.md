@@ -88,7 +88,7 @@ a specific infinitesimal-shifted surreal and take the standard-part.
 Unlike the topological limit, this construction makes sense in pure
 algebra.
 
-## Why this matters for QOU
+## Significance for QOU
 
 The main paper's mass formula outputs live in $\mathbb{Q}(q)$ with
 $q = q_0 \in \mathbb{R}$ as the substrate value. Under a surreal lift,

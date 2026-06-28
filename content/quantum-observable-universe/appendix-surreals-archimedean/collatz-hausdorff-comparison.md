@@ -89,7 +89,7 @@ the orbit expands, at $v = 2$ it contracts by $3/4$,
 and at $v \geq 3$ it contracts even faster.  There is
 no critical slowing-down and no superattraction.
 
-### What this means for the conjecture
+### Implications for the conjecture
 
 The Hausdorff recurrence converges **unconditionally**
 because $F'(q) < 1$ for all $q > 3/4$ — the derivative
