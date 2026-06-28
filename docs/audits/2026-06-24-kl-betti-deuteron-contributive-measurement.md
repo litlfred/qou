@@ -109,6 +109,32 @@ duplication:
   #2899/#2925.** Deep progress (Stage 2–5, sorry-free binding q-Gaussian Habiro
   tower). Not duplicated here.
 
+## A=4 (⁴He) empirical reconciliation (2026-06-28)
+
+Ran the reconciliation on `main` to test #2839's "$B_{(10,2)}=584$ closes A=4":
+
+- The **only runnable A=4 integration on main**, `a4_option_e_color_tube_closure.py`,
+  gives $|\Sigma_\lambda (y\cdot\chi\cdot\text{sign})| = 0.011567 \to 0.0059$ MeV raw
+  $\to \times10^3$ color-tube $= \mathbf{5.91}$ **MeV** vs AME 28.30 (**−79.1%**). It does
+  not close, and the $\times10^3$ is the retracted color-tube numerology (not Betti).
+- **No full signed $\Sigma_\lambda\,y\cdot\chi\cdot\text{sgn}\cdot B_\lambda$ exists on
+  main.** `chi-helium-4-h12-at-q0-50dps` is **17/77** partitions (`partial: true`;
+  producer `chi_4he_via_rust_lossless.py` is **Rust-gated** — `pyhecke_native`
+  unavailable, and the pure-Python matrix-M fallback is "infeasible for n=12" per its
+  own docstring — bean **b0vf**), and only $B_{(10,2)}$ of the 77 $B_\lambda$ is computed
+  (#2839, Rust). So the A=4 "closure" cannot be a full-sum result — it is a
+  single-partition scalar.
+- **Verdict:** on **both** computable fronts (A=2 full sum here; A=4 only-runnable
+  script) Option-E/KL-Betti is **contributive/insufficient, not closing**. Do **not**
+  re-chase an A=4 "closure" until (a) the 77-partition χ^λ table is complete (b0vf,
+  needs the Rust producer) **and** (b) all 77 $B_\lambda$ are computed (#2839 Rust);
+  then run the full signed $\Sigma_\lambda$ on
+  `option_e_kl_betti_contributive_deuteron.py` (it generalizes from the deuteron).
+
+(Bean-hygiene note: `t6ba` — the `path_b_habiro_mass_probe` A≥3 `check_q` crash — is
+verified **resolved on main**: the probe runs clean, exit 0; A≥3 atoms now skip
+gracefully on missing-witness data, a separate matter, not the crash.)
+
 ## Cross-references
 
 - [`2026-06-16-option-e-probe4-kl-positivity-prune.md`](2026-06-16-option-e-probe4-kl-positivity-prune.md) — the sign prune (stands)
