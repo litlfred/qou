@@ -1,21 +1,7 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-06-28T06:43:51.852Z",
+  "updated_at": "2026-06-28T14:46:37.169Z",
   "entries": {
-    "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean::BorromeanQuark::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "true-class-field",
-      "line": 247,
-      "verdict": "needs-agent",
-      "file_sha": "800365aee7af"
-    },
-    "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean::BorromeanQuark::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "true-class-field",
-      "line": 183,
-      "verdict": "needs-agent",
-      "file_sha": "3b81c71853fb"
-    },
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
       "category": "proof-no-false-premise",
       "pattern": "discharged-impossible-hyp",
