@@ -71,10 +71,15 @@ def CanonicalBraid.boundaryPerm : CanonicalBraid → ColorSector → ColorSector
 theorem boundaryPerm_bijective (β : CanonicalBraid) :
     Function.Bijective β.boundaryPerm := by
   refine ⟨?_, ?_⟩
-  · intro s₁ s₂ h
-    cases β <;> cases s₁ <;> cases s₂ <;>
-      first | rfl | (exfalso; apply absurd h; decide)
-  · intro s
+  · -- Injectivity: a finite check over the 3×3 colour pairs for each of the
+    -- six braids.  After casing, `boundaryPerm` reduces to a concrete colour
+    -- and the hypothesis `h` to a concrete colour equality; `simp_all`
+    -- closes the diagonal (`rfl`) cases and rules out the off-diagonal ones
+    -- by `ColorSector` no-confusion (no contradictory-premise discharge).
+    intro s₁ s₂ h
+    cases β <;> cases s₁ <;> cases s₂ <;> simp_all [CanonicalBraid.boundaryPerm]
+  · -- Surjectivity: exhibit a preimage colour for each target.
+    intro s
     cases β <;> cases s <;>
       (first
         | (exact ⟨ColorSector.red,   by decide⟩)
@@ -122,7 +127,18 @@ theorem garside_swaps_red_blue :
 theorem boundaryPerm_injective :
     Function.Injective CanonicalBraid.boundaryPerm := by
   intro β₁ β₂ h
-  cases β₁ <;> cases β₂ <;> first | rfl | (exfalso; apply absurd h; decide)
+  -- For distinct constructors the two boundary permutations disagree on at
+  -- least one colour sector; evaluating the function equality `h` at the red
+  -- and green witnesses (`congrFun`) yields a concrete colour equality that
+  -- `simp_all` resolves — diagonal cases by `rfl`, off-diagonal by
+  -- `ColorSector` no-confusion.  (Function equality is not decidable, so we
+  -- evaluate at witnesses rather than `decide`-ing the functions.)
+  cases β₁ <;> cases β₂ <;>
+    first
+      | rfl
+      | (have hr := congrFun h ColorSector.red
+         have hg := congrFun h ColorSector.green
+         simp_all [CanonicalBraid.boundaryPerm])
 
 /-- The number of distinct boundary permutations realised by the
     six canonical braids is exactly $6 = |S_3|$.  Together with

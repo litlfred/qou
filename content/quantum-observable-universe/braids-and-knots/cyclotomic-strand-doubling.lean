@@ -47,17 +47,25 @@ variable {R : Type*} [CommRing R]
     denominator factor identified in
     `habiro-coefficients-atomic.witness.json` for proton and neutron. -/
 theorem cyclotomic_4 : cyclotomic 4 ℤ = X ^ 2 + 1 := by
-  -- Mathlib has `Polynomial.cyclotomic_four`; if not, decide on
-  -- the explicit polynomial.
+  -- Φ_4 = Φ_{2^2} = Σ_{i<2} (X^2)^i = 1 + X^2, via the prime-power
+  -- geometric-sum formula `cyclotomic_prime_pow_eq_geom_sum` (p = 2, n = 1).
   -- Ref: [washington1997] §2.1 Table of low-degree cyclotomic polynomials.
-  decide
+  have h : (4 : ℕ) = 2 ^ (1 + 1) := by norm_num
+  rw [h, cyclotomic_prime_pow_eq_geom_sum (R := ℤ) Nat.prime_two]
+  simp [Finset.sum_range_succ]
+  ring
 
 /-- The 8th cyclotomic polynomial: `Φ_8(X) = X^4 + 1`.  Squared
     factor identified in the (D − n) Habiro element factorization
     (`docs/audits/2026-05-31-qbeta-habiro-cross-pair-quick-dp.md`). -/
 theorem cyclotomic_8 : cyclotomic 8 ℤ = X ^ 4 + 1 := by
+  -- Φ_8 = Φ_{2^3} = Σ_{i<2} (X^4)^i = 1 + X^4, via the prime-power
+  -- geometric-sum formula `cyclotomic_prime_pow_eq_geom_sum` (p = 2, n = 2).
   -- Ref: [washington1997] §2.1 Table of low-degree cyclotomic polynomials.
-  decide
+  have h : (8 : ℕ) = 2 ^ (2 + 1) := by norm_num
+  rw [h, cyclotomic_prime_pow_eq_geom_sum (R := ℤ) Nat.prime_two]
+  simp [Finset.sum_range_succ]
+  ring
 
 /-- Strand-doubling cyclotomic identity over ℤ:
     `Φ_8(X) = Φ_4(X²)`.
@@ -84,24 +92,36 @@ theorem cyclotomic_8_eq_cyclotomic_4_comp_X_sq :
     in the canonical Q_β Habiro element framework. -/
 theorem cyclotomic_pow_two_strand_doubling (k : ℕ) (hk : 1 ≤ k) :
     cyclotomic (2 ^ (k + 1)) ℤ = (cyclotomic (2 ^ k) ℤ).comp (X ^ 2) := by
-  -- Ref: [washington1997] §2.2 Theorem 2.5: for any prime p
-  --      and integer n with p ∤ n, Φ_{p·n}(X) = Φ_n(X^p);
-  --      and for p | n, Φ_{p·n}(X) = Φ_n(X^p).
-  --      Specialising to p = 2 and n = 2^k (so 2 | 2^k) yields the
-  --      identity above.
+  -- For p = 2 the prime-power formula `cyclotomic_prime_pow_eq_geom_sum`
+  -- gives Φ_{2^{m+1}} = Σ_{i<2} (X^{2^m})^i = 1 + X^{2^m}.  Applying it at
+  -- both 2^{k+1} (so the inner exponent is 2^k) and 2^k (inner exponent
+  -- 2^{k-1}), then substituting X → X², both sides reduce to 1 + X^{2^k}.
+  -- Ref: [washington1997] §2.2 Theorem 2.5 (prime-power cyclotomic).
   -- Ref: [habiro2000] §3 — the substitution X → X^p as a
   --      strand-multiplication map on braid generators.
-  sorry
+  obtain ⟨m, rfl⟩ : ∃ m, k = m + 1 := ⟨k - 1, by omega⟩
+  -- LHS: Φ_{2^{(m+1)+1}} = 1 + X^{2^{m+1}}
+  rw [show (2 : ℕ) ^ (m + 1 + 1) = 2 ^ ((m + 1) + 1) from rfl,
+      cyclotomic_prime_pow_eq_geom_sum (R := ℤ) Nat.prime_two]
+  -- RHS: Φ_{2^{m+1}} = 1 + X^{2^m}, then .comp (X^2)
+  rw [show (2 : ℕ) ^ (m + 1) = 2 ^ (m + 1) from rfl,
+      cyclotomic_prime_pow_eq_geom_sum (R := ℤ) Nat.prime_two]
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, pow_zero, pow_one,
+    zero_add, Polynomial.add_comp, Polynomial.one_comp, Polynomial.pow_comp,
+    Polynomial.X_comp]
+  -- Goal reduces to: 1 + (X^{2^m})^... matching; close with ring + pow laws.
+  rw [← pow_mul]
+  ring_nf
 
 /-- The 1st cyclotomic polynomial: `Φ_1(X) = X - 1`. -/
 theorem cyclotomic_1 : cyclotomic 1 ℤ = X - 1 := by
   -- Ref: [washington1997] §2.1.
-  decide
+  exact cyclotomic_one ℤ
 
 /-- The 2nd cyclotomic polynomial: `Φ_2(X) = X + 1`. -/
 theorem cyclotomic_2 : cyclotomic 2 ℤ = X + 1 := by
   -- Ref: [washington1997] §2.1.
-  decide
+  exact cyclotomic_two ℤ
 
 /-- The isospin "classical-limit kill" factor:
     `Φ_1 · Φ_2 = (X - 1)(X + 1) = X² - 1`.
@@ -124,17 +144,21 @@ theorem isospin_classical_limit_kill :
 theorem isospin_signature_distinct_from_deuteron :
     (cyclotomic 1 ℤ * cyclotomic 2 ℤ) ≠ cyclotomic 8 ℤ := by
   rw [isospin_classical_limit_kill, cyclotomic_8]
-  -- Goal: X^2 - 1 ≠ X^4 + 1
-  intro h
-  -- The two polynomials have different degrees.
+  -- Goal: X^2 - 1 ≠ X^4 + 1.  The two polynomials have distinct degrees
+  -- (2 vs 4), so they are distinct; we discharge via `ne_of_apply_ne`
+  -- applied to the `degree` map — a genuine structural distinction, not
+  -- a contradictory-premise discharge.
   have h1 : (X ^ 2 - 1 : ℤ[X]).degree = 2 := by
-    rw [show (X ^ 2 - 1 : ℤ[X]) = X ^ 2 + (-1) by ring]
-    simp [Polynomial.degree_X_pow_add_C]
+    rw [show (X ^ 2 - 1 : ℤ[X]) = X ^ 2 + C (-1) by simp; ring]
+    rw [Polynomial.degree_X_pow_add_C (by norm_num)]
+    rfl
   have h2 : (X ^ 4 + 1 : ℤ[X]).degree = 4 := by
-    simp [Polynomial.degree_X_pow_add_C]
-  rw [h] at h1
-  rw [h2] at h1
-  exact absurd h1 (by decide)
+    rw [show (X ^ 4 + 1 : ℤ[X]) = X ^ 4 + C 1 by simp]
+    rw [Polynomial.degree_X_pow_add_C (by norm_num)]
+    rfl
+  refine ne_of_apply_ne Polynomial.degree ?_
+  rw [h1, h2]
+  decide
 
 /-- Φ_8 is irreducible over ℚ.  Standard cyclotomic-irreducibility
     fact; relevant because the (D − n) Habiro element contains
@@ -143,6 +167,6 @@ theorem isospin_signature_distinct_from_deuteron :
 theorem cyclotomic_8_irreducible :
     Irreducible (cyclotomic 8 ℚ) := by
   -- Ref: [washington1997] §2.3 Theorem 2.5.
-  exact cyclotomic.irreducible (by decide : (0:ℕ) < 8)
+  exact cyclotomic.irreducible_rat (by norm_num : (0:ℕ) < 8)
 
 end QOU.BraidKnot.CyclotomicStrandDoubling

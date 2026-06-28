@@ -1,4 +1,6 @@
 import Mathlib.Data.Nat.Basic
+import Mathlib.Algebra.Group.Even
+import Mathlib.Tactic.Common
 
 
 /-!
@@ -26,7 +28,7 @@ def alexanderWeightDifference (N : ℕ) : ℕ :=
 /-- For N = 6, the Alexander weight difference is 2. -/
 -- Ref: [manuscript] Ch. 10, Proposition: Predicted vs. observed barrier
 theorem alexander_weight_diff_six : alexanderWeightDifference 6 = 2 := by
-  native_decide
+  decide
 
 /-- The weight difference increases with N (for even N ≥ 4). -/
 -- Ref: [manuscript] Ch. 10, Proposition: Ring-closure energy barrier
