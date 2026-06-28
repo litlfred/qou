@@ -111,6 +111,31 @@ duplication:
 
 ## A=4 (⁴He) empirical reconciliation (2026-06-28)
 
+**Update (2026-06-28, COMPUTED — `pyhecke_native` built per owner direction).**
+The bullets below (earlier same-day pass) were partly wrong; corrected here:
+
+- **The complete 77/77 ⁴He χ^λ was already on `main`** — in
+  `chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json` (`partial: false`). My earlier
+  "χ 17/77 / can't compute" was a **file mix-up**: 17/77 is the *stale*
+  `chi-helium-4-h12-at-q0-50dps.witness.json` (bean **b0vf** = a stale-partial /
+  consumer-pointer issue, **not** a missing computation). So the full A=4 **f^λ**
+  sum was always computable from `main`.
+- **Computed the full A=4 f^λ binding** (all 77, exact —
+  `option_e_a4_full_reconciliation.py` + witness): $\Sigma_f=-10.867 \Rightarrow$
+  **B(⁴He)_f = 5.55 MeV (−80.4%)**, needs **×5.10** to close. (The
+  `a4_option_e_color_tube_closure.py` −79% in the bullets below is a *different*,
+  degenerate raw×10³ object — superseded by this proper f^λ sum.)
+- **The full A=4 *Betti* sum is genuinely infeasible**, even with pyhecke built:
+  `kl_betti_sum_rust` on a shallow shape ($(10,2)$, $n(\lambda)=2$) is ~100 s, and the
+  column-like shapes ($(1^{12})$, …) contain $w_0$ (length 66 → the full $S_{12}$
+  Bruhat interval) — uncomputable. This is *why* #2839 published only $B_{(10,2)}$.
+  Only $(12),(11,1)$ (trivial, $B_\lambda=f^\lambda$) computed in-budget here.
+- **Verdict (unchanged, strengthened):** A=4 does **not** close — f^λ is −80.4%
+  (×5.10 short), and the deuteron's *full* Betti uplift is only ×2.0, so even a
+  feasible Betti sum (~×2) lands near 11 MeV (−60%). #2839's "$B_{(10,2)}=584$
+  closes A=4" is **refuted**: the real A=4 f^λ binding is 5.55 MeV, and no Betti
+  sum reaches 28.30 MeV.
+
 Ran the reconciliation on `main` to test #2839's "$B_{(10,2)}=584$ closes A=4":
 
 - The **only runnable A=4 integration on main**, `a4_option_e_color_tube_closure.py`,
