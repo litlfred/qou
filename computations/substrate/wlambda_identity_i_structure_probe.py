@@ -25,9 +25,14 @@ from fractions import Fraction
 from math import comb, factorial
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sympy as sp
 
-q = sp.Symbol("q", positive=True)
+# Shared cached symmetric quantum-dim machinery (bean z3a2; PR #2952): q, qfact, dim_q.
+# The classical SYT/hook combinatorics (f_lambda, hook, conj, …) + list-form partitions stay
+# local — different hook/leg arg order, and the W_λ witness keys embed list-form partitions, so
+# dim_q (which needs a hashable tuple) is called as dim_q(tuple(lam)).
+from young_qdim import q, qfact, dim_q  # noqa: E402,F401
 
 
 # ---------- Young-diagram combinatorics (classical) ----------
@@ -133,33 +138,16 @@ sum_h_elementary_ok = all(
 )
 
 # ---------- (C) W_λ = d_q(λ)²/[n]_q! : q-Plancherel + cyclotomic structure ----------
-def qint(k):
-    return (q ** k - q ** (-k)) / (q - 1 / q)
-
-
-def qfact(n):
-    r = sp.Integer(1)
-    for k in range(1, n + 1):
-        r *= qint(k)
-    return r
-
-
-def dim_q(lam):
-    cj = conj(lam)
-    d = qfact(sum(lam))
-    for (i, j) in cells(lam):
-        d /= qint(hook(lam, cj, i, j))
-    return sp.cancel(sp.together(d))
-
-
+# qint / qfact / dim_q now come from young_qdim (imported above). dim_q is lru_cached and needs
+# a hashable partition, so it is called as dim_q(tuple(lam)) on the local list-form partitions.
 def W_lambda(lam):
-    return sp.cancel(sp.together(dim_q(lam) ** 2 / qfact(sum(lam))))
+    return sp.cancel(sp.together(dim_q(tuple(lam)) ** 2 / qfact(sum(lam))))
 
 
 # q-Plancherel normalization  Σ_λ d_q(λ)² = [n]_q!  (⇒ Σ_λ W_λ = 1) — the q-RSK sibling identity
 qplanch = {}
 for n in range(1, 7):
-    lhs = sp.cancel(sp.together(sum(dim_q(lam) ** 2 for lam in partitions(n))))
+    lhs = sp.cancel(sp.together(sum(dim_q(tuple(lam)) ** 2 for lam in partitions(n))))
     qplanch[n] = bool(sp.simplify(lhs - qfact(n)) == 0)
 qplanch_ok = all(qplanch.values())
 
