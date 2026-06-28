@@ -33,3 +33,13 @@ formalisation and experimental comparison):
   SnapPy $\mathrm{Vol}(4_1)$ and CODATA $m_\mu/m_e$), the
   $(Z, N)$ scan is a categorical probe of the Standard Model's
   discrete nuclear-structure hierarchy.
+
+**Related**:
+- Complementary to the LP-dual shadow prices
+  ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)),
+  which give only scalar per-partition variables.
+- The $q$-dependence of the couplings $c_{\lambda\lambda'}(q)$
+  (varying $q$ at fixed $Z, N$) detects SUBSTRATE regime switches
+  — cosmological transitions, Big-Bang to heat-death across the
+  $q$-time coordinate ([$q$-heat equation](#def:q-heat-equation)).
+  This extension is deferred to a future commit.

@@ -45,13 +45,3 @@ $\square$
 with `sdp_with_atom_observables(Z, N, partition_entries,
 pair_couplings)` using the `cvxpy` SDP solver; falls back to
 scalar LP if `cvxpy` unavailable.
-
-**Related**:
-- Complementary to the LP-dual shadow prices
-  ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)),
-  which give only scalar per-partition variables.
-- The $q$-dependence of the couplings $c_{\lambda\lambda'}(q)$
-  (varying $q$ at fixed $Z, N$) detects SUBSTRATE regime switches
-  — cosmological transitions, Big-Bang to heat-death across the
-  $q$-time coordinate ([$q$-heat equation](#def:q-heat-equation)).
-  This extension is deferred to a future commit.

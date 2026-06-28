@@ -7,6 +7,8 @@ export default remark({
   uses: [
     "prop:sdp-regime-switch",
     "prop:q-heat-kernel-peter-weyl",
+    "prop:mass-coefficient-shadow-price",
+    "def:q-heat-equation",
   ],
   tags: [
     "sdp",
