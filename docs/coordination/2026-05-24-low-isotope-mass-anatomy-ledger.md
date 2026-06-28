@@ -320,3 +320,37 @@ siblings + s5-so3 main drift dispatched.
   review threads to triage.
 - **Convergence note:** #2531 and I independently reached `[2ℓ+1]_q` (penetration
   + 2n² capacity). The shared open piece is the scale balance.
+
+### 2026-06-28 coordinate pass — #3016 brane-tower m_can + Borromean per-knot binding
+
+**Branch:** `claude/deuteron-m-sym-error-rf9i4u` · **PR:** #3016 · **Bean:** `km42`.
+
+**Canonical (what landed / is settled):**
+- Dashboard headline mass is now **`m_can⁰ = m_unbnd,can − E₀·Δtr`** (brane-tower
+  level 0), replacing the exploratory log `m_sym`. Pure Markov × m_e; zero
+  AME/CODATA beyond CAL-1/CAL-2. Deuteron mass error 6× better than the log.
+- **Convergence law (derived, formalize-first):** the per-braid Li₂^q tower
+  converges iff the nucleon trace `<1`. The **atom-word** proton `tr_p=1.0653>1`
+  diverges the free pp pair for Z≥2 (= the superseded per-generator divergence
+  class). The **Borromean** nucleon `τ=|tr_M(β_Bor)|=0.9986<1` converges ∀Z.
+- **Conventions derived from the categorical action** (not chosen): binding
+  dilog sign `g(x)=−Li₂^q(−x)` (bar-even channel `bar-parity-split.md` + Hecke
+  −q⁻¹); A=2 pair included (distinct functional). Refs:
+  `docs/audits/2026-06-28-brane-tower-formalize-first-plan.md`.
+- **Single pipeline (ties in bean `ovud`):** nucleon mass (`F_Bor`) and binding
+  both flow from the one Borromean `τ`. `computations/borromean_binding_recompute.py`.
+
+**Gaps (the frontier — for siblings working Δ_λ / lever-1 / option-e):**
+- The Borromean tower has the **right shape** (binding grows with pair count:
+  ¹⁶O err 31×→2.3×) but the **wrong normalization** — under-binds mid-mass,
+  over-binds ⁵⁶Fe. This is exactly the **Δ_λ per-partition-weight frontier**:
+  my tower applies a *uniform* E₀ where the canonical `B=m_e·Σ_λ y_λ χ^λ Δ_λ`
+  carries a per-λ weight. NOT a truncation error.
+- Cross-link #2985 (z2bn Stage-6): the binding correction tower is **not** a
+  single low-order q-hypergeometric/Habiro element — consistent; I am not
+  re-chasing a single-element closure.
+- Open structural lever (per AGENTS.md Δ_λ gate — NOT a 7th fit): GAP-A-3/A-4
+  brane-tower level selection / ρ general rule.
+
+**Siblings flagged:** #3014 (same dashboard file, non-overlapping region — rebase
+heads-up), #2985 (binding-tower domain — finding cross-linked).
