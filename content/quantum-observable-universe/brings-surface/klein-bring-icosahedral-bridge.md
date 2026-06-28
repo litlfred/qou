@@ -60,22 +60,51 @@ lattice-compatible) and the $5$-fold (weak, aperiodic, parity-violating) are
 **distinct irreducible components** — they do not assemble into one icosahedral
 group through the trefoil's perpendicular $e_1, e_3$ axes.
 
-## What survives (the sharpened conjecture)
+## Construction — the surviving group-theoretic core is discharged
 
-The proof attempt **narrows** the open content. Klein's icosahedral $A_5
-\subset \mathrm{PGL}(V)$ on $\mathbb{P}(V)$ exists as classical geometry; the
-conjecture is that
+Klein's icosahedral generators on $\mathbb{P}(V)$ (coordinate $w$,
+$\varepsilon = e^{2\pi i/5}$ \cite{klein1888}) supply the icosahedral-angle pair
+the trefoil could not — and the order-$5$ element is *exactly the corpus
+$\zeta_5$ pentad*:
 
-- this icosahedral $A_5$ — with order-$2$ and order-$3$ generators at the
-  **icosahedral angle** ($\arccos$ of the vertex–face inner product), *distinct*
-  from the trefoil's perpendicular pair — is realised on the Bring base
-  $\mathbb{P}(V)$ through Klein's resolvent of the Bring–Jerrard quintic, and
-- its quotient $\mathbb{P}(V)/A_5 \cong S^2(2,3,5)$ is the keystone Seifert base
-  of $S^3/2I$.
+$$
+  S : w \mapsto \varepsilon\, w \quad (\text{the } \zeta_5 \text{ pentad, order } 5,\ \text{fixing } 0/\infty),
+  \qquad
+  T = \tfrac{1}{\sqrt5}\begin{pmatrix} \varepsilon-\varepsilon^4 & \varepsilon^2-\varepsilon^3 \\ \varepsilon^2-\varepsilon^3 & -(\varepsilon-\varepsilon^4)\end{pmatrix}
+  \ (\text{icosahedral } 2\text{-fold}).
+$$
+
+Setting $c_2 = T$ (order $2$) and $c_3 = TS$ (order $3$) gives
+$c_2 c_3 = T\,TS = S$ — the $\zeta_5$ pentad, of order **exactly $5$**, with
+$S^5 = T^2 = (ST)^3 = 1$, so $\langle S, T\rangle \cong A_5$ (order $60$). Thus
+order-$2$/order-$3$ generators at the icosahedral angle, *distinct* from the
+trefoil's perpendicular pair, **exist** and assemble the $\zeta_5$ pentad into
+the icosahedral $A_5$. Verified parameter-free in
+[`scripts/keystone_klein_icosahedral_construction.py`](https://github.com/litlfred/qou/blob/main/scripts/keystone_klein_icosahedral_construction.py);
+the abstract realizability of the $(2,3,5)$ relation is Lean-proved sorry-free
+(`icosahedral_235_realizable`: explicit even permutations $(1\,2)(3\,4)$,
+$(0\,2\,4)$ with product the $5$-cycle), the positive complement to the
+$(2,3,2)$ refutation.
 
 The six branch points $\{\zeta_5^k, \infty\}$ are not $A_5$-invariant (no
 icosahedral orbit has size $6$; minimum $12$): they are the $C_5$-pentagon
-skeleton, the vertex-stabiliser data, not the full icosahedral set.
+skeleton — the equatorial $S$-orbit — not the full icosahedral set.
+
+## The sole residual open content
+
+With the group-theoretic core discharged, the **only** remaining conjectural
+claim is the geometric identification
+
+$$
+  \mathbb{P}(V)/A_5 \;\cong\; S^2(2,3,5)
+  \quad = \quad \text{the Seifert base of } S^3/2I,
+$$
+
+i.e. that the orbit space of the constructed icosahedral action *is* the
+keystone Poincaré-sphere base, via Klein's resolvent of the Bring–Jerrard
+quintic. In the Lean class `KleinBringIcosahedralBridge` this is the pair of
+open fields `proj_orbit_constant` / `proj_separates_orbits` (the quotient map
+$\mathbb{P}(V) \to S^2(2,3,5)$); no instance is constructed.
 
 ## Scope
 
