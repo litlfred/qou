@@ -59,6 +59,34 @@ normalization question the ledger records (*"#2524 proposes `d_q²/D²` (Σ=1) v
 total-quantum-dimension `D² = Σ_λ d_q²` normalization, not `[n]_q!`. The witness records the per-λ
 `W_λ` cyclotomic denominators (the Habiro habitat) for the colored-Σ(2,3,5)-WRT bridge.
 
+## Finding 3 — q-Askey placement: binding = q-Hermite *moments*, W_λ = its *measure*, and the `𝔙` framing
+
+Probe [`binding_qaskey_product_probe.py`](../../computations/substrate/binding_qaskey_product_probe.py)
+(witness [`binding-qaskey-product-probe.witness.json`](../../computations/substrate/binding-qaskey-product-probe.witness.json))
+places the binding side in the **q-Askey scheme**.
+
+- **Simple q-Askey product form REFUTED (a).** If the binding generating function
+  `Ĝ(z)=Σ S(m) z^m/N(m)` were a closed-form q-Pochhammer product `∏(z qᵃ;q)_∞^{cᵃ}`, each
+  `L_m·(1−qᵐ)` would be a Laurent polynomial. It is not — in **both** the symmetric `[m]_q!` and
+  the standard q-Askey `(q;q)_m` normalizations, residual cyclotomic factors survive — consistent
+  with the not-low-order-q-holonomic result (PR #2899, Stages 3–4).
+- **Family map (positive, stands).** The binding period `S(m)=Σ_λ dim_q(λ)` is the **q-Hermite /
+  Rogers–Szegő MOMENT** sequence (q=1 → involution numbers = Hermite moments; main's
+  `FollowsRogersSzego`/`rsSeq` is the same family). `W_λ = d_q²/D²` is that family's **Plancherel /
+  orthogonality MEASURE**. The W_λ arena is the **Hahn–Exton q-Bessel** `E_q(2)` contraction — one
+  q-Askey degeneration away. The bridge between moments and measure is the **three-term recurrence /
+  orthogonality** (`FollowsRogersSzego`), **not** a product generating function.
+- **`𝔙` framing (the unification).** `𝔙(K) = E₀·tr_M((Π_free−1)∘ℳ) ∈ ℂ` is the **complex-volume
+  observable** (Neumann–Zagier `𝕍 = Vol + i·CS` analogue; `conj:binding-qbeta-complex-volume`):
+  - `Re 𝔙 = 𝔈_bind` — binding, **bar-even / cosh** — *this is the binding q-Hermite moment*;
+  - `Im 𝔙 = 𝔔_β` — β-decay Q-value, **bar-odd / sinh** — the `c_k` Habiro element.
+
+  The q-Askey `q = e^η` cosh/sinh grading **is** the `Re/Im = binding/Q_β = Vol/CS` split of `𝔙`.
+  So the binding side **describes `Re 𝔙`**; the full `𝔙` is the *complex* q-Hermite/Askey object
+  whose real part is the binding moment and imaginary part the Q_β Habiro element — one object,
+  two bar-parities. (This is also why the binding `D(m)` factors are real-q `ℤ[q]` while the Q_β
+  `c_k` are ζ-fibre/complex: they are `Re` and `Im` of the same `𝔙`.)
+
 ## Consequence for the next step
 
 The Identity-I Lean closure splits into:
