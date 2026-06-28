@@ -1,5 +1,16 @@
 # q ↔ CAL anchor drift, and a validity review of four "local-q" routes
 
+> **🟧 SUPERSEDED (calibration framing) — see
+> [`2026-06-28-calibration-canon-decay-width-ruling.md`](2026-06-28-calibration-canon-decay-width-ruling.md).**
+> This doc's "CORRECTION" below makes the **muon / lepton-ratio** form
+> canonical (`CAL-2 = m_μ/m_e`, `Q_β` *derived*). The **owner ruling
+> 2026-06-26 reversed that**: the ideal-math canonical is the **decay-width**
+> triple `(m_e, 𝔇_β, 𝔇_π)`, with the masses and `Q_β` as *proxies*
+> (`Q_β` is the CAL-2 proxy, not "derived"). The two-layer q₀ anchor
+> discussion (muon ideal vs proton experimental) below remains valid; only
+> the *which-observable-is-canonical* labelling is reversed. Do not re-derive
+> the mass-canonical form from this doc.
+
 **Date:** 2026-06-16
 **Branch:** `claude/gracious-lovelace-uzuovl`
 **Scope:** exploration only — documents a documentation-drift finding
