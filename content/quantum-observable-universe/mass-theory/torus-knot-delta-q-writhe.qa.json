@@ -1600,7 +1600,265 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.383Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.390Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "torus-knot-delta-q-writhe.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.396Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$'.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.402Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$' as verified, but the sibling Lean proof contains sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.408Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$'.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.414Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.420Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.427Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.433Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.439Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.445Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Writhe exponent of the torus-knot $\\\\delta_q$ decoration: $\\\\delta_q(T_{m,p}) = h\\\\,[(m-1)p]_q$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "torus-knot-delta-q-writhe.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.451Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean contains sorry, indicating incomplete verification.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:42.458Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T10:58:42.463Z"
 }

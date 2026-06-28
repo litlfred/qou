@@ -1102,21 +1102,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:13.099Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:58:54.798Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Chirality / non-chirality split: $\\\\mathfrak{m} = \\\\mathfrak{m}^{\\\\mathrm{chir}} + \\\\mathfrak{m}^{\\\\neg\\\\mathrm{chir}}$ refining the unified mass formula'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1159,21 +1158,20 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:14.294Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
+        "reviewed_at": "2026-06-28T10:58:54.804Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Narrative in content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.md matches the Lean sibling structure in content/quantum-observable-universe/mass-theory/chirality-residue-mass-term.lean.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1197,25 +1195,20 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:15.265Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T10:58:54.811Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Proof compiles successfully, confirming goal plausibility.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
@@ -1243,81 +1236,77 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:15.943Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T10:58:54.817Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:16.318Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T10:58:54.823Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:16.708Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T10:58:54.829Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:17.101Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T10:58:54.835Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1341,21 +1330,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "7138560af961",
+          "md": "3d60563b1640",
           "ts": "6beed0e93789",
-          "lean": "3ef4dd2f8d41"
+          "lean": "c94ce889a052"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:17.781Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T10:58:54.841Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1604,5 +1592,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T10:58:54.847Z"
 }

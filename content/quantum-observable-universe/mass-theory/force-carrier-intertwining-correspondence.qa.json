@@ -1068,21 +1068,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "79f5d16a9ee9",
+          "md": "021309e9b8e6",
           "ts": "bdfc6dfa9089",
           "lean": "6aa5cd41d2a4"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:12.189Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:58:53.984Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\\\\lambda = (p, 1^{n-p})$'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1176,65 +1175,20 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "79f5d16a9ee9",
+          "md": "021309e9b8e6",
           "ts": "bdfc6dfa9089",
           "lean": "6aa5cd41d2a4"
         },
-        "result": "warn",
-        "score": {
-          "value": 0.34,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:14.246Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carries math structure and definitions."
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "pass",
-        "notes": "Torus-knot T_{p,q} landing on Wedderburn channel (p,1^{n-p}) is well-posed with witness backing (delta-q-decoration: (3,1),(2,1,1) for H_4).",
-        "reviewed_at": "2026-06-25T17:03:27.000Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
+        "reviewed_at": "2026-06-28T10:58:53.991Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean code in content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean is broken and does not compile, hence goal plausibility cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
@@ -1262,77 +1216,39 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:15.005Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Declaration contains sorryAx or unexpected axioms."
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "fail",
-        "notes": "Lean is 'def force_carrier... : True := by trivial' (def-disguised-True per §1a). Encodes none of the λ=(p,1^{n-p}) dominant-weight claim. Vacuous.",
-        "reviewed_at": "2026-06-25T17:03:27.000Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
+          "md": "021309e9b8e6",
           "ts": "bdfc6dfa9089",
           "lean": "6aa5cd41d2a4"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:15.362Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T10:58:53.997Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "021309e9b8e6",
+          "ts": "bdfc6dfa9089",
+          "lean": "6aa5cd41d2a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.004Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
@@ -1374,57 +1290,20 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:16.125Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
+          "md": "021309e9b8e6",
           "ts": "bdfc6dfa9089",
           "lean": "6aa5cd41d2a4"
         },
         "result": "pass",
-        "notes": "hp:p≤n and hq:gcd p q=1 are jointly satisfiable (e.g. p=2,q=9,n=4). No contradictory premise.",
-        "reviewed_at": "2026-06-25T17:03:27.000Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.010Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1448,39 +1327,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "79f5d16a9ee9",
-          "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:16.852Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "79f5d16a9ee9",
+          "md": "021309e9b8e6",
           "ts": "bdfc6dfa9089",
           "lean": "6aa5cd41d2a4"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean, content/quantum-observable-universe/lean/QOU/BraidKnot.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.017Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1729,5 +1589,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T10:58:54.023Z"
 }

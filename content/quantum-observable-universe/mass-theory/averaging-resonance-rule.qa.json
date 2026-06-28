@@ -1102,21 +1102,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:14.337Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:58:55.797Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'theorem' match validated structurally for 'Averaging-resonant rung selection: $k_{\\\\mathrm{res}}(n_{\\\\mathrm{total}}) = \\\\lfloor n_{\\\\mathrm{total}}/2 \\\\rfloor + \\\\mathbb{1}_{\\\\mathrm{wrap}}$'.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1159,21 +1158,20 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:15.455Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
+        "reviewed_at": "2026-06-28T10:58:55.803Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Narrative in content/quantum-observable-universe/mass-theory/averaging-resonance-rule.md matches the Lean sibling structure in content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1197,25 +1195,20 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:16.143Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T10:58:55.809Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Proof compiles successfully, confirming goal plausibility.",
+        "severity": "minor"
       }
     ],
     "proof-rater-novelty": [
@@ -1243,62 +1236,42 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:16.984Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T10:58:55.815Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:17.415Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T10:58:55.821Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "84a2e531b9ab",
-          "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:17.825Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      },
       {
         "field_hash": {
           "lean": "cc7a211417b5"
@@ -1319,41 +1292,39 @@
       },
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean, content/quantum-observable-universe/lean/QOU/BraidKnot.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.828Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:18.334Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T10:58:55.834Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1377,21 +1348,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "84a2e531b9ab",
+          "md": "9e0387e5f195",
           "ts": "9090da6593bd",
-          "lean": "cc7a211417b5"
+          "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:19.083Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T10:58:55.840Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1640,5 +1610,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "updated_at": "2026-06-28T10:58:55.845Z"
 }

@@ -978,7 +978,265 @@
           "value": 0.78
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.813Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.820Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "isospin-from-canonical-bowtie.lean:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.827Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)'.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.833Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)' as verified, but the sibling Lean proof contains sorry stubs.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.849Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)'.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.857Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.863Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.869Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations kashiwara1991, wenzl1988, lusztig1990, wigner1937,  in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.875Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.882Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.888Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Canonical $\\\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\\\bowtie_K$ interface (regularised crystal extension)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "isospin-from-canonical-bowtie.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.894Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean contains sorry, indicating incomplete verification.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ae7b6d892c36",
+          "ts": "41a802b4f1c0",
+          "lean": "1112d2bac8dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:39.900Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:55.362Z"
+  "updated_at": "2026-06-28T10:58:39.906Z"
 }

@@ -1169,7 +1169,25 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b1a11469c28b",
+          "ts": "6abfdce32faf"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:49.546Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Conjectured block 'Geometric invariant $\\\\mathrm{Geom}(K)$ as rigid dualizing evaluation' has no Lean sibling, representing a minor structural gap.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T10:58:49.551Z"
 }

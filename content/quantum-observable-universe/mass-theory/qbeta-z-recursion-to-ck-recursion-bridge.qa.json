@@ -1340,7 +1340,265 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.168Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence': the formalization compiles successfully without errors.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.174Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.180Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence'.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.186Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.193Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence'.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.199Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.205Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean sibling corresponds directly to the narrative claim in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.211Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations habiro2004, wenzl1988 in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.217Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.224Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.239Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.246Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean file compiles successfully, confirming reproducibility.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ee2ed996cffb",
+          "ts": "61f79b58b6be",
+          "lean": "15b5dad97bca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.252Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T10:58:38.258Z"
 }

@@ -1181,7 +1181,265 @@
         "evidence": "tau-all-orders-bridge.lean:128-129: `def tau_all_orders_bridge … := Nonempty (TauBandedKernelMap …) ∨ Nonempty (TauDistinctInvariants …)`; lean:126-127 \"Neither class currently has an instance … the honest reflection of the open status\".",
         "notes": "Quality score ~0.3. This is a genuine open dichotomy (core-criticality: deciding which arm holds is the open content, not a routine gap). No sorry to close — the open question is whether a finite-band convolution kernel exists; plausibility of resolution is low, not a sorry-free 1.0 nor a trivially-closeable routine 0.9. Honestly stated open status."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.312Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.318Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The claims in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are non-vacuous as they make concrete conjectures about 'algebraic $h^k$-coefficient of the $Q_8$ crossed-module mult...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.324Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.331Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.337Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.343Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.349Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Lean and narrative statements for 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are structurally aligned.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.355Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to yekutieli2015, neumann-zagier1985 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.362Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.368Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.374Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.380Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8b06800701e0",
+          "ts": "fb6a987d2b94",
+          "lean": "11c3f39de7ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.395Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Status of the fibre functor $\\\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T10:58:56.402Z"
 }

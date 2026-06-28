@@ -839,7 +839,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.854Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.860Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' presents substantial mathematical content: With the corrected Markov trace $\\mathrm{tr}_M(e^-) = z^3$ ([corrected trace](#p...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.867Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.873Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.879Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.885Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.891Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.897Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.903Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.909Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.915Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.921Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/mass-ordering-corrected.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e5432ff636eb",
+          "ts": "f227f933a0a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:54.927Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Mass ordering $\\\\mathfrak{m}_{\\\\mathfrak{n}} > \\\\mathfrak{m}_{\\\\mathfrak{p}}$ with corrected trace' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:12.911Z"
+  "updated_at": "2026-06-28T10:58:54.933Z"
 }

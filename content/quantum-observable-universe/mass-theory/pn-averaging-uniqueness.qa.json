@@ -1338,7 +1338,266 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.588Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Canonical p-n interface averaging uniqueness' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean:191:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.595Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.601Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Canonical p-n interface averaging uniqueness'.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.606Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Canonical p-n interface averaging uniqueness' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.612Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Canonical p-n interface averaging uniqueness'.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.618Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.624Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.631Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations jones1987, wenzl1988 in 'Canonical p-n interface averaging uniqueness' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.637Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Canonical p-n interface averaging uniqueness' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.643Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Canonical p-n interface averaging uniqueness' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.649Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Canonical p-n interface averaging uniqueness' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.655Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "pn-averaging-uniqueness.lean:1 — content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean:191:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "655e457c1668",
+          "ts": "2704de932b44",
+          "lean": "31f157f54b06"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.661Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean fails compilation: content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean:191:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean contains compilation errors: content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean:191:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern, invalidating the claimed formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:59.809Z"
+  "updated_at": "2026-06-28T10:58:38.667Z"
 }

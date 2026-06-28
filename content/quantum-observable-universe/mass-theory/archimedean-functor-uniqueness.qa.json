@@ -1499,6 +1499,23 @@
         "reviewed_at": "2026-06-24T04:27:37Z",
         "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "f75cd50e16cc",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:48.469Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean proof in content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean contains a sorry, representing a divergence from the fully claimed narrative.",
+        "severity": "minor"
       }
     ],
     "da-overclaim": [
@@ -1528,6 +1545,23 @@
         "reviewed_at": "2026-06-24T04:27:37Z",
         "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
         "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "f75cd50e16cc",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:48.462Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose in 'Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor"
       }
     ],
     "da-citation-misuse": [
@@ -1557,6 +1591,24 @@
         "reviewed_at": "2026-06-24T04:27:37Z",
         "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f75cd50e16cc",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:48.475Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Citations to suslin1991, bloch2000, zagier1986, kashaev1997, murakami-murakami2001, faddeev1994, thurston1978 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1585,6 +1637,24 @@
         },
         "reviewed_at": "2026-06-24T04:27:37Z",
         "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      },
+      {
+        "field_hash": {
+          "md": "f75cd50e16cc",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:48.481Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols (including $g = 4$) in 'Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1"
       }
     ],
     "da-reproducibility": [
@@ -1614,6 +1684,24 @@
         "reviewed_at": "2026-06-24T04:27:37Z",
         "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f75cd50e16cc",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:48.488Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1635,6 +1723,25 @@
         },
         "reviewed_at": "2026-06-24T04:27:37Z",
         "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      },
+      {
+        "field_hash": {
+          "md": "f75cd50e16cc",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:48.494Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: survivable-objection.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block 'Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)' relies on unproved lemmas or conditional stubs in the sibling Lean file."
       }
     ],
     "da-false-claim": [
@@ -1770,5 +1877,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T10:58:48.500Z"
 }

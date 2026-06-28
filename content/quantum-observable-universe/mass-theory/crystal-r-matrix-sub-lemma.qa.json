@@ -1106,21 +1106,20 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:56:59.354Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+        "reviewed_at": "2026-06-28T10:58:44.553Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'proposition' match validated structurally.",
+        "severity": "minor"
       }
     ],
     "wall-side-statement": [
@@ -1164,21 +1163,20 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:00.473Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
+        "reviewed_at": "2026-06-28T10:58:44.560Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1202,25 +1200,21 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:01.219Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+        "reviewed_at": "2026-06-28T10:58:44.566Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Proof does not compile due to compilation errors: content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean:57:25: error(lean.unknownIdentifier): Unknown identifier `QOU.BraidKnot.Partition`",
+        "severity": "minor",
+        "score": 0
       }
     ],
     "proof-rater-novelty": [
@@ -1248,81 +1242,77 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:01.957Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+        "reviewed_at": "2026-06-28T10:58:44.573Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean:57:25: error(lean.unknownIdentifier): Unknown identifier `QOU.BraidKnot.Partition`",
+        "severity": "minor"
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:02.459Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+        "reviewed_at": "2026-06-28T10:58:44.579Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No self-assuming projections are used in the proof.",
+        "severity": "minor"
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:02.809Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+        "reviewed_at": "2026-06-28T10:58:44.585Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The proof does not rely on trivial True stubs.",
+        "severity": "minor"
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.266Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+        "reviewed_at": "2026-06-28T10:58:44.591Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The proof assumptions are consistent and do not contain false premises.",
+        "severity": "minor"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1346,21 +1336,20 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "5063855a8060",
+          "md": "0e474b281e0c",
           "ts": "232342679732",
-          "lean": "a2dea961097d"
+          "lean": "824134ca6d70"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-22T02:57:03.985Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+        "reviewed_at": "2026-06-28T10:58:44.597Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The proof does not use decide tactics to mask verification steps.",
+        "severity": "minor"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1396,6 +1385,23 @@
         },
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "0e474b281e0c",
+          "ts": "232342679732",
+          "lean": "824134ca6d70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.623Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
       }
     ],
     "da-vacuous": [
@@ -1428,6 +1434,24 @@
         },
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "0e474b281e0c",
+          "ts": "232342679732",
+          "lean": "824134ca6d70"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.610Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "crystal-r-matrix-sub-lemma.ts:1"
       }
     ],
     "da-overclaim": [
@@ -1460,6 +1484,23 @@
         },
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "0e474b281e0c",
+          "ts": "232342679732",
+          "lean": "824134ca6d70"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.617Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose presents 'Crystal R-matrix Sub-lemma 2.1 (operator-valued): ' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor"
       }
     ],
     "da-false-claim": [
@@ -1492,6 +1533,24 @@
         },
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "0e474b281e0c",
+          "ts": "232342679732",
+          "lean": "824134ca6d70"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.604Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Crystal R-matrix Sub-lemma 2.1 (operator-valued): ' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean:57:25: error(lean.unknownIdentifier): Unknown identifier `QOU.BraidKnot.Partition`.",
+        "severity": "minor",
+        "evidence": "crystal-r-matrix-sub-lemma.lean:1"
       }
     ],
     "da-referee-verdict": [
@@ -1513,6 +1572,25 @@
         },
         "reviewed_at": "2026-06-24T12:07:53Z",
         "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "0e474b281e0c",
+          "ts": "232342679732",
+          "lean": "824134ca6d70"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:44.629Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean fails compilation: content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean:57:25: error(lean.unknownIdentifier): Unknown identifier `QOU.BraidKnot.Partition`",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean contains compilation errors: content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean:57:25: error(lean.unknownIdentifier): Unknown identifier `QOU.BraidKnot.Partition`, invalidating the claimed formalization."
       }
     ],
     "da-circular": [
@@ -1668,5 +1746,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:50:24.256Z"
+  "updated_at": "2026-06-28T10:58:44.635Z"
 }

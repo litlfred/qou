@@ -1370,7 +1370,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.087Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.093Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' presents substantial mathematical content: 'Let $H_n(R, q)$ be the Iwahori--Hecke algebra with Markov trace'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.099Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$'.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.105Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.111Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$'.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.117Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.123Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.130Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations kassel1995, jones1987 in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.136Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.142Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.149Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "markov-pair-z2.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.155Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bbd1022f7fa4",
+          "ts": "ba43c46409fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.161Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'All-pairs Markov-trace identity $\\\\mathrm{tr}_M(\\\\sigma_i\\\\sigma_j) = z^2$' are consistent."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T10:58:38.167Z"
 }
