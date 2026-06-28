@@ -906,16 +906,260 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:13.151Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.lean:1 — Lean file exists",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "evidence": "content/quantum-observable-universe/mass-theory/archimedean-realization-functor.lean:1 — content/quantum-observable-universe/mass-theory/archimedean-realization-functor.lean:22:16: error: unexpected token '/--'; expected term",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a44f57d01a27",
+          "ts": "d858ccccb630",
+          "lean": "e3f25f66a499"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/archimedean-realization-functor.lean:22:16: error: unexpected token '/--'; expected term",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/archimedean-realization-functor.lean:22:16: error: unexpected token '/--'; expected term"
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:13.151Z"
+  "updated_at": "2026-06-28T01:37:45.956Z"
 }

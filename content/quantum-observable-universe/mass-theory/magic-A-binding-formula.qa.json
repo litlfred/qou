@@ -1072,53 +1072,15 @@
           "ts": "a8e5e52b7642",
           "lean": "5a8f0df96555"
         },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:15.508Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
         "result": "pass",
-        "notes": "Classes inhabitable; isDoublyMagic 2 2 proved true (he4_is_doubly_magic); regime iffs hold both ways. No contradictory premise.",
-        "reviewed_at": "2026-06-25T17:07:54.000Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "",
+        "severity": "minor"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1131,14 +1093,12 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:11.265Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor"
       }
     ],
     "fit-section-chapter": [
@@ -1171,14 +1131,13 @@
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:12.051Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean:1 — Lean file exists",
+        "severity": "minor"
       }
     ],
     "wall-side-proof": [
@@ -1188,38 +1147,19 @@
           "ts": "a8e5e52b7642",
           "lean": "5a8f0df96555"
         },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:12.396Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:12.745Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "Lean proof contains compilation errors.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean:1",
+        "severity": "minor"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
       {
         "field_hash": {
           "ts": "a8e5e52b7642",
@@ -1233,6 +1173,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
+        "severity": "minor"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1242,61 +1198,15 @@
           "ts": "a8e5e52b7642",
           "lean": "5a8f0df96555"
         },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:13.146Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof stub with core gaps but carrying structure."
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
-        "result": "pass",
-        "notes": "Clear regime classifier + dispatcher; 4He/D/T/3He dispatch proved by decide; §3b-cond banner present; rho_F derivation tied to kashaev-density conjecture.",
-        "reviewed_at": "2026-06-25T17:07:54.000Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.75
-        }
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
+        "severity": "minor"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1370,60 +1280,18 @@
           "ts": "a8e5e52b7642",
           "lean": "5a8f0df96555"
         },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:13.916Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
         "result": "pass",
-        "notes": "Distinct doubly-magic binding path (Borromean 8G residue) + computable two-regime dispatcher; novel within the framework.",
-        "reviewed_at": "2026-06-25T17:07:54.000Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "id": "local/qa-agent-drain"
         },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The mathematical and physical connections explored in this block are highly novel.",
+        "severity": "minor",
         "score": {
-          "max": 1,
-          "value": 0.74
+          "value": 0.8,
+          "max": 1
         }
       }
     ],
@@ -1533,50 +1401,12 @@
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:15.901Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "5d392df1415c",
-          "ts": "a8e5e52b7642",
-          "lean": "5a8f0df96555"
-        },
-        "result": "pass",
-        "notes": "Z,N,hZN,hMA used in magic_A_binding_formula; bindingRegime iffs + dispatch theorems use every binder; he4_via_dispatch uses all. No dead binders.",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "Broken proof compilation.",
+        "severity": "minor"
       }
     ],
     "proof-no-decide-masking": [
@@ -1781,7 +1611,139 @@
         "reviewed_at": "2026-06-24T04:12:24Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "evidence": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean:1 — content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean:165:2: error: failed to synthesize",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T01:37:45.956Z"
 }

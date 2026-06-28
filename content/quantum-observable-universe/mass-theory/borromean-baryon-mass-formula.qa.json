@@ -1144,7 +1144,139 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-circular.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:45.956Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-24T03:58:58Z"
+  "updated_at": "2026-06-28T01:37:45.956Z"
 }

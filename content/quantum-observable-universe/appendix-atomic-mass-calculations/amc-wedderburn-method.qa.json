@@ -25,6 +25,21 @@
         },
         "reviewed_at": "2026-06-21T21:55:00.000Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "2384d1aef8bb",
+          "ts": "85fcdb026f31"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:42.115Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "Block placement and kind match validated structurally.",
+        "severity": "minor"
       }
     ],
     "voice-status-leak": [
@@ -798,5 +813,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-21T19:18:53.122Z"
+  "updated_at": "2026-06-28T01:37:42.115Z"
 }

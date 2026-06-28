@@ -873,7 +873,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4b0fbd9e2ec2",
+          "ts": "b58c988bab66",
+          "lean": "9b540cef451a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T01:37:43.186Z",
+        "reviewed_sha": "9784b1cf296603b8a08a0cc20582bee43f1b1350",
+        "notes": "No issues found for da-lean-narrative-divergence.",
+        "severity": "minor"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:00.957Z"
+  "updated_at": "2026-06-28T01:37:43.186Z"
 }
