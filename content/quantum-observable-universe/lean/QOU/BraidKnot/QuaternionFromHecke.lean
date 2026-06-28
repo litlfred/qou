@@ -1,5 +1,4 @@
 import Mathlib.Tactic
-import Mathlib.Algebra.Quaternion
 
 /-!
 # Quaternion algebra from Hecke eigenspace decomposition
@@ -44,7 +43,7 @@ QUATERNIONIC STRUCTURE of the Borromean braid.
 The 8 ideal tetrahedra in Vol(𝓑₃) = 8G correspond to the 8
 elements of the quaternion group Q₈ = {±1, ±i, ±j, ±k}, NOT
 the abelian group (ℤ/2)³. The non-commutativity matters for the
-color-tube averaging that determines λ_scale.
+color-tube averaging that determines lam_scale.
 
 ## Mathematical references
 
@@ -103,22 +102,22 @@ class QuaternionFromHecke (R : Type*) [Field R] where
       intro hq; simp [hecke_eigenvalue_antisym, hq]
 
 /-- The Hecke relation σ² = (q - q⁻¹)σ + 1 implies the
-    eigenvalue equation λ² = (q - q⁻¹)λ + 1, which factors as
-    (λ - q)(λ + q⁻¹) = 0. This FORCES the eigenvalues to be
+    eigenvalue equation lam² = (q - q⁻¹)lam + 1, which factors as
+    (lam - q)(lam + q⁻¹) = 0. This FORCES the eigenvalues to be
     exactly {+q, -q⁻¹} — there is no freedom to choose them. -/
 theorem hecke_eigenvalues_forced {R : Type*} [Field R] (q : R)
-    (hq : q ≠ 0) (λ : R) (hλ : λ ^ 2 = (q - q⁻¹) * λ + 1) :
-    λ = q ∨ λ = -(q⁻¹) := by
-  -- The Hecke relation λ² - (q - q⁻¹)λ - 1 = 0 factors as
-  -- (λ - q)(λ + q⁻¹) = 0. Clear denominators, factor, split.
+    (hq : q ≠ 0) (lam : R) (hlam : lam ^ 2 = (q - q⁻¹) * lam + 1) :
+    lam = q ∨ lam = -(q⁻¹) := by
+  -- The Hecke relation lam² - (q - q⁻¹)lam - 1 = 0 factors as
+  -- (lam - q)(lam + q⁻¹) = 0. Clear denominators, factor, split.
   -- Ref: [kassel1995] §III.1, Proposition III.1.1
-  field_simp at hλ ⊢
-  have h1 : (λ * q - q ^ 2) * (λ * q + 1) = 0 := by nlinarith
+  field_simp at hlam
+  have h1 : (lam * q - q ^ 2) * (lam * q + 1) = 0 := by linear_combination q * hlam
   rcases mul_eq_zero.mp h1 with h | h
-  · left; nlinarith
-  · right; nlinarith
+  · left; apply mul_right_cancel₀ hq; linear_combination h
+  · right; field_simp; linear_combination h
 
-/-- The quaternion algebra ℍ is the V ⊗ V of the fundamental
+/-! The quaternion algebra ℍ is the V ⊗ V of the fundamental
     representation of SU(2), with algebra structure induced by the
     R-matrix. This is universal: it holds for ANY 2-dimensional
     representation of a Hopf algebra with a quasi-triangular
@@ -143,7 +142,7 @@ theorem hecke_eigenvalues_forced {R : Type*} [Field R] (q : R)
     -- Ref: [kassel1995] §VIII.2, Theorem VIII.2.4
     -- Ref: [majid1995] §3.2, Proposition 3.2.7
 
-/-- Three-strand consequence: the Borromean braid β_Bor = (σ₁⁻¹σ₂)³
+/-! Three-strand consequence: the Borromean braid β_Bor = (σ₁⁻¹σ₂)³
     on H₃(q) involves TWO quaternion algebras:
 
       ℍ₁ := V₁ ⊗ V₂ (from σ₁)
@@ -158,7 +157,7 @@ theorem hecke_eigenvalues_forced {R : Type*} [Field R] (q : R)
     The "color-tube averaging" at p-n interfaces must respect this
     non-commutativity — using (σ + σ⁻¹)/2 uniformly assumes the
     abelian (ℤ/2)³ structure, losing the Q₈ correction that
-    contributes to λ_scale. -/
+    contributes to lam_scale. -/
 /- theorem borromean_quaternion_noncommutativity :
     True := by trivial -/
     -- Full statement needs:
