@@ -29,6 +29,17 @@ Pure-Rust canonical compute core for the QOU paper's Iwahori-Hecke `H_3(q)` Gram
 | `clarabel-bigrational` | no | Clarabel with `BigRational` scalar (exact rational arithmetic) |
 | `clarabel-mpfr` | no | Clarabel with `MpfrFloat` scalar (mutually exclusive with `clarabel-sdp` and `clarabel-bigrational`) |
 
+The three `clarabel-*` features are **off by default in this crate** (so the
+`clarabel-sdp` bins build without a backend conflict and the WASM subset stays
+clarabel-free), but the **`pyhecke-native` wheel turns `clarabel-mpfr` on by
+default** via its `clarabel-lp` feature (2026-06-28). Any clarabel feature
+requires the **litlfred Clarabel.rs fork** (pinned in `[patch.crates-io]`, rev
+`9673209`) — the `mpfr`/`bigrational` scalar backends and `rug`-interop are
+fork-only, absent from crates.io `clarabel` 0.11. Rationale + the
+restricted-network (egress-blocked) build fallbacks are documented in
+[`../pyhecke-native/README.md` §"Clarabel (litlfred fork)"](../pyhecke-native/README.md#clarabel-litlfred-fork)
+and [`CLARABEL_PRECISION_PLAN.md`](CLARABEL_PRECISION_PLAN.md).
+
 For browser / WASM consumers without GMP, use `default-features = false, features = ["wasm-core"]` — see [`hecke-engine-wasm`](../hecke-engine-wasm/) for the canonical pattern.
 
 ## Build
