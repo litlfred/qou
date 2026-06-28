@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-23T14:19:27Z
-updated_at: 2026-06-27T14:09:03Z
+updated_at: 2026-06-28T16:30:00Z
 ---
 
 
@@ -282,3 +282,5 @@ Derived, no fit; Lean `QOU/Mass/TauQuantumIntegerForm.lean` sorry-free:
 
 
 **Update 2026-06-27 (PR #2899):** formalize-first probe on the fibre kernel. Tested parameter-free q-involution recurrence S(m)=S(m-1)+[m-1]_q·S(m-2) for S(m)=Σ_{λ⊢m}dim_q(λ) (lw(c)=S(c+1)/(c+1)). q=1 limit IS the involution numbers (skeleton correct). Bare ansatz exact at seed m=2,3, drifts beyond. KEY FINDING: correction D(m) carries a universal (q-1)² prefactor (O(h²), pure fibre effect) and factors cyclotomically (D4 carries Φ3; D7 Φ3²Φ5; D8 Φ3Φ5Φ7) — the Habiro-ring signature. So the lever-1 kernel = q-involution operator dressed by a cyclotomic/Habiro correction = the SAME object class kehn's c_k/Q_β closure needs. Scope: refutes the bare ansatz (a) only, not the q-holonomic class; the D(m) cyclotomic tower is the derived parameter-free constraint. Next: fit D(m) to a single Habiro element, verify held-out m. Audit: docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md
+
+**Update 2026-06-28 (Stage 6) — the correction tower is NOT a single low-order q-hypergeometric element.** Executed the 2026-06-27 stated next step. Tested whether either the additive correction D(m) (nonzero m=4..10) or the q-EGF log-tower L_m (m=1..10) is q-hypergeometric — i.e. its ratio T(m+1)/T(m) is a FIXED rational R(q,q^m) — by order-1 guess-and-verify with held-out-m falsification (the Stages 3-4 methodology, on the correction towers), plus the literal contiguity template r_k=−q^k/[(1−q^{k+1})(1−a q^k)] (one param a). RESULT (negative, sharp): empty train nullspace at every strongly over-determined bidegree up to (q±3,X≤3) for both towers; the one near-square nullspace (L_m, 56u/65c, dim 3) is killed by held-out; the literal template fails held-out for both. So the binding correction tower is NOT a single low-order ₂φ₁ element — sharpens Stages 3-4 (S(m) not q-holonomic) to "even its Habiro correction isn't a single low-order element". (a)-scoped; Habiro class NOT refuted (no proved invariant) — constrains order/shape. Next decidable: cyclotomic-basis (q;q)_n expansion of D(m)/C(z) directly, not a finite q-difference operator (Stages 3-6 show none exists at low order). No fit; nothing wired; no tier change. Probe: computations/substrate/lever1_binding_habiro_single_element_test.py; witness: …-single-element-test.witness.json; audit: docs/audits/2026-06-28-lever1-binding-correction-not-single-qhypergeometric.md
