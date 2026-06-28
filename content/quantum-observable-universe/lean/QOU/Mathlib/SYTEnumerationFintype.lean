@@ -635,4 +635,145 @@ theorem sytToList_nodup (l : List ℕ) (e : ℕ → ℕ → ℕ)
     have := (hinj a j1 b j2 (by simpa using ha) hj1 (by simpa using hb) hj2 heq).1
     omega
 
+/-! ### The equivalence and the counting bridge -/
+
+open QOU.Mathlib (StandardYoungTableau numStandardYoungTableaux)
+
+/-- Two standard tableaux are equal when their underlying semistandard tableaux agree (the `bijOn`
+field is a `Prop`, hence proof-irrelevant). -/
+theorem StandardYoungTableau.ext_toSsyt {μ : YoungDiagram} {T1 T2 : StandardYoungTableau μ}
+    (h : T1.toSsyt = T2.toSsyt) : T1 = T2 := by
+  cases T1; cases T2; cases h; rfl
+
+/-- A standard tableau's entry map is grid-injective on its cells. -/
+theorem syt_entry_gridInj (hl : List.Sorted (· ≥ ·) l)
+    (T : StandardYoungTableau (YoungDiagram.ofRowLens l hl)) :
+    ∀ i1 j1 i2 j2, (h1 : i1 < l.length) → j1 < l[i1]'h1 → (h2 : i2 < l.length) →
+      j2 < l[i2]'h2 → T.entry i1 j1 = T.entry i2 j2 → i1 = i2 ∧ j1 = j2 := by
+  intro i1 j1 i2 j2 h1 hj1 h2 hj2 heq
+  have hc1 : (i1, j1) ∈ YoungDiagram.ofRowLens l hl :=
+    YoungDiagram.mem_ofRowLens.mpr ⟨h1, hj1⟩
+  have hc2 : (i2, j2) ∈ YoungDiagram.ofRowLens l hl :=
+    YoungDiagram.mem_ofRowLens.mpr ⟨h2, hj2⟩
+  have := T.injOn_cells (StandardYoungTableau.mem_coe_cells hc1)
+    (StandardYoungTableau.mem_coe_cells hc2) heq
+  exact ⟨congrArg Prod.fst this, congrArg Prod.snd this⟩
+
+/-- The flatten of a standard tableau is a standard filling. -/
+theorem sytToList_mem_standardFillings (hl : List.Sorted (· ≥ ·) l)
+    (T : StandardYoungTableau (YoungDiagram.ofRowLens l hl)) :
+    sytToList l T.entry ∈ standardFillings l := by
+  rw [mem_standardFillings_iff]
+  have hlen : (sytToList l T.entry).length = l.sum := sytToList_length l T.entry
+  refine ⟨?_, ?_⟩
+  · -- permutation of [1,…,∑l]
+    apply List.Subperm.perm_of_length_le (l₂ := (List.range l.sum).map (· + 1))
+    · refine List.Nodup.subperm ?_ ?_
+      · exact sytToList_nodup l T.entry (syt_entry_gridInj hl T)
+      · intro v hv
+        rw [mem_sytToList] at hv
+        obtain ⟨i, j, hi, hj, hje⟩ := hv
+        have hc : (i, j) ∈ YoungDiagram.ofRowLens l hl :=
+          YoungDiagram.mem_ofRowLens.mpr ⟨hi, hj⟩
+        have hmaps := T.mapsTo_cells (StandardYoungTableau.mem_coe_cells hc)
+        rw [Set.mem_Icc] at hmaps
+        have hcard : (YoungDiagram.ofRowLens l hl).cells.card = l.sum :=
+          QOU.Mathlib.SYTEnum.card_cells_ofRowLens l hl
+        rw [hcard] at hmaps
+        simp only [StandardYoungTableau.entry] at hje hmaps
+        rw [hje] at hmaps
+        simp only [List.mem_map, List.mem_range]
+        exact ⟨v - 1, by omega, by omega⟩
+    · rw [List.length_map, List.length_range, hlen]
+  · -- isStdFilling
+    apply isStdFilling_of_entry l _ hlen
+    · intro i j1 j2 hi hj hj2
+      rw [entryFn_sytToList l T.entry i j1 hi (by omega),
+          entryFn_sytToList l T.entry i j2 hi hj2]
+      exact T.row_strict hj (YoungDiagram.mem_ofRowLens.mpr ⟨hi, hj2⟩)
+    · intro i j hi hj
+      rw [entryFn_sytToList l T.entry i j (by omega) (by
+            have : l[i + 1]'hi ≤ l[i]'(by omega) := by
+              have := List.pairwise_iff_getElem.mp hl i (i + 1) (by omega) hi (by omega)
+              simpa using this
+            omega),
+          entryFn_sytToList l T.entry (i + 1) j hi hj]
+      exact T.toSsyt.col_strict (by omega) (YoungDiagram.mem_ofRowLens.mpr ⟨hi, hj⟩)
+
+/-- The SYT roundtrip: reshaping a tableau's flatten recovers the tableau. -/
+theorem listToSYT_sytToList (hl : List.Sorted (· ≥ ·) l)
+    (T : StandardYoungTableau (YoungDiagram.ofRowLens l hl)) :
+    listToSYT hl (sytToList l T.entry)
+        ((mem_standardFillings_iff l _).mp (sytToList_mem_standardFillings hl T)).1
+        ((mem_standardFillings_iff l _).mp (sytToList_mem_standardFillings hl T)).2 = T := by
+  -- equality of StandardYoungTableau reduces to equality of toSsyt (bijOn is a Prop)
+  apply StandardYoungTableau.ext_toSsyt
+  apply SemistandardYoungTableau.ext
+  intro i j
+  show entryFn l (sytToList l T.entry) i j = T.entry i j
+  by_cases hij : (i, j) ∈ YoungDiagram.ofRowLens l hl
+  · rw [YoungDiagram.mem_ofRowLens] at hij
+    obtain ⟨hi, hj⟩ := hij
+    exact entryFn_sytToList l _ i j hi hj
+  · have hz : T.entry i j = 0 := T.toSsyt.zeros hij
+    rw [hz]
+    rw [YoungDiagram.mem_ofRowLens] at hij
+    push_neg at hij
+    by_cases hi : i < l.length
+    · exact entryFn_zero_of_col l _ i j hi (hij hi)
+    · exact entryFn_zero_of_row l _ i j (by omega)
+
+/-- **The equivalence** `StandardYoungTableau (ofRowLens l hl) ≃ {a // a ∈ standardFillings l}`. -/
+noncomputable def sytEquivStandardFillings (hl : List.Sorted (· ≥ ·) l) :
+    StandardYoungTableau (YoungDiagram.ofRowLens l hl) ≃ {a : List ℕ // a ∈ standardFillings l} where
+  toFun T := ⟨sytToList l T.entry, sytToList_mem_standardFillings hl T⟩
+  invFun a := listToSYT hl a.1 ((mem_standardFillings_iff l _).mp a.2).1
+    ((mem_standardFillings_iff l _).mp a.2).2
+  left_inv T := listToSYT_sytToList hl T
+  right_inv a := by
+    apply Subtype.ext
+    show sytToList l (listToSYT hl a.1 _ _).entry = a.1
+    have hlen : a.1.length = l.sum :=
+      (((mem_standardFillings_iff l _).mp a.2).1).length_eq.trans (by simp)
+    -- (listToSYT ...).entry = entryFn l a.1 definitionally
+    show sytToList l (entryFn l a.1) = a.1
+    exact sytToList_entryFn l a.1 hlen
+
+/-- `standardFillings l` is `Nodup` (a filter of the `Nodup` permutation list). -/
+theorem standardFillings_nodup (l : List ℕ) : (standardFillings l).Nodup := by
+  unfold standardFillings
+  apply List.Nodup.filter
+  rw [allPerms_eq]
+  have hp : ((List.range l.sum).map (· + 1)).permutations'
+      ~ ((List.range l.sum).map (· + 1)).permutations :=
+    (List.permutations_perm_permutations' _).symm
+  rw [hp.nodup_iff]
+  apply List.nodup_permutations
+  exact List.Nodup.map (by intro x y hxy; simpa using hxy) List.nodup_range
+
+/-- `Nat.card` of the membership subtype of a `Nodup` list is its length. -/
+theorem nat_card_mem_subtype {α : Type*} [DecidableEq α] (L : List α) (h : L.Nodup) :
+    Nat.card {a : α // a ∈ L} = L.length := by
+  have heq : {a : α // a ∈ L} = {a : α // a ∈ L.toFinset} := by simp [List.mem_toFinset]
+  rw [heq, Nat.card_eq_finsetCard, List.toFinset_card_of_nodup h]
+
+/-- `Nat.card` of the standard-filling subtype equals `numSYTenum`. -/
+theorem nat_card_standardFillings (l : List ℕ) :
+    Nat.card {a : List ℕ // a ∈ standardFillings l} = numSYTenum l := by
+  rw [nat_card_mem_subtype _ (standardFillings_nodup l),
+    numSYTenum_eq_length_standardFillings]
+
+/-- **The SYT counting bridge.** The brute-force list enumeration `numSYTenum l` equals the
+structure-level count `numStandardYoungTableaux (ofRowLens l hl) = Nat.card (StandardYoungTableau)`. -/
+theorem numSYTenum_eq_numStandardYoungTableaux (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    numSYTenum l = numStandardYoungTableaux (YoungDiagram.ofRowLens l hl) := by
+  unfold numStandardYoungTableaux
+  rw [Nat.card_congr (sytEquivStandardFillings hl), nat_card_standardFillings]
+
+/-- **Corollary on the partition index.** `dimSYT p` (the genuine `#SYT` of `p`'s shape) equals the
+brute-force enumeration of the sorted parts. -/
+theorem dimSYT_eq_numSYTenum {n : ℕ} (p : Nat.Partition n) :
+    QOU.Mathlib.dimSYT p = numSYTenum (p.parts.sort (· ≥ ·)) :=
+  (numSYTenum_eq_numStandardYoungTableaux (p.parts.sort (· ≥ ·)) (Multiset.sort_sorted _ _)).symm
+
 end QOU.Mathlib.SYTEnum
