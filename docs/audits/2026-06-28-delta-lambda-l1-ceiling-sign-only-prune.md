@@ -142,6 +142,27 @@ q-deformed magnitudes, which the magnitude size alone does not test. Scope
 **(a)** (convention-under-determination), not a (b) exclusion — no invariant
 forbids a q-dim magnitude.
 
+**Cancellation / A-scaling probe** ([`delta-lambda-cancellation-ascaling-probe.witness.json`](../../computations/delta-lambda-cancellation-ascaling-probe.witness.json)).
+The ℓ¹ is only the ceiling; the quantity that must equal target is the
+*signed* net `Σ_λ y_λ χ^λ sgn(w₀^{S_λ'}) dim_q,λ` (closure ⇒ net/target = +1):
+
+| iso | classic | balanced | unbalanced | fake-degree |
+|-----|--------:|---------:|-----------:|------------:|
+| D   | 0.17 | 0.18 | 0.22 | 0.28 |
+| T   | 0.23 | 0.30 | 0.57 | 0.91 |
+| ³He | 0.30 | 0.40 | 0.78 | **1.27** |
+| ⁴He | 0.11 | 0.21 | 0.65 | **1.31** |
+
+As the convention grows the net grows **non-uniformly in A** — heavy isotopes
+overshoot while light ones undershoot. **No single convention lands all four
+near +1** (isotope spread 2.2–4.7×, *widens* with the convention). So the
+sharper statement: a *flat* q-dim convention cannot reproduce the **A-scaling**
+of nuclear binding (D wants a steep convention, ⁴He a shallow one — they
+conflict). The closure object must therefore carry **A-/λ-dependent**
+structure — a structured generating kernel whose effective `dim_q` bends the
+A-scaling, exactly the z2bn `S(m)=Σ_λ dim_q` q-Gaussian/Habiro EGF (#2899).
+Scope (a). (Classic column cross-checks the canonical net, D 0.171.)
+
 ## Machine-checked core (Lean)
 
 The logical core is formalized sorry-free in
