@@ -1,7 +1,7 @@
 ---
 # vq30
 title: 'Vacuity fix: predicted-spectra (1 defect)'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T00:00:00Z
