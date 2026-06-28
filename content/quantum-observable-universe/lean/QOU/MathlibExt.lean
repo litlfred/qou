@@ -134,7 +134,7 @@ theorem List.foldl_eq_foldr_of_commute_init {α : Type*} [Monoid α]
 theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]
     {xs ys : List α} (h : xs.Perm ys) :
     xs.prod = ys.prod :=
-  h.prod_eq
+  List.Perm.prod_eq h
 
 /-! For a `CommMonoid`, the underlying Mathlib lemma
     `List.Perm.prod_eq` already gives us order-invariance of
