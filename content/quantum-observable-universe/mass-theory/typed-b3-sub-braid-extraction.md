@@ -4,7 +4,7 @@
 Track-C chain, narrowing the open axiomatic content to a SINGLE focused
 combinatorial fact.
 
-## What this closes
+## Scope of this closure
 
 Per the Track-C plan, the n-strand (= 3-strand for typed-B_3) case
 requires extracting sub-braids from the canonical 11-crossing braids

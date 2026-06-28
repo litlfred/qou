@@ -40,7 +40,7 @@ $$
 depth-$d_{\mathrm{II}}(\lambda)$ component of $\mathrm{Li}_n^q$ at
 the canonical Bring shape parameter for cell $\lambda$.*
 
-### Why this is the right structural statement
+### Structural justification of the statement
 
 The two filtrations have orthogonal information:
 

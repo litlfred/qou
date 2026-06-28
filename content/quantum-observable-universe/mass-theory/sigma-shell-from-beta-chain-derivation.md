@@ -48,7 +48,7 @@ benchmark with the true categorical mass-formula contribution
 $\Delta\mathfrak{m}_{\mathrm{shell}}(D) / \mathfrak{m}(D)$, picking
 up additional Wedderburn-block factors beyond the staircase.*
 
-**Why this is the correct frame (replacing the earlier β-chain formulation).**
+**Correctness of this frame (replacing the earlier β-chain formulation).**
 
 *An earlier version of this proposition extracted
 $y_{\mathrm{target}}$ from cumulative $\beta$-decay chain Q-values

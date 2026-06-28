@@ -169,7 +169,7 @@ the degree-1 Markov trace of the surviving class.*
 \sigma_1 \sigma_0]) = 2 z^2$ — matches the $z^2$ pre-factor of
 Term 3 exactly.*
 
-**What this computation establishes.**
+**Conclusions of this computation.**
 
 1. *The spectral sequence is **computable for $H_3(R, q)$** over
  $R$ (paper's categorical base ring).*

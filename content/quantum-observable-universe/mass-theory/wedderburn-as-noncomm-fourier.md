@@ -43,7 +43,7 @@ The role of $\operatorname{tr}_M$ is the inverse-transform: it
 *reassembles* a class function on $H_n(q)$ from its non-commutative
 Fourier coefficients $\{\chi_\lambda(\beta)\}_\lambda$.
 
-**Why this is a renaming.** Nothing new is asserted: this is
+**Renaming, not new content.** Nothing new is asserted: this is
 exactly the Peter--Weyl/Plancherel formula for the finite-dimensional
 semisimple algebra $H_n(q)$, applied to the trace functional
 $\operatorname{tr}_M$. The proposition is included because the

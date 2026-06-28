@@ -91,7 +91,7 @@ two different homological objects:*
  classes are outer-derivation cocycles; cup product is on
  cochains; $HH^1(H_3(R, q)) = 0$ generically so no tower exists.
 
-**Where Term 2's Cauchy kernel actually comes from.**
+**Origin of Term 2's Cauchy kernel.**
 
 *The $\Phi_q$ Cauchy expansion $\Phi_q(z) = \sum z^k/(q;q)_k$ is
 NOT from HH cup products. Possible sources:*
@@ -329,7 +329,7 @@ $\mathrm{tr}_M(\sigma_0^k)$ **oscillates** rather than matching
 the $\Phi_q$ generating-function growth. The hypothesis
 "$\mathrm{tr}_M(\sigma_0^k) \propto 1/(q;q)_k$" is FALSE.*
 
-**Why the shortcut is wrong.**
+**Invalidity of the shortcut.**
 
 *Cup product in Hochschild cohomology $HH^*(A, A)$ is NOT algebra
 multiplication. For a cochain $f \in HH^p$ represented by a map
@@ -407,7 +407,7 @@ $$
 for $\ell \geq 2$ (the level-$\ell = 1$ residue is absorbed into
 Terms 2, 3 as the dominant $\zeta_1 = 1$ pole).*
 
-**Why this replaces the prefix formula.**
+**Replacement of the prefix formula.**
 
 *The paper's prefix formula
 $a_k(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta_k) / \sum_\lambda w_\lambda \dim \mathrm{Res}^{H_k}_{H_3} V_\lambda$

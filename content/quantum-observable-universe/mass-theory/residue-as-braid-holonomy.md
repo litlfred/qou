@@ -45,7 +45,7 @@ $\mathfrak{m}(K, q_0) = |\mathrm{tr}_M(T_w, q_0)|$ realised as
 the Habiro evaluation at $q_0$, not as a complex-analytic
 partial-fraction sum.*
 
-**Why the empirical regular-value tower misses this.**
+**Omission by the empirical regular-value tower.**
 *The regular-value formula
 ([mass endomorphism tower](#prop:mass-endomorphism-tower))
 evaluates $\Phi_{q_0}$ on $|\hat V_i^{\mathrm{full}}|$ without

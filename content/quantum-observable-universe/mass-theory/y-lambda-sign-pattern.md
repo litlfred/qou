@@ -46,7 +46,7 @@ The negative components are small in absolute value but
 non-negligible — they enter every $\alpha_k$ derivation and the
 unified mass formula at the right depths.
 
-**Why this is not a contradiction.**
+**Consistency with trace positivity.**
 The Markov trace is positive on positive elements: for any
 $a \in H_n(R, q)$, $\mathrm{tr}_M(a^\ast a) \geq 0$.  In the
 central decomposition $\mathrm{tr}_M = \sum_\lambda y_\lambda

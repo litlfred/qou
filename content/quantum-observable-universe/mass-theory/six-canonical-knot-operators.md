@@ -74,7 +74,7 @@ This recovers the $S_3$ holonomy of $\rho: B_3 \to \mathrm{SU}(2)$
 from [$\rho$ as $S_3$ holonomy on Lagrange resolvents](#rem:rho-s3-holonomy-exposition)
 *explicitly as a trajectory computation* in the Reeb bundle. $\square$
 
-**Why this is conditional.**  The proof above takes the
+**Conditional status.**  The proof above takes the
 [$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)
 class as given: it uses only the additive composition rule and
 the two-strand localisation rule.  The underlying differential-

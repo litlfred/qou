@@ -52,7 +52,7 @@ $$
   = \frac{[2]_q^2}{4}. \qquad\square
 $$
 
-## Consequences
+## Corollaries
 
 **Nuclear binding from mixed crossings only.**
 Identity (i) means that adjacent $pp$ and $nn$ crossings

@@ -34,7 +34,7 @@ which misses $^4_2\mathrm{He}$ by $-79\%$ ($5\times$ too small) because that
 formula assumes a single hyperbolic force-carrier knot per nucleus —
 an assumption that breaks for doubly-magic nuclei.*
 
-## Why doubly-magic requires a separate formula
+## Necessity of a separate doubly-magic formula
 
 The framework's two binding paths apply to **distinct categorical
 regimes**:

@@ -75,7 +75,7 @@ channel that drives beta decay).  The standard sector mixes
 both eigenvalues — it controls the **mass scale** (the
 conversion between Hecke algebra units and MeV).
 
-## Why three suffices for all $A$
+## Sufficiency of three parameters for all $A$
 
 Nuclear computations at Level 0 use $H_A(R, q)$ (one strand per
 nucleon), which for $A > 3$ has more than three irreps.
