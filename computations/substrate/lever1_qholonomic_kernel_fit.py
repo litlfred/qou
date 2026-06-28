@@ -30,48 +30,12 @@ so a held-out-verifying solution at small (A,B) is a real certificate, not a fit
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sympy as sp
 
-q = sp.Symbol("q", positive=True)
-
-
-def qint(k):
-    return (q**k - q**(-k)) / (q - 1 / q)
-
-
-def qfact(n):
-    r = sp.Integer(1)
-    for k in range(1, n + 1):
-        r *= qint(k)
-    return r
-
-
-def partitions(n):
-    if n == 0:
-        yield []
-        return
-    for first in range(n, 0, -1):
-        for rest in partitions(n - first):
-            if not rest or rest[0] <= first:
-                yield [first] + rest
-
-
-def hooks(lam):
-    conj = [sum(1 for r in lam if r > c) for c in range(lam[0])]
-    return [(row - j) + (conj[j] - i) - 1 for i, row in enumerate(lam) for j in range(row)]
-
-
-def dim_q(lam):
-    d = qfact(sum(lam))
-    for h in hooks(lam):
-        d /= qint(h)
-    return sp.cancel(sp.together(d))
-
-
-def S(m):
-    if m == 0:
-        return sp.Integer(1)
-    return sp.cancel(sp.together(sum(dim_q(l) for l in partitions(m))))
+# Shared, cached Young-diagram / symmetric quantum-dimension machinery (bean z3a2; PR #2952).
+# Replaces the formerly inline qint/qfact/partitions/hooks/dim_q/S — same symbolic results.
+from young_qdim import q, S
 
 
 NMAX = 9          # compute S(0..9)
