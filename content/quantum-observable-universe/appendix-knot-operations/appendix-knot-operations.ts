@@ -19,6 +19,9 @@ export default chapter({
         "hecke-operations",
         "hecke-operations-table2-data",
         "hecke-operations-table1-data",
+        // Atomization (batch-085): Borromean gluon-content / color-singlet
+        // interpretation split out of rem:hecke-operations into its own remark.
+        "borromean-gluon-content",
       ],
     }),
     section({
