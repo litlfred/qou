@@ -190,7 +190,7 @@ is the exact integer minimiser of the convex quadratic $E(p, A)$
 approximation — the integer minimiser of a convex quadratic is
 determined exactly.
 
-**Open question: pairing lift to genus $1$.**
+**Pairing lift to genus $1$ (open).**
 
 The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
@@ -202,7 +202,7 @@ stability cubic and the color cubic (identical algebraic origin
 in the Bring's surface, coefficient matching at $p \approx 68$)
 is suggestive but not yet proven.
 
-**What is proven:**
+**Established results:**
 
 - The stable nuclei are lattice points on the stability cubic
   (exact, from the Skein binding Lagrangian).

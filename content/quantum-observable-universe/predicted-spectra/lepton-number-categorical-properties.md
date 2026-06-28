@@ -68,7 +68,7 @@ $L_0^{-}$ must decompose into exactly these knot types because
 they are the only single-component closures of a 2-arc
 resolution at a Borromean crossing.
 
-**Why lepton number is not broken.**
+**Structural origin of lepton-number conservation.**
 In the Standard Model, lepton number conservation is an accidental
 symmetry.  In QOU, it is a **structural invariant**: the Skein
 relation is the unique operation that changes crossing type, and

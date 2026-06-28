@@ -40,7 +40,7 @@ $$
 For hydrogen (one electron), only the $n = 1$, $\ell = 0$
 orbital is occupied in the ground state.
 
-**Why $1/n^2$ energy levels.**
+**Origin of $1/n^2$ energy levels.**
 
 At shell $n$, the Seifert surface of the Hopf link between
 electron and proton is an $n$-fold covering of the base

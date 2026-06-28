@@ -30,7 +30,7 @@ $$
 $\mathbb{Q}(\zeta_3, \zeta_5)$, has Bloch-Wigner image
 $D([Z]_{\mathrm{Bring}}) = 2/(3\pi)$.*
 
-## Why this conjecture is the right framing
+## Motivation for the framing
 
 The mass / hyperbolic sector of the QOU framework
 ([figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration))
@@ -443,7 +443,7 @@ to $\mathbb{Q}(\zeta_3, \sqrt{-15})$ to higher cubic fields) need
 to be checked for $S_5$-compatible embeddability and trace-field
 inclusion in $\mathbb{Q}(\zeta_{15})$.
 
-## What is proved (Lean handle)
+## Established results (Lean handle)
 
 The Lean file [`bring-hyperbolic-knot-bloch-decomposition.lean`](bring-hyperbolic-knot-bloch-decomposition.lean)
 establishes the unconditional algebraic skeleton plus one

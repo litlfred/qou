@@ -164,7 +164,7 @@ $$
 
 *a manifestly $R$-rational quantity. $\square$*
 
-**Why "product, not sum".**
+**Product versus sum.**
 *The sum $\sum_k dc_k/dz$ is the projection onto $V_{(3)}$ (the
 trivial isotype) and is the integrand for a putative $\mathrm{Sym}^3$
 particle (a colour-singlet symmetric trion).  The baryon, by quark

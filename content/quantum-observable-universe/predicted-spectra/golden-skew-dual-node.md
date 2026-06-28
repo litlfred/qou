@@ -52,7 +52,7 @@ has no closed form in $\varphi$ alone; it varies smoothly with
 $q_0$ and equals $1$ exactly at the arithmetic midpoint
 $q = (1/\varphi^2 + \varphi^2)/2 = 3/2$.
 
-**Why $\varphi^2$ on the physical side?**
+**Appearance of $\varphi^2$ on the physical side.**
 The Descartes elliptic curve $\mathcal{E}_q$ does not itself acquire
 a node at $q = \varphi^2$ — its Weierstrass factor $s^2 + s - 1$ is
 non-zero there.  The bar-dual node is the degeneration of the

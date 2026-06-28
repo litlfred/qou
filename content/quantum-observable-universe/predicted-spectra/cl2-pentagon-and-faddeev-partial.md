@@ -20,7 +20,7 @@ All proofs are by direct rewriting + `simp` / `ring` / `linarith`
 on the unconditional building blocks `Cl_2_zero` and
 `faddeev_limit_at_zero`.
 
-## What this closes
+## Content of this closure
 
 **Items (2) and (3) — boundary portions, unconditional.** The
 boundary-case identities are now Lean theorems that any future
@@ -29,7 +29,7 @@ This formally discharges the consistency requirements for the
 two Mathlib-pending classes `Cl_2_PentagonHolds` and
 `FaddeevKashaevQuasiClassicalLimit`.
 
-## What remains
+## Remaining content
 
 **The general (non-boundary) cases.** These are the substantive
 mathematical content:

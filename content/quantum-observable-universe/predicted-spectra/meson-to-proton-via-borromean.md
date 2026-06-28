@@ -88,7 +88,7 @@ With typed crossings at $q_0 \approx 1.1100$:
 | Proton $\mathfrak{p}$ | $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ | $+0.9991$ |
 | Neutron $\mathfrak{n}$ | $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ | $+0.8108$ |
 
-## Why $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
+## The scale $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
 
 The NF coefficients are dimensionless Laurent polynomials in $q$.
 To convert to physical energies (MeV), a single scale
@@ -127,7 +127,7 @@ observable**: the beta decay $Q$-value.
       \approx  4.155 \text{MeV}.
    $$
 
-3. **Why this works.**  The ratio is well-defined because:
+3. **Well-definedness.**  The ratio is well-defined because:
    - $q_0$ is already fixed (substrate parameter), so all NF
      coefficients are determined — no remaining free parameters
      in the algebra.

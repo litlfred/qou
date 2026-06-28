@@ -43,7 +43,7 @@ for individual nuclei requires resolving the discrete shell
 structure — the quantum numbers of the specific parent and daughter
 nuclear states.
 
-**What the QOU does predict.**
+**Predictions of the QOU.**
 Within a single transition class (fixed $\log ft$), the QOU
 correctly determines:
 
