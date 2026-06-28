@@ -192,4 +192,16 @@ theorem rowHookProd_mul_betaGapProd (a : ℕ) (t : List ℕ)
       ih (a + 1) hr hra, List.length_cons]
     congr 1; omega
 
+/-- **`betaGapProd` is positive (sorry-free).** For a tail `t` with every part `≤ a`, each beta-gap
+factor `a + 1 − c` is `≥ 1`, so the product is `> 0`.  (This is the strict decrease of the beta
+numbers; it makes the Vandermonde denominator invertible in the dimension identity.) -/
+theorem betaGapProd_pos (a : ℕ) (t : List ℕ) (hta : ∀ p ∈ t, p ≤ a) : 0 < betaGapProd a t := by
+  induction t generalizing a with
+  | nil => simp
+  | cons c r ih =>
+    rw [betaGapProd_cons]
+    have hca : c ≤ a := hta c (List.mem_cons_self ..)
+    have hra : ∀ p ∈ r, p ≤ a + 1 := fun p hp => le_trans (hta p (List.mem_cons_of_mem _ hp)) (by omega)
+    exact Nat.mul_pos (by omega) (ih (a + 1) hra)
+
 end QOU.Mathlib.SYTBeta
