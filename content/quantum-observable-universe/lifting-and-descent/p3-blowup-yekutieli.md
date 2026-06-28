@@ -71,7 +71,7 @@ ceases to lift.  The blowup is localised at this level:
 
 ## Cohomological address of a counter-example
 
-**Where a counter-example lives: the cohomological address.**
+**Location of a counter-example: the cohomological address.**
 A counter-example to NS regularity is a quintuple
 
 $$

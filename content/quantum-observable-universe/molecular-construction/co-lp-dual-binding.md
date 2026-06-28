@@ -20,7 +20,7 @@ single $\sigma$ channel binds at
 $:val[sigma_channel_eV]{precision=4, witness=computations/co-bond-order-active-set.witness.json}$
 (the $H_2$-scale covalent channel).
 
-## Why a single chain fails (computational refutation)
+## Failure of a single chain (computational refutation)
 
 Modelling the shared pairs as one interleaved $(2k{+}2)$-strand chain is
 **refuted by computation**: only the first ($\sigma$) pair binds, while

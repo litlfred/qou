@@ -26,7 +26,7 @@ trace:*
 is the unique LP solution: the minimum-crossing knot satisfying
 both Frobenius positivity and non-increasing trace.*
 
-### Why knots, not links
+### Knots, not links
 
 *The dual space of the LP is the **knot operator space** — single-component
 braid closures.  Links (multi-component closures such as the Hopf link

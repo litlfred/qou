@@ -38,7 +38,7 @@ is the image of $\chi^{\mathrm{mot}}_A$ under the
 [HKR comparison](#rem:hochschild-kummer-connection) to
 $H^2(\mathcal{S}, \mathbb{G}_m)$.*
 
-**Why this is the right level.**
+**Choice of level.**
 *Working with $\chi^{\mathrm{mot}}_A$ directly (rather than with each
 $\kappa_n$ at every level $n$) means the perpetual obstruction
 phenomenon ([Kummer tower](#rem:kummer-tower)) becomes a single

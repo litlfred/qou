@@ -18,7 +18,7 @@ duality:*
   genuinely-distinct dual algebra (Type B $\leftrightarrow$ Type C, etc.) — this
   is the quantum analogue of classical Langlands.*
 
-## Why this matters
+## Significance
 
 For Type $A_{n-1}$ (the framework's main case), the Langlands dual
 is self-dual at the **algebra level** (no parameter inversion required), but the

@@ -20,7 +20,7 @@ $$
 *These are the muon (c=1, knot) and the proton (c=3, Borromean 3-link)
 anchors of the per-component selection rule.*
 
-## Why this matters
+## Significance
 
 The zero-parameter selection rule is
 $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$

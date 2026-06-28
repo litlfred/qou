@@ -17,7 +17,7 @@ processes decompose similarly.  The Toffoli transfer matrix
 ([tm-interactions §6](#tm-interactions)) is a *gate construction* on
 three strands, not a fresh interaction at a single crossing.
 
-## Why exactly seven
+## Exactly seven interactions
 
 The count follows from three constraints:
 
