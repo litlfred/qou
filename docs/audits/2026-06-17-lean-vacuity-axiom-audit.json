@@ -1,19 +1,18 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-28T05:46:27.997Z",
+  "generated": "2026-06-28T06:43:51.852Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 1716,
-  "files_flagged": 76,
-  "total_defects": 45,
+  "scanned_files": 1720,
+  "files_flagged": 52,
+  "total_defects": 10,
   "total_exempt": 56,
   "categories": {
-    "proof-claims-unencoded": 36,
-    "proof-no-trivial-true": 1,
+    "proof-claims-unencoded": 2,
     "proof-no-false-premise": 7,
     "proof-no-decide-masking": 1
   },
   "conjecture_graph": {
-    "total": 210,
+    "total": 218,
     "primary": [
       "AeonRecycling",
       "AlgebraicGeometricEquivalence",
@@ -27,6 +26,8 @@
       "BlowupYekutieli",
       "BorelZagierQOU",
       "BorelZagierQouVolumes",
+      "BorromeanQuark",
+      "BorromeanQuark",
       "BorromeanQuark",
       "BorromeanQuark",
       "BorromeanQuark",
@@ -108,6 +109,7 @@
       "KLRCategorifiesNegativeHalfUqg",
       "KappaZeroImpliesSelfConjugate",
       "KashiwaraCrystal",
+      "KnotFactorFrobeniusPairing",
       "LRCoefficientHecke",
       "LagrangeResolventEquivarianceAxiom",
       "LeviDegeneracy",
@@ -116,6 +118,7 @@
       "MRatioInversionMonotone",
       "MagicABindingFormula",
       "MagicEqualsEmpirical",
+      "MagicNumbersBring",
       "MagicNumbersBring",
       "MarkovDisjointStabilisation",
       "MarkovTraceCyclic",
@@ -163,11 +166,13 @@
       "QouInfraDischargesGoncharovZeta5",
       "QouPNeqNp",
       "QuantumComputationalUniversality",
+      "QuantumLanglandsDual",
       "RadiusOfConvergenceGateClass",
       "RegularityBreakdown",
       "RegularityBreakdown",
       "RegularityBreakdown",
       "ResidueAtRoot",
+      "ReverseLimitQToInfinity",
       "RhoKH3ARefinement",
       "RhoPrefactorStructural",
       "RootOfUnityTruncationContext",
@@ -202,6 +207,7 @@
       "VolumeConjecture",
       "VolumeConjecture",
       "VorticityLowerBoundContext",
+      "WeakSpectralCompleteness",
       "WeakSpectralCompleteness",
       "WeakSpectralCompletenessSkeleton",
       "WeakSymmetricNormalization",
@@ -252,6 +258,14 @@
         "line": 342,
         "dependsOn": [
           "FullTwistContentFormula"
+        ]
+      },
+      {
+        "name": "ShellTransitionKnot",
+        "file": "content/quantum-observable-universe/lean/QOU/Conjectures/ShellTransitionKnot.lean",
+        "line": 88,
+        "dependsOn": [
+          "BorromeanQuark"
         ]
       },
       {
@@ -337,28 +351,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean)"
       }
     ],
-    "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean": [
-      {
-        "line": 254,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class StandardHeckeWoronowicz",
-        "decl": "StandardHeckeWoronowicz",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (deg_is_coxeter_length) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character.lean": [
-      {
-        "line": 121,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class PontryaginDualCoxeterCharacter where",
-        "decl": "PontryaginDualCoxeterCharacter",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean": [
       {
         "line": 19,
@@ -413,28 +405,6 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.lean": [
-      {
-        "line": 23,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure LocalShadowOrdering (R : Type u) [CommRing R] where",
-        "decl": "LocalShadowOrdering",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds_on_neighborhood) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.lean": [
-      {
-        "line": 9,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure NSRegularQOU where",
-        "decl": "NSRegularQOU",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (regular) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/fluid-dynamics/observability-q-independent.lean": [
       {
         "line": 19,
@@ -457,27 +427,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean": [
-      {
-        "line": 64,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure NPProblem where",
-        "decl": "NPProblem",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (has_verifier) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean": [
-      {
-        "line": 82,
-        "category": "proof-no-trivial-true",
-        "pattern": "def-disguised-true",
-        "snippet": "def qHeatKernelPeterWeyl (q t : ℝ)",
-        "decl": "qHeatKernelPeterWeyl",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/information-theory/qou-is-ccc.lean": [
@@ -510,44 +459,6 @@
         "snippet": "theorem HyperbolicVolumeIndependence.implies_single_irrational",
         "decl": "HyperbolicVolumeIndependence.implies_single_irrational",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean": [
-      {
-        "line": 67,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class HasPentagonRelation",
-        "decl": "HasPentagonRelation",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (pentagon_subgroup_exists) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 78,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class HasBlochGroup",
-        "decl": "HasBlochGroup",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (bloch_quotient_is_abelian, bloch_wigner_regulator_exists) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 100,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class Cl_2_PentagonHolds : Prop where",
-        "decl": "Cl_2_PentagonHolds",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (pentagon_holds_general, pentagon_at_pi_third) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 137,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class FaddeevKashaevQuasiClassicalLimit",
-        "decl": "FaddeevKashaevQuasiClassicalLimit",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (convergence_holds) — encode the real property as the field type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean": [
@@ -605,61 +516,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Conjectures/KnotFactorFrobeniusPairing.lean": [
-      {
-        "line": 5,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class KnotFactorFrobeniusPairing where",
-        "decl": "KnotFactorFrobeniusPairing",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Conjectures/MagicNumbersBring.lean": [
-      {
-        "line": 5,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class MagicNumbersBring where",
-        "decl": "MagicNumbersBring",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Conjectures/QuantumLanglandsDual.lean": [
-      {
-        "line": 5,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class QuantumLanglandsDual where",
-        "decl": "QuantumLanglandsDual",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Conjectures/ShellTransitionKnot.lean": [
-      {
-        "line": 5,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class ShellTransitionKnot where",
-        "decl": "ShellTransitionKnot",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Conjectures/WeakSpectralCompleteness.lean": [
-      {
-        "line": 5,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class WeakSpectralCompleteness where",
-        "decl": "WeakSpectralCompleteness",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean": [
       {
         "line": 46,
@@ -704,17 +560,6 @@
         "snippet": "theorem zero_not_isAlgebraicallyPrime (q : ℝ) :",
         "decl": "zero_not_isAlgebraicallyPrime",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/IwahoriHecke/TypeA.lean": [
-      {
-        "line": 137,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class ReverseLimitQToInfinity where",
-        "decl": "ReverseLimitQToInfinity",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (bar_image_quadratic_holds) — encode the real property as the field type, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean": [
@@ -924,71 +769,9 @@
         "snippet": "structure StrongDualityPair (sdp : SDPPrimal n R ι) where",
         "decl": "StrongDualityPair",
         "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (dual_feas, obj_eq) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean": [
-      {
-        "line": 92,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure CategoricalMobiusEnergy (M : Type*) where",
-        "decl": "CategoricalMobiusEnergy",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (mobiusInvariant) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean": [
-      {
-        "line": 168,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure QHeckeEigensheaf (M : Type u) where",
-        "decl": "QHeckeEigensheaf",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (tensor_compatible, factorisation) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QuantumBloch/pentagon_uv_commutation.lean": [
-      {
-        "line": 17,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure claim_iii_eigenvalue_specialisation : Prop where",
-        "decl": "claim_iii_eigenvalue_specialisation",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (instance) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 25,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "structure claim_iv_operator_lift_transient : Prop where",
-        "decl": "claim_iv_operator_lift_transient",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (instance) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Substrate/ColorAntisymmetric.lean": [
-      {
-        "line": 80,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class FermiColorSinglet (Baryon : Type*) : Prop where",
-        "decl": "FermiColorSinglet",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (color_in_sign_rep) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean": [
-      {
-        "line": 56,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class PairGenCanonical : Prop where",
-        "decl": "PairGenCanonical",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
+        "exempt": true,
+        "exempt_reason": "explicit @marker / opaque-tag opt-out",
+        "detail": "opaque-marker field(s) `: True` (dual_feas, obj_eq) — honestly framed; tracked not counted"
       }
     ],
     "content/quantum-observable-universe/mass-endomorphism/gb-spectral-sequence.lean": [
@@ -1015,20 +798,9 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean)"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean": [
-      {
-        "line": 129,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class MassFormula where",
-        "decl": "MassFormula",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (proton_matches_codata, neutron_matches_codata) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean": [
       {
-        "line": 61,
+        "line": 63,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def pipeline_functoriality {R : Type u} [Field R] (q : R) :",
@@ -1038,16 +810,7 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       },
       {
-        "line": 121,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class HyperbolicVolumeIndependence : Prop where",
-        "decl": "HyperbolicVolumeIndependence",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 128,
+        "line": 144,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def conditional_on_HyperbolicVolumeIndependence",
@@ -1099,39 +862,25 @@
         "snippet": "class IsDemazureSubCrystal",
         "decl": "IsDemazureSubCrystal",
         "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (closed_under_kashiwara_raising) — encode the real property as the field type, or demote per §3b-tax"
+        "exempt": true,
+        "exempt_reason": "explicit @marker / opaque-tag opt-out",
+        "detail": "opaque-marker field(s) `: True` (closed_under_kashiwara_raising) — honestly framed; tracked not counted"
       },
       {
-        "line": 106,
+        "line": 112,
         "category": "proof-claims-unencoded",
         "pattern": "true-class-field",
         "snippet": "class HasBlochGroupQuotient (F : Type*) : Prop where",
         "decl": "HasBlochGroupQuotient",
         "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (bloch_quotient_exists, borel_regulator_iso) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 128,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class Cl_2_PentagonIdentity : Prop where",
-        "decl": "Cl_2_PentagonIdentity",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (pentagon_holds_modulo_2pi) — encode the real property as the field type, or demote per §3b-tax"
+        "exempt": true,
+        "exempt_reason": "explicit @marker / opaque-tag opt-out",
+        "detail": "opaque-marker field(s) `: True` (bloch_quotient_exists, borel_regulator_iso) — honestly framed; tracked not counted"
       }
     ],
     "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean": [
       {
-        "line": 144,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 151,
+        "line": 168,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def reidemeister_mass_invariance_conditional_on_borromean_quark",
@@ -1149,7 +898,9 @@
         "snippet": "class MarkovTraceFamilyOneDim (R : Type*) (q z : R) where",
         "decl": "MarkovTraceFamilyOneDim",
         "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (unique) — encode the real property as the field type, or demote per §3b-tax"
+        "exempt": true,
+        "exempt_reason": "explicit @marker / opaque-tag opt-out",
+        "detail": "opaque-marker field(s) `: True` (unique) — honestly framed; tracked not counted"
       }
     ],
     "content/quantum-observable-universe/observations/flavor-split-substrate.lean": [
@@ -1200,80 +951,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean)"
       }
     ],
-    "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean": [
-      {
-        "line": 25,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class CPTD6D7D8Closure where",
-        "decl": "CPTD6D7D8Closure",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (cpt_trace_preserved) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 34,
-        "category": "proof-no-trivial-true",
-        "pattern": "def-disguised-true-conjecture",
-        "snippet": "def cpt_closure [CPTD6D7D8Closure] : True := by",
-        "decl": "cpt_closure",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean": [
-      {
-        "line": 167,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class SymmetricCrystalPairProduction : Prop where",
-        "decl": "SymmetricCrystalPairProduction",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 174,
-        "category": "proof-no-trivial-true",
-        "pattern": "def-disguised-true-conjecture",
-        "snippet": "def conditional_on_SymmetricCrystalPairProduction",
-        "decl": "conditional_on_SymmetricCrystalPairProduction",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/geom-universality.lean": [
-      {
-        "line": 192,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class HyperbolicVolumeIndependence : Prop where",
-        "decl": "HyperbolicVolumeIndependence",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 199,
-        "category": "proof-no-trivial-true",
-        "pattern": "def-disguised-true-conjecture",
-        "snippet": "def conditional_on_HyperbolicVolumeIndependence",
-        "decl": "conditional_on_HyperbolicVolumeIndependence",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean": [
-      {
-        "line": 254,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
       {
         "line": 103,
@@ -1291,27 +968,6 @@
         "pattern": "def-disguised-true-conjecture",
         "snippet": "def force_carrier_from_hartree [EHartreeCategoricalDerivation] :",
         "decl": "force_carrier_from_hartree",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean": [
-      {
-        "line": 55,
-        "category": "proof-claims-unencoded",
-        "pattern": "true-class-field",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major",
-        "detail": "carrier field(s) typed `: True` carry no content (holds) — encode the real property as the field type, or demote per §3b-tax"
-      },
-      {
-        "line": 62,
-        "category": "proof-no-trivial-true",
-        "pattern": "def-disguised-true-conjecture",
-        "snippet": "def hydrogen_shell_writhe_conditional_on_borromean_quark",
-        "decl": "hydrogen_shell_writhe_conditional_on_borromean_quark",
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
