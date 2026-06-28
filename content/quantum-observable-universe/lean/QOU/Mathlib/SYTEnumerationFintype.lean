@@ -224,4 +224,35 @@ theorem isStdFilling_adjcol (l a : List ℕ) (h : isStdFilling l a = true) (hlen
     congr 1
   rw [e0, e1]; exact hcol
 
+/-- Adjacent-column strictness chains to **general** column strictness. -/
+theorem isStdFilling_col_aux (l a : List ℕ) (h : isStdFilling l a = true) (hlen : a.length = l.sum)
+    (hl : List.Sorted (· ≥ ·) l) (i1 n j : ℕ)
+    (hi2 : i1 + n + 1 < l.length) (hj : j < l[i1 + n + 1]'hi2) :
+    entryFn l a i1 j < entryFn l a (i1 + n + 1) j := by
+  induction n with
+  | zero =>
+    simpa using isStdFilling_adjcol l a h hlen hl i1 j (by simpa using hi2) (by simpa using hj)
+  | succ k ih =>
+    have hmid : i1 + k + 1 < l.length := by omega
+    have hmono : l[i1 + (k + 1) + 1]'hi2 ≤ l[i1 + k + 1]'hmid := by
+      have := List.pairwise_iff_getElem.mp hl (i1 + k + 1) (i1 + (k + 1) + 1) hmid hi2 (by omega)
+      simpa using this
+    have hjmid : j < l[i1 + k + 1]'hmid := by omega
+    have step1 : entryFn l a i1 j < entryFn l a (i1 + k + 1) j := ih hmid hjmid
+    have hi2' : (i1 + k + 1) + 1 < l.length := by omega
+    have hj' : j < l[(i1 + k + 1) + 1]'hi2' := by
+      have he : (i1 + k + 1) + 1 = i1 + (k + 1) + 1 := by omega
+      rw [getElem_congr_idx he]; exact hj
+    have step2 := isStdFilling_adjcol l a h hlen hl (i1 + k + 1) j hi2' hj'
+    rw [show i1 + (k + 1) + 1 = (i1 + k + 1) + 1 by omega]
+    exact lt_trans step1 step2
+
+/-- **Column fact.** For `i1 < i2 < l.length` and `j < l[i2]`, `entry i1 j < entry i2 j`. -/
+theorem isStdFilling_col (l a : List ℕ) (h : isStdFilling l a = true) (hlen : a.length = l.sum)
+    (hl : List.Sorted (· ≥ ·) l) (i1 i2 j : ℕ) (hlt : i1 < i2) (hi2 : i2 < l.length)
+    (hj : j < l[i2]'hi2) :
+    entryFn l a i1 j < entryFn l a i2 j := by
+  obtain ⟨n, rfl⟩ : ∃ n, i2 = i1 + n + 1 := ⟨i2 - i1 - 1, by omega⟩
+  exact isStdFilling_col_aux l a h hlen hl i1 n j hi2 hj
+
 end QOU.Mathlib.SYTEnum
