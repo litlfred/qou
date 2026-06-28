@@ -177,6 +177,37 @@ theorem sum_map_const_mul (A : ℚ) (L : List ℕ) (f : ℕ → ℚ) :
   | nil => simp
   | cons a t ih => simp [List.sum_cons, ih, mul_add]
 
+/-! ## Bridge: the brute-force enumerator is Mathlib's `List.permutations'`
+
+`allPerms` / `insertEverywhere` are definitionally Mathlib's `List.permutations'` / `permutations'Aux`
+(the structural — kernel-reducible — permutation generator).  Identifying them lets the corner-recursion
+bijection use Mathlib's permutation API (`mem_permutations'`, `permutations_perm_permutations'`, …)
+instead of re-deriving completeness/no-duplication of the generator by hand. -/
+
+/-- `insertEverywhere` is Mathlib's `permutations'Aux`. -/
+theorem insertEverywhere_eq (x : ℕ) (l : List ℕ) :
+    insertEverywhere x l = l.permutations'Aux x := by
+  induction l with
+  | nil => rfl
+  | cons a t ih => simp [insertEverywhere, List.permutations'Aux, ih]
+
+/-- **The brute-force generator is `List.permutations'`** — `allPerms l = l.permutations'`. -/
+theorem allPerms_eq_permutations' (l : List ℕ) : allPerms l = l.permutations' := by
+  induction l with
+  | nil => rfl
+  | cons a t ih =>
+    simp only [allPerms, List.permutations', ih]
+    congr 1
+    funext y
+    exact insertEverywhere_eq a y
+
+/-- **`numSYTenum` as a filtered length over `permutations'`** — the form the corner bijection counts
+against: `#SYT(λ) = |{ standard fillings among the permutations of [1,…,n] }|`. -/
+theorem numSYTenum_eq_length_filter (l : List ℕ) :
+    numSYTenum l = (((List.range (sz l)).map (· + 1)).permutations'.filter (isStdFilling l)).length := by
+  unfold numSYTenum sz
+  rw [allPerms_eq_permutations', List.countP_eq_length_filter]
+
 /-! ## The two residual GNW identities (cited `sorry` — self-contained, unblocked)
 
 Unlike `SYTHookFormulaGeneral.dimAitkenIdentity` (blocked: needs Specht/RSK/Frobenius-determinant
