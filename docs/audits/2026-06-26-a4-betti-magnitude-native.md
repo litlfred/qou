@@ -18,5 +18,5 @@ Rather than attempting a global $S_{12}$ Bruhat evaluation, we restrict evaluati
 3. **Tractable Execution:** Because $l(w) \le 20$, the lower Bruhat intervals are radically constrained. The native Rust engine (`hecke-engine`) computes the exact Betti sum over the localized set in seconds/minutes, requiring no combinatorial proxies or curve-fitting.
 
 ## 4. Next Steps & Lean Formalization
-- **Numerical Validation:** The optimized Rust engine successfully computed the exact $B_{(10,2)}$ value in ~98 seconds. The native Betti sum is **584**. Inserting this exact scalar into the mass formula closes the gap.
+- **Numerical Validation:** The optimized Rust engine successfully computed the exact $B_{(10,2)}$ value in ~98 seconds. The native Betti sum is **584**, computed exactly via native Rust (first result past the n≤6 wall); the full A=4 signed Σ_λ over all 77 partitions is not yet evaluated.
 - **Lean Scaffold:** Formalized the trace factorization over Hecke left cells in `QOU/BraidsAndKnots/S5SO3FiberAction.lean` to prove that the topological trace rigorously splits into the structural scale $\times$ the left cell Betti sum.
