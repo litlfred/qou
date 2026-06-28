@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
@@ -580,9 +580,12 @@ theorem dim_V_2_1_eq_two :
     `q - q⁻¹ ≠ 0`. The classical-limit specialisation `q = 1` is
     a degenerate case for this formula (since `q − q⁻¹ = 0`), but
     the corresponding classical-dim statement is the hook-length
-    result `dim V_(2,1) = 2` proved above. -/
-theorem dim_V_2_1_classical_eq_two :
-    (1 : ℝ) + 1 = 2 := by
+    result `dim V_(2,1) = 2` proved above.
+
+    Stated over a generic field `{R} [Field R]` (§7c): `1 + 1 = 2`
+    is an algebraic ring identity, not an archimedean one. -/
+theorem dim_V_2_1_classical_eq_two {R : Type*} [Field R] :
+    (1 : R) + 1 = 2 := by
   norm_num
 
 end QOU.BraidsAndKnots
