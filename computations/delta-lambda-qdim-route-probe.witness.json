@@ -1,13 +1,17 @@
 {
  "engine": "mpmath",
  "engineVersion": "mpmath 50dps on canonical witnesses",
- "computedAt": "2026-06-28T05:59:20.297032+00:00",
+ "computedAt": "2026-06-28T06:06:33.317271+00:00",
  "computation": "delta-lambda-qdim-route-probe",
  "scriptFile": "delta_lambda_qdim_route_probe.py",
- "scriptHash": "948999b156ce",
- "description": "Route-(i) probe: replace |\u0394_\u03bb|=dim_\u03bb by the balanced quantum dimension dim_q,\u03bb=[n]_q!/\u220f[hook]_q at q_0 and recompute the \u2113\u00b9 ceiling. \u2016c_q\u2016\u2081/|target| \u2208 [0.46,0.79] < 1 for D/T/\u00b3He/\u2074He \u27f9 balanced-q-dim reweighting alone does NOT supply the shortfall, but lifts the heavy-isotope ceiling a lot (\u2074He 0.41\u21920.79) \u2014 constructive evidence for the fibre q-kernel (z2bn #2899). SCOPE (a) scope-limited negative: this convention as SOLE fix only; other q-dim conventions and route (i)+(ii)/(iii) NOT excluded; no invariant \u27f9 not a (b) exclusion.",
- "scope": "(a) scope-limited-negative \u2014 balanced-[k]_q quantum dimension as the sole magnitude fix",
- "qdim_convention": "balanced [k]_q=(q^k-q^-k)/(q-q^-1); dim_q,\u03bb=[n]_q!/\u220f_cells[hook]_q",
+ "scriptHash": "7468e26442e5",
+ "description": "Route-(i) probe across 3 q-dimension conventions (balanced / unbalanced / fake-degree). The \u2113\u00b9 ceiling \u2016c_q\u2016\u2081/|target| is wildly convention-dependent (\u2074He spans 0.41\u21925.62): balanced undershoots all isotopes, unbalanced/fake-degree overshoot the heavy ones. \u27f9 route (i) ESCAPES the sign-only prune and is UNDER-CONSTRAINED \u2014 the q-dim convention is a hidden DOF (Rule 14), so magnitude-matching via q-dim is not evidence of a derivation. The real discriminators: an independent principle fixing the convention + the sign/cancellation structure (net \u221282.9% vs fake-degree \u2113\u00b9 +462% on \u2074He). Scope (a), NOT a (b) exclusion (no invariant).",
+ "scope": "(a) scope-limited \u2014 route (i) is convention-under-determined; q-dim convention is a hidden DOF",
+ "conventions": {
+  "balanced": "[n]_q!/\u220f[h]_q, [k]=(q^k-q^-k)/(q-q^-1)",
+  "unbalanced": "[n]_q!/\u220f[h]_q, [k]=(1-q^k)/(1-q)",
+  "fake_degree": "q^{n(\u03bb)}\u00b7unbalanced, n(\u03bb)=\u03a3(i-1)\u03bb_i (principal specialization)"
+ },
  "parameters": {
   "q_0": 1.1099785955573347,
   "m_e_MeV": 0.51099895069
@@ -18,40 +22,51 @@
     "atom": "D",
     "B_AME_MeV": 2.224566,
     "target_units_m_e": 4.353367060727183,
-    "l1_classic": 2.246626166084354,
-    "l1_qdim": 2.384743688691243,
-    "qdim_over_classic": 1.0614777503671715,
-    "qdim_ceiling_over_target": 0.5477929279624993
+    "ceiling_over_target": {
+     "classic": 0.5160663308986123,
+     "balanced": 0.5477929279624993,
+     "unbalanced": 0.6827162778760162,
+     "fake_degree": 0.845148160532311
+    }
    },
    {
     "atom": "T",
     "B_AME_MeV": 8.481798,
     "target_units_m_e": 16.59846461239707,
-    "l1_classic": 5.934980036613723,
-    "l1_qdim": 7.711000299532652,
-    "qdim_over_classic": 1.2992462067205637,
-    "qdim_ceiling_over_target": 0.4645610590857577
+    "ceiling_over_target": {
+     "classic": 0.35756198993134597,
+     "balanced": 0.4645610590857577,
+     "unbalanced": 0.8639154402913146,
+     "fake_degree": 1.3508113939230264
+    }
    },
    {
     "atom": "3He",
     "B_AME_MeV": 7.718043,
     "target_units_m_e": 15.10383336321602,
-    "l1_classic": 8.938724763901604,
-    "l1_qdim": 11.58618050338668,
-    "qdim_over_classic": 1.2961782367633283,
-    "qdim_ceiling_over_target": 0.7671019816468411
+    "ceiling_over_target": {
+     "classic": 0.5918182853944242,
+     "balanced": 0.7671019816468411,
+     "unbalanced": 1.4138969419534215,
+     "fake_degree": 2.1749852978629503
+    }
    },
    {
     "atom": "4He",
     "B_AME_MeV": 28.295673,
     "target_units_m_e": 55.37325069218333,
-    "l1_classic": 22.475975244771508,
-    "l1_qdim": 44.01349634660421,
-    "qdim_over_classic": 1.958246343808502,
-    "qdim_ceiling_over_target": 0.7948512286423757
+    "ceiling_over_target": {
+     "classic": 0.40589950858608864,
+     "balanced": 0.7948512286423757,
+     "unbalanced": 2.535171588784837,
+     "fake_degree": 5.617895289827509
+    }
    }
   ],
-  "all_qdim_ceilings_below_target": true
- },
- "allPassed": true
+  "ceiling_span_across_conventions": [
+   0.35756198993134597,
+   5.617895289827509
+  ],
+  "some_convention_overshoots_target": true
+ }
 }

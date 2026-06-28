@@ -109,18 +109,38 @@ levers, all of which add or reshape ℓ¹ mass and so escape the ceiling:
 - **PROBE-2** (ae4b/ae42/ae43, A=4 interface operator) — a genuinely new
   many-body term; adds magnitude. Not excluded.
 
-**Route-(i) follow-up (scope (a)).** The cheapest magnitude route is to
-re-derive the block magnitude `|Δ_λ|`. Replacing the classical `dim_λ` by
-the **balanced quantum dimension** `dim_q,λ = [n]_q!/∏[hook]_q` at `q_0`
+**Route-(i) follow-up (scope (a)) — the q-dim convention is a hidden DOF.**
+The cheapest magnitude route is to re-derive the block magnitude `|Δ_λ|` as
+a quantum dimension. Testing three natural conventions at `q_0`
 ([`delta-lambda-qdim-route-probe.witness.json`](../../computations/delta-lambda-qdim-route-probe.witness.json))
-raises the ceiling to `‖c_q‖₁/|target|` = {D 0.55, T 0.46, ³He 0.77,
-⁴He 0.79} — **still < 1**, so this convention *alone* does not close the
-deficit. But it lifts the heavy-isotope ceiling sharply (⁴He 0.41 → 0.79),
-i.e. the q-deformation supplies a *large part* of the missing magnitude —
-constructive evidence for the fibre q-kernel direction (z2bn, #2899).
-Scope **(a)** (this convention as sole fix only): other q-dim conventions
-and route (i) combined with (ii)/(iii) are not excluded; no invariant
-forbids a different magnitude rule, so this is not a (b) exclusion.
+gives a **wildly convention-dependent** ceiling `‖c_q‖₁/|target|`:
+
+| iso | classic | balanced | unbalanced | fake-degree |
+|-----|--------:|---------:|-----------:|------------:|
+| D   | 0.52 | 0.55 | 0.68 | 0.85 |
+| T   | 0.36 | 0.47 | 0.86 | **1.35** |
+| ³He | 0.59 | 0.77 | **1.41** | **2.18** |
+| ⁴He | 0.41 | 0.80 | **2.54** | **5.62** |
+
+The balanced convention undershoots everywhere, but the unbalanced and
+fake-degree (principal-specialization) conventions *overshoot* the heavy
+isotopes — ⁴He spans **0.41 → 5.62× target** across conventions. So route
+(i) does **not** "fail": it **escapes the sign-only prune** (which holds the
+magnitude fixed at classical `dim`) and is **under-constrained** — the
+q-dimension convention is a **hidden degree of freedom** (Rule 14 /
+production-vs-exploratory discipline). Matching the binding *magnitude* by
+choosing a q-dim convention is therefore *not* evidence of a derivation;
+almost any target ℓ¹ can be dialled in.
+
+Consequence for the magnitude-side levers (z2bn/thb7/PROBE-2): the binding
+ℓ¹ magnitude is a **weak discriminator**. The genuine constraints are (1) an
+*independent* principle that fixes the q-dim convention (not chosen to fit),
+and (2) the **sign / cancellation** structure — the actual signed sum
+undershoots at −82.9 % while the fake-degree ℓ¹ overshoots at +462 % (⁴He),
+so the missing object must reproduce a *near-total cancellation* of large
+q-deformed magnitudes, which the magnitude size alone does not test. Scope
+**(a)** (convention-under-determination), not a (b) exclusion — no invariant
+forbids a q-dim magnitude.
 
 ## Machine-checked core (Lean)
 
