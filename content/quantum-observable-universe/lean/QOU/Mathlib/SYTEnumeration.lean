@@ -77,11 +77,32 @@ def shapesLE4 : List (List ℕ) :=
   [[1], [2], [1, 1], [3], [2, 1], [1, 1, 1],
    [4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
 
+/-- The partitions of `n`, grouped by `n`, for `n = 1,…,4` (paired with `n` for the `n!` check). -/
+def partitionsByN : List (ℕ × List (List ℕ)) :=
+  [(1, [[1]]),
+   (2, [[2], [1, 1]]),
+   (3, [[3], [2, 1], [1, 1, 1]]),
+   (4, [[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]])]
+
 /-- **Per-shape validation of the hook-length formula (sorry-free).** For every shape with
 `∑ ≤ 4`, the brute-force standard-tableau count equals the Frame–Robinson–Thrall hook dimension:
 `#SYT(λ) = dimHLF(λ)`.  An independent per-shape check that `dim_validated_le12` (sum only) does not
 provide. -/
 theorem numSYTenum_eq_dimHLF_le4 :
     ∀ l ∈ shapesLE4, numSYTenum l = dimHLF l := by decide
+
+/-- **Identity I axiom (i), validated against genuine standard-tableau counts (sorry-free).**  For
+every `n ≤ 4`, the RSK / Burnside sum of squares of the *brute-force* `#SYT(λ)` counts equals `n!`:
+
+    Σ_{λ ⊢ n} (numSYTenum λ)² = n!.
+
+`dim_validated_le12` proves the same sum-of-squares for the *hook* dimension `dimHLF`; this proves it
+for the **independently-enumerated** standard-tableau count — so the RSK identity holds at the level
+of actual tableaux, not merely of the hook closed form.  Together with `numSYTenum_eq_dimHLF_le4`
+(per-shape `numSYTenum = dimHLF`), this re-grounds `dim_validated_le12` itself in genuine `#SYT` for
+`n ≤ 4`. -/
+theorem rsk_sumSq_eq_factorial_le4 :
+    ∀ nps ∈ partitionsByN, (nps.2.map (fun l => (numSYTenum l) ^ 2)).sum = nps.1.factorial := by
+  decide
 
 end QOU.Mathlib.SYTEnum
