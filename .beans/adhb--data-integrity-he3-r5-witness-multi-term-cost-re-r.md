@@ -4,8 +4,29 @@ title: 'Data-integrity: He3 R5 witness multi-term-cost re-run (regen winner dive
 status: todo
 type: task
 created_at: 2026-06-26T03:39:52Z
-updated_at: 2026-06-26T03:39:52Z
+updated_at: 2026-06-28T23:30:00Z
 ---
+
+## Empirical diagnosis (2026-06-28) — "re-run with multi-term cost recovers canonical" is REFUTED
+
+Ran the CURRENT `r5_full_canonical_knot_solver.py` (which ALREADY wires a multi-term offset
+`b23 + t4` from `mass_formula_6term`, lines 562–590) for he3 + deuteron — H₃ Wenzl weights read
+from `y-lambda-wenzl-witness.json` (pyhecke_native unavailable, same Clarabel.rs scope block as b0vf;
+cache matches native to 3e-16). `solve_atom_b3` called directly; committed witness NOT touched.
+
+Result — canonical winner does NOT emerge for either atom:
+- **deuteron**: canonical `6_2` is NOT PSD-feasible (α_gap=0.89, rank 1051) — cannot win an
+  α-gap-driven search at all. Winner `[1,-2,1,-2,-1,-1,-1,-2]` ρ=2.
+- **he3**: canonical `L6a4` IS PSD-feasible but ranks 381st (rel_resid 0.74). `B_AME=7.718` MeV but
+  L6a4 predicts only ~2.04 MeV even WITH the ~1 MeV multi-term offset; best B₃ candidate reaches 4.58.
+  The offset is far too small to close the ~5.7 MeV deficit (the documented ~87–100% single-term
+  magnitude offset).
+
+So the bean's mechanical-re-run hypothesis fails. Tuning w_resid/offset to force canonical = fitting
+to the known answer (FORBIDDEN no-fit). The real fix is research-grade: (a) a feasibility criterion
+admitting deuteron `6_2`, and (b) a multi-term formula whose MAGNITUDE actually reaches B_AME — not a
+weight tune. Committed witness correctly stays frozen (PR #2836). No production change. Audit:
+`docs/audits/2026-06-28-adhb-r5-multiterm-insufficient-b0vf-native-blocked.md`.
 
 ## Problem (2026-06-26, PR #2836)
 
