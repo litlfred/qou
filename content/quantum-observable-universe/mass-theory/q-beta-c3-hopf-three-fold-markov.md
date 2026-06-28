@@ -95,6 +95,20 @@ the prediction is empirically observable:
 This 112$\times$ residual reduction is **observable above CODATA noise**,
 empirically validating the categorical-chain prediction.
 
+**Near-match tier (not Taylor-exact).** The identification
+$c_3 = J_{\text{Hopf}}(q=1) = -2$ is a **classical-limit near-match**, not
+a Taylor-exact coefficient — only $c_2 = -1$ is proved exact (per the
+$c_k$ truncation-order framing). Measured against the empirical $c_3$
+extracted from the operator-valued $N=3$ tower
+([`q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json),
+$c_3^{\text{emp}} \approx -2.0216$), the best simple model
+$c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ now sits at a residual
+$\approx 0.58\%$ (witness
+[`c3-hopf-habiro-analysis.witness.json`](../../computations/c3-hopf-habiro-analysis.witness.json)).
+This residual was $\approx 0.004\%$ against the pre-drift upstream input;
+the $\approx 0.58\%$ value reflects the refreshed $N=3$ operator-valued
+$c_3$, and is the size of the near-match gap — not evidence of exactness.
+
 ## Open formalization steps
 
 The Lean stub
