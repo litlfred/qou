@@ -305,4 +305,104 @@ theorem entryFn_eq_a_idx (l a : List ℕ) (i j : ℕ) (hi : i < l.length) (hj : 
   rw [getD_of_lt]
   rfl
 
+/-- A flat filling that is a permutation of `[1,…,∑l]` has entries in `[1,∑l]`. -/
+theorem a_getElem_mem_Icc (l a : List ℕ) (hp : a.Perm ((List.range l.sum).map (· + 1)))
+    (k : ℕ) (hk : k < a.length) : 1 ≤ a[k] ∧ a[k] ≤ l.sum := by
+  have hmem : a[k] ∈ a := List.getElem_mem hk
+  rw [hp.mem_iff] at hmem
+  simp only [List.mem_map, List.mem_range] at hmem
+  obtain ⟨x, hx, hxe⟩ := hmem
+  omega
+
+/-- `a` is `Nodup` (a permutation of the `Nodup` list `[1,…,∑l]`). -/
+theorem a_nodup (l a : List ℕ) (hp : a.Perm ((List.range l.sum).map (· + 1))) : a.Nodup := by
+  have hrng : ((List.range l.sum).map (· + 1)).Nodup :=
+    List.Nodup.map (by intro x y hxy; simpa using hxy) List.nodup_range
+  exact (hp.nodup_iff).mpr hrng
+
+/-! ### The inverse: a flat filling gives a standard Young tableau -/
+
+variable {l : List ℕ}
+
+/-- The semistandard Young tableau reshaped from a flat standard filling `a`. -/
+def listToSsyt (hl : List.Sorted (· ≥ ·) l) (a : List ℕ)
+    (hstd : isStdFilling l a = true) (hlen : a.length = l.sum) :
+    SemistandardYoungTableau (YoungDiagram.ofRowLens l hl) where
+  entry := entryFn l a
+  row_weak' := by
+    intro i j1 j2 hj hmem
+    rw [YoungDiagram.mem_ofRowLens] at hmem
+    obtain ⟨hi, hj2⟩ := hmem
+    exact le_of_lt (isStdFilling_row l a hstd hlen i j1 j2 hi hj hj2)
+  col_strict' := by
+    intro i1 i2 j hi hmem
+    rw [YoungDiagram.mem_ofRowLens] at hmem
+    obtain ⟨hi2, hj⟩ := hmem
+    exact isStdFilling_col l a hstd hlen hl i1 i2 j hi hi2 hj
+  zeros' := by
+    intro i j hmem
+    rw [YoungDiagram.mem_ofRowLens] at hmem
+    push_neg at hmem
+    by_cases hi : i < l.length
+    · exact entryFn_zero_of_col l a i j hi (hmem hi)
+    · exact entryFn_zero_of_row l a i j (by omega)
+
+/-- The standard Young tableau reshaped from a flat standard filling `a` (a permutation of
+`[1,…,∑l]`): its entry map bijects the cells onto `{1,…,∑l}`. -/
+def listToSYT (hl : List.Sorted (· ≥ ·) l) (a : List ℕ)
+    (hp : a.Perm ((List.range l.sum).map (· + 1))) (hstd : isStdFilling l a = true) :
+    QOU.Mathlib.StandardYoungTableau (YoungDiagram.ofRowLens l hl) where
+  toSsyt := listToSsyt hl a hstd (hp.length_eq.trans (by simp))
+  bijOn := by
+    set μ := YoungDiagram.ofRowLens l hl with hμ
+    have hlen : a.length = l.sum := hp.length_eq.trans (by simp)
+    have hcard : μ.cells.card = l.sum := QOU.Mathlib.SYTEnum.card_cells_ofRowLens l hl
+    set f : ℕ × ℕ → ℕ := fun c => (listToSsyt hl a hstd hlen).entry c.1 c.2 with hf
+    -- entry on a cell equals a[idx]
+    have hentry : ∀ i j, (hi : i < l.length) → (hj : j < l[i]'hi) →
+        f (i, j) = a[idx l i j]'(by rw [hlen]; exact idx_lt_sum l i j hi hj) := by
+      intro i j hi hj; exact entryFn_eq_a_idx l a i j hi hj hlen
+    -- MapsTo
+    have hmaps : Set.MapsTo f (μ.cells : Set (ℕ × ℕ)) (Set.Icc 1 μ.cells.card) := by
+      intro c hc
+      rw [Finset.mem_coe, YoungDiagram.mem_cells, hμ, YoungDiagram.mem_ofRowLens] at hc
+      obtain ⟨hi, hj⟩ := hc
+      rw [Set.mem_Icc, hcard, hentry c.1 c.2 hi hj]
+      exact a_getElem_mem_Icc l a hp _ _
+    -- InjOn
+    have hinj : Set.InjOn f (μ.cells : Set (ℕ × ℕ)) := by
+      intro c1 hc1 c2 hc2 heq
+      rw [Finset.mem_coe, YoungDiagram.mem_cells, hμ, YoungDiagram.mem_ofRowLens] at hc1 hc2
+      obtain ⟨hi1, hj1⟩ := hc1
+      obtain ⟨hi2, hj2⟩ := hc2
+      rw [hentry c1.1 c1.2 hi1 hj1, hentry c2.1 c2.2 hi2 hj2] at heq
+      have hidx : idx l c1.1 c1.2 = idx l c2.1 c2.2 :=
+        (List.Nodup.getElem_inj_iff (a_nodup l a hp)).mp heq
+      obtain ⟨h1, h2⟩ := idx_injOn l c1.1 c1.2 c2.1 c2.2 hi1 hj1 hi2 hj2 hidx
+      exact Prod.ext h1 h2
+    -- SurjOn via Finset double-counting (inj + card ⇒ surj on equal-card finsets)
+    have hsurj : Set.SurjOn f (μ.cells : Set (ℕ × ℕ)) (Set.Icc 1 μ.cells.card) := by
+      rw [show (Set.Icc 1 μ.cells.card) = (↑(Finset.Icc 1 μ.cells.card) : Set ℕ) by
+        simp [Finset.coe_Icc]]
+      intro b hb
+      simp only [Finset.coe_Icc, Set.mem_Icc] at hb
+      have hmaps' : ∀ c ∈ μ.cells, f c ∈ Finset.Icc 1 μ.cells.card := by
+        intro c hc
+        have : c ∈ (μ.cells : Set (ℕ × ℕ)) := by rw [Finset.mem_coe]; exact hc
+        have := hmaps this
+        rw [Set.mem_Icc] at this
+        simp only [Finset.mem_Icc]; exact this
+      have hinj' : ∀ c1 ∈ μ.cells, ∀ c2 ∈ μ.cells, f c1 = f c2 → c1 = c2 := by
+        intro c1 hc1 c2 hc2 heq
+        exact hinj (by rw [Finset.mem_coe]; exact hc1) (by rw [Finset.mem_coe]; exact hc2) heq
+      have hcardle : (Finset.Icc 1 μ.cells.card).card ≤ μ.cells.card := by
+        rw [Nat.card_Icc]; omega
+      have := Finset.surj_on_of_inj_on_of_card_le (s := μ.cells)
+        (t := Finset.Icc 1 μ.cells.card) (fun c _ => f c) (fun c hc => hmaps' c hc)
+        (fun c1 c2 h1 h2 he => hinj' c1 h1 c2 h2 he) hcardle b (by
+          simp only [Finset.mem_Icc]; exact hb)
+      obtain ⟨c, hc, hce⟩ := this
+      exact ⟨c, by rw [Finset.mem_coe]; exact hc, hce.symm⟩
+    exact ⟨hmaps, hinj, hsurj⟩
+
 end QOU.Mathlib.SYTEnum
