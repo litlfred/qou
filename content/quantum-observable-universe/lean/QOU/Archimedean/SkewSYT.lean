@@ -469,7 +469,9 @@ theorem skewSYTCount_pos [PartitionHelpers]
           omega
         · -- If μ ⊈ removeCorner, skewSYTCount = 1 in the if-branch.
           -- In fact this branch is vacuous: removing a corner from lam\μ
-          -- never drops below μ.  Discharged via the axiom below.
+          -- never drops below μ.  Discharged via the `PartitionHelpers`
+          -- class field `removeCorner_preserves_containment` (a named,
+          -- class-axiomatised conjectural input — §3b-cond — not an axiom).
           exact absurd (removeCorner_preserves_containment lam μ c.row h hc_cells) hnot
   -- Ref: [fulton1997]
 
