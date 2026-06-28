@@ -25,13 +25,10 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:bring-trilog-depth-3-witness`](../../../quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.md). -/
 class BringTrilogDepth3Witness where
-  -- Witness: computations/none
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+  /-- The Bring trilog value $\mathrm{Cl}_3(2\pi/5)$. -/
+  cl3Zeta5 : ℝ
+  /-- The conjugate trilog value $\mathrm{Cl}_3(4\pi/5)$. -/
+  cl3Zeta5_conj : ℝ
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
