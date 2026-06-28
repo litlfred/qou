@@ -15,27 +15,12 @@ import sympy as sp
 import mpmath as mp
 from qou_substrate import constants as C
 
-q = sp.Symbol("q", positive=True)
-def qint(k): return (q**k - q**(-k)) / (q - 1/q)
-def qfact(n):
-    r = sp.Integer(1)
-    for k in range(1, n+1): r *= qint(k)
-    return r
-def partitions(n):
-    if n == 0: yield []; return
-    for first in range(n, 0, -1):
-        for rest in partitions(n-first):
-            if not rest or rest[0] <= first: yield [first]+rest
-def hooks(lam):
-    conj = [sum(1 for r in lam if r > c) for c in range(lam[0])]
-    return [(row-j)+(conj[j]-i)-1 for i, row in enumerate(lam) for j in range(row)]
-def dim_q(lam):
-    d = qfact(sum(lam))
-    for h in hooks(lam): d /= qint(h)
-    return sp.cancel(sp.together(d))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from young_qdim import q, S  # noqa: E402
+
+# lw(c) = (1/(c+1)) Σ_{λ⊢c+1} dim_q(λ) = S(c+1)/(c+1) (shared cached machinery; bean z3a2, PR #2952)
 def lw(c):
-    n = c+1
-    return sp.cancel(sp.together(sum(dim_q(l) for l in partitions(n)) / n))
+    return sp.cancel(S(c + 1) / (c + 1))
 
 LW = {c: lw(c) for c in range(1, 7)}                 # lw(1..6)
 tau_seed = sp.cancel((LW[1] + LW[3]) / LW[2])        # solved from n=2,3,4
@@ -50,26 +35,26 @@ def tau_window(k): return sp.cancel((LW[k-1] + LW[k+1]) / LW[k])   # k>=2
 tau_w = {k: tau_window(k) for k in (2, 3, 4)}        # 3 overlapping windows
 
 # residuals lw(c+1) - (tau_seed*lw(c) - lw(c-1)) for c=3,4,5  (a_D n=5,6,7 checks)
-res = {c+2: sp.simplify(LW[c+1] - (tau_seed*LW[c] - LW[c-1])) for c in (3, 4, 5)}
+res = {c+2: sp.cancel(LW[c+1] - (tau_seed*LW[c] - LW[c-1])) for c in (3, 4, 5)}
 
 results = {
     "lw": {c: mp.nstr(ev(LW[c]), 16) for c in range(1, 7)},
     "tau_seed_n234": mp.nstr(ev(tau_seed), 16),
     "tau_closed_form": mp.nstr(ev(tau_cf), 16),
-    "tau_seed_eq_closed_form": bool(sp.simplify(tau_seed - tau_cf) == 0),
+    "tau_seed_eq_closed_form": bool(sp.cancel(tau_seed - tau_cf) == 0),
     "tau_windows": {f"n{k},{k+1},{k+2}": mp.nstr(ev(tau_w[k]), 12) for k in (2, 3, 4)},
     "recurrence_residuals_seed_tau": {f"n={n}": mp.nstr(ev(res[n]), 8) for n in (5, 6, 7)},
     "residual_rel_to_lw_at_n5": mp.nstr(ev(res[5]) / ev(LW[4]), 6),
     "theta_binding_seed": mp.nstr(mp.acosh(ev(tau_seed)/2), 12),
 }
 assertions = {
-    "tau_seed_eq_closed_form": bool(sp.simplify(tau_seed - tau_cf) == 0),
+    "tau_seed_eq_closed_form": bool(sp.cancel(tau_seed - tau_cf) == 0),
     "n5_recurrence_FAILS": bool(res[5] != 0),
     "n6_recurrence_FAILS": bool(res[6] != 0),
     "n7_recurrence_FAILS": bool(res[7] != 0),
-    "windowed_kernel_NOT_constant": bool(sp.simplify(tau_w[2] - tau_w[3]) != 0),
-    "lw2_matches_corpus": bool(sp.simplify(LW[2] - (q+1)**2/(3*q)) == 0),
-    "lw3_matches_familyA": bool(sp.simplify(LW[3] - (3*q**2 + 4 + 3/q**2)/4) == 0),
+    "windowed_kernel_NOT_constant": bool(sp.cancel(tau_w[2] - tau_w[3]) != 0),
+    "lw2_matches_corpus": bool(sp.cancel(LW[2] - (q+1)**2/(3*q)) == 0),
+    "lw3_matches_familyA": bool(sp.cancel(LW[3] - (3*q**2 + 4 + 3/q**2)/4) == 0),
 }
 all_passed = all(assertions.values())
 

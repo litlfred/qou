@@ -88,26 +88,26 @@ Sm = {m: S(m) for m in range(0, MMAX + 1)}
 
 # Sanity: q=1 limit must be the involution numbers 1,1,2,4,10,26,76,232,764
 INVOL = [1, 1, 2, 4, 10, 26, 76, 232, 764]
-q1_ok = all(sp.simplify(Sm[m].subs(q, 1) - INVOL[m]) == 0 for m in range(0, MMAX + 1))
+q1_ok = all(sp.cancel(Sm[m].subs(q, 1) - INVOL[m]) == 0 for m in range(0, MMAX + 1))
 
 # --- Hypothesis H1: S(m) = S(m-1) + [m-1]_q_sym * S(m-2) ---
 res_sym = {}
 for m in range(2, MMAX + 1):
-    r = sp.simplify(Sm[m] - (Sm[m - 1] + qint_sym(m - 1) * Sm[m - 2]))
+    r = sp.cancel(Sm[m] - (Sm[m - 1] + qint_sym(m - 1) * Sm[m - 2]))
     res_sym[m] = r
 H1_exact = all(res_sym[m] == 0 for m in range(2, MMAX + 1))
 
 # --- Variant H1a: asymmetric (Gaussian) q-integer ---
 res_asym = {}
 for m in range(2, MMAX + 1):
-    r = sp.simplify(Sm[m] - (Sm[m - 1] + qint_asym(m - 1) * Sm[m - 2]))
+    r = sp.cancel(Sm[m] - (Sm[m - 1] + qint_asym(m - 1) * Sm[m - 2]))
     res_asym[m] = r
 H1a_exact = all(res_asym[m] == 0 for m in range(2, MMAX + 1))
 
 # --- Variant H1b: top-power q^{m-1} weight (the (m-1) -> q^{m-1} deformation) ---
 res_top = {}
 for m in range(2, MMAX + 1):
-    r = sp.simplify(Sm[m] - (Sm[m - 1] + q**(m - 1) * Sm[m - 2]))
+    r = sp.cancel(Sm[m] - (Sm[m - 1] + q**(m - 1) * Sm[m - 2]))
     res_top[m] = r
 H1b_exact = all(res_top[m] == 0 for m in range(2, MMAX + 1))
 
@@ -132,7 +132,7 @@ all_have_qm1_sq = all(has_double_root_at_1(Dm[m]) for m in range(2, MMAX + 1) if
 Wm = {m: sp.cancel((Sm[m] - Sm[m - 1]) / Sm[m - 2]) for m in range(2, MMAX + 1)}
 Wm_factored = {m: sp.factor(Wm[m]) for m in range(2, MMAX + 1)}
 W_seed_exact = bool(
-    sp.simplify(Wm[2] - qint_sym(1)) == 0 and sp.simplify(Wm[3] - qint_sym(2)) == 0
+    sp.cancel(Wm[2] - qint_sym(1)) == 0 and sp.cancel(Wm[3] - qint_sym(2)) == 0
 )
 # W(m) is a Laurent polynomial in q (no partition-sum denominator) only at the seed:
 def is_laurent_poly_in_q(expr):
