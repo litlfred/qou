@@ -26,7 +26,7 @@ $\mathrm{tr}_M^{(n)}(T_w) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ by
    $H_n \supset H_{n-1} \supset \cdots \supset H_1$ terminates
    at the base case $\mathrm{tr}_M^{(1)}(\mathbf{1}) = 1$.
 
-**Why this matters.** The naive Hoefsmit per-Wedderburn-block path
+**Significance.** The naive Hoefsmit per-Wedderburn-block path
 materialises symbolic matrices of dimension up to $\dim_\lambda \leq 462$
 for every partition $\lambda \vdash 3A$ and multiplies along the
 braid word — for $A \geq 4$ this is computationally infeasible

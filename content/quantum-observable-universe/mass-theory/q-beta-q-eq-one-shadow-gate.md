@@ -11,7 +11,7 @@ $$
 
 *A candidate failing either shadow is structurally REFUTED.*
 
-## Why this is the $\S 4(c)$ formalize-first gate
+## Role as the $\S 4(c)$ formalize-first gate
 
 The refuted-class map (`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`)
 $\S 4$ lists four structural invariants any candidate $F(q)$ must satisfy:

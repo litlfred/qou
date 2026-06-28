@@ -5,7 +5,7 @@ the four $\S 4$ formalize-first invariants for any candidate
 a candidate is equivalent to that candidate clearing all four
 mass-side gates simultaneously.*
 
-## Why a parametric mass-side typeclass
+## Rationale for a parametric mass-side typeclass
 
 The $\mathfrak{Q}_\beta$ decay-side
 [`prop:q-beta-bar-even-kernel-typeclass`](q-beta-bar-even-kernel-typeclass.md)
@@ -88,7 +88,7 @@ Steps 1–3 are evaluable; step 4 requires the open categorical
 derivation (whatever rational/integer $w(1)$ should equal under the
 mass-side categorical chain).
 
-## Honest scope
+## Scope
 
 - This is **infrastructure**, not new mathematical content. It does
   NOT construct the registered $\S 4(\mathrm{c})$ anchor for `linking_weight` —

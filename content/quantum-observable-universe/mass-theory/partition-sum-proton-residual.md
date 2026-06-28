@@ -145,7 +145,7 @@ pole of $\Phi_q$, so $\Phi_q(\hat V_0^{\mathfrak{n}}) \sim
 0.989)$, undershooting the tower mass of the neutron by factor
 $\sim 2.3$.*
 
-**Consequences.**
+**Corollaries.**
 
 1. *The $\frac{5}{2} \cdot m_e$ closed form identifies the
    **single missing term** in the proton's pure-tower

@@ -276,7 +276,7 @@ $$
     M_{d_\lambda}\!\bigl(\mathbb{Q}(q)\bigr).
 $$
 
-**Consequence.** Finite-slice computation suffices: at every finite
+**Corollary.** Finite-slice computation suffices: at every finite
 filtration grade $k$, the surviving $E_\infty$-classes already account
 for all of $\mathrm{tr}_M(T_w)$ because $d_r = 0$ for $r \geq 3$.
 No higher slices contribute to the mass invariant.

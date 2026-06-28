@@ -56,7 +56,7 @@ $E_0 = 0.782\,\mathrm{MeV} / |Q_{\mathrm{cat}}| = 1.109\,\mathrm{MeV}$/cat.unit.
 The q-deformation restores the structural information lost in
 the classical limit.*
 
-**Why the $q$-character sees the sign.**
+**Mechanism by which the $q$-character sees the sign.**
 *A positive crossing $\sigma_i$ and a negative crossing $\sigma_i^{-1}$
 project to the same $S_n$ transposition (parity-blind at $q = 1$),
 but as elements of $H_n(R, q)$ they are distinct: $\sigma_i$ has

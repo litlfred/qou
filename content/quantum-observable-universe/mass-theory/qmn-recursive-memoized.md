@@ -27,7 +27,7 @@ $(\rho, \lambda)$ gives:*
 | Storage, no cache | $O(1)$ | $O(p(n)^2)$ — cache size |
 | Storage, character table | $O(p(n)^2)$ | $O(p(n)^2)$ — same |
 
-## Why memoisation wins for atom-knot work
+## Advantage of memoisation for atom-knot work
 
 For ${}^{6}$Li / ${}^{7}$Li atom-knot identification ([wenzl-qmn-synergy](#prop:wenzl-qmn-synergy)),
 we need $\chi_\lambda(\mathcal{B}_K; q_0)$ for **many** hyperbolic knots

@@ -56,7 +56,7 @@ reflecting the $\sigma_1$ vs $\sigma_0$ crossing ratio.*
 data, specifically products of $q$-integers counting crossings in
 the $B_3$ / $4_1$ knot topologies.*
 
-**Why regimes switch: topology, not just $A$.**
+**Regime-switching mechanism: topology, not just $A$.**
 
 *The BW coefficients contain $q$-integers that count crossings in
 a **specific topology**: $[7]_q$, $[4]_q$ are proton's internal
@@ -81,7 +81,7 @@ not the satellite topology of $D$. The regime switch is
 **topological**, and $A = 2$ vs $A \geq 3$ is the topological
 transition point (single pair vs Borromean triple).*
 
-**Why $A = 2$ breakdown of BW.**
+**$A = 2$ breakdown of BW.**
 
 *At $A = 2$ the standard BW formula gives*
 
@@ -101,7 +101,7 @@ $B = a_K \cdot B_{\mathrm{bulk}}$ matches $B_{\mathrm{AME}}$
 positively; the closest positive match requires $a_K < 0$
 (negative, not a chirality factor).*
 
-**Why SW+Frob works at $A = 2$.**
+**Validity of SW+Frob at $A = 2$.**
 
 *At $A = 2$ the atomic braid has only $1$ inter-nucleon crossing
 on top of the intra-nucleon Hecke words. The Markov trace
@@ -119,7 +119,7 @@ remaining per-vortex substrate cost. Result: $B_D^{\mathrm{pred}}
 3. *No collective motion is present (no liquid-drop approximation needed).*
 4. *Only one inter-nucleon crossing — the tower structure is minimal.*
 
-**Why BW+$\chi$ works at $A \geq 3$.**
+**Validity of BW+$\chi$ at $A \geq 3$.**
 
 *Starting at $A = 3$, the atomic braid has enough crossings that
 **collective** partition channels dominate — the full Markov

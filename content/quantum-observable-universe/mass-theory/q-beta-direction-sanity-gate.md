@@ -7,7 +7,7 @@ ratio $\mathfrak{Q}_\beta^{\text{CODATA}} / [Q_A(q_0) \cdot \cos(\alpha_{\text{e
 A candidate predicting a magnitude differing by more than $10\times$
 is structurally REFUTED at the formalize-first level.*
 
-## Why this is the $\S 4(d)$ formalize-first gate
+## Role as the $\S 4(d)$ formalize-first gate
 
 The refuted-class map (`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`)
 $\S 4(d)$ states the direction-sanity invariant abstractly. The canonical

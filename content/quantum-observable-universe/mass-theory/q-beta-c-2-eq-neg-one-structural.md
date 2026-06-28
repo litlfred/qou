@@ -33,7 +33,7 @@ $b$ and $\hbar_q$. Comparing to the ladder ansatz
 $1 + c_2 \cdot u_{\text{ladder}}^2 + O(u_{\text{ladder}}^3)$ at order $u_{\text{ladder}}^2$
 forces $c_2 = -1$. $\blacksquare$
 
-## Why this is "structural", not "fit"
+## Structural status versus empirical fit
 
 The earlier numerical observation $c_2 \approx -1$ (PR
 [#1602](https://github.com/litlfred/qou/pull/1602), bar-even constraint)

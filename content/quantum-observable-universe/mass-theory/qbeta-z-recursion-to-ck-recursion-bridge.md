@@ -39,7 +39,7 @@ but its kernel coefficients depend on $n$:
 | **Kernel** | `Fin d → R` (constant) | $n \mapsto (\text{Fin 2} \to \mathbb{R})$ (variable) |
 | **Linear in history** | Yes (proven, `applyRecursion_linear`) | Yes (state-dependent linear) |
 
-**Why the kernels differ.** The constant-kernel structure of
+**Origin of the kernel difference.** The constant-kernel structure of
 `CKRecursion` reflects a fibre-level Habiro element whose
 $q$-difference equation $F(q \xi) = R(q, \xi) \cdot F(\xi)$ has a
 Laurent polynomial $R$ of fixed degree $d$; the change-of-basis from
@@ -70,7 +70,7 @@ shapes differ). However:
    the f-map. The $z$-recursion is a structural input to the f-map
    derivation, not a substitute for the ladder $c_k$ recursion.
 
-## What this block does NOT establish
+## Claims not established by this block
 
 - **A concrete `CKRecursion ℝ` instance.** That would require the
   open f-map identification (the 1ppQ-Q$_\beta$ keystone).

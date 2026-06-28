@@ -18,7 +18,7 @@ $$
 $c_3$ (= $J_{\mathrm{Hopf}}$ at $q=1$) and $c_8$ (= $c_3^2 \cdot b^4$,
 the second rung of the $\sigma$-action tower) — not stipulated.*
 
-## Why this matters
+## Significance
 
 The closed-form Pell-Lucas $\sigma$-action recursion $c_{k+2} = b^2
 \cdot c_k$ holds for $k \geq 6$ but does not extend below $k = 6$:

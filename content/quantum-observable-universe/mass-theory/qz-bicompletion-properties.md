@@ -28,7 +28,7 @@ $$
 | $z$-only ([$z$-Habiro ring](#def:z-habiro-ring)) | $(P_n(q, z))$ | brane-tower element (conjectural) | level-$n$ cyclotomic truncation |
 | $(q, z)$-joint (this block) | $((q;q)_m \cdot P_n(q,z))$ | mass-element (conjectural) | $J_N$-data + brane-tower data jointly |
 
-## Why bicompletion
+## Rationale for the bicompletion
 
 The mass-element [conjecture](#conj:mass-endomorphism) connects two
 quantum invariants that live in **different** cyclotomic

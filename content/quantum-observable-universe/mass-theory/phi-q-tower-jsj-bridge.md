@@ -75,7 +75,7 @@ coincides with the JSJ piecewise sum
 $\sum_{P \in \mathrm{JSJ}(K)} \rho_F(P) \cdot \mathrm{Vol}_{\mathrm{hyp}}(P)$
 that drives the canonical binding-energy pipeline.
 
-### Why this matters (rather than deprecating Φ$_q$)
+### Significance (rather than deprecating Φ$_q$)
 
 The conjecture says the **dilog form** and the **hyperbolic-volume
 form** of the tower are not two competing engines: they are two

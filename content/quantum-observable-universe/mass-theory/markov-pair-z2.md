@@ -58,7 +58,7 @@ Combining the two peels:
 $\mathrm{tr}_M(\sigma_i\sigma_j) = z \cdot z = z^2$.
 $\square$
 
-## Why adjacency does not matter
+## Independence of adjacency
 
 The naive worry is that for **adjacent** generators
 $\sigma_i, \sigma_{i+1}$, the braid relation

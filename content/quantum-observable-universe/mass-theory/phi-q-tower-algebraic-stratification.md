@@ -40,7 +40,7 @@ guarantees that order-$\geq 3$ defects ascend to level-$(n+1)$
 singletons or pairs in the jet tower; no triple or higher term
 appears at any fixed level.*
 
-## What this block delivers
+## Content of this block
 
 This is the **algebraic-side reformulation** that the audit's
 GAP 8a calls for: every object on the right-hand side lives in
@@ -76,7 +76,7 @@ the mass-endomorphism formula
 ([mass endomorphism tower](#prop\:mass-endomorphism-tower)), not a
 3-manifold property.
 
-## Why this matters
+## Significance
 
 * **Discharges audit GAP 8a (wall risk).** The audit's worry was
   that the Φ$_q$-tower reformulation read as 3-manifold/topological.

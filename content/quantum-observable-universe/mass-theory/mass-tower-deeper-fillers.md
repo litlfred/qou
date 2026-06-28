@@ -61,7 +61,7 @@ trivial sanity-check theorem.
   in `markov_weights_symbolic.py`, leave the symbolic version
   intact for `y_lambda_equivalence_proof.py:60` to consume.
 
-## What's left after this push
+## Remaining work after this push
 
 The §3b-cond scaffolding is now substantially complete: every
 mass-tower / α_EM open problem has a Lean class hook, an

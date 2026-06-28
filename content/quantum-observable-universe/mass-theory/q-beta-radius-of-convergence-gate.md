@@ -18,7 +18,7 @@ generating function has its nearest singularity elsewhere than
 $u_{\text{substrate}}$ is structurally REFUTED as a valid $\mathfrak{Q}_\beta$
 precision-ladder kernel.*
 
-## Why this is the $\S 4(a)$ formalize-first gate
+## Role as the $\S 4(a)$ formalize-first gate
 
 The refuted-class map (`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`)
 $\S 4$ lists four structural invariants any candidate $F(q)$ must satisfy:

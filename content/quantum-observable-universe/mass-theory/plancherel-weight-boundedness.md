@@ -55,7 +55,7 @@ $\mathfrak{m}_{q,\mathcal{K}}(\mathcal{T}) = \sum_k \alpha_k
 absolutely convergent for any bounded $|\alpha_k|$, with no
 super-exponential divergence at large $n$.*
 
-**Why this matters for mass-tower computations.**
+**Significance for mass-tower computations.**
 
 Plancherel-weight boundedness is the formal reason that the
 log-pairing $\Phi_k$ in

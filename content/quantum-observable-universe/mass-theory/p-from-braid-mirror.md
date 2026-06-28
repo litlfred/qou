@@ -32,7 +32,7 @@ On the writhe, this gives $w(P\beta) = -w(\beta)$ — a sign flip on
 the bar-anti-symmetric writhe quantity classified in
 [`bar-involution-table3-data`](bar-involution.md#tbl:bar-involution-table3-data).
 
-## Why this disentangles D7 from CPT
+## Disentanglement of D7 from CPT
 
 The composite bar-involution acts as both:
 

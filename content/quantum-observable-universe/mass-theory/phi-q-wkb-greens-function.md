@@ -230,7 +230,7 @@ This closes the chain $S_1 \leadsto -\tfrac{1}{2}\log\det\mathfrak{D}_\nabla
 \leadsto G_\nabla(x_0)$ — modulo the three open ingredients listed
 below.
 
-## What the proof leaves open
+## Open ingredients of the proof
 
 | Step | Status | What remains |
 |---|---|---|
@@ -287,7 +287,7 @@ via Faddeev–Kashaev (the imaginary half of the volume conjecture, since
 $\mathrm{Vol}(T_{m,n}) = 0$); the $S_1$ piece supplies the matching
 one-loop propagator factor of the same algebraic state.
 
-## Why it remains conjectural in Lean
+## Conjectural status in Lean
 
 Granting the narrative proof above, three ingredients still need
 formal write-up to upgrade the block to a theorem:
@@ -316,7 +316,7 @@ formal write-up to upgrade the block to a theorem:
 Ingredient (1) is the closest to a paper-side write-up; ingredients
 (2)–(3) are the same Mathlib gap the parent conjecture already faces.
 
-## Why this matters
+## Significance
 
 The categorical Green's function $G_\nabla$ is the kernel that controls
 the exponential decay of correlations in the categorical action — i.e.,

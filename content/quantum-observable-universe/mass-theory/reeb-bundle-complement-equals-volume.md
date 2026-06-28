@@ -36,7 +36,7 @@ explicit: the categorical observable is computed *inside* the
 Reeb bundle, and the right-hand side is the hyperbolic volume of
 *its complement*.
 
-**Why this is conditional, not a new conjecture.**  All
+**Conditional status, not a new conjecture.**  All
 substantive content beyond
 [mass-volume factorization](#conj:mass-volume-factorization)
 is already established:
