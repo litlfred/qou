@@ -35,7 +35,7 @@ Thus **nothing in the existing $q$-theory changes**: every identity
 previously written with $q - 1$ is now written with $\varepsilon$,
 and the classical point $\varepsilon = 0$ coincides with $q = 1$.
 
-**Why pull $\varepsilon$ out first.** Two reasons.
+**Motivation for taking $\varepsilon$ as primitive.** Two reasons.
 
 1. **Categorical origin.** The substrate parameter $q$ is a scalar
    attached to the $R$-matrix.  The Reeb infinitesimal $\varepsilon$

@@ -131,7 +131,7 @@ $$
   =  \mathfrak{D}_\nabla^2 + \tfrac{1}{4}\mathrm{Sc}_q. \quad\square
 $$
 
-## Consequences
+## Corollaries
 
 The identity is the categorical input needed by
 [next Faddeev-WKB order](#conj:phi-q-wkb-greens-function) Step 3b:

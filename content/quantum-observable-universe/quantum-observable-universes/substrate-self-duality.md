@@ -22,7 +22,7 @@ observables act. In the language of rigid dualizing complex theory \cite{yekutie
 Frobenius form $\lambda$ is the unique trace that makes $A$ its own
 dualizing object.
 
-**Consequences.** The quasi-isomorphism $A \simeq \omega_A^\bullet$
+**Corollaries.** The quasi-isomorphism $A \simeq \omega_A^\bullet$
 implies:
 
 1. **Serre-type duality**: $\mathrm{Ext}^i_A(M, A) \cong H^{d-i}(M)^\vee$

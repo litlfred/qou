@@ -1,6 +1,6 @@
-**Remark (why the figure-8 case is structurally trivial, and what remains).**
+**Remark (structural triviality of the figure-8 case, and the remaining cases).**
 
-### Why this case is structurally trivial
+### Structural triviality of this case
 
 The verification works because **the bar and braid actions touch
 disjoint structure**:
@@ -15,7 +15,7 @@ disjoint structure**:
 non-trivial case is **chiral pairs**, where bar swaps cells while
 braid acts non-by definition on the swapped pair.
 
-### What this verifies and what remains
+### Scope of the verification and remaining cases
 
 **Verified**: $(\lambda, K) = ((2, 2), 4_1)$ — a self-conjugate cell.
 By extension, any self-conjugate cell with a polylog argument in

@@ -35,7 +35,7 @@ $q = 1$:
 The Lean stub proves all four arithmetic steps directly via
 `Real.sqrt_sq`, `field_simp`, and `ring` — closed proof with no `sorry`s.
 
-## Why this matters
+## Significance
 
 This lemma is the **purely-arithmetic component** of the c_3 = $-2$
 identification in [`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov).

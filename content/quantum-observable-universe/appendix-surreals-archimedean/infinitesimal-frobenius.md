@@ -59,7 +59,7 @@ candidate is to deform $A$ by a coboundary at infinitesimal order:
 Whether the resulting structure is gauge-equivalent to the
 strict $A$ is open.
 
-## Why this matters
+## Significance
 
 Three uses:
 

@@ -13,7 +13,7 @@ must decompose as a sum over pair-partitions $\pi$ of
 $\{1, \ldots, k\}$ of weights $W(\pi, q)$ depending only on $\pi$
 and the deformation parameter $q$.
 
-**Why Hecke generators satisfy it.** The Hecke quadratic relation
+**Satisfaction of the hypothesis by Hecke generators.** The Hecke quadratic relation
 $$
   \sigma_i^2 \;=\; (q - q^{-1})\,\sigma_i + 1
 $$
@@ -59,7 +59,7 @@ No new mathematics introduced; the proof in
 [`prf:hecke-satisfies-blitvic-hypothesis`](#prf:hecke-satisfies-blitvic-hypothesis)
 is an explicit reduction.
 
-**Consequence: the q-CLT input is verified.** With this proposition
+**Corollary: the q-CLT input is verified.** With this proposition
 established, Blitvić's CLT
 [`blitvic2012`, Theorem 1.1] applies directly: the rescaled centred
 sum $S_n = n^{-1/2} \sum_i \tilde\sigma_i$ has joint moments

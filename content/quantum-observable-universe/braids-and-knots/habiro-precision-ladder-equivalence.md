@@ -45,7 +45,7 @@ The proton's Markov trace has $M = 8$ (series terminates):
 The neutron has the same structure with $M = 8$ and different integer
 coefficients. The deuteron has $M = 12$.
 
-## Why this resolves the "axiom vs theorem" question
+## Resolution of the axiom-vs-theorem question
 
 The archimedean functor is not an arbitrary map — it is the UNIQUE
 evaluation $\widehat{\mathbb{Z}[q]} \to \mathbb{R}$ that:
@@ -59,7 +59,7 @@ The integrality and finiteness of the $a_m$ require no fitting and no
 free parameters beyond $(m_e, q_0)$ — the Habiro evaluation of
 $\operatorname{tr}_M$ at $q_0$ is determined.
 
-## What the exact evaluation does and does not give
+## Scope of the exact evaluation
 
 Since the Habiro expansion is **finite** ($M = 8$ for proton), the
 evaluation $\operatorname{tr}_M(\beta_K, q_0)$ is **exact** — a

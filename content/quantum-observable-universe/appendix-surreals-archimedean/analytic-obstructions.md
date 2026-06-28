@@ -6,7 +6,7 @@ content, however, finds that most of these obstructions are
 *not triggered* by the main paper. This remark records which
 obstructions genuinely bite and which are only apparent.
 
-## 0. Why an audit, not an axiomatisation
+## 0. An audit, not an axiomatisation
 
 The obvious shortcut — "axiomatise a single integration operator
 on $\mathbf{No}$ and use it everywhere" — is closed off by a
@@ -148,7 +148,7 @@ obstructions after audit:
 
 See [Table 2](#tbl:analytic-obstructions-table2-data).
 
-**Upshot.** The surreal lift is dramatically less lossy than a
+**Conclusion.** The surreal lift is dramatically less lossy than a
 first-pass survey suggests. With two narrow exceptions — the
 Möbius energy integral and the hyperbolic-volume side of the
 Kashaev comparison — every load-bearing step of the QOU mass

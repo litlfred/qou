@@ -22,7 +22,7 @@ $A$ at $q_0$, induced by the categorical trace of $\mathrm{Rep}(U_q(\mathfrak{sl
 makes the antipode-twisted Frobenius pairing $\langle\theta(\cdot),
 \cdot\rangle_F$ positive-definite on the positive-time Reeb half.*
 
-## Why this is the natural follow-up
+## The natural follow-up
 
 The OS-reflection-positivity conjecture
 [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)
@@ -73,7 +73,7 @@ $C^*$-tensor category is automatically a positive Frobenius algebra
 (in the sense of the substrate axiom of
 [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)).
 
-## What the conjecture actually claims
+## The conjecture's actual claim
 
 The conjecture is therefore the **identification step** between two
 positivity notions:

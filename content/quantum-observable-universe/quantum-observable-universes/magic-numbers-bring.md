@@ -69,7 +69,7 @@ $H^1(A_1, \mathbb{Z})$ that close shells under
    is supported on a single self-conjugate partition associated
    to that lattice.*
 
-## Why $S_5$ and Bring
+## Role of $S_5$ and Bring
 
 Bring's curve is the unique (up to isomorphism) genus-$4$ curve
 with $S_5 \cong \mathrm{Aut}(\mathcal{B})$ acting maximally

@@ -44,7 +44,7 @@ just a formal involution on the parameter: every Kashiwara crystal
 construction has a reverse-crystal analogue at $q \to \infty$,
 related by bar.
 
-## Why this matters
+## Significance
 
 D12 (Kashiwara $q \to 0$) is partially formalised in the framework
 via [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy).

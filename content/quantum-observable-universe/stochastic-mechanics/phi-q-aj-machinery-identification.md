@@ -23,7 +23,7 @@ is governed in the asymptotic by the geometric component of the classical A-poly
 
 The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([`conj:modular-s-transform-q-q-tilde`](modular-s-transform-q-q-tilde.md), D14 in the duality tracker).
 
-## Why this matters
+## Significance
 
 The framework's [`canonical-derivation-cheat-sheet.md`](../../../docs/canonical-derivation-cheat-sheet.md) currently distinguishes $\Phi_q$ vs $\mathrm{Li}_2^q$ contexts pragmatically — using one or the other depending on which gives the cleaner expression for a given derivation. Per the AJ identification, both are the **same algebraic object** ($\hat{A}_K$) viewed through different archimedean lenses. Wiring this explicitly:
 
