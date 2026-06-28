@@ -129,6 +129,9 @@ import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
 -- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
 -- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
 import QOU.BraidsAndKnots.PachnerPentagonBorromean
+-- Δ_λ ℓ¹-ceiling: sign-only fixes structurally excluded (Option-E prune, PR #2925).
+-- Triangle bound on the per-block binding closure; sorry-free, generic base ring.
+import QOU.BraidsAndKnots.DeltaLambdaL1Ceiling
 -- Post-τ q-Rogers pentagon: α/β substitution algebra, the log² correction
 -- term, and the q≠1 analytic-continuation conjecture-class.
 import QOU.BraidKnot.QRogersPentagonArchimedean
