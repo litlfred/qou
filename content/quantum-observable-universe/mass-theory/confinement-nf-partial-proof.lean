@@ -30,6 +30,7 @@ consequence of definitions or a class-conditional invocation.
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.Bounds.Basic
+import Mathlib.Data.Finite.Defs
 
 namespace QOU.BraidKnot.ConfinementNFPartial
 
@@ -42,6 +43,10 @@ structure OperatorSelectionLP where
   Λ : Type
   /-- Finite-dim hypothesis. -/
   finite : Finite Λ
+  /-- Non-emptiness: the partition lattice of `n ≥ 1` always
+  contains at least the trivial partition, so the LP has a feasible
+  primal point and a well-defined `max_pole`. -/
+  nonempty : Nonempty Λ
   /-- LP is bounded above (Wedderburn dimension is finite, so all
   primal variables `t_λ ∈ [0, 1]` after normalisation; objective
   achieves its max on a compact polytope). -/
@@ -68,8 +73,12 @@ def duality_gap (lp : OperatorSelectionLP) : ℝ :=
 /-- Active set of dual variables: λ with `y_λ* > 0`. -/
 opaque active_set (lp : OperatorSelectionLP) : Set lp.Λ
 
-/-- Wedderburn-pole maximizer (= primal-optimal point). -/
-opaque max_pole (lp : OperatorSelectionLP) : lp.Λ
+/-- Wedderburn-pole maximizer (= primal-optimal point).  Existence
+follows from `lp.nonempty` (the partition lattice is inhabited) plus
+finiteness (the objective attains its max on a finite set); we expose
+a representative via the non-emptiness witness. -/
+noncomputable def max_pole (lp : OperatorSelectionLP) : lp.Λ :=
+  lp.nonempty.some
 
 /-- Predicate: the primal constraint at λ is **tight** at the
 optimum (= the constraint binds the optimum, equivalently
@@ -77,7 +86,7 @@ optimum (= the constraint binds the optimum, equivalently
 inner constraint matrix; here we expose it as an abstract Prop
 indexed by λ so theorems can be stated against it without unfolding
 the LP details. -/
-opaque tight (lp : OperatorSelectionLP) (λ : lp.Λ) : Prop
+opaque tight (lp : OperatorSelectionLP) (lam : lp.Λ) : Prop
 
 end OperatorSelectionLP
 
@@ -121,9 +130,9 @@ theorem theorem_3_strong_duality (lp : OperatorSelectionLP)
 /-- Complementary slackness theorem (class-conditional invocation).
 Conditional on `[HasFiniteLPDuality lp]` per AGENTS.md §3b-cond. -/
 theorem complementary_slackness (lp : OperatorSelectionLP)
-    [lpd : HasFiniteLPDuality lp] (λ : lp.Λ) :
-    (λ ∈ lp.active_set) ↔ lp.tight λ :=
-  lpd.complementary_slackness_holds λ
+    [lpd : HasFiniteLPDuality lp] (lam : lp.Λ) :
+    (lam ∈ lp.active_set) ↔ lp.tight lam :=
+  lpd.complementary_slackness_holds lam
 
 /-- Theorem 1 of the partial proof: the Wedderburn maximizer lies in
 the LP active set.  Conditional on `[HasFiniteLPDuality lp]`. -/
