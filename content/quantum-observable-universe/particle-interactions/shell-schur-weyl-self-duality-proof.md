@@ -42,39 +42,13 @@ under Schur–Weyl, any $\mathrm{GL}_k$-charge-conjugate-invariant
 construction in the quantum-group category corresponds, under SW
 transport, to an element of $H_n(R, q)$ fixed by the sign-twist
 involution.  Such elements satisfy $x_\lambda = x_{\lambda^*}$ in
-the Wedderburn decomposition.
-
-The **SDP/LP optimum** identified numerically by
-[sdp_on_shadows.py](https://github.com/litlfred/qou/blob/main/computations/sdp_on_shadows.py)
-at $A_{\mathrm{magic}} = 8$ —
-$(x_{(7,1)} = x_{(2,1^6)} = 35.24)$ — is precisely this self-dual
-combination, providing numerical confirmation of the categorical
-prediction.  $\square$
-
-**Consequence for the ILP at level 4.**
-*The shell-operator ILP*
-
-$$
-  \text{minimize}\;
-  \sum_\lambda x_\lambda \cdot w_\lambda
-  \;\text{s.t.}\;
-  \sum_\lambda x_\lambda \cdot y_\lambda
-  \;=\; y_{\mathrm{target}},
-  \;\;
-  x_\lambda \in \mathbb{Z}_{\geq 0},
-$$
-
-*admits a **constrained** formulation imposing $x_\lambda =
-x_{\lambda^*}$, reducing the search space to self-dual vectors.
-The constrained ILP has at most $\lceil p(A_{\mathrm{magic}})/2 \rceil$
-variables (one per conjugate-equivalence class), yielding a
-significant computational saving for large $A_{\mathrm{magic}}$.*
+the Wedderburn decomposition.  $\square$
 
 **Relation to existing propositions.**
 *This result refines
 [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)
 (which gives y_λ per partition) by asserting the self-dual
-symmetry of the physical shell operator.  It complements
+symmetry of the shell operator.  It complements
 [skein-crossing-asymmetry](#prop:skein-crossing-asymmetry)
 (which encodes the parity-violation mechanism at level 3) by
 locating the parity-conserving regime at level 4.*
