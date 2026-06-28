@@ -835,7 +835,234 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "mass-noncommutative-drag.md:1-7 asserts non-cocommutativity of Δ 'is the source of the inertial resistance' (mass). This identifies a categorical property with a physical mechanism (inertia) as if established.",
+        "notes": "As a `remark` interpreting def:quantum-universe this is permitted interpretive framing, but the causal claim 'non-commutativity → inertial mass' is presented declaratively with no derivation linking the SU_q(2) fibre rearrangement to a mass/energy cost. Keep as scope-limited interpretation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-noncommutative-drag.md:4-7: 'Moving a vortex ... requires a continuous rearrangement of the SU_q(2) fibre data, which is the source of the inertial resistance.' The 'which is' equates rearrangement with inertial resistance without an intervening lemma quantifying the resistance.",
+        "notes": "Gap is interpretive, not a proof step; acceptable for a remark but the inferential leap (rearrangement ⇒ inertia) is asserted, not argued."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "remark, no .lean sibling and none required."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] / -- Ref:; references only internal blocks."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-noncommutative-drag.md:1 'q(p) ≠ 1 at every point of the recursive brane tower' uses 'inertial resistance' as if a defined observable, but the remark gives no definition of the drag/inertia quantity it invokes; it relies entirely on rem:mass-geometric-drag.",
+        "notes": "Term 'inertial resistance' is borrowed, not defined here; meaning is delegated to the referenced remark, acceptable but slightly ambiguous standalone."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical claims in this remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-noncommutative-drag.md:5-7 ties inertial mass to non-cocommutative comultiplication. A referee would ask why non-cocommutativity (a discrete algebraic asymmetry) yields a Lorentz-invariant inertial mass rather than e.g. a direction-dependent drag.",
+        "notes": "Plausible-as-metaphor but a physicist would flag the absence of any mechanism guaranteeing isotropy/Lorentz behavior of the resulting 'drag'. Interpretive, low severity."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness on this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9e956be3d8d7",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Block is an interpretive remark with correctly-set interprets:def:quantum-universe; survives as interpretation.",
+        "notes": "verdict: minor-revisions. referee_argument: the 'non-cocommutativity IS the source of inertial mass' framing is asserted causally without quantifying the drag→mass map; fine as a remark, but should read as interpretation ('we interpret ... as') rather than a mechanism claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:42.275Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

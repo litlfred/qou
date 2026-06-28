@@ -781,7 +781,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-su2.md:23-27 states m_desc = χ(CP¹) = 2 as 'the descended mass of the fundamental cycle'. The parent theorem (topological-mass.md) defines tr_desc as a categorical trace restricted to A^desc ≅ End_C(A_n), giving the base-cycle mass — there is no derivation that this trace equals the Euler characteristic 2; the identification m_desc = χ(CP¹) is asserted, not shown to follow from the theorem.",
+        "notes": "Equating the descended trace norm ‖tr_desc(ϱ)‖ with χ(CP¹)=2 is an unproved leap: the theorem gives an idempotent-split trace, the example substitutes a topological invariant. No special case is shown false, but the claimed numerical value lacks a derivation, so this is at best a conjectural identification mislabeled inside a worked 'verification'."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fit to an experimental target; the '2' is a topological constant, not a calibrated quantity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-su2.md:5 frames the block as 'we verify the topological mass theorem for G=SU(2)', and md:40-43 concludes m = 2 + 0 = 2 'recovering the Euler characteristic'. The values m_desc=2 (md:24), m_trans=0 for U(1)-equivariant cycles (md:35) are stated without computing the categorical trace tr_desc/tr_trans from the theorem's definition — an example presented as a 'verification' but supplying asserted invariants.",
+        "notes": "'Verify' overclaims: nothing is verified against the theorem's trace formula. It restates the additive split m = m_desc + m_trans (which is the theorem) and plugs in topological folklore values. Re-scope as 'illustrative SU(2) heuristic', not a verification."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-su2.md:31-35: 'for a cycle ϱ that is U(1)-equivariant, m_trans(ϱ)=0 since the transient eigenspace has non-zero U(1)-weight.' The inference (non-zero weight ⇒ equivariant trace vanishes) is asserted; the link from 'transient eigenspace carries non-trivial weight' to 'its trace on an equivariant cycle is exactly zero' is a missing lemma (e.g. Schur orthogonality is neither invoked nor cited).",
+        "notes": "The vanishing is plausible by a weight/averaging argument but the 'since' supplies the conclusion as if it were the premise."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "example block, no .lean sibling required or present."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "no cites[] on this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-su2.md:33 writes A^trans ≅ Ω¹(CP¹)⊕ℂ and md:19 A^desc ≅ su(2); these archimedean/geometric identifications of the categorical descended/transient subalgebras are introduced only here with no definition or cross-ref, and 'mass' here is a dimensionless integer (2) with no MeV unit — inconsistent with the framework's 𝔪 in MeV.",
+        "notes": "The term 'mass' silently shifts meaning: in the SU(2) example it is a topological/Euler number, elsewhere in the corpus 𝔪(K) is an MeV observable. Two incompatible readings of 𝔪 without flagging the regime."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "no numerical match to experiment; '2' is exact-topological."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-su2.md:40-43 'm = 2' presents a mass as a dimensionless Euler characteristic with no scale (no m_e, no MeV). A physicist reads 'mass = 2' as either unit-less (meaningless as a mass) or implicitly in some unset unit.",
+        "notes": "Either the block means an index/charge (not a mass) — a notational/units problem — or it needs the electron-scale dressing the rest of the framework applies (m = m_e·Vol·ρ/ℏ_q²). As written, 'topological mass = 2' is dimensionally ill-posed for a physical mass."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "no backing witness/compute on this example."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8558582d1d4b",
+          "ts": "c3cacfd31d2e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Block titled a 'verification' (md:1-5) yet supplies asserted topological values (m_desc=χ=2, md:24; m_trans=0, md:35) without computing the theorem's categorical traces; 'mass=2' is dimensionless (da-physical-implausibility) and the m_trans=0 step is a non-sequitur (md:31-35).",
+        "notes": "verdict: major-revision. referee_argument: 'This example claims to verify thm:topological-mass for SU(2) but performs no verification — it asserts m_desc = χ(CP¹)=2 and m_trans=0 from topological folklore rather than evaluating tr_desc/tr_trans. The resulting m=2 is a dimensionless integer presented as a mass. Re-scope to an illustrative analogy and either compute the traces or state explicitly that the Euler-characteristic identification is conjectural and unit-conventional.'"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.915Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

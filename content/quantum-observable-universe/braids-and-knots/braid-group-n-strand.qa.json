@@ -835,7 +835,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Content is scaffolding description (n-strand braid group, Markov closure, Hecke quotient) plus pointers to tables; no false mathematical assertion. Standard B_n generators/relations."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-group-n-strand.md:9-15,34-36 — three 'What's defined / Specialisations' sections each consist solely of 'See [Table N]' pointers; authorNotes (braid-group-n-strand.ts:25-29) flags 'Scaffolding only' and that higher-n closures return Link.unknot as an ansatz (md:52).",
+        "notes": "The block carries real intent but its own body is largely a redirect to tables; the substantive closures are explicitly stubbed (closureN returns Link.unknot for n≥3, md:52). Not content-free but thin — a warn, not a fail, since the linked tables hold the actual data."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation that assumes its conclusion; descriptive scaffolding."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-group-n-strand.md:29-32 claims 'each new n adds an instance ... and downstream theorems auto-specialise', while md:46-52 (Open R&D) concedes MarkovTraceN is not discharged per-n and closureN returns Link.unknot as an ansatz for n≥3.",
+        "notes": "The 'auto-specialise' framing slightly overstates maturity given the same block lists the core closures as open/ansatz. The accompanying authorNotes 'Scaffolding only' mitigates this; warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter introduced; structural typeclass scaffolding."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The motivation 'need n=6 to test tr_M(K1⊔K2)=tr_M(K1)·tr_M(K2)·z^k via M3' (md:24-27) follows from the multiplicativity-under-disjoint-union property; no logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling for this remark block; Lean infrastructure (HeckeQuotient/MarkovTraceN instances) lives in library modules referenced but not a sibling file."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-group-n-strand.ts:12-16 cites wenzl1988; references.ts:3443-3452 carries a note that wenzl1988 vs wenzl1988b/c DOIs were mis-split and some inline Lean sites cite a different Wenzl 1988 paper (BF01393839) than wenzl1988 (BF01404457).",
+        "notes": "For *this* block the cite of wenzl1988 (Hecke algebras of type A_n) is appropriate to the Hecke/Markov-trace scaffolding content. The repo-wide Wenzl DOI-split caveat is a known placeholder issue but does not mis-attribute the result invoked here. Warn for proximity to the unresolved key, not a fail."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Terms (braid group B_n, Markov closure, Hecke quotient) are standard and pointed at via the table blocks; n∈ℕ regime stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match/fit in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physics/units claim; the di-baryon/2-baryon mention (md:25,52) is structural (disjoint braid), not a physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness JSON backing; the data lives in committed table-data .ts blocks, not a compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "66e7a94abf91",
+          "ts": "19a4a79c8db2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor-revisions. referee_argument: The block honestly self-labels as scaffolding and its substantive closures (closureN for n≥3, per-n MarkovTraceN discharge) are explicitly open (md:46-52). The strongest objection is the mild overclaim that 'downstream theorems auto-specialise' (md:31-32) sitting next to the Open-R&D admission that the closures are ansätze (Link.unknot) — the maturity framing should be softened to match the stubbed reality. No mathematical error; citation key wenzl1988 sits near an unresolved repo-wide DOI split but is correctly attributed here."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.814Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

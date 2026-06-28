@@ -781,7 +781,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The three parts are individually standard: (1) Markov property is the trace's defining locality (md:3-12); (2) GS reduction is genuinely non-local across the braid word (md:14-34); (3) Wenzl product factorisation of the Markov trace (md:36-70). No false mathematical assertion identified."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proof has real content reconciling Markov-locality vs GS-nonlocality via Wenzl factorisation; not a tautology. (It is a proof block with no .lean sibling, which is permitted.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trace-locality-...-proof.md:51-65 attributes a specific 'vertex volume' product tr_M(NF(β))=∏_i V̂_i(q) with V̂_i depending only on the Bratteli path of e_{j_i}, citing Wenzl 1988 Thm 5.13.2. Wenzl 1988 gives the weights w̃_λ=dim_q²(λ)/[n]_q! and the trace formula, but the per-normal-form-generator 'vertex volume' decomposition tr_M=∏ V̂_i is a QOU-specific repackaging presented as if straight from Wenzl; the locality-of-each-factor claim (md:67-69) is asserted ('This factorisation is local in the normal-form word') without proof.",
+        "notes": "The headline reconciliation is plausible, but step (3) presents the per-vertex product factorisation as established-from-Wenzl when the per-generator V̂_i decomposition and its claimed locality are framework constructions; mild over-attribution."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable; (a_i,b_i) GS coefficients and V̂_i are determined by the braid, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trace-locality-...-proof.md:46-65 — 'The product factorisation then follows from the multiplicativity of the standard trace on products of matrix units in distinct positions of the same block.' The standard trace is NOT multiplicative on products of matrix units (tr(E_ij E_kl)=δ_jk δ_il, and tr is linear not multiplicative); the claim that tr_M(NF(β)) equals a PRODUCT ∏_i V̂_i over normal-form generators does not follow from 'multiplicativity of the standard trace' (no such property). The mechanism by which a sum-over-blocks weighted trace becomes a single product over normal-form letters is not bridged — the key step (md:53-57) invokes a non-existent multiplicativity.",
+        "notes": "Major logical gap: 'multiplicativity of the standard trace on products of matrix units' is false as stated; traces are not multiplicative. The product-factorisation bridge (the whole point of part 3) rests on this mis-stated property. Either a different mechanism (e.g. the trace being a single matrix-unit coefficient times a path weight that telescopes) must be supplied, or the step is a non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.ts:7-10 sets lean.ref qou:QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReconciliation with validation:'not_checked'. The narrative prop has three substantive parts; the proof block (this block) has no .lean. The bundled main-prop Lean (HasReconciliation) is unverified ('not_checked'), so whether it captures parts (1)-(3) — especially the disputed product factorisation — cannot be confirmed here.",
+        "notes": "This proof block itself correctly has no Lean (proof kind). Flag is that the parent proposition's Lean is not_checked and the contested step (3) product factorisation is exactly the kind of claim that needs Lean/compute backing it does not yet have. Minor at this block's scope."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trace-locality-...-proof.md:36-37 cites 'Wenzl 1988 [wenzl1988], Theorem 5.13.2 in the QOU manuscript' for the product factorisation. 'Theorem 5.13.2 in the QOU manuscript' is a self-reference (manuscript section), not a Wenzl 1988 theorem number; conflating an external citation with an internal manuscript label muddies attribution. wenzl1988 (references.ts: Hecke algebras of type A_n, Invent. Math. 92) is the correct Wenzl paper for Markov-trace weights, but it does not contain a 'Theorem 5.13.2' of this content.",
+        "notes": "The numbering '5.13.2' appears to be the QOU manuscript's own, attached to the Wenzl citation as if it were Wenzl's theorem number; mild mis-citation of the precise result locus."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trace-locality-...-proof.md:51-56 introduces 'vertex volume V̂_i(q)' and 'local data of the GS coefficient (a_i,b_i)' without definition in-block; the term 'vertex volume' and the (a_i,b_i) coefficients are framework objects whose precise definition is assumed. md:11 also gives z=1/(q^{1/2}+q^{-1/2}) while the parent prop and other blocks use z as the Markov parameter — consistent, but q^{1/2} requires a square-root regime (archimedean) unmentioned.",
+        "notes": "'Vertex volume' V̂_i is the load-bearing object of part (3) yet is undefined here; reader must locate it elsewhere. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical observable asserted; 'locality/non-locality' is used in the algebraic (trace/rewriting) sense, not a relativistic-causality claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing; the product-factorisation claim (part 3) would benefit from a GS-reduction + trace compute witness but none is attached."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=major-revision (on part 3). referee_argument: Parts (1) Markov locality and (2) GS non-locality are sound and well-presented. Part (3), the product-factorisation bridge that does all the reconciling work, justifies tr_M(NF(β))=∏_i V̂_i(q) by appealing to 'multiplicativity of the standard trace on products of matrix units' — but traces are not multiplicative, so the key step is a non-sequitur as written, and the per-normal-form-generator 'vertex volume' decomposition is over-attributed to Wenzl 1988 (cited via a QOU-manuscript theorem number) while 'vertex volume' itself is left undefined in-block. The parent proposition's Lean is not_checked. Supply the correct telescoping/path-weight mechanism (not trace-multiplicativity), define V̂_i, and pin the exact Wenzl result; consider a GS+trace compute witness."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.206Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

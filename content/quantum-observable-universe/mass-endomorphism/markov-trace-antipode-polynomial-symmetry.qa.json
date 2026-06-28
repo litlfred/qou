@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "671ab8a84f30",
     "ts": "fe84119e6e52",
-    "lean": "ac1c0b21c103"
+    "lean": "525231f8dbee"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1600,7 +1600,257 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.md:8,21",
+        "notes": "Checked coefficient-by-coefficient: p(q)=q^20+q^18+2q^12-2q^8-q^2-1 satisfies q^20·p(1/q) = -p(q) (c_20=1=-c_0, c_18=1=-c_2, c_12=2=-c_8). Identity is true; Lean proves it sorry-free over ℤ[X]."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.lean:90-96",
+        "notes": "markovTraceAntipodePolynomialSymmetry proves a genuine, non-trivial concrete ℤ[X] equality (shiftedReverse20 p = -p) by simp+ring, sorry-free and not a True-trivial. Substantive."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure algebraic identity on a fixed polynomial; no calibration or target-fitting involved."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.md:25-29,80-97",
+        "notes": "Two overclaims. (1) The proposition states tr_M(B_p)(1/q) = -tr_M(B_p)(q) 'Equivalently' to the polynomial identity, but the Lean (and the witness) only establish the polynomial fact q^20 p(1/q) = -p(q); the trace-level statement also requires the denominator 12q^10 to transform correctly, which is asserted in prose, not proved. (2) The 'Generalization conjecture' (lines 82-97) gives a general (-1)^{ℓ(B_K)} formula with shift(K)=18Z+21N+1, presented with a worked sign rationale ('word length 11 odd parity') — a single example (proton) generalized to all closed braids; this is conjectural extrapolation framed with more confidence than one verified case supports. The block is kind=proposition but lines 80-97 are conjecture."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.md:95-97",
+        "notes": "The conjecture introduces shift(K) = 18Z + 21N + 1 'per the integer-LP closure' with no derivation in-block of where 18, 21, 1 come from; these look like fitted/assigned crossing-count weights. For the proposition proper (the proton p(q)) there is no hidden DOF, but the conjecture section smuggles three unexplained integer coefficients."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.md:73-78",
+        "notes": "The 'minus sign reflects odd parity of word length ℓ(B_p)=11' explanation is asserted, not derived: the Categorical interpretation invokes tr(S^2(x))=tr(x) for Frobenius algebras (which gives a +, not a -), then attributes the actual minus to '11-crossing (odd) length contributes a parity sign' without a lemma connecting word-length parity to the sign of q^d p(1/q). The sign is verified for this p(q) by direct computation, but the rep-theoretic 'why' is a plausibility narrative with a missing lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.lean:61-96 vs markov-trace-antipode-polynomial-symmetry.md:25-29",
+        "notes": "The .md Proposition's headline claim is the TRACE identity tr_M(B_p)(1/q) = -tr_M(B_p)(q) (and the boxed q^20 p(1/q) = -p(q)). The Lean proves only the polynomial-numerator identity shiftedReverse20 protonClosedFormPolynomial = -protonClosedFormPolynomial — a weaker, denominator-free combinatorial fact. The Lean docstring is honest that it 'proves the algebraic-combinatorial identity that supports' the categorical claim, but per proof-statement-integrity the Lean is strictly weaker than the .md proposition statement (no tr_M object, no 12q^10 denominator, no Hopf-antipode descent). validation: not_checked."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites [wenzl1988], [hoefsmit1974] (seminormal reduction that produced the closed form), [kassel1995] Ch III (Hopf antipode + Frobenius integrals) are correctly attributed to the invoked machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.md:1-16",
+        "notes": "B_p ('the proton braid in B_3 used in prop:atomic-mass-gb-nf') and the closed form tr_M(B_p)=p(q)/(12q^10) are stated as if canonical, but the sibling axiomatic block gives a DIFFERENT tr_M(σ₁⁷σ₂⁴) = (num)/(q^10(q+1)^3) ≈ 1.63315 whereas this one = p(q)/(12q^10) ≈ 0.4331. The two 'proton Markov traces' are distinct objects (Plancherel w_λ vs Jones–Markov y_λ) sharing the symbol tr_M; this block does not flag the distinction, so a reader cannot tell which tr_M is meant from this block alone."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The identity is symbolic/exact (sympy + sorry-free Lean), not a numerical near-match; no q0-anchored value or cross-anchor swing involved."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical-observable claim; an algebraic symmetry of a trace polynomial."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.ts:34,37",
+        "notes": "The .ts computation references script 'computations/poly_q_proof_probe.py' and witness 'computations/poly-q-proof.witness.json' with status:'verified', but both files now live only under computations/_deprecated/ (poly_q_proof_probe.py and poly-q-proof.witness.json are absent at the cited non-deprecated paths). The backing compute/witness is stale/relocated to _deprecated, so the cited verification is not reproducible at the paths recorded. (The pure-polynomial identity itself is independently confirmed and Lean-proved, so the math stands — only the witness wiring is broken.)"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "671ab8a84f30",
+          "ts": "fe84119e6e52",
+          "lean": "525231f8dbee"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-trace-antipode-polynomial-symmetry.lean:90-96; .ts:34-37; .md:82-97",
+        "notes": "verdict: minor-revision. referee_argument: the core polynomial identity q^20 p(1/q) = -p(q) is true and proved sorry-free in Lean — the proposition's hard content is solid. Strongest objection (compound): (a) the Lean proves only the denominator-free numerator identity, strictly weaker than the .md's trace-level claim tr_M(B_p)(1/q)=-tr_M(B_p)(q) (lean-narrative-divergence); (b) the cited witness/script are deprecated/missing at the recorded paths (reproducibility); (c) the 'Generalization conjecture' with shift=18Z+21N+1 is conjectural extrapolation embedded in a kind=proposition block with three unexplained integers. Fix: re-point the witness to its current path, demote the generalization to a clearly-marked conjecture block, and either prove the trace-level identity (denominator transform) or restate the Lean claim as the numerator identity it actually is."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

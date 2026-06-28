@@ -1340,7 +1340,261 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The statement is explicitly conjectural ('Proposition (Conjecture — homological shell condensation)', .md:44) and the Lean axiomatises it as a class with no instance — no false claim is asserted as proved. The asserted vanishing E_∞^{p,>0}(n)=0 at magic n is an open conjecture, not a false theorem."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "homological-shell-condensation.lean:72-119 — strict_positive_collapse_unique / _subsingleton / _eq_zero / _add_zero / strict_diagonal_collapse all proved by rw [c.collapse …]",
+        "notes": "The five downstream 'conditional theorems' are near-tautological projections of the class field `collapse`: once `collapse` asserts every x = EInftyZero, 'two such x are equal', 'the type is Subsingleton', 'x = zero', and 'x+y = 0+0' are immediate restatements. They satisfy §3b-cond formally but carry essentially no derived content beyond the axiom itself — borderline self-assuming projection (the class field IS the conclusion and the theorems read it back out). Not flagged critical because the carrier is content-bearing (a real ∀p q,0<q,… vanishing) and there is no fabricated instance."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:76-94 ('Conditional content via the categorical-neutrality conjecture'); .md:124-135 ('Discussion', evidence item 3: the magic set {2,8,20,28,50,82,126})",
+        "notes": "The magic set 𝔐 is asserted as the conjecture's domain (.md:45) and simultaneously justified by the empirical fact that these are 'the only nucleon counts at which the experimental binding curve exhibits a discontinuous first-derivative drop' (.md:132-135). Defining the conjecture's support to be exactly the experimentally-observed magic numbers, then citing that experiment as supporting evidence, is close to back-fitting: the construction reproduces the target by choosing the target as its index set. The conjecture is honestly flagged conjectural, but the 'supporting evidence' is partly the very phenomenology the index set was selected from."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "homological-shell-condensation.ts:3 builder 'proposition' / label 'prop:…'; .md:44 title 'Proposition (Conjecture …)'; .ts tag 'open-problem'",
+        "notes": "Kind/label say 'proposition' (a provable kind) while the content is openly a conjecture (title parenthesis, open-problem tag, §3b 'Conjectural' note at .md:124). Per AGENTS.md §3b a still-open statement should be kind 'conjecture' (conj:) — here the Lean correctly uses a class carrier, but the content-block kind overclaims by labelling an unproved statement a proposition. Also .md:100-102 says numerical verification 'empirically confirms' the vanishing at n=2,8,20, stronger than 'is consistent with' for a spectral-sequence collapse only checked via Hoefsmit residues at three points."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:45 𝔐 = {2,8,20,28,50,82,126}",
+        "notes": "The seven-element magic set is the framework's degree of freedom here: it is taken as input (the conjecture's domain) rather than derived from q0/the canonical chain within this block. The downstream-cone note (.md:137-142) concedes that {50,82,126} are predictions where matrix evaluation is unavailable — i.e. unverified. Whether 𝔐 is genuinely derived (categorical-neutrality conjecture) or chosen to match the empirical magic numbers is not closed inside this block, so it reads as a potentially fitted index set."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:76-94, especially .md:84-88 ('the BB stratification becomes self-dual: the strata above the E_2 collapse line cancel pairwise')",
+        "notes": "The chain 'categorical neutrality ⇒ self-conjugate Wedderburn support ⇒ (via Yekutieli rigidity) τ̂ self-conjugacy on A_n ⇒ BB stratification self-dual ⇒ strata cancel pairwise ⇒ E_∞^{p,>0}=0' has at least two unjustified jumps: (i) 'self-dual stratification ⇒ pairwise cancellation of higher strata' is asserted, not argued (self-duality does not in general force vanishing of off-diagonal E_∞ terms); (ii) the transfer from Hecke-side self-conjugacy to brane-tower self-duality 'under Yekutieli rigidity' is a one-line citation standing in for a functor-level argument. Acceptable as a conjecture's motivation, but stated with 'therefore'-strength it is a non-sequitur if read as proof."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:49-53 (E_∞^{p,q}(n)=0 for all p∈ℕ, q>0) vs lean:40-65 (EInfty abstracted as an arbitrary ℕ→ℕ→Type* family; collapse: ∀p q,0<q,∀x,x=EInftyZero)",
+        "notes": "The Lean class does not encode that EInfty IS the Białynicki-Birula E_∞ page H^q(gr_F^p A_n) — that identification is only in the docstring (lean:36-39). EInfty is a free Type*-valued family, so the class asserts 'some chosen family vanishes above q=0', not 'the BB spectral sequence of A_n collapses'. The substantive mathematical objects (A_n, the descent filtration F, the spectral sequence convergence E_1⇒H^{p+q}) are absent from the Lean. The Lean is a faithful skeleton of the *shape* of the claim but strictly weaker than the .md proposition, which ties the vanishing to a specific geometric construction."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites bialynicki1973 (BB stratification), yekutieli2010 (central extensions/rigidity), ariki1996 (Hecke decomposition numbers) are each invoked in the .md/Lean for roughly the result they are known for; no evident mis-attribution. ariki1996 is listed in .ts cites but only loosely used in prose, a minor under-use, not misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:36-40 'strict-positive part E_∞^{p,>0}(n)'; .md:14-16 jet algebra A_n = A_{n-1} ⊗ Ω¹(A_{n-1})",
+        "notes": "'Saturated n' and the magic set are pinned, but the convergence claim E_1^{p,q}=H^q(gr_F^p A_n) ⇒ H^{p+q}(A_n) (.md:30-34) is stated without specifying the (co)homology theory H^q on a (possibly non-commutative) jet algebra, and 'descent-graded trace tr_{M,ℓ} on J^ℓ/J^{ℓ+1}' (.md:55-59) references a J-filtration distinct from the F-filtration without relating them. Operator-level vs Plancherel-weighted support is carefully disambiguated (.md:108-120), to the block's credit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:98-101 'Numerical verification at k=3,…,10 … empirically confirms E_∞^{p,>0}(n)=0 at n=2,8,20'",
+        "notes": "The empirical support is only three data points (n=2,8,20) via Hoefsmit residues, with the k≥12 combinatorial blow-up explicitly blocking verification at the four higher magic numbers (.md:102-106, 137-142). A spectral-sequence-collapse conjecture confirmed at 3 of 7 asserted points, with the predictive cases (50,82,126) admittedly unreachable by the only available verification method, is empirically thin — the match could be fragile precisely where it would be a prediction rather than a postdiction."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Mapping shell closure / binding-curve first-derivative drops at magic numbers to a homological collapse is a reasonable structural reinterpretation of accepted nuclear phenomenology; no broken conservation or wrong units. The physical anchor (magic numbers) is real."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:98-101 cites prop:magic-numbers-from-q numerical verification but this block attaches no witness JSON; .ts has no computation/witness field",
+        "notes": "The 'empirically confirms at n=2,8,20' claim points to ../observations/magic-numbers-from-q rather than to a witness file resolvable from this block's manifest, so the numerical backing is not directly reproducible from here. Per AGENTS.md §3b a definition/conjecture leaning on empirical support 'should cite any computational witnesses available' in the manifest — not done."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "de4db1289481",
+          "ts": "cc27b7c24955",
+          "lean": "99b2e1170770"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:44-53, 76-94, 98-106; .ts builder 'proposition' + tag 'open-problem'; lean:40-65",
+        "notes": "verdict: minor-to-major revisions; the conjecture is honestly flagged and Lean-axiomatised correctly under §3b-cond, so it is defensible as an open problem. referee_argument: The strongest objection is the kind/overclaim + hidden-DOF cluster — a statement labelled 'proposition' that is admittedly an open conjecture whose domain is exactly the empirically-observed magic numbers it then cites as evidence. The motivational chain (categorical neutrality ⇒ self-dual BB ⇒ pairwise cancellation) contains an unargued 'self-dual ⇒ higher strata cancel' step, and empirical support is 3/7 points with the predictive cases unverifiable. None of this sinks it as a conjecture, but the block should be retyped 'conjecture', the magic-set derivation made explicit (vs fitted), and 'empirically confirms' softened to 'is consistent with at the three computable points'."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.870Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

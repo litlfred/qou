@@ -837,7 +837,243 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The finiteness mechanism (categorical trace over finitely many irreducible summands of V^⊗n) is internally coherent; no outright false mathematical statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The mass-ratio computation is presented as downstream of the q₀-pinned R-matrix; no back-fitting visible in this remark itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "feynman-eigenbasis.md:30-33 states as fact 'Each irreducible summand corresponds to a particle identity ... the unknot to the neutrino, the trefoil to the electron, the figure-eight knot to the Higgs field (mass mechanism), and so on.' and md:22-24 'this action completely decomposes V^⊗n into irreducible summands ... labelled by Young diagrams, or equivalently by knot types via Alexander's braid-closure theorem.'",
+        "notes": "The knot↔particle dictionary is a framework conjecture/identification, here stated declaratively without 'conjecturally' / 'we posit'. Alexander's theorem gives knots as braid closures, not a canonical bijection Young-diagram ↔ knot-type ↔ particle; conflating 'irreducible summands labelled by Young diagrams' with 'knot types' and then with 'particle identities' is a chain of identifications presented as established. Overclaim (identification-as-derived) in scholarly prose."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The single numeric m_mu/m_e is pinned to a named witness; no off-menu coefficient introduced in this remark."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "feynman-eigenbasis.md:21-24 'by [knot eigenbasis completeness] this action completely decomposes V^⊗n into irreducible summands — labelled by Young diagrams, or equivalently by knot types via Alexander's braid-closure theorem.'",
+        "notes": "The 'or equivalently by knot types' equivalence does not follow from Schur–Weyl/Young-diagram decomposition: Alexander surjectivity gives every knot as some braid closure but not an equivalence between the (finite) set of Young-diagram summands at level n and knot types. The 'equivalently' is the missing-lemma step."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark has no .lean sibling; computation field points to a Python witness, not a Lean proof."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "feynman-eigenbasis.md:60 cites \\cite{stolz-teichner-2012} immediately after the claim that the categorical trace is a finite expression requiring no regularisation.",
+        "notes": "Stolz–Teichner (supersymmetric field theories / cobordism functors) is about a functorial-QFT framework, not about replacing the path integral with a finite Markov-trace mass formula. The citation is at best tangential support for the 'finite categorical replacement of the path integral' claim; reads as decorative/mis-targeted attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "feynman-eigenbasis.md:43-54 the mass functional m(ϱ)=||tr((∫_A⊗id)∘Δ∘ϱ)|| uses ∫_A 'the Frobenius form' and Δ 'the comultiplication' on 'a finite-dimensional Frobenius–Hopf object A' without specifying which object A is or its relation to V^⊗n / the knot.",
+        "notes": "'A' is introduced as a Frobenius–Hopf object and ϱ:1→A 'a closed cycle ... representing a particle propagating around a vortex filament' — the link between this A and the V^⊗n eigenbasis discussed above is left implicit. Key terms (Frobenius form normalisation) undefined here; resolved only by cross-ref to def:mass-identity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "feynman-eigenbasis.md:71 quotes m_μ/m_e ≈ :val[m_mu_over_e]{precision=6}; the bound witness computations/q-pinning-50-digit.witness.json records m_mu_over_e_str=206.7682830 with m_mu_over_e_role='9.5σ cross-check PREDICTION (not the anchor)'.",
+        "notes": "Per CLAUDE.md (q₀ anchor convention, STRICT) m_μ post proton-repin is a 963.6× L2 FAIL prediction (~210 ppb), not an exact match. The remark displays the ratio as a clean computed value at precision 6 without any indication it is the muon–proton substrate-tension cross-check rather than an accuracy success. Not a false statement, but precision-as-displayed obscures the 9.5σ residual — fragile framing flagged."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "feynman-eigenbasis.md:32-33 asserts 'the unknot to the neutrino, the trefoil to the electron, the figure-eight knot to the Higgs field (mass mechanism)'.",
+        "notes": "A particle physicist would reject this dictionary as stated: the Higgs is a scalar field (its 'mass mechanism' is spontaneous symmetry breaking, not a knot identity), the electron and neutrino are distinct leptons whose assignment to trefoil vs unknot is unmotivated by any cited selection rule here, and the figure-eight↔Higgs identification mixes a fermionic-mass mechanism with a boson. Presented declaratively without hedging in scholarly prose. (Same root as the overclaim finding; logged separately as a domain-expert objection.)"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "feynman-eigenbasis.ts:7-12 declares computation{script:'computations/q_pinning_50_digit.py', witness:'computations/q-pinning-50-digit.witness.json', status:'verified'} but the .ts carries no scriptHash/scriptCommitSha to detect drift; the witness value 206.7682830 is consistent with the prose ≈ value.",
+        "notes": "Value reproduces against the named witness, but the block records no producer hash, so staleness vs the current q₀ pin cannot be machine-checked from the manifest. Given the proton/muon repin history (CLAUDE.md), absence of a pinned scriptCommitSha is a reproducibility gap rather than a confirmed stale value."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "66113277185d",
+          "ts": "46109b0ea21e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Rollup of feynman-eigenbasis.md:30-33 (knot↔particle dictionary stated as fact), md:22-24 ('equivalently by knot types'), md:71 (m_μ/m_e displayed at precision 6 with no cross-check caveat).",
+        "notes": "verdict: major-revision. referee_argument: The strongest objection is that a remark interpreting prop:braid-action-tensor smuggles in the framework's most contestable physical identifications — unknot=neutrino, trefoil=electron, figure-eight=Higgs — as declarative fact rather than as the named conjectural dictionary, and asserts a Young-diagram ↔ knot-type equivalence that does not follow from the cited completeness/Alexander results. Combined with displaying m_μ/m_e at 6 digits without flagging it as the 9.5σ muon–proton cross-check (a 963.6× L2 FAIL per AGENTS.md, not an accuracy win), the block reads as overclaiming both the categorical-to-physical map and the numerical agreement. Fix: hedge the particle dictionary ('we posit / conjecturally'), replace 'equivalently' with the actual (weaker) statement, and annotate the m_μ/m_e value as the substrate-tension cross-check."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.897Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1340,7 +1340,250 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "mass_is_holonomy (lean:76-79) is a valid rewrite from two axioms; the corollary statement m(γ)=‖Hol‖ is the cited Yekutieli nonabelian Stokes result, not asserted as independently proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "mass-identity-C.lean:56-69 introduces TWO axioms (nonabelian_stokes: mult_integral_norm = holonomy_norm; categorical_equals_multiplicative_integral: categorical_mass_norm = mult_integral_norm) over an abstract `structure ArchimedeanMassData` of free ℝ fields. theorem mass_is_holonomy (lean:76-79) then chains them by `rw`. The 'theorem' is a trivial transitivity of two assumed equalities on uninterpreted reals — the entire mathematical content is in the axioms; the theorem itself is vacuous (a := b, b := c ⊢ a = c).",
+        "notes": "The corollary's Lean content reduces to assuming the result as two axioms and composing them. Legitimate per AGENTS.md (axiom + -- Ref: yekutieli2015, deep analytic result not in Mathlib), but the theorem adds no proof content beyond transitivity of axiomatised equalities."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Not circular: the two axioms are independent imported analytic facts (nonabelian Stokes; categorical=MI bridge), not the conclusion smuggled in. The conclusion m=‖Hol‖ follows from them but they are not it."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The block is kind=corollary and the .lean labels mass_is_holonomy a `theorem`, but both axioms it rests on are unproved imports (lean:56,68) and the docstring (lean:11-14) concedes nonabelian Stokes 'cannot currently be formalised in Lean/Mathlib'. Presenting an axiom-chained transitivity as a `theorem`/`corollary` slightly overstates the formalisation status (it is axiom-conditional, not proved).",
+        "notes": "Minor: validation is 'not_checked' and the .lean is honestly annotated 'NOT part of the formal proof chain' (lean:23), which mitigates; but the kind=corollary + theorem framing reads stronger than 'recorded as axioms'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters; abstract holonomy/MI/categorical-mass norms, no q_0-derived constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The two-step rw is logically valid; m=MI and MI=Hol ⇒ m=Hol."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The .md/.proof claim is a geometric equation: mass = ‖MI∫_Σ(∇_A q, L∧F^+)‖ = ‖Hol_{∇_A}(γ;𝔊)‖ with the Killing-form norm on su(2) and quantum-flatness integrand. The .lean (lean:38-47) models this as a bare `structure ArchimedeanMassData` of three independent ℝ scalars (holonomy_norm, mult_integral_norm, categorical_mass_norm) plus mass_nonneg; none of the geometric content (multiplicative integral, curvature pair, su(2) norm) is represented — the equalities are between abstract reals. The Lean is a faithful *bookkeeping* shell but proves nothing about the actual MI/holonomy objects the .md asserts.",
+        "notes": "proof-statement-integrity concern: the Lean abstracts away every geometric object in the narrative claim into opaque reals and axiom-asserts the two equalities; it does not formalise the .md's equation, it stipulates it. Acceptable given the not-in-Mathlib disclaimer, but the divergence between the rich .md claim and the abstract Lean shell is real."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "yekutieli2015 resolves (references.ts:776) and genuinely concerns 'Nonabelian Multiplicative Integration on Surfaces'; correctly invoked for the nonabelian Stokes / MI=holonomy result."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-identity-C.md:2-6 invokes 'instanton connection A, Levi form L, self-dual curvature F^+' and the integrand (∇_A q, L∧F^+) without defining L or the pairing in-block (relies on def:mass-identity / def:quantum-flatness by ref). The proof.md:18 names the Killing-form norm on su(2) but the structure-group 𝔊 vs su(2) identification is implicit.",
+        "notes": "Minor: the geometric data (L, F^+, 𝔊 vs su(2)) is cross-referenced rather than defined here; readers must follow def:mass-identity to disambiguate the integrand."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical prediction; purely structural archimedean identity."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "mass = norm of holonomy of a connection around a cycle is dimensionally/structurally consistent with a gauge-theoretic mass-as-resistance picture; no broken conservation or unit error in the abstract statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness; result is analytic (axiom-cited), nothing to re-run."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "24072c0f8b25",
+          "ts": "b2a2095094eb",
+          "lean": "0e68c60f859f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: minor-revisions. referee_argument: The corollary is a legitimate axiom-conditional record of Yekutieli's nonabelian Stokes theorem (citation resolves, disclaimer honest). The strongest objection is structural: the Lean models the rich geometric identity as transitivity of two axioms over three opaque ℝ scalars (mass_is_holonomy is a := rw chain), so the .lean stipulates rather than formalises the .md claim, and a kind=corollary/`theorem` framing reads stronger than 'recorded as axioms'. No mathematical error; the gap is formalisation-status honesty."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:46.309Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

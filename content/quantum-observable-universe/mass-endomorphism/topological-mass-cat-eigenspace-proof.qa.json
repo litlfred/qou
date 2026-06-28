@@ -781,7 +781,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "topological-mass-cat-eigenspace-proof.md:40-52",
+        "notes": "Same defect as the parent lemma, located in the proof body: the proof asserts the QED-completed identity m(rho) = ||tr(tau_hat alpha)|| + ||tr(alpha - tau_hat alpha)|| but the derivation only establishes the algebra-level Pythagoras ||alpha||^2 = ||tau_hat alpha||^2 + ||alpha-tau_hat alpha||^2. The final equality (sum of norms of traces) is false in general (anti-parallel trace images give LHS=0 != RHS>0). The square (QED) is therefore unjustified."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proof is not vacuous/tautological — it makes a real (but invalid) inferential move; flagged under false-claim/non-sequitur, not vacuity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Does not assume its conclusion; the prior self-assuming intermediate_sum version was removed. The error is an invalid forward step, not circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-cat-eigenspace-proof.md:32-52",
+        "notes": "Claims an exact equality proven, while the supporting orthogonality only yields a squared-norm decomposition at the algebra level (a different, weaker statement) plus at best a triangle inequality after applying tr. Exact-equality-as-proved overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-cat-eigenspace-proof.md:40-52",
+        "notes": "'and by the linearity of the categorical trace:' is the non-sequitur connective: it converts a sum-of-squared-algebra-norms into a sum-of-trace-norms. Linearity of tr supports tr(alpha)=tr(tau_hat alpha)+tr(alpha-tau_hat alpha) only; it neither distributes a norm over a sum nor transfers Pythagorean additivity through the trace. Missing lemma."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "cat_eigenspace_decomposition.lean:63 (sorry) vs proof .md:54 (QED)",
+        "notes": "The narrative proof closes with a square (claims completion) but the corresponding Lean theorem is `sorry`. The formalization does not back the asserted proof, and the asserted proof is invalid; this is a divergence between a claimed-complete narrative argument and an unproved Lean obligation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proof cites internal blocks (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing) which exist and are used in the appropriate roles; no external citation to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-cat-eigenspace-proof.md:27-38",
+        "notes": "||.|| denotes the Frobenius algebra norm in the Pythagoras line (33-38) but a trace-scalar norm in the conclusion (43-52); the silent overloading is exactly what makes the bad step look plausible. The *-compatibility hypothesis's inner product is left implicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Abstract categorical proof; no physics prediction to test."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing; Lean obligation is sorry'd."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5f43c9908d37",
+          "ts": "db13a97d0f17"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=major-revision. referee_argument: The proof's terminal inference is invalid. It legitimately establishes algebra-level orthogonality (Pythagoras: ||alpha||^2 = ||tau_hat alpha||^2 + ||alpha - tau_hat alpha||^2) but then claims, 'by linearity of the categorical trace', the unrelated equality m(rho) = ||tr(tau_hat alpha)|| + ||tr(alpha - tau_hat alpha)|| and writes QED. Linearity of tr only gives tr(alpha) = tr(tau_hat alpha) + tr(alpha - tau_hat alpha) (a sum inside one norm; merely a triangle inequality for the norms), and squared-norm additivity does not survive the trace. A counterexample with anti-parallel trace images gives LHS 0 vs RHS positive. The Lean leaves this `sorry`, so the formalization neither corroborates the QED nor catches the gap."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.748Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

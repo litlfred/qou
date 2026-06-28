@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "why-b3.md:1-2 — 'The Descartes condition χ(A) = −6 forces the gauge group to be a quantum form of SU(2) (rank 2)'. χ=−6 and 'rank 2' do not uniquely *force* SU(2); rank-2 admits SU(3) (also rank 2), Sp(4), G2, SU(2)×SU(2), etc. The Euler-characteristic-to-gauge-group implication is asserted, not justified here, and 'forces' overstates a uniqueness that this remark does not establish.",
+        "notes": "Remark interprets prop:braid-action-tensor; the 'forces SU(2)' step is the kind of uniqueness claim a referee would challenge. Minor because it is a remark (no logical claim per §3a) but the word 'forces' makes a uniqueness assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark has genuine interpretive content (why B_3 is the first nontrivial braid action: V 2-dim ⇒ V^⊗2 single braiding, V^⊗3 first with two generators). Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "why-b3.md:1-2 'forces the gauge group to be a quantum form of SU(2)' — stronger than the rank-2/χ=−6 datum supports (see da-false-claim). The conclusion of uniqueness exceeds the argument given in the remark.",
+        "notes": "Same root as da-false-claim; logged as overclaim of uniqueness. The supporting derivation (if any) lives in prop:braid-action-tensor / the Descartes chapter, not cited here."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Given a 2-dim V, the chain V^⊗2→single c_{V,V}, V^⊗3→two generators σ1,σ2 of B_3 is correct and follows."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark block, no .lean sibling (correct per §3 — remarks optional)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref:."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "why-b3.md:1 'The Descartes condition χ(A) = −6' is invoked without definition or cross-link in this remark; the reader must know what χ(A) is and why χ=−6 maps to rank 2. uses[] cites only prop:braid-action-tensor, not a Descartes/χ definition.",
+        "notes": "Term χ(A) and the χ=−6 ↦ rank-2 map are undefined in-block; rely on external context that is not linked."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "'Gauge group is a quantum form of SU(2)' is consistent with the framework's SU_q(2) substrate; no unit/conservation issue."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ab276dab061d",
+          "ts": "f7f40af11f64"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict=accept-with-minor-edits. referee_argument: The remark is a sound motivation for B_3, but 'χ(A)=−6 forces … SU(2)' asserts a uniqueness the remark neither defines (χ undefined in-block) nor justifies (rank 2 is not unique to SU(2)). Soften 'forces' to 'selects (per the Descartes condition, cf. ch.…)' and link the χ definition."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.112Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

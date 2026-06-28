@@ -1600,7 +1600,249 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Claim restricted to integrality (a_m∈ℤ[u]) and finiteness (M<∞) of the Habiro expansion — a true standard quantum-topology fact (Habiro). The .md and authorNotes explicitly disclaim any c_k/precision-ladder bridge."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "habiro-precision-ladder-equivalence.lean:92-94 theorem habiro_integral := ⟨(h.coeffs m).eval u₀, rfl⟩",
+        "notes": "The lean.ref target habiro_integral states ∃ z:ℤ, (h.coeffs m).eval u₀ = z and proves it by ⟨eval, rfl⟩. Since h.coeffs has codomain HabiroCoeff = Polynomial ℤ, eval at u₀:ℤ is *already* an ℤ by typing — the existential is trivially true for ANY data and carries no content ('an integer is an integer'). It does NOT capture the .md's substantive claim 'coefficients live in ℤ[u] not ℚ[u]/ℝ[u]' (that is baked into the abbrev type, not proved). habiro_terminates (lines 74-76, card = M+1 by simp) is likewise a tautology about Fin. The genuine content (the specific integer a_m table, witness all_integral:true) lives only in the witness/.md, not in the proved Lean. Self-assuming/trivial-by-typing projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The .md and authorNotes explicitly forbid the back-fitted precision-ladder c_k (tuned against experiment); the bridge class QbetaHabiroTaylorBridgeClass is left as an OPEN §3b-cond conditional with no instance — circularity is named and quarantined, not committed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Title 'Precision-ladder coefficients are Habiro integer evaluations' is broader than what is proved, but the .md (lines 76-81) and authorNotes (line 31) explicitly retract the c_k bridge and confine the canonical content to a_m integrality. Honestly de-scoped."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Explicitly states only (m_e,q_0) inputs (lines 58-60) and that higher c_k are NOT derived/are fitted (excluded from canonical chain). The free DOF is disclosed, not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "habiro-precision-ladder-equivalence.md:1-21 (integrality+finiteness of tr_M Habiro expansion) vs habiro-precision-ladder-equivalence.lean:92-94 (habiro_integral)",
+        "notes": "The lean.ref target habiro_integral proves something strictly weaker/different than the .md proposition: the .md asserts that the Markov trace tr_M *admits* a finite ℤ[u] Habiro expansion (an existence theorem about tr_M — Habiro 2000 Thm 1.1). The Lean instead takes an arbitrary HabiroExpansion structure as given and proves the tautology that its already-ℤ-valued coefficient evaluates to an integer. The hard content (tr_M HAS such an expansion; the coefficients are the specific integers) is never connected to tr_M in Lean — there is no Markov-trace object in this file at all. Lean ⊨ vacuous-implied vs .md existence claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "habiro-precision-ladder-equivalence.ts:15-19 cites:[habiro2000,...]; lean:31,90,158 Ref:[habiro2000] Corollary 1.2; references.ts:1676,1706",
+        "notes": "The integrality/cyclotomic-ring content (a_m∈ℤ[u], finite Habiro expansion) is the Habiro-RING result. Per references.ts notes, habiro2000 ('colored Jones of simple links') is NOT the ring/integrality paper — QOU ring citers were re-keyed to habiro2004cyclotomic. Lean cites '[habiro2000] Corollary 1.2' and '[habiro2000] Theorem 1.1' for integrality/termination, which is mis-attributed; should be habiro2004cyclotomic (or habiro2002 for bottom-tangles universal invariant)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "habiro-precision-ladder-equivalence.md:20 u=q^{1/2}, (u;u)_m=∏(1-u^{2k}); lean:44-46 qPochhammer",
+        "notes": "u=q^{1/2} introduces a square-root branch over ℂ/ℝ without specifying the branch; the Lean qPochhammer is defined over generic CommRing in u directly (no q^{1/2} extraction), so the .md's 'u=q^{1/2}' and Lean's 'u as the variable' are two different conventions left implicitly identified. ℏ_q is referenced as 'universal substrate Planck quantum (categorical; numerical value ... not here)' — value deferred, acceptable but the per-factor shrink '~ℏ_q^m' is asserted without a stated bound."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The block deliberately does NOT make a precision claim — it states the exact Habiro evaluation 'does not give experiment-grade agreement' (lines 62-81) and that ppb-level c_k were experiment-tuned. By withholding the fragile numeric claim it avoids the fragility failure; the integer a_m table is exact, not a fitted near-match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No standalone physical-observable prediction is asserted (Q_β accuracy explicitly deferred to witness ledger)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Cited witness habiro-expansion-atomic-probe.witness.json resolves at computations/probes/; proton M=8 table (lines 31-43) is a concrete reproducible artifact. No stale-q0 contradiction (the block avoids q0-dependent numerics)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9cdc28295f46",
+          "ts": "28b98f6f7d91",
+          "lean": "9549aabb0b76"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revision. The narrative is unusually honest (retracts the precision-ladder bridge, confines the claim to a_m integrality/finiteness). Strongest objection (referee_argument): the formalization does NOT establish the .md proposition — the lean.ref target habiro_integral is a typing tautology (∃z, ℤ-eval = z by rfl) and habiro_terminates is a Fin-cardinality triviality; neither connects to the Markov trace tr_M, so the headline existence claim 'tr_M admits a finite ℤ[u] Habiro expansion' is unproved in Lean while presented as a proposition. Either state the genuine tr_M existence theorem (citing habiro2004cyclotomic as an external axiom) or relabel the Lean as a structural scaffold. Also re-key habiro2000→habiro2004cyclotomic for the ring/integrality citations."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

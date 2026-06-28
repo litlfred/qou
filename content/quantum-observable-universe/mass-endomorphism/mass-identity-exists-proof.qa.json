@@ -781,7 +781,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Narrative (mass-identity-exists-proof.md:1-16) correctly argues each factor (Δ, ∫_A⊗id, rigid tr, norm) is a morphism, so the composite lands in R. No false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The proof backs prop:mass-identity-exists, whose Lean (mass-identity-exists.lean:29-34) is `theorem MassIdentity.exists {R} [NormedCommRing R] [Nonempty R] : Nonempty R := infer_instance` — a tautology assuming its own conclusion ([Nonempty R] ⇒ Nonempty R).",
+        "notes": "The narrative proof itself is non-vacuous (genuine categorical composition argument), but the formal backing it points to is a self-assuming projection: it proves 'R is inhabited' from 'R is inhabited', not that the mass composite is well-defined for every ϱ. The proof-block's content is real; the Lean it relies on is vacuous (recorded under the proposition's da-vacuous too)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Narrative does not assume existence to prove existence; it constructs the element factor by factor."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proof claims only well-definedness/existence of an element of R, which the factor-by-factor argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-identity-exists-proof.md:8-10 asserts tr exists 'via the rigid dual structure' citing rigid-monoidal-category, and md:11-13 that the norm is 'defined on every element of R' via the Frobenius pairing. The existence of a NORM on R (not merely the pairing) is invoked but not justified here — the step from Frobenius pairing to a genuine norm ‖·‖ is asserted.",
+        "notes": "Minor: the proof treats 'norm induced by the Frobenius pairing' as given, but a symmetric bilinear pairing need not induce a norm without positivity/non-degeneracy hypotheses on R. Gap to the actual ‖·‖ construction."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Narrative proves: the composite ‖tr((∫⊗id)∘Δ∘ϱ)‖ exists in R for every cycle ϱ (md:1-16). Backing Lean mass-identity-exists.lean:29-34 proves only `Nonempty R` from `[Nonempty R]` — it never constructs the composite, never mentions Δ, ∫_A, tr, or ϱ. The Lean docstring itself admits 'records the claim at the type level via a Nonempty R witness (trivial for non-trivial R)' (lines 26-27).",
+        "notes": "The Lean is strictly weaker/different (inhabitation of R) than the narrative (the mass composite is well-defined). proof-statement-integrity fails."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No external -- Ref: in this proof .md beyond internal block links; the backing prop's Lean cites [kock2004] (Frobenius algebras), appropriate for the construction."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-identity-exists-proof.md:11-13 invokes 'the norm ‖·‖ on R induced by the Frobenius pairing' without specifying which norm or under what conditions on R it is a norm; R is only 'a commutative ring' (categorical base ring), for which a canonical norm is not automatic.",
+        "notes": "Implicit base-ring/norm regime: a norm exists only for archimedean R (e.g. R⊇ℝ); over a generic CommRing the ‖·‖ in the mass formula is undefined. Ambiguity in the regime where the existence claim holds."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure existence statement; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9fac61598f37",
+          "ts": "0285d08563ef"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Narrative proof is sound at the categorical-existence level but its formal backing (prop:mass-identity-exists Lean) proves only Nonempty R from Nonempty R.",
+        "notes": "verdict: minor-revisions (narrative) / the Lean backing needs major-revisions. referee_argument: the prose existence argument is acceptable modulo the implicit norm-on-R hypothesis, but the Lean theorem it is paired with is a vacuous inhabitation tautology that formalises none of the composite's structure. Either state the real existence claim in Lean (construct the composite morphism into R) or relabel the Lean as a placeholder; and make explicit the archimedean regime under which ‖·‖ is a norm."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.544Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

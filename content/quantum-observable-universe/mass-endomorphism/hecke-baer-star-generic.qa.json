@@ -1358,7 +1358,259 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-baer-star-generic.md:46-51 (Step 3) 'every idempotent is similar (over R algebraically closed) to a self-adjoint idempotent'; but the .md hypothesis (.md:3) is 'R a field of characteristic 0, q generic', NOT algebraically closed",
+        "notes": "Step 3 silently strengthens the hypothesis to 'R algebraically closed' to get the self-adjointness/similarity argument, contradicting the stated hypothesis (a general char-0 field). Over a non-algebraically-closed field the Wedderburn blocks need not be full matrix algebras M_{d}(R) and an idempotent need not be similar to a self-adjoint one w.r.t. a chosen Hermitian form — Step 3 (and the M_{d_λ}(R) decomposition at .md:16-18) can fail. The proposition as stated for a general char-0 field is not established by the given proof; it holds as written only over an algebraically closed (or splitting) field. Quantifier/hypothesis slip."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-baer-star-generic.lean:85-95 (bar_idempotent_transposition_partition … : True := by … trivial) and lean:117 (example {n:ℕ} : True := trivial)",
+        "notes": "Step 1 of the proof (bar acts on e_λ by partition transpose) is formalised as `def … : True := by trivial` — a §1a-forbidden disguised-True (def-disguised-True) carrying none of the claimed content; the Volume-Conjecture co-location 'example : True := trivial' (lean:117) is likewise vacuous. Two of the three substantive proof steps reduce to `trivial` over the unit type, asserting nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical target or smuggled calibration; the proposition is a structural ring-theory claim. The failure-locus and Volume-Conjecture co-location are observational, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-baer-star-generic.lean:61-66 (axiom matrix_algebra_baer_right_axiom), lean:121-127 (axiom hecke_baer_star_generic_sketch_axiom), lean:132-137 main theorem := axiom",
+        "notes": "The 'Theorem (prop:hecke-baer-star-generic)' (lean:129-137) is proved by directly applying hecke_baer_star_generic_sketch_axiom — i.e. the headline result is an axiom, not a derived theorem. Combined with the matrix-Baer axiom and the two `: True` steps, essentially the whole proposition is axiomatised. The .md presents a complete 3-step proof with □ (.md:54) and the .ts kind is 'proposition' with a lean.ref to hecke_baer_star_generic, overclaiming a proved result whose Lean is an axiom-projection. Also the axiom (lean:125-127) only asserts each block M_d(R) is Baer-* — it does NOT assemble the blocks into H_n(q) being Baer-*, so even the axiomatised statement is weaker than the headline."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter; pure algebra."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-baer-star-generic.md:36-43 (Step 2) → .md:45-54 (Step 3)",
+        "notes": "Step 2 produces idempotents p_λ generating the annihilator; Step 3 then asserts these 'can be chosen self-adjoint' via 'every idempotent is similar to a self-adjoint idempotent'. The therefore is missing the lemma that the *similarity transport* preserves the specific annihilator (the projection generating Ann_r(I) must be self-adjoint AND still generate the same ideal — similarity can move the ideal). The compatibility of 'choose self-adjoint representative' with 'generates this particular annihilator' is asserted, not proved. The Lean offloads exactly this to an axiom, confirming the gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:1-8 ('H_n(q) is a Baer-*-ring: every annihilator ideal is generated by a self-adjoint idempotent') vs lean:121-137 (axiom + theorem conclude only Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R)) for each block d)",
+        "notes": "The Lean theorem hecke_baer_star_generic_sketch proves (modulo axiom) that an individual matrix block M_d(R) is Baer-*, parameterised by an arbitrary d — it never constructs H_n(q), never uses the Wedderburn decomposition ⊕_λ M_{d_λ}(R), and never shows the direct sum is Baer-*. It also drops the self-adjointness from BaerStarRing's matrix instance (matrix_algebra_baer_right_axiom, lean:61-66, has IsIdempotentElem p but NO star p = p clause, unlike the BaerStarRing class at lean:37-42 which requires star p = p). So the proved object is both weaker (single block, no assembly) and missing the self-adjoint condition that is the whole point. Fails proof-statement-integrity vs the .md."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "hecke-baer-star-generic.lean:60 '-- Ref: [kassel1995] … §I' for matrix_algebra_baer_right_axiom; lean:124 '[kassel1995] … §V.5' for the Wedderburn-blocks-Baer-* axiom",
+        "notes": "Kassel 1995 (Quantum Groups) develops Hecke algebras and their Wedderburn structure (plausibly §V), but 'matrix annihilators are principal idempotent-generated ideals' (§I) and 'Wedderburn blocks are Baer-* rings' are not standard named results in Kassel — Baer-*-ring theory is not a Kassel topic at all (that is Berberian / Kaplansky). The citations are gestural section pointers for axioms whose content Kassel does not state in that form; the .ts cites[] is empty, so these -- Ref: are the only attribution and they are loose."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:1-8 'every / The right (resp. left) annihilator ideal is generated by a self-adjoint idempotent' (note the garbled 'every The right' at .md:7), and 'generic q' defined two ways",
+        "notes": "The statement line is grammatically broken ('every\\nThe right …', .md:6-8), leaving the quantifier on 'annihilator ideal' ambiguous. 'Generic q' is given as 'not a root of unity, q≠1' (.md:4) but the failure locus (.md:80-87) only excludes 2k-th roots of unity for k≤n, so 'generic' (excludes ALL roots of unity) and the actual semisimplicity condition ([k]_q≠0 for k≤n) are not the same set — the precise hypothesis under which the proposition holds is stated inconsistently."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable; the figure-8 e_{(2,2)}·Li_2^q(ζ_6) instance (.md:134) is illustrative, not a precision match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "hecke-baer-star-generic.md:110-124 ('the Volume Conjecture's archimedean asymptotic regime is exactly the trajectory through the Baer-*-failure locus … The loss of Baer-* projection-generation IS the structural mechanism of the wall-crossing transition')",
+        "notes": "The co-location argument is over-asserted: for FIXED n, q=ζ_N with N≫n is OUTSIDE failure_locus(n) (the .md concedes this at .md:107-111), and the recovery argument 'n grows with the colored-Jones level' is hand-waved. Claiming the VC asymptotic regime is 'exactly' the failure-locus trajectory, and that Baer-* loss 'IS the structural mechanism' of wall-crossing, is a strong physical/structural identification resting on an admittedly slippery fixed-n-vs-growing-n argument. Not a measurement contradiction, hence warn not fail, but a domain expert would push back on the 'exactly/IS' framing."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing attached; the claims are algebraic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "365bbcf20bc0",
+          "ts": "9a677377c504",
+          "lean": "d8d1f2b0b7d4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "lean:61-66, 85-95, 117, 121-137; .md:45-54, 1-8",
+        "notes": "verdict: major-revision-bordering-reject (as a 'proposition'/'theorem'). referee_argument: The headline objection is da-overclaim/da-lean-narrative-divergence — the Lean 'theorem' is literally `:= hecke_baer_star_generic_sketch_axiom`, i.e. the result is axiomatised, and even that axiom only gives 'each matrix block M_d(R) is Nonempty-Baer-*' (with the self-adjoint clause silently dropped), never assembling the Wedderburn sum into 'H_n(q) is Baer-*'. Two of three narrative proof steps are `: True := trivial` (§1a disguised-True). On the math, Step 3's self-adjointness argument quietly assumes R algebraically closed, contradicting the stated 'char-0 field' hypothesis, and the 'generic q' hypothesis is stated inconsistently with the actual semisimplicity locus. The structural Baer-* / failure-locus picture is interesting and probably correct over a splitting field, but as committed the block presents an axiom-backed, partially-vacuous, hypothesis-slipped sketch as a proved proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

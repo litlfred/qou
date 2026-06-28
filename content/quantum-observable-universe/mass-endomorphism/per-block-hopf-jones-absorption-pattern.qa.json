@@ -1097,7 +1097,258 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Remark with interprets:rem:chi-per-irrep-cyclotomic-closed-forms; per-Wedderburn-block Hopf-Jones absorption (qbeta/Markov-trace) squarely in mass-endomorphism scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "chi_λ_diff(1)=0 and the integer LO pattern (-2,-1,-2), dim-weighted sum -6, y-weighted -5/4 all reproduce (sympy + lean ring/decide)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "per-block-hopf-jones-absorption-pattern.lean:59-71 prove only chi_Vx_diff(1)=0 (value-at-1 vanishing), a *necessary* condition; the actual LO ε^1 coefficients (-2,-1,-2) that the .md headlines are NOT extracted in Lean (lean:87-91 admits 'Full proof of the LO ε^1 extraction ... is left to a follow-up extension'). dimension_scaled_absorption_pattern (lean:92-99) merely `decide`s 1·(-2)+2·(-1)+1·(-2)=-6 from hand-supplied integer literals — it assumes the very coefficients in question.",
+        "notes": "The Lean's load-bearing claim (the -2/-1/-2 absorption) is asserted as integer literals and arithmetic, not derived; the only derived facts are vanishing-at-1. Honest as a stated-not-proved stub, but the headline pattern is not Lean-backed."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "c_3=-2=J_Hopf(q=1) is cross-referenced to prop:q-beta-c3-hopf-three-fold-markov, not back-fit here; the per-block sum reproduces -6 independently."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:39-56 frames the per-block decomposition as the 'structural foundation for extending Fact 3 beyond c_3' and md:79-83 asserts higher c_k 'come from products of the per-block linear-in-ℏ_q factors' — but no c_k≥4 is computed and md:55-56 shows the dim-weighted sum is -6 'before Wenzl-bridge re-weighting' while the y-weighted result is -5/4 and the actual q_0 compute gives -0.142. The 'realised structurally per Wedderburn block' framing implies more derivational power than the value-matching demonstrates.",
+        "notes": "The -2 = c_3 coincidence is presented as structural realisation; it is a value match at q=1 plus a re-weighting that lands at -5/4 (not c_3). The higher-c_k 'products of factors' claim is a conjecture stated as a mechanism."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "y_λ weights are stated as solutions of the Ocneanu-Wenzl Markov axioms, not free; the q_0 values (0.4154,0.2809,0.0227) are derived, not tuned."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:51-56: 'The dimension-weighted sum reproduces the global c_3' is followed by a sum evaluating to -6, NOT c_3=-2; then md:58-64 switches to a DIFFERENT (y_λ Markov-bridge) weighting giving -5/4, also not -2. Neither weighted sum equals c_3=-2, so the asserted 'reproduces the global c_3' does not follow from either computation shown.",
+        "notes": "The text claims the decomposition reproduces c_3=-2 but neither presented weighting yields -2 (one gives -6, the other -5/4). The connection to c_3=-2 is by the per-block coefficient appearing, not by the sum reproducing it."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The .md title/claim is the LO ε^1 absorption coefficients (-2,-1,-2) per block. The Lean theorems chi_V3_diff_value_at_1 / chi_V21_diff_value_at_1 / chi_V111_diff_value_at_1 (lean:59,66,70) prove only `chi_Vx_diff (1:R) = 0` — vanishing at q=1, NOT the ε^1 coefficient. dimension_scaled_absorption_pattern (lean:92-99) proves 1·(-2)+2·(-1)+1·(-2)=-6 from literal inputs. None of the three named LO coefficients are derived in Lean; the .lean proves strictly weaker statements than the .md headlines.",
+        "notes": "proof-statement-integrity fail: Lean proves vanishing-at-1 (necessary condition) and an arithmetic tautology over hand-entered integers, while the .md claims the per-block absorption coefficients themselves. ts validation is 'not_checked'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "per-block-hopf-jones-absorption-pattern.ts:14 cites 'jones1985', and the .lean:31 comment labels it '(Hopf-link Jones polynomial)'; references.ts:1487 has id jones1985. The Hopf-link J=-2 classical-limit value is invoked but jones1985 is the general Jones-polynomial paper, not a specific Hopf-link c_3 source — borderline over-attribution. hoefsmit1974 (cited) is not actually used in this block's argument.",
+        "notes": "Minor: hoefsmit1974 appears in cites[] but plays no role in the LO-coefficient argument; jones1985 attribution for the specific Hopf value is loose. Not mis-keyed (all keys resolve)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:52-54 writes 'dim_q^2(V_λ)' (quantum dimension squared) for the first weighting then md:58-64 uses 'y_λ Markov-bridge weights' for the second; the two weightings are conflated under the single phrase 'dimension-weighted sum reproduces the global c_3'. Also J_Hopf(q=1) is used as a fixed scalar -2 without restating which normalisation of the Hopf Jones polynomial.",
+        "notes": "Minor: 'dimension-weighted' vs 'Markov-bridge y_λ-weighted' are distinct and give -6 vs -5/4; the prose does not cleanly separate which is 'the' reproduction of c_3."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:66-73: the headline -2 lands at q=1; at the substrate q_0 the y_λ are (0.4154,0.2809,0.0227) summing to 0.7191 (NOT 3/4) and the Markov-trace LO is τ_M≈-0.142, i.e. the clean -5/4 is a q=1 artifact that does NOT persist to q_0. The backing witness scriptHash is stale (stored c54db859094b vs current 5db6e17d42ce) and scriptCommitSha stale (cf3b3f7... vs 7b25fc6...).",
+        "notes": "The pretty integer pattern is a q=1 evaluation; at the physical q_0 the weights and the LO coefficient both drift substantially (3/4→0.7191, -5/4→-0.142). Cross-anchor (q=1 vs q_0) swing is disclosed in-text but undercuts 'structural realisation of c_3'."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Algebraic/representation-theoretic pattern; no standalone physical observable asserted here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Backing witness computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json has stale provenance: stored scriptHash c54db859094b ≠ current sha256[:12] 5db6e17d42ce of qbeta_per_block_paper_closed_forms.py; stored scriptCommitSha cf3b3f758b93... ≠ current commit 7b25fc6058... The producer changed since the witness was generated; the recorded results are not provably from the current script.",
+        "notes": "Both witness provenance fingerprints drift from the current producer (per AGENTS.md idle-time staleness criteria). Re-run the producer with tee-logging to refresh the witness before relying on its q_0 numbers."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5e79f0d08f7b",
+          "ts": "15077a93f542",
+          "lean": "842b0edd4ff6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revisions. referee_argument: The arithmetic is correct, but (1) the Lean proves only vanishing-at-1, not the headline -2/-1/-2 LO coefficients (lean-narrative-divergence); (2) neither weighted sum actually equals the claimed c_3=-2 (it gives -6 or -5/4) yet the prose says it 'reproduces the global c_3'; (3) the clean pattern is a q=1 artifact that drifts to τ_M≈-0.142 at q_0; (4) the backing witness is stale on both hash and commit. As an exploratory structural-observation remark it is acceptable, but the framing overstates what is established."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

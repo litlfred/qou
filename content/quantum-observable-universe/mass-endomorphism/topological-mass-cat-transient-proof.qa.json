@@ -781,7 +781,237 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-cat-transient-proof.md:16-17 'the norm of the sum equals the sum of the norms (by disjointness of the supports)'",
+        "notes": "The claim ‖Σ_i tr_trans(ϱ,p_i)‖ = Σ_i ‖tr_trans(ϱ,p_i)‖ from 'disjointness of supports' is generally FALSE for a Killing-form (Euclidean-type) norm: orthogonal/disjoint summands give the Pythagorean ‖Σ x_i‖² = Σ‖x_i‖² (an L2 sum), not the linear L1 sum ‖Σ x_i‖ = Σ‖x_i‖. Disjoint supports never upgrade an L2-orthogonality to L1-additivity. The triangle inequality gives ≤, equality requires colinearity, not disjointness. Flagged warn (not critical) because the norm convention is not pinned and the parent lemma's normed claim is the load-bearing one."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proof makes a substantive (if questionable) structural claim about kernel decomposition; not a tautology or self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No assumption of the conclusion; derives the transient sum from a disjointness premise about ker(d_{n+1}|_{p_i})."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:6-8 'These kernels are mutually disjoint submodules (each arises from a distinct extension step)'",
+        "notes": "Two asserted facts carry no justification: (i) the transient support is contained in the union of the per-centre kernels, and (ii) those kernels are mutually disjoint submodules. Both are stated as given ('by the structure of the brane boundary') with no lemma. The conclusion (norm-additive decomposition) is stronger than the supplied argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free numerical parameter or calibration; purely structural argument."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:8-17: from 'kernels are mutually disjoint submodules' the proof writes tr(α−τ̂ₙ(α)) = Σ_i tr_trans and then 'the norm of the sum equals the sum of the norms (by disjointness of the supports)'",
+        "notes": "The step 'norm of sum = sum of norms by disjointness' does not follow: disjoint/orthogonal supports yield a Pythagorean (L2) identity, not an L1 sum-of-norms. The missing lemma (that the per-centre contributions are non-negative scalars or pairwise colinear) is exactly what would be needed for ‖Σ‖ = Σ‖·‖, and it is absent. Logical gap between the disjointness premise and the linear-additivity conclusion."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling for this proof block (proof kind, uses lem:topological-mass-cat-transient). Nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No external cites[] on the .ts; only an internal def:brane-boundary reference. No misattribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:5 ker(d_{n+1}|_{p_i}) and .md:13 tr_trans(ϱ,p_i) used without in-block definition; 'norm' convention unspecified",
+        "notes": "The localized trace tr_trans(ϱ,p_i) and the differential d_{n+1} are introduced without definition, and the norm whose additivity is invoked is not pinned (Killing-form L2 vs some L1 measure) — the ambiguity is precisely what masks the L2/L1 slip flagged under da-non-sequitur."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Localization of transient contributions to blow-up centres is physically reasonable; no units/conservation issue."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness backing this proof."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f6b12fba3ed1",
+          "ts": "d7d0a667bf90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "VERDICT: major-revision. referee_argument: The proof's final and load-bearing step — 'the norm of the sum equals the sum of the norms by disjointness of the supports' (.md:16-17) — is mathematically unjustified and most likely false for the Killing-form norm. Disjoint/orthogonal supports give the Pythagorean L2 identity ‖Σ x_i‖² = Σ‖x_i‖², not the linear L1 sum ‖Σ x_i‖ = Σ‖x_i‖ the proof asserts. The two structural premises (transient support ⊆ ∪ kernels; kernels mutually disjoint) are also stated without proof. The block must either pin a norm/positivity convention under which L1-additivity holds, or restate the decomposition as Pythagorean."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.479Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

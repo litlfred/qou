@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/bar-involution.lean"
   },
   "source_hashes": {
-    "md": "c9089609cd39",
-    "ts": "d86b2f619227",
+    "md": "0c2f6eafd741",
+    "ts": "e3b48a4881f5",
     "lean": "05f23632489f"
   },
   "criteria": {
@@ -915,7 +915,259 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Ring-involution grading lemmas (anti×anti=sym, sym×anti=anti, even/odd power classification, projection identities) are standard and Lean-proved sorry-free over CommRing/Field. h=q−q⁻¹ bar-anti-symmetric, h²=h²+4-form for [2]_q² all check. No false statement found in the definitional core."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "BarInvolution class carries 6 genuine axiom fields (involutive/add/mul/one/zero); predicates and 33 lemmas have real content, no ': True' carrier, no self-assuming projection. The Lean is substantive infrastructure."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "bar-involution.md:86-104",
+        "notes": "The categorical identification −3/2 = −(dim V_{(3)}+dim V_{(2,1)})/2 is a post-hoc match of the empirical c_5=−b²−1/2 '−1/2 fingerprint' to a Wedderburn count. The arithmetic (1+2)/2 is trivially true, so the 'identification' risks reading a chosen target into a free combinatorial sum; flagged minor because it is presented as interpretation of an independently-proved c_5 form."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "bar-involution.md:194-205",
+        "notes": "§Kac–Sunada meta-justification concludes 'bar-symmetric is FORCED — the projection isn't a stylistic choice but the isospectral lift demanded by Kac–Sunada'. This is a strong necessity claim with no proof or Lean backing; the cited Kac/Sunada isospectrality results do not entail that the QOU framework must project to the bar-even part. The retained-vs-discarded choice (line 27-30) is explicitly 'the framework's empirical content', i.e. a modelling choice, contradicting the 'FORCED' framing."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The bar-involution itself introduces no numerical free parameter. c_5/b² closed forms are functions of q only. The choice to retain P_avg is a stated modelling convention, not a hidden tunable constant (handled under da-overclaim)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "bar-involution.md:174-180",
+        "notes": "§Falsifiability: from 'Silver outliers {5}, Golden outliers ∅' the text concludes 'This confirms the hypothesis that the c_5 outlier is silver-specific… The outlier IS the forced collapse into the bar-invariant fixed-point sector.' The jump from a single Fibonacci/Pell cleanliness test at two q-values to 'IS the forced collapse' is a gap — one data point does not confirm a forcing mechanism."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "bar-involution.md:69-137; bar-involution.lean:1-342",
+        "notes": ".md asserts several identities as 'Proved in Lean as' siblings that are NOT in bar-involution.lean: hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared, c5_decomposition_via_quantum_two, c5_classical_limit_eq_neg_five_quarters, c5_classical_eq_wedderburn_nonsign_dim_half, quantum_two_squared_eq_skein_squared_plus_four, c5_as_function_of_skein. The .lean file (the def:bar-involution sibling) contains ONLY the abstract grading infrastructure (lines 39-338); it explicitly defers c_5 content to c5-involution-leibniz-decomposition.lean (lines 17-19). So the b²/c_5 'PROVED in Lean (no sorry)' claims are not verifiable in this block's Lean sibling — proof-statement-integrity gap relative to the named file. (Claims may hold in the sibling file, but this block's .lean does not back them.)"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites[wenzl1988, hoefsmit1974, jones1985] are the correct provenance for Hecke representation / Markov trace / Hoefsmit matrices. Lean -- Ref: wenzl1988 doi matches. No misattribution detected."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "bar-involution.md:3-13; bar-involution.lean:39-45",
+        "notes": ".md calls bar a 'ring anti-involution' on H_n(q) (with σ_i↦σ_i⁻¹, order-reversing), but the Lean class BarInvolution encodes a *commutative-ring homomorphism* involution (bar_mul: bar(xy)=bar x·bar y, no order reversal) on a generic CommRing coefficient ring. These are two different objects sharing the name 'bar'; the .md does not flag that the Lean models only the coefficient-ring action, not the anti-automorphism on the algebra. Base ring also slides between H_n(q), ℤ[q^{±1/2},…], and ℝ."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "bar-involution.md:165-180",
+        "notes": "The silver-vs-golden c_5 outlier 'falsifiability' rests on a single probe (qbeta_golden_ratio_fibonacci_probe.py) producing one outlier set {5} vs ∅. A 2-point (golden/silver) Fibonacci/Pell 'cleanness' test is highly susceptible to definitional choices of 'clean'; no error bars, no cross-anchor sweep, and the result is leveraged into a physical 'β-decay null' narrative. Empirically fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "bar-involution.md:177-180, 184-192",
+        "notes": "Physical glosses ('inert-prime fingerprint of the β-decay null', 'orientation-averaged Wilson loop', 'contact volume α∧dα') attach physics labels to algebraic bar-types without a derivation in this block. Not obviously wrong on units/conservation, but a domain referee would flag the β-decay-null↔silver-ratio link as unsupported physics. Minor."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "bar-involution.md:167-172, 197-205",
+        "notes": "§Falsifiability cites a probe 'witness confirmed' but gives no witness path/hash; §Kac–Sunada is narrative. The grading lemmas are reproducible (Lean), but the empirical c_5-outlier and silver/golden tables (Table 6) point at a probe with no pinned witness JSON in-block — not independently reproducible from the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "05f23632489f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "bar-involution.md:69-137, 194-205; bar-involution.lean:17-19",
+        "notes": "verdict: minor-revision. The abstract bar-grading infrastructure is correct, well-formalized, and sorry-free. Strongest objection (referee_argument): a definition block has accreted a large body of interpretive/empirical claims (Kac–Sunada 'FORCED' necessity, silver-vs-golden c_5 'falsifiability', physics glosses) and cites ~6 c_5/b² theorems as 'Proved in Lean' that do NOT live in this block's own .lean sibling (deferred to c5-involution-leibniz-decomposition.lean). A referee would ask to (a) move the empirical c_5/Kac–Sunada material to a remark/proposition with its own proof sibling, (b) soften 'FORCED', and (c) clarify the Lean class models the coefficient-ring involution, not the algebra anti-involution the prose defines."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:22.101Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

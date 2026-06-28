@@ -1355,7 +1355,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The claim — partition-sum (Wenzl y_λ · Hoefsmit χ^λ_q) equals the recursive Markov-axiom reducer to numerical precision at q0 — is the standard Wedderburn-spectral identity for tr_M and is corroborated at machine epsilon (rel err ~1e-15) across five atoms. True as stated (numerical-precision agreement)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-hecke-seminormal-character-closure.lean:16-18 sibling docstub `theorem character_closure_holds : True := by ... trivial`; library QHeckeSeminormalCharacterClosure.lean:19-36 `class ... { claim_paths_agree : tr_M_partition_sum = tr_M_axiom_reducer }` with `def character_closure_holds := ctx.claim_paths_agree`",
+        "notes": "Two-layer vacuity: the resolved sibling stub concludes `: True`, and the library 'proof' is a self-assuming projection — the class field `claim_paths_agree` IS the conclusion, and the def merely returns it. Per §3b-tax/proof-statement-integrity this is a vacuous self-assuming projection; the class axiomatizes the conclusion, not sub-hypotheses, so it derives nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "QHeckeSeminormalCharacterClosure.lean:27-36 — field `claim_paths_agree : tr_M_partition_sum = tr_M_axiom_reducer`, then `def character_closure_holds ... := ctx.claim_paths_agree`",
+        "notes": "The Lean 'proof' assumes its conclusion: the proposition to be shown (the two paths agree) is taken as a class field and projected back out. This is textbook circularity at the formal layer — the agreement is asserted as a hypothesis, not derived from y_λ/χ^λ_q definitions. The narrative content is non-circular (it's an empirical equality), but the formalization is."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".ts:42 lean.validation='not_checked'; authorNotes:74 frames it as 'identically equals' citing Hoefsmit/Mathas/Wenzl while only numerical agreement is shown",
+        "notes": "The authorNotes assert the partition-sum 'identically equals' the recursive ascent as a mathematical identity, but the block delivers numerical agreement at q0 only (no symbolic proof of the identity in Q(q)). 'Identically' slightly overstates the delivered evidence; the .md is more careful ('to numerical precision'). Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "y_λ(q) (Wenzl Schur principal specialization) and χ^λ_q (Hoefsmit seminormal trace) are canonical-chain objects; the interface I=σ_{n1}-(h/2)·1 has h=q-q^{-1}. No off-menu free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The 'why it matters' chain (Wedderburn decomposition ⇒ partition-by-partition tr_M needed downstream) is coherent; the bug-fix narrative (q=1 MN character → q-Hecke seminormal) is a valid correction, not a logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:13-22 claims a tr_M partition-sum equals the canonical reducer to precision at q0; library lean:33-36 proves equality only by projecting the assumed class field `claim_paths_agree`; sibling stub lean:16-18 proves `: True`",
+        "notes": "proof-statement-integrity: the .md asserts a verified numerical identity between two compute paths; the Lean either proves `True` (stub) or re-emits its own assumption (library projection). Neither formalizes y_λ, χ^λ_q, or any agreement — the Lean is strictly weaker/vacuous vs the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Wenzl 1988 (y_λ Markov weight), Hoefsmit 1974 + Mathas 1999 §3.4 (seminormal representation/character), Jones 1987 (Markov trace) are correctly attributed for the invoked ingredients. jing-liu-2021 listed in cites[] but not visibly invoked in prose — not a misuse, just unused."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:5-7 𝓑_K = 𝓑_p·I·𝓑_n with I=σ_{n1}-(h/2)·1; |tr_M| values (proton 1.06530) differ from the sibling reducer block's tr_M (proton 1.63315) with no stated normalization map",
+        "notes": "The canonical atomic-braid word and its |tr_M| are defined by reference to a Python function (atom_braid_word_3A) rather than in-prose; combined with the absolute-value vs signed convention and the differing numeric values across sibling blocks, a reader cannot self-derive which tr_M normalization is being equated. Minor (the equality is between two paths on the SAME 𝓑_K, so internally consistent)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Agreement is at machine epsilon (3.96e-15 .. 1.07e-14) across five atoms and reproduced at 50-dps mpmath (1.4e-16). This is a same-quantity two-method cross-check (not a fit to data), so it is robust, not fragile. No anchor-swing concern (both paths use the same q0)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Algebraic cross-check between two tr_M compute paths; no standalone physical-observable claim to test against measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "tr-m-q-hecke-seminormal.witness.json: scriptHash='ce83de9142e8', scriptCommitSha='f178edd94a6d...'; current computations/tr_m_q_hecke_seminormal.py sha256 prefix = 2e09fee63ac7 and git log -1 head = 7b25fc60... — BOTH the content hash and the commit sha have drifted",
+        "notes": "The witness is stale per the §0b sidecar/witness staleness rule: the recorded scriptHash (ce83de9142e8) does not match the current producer-file hash (2e09fee63ac7), and scriptCommitSha (f178edd9, computedAt 2026-05-09) predates the current producer commit (7b25fc60). The cited numerical agreement is therefore not certified reproducible against the committed script; needs a fresh `python3 -u tr_m_q_hecke_seminormal.py 2>&1 | tee` re-run and witness refresh."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "941baf644fb0",
+          "ts": "8396b0b9ee84",
+          "lean": "fa99781c7e72"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict=major-revision; lean circular/vacuous (QHeckeSeminormalCharacterClosure.lean:33-36 projects assumed field; stub:16-18 `:True`) + stale witness (scriptHash ce83de9142e8 vs current 2e09fee63ac7)",
+        "notes": "referee_argument: 'The underlying numerical content — partition-sum tr_M = recursive tr_M at machine epsilon across five atoms, reproduced at 50 dps — is sound and is the expected Wedderburn-spectral identity. Two defects block acceptance as a *proved proposition*: (1) the formalization is circular/vacuous — the library def projects an assumed class field carrying the conclusion, and the content-block sibling stub concludes `: True := trivial`, so Lean derives nothing (§3b-tax / proof-statement-integrity); (2) the backing witness is stale — both scriptHash (ce83de9142e8→2e09fee63ac7) and scriptCommitSha (f178edd9→7b25fc60) have drifted from the current producer, so the quoted rel-errors are not certified against committed code. Fix: restructure the class to carry the y_λ/χ^λ_q sub-data and derive the agreement, and re-run the witness. The proposition itself need not be retracted.' Verdict: major-revision."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

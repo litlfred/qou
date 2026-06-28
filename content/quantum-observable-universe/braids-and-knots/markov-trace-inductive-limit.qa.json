@@ -1045,7 +1045,153 @@
         "reviewed_at": "2026-06-24T04:37:26Z",
         "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-trace-inductive-limit.md:9-10 claims axioms M1-M4 'characterise τ_M uniquely.' Uniqueness of the Markov trace given (M1,M2,M3) is a real theorem (Jones 1985) but holds for the trace functional on the Hecke quotient, not on the full braid group B_∞ (the .md writes τ_M : B_∞ → ℝ). On B_∞ itself M1-M4 do not single out a unique map without passing to H_n(q).",
+        "notes": "The slip is the domain (B_∞ vs the Hecke quotient); the cited uniqueness statement is real, so this is a phrasing imprecision rather than a false theorem."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-trace-inductive-limit.lean:65-80: class MarkovTraceInductiveLimit carries only inclusion_residual:ℝ + inclusion_residual_eq_zero, discharged by instance ⟨0,rfl⟩. The bridge instance (lean:98-105) sets tau_identity:=1, tau_cyclic_residual:=0, tau_stab_factor:=markovZN_legacy q with every proof :=rfl — it uses NOTHING from [MarkovTraceInductiveLimit q]. The hypothesis is inert; the same MarkovTraceN instance is constructible with no hypothesis at all.",
+        "notes": "Classic explicit-residual self-discharge: a content-free class asserting 0=0, and a bridge that derives nothing from it. authorNotes honestly flag 'scaffolding only,' but the construct as written is vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-trace-inductive-limit.md:27-31 + 35-38 claim 'every per-n MarkovTraceN class is automatically derivable' because 'the per-n axioms are the restrictions of the global ones.' In the Lean the derivation does not flow from any restriction of a global trace; the per-n fields are independently set to trivial constants (lean:100-105). The stated justification ('restriction of the global ones') is not what the proof does.",
+        "notes": "The conclusion (per-n instances elaborate) is true, but the stated reason is not the mechanism — a non-sequitur between narrative justification and Lean realisation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "11a89ab3c511",
+          "ts": "239c0e93722e",
+          "lean": "9a2e78c76f80"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing; pure Lean scaffold. z=1/(√q+1/√q) matches the Markov-Jones parameter convention; nothing to reproduce."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

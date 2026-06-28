@@ -835,7 +835,233 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "V^{⊗3} ≅ V_{3/2} ⊕ V_{1/2}^{⊕2} (md:1-2) is the correct su(2) Clebsch–Gordan for spin-1/2 V (2⊗2⊗2 = 4⊕2⊕2). B_3 preserving the isotypic decomposition (Schur–Weyl) is correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Makes a genuine (if interpretive) claim that the boson/fermion split is categorical/Schur–Weyl, not topological; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting; the identification symmetric↔boson / mixed-symmetry↔fermion is asserted from the decomposition, not from the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "categorical-boson-fermion.md:6-8 'they act non-by definition (fermionic exchange). This categorical distinction between bosons and fermions requires no appeal to topology.'",
+        "notes": "The claim that scalar action on the symmetric sector = 'bosonic' and non-scalar on mixed-symmetry = 'fermionic' is a suggestive identification; calling it a derived 'categorical distinction between bosons and fermions ... requires no appeal to topology' slightly overclaims — it reproduces exchange-symmetry sector labels, not the full spin-statistics theorem. As an interpretive remark (interprets prop:braid-action-tensor) this is acceptable framing; warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No parameter; structural."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Decomposition → B_3 preserves sectors → distinct action per sector is a valid Schur's-lemma argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling; the proposition it interprets (prop:braid-action-tensor) has its own Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref:."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "categorical-boson-fermion.md:7 reads 'they act non-by definition (fermionic exchange)' — the phrase 'non-by definition' is garbled; a word (e.g. 'non-trivially' / 'non-scalar') was dropped, leaving the key characterisation of fermionic-sector action undefined.",
+        "notes": "The contrast is 'act as scalars (bosonic)' vs '???-by definition (fermionic)'. As printed, the fermionic action is described by a broken phrase, so the central definitional contrast of the remark is not actually stated. Mechanical prose fix (likely 'act non-trivially'); fail on da-definitional-ambiguity because the defining property is currently unreadable."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical-implausibility: spin-3/2 symmetric and spin-1/2 mixed sectors from three spin-1/2 constituents are standard; no broken conservation or wrong units."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4d2450af7a10",
+          "ts": "d125c6cc22dd"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor-revisions. referee_argument: Mathematically the Schur–Weyl decomposition V^{⊗3}≅V_{3/2}⊕V_{1/2}^{⊕2} and the B_3-sector-preservation are correct. Two revisions: (1) md:7 'act non-by definition' is a garbled phrase that leaves the fermionic-sector characterisation unstated — must be fixed; (2) the closing 'requires no appeal to topology' framing overstates — the remark reproduces exchange-symmetry labels, not the full spin-statistics connection. Both minor; no false claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.246Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

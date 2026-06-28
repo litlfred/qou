@@ -1605,7 +1605,235 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The lemma (MI∫_Σ τ̂_n(α) = Hol_{∇_A}(ϱ_0)) is a plausible holonomy/Stokes statement; no counterexample or quantifier slip is evident. Correctness hinges on the unproved transient-vanishing step (flagged under da-non-sequitur), not on falsity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Non-vacuous geometric content (identifies a descended Markov-integral term with an unknot-core holonomy). Not a self-assuming projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-holonomy.ts:5-6 lean.ref validation: \"not_checked\"; no sibling .lean file (topological-mass-holonomy.lean absent)",
+        "notes": "Stated as a proved Lemma with a Lean ref (QOU.LiftingDescent.tm_descended_is_holonomy), but the ref is validation:not_checked and there is no sibling .lean to inspect; the proof.md asserts the key vanishing rather than proving it. The 'Lemma' label slightly overstates verification status. Scope-limited but a referee would want the Lean ref confirmed to resolve to a real, sorry-free decl."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-holonomy-proof.md:10-12 \"On Σ_0 the transient component vanishes (α − τ̂_n(α) = 0 on the unknot complement, since ϱ_0 has trivial topology and all sections there factor through level n)\"",
+        "notes": "The crux step — transient vanishing on Σ_0 — is asserted with a one-line topological hand-wave ('trivial topology ⇒ sections factor through level n'). This is the load-bearing inference for the whole lemma; 'all sections there factor through level n' is stated without a cited lemma or Lean witness. The nonabelian-Stokes second equality (yekutieli2015) is fine; the first equality (MI∫_Σ = MI∫_{Σ_0}) depends on this unproved vanishing. Major logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-holonomy.ts:5 ref: \"qou:QOU.LiftingDescent.tm_descended_is_holonomy\", validation:\"not_checked\"; no sibling .lean present to compare against the .md claim",
+        "notes": "Cannot confirm the Lean decl proves the narrative equality (and not a weaker/vacuous variant) because validation is not_checked and no sibling .lean exists for direct inspection. Given proof-statement-integrity cannot be verified, flag as a potential divergence pending resolution of the library-tree decl."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites:[yekutieli2015] invoked specifically for the nonabelian Stokes theorem on the disc Σ_0 (proof.md:23-24) — Yekutieli's non-abelian Stokes work is the correct attribution for this step."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-holonomy.md:9 MI∫ (Markov-integral / multiplicative integral operator) and 𝔊 are used without local definition; proof.md:5 relies on def:descent-involution and A_{n+1}^desc",
+        "notes": "MI∫ notation and the gauge object 𝔊 / connection ∇_A are taken from upstream blocks (uses: lem:topological-mass-eigenspace-decomp) but not recalled here; a referee reading the lemma in isolation cannot pin the precise meaning of the multiplicative-integral or the level-n filtration. Minor — resolvable via the cited upstream block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Purely topological/algebraic statement; no numerical match or q_0-dependent value."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No direct physical-observable claim (structural holonomy identity)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness backing (analytic lemma)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f90dc9a94d14",
+          "ts": "0842164ef189"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: the lemma's entire content reduces to the transient-vanishing step on Σ_0 (proof.md:10-12), which is asserted via an unproved 'trivial topology ⇒ all sections factor through level n' claim with no cited lemma or Lean witness; combined with the Lean ref being validation:not_checked and lacking an inspectable sibling .lean, the 'Lemma' is not yet verified to the standard its label implies. Strongest objection: discharge or cite the level-n factorization on the unknot complement, and confirm the library decl proves exactly this equality."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

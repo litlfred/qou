@@ -1374,7 +1374,258 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The core identity 1+ℏ_q−ℏ_q²/2 = (3−q⁻²)/2 = (3q²−1)/(2q²) with ℏ_q=(q−1)/q is verified: ℏ_q=1−q⁻¹, ℏ_q²=1−2q⁻¹+q⁻², so 1+(1−q⁻¹)−½(1−2q⁻¹+q⁻²)=3/2−½q⁻²=(3−q⁻²)/2. Correct. Lean meson_EM_closed_form (lean:39-43) closes it by field_simp;ring — sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Not vacuous: the Lean theorems prove genuine non-trivial rational-function identities over a Field with q≠0, discharged by field_simp;ring (real content), not `:True`."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:60-72 'Structural reading': reads the numerator 3q²−1 as '3 = number of saturating-genus generation torus knots T(2,3),T(2,5),T(2,7)' and denominator 2q² as 'EM-self-energy halving (Casimir)'. These interpretations are imposed on coefficients that arise purely from the elementary algebra 1+ℏ_q−ℏ_q²/2.",
+        "notes": "The '3' and '2' in (3q²−1)/(2q²) come directly from the Taylor truncation 1+ℏ−½ℏ² (constant 1, linear +1, the ½), i.e. from the chosen truncation order — not from Bring-surface generation counting. Attaching '3 generations' and 'Casimir halving' meaning to these is a post-hoc structural reading, not a derivation; it risks circular significance-assignment. The .md itself flags 'modulo a rigorous first-principles derivation of the ℏ_q−ℏ_q²/2 truncation order' (.md:72), which is honest. Minor — the algebra is correct; only the interpretive overlay is suggestive-not-derived."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:47-54 claims m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) is a 'single closed-form derived expression' with 'no fitted integers', both pieces 'framework-derived'. But the block ITSELF only proves the elementary algebraic identity (the (3q²−1)/(2q²) rewrite); the meson-ratio closure, [3]_q·[4]_q fusion, and α_em=q·[9]_q·[10]_q are imported from other props, and the truncation order 1+ℏ−½ℏ² is admittedly unproved (.md:72).",
+        "notes": "The proved content is just rational-function algebra (the .md 'Mathematical Novelty' note, line 75, is candid about this). The significance section presents the full m_K²/m_π² closure as 'derived / no fitted integers', but the choice of truncation order (why exactly 1+ℏ−½ℏ², i.e. why second-order with coefficient −½) is the load-bearing modeling choice and is explicitly NOT derived ('modulo a rigorous first-principles derivation of the truncation order'). Calling the assembled ratio 'derived (no fitted integers)' while the truncation order is hand-chosen is an overclaim — the −½ℏ² truncation IS effectively a modeling degree of freedom. Major because 'no fitted integers / framework-derived' is exactly the production-vs-exploratory claim the canonical-watcher polices."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:72 admits the result holds 'modulo a rigorous first-principles derivation of the ℏ_q − ℏ_q²/2 truncation order'. The truncation 1 + ℏ_q − ℏ_q²/2 (keep to O(ℏ²), coefficient −1/2 on the quadratic) is the choice that produces the exact coefficients 3 and the −½; a different truncation (e.g. +½ℏ², or O(ℏ³)) changes the numerator/denominator.",
+        "notes": "The truncation order/coefficient is an undisclosed-as-such free choice presented post-hoc as structurally meaningful (3 generations, Casimir 2). It has no stated canonical-chain origin — the .md concedes the derivation is pending. This is a hidden modeling DOF dressed as derived numerology (3, 2). Major per the framework's own Rule-14 / production-vs-exploratory discipline: an h^k truncation whose order is chosen to match must be flagged, not presented as 'no fitted integers'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:32-46: 'Substituting the closed form into the meson mass-squared ratio gives a single closed-form derived expression for the full m_K²/m_π² ratio' then writes the [3]_q[4]_q + (α_em/π)(3q²−1)/(2q²) formula. The substitution step assumes the EM correction enters multiplicatively as (α_em/π)·(sinh factor); that combination rule is asserted, not shown in this block.",
+        "notes": "The proved identity is only the (3q²−1)/(2q²) rewrite. The leap to the full m_K²/m_π² formula requires the additive-correction structure m_K²/m_π² = strong + (α_em/π)·EM, which is a separate (cross-referenced) claim. As presented in this block the 'gives ... the full ratio' is a non-sequitur from the proved algebra alone. Minor since it explicitly cites prop:meson-qcg-fusion-identity and the force-carrier prop for the other pieces."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The Lean (lean:39-57) proves exactly the three rational-function identities the .md proposition states (1+ℏ_q−ℏ_q²/2 = (3q²−1)/(2q²) = (3−q⁻²)/2 = 1+(1−q⁻²)/2), sorry-free, over a generic Field. The Lean correctly does NOT attempt the m_K²/m_π² significance claims (those stay in prose). Lean faithfully matches the proved part of the .md. No divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Only cite is [kassel1995] (Quantum Groups), -- Ref: in lean:26 with DOI. Used as general q-deformation/quantum-integer background; appropriate and not over-attributed (no specific theorem is pinned to it)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:2 defines ℏ_q = (q−1)/q. The CLAUDE.md cheat-sheet uses ℏ_q = 1 − q₀⁻¹ (= (q−1)/q, consistent) BUT also ℏ_q = 1 − q₀⁻¹ elsewhere; and the EM correction multiplies α_em/π by (3q²−1)/(2q²) without specifying the regime (symbolic q vs substrate q0) for the m_K²/m_π² evaluation in .md:38-46.",
+        "notes": "ℏ_q=(q−1)/q is consistent with the cheat-sheet ℏ_q=1−q⁻¹ — no contradiction (good). Minor residual ambiguity: the proposition holds for symbolic q over any field (correctly generic), but the significance section silently shifts to the archimedean substrate evaluation (m_K²/m_π² numbers) without flagging the fibre→archimedean wall crossing in-block (it defers to an audit doc, .md:56-57). Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:32-46 claims the m_K²/m_π² closure is 'sub-ppm' (Lean docstring lean:7-8 'closes the meson m_K²/m_π² ratio to sub-ppm'). No witness JSON / q0 pin / reproduced number is given in-block; the sub-ppm match depends on the chosen truncation order (the hidden DOF above) evaluated at the current q0.",
+        "notes": "A 'sub-ppm' match for m_K²/m_π² achieved via a hand-chosen truncation order (1+ℏ−½ℏ²) and an EM coefficient α_em=q[9]_q[10]_q is exactly the empirical-fragility profile the framework warns about: the precision could be inside fit noise of the truncation choice, and there is no in-block witness or cross-anchor (muon vs proton q0) swing check. The block defers the archimedean numbers to an audit doc (.md:56-57) rather than pinning a reproducible witness. Major: the headline 'sub-ppm' is unsupported in-block and rests on a chosen truncation."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:38-46 writes m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²). With m_K≈494 MeV, m_π≈139.57 MeV, m_K²/m_π² ≈ 12.5. The EM term (α_em/π)·O(1) ≈ (1/137)/π ≈ 0.0023 is a sub-percent correction, consistent in magnitude; but the assignment of '3 = three fermion generations' to a meson EM self-energy coefficient (.md:61-64) mixes unrelated physics sectors.",
+        "notes": "The numerical magnitudes are plausible (the EM correction is correctly tiny). The physical-interpretation overlay ('3' = generations, '2q²' = Casimir EM halving) attaches generation-counting and self-energy meaning to coefficients that are algebraically just the Taylor truncation constants — a domain expert would view the 'three generations in the meson mass numerator' reading as physically unmotivated cross-sector pattern-matching. Minor (interpretive, not a hard contradiction)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The Lean docstring (lean:7-8) and .md significance both claim a 'sub-ppm' / mass-ratio closure but cite only docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md (.md:56-57) for the archimedean evaluation; no computations/*.witness.json with scriptHash is referenced in the block.",
+        "notes": "The proved algebraic identity is fully reproducible (Lean field_simp;ring, self-contained). Only the empirical 'sub-ppm' significance lacks an in-block reproducible witness pointer (defers to an audit doc). Minor since the load-bearing proved content is the self-contained algebra."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fa712a606373",
+          "ts": "20983b2e18e7",
+          "lean": "67b26c01c35a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: accept-the-lemma-revise-the-significance. referee_argument: The proved object — the rational-function identity 1+ℏ_q−ℏ_q²/2 = (3q²−1)/(2q²) — is correct, generic over any field, and faithfully formalized sorry-free (no Lean/narrative divergence; da-false-claim/da-vacuous/da-lean pass). The block's weakness is entirely in the significance/structural-reading prose. Strongest objection (da-overclaim + da-hidden-dof): the .md presents the assembled m_K²/m_π² = [3]_q[4]_q + (α_em/π)(3q²−1)/(2q²) as 'a single closed-form derived expression' with 'no fitted integers / framework-derived', yet the truncation order 1+ℏ−½ℏ² (which fixes the coefficients 3 and ½) is admittedly NOT derived ('modulo a rigorous first-principles derivation of the truncation order', .md:72). That truncation choice is a hidden modeling DOF, and the post-hoc reading of '3' as three fermion generations and '2q²' as Casimir EM halving is suggestive numerology, not derivation. Required revision: scope the significance section as 'a candidate closed form consistent with the meson ratio, pending derivation of the truncation order', and avoid the 'no fitted integers / derived' framing until the truncation order is pinned; add a reproducible witness for the claimed sub-ppm match. The elementary identity itself is publication-ready."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1340,7 +1340,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The .md existence claim (𝔪(ϱ) exists in R for every ϱ) is a well-definedness statement of a composition of total maps into a normed ring; it is true. No counterexample."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "mass-identity-exists.lean:29-34 — `theorem MassIdentity.exists {R} [NormedCommRing R] [Nonempty R] : Nonempty R := by infer_instance`",
+        "notes": "The Lean theorem assumes `[Nonempty R]` and concludes `Nonempty R` — a trivial self-implying projection. It records nothing about the trace/Frobenius-Hopf composition the .md asserts exists. The docstring even concedes 'Witness is automatic'. Honest disposition would be to state the real composite-evaluation claim or carry it with sorry+Ref."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting or smuggled calibration; existence is structural, no numerical target involved."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-identity-exists.ts:6-8 lean.validation='not_checked'; .lean theorem far weaker than .md",
+        "notes": "Narrative presents a proved 'existence' proposition; the formal backing is a tautology marked not_checked. The proposition-level claim is fine mathematically but the 'proved' framing outruns the Lean content. Minor because the underlying statement is genuinely trivially-true."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters or calibration inputs in this structural existence block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The .md defers uniqueness to prop:mass-identity-unique and asserts only existence of the composite; no logical gap in that minimal claim."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:6-15 claims 𝔪(ϱ)=‖tr((∫_A⊗id)∘Δ∘ϱ)‖ exists in R; mass-identity-exists.lean:29-34 proves only `Nonempty R` from `[Nonempty R]`",
+        "notes": "proof-statement-integrity violation: the Lean derives a vacuously-implied `Nonempty R` rather than the well-definedness of the specific mass composite. The trace/Δ/∫_A construction never appears in the Lean term."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-identity-exists.lean:28,33 `-- Ref: [kock2004]` attached to an `infer_instance` proof of `Nonempty R`",
+        "notes": "Kock 2004 (Frobenius Algebras and 2D TQFT) is the correct reference for the Frobenius trace construction in the .md, but it is here cited as backing for a `Nonempty R` tautology that uses none of Kock's content. The citation is plausibly correct for the intended statement but mis-attributed to the vacuous proof actually present."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:9-12 uses ‖·‖ (Frobenius norm on R) and tr; mass-identity.md:42-43 defines ‖·‖ as 'the norm on R induced by the Frobenius pairing'",
+        "notes": "The norm on a general ring R is not canonical; the .md leans on def:frobenius-pairing for it but the Lean uses `NormedCommRing` (an a-priori-given norm). Whether the Frobenius-pairing-induced norm equals the NormedCommRing norm is left implicit — a base-structure ambiguity, minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match or witness; purely structural existence claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Defines inertial mass as a categorical-trace norm; no physical units/conservation claim is made here, so nothing a domain expert can refute at this abstraction level."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached to this block (ts has no `computation` field)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8eee38ab0fa3",
+          "ts": "1501eb46bacd",
+          "lean": "c0628c9fe3bc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict=minor-revision; strongest objection: Lean tautology (lean:29-34) does not formalize the .md mass composite",
+        "notes": "referee_argument: 'The proposition statement (existence of the categorical-trace mass) is true and unobjectionable, but the formal backing is a `Nonempty R`←`[Nonempty R]` tautology citing Kock 2004 for content it does not use. A referee would ask either to formalize the actual composite well-definedness or to demote the block to a structural remark. Not a falsity — a vacuity/divergence defect.' Verdict: minor-revision."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.929Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

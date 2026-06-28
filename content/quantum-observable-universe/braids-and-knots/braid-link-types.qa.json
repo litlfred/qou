@@ -835,7 +835,237 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "closure2_at_two_crossings_eq_hopf and jonesAtOne_hopf=-2 are rfl-level claims for the 2-strand restricted Link inductive; J_Hopf(q=1)=-2 is standard."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-link-types.md:9-14, :24-25; jonesAtOne defined as 'classical-limit Jones values' on a 3-constructor toy Link type",
+        "notes": "The Lean 'theorem' chain closes by rfl precisely because jonesAtOne(hopfLink) is DEFINED to be -2 and closure2(sigma_sq) is DEFINED to be hopfLink. It is a self-consistent definitional unfold (an honest 2-strand encoding), not a derivation of J_Hopf(1)=-2 from Jones-polynomial axioms. The mathematical content (=-2) is injected by the definition, so 'FULLY LEAN-PROVED' overstates what rfl establishes."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting to a physical target; c_3=-2 identification is only enumerated as open n-strand work (lines 55-83), not claimed closed here."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "braid-link-types.md:35 'is now FULLY LEAN-PROVED', :52 'Both atomic Track-C axioms are now Lean theorems'",
+        "notes": "'FULLY LEAN-PROVED' is true only for a hand-rolled 3-constructor Link type and a definitional jonesAtOne, not for the general Markov-closure/Jones-polynomial statement. The crucial step for the framework (3-strand sub-braid extraction, the dominant-subset selection at order eps^6) is explicitly open (:55-83). The headline risks reading as if c_3=-2 is Lean-discharged when only the 2-strand toy case is."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters; remark is pure Lean-infrastructure scaffolding."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-link-types.md:60-67 steps 1-5 of the n-strand chain",
+        "notes": "Step 3 ('the 3-element subset that maximally contributes corresponds to a 2-strand sub-braid') is asserted as the pivot but is precisely the unproved combinatorial claim (acknowledged :73). As a remark enumerating open work this is honest, but the 'Composing gives c_3 = -2' (:67) does not follow until step 3 is established."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark accurately describes the Lean toy types it builds; no overclaim that diverges from a stated Lean theorem signature."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "jones1985 cited for J_Hopf(1)=-2 and Alexander-Markov 1923/1936 for closure-of-sigma^2=Hopf are correctly attributed standard results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-link-types.md:14 'jonesAtOne : Link -> R -- classical-limit Jones values'",
+        "notes": "'jonesAtOne' conflates the Jones polynomial evaluated at q=1 (a normalization-dependent number) with a definitionally-assigned value on the toy type. Whether the -2 is the (unreduced) Jones polynomial, the Kauffman bracket, or a chosen normalization is not pinned; for the Hopf link the literature value depends on orientation and normalization convention."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match against experiment; pure topology/algebra."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing witness/compute; claims are Lean-level (authorNotes: 'no sorrys', 2-strand closed). Not gated on a witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a6b2d42dffeb",
+          "ts": "93d3df457476"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: minor-revision. Strongest objection (referee_argument): the remark's headline 'the chain sigma^2 -> Hopf -> -2 is now FULLY LEAN-PROVED' is true only for a 3-constructor toy Link type with a definitionally-assigned jonesAtOne; the value -2 is injected by definition (rfl), not derived from Jones-polynomial axioms, and the load-bearing 3-strand sub-braid-extraction step for the actual c_3=-2 framework claim is explicitly open. Re-scope 'FULLY LEAN-PROVED' to 'definitionally encoded for the 2-strand toy case'."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.384Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

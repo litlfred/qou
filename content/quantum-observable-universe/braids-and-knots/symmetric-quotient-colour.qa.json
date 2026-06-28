@@ -1059,7 +1059,230 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark interprets prop:braid-action-tensor and sits in 'Categorical origin of braiding: the braid action' section (chapter ts:31-40 lists symmetric-quotient-colour). The B_3↠S_3 / braided→symmetric-monoidal content and colour-sector lifts fit the braid-action scope; properly an interpreting remark, not a misfiled claim."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark makes no formal claim. Stated facts (B_3 -> S_3 by sigma_i^2=id; symmetric quotient <-> c_{V,V}^2=id; three S_3 in S_5) are standard / framework-internal and not asserted as theorems."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Interpretive remark with content (links symmetric quotient to colour sectors); interprets prop:braid-action-tensor; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation; interpretive mapping only."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "symmetric-quotient-colour.md:9-11 'The lifts of these three S_3 subgroups back to B_3 ... recover the non-trivial exchange phases that distinguish quarks from leptons.'",
+        "notes": "Stated as accomplished ('recover') in a remark, but the quark/lepton exchange-phase distinction is a framework conjecture, not an established lift theorem; the remark has no interprets-target proving the 'recover' claim. As a remark it makes no formal commitment, but the verb 'recover' reads as a settled result rather than an interpretation. Minor (remark register)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameter introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Interpretive prose; no inferential chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark, no .lean sibling required or present."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[]; cross-references to rem:chirality-trefoil and def:color-sector-coords resolve (color-sector-coords / braid-action-tensor blocks exist)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Refers to defined terms (braided/symmetric monoidal, color-sector-coords) with refterm/links; S_5=Aut(Sigma_4) and the three S_3 are pinned by cross-refs."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Mapping colour sectors to symmetric-quotient images is a structural identification; no measurable contradiction asserted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness backing a remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b8a800beaf68",
+          "ts": "0e4eb9bfd15a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Verdict: accept. Properly-backed interpretive remark (interprets prop:braid-action-tensor, uses def:color-sector-coords). Only soft note: the verb 'recover' (md:11) reads stronger than an interpretation warrants, but within the remark register this is acceptable. referee_argument: none rising above minor."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

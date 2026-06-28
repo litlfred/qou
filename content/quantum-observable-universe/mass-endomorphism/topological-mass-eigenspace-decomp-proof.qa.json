@@ -781,7 +781,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "topological-mass-eigenspace-decomp-proof.md:51-66: from m(ϱ) = ‖MI∫_Σ τ̂(α) · MI∫_Σ(α−τ̂(α))‖ (a product of two SU_q(2) group elements, eq:mi-decomp lines 41-49) the proof concludes m(ϱ) = ‖MI∫_Σ τ̂(α)‖ + ‖MI∫_Σ(α−τ̂(α))‖ (a SUM of norms), justified by 'submultiplicativity of ‖·‖ (which is an equality for the orthogonal decomposition of an idempotent)'. Submultiplicativity gives ‖ab‖ ≤ ‖a‖·‖b‖ (a PRODUCT bound), never ‖ab‖ = ‖a‖ + ‖b‖. No norm satisfies ‖ab‖ = ‖a‖+‖b‖ for a multiplicative group operation.",
+        "notes": "The Pythagorean identity at lines 28-34 (‖α‖² = ‖τ̂α‖² + ‖α−τ̂α‖²) is a sum of SQUARES of the integrand sections, not of the multiplicative-integral group elements. The final equation conflates additive (Killing-form, pre-integration) with multiplicative (group, post-integration) structure and lands on an impossible ‖product‖ = sum-of-norms identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-eigenspace-decomp-proof.md:51-53 calls the submultiplicativity bound an EQUALITY ('which is an equality for the orthogonal decomposition of an idempotent') to upgrade an inequality into the exact decomposition needed. The exactness is asserted, not derived; a submultiplicative norm bound is being passed off as a clean additive splitting.",
+        "notes": "Even granting a product→sum reading via logs, the 'is an equality' claim has no proof; it conflates the orthogonality of the Killing decomposition (exact for the additive ‖·‖²) with the multiplicative-integral norm (only submultiplicative)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-eigenspace-decomp-proof.md:36-49 invokes 'additivity of the nonabelian multiplicative integral over orthogonal direct sums [Proposition 5.3, yekutieli2015]' to write MI∫α = MI∫τ̂(α) · MI∫(α−τ̂α). The non-abelian multiplicative integral (Yekutieli's non-abelian Stokes) is a PATH/AREA-ORDERED product and is NOT additive/multiplicative over an algebraic orthogonal direct-sum split of the integrand — Prop 5.3 of yekutieli2015 concerns 2-dimensional multiplicative integration, not factorisation along a *-idempotent eigenspace decomposition. The step B (eq:mi-decomp) does not follow from step A.",
+        "notes": "Two compounding gaps: (i) the eq:mi-decomp factorisation mis-applies the cited Yekutieli result; (ii) the subsequent norm step turns the product into a sum (see da-false-claim)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Block kind=proof; no lean.ref on this .ts (proof blocks have no sibling Lean here). The parent lemma lem:topological-mass-eigenspace-decomp carries the formalisation, out of scope for this proof block."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-eigenspace-decomp-proof.md:38 cites '[Proposition 5.3, yekutieli2015]' for 'additivity of the nonabelian multiplicative integral over orthogonal direct sums'. yekutieli2015 (references.ts:776) is on non-abelian multiplicative integration / Stokes; it does not provide a proposition that the area-ordered multiplicative integral factorises along an algebraic *-eigenspace (descent-involution) decomposition of the integrand. The invoked 'additivity over orthogonal direct sums' is not a Yekutieli Prop 5.3 result.",
+        "notes": "Mis-attribution of the factorisation lemma to a specific proposition number that does not establish it."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The symbol α is introduced only implicitly (md:36 'Applying this to the mass integrand') as the integrand (∇_A q, L∧F^+); the proof slides between ‖·‖ on su(2) (Killing form, md:24-25) and ‖·‖ on the group SU_q(2) (md:51) using the same notation. 'submultiplicativity ... which is an equality for the orthogonal decomposition of an idempotent' relies on an unstated norm on the group.",
+        "notes": "The norm whose submultiplicativity/equality is invoked is never pinned down; two different ‖·‖ (Lie-algebra vs group) share notation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The conclusion m(ϱ) = ‖MI∫τ̂(α)‖ + ‖MI∫(α−τ̂α)‖ (md:55-66) makes mass the SUM of two norms of group elements. As a physical mass-decomposition this requires additive splitting of the mass into a 'descended' base term and a 'transient' correction; but the algebra delivering it (‖product‖ = sum) is unphysical/false, so the claimed additive mass budget rests on an incorrect identity.",
+        "notes": "Flagging because the physical interpretation (additive base + transient mass split) is the payload, and it is derived from the false norm identity."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c40c9cd528a1",
+          "ts": "51f856db2d61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "notes": "verdict: REJECT (proof invalid as written). referee_argument: The proof's final step (md:51-66) commits a category error: it derives m(ϱ) = ‖MI∫τ̂α‖ + ‖MI∫(α−τ̂α)‖ — a SUM of norms — from a PRODUCT of two SU_q(2) group elements, justifying it by 'submultiplicativity ... which is an equality'. Submultiplicativity gives ‖ab‖ ≤ ‖a‖·‖b‖; no norm yields ‖ab‖ = ‖a‖ + ‖b‖. Compounding this, the upstream factorisation MI∫α = MI∫τ̂α · MI∫(α−τ̂α) mis-attributes Yekutieli 2015 Prop 5.3 (the area-ordered multiplicative integral does not factor along an algebraic *-eigenspace split). The Pythagorean ‖α‖² split (true, additive, pre-integration) is silently conflated with the multiplicative group structure (post-integration). The additive mass-budget conclusion the lemma needs is therefore unproven; the proof must be rewritten with a correct relation between the multiplicative integral and the descent decomposition."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.963Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

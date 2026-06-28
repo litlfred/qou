@@ -1353,7 +1353,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trace-locality-meets-gs-nonlocality.md:33-44 Part (3) asserts tr_M(ρ_NF(β)) = Π_i V̂_i(q), a product of per-generator 'vertex volumes' local in the normal-form word. The Markov trace of a generic Hecke element decomposes as a WEIGHTED SUM over Wedderburn blocks (Σ_λ w̃_λ · tr_λ), not a product over normal-form letters; the proof block's own part (3) (trace of a sum of matrix units) does not yield a literal product over positions in general.",
+        "notes": "Part (1) (Markov locality) and part (2) (GS non-locality) are correct. Part (3) is the load-bearing 'bridge' and its product form is mathematically questionable as stated — true only blockwise / for single-block elements, not for an arbitrary braid word's normal form. Warn rather than fail because the statement is hedged ('local in the normal-form word') and may be intended per-block."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Sibling trace-locality-meets-gs-nonlocality.lean:19-21 is `theorem HasReconciliation : True := by trivial`. The real class lives at lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean. There, field `vertexVolume_local` (lines 66-70) is trivially provable by rfl: hypothesis `nfSymbolAt x i = nfSymbolAt y i` makes both sides of `vertexVolume (nfSymbolAt x i) = vertexVolume (nfSymbolAt y i)` identical, so 'locality of vertex volumes' asserts nothing.",
+        "notes": "Two vacuity issues: (a) the resolved-first sibling is a `: True := trivial` shadow stub (banner acknowledges the real file, mitigating but the stub still resolves first per §0a); (b) the real class's `vertexVolume_local` field is a tautology — it should quantify locality as a property of an independently-defined volume, not state f(a)=f(a). `markovLocality` and `productFactorisation` fields are genuine."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.md:86-93 'Status: provable from existing infrastructure ... No new mathematics is introduced' and the .lean class titled `HasReconciliation`. The Lean does NOT prove the proposition; it axiomatises the three identities as class FIELDS (hypotheses), with no instance constructed. The narrative 'provable / assembled from cited components' overstates what the formalisation delivers (an empty conditional packaging, no inhabitant).",
+        "notes": "A class with no instance is an honest open-conditional, but the prose 'provable from existing infrastructure / no new mathematics' implies the assembly is done. Pair with da-vacuous."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "trace-locality-meets-gs-nonlocality-proof.md part (3): the step from the Wedderburn decomposition H_n ≅ ⊕_λ End(S^λ) to 'the product factorisation then follows from multiplicativity of the standard trace on products of matrix units in distinct positions' is a gap. Trace is additive across the direct-sum blocks and NOT multiplicative across a single block's matrix-unit factors in the way needed to give Π_i V̂_i; the 'therefore' to the product form is not justified by the cited Wedderburn structure alone.",
+        "notes": "The reduction from 'block decomposition' to 'product over normal-form positions' needs a multiplicativity lemma (Bratteli-path factorisation) that is asserted, not proved. Same root as da-false-claim part (3)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".ts lean.ref = qou:QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReconciliation. Sibling trace-locality-meets-gs-nonlocality.lean:19 resolves FIRST (per §0a candidate-1 sibling precedence) to `theorem HasReconciliation : True := trivial`, which proves nothing of the .md proposition. The buildable class in the library tree (lean/.../TraceLocalityMeetsGsNonLocality.lean) is a DIFFERENT kind (a `class` with hypothesis fields, no instance) — it states conditions, it does not prove the reconciliation.",
+        "notes": "proof-statement-integrity: the .md claims a proved reconciliation; the resolved Lean is either a True-stub or an uninstantiated conditional class. The `vertexVolume_local` field is also vacuous (see da-vacuous)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "trace-locality-meets-gs-nonlocality.md:44,92-93 and -proof.md attribute a 'vertex-volume product factorisation' tr_M(NF) = Π_i V̂_i(q) to 'Wenzl 1988 [wenzl1988], Theorem 5.13.2 in the QOU manuscript'. wenzl1988 (references.ts:3443, Hecke-A_n subfactors, Invent. Math. 92) establishes the Markov trace and the Wedderburn/Bratteli weight structure (w̃_λ = dim_q²/[n]_q!), not a literal product factorisation over normal-form generators. 'Theorem 5.13.2 in the QOU manuscript' is a self-reference, not a Wenzl theorem number.",
+        "notes": "The cited result supports the per-block weights, but the specific 'product over normal-form positions' claim is not a Wenzl theorem; attribution is loose."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The 'vertex volume' V̂_i(q) is never defined in the .md/-proof.md; it is described as 'depends only on its own normal-form generator e_{j_i} and the modified Markov-parameter coefficients (a_i, b_i)' (md:40-44) but no formula is given. The normal-form alphabet shifts between σ_{i_k} (braid generators, md:11) and e_{j_i} (md:13) without stating the e-generator presentation of H_n.",
+        "notes": "Without a definition of V̂_i the product-factorisation claim cannot be checked; the (a_i,b_i) 'GS coefficients' are also undefined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e5d071e43565",
+          "ts": "122f9159a9f6",
+          "lean": "bff8025c4270"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: MAJOR-REVISION. referee_argument: The reconciliation's conceptual content (parts 1-2: single-generator Markov locality vs whole-word GS non-locality) is correct and well-motivated. But the central 'bridge' — part (3)'s product factorisation tr_M(NF) = Π_i V̂_i(q) — is over-attributed to Wenzl 1988 and is not justified as stated: the Markov trace of a general Hecke normal form is a weighted SUM over Wedderburn blocks, not a product over normal-form letters, and 'vertex volume' is never defined. The Lean side does not rescue the claim: the resolved sibling is `: True := trivial`, and the library class merely axiomatises the three identities as hypotheses (with a tautological `vertexVolume_local` field) without constructing an instance — so 'provable from existing infrastructure, no new mathematics' overstates the formal status."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

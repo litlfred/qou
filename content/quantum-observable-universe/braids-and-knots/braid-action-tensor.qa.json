@@ -1340,7 +1340,243 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The Artin generators ρ_n(σ_i)=id⊗c_{V,V}⊗id and the braid-relation ⇔ Yang–Baxter equivalence are correct standard facts (Kassel XIII.1.3); the Lean yang_baxter_braiding is a sorry-free hexagon+naturality chase."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean theorems (yang_baxter_braiding, sigma1/2_is_iso) are substantive non-trivial proofs, not tautologies."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-action-tensor.md:5-10 states the homomorphism ρ_n: B_n → Aut(V^⊗n) 'For each object V ... and each n ≥ 2'. The Lean sibling only constructs/verifies the B₃ case: yang_baxter_braiding and BraidRepB3 act on (V⊗V)⊗V (braid-action-tensor.lean:174-231); there is no n-general ρ_n or far-commutativity formalisation.",
+        "notes": "The proposition claims the full B_n family; the formalisation establishes the single defining relation for B₃ (the generating braid relation) and packages it as braid_action_tensor : BraidRepB3. The .md 'Mathematical Novelty' note (l.31) accurately scopes the contribution as the B₃ Yang–Baxter chase, so the gap is between the proposition statement (all n) and what is proved (n=3 relation). Standard mathematically; minor overclaim of formalised scope."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "braid-action-tensor-proof.md:1-18 correctly derives the braid relation from the hexagon axioms and far-commutativity from naturality; the inference chain is sound."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-action-tensor.md:5-10 asserts ρ_n for all n≥2 with the far-commutativity relation implied; braid-action-tensor.lean proves only the adjacent braid relation on B₃ (yang_baxter_braiding, l.174-206) and never formalises far-commutativity (|i-j|≥2) nor a general-n ρ_n. The proof block braid-action-tensor-proof.md:14-17 explicitly mentions far-commutativity, which is absent from the Lean.",
+        "notes": "Lean proves a faithful but strictly smaller piece (the single B₃ generating relation) than the narrative proposition+proof claim (full Artin presentation of B_n). Divergence is one of scope/completeness, not contradiction; the proved part is correct. Flagged minor under proof-statement-integrity."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "braid-action-tensor.lean:18,108,173,226 cite [kassel1995] Thm XIII.1.3 / Cor XIII.1.4 for the braid-rep / Yang–Baxter result — accurate attribution. .md:31 cites 'Kassel Thm XIII.1.3' consistently."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "All terms (braided monoidal C, braiding c_{X,Y}, Artin generators) are defined or standard; base ring is irrelevant (purely categorical, generic C with universes u v pinned per §7d)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness; Lean-backed only."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2295a2da1ee3",
+          "ts": "44cfe9412e11",
+          "lean": "7e4ea0089b1b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Proposition claims ρ_n: B_n→Aut(V^⊗n) for all n≥2 (braid-action-tensor.md:5-10); Lean establishes the generating relation for B₃ only (braid-action-tensor.lean:174-231) and omits far-commutativity.",
+        "notes": "verdict: accept-with-minor-revision. referee_argument: This is the strongest block of the five — a correct, sorry-free categorical proof of the B₃ Yang–Baxter relation with honest novelty framing. The only objection is the scope mismatch: the proposition is stated for all n≥2 with the full Artin presentation (proof block invokes far-commutativity), while the Lean proves the single adjacent braid relation on (V⊗V)⊗V and never formalises the |i-j|≥2 commutation or the general-n homomorphism. Recommend either narrowing the proposition's formalised claim to B₃ or adding the far-commutativity lemma; mathematically the general result is standard so no falsity risk."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:27.191Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

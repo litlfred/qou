@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.lean"
   },
   "source_hashes": {
-    "md": "aa634b5a98d8",
+    "md": "3c1976313870",
     "ts": "9891a18a24fd",
     "lean": "c431a939eb0f"
   },
@@ -1374,7 +1374,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Core identity 1-q^k=(1-u^k)(1+u^k) for q=u² is correct, and the resulting (q;q)_m=(u;u)_m·Π(1+u^k) and the weighted-average rewrite are algebraically valid (the average is just numerator/denominator). No false statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "habiro-pochhammer-bridge.md:16-24 — the 'bridge' identity is the tautology numerator/denominator = ⟨Π(1+u^k)⟩_Hab once (q;q)_m=(u;u)_m·Π(1+u^k) is substituted.",
+        "notes": "The headline 'bridge' equation is true essentially by definition of the weighted average: it restates Σa_m(q;q)_m / Σa_m(u;u)_m as the (u;u)-weighted average of Π(1+u^k). Mathematically content-light (the only real fact is the elementary factorisation, which the block's own 'Mathematical Novelty' note concedes is textbook). Honest about this, so warn not fail."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting to a target; it is an algebraic normalization identity, no calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "habiro-pochhammer-bridge.md:59-65 — 'exact rational function of q (degree 226/97 in u)' and the transcendental-Vol(4_1) correction claim are stated without a proof or witness in-block.",
+        "notes": "The proven part (Pochhammer factorisation) is correctly scoped. But the closing paragraph asserts a specific rational-function degree (226/97) and a transcendence/no-closed-form conclusion for the correction S — stronger claims than the elementary identity proves, presented adjacent to it. The 'cannot be expressed as a closed-form rational function … from representation theory alone' is a negative claim stated absolutely (§'refuted' discipline would want it scoped). Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No tunable coefficient; a_m(u) are the Habiro coefficients of a fixed braid word, u=√q with q the substrate. No off-menu DOF introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Proof steps (factor each Pochhammer factor → product → divide) follow cleanly; the .md ## Proof is gap-free."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "habiro-pochhammer-bridge.md:16-24 states the Habiro-WEIGHTED-AVERAGE ratio identity as the load-bearing Proposition; habiro-pochhammer-bridge.lean:30-37 `HabiroPochhammerBridge` proves only the product factorisation Π(1-q^j)=Π(1-u^j)·Π(1+u^j).",
+        "notes": "The Lean proves the genuine algebraic core (product factorisation, sorry-free via ring/prod_mul_distrib — sound), but NOT the proposition's stated headline equation involving the Habiro coefficients a_m(u) and the weighted average ⟨·⟩_Hab. Those (the Σa_m sums, the average) never appear in Lean. So Lean establishes a strictly weaker lemma than the .md Proposition claims. proof-statement-integrity gap (the missing piece is admittedly trivial division, but it is not formalized)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "[habiro2000] (Habiro ring / cyclotomic completion) present in references.ts and apt for the Habiro coefficients; [jones1987] apt for the Markov-trace context. -- Ref: [habiro2000] DOI 10.2140/gt.2000.4.227 correct."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "habiro-pochhammer-bridge.md:3-5 — 'the Habiro coefficients {a_m(u)} of a braid word β∈B_n (integer polynomials in u)' are invoked but their construction is not given in-block; index m runs to M, with Π_{k=1}^{m} reusing m as both coefficient index and product upper limit.",
+        "notes": "Two ambiguities: (i) the a_m(u) are taken as given (defer to def:habiro-ring / prop:habiro-precision-ladder-equivalence, both present), and (ii) in ⟨Π_{k=1}^{m}(1+u^k)⟩ the symbol m is simultaneously the summation/averaging index and the product's upper limit, so f_m=Π_{k=1}^{m}(1+u^k) is m-dependent — readable but notationally overloaded. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "habiro-pochhammer-bridge.md:48-57 numerical table at 'q_0≈1.1100' (Σa_m(q;q)_m=136.071, Σa_m(u;u)_m=24.227, ratio 5.616); canonical substrate is q_0≈1.10998 (computations/q-pinning-50-digit.witness.json = 1.109978595…).",
+        "notes": "q_0 is quoted as ≈1.1100 (4 sig figs, rounded — consistent with both the muon-q_0 1.10998 and proton-q_0 ~1.10998, so not a wrong pin, but the block does not state WHICH pin). More importantly the numerics (136.071 / 24.227 / 5.616) are presented as a verification but I found NO live witness backing them — only _deprecated/ habiro witnesses (habiro-deuteron-h6-cross-check, term6-habiro-residue) match the search. The ratio-check is internally self-consistent (136.071/24.227=5.616) so it cannot fail by construction; it verifies arithmetic, not the framework number. 'proton, n=9' specificity with no reproducible source = fragile."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No direct physical-observable prediction in this block (it is a normalization-bridge identity); the proton/n=9 label is the source braid, not a mass claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "habiro-pochhammer-bridge.md:48-65 numerical-verification table (136.071, 24.227, 5.616, 'degree 226/97 in u') with no witness file; grep for these values over computations/ returns only _deprecated/ habiro witnesses, none current/canonical.",
+        "notes": "The 'Numerical verification (proton, n=9)' section presents specific values and a degree-226/97 rational-function claim with no live, citable *.witness.json backing. The block's .ts has cites[] but no computation/witness reference. Per repo discipline, observed/derived numerics should trace to a current witness; here the only matching producers are in computations/_deprecated/, so the numbers are effectively unreproducible/stale from this block alone. Also the prose says q_0≈1.1100 while the canonical witness is 1.109978… — rounded-consistent but the pin is unstated."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3c1976313870",
+          "ts": "9891a18a24fd",
+          "lean": "c431a939eb0f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: the proven identity (Pochhammer factorisation) is correct and Lean-verified sorry-free, but the block over-packages it: (1) the Lean proves only the product factorisation, not the .md's headline Habiro-weighted-average ratio (lean–narrative gap); (2) the 'Numerical verification (proton,n=9)' table and the degree-226/97 / transcendence claims have no live witness — only _deprecated producers — so they are non-reproducible from the block and the q_0 pin is unstated; (3) the ratio-check 136.071/24.227=5.616 is true by construction and verifies arithmetic, not framework content. Fixes: cite/refresh a current witness for the numerics or move them to authorNotes, and either extend the Lean to the weighted-average statement or rescope the Proposition headline to the product factorisation."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -835,7 +835,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "holonomy-trefoil.md:32-35 claims the composite holonomy H_1 H_2: w↦(w_3,w_4,w_1,w_2) 'is the 3-cycle α and satisfies (H_1 H_2)^3=id'. Verified: the permutation (w_3,w_4,w_1,w_2) is the double transposition (13)(24), order 2 — (H_1H_2)^2=id, hence (H_1H_2)^3=H_1H_2≠id. It is NOT a 3-cycle. braid-twist-flip.md:28-30 (the block this remark interprets) explicitly identifies σ_1σ_2:w↦(w_3,w_4,w_1,w_2) as a generator of the Klein four-group V_4 (order 2).",
+        "notes": "Two separate false sub-claims: (a) order-3 ('3-cycle', '(H_1H_2)^3=id') for an order-2 element; (b) internal contradiction with the V_4 structure in the upstream block. Likely conflates the genuine 3-cycle R_α (2π/3 SO(3) rotation in so3-generators) with the order-2 permutation σ_1σ_2."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "holonomy-trefoil.md:25-30 states the assignment x↦H_1, y↦H_2 'is therefore an isomorphism π_1(S^3\\K_{3,2})→⟨H_1,H_2⟩' and 'the monodromy group ... *is* the trefoil-knot group'. The trefoil group ⟨x,y|xyx=yxy⟩≅B_3 is correct, but H_1=σ_1,H_2=σ_2 here are 4×4 permutation matrices (braid-twist-flip) generating only V_4 — a quotient that is NOT faithful, so ⟨H_1,H_2⟩ is the order-≤? finite image, not isomorphic to the infinite group B_3. Asserting an isomorphism onto the represented matrices overclaims faithfulness.",
+        "notes": "The abstract presentation ≅B_3 is fine; the claim that the *represented* holonomy operators reproduce it as an isomorphism is stronger than the V_4 permutation image supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "T (torsion scalar) and Θ (branch angle) are named geometric quantities introduced for the SU(2) embedding, not undisclosed fit parameters feeding a numerical observable."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "holonomy-trefoil.md:32-35: 'The composite holonomy H_1H_2:w↦(w_3,w_4,w_1,w_2) is the 3-cycle α and satisfies (H_1H_2)^3=id on SO(3).' The 'therefore'-style identification does not follow: the stated permutation does not equal any 3-cycle, and the cited order-3 property is not derivable from it (it is order 2).",
+        "notes": "Distinct from da-false-claim as a logical-gap framing: the conclusion '(H_1H_2)^3=id' is asserted without (and against) the actual computation of the permutation's order."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling; remark block with interprets=def:braid-twist-flip. No Lean statement to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "holonomy-trefoil.ts has no cites[] and the .md carries no -- Ref:/\\cite. Nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "holonomy-trefoil.md:18 introduces T (geometric torsion scalar) and Θ (branch angle) and H_i=exp(TΘe_i) without defining their values or the e_i basis here; def:su2-generators is referenced but T,Θ are not defined there either. The symbol 'α' (line 34) is reused for the composite holonomy while su2-generators.md uses α for the genuine 2π/3 SU(2) 3-cycle — incompatible readings.",
+        "notes": "The α collision is the proximate cause of the false-claim: two incompatible 'α' meanings (genuine 3-cycle vs order-2 σ_1σ_2)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical/observable prediction; purely structural/topological content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical-magnitude or conservation claim; 'monodromy = trefoil group' is a mathematical (mis)statement, handled under da-false-claim, not a physics-measurement contradiction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness/compute backing; only a rendered SVG (hash 6771329130f7). No scriptHash/scriptCommitSha to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6eb945d668bc",
+          "ts": "81fc29cba821"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "Rollup of da-false-claim + da-non-sequitur above.",
+        "notes": "verdict=reject-as-stated. referee_argument: The block's culminating identification 'H_1H_2 is the 3-cycle α with (H_1H_2)^3=id' is demonstrably false — the permutation (w_3,w_4,w_1,w_2) has order 2 (it is (13)(24), a V_4 element per the upstream braid-twist-flip block), so (H_1H_2)^3=H_1H_2≠id. Fix: either replace σ_1σ_2 by the genuine SO(3) 3-cycle R_α (so3-generators) when asserting order 3, or correct the order claim to (H_1H_2)^2=id. The faithfulness overclaim (V_4 image ≠ B_3) should also be softened."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:22.154Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1605,7 +1605,242 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The proof block (topological-mass-cat-transient-proof.md:16-17) asserts 'the norm of the sum equals the sum of the norms (by disjointness of the supports)'. Disjoint supports give additivity of the trace (the displayed sum), but ‖Σ tr_i‖ = Σ ‖tr_i‖ only holds if all local traces share sign; transient traces are signed, so this norm-additivity step is generally false.",
+        "notes": "The lemma statement itself (topological-mass-cat-transient.md:8-12) is only the trace-additivity identity tr(...) = Σ tr_trans(ρ,p_i), which is fine under disjointness. The over-strong norm-equality is confined to the proof's parenthetical; flagged as warn since the stated lemma is not the false part."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The Lean (cat_transient_localises_blowup.lean:38-58) models traceTransient, traceLocal, and N as three independent `opaque` reals/functions and asserts traceTransient = Σ_{i<N} traceLocal i with `sorry`. Between opaque, unconstrained objects the statement carries no content beyond the sorry placeholder.",
+        "notes": "Disclosed honestly (lean:18-31): the file states the support/disjointness analysis is 'not available in Mathlib' and the sorry is per AGENTS.md §1 with a -- Ref: [manuscript] citation. So it is an honest stated-not-proved placeholder, not an audit-dodge — warn."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No calibration or numerical target; structural localisation claim. Not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The proof (proof.md:17) tacks on a norm-additivity conclusion ('norm of the sum equals the sum of the norms') stronger than disjointness alone supports for signed traces; the lemma .md does not claim it, so the overreach is in the proof prose.",
+        "notes": "Recommend dropping the norm-equality clause or restricting to a same-sign / orthogonality hypothesis."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No free parameter / calibration; categorical support-localisation lemma."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Proof step (proof.md:5-8): 'the support of a transient endomorphism is contained in the union of the kernels ker(𝔡_{n+1}|_{p_i})' is asserted 'by the structure of the brane boundary' with no cited lemma establishing that containment; the localisation is the lemma's substantive content yet is invoked as a premise.",
+        "notes": "The Lean concedes the same gap (lean:18-31: 'rests on the jet-filtration/mass-endomorphism support analysis ... not available'). The narrative proof presents the hard step as if already known — a logical gap, mitigated by honest disclosure on the Lean side."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The .md lemma claims a structural localisation + disjoint-sum decomposition over genuine objects (α−τ̂ₙ(α), brane-boundary kernels). The Lean (lean:38-58) restates it as an equality between three unconstrained `opaque` reals discharged by `sorry`, so it proves neither the support-containment nor the decomposition.",
+        "notes": "ts validation is 'not_checked' (topological-mass-cat-transient.ts:5). Honestly a sorry-stub; the divergence is that Lean captures essentially none of the .md's mathematical content beyond the bare equation shape."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No cites[] on the .ts; Lean carries only `-- Ref: [manuscript]` (lean:53), an internal pointer, not an external attribution to verify."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "`tr_trans(ϱ, p_i)` (md:11) and `𝔡_{n+1}` are used without local definition; 𝔡_{n+1} is 'the jet differential' per the Lean comment but the brane-boundary kernel structure is only gestured at (uses: def:brane-boundary). The transient-trace local contribution is not pinned to a concrete formula.",
+        "notes": "Acceptable as forward dependency on def:brane-boundary, but the proof leans on the precise kernel-support property which is not stated in the cited definition's summary."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No numerical value or witness; abstract trace decomposition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No physical observable / units claim; categorical mass-defect localisation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No compute backing; Lean is a sorry-stub with no witness to drift against."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "225aade7d47b",
+          "ts": "1267db4eb7ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Lemma is an honestly-flagged sorry placeholder whose Lean captures little of the .md content, and whose narrative proof (i) asserts the key support-containment as a given and (ii) over-claims norm-additivity for signed traces.",
+        "notes": "verdict: major-revisions. referee_argument: the substantive content — that transient support localises to the blow-up kernels — is asserted rather than proved (both narrative and Lean concede the support analysis is unavailable), and the proof's ‖Σ‖=Σ‖·‖ clause is false for signed traces. Either cite/prove the support-localisation lemma or restate as a conjecture; drop the norm-equality."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

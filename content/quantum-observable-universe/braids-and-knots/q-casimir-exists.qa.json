@@ -1785,7 +1785,248 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; the proof term is a direct axiom application."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The q-Casimir C_q = FE + (qK+q⁻¹K⁻¹−(q+q⁻¹))/(q−q⁻¹)² being central with eigenvalue [j]_q[j+1]_q on V_j is a correct standard result (Kassel VI.4), under the stated invertibility of (q−q⁻¹)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-exists.lean:30 declares `axiom QCasimir.exists_axiom : ∀ qs, Nonempty (QCasimirData qs)` and l.38-39 `theorem QCasimir.exists qs := QCasimir.exists_axiom qs` — the 'existence' theorem is a direct projection of an axiom. QCasimirData (q-casimir.lean:87-108) is a parameter bundle (qInv, ι, invQm with inverse/centrality witnesses), so Nonempty (QCasimirData qs) merely asserts such data exists, not that C_q is central.",
+        "notes": "The proposition's content (centrality + eigenvalue) is NOT what the Lean theorem proves; the theorem proves only that the parameter-bundle type is inhabited, and even that is taken as an axiom rather than constructed. Per AGENTS.md §3b the honest disposition for an unproved standard fact is a cited axiom — which the .md openly states ('isolated as an explicit QCasimir.exists_axiom', md:17). So it is honest, but the theorem QCasimir.exists is a near-vacuous re-export of the axiom; it does not exhibit a centrality/eigenvalue witness. Flagged major because the proposition kind is 'proposition' yet the Lean delivers an axiom projection of an inhabitation claim, not the stated mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting; the existence is axiomatised against Kassel, not derived from a downstream target. The sibling q-casimir.lean does prove centrality (QCasimir_comm_K sorry-free) from the QuantumSu2Relations class, so the structural content is not self-assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-exists.md:8-9 states C_q 'exists as a central element ... and acts as [j]_q[j+1]_q id on every simple module V_j'; the Lean ref qou:QOU.QCasimir.exists (ts:6) backs only Nonempty (QCasimirData qs) via axiom (lean:30,38).",
+        "notes": "Block kind is 'proposition' (provable expected) but the centrality and the eigenvalue clauses are not proved by the named Lean decl — centrality is proved separately in q-casimir.lean (QCasimir_comm_K) while the E/F-centrality there is itself axiomatised (QCasimir_comm_E_axiom, q-casimir.lean:614). The md 'Mathematical Novelty' note honestly flags 'axiomatizes this standard mathematical fact'. So the overclaim is the proposition-kind framing of an axiom-backed existence/eigenvalue claim. Minor given the honest banner."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "q-casimir-exists-proof.md:1-12 gives the standard highest-weight evaluation (Kv_j=q^{2j}v_j, Ev_j=0 ⇒ C_q v_j=[j]_q[j+1]_q v_j); the inference is correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "q-casimir-exists.md:8-9 claims C_q EXISTS AS A CENTRAL ELEMENT acting as [j]_q[j+1]_q on every V_j. The Lean theorem QCasimir.exists (q-casimir-exists.lean:38-39) proves only `Nonempty (QCasimirData qs)` — inhabitation of a parameter bundle — and does so by `axiom` (l.30). Neither centrality nor the eigenvalue appears in this decl; QCasimirData's fields (q-casimir.lean:87-108) are inverse/embedding witnesses, not a centrality proof.",
+        "notes": "The named formalisation proves a strictly weaker and different statement (a data type is non-empty) than the .md proposition (a specific central element with a specific spectrum exists). The eigenvalue clause has no counterpart in QCasimir.exists at all (it lives, partly axiomatised, in the sibling q-casimir.lean's QCasimirEigenvalue/QCasimir_comm_* ). proof-statement-integrity divergence between def-ref and stated claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "q-casimir-exists.lean:15-16,28-29 cite [kassel1995] §VI.4 and [lusztig1993] for the q-Casimir — correct, standard sources for U_q(sl_2) Casimir existence/centrality."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q-casimir-exists.md:9 'acts as [j]_q[j+1]_q id on every simple module V_j' and proof.md:9-12 reparametrise half-integer spin via q^{1/2} (mirrored in q-casimir.lean:678-690 QCasimirEigenvalue over integer j with a 'reparametrise using q^{1/2}' note). The base ring / field is left as 'any ground ring R in which (q−q⁻¹) is invertible' (md:1) but the eigenvalue formula needs division and zpow (a Field), per q-casimir.lean:668-676.",
+        "notes": "'every simple module V_j' implicitly assumes the generic (non-root-of-unity) semisimple regime; at roots of unity simple modules and the spectrum differ. The ring vs field distinction (existence over a ring vs eigenvalue over a field) is real and only partially flagged. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical compute/witness; axiom-backed pure algebra."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "709bcf4feaf3",
+          "ts": "ffa00ce627ff",
+          "lean": "1e2e5a894579"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "Proposition (q-casimir-exists.md:8-9) claims existence of a specific central C_q with spectrum [j]_q[j+1]_q; named Lean decl QCasimir.exists (q-casimir-exists.lean:38) proves only axiom-backed Nonempty (QCasimirData qs).",
+        "notes": "verdict: minor-to-major-revision (honest but mislabelled). referee_argument: The mathematics is correct and standard, and the block is commendably honest that it axiomatises (md 'Mathematical Novelty' + explicit QCasimir.exists_axiom). The strongest objection is structural integrity: a block of kind 'proposition' whose Lean ref resolves to an axiom-projecting inhabitation theorem that captures neither the centrality nor the eigenvalue it states. The genuine structural work (centrality QCasimir_comm_K, eigenvalue QCasimirEigenvalue, EF/FE equivalence) lives, partly sorry-free and partly axiomatised (QCasimir_comm_E_axiom, q-casimir.lean:614), in the sibling def file — but the existence proposition itself points at the weak inhabitation lemma. Recommend either retargeting the lean.ref to the centrality/eigenvalue theorems or restating the proposition to match Nonempty (QCasimirData), and surfacing that E/F-centrality remains an axiom."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

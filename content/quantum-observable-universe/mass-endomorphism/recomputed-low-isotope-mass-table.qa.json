@@ -1045,7 +1045,241 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Remark interpreting prop:q-hecke-seminormal-character-closure; low-isotope mass/binding table from the Markov trace — core mass-endomorphism content."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The remark's quantitative claims (three production paths agree to machine epsilon; +0.168% Q_β residual; binding energies +2.225/+8.482/+7.718 MeV) are correctly labelled as approximate/predictions; the p/n '0.000%' is explicitly flagged as a tautology, not a truth claim. Nothing asserted as a false exact identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:69-78 'The proton and neutron rows are tautological by construction'; .md:174-176 'The 0.000% on p and n is a calibration-discipline violation, not a prediction'",
+        "notes": "Large portions of the displayed table (p/n rows, and the LO ρ_K factorisation .md:42-52) are self-admittedly content-free (the |tr_M| factor cancels identically). The remark is honest about this, but a reviewer should note that a substantial fraction of the headline 'mass-table predictions' carries zero predictive content — only the Δ column and the Q_β closed form are genuine predictions."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:61-78 'Calibrated form: ρ_K^LO = (Z m_p + N m_n)/(m_e|tr_M|) consumes CODATA m_p and m_n as upstream inputs ... violates CAL-1/2/3 by injecting m_p and m_n as 4th and 5th calibration constants'",
+        "notes": "The LO mass table is explicitly circular: it injects CODATA m_p, m_n and returns them as 'predictions' (M(p)=m_p, M(n)=m_n by construction). The remark itself labels this a 'bug' and 'calibration-discipline violation' (AGENTS.md three-calibration rule). The circularity is disclosed and quarantined (the FULL chain raises NotImplementedError, .md:166-170), so warn rather than fail — but the circular construction is present in the published table."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:4-5 'three independent production paths ... now agree to machine epsilon'; .md:97 'vs CODATA 0.7823 MeV — +0.168% / +1.31 keV framework prediction'",
+        "notes": "'Machine epsilon agreement across {p,n,D,T,³He}' is a statement about tr_M(B_K) cross-method consistency (L1 compute), not about mass accuracy (L2). A reader could conflate the two: the title 'recomputed low-isotope MASS table' suggests masses agree to machine epsilon, but the masses are either tautological (p/n) or carry real binding-energy errors (D/T/³He) the remark admits (.md:194-195 'understate the true binding prediction error'). Title/headline overclaims relative to the actual L2 status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:211-215 'the per-block binding fractions Δ_λ(K) — currently determined by Occam's-razor minimal-perturbation selection (single dominant partition); the categorical derivation of Δ_λ from first principles is an open research question'",
+        "notes": "The Δ_λ binding fractions — which carry the only non-tautological mass content — are selected by an ad-hoc 'minimal-perturbation / single dominant partition' rule, not derived. This is an undisclosed-in-headline free parameter (the .md does disclose it in §2, hence warn). Per CLAUDE.md the Δ_λ closure is the Track-A blocker with six failed ansätze; this remark's binding numbers rest on the unresolved Δ_λ selection."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The remark is largely descriptive/cross-referential; its logical steps (LO cancellation identity .md:45-49) are correct and explicitly worked. No 'therefore' gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark kind, no .lean sibling. interprets prop:q-hecke-seminormal-character-closure."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites wenzl1988, hoefsmit1974 — both registered (references.ts:3408 hoefsmit1974, :3443 wenzl1988) and invoked for the correct results (Wenzl Schur principal specialization for y_λ; Hoefsmit seminormal matrices for χ^λ_q). Appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Terms are defined or cross-referenced (B_K canonical braid, y_λ Wenzl weight, χ^λ Hoefsmit character, Δ_λ binding fraction). Adequate for a remark."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:88-97 Q_β^pred ≈ 0.7836 MeV vs CODATA 0.7823, '+0.168% / +1.31 keV'",
+        "notes": "The +0.168% Q_β figure is a muon-anchor-era number. Per CLAUDE.md (q₀ anchor convention, 2026-05-28 proton re-pin) the canonical L2 dashboard reports Q_β at ~1279 ppb (164x miss), and the Habiro-exact 5.7 ppb result 'has not been refreshed since the proton-anchor re-pin' (stale-witness audit 2026-05-30). The single-wrap closed form here uses E_0 = m_e/(q_0(q_0-1)) without stating which q_0 pin; the 0.168% residual is attributed to 'brane-tower truncation' but is anchor-dependent and not cross-anchor-stable. The headline precision is fragile against the current pin. Additionally the binding-energy Δ_λ inputs depend on in-flight PRs #602/#603/#613 (.md:59), so the table is not from a settled compute."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Binding energies cited match the real deuteron/tritium/³He values (.md:200-202); Q_β ≈ 0.78 MeV is the correct neutron β-decay scale. No units or conservation problem."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:57-59 binding_K_direct.py 'consumes Δ_λ from the in-flight derivation race in PRs #602 / #603 / #613'; .ts:36-58 computation.status 'verified' with multiple witnesses",
+        "notes": "The binding portion of the table depends on an explicitly in-flight derivation (PRs #602/#603/#613 not landed), so those numbers are not reproducible from a settled producer. The Q_β witness (q-beta-predicted.witness.json exists) and tr_M witnesses exist, but the Q_β value is from the pre-re-pin regime (see da-empirical-fragility) and the dashboard discipline in CLAUDE.md flags this exact stale-vs-current-q0 class. computation.status 'verified' overstates the settled-ness of the Δ_λ-dependent rows."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "eef4244436d2",
+          "ts": "2dd37ba2ba1f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "VERDICT: minor-revision (honest but caveat-heavy). referee_argument: This remark is unusually self-critical and discloses its own weaknesses (tautological p/n rows, CAL-4/5 calibration violation, ad-hoc Δ_λ selection, NotImplementedError on the FULL chain). The strongest live objection is empirical fragility/staleness: the headline Q_β +0.168% figure and the 'machine-epsilon mass table' framing predate the 2026-05-28 proton re-pin, and per CLAUDE.md the canonical L2 status for Q_β is a ~164x miss, not a sub-keV win — the remark should state which q_0 pin and flag the stale-witness class. Secondarily the binding rows depend on unlanded PRs, so computation.status='verified' is premature. Recommend pinning the q_0 anchor explicitly and demoting the binding rows to 'in-flight'."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

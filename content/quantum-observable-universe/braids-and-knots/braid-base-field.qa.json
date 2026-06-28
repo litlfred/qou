@@ -835,7 +835,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-base-field.md:11-14 — 'the Yang–Baxter equation is an identity in the endomorphism algebra and holds over any base ring'. The YBE for the universal R-matrix is indeed a ring-independent identity once the braided structure exists; the three realisations (ℂ, ℚ_p, 𝔽_p) are standard. No false universally-quantified claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Remark with interprets: prop:braid-action-tensor; it states a genuine (non-tautological) observation that the B_n-action depends only on braided-monoidal structure, hence base-field-independent. Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No derivation of a numerical target; it is an interpretive structural remark. No smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-base-field.md:6-9 — '...the B_n-action recovers the skein relations of Chapter 6 as traces on braid-group representations' and lines 20-23 'skein relations, knot invariants, and hyperbolic volumes ... are consequences ... not the source'. The hyperbolic-volume claim is the strongest: hyperbolic volume is an archimedean (ℝ/ℂ-analytic) invariant and does NOT exist over ℚ_p or 𝔽_p, yet it is folded into the 'base-field-independent consequences' framing.",
+        "notes": "The base-field-independence holds for the algebraic braiding/skein layer, but listing 'hyperbolic volumes' among the field-independent consequences over-extends — volume is intrinsically archimedean."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No free parameter or coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The three itemised realisations each follow from the existence of the braiding on the respective Rep category; the logic (braided structure ⇒ B_n action ⇒ field-independence) is sound at the algebraic level."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Remark block, no .lean sibling and no lean.ref in braid-base-field.ts. Nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-base-field.ts has no cites[]; no external reference invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "braid-base-field.md:12 — 'Rep(SU_{q(p)}(2)) over ℚ_p' and line 17 'Rep_{𝔽_p}(SU_q(2))' presuppose a well-defined p-adic / finite-field quantum group at q(p); the notation q(p) (a p-dependent substrate value) is used without definition in this remark, and the existence of the fusion category over 𝔽_p (semisimplicity at the relevant q) is asserted, not pinned.",
+        "notes": "The objects exist in the literature but the remark leans on the (referenced) example blocks ex:p-adic-realisation / ex:finite-field-realisation for the actual definitions — acceptable, but q(p) is locally undefined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No numerical value or experimental comparison in this remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No physics-observable claim with units/conservation; purely structural statement about where braid structure comes from."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No compute/witness backing this remark."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "986468d4d5a2",
+          "ts": "812680cb431c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "verdict: ACCEPT-WITH-MINOR-REVISION. Sound structural remark; the only objection is the over-inclusive list of 'consequences' (hyperbolic volumes are archimedean and not base-field-independent).",
+        "notes": "referee_argument: Tighten line 20-23 to separate the algebraic, field-independent layer (skein relations, knot invariants as Markov traces) from the archimedean-only invariants (hyperbolic volume), which do not survive the ℚ_p / 𝔽_p realisations."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:22.295Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

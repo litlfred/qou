@@ -1358,7 +1358,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The branching trace decomposition (md:10-23) is standard semisimple representation theory: for the parabolic inclusion H_n⊗H_m ↪ H_{n+m} at generic q, restriction of V_λ decomposes by LR coefficients (md:38-47), and the trace splits over isotypic components. The argument (md:26-68) is correct and gap-free at the narrative level. The corollary's Pythagorean identity (md:80-89) is the standard HS scalar-vs-traceless split."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-branching-trace-decomposition.lean:34-43 — class `HeckeBranchingTraceDecomposition` has fields `branchCoefficient : Unit` and `trace_decomposition : True` (both explicit placeholders). The named declaration `branch_trace` (lean:48-52) has type `True` and is proved by `trivial`.",
+        "notes": "The Lean is entirely content-free: the class encodes the substantive identity as `True`, and `branch_trace : True := trivial` is the canonical §1a-forbidden vacuous shape. It asserts nothing about the LR/Wedderburn decomposition the .md proves. This is a vacuous placeholder, not a formalization (acknowledged in the docstring comments as awaiting Mathlib Hecke infra)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Derivation flows from Wenzl semisimplicity + LR branching to the trace identity; no target value back-fitted, no calibration involved."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "md:91-101 honestly scopes the result: semisimplicity hypothesis q^{1/2}+q^{-1/2}>2 is stated as sharp, the operator-valued A^λ_{μν} is the genuine refinement, and the computational evaluation is attributed to a probe. No conclusion exceeds the argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "A^λ_{μν}(I) is determined by the interface element I and the branching isomorphism; multiplicities are the fixed LR coefficients c^λ_{μν}. No free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Each step follows: semisimplicity (Wenzl) → branching rule (Halverson–Ram/Hoefsmit) → β_i commutes with the central (μ,ν)-projection (md:57-64) → trace splits over orthogonal isotypic components (md:66-68). The commutation claim (inclusion is an algebra map, projection central in H_n⊗H_m) is correctly justified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "hecke-branching-trace-decomposition.lean:48 — .md proves a substantive trace-decomposition identity (md:10-17); the Lean declaration `branch_trace {q} [HeckeBranchingTraceDecomposition q] : True := trivial` proves the trivial proposition `True`, and the class field `trace_decomposition : True` (lean:43) that it is 'conditional on' is itself `True`.",
+        "notes": "proof-statement-integrity: maximal divergence — the Lean proves `True`, not the decomposition. Even the conditional-class device is empty (the axiomatised content is `True`, not the identity), so the §3b-cond non-degeneracy requirement (class must carry genuine hypotheses) is violated. validation 'not_checked' (ts:10)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "ts:15-19 cites `halverson-1998-markov-weights`; references.ts:5051 documents this key is actually Orellana's 'Weights of Markov Traces on Hecke Algebras' (legacy misnomer) and explicitly FLAGS: 'the hecke-branching citer invokes a Murnaghan–Nakayama-type rule, better served by [ram1991]/[hoefsmit1974] than this weights paper — review citation appropriateness.' The .md (md:97-101) invokes exactly that 'Murnaghan–Nakayama-type rule'.",
+        "notes": "Two issues: (1) the cite key name attributes the paper to Halverson when it is Orellana; (2) the paper cited (Markov-trace weights) does not contain the Murnaghan–Nakayama-type evaluation rule the block invokes — that result is in Ram 1991 (which the Lean correctly cites at lean:50). The .ts cites[] should drop/replace halverson-1998-markov-weights with ram1991 for this invocation. Documented mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:5-7 defines 'interface element I' as 'any product of generators that bridges the index range {n,n+1}' — 'bridges' is informal; md:19 A^λ_{μν}(I) ∈ End(V_μ⊗V_ν)^{⊕c^λ_{μν}} fixes a basis-dependent operator via a 'choice of branching isomorphism' (md:46-47) that is not unique.",
+        "notes": "The operator-valued coefficient A^λ_{μν}(I) depends on the chosen branching isomorphism (md:46 'Choose the branching isomorphism that respects the Hoefsmit seminormal basis'); different choices give different A but the same trace. The trace identity is well-defined, but A^λ_{μν} itself (used downstream in the operator-valued budget) is only defined up to that choice. Minor — the trace invariant is unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure structural representation-theoretic identity; no numerical match or fit to experimental data in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physical claim — abstract Hecke-algebra branching."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached to this block's .ts (it is a pure-math proposition); the referenced probe probe_operator_valued_ansatze_from_mass_endo.py is named for downstream consumers, not as this block's reproducibility backing. Nothing to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e9157442aa9b",
+          "ts": "52edbf249725",
+          "lean": "7f4315ca13fb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict: accept-with-revisions. Strongest objection: the Lean is fully vacuous (`branch_trace : True := trivial`, class fields `Unit`/`True`), so the proposition is unformalized despite a correct narrative proof, and the .ts mis-cites halverson-1998-markov-weights (actually Orellana, wrong paper) for the Murnaghan–Nakayama rule.",
+        "notes": "referee_argument: The narrative proof is standard and sound — this is genuine, correct representation theory. The defects are formalization (the Lean proves True, violating §1a/§3b-cond non-degeneracy) and citation hygiene (the documented Orellana/Ram mis-attribution at references.ts:5051). Revise: replace the True-class with a content-bearing statement or an honest placeholder, and fix cites[] to ram1991."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1340,7 +1340,260 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "For a 2×2 matrix char poly = λ²−(tr)λ+det; with tr=−(h²+1), det=1 ⇒ λ²+(h²+1)λ+1 (md:33-35), correct. Lean pion_eq_half_figure_eight_phase verifies this via linear_combination. det=(−1)^6=1 and (−1)^2=1 verified by decide. Equal trace ⇒ equal char poly ⇒ equal eigenvalues: sound for 2×2."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.lean:32-39 the 'theorem' takes tr, det, lam as universally-quantified with hypotheses tr=−(h²+1), det=1, lam²−tr·lam+det=0 and concludes lam²+(h²+1)lam+1=0 — i.e. it is pure algebraic substitution (rw + linear_combination), independent of any pion/braid content. figure_eight_is_square_of_half (line 44) is `(1:R)^2=1 := by ring` — content-free relative to its docstring about e^{iθ}→e^{2iθ}.",
+        "notes": "The Lean captures only the trivial 'same tr+det ⇒ same char poly' algebra; the substantive claim (that BOTH braids actually HAVE tr=−(h²+1) on V_(2,1)) is assumed, never computed — the .md itself flags this (md:17). figure_eight_is_square_of_half proves 1²=1, not the squaring-of-eigenphase claim its name/docstring advertise. Warn: honestly disclosed, but the formal content is thin vs the proposition's billing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The trace identity χ^(2,1)(M₊)=−(h²+1) is assumed (md:17), not back-fitted to a target observable here; no smuggled calibration in this block."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "pion-half-figure-eight.md:48-53 'The muon-anchor identity m_μ/m_e = Vol(4_1)/ℏ_q² uses the volume of the figure-eight — the asymptotic value of twice the pion rotation angle. The pion is the generator of the Reeb rotation tower; the figure-eight is its square.' This connects the proven char-poly fact to a physical mass-ratio claim via 'asymptotic value of twice the pion rotation angle' — an interpretive leap not supported by the 2×2 spectral lemma, which only shows arg(λ(M₊))=arg(λ(σ₁σ₂⁻¹)) at finite h, not that 2θ→Vol(4_1).",
+        "notes": "The formal result is a finite-h eigenvalue-phase equality. The narrative escalates to 'figure-eight is the square', '2θ=Vol(4_1) asymptotically', and pion-decay↔lepton-mass-ratio bridging (md:56-66) — conclusions far stronger than the lemma. The θ→Vol(4_1) asymptotics is asserted, not derived."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.md:25-27 the parameter h enters as χ^(2,1)=−(h²+1) with h undefined in-block (presumably ℏ_q-related). The trace value −(h²+1) is asserted (md:17 'introduced as an assumed hypothesis'). If h were free, the eigenvalue phase θ=arccos(−(h²+1)/2) and the Vol(4_1) link would inherit a tunable parameter.",
+        "notes": "h is the q-deformation parameter and is canonical (not a 4th calibration), but it is unintroduced in this block and the trace value carrying it is assumed; flag as undisclosed-in-block rather than off-menu."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "pion-half-figure-eight.md:44-53 — 'Each pion rotation advances the Reeb phase by θ; two such advances give the figure-eight's eigenvalue phase 2θ' then 'm_μ/m_e=Vol(4_1)/ℏ_q² uses … twice the pion rotation angle.' The step from '(σ₁σ₂⁻¹)² is the figure-eight knot operator and squares the eigenvalue (2θ)' to 'therefore Vol(4_1) = (asymptotic) 2θ / equals the muon mass ratio' is a missing-lemma jump: eigenvalue-phase doubling under squaring is correct, but its identification with the hyperbolic VOLUME of 4_1 is not argued.",
+        "notes": "The algebraic squaring (e^{iθ}→e^{2iθ}) is fine; the leap to hyperbolic volume Vol(4_1) and the lepton mass ratio is the non-sequitur — no lemma links eigenvalue phase to the figure-eight's volume."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "pion-half-figure-eight.md headline claim: arg(λ(M₊))=arg(λ(σ₁σ₂⁻¹)) on V_(2,1), with M₊ and σ₁σ₂⁻¹ being specific Hecke braids. pion-half-figure-eight.lean:32-39 proves only the generic algebraic implication 'if tr=−(h²+1) and det=1 and λ²−trλ+det=0 then λ²+(h²+1)λ+1=0' — it never mentions M₊, σ₁σ₂⁻¹, V_(2,1), Hecke reps, or eigenvalue *phase/arg*. The two facts that make the proposition non-trivial (both braids HAVE that trace and det on V_(2,1)) are not in the Lean. figure_eight_is_square_of_half:44 proves `(1:R)^2=1` despite a docstring claiming the eigenphase-squaring e^{iθ}→e^{2iθ}.",
+        "notes": "proof-statement-integrity: the Lean is a substitution identity + 1²=1 + (−1)^6=1; it is vacuously-implied by / much weaker than the .md proposition. The .md (md:17) candidly says the trace is 'assumed hypothesis … not a disguised gap', but the Lean theorem name pion_eq_half_figure_eight_phase advertises a phase-equality it does not contain (no arg/phase appears). Divergence is real and major."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.ts cites wenzl1988c and jones1987. references.ts:3482 marks wenzl1988c as a PLACEHOLDER: 'DOI 10.1007/BF01388470 … Resolve DOI manually before publication' (title/venue unconfirmed). The block invokes Wenzl for the V_(2,1) Hecke representation/trace structure against an unverified bibliographic entry.",
+        "notes": "Not a clear mis-attribution, but the cited key is an explicitly-flagged unresolved placeholder (references.ts note), so the citation is not yet verifiable for the invoked result."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.md:1-5 'pion braid M₊=(σ₁σ₂)²σ₂σ₁' and 'standard representation V_(2,1) of H_3(q)'; the parameter h (md:25) is undefined; 'eigenvalue phase' presupposes the eigenvalues lie on the unit circle, which requires |−(h²+1)/2|≤1 i.e. h²≤... — a regime restriction on h that is unstated (for large real h the roots are real, no 'phase').",
+        "notes": "The 'phase θ=arccos(−(h²+1)/2)' (md:40) is only real-valued (i.e. eigenvalues on unit circle) when |h²+1|≤2 ⇒ h²≤1; outside that the eigenvalues are real and 'identical phase' is degenerate. The applicable h-regime is undefined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "pion-half-figure-eight.md:48-50 ties the result to m_μ/m_e=Vol(4_1)/ℏ_q². Per AGENTS.md the muon ratio is a 9.5σ prediction post proton-anchor re-pin (misses L2 100× by 963.6×); the block presents the figure-eight/pion-rotation as cleanly underwriting that identity without noting the substrate-anchor tension or any error bar. The 'asymptotic value of twice the pion rotation angle = Vol(4_1)' equality carries no numerical check / witness in-block.",
+        "notes": "The lepton-meson-bridge framing leans on the muon-anchor identity whose current accuracy status is a known FAIL (m_μ 963.6× over target); presenting it as a derived structural bridge without that caveat is empirically fragile / stale-relative-to-current-pin."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "pion-half-figure-eight.md:56-66 'pion decay π→μ+ν de-entangles V_(2,1) into V_(2)⊕V_(1,1) … the decay releases [the phase energy] by undoing the rotation. Two such decays (two pions) would undo a full figure-eight rotation.' Physically π→μν is a single weak decay; the picture of 'two pion decays undoing a figure-eight' has no correspondence to the actual decay kinematics/conservation and is metaphorical.",
+        "notes": "Interpretive/heuristic; not a hard units/conservation violation but a domain expert would reject the 'two pion decays = one figure-eight rotation' as a literal physical statement. Logged minor (prose is suggestive, the proposition's hard content is the 2×2 spectral fact)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No witness.json backing; the asserted trace χ^(2,1)(M₊)=−(h²+1) is not tied to a reproducible compute in-block (would strengthen the proposition if it were)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "47823d6cec93",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=major-revision. referee_argument: The hard mathematical content — same trace + det ⇒ same characteristic polynomial for 2×2 — is correct and Lean-checked, but it is the trivial half of the claim. The non-trivial half (that BOTH the pion braid M₊ and σ₁σ₂⁻¹ actually have trace −(h²+1) and det 1 on V_(2,1)) is assumed, not computed, and the Lean theorem 'pion_eq_half_figure_eight_phase' contains no braid, no V_(2,1), and no phase — a major Lean/narrative divergence. The block then escalates from a finite-h eigenvalue-phase equality to physical claims (Vol(4_1)=2θ asymptotically; m_μ/m_e bridge; pion-decay 'undoing rotation') that are not derived (da-non-sequitur, da-overclaim) and lean on the muon-anchor identity whose current accuracy is a known FAIL (da-empirical-fragility). Compute the two traces (or cite a witness), restrict the unit-circle h-regime, and scope the physical interpretation."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:25.923Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -818,7 +818,250 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The three narrative steps (Jimbo semisimplicity at generic q, Alexander surjectivity, algebraic direct-limit spanning) are each standard and correct as stated. Restriction to ≤2-row partitions for SU_q(2) is right. No counterexample."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "knot-eigenbasis-complete-proof.lean:37-72 — KnotEigenbasisComplete is a `structure` whose key content (`summands_detected`, `spanning`) are *fields* (hypotheses), not proved obligations. No term inhabiting the structure is exhibited.",
+        "notes": "The Lean carrier axiomatizes the proposition's conclusions as structure fields rather than deriving them. A `structure` with these fields is not a proof; whoever supplies an instance must supply `spanning` and `summands_detected` by hand. The author flagged the empty-set degeneracy in the docstring (lines 64-72), which mitigates the most trivial vacuity, but the structure itself proves nothing without an inhabitant. The narrative .md proof carries the actual mathematical content; the Lean is a data-carrier, not a discharged theorem."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting; standard representation-theoretic facts, no smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-eigenbasis-complete-proof.md:20-26 — 'the irreducible summands … span V_phys' is asserted; the .ts sets validation:'leanok'.",
+        "notes": "The narrative 'complete eigenbasis replacing the Feynman path integral' (Lean docstring line 23) is a strong framing claim. The algebraic-spanning statement is true but is the trivial direct-limit cover (every element sits at some finite level), not a non-trivial completeness/basis result in the Hilbert-space sense the 'replacing the path integral' framing might suggest. Conclusion is modestly stronger in flavour than the elementary colimit fact delivers; minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Steps chain correctly: semisimplicity → decomposition; Alexander → closure surjectivity; colimit → spanning. No missing lemma in the narrative."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "knot-eigenbasis-complete-proof.lean:37 `structure KnotEigenbasisComplete` vs .md narrative 'Proof of Completeness'; .ts:8 validation:'leanok'.",
+        "notes": "The .md is a genuine proof; the Lean is a structure whose fields ASSUME the very conclusions (summands_detected, spanning) the proof should establish. So the Lean does not derive the .md claim — it packages it as hypotheses. proof-statement-integrity concern: 'leanok' on a hypothesis-carrying structure overstates what Lean verifies. The build-graph copy may differ, but as co-located the Lean is weaker than the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Refs in Lean are apt: [chari1994] Ch.10 for q-Schur–Weyl, [alexander1923] for the braid-closure theorem, [jones1987] for the Markov trace. Correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "knot-eigenbasis-complete-proof.md:20 'V_phys := varinjlim V^{⊗n}' — algebraic direct limit asserted, but the transition/embedding maps V^{⊗n} → V^{⊗(n+1)} are not specified in the block.",
+        "notes": "The direct-limit system's connecting maps (presumably the σ_n stabilisation embeddings) are left implicit. 'The irreducible summands, indexed by knot types via the closure map' presumes the indexing is well-defined (closure is many-to-one on braids, so 'indexed by knot types' needs the Markov-equivalence quotient). Minor under-specification, resolvable from context."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure-math content; 'replacing the Feynman path integral' is framing, not a checkable physics claim here."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "98be9e9a07c3",
+          "ts": "9d6194042021",
+          "lean": "c6ce02dc440e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: the narrative proof is sound and standard, but the Lean witness carries the conclusions (summands_detected, spanning) as structure FIELDS rather than deriving them, so the 'leanok' validation overstates what is formally verified — the strongest objection. Recommend either inhabiting the structure with a constructed term or downgrading the validation tag / restating the spanning result as the elementary colimit fact it is."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.706Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

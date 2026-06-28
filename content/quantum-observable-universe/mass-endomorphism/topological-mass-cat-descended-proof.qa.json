@@ -781,7 +781,232 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The proof chain tr(τ̂_n(α)) = tr(ℓ_n(d_{n+1}(α))) = tr_n(d_{n+1}(α)) = tr_n(α_0) is a routine descent computation; each step cites a named structural fact (ascent embedding ℓ_n, trace-descent compatibility). No false identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Proves a non-trivial equality ‖tr(τ̂_n(α))‖ = 𝔪(ϱ_0) reducing a level-n mass to the base level. Not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Concludes the descended term equals the base-level mass by composing the descent isomorphism and trace-compatibility hypotheses; does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Conclusion (descended = base-level mass) is exactly what the chain delivers; no scope inflation."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical constants; purely categorical."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-cat-descended-proof.md:6-8 invokes 'compatibility of the categorical trace with descent (tr_n ∘ d_{n+1} = tr_{n+1} on im τ̂_n)'",
+        "notes": "The key middle equality relies on a trace-descent compatibility stated as given rather than proved or cited to a specific lemma in this block; the proof is correct ONLY if that compatibility holds on im τ̂_n. It is presented as known ('gives'), with no in-block reference to where it is established. Minor gap: a bridging-lemma citation would close it."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No .lean sibling for this proof block; the lemma it proves (lem:topological-mass-cat-descended) carries any Lean. proof blocks are narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] / -- Ref:; the only reference is an in-paper #def:descent-involution hyperlink, not a bibliographic citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-cat-descended-proof.md:21 '‖tr(...)‖ = 𝔪(ϱ_0)' — the norm ‖·‖ is used without specifying which norm/normalisation",
+        "notes": "The mass identity is ‖tr(...)‖; the proof equates tr-values then applies ‖·‖ at the end. The base-ring/normalisation of ‖·‖ is implicit, inherited from def:mass-identity. Minor — resolved by the upstream definition, not in-block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numbers."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure categorical algebra; no physical prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No attached compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "37fdb785dfcc",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: accept. referee_argument: A short, correct descent proof. The only soft spots are the unreferenced trace-descent compatibility (relied on as given) and the implicit ‖·‖ normalisation, both minor and inherited from upstream definitions. No errors."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.310Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

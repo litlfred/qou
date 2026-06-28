@@ -1340,7 +1340,261 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The boxed graded identity (md:10-19) is a definitional rearrangement of M(K)=m_e·ρ_K·|tr_M| (multiply through by m_e·|tr_M|), tautologically true as an identity once ρ_K is defined as the residual. The LO piece (Markov multiplicativity, Wenzl Thm 5) is a genuine theorem. No false claim in the stated identity."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "rho-k-graded-expansion.lean:51-69 — the class `GradedRhoKExpansion` carries `graded_decomp : atomicMass = constituent + singleGenCorrection + higherPieces` as a field, and the theorem `rhoKGradedExpansion` (lean:78-83) merely projects that field (`:= graded_decomp β_K`). `higherPieces` is an unconstrained catch-all (lean:60-63).",
+        "notes": "The Lean 'decomposition theorem' is a self-assuming projection: the identity it 'proves' is asserted as a class field and re-emitted, and the residual is absorbed into an arbitrary `higherPieces` so the identity holds for ANY values. This is exactly the §3b-tax pattern flagged as vacuous — the class field carries the conclusion. The only non-trivial lemma, rhoK_LO_when_no_binding, is genuine but trivial (ring after substitution)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "ρ_K is defined as the residual M(K)/(m_e·|tr_M|), and the graded expansion identifies named pieces of it. The LO piece is derived from Wenzl multiplicativity independently of any mass target; the single-gen/pair-gen pieces are explicitly empirical/open, not back-fitted to close a target while claiming derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:55-73 titles the single-gen subsection 'Single-gen piece (proved)' and md:135-137 'The single-gen piece is the proved binding correction at 0.18% empirical accuracy'; .ts:13-14 'single-gen log-volume correction: PROVED'. The accuracy figure itself is internally inconsistent (see da-empirical-fragility).",
+        "notes": "Labelling an empirically-tuned correction with 0.18-0.35% residual as 'proved' overclaims: a 'proof' that leaves a sub-percent unexplained residual and whose pair-gen continuation 'degrades accuracy' (md:106-113) is a scope-limited empirical match, not a theorem. The Kashaev-limit functional form for the single-gen piece is asserted to match T_2 but the parallel pair derivation is admitted open — so 'proved' is stronger than the argument supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:21,68 α = m_e·8G ≈ 3.7445 MeV is presented as the Borromean binding scale from prop:binding-scale-catalan; the Markov parameter z = 1/(q^{1/2}+q^{-1/2}) and the pair prefactor αz² (md:81) appear in the open pair-gen term.",
+        "notes": "α is sourced to a named block (binding-scale-catalan) so it is on-menu, not a free DOF — pass on that. The genuine concern: the pair-gen term's functional form is openly admitted to be unknown (md:108-113 'needs a parallel derivation that produces the correct functional form and prefactor'), which is an undetermined-prefactor degree of freedom rather than a hidden one. Flag as warn because the block honestly labels it open rather than fitting it."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:115-126 'Identification with the six-term theorem' asserts each graded piece 'corresponds to' a term of thm:knot-mass-formula-unified 'in its Kashaev limit' (single-gen ↔ T_2). But md:108-113 admits the pair-gen Kashaev limit does NOT reproduce T_3's functional form (αz²Σln vs -z²ΣLi_2^q).",
+        "notes": "The claim that the graded expansion 'is the Kashaev specialisation of the six-term theorem' (md:123-124) does not follow when the pair-gen term demonstrably fails to match T_3's form. The single-gen↔T_2 correspondence is asserted by analogy ('matching T_2', md:111) without a derivation shown in-block. The 'therefore' at md:123 outruns the evidence for terms beyond LO+single-gen."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "rho-k-graded-expansion.lean:78-83 — the .md presents a specific graded expansion with named functional forms (Z m_p+N m_n+Z m_e; α Σ ln|V̂_i|; αz² Σ ln|V̂_iV̂_j|_Wedd). The Lean theorem `rhoKGradedExpansion` proves only the abstract additive split atomicMass = constituent + singleGen + higherPieces, where every summand is an uninterpreted ℝ-valued class field and the identity is itself a class axiom (graded_decomp).",
+        "notes": "proof-statement-integrity: the Lean encodes none of the actual functional content (no log-volume, no Markov multiplicativity, no Wedderburn coupling) and proves the additive identity only by assuming it as a class field. It is strictly weaker and structurally divergent from the .md, and vacuously satisfiable for any reals. validation 'not_checked' (ts:35)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites:[wenzl1988] (ts:23); wenzl1988 = 'Hecke algebras of type A_n and subfactors', Invent. Math. 92 (references.ts:3443), and Theorem 5 / Markov multiplicativity for parabolic subalgebras is genuinely the source for the LO branching identity (md:30-38, 157). Correctly attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:14-16,61,81 use V̂_i^full (the 'full volume'), |·|_Wedderburn (md:88-93), and the bar-involution overline; md:66 notes 'at real q_0 and real V̂_i this reduces to α Σ ln|V̂_i^full|'. The object V̂_i^full is used but not defined in-block.",
+        "notes": "V̂_i^full is invoked as if known but never defined here (no `uses[]`/cross-ref pins it); the |·|_Wedderburn inner product is given a formula (md:88-93) but the per-generator transfer matrices M_i and weights w_• are sourced only by name. A referee cannot reconstruct the single-gen term from the block alone. Minor since downstream blocks presumably define V̂."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The single-gen accuracy is quoted as '0.18%' in md:24, md:70, md:137 but the canonical probe table (rho-k-graded-expansion-table1-data.md:3) gives single-gen mean |err| = 0.25%, max 0.35%; md:70 itself says '0.18% mean error, 0.35% max'. Also the .ts/.md reference witness `rho-k-pair-gen-extension.witness.json` which does not exist on disk (verified: ls returns 'No such file').",
+        "notes": "Inconsistent headline accuracy (0.18% vs 0.25% mean) across the same block's prose and its own data table indicates the figure is not pinned to a single live witness — a hallmark of fit-figure drift. The pair-gen extension that would test robustness degrades to 4.7-9.0% (table1:4-5), and one of the cited witnesses is missing, so the sub-percent claim is fragile/unauditable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:13-14 'constituent' piece Z m_p + N m_n + Z m_e: including Z electron masses in a nuclear/atomic mass budget is the atomic (not nuclear) convention; binding energy (negative, ~ -8 MeV/nucleon) is then carried by the α-weighted log terms. The single-gen correction α Σ ln|V̂| has no manifest sign guaranteeing it is a binding (mass-defect) reduction.",
+        "notes": "Units are consistent (MeV). The plausibility concern is that the leading binding correction's sign/magnitude is empirically tuned to 0.18-0.35%, and the framework cannot yet produce the experimentally-known per-nucleon binding curve beyond the light nuclei (the pair-gen term degrades). Not a hard physics contradiction, but the binding mechanism is not yet physically closed."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "rho-k-markov-multiplicativity.witness.json:29 has `scriptCommitSha: \"unknown\"` (cannot pin the producer commit). The block (.md:73,151; .ts implicitly via the table) references `rho-k-pair-gen-extension.witness.json`, which is absent from computations/probes/ (ls: No such file). q_0 in the markov witness (1.1099785955541805) differs in the 11th digit from the idempotent witness's q_0.",
+        "notes": "Two reproducibility defects: (1) the LO witness has an unknown scriptCommitSha, breaking the producer-pin chain; (2) a witness cited in prose to support the open pair-gen claim does not exist on disk, so that claim is unbacked. The q_0 digit drift is within the muon-pin family but signals witnesses produced at slightly different pins."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "638b5ddd9815",
+          "ts": "899434085f30",
+          "lean": "20417d142f1c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict: major-revision. Strongest objection: the central 'proved' claims are overstated — the Lean theorem is a self-assuming projection over uninterpreted class fields, the single-gen 'proof' leaves a 0.18-0.35% (inconsistently quoted) empirical residual, and a cited supporting witness (rho-k-pair-gen-extension) is missing.",
+        "notes": "referee_argument: The graded identity is a valid rearrangement and the LO Markov-multiplicativity piece is a real theorem, but the block conflates 'rearranged into named pieces' with 'derived'. The single-gen term is empirical (fit residual, drifting headline figure), the pair-gen term openly fails, and the Lean formalizes none of it while vacuously asserting the additive split. Required: (1) relabel single-gen 'proved'→'empirical, mean err ≤0.25%' and reconcile the 0.18/0.25 figures to one witness; (2) restore or remove the missing pair-gen witness; (3) make the Lean encode functional content or mark it a placeholder."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.865Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

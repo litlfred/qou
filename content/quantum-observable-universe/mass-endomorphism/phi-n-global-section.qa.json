@@ -835,7 +835,236 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "As a remark (interprets: conj:mass-endomorphism, phi-n-global-section.ts:7) it asserts no theorem; the 'global section' framing is interpretive."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The remark carries substantive interpretive content (locality-dropping motivation, ribbon-flux divergence argument); not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No back-fit to a numeric target; the reframing is structural narrative."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-n-global-section.md:31-38 states global topological neutrality is 'the only consistent reconciliation' and that a non-trivial action 'cannot coexist with finite mass' — a uniqueness/necessity claim stronger than a remark's interpretive remit, and it forward-asserts the content of an open conjecture (conj:categorical-neutrality-saturated-shells).",
+        "notes": "Phrased as forced necessity ('the only', 'cannot') for what is itself conjectural."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No parameters introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "phi-n-global-section.md:14-38 — the chain 'non-trivial ribbon action → unbounded framing flux → divergent accumulated flux → incompatible with finite mass → therefore global neutrality at saturation' has a gap: 'each brane level inherits the framing flux; without a global cancellation mechanism, the accumulated flux diverges' (lines 22-24) is asserted, not derived, and the jump to 'global neutrality (centre-of-braid-group)' as the unique cure is not established.",
+        "notes": "The argument is heuristic/physical; presented with 'cannot' as if logically forced."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark has no .lean sibling and no lean.ref; nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] or -- Ref: in the block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-n-global-section.md:36 labels prop:categorical-neutrality-saturated-shells as `prop:` in prose but links it as `#conj\\:categorical-neutrality-saturated-shells` (conjecture); 'global section of the categorical mass functor' is used in 'the strict sense of monoidal-category global sections' (line 6) without a precise definition of what global sections of an endofunctor 𝓕_mass:𝐂→𝐂 are.",
+        "notes": "'Global section' of an endofunctor is non-standard terminology and left informally defined; prop-vs-conj label inconsistency."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "The finite-observable-mass premise (phi-n-global-section.md:25-29) is physically uncontroversial; the flux-divergence reasoning is heuristic but not in conflict with measurement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness attached."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5934bc3173ed",
+          "ts": "f7c30a6c31c9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict=weak-accept. Strongest objection: the remark asserts global neutrality as the 'only consistent reconciliation' that finite mass 'forces', but this is a heuristic physical argument with an un-derived flux-divergence step, dressed as logical necessity for what is itself an open conjecture.",
+        "notes": "referee_argument: Properly tagged as an interpretive remark (interprets conj:mass-endomorphism), but the necessity language ('the only', 'cannot coexist', 'forces') overstates a non-rigorous motivation. Soften to 'suggests/motivates' and fix the prop:/conj: label slip on categorical-neutrality-saturated-shells."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:40.890Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

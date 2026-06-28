@@ -1340,7 +1340,247 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Narrative claim (uniqueness up to the |c| scalar ambiguity of ∫_A) is correct given linearity of the mass in ∫_A inside the norm."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "mass-identity-unique.lean:28-33: `theorem MassIdentity.unique {R} [NormedCommRing R] (m₁ m₂ : R) (h : m₁ = m₂) : ‖m₁‖ = ‖m₂‖ := by rw [h]`. This is the tautology 'equal elements have equal norms' — it assumes m₁=m₂ as a hypothesis and concludes their norms are equal. It says nothing about uniqueness of the mass FUNCTION 𝔪 on Hom(1,A).",
+        "notes": "Self-assuming projection: hypothesis h:m₁=m₂ trivially gives ‖m₁‖=‖m₂‖. The genuine content (𝔪 is uniquely determined once ∫_A is normalized, up to |c|) is entirely absent from the Lean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "mass-identity-unique.ts:6 declares lean ref qou:QOU.MassIdentity.unique as the formalisation of 'Uniqueness of the inertial mass identity', but the Lean (lean:28-33) proves only the congruence ‖m₁‖=‖m₂‖ under m₁=m₂. The proposition is presented as having a Lean formalisation of uniqueness; the Lean delivers a tautology.",
+        "notes": "A vacuous congruence is presented as the uniqueness proof. The narrative .md/.md-proof argument is sound, but the formal claim overstates what the Lean establishes."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Narrative reasoning (linearity in ∫_A ⇒ norm scales by |c| ⇒ uniqueness once normalization fixed) is a valid chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md/proof claim: 𝔪:Hom_C(1,A)→R is unique once ∫_A's normalization is fixed, with m_(1)(ϱ)=|c|·m_(2)(ϱ) under ∫^(1)=c∫^(2) (mass-identity-unique.md:8-9, unique-proof.md). Lean MassIdentity.unique (lean:28-33) proves ‖m₁‖=‖m₂‖ from m₁=m₂ — neither the function 𝔪, the scalar c, the |c| scaling, nor Hom(1,A) appears.",
+        "notes": "Lean proves a strictly weaker/different tautology; the |c|-scaling uniqueness content is unformalised. proof-statement-integrity fails."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean -- Ref:[kock2004] (Frobenius Algebras and 2D TQFT Ch 2) is topically appropriate to the Frobenius-pairing uniqueness context, though it backs a tautological proof."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "mass-identity-unique.md:5-9 'uniquely determined up to the scalar ambiguity of the Frobenius pairing' — 'up to scalar ambiguity' makes 'unique' a qualified claim; the in-particular statement (md:11-13) that 𝔪 is 'unique' only holds after fixing the normalization, which is asserted as part of the QU datum without pointing to where that normalization is fixed.",
+        "notes": "'Unique up to |c|' then 'unique once normalization fixed' — the regime in which uniqueness is unqualified depends on an externally-fixed normalization that the block does not pin to a specific construction."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2332c924ebb4",
+          "ts": "bcfbf7092f0e",
+          "lean": "fd304cd8c251"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The narrative uniqueness argument is correct, but the paired Lean theorem (mass-identity-unique.lean:28-33) is a tautology `‖m₁‖=‖m₂‖` from `m₁=m₂`, formalising none of the actual uniqueness content.",
+        "notes": "verdict: major-revisions. referee_argument: the prose proof (linearity of 𝔪 in ∫_A inside the norm ⇒ uniqueness up to |c| once ∫_A is normalized) is sound, but its Lean witness is a vacuous norm-congruence that assumes equal inputs and concludes equal norms — it proves nothing about the mass function being uniquely determined. Replace with a Lean statement quantifying over two normalizations ∫^(1)=c·∫^(2) and proving 𝔪_(1)=|c|·𝔪_(2) (and 𝔪 well-defined once c fixed), or relabel the Lean as a placeholder. Same vacuity pattern as the sibling mass-identity-exists Lean (Nonempty R from Nonempty R)."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.552Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

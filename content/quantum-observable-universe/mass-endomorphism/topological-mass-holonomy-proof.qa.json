@@ -781,7 +781,230 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-holonomy-proof.md:10-12 asserts the transient component vanishes on Σ₀ '(since ϱ₀ has trivial topology and all sections there factor through level n)' as the load-bearing step; this parenthetical is asserted, not proved.",
+        "notes": "The vanishing α − τ̂ₙ(α) = 0 on the unknot complement is the crux of the lemma and is stated as obvious rather than derived. A referee would ask for the argument that 'trivial topology ⇒ all sections factor through level n'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "topological-mass-holonomy-proof.md:15-21 the chain MI∫_Σ τ̂ₙ(α) = MI∫_{Σ₀} α = Hol(ϱ₀) collapses the exceptional-divisor discs D_i out of the integral with no stated reason: τ̂ₙ(α) restricted to each D_i is not shown to vanish or integrate to zero.",
+        "notes": "The decomposition Σ = Σ₀ ∪ ⋃ D_i is introduced (line 7) but the proof only handles Σ₀; the D_i contributions to ∫_Σ τ̂ₙ(α) are silently dropped. The 'Hence' at line 13 needs a lemma that the descended projection has no support on the exceptional discs."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "proof block has no .lean sibling; the parent thm:topological-mass carries lean ref qou:QOU.Torsion.mass_decomposition_categorical with validation 'not_checked'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites yekutieli2015 (present in references.ts:776) for the nonabelian Stokes theorem on the disc Σ₀ — appropriate attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-holonomy-proof.md:16 the operator MI∫ (multiplicative-integral) is used without definition in this block; 𝔊 in Hol_{∇_A}(ϱ₀;𝔊) is also undefined here.",
+        "notes": "Reader must chase the parent lemma/theorem for MI∫ and 𝔊. Minor since defined upstream, but the load-bearing surface integral's meaning is not local."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "pure narrative proof; no backing witness/compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9fd7a3ff664e",
+          "ts": "310c4a6ac144"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "The two-equality chain (md:15-21) discharges only the Σ₀ piece and drops the exceptional-divisor D_i contributions without justification (da-non-sequitur); the crux vanishing on Σ₀ is asserted (da-overclaim).",
+        "notes": "verdict: minor-revision. referee_argument: 'The lemma decomposes Σ into Σ₀ plus N exceptional discs, yet the proof's central equality integrates τ̂ₙ(α) only over Σ₀ and never argues that the descended projection is supported away from the D_i. Either show τ̂ₙ(α)|_{D_i}=0 or that ∫_{D_i}τ̂ₙ(α) cancels; otherwise the equality MI∫_Σ = MI∫_{Σ₀} is unsupported.' The Stokes citation is sound; the gap is the descended-support argument."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:42.606Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

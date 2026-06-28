@@ -2005,7 +2005,231 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Uses `ring`, not `decide`/`trivial`."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The normalisation y_(3)+2y_(2,1)+y_(1,1,1) = z + 2(1/2−z) + z = 1 (md:16-19) is a correct identity for all q, discharged by `ring` in the Lean instance (QBetaCanonicalMarkovWeightsInstance.lean:48-53). z(q)=√q/(1+q) = 1/(√q+1/√q) matches the proposition's z (markov_parameter_symmetric_form, QBetaPerBlockChiClosedForms.lean:1050-1052)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Not vacuous: the explicit instance discharges a content-bearing class field `sum_dim_normalised : ∀ q>0, y3 q + 2*y21 q + y111 q = 1` (QBetaPerBlockChiClosedForms.lean:1085) with concrete √q-bearing weights, and makes the §3b-cond conditional theorems non-vacuous (is_inhabited, delta_tau_M_canonical_explicit_* lemmas). The block explicitly disclaims being the canonical instance — it inhabits, it does not trivialise."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting: the block constructs ONE inhabitant and explicitly states (md:36-45, 71-74) it is NOT the canonical Wenzl–Markov instance, with the numerical mismatch (y_(3)≈0.499 vs canonical 0.4154) given as evidence against any identification. No conclusion is assumed."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Exemplary scope discipline: md:21-50 'Honest scope — what this instance does and does NOT establish' enumerates exactly that it proves inhabitability only, not canonicality, not a Δτ_M formula, not c_k closure. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No hidden DOF: the weights are fully explicit functions of the single parameter q via z(q)=√q/(1+q); the y_(2,1)=1/2−z choice is disclosed as one arbitrary inhabitant among infinitely many (md:73), not a smuggled fit."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The single inference (instance exists ⇒ class inhabited ⇒ conditional theorems non-vacuous) is valid and Lean-checked (is_inhabited, QBetaCanonicalMarkovWeightsInstance.lean:59-61)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "lean.ref qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance resolves (no sibling stub) to the library instance (QBetaCanonicalMarkovWeightsInstance.lean:43-53), which proves exactly the .md claim (the √q-bearing weights satisfy sum_dim_normalised). The downstream delta_tau_M_canonical_explicit_* theorems match the .md's 'computable modulo straight algebra' caveat. No divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites [wenzl1988] (references.ts:3443) and [hoefsmit1974] (references.ts:3408) for the canonical Wenzl–Markov weight construction the block contrasts ITSELF against — appropriate, since the block invokes them only to say its instance is NOT those canonical weights. No mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "All terms pinned: z(q)=√q/(1+q) given explicitly (md:13), CanonicalMarkovWeightsH3 class declared in the cross-referenced file, base ring ℝ with q>0 archimedean regime explicit (the √q forces ℝ, correctly). The 'which inhabitant is canonical' ambiguity is openly named as open math, not glossed."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.md:54-58 cites q_0 ≈ 1.10998 and z(q_0) ≈ 0.499, and notes z(q_0)≈1/2 'by accident'. The q_0 ≈ 1.10998 value is the proton-anchored package value; the canonical weights comparison (md:63-69) uses markov_weights_symbolic.solve_y_lambda(3) 'off by 10^-4 from 1 due to truncation precision'. The numbers are illustrative (the block's logic does not depend on them), but the q_0 pin is unstated as to which anchor (muon-q_0 computations layer vs proton-q_0 package layer per AGENTS.md), and the 10^-4 normalisation slack in the 'canonical' comparison is a precision caveat.",
+        "notes": "Minor: these are sanity-check numbers supporting the qualitative 'not canonical' conclusion, not a load-bearing precision claim. The conclusion (instance ≠ canonical) is robust to the q_0-anchor ambiguity since y_(3)≈0.499 vs 0.4154 differ at the 10^-1 level."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "qbeta-canonical-markov-weights-explicit-instance.md:63-69 quotes canonical weights y_(3)^canon≈0.4154, y_(2,1)^canon≈0.2809, y_(1,1,1)^canon≈0.0227 from `markov_weights_symbolic.solve_y_lambda(3)` at q_0, but cites no witness JSON / scriptHash for these specific numbers (the Lean companion at QBetaCanonicalMarkovWeightsInstance.lean:69-72 references qbeta_delta_tau_M_canonical_explicit_instance.py / its witness, a different object — the Δτ_M evaluation, not the solve_y_lambda comparison).",
+        "notes": "Minor: the comparison numbers are illustrative and the qualitative conclusion (≠ canonical) does not turn on their exact reproducibility, but the solve_y_lambda(3) output is quoted to 4 sig figs without a pinned witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f6fa477183c4",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: ACCEPT. referee_argument: A model of scope-honest formalisation — it proves precisely one thing (CanonicalMarkovWeightsH3 is inhabited by an explicit √q-bearing instance, making the §3b-cond conditional theorems non-vacuous), the Lean (QBetaCanonicalMarkovWeightsInstance.lean) discharges the content-bearing normalisation field by `ring` and matches the .md, and the block's own 'Honest scope' section pre-empts every overclaim by stating it is NOT the canonical instance and giving the numerical mismatch as proof. Only nits: the illustrative q_0≈1.10998 numbers don't name their anchor (muon vs proton layer) and the solve_y_lambda(3) comparison values lack a pinned witness — neither affects the load-bearing claim."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

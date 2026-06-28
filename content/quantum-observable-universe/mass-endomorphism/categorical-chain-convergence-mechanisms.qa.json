@@ -1816,7 +1816,257 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial masking. Proofs use induction, ring, pow lemmas, div_nonneg, linarith on genuine archimedean goals; the one decide-adjacent term (spacetime_color_card) is in a sibling block, not here."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:20-22 'ℏ_q²≈9.8×10⁻³ — each new rung tightens the prediction by ∼100×'",
+        "notes": "The 100×-per-rung tightening holds ONLY if each rung's coefficient c_k is bounded by an O(1) constant so the rung magnitude is ~c_k·ℏ_q^{2k}. Per AGENTS.md the c_k (k≥3) are q₀-dependent NEAR-MATCHES with cross-anchor swings up to ~3.47%, NOT bounded-exact, so the residual bound |R_N|≤ℏ_q^{2(N+1)}/(1−ℏ_q²) (md:16-18) implicitly assumes |c_k|≤1, which the framework's own ladder does not establish. The clean geometric-decay claim is stronger than the (near-match) coefficients support."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Lean theorems cKBound_geometric_decay and stabIter_spec/inter_knot_decoupling are genuine, sorry-free, and derive z^k from the Markov-M3 class field by induction (non-degenerate per §3b-cond). Not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Convergence is argued from a residual bound (delegated to conj:archimedean-remainder-exponential-decay) + Markov M3 factorisation; no back-fit to a target Q-value within this block."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:26-28 'truncation at N=3 suffices for the 1 ppb roadmap'; upstream q-beta-categorical-precision-ladder.md:18-20 gives the N=3 c(K) ceiling as 0.0094 ppm = 9.4 ppb and the ladder residual −0.0066 ppm = 6.6 ppb",
+        "notes": "'N=3 suffices for the 1 ppb roadmap' overclaims: the upstream prop's own N=3 ceiling is ~9.4 ppb and the realised residual ~6.6 ppb, an order of magnitude above 1 ppb. The block also presents 'asymptotic freedom' analogy (md:78-88) and a boxed full-factorisation (md:62-72) as established, while ts:status='experimental' and the proposition's Mechanism-2 factorisation is only conditional on the unlinked-limit class hypothesis."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Parameters (ℏ_q=(q−1)/q, z, b) all trace to the substrate q₀ and the Hecke/Markov structure; no off-menu free coefficient introduced in this block (the c_k near-match concern is upstream)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:54-55 'Cross-coupling correction terms vanish at leading order in the linking parameter — they only enter when lk(K_i,K_j)≠0'; md:42-52 O(lk_{12}) additive correction",
+        "notes": "The leading-order vanishing of cross terms in lk is asserted, not derived; the Lean only proves the EXACT unlinked (lk=0) factorisation τ_M=product·z^k, with no formalization of the O(lk) expansion. The 'O(lk_{12})' bookkeeping is heuristic, leaving a gap between the proved exact-decoupling and the claimed perturbative locality."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:38-40 'τ_M(K_1⊔K_2)=τ_M(K_1)·τ_M(K_2)' (no z-factor, 'linking-trivial limit'); lean:148-151 inter_knot_decoupling proves '=τ_M(K_1)·τ_M(K_2)·(markovZc q)^k'",
+        "notes": "The .md display equation drops the z^k stabilisation factor that the Lean theorem actually proves; the .md presents a strictly different (z=1) identity from the Lean. Also the Lean's combined export categorical_chain_convergence_mechanisms proves only (Mechanism-1 geometric decay ∧ Mechanism-2 z^k factorisation) — it does NOT prove the headline narrative claim that Q_β^cat,full 'evaluates to a finite real number' (md:87-88 / lean docstring:161-163); the convergence/finiteness is asserted in the docstring but not a theorem conclusion. Lean proves a weaker pair of algebraic identities than the .md's convergence narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "cites[habiro2002, jones1985]; -- Ref:[jones1985] doi:10.2307/1971403 attached to the Markov-M3 stabilisation (lean:113,135) is correctly attributed (Jones 1985 is the canonical Markov-trace/M3 source). habiro2002 supports the Habiro-ring inverse-limit framing."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:36 'lk-class trivial' equated with lk=0; lean:74-80 'disjoint strand sets ... linking number zero' — but linking number 0 ≠ geometrically unlinked (e.g. Whitehead link has lk=0 yet is linked)",
+        "notes": "The block conflates 'linking number zero' with 'unlinked/disjoint strands'. The Lean is actually about DISJOINT-strand (split) braids (genuinely unlinked), which is stronger than lk=0; the .md's 'lk(K_1,K_2)=0 ⇒ factorises' is too broad as stated since lk=0 admits linked configurations. Ambiguous regime."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:20-22 ℏ_q²≈9.8×10⁻³ at q₀≈1.110; the per-rung c_k feeding the bound are near-matches (AGENTS.md: c_3=−2 swings ~3.47% cross-anchor); ts computation.status='experimental'",
+        "notes": "The headline '100× per rung' and 'N=3 suffices' rest on the c_k ladder whose higher coefficients are cross-anchor-fragile near-matches, not stable constants. The q₀ value used (1.110) is the muon/proton substrate pin; the convergence-rate claim inherits the c_k fragility documented for the Q_β ladder."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:78-88 'The categorical analog of asymptotic freedom'",
+        "notes": "The asymptotic-freedom analogy is rhetorical: asymptotic freedom is a running-coupling phenomenon (coupling →0 at high energy), whereas here 'high substrate density ⇒ small ℏ_q ⇒ sharp truncation' is a convergence-rate statement, not a renormalisation-group running. A physicist would reject the label as a category match; it is presented as explanatory ('Why this works') rather than flagged as loose analogy."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Backing witnesses reproducible: inter-knot-decoupling.witness.json scriptHash=ba813c809f5f matches current probe_inter_knot_decoupling.py (ba813c809f5f); c-k-beta-decay-bound.witness.json present (scriptHash 2da665553d35). No drift detected on this block's producers. (lean ref validation='not_checked' but file is sorry-free on read.)"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "19e679d936a5",
+          "ts": "02972c686da0",
+          "lean": "6a07fdaffdf2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "md:38-40 vs lean:148-151 z-factor divergence; md:26-28 'N=3 suffices for 1 ppb' vs upstream 6.6–9.4 ppb",
+        "notes": "verdict=major-revision. referee_argument: The Lean content is sound and sorry-free (geometric decay of the c(K) bound; z^k factorisation derived from Markov M3), but it proves strictly less than the .md narrative: (i) the .md's display factorisation drops the z^k factor the Lean actually proves, and (ii) neither the Lean nor an in-block argument establishes the headline finiteness/convergence of Q_β^cat,full — it is asserted in prose/docstring only. The accuracy claims ('100× per rung', 'N=3 suffices for the 1 ppb roadmap') overstate: the upstream ladder's own N=3 ceiling is ~9.4 ppb with ~6.6 ppb realised, and the underlying c_k are cross-anchor-fragile near-matches, so the clean geometric bound presumes |c_k|≤1 the framework has not shown. The lk=0⇒factorises statement also over-generalises the Lean's disjoint-strand (split) hypothesis. Tighten the .md to the Lean's actual z^k identity, restate convergence as conditional/experimental (matching ts status), and replace '1 ppb' with the realised ~6.6 ppb."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

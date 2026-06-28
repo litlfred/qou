@@ -835,7 +835,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "h3-hecke-idempotents.md:8-12,56",
+        "notes": "Eigenvalue table (q,q for (3); -q^{-1},-q^{-1} for (1^3); dim_q V_{(2,1)}=[2]_q) is correct for H_3(q). P(q)=1+2q^2+2q^4+q^6=(1+q^2)(1+q^2+q^4) is the correct Poincare polynomial of S_3 in q^2, and =q^{l(w0)}[3]_q! with l(w0)=3 checks out. dim sum = q+q^{-1}+2 correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "h3-hecke-idempotents.md:14-33",
+        "notes": "Explicitly anti-vacuous: exports concrete scalar identities (dimQ_V3=1, dimQ_V21=q+q^{-1}, etc.) and dimQ_sum_H3 closed by ring; residual=0 theorem. Substantively backs QYoungSymmetrizers 3 q rather than asserting True."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitting; pure representation-theoretic facts about H_3(q)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "h3-hecke-idempotents.md:80-88",
+        "notes": "The '## What remains' section honestly flags that the abstract H_n(q) quotient is NOT formalized (only the concrete rank-6 carrier / scalar invariants). The title and 'substantively backs QYoungSymmetrizers 3 q' could be read as a stronger formalization than exists — but the block itself discloses the limitation, so warn not fail. The scalar-invariant version is correctly described as 'sufficient to discharge the abstract Q-YST scaffolding'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No free parameters; q is the formal Hecke variable, no numerical calibration."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "h3-hecke-idempotents.md:58-62",
+        "notes": "Idempotency argument (T_w e=q^{l(w)} e => squaring multiplies by sum q^{2l(w)}=P(q), so normalizer pinned to P(q)) is a valid derivation; the bar-block argument for P(q^{-1}) parallels correctly. No gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "h3-hecke-idempotents.ts (no lean field); md:16-22,45-49",
+        "notes": "The .md narrates a library-tier Lean module (QOU.Mathlib.HeckeAlgebra H3.blockSym3/blockAlt3/poincare; dimQ_* and dimQ_sum_H3) but this remark block carries NO lean.ref and no .lean sibling, so the prose-to-Lean correspondence cannot be verified from the block manifest. Claims like 'dimQ_sum_H3 closed by ring' and 'qYoung_completeness_residual_H3 closed 0 by ring' are unverifiable at the block level without resolving the named library decls. Recommend adding a lean.ref to anchor the cited declarations."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "wenzl1988 (Hecke idempotents/Wenzl projectors), hoefsmit1974 (Hoefsmit matrices for the (2,1) off-diagonal), kassel1995 (Hecke background) are all correctly attributed to the invoked results."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "h3-hecke-idempotents.md:11,68-71",
+        "notes": "The (2,1) block sigma_0 eigenvalue is written as the multiset <q,-q^{-1}> while sigma_1 is just labeled 'Hoefsmit (off-diag)' — the 2-dim block's action is not a single eigenvalue, so the table column is heterogeneous (scalar for 1-dim blocks, eigenvalue-pair / matrix for the 2-dim block) without a stated convention. Also 'balanced q-factorial [k]_q' is introduced mid-block; fine but the two normalization conventions (P(q) vs balanced [3]_q!) coexist and a reader must track which is used where."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable; all identities exact in q."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure algebra, no physics prediction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached to this block (Lean-infrastructure remark)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ca3b0a806a50",
+          "ts": "fab9fc710292"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: accept-with-minor-revisions. referee_argument: Mathematically sound (eigenvalue table, Poincare normalizer, dim-sum identity all correct). Strongest objection: the block narrates concrete library-tier Lean declarations (dimQ_sum_H3, qYoung_completeness_residual_H3, H3.blockSym3/blockAlt3/poincare) but carries no lean.ref, so the prose-Lean correspondence is unverifiable from the manifest — add a lean.ref. Secondary: the eigenvalue table column for the 2-dim (2,1) block mixes scalar and matrix entries without a stated convention."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.025Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1376,7 +1376,256 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "alpha-em-habiro-bar-involution.lean:53-71",
+        "notes": "H(q^{-1})=H(q), H(1)=2, H(-1)=-2 all hold; verified by ring over generic CommRing. Math is correct (q+qi symmetric, (q-qi)^2 kills sign)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "alpha-em-habiro-bar-involution.md:50-51",
+        "notes": "The block itself concedes 'The proved facts are elementary, consisting of a ring-level observation' — the three Lean theorems are one-line ring identities. Not vacuous (real content), but the proposition's mathematical weight is minimal; the substance is the fibre-vs-observable framing in prose, not the proved lemmas. Borderline; warn for low formal content relative to billing as a 'Proposition'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No target value back-fitted; bar-symmetry of [2]_q is a structural fact independent of any calibration. alpha kept formal."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "alpha-em-habiro-bar-involution.md:18-36",
+        "notes": "The 'Significance' section asserts H is 'the alpha_EM next-order Habiro element' and that H(1)=2 'gives alpha/(4pi)', and that zeta_4=0 is the 'exact structural dual of the Q_beta Habiro element's modular pole'. These are framework interpretive claims (Habiro-element identity, the alpha/(4pi) wiring, the pole/zero duality) that go well beyond what the three ring lemmas prove. The proved content is only bar-invariance + two special values; the identification with alpha_EM physics is asserted via uses-less cross-reference to prop:em-coupling-bring-zero-mode (not in uses[]). The conclusion (a physically meaningful Habiro element) is stronger than the elementary algebra supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "alpha-em-habiro-bar-involution.md:1,20",
+        "notes": "alpha appears as a formal parameter in H=[2]_q(1-h^2 alpha) with no canonical-chain origin stated in this block; it is the fine-structure coupling whose value/derivation lives elsewhere (prop:em-coupling-bring-zero-mode, not in uses[]). As an off-block free parameter it is not disclosed here, though kept formal. Minor since alpha is explicitly formal and not numerically fitted in this block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The three proved statements each follow by ring; no claimed inferential bridge beyond them inside the formal part."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "alpha-em-habiro-bar-involution.lean:45-71",
+        "notes": "Lean alphaEmHabiro, alphaEmHabiro_bar_invariant, alphaEmHabiro_at_one/_at_neg_one exactly match the .md's two enumerated claims (bar-fixed point + special values 2,-2). No divergence; the lean.ref points at alphaEmHabiro_bar_invariant. The H(zeta_4)=0 claim is NOT in the Lean (only in witness), but it is presented in prose as witness-backed, not as a Lean theorem, so no integrity gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "alpha-em-habiro-bar-involution.lean:31-32",
+        "notes": "jones1987 and kassel1995 are cited as -- Ref: on the file but neither contains the 'alpha_EM Habiro element' construction; they back generic Hecke/Jones-polynomial and quantum-group background, not the specific H=[2]_q(1-h^2 alpha). The elementary ring lemmas need no citation; the cites are loosely topical rather than supporting the invoked result. Minor."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "alpha-em-habiro-bar-involution.md:40-44",
+        "notes": "'Habiro element' is invoked as a defining term but the block does not pin a Habiro-ring membership; H is just a Laurent polynomial in q with formal alpha. Calling it 'the Habiro element' borrows the term's authority without establishing the cyclotomic-completion structure that defines the Habiro ring. The qi vs q^{-1} convention (independent variables vs q*qi=1) is handled, but 'fibre-level' vs archimedean is asserted rather than defined here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical observable matched in this block; alpha and q kept formal, special values are exact integers."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No archimedean physical prediction made here (explicitly fibre-level); the alpha/(4pi) connection is mentioned as motivation, not asserted as a computed value."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "alpha-em-q-difference-fourier.witness.json scriptHash 'b512c073edb2' / scriptCommitSha 'f85a6e5f67328219a98e79758b687c5b4d9d2d31'",
+        "notes": "Witness is STALE. Current producer computations/alpha/alpha_em_q_difference_fourier.py has sha256-12 = a2995bbbbd68 (witness records b512c073edb2) and last-commit 7b25fc605812dc42f9214aa1b5aa6e52a49abf78 (witness records f85a6e5f...). Both scriptHash and scriptCommitSha drift => witness must be regenerated before it can back the proposition's computation.status='verified'. The Lean lemmas (which are the load-bearing proof) are unaffected, but the H(zeta_4)=0 claim in prose is backed only by this stale witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5fa0d2dd60c2",
+          "ts": "10b187e6901b",
+          "lean": "2e7819a7b9a7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: The proved Lean facts (bar-invariance + H(1)=2, H(-1)=-2) are correct but elementary one-line ring identities; the block's billing as a Proposition with physical 'alpha_EM Habiro element / alpha/(4pi) / pole-zero duality' significance overclaims relative to the algebra (strongest objection). Secondary: the backing witness is stale (scriptHash + scriptCommitSha drift), and prop:em-coupling-bring-zero-mode — the source of the physical identification — is referenced but absent from uses[]. Fixes: regenerate the witness, add the wiring dependency to uses[], and soften the significance prose to 'structural observation' (the .md's own Novelty line already concedes this)."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -1340,7 +1340,255 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The algorithmic claims (termination by lex order on (n,ℓ), exactness of Hecke-quadratic + Markov-axiom reduction, disjoint-product law for separated clusters) are standard and correct (Jones 1987, Kassel III.3). No counterexample to the stated proposition."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-trace-recursive-reducer.lean:91-112 witnesses termination with `fun _ _ _ => none` + `Or.inr trivial`; lines 144-166 witness disjoint-product with `ULift Unit`, `mT=const ⟨()⟩`, proving `0=0*0`-style via `rfl`",
+        "notes": "Both Lean theorems are vacuous existentials discharged by trivial constant witnesses (the `... ∨ True` form and the `∃ R' ... mT=const`); the docstrings openly admit 'the trivial always-none tracer technically witnesses' and 'the trivial mT=const 0 choice'. The substantive O(ℓ·n!) algorithm and disjoint-product content live only in the .md/Python."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No back-fitted target. The disjoint-product empirical check (deuteron = proton·neutron) is a genuine prediction of the algorithm, not a smuggled calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:16-18 'The algorithm is correct, terminates ... and verifies the disjoint-product property'; .ts:52 computation.status='verified'; lean.validation='not_checked' with vacuous .lean",
+        "notes": "Correctness/termination are asserted as proved at proposition level, but the only formal artifact is a tautology and the empirical verification is on a handful of atoms at one q0. 'Correct ... in O(ℓ·n!)' is a worst-case complexity claim with no proof given. The conditional/empirical status is presented as established."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "z=1/(q^{1/2}+q^{-1/2}) and h=q-q^{-1} are the standard Hecke/Markov parameters, both functions of q0 — no off-menu free coefficient introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:113-118 disjoint-product proof 'by induction on ℓ(β)' asserts the peeling phase 'exactly match the standalone tr_M(β)' without proving the cross-firing terms cancel; .md:93-97 acknowledges α may contain another σ_{n-2}",
+        "notes": "The disjoint-product argument waves at induction but the key step — that peeling β's top generators contributes exactly the standalone-algebra z-factors even when Hecke-quadratic firings occur — is asserted, not derived. The empirical 50-dps match supports it, but the prose 'proof' has a gap. Minor: the result is true and standard, only the local justification is thin."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": ".md:3-27 claims a correct, terminating reducer + disjoint-product law; .lean:91-112 proves `(tracer fuel n β).isSome ∨ True` (trivially true) and .lean:144-166 proves only ∃ a ring where the law holds (witnessed by const-0)",
+        "notes": "proof-statement-integrity: the Lean theorems are strictly weaker than (in fact disjoint from) the .md claims. `markovTraceRecursiveReducer_terminates` proves a disjunction with `True`; `markovTrace_disjointProduct` proves an existential satisfied by the zero trace — neither constrains the actual tr_M algorithm."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Jones 1987 (Markov-trace existence/uniqueness), Kassel 1995 Ch.III §3 (axiomatic Markov trace), Wenzl 1988 (branching) are correctly attributed for the cited results. Kassel 'Lemma III.3.5' / 'Theorem III.3.3' specific numbering not independently verified but the chapter and topic are right."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".md:122-133 lists proton tr_M(q0)≈1.633154, neutron≈1.248248 (un-normalized, H_3); the sibling closure block q-hecke-seminormal-character-closure.md:67-72 lists |tr_M| proton≈1.06530, neutron≈0.92323",
+        "notes": "Two adjacent blocks quote different tr_M values for 'proton'/'neutron' under different braid-word/normalization conventions (raw H_3 word σ1^7σ2^4 vs the |tr_M| of the 3A canonical word with interface). The proposition never states which normalization is canonical, so a reader cannot reconcile the numbers. Definitional, not a falsity (different objects)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The disjoint-product match is exact algebra (deuteron=proton·neutron at 50 dps), not a tuned fit; the proton cross-check vs markov_trace_atomic_proton_full at 50 dps is a genuine independent-method agreement. No cherry-picked precision or anchor swing."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure algebra/algorithm block; no physical-units or conservation claim to test."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": ".ts:46-51 names witnesses markov-trace-recursive.witness.json (scriptCommitSha 0fd092af, scriptHash fd23a103) and markov-trace-axiomatic-multi-atom.witness.json; producer markov_trace_recursive.py current git head not equal to 0fd092af",
+        "notes": "Witness scriptCommitSha (0fd092af) predates the current producer head, indicating possible drift; both witnesses are present and allPassed, so reproducibility is plausible but the sha pin is stale. Re-run + refresh recommended. Minor pending a hash re-check of the producer file content."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "87cd97dccb18",
+          "ts": "f49d76a16dea",
+          "lean": "ee0df9b06a9c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict=minor-revision; strongest objection: lean:91-166 both vacuous, narrative correctness asserted not proved",
+        "notes": "referee_argument: 'The mathematics (axiomatic Markov-trace reducer + disjoint-product) is standard and correct, and the empirical disjoint-product check is convincing. But the proposition is labelled proved/verified while its Lean is two vacuous existentials (const-none tracer; const-0 trace) and the disjoint-product prose proof has a gap at the cross-firing cancellation step. Recommend: either formalize a non-trivial signature or down-label the block to algorithm+empirical, and tighten the induction. No retraction — content is sound.' Verdict: minor-revision."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:45.706Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -815,7 +815,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose summary of the complex-volume conjecture; the only asserted algebra (cosh λ ± sinh λ = e^{±λ}, cos θ ± i sin θ) is correct. The forced-Re/Im claim is correctly tagged as conjectural, not stated as fact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "prose block; introduces a real structural claim (binding = Re𝔙, Q_β = Im𝔙). Not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation here; it forwards to the conjecture block. No back-fitting in the prose itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "complex-volume-intro.md:3 'The reconstruction 𝔈_bind + i 𝔔_β = 𝔙 is proved sorry-free in Lean'",
+        "notes": "True but the proved content is purely the definitional identity z = Re z + i·Im z (Complex.re_add_im); 'proved sorry-free' risks reading as if the physical unification is proved. The very next clause does correctly scope it ('only the physical match ... is conjectural'), so this is a presentation warn, not a falsehood. The draft markers (_[draft]_, _(draft.)_) partly mitigate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "E_0 is the substrate energy scale already in the canonical chain; no off-menu constant introduced in the prose."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "complex-volume-intro.md:21 'Closing either column is expected to close the other: they are the real and imaginary parts of the same unclosed defect.'",
+        "notes": "Asserted, not argued. Re and Im of one complex object can be independently 'unclosed' (Vol and CS are genuinely independent invariants), so 'closing either closes the other' does not follow from sharing one 𝔙. Hedged with 'is expected to', so warn not fail."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "prose block has no .lean sibling and makes no standalone provable claim of its own."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] on this prose block; Neumann–Zagier is named descriptively, not cited as a key in this file."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "complex-volume-intro.md:16 'root-of-unity q (cosh→cos, sinh→i sin)' vs :5 'Im(q_0)=0'",
+        "notes": "The narrative slides between two evaluations of q (real-q hyperbolic vs root-of-unity) without specifying which root of unity or how the single 𝔙 is evaluated at both simultaneously. The fibre-level caveat (line 5) names the tension but the prose does not pin a concrete evaluation map. Minor since the conjecture block carries the STRICT caveat."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match asserted in this prose block (numbers live in the conjecture block / witness)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Explicitly disclaims 'no complex mass' and keeps observables real; no unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No compute/witness attached to this prose block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fdc1753eb140",
+          "ts": "1e7e0ea48a82"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "notes": "verdict: minor-revision. referee_argument: A clean, honestly-hedged section intro (draft-marked). Strongest objection is the 'proved sorry-free' phrasing (intro.md:3) — the proved object is the trivial z=Re+i·Im identity, and 'closing either column closes the other' (intro.md:21) is asserted though Re/Im of a complex invariant can be independently open. Both are presentation-level, both hedged; no false math."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

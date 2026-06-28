@@ -281,7 +281,234 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "prose intro for sec:hecke-chi-per-block-delta-tau-canonical-weights; correctly a prose block (pure exposition, no provable claim), forward-references the section's siblings (chi closed forms, the conditional q^2-1 factor, surrogate Taylor, canonical instance). Well placed."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose intro; claims (χ_λ vanish at q=1, (q²−1) factor forced) are hedged and forwarded to named propositions; nothing asserted falsely here."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Substantive sectioning prose summarizing four downstream propositions; not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No derivation performed; merely routes per-block χ data into the downstream c_k recursion. Explicitly flags the downstream extraction as 'calibration-anchored' (md:16-17), so no smuggled-calibration concealment."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Carefully distinguishes 'closed forms here are exact' from 'downstream extraction remains calibration-anchored' (md:16-17). Honest scoping."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Prose introduces no parameters; the canonical Markov weights it references are pinned in prop:qbeta-canonical-markov-weights-explicit-instance."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:5-9 'vanish at q=1 ... which is what forces the Δτ_M difference to carry an explicit (q²−1) factor'",
+        "notes": "The 'which forces' causal link is asserted, not argued, in the intro. It is delegated to prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor, so acceptable for a prose intro, but the implication (vanishing-at-1 ⇒ explicit (q²−1) factor) is non-trivial and unsupported in-block."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "prose block, no .lean sibling and no claim requiring formalization."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref:; only internal cross-references."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "md:3 'reads them through the T_β endomorphism'; md:13 'surrogate Δτ_M'",
+        "notes": "'T_β endomorphism' and 'surrogate Δτ_M' are used without in-block definition; the reader must trust the linked propositions. The base ring / q-regime (formal q vs substrate q_0) is also implicit. Minor for an intro."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical match asserted in-block; explicitly defers the fragile (calibration-anchored) part downstream (md:16-17)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Pure algebraic/sectioning prose; no physical (units/conservation/measurement) claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No computation/witness attached to this prose block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2d43f7b9476a",
+          "ts": "7d43cabb524d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "verdict=accept-with-minor",
+        "notes": "referee_argument: A well-scoped sectioning intro that honestly separates exact closed forms from calibration-anchored downstream extraction. The only soft spot is the unargued 'vanishing-at-q=1 forces an explicit (q²−1) factor' implication and the undefined-in-block T_β/surrogate-Δτ_M terms, both delegated to named propositions — appropriate for prose but worth a reader-facing pointer."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

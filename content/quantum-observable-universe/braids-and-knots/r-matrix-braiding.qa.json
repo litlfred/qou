@@ -835,7 +835,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding.md:10-13 — YBE R_12 R_13 R_23 = R_23 R_13 R_12 and the braid operator Ř = P∘R are stated correctly for U_q(su(2)). Standard and true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Interpretive remark (interprets: prop:r-matrix-braiding-structure) with genuine content describing the universal R-matrix and its braid action. Not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No numerical target or self-referential justification; describes a standard construction."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding.md:14-16 — 'furnishing a q-deformed braid group representation that replaces the classical twist/flip involutions'. Modest, correct claim referencing def:braid-twist-flip; nothing stronger than the construction supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "q is the standard quantum-group deformation parameter; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Single descriptive step: R satisfies YBE ⇒ Ř=P∘R gives a braid rep. This is the standard, correct implication."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding.ts has no lean.ref and no sibling .lean for this remark (the sibling r-matrix-braiding-structure.lean belongs to the distinct prop:r-matrix-braiding-structure block it interprets, not this remark). Nothing to compare for this block.",
+        "notes": "The proposition it interprets (prop:r-matrix-braiding-structure) has its own .lean; this remark itself has no Lean claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding.ts has no cites[]; no external reference invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "r-matrix-braiding.md:5-8 — R ∈ U_q(su(2)) ⊗̂ U_q(su(2)) uses the completed tensor product ⊗̂ without specifying the completion/topology (the universal R-matrix of U_q(su(2)) lives in a completion since it is an infinite sum). The notation is invoked without saying which completion, and 'the universal element' presumes existence/uniqueness in that completion.",
+        "notes": "Standard in the literature but locally unspecified; minor, since it interprets a proposition that presumably pins this down."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No numerical value or experimental comparison."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No physics-observable claim with units/conservation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No compute/witness backing."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c84ebe4d34ed",
+          "ts": "21a1d6955ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "verdict: ACCEPT. Correct, standard, modest interpretive remark on the U_q(su(2)) R-matrix and its braid action; only nit is the unspecified completion in ⊗̂.",
+        "notes": "referee_argument: No substantive objection. Optionally specify the completion for ⊗̂ and confirm the interpreted proposition pins existence of the universal R-matrix."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.199Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

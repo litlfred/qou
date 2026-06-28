@@ -1605,7 +1605,238 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The stated identity ||tr(tau_hat(alpha))|| = m(rho_0) is plausibly true given the descent/trace-compatibility setup (tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)) and is a single norm equality (no sum-of-norms slip). Not demonstrably false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "cat_descended_is_base_mass.lean:37-57",
+        "notes": "Honest manuscript statement, but the Lean context class makes tr, nrm, tau_hat arbitrary ℝ->ℝ and base_mass an arbitrary ℝ, with body `sorry`. The theorem ||tr(tau_hat alpha)|| = base_mass with all symbols free is essentially a definitional pin on base_mass that no instance is forced to satisfy; as a verification artifact it encodes none of the descent/Frobenius-compatibility content. Honest-sorry per §1a but content-free as a proof."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No assumption of the conclusion; the prior intermediate_mass laundered version was removed per the Lean notes."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-cat-descended-proof.md:1-22",
+        "notes": "The proof asserts the trace-descent compatibility 'tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)' as a given (line 6-8) and the ascent-embedding isomorphism, then derives the result in two lines and writes QED — but the Lean obligation is `sorry` and these compatibility facts are not themselves formalized/proved here. So a narrative QED is claimed for a result whose key inputs are asserted, not established. Milder than the eigenspace block since the inputs are individually plausible standard facts."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "topological-mass-cat-descended-proof.md:10-21",
+        "notes": "Given its asserted inputs (im(tau_hat) ≅ End(A_n) via ascent embedding; trace-descent compatibility), the chain tr(tau_hat alpha) = tr(l_n(d_{n+1}(alpha))) = tr_n(d_{n+1}(alpha)) = tr_n(alpha_0) is a valid substitution sequence, and ||.|| = m(rho_0) follows by definition. No internal logical gap, modulo the unproven inputs (covered under overclaim/vacuous)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "cat_descended_is_base_mass.lean:55-57 (sorry) vs topological-mass-cat-descended-proof.md:22 (QED)",
+        "notes": "Narrative proof claims completion (QED) while the Lean theorem cat_descended_is_base_mass is `sorry`. The .ts (validation: not_checked) and the Lean notes are honest that the descent/Frobenius infrastructure is not yet formalized, but the proof .md still presents a finished argument the Lean does not back."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Internal refs (def:descent-involution, lem:topological-mass-cat-eigenspace) exist and are used correctly; no external citation to mis-attribute; Lean -- Ref: is honest [manuscript] self-reference."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "topological-mass-cat-descended.md:1-10; descended-proof.md:5-8",
+        "notes": "'base-level descent rho_0' and the ascent embedding l_n / descent map d_{n+1} are used without restating their definitions in-block (deferred to def:descent-involution); the trace-compatibility 'tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)' is stated as fact without a citation handle. A reader cannot verify the precise meaning of m(rho_0) vs m(rho) without chasing the descent-involution definition. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The 'descended mass = base-level mass' identity is a structurally reasonable renormalization/level-reduction statement; no physics conflict at this abstraction."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing witness/compute; Lean obligation sorry'd (validation: not_checked)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "68d219883fb7",
+          "ts": "280d173c3865"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict=major-revision. referee_argument: The lemma statement ||tr(tau_hat alpha)|| = m(rho_0) is sound and its two-line proof is logically valid GIVEN its asserted inputs (im(tau_hat) ≅ End(A_n) via the ascent embedding, and trace-descent compatibility tr_n . d_{n+1} = tr_{n+1} on im(tau_hat)). The objection is maturity, not error: those inputs are asserted not proved, the Lean theorem is a `sorry` over a context class of unconstrained opaque operators (encoding none of the descent structure), and the narrative still writes QED. Unlike the sibling eigenspace lemma there is no false step — so this is a completeness/formalization gap (stated-not-proved) rather than a wrong claim. Formalize the descent/trace-compatibility infrastructure or downgrade the QED to a proof sketch."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

@@ -835,7 +835,250 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-axioms-primitive.md:11-23 — the four Markov axioms M1-M4 and z = 1/(√q+1/√q) are stated correctly (standard Jones/Wenzl). The disjoint factorisation τ_M(K_1⊔K_2)=τ_M(K_1)·τ_M(K_2)·z^k is the correct statement.",
+        "notes": "The mathematical statements are true; the defect is in what the Lean actually proves (see da-vacuous / da-lean-narrative-divergence)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean:136-180 — the 'discharge' theorems are vacuous ∃-repackaging. markov_iterated_stab_gen proves `∃ τ_k, τ_k = τ * z^k := ⟨τ * z^k, rfl⟩` (trivially true: every expression equals itself). disjoint_product_factorisation proves `∃ τ_joint, τ_joint = τ_K1*τ_K2*z^k` — again ⟨expr, rfl⟩. These do NOT prove the joint Markov trace EQUALS the product; they assert a real number exists equal to a chosen formula. The .md:33-35 claim 'The proof is by iterating M3 k times' is false of the Lean: nothing is iterated, the proof is rfl on a fabricated witness.",
+        "notes": "Self-assuming projection: the existential quantifier hides that no actual trace object is constrained. MarkovTraceAxioms_implies_disjoint_stabilisation (lean:197-202) likewise just re-states tau_stab_factor_eq_z."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No back-fitted numerical target; M1/M3 are honestly carried as class axioms (lean:111-120), acknowledged in authorNotes as 'unavoidable axiomatic content'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-axioms-primitive.md:37-41 + ts:20 authorNotes 'Status: closed, no sorrys' claim this DISCHARGES the MarkovDisjointStabilisation class from primitive axioms. But what is proved (∃ a number = the product formula) does not discharge a hypothesis that the actual disjoint trace factorises — it would discharge equally well for ANY formula. Presenting a trivial ∃-rfl as 'the conditional-class inter-knot-decoupling theorem now follows from the primitive Markov axioms' overclaims a vacuous lemma as a substantive discharge.",
+        "notes": "'closed, no sorrys' is technically true but misleading: sorry-free vacuity is still vacuity (AGENTS.md §1a no-audit-dodging)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No undisclosed parameter; z is the standard Markov-Jones parameter, k is the disjoint-strand count."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "markov-axioms-primitive.md:34-35 'The proof is by iterating M3 k times: each new disjoint strand contributes a factor z.' The narrative asserts an inductive argument over k that is the real content (each stabilisation step actually multiplies the trace by z). The Lean (lean:170-175) supplies no such induction — it manufactures the witness τ_K1·τ_K2·z^k by hand. The step 'M3 applied k times ⇒ factor z^k' is the missing lemma; it is stated in prose but not derived from MarkovTraceAxioms in Lean.",
+        "notes": "The gap is precisely the iteration the .md claims to perform."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "critical",
+        "evidence": "The .md:1 advertises a 'Lean sibling' and ts:6 title + authorNotes describe markov-axioms-primitive.lean defining MarkovTraceAxioms, proving markov_iterated_stab and disjoint_product_factorisation. (1) No sibling markov-axioms-primitive.lean exists at the block path (find returns none); the decls live in QOU/BraidKnot/MarkovAxiomsPrimitive.lean. (2) The .ts has NO lean.ref field, so the block is not formally wired to that library file at all. (3) Even the library proofs are weaker than the .md: ∃-rfl repackagings, not the claimed iterated-M3 factorisation of the actual trace.",
+        "notes": "Both a wiring gap (missing sibling + missing lean.ref) and a strength gap (Lean proves ∃x.x=expr, .md claims the trace factorises). proof-statement-integrity fails."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-axioms-primitive.ts:9 cites ['jones1985','wenzl1988'] for axioms M1-M4, and the library Lean line 169 attributes '[jones1985] doi:10.2307/1971403 (Markov axioms M1–M4)'. But references.ts:1487-1498 jones1985 is the 1985 BAMS announcement (DOI 10.1090/S0273-0979-1985-15304-2, 'A polynomial invariant for knots via von Neumann algebras', pp.103-111) — a short announcement that does NOT state the Hecke-trace axioms M1-M4. The DOI 10.2307/1971403 in the Lean comment is Jones 1987 (Annals, 'Hecke algebra representations of braid groups and link polynomials'), where M1-M4 actually appear. The cite key and DOI disagree, and the cited 1985 paper is mis-attributed for M1-M4.",
+        "notes": "Add a jones1987 reference (DOI 10.2307/1971403) and re-key; the 1985 BAMS note is the wrong source for the Markov axioms."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "markov-axioms-primitive.md:31 'where k is the number of disjoint strands stabilised' — the disjoint union K_1 ⊔ K_2 of two braids and the count k are not rigorously defined (k vs the strand counts of K_1,K_2; whether z^k absorbs the closure normalisation). The library class also drops M2 and M4 (lean:111-120 encodes only M1+M3), with authorNotes asserting 'M2 implicit, M4 follows from M3' — an unproven claim about which axioms are primitive.",
+        "notes": "The reduction 'M2 implicit / M4 from M3 via Hecke quadratic' is asserted, not formalised; combined with undefined k this leaves the factorisation's hypotheses ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No numerical/experimental value; pure algebra."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "No physics-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The block's claimed backing (a sibling markov-axioms-primitive.lean) is not reproducible: no such file exists, and the .ts carries no lean.ref to the library QOU/BraidKnot/MarkovAxiomsPrimitive.lean. A reader following the block cannot locate the Lean it describes without an out-of-band grep.",
+        "notes": "Wiring is irreproducible from the manifest; fix by adding lean.ref: 'qou:QOU.BraidKnot.MarkovTraceAxioms' (or similar) or correcting the .md's 'Lean sibling' wording."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "15ea8883cda0",
+          "ts": "7d7fb15af3e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "verdict: MAJOR-REVISION. The remark advertises a sorry-free discharge of MarkovDisjointStabilisation from primitive Markov axioms, but (a) the Lean 'proofs' are vacuous ∃-rfl repackagings that prove no factorisation, (b) the claimed sibling .lean does not exist and the .ts has no lean.ref, and (c) the jones1985 citation is mis-attributed for M1-M4.",
+        "notes": "referee_argument: The headline 'discharges the previously-axiomatic class hypothesis ... from a smaller axiomatic base' is not earned. `∃ τ_joint, τ_joint = τ_K1·τ_K2·z^k := ⟨_, rfl⟩` is true for any RHS and constrains nothing about the actual Markov trace; the substantive content (that iterating M3 produces z^k on the genuine trace) is asserted in prose and absent in Lean. Wire the block, cite Jones 1987 for M1-M4, and either prove the factorisation against a real trace functional or demote the 'discharge' claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.211Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

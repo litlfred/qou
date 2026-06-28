@@ -875,7 +875,261 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "The n=3 table (md:21-25) and Lean ring-identities (chi_V3/V21/V111_numerator_matches, lean:84-101) are correct algebraic facts: Φ_4=q²+1, Φ_8=q⁴+1, and the numerator matches hold by ring. The block is explicitly a conjecture, so the n=4 extrapolation is not asserted as proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "phi-d-syt-count-conjecture.lean:111-120 class PhiD4FConjecture carries `conjecture_residual : ℝ` + `conjecture_residual_eq_zero : conjecture_residual = 0`; every instance (lines 127-149) sets `conjecture_residual := 0` and discharges by `rfl` — a self-assuming projection that asserts nothing about the actual character difference. Likewise GeneralPhiD4FConjecture (lines 211-227): field `d_lambda_map_eq : ∀ f, d_lambda_map f = 4*f` with instance `d_lambda_map f := 4*f` proved by `rfl`; the docstring (lines 221-224) itself admits 'discharged trivially (the map IS 4·f by definition)'. These class fields are tautologies, not the conjecture's empirical content.",
+        "notes": "The genuine content (numerator-match theorems) is fine, but the 'conjecture classes' that the .md 'Lean theorems exported' table (md:88-89) presents as encoding the conjecture are vacuous — residual=0 by fiat, d=4f by definition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-d-syt-count-conjecture.md:3-13 the relation d_λ = 4·f_λ is introduced 'Per user direction' and then 'verified' against exactly the n=3 closed forms it was read off from (md:19-28); the multiplicity m_λ and denominator power e_λ are likewise back-solved from the n=3 data (md:32-43, e.g. m_λ·φ(d_λ)=4 'fixed at 4 by typed-B_3 word length'). The n=3 'verification' is fitting the pattern to the only data it has.",
+        "notes": "Honest as a conjecture (the prose says 'specific pattern' and flags n=4 as untested), so warn not fail — but the n=3 'all three match exactly' is not independent confirmation; the form was extracted from those three."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-d-syt-count-conjecture.lean:91 docstring 'All sorry-free, closed by `ring` after unfolding' and md:91 'All sorry-free, closed by ring after unfolding' invite reading the conjecture as Lean-verified. What is verified is three n=3 ring-identities plus tautological class discharges; the conjecture itself (general n) is open (lean:192-205, md:234 'open R&D'). The 'sorry-free' framing slightly over-sells.",
+        "notes": "Mitigated by explicit 'General-n status: open R&D' (lean:234); minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "phi-d-syt-count-conjecture.md:9-43: the conjecture introduces the constant factor 4 in d_λ = 4·f_λ, the multiplicity m_λ, and the denominator power e_λ (tied to content sum c(λ)) — three pattern parameters fixed by the n=3 fit with no canonical-chain derivation. The '4' has no stated origin beyond matching Φ_4/Φ_8 subscripts at n=3, and e_λ ∈ {1,3,5} for the three n=3 irreps is read off, not derived.",
+        "notes": "Off-menu coefficients (4, m_λ, e_λ) introduced to match observed cyclotomic factors; their canonical-chain provenance is absent. This is the kind of pattern-fit the production-vs-exploratory discipline would flag — though it is correctly housed as a conjecture/remark, not production."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-d-syt-count-conjecture.md:62-69 'If the conjecture holds at all n, ... this would close the categorical-chain derivation at every order for arbitrary multi-baryon typed braids' — a large inferential leap from a 3-point n=3 pattern to closing the c_k ladder at every order. The connective 'Combined with the Wenzl-bridge y_λ weights and the precision-ladder c_k extraction, this would close ...' assumes unproven downstream lemmas.",
+        "notes": "Conditional 'would' phrasing softens it; minor."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "phi-d-syt-count-conjecture.md:83-90 'Lean theorems exported' table lists `class PhiD4FConjecture (n λ_syt_count q)` as 'abstract conjecture class with d_λ field + residual' and the instances as 'n=3 discharges', implying the Lean encodes/verifies the conjecture. In fact (lean:111-149) the class's only Prop content (`conjecture_residual = 0`) is supplied as 0 by each instance — the Lean does NOT verify that the conjecture's predicted numerator equals the empirical character difference for those instances; the real matches are the separate ring-identity theorems against hard-coded closed forms, not against any computed χ_λ(β_n)−χ_λ(β_p). The narrative 'conjecture class ... n=3 discharges' overstates what the class proves.",
+        "notes": "proof-statement-integrity: the .md presents the class instances as discharging the conjecture; the class is a vacuous residual=0 carrier (see da-vacuous). The genuine n=3 content is the numerator-match ring identities, which compare two hand-written polynomials, not the conjecture's mechanism."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-d-syt-count-conjecture.md:76-79 and lean:219 cite [mathas1999] for a 'literature bridge' to Ariki-Koike cyclotomic Hecke algebras 'where Specht modules decompose along Φ_d(q) factors at the parameter-cyclotomic structure'. mathas1999 (references.ts:3151) is on Iwahori-Hecke and Schur algebras; the Φ_d-factor-decomposition-of-Specht-modules framing is suggestive but the cited work does not establish the specific d_λ = 4·f_λ pattern — the citation supports background, not the conjecture's claim, and the .md wording could be read as borrowing authority.",
+        "notes": "Background-bridge citation, not a load-bearing one; minor. The [kassel1995] and [mathas1999] -- Ref: comments in lean:218-219 are on the open general-n class, appropriately hedged."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-d-syt-count-conjecture: the 'observed factor' column (md:23-25) writes Φ_4(q)² for λ=(3) while the boxed/predicted quantity is d_λ=4f_λ=4 giving Φ_4 — the exponent (2 vs 1) is the multiplicity m_λ, defined only later (md:31-37) by a separate fitted relation m_λ·φ(d_λ)=4. So 'd_λ = 4f_λ' alone does NOT determine the observed factor; the reader must also supply m_λ and e_λ, which are introduced as separate undefined-until-fit quantities. The map λ↦(d_λ,m_λ,e_λ) is the actual object and it is under-specified at general n.",
+        "notes": "The headline boxed claim (md:10-13) captures only one of three needed parameters; m_λ, e_λ are defined by n=3-specific relations with no general-n definition."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "evidence": "phi-d-syt-count-conjecture.md:19-28 the only empirical support is n=3 (three irreps), and the pattern was extracted from precisely those three closed forms; the n=4 predictions (md:45-55) are explicitly untested ('Testing this is the next concrete R&D step'). A 3-point fit of a relation with three free shape-parameters (4, m_λ, e_λ) has no predictive margin — it is guaranteed to fit n=3 and carries no cross-validation.",
+        "notes": "Correctly flagged as a conjecture awaiting n=4/n=6 tests, so this is a fragility note, not a refutation. The danger is that downstream the d_λ=4f_λ pattern gets treated as established before n≥4 confirmation."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "phi-d-syt-count-conjecture.md:57-59,237-239 references `probe_per_wedderburn_block_ck.py` as the producer of the n=3 character differences but the block cites no witness JSON and gives no scriptHash/commit pin for the numbers in the n=3 table; the closed forms in the Lean are hand-transcribed. The empirical χ_λ(β_n)−χ_λ(β_p) values underlying the table are not reproducibly linked.",
+        "notes": "The Lean is self-contained (ring identities), but the claim that those polynomials ARE the computed character differences rests on an uncited probe script."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f4e561ef18ff",
+          "ts": "f23b46c7122d",
+          "lean": "5b57adf190ea"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "major",
+        "notes": "verdict: ACCEPT-AS-CONJECTURE / MAJOR-REVISION of Lean framing. referee_argument: The mathematical core (Φ_4=q²+1, Φ_8=q⁴+1, and the three n=3 numerator-match ring identities) is correct, and the block is honestly housed as a conjecture with n=4 flagged as untested. The legitimate objections are (1) the Lean 'conjecture classes' are vacuous — `conjecture_residual = 0` and `d_lambda_map f = 4*f` are discharged by fiat/definition (rfl), so the .md's 'Lean theorems exported / n=3 discharges' table oversells what is verified (da-vacuous, da-lean-narrative-divergence); and (2) the relation d_λ=4·f_λ plus the auxiliary m_λ, e_λ are a three-parameter pattern read off a three-point n=3 dataset 'Per user direction' with no canonical-chain derivation of the factor 4 and no cross-validation (da-hidden-dof, da-empirical-fragility, da-circular). Recommend: replace the residual=0 class field with a field actually relating the predicted Φ-factor to the computed character difference, and down-weight 'would close the derivation at every order' until n=4 is tested."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.158Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

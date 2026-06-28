@@ -1568,7 +1568,237 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "All eight catalogued coefficients (orders 0-7) reproduce exactly from the stated closed form via sympy series; verified independently (qbeta-delta-tau-surrogate-taylor-coefficients.md:50, table lines 9-16)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The Lean decl `delta_tau_M_surrogate_taylor_witness` (QBetaDeltaTauSurrogateTaylorCoefficients.lean:37-46) is a hardcoded lookup table; the order-2..7 theorems (lines 60-81) are `rfl` against that table, not against an actual `iteratedDeriv` of `delta_tau_M_surrogate`.",
+        "notes": "The .md 'Honest scope' (lines 35-43) discloses this: orders 2-7 are 'catalogued from witness; formal proof deferred'. So the vacuity is explicitly flagged, not disguised — warn rather than fail. The order-0/1 theorems do tie to genuine derivative proofs upstream."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No target is back-fitted: the coefficients are derived top-down from a fixed closed form (md:50) by Taylor expansion; no calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Title says 'Catalogue', kind is proposition-as-catalogue, and the 'This block does NOT establish' section (md:35-43) explicitly bounds the claim to a witness catalogue with two sorry-free anchors. No derived/proved overreach."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "No free parameter introduced; the object is a pure rational function of q with no calibration. Witness flags y_λ is a non-canonical rational surrogate, but that is disclosed, not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Each coefficient follows mechanically from sp.series of the stated closed form; no logical gap between the closed form and the table."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "The .md presents the c_n as 'Taylor coefficients of delta_tau_M_surrogate', but the Lean theorems prove only that a lookup-table function returns the catalogued rationals (rfl), not that those rationals equal the n-th Taylor coefficient of the surrogate function for n≥2.",
+        "notes": "Honestly labelled in both .md ('formal proof deferred') and the Lean docstring (QBetaDeltaTauSurrogateTaylorCoefficients.lean:31-36). The divergence is acknowledged scope, not a hidden weaker-claim — warn."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "cites: [hoefsmit1974] (ts:10) is the standard Hoefsmit representation source underlying the Hecke per-block data; appropriate background citation, not load-bearing for the rational arithmetic."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "`delta_tau_M_surrogate` is a 'surrogate'; the witness c_3_status field records 'the y_λ used here is a NON-CANONICAL rational surrogate (canonical y_λ involves √q)'. The .md does not surface that the surrogate differs from the canonical object beyond the word 'surrogate'.",
+        "notes": "Reader could mistake the surrogate's Taylor data for the canonical Δτ_M's. A one-line note that the surrogate replaces √q-weighted y_λ with rational surrogates would remove the ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "These are exact rational Taylor coefficients (no float match, no q0 evaluation). Cross-anchor swing in the witness pertains to c_3=-2 NEAR-MATCH, which this block does not claim; the block claims only the exact rationals.",
+        "notes": "The block correctly does NOT assert c_3=-2 Taylor-exactness; witness c_3_status keeps it as NEAR-MATCH/open."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Pre-archimedean combinatorial catalogue (tagged pre-archimedean); no physical observable asserted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "evidence": "Witness qbeta-c3-multiblock-recursion-attack.witness.json reproduces: scriptHash e03423a5bf16 matches current sha256 of computations/qbeta/qbeta_c3_multiblock_recursion_attack.py exactly (no drift); taylor_coeffs_w_expansion field matches the .md table for all orders 0-7, and I independently re-derived all eight."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b77c350e92aa",
+          "ts": "c586c83a180d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "Block is a faithful, reproducible, exactly-verified rational catalogue with an explicit honest-scope section. Strongest objection: orders 2-7 in Lean are lookup-table `rfl`s, not derivative proofs, and the 'surrogate' is a non-canonical (rational, not √q) stand-in for the canonical Δτ_M.",
+        "notes": "verdict: accept-with-minor-revisions. referee_argument: the catalogue is correct and reproducible; tighten by (1) noting the surrogate's deviation from canonical y_λ, (2) making clear the Lean n≥2 theorems certify the table, not the derivative."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }

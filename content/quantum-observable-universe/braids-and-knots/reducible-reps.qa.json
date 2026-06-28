@@ -835,7 +835,230 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "reducible-reps.md:19-22 claims this Gröbner–Shirshov construction 'produces the distribution algebra Dist(G) of the lifted formal group G' in positive characteristic, and that 'the strong multiplicativity condition guarantees that the Frobenius relation is preserved at every filtration degree'.",
+        "notes": "As a remark interpreting prop:skew-poisson-integration these are sketch-level assertions stated as facts; the positive-characteristic Dist(G) deformation and the Frobenius-preservation claim are non-trivial and are only cited, not derived here. Mild overclaim for a remark, but not a structural one."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "reducible-reps.md:14-19 asserts the GS normal-form basis 'coinciding with the Lusztig divided-power basis' as the resolution of the q-Serre obstructions, with no intermediate argument that the non-overlapping leading monomials yield exactly that basis.",
+        "notes": "The 'whose resolution (composition lemma) yields a normal-form basis coinciding with the Lusztig divided-power basis' is a 'therefore' with the key identification (GS NF = Lusztig basis) supplied by assertion. Acceptable in a remark, flagged as minor."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "Remark has no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No cites[] and no -- Ref: (no .lean). Internal cross-refs only (#sec:enveloping-algebras, prop:skew-poisson-integration)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "severity": "minor",
+        "evidence": "reducible-reps.md:2 writes ρ: π₁(P¹(ℂ)∖K) → PSL(2,ℂ) and says reducible reps are 'all rotations around a common axis' (l.5). PSL(2,ℂ) elements fixing a common point are upper-triangular but are not in general 'rotations' (those are the elliptic/SU(2) subgroup); the term is used loosely.",
+        "notes": "Also 'gr U_q ... commutative product' / 'flat deformation' (l.13-15) uses standard but unstated PBW conventions. Minor; register is interpretive."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No numerical claims."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No physics observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "No backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "876f17c03013",
+          "ts": "4ae98fcb957e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T05:36:08.012Z",
+        "reviewed_sha": "373c5c9a90849817e8274c39b72088b56c6f2b10",
+        "notes": "verdict: accept-as-remark. referee_argument: An interpretive remark interpreting prop:skew-poisson-integration. The strongest objection is that the positive-characteristic Dist(G) deformation and the GS-NF = Lusztig-basis identification (l.18-22) are asserted, not argued, and 'rotations around a common axis' (l.5) mischaracterises a general reducible PSL(2,ℂ) rep. None rise to a structural defect for a remark; demote-to-prose is not warranted since it interprets a named proposition."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:21.728Z"
+  "updated_at": "2026-06-28T05:36:08.012Z"
 }
