@@ -111,7 +111,15 @@ def _tr_M_word_impl(word: tuple, n: int, z, h, *,
     if not word:
         return sp.Integer(1) if hasattr(z, "is_number") else 1
     max_gen = max(word)
-    if max_gen < n - 2:
+    # Normalize to the word's natural algebra H_{max_gen+2}: the Markov
+    # trace value is independent of the ambient n (the trace is consistent
+    # under the H_{n} ⊂ H_{n+1} embedding), so n is advisory. We already
+    # SHRINK when n is too large (max_gen < n-2); handle the symmetric
+    # PROMOTE case (max_gen > n-2, a generator above σ_{n-2}) the same way.
+    # Without this, top = n-2 is absent from the word, top_positions is
+    # empty, and `top_positions[-1]` below raised IndexError on any word
+    # whose highest generator exceeds σ_{n-2} (e.g. tr_M_word([1], 2)).
+    if max_gen != n - 2:
         return tr_M_word(word, max_gen + 2, z, h,
                           depth=depth + 1, max_depth=max_depth)
     top = n - 2
