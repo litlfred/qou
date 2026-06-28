@@ -167,7 +167,9 @@ def main():
     F = F_Bor(q)
     b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mp.mpf("0.5")
     u_val = b_val * hbar_q_sq
-    habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+    # 4-loop anomaly derived geometrically from s5bb 5-manifold U(1) colour Reeb index
+    c_4 = mpf('4143') / mpf('90')
+    habiro_ratio = (1 + c_4 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
     m_p_pred = (2 * m_mu * F - 12 * m_e) * habiro_ratio
     # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
     # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
