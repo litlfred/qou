@@ -34,10 +34,10 @@ $$
 $$
 
 *where $z_{\mathrm{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$.  The
-numerical evaluation at $q = q_0$ and the matching CODATA residual
+canonical evaluation at $q = q_0$ and the matching CODATA residual
 are tabulated in
 [`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md)
-(Observations chapter; per the manuscript convention numerical
+(Observations chapter; per the manuscript convention canonical
 substrate values stay out of geometry / braids chapters and are
 collected with the other Physical-Observations numerology there).*
 

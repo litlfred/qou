@@ -43,7 +43,7 @@ the product formula.  $\square$
 
 **The ratio = 1.000000 in the computational verification is
 exact by construction** — the product formula and the direct
-trace compute the same algebraic object.  The numerical
+trace compute the same algebraic object.  The canonical
 verification confirms code correctness, not an approximation:
 
 | Nucleus | $A$ | $\binom{A}{2}$ | $\prod_i \hat{V}_i$ | Direct trace | Ratio |

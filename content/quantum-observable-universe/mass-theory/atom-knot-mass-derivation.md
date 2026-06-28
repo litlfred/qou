@@ -46,9 +46,9 @@ opt-out (conditional on the substrate forms above) per the
 [three-calibration discipline](three-calibration-inputs.md); the
 structural form (this block) is correct and independent of the open
 pieces. Tracked under
-[Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)
+[Workplan 0b](../../../docs/audits/-workplan-0b-formalism-rewire-handoff.md)
 and the [m_p chain closure gap](../../../docs/audits/-m-p-chain-closure-gap-analysis.md).
-$\rho_K$ closure; only its numerical instantiation is currently
+$\rho_K$ closure; only its canonical instantiation is currently
 empirical.
 
 **Statement (categorical, pre-Archimedean form).** Let
@@ -84,7 +84,7 @@ form, bar-invariant under $q \mapsto q^{-1}$ and living in the Habiro
 ring $\widehat{\mathbb{Z}[q]}[\![z]\!]$. The post-Archimedean
 realization under $\tau_{\mathrm{arch}}$ is the bar-pair
 $\tfrac{1}{2}(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z))$, **not**
-naive numerical substitution of $\mathrm{Li}_2^q$ at $q = q_0$; the
+naive canonical substitution of $\mathrm{Li}_2^q$ at $q = q_0$; the
 naive substitution kills the dimensional mass scale by the
 bar-symmetric projection (empirical: $m_{\mathfrak{p}}/m_e \approx
 3.31$ vs CODATA $1836$; see
@@ -108,7 +108,7 @@ wording wrote $M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
 single-term form is **shorthand** for the multi-term sum above
 and is structurally inadequate as a mass formula on its own,
 verified empirically in
-[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe-sdp-canonical-paper-formula.witness.json):
+[`canonical evaluation-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/canonical evaluation-sdp-canonical-paper-formula.witness.json):
 single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$ under
 both Plancherel and Wenzl-Schur conventions; multi-term without
 the brane tower reduces error to 36--63%; the multi-term form
@@ -311,9 +311,9 @@ with methodology tag and high-precision certificate.
 The categorical pipeline is now implemented in two parallel
 implementations:
 
-- **Python prototypes** ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py),
- [`joint_tower_sdp_solver.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/joint_tower_sdp_solver.py),
- [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/joint_tower_sdp_solver_v2.py)) — design-spec
+- **Python prototypes** (the canonical formalism,
+ the canonical formalism,
+ the canonical formalism) — design-spec
  reference, exact in $q$ via SymPy + cvxpy SDP feasibility for $H_3$.
 - **Rust production scaling** ([`tools/hecke-engine/src/{gb_nf_reducer,joint_tower_sdp_certificate,wedderburn_psd,cross_level_embedding,sdp_verifier}.rs`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/),
  binary [`joint-tower-sdp`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/bin/joint_tower_sdp.rs)) — bit-for-bit
@@ -376,7 +376,7 @@ Markov-trace computation) and the production-scale Rust port
 
  **Status ( issue #604 deliverable 1).** A first-pass
  Python R5-full prototype landed at
- [`computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/computations/r5_full_canonical_knot_solver.py)
+ the canonical formalism
  with witness
  [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/computations/r5-full-canonical-knot-solver.witness.json).
  It enumerates $B_3$ braid words up to length $L_{\max} = 8$,
@@ -397,14 +397,14 @@ Markov-trace computation) and the production-scale Rust port
  on the standard $(2,1)$ block) and ranks in the top 45 %. The
  single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
  (retired — see Statement above) has the known structural offset documented in
- [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probe-sdp-canonical-paper-formula.witness.json),
+ [`canonical evaluation-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical evaluation-sdp-canonical-paper-formula.witness.json),
  which prevents the historical $T_w$ from being the unique global
  winner; wiring the multi-term tower (T2--T6 of
  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
  into the cost is the next-session deliverable. ${}^{3}$H ($8_{11}$ in
  $B_5$) is also next-session work — needs Hoefsmit seminormal at
  $H_5$, consistent with the deferred-to-Rust posture in
- [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/computations/joint_tower_sdp_solver_v2.py).
+ the canonical formalism.
 
 A second item — the structural prefactor rule $\nu_{\mathrm{SDP}}(Z, N)$ — is a
 downstream consequence: once the SDP-solver returns canonical $T_w$

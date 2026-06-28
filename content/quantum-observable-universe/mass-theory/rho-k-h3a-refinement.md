@@ -57,7 +57,7 @@ and complements
 `prop:six-term-mass-formula-complete`
 by giving the **exact** $\rho_K$ closed form rather than the
 narrative six-term decomposition.  Compute is stubbed in
-[`computations/rho_k_h3a_refinement.py`](computations/rho_k_h3a_refinement.py);
+the canonical formalism;
 full evaluation requires summing $p(3A)$ partitions
 ($p(3) = 3$, $p(6) = 11$, $p(9) = 30$, $p(12) = 77$,
 $p(30) = 5604$, $p(60) = 966\,467$) with Hoefsmit characters

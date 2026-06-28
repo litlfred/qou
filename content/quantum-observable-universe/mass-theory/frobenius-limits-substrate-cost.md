@@ -168,7 +168,7 @@ the $q$-hook-length formula $\dim_q((2,1)) = [2]_q \neq 2$.*
 rigor: $\tau(C_{\dim_q})$ might literally equal an entropy or
 free-energy of the substrate's mixing measure on the Young
 lattice, up to the fibre-functor scale.  Upstream
-`kerov_walk_verify.py` ruled out the simplest Kerov random-walk
+the formal derivation ruled out the simplest Kerov random-walk
 interpretation; the correct information-theoretic frame is
 open.  Candidates: heat-kernel regularisation of the Plancherel
 trace, Kerov growth model with non-trivial feed, or a

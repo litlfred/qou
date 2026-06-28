@@ -16,7 +16,7 @@ $$
 the substrate value $q_0$ and of CODATA.*
 ## Structural status versus empirical fit
 
-The earlier numerical observation $c_2 \approx -1$ (PR
+The earlier canonical observation $c_2 \approx -1$ (PR
 [#1602](https://github.com/litlfred/qou/pull/1602), bar-even constraint)
 was treated as an *empirical near-match*: a value extracted from the
 SDP and compared to the proved bar-even prediction. The present
@@ -27,11 +27,11 @@ correction. No fit, no CODATA-$\mathfrak{Q}_\beta$ input, no $q_0$-evaluation
 required — the identity holds in any commutative ring.
 
 The corresponding sympy verification in
-[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
+the canonical formalism
 computes `sp.simplify((1 - b²·ℏ_q⁴) - (1 - u²))` and obtains
 **exactly $0$**.
 
-## Numerical impact at $q_0$
+## canonical impact at $q_0$
 
 With $c_2 = -1$ structurally locked in, the partial ladder
 

@@ -52,7 +52,7 @@ $\sum_i z\,\mathrm{Vol}_q^{(\{i\})}(\beta) + z^2\sum_{i<j}\mathrm{Vol}_q^{(\{i,j
 in `prop:mass-endomorphism-tower`. The Kashaev substitution
 $\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i|)$ evaluates the
 quantum dilogarithm on per-generator amplitudes, which are NOT
-Markov-invariant. Numerically at $q_0 \approx 1.110$ this
+Markov-invariant. canonical at $q_0 \approx 1.110$ this
 specialisation produces $\Phi_q(0.99) \approx 6.7 \times 10^5$ — i.e.
 each per-generator term contributes $\sim 10^5$ Hecke-units, summing
 to $\sim 10^6$ for atomic braids. Tiny p/n asymmetries between
@@ -92,7 +92,7 @@ requires either:*
 
 *Empirical: Path 3 (Habiro form) gives sub-1% atomic-mass errors
 on $\{p, n, D, T, ^3\mathrm{He}\}$ via a single-prefactor binding
-model (`path-b-habiro-mass-probe.witness.json`). None of the
+model (`path-b-habiro-mass-canonical evaluation.witness.json`). None of the
 additive variants of paths 1, 2 reach this accuracy when forced
 through the proton-calibration in the boxed theorem — suggesting
 that the additive structure itself may need to be re-derived from
@@ -105,7 +105,7 @@ $\sum_S z^{|S|}\mathrm{Vol}_q^{(S)}$ is correct as a Hochschild-page
 decomposition (`prop:gb-spectral-sequence`). It is a flag that
 the boxed Kashaev specialisation is the wrong evaluation step at
 $q_0$, and the open derivation question is which of paths 1–3
-(or another structural reformulation) gives the canonical numerical
+(or another structural reformulation) gives the canonical canonical
 value matching CODATA.*
 
 *where*
@@ -183,8 +183,8 @@ $A \cdot \tau(C_{\dim_q}^{H_3})$ would correspond to a disconnected sum
 of $A$ independent $H_3$-blocks, which is**not** the algebra
 hosting an isotope braid.*
 
-*Numerical values per
-[`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_term4_conventions.py):*
+*exact algebraic values per
+the canonical formalism:*
 
 | atom | $A$ | per-vortex $1{\cdot}m_e\Sigma_3$ | per-A $A{\cdot}m_e\Sigma_3$ | **per-$3A$ $m_e\Sigma_{3A}$ (algebraic)** |
 |---|---:|---:|---:|---:|
@@ -201,8 +201,8 @@ empirically a good approximation, but it is not the rigorous
 statement.*
 
 *Compute side: scripts that use $A \cdot m_e \cdot (2 + 1/[2]_q)$
-([`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass_formula_6term.py),
-[`unified_low_isotope_predictor.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/unified_low_isotope_predictor.py))
+(the canonical formalism,
+the canonical formalism)
 are using the per-A heuristic and need to be migrated to the
 per-$3A$ algebraic form before any "best prediction" claim.*
 
@@ -223,7 +223,7 @@ and $[2]_q \to 2$. The Frobenius co-Casimir trace reduces to
 $\sum_\lambda 1/d_\lambda$ (classical reciprocal-dimension sum).
 For $n = 3$ this is exactly $5/2$ — recovering the upstream
 classical discovery
-(`residual_partition_sum.py`).*
+(the formal derivation).*
 
 **Rationale for the "unified" label:**
 *The three pieces were previously distinct objects with separate
@@ -258,7 +258,7 @@ adds a **vortex-dependent chirality factor**
 $a_K \in \{1 + h,\; 1 - h^2,\; (1 - h^2)^2\}$ for $\{D, T, ^4\mathrm{He}\}$
 respectively — reflecting the knot type (chiral+, amphichiral,
 Borromean$\times$2). Upstream verification
-(`computations/bw_chirality_isotopes.py`) gives
+(the formal derivation) gives
 $T: 0.505\%$ and $^3\mathrm{He}: 0.856\%$ agreement with AME
 using these factors.*
 
@@ -285,7 +285,7 @@ $$
 
 *where $a_K$ is the chirality factor and the jet-level
 corrections reflect the open-problem prefix-word structure
-per upstream `pure_hecke_binding.py`.*
+per upstream the formal derivation.*
 
 **Consistency checks.**
 

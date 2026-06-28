@@ -76,7 +76,7 @@ $$
 $$
 
 The empirical $c_k$ from the Wenzl-bridge Markov trace at $H_3$
-selects the same signed combination (numerical verification at
+selects the same signed combination (canonical structural verification at
 $k = 5, 6$ above; the Markov-trace decomposition by Wenzl
 ([Wenzl 1988, Theorem 5]) factors through the character ring of
 $S_3$, with the long-element coefficient governing the

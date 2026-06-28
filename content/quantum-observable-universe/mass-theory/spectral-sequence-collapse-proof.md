@@ -47,7 +47,7 @@ Frobenius integral.  The chirality stratum (S-anti-invariant rank
 $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 
 **Practical consequence.**
-*Numerical pipelines need only enumerate central idempotents $e_\lambda$,
+*categorical derivation steps need only enumerate central idempotents $e_\lambda$,
 compute their GB-depth, evaluate $\chi_\lambda$ via Hoefsmit seminormal
 form ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)), and
 sum $\sum_\lambda w_\lambda \cdot \chi_\lambda(\beta) / \dim_q V_\lambda$

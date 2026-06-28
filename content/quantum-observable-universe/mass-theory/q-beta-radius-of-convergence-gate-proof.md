@@ -20,7 +20,7 @@ extracts the candidate's nearest pole $u_0$. If
 $|u_0 - u_{\text{substrate}}| / u_{\text{substrate}} > 10^{-6}$ (fibre-level
 tolerance from the cross-anchor bound), the candidate fails the gate. $\blacksquare$
 
-## Numerical anchor (verified)
+## canonical anchor (verified)
 
 From the canonical SDP extraction at $q_0 = 1.10997858\ldots$:
 

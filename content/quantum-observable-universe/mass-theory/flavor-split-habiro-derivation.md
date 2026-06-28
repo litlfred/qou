@@ -1,6 +1,6 @@
 # Derivation Scaffold: Flavor Split $m_n - m_p$ Habiro Element
 
-To structurally derive (rather than numerically probe) the intrinsic $0.10\%$ residual for the nucleon flavor split $\Delta_{pn}$, we must treat the weak $\beta$-decay insertion precisely as we did the photon vertex in the $\alpha_{\text{EM}}$ derivation.
+To structurally derive (rather than canonical canonical evaluation) the intrinsic $0.10\%$ residual for the nucleon flavor split $\Delta_{pn}$, we must treat the weak $\beta$-decay insertion precisely as we did the photon vertex in the $\alpha_{\text{EM}}$ derivation.
 
 ## 1. Topological Parity and the Hopf Antipode
 The proton ($uud$) and neutron ($udd$) differ topologically by a single crossing reversal, which corresponds to the Hopf antipode $S(T_w) = T_{w^{-1}}$ in the Hecke algebra $H_n(q)$. 

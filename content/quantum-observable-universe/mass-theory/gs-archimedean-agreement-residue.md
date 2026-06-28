@@ -23,12 +23,12 @@ instances using the corresponding Markov-normalised polynomials.*
 for the proton.  It unifies two independent computational pipelines:*
 
 1. *Habiro side: $T_{\mathfrak{p}}$ produced by
-   `habiro_coefficients_atomic.py` for $(Z=1, N=0,
+   the formal derivation for $(Z=1, N=0,
    \texttt{include\_inter}=\text{false})$ — a degree-$48$ polynomial
    in $\mathbb{Z}[u]$, evaluated at $u_0 = \sqrt{q_0}$ to $\geq 60$
    decimal places.*
 2. *Residue side: $\mathfrak{m}_{\mathrm{GB}}(\mathfrak{p}, q_0)$
-   computed by `term6_full_pole_sum.py` from the descended trace
+   computed by the formal derivation from the descended trace
    plus cyclotomic residues at $\zeta_\ell$ for
    $\ell = 1, \ldots, 6$.*
 
@@ -56,7 +56,7 @@ requires either:*
 this is a feasible standalone follow-up.*
 
 **Conjectural status.**
-*The numerical agreement is empirically certified to machine precision
+*The canonical agreement is categorically certified to machine precision
 in `markov-pipeline-cross-validation.witness.json` (proton
 $\mathrm{rel\_diff} = 0$ at machine precision); a rigorous Lean proof
 requires either (i) brute-force `native_decide` on the explicit

@@ -43,14 +43,14 @@ $$
 *Combine.* $2 i\,S_3(2\pi/5) = 8 i \pi^3 / 125$, so
 $S_3(2\pi/5) = 4 \pi^3 / 125$. $\square$
 
-### Numerical verification at 50 dps
+### canonical structural verification at 50 dps
 
-Verified by [`kummer_reflection_zeta5.py`](https://github.com/litlfred/qou/blob/main/computations/kummer_reflection_zeta5.py)
+Verified by the canonical formalism
 ([witness JSON](https://github.com/litlfred/qou/blob/main/computations/kummer-reflection-zeta5.witness.json)):
 
 | Quantity | Value (50 dps) |
 |---|---|
-| Direct: $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5)$ via `mpmath.polylog` | $0.99220085376959424561524208214724464647120923410832\ldots$ |
+| Direct: $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5)$ via `exact algebraic structures.polylog` | $0.99220085376959424561524208214724464647120923410832\ldots$ |
 | Closed form: $4 \pi^3 / 125$ | $0.99220085376959424561524208214724464647120923410832\ldots$ |
 | Residual | $1.34 \times 10^{-51}$ |
 | Kummer formula LHS vs RHS residual | $5.35 \times 10^{-51}$ |

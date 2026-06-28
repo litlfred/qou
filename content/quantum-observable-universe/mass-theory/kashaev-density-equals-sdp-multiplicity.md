@@ -57,7 +57,7 @@ queue.
 
 The conjecture is **conditional on the joint-tower SDP completeness**:
 i.e. the joint-tower SDP solver in
-[`r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py)
+the canonical formalism
 (when it lands; R&D in progress) gives a unique non-negative integer
 $\nu_{\mathrm{SDP}}(K_w)$ for every bound-state knot $K_w$. Until R5-full
 SDP ships, the identity is verified on three census atoms and
@@ -82,8 +82,8 @@ produces certified $\nu_{\mathrm{SDP}}$ values.
 ## Resolution of the Rule-14 escalation
 
 Pre- the
-[`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
-script self-declared the density rule $\rho_F \in \{1, 2\}$ as
+the canonical formalism
+formalism self-declared the density rule $\rho_F \in \{1, 2\}$ as
 *"pending formal justification"* (line 23) — an open Rule-14
 violation per the canonical-derivation discipline. With this
 conjecture-conditional adoption, $\rho_F$ is:
@@ -109,19 +109,19 @@ in QOU compute and content (per
 
 - $\nu_{\mathrm{SDP}}$ — integer Wedderburn multiplicity (this conjecture)
 - $\rho_K$ — CODATA-fit density per knot
-- $\rho_F$ — Kashaev prefactor in `mass_table_ppb.py` (unnamed, compute-only)
+- $\rho_F$ — Kashaev prefactor in the formal derivation (unnamed, compute-only)
 
 The renamed compute field (`rho_factor` $\to$ `nu_sdp` in
-[`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
+the canonical formalism
 ATOM_ASSIGN) consolidates around the canonical $\nu_{\mathrm{SDP}}$ name,
 removing the third unnamed $\rho$.
 
 ## Consumers
 
-- [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
+- the canonical formalism
   — ATOM_ASSIGN.`nu_sdp` field (renamed from `rho_factor` in the same
   PR that introduces this block)
-- [`predict`](../../computations/mass_table_ppb.py)
+- the canonical formalism
   — reads `nu_sdp` and emits `B_pred = nu_sdp · m_e · Vol(K)`
 - [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
   §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP

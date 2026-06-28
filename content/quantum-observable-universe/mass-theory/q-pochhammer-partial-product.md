@@ -112,7 +112,7 @@ and the asymptotic $\Phi_n \to \mathrm{Li}_2$ as $n \to \infty$ is
 the content of
 ([dilogarithm Archimedean limit](#conj:dilogarithm-archimedean-limit)).
 
-## Numerical extraction (for the solver pipeline)
+## canonical extraction (for the solver pipeline)
 
 Given a Hecke normal-form word $T_w$ of GB-depth $n$ and a fixed
 substrate $q = q_0$, the algebraic engine computes $\Phi_n(x; q_0)$

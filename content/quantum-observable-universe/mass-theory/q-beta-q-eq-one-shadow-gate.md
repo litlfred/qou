@@ -50,4 +50,4 @@ A candidate $F(q)$ must clear (in order):
 5. CFinite recurrence          PASS (generates c_k from kernel)
 ```
 
-With all four §4 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a numerical fit.
+With all four §4 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a canonical fit.

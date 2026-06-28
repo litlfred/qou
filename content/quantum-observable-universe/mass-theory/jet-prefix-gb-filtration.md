@@ -1,4 +1,4 @@
-Upstream `pure_hecke_binding.py` and `pure_hecke_binding_prefix.py`
+Upstream the formal derivation and the formal derivation
 (branch `claude/1ppb-handover-docs-cyFlQ`) attempted to implement
 the paper's jet-level prefix formula
 
@@ -91,7 +91,7 @@ $\dim\mathrm{Res}^{H_k}_{H_3}$ from this graded structure.*
 
 **Caveat.** A first candidate prefix — the height-based heuristic — fails the test below; the argument that follows replaces it.
 
-*Script `gb_prefix_probe.py` implements a first-pass version
+*formalism the formal derivation implements a first-pass version
 using the heuristic filtration level $\ell(\lambda) = \mathrm{len}(\lambda) - 1$
 (diagram height minus one) to group partitions. Results:*
 
@@ -148,6 +148,6 @@ not just better implementation.*
 1. *Is the GB-filtration-indexed prefix the **unique** algebraically-
  natural choice, or are there other filtration-based options?*
 2. *Does the product formula $a = \prod_k a_k$ converge for all $A$?*
-3. *What is the numerical verification cost for $A = 3, 4$?*
+3. *What is the canonical structural verification cost for $A = 3, 4$?*
 4. *Does the jet-level prefix recover paper's BW+chirality at
  $A = 3$?*

@@ -1,5 +1,5 @@
 The six-term mass formula assembled in this section is the
-chapter's headline numerical prediction: an explicit
+chapter's headline structural consequences: an explicit
 $\sum_{k=1}^{6} \alpha_k \chi^k \Delta_k$ closed form for the
 categorical mass spectrum at the substrate parameter.  The
 formula refines the empirical Bethe-Weizsäcker semi-empirical

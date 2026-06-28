@@ -14,7 +14,7 @@ Hecke element $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form.
 The GB-NF carries a length filtration $\ell$ and a jet-order grading
 ($\ell$ from Coxeter length on $S_{n_0}$; jet-order from the temporal
 sequence of reductions; both certificate components verified for
-small cases by [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py)
+small cases by the canonical formalism
 and locked in [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)).
 
 **Yekutieli at finite slice** (multiplicative integration on surfaces,

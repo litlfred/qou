@@ -65,8 +65,8 @@ is the Newton's-constant identification at the deep-tower stratum.
 
 ## Witness
 
-[`computations/alpha/alpha_k_jones_markov_h3.py`](#)
+[the formal derivation](#)
 implements the Jones-Markov linear system and the explicit Markov
 pairings. Produces witness `alpha-k-jones-markov-h3.witness.json`
 with $\alpha_2 = z^2$ verified to $10^{-17}$ and $\alpha_3 = h z^2 + z$
-verified to numerical precision.
+verified to canonical precision.

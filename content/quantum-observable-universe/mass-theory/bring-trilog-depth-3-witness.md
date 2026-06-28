@@ -1,5 +1,5 @@
 **Conjecture (Bring trilog at $\zeta_5$ as depth-3 grouplike value;
-50-digit numerical witness with functional-equation cross-validation).**
+50-digit canonical witness with functional-equation cross-validation).**
 
 *The depth-3 grouplike of $\mathcal{H}_q$ at the primitive 5th root
 of unity $\zeta_5 = e^{2\pi i / 5}$ — the canonical Bring-natural
@@ -20,10 +20,10 @@ $$
   \;}
 $$
 
-### Numerical witness (50-digit precision)
+### canonical witness (50-digit precision)
 
-Computed via `mpmath.polylog` at `mp.dps = 50` (script
-[`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/computations/bring_trilog_zeta5_depth_3.py),
+Computed via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism
+the canonical formalism,
 witness
 [`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-trilog-zeta5-depth-3.witness.json)):
 
@@ -58,7 +58,7 @@ $$
   -\tfrac{24}{25}\,\zeta(3).
 $$
 
-**Numerically verified** at 50 dps:
+**canonical verified** at 50 dps:
 
 | Side | Value (50 dps) |
 |---|---|
@@ -69,7 +69,7 @@ $$
 The imaginary part of the orbit sum vanishes (complex-conjugate
 cancellation between $\zeta_5^k$ and $\zeta_5^{5-k}$), verified to
 $1.3 \times 10^{-51}$. **This is a 50-digit cross-validation
-independent of `mpmath`'s polylog implementation** — the functional
+independent of `exact algebraic structures`'s polylog implementation** — the functional
 equation forces the relation regardless of how each individual
 $\mathrm{Li}_3(\zeta_5^k)$ is computed.
 
@@ -112,7 +112,7 @@ identifications, in order of plausibility:
 
 ### Significance for B1
 
-This is the **first depth-3 numerical witness** for
+This is the **first depth-3 canonical witness** for
 [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).
 Combined with [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)
 (depth 2), B1 is now **falsifiability-tested at depths 2 and 3**.
@@ -120,4 +120,4 @@ Combined with [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eig
 The functional-equation cross-validation provides genuine 50-digit
 agreement (depth-2 witness only had ~13-digit cross-validation via
 Clausen partial sum); the depth-3 instance is therefore the
-*numerically tightest* graded-Mikusiński instance recorded.
+*canonical tightest* graded-Mikusiński instance recorded.

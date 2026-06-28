@@ -39,7 +39,7 @@ endomorphism algebra. $\square$
 
 2. **Convention-dependent regularizer dominates the brane-tower
    variation.**  The non-categorical brane-tower regularization
-   contributions vary by orders of magnitude across the six probe
+   contributions vary by orders of magnitude across the six canonical evaluation
    families — but their *difference from* $|\tau|$ is the same
    non-categorical regularizer.  The structural gap
    $\Delta_{\mathrm{cat}}$ should be the same across all probed

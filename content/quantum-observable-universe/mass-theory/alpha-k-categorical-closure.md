@@ -102,10 +102,10 @@ $|\hat V_i^{\text{full}}|$) may give a different and possibly
 correct closure; that evaluation requires atomic-braid input and
 is not a substrate-only computation.
 
-## Numerical evidence (substrate level)
+## canonical evidence (substrate level)
 
 Computed in
-[`computations/derived_masses.py`](https://github.com/litlfred/qou/blob/main/computations/derived_masses.py)
+the canonical formalism
 at $q_0 \approx 1.110$:
 
 - $E_0^{(N=0)} \approx :val[E_0_N0_MeV]{precision=4}$ MeV — single Planck-tick (CAL-1 + CAL-2)

@@ -62,7 +62,7 @@ proved" downstream.
    $n_q=2$ vs $4.4\times 10^5$ ppm at $n_q=1$). It is **not derived** from
    the substrate; the `meson_squaring_exponent` lemma only records the
    value, it does not select it.
-2. **The numerical match to the PDG ratio** ($\approx 290$ ppm) is a
+2. **The canonical exact match to the PDG ratio** ($\approx 290$ ppm) is a
    *witnessed near-match*, not a Lean equality — the witness JSON is the
    evidence, the Lean file proves only the two underlying identities.
 

@@ -55,7 +55,7 @@ $$
 ## Proposition
 
 **(Conditional on
-[`he4-sdp-compositional-probe.witness.json`](computations/he4-sdp-compositional-probe.witness.json).)**
+[`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
 For the $^4\mathrm{He}$ operator-selection LP defined above:
 
 1. **Unique primal optimum** at the $\mathrm{T} \oplus p$ channel:

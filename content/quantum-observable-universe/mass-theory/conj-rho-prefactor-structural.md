@@ -4,7 +4,7 @@ $$
   B(\mathfrak{H}) \;=\; m_e \cdot \rho \cdot M(\mathfrak{H})\big|_{q = q_0}
 $$
 
-is currently determined case-by-case as a numerical by-product of
+is currently determined case-by-case as a canonical by-product of
 the Wedderburn SDP search. This conjecture proposes a structural rule
 for $\rho$ in terms of the categorical data of $\mathfrak{H}$.
 
@@ -38,7 +38,7 @@ following heuristic table. **Caveat (issue #604, deliverable 4):** the
 "Dominant $\lambda^*$" entries here are *conjectural* and were
 populated before the $H_{3 \cdot A}$ binding-K analysis below; they are kept
 for historical reference and reconciliation with the older narrative.
-The numerically verified rule (see "Critical structural finding" below)
+The canonical verified rule (see "Critical structural finding" below)
 must be evaluated at the atomic strand count $n_0 = 3 \cdot A$:
 
 | Particle | Knot | $n_0 = 3\cdot A$ | Conjectural dominant $\lambda^*$ | $\dim_q(\lambda^*)$ at $q_0$ | Obs.\ $\rho$ |
@@ -109,8 +109,8 @@ and $\rho = 2$ for double-cover nuclei.
 
 ## Critical structural finding (issue #604, deliverable 4)
 
-The B_3-level numerical evaluation
-([`computations/rho_prefactor_structural_verifier.py`](https://github.com/litlfred/qou/blob/main/computations/rho_prefactor_structural_verifier.py),
+The B_3-level canonical evaluation
+(the canonical formalism,
 witness [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-prefactor-structural-verifier.witness.json))
 **falsifies** the simple form of the rule "$\rho = \mathrm{round}[\dim_q(\lambda^*)]$" when
 $\lambda^*$ is computed from the *braid strand count* alone:

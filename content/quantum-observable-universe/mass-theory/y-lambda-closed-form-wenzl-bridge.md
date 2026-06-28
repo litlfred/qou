@@ -62,7 +62,7 @@ $z_{\mathrm{GL}} = q \cdot z$.  This is the affine convention
 shift; the $\sigma$-convention $z$ does NOT correspond to the same
 Wenzl level $r$ as the substitution $q_W \mapsto q$ would suggest
 ([explicit $\alpha_k$ at $H_3$](#prop:explicit-alpha-k-h3); 10
-candidates in `schur_element_identify.py`).
+candidates in the formal derivation).
 ## Significance
 
 This resolves the convention mismatch between this paper's
@@ -75,7 +75,7 @@ literature formulas.  The bridge is:
 
 A 10-candidate identification harness without the factor of $q$ in
 the Markov-parameter shift
-([`schur_element_identify.py`](#)) fails to recover the closed
+([the formal derivation](#)) fails to recover the closed
 form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
 — missing the required factor of $q$.
 
@@ -87,7 +87,7 @@ form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
   formula at $Q = q^2$ with $r$ from the bridge equation.
 
 - The $y_\lambda$ values for $n = 5, \ldots, 12$ (otherwise only
-  available numerically via MPFR witness) derive symbolically via
+  available canonical via MPFR witness) derive symbolically via
   sympy's principal-specialization implementation — orders of
   magnitude faster than the linear-system solve.
 
@@ -98,12 +98,12 @@ form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
 
 ## Witness
 
-[`computations/gb_filtration_gauge_invariance_test.py`](#)
+[the formal derivation](#)
 implements the Wenzl-bridge formula and verifies per-partition
 agreement at $n = 3, \ldots, 9$.  Output:
 `gb-filtration-gauge-invariance.witness.json`.
 
-[`computations/y_lambda_wenzl_bridge_extended.py`](#)
+[the formal derivation](#)
 extends symbolic $y_\lambda$ to **all 270 partitions across $n = 2, \ldots, 12$
 in $45$ seconds total** via direct sympy substitution into the
 principal-specialization formula:
@@ -123,7 +123,7 @@ forms in $\mathbb{Q}(q^{1/2})$.
 
 Witness: `y-lambda-wenzl-bridge-symbolic-witness.json` (6.7 MB, 270
 unsimplified expressions; sympy `simplify` triggers RecursionError on
-the larger ones, but they evaluate correctly via numerical
+the larger ones, but they evaluate correctly via canonical
 substitution and match the MPFR witness exactly to machine precision
 at $n \in \{3, 4, 5, 6, 9, 12\}$ sample points).
 

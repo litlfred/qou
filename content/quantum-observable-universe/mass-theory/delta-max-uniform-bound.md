@@ -120,7 +120,7 @@ $$
 The right-hand side is independent of $n$; set
 $\Delta_{\max}(\varrho)$ equal to it.  $\square$
 
-## Numerical scale
+## canonical scale
 
 For the deuteron representative
 $\beta_{\mathrm{D}} = \sigma_0 \in B_2$:
@@ -157,11 +157,11 @@ $$
   \cdot \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^{2}}.
 $$
 
-For light atoms ($A \le 16$) at $q_0$, numerical evaluation
+For light atoms ($A \le 16$) at $q_0$, canonical evaluation
 shows $N = 3$ is sufficient for sub-ppm precision on binding
 energies; the bound is saturated within a factor of 2 on the
 deuteron, tritium, and ${}^3\mathrm{He}$
-(cf. `computations/unified_lift.py` with
+(cf. the formal derivation with
 `JET_TARGET_PPM`).
 
 ## Remaining open items
@@ -176,7 +176,7 @@ subconjecture 1).  The two remaining pieces are:
    the operator-norm control in Step 2 must be replaced by a
    sum over rank-1 summands with weights from the SDP
    eigenvalues.  The qualitative bound survives (operator norms
-   are subadditive), but the numerical prefactor degrades.
+   are subadditive), but the canonical prefactor degrades.
 2. **Sharp constant.**  The factor $2\,L(\beta)\,\|\rho\|^2$
    is a worst-case bound; for stable atoms the effective
    $\Delta_{\max}$ is empirically within a factor of 2 of the

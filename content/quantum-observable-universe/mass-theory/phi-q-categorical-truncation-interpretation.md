@@ -17,7 +17,7 @@ small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.*
 
 **Computed for tritium.** A direct YSN/Hoefsmit
 character computation
-([`probe_tritium_k_star.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_tritium_k_star.py))
+(the canonical formalism)
 gives $\chi_\lambda(\rho(\mathrm{T_w})) \neq 0$ for **every**
 $\lambda \vdash 5$, so $\mathrm{supp}(\mathrm{T_w}) = \{\lambda : \lambda \vdash 5\}$
 and $k_\star(\mathrm{T_w}) = \max_{\lambda \vdash 5} \mathrm{maxhook}(\lambda) = 5$.
@@ -52,16 +52,16 @@ $k_{\max}$ in the witness.
 *Under this proposition, the structural truncation depth for tritium
 is $k_\star(\mathrm{T_w}) = 5$ (computed; full partition support of
 $\lambda \vdash 5$), and for D and ${}^3\mathrm{He}$ at most
-$k_\star \leq 3$ (since they live in $H_3$). The uniform-$k$ probe
-([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))
-shows the Frobenius-paired truncation is far from numerically closed:
+$k_\star \leq 3$ (since they live in $H_3$). The uniform-$k$ canonical evaluation
+(the canonical formalism)
+shows the Frobenius-paired truncation is far from canonical closed:
 at $k = 2$ subtractive form, D errs $-22\%$, T errs $-39\%$,
 ${}^3\mathrm{He}$ overshoots $+134\%$; at $k = 5$ (the
 structural truncation for tritium), the absolute formula errs by
 $\sim 70000\%$. The Frobenius-paired equality
 $\mathrm{tr}_M(\Phi_q \cdot T_w) = \mathrm{tr}_M(\Phi_q^{[\leq k_\star]} \cdot T_w)$
-is a **categorical identity**, not a real-valued numerical identity;
+is a **categorical identity**, not a real-valued canonical identity;
 the real-valued mass at $|\hat V|\approx 1$ requires the open
 $z$-Habiro uniform bound to convert categorical equality into
-numerical equality
+canonical equality
 ([brane tower in $z$-Habiro](#conj:brane-tower-z-habiro)).*

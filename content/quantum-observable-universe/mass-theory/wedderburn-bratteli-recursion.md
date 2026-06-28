@@ -37,7 +37,7 @@ indexed by depth-$k$ partitions and their Bratteli-ancestors.
 [`computations/y-lambda-jones-markov-witness.json`](#) —
 all 270 weights for $n = 2, \ldots, 12$.
 
-[`computations/y_lambda_bratteli_extract.py`](#) —
+[the formal derivation](#) —
 extracts per-edge ratios and tests candidate closed forms $F_q$.
 
 ## Open

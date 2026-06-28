@@ -5,7 +5,7 @@ input is permitted — every other mass, Q-value, binding energy,
 coupling constant, mixing angle, and dimensionless ratio in the paper
 is a prediction.*
 
-| ID | Canonical observable | Numerical proxy | What it fixes | DOF of $H^1 = 2W$ |
+| ID | Canonical observable | canonical proxy | What it fixes | DOF of $H^1 = 2W$ |
 |----|-----------|-------------|--------------|-------------------|
 | **CAL-1** | $m_\mathfrak{e}$ (leptonic mass scale, order $h^0$) | electron mass (Penning trap) | the dimensional unit | $W$-plane scale |
 | **CAL-2** | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width, order $h^2$) | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
@@ -45,7 +45,7 @@ $H_3(R, q)$ ([three parameters from Wedderburn](#prop:three-parameters-wedderbur
 
 ## Statement
 
-For every numerical observable $\mathcal{O}$ in the paper —
+For every canonical observable $\mathcal{O}$ in the paper —
 mass $\mathfrak{m}$, Q-value $\mathfrak{Q}_\beta$, binding $B(Z, N)$,
 crossing energy $E_{\mathfrak{H}}$, coupling $\alpha$, mixing angle,
 shell parameter — there exists a $\mathbb{Q}(q_0)$-element
@@ -64,7 +64,7 @@ $$
 
 with $a + b \in \{0, 1\}$ (dimensionless, mass-scale, or energy-scale
 output) and $q_0$ fixed by CAL-2 ($\mathfrak{D}_\beta$, pinned
-numerically through its proxy $m_\mu/m_e$). The two dimensional
+canonical through its proxy $m_\mu/m_e$). The two dimensional
 bridges to MeV are the proxy scales $m_e$ and $m_\pi$; the derived
 hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the CAL-2
 proxy $\mathfrak{Q}_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
@@ -72,9 +72,9 @@ independent factors.
 
 ## Allowed substitutions
 
-- $q_0$ is a numerical constant *only* via CAL-2; downstream compute
+- $q_0$ is a canonical constant *only* via CAL-2; downstream compute
   must carry $q_0$ symbolically as long as possible and substitute
-  the CAL-2 numerical value at the final reporting step
+  the CAL-2 exact algebraic values at the final reporting step
   ([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/-math-framework-workplan.md#p25)).
 - $\mathfrak{E}_0$ has two framework-derived forms and one CODATA
   cross-check, all related by the brane-tower correction $1/(1-\hbar_q^2)$:

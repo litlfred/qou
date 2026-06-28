@@ -18,7 +18,7 @@ while the target multiplier $\text{linking\_weight} \approx 2.53$ was
 strictly greater than 1. **No power of $z < 1$ can multiply UP to a
 value $> 1$** — this is a one-line magnitude refutation that killed
 the entire mass-side trace identity class **before** any expensive
-numerical anchor sweep.
+canonical anchor sweep.
 
 The direction-sanity invariant abstracts this argument: a candidate
 $F(q)$ whose magnitude at the substrate anchor is structurally
@@ -36,7 +36,7 @@ paper, not in compute. This is the $\S 4(d)$ formalize-first gate.
 
 With (d) formalized, the four-invariant set is complete; any future
 candidate $F(q)$ for the $\mathfrak{Q}_\beta$ c_k Habiro element is evaluable as a
-Lean class-instance attempt rather than as a numerical fit.
+Lean class-instance attempt rather than as a canonical fit.
 
 ## The target magnitude at $q_0$
 
@@ -63,7 +63,7 @@ Concretely, for any candidate $F(q)$:
 3. If the ratio is $> 10$ (order-of-magnitude mismatch), REJECT —
    add a new row to refuted-class map $\S 2$.
 4. If the ratio is $\le 10$, proceed to Step 7 (only NOW run the
-   numerical anchor sweep) of the checklist.
+   canonical anchor sweep) of the checklist.
 
 ## Composition with the prior three gates
 

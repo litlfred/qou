@@ -154,7 +154,7 @@ representation capacity at high crossing count.
 A plausible elementary-particle count fitting the 6-dim NF diamond:
 
 - 2 lepton generations $\times$ 2 chiralities (L, R) = 4 dimensions
-- 1 Higgs (figure-eight $4_1$, "Higgs field / mass mechanism" per `knot-volumes.py:58`)
+- 1 Higgs (figure-eight $4_1$, "Higgs field / mass mechanism" per `the formal derivation:58`)
 - 1 photon ($\gamma$, identity element of $H_3$)
 - **Total = 6 dimensions = $\dim H_3(q)$**
 
@@ -176,8 +176,8 @@ and possibly weak-isospin partner (neutrino).
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — Li_2^q canonical mass formula
 - [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
 - [`rem:bar-involution`](bar-involution.md) — P_avg / P_skew projection (real-q mechanism)
-- Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
-- Compute infrastructure: `computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)
-- T6 closure attempt: `computations/t6_lepton_h3_3channel_convention.py`
+- Convention source: `tools/pyhecke/python/pyhecke/the formal derivation:156` (V_HAT_ELECTRON)
+- Compute infrastructure: the formal derivation (generalises `per_generator_V_hat_3A`)
+- T6 closure attempt: the formal derivation
 - Audit: [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
 - SUPERSEDED ρ_q purge (now understood as incomplete): [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md)

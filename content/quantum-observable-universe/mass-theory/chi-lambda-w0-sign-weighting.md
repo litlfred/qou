@@ -8,7 +8,7 @@ does **not** match a uniform Plancherel-weighted sum
 $\sum_\lambda w_\lambda \cdot c_k^{(\lambda)}$ with the canonical
 $w_\lambda = (\dim V_\lambda)^2 / n!$: the Plancherel-weighted
 sum has the **wrong sign** at both $k = 5$ and $k = 6$ (see the
-`per-wedderburn-block-ck` probe witness's `c5_match_status` and
+`per-wedderburn-block-ck` canonical evaluation witness's `c5_match_status` and
 `c6_match_status` fields).
 
 This proposition identifies the **correct weighting**: the
@@ -51,10 +51,10 @@ element:*
 | $(2,1)$            | standard (Hoefsmit) | $2$ | $0$ |
 | $(1,1,1)$          | sign | $1$ | $-1$ |
 
-## Numerical verification
+## canonical structural verification
 
 From [`per-wedderburn-block-ck.witness.json`](https://github.com/litlfred/qou/blob/main/computations/per-wedderburn-block-ck.witness.json)
-( merge, per-Wedderburn-block probe at $q = 1 + \varepsilon$
+( merge, per-Wedderburn-block canonical evaluation at $q = 1 + \varepsilon$
 to order $\varepsilon^{12}$):
 
 | $k$ | $c_k^{(3)}$ | $c_k^{(2,1)}$ | $c_k^{(1,1,1)}$ | $S_k^{(w_0)}$ | empirical $c_k$ | sign agreement |
@@ -72,7 +72,7 @@ into the per-block-diagonal sum).
 
 ## The role of $w_0$ versus $-I$
 
-The probe agent that surfaced this finding referred to
+The canonical evaluation agent that surfaced this finding referred to
 the weighting as "character $\chi_\lambda(-I)$." In the symmetric
 group $S_n$ realised as a Coxeter group, "$-I$" has no canonical
 meaning (the group is not realised as matrices acting on a real

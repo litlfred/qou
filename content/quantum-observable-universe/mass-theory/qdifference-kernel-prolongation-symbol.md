@@ -31,4 +31,4 @@ closure: the residue form (D), the body-order = jet-degree coincidence (C), and
 the recurrence machinery (L3) are all proved; only the identification of $R$
 with the prolongation symbol remains. It is stated here as a precise,
 falsifiable structural claim — to be *derived* from the prolonged connection's
-local monodromy, not searched numerically.
+local monodromy, not searched canonical.

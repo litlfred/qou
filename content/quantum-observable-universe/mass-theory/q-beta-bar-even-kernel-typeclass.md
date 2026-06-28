@@ -19,7 +19,7 @@ were formalized separately as four parametric gate classes:
 | (c) $q = 1$ classical-limit shadow | `QOneShadowGateClass (c2 c3 : ℝ → ℝ)` | **yes** |
 | (d) Direction sanity at $q_0$ | `DirectionSanityGateClass (m : ℝ)` | **yes** |
 
-A future probe author evaluating a candidate $F(q)$ currently has to
+A future canonical evaluation author evaluating a candidate $F(q)$ currently has to
 instantiate four classes by hand. **`BarEvenKernel` is the single
 bundling typeclass** that makes the entire formalize-first chain a
 one-liner: instantiate `BarEvenKernel pole c2 c3 magnitude` and the
@@ -75,7 +75,7 @@ implicit in the constructor.
 This typeclass *operationalises* the 7-step Δ_λ pre-flight checklist
 (`docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md`
 $\S 3$): instead of running Steps 3–6 as separate sympy probes + Lean
-checks, a probe author writes:
+checks, a canonical evaluation author writes:
 
 ```python
 # Conceptual: at the formal level, the entire pre-flight reduces to:
@@ -85,7 +85,7 @@ pole, c2, c3, magnitude = extract_observables(candidate)
 #          If Lean accepts the instance → admit; else → REFUTE
 ```
 
-with each field hypothesis discharged by the corresponding probe.
+with each field hypothesis discharged by the corresponding canonical evaluation.
 
 ## Honest scope
 

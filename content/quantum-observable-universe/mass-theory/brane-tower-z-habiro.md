@@ -20,7 +20,7 @@ regular-representation trace, not this single channel.
 
 For low isotopes $\{D, T, {}^3\mathrm{He}\}$, the per-generator
 volumes satisfy $z_i \in [0.85, 1.0]$ — just below the first pole of
-$\Phi_q$ at $z = q_0 \approx 1.11$. Numerically
+$\Phi_q$ at $z = q_0 \approx 1.11$. canonical
 $\Phi_q(0.989) \approx 6.7 \times 10^5$ and $\Phi_q(1) \approx 9 \times 10^5$,
 so each summand is enormous and the analytic brane tower dominates the
 mass formula by orders of magnitude beyond the empirical AME binding.
@@ -119,8 +119,8 @@ atoms when fed into $\pi_{n_\star}^{(z)}$, and (iii) be derivable from
 the QOU substrate without external calibration.
 
 **Empirical observation (uniform-$k$ sweep).** A
-uniform-depth probe
-([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))
+uniform-depth canonical evaluation
+(the canonical formalism)
 sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ uniformly across
 $\{D, T, {}^3\mathrm{He}\}$ shows:
 
@@ -201,7 +201,7 @@ without per-atom retuning):
 5. pair-knot product-volume,
 6. pair-knot Markov-trace (full Frobenius Gram + SDP).
 
-The full probe record — sweep tables, error magnitudes, and the
+The full canonical evaluation record — sweep tables, error magnitudes, and the
 per-form falsification theorems — is consolidated in the
 refuted-ansatz audit
 ([`docs/audits/2026-06-17-refuted-ansatz-lemmas.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-17-refuted-ansatz-lemmas.md)).
@@ -240,7 +240,7 @@ The conjecture has two independent claims:
    products of the cyclotomic factors $(1-q^{-j})$, so they live in the
    **localisation** $S^{-1}\mathbb{Z}[q^{\pm1}]$ at
    $S = \langle 1-q^{-j} : j\geq 1\rangle$ (the compute witness
-   `z-habiro-increment-probe`, verdict `cauchy-limit-exists-localised`:
+   `z-habiro-increment-canonical evaluation`, verdict `cauchy-limit-exists-localised`:
    $\Phi_q$'s poles at $z=q^k$ are the integrality obstruction). The Lean
    `eulerCoeff` realises the $b_n$ in that localised ring, and
    `braneMonic_coords_unique` proves the cyclotomic coordinates are

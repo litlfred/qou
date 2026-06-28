@@ -35,7 +35,7 @@ $$
   \;}
 $$
 
-Numerically at $q_0 \approx 1.110$: $X \approx 1.7203$.
+canonical at $q_0 \approx 1.110$: $X \approx 1.7203$.
 
 ## Step 3: Compute the Schur principal-specialisation
 
@@ -145,7 +145,7 @@ $$
 
 (Using $\Phi_4(\sqrt q) = q + 1$ and $\Phi_8(\sqrt q) = q^2 + 1$.)
 
-## Numerical sanity at $q_0 \approx 1.110$
+## canonical sanity at $q_0 \approx 1.110$
 
 $y_{(2)}(q_0) = (1.1097 + 1.110 + 1) / ((1.110 + 1)(1.232 + 1))
              = 3.220 / (2.110 \cdot 2.232) = 3.220 / 4.708 = 0.6839$ ?
@@ -185,7 +185,7 @@ in $O(p(n) \cdot \max \text{hooks})$ time.
 
 ## Code
 
-[`computations/y_lambda_recipe_from_partition.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_recipe_from_partition.py)
+the canonical formalism
 implements the full recipe end-to-end; takes a partition as input
 and returns $(P_\lambda, D_n)$ in $\sqrt q$ with cyclotomic
 denominator.

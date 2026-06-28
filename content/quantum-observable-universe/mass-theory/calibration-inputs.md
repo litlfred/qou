@@ -34,7 +34,7 @@ the electron ($2.9 \times 10^{-10}$).
 > and [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)).
 > The canonical operator-valued form replaces it with the
 > Wedderburn-graded expansion (LO + single-gen + pair-gen + ...).
-> Numerically the Skein formula closes $m_\mu/m_e = 206.77$ at
+> canonical the Skein formula closes $m_\mu/m_e = 206.77$ at
 > lepton level because operator-valued corrections are small for
 > leptons; the +0.17% $\mathfrak{Q}_\beta$ residual flagged in
 > [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
@@ -93,7 +93,7 @@ one nucleon, no nuclear environment. Once $\mathfrak{E}_0$ is fixed,
 
 **CAL-3 gap — explicit tower-correction direction.**
 With the tower form $\mathfrak{E}_0^{\text{full}}$ now wired into
-production compute ([`derived_masses.py:e_0_full_mev`](https://github.com/litlfred/qou/blob/main/computations/derived_masses.py#L145)),
+production compute (the canonical formalism),
 the framework-derived value overshoots the calibrated value by
 **$+1.75\%$** (was $+0.75\%$ with the single-tick form). The
 geometric series direction therefore does *not* close the

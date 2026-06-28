@@ -2,8 +2,8 @@ The scalar [confinement LP](#prop:confinement-lp) is the
 diagonal projection of a richer **semidefinite program** over
 matrix-valued operators.  The SDP is the actual selection
 principle computed by the multi-level pipeline
-(`computations/multi_level_sdp.py`,
-`sdp_cross_channel.py`, `misdp_cross_channel.py`); the LP
+(the formal derivation,
+the formal derivation, the formal derivation); the LP
 obtains only when every Wedderburn block decouples.
 
 ## Primal SDP (matrix operator selection)

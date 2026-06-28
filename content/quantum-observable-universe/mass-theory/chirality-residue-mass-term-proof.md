@@ -23,11 +23,11 @@ kernel is the gauge-invariant background that survives the
 GB-filtration spectral-sequence collapse — the categorical analogue
 of the gluon-condensate vacuum.*
 
-**Numerical witness (atomic isotopes).**
+**canonical witness (atomic isotopes).**
 
 *The q-deformed Wedderburn-weighted character contribution from
 chirality cells is computed in
-[`computations/atomic_chirality_residue.py`](#).
+[the formal derivation](#).
 For $\mathcal{T} = 1$ (total mass), the chirality contribution to the
 binding energy via $\alpha = m_e \cdot 8G$ is:*
 
@@ -69,7 +69,7 @@ $\mathfrak{m}^{\mathrm{chir}, (k)}$ inherits this boundedness, and
 the cumulative chirality contribution
 $\mathfrak{m}^{\mathrm{chir}}_{q,\mathcal{K}}$ is convergent.*
 
-*Remark.* This proposition is a structural refinement of the unified mass formula. No new analytic content is added; the split exists by inspection.  The numerical witness shows that the chirality channel
+*Remark.* This proposition is a structural refinement of the unified mass formula. No new analytic content is added; the split exists by inspection.  The canonical witness shows that the chirality channel
 is small in absolute terms (~3% of $B_\mathrm{nucl}$ at $^4$He) but
 is the dominant contribution at deep curvature-rank strata.  This
 provides direct empirical access to the $D_q^2 = 0$ kernel from

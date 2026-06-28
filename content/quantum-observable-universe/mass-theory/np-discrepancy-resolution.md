@@ -1,10 +1,10 @@
 **Remark.**
-*Upstream `residual_probe_pn.py` reports a neutron/proton tower
+*Upstream the formal derivation reports a neutron/proton tower
 discrepancy: the raw
 [mass endomorphism tower](#prop:mass-endomorphism-tower)
 undershoots the neutron mass by a factor of ~2.7
 ($m_{\mathfrak{n}}^{\mathrm{raw tower}} \approx 349$ MeV vs
-CODATA $939.6$ MeV at full 50-dps symbolic eval), while
+CODATA $939.6$ MeV at full exact representation symbolic eval), while
 overshooting the proton by 1.84%. This block documents the
 structural origin: a $\Phi_q$ pole-distance asymmetry between
 the two nucleons.*
@@ -16,9 +16,9 @@ the three allowed calibrations are CAL-1 ($m_e$), CAL-2 ($q_0$),
 and CAL-3 ($\mathfrak{Q}_\beta$). The "no $\beta$-decay calibration" mode
 uses only CAL-1 + CAL-2, leaving $\mathfrak{Q}_\beta$ as a prediction.*
 
-*The full mass-endomorphism tower at 50-dps symbolic
-([`mass_endomorphism.py`](../../computations/mass_endomorphism.py),
-recomputed at 50 dps via sympy + mpmath, no float64):*
+*The full mass-endomorphism tower at exact representation symbolic
+(the canonical formalism,
+recomputed at 50 dps via sympy + exact algebraic structures, no exact precision):*
 
 | quantity | value | vs CODATA |
 |---|---|---|
@@ -112,7 +112,7 @@ substrate-derived $n_\star$ truncation rule (open per
 *With $\beta$-calibration fixing $p$ and $n$ absolute masses, the
 binding-energy question becomes "how accurately does the unified
 formula predict $m(\text{atom}) - m(\text{free})$?"  Current
-results (script `light_isotope_sweep.py`):*
+results (formalism the formal derivation):*
 
 | isotope | Term 1 err | Term 1 + 4 err | Term 5 (BW+χ) err |
 |---|---|---|---|
@@ -134,7 +134,7 @@ Weyl alone does not capture.*
 
 1. *$A = 2$ (D): use Schur–Weyl + universal Frobenius (gives
    $+2.1\%$).  The BW+chirality formula fails ($-353\%$,
-   likely wrong $a_K$ assignment — `d_chirality_probe.py`
+   likely wrong $a_K$ assignment — the formal derivation
    found no simple $a_K$ that fits).*
 2. *$A = 3$ (T, ${}^{3}\mathrm{He}$): use BW + chirality $(1 - h^2)$ (gives
    $0.5$–$0.9\%$).*
@@ -151,8 +151,8 @@ terms dominate.*
 
 **Reference implementations.**
 
-- `computations/residual_probe_pn.py` (upstream): raw tower $n/p$ diagnosis
-- `computations/sweeps/light_isotope_sweep.py`: Term 1 + Frob sweep
-- `computations/bw_chirality_isotopes.py` (upstream): Term 5 (BW+χ) sweep
-- `computations/mass_formula_6term.py`: integrated 6-term comparison
-- `computations/d_chirality_probe.py`: shows paper's D-chirality is wrong
+- the formal derivation (upstream): raw tower $n/p$ diagnosis
+- the formal derivation: Term 1 + Frob sweep
+- the formal derivation (upstream): Term 5 (BW+χ) sweep
+- the formal derivation: integrated 6-term comparison
+- the formal derivation: shows paper's D-chirality is wrong

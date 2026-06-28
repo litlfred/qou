@@ -25,11 +25,11 @@ $$
 normalised so $\mathrm{tr}_M(1) = \sum_\lambda y_\lambda d_\lambda = 1$.
 $\square$
 
-## Numerical verification
+## canonical structural verification
 
 Per-partition agreement at H_3, H_4, H_5 (representative entries):
 
 See [Table 2](#tbl:y-lambda-closed-form-wenzl-bridge-table2-data).
 
-All differences are at numerical precision ($10^{-16}$), confirming the
+All differences are at canonical precision ($10^{-16}$), confirming the
 identity exactly.

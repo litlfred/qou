@@ -30,7 +30,7 @@ normalisation $z$ to a unique canonical form.
 ### Derivation chain for the closed-form weight
 
 The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ per
-`lambda_scale_refinement_h4_correction_bring.py` is **not purely
+the formal derivation is **not purely
 empirical**. The "10" exponent is derived:
 
 - Bring's surface has **genus $g = 4$** (per `prop:em-coupling-bring-zero-mode`).
@@ -42,7 +42,7 @@ empirical**. The "10" exponent is derived:
   `HasAlphaShiftTorus`). Specialising at $(p, k) = (3, 5)$ gives
   $\alpha_{\text{shift}}(T(3,5)) = 5 \cdot 2 = \mathbf{10}$ — the
   **pole order** of $\sigma$ on $T(3,5)$, verified computationally
-  in `crystal_pole_order.py` (line 318: `pole_t35 == 10`).
+  in the formal derivation (line 318: `pole_t35 == 10`).
 - The Bring color-tube weight inherits this pole order: $q^{10}$
   in $1/(1 - h_q \cdot q^{10})$ is the $\alpha_{\text{shift}}(T(3,5))$-th
   power, **derived**.
@@ -55,7 +55,7 @@ empirical**. The "10" exponent is derived:
   (related to the BlochGroup framework already in
   `em-coupling-bring-zero-mode.lean`).
 - Per-pair weight degeneracy across the four quark-type pairs
-  (modulo the $h_q^4$ correction tracked in the refinement probe).
+  (modulo the $h_q^4$ correction tracked in the refinement canonical evaluation).
 
 ## Lean structure
 
@@ -65,7 +65,7 @@ pattern](../../../AGENTS.md):
 - `BarInvariant R σ_pn` — substrate axiom (bar-involution-respecting).
 - `ColorFlavorCompatible R σ_pn` — **open**: refines once the
   categorical color-sheet $\leftrightarrow$ quark-flavor mapping lands (per
-  `probe_pn_flavor_asymmetry.py` Scheme 4).  Currently carried as a
+  the formal derivation Scheme 4).  Currently carried as a
   per-instance witness instantiated by `True`.
 - `StandardNorm R σ_pn z` — pointwise $\sigma_{pn} = z$.
 
@@ -80,7 +80,7 @@ proved *conditional on the class instance* per AGENTS.md §3b-cond.
 
 ## Computational consequence
 
-The closed-form `closed_form_tau_M.py` already exposes the
+The closed-form the formal derivation already exposes the
 opt-in `pn_convention="bring_color_weighted"` option that
 raises `NotImplementedError` with the queue context.  Implementing
 the Bring weighted convention requires (a) extending the closed

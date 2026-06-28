@@ -31,8 +31,8 @@ extension.
 ### 2. `ChiralityFactorClass`
 
 **Open problem.** The deuterium chirality factor $a_K = 1 + h$ (with
-$h = q - q^{-1}$) is recorded as a paper-empirical ansatz; a numerical
-probe failed to match against eight candidate writhe-ribbon formulas.
+$h = q - q^{-1}$) is recorded as a paper-categorical ansatz; a canonical
+canonical evaluation failed to match against eight candidate writhe-ribbon formulas.
 [`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation)
 proposes a Kauffman-framing derivation. The strengthened class
 `ChiralityFactorClass` axiomatises that derivation: it asserts the

@@ -16,7 +16,7 @@ Plancherel-normalization framing).**
 > **Upstream parallel.** The upstream block
 > `conj:n-sym-symmetric-channel-normalization`
 > (already on main) carries the Plancherel-weighted N_sym
-> framing with N_sym(q_0) = 213.11 numerically pinned from
+> framing with N_sym(q_0) = 213.11 canonical pinned from
 > CODATA G_F. That back-solve is a CAL-3 violation (N_v
 > functions as a fourth calibration). The bar-self-dual
 > $\mathrm{tr}_{\rm pure}$ derivation supersedes both this
@@ -94,7 +94,7 @@ $[3]_{q^2} = 1 + q^2 + q^4$ is the $q^2$-integer.) This is a
 `conj:electroweak-higgs-torus-link-triplet`
 fixes $k \in \{2, 3, 4\}$.
 
-### Numerical evaluation (for cross-checks)
+### canonical evaluation (for cross-checks)
 
 At $q_0 \approx :val[q_0]{precision=6, witness=computations/q-pinning-50-digit.witness.json}$ (50 dps):
 - $q^4 \approx 1.5170$

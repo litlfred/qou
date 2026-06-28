@@ -31,7 +31,7 @@ $\chi^\lambda_q(\sigma_w) =
 where $\varepsilon_i = \pm 1$ is the sign of the $i$-th letter in $w$,
 is an exact rational function of $q$.*
 
-**Numerical witness at $A = 1$ ($q_0 \approx 1.11$).**
+**canonical witness at $A = 1$ ($q_0 \approx 1.11$).**
 
 | $\lambda \vdash 3$ | $\chi^\lambda_q(\sigma_w^{\mathfrak{p}})$ @ $q_0$ | $\chi^\lambda_q(\sigma_w^{\mathfrak{n}})$ @ $q_0$ | difference |
 |---|---|---|---|
@@ -91,9 +91,9 @@ sympy, where $d = \dim S^\lambda = f^\lambda$:*
   are exact.*
 - *$A \geq 2$: $f^\lambda$ up to $16$ (for $\lambda = (3,2,1)$
   at $A=2$) and up to $132$ at $A=4$; symbolic cost becomes
-  prohibitive.  For $A \geq 2$ use the **numerical**
+  prohibitive.  For $A \geq 2$ use the **canonical**
   Hoefsmit pipeline in
-  `computations/hecke/hecke_characters.py`
+  the formal derivation
   (well-tested, handles 2$\times$2 block $b^2$ sign with
   `sqrt(abs(b^2))` where the symbolic expression can turn
   negative off the unitary locus).*
@@ -115,17 +115,17 @@ MN-support on any single $v$.  Pruning to the MN-support at
 $A \geq 2$ produces a **biased** result and is not used.*
 
 **Reference implementation.**
-*Script: `computations/hecke/hecke_character_symbolic.py`.
+*formalism: the formal derivation.
 Builds Hoefsmit matrices with `q` as sympy symbol, multiplies
 through atomic braid word, traces to extract $\chi^\lambda_q(\sigma_w)$.
 Witness: `hecke-character-symbolic.witness.json`.*
 
 **Next step.**
-*Apply the numerical pipeline in
-`computations/hecke/hecke_characters.py` (full $H_{3A}$
+*Apply the categorical derivation steps in
+the formal derivation (full $H_{3A}$
 Wedderburn sum) to $A = 2$ (deuteron) with all $11$ partitions of
 $6$, weighted by the exact symbolic $w_\lambda(q_0)$.  The
-numerical Hoefsmit handles the 2$\times$2 block $b^2$ sign robustly.
+canonical Hoefsmit handles the 2$\times$2 block $b^2$ sign robustly.
 This is the final piece needed for deuteron binding energy from
 first principles — the only inputs are $E_0$ ($\beta$-decay) and
 $q_0$ (substrate).*

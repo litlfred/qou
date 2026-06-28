@@ -60,8 +60,8 @@ or with growth slower than $\hbar_q^{-2n}$), the tail decays as a
 geometric series.
 
 Empirically (see
-[`computations/jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)
-and `unified_lift.py`) the per-level terms for $\mathrm{D}$,
+the canonical formalism
+and the formal derivation) the per-level terms for $\mathrm{D}$,
 $\mathrm{T}$, $\mathrm{^{3}He}$ satisfy
 $|\hbar_q^{2n} \Delta^{(n)}| \leq |\hbar_q^{2(n-1)} \Delta^{(n-1)}|
 \cdot \hbar_q^2$ to three significant figures, and the

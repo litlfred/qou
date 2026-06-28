@@ -2,7 +2,7 @@
 *Two seemingly distinct derivations — Term 5 chirality factor
 ([chirality dual-space](#prop:chirality-dual-space-derivation))
 and the upstream **neutron tower closure** via
-`alpha_blend_tower.py` — use the **same algebraic operation**:
+the formal derivation — use the **same algebraic operation**:
 the **Frobenius antipode**
 $S \colon \sigma \mapsto \sigma^{-1}$ on the Hecke algebra
 $H_n(R, q)$.  This unifies what appeared to be unrelated structural
@@ -45,7 +45,7 @@ The chirality factor measures the **antipode-asymmetry** of the
 braid in the symmetric Wedderburn channel.*
 
 **Application 2: Neutron tower closure
-(`computations/frobenius_antipode_symmetry.py`).**
+(the formal derivation).**
 
 *Upstream commit `8ee07e2` (rebased into this branch) discovered:
 the neutron tower undershoots CODATA by $-56\%$ in the raw
@@ -71,7 +71,7 @@ This is **exactly** the Frobenius antipode operation that gives
 chirality in the symmetric channel.*
 
 **Application 3: $\alpha$-blend full closure
-(`computations/alpha/alpha_blend_tower.py`).**
+(the formal derivation).**
 
 *Upstream commits `fad1ebd` + `82dd7d4` (rebased): blending the
 Frobenius-symmetrized $\hat V$ with the Frobenius-INVARIANT
@@ -126,14 +126,14 @@ algebraic.*
 
 **Reference implementations (rebased upstream + my chirality work).**
 
-- *`computations/frobenius_antipode_symmetry.py`
+- *the formal derivation
   + witness — the $4\times$ neutron improvement.*
-- *`computations/alpha/alpha_blend_tower.py`
+- *the formal derivation
   + witness — sub-ppm closure at $\alpha^* = 0.306$.*
-- *`computations/tower_full_jet_filtration.py`
+- *the formal derivation
   — confirms paper's pair-truncation is structurally insufficient
   (matches my all-subsets finding in
-  `computations/all_subsets_tower.py`).*
+  the formal derivation).*
 - *My chirality blocks
   ([Frobenius self-pairing](#prop:chirality-from-frobenius-self-pairing),
   [chirality dual-space](#prop:chirality-dual-space-derivation))

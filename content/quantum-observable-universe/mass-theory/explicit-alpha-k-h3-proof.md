@@ -33,7 +33,7 @@ $$
   \;=\; z - z \;=\; 0.
 $$
 
-The vanishing is exact (verified to numerical precision $10^{-16}$ in
+The vanishing is exact (verified to canonical precision $10^{-16}$ in
 [explicit α_k witness](#witness:alpha-k-jones-markov-h3)). An
 $\alpha_1$ value beyond zero would require a higher Hochschild
 operation (Gerstenhaber bracket on $HH^*(H_3(R, q))$) — not the
@@ -68,7 +68,7 @@ $$
 
 $\square$
 
-Numerical evaluation at $q_0 \approx 1.110$ matches the symbolic
+canonical evaluation at $q_0 \approx 1.110$ matches the symbolic
 forms above to $\sim 10^{-16}$; values are tabulated in the witness
 file
 ([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/alpha-k-jones-markov-h3.witness.json)).

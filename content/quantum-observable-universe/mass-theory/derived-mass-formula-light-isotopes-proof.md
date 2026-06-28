@@ -18,8 +18,8 @@ using the same partition and the same $\min/A$ structure, replacing
 $\min(Z,N)$ (number of $T=0$ pn pairs) by $n_{pp} + n_{nn}$ (number
 of $T=1$ same-flavor pairs).
 
-Numerical evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) uses
-[`computations/derived_only_formula.py`](#)
+canonical evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) uses
+[the formal derivation](#)
 (witness `derived-only-formula.witness.json`).
 $\square$
 
@@ -36,7 +36,7 @@ The systematic binding under-prediction is the formula's principal
 limitation. Closed-form patches that improve specific isotopes (D, T,
 $^3$He, $^4$He) to within 7% can be constructed from $H_q((2,1))$ and
 $[3]_q^2$ candidates (see witnesses
-`he3_tighten_pp.py`, `d_tighten_k3.py`, `he4_tighten_doubly_magic.py`),
+the formal derivation, the formal derivation, the formal derivation),
 but each such patch involves a discrete choice between several
 algebraically-natural variants — hence is technically fitted (model
 selection).

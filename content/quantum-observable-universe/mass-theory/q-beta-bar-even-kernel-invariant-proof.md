@@ -11,7 +11,7 @@ $$
 This is a `ring` identity in any commutative ring containing $b$ and
 $\hbar_q$. Both factors are bar-even at the Taylor level: $b^2(q)$ is a
 manifest q-rational that satisfies $b^2(q^{-1}) = b^2(q)$ exactly
-(verified in the [`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
+(verified in the the canonical formalism
 chain), and $\hbar_q^4$ is even in $t$ to leading order
 ($\hbar_q = t - t^2 + O(t^3)$, so $\hbar_q^2 = t^2 - 2t^3 + O(t^4)$ and
 $\hbar_q^4 = t^4 + O(t^5)$ — the odd-in-$t$ content sits at orders $t^5$
@@ -27,5 +27,5 @@ and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
 The bar-even discriminant explains the asymmetry structurally: $\alpha_{\text{EM}}$
 admits a scalar Habiro element because its kernel is bar-even; $\mathfrak{Q}_\beta$ does
 not, so its $c_k \ge 3$ requires the **operator-level grading** (the open
-[probe-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)
+[canonical evaluation-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)
 spec from the closed sibling analysis).

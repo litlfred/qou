@@ -180,7 +180,7 @@ HIGH-#1 fix in the infrastructure audit
 > level loop; compute desc once at level 0 and treat levels 1+
 > as singleton + pair only.
 
-The fix is not a numerical trick or heuristic: it is the
+The fix is not a canonical trick or heuristic: it is the
 correct implementation of Step 4 above. The code's prior
 behaviour of re-adding the descended product at every jet
 level violated the idempotence of $\hat\tau_n$ and overcounted

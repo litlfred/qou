@@ -22,7 +22,7 @@ average. $\square$
 ### Generator-decomposition reading of (18, 21)
 
 Each new generator's DP-max contribution to the q=0 pole is 1
-([`dp_pole_probe.py`](../../computations/dp_pole_probe.py)),
+(the canonical formalism),
 so DP-max increment per new nucleon is $12$. The actual pole
 increments are:
 - **per-new-proton:** pole $+9$ (cancellation $= 12 - 9 = 3$),
@@ -37,7 +37,7 @@ combination $18 + 21 + 1 = 40$ are verified by direct symbolic
 Hoefsmit pole-order analysis:
 
 - **Proton ($A = 1$, $H_3$):**
-  [`per_irrep_pole_proton_h3.py`](../../computations/per_irrep_pole_proton_h3.py)
+  the canonical formalism
   (witness:
   [`per-irrep-pole-proton-h3.witness.json`](../../computations/per-irrep-pole-proton-h3.witness.json))
   computes $\chi^\lambda_q(\mathcal{B}_p)$ for each $\lambda \vdash 3$
@@ -45,11 +45,11 @@ Hoefsmit pole-order analysis:
   $\mathrm{tr}_M(\mathcal{B}_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\mathcal{B}_p)$
   with the canonical Wenzl Jones-Markov weights, substitutes $q = u^2$
   (per the $D(u)$ convention from
-  [`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py))
+  the canonical formalism)
   and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\mathcal{B}_p)) = 19$,
   matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
 - **Deuteron ($A = 2$, $H_6$):**
-  [`per_irrep_pole_deuteron_h6.py`](../../computations/per_irrep_pole_deuteron_h6.py)
+  the canonical formalism
   (witness:
   [`per-irrep-pole-deuteron-h6.witness.json`](../../computations/per-irrep-pole-deuteron-h6.witness.json))
   uses three optimisations to make the symbolic $H_6$ analysis

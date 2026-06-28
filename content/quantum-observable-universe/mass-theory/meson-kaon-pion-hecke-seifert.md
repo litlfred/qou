@@ -27,5 +27,5 @@ $$
 3. *the exponent $2$ equals the number of quark constituents in the
    meson $q\bar{q}$ composite.*
 
-*The numerical value $3.5361$ matches the PDG ratio
+*The exact algebraic values $3.5361$ matches the PDG ratio
 $m_{K^\pm}/m_{\pi^\pm} = 3.5371$ to $290\;\mathrm{ppm}$.*

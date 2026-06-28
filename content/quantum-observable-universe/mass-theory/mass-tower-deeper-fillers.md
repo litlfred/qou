@@ -54,12 +54,12 @@ trivial sanity-check theorem.
   PDFs lack OCR-extracted text or the keywords are absent. A
   proper intake via `local/document-intake` skill would surface
   any relevant content; out of scope for this filler push.
-- **Wiring follow-up:** `crt_markov.py` currently has no
+- **Wiring follow-up:** the formal derivation currently has no
   `solve_y_lambda` reference — the user is preparing the
   modification. Recommendation per the prior turn stands: add
   `solve_y_lambda_numerical(n, q_value)` as a *separate* function
-  in `markov_weights_symbolic.py`, leave the symbolic version
-  intact for `y_lambda_equivalence_proof.py:60` to consume.
+  in the formal derivation, leave the symbolic version
+  intact for `the formal derivation:60` to consume.
 
 ## Remaining work after this push
 

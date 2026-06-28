@@ -81,11 +81,11 @@ $1.2761$ MeV and the observed $1.2779$ MeV may come from:*
 
 1. *Hecke-algebra finite-size corrections beyond the co-Casimir
    trace (higher-order Frobenius invariants).*
-2. *The numerical proton-mass calibration itself has uncertainty
+2. *The canonical proton-mass calibration itself has uncertainty
    at this precision.*
 
 **GB-filtration decomposition (witness).**
-*Script `computations/frobenius_partition_sum.py`
+*formalism the formal derivation
 decomposes $\sum_\lambda 1/\dim_q(\lambda)$ by confinement
 filtration level $\ell(\lambda) = \mathrm{height}(\lambda) - 1$:*
 
@@ -113,7 +113,7 @@ See [Table 3](#tbl:partition-sum-proton-residual-table3-data).
 self-dual pattern (top+bottom levels = $1 + 1$, plus middle
 $q$-dependent) holds for all $n$.*
 
-**Numerical witness at $q_0 \approx 1.11$.**
+**canonical witness at $q_0 \approx 1.11$.**
 
 See [Table 4](#tbl:partition-sum-proton-residual-table4-data).
 
@@ -122,18 +122,18 @@ See [Table 4](#tbl:partition-sum-proton-residual-table4-data).
 **inverse-dimension partition sum** at level $n = 3$, the
 expectation of $1/d_\lambda$ under the uniform-endpoint measure
 on the Young lattice. The Kerov-walk variant has been ruled out
-upstream (`kerov_walk_verify.py` confirms the reciprocal-dim
+upstream (the formal derivation confirms the reciprocal-dim
 distribution $(2/5, 1/5, 2/5)$ is a valid probability but **not**
 the stationary measure of any simple local-update Kerov walk).
 Plausible algebraic origins remain open — most natural is the
 centraliser-algebra reading $1/d_\lambda = \dim Z(\mathrm{End}_{H_n}(S^\lambda))$
 normalised, with the partition sum reflecting the trace of the
-identity on the full Wedderburn decomposition. Numerical match
+identity on the full Wedderburn decomposition. canonical exact match
 to $0.03\%$ at canonical $q_0$ is a strong structural clue;
 rigorous derivation is open.*
 
 **Extension failure for neutron-containing configurations.**
-*Upstream `tower_isotope_absolute.py` tested whether the same
+*Upstream the formal derivation tested whether the same
 $\sum_\lambda 1/d_\lambda$ hypothesis extends to higher
 partitions $n = 3A$ for isotopes.  Result: **fails for every
 configuration containing at least one neutron**.  The neutron
@@ -188,12 +188,12 @@ See [Table 5](#tbl:partition-sum-proton-residual-table5-data).
    ([Habiro completion](#prop:full-pole-structure-mass-trace)),
    or non-default inter-nucleon multiplicities.*
 
-*Witnesses: `deuteron-residual-probe.witness.json`,
+*Witnesses: `deuteron-residual-canonical evaluation.witness.json`,
 `q-variant-partition-sum.witness.json`.*
 
 **Reference implementations.**
 *Scripts
 (both on branch `claude/1ppb-handover-docs-cyFlQ`):*
-- [residual_partition_sum.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/residual_partition_sum.py)
-- [tower_isotope_absolute.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/tower_isotope_absolute.py)
-- [kerov_walk_verify.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/kerov_walk_verify.py)
+- the canonical formalism
+- the canonical formalism
+- the canonical formalism

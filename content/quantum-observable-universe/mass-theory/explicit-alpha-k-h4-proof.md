@@ -32,9 +32,9 @@ character matrix is full row-rank since the irreps are distinct).
 Fixing the gauge $c_{C_4} = 1$, the remaining coefficients are
 uniquely determined.
 
-**Numerical evaluation at $q_0$.**  Hoefsmit characters computed via
+**canonical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
-`computations/hecke/hecke_characters.py`); the $5 \times 5$
+the formal derivation); the $5 \times 5$
 character matrix at $q_0$ is recorded in
 [`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json).
 
@@ -46,7 +46,7 @@ $$
   \sum_{\lambda \,\vdash\, 4} y_\lambda \cdot \chi_\lambda(T_{w_C})
 $$
 
-verifies to $\sim 10^{-17}$ numerical precision against the
+verifies to $\sim 10^{-17}$ canonical precision against the
 Jones-Markov witness ([y-lambda witness](#witness:y-lambda-jones-markov)).
 This anchors the Hoefsmit character values.
 
@@ -73,5 +73,5 @@ $$
   \;=\; y_{(1^4)} \cdot \chi_{(1^4)}(r_3)
 $$
 
-(only the depth-3 term survives).  Both sides agree to numerical
+(only the depth-3 term survives).  Both sides agree to canonical
 precision, confirming the construction.  $\square$

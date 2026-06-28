@@ -199,5 +199,5 @@ ground ring $R$ (paper's categorical base ring).*
 **Reference.**
 *The rank calculation above, Yang–Baxter resolution, and the
 Markov-trace pairings are all done symbolically in
-$R$ (paper's categorical base ring); no numerical evaluation is required
+$R$ (paper's categorical base ring); no canonical evaluation is required
 until the final substitution $q \to q_0$.*

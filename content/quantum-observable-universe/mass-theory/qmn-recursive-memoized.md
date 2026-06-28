@@ -67,13 +67,13 @@ n=21 vs $\sim 50$ TB for full seminormal.
 
 The current main has:
 
-- [`q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/computations/q_mn_canonical.py)
+- the canonical formalism
   — Halverson-Ram broken-strip q-MN for canonical $T_w$,
   $O(n^2)$ per $(\lambda, \mu)$.
 
 The proposed extension:
 
-- `q_mn_recursive_memoized.py` (this PR / follow-up): wrap
+- the formal derivation (this PR / follow-up): wrap
   `q_mn_canonical` with a recursive driver
   `chi_recursive(λ, ρ, cache)` that:
   1. Looks up `cache[(λ, ρ)]`.
@@ -110,8 +110,8 @@ identification at high $n$.
 
 ## Open
 
-- **Implement**: `q_mn_recursive_memoized.py` driver. Mechanical
-  wrapper over existing `q_mn_canonical.py`; estimated 1-day work.
+- **Implement**: the formal derivation driver. Mechanical
+  wrapper over existing the formal derivation; estimated 1-day work.
 - **Profile**: confirm $\sim 50\times$ speedup empirically at $n = 18, 21$.
 - **Lean**: state recursive MN identity as a theorem and the
   memoisation as `simp`-rewrite (open).

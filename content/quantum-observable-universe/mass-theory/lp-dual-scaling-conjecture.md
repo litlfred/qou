@@ -69,8 +69,8 @@ Kashiwara crystal limit (NOT $q \to 1$). In that limit the
 JM eigenvalues become integer content multiplicities and the
 LP becomes integer programming over a Kashiwara crystal graph
 (open
-follow-up (H)). The current probe sweeps $q \to 1^+$ only;
-a separate $q \to 0^+$ probe is needed.
+follow-up (H)). The current canonical evaluation sweeps $q \to 1^+$ only;
+a separate $q \to 0^+$ canonical evaluation is needed.
 
 (e) **Demazure sub-crystal selector.**  empirically
 found that the categorical rule for $\lambda^*(Z, N)$ is
@@ -82,7 +82,7 @@ $y_0^*(A, |T_3|)$ as a sum of crystal-graph weights.
 
 **Witness-able next probes.**
 
-1. **${}^4\mathrm{He}$ probe** ($A = 4, |T_3| = 0$, $n = 12$;
+1. **${}^4\mathrm{He}$ canonical evaluation** ($A = 4, |T_3| = 0$, $n = 12$;
  sympy expensive). *Hypothesis*:
  $y_0^*({}^4\mathrm{He}) / y_0^*(D)$ is $q$-rational — both
  sit on the $|T_3| = 0$ branch — distinct from the

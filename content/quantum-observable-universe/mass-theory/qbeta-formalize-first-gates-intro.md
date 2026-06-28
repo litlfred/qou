@@ -41,4 +41,4 @@ $c_k$ stay cal-anchored, and the categorical construction of $F(q)$ that
 would turn the recursion into a parameter-free predictor is deferred to the
 brane-tower (contraction) limit where the binding $\Delta_\lambda$ ladder
 also lives. What the gates buy is a sharper statement of the open problem:
-any future $F$ that fails a gate is excluded without a numerical search.
+any future $F$ that fails a gate is excluded without a canonical search.

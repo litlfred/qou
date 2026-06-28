@@ -28,9 +28,9 @@ $c_C(\lambda) \in \mathbb{Q}(q)$ given by:*
 
 *The depth-stratum coefficients $\alpha_\lambda(H_4) := \mathrm{tr}_M(r_\lambda)
 = y_\lambda \cdot \chi_\lambda(r_\lambda)$ evaluate at the substrate
-value $q_0 \approx 1.110$ to numerical values in
+value $q_0 \approx 1.110$ to exact algebraic values in
 [`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json),
-verified to numerical precision against the Hoefsmit character matrix
+verified to canonical precision against the Hoefsmit character matrix
 and Jones-Markov $y_\lambda$ values (consistency residual $< 10^{-15}$).*
 ## Significance
 
@@ -54,19 +54,19 @@ coefficients are tabulated above (lines 21–31). The closed forms
 factor through cyclotomic denominators $(q+1)$, $(q^2+1)^2$,
 $q^3 \Phi_{(4)}$, etc. (standard Schur-element pattern). All five
 partitions of 4 — including the self-conjugate $(2, 2)$ whose
-numerical inverse is ill-conditioned — close via the sympy null-space
+canonical inverse is ill-conditioned — close via the sympy null-space
 solve.
 
-For $H_5$ and $H_6$, all $18$ partitions admit numerical $r_\lambda$
+For $H_5$ and $H_6$, all $18$ partitions admit canonical $r_\lambda$
 values via the adaptive-gauge selection in
-[`r_k_h5_h6_adaptive.py`](#). Symbolic forms for $y_\lambda$ at
+[the formal derivation](#). Symbolic forms for $y_\lambda$ at
 $n = 5, \ldots, 12$ are also available via the
 [Wenzl bridge](#prop:y-lambda-closed-form-wenzl-bridge)
 (270 partitions, 45 seconds total).
 
 ## Witness
 
-[`computations/wedderburn_orthogonal_r_k.py`](#) —
+[the formal derivation](#) —
 implements the class-function basis construction, character
 evaluation via `build_seminormal_matrices`, and 4$\times$5 linear-system
 solve.  Output:

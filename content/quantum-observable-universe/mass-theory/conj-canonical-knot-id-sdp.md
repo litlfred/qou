@@ -78,8 +78,8 @@ ground truth agrees with the historical assignment.
 
 ## SDP witness evidence
 
-Numerical SDP witnesses (stored in
-`computations/probe-sdp-canonical-paper-formula.witness.json`)
+canonical SDP witnesses (stored in
+`computations/canonical evaluation-sdp-canonical-paper-formula.witness.json`)
 show that the multi-term mass formula reproduces the AME binding
 energies of $^2$H, $^3$H, $^3$He to within the claimed error bound
 when $T_w$ is set to these knot types.  The conjecture asserts that
@@ -89,7 +89,7 @@ residual.
 ## Partial closure
 
 The R5-full canonical-knot SDP solver prototype
-([`r5_full_canonical_knot_solver.py`](../../../computations/r5_full_canonical_knot_solver.py),
+(the canonical formalism,
 witness
 [`r5-full-canonical-knot-solver.witness.json`](../../../computations/r5-full-canonical-knot-solver.witness.json))
 gave the first **substrate-only** check of this conjecture for the
@@ -114,7 +114,7 @@ three light nuclei.  Result:
 - **$^2\mathrm{H}$ — needs multi-term cost.** The prototype's
   single-term flagship formula $B = m_e \cdot \rho \cdot \mathrm{tr}_M(T_w)$
   does not make $6_2$ the structural winner (per the known offset
-  documented in `probe-sdp-canonical-paper-formula.witness.json`).
+  documented in `canonical evaluation-sdp-canonical-paper-formula.witness.json`).
   Wiring T2–T6 of
   [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
   into `cost_for_candidate` is the next-priority closure step.
@@ -128,12 +128,12 @@ formally stated in
 as `helium3_canonical_uniqueness_via_strict_complementarity`.  The
 Lean theorem takes:
 
-1. The R5-full numerical witness (`R5FullWitness LightNucleus.helium3`)
+1. The R5-full canonical witness (`R5FullWitness LightNucleus.helium3`)
    recording $\alpha_{\mathrm{gap}} = 0$ + strong duality
    ($|\text{primal\_obj} - \text{dual\_obj}| \leq 10^{-6}$);
 2. A strict-complementarity certificate
    (`StrictComplementarity LightNucleus.helium3`) — the categorical
-   hypothesis upgrading numerical PSD-feasibility to unique-minimizer
+   hypothesis upgrading canonical PSD-feasibility to unique-minimizer
    status per Boyd–Vandenberghe §5.5.
 
 and concludes
@@ -141,7 +141,7 @@ and concludes
 class instance for $^3\mathrm{He}$).  This is the closure path for
 sub-deliverable 3 of Issue #604: under the strict-complementarity
 hypothesis (a categorical claim about the geometry of the SDP's
-feasible set, not a numerical certificate), the historical
+feasible set, not a canonical certificate), the historical
 $L_{6a4}$ assignment for $^3\mathrm{He}$ is *the* unique R5-full
 canonical $T_w$.
 
@@ -189,7 +189,7 @@ active-set data.
 
 ## Structural decomposition (issue #604, deliverables 3 + 4)
 
-The numerical evidence from
+The canonical evidence from
 [`computations/r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/computations/r5-full-canonical-knot-solver.witness.json)
 (deliverable 1) and
 [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-prefactor-structural-verifier.witness.json)
@@ -214,8 +214,8 @@ uniqueness conjecture into:
 
 (a) **Constituent uniqueness** — each $T_w(\text{nucleon}_i)$ is the
     unique PSD-feasible canonical element at $H_3(q_0)$.  *Closed
-    numerically* by the R5-minimal verifier
-    ([`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/computations/joint_tower_sdp_solver_v2.py)).
+    canonical* by the R5-minimal verifier
+    (the canonical formalism).
 
 (b) **Binding-K uniqueness** — $K(\mathfrak{H}) \in H_{3 \cdot A}(q_0)$
     is the unique PSD-feasible Hecke element satisfying the joint-tower

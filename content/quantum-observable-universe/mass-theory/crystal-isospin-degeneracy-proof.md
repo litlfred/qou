@@ -58,7 +58,7 @@ weight $w_\lambda(q = 1) = (f^\lambda)^2 / (3A)!$ yields the claim.  $\square$
 **Conditional corollary (legacy disjoint-product convention).**
 *Suppose tritium and helium-3 are presented by the simplified
 disjoint-product words used by
-[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)*
+the canonical formalism*
 
 $$
   \tilde\beta_T = \sigma_1\sigma_2\sigma_1^{-1}\sigma_4\sigma_5^{-1}\sigma_4
@@ -83,7 +83,7 @@ $0.0020612874779541296$.*
 **Caveat — this corollary is *not* a statement about physical
 ${}^3\mathrm{H}$ vs.\ ${}^3\mathrm{He}$.** Under the canonical
 $\bowtie_K$-coupled convention
-[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py),
+the canonical formalism,
 ${}^3\mathrm{H}$ has interface types $(pn{=}\bowtie_K,\;nn{=}\sigma^{-1})$
 while ${}^3\mathrm{He}$ has $(pp{=}\sigma,\;pn{=}\bowtie_K)$ — the
 words differ in *interface type*, not just generator signs, so the

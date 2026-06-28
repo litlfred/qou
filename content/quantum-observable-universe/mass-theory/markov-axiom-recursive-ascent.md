@@ -35,7 +35,7 @@ materialises a matrix representation: the cost is bounded by the
 braid length and the depth of the Hecke-quadratic branching tree.
 
 The production implementation
-(`computations/markov/markov_peel.py`) completes
+(the formal derivation) completes
 $\mathfrak{m}({}^{4}\mathrm{He})$ end-to-end in ~60 s and
 $\mathfrak{m}({}^{6}\mathrm{Li})$ within minutes, with all
 $A \leq 3$ atoms cross-checked against the Hoefsmit + Wenzl

@@ -60,6 +60,6 @@ regime and contributes a small additional reduction. Together they
 explain why the theorem's upper bound is loose: it does not absorb
 either the explicit $1/3$ or the Skein correction. Tightening the
 bound to match the realised value is open (no canonical closed form
-is committed in this revision). The numerical evaluation at $q_0$
+is committed in this revision). The canonical evaluation at $q_0$
 of both sides is tabulated in
 [`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md).

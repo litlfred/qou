@@ -30,7 +30,7 @@ tabulates all 270 weights for $n = 2, \ldots, 12$ at
 $q_0 \approx 1.110$.  Per-edge ratios
 $y_\lambda^{(n+1)} / (z \cdot y_\mu^{(n)})$ extracted from the witness
 exhibit the following **structural regularities** (computed in
-[`y_lambda_bratteli_extract.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_bratteli_extract.py)):
+the canonical formalism):
 
 1. **Per-row monotonicity**: along a fixed-shape path
    $\lambda^{(1)} \nearrow \lambda^{(2)} \nearrow \cdots$ where each
@@ -93,7 +93,7 @@ $$
 
 Denominators factor through cyclotomic polynomials $\Phi_d(q)$ —
 the standard Schur-element pattern for Hecke algebras at generic
-$q$ ([Geck--Pfeiffer]).  Sympy and numerical witness agree to
+$q$ ([Geck--Pfeiffer]).  Sympy and canonical witness agree to
 $10^{-16}$ at $q_0$.
 
 What is **already structurally fixed** without $F_q$ in closed form:

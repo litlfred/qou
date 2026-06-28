@@ -148,7 +148,7 @@ for the atom-knot mass derivation
 - Confinement SDP: [prop:confinement-sdp](#prop:confinement-sdp).
 - GB filtration / jet-order certificate format:
  [gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json) +
- [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py).
+ the canonical formalism.
 - GB spectral-sequence collapse:
  [prop:gb-spectral-sequence](#prop:gb-spectral-sequence),
  [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse).

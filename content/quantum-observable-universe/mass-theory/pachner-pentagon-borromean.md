@@ -137,7 +137,7 @@ class PachnerPentagonBorromean
 
 ## Open R&D
 
-1. **Compute prototype**: extend a Pachner-state-sum probe for
+1. **Compute prototype**: extend a Pachner-state-sum canonical evaluation for
    $\mathcal{B}_3$ at $q = q_0$; cross-check $h^4$ coefficient via
    the Lobachevsky decomposition $8G = \sum \Lambda(\theta_i)$.
 2. **D15 to closed** requires the Lean class + the

@@ -16,7 +16,7 @@ underlying field of fractions and acts on each coefficient:
 - $z = 1/(q^{1/2} + q^{-1/2})$: the denominator is symmetric under
   $q \to q^{-1}$, so $z$ is invariant.
 - Catalan's constant $G$, Borromean volume $8G$, electron mass
-  $m_e$, and binding scale $\alpha$ are real numerical constants
+  $m_e$, and binding scale $\alpha$ are real canonical constants
   unaffected by the algebraic action.
 
 **Functional $\Phi_2$.** The transfer matrix is
@@ -65,15 +65,15 @@ $$
 $$
 
 isolates the chirality channel as the unique source of $S$-odd
-contribution to the categorical mass.  Numerically, since $S$
+contribution to the categorical mass.  canonical, since $S$
 maps the proton braid (uud) to a braid with quark content (ddu)
 (modulo strand ordering equivalent to the neutron's udd content),
 this provides the structural origin of the proton-neutron mass
 splitting at the Wedderburn formula level.
 
 **Witness**:
-[`computations/wedderburn_3term_inter_only.py`](#)
-verifies the eigenvalue assignments numerically at $q_0$ and
+[the formal derivation](#)
+verifies the eigenvalue assignments canonical at $q_0$ and
 confirms that $\Phi_3 \approx 0$ for inter-nucleon-only chains in
 free $A=1$ nucleons (consistent with the $S$-eigenspace
 decomposition).

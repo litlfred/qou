@@ -47,7 +47,7 @@ $\arg q \neq 0$?
 CAL-2 ($m_\mu/m_e = 206.7682830$) gives **one real equation** on
 two real unknowns ($\mathrm{Re}(q), \mathrm{Im}(q)$). The solution
 set is an **Apollonius circle** in the complex q-plane (center
-$\approx 1.010$, radius $\approx 0.100$ per `q_beta_complex_q_test1_phaseA_v2.py`).
+$\approx 1.010$, radius $\approx 0.100$ per the formal derivation).
 The framework's real-axis solution $q_0 \approx 1.10998$ is one
 point on this circle; Im(q) is the arc coordinate parametrizing
 the other admissible q values.

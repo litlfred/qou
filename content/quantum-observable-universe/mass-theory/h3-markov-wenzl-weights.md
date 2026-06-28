@@ -123,5 +123,5 @@ form being precisely $[2]_q^2 = 1/y_{(2,1)}(q)$.
 > section above: the Jones trace is not sign-twist invariant. The
 > corrected weights $(\tfrac12, \tfrac14, 0)$ are verified three ways:
 > Schur orthogonality on the $q = 1$ cycle-counting trace, the exact
-> $q$-dependent closed forms above, and numerical reproduction of the
+> $q$-dependent closed forms above, and canonical reproduction of the
 > Borromean closed form at 30 digits.

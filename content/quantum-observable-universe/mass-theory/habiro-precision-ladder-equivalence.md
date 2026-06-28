@@ -23,7 +23,7 @@ $q$-Pochhammer symbol, and $M < \infty$ (the series terminates).*
 *Under the archimedean evaluation $u \mapsto u_0$ at the substrate
 square-root, each $(u_0;\,u_0)_m$ contributes a factor that shrinks
 like $\sim \hbar_q^m$, where $\hbar_q$ is the universal substrate
-Planck quantum (categorical; numerical value at the substrate q_0
+Planck quantum (categorical; exact algebraic values at the substrate q_0
 recorded in the audit ledger, not here).*
 
 ## Proton Habiro coefficients (verified integral)

@@ -39,7 +39,7 @@ See [Table 2](#tbl:per-nucleon-shift-additive-linearity-table2-data).
 (11 from the nucleon's intrinsic structure
 + 1 from its incoming interface generator
 in
-[`mass_endomorphism.proton_cross`/`neutron_cross`](../../computations/mass_endomorphism.py).)
+the canonical formalism.)
 ### Companion remark — leading-coefficient identity
 
 The leading coefficient of $\mathrm{tr}_M(\beta)$ at $q = 0$
@@ -49,7 +49,7 @@ $D(u)^{-1} \cdot \mathrm{tr}_M(\beta)$ at $u = 0$) is
 $-\tfrac{1}{12}$ for neutron standalone (precision-limited at
 high-$A$ atoms in the existing float-precision Hoefsmit pipeline).
 See
-[`docs/audits/-ocneanu-cancellation-numerical-verification.md`](../../docs/audits/-ocneanu-cancellation-numerical-verification.md)
+[`docs/audits/-ocneanu-cancellation-canonical-verification.md`](../../docs/audits/-ocneanu-cancellation-canonical-verification.md)
 for the high-precision (200 dps) verification.
 
 The simple rational $-\tfrac{1}{12}$ is strong evidence that the
@@ -77,7 +77,7 @@ exponent in the atomic Markov-trace denominator, providing:
 2. **Cross-validation gate.** Any atomic mass / binding pipeline
    that involves $D(u)$ can verify shift = 18Z + 21N + 1 as a
    structural invariant.
-3. **Pole-counting consumer.** [`dp_pole_probe.py`](../../computations/dp_pole_probe.py)
+3. **Pole-counting consumer.** the canonical formalism
    and downstream pole-counting analyses now have a closed-form
    target for the actual q-pole order of $\mathrm{tr}_M$ (= shift / 2,
    modulo half-integer cases).

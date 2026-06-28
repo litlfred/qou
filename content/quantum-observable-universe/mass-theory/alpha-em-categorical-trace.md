@@ -18,7 +18,7 @@ archimedean correction lives in
 The earlier empirical / PSLQ closed forms — $45\,[3]_q\,(1+\delta_{CS}+8q\,\delta_{CS}^2)$
 with $\delta_{CS}=\hbar_q^4[5]_q$, and the "gluon-octet" conjecture — were
 **single-point PSLQ-uniqueness matches at $q_0$, not derivations** (the
-multiplicative q-rational family was ruled out by the 100-dps 54-element scan;
+multiplicative q-rational family was ruled out by the exact representation 54-element scan;
 the residual is non-smooth in $q$). They are recorded for the audit trail in
 [`docs/audits/2026-06-10-alpha-em-legacy-empirical-forms.md`](../../../docs/audits/2026-06-10-alpha-em-legacy-empirical-forms.md)
 so future agents see what was tried and why it was rejected. **Do not revive
