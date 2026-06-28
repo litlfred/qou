@@ -216,12 +216,24 @@ the list shape model and are in principle provable on the current toolchain. -/
 
 /-- **(GNW count) corner recursion of the standard-tableau count.**  In any standard tableau of shape
 `λ` the largest entry `n` occupies a removable corner; deleting it is a bijection
-`SYT(λ) ≃ ⨆_{corners c} SYT(λ ∖ c)`, whence the count splits as a sum. -/
+`SYT(λ) ≃ ⨆_{corners c} SYT(λ ∖ c)`, whence the count splits as a sum.
+
+**Closure route (validated this session).**  Do *not* prove this as a flat-list `eraseIdx` bijection on
+`numSYTenum`'s permutation model — go through the **already-proved structural bridge**
+`SYTEnumerationFintype.numSYTenum_eq_numStandardYoungTableaux`
+(`numSYTenum l = numStandardYoungTableaux (YoungDiagram.ofRowLens l hl) = Nat.card (StandardYoungTableau …)`,
+sorry-free).  The remaining content is then the **structural branching rule**
+`numStandardYoungTableaux μ = ∑_{removable corners c of μ} numStandardYoungTableaux (μ ∖ c)`, proved by the
+"delete the cell holding `|μ|`" bijection on `StandardYoungTableau`.  Mathlib's `YoungDiagram` exposes
+`ofRowLens` / `rowLens` / `mem_cells` but **no** corner / erase / `SDiff` API, so that corner-removal of a
+diagram (and `ofRowLens (removeCorner l c) ↔ (ofRowLens l hl) ∖ c`) must be built first — a multi-session
+piece, but on the clean `YoungDiagram` structure rather than on flat lists. -/
 theorem cornerRecursion (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
     (hne : l ≠ []) :
     numSYTenum l = ((corners l).map (fun c => numSYTenum (removeCorner l c))).sum := by
   -- Ref: [sagan2001] https://doi.org/10.1007/978-1-4757-6804-6 (branching rule for SYT; the largest
-  -- entry sits in a removable corner, deletion is a bijection — §3.x).  Self-contained ℕ bijection.
+  -- entry sits in a removable corner, deletion is a bijection — §3.x).  Route: via the structural
+  -- bridge numSYTenum_eq_numStandardYoungTableaux to the YoungDiagram branching rule (see docstring).
   sorry
 
 /-- **(GNW hook) hook-summation identity.**  Summing the hook-product ratios over the removable corners
