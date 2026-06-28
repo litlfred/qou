@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-28T00:59:55.839550+00:00",
-  "commitSha": "630d2a652beafe19a85ab93233d3dfc3ba7a072a",
+  "computedAt": "2026-06-28T06:43:07.233004+00:00",
+  "commitSha": "94b3c335cc8c81883e886765e6486b3954afd376",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2419,6 +2419,7 @@
         "delta-S-chain-audit.witness.json",
         "delta-lambda-2row-stratum.witness.json",
         "delta-lambda-binding-full-evaluation.witness.json",
+        "delta-lambda-cancellation-ascaling-probe.witness.json",
         "delta-lambda-canonical-residual.witness.json",
         "delta-lambda-categorical-verification.witness.json",
         "delta-lambda-dim-weight-proof.witness.json",
@@ -2430,8 +2431,11 @@
         "delta-lambda-fr-identity-phase5c.witness.json",
         "delta-lambda-full-variance-phase5e-1.witness.json",
         "delta-lambda-jsj-phase3.witness.json",
+        "delta-lambda-l1-ceiling-sign-prune.witness.json",
+        "delta-lambda-magnitude-deficit-profile.witness.json",
         "delta-lambda-multi-atom-crosscheck.witness.json",
         "delta-lambda-q-sweep-2row.witness.json",
+        "delta-lambda-qdim-route-probe.witness.json",
         "delta-lambda-qlommel-recurrence-precheck.witness.json",
         "delta-lambda-sign-rule-proof.witness.json",
         "delta-lambda-two-factor-phase2.witness.json",
