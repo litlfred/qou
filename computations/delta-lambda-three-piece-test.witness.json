@@ -1,0 +1,71 @@
+{
+  "schema": "delta-lambda-three-piece-test/v1",
+  "description": "extensive bulk \u00d7 fibre kernel combination law: additive REFUTED, multiplicative r(K) is the z2bn R(q,x) target.",
+  "per_nucleon_2me8G_MeV": 7.4889193198832205,
+  "additive_refuted": true,
+  "rows": [
+    {
+      "iso": "D",
+      "A": 2,
+      "B_AME": 2.224573,
+      "bulk": 14.977838639766441,
+      "nt_bulk": 6.732904984357196,
+      "nt_additive": 7.847858702448793,
+      "r_multiplicative_target": 0.14852430003443334
+    },
+    {
+      "iso": "4He",
+      "A": 4,
+      "B_AME": 28.295673,
+      "bulk": 29.955677279532882,
+      "nt_bulk": 1.0586663649785917,
+      "nt_additive": 1.2844027279965495,
+      "r_multiplicative_target": 0.9445846520496777
+    },
+    {
+      "iso": "6Li",
+      "A": 6,
+      "B_AME": 31.994564,
+      "bulk": 44.933515919299325,
+      "nt_bulk": 1.4044109467876895,
+      "nt_additive": 1.73305462906224,
+      "r_multiplicative_target": 0.7120422995045012
+    },
+    {
+      "iso": "12C",
+      "A": 12,
+      "B_AME": 92.161728,
+      "bulk": 89.86703183859865,
+      "nt_bulk": 0.9751014199581702,
+      "nt_additive": 1.3292782460730892,
+      "r_multiplicative_target": 1.0255343490761175
+    },
+    {
+      "iso": "16O",
+      "A": 16,
+      "B_AME": 127.619,
+      "bulk": 119.82270911813153,
+      "nt_bulk": 0.9389096382053732,
+      "nt_additive": 1.3784384492540167,
+      "r_multiplicative_target": 1.065065219600253
+    },
+    {
+      "iso": "40Ca",
+      "A": 40,
+      "B_AME": 342.052,
+      "bulk": 299.5567727953288,
+      "nt_bulk": 0.8757638394025727,
+      "nt_additive": 1.8797962995714328,
+      "r_multiplicative_target": 1.1418603452298037
+    },
+    {
+      "iso": "56Fe",
+      "A": 56,
+      "B_AME": 492.254,
+      "bulk": 419.3794819134603,
+      "nt_bulk": 0.8519574892503876,
+      "nt_additive": 2.2437482399022612,
+      "r_multiplicative_target": 1.1737674856052627
+    }
+  ]
+}
