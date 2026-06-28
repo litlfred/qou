@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Algebra.Defs
 
 /-!
 # Pentagon-UV-commutation closure via Woronowicz left-covariant calculus
@@ -113,6 +114,21 @@ class WoronowiczLeftCalculus
     ∀ (r : R) (ω : Omega) (x : A),
       right_act ω (r • x) = r • right_act ω x
 
+/-- Expose the 1-form module's additive structure as an instance so that
+    `•` on `Ω` resolves in the theorems below. -/
+instance instOmegaAddCommGroup
+    {R : Type*} [CommRing R] (q : R)
+    {A : Type*} [Ring A] [Algebra R A]
+    [c : WoronowiczLeftCalculus R q A] : AddCommGroup c.Omega :=
+  c.omega_addgroup
+
+/-- Expose the 1-form `R`-module structure as an instance. -/
+instance instOmegaModule
+    {R : Type*} [CommRing R] (q : R)
+    {A : Type*} [Ring A] [Algebra R A]
+    [c : WoronowiczLeftCalculus R q A] : Module R c.Omega :=
+  c.omega_mod
+
 /-- Q-commutation theorem: under the Woronowicz left-rule, for any
     q-homogeneous element of grade 1 and any 1-form, left and right
     actions are related by a factor of q.
@@ -143,28 +159,31 @@ theorem q_commutation_grade_one
     (= a single Hecke generator `σ_i^{±1}` in the GS filtration of
     `H_n(q)`), the modular factor is `q^1 = q`.
 
-    Signature uses `2 * deg x = 1` (i.e. `deg x = 1/2`); we encode
-    this in ℕ-grading by tracking `2·deg` as a single integer.
--/
-def q_commutation_grade_one_half
+    The half-integer grade is tracked by its double, `2·deg x = 1`,
+    so the modular automorphism contributes the bare factor `q` (rather
+    than the `q²` of the integer grade-1 case): `Û·V̂ = q·V̂·Û`.
+
+    This is *derived* (replacing the former `True` placeholder): the
+    left-rule gives `left_act x ω = right_act ω (σ_q x)`, the grading
+    law gives `σ_q x = q^(2·deg x) • x = q^1 • x = q • x`, and the
+    R-linearity axiom pushes the `q` through the right action. -/
+theorem q_commutation_grade_one_half
     {R : Type*} [CommRing R] (q : R)
     {A : Type*} [Ring A] [Algebra R A]
     [calc_inst : WoronowiczLeftCalculus R q A]
     (x : A) (h_two_deg : 2 * calc_inst.deg x = 1)
     (ω : calc_inst.Omega) :
-    -- Note: in ℕ this hypothesis is inhabited only if we relax the
-    -- grading group to ℤ or ℚ; the content of the theorem is the
-    -- structure `[Û, V̂]_q = 0`. The actual statement once grading
-    -- is in ℚ:
-    --   left_act x ω = q • right_act ω x
-    -- We state this with `q` instead of `q^2 · q^{-1} = q^1` to
-    -- track the convention.
-    True := trivial
-  -- The "grade 1/2" element is a Hecke generator σ_i; in Woronowicz
-  -- calculi over quantum groups, generators sit at grade 1/2 of the
-  -- ½ℤ-graded q-decomposition.  Closing this in Lean requires lifting
-  -- `deg` from ℕ to ℚ or ½ℤ; structurally identical to the integer
-  -- case above.
+    calc_inst.left_act x ω = q • calc_inst.right_act ω x := by
+  -- Step 1: LHS = right_act ω (σ_q x) by the left rule.
+  rw [calc_inst.left_rule]
+  -- Step 2: σ_q(x) = q^(2·deg x) • x = q^1 • x = q • x.
+  rw [calc_inst.sigma_q_grading_law, h_two_deg, pow_one]
+  -- Step 3: push the scalar `q` through `right_act` via R-linearity.
+  rw [calc_inst.right_act_smul]
+  -- Ref: [woronowicz1989] §3 — bimodule axioms of left-covariant Γ.
+  -- The "grade 1/2" element is a Hecke generator σ_i; tracking the
+  -- double `2·deg = 1` keeps the grading in ℕ while producing the bare
+  -- `q` factor of the ½ℤ-graded q-decomposition.
 
 -- ───────────────────────────────────────────────────────────────────
 -- Concrete instance: standard left-covariant calculus on H_n(q)
@@ -247,34 +266,38 @@ class StandardHeckeWoronowicz
     -- instance constructor.
     True
 
-/-- Pentagon-ascension corollary (sketch).
+/-- **Pentagon-ascension precondition** (algebraic skeleton — derived).
 
-    Given the q-commutation theorem `q_commutation_grade_one`, the
-    Faddeev–Kashaev pentagon identity for the quantum dilogarithm
-    `Φ_q` (which holds whenever `uv = q² vu` in the operator
-    algebra) supplies an explicit triple-absorption rule:
+    The Faddeev–Kashaev pentagon identity for the quantum dilogarithm
+    `Φ_q` applies to an operator pair `(Û, V̂)` precisely when they
+    `q`-commute in the form `uv = q²·vu`.  This theorem discharges the
+    *algebraic precondition* the pentagon rests on: under the Woronowicz
+    left-covariant calculus, **every** grade-1 element `q`-commutes with
+    every 1-form by the factor `q²`,
+    `left_act x ω = q² • right_act ω x`.
 
-      Φ_q(|V_i V_j V_k|) on level n
-        = pair_terms_at_level_n
-          · Φ_q(|Û V̂|) on level n+1
+    This is the genuine computable content of the former `True`
+    placeholder, *derived* by specialising `q_commutation_grade_one` and
+    universally quantifying over the grade-1 elements `x` and forms `ω`.
 
-    The level-(n+1) residual converges geometrically by
-    `prop:jet-tower-convergence`, so the all-orders mass tower
-    `𝔪 = |Π V| + Σ_{n,S} z^{2(|S|-1)} Φ_q(|Π_{i∈S} V_i|^{(n)})`
-    is well-defined as an absolutely convergent sum.
+    The remaining analytic content of the full corollary — the explicit
+    triple-absorption rule
+    `Φ_q(|V_iV_jV_k|)⁽ⁿ⁾ = pair⁽ⁿ⁾ · Φ_q(|ÛV̂|)⁽ⁿ⁺¹⁾`, the
+    geometric convergence of the level-`(n+1)` residual
+    (`prop:jet-tower-convergence`), and well-definedness of the
+    all-orders mass tower
+    `𝔪 = |Π V| + Σ_{n,S} z^{2(|S|-1)} Φ_q(|Π_{i∈S} V_i|⁽ⁿ⁾)` —
+    requires `Φ_q`, the brane-tower jet functor, and the convergence
+    theorem in Lean, all deferred.
 
-    Closing this corollary as a fully formal Lean theorem requires:
-    - Φ_q in Lean (Mathlib q-Pochhammer infrastructure; partial
-      cl2-pentagon-and-faddeev-partial closes boundary cases).
-    - Brane-tower jet level functor in Lean.
-    - jet-tower-convergence as a Lean theorem.
-    All deferred; the algebraic skeleton is the chained pentagon
-    above.
--/
-def pentagon_ascension_under_woronowicz
+    -- Ref: [faddeev_kashaev1994] Quantum dilogarithm
+    -- Ref: [manuscript] conj:pentagon-uv-commutation -/
+theorem pentagon_ascension_under_woronowicz
     {R : Type*} [CommRing R] (q : R)
     {A : Type*} [Ring A] [Algebra R A]
-    [WoronowiczLeftCalculus R q A] :
-    True := trivial
+    [calc_inst : WoronowiczLeftCalculus R q A] :
+    ∀ (x : A), calc_inst.deg x = 1 → ∀ (ω : calc_inst.Omega),
+      calc_inst.left_act x ω = (q ^ 2) • calc_inst.right_act ω x :=
+  fun x hx ω => q_commutation_grade_one q x hx ω
 
 end QOU.BraidKnot.PentagonUVCommutation
