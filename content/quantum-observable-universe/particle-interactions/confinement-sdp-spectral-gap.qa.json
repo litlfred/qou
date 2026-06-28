@@ -835,7 +835,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Verified: the Hecke generator sigma on V tensor V has eigenvalues (q, -q^{-1}) on S^2 V + Lambda^2 V (Hecke relation (sigma-q)(sigma+q^{-1})=0), and the eigenvalue separation q-(-q^{-1}) = q + q^{-1} vanishes at q = +-i (md:18-22): i + 1/i = i - i = 0. Correct. Delta_sigma(q) := |q + q^{-1}| > 0 iff eigenvalues distinct iff non-degenerate. The mathematical statement is true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive interpretive content (feasibility <-> spectral-gap; dual certificate = Jones-Wenzl projectors; deconfinement = gap closure at q = +-i). Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Not circular; the spectral-gap reading is derived from the eigenvalue structure of sigma, not back-fitted to a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-sdp-spectral-gap.md:2-5 'feasibility of the confinement SDP is equivalent to a Hecke spectral-gap condition: the feasible cone is non-empty if and only if Delta_sigma(q) = |q+q^{-1}| > 0'.",
+        "notes": "The 'if and only if' (iff feasibility) is asserted, not proved. The parent prop (confinement-sdp.md) establishes Slater strict feasibility 'at generic q where |q+q^{-1}|>0' (one direction: gap>0 => feasible), and the Lean defers the conic-duality step via sorry. The CONVERSE - that the feasible cone is EMPTY whenever |q+q^{-1}|=0 - is not demonstrated; collapse of one strictly-feasible point (Slater) at q=+-i does not by itself prove the feasible cone is empty (feasibility can hold without strict feasibility). 'Equivalent' / 'if and only if' overclaims relative to the one-directional Slater argument actually available."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No hidden parameter; q is the substrate modulus, the eigenvalues (q,-q^{-1}) are forced by the Hecke relation."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-sdp-spectral-gap.md:13-16 'The dual certificate at optimum is the pair of Jones-Wenzl projectors ... the SDP complementary-slackness matrix is their orthogonal decomposition'; md:22-24 'its existence is guaranteed by the categorical volume constraint and can be produced from the eigenvalue structure alone without invoking continuous optimisation'.",
+        "notes": "Two asserted-without-proof leaps: (i) that the dual certificate is EXACTLY the JW projector pair - plausible for V tensor V (two isotypic components) but not derived here for the general multi-block confinement SDP; (ii) the claim that the optimal SDP solution 'can be produced from the eigenvalue structure alone without invoking continuous optimisation' is a strong reduction (SDP -> closed-form) asserted as a 'therefore' with no construction shown. Both follow plausibly but the inferential steps are missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark block has no Lean sibling; the parent prop:confinement-sdp Lean defers strong duality via sorry, but that is a separate block. Nothing to compare for this remark."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] in this remark's .ts. Jones-Wenzl projectors and Kauffman-bracket degeneracy at q=+-i are standard, correctly invoked (no specific reference mis-attributed)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-sdp-spectral-gap.md:6-9 defines Delta_sigma(q) := |q+q^{-1}| and calls it a 'spectral-gap'.",
+        "notes": "Delta_sigma as defined is the SEPARATION between the two eigenvalues (q minus -q^{-1}), which for a 2-eigenvalue operator is a reasonable 'gap', but the term 'spectral gap' conventionally means distance from the bottom of the spectrum / a mass gap, so the naming is mildly ambiguous against standard usage. Also '|q+q^{-1}|' with absolute value presupposes a normed/complex base ring (q=+-i is complex), while elsewhere the framework keeps q real at q0 - the regime (complex fibre vs real archimedean q0) is not flagged here; per AGENTS.md the Im(q) fibre-vs-observable distinction matters (q=+-i lives in the fibre)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical observable matched to experiment; the q=+-i degeneracy is an exact algebraic fact, not a fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "'Deconfinement = spectral-gap closure' at the Kauffman-bracket degeneracy is a coherent and standard-flavoured analogy (root-of-unity degeneracy ~ phase transition). No broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute witness cited for this remark; the eigenvalue claim is analytically verifiable (and was verified) rather than witness-backed."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c9997223df6b",
+          "ts": "13f330684da5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: accept-with-revisions. referee_argument: The core algebraic content is correct and verified - sigma has eigenvalues (q,-q^{-1}), the separation |q+q^{-1}| vanishes exactly at q=+-i, JW projectors decompose V tensor V. The objections are about the strength of the connectives: (i) 'feasibility iff |q+q^{-1}|>0' asserts an EQUIVALENCE while only the gap>0 => Slater-strict-feasible direction is supported (the parent prop's converse / cone-emptiness at q=+-i is not proved, and the Lean defers strong duality via sorry); (ii) 'can be produced from the eigenvalue structure alone without continuous optimisation' and 'the dual certificate IS the JW projector pair' are asserted reductions without the construction. Recommend softening 'if and only if' to the proven direction (or proving the converse) and flagging the complex-q (q=+-i) fibre regime per the framework's Im(q) convention."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.213Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

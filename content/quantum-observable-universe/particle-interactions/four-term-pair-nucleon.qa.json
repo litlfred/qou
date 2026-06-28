@@ -1605,7 +1605,248 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "net(p)≈+0.999, net(n)≈+0.811 are stated as witness-pinned numerical NF outputs, not universally-quantified math claims; no counterexample/quantifier slip visible without the compute. Survives as a claim about a specific evaluation at q0."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The .md makes substantive (if compute-backed) numerical claims; not a tautology. The Lean main theorem is honest sorry, not a vacuous projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:48-69, table2/table3 values net(p)≈+0.999, net(n)≈+0.811",
+        "notes": "The block claims the nucleon is 'derived — not asserted' but the headline numbers it derives (net p≈+1.000, n≈0.811) and the flavour assignment (u,u,d for proton) are themselves chosen to match the known proton/neutron identities. The Borromean operator is justified by 'minimum action' (prop:confinement-operator-selection) but the flavour-to-nucleon mapping is input by hand. Whether the +0.999 vs +0.811 split is genuinely predicted or back-fitted to known p/n cannot be confirmed from the block alone; the 'derived not asserted' framing overstates the independence."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:1-3 'derived — not asserted'; vs four_term_pair_nucleon.lean:80-90 (main theorem is `sorry`)",
+        "notes": "The prose asserts the proton/neutron are 'derived'. The accompanying Lean states the NF equalities and discharges them with an honest sorry (the GS/Markov compute 'is not yet in Lean'). So the central claim is witness-asserted, not proved/derived in any verifiable sense within this corpus. 'Derived' is stronger than the supporting argument (one witness JSON + unformalised compute) supports."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:41 'at φ01 = 0.02'; :98-103 sweep claim",
+        "notes": "φ01=0.02 is an undisclosed-origin numerical input for the displayed Table 1 NF. The block asserts confinement universality (NF independent of φ0,φ1,φ01) which would render it inert, but that universality is itself only witness-asserted (sorry in Lean). If universality fails, φ01 is a free knob; its canonical-chain origin is not given."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:91-93",
+        "notes": "'The neutron has larger demand in γ (−0.202 vs −0.100) and additional demand in L+ (−0.010) — this extra deficit drives beta decay.' The causal jump from a normal-form coefficient deficit to 'drives β-decay n→p+e−+ν̄' is asserted, not derived; no lemma links the L+/γ NF deficit to a decay rate or energetic favourability. 'Drives' is a missing-lemma 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four_term_pair_nucleon.lean:67-68 (four_term_pair_nucleon_counts proves only nucleonPairCount=3 ∧ photonColorTerms=4 by rfl); :80-90 the substantive theorem is sorry",
+        "notes": "The only sorry-free Lean content is the trivial count 3∧4 (`⟨rfl,rfl⟩`). The substantive .md claims (net values, universality) are sorry. The Lean is honest about this (good), but a reader equating 'has Lean' with 'formalised' would be misled: the proposition's mathematical content is entirely unproved. ts validation flag is correctly 'not_checked'."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean cites [jones1987] (Markov trace / Jones polynomial) and [manuscript] for the sorry, which is topically appropriate for the Hecke/Markov-trace machinery invoked. No mis-attribution evident."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "four-term-pair-nucleon.md:78 net(p)≈+0.999 vs :88 net(n)≈+0.811; tables list 6 basis terms",
+        "notes": "'net' (the NF net coefficient) is never explicitly defined in-block — it is some scalar projection of the 6-term normal form, but which functional (sum? σ1-channel coefficient? Markov trace?) yields +0.999/+0.811 is left implicit. The reader cannot reconstruct 'net' from the table coefficients. Relies on def:categorical-proton without restating."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:73 'q0≈1.1100'; :78,:88 net values to 3 decimals; witness four-term-photon-to-atoms.witness.json",
+        "notes": "Numbers quoted to 3 sig figs at a specific q0≈1.1100 with no error bars and no statement of which q0 pin (muon vs proton, per AGENTS.md §q0 anchor convention) is used. The block predates the documented q0-repin staleness class; net values could shift with the pin. Cross-anchor stability is asserted only for φ (polarization), not for q0. Reproducibility hinges on a single witness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:30-39 'γγ → u + ū' via L+; tables label σ1 'up-quark channel', L+ 'gluon field'",
+        "notes": "The identification of NF basis elements with quarks/gluons/electrons (σ1=up-quark, L+=gluon, e- channel) is a physical interpretation a hadron-physics referee would resist: γγ→qq̄ pair production and quark confinement do not map cleanly onto single Hopf/trefoil crossings, and color (SU(3), 3 charges) is not visibly carried. These are interpretive labels on combinatorial coefficients; the physical content is not established. Not a units/conservation error per se, hence warn not fail."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "four-term-pair-nucleon.md:105 'Witness: four-term-photon-to-atoms.witness.json'",
+        "notes": "All numerical claims rest on one named witness; the block carries no scriptHash/scriptCommitSha and I cannot confirm the witness is current vs the 2026-05-28 q0 re-pin. The 3-decimal NF values are not independently reproducible from the block. Flag as needing witness-currency verification."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3fe79ad24d2b",
+          "ts": "b8539569a318"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean main theorem sorry (lean:80-90); 'derived' overclaim (md:1-3); interpretive quark labels (tables)",
+        "notes": "verdict: major-revisions. referee_argument: The proposition advertises a parameter-free *derivation* of the proton and neutron, but every load-bearing claim — the net NF coefficients (+0.999/+0.811), confinement universality, and the quark/gluon identifications — is witness-asserted and discharged in Lean by an honest sorry. The strongest objection is the gap between 'derived — not asserted' (md:1) and the unformalised compute it actually rests on, compounded by hand-input flavour assignments matching the known p/n and a 'drives beta decay' causal leap with no rate lemma. Honest sorry-labeling and the universality claim keep it from being circular outright, but as stated the block overclaims derivation."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

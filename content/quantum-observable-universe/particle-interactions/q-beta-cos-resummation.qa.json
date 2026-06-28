@@ -1845,6 +1845,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "ts:27 computation.script = computations/probe_q_beta_tightening_landscape.py — file does NOT exist (verified: ls 'No such file or directory'). authorNotes (ts:40) and lean:152-155 cite computations/q-beta-tightening-landscape.witness.json for the 305.7 ppm result — file does NOT exist. The only present witness (ts:28-30, delta-S-chain-audit.witness.json) contains eps_Q_ppm=1677.5 (bare Form A) but NO cos-resummed 305.7 ppm value.",
+        "notes": "The numerical backing for the block's central claim (305.7 ppm, 5.49x) is irreproducible: both the named producer script and the named witness are absent from the repo, and the one existing witness does not contain the cited number. Direct AGENTS.md witness-currency violation."
       }
     ],
     "da-vacuous": [
@@ -1880,6 +1898,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-beta-cos-resummation.lean:159-183: the headline theorem q_beta_cos_resummation, for all formA, exhibits formA_cos = formA*cos(alpha) and a second conjunct that is closed by `ring` because the bracketed term (lean:166-171) is literally cos(alpha) minus its own Taylor truncation — i.e. the equation reduces to formA*cos a = formA*cos a. Also lean:188-197 adds class BorromeanQuark { holds : True } and def q_beta_cos_conditional [BorromeanQuark] : True := trivial.",
+        "notes": "The 'cos-resummation theorem' is a tautology: both conjuncts are definitional/ring identities about the symbol cos(eigenphase q); it does not connect to any Markov trace, transfer matrix, or Q_beta value. The TransferMatrixEigenphase class hypothesis is never used in the proof (lean:181-183 only uses rfl+ring). The trailing BorromeanQuark : True / : True := trivial is an explicit vacuous self-assuming stub (AGENTS.md §1a forbidden pattern)."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1915,6 +1951,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:3-23 claims a specific Q_beta refinement tightening CODATA residual 1677.5->305.7 ppm. The Lean theorem q_beta_cos_resummation (lean:159-183) proves only the abstract algebraic identity formA_cos = formA*cos(alpha) (plus a ring-trivial Taylor restatement); it makes no claim about Q_beta, CODATA, the transfer matrix, or 305.7 ppm. The class hypothesis [TransferMatrixEigenphase q] is unused in the proof.",
+        "notes": "proof-statement-integrity: Lean proves a vacuously-true symbolic factorisation, strictly weaker than and disconnected from the .md's empirical/physical claim. lean validation marked 'not_checked' (ts:7)."
       }
     ],
     "da-hidden-dof": [
@@ -1950,6 +2004,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The choice of resummation function (classical cos vs q-deformed cos_q vs linear bridge) is a discrete model-selection DOF resolved by CODATA residual (md:62-66). Per AGENTS.md Q_beta c_k framing, such post-hoc corrections must be reported tiered (proved/near-match/fitted); here the cos factor is a near-match selected by fit.",
+        "notes": "The cos-vs-cos_q selection is effectively an undisclosed fitting degree of freedom (pick the even resummation closest to data). Not a 4th calibration, but a hidden model-selection knob presented as forced-by-symmetry."
       }
     ],
     "da-empirical-fragility": [
@@ -1985,6 +2057,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The headline tightening (md:20-23) cites +1677.5 -> +305.7 ppm via probe_q_beta_tightening_landscape.py at q0~1.110. The classical-vs-q cos margin is only ~7 ppm (md:62-67, 305.7 vs 313.4) — well inside model-selection noise and used to claim 'classical-limit residence'. The q0~1.110 (3 decimals) is the proton-pin-rounded value; the witness chain (delta-S-chain-audit) uses muon-pinned q0=1.10997859... (witness data.q_0_50dps), a different pin than the claimed q0.",
+        "notes": "The 7 ppm classical>q-cos preference is far inside the fit noise of a single-eigenphase model that still leaves 305 ppm; concluding 'classical-limit residence' from a 7 ppm margin is empirically fragile. The residual figures are q0-pin-sensitive and the witness backing uses the muon q0, not the stated value."
       }
     ],
     "da-citation-misuse": [
@@ -2020,6 +2110,24 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "ts:12-15 cites jones1985 (Jones, Markov trace) and wenzl1988; lean:157-158 cites jones1985 for 'Markov trace on H_n(q)' and wenzl1988 for 'Wenzl-bridge y_λ'. These references concern the Markov trace / Wenzl projections generally; neither contains the cos((z-1)h/2) Q_beta resummation or the eigenphase identification, which the block attributes to prop:beta-decay-transfer-matrix (a block that does not exist as a sibling file).",
+        "notes": "Citations are topically adjacent (Markov trace machinery) but do not support the specific invoked result (the cos-resummation / eigenphase). Minor: standard-machinery citations, but they do not back the novel claim and the in-corpus dependency target is missing."
       }
     ],
     "da-referee-verdict": [
@@ -2041,8 +2149,144 @@
         },
         "reviewed_at": "2026-06-24T12:29:19Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Central empirical claim (305.7 ppm, 5.49x) has no reproducible backing (missing script+witness, ts:27 / lean:152-155); Lean theorem is a ring-trivial tautology disconnected from Q_beta with an unused class hypothesis and an explicit : True := trivial stub (lean:159-197); the symmetry argument does not uniquely yield cos (overclaim md:50 / lean:146-150); conditional dependency prop:beta-decay-transfer-matrix has no sibling block.",
+        "notes": "verdict=major-revision. referee_argument: 'The eigenphase->cos symmetrization is a pretty observation, but as a proposition it is unsupported: the witness and producer script backing the 5.49x tightening do not exist in the repo, the Lean \"theorem\" proves only formA*cos a = formA*cos a (the eigenphase class is never used) and ships a True-trivial stub, and the claim that cos is the unique even resummation matching at every order is false. The 7 ppm classical-vs-q margin cannot support a classical-limit conclusion. Restore the compute, make the Lean derive the resummation from the class, and re-scope the uniqueness/limit claims.'"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The symbolic identity tau_M(M_beta)=cos(alpha) from spectrum {e^{+ia},e^{-ia}} (md:34-42) is correct, and the bar-involution alpha(q^{-1})=-alpha(q) is correctly proved in Lean (lean:57-81, sorry-free, verified by ring). No false proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The cos factor cos((z-1)h/2) is selected because it improves the CODATA residual (md:20-23, table md:62-66 compares classical vs q-deformed cos and keeps the one closer to data). The 'two structural constraints' (even-in-alpha) only force an even function, not specifically cos; the choice among even resummations is decided by which matches data best.",
+        "notes": "The evenness argument constrains the form to even powers but does not single out cos over (say) a Pade or a different even series; the final selection is the one that fits CODATA better by ~7 ppm (md:67). That is empirical selection presented as a structural derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:50-54 'the minimal even-power resummation matching the linear bridge at the perturbative level is the cosine' and lean:146-150 'the cosine is the unique entire even analytic function matching the spectral-bridge perturbative expansion at every order'. Uniqueness 'at every order' is not established — only the leading even constraint and a single fitted comparison (cos vs cos_q, md:62-66) are shown.",
+        "notes": "'unique entire even analytic function matching at every order' is a strong overclaim: matching a finite perturbative expansion does not uniquely determine an entire function, and only one alternative (q-cos) was tested. The 5.49x tightening is also presented as derived when it is an empirical fit improvement."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:44-54 step from 'trace must be even in alpha' to 'therefore the cosine'. Evenness implies only that odd powers vanish; it does not imply the specific function cos. The 'minimal even-power resummation matching the linear bridge' phrase smuggles in cos without a lemma establishing minimality/uniqueness.",
+        "notes": "Missing lemma: among even analytic functions agreeing with the bridge perturbatively, cos is selected without proof of minimality or uniqueness. The Lean's cos_resummation_even (lean:130-132) only proves cos(-a)=cos a, not that the resummation must be cos."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:3 and ts:10 condition on prop:beta-decay-transfer-matrix, but no content block beta-decay-transfer-matrix.{md,ts} exists in particle-interactions (verified: only knot-periodic-table / transfer-matrix-operator-properties mention the phrase). The eigenphase alpha=(z-1)h/2 'at the single-wrap order' (md:29-31) leaves 'single-wrap order' undefined in-block.",
+        "notes": "The conditional hypothesis references a non-existent sibling block; the 'single-wrap order' regime and Form A (Q_beta^A) are not defined here. uses:[prop:q-beta-spectral-bridge] resolves but the cited prop:beta-decay-transfer-matrix does not as a sibling."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "34ca73cc2d55",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:11-13 multiplies the Q_beta prediction by cos((z-1)h/2), a dimensionless factor <1, to reduce Q_beta; physically Q_beta = m_n - m_p - m_e is a measured mass difference and the cos factor is a phenomenological correction whose ~1372 ppm shift has no decay-rate / phase-space derivation given.",
+        "notes": "The cos resummation is dimensionally consistent (dimensionless multiplier) but a domain expert would question why a Markov-trace eigenphase cosine multiplies a nuclear Q-value by O(0.1%) with no QED/phase-space mechanism; flagged as plausibility concern, not an error."
       }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

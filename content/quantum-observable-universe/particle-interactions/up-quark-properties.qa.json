@@ -835,7 +835,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "up-quark-properties.md:6-7 'a Coulomb charge contribution of +2/3 relative to the proton.'",
+        "notes": "The up quark's electric charge is +2/3 e (absolute), not '+2/3 relative to the proton' (the proton has charge +1, so 'relative to the proton' would be +2/3). The phrasing is at best ambiguous and as literally written ('relative to the proton') is wrong; if read as the up-quark absolute charge the number is right but the 'relative to the proton' qualifier is a false/garbled normalization. Warn (not critical) because the intended fact (+2/3 e) is standard."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark makes substantive (if contestable) interpretive claims; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No target back-fitting in this descriptive remark."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "up-quark-properties.md:4-7 — 'positive orientation means the up quark's crossings contribute +q to the Skein polynomial ... This gives the up quark a Coulomb charge contribution of +2/3.'",
+        "notes": "Deriving electric charge (+2/3) from a Skein-polynomial crossing sign (+q) is asserted via 'This gives', with no derivation linking a knot-polynomial coefficient to a Coulomb charge. The remark presents a heuristic identification as if it follows; the +2/3 number appears to be imported from the Standard Model rather than derived from the +q crossing. Overclaim: heuristic-as-derived."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numerical parameter introduced; +2/3 is a SM input, not a fitted knob (its provenance is the overclaim issue, not a hidden DOF)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "up-quark-properties.md:4-7: 'The positive orientation means the up quark's crossings contribute +q to the Skein polynomial at each crossing point. This gives the up quark a Coulomb charge contribution of +2/3 relative to the proton.'",
+        "notes": "Step A (positive crossing → +q in Skein) does not entail step B (electric charge +2/3). No lemma/map from Skein-variable sign to fractional electric charge is supplied. The 'This gives' is a missing-lemma logical gap: a knot-polynomial crossing weight and a Coulomb charge are different quantities and the connection is asserted, not argued."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark block, no .lean sibling (remark Lean optional and absent)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] / -- Ref: in this remark."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "up-quark-properties.md:6 '+2/3 relative to the proton' — 'relative to the proton' is an undefined normalization; and the def it interprets (up-quark.md:1-3) defines the up quark as a neutrino-unknot with positive orientation, with no charge field, so 'Coulomb charge' is introduced only here.",
+        "notes": "'Coulomb charge contribution +2/3 relative to the proton' admits multiple readings (absolute +2/3 e? fraction of proton charge? per-crossing contribution?). The base definition (def:up-quark) carries no charge attribute, so the remark's charge claim has no upstream anchor to disambiguate against."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "+2/3 is an exact SM quantum number, not a numerical fit/q0-pinned match; fragility lens does not apply."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "up-quark-properties.md:6-7 attributes the +2/3 e charge to a Skein crossing sign; md:1-3,9-13 model the up quark as a neutrino (the up-quark.md def: 'unknot (neutrino)').",
+        "notes": "A domain expert would object on two grounds: (1) identifying the up quark's substrate with a neutrino (a neutral, leptonic state) while assigning it +2/3 e color-charged-quark charge is physically incongruous; (2) electric charge is not a Skein-polynomial sign — the units/mechanism don't connect. The confinement statement (md:9-13, 'isolated up quark does not exist') is physically correct, so this is a warn on the charge-derivation half, not a wholesale fail."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness cited."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9cbfdbfcd5a8",
+          "ts": "60f6a6ad8d21"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: The remark's confinement/isolation content (md:9-13) is sound, but its charge claim is the weak link: 'positive crossing → +q in Skein → Coulomb charge +2/3 relative to the proton' (md:4-7) is a non-sequitur (no map from a Skein-variable sign to electric charge), an overclaim (heuristic-as-derived — +2/3 is a SM input dressed as a consequence), and the 'relative to the proton' normalization is wrong/ambiguous for the absolute +2/3 e charge. Restate as an interpretive correspondence (not a derivation), fix the normalization, and either cite where the +2/3 actually comes from or demote the charge sentence."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.830Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

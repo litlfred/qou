@@ -915,7 +915,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Algebra checks: σ_k⁻¹ = σ_k−(q−q⁻¹) from the Hecke relation; mixed case ½(σ_k+σ_k⁻¹)=σ_k−½(q−q⁻¹) is correct (md:24-26,38-42). Down-down case correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "typed-crossing-operator.lean:32-34 — `structure TypedCrossingOperator` carries only `crossType` and `generatorIndex`; the operator's actual value (σ_k, σ_k−(q−q⁻¹)1, σ_k−½(q−q⁻¹)1) is never defined in Lean",
+        "notes": "The Lean sibling only enumerates flavor/crossing types and a 2-field record; it does NOT define the H₃(q)-valued operator the .md specifies (no Hecke element, no q, no R-matrix). It is not `: True := trivial`, but the definitional content (the three operator values) is absent — the Lean is a stub of the type, not the operator. For a `definition` block this under-delivers on the named object."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "A definition; no derivation toward a target."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "typed-crossing-operator.md:28-43 'Motivation' presents the up=σ, down=σ⁻¹, mixed=mean assignment as the natural/forced encoding",
+        "notes": "The identification 'down-down = inverse generator' and 'mixed = arithmetic mean ½(σ+σ⁻¹)' is presented as motivated/canonical, but the mean choice for mixed flavors is a modeling convention, not derived from the Hecke structure (there is no a-priori reason the up–down crossing must be the arithmetic mean of the two eigen-channel operators rather than, say, a q-weighted combination). Stated as 'the' typed operator; really one natural choice among several."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The ½ in the mixed case is fixed by the 'arithmetic mean' convention, not a free fitted parameter; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The 'expanded via the Hecke relation' steps follow correctly from σ²=(q−q⁻¹)σ+1."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "typed-crossing-operator.md:12-26 defines C(f_i,f_j;σ_k)∈H₃(R,q) with three explicit Hecke-algebra values; typed-crossing-operator.lean:1-34 defines only enums + a 2-field `structure` with no operator value and no ring/q",
+        "notes": "The Lean sibling does not formalize the definition it is named for: the actual operator (the H₃(q) element in each of the three cases) is never constructed in Lean. The .md's mathematical content (the three Hecke-algebra values and their derivation) has no Lean counterpart. The named decl QOU.Braiding.TypedCrossingOperator is a type-skeleton, weaker than the narrative definition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "typed-crossing-operator.lean:1-4 cites [jones1987] §3 (Markov trace) + §4 (link polynomials) for Hecke-algebra representations of braid groups — a correct and standard attribution for the Hecke/Skein framework underlying the typed crossing operator."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "typed-crossing-operator.md:8 'H_3(R,q)' (generic ring R) but :13 uses q⁻¹ and :39 uses ½ — requiring q invertible and 2 invertible (characteristic ≠ 2 / field), unstated; mixed case symmetric in (f_i,f_j) so order-(i,j) dependence is dropped silently",
+        "notes": "Base-ring/regime left implicit: the ½ coefficient needs 2 invertible (fails over a generic CommRing / char 2), and q⁻¹ needs q a unit — neither stated though the block advertises generic R. Also the 'mixed' case is symmetric, so the up–down vs down–up distinction is collapsed without comment. Minor definitional looseness."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical/experimental match claimed; purely algebraic."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "typed-crossing-operator.md:46-48 'encodes the flavor dependence of the strong interaction'",
+        "notes": "A QCD referee would note that the strong interaction is flavor-blind (gluon coupling is identical for u and d quarks; isospin is an approximate symmetry broken mainly by quark masses and electromagnetism, not by the strong color force). Encoding 'flavor dependence of the strong interaction' via up/down crossing signs attributes flavor-dependence to the strong force itself, which is contrary to standard QCD. Framework reinterpretation flagged as physically contestable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute witness backs this definition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9233370b268f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lean:32-34 (operator value never defined); md:46-48 (strong-interaction flavor-dependence); md:38-42 (mean as the canonical mixed choice)",
+        "notes": "verdict: minor-revision. referee_argument: The algebra is correct and the [jones1987] citation is apt, but (1) the Lean sibling does not actually construct the operator it names — it stops at enums + a 2-field record, so the definition is unformalized; (2) the mixed-flavor = arithmetic-mean assignment is a convention presented as canonical; and (3) the physical gloss ('flavor dependence of the strong interaction') conflicts with the flavor-blindness of QCD. Strongest objection: Lean/narrative divergence — a `definition` block whose required Lean sibling does not contain the definition. Fixable by adding the H₃(q)-valued construction and softening the QCD-flavor claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.722Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

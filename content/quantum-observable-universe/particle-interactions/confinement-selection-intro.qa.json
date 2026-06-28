@@ -815,7 +815,232 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose roadmap enumerating sibling def/prop/conj/rem blocks; no standalone claim to falsify."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.md:1 frames 'Algebraic primality at q_0 equals the empirical magic ladder' as a 'conjectural empirical match' and confinement-selection-intro.md:3-5 promotes LP/SDP selection to 'the physically distinguished' braid words.",
+        "notes": "The roadmap presents the magic-number ladder as a match the machinery 'will detect'; the actual circularity risk lives in the conj/prop siblings (whether the LP target is back-fitted to AME), not in this signpost. Flagged as a pointer for the downstream blocks; minor here."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.md:3 'every later observable in the chapter is computed as a G^{-1}-weighted dual pairing against the active set identified by this LP' and '...is the central proposition'.",
+        "notes": "Strong universal framing ('every later observable') stated in a draft intro; whether all chapter observables genuinely route through the LP dual pairing is a claim to verify against the prop, not established here. Minor: intro prose, '[draft]'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No coefficients introduced in this prose; the q_0/magic-ladder match is explicitly flagged conjectural in a named sibling conj, not asserted as a derived constant here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Enumeration of blocks, not a deductive chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose block, no lean.ref."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[]/-- Ref:."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-selection-intro.md:1 'Algebraic primality of n at substrate q' is invoked as a 'structural notion of primality the LP and SDP machinery will detect' without the in-block definition; 'shadow prices', 'active set' similarly forward-referenced.",
+        "notes": "Resolved by the named sibling def; minor and expected for a roadmap intro."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerics in this block; the empirical 'magic ladder' match is delegated to the conj sibling."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1a4c3b4afa09",
+          "ts": "788c9d635cce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept-as-prose. Strongest objection (referee_argument): the intro asserts 'every later observable in the chapter is computed as a G^{-1}-weighted dual pairing' and presents algebraic-primality = empirical magic ladder as a match the machinery 'will detect' — both load-bearing claims whose substance (and any back-fitting / hidden-DOF risk) lives in the named sibling prop/conj, which a referee must audit there. As a draft signpost it carries no defect of its own."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

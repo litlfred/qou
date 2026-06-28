@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/x5-bring-prym-jacobian.md"
   },
   "source_hashes": {
-    "md": "b7d006061c6a",
+    "md": "fe25259d45ad",
     "ts": "6af899d0d266"
   },
   "criteria": {
@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The remark explicitly disclaims a Prym embedding (x5-bring-prym-jacobian.md:21-23 'Not a Prym embedding ... Bring has no genus-2 Galois quotient'), avoiding the standard over-claim; the Z5-character equality is stated as a compatibility, dimensionally consistent (Bring g=4 ⇒ H^1 rk 8; X_5 g=2 ⇒ rk 4; 4 nontrivial chars χ1..χ4)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "x5-bring-prym-jacobian.md:10-14 asserts the isotypical equality H^1(X_5,Q)_{≠0} = χ1⊕χ2⊕χ3⊕χ4 = H^1(B_Br,Q)_{≠0}^cyc as fact; the block is a remark (interprets prop:x5-bring-weight-identification) with no proof/witness of the Jacobian-level character equality, only a cite to edge1978 for the classical Bring relation.",
+        "notes": "Companion 'Jacobian-level' identity is presented as established though the remark carries no formal backing for the cohomology decomposition itself."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "x5-bring-prym-jacobian.md:16-17 is a broken sentence: 'where χ_k is the character σ ↦ ζ_5^{-k} and the / The right-hand side is the non-trivial...' — a dangling 'and the' leaves a clause unstated before the next sentence.",
+        "notes": "Textual gap (likely an editing artifact) rather than a logical one, but it interrupts the justification of the right-hand identity."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark has no Lean sibling (kind=remark, no lean ref in .ts)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "edge1978 (Edge, 'Bring's curve', J. London Math. Soc., references.ts:1503) is correctly invoked for 'the classical relation between Bring and its hyperelliptic quotients' (x5-bring-prym-jacobian.md:37-38)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "x5-bring-prym-jacobian.md:18-19 'the remaining weight-0 summand is contained in the S_5-standard isotype and does not see the cyclic structure' — B_Br = B_{Br} (Bring) and X_5 genera/H^1 ranks are not stated in-block; the reader must supply g(Bring)=4, g(X_5)=2 to check the χ1..χ4 count.",
+        "notes": "Key dimensional data (genera, H^1 ranks) left implicit; the symbol B_Br for Bring vs B_3 (Borromean) elsewhere in the chapter is a near-collision."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure geometry/representation-theory remark; no physical-observable claim."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fe25259d45ad",
+          "ts": "6af899d0d266"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Strongest objection: the Jacobian-level Z5-isotypical equality (x5-bring-prym-jacobian.md:10-14) is asserted without proof/witness in a remark, and the supporting sentence is grammatically broken at :16-17.",
+        "notes": "verdict=minor-revision. referee_argument: mathematically careful (Prym embedding correctly disclaimed) but the headline character-decomposition is stated as fact; either cite a proof in prop:x5-bring-weight-identification for the H^1 decomposition or soften to 'expected'. Fix the dangling clause."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.062Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

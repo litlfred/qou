@@ -913,7 +913,247 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "A definition (naming a morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind); a naming act makes no truth claim that could be false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Lean `structure LocalizedHadron extends Hadron` adds genuine fields (point_theta, point_phi, binding) over the ground ring R_q — not a True/trivial body. Non-vacuous as a definition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Built on def:hadron and projective-line/Hopf-link primitives; no self-reference."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition makes no derived claim to overstate."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "point_theta/point_phi are the base-point coordinates intrinsic to localization, not undisclosed fit parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No inferential chain in a definition."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "localized-hadron.md:5-13 morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind vs localized-hadron.lean:35-41 structure with fields point_theta,point_phi:R_q and binding:HadronBinding",
+        "notes": "The Lean models the localized hadron as a record carrying a base point (two R_q coordinates) + binding data, not as a categorical morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind. The 'morphism from 𝟙' that the .md calls the distinguishing feature (md:14-19) is not represented in the structure (no hom field, no Sym^n object). The formalisation captures the data of a point but not the universal/morphism content of the definition. Minor for a definition block, but a real narrative-vs-Lean gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No external cites[]; Lean -- Ref is a [manuscript] self-reference (§3 Lifting and Descent), not an attributable external result."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "localized-hadron.md:11 'Sym^n(𝒦_p)' (n unbound); md:11 '𝒦_p the fibre of knot types at p'; md:12 'ℒ_p^bind the binding Hopf link'",
+        "notes": "The exponent n in Sym^n(𝒦_p) is unquantified (the hadron's constituent count? fixed? bound to def:hadron?) — not stated in this block. 'Fibre of knot types' and 'binding Hopf link' are used as if defined but not linked here (no #ref). The Lean also drops Sym^n entirely. Mild under-specification of the object being named."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Localizing a hadron at a categorical point of ℙ(V) is a coherent modelling choice; no physical claim to reject."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness backing a definition."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f029ae0a62b9",
+          "ts": "b781de4a81d6",
+          "lean": "7ae48ef8907f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "localized-hadron.md:5-19 morphism definition vs localized-hadron.lean:35-41 point-record structure; md:11 unbound n in Sym^n",
+        "notes": "verdict: accept-with-minor-revision. referee_argument: a clean definition whose only defects are (1) the Lean structure records a base point + binding data but omits the very feature the prose calls distinguishing — the morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind (no hom/Sym^n field), and (2) the constituent count n in Sym^n(𝒦_p) is unbound and the supporting objects 𝒦_p / ℒ_p^bind are not cross-linked in this block. Tighten the Lean to carry the morphism (or note the abstraction explicitly) and bind n. The definition is otherwise sound and non-vacuous."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:18.840Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

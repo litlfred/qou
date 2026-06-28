@@ -815,7 +815,233 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Section-intro prose summarizing downstream blocks; no standalone provable claim stated falsely."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose intro; no claim to be vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; navigational summary."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "transfer-beta-decay-intro.md:3 'Transfer matrix identities: $T_{pp}T_{nn} = I$ and $T_{pn}^2 = [2]_q^2/4 \\cdot I$' presented as established 'algebraic identities'.",
+        "notes": "Compared with nucleon-ordering-factorization.md, T_pp=σ0, T_nn=σ0⁻¹ so T_pp·T_nn=I is plausible, and T_pn=½(σ0+σ0⁻¹) gives T_pn²=¼(σ0+σ0⁻¹)² — equal to [2]_q²/4·I only if (σ0+σ0⁻¹)²=[2]_q²·I, which is the Hecke statement σ0+σ0⁻¹=[2]_q (a scalar) holding on the relevant channel, not in general H_n(q). The intro states these as flat identities; their validity is channel/representation-restricted. Minor, since the intro defers to the (prop) blocks."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free parameter introduced in the intro prose."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Describes block roles without an inferential chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[]/-- Ref:."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "transfer-beta-decay-intro.md:1 'The Gram-weighted $\\mathcal{Q}_q$-value of §6' and md:3 '$\\mathfrak{Q}_\\beta$' / '$[2]_q$' used without in-block definition.",
+        "notes": "Q_q vs 𝔔_β and [2]_q are introduced cold (deferred to §6 / the prop blocks). Standard for an intro; reader must follow links. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical Q_β value/accuracy claim made in this prose intro (the AGENTS.md Q_β c_k-truncation and q0-repin fragility lives in the actual Q_β prop/witness blocks, not here)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "'every beta-decay event becomes a single matrix insertion' is a modeling framing, not a falsifiable physical claim at the intro level; no broken conservation/units stated."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness/compute cited in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "28ce4d761a84",
+          "ts": "f4a397d0cf0c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: accept-with-nits. referee_argument: A clean navigational section intro. The only referee nit is that it states the transfer-matrix identities T_pp T_nn=I and T_pn²=[2]_q²/4·I as flat algebraic facts when they are representation/channel-restricted (true on the standard channel, not across all of H_n(q)); and several symbols (Q_q, 𝔔_β, [2]_q) are introduced cold. Both are deferred to the cited (prop) blocks, so minor."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

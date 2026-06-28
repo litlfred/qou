@@ -1338,7 +1338,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The narrative claim — for a finite Hecke NF the minimal filtration level exists — is true: it is a min over a finite nonempty set. No counterexample."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-level-exists.lean:19-21 proves only `Nonempty (ConfinementLevel R)` by exhibiting the arbitrary record `{ braidIndex := 0, nStrands := 1, q := 0, level := 0 }`.",
+        "notes": "`ConfinementLevel` (ConfinementLevel.lean:25-33) is a plain 4-field record; `Nonempty` of it is trivially true for ANY field values and encodes nothing about T_w lying in J^ℓ(q) or the minimum being achieved. Self-assuming/content-free relative to the stated proposition."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical target or calibration; pure finiteness argument. No back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.md:18 `ℓ(K,q)=m in the worst case … = 0 when T_w lies entirely in the trivial 1-dimensional blocks`.",
+        "notes": "The body asserts specific worst/best-case values of ℓ without proof; the actual argument only establishes existence/finiteness. The numeric characterisation `ℓ=m` is stated, not derived. Minor since it is illustrative."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physical constant or coefficient introduced; combinatorial existence statement."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-level-exists.md:13-16: jump from 'partitions finite' to 'filtration has finitely many distinct levels' to 'minimum achieved by ℓ∈{0,…,m} where m = number of distinct nonzero shadow-price values'.",
+        "notes": "The identification of the level bound with 'distinct nonzero shadow-price values' is asserted without a lemma linking the partition count to the shadow-price multiset; the conclusion (existence) is fine but this intermediate equation is an unjustified 'therefore'."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:1-5 claims 'for any closed braid K … the confinement level ℓ(K,q) exists and is finite'; confinement-level-exists.lean:19-21 proves `Nonempty (ConfinementLevel R)`.",
+        "notes": "Lean proves a strictly weaker/different statement (the record type is inhabited) than the .md (a particular braid's minimal filtration level exists). proof-statement-integrity violated: no T_w, no J^ℓ, no minimality in the Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean -- Ref: [manuscript] is a self-citation placeholder; no external reference invoked to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:11-12 'generic locus' and :15-16 'distinct nonzero shadow-price values at q' used without local definition; def:confinement-level referenced but not in uses[] (confinement-level-exists.ts:9 `uses: []`).",
+        "notes": "The proposition depends on def:confinement-level and the shadow-price/SDP machinery yet declares `uses: []`, leaving the key terms (generic locus, shadow-price) unanchored in the manifest."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match to experiment; q-independent finiteness claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physical/dimensional claim; purely algebraic existence."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness/compute; analytic statement with no numbers to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "50769fe81a58",
+          "ts": "009b9fc85a42",
+          "lean": "7c11db6308a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean witness is vacuous (Nonempty of an arbitrary record) and diverges from the .md existence-of-minimal-level claim; uses[] empty despite dependence on def:confinement-level.",
+        "notes": "verdict: minor-revision. referee_argument: The mathematical content (finiteness ⇒ min exists) is correct and easy, but the formalisation does not formalise it — it proves type-inhabitation instead, so the block is unbacked. Either state `∃ ℓ, IsLeast {ℓ : T_w ∈ J^ℓ} ℓ` in Lean or demote the Lean to a documented stub, and populate uses[]."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:25.667Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

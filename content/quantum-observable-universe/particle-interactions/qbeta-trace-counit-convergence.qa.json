@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean"
   },
   "source_hashes": {
-    "md": "b3d2ff3173bc",
+    "md": "d950a541641b",
     "ts": "a5045a26f4f1",
     "lean": "5d81f8abaa07"
   },
@@ -978,7 +978,259 @@
           "value": 0.8
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Stated as a conjecture asserting equality of two functionals (tr_M tower difference = ε(Δ)·𝔈₀). The counit closed form m_e(q+1)(q²-2q-1)/(2q³) is the proved leg (Qbeta_closed); the equality is honestly flagged conjectural. No demonstrably false claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "qbeta-trace-counit-convergence.lean:38-47 class fields traceMassDiff, counitForm both opaque ℝ; converges: traceMassDiff = counitForm",
+        "notes": "The class axiomatises traceMassDiff and counitForm as free real fields with no construction, then the 'conjecture' field `converges` simply asserts they are equal. Because traceMassDiff is an uninterpreted ℝ (not built from any tr_M tower), the conditional corollary qbeta_is_trace_mass_difference (lean:52-55) is provable by rw and asserts only 'an unconstrained real equals the counit form given that we postulated it equals it'. The genuine content (the tower sum actually equalling the counit form) is not encoded — traceMassDiff is not defined as 𝔪(n)-𝔪(p)-m_e in Lean, only named so in a docstring. Borderline self-assuming carrier: the conjectural field carries the conclusion as a bare equality of two opaque symbols rather than the structural identity."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "qbeta-trace-counit-convergence.md:16-20 'their equality is required for consistency'; md:36-37 'functional-consistency identity'",
+        "notes": "The justification 'the two sides are the same physical observable ... so their equality is required for consistency' is a self-referential argument: it presumes both functionals compute the same observable (the thing to be shown) to argue they must be equal. The +0.17% residual (md:32-34) is precisely a measured *disagreement*, yet it is reframed as 'the brane-tower remainder' rather than evidence against the identity. Assuming the conclusion (they are the same observable) to motivate the conjecture is circular reasoning, though it is labelled a conjecture not a proof."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:24-34: N=0 tr_M term misses by -56% (≈0.345 vs 0.78 MeV, 2.3x low); counit form matches +0.17%",
+        "notes": "The block frames a single-term -56% miss as evidence FOR a convergence identity, attributing the entire 2.3x gap to an unevaluated 'tower sum' that is conjectured to reorganise exactly onto the counit form. That the leading term is 2.3x too small is presented as showing the convergence is 'non-perturbative' rather than as a problem; the claim that the tower sum closes the gap exactly is asserted with no partial-sum evidence. Conclusion (exact functional identity) is much stronger than the evidence (one functional matches to 0.17%, the other to within 2.3x). Honestly conjecture-labelled, hence warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "𝔈₀, q, m_e are canonical-chain quantities; the counit form is a fixed rational function. No undisclosed free parameter introduced (the +0.17% is reported as a residual, not absorbed by a knob)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:22-41 'Why the convergence is non-perturbative'",
+        "notes": "The argument 'the N=0 term misses by 56%, ε(Δ)-tr_M(Δ)=h(z-1) is not small, THEREFORE a closed evaluation of the tower-summed difference establishes the identity' has a gap: showing the leading term and the leading functional difference are large does not establish that the full tower sum converges to the counit form — it only shows perturbation theory won't prove it. The leap from 'non-perturbative, needs closed evaluation' to the asserted exact equality is the missing lemma (the closed evaluation itself, which is exactly what is unproved)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:9-13 (traceMassDiff = 𝔪(n)-𝔪(p)-m_e, tower-summed Markov trace) vs lean:39-47 (traceMassDiff : ℝ — an opaque field with no definition)",
+        "notes": "The .md claims the conjecture is that the *tower-summed Markov-trace mass difference* equals the counit form. In Lean, traceMassDiff is an undefined real-valued class field; nothing ties it to 𝔪(n)-𝔪(p)-m_e, to tr_M, or to a tower sum. So the conditional corollary qbeta_is_trace_mass_difference proves only 'opaque_real = counit_form given opaque_real = counit_form' (lean:52-55, by `rw [h.converges, h.counitForm_eq]`) — a trivial projection of the assumed equality, not a derivation of the physical mass difference. proof-statement-integrity: the Lean does not derive the .md claim; it restates the postulate. This is the §3b-cond 'degenerate — class axiomatises the conclusion, theorem merely projects it' failure mode."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] in .ts and no external -- Ref: in the Lean; only internal cross-references to prop:qbeta-counit-closed-form and a docs/audits path. Nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:18-20 'the integral ω = G⁻¹𝟙'; md:9 'summed over the brane tower'",
+        "notes": "Two key objects are under-specified: (1) 'the brane tower' and how 𝔪(n)-𝔪(p)-m_e is summed over it is never defined in-block (no tower index, no summand) — yet it is the LHS of the conjectured identity; (2) the counit's 'integral ω = G⁻¹𝟙' is stated without specifying G or the pairing space. The Lean sidesteps both by leaving traceMassDiff opaque, so the ambiguity is real and load-bearing."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:32-34 'matches to +0.17% at N=0 — the same residual that separates 𝔈₀≈4.186 MeV from its calibration cross-check ≈4.155 MeV'; md:27 'Q_β ≈ 0.78 MeV'",
+        "notes": "The headline 0.17% agreement is at a specific (unstated-pin) q0 and is acknowledged to coincide with the 𝔈₀ vs cross-check discrepancy (4.186 vs 4.155 MeV, ~0.7%) — so the '0.17%' is entangled with the energy-scale calibration uncertainty, not a clean prediction. No error bars; no statement of muon vs proton q0 pin; per AGENTS.md the Q_β L2 target is ~7.8 ppb while the framework currently sits at ~1279 ppb, so a '0.17%' (1700000 ppb) match is far inside the experimentally-relevant band and its quoted precision is not robust against the q0 re-pin staleness class."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Q_β ≈ 0.78 MeV is the correct order for the neutron β-decay endpoint scale; identifying 𝔪(n)-𝔪(p)-m_e with the Q-value is dimensionally and physically standard. No conservation/units violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:26-34 quotes 0.345 MeV, 0.78 MeV, 4.186/4.155 MeV, -56%, +0.17% with no witness file named in the block",
+        "notes": "Several specific numerical values are quoted (the -56% miss, |tr_M(Δ)|·𝔈₀≈0.345, 𝔈₀≈4.186) but the block names no witness JSON and no scriptHash/scriptCommitSha; the q0 pin is unstated. The values cannot be reproduced or staleness-checked from the block alone, and 'Q_β≈0.78' vs the AGENTS.md current dashboard (Q_β missing target by 164x) suggests the quoted agreement may predate the q0 re-pin. Needs a cited, current witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d950a541641b",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lean:39-55 opaque traceMassDiff + trivial-projection corollary; md:16-20 consistency-circularity; md:24-34 56%-miss reframed as non-perturbative",
+        "notes": "verdict: major-revisions. referee_argument: The narrative is honest about being a conjecture and about the -56% leading-term miss, which is creditable. But three issues compound: (1) Lean formalisation is degenerate — traceMassDiff is an undefined real field, so the 'conditional corollary' proves only the postulated equality back to itself (§3b-cond degenerate self-projection, da-lean-narrative-divergence FAIL); the tower-summed Markov-trace object the conjecture is *about* is never constructed in Lean. (2) The motivating argument ('same physical observable, so equality required for consistency') is circular, and the +0.17% residual is reframed from disagreement into 'remainder'. (3) The 0.17% agreement is entangled with the 𝔈₀ calibration spread and quoted at an unstated, possibly-stale q0 pin with no witness. Strongest objection: encode traceMassDiff as the actual tr_M tower sum (or at minimum a defined finite partial sum) so the conjecture has falsifiable content and the corollary derives rather than restates it; cite a current witness for the 0.78/0.345/4.186 numbers."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.846Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

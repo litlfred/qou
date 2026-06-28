@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/cemetery-group-emergence.md"
   },
   "source_hashes": {
-    "md": "24f3133a5f95",
+    "md": "9d6d42f45367",
     "ts": "d4b85b8efa3f"
   },
   "criteria": {
@@ -914,7 +914,241 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The conjecture (monotonicity of Z_n=ker τ under crystal extensions) is stated as a conjecture, not asserted true; .md:37-46 explicitly flags monotonicity as the conjectural content. No false assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "CemeteryGroupEmergence.lean:74-80 the 'canonical' instance sets tauImage _ := 0 (constant zero) and discharges monotone_under_extension _ _ := rfl. The docstring (lean:74) claims 'Faithful instance. Carries the explicit research-grade conjecture as a sorry' but there is NO sorry — the conjectural field is satisfied trivially because τ is identically 0.",
+        "notes": "This is the §3b-tax / §1a anti-pattern: an instance that 'closes' a conjecture by making its content vacuously true (tauImage≡0 ⇒ monotonicity holds by rfl). The .md (lines 37-46) insists monotonicity is non-trivial and conjectural; the Lean instance contradicts that by providing a trivial model. Either the conjecture class should have NO instance (open state), or the instance must carry a genuine sorry. The docstring's 'sorry' claim is false."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting to a numerical target; structural conjecture about a kernel filter."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cemetery-group-emergence.md:42-46 'Monotonicity follows from the localising-Serre property of $\\mathcal{Z}_n$ ... together with the action of Kashiwara operators ...; both are standard for KLR algebras, and the residual content is the QOU-specific instantiation.'",
+        "notes": "Calling the monotonicity 'follows from ... standard' properties while the block is (correctly) kept a conjecture is mildly tension-y: if it truly followed from standard KLR facts it would be a theorem. The 'residual content is QOU-specific instantiation' hedge is doing the load-bearing work and is not spelled out. Honest conjecture kind keeps this at warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameter; Z_n=ker τ is defined structurally."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cemetery-group-emergence.md:29-35 'Relation to the spectral-sum cutoff' asserts the residue strata above the confinement level ℓ(K,q0) 'correspond precisely to' the crystal extensions falling into Z_n.",
+        "notes": "The 'correspond precisely' linkage between the spectral-sum cutoff (conj:gs-spectral-sum-finite) and the cemetery extensions is asserted as the structural reason for the cutoff without an argued bridge; it is itself conjectural and rests on the very monotonicity being conjectured. Acceptable within a conjecture block but the precise-correspondence claim is stronger than supported."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "cemetery-group-emergence.md:1-17 the conjecture is the non-trivial monotonicity τ(M_{β≤k·w'})=0 for every continuation. CemeteryGroupEmergence.lean:44-45 encodes monotone_under_extension as ∀ T, inCemetery (nodeOf T) → tauImage T = 0, but the only provided instance (lean:75-80) makes tauImage≡0, so the downstream 'theorems' tauImage_eq_zero_of_inCemetery (lean:52-57) and killSwitch_zero_mul (lean:67-72) are proved against a model where τ is identically zero — they establish nothing about the actual observation functor.",
+        "notes": "Lean proves a vacuously-implied version: the conditional 'theorems' hold for the trivial τ≡0 instance, diverging from the .md claim that τ genuinely annihilates only cemetery extensions. The §3b-cond pattern requires the class field to carry the genuine sub-hypotheses and the instance to be honest (sorry); here the instance trivializes the hypothesis. proof-statement-integrity fail: the formal artifact does not derive the narrative claim, it satisfies it by a degenerate model."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cemetery-group-emergence.md:43-46 cites [khovanovlauda2009, brundankleshchev2009] for 'the localising-Serre property of Z_n inside K_n together with the action of Kashiwara operators on graded projectives; both are standard for KLR algebras'. .ts cites[] lists both.",
+        "notes": "KhovanovLauda 2009 and BrundanKleshchev 2009 establish the KLR/cyclotomic-Hecke diagrammatic categorification but neither contains the specific 'localising-Serre property of the cemetery group Z_n' nor the τ-monotonicity result — those are QOU-specific. The citations support the general KLR backdrop but are invoked as if backing the specific monotonicity ('both are standard'), which overstates what the references prove. Minor/borderline since they do back the general machinery."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cemetery-group-emergence.md:6-10 refers to 'the prefix β≤k of β lifts to a graded projective KLR module that lies in the cemetery group Z_n=ker τ'; the lift from a crystal-path prefix to a graded projective KLR module is the key construction and is not pinned down in-block (deferred to conj:crystal-graph-realization).",
+        "notes": "The map crystal-path-prefix ↦ graded projective KLR module ↦ membership in ker τ involves several constructions stated only by reference. 'ker τ' depends on which τ (observation functor) and on which n; the n-dependence of Z_n vs the fixed observation functor is left implicit. Resolvable via uses[] links, hence minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match/observable; purely structural conjecture."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No direct physical-observable claim (algorithmic/categorical pruning conjecture)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No compute/witness backing cited; conjecture has no numerical witness to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9d6d42f45367",
+          "ts": "d4b85b8efa3f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: As a narrative conjecture the block is honestly labeled, but its Lean axiomatisation is degenerate. The 'canonical' instance (CemeteryGroupEmergence.lean:75-80) discharges the conjectural monotonicity field by setting tauImage≡0 with monotone_under_extension := rfl — no sorry — while its docstring falsely claims to 'carry the explicit research-grade conjecture as a sorry'. Consequently the two downstream conditional 'theorems' (tauImage_eq_zero_of_inCemetery, killSwitch_zero_mul) are proved against a trivial τ≡0 model and establish nothing about the real observation functor (da-vacuous + da-lean-narrative-divergence, both major). Per §3b-tax/§1a, either remove the trivial instance to leave the conjecture in its honest open state (content-bearing class, no instance) or make the instance carry a genuine sorry. Secondary nits: the 'monotonicity follows from standard KLR facts' framing (da-overclaim) and the [khovanovlauda2009]/[brundankleshchev2009] citations being invoked for the QOU-specific monotonicity (da-citation-misuse)."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.120Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

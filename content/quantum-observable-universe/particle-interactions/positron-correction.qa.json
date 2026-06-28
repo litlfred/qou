@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/positron-correction.md"
   },
   "source_hashes": {
-    "md": "506d228871e0",
+    "md": "1d7f4d8376de",
     "ts": "6ef0ab961147"
   },
   "criteria": {
@@ -1605,7 +1605,243 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The algebraic identity Q=(Σ+r)·m_e with r=1 ⇒ Q=Σ·m_e+m_e is true; no false statement at the algebra level."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "positron_correction.lean:42-44 class field 'qvalue_form : Q = (Σ_char + r)·m_e' carried as input, then theorem (lean:63-69) derives Q=Σ_char·m_e+m_e by rw+ring.",
+        "notes": "The 'derived' identity is one ring-step from the assumed class field qvalue_form; the content of the proposition (that the +1 IS the positron and is structurally required) is supplied as a hypothesis (qvalue_form + positron_ratio_one), not derived. Borderline self-assuming projection — the Lean shows little beyond substituting r=1."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "positron-correction.md:1-5 'The +1 ... is not a fitting constant — it is the positron mass m_{e+}/m_e=1' while the Lean encodes r=1 as 'physical input' (lean:38-41 positron_ratio_one : r = 1).",
+        "notes": "The claim 'the +1 is the positron, not a fit' is asserted/axiomatized (r=1 as input), not independently derived from the pair-production vertex; the categorical character-sum is not shown to mandate exactly +1 m_e — it is identified post-hoc with the known positron mass."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "positron-correction.md:21-23 boxed Q = Σ_char × m_e + 1 × m_e presented as exact/structural, but :24-39 the +1 is applied only for A=1 and even A, absorbed for odd A≥3.",
+        "notes": "The single boxed identity is presented as the universal Q-value correction, yet the body shows it is regime-conditional (added, restored, or absorbed depending on parity of A). The clean '+1 = positron' framing overstates the uniformity of a correction that is actually case-split."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "positron-correction.md:24-39 three regimes: A=1 'correction added explicitly Q=(SΔ+1)m_e'; even A 'after Frobenius filtering ... restores'; odd A≥3 'absorbed ... no explicit correction'.",
+        "notes": "Whether the +1 is added, restored-after-filtering, or absorbed is selected per parity-regime — a discrete sign/inclusion degree of freedom applied to land on the physical Q-value. With the +1 (and its applicability) chosen case-by-case, the correction functions as a tunable per-regime adjustment rather than a single derived constant; the selection rule is not derived from the canonical chain within this block."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "positron-correction.md:9-13 'character sum subtracts both fermions (2 units) but Q subtracts only the electron (1 unit). The difference is the positron action' ⇒ boxed Q.",
+        "notes": "The step from 'character sum counts both produced fermions' to 'therefore add exactly +1 m_e to Q' presumes the character sum literally subtracts 2 m_e and that the residual is exactly one positron mass — neither is established here (no lemma that Σ_char carries a 2-unit fermion subtraction)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "positron-correction.md claims the +1 is the *recovered* positron mass from the Breit–Wheeler vertex; positron_correction.lean derives only Q=Σ·m_e+m_e from the assumed qvalue_form (lean:42-44) plus r=1, plus a trivial if-branch case split (lean:54-55,63-73).",
+        "notes": "Lean proves the substitution identity and the if-reduction, not the manuscript's substantive claim that the categorical character sum mandates the positron unit. The load-bearing physics (Σ_char subtracts 2 fermions) is encoded as the hypothesis qvalue_form rather than proved, so Lean is weaker than the .md narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Breit–Wheeler (def:breit-wheeler-pair-production) and thm:parity-regime-selection are internal cross-refs; the γγ→e−e+ pair-production attribution is correct."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "positron-correction.md uses 'Σ_λ χ_λ(Δ)' (line 9), 'Σ_char' (boxed, line 17), 'SΔ' (line 28), and 'Σ_FP' (line 33) for related-but-distinct sums without a single reconciling definition.",
+        "notes": "Four notations (Σ_λχ_λ, Σ_char, SΔ, Σ_FP) appear for the character/spectator sums; their precise relationship and which one the boxed identity uses is left implicit."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "r=1 is exact by definition (m_{e+}=m_e by CPT); no fitted numerical match in this block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "m_{e+}/m_e = 1 (CPT) is correct; identifying a +m_e Q-value offset with the positron is physically coherent for neutron β-decay energetics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical witness referenced by this block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1d7f4d8376de",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revisions. referee_argument: the clean '+1 = positron, not a fit' headline is undercut by the body's parity-regime case split (added / restored-after-Frobenius-filter / absorbed), which reads as a per-regime inclusion DOF chosen to hit the physical Q-value; and the Lean carries the substantive content (Σ_char subtracts 2 fermions, encoded as qvalue_form) as a hypothesis, deriving only the trivial r=1 substitution. Either derive the 2-unit subtraction and the regime-selection rule, or present the correction as conditional."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

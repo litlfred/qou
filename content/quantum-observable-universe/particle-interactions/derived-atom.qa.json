@@ -915,7 +915,259 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition block describing a 5-step construction; no provable universal claim that admits a counterexample. The polynomial-complexity claim (inductive GS, ≤C(A-1,k) terms) is plausible and not the formalized assertion."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "derived-atom.lean:23-27 (def DerivedAtom := trivial)",
+        "notes": "The sibling derived-atom.lean defines `def DerivedAtom := trivial` — a content-free body. Per AGENTS.md §0a/§1a this is both a vacuous declaration AND a forbidden disguise: a real `structure DerivedAtom` plus the full construction (crossingCoeffs, confinement_universality, etc.) exists in the library file QOU/Interactions/DerivedAtom.lean, but the sibling `:= trivial` SHADOWS it (sibling resolves first), hiding the genuine formalization behind a stub."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition, not a derivation; no target back-fitted. (Numerical closure of nuclear masses is handled in downstream dashboards, not asserted here.)"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atom.md:1-5,:108-123",
+        "notes": "Opening claims 'No component is asserted — each step is derived from the previous one' and that A(Z,N) is 'a UNIQUE element of H_A(q) in GS normal form'. Several steps (iii-b gluon stabilisation via 'integer LP dual', electron-crossing assignments) are modeling ansätze — indeed the library Lean explicitly marks the electron crossings as 'POSTULATES — not derived from the Hecke algebra' (DerivedAtom.lean:78-92). So 'nothing asserted / fully derived' overstates: discrete flavor/electron assignments are postulated, not derived."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atom.md:39-44,:84-85; DerivedAtom.lean:86-92",
+        "notes": "Discrete choices function as undisclosed-in-prose modeling DOF: the gluon selection (proton σ₀→σ₀ vs neutron L_+→L_-), the electron-generator alternation g_e=(e−1) mod 2, and the pe/ne/ee crossing-coefficient assignments are postulates (library Lean flags them as such). These are structural/discrete rather than fitted continuous parameters, so warn not fail; but the .md does not surface them as choices."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atom.md:34-45",
+        "notes": "Step (iii-b) asserts the confined nucleon is 'LP unstable … the γ Frobenius channel violates positivity' and that 'the integer LP dual selects the minimum gluon', then asserts specific gluon choices and 'stable only for q<1.104' without an in-block argument or witness for those thresholds. The 'therefore' (gluon required at q₀≈1.110) leans on prop:mass-endomorphism-tower not reproduced here. Disclosed via cross-ref, so warn."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "derived-atom.md (5-step construction, NF characterization) vs derived-atom.lean:24-27 (def DerivedAtom := trivial)",
+        "notes": "The sibling Lean formalizes the rich .md construction as `def DerivedAtom := trivial` (value ()). This proves/encodes nothing of the .md content (pair production, confinement, nuclear assembly, NF). Maximal proof-statement divergence: the formal object is the unit-type-ish trivial, not the H_A(q) NF element the .md defines. (The real structure exists in the library file but is shadowed by this stub.)"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "derived-atom.lean -- Ref cites [jones1987] §3 (Markov trace) + §4 (link polynomials) 'verified against the published version' — appropriate for the Hecke/Markov-trace machinery underlying the construction. No mis-attribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atom.md:62-66,:84-85; uses=[prop:four-term-pair-nucleon] but DerivedAtom.lean ref",
+        "notes": "The inter-nucleon crossing C(N_i,N_j;σ_g) with g=min(i−1,A−2) and electron generator g_e=(e−1) mod 2 are stated as formulas but the 'unique element' claim depends on a fixed term ordering / generator-indexing convention that is not pinned down (which σ_g for which pair, ordering of the product). 'Unique NF element' presumes a chosen monomial order not specified in-block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "This definition block asserts no numerical observable match (mass/Q-value numbers are in downstream blocks/dashboards)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atom.md:24-26,:64-66",
+        "notes": "Baryon-number bookkeeping is written '3 × 0 = 1 + (−1)' (line 26), which is dimensionally/numerically odd as a conservation statement (LHS 0, RHS 0 only if read as net). And mapping pp→Coulomb-repulsion vs nn→strong-force to σ vs σ⁻¹ (with EM and strong force sharing identical algebraic crossings, per the library Lean postulate) is a strong physical simplification a nuclear physicist would question. Order-of-magnitude modeling, hence warn."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "derived-atom.md:123 ('Witness: four-term-photon-to-atoms.witness.json'); file located only at computations/_deprecated/four-term-photon-to-atoms.witness.json",
+        "notes": "The cited witness four-term-photon-to-atoms.witness.json has been DEPRECATED — it now lives only under computations/_deprecated/ (along with its producer script). The block's named backing compute is no longer in the live computations/ tree, so the construction's claimed witness is irreproducible as cited."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b72fee013433",
+          "ts": "8fcdd84013db",
+          "lean": "19a8a367f5c4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "derived-atom.lean:24-27; derived-atom.md:1-5,:123; computations/_deprecated/",
+        "notes": "verdict: major-revision-required. Strongest objection (referee_argument): the block opens 'No component is asserted — each step is derived', yet (i) its sibling Lean is `def DerivedAtom := trivial`, a vacuous shadow-stub hiding the real library structure (§0a violation), (ii) several construction steps are explicit POSTULATES (electron crossings, gluon selection) per the library file's own comments, contradicting 'fully derived', and (iii) the cited witness four-term-photon-to-atoms.witness.json is deprecated/relocated, so the construction is not reproducibly backed. Fix: delete the shadowing stub (let the ref resolve to QOU.Interactions.DerivedAtom), soften 'nothing asserted' to flag the postulates, and re-point or regenerate the witness."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.713Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

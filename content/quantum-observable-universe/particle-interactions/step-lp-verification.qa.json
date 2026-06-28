@@ -835,7 +835,242 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:1-23 claims all 20 listed atoms pass all-channel-nonzero at every step and three fundamental states are fully LP-stable.",
+        "notes": "Claim is an enumerated computational result, not a universal mathematical statement; not falsifiable as stated without the witness, but no internal contradiction."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Kind=remark interpreting prop:atomic-lp-stability (.ts:9).",
+        "notes": "Substantive interpretive content (per-step channel-nonzero verification across 20 atoms); not tautological."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation; a verification-status report. Nothing assumes its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:11 'all 20 pass all-channel-nonzero at every step' vs .md:20-23 'Full LP stability (existence of an annihilator) is verified for 1H, proton, neutron' only.",
+        "notes": "The strong property (full LP stability = annihilator exists) is verified for 3 states; the 20 atoms only get the weaker all-channel-nonzero check. The phrasing 'Each atom is verified to be LP-stable' (.md:1) reads as the strong claim for all 20, which the body then narrows. Minor over-read in the opening sentence."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Verification report; no parameters or coefficients introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No multi-step inference; claims are independent verification outputs."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark block; no sibling .lean (interprets prop:atomic-lp-stability, whose Lean lives elsewhere)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:25-26 cites witness `atom-mass-complete-wedderburn.witness.json` as the backing artifact; this file does not exist anywhere in the repo (find returned nothing). The Rust certificates `tools/hecke-engine/certificate-*.json` do exist.",
+        "notes": "The primary cited witness is missing/mis-named, so the central evidentiary reference cannot be resolved. (Graded under citation-misuse since the block is a remark with no cites[]; the broken backing-artifact reference is the relevant 'cited reference does not contain the result' failure.)"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:8-9 'channel-mixing annihilation that destabilises the bare hydrogen atom' and 'full LP stability (existence of an annihilator in the complete H_n(q))' use 'annihilator'/'LP-stable' without in-block definition.",
+        "notes": "Terms are defined in the interpreted prop:atomic-lp-stability, so resolvable, but the remark stands alone in the viewer where 'LP-stable' has two readings (all-channel-nonzero vs annihilator-exists) that the block itself conflates (see overclaim)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical observable/CODATA match; a binary pass/fail stability check."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Abstract algebraic stability statement; no physical-units or conservation claim to contradict."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Backing witness `atom-mass-complete-wedderburn.witness.json` (.md:25) is absent from the repo (find . -name returned nothing). No scriptHash/scriptCommitSha can be checked because the artifact is missing.",
+        "notes": "The block's quantitative claim ('all 20 pass at every step') is not reproducible from the cited witness — the witness file is missing. The Rust certificate-*.json exist but the remark does not say which certificate underwrites which atom's per-step pass."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ac897c866fcb",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict: minor-revision. Strongest objection: the sole backing witness `atom-mass-complete-wedderburn.witness.json` (.md:25) does not exist, so the central 20-atom verification claim is unbacked/irreproducible.",
+        "notes": "referee_argument: The interpretive content is reasonable, but a verification remark whose named witness is missing cannot be relied on. Fix the witness reference (or restore the file) and narrow the opening sentence so 'LP-stable' is not over-read across all 20 atoms."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.409Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

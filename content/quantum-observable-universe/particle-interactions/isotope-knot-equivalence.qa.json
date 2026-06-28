@@ -1338,7 +1338,258 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "def:isotope-knot (isotope-knot.md:1-5) DEFINES isotopes as two atom-knots with N₁≠N₂ ('with N₁ ≠ N₂'). The equivalence proof isotope-knot-equivalence.md:7-8 then asserts Reflexivity 'K∼K by definition' — but under the def's N₁≠N₂ requirement the relation is IRREFLEXIVE (no knot has N≠itself), contradicting the reflexivity claim. The narrative relation as literally defined cannot be an equivalence relation.",
+        "notes": "The .md relation as defined (N₁≠N₂) is irreflexive, so the 'equivalence relation' Proposition is false on its own definition. The Lean (isotope-knot.lean:16-17) silently drops the N₁≠N₂ clause, defining isIsotope := Z-equal ∧ protonBlock-equal, which IS an equivalence — so Lean proves a different (reflexive) relation than the .md defines. The narrative is internally contradictory."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The Lean theorems (equivalence.lean:13-25) prove refl/symm/trans for isIsotope := (K₁.Z=K₂.Z ∧ K₁.protonBlock=K₂.protonBlock) via ⟨rfl,rfl⟩ / .symm / .trans — i.e. the generic fact that any conjunction of pullback-equalities is an equivalence relation. No isotope-specific content (the neutron-block structure, the Hecke generators) is used.",
+        "notes": "Not ': True := trivial', but content-thin: the proof is the trivial Eq-is-an-equivalence fact instantiated, capturing none of the mathematical substance the .md attributes to isotopes (distinct Jones polynomials, neutron-block parametrisation). True but near-vacuous relative to the claimed depth."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No back-fitting; the equivalence-relation proof is a direct structural argument, not a tuned-to-target derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "isotope-knot-equivalence.md:23-26 claims the quotient 'recovers the chemical element concept categorically — element = isotope class.' This is a strong interpretive claim resting on a relation that, as Lean-formalised, is merely 'equal Z and equal proton block' — i.e. element=fixed-Z, which is tautological, not a categorical recovery of chemistry.",
+        "notes": "The 'recovers the chemical element concept' framing overclaims: the formal content is that fixing Z partitions atom-knots, which is definitionally what Z means. The physics-flavoured conclusion exceeds the trivial group-by-Z argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No numerical parameter or calibration involved; pure relational statement."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "isotope-knot-equivalence.md:17-21 jumps from 'the equivalence classes at fixed Z are parametrised by the neutron-quark block and inter-nucleon connector' to the concrete isotope chart (¹²C,¹³C,¹⁴C) without establishing the parametrisation is exact (no surjectivity/injectivity of block-data → isotope argument).",
+        "notes": "The parametrisation claim is asserted, not derived; the C-isotope example illustrates but does not prove it. Minor logical gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The .md (isotope-knot.md:3-5) defines the isotope relation with the constraint N₁≠N₂; the Lean isIsotope (isotope-knot.lean:16-17) defines it as K₁.Z=K₂.Z ∧ K₁.protonBlock=K₂.protonBlock with NO N₁≠N₂ clause. The Lean relation is therefore reflexive (provable ⟨rfl,rfl⟩ at equivalence.lean:13) whereas the .md relation is irreflexive. Lean proves an equivalence for a strictly different relation than the .md states.",
+        "notes": "proof-statement-integrity violation: the formalised proposition (Z-and-protonBlock equality is an equivalence) is not the narrative proposition (the N₁≠N₂ isotope relation). The divergence is exactly what lets the Lean succeed where the narrative relation could not be reflexive."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref: in the .lean (the sorry-free proof needs none); nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "isotope-knot-equivalence.md:7-8 reflexivity bullet writes 'w_{q^Z}^{(1)}=w_{q^Z}^{(2)}=w_{q^Z} for K₁=K₂', equating the relation with proton-block equality (w_{q^Z}), but def:isotope-knot.md:15 phrases it as 'identical w_{q^Z}' while also demanding N₁≠N₂; and the Lean uses 'protonBlock' (undefined regime — what field of AtomKnot). The term 'isotope' thus has at least two incompatible readings (N₁≠N₂ vs reflexive-allowed).",
+        "notes": "AtomKnot.protonBlock and AtomKnot itself are only stub-typed (isotope-knot.lean:16 against an AtomKnot whose structure isn't shown in the read files); the key term's exact field content is opaque. Ambiguity is real but minor given the relation reduces to equality."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match or witness; purely structural proposition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Mapping 'element = fixed Z = isotope class' is consistent with chemistry (isotopes share Z); no physical contradiction, only an overclaim of novelty (covered under da-overclaim)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness; the claim is a Lean-proved structural fact, not a numerical result."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3eee8cd49596",
+          "ts": "e27974274291",
+          "lean": "d8c6ed9e1bf6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection (da-false-claim + da-lean-narrative-divergence): the narrative defines isotopes with N₁≠N₂ (isotope-knot.md:3-5), making the relation irreflexive and the 'equivalence relation' Proposition false as stated; the Lean (isotope-knot.lean:16-17) rescues it only by silently dropping N₁≠N₂, so the formal proof certifies a DIFFERENT relation than the prose defines.",
+        "notes": "verdict: major-revisions. The Proposition and its definition are mutually inconsistent (irreflexive def vs reflexivity proof), and the Lean diverges from the narrative to make the theorem true. referee_argument: either drop N₁≠N₂ from def:isotope-knot (making the relation genuinely reflexive and matching Lean) or restate the proposition as an equivalence on the proton-block data rather than on 'isotopes' as defined. The 'recovers chemistry categorically' conclusion also overclaims a tautology."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:25.661Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -835,7 +835,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "binding-knots-visual-inventory.md:118 says Borromean β=σ0σ1σ2σ0σ1σ2 ∈ B_4 and 'Hyperbolic volume Vol(B_3)=8G'; but binding-knots-visual-inventory-table2-data.md:5 lists 'L6a4 … (census-assigned, also = Borromean)' while main text:144 calls the Borromean link KnotInfo entry L6a4",
+        "notes": "Internal inconsistency / possible mis-identification: table2 labels L6a4 as Helium-3 AND parenthetically '= Borromean', while the main inventory already assigns L6a4 = the Borromean rings 6^3_2 to proton/neutron/4He. The same census link cannot simultaneously be the He-3 census assignment and the Borromean baryon identity without clarification; one labelling is loose. Borderline-false as written."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive catalogue of knots, braid words, and binding roles; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Inventory/remark; no derivation to assume its own conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The block openly flags the higher-order census links as 'census-assigned … selected by census search to match AME binding energies rather than derived from first principles' (md:159-163) — appropriately scoped, no overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "binding-knots-visual-inventory.md:150-163; binding-knots-visual-inventory-table2-data.md:1-6",
+        "notes": "The census-assigned link↦isotope map (6_2↦deuteron, 8_11↦tritium, L6a4↦He-3, 7^2_1↦α-α) is, as the block itself admits, fitted to AME binding energies — i.e. a per-isotope discrete degree of freedom chosen by census search. Honestly disclosed (so warn, not fail), but it is a hidden-DOF in the broader mass-table-ppb claim of being 'zero-parameter'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No 'therefore' chain; descriptive inventory."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark with no lean.ref / no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Cross-references to in-corpus blocks (knot-particle-dictionary, binding-scale-catalan, mass_table_ppb.py, workplan audit) are pointers, not external-result attributions; no misuse."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "binding-knots-visual-inventory.md:37-38 ('Hopf link L2a1 = T(2,2)'); :113 ('Borromean B_3 = 6^3_2') vs table2 L6a4 labelling",
+        "notes": "The Borromean rings are referred to under two KnotInfo names (6^3_2 in the main text, L6a4 in the parenthetical at md:143-144 and in table2), and table2 conflates L6a4's He-3 census role with the Borromean identity. Reader cannot unambiguously tell whether L6a4 denotes the He-3 census link or the baryon Borromean link. Naming ambiguity for the same symbol."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "binding-knots-visual-inventory.md:124 ('α = m_e · 8G ≈ 3.7445 MeV')",
+        "notes": "The Catalan-constant binding scale 8G≈3.7445 MeV is quoted; this depends on m_e (CAL-1) and is a derived approximation — fine — but the census-assigned links it sits among are fitted to AME, so any per-isotope binding match downstream of this inventory carries fit-noise fragility. Block-local quote is sound; flagged as warn for the downstream coupling."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "binding-knots-visual-inventory.md:59-61 (T(2,2) gluon, T(2,4) W, T(2,6) Z, T(2,8) Higgs) and :84-85 (T(2,5) muon, T(2,7) tau)",
+        "notes": "The torus-knot↦particle assignments (gluon/W/Z/Higgs as T(2,2k); leptons as T(2,2k+1)) are framework identities a Standard-Model physicist would not accept without the QOU derivation; presented here as inventory labels. Not a numeric contradiction, but a strong physical claim stated as catalogue fact."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "mass-table-ppb.witness.json and mass_table_ppb.py both exist in computations/ (verified present); the census-assigned flag is correctly traceable to that live witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a571b343f68c",
+          "ts": "6e2114d96411"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: minor-revision. referee_argument: A useful and largely honest visual catalogue — notably it discloses the census-assigned (AME-fitted, not first-principles) status of the higher-order links. Two fixes needed: (1) the L6a4 label is used for both the Borromean baryon link and the He-3 census assignment, creating a genuine naming collision (table2 vs main text); disambiguate. (2) The torus-knot↦boson/lepton assignments are framework claims stated as inventory fact and should cite their deriving blocks at point of use."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.086Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

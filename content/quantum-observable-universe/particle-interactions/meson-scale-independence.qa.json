@@ -1957,7 +1957,259 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:18-21 states character ratios chi^(3)(K)/chi^(3)(pi)=q^2, chi^(2,1)(K)/chi^(2,1)(pi)=1/(h^2+1), chi^(1^3)(K)/chi^(1^3)(pi)=q^{-2} with h=q-q^{-1}; these specific closed forms are asserted without derivation and the (2,1) ratio 1/(h^2+1)=1/(q^2-1+q^{-2}) is not obviously the Hecke character ratio for an added crossing. md:21->22 then claims they 'determine m_K/m_pi'.",
+        "notes": "The three ratio formulas are stated as derived but no derivation is shown; the (2,1) form in particular is suspect. Flagged warn (the core scale-independence claim is plausible; the specific ratios are the questionable part)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "meson-scale-independence.lean:8-16 proves NOT exists f:R->R->R, forall m_e q_0 m_pi, m_pi = f m_e q_0 — a trivial logical truth (a function of two args cannot equal every value of a free third variable), witnessed at m_e=q_0=0, m_pi in {0,1}. This is provable for ANY quantity, with no Hecke/topology content.",
+        "notes": "The Lean 'theorem' is vacuous relative to the .md claim: it shows the syntactic impossibility of m_pi being literally a function of (m_e,q_0) when m_pi ranges freely — true of any third variable — rather than the substantive physics claim that the substrate+Hecke data underdetermines the meson scale. proof-statement-integrity / self-trivialising."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; argues independence from Vol(Hopf)=0. Not applicable."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:1-5 asserts m_pi 'cannot be derived from (m_e,q_0) alone' as a proposition; the supporting argument (md:9-16) is 'the meson's binding topology is the Hopf link whose complement has Vol=0, so there is no geometric invariant to set the scale'. Absence of THIS particular geometric invariant does not prove no derivation exists (could come from a non-volume invariant).",
+        "notes": "The proof rules out one mechanism (hyperbolic-volume normalisation) and concludes impossibility (a scope-limited negative stated as structural exclusion, per AGENTS.md 'refuted/ruled out' STRICT). Should be scoped to 'via the volume-density form'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block argues m_pi (=CAL-3/D_pi) is an independent calibration input, consistent with the canonical 3-CAL menu; no off-menu DOF introduced. Not applicable."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:13-16: 'Without a non-zero hyperbolic volume, there is no geometric invariant to set the meson mass scale from (m_e,q_0).' This is the central inference and it does not follow — Vol(Hopf-complement)=0 only shows the baryon volume-density normalisation is unavailable; it does not establish that NO function of (m_e,q_0) yields m_pi. Missing lemma: completeness of geometric invariants.",
+        "notes": "The step from 'this complement has zero volume' to 'therefore m_pi is not a function of (m_e,q_0)' omits the lemma that hyperbolic volume is the only available scale-setting invariant. The Lean does not fill this gap (it proves a different, trivial statement)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:1-23 claims a representation-theoretic + topological non-derivability result (Vol(Hopf)=0, character ratios fix m_K/m_pi but not m_pi). meson-scale-independence.lean:8-16 instead proves the trivial NOT exists f, forall m_e q_0 m_pi, m_pi=f(m_e,q_0) using a counterexample at zero — encoding none of the Hopf-volume or Hecke content. md:50 even admits the 'companion Lean states the claim and defers its proof via sorry', contradicting the actual Lean which has NO sorry but proves a vacuous surrogate.",
+        "notes": "Strong divergence: the Lean both (a) proves something trivially-true and physically-empty, and (b) the .md's own description of the Lean (sorry-deferred) does not match the committed file (a complete proof of a different statement). proof-statement-integrity failure."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "ts:12-15 cites jones1987 and wenzl1988c. The block's substantive claims are the Hopf-complement Vol=0 topology and three specific Hecke character ratios; jones1987/wenzl1988c (Hecke/Markov-trace literature) do not contain the Vol(Hopf)=0 scale-independence argument and are not invoked at any specific step in the .md.",
+        "notes": "Citations are general background (Hecke representation theory) and do not support the specific invoked results (the topological volume argument or the (2,1) character-ratio formula). Minor."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:9-11 'baryon mass formula uses Vol(B_3)/hbar_q^2 ... Vol(B_3)=8G>0' (8G=2*V_oct~7.3277, correct) but 'the meson's binding topology is the Hopf link L_+, whose complement is a solid torus' — the Hopf link complement is T^2 x I (not a solid torus); and 'derived' character ratios use chi^(lambda) without specifying the added-crossing operator. uses:[def:categorical-meson, prop:frobenius-lepton-meson-bridge, prop:hoefsmit-binding-amplitude] but the .ts conditional dependency is implicit.",
+        "notes": "Minor topological mislabel (Hopf complement is T^2xI, though it is indeed non-hyperbolic / Vol=0, so the conclusion stands) and undefined crossing operator behind the character ratios. The core Vol=0 fact is correct."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No fitted numerical match in this block; it argues a structural independence and the m_K/m_pi ratio (a met L2 observable per AGENTS.md) is referenced qualitatively. Not applicable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Claim (m_pi is an independent calibration, m_K/m_pi fixed by Hecke ratios) is consistent with the framework's 3-CAL structure and with m_pi being genuinely independent (AGENTS.md cheat-sheet). No conservation/units error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:18-21 character ratios and md:42-46 the flavor-split X=(q-1)^2(1-q^{-4})/3 = h^3/6+... are stated numerically/symbolically with no computation/witness in the .ts (ts has no computation field); the Vol(B_3)=8G value is correct but unsourced in-block.",
+        "notes": "The specific ratio formulas and the X skein-difference expansion have no witness backing for reproducibility/verification. Minor; mostly symbolic."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "860fb35172fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The proposition's Lean (lean:8-16) proves a vacuous surrogate (m_pi cannot literally be a function of two vars while ranging freely) rather than the topological/representation claim, and the .md mis-describes its own Lean as sorry-deferred (md:50); the central inference 'Vol(Hopf)=0 => not derivable from (m_e,q_0)' is a scope-limited negative stated as structural exclusion without the completeness-of-invariants lemma (md:13-16); specific character ratios are underived (md:18-21).",
+        "notes": "verdict=major-revision. referee_argument: 'The thesis (m_pi is an independent scale) is defensible and matches the framework, but as a proposition it is not proved: the topological argument rules out only the volume normalisation, not all derivations, so the impossibility claim over-reaches; and the Lean file proves a trivially-true statement about free variables that has nothing to do with Hopf-link topology, while the prose claims the Lean defers via sorry. Re-scope to \"not derivable via the hyperbolic-volume form\" and make the Lean encode that, or downgrade to a remark.'"
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -1605,7 +1605,246 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "inductive-gb-reduction.md:1-2 claims the computation 'scales polynomially in A', but the stated NF bound (md:22) is the central binomial coefficient C(A-1, floor((A-1)/2)) ~ 2^(A-1)/sqrt(A), which is EXPONENTIAL in A, not polynomial. Verified: A=16 gives C(15,7)=6435.",
+        "notes": "The headline conclusion 'polynomial scaling' is mathematically contradicted by the very bound the proposition states. A central binomial coefficient is the canonical example of exponential growth. The O(A^2)/O(A^3) operation counts (md:27-28) are then also unjustified since each reduction step manipulates an exponentially large NF."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "inductiveGBReduction.lean:83-87: theorem inductiveGBReduction takes class InductiveGBReductionContext whose fields h_NF_size, h_multiplications, h_reduction_steps (lean:37-41) ARE exactly the three conclusions, and the proof body is just the projection ⟨ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps⟩.",
+        "notes": "Classic self-assuming projection (AGENTS.md §3b-cond non-degeneracy rule): the class axiomatises the conclusion as hypotheses and the 'theorem' merely returns them. Proves nothing about Gröbner-Shirshov reduction. The .ts marks lean validation 'not_checked'."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "The Lean encoding assumes the bound (h_NF_size : NF_size A ≤ C(A-1,(A-1)/2)) as a class field rather than deriving it; lean:37, lean:84-87.",
+        "notes": "On the Lean side the result is assumed not derived. Narrative side is not strictly circular (it argues from the per-step 2x6 fan-out), but the argument is invalid (see da-non-sequitur)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Title (ts:5) and md:1-3 assert 'polynomial scaling'; md:77-78 claims 'reduces 10^10 unreduced terms to 128 NF terms for oxygen-16'. The stated NF bound is exponential, and the '128' figure does not match the formula C(15,7)=6435.",
+        "notes": "Conclusion (polynomial, 128 terms) is far stronger than the argument supports. The bound formula and the complexity table disagree by ~50x at A=16."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No calibration constant or off-menu coefficient; H_A = q - q^{-1} is the standard Hecke parameter. Not applicable."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "md:32-38: the proof argues each step multiplies term-count by 2x6=12 ('at most |N_{<=k}| x 2 x 6 terms') then asserts 'producing a normal form of bounded size'. A 12x multiplicative growth per step gives 12^A growth; the claim that GS reduction collapses this to a polynomial/binomial bound is asserted, not shown. The complexity table (md:70-75) is internally inconsistent: row A=8 formula C(7,3)=35 exceeds the table's '<=32'.",
+        "notes": "The jump from 'each step can multiply size by 12' to 'bounded NF size' is the entire content and is unproven. The 'Hecke square rule' identities (md:44-46) bound same-type pairs but say nothing about the global cross-type product blow-up."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "meson md... — for this block: inductiveGBReduction.lean:83-87 proves a trivial conjunction of three assumed inequalities, while the .md (md:1-3, 27-28) claims a substantive polynomial-complexity theorem with a derived binomial NF bound. The Lean does not derive any bound; it projects assumed class fields.",
+        "notes": "proof-statement-integrity violation: the Lean statement is strictly weaker (assumes its conclusion) than the .md claim, and the .md claim itself is false (exponential)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref: bibliographic key beyond [manuscript] (lean:82). Nothing external to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:8-9 'N_{<=k} denotes the GS normal form of the first k nucleons in H_k(q)' but the mixed-crossing correction C_pn^2 = H_A C_pn + 1 - (1/4)H_A^2 (md:59-62) introduces a constant -1/4 H_A^2 with no derivation; 'typed crossings' C_pp, C_pn are not defined in-block.",
+        "notes": "The -(1/4)H_A^2 constant and the C_pp/C_pn/C_nn typed-crossing objects are used without definition; whether C_pp^2 = H_A C_pp + 1 is itself an instance of the Hecke relation depends on undefined normalisation."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical CODATA match or q0-pinned value; complexity counts only. Not applicable."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure complexity/algebra claim, no physical observable. Not applicable."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:70-75 complexity table presents specific term counts (12, 432, ~10^5, ~10^10 unreduced; <=2,8,32,128 reduced) with no computation/witness backing in the .ts (ts has no computation field).",
+        "notes": "The table numbers are unsourced and the reduced column contradicts the block's own bound formula (C(15,7)=6435 vs '<=128'); not reproducible from any cited compute."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "critical",
+        "evidence": "Headline 'polynomial scaling' is false (NF bound is the exponential central binomial coefficient, A=16 -> 6435); complexity table is internally inconsistent (A=8: formula 35 > table 32; A=16: formula 6435 vs table 128); Lean is a self-assuming projection (lean:83-87). verdict=major-revision.",
+        "notes": "referee_argument: 'The proposition is titled and asserted as polynomial-scaling, but its own bound C(A-1,floor((A-1)/2)) is asymptotically 2^(A-1)/sqrt(A) — exponential. The complexity table does not even match this formula. The Lean witness assumes all three conclusions as class fields and returns them, proving nothing. As written the central claim is false and must be re-stated as an exponential (or genuinely-derived sub-exponential) bound.'"
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

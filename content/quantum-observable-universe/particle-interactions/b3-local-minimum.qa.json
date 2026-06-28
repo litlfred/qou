@@ -835,7 +835,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:5-11 claims the confinement LP 'admits a global minimum at tr_M=0 — a massless confined state' and that B_3 is a local minimum at a polytope vertex. md:16-21 states the 6×6 Gram matrix has a negative eigenvalue ≈-0.956 making the Frobenius form indefinite and the feasible region 'unbounded in the direction of the negative eigenvector'.",
+        "notes": "These are concrete, falsifiable mathematical assertions (specific eigenvalue, global vs local structure, unboundedness) made in a remark with NO formal backing and no witness — the block has no .lean sibling and no computation. Cannot be confirmed false from the block, but an indefinite Gram form with an unbounded feasible direction would normally make the LP UNBOUNDED (no finite minimum), which sits in tension with the simultaneous claim of a global minimum at tr_M=0; the reconciliation (min|λ| selection on the net-constraint hyperplane, md:25-31) is asserted, not derived. Potential internal tension flagged."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark with interprets: prop:confinement-lp; makes substantive (if unbacked) claims, not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:24-31 'The confinement LP selects B_3 via the min|λ| eigenvalue criterion (not max)' presents the selection rule as established fact; combined with the specific -0.956 eigenvalue (md:18) this reads as a derived computational result, but it is an unwitnessed remark.",
+        "notes": "A remark is allowed to interpret; here it states quantitative selection-criterion results (min|λ| picks B_3, eigenvalue -0.956) as if computed, without pinning a witness. The interpretive license of a remark does not extend to asserting specific numbers as facts — those belong in a proposition with compute backing. Borderline; warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:24-31 introduces a 'min|λ| eigenvalue criterion (not max)' as the selection rule. The choice of min-absolute-eigenvalue (vs max, vs sign-based) on the net-constraint hyperplane is a selection convention that picks out B_3.",
+        "notes": "If the min|λ| rule is chosen specifically because it yields B_3 (the desired Borromean solution), it functions as a hidden discrete degree of freedom / post-hoc selection. The remark does not justify min|λ| from the categorical action independently of the target; the parenthetical '(not max)' suggests the alternative was considered and rejected on outcome. Possible outcome-driven rule selection."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:18-21: a negative eigenvalue ≈-0.956 ⇒ 'the LP feasible region is unbounded in the direction of the negative eigenvector.' An indefinite Gram (objective) matrix does not, by itself, make the LP feasible REGION unbounded — feasibility is set by the constraints, not the objective's signature.",
+        "notes": "Conflates indefiniteness of the Frobenius/Gram form with unboundedness of the feasible polytope. The two are distinct (an indefinite quadratic over a bounded polytope still attains a min). The step 'indefinite ⇒ feasible region unbounded' is a non-sequitur as stated; the intended point is probably objective-unbounded-below along that direction."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block has no .lean sibling (remark, interprets prop:confinement-lp). Nothing to compare."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; cross-refs to prop:confinement-lp, prop:corrected-markov-trace are internal block links, not bibliographic citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:16-17 'corrected Markov trace (using tr_M(e^-)=z^3)' and md:24-31 'min|λ| eigenvalue criterion ... restricted to the net-constraint hyperplane' use 'corrected', 'z', and the hyperplane restriction as established terms without in-block definition.",
+        "notes": "The variable z (md:11, tr_M(e^-)=z^3) is undefined here; the 'net-constraint hyperplane' and what 'restricted' Gram means are not specified. A reader cannot reconstruct the -0.956 eigenvalue computation from the block. Terms presumably defined in prop:confinement-lp / prop:corrected-markov-trace but locally ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:18 cites a specific eigenvalue ≈-0.956 with no witness, no script, no q₀ pin stated. The value depends on the 'corrected' Gram matrix and the substrate q₀ but neither the precision nor the pin is given.",
+        "notes": "A bare numerical eigenvalue (-0.956) presented in a remark with no backing compute is unverifiable and potentially stale relative to the current q₀. Not a fit-to-experiment claim, so fragility is mild, but the unwitnessed single-number assertion is exactly the pattern witnessed-values discipline targets."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.md:9-11 'a global minimum at tr_M=0 — a massless confined state. The Borromean solution B_3 is a local minimum.' Interpreting the global LP optimum as a massless state while the physically realized particle sits at a non-global local minimum is a strong physical claim.",
+        "notes": "That the observed nucleon corresponds to a LOCAL (not global) minimum of the categorical action, with the global minimum being an unphysical massless state, is a non-trivial stability assertion that a domain expert would want justified (why is the system trapped in the local minimum?). Not implausible per se, but unargued in the block. Mild flag."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "b3-local-minimum.ts declares no computation/witness; b3-local-minimum.qa.json compute-witness-exists=pass refers to the interpreted prop's witness, not this remark's -0.956 / tr_M=0 numbers. No producer script is pinned for the eigenvalue or the global-min claim.",
+        "notes": "The quantitative claims (negative eigenvalue -0.956, global min at tr_M=0, B_3 as min|λ| selection) are not tied to a reproducible *.witness.json in the block. A reviewer cannot regenerate them. Backing presumably lives in the confinement-LP compute but is not surfaced here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f361e8a4de1e",
+          "ts": "2a851fd9473f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: this remark packs several specific, falsifiable quantitative claims (Gram eigenvalue ≈-0.956, global LP minimum at tr_M=0 as a massless state, B_3 selected by a min|λ| rule) into an interpretive block with NO formal backing and NO pinned witness. The strongest objection is the internal tension/non-sequitur at md:18-21: an indefinite Gram form is said to make the FEASIBLE REGION unbounded (feasibility is constraint-determined, not objective-signature-determined), which also sits awkwardly with the claim that a finite global minimum exists. Secondary concerns: the min|λ| selection rule looks outcome-chosen (hidden DOF), the -0.956 eigenvalue is unreproducible, and undefined symbols (z, 'net-constraint hyperplane'). Recommend either promoting the quantitative claims to a witnessed proposition or softening the remark to clearly interpretive language and pinning the eigenvalue to the confinement-LP witness."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.786Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

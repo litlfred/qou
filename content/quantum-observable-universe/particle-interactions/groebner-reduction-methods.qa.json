@@ -835,7 +835,237 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "groebner-reduction-methods.md:47-48 Mersenne reduction 'x mod P = (x >> 127) + (x & P)' for P=2^127-1",
+        "notes": "The folded value can still equal or exceed P (e.g. when both halves are large, or both equal P), so a single fold is not a complete reduction to [0,P) — a final conditional subtract is required. As written it is an approximate/incomplete statement of Mersenne reduction. Minor: implementation detail, the engine presumably handles the carry; the prose omits it."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive methods remark (rewriting rules, H_A-power factorisation, four engines, LP-dual ordering). Not vacuous."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Describes a reduction algorithm; no target back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "groebner-reduction-methods.md:26-27 'every normal form coefficient factors as +-2^a x H_A^k ... This is verified for 1H through 9Be'",
+        "notes": "Empirical-range claim ('verified for 1H..9Be') presented as a clean structural factorisation, with the admission that 'for mixed orderings the factorisation breaks.' The +-2^a x H_A^k claim is therefore order-specific (pp..nn only) and range-limited; stating it as 'every normal form coefficient factors' before the qualifier slightly over-reaches. The qualifier on line 31-33 recovers it. Scope-limited."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physical free parameter; H_A=q-q^{-1} is the canonical Hecke quantum integer, a=pn-crossing count, k=Hecke-relation count are derived integers, not fitted."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Confluence -> arbitrary rule ordering -> LP-dual chooses cheapest strategy is a valid inference; Buchberger S-poly criterion correctly invoked for leading-term cancellation."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "remark, no sibling .lean (interprets def:atomic-braid, uses prop:inductive-gb-reduction)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Buchberger S-polynomial criterion and Diamond/Grobner-Shirshov confluence are correctly attributed concepts; no external cites[] to mis-map."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "groebner-reduction-methods.md:24-25 'a counts the number of pn crossings in the reduction path' — the reduction path is non-unique even though the NF is unique",
+        "notes": "a and k are defined relative to 'the reduction path', but the prose itself stresses (line 16-18) that intermediate word count depends on strategy; so whether a,k are path-invariants of the final coefficient or artifacts of a chosen path is not made explicit. The compressed (sign,a,k) representation is only well-defined if a,k are determined by the coefficient. Minor underspecification; the upstream prop (inductive-gb-reduction) supplies the H_A^k structure."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No q_0-anchored numerical match in this block; the factorisation claim is exact-arithmetic (BigInt engine) not a fit. q_0 appears only as the evaluation point for certificate JSONs."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Computational-methods remark; no physics claim to assess."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "groebner-reduction-methods.md:72-80 'All computations are reproducible from the Rust source in tools/hecke-engine/ ... Witness files in computations/ record every mass prediction' — no specific witness path or scriptHash pinned in the .ts (tags:['computational'], no computation field)",
+        "notes": "Reproducibility section asserts reproducibility but the block carries no computation:{script,witness} pin in groebner-reduction-methods.ts, so the claim 'all reproducible' is not anchored to a verifiable witness hash. Cannot detect drift because nothing is pinned. Recommend attaching the relevant hecke-engine certificate witness to the manifest."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d07c433ab87c",
+          "ts": "35e6541f4681"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: minor-revision. referee_argument: solid methods remark, but three soft spots: (1) the single-fold Mersenne reduction omits the final carry/subtract (line 47-48), (2) the +-2^a x H_A^k 'every coefficient' factorisation is range- and ordering-limited ('verified 1H..9Be', breaks on mixed orderings) and the path-dependence of (a,k) is not pinned, (3) the Reproducibility section makes an 'all reproducible' claim with no witness/scriptHash pinned in the manifest. None are fatal; all are tightening edits."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.611Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

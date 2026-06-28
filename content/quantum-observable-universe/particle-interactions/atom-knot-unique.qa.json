@@ -1338,7 +1338,263 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atom-knot-unique.md:14-29 'Proof': asserts two braids realising the same NF 'differ only by a sequence of' R-II/R-III/far-commutations, 'Each is a categorical Markov move, so the closures are isotopic.' But sameness of NF (a Hecke-algebra normal form) does NOT imply the two BRAIDS are related by Reidemeister/Markov moves — distinct braids can share a Hecke NF yet have non-isotopic closures (the Hecke quotient collapses braid information). The Scope section (md:31-39) even concedes 'different w_q^Z realisations ... yield different isotopy classes'.",
+        "notes": "The proof conflates equality in H_n(q) (NF) with isotopy of Markov closures. NF equality is necessary, not sufficient, for closure isotopy. The proof step 'differ only by R-II/R-III/far commutations' is unjustified — that is the Markov theorem's content, not a consequence of NF equality. Borderline false-as-proved; flag warn pending the missing Markov-move lemma."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atom-knot-unique.lean:17-26: theorem AtomKnot.unique_up_to_markov takes h_Z,h_N,h_proton,h_neutron,h_inter (ALL five record fields equal) and concludes K₁=K₂ via 'cases K₁; cases K₂; congr <;> assumption'. This is the trivial fact that a structure is determined by its fields — a tautology with no Markov/isotopy/Hecke content whatsoever.",
+        "notes": "The Lean 'proof' is vacuous: it proves record extensionality, not 'unique up to Markov equivalence'. The hypotheses already assume everything (all fields equal ⇒ records equal). Self-assuming projection in the §1a sense."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "Not back-fitting a numerical target; the issue is vacuity/divergence, not circular calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atom-knot-unique.ts:1 kind=proposition titled 'Uniqueness of the atom-knot up to Markov equivalence', .md states closures are isotopic (md:8-12). The actual Lean (lean:17-26) proves only record equality from all-fields-equal — strictly weaker than 'closures isotopic'. The narrative proof's Markov-move step is asserted, not derived (md:16-28).",
+        "notes": "The proposition claims a topological uniqueness (isotopy of S^3 closures) that neither the narrative proof (asserted Markov-move reduction) nor the Lean (trivial record extensionality) establishes. Conditional/assumed-as-proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No numerical parameters involved."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atom-knot-unique.md:16-28: 'Two braids realising the same NF differ only by a sequence of [R-II / R-III / far commutations] ... Each is a categorical Markov move, so the closures are isotopic.' The 'so' does not follow: equality of Hecke normal forms does not entail the braids are connected by Reidemeister/Markov moves (the Hecke quotient is many-to-one on braids). The required lemma — 'same NF ⇒ Markov-equivalent braids' — is missing and is in fact false in general.",
+        "notes": "This is the load-bearing inferential gap. NF equality lives in the algebra H_n(q); braid/closure isotopy lives in B_n/S^3. The map is not injective, so the implication is a non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atom-knot-unique.md claims 'Markov closures are isotopic in S^3' (md:8-12) under shared NF. atom-knot-unique.lean:17-26 instead proves K₁=K₂ (strict record equality) from ALL five fields being equal, by 'congr <;> assumption' — a different and strictly weaker statement that mentions neither Markov closure nor isotopy. Additionally, .ts:6 lean.ref='qou:QOU.BraidKnot.AtomKnot.unique' but the actual decl is 'AtomKnot.unique_up_to_markov' (lean:17) — the ref name does not resolve to the declaration.",
+        "notes": "Twofold divergence: (1) Lean proves record extensionality, not Markov-isotopy uniqueness — proof-statement-integrity failure; (2) ref/decl name mismatch (unique vs unique_up_to_markov). The Lean is vacuously implied and does not capture the .md claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atom-knot-unique.lean:16 '-- Ref: [manuscript] thm:jones-markov-trace' attaches the Jones–Markov-trace manuscript reference to a theorem (record extensionality) that uses none of that content. The .md (md:27-29) likewise cites thm:jones-markov-trace to justify 'Each is a categorical Markov move', but that theorem gives the trace, not the Markov-move-equivalence of NF-equal braids.",
+        "notes": "The cited result (Jones–Markov trace) is invoked to license the Markov-move reduction, which it does not supply (Markov's theorem on braid equivalence is the relevant result, not the trace). Mild misattribution."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atom-knot-unique.md:2-3 'unique up to Markov equivalence' vs md:8 'isotopic in S^3' vs md:32 'up to isotopy, not up to NF strict equality' — three notions (Markov equivalence of braids, isotopy of closures, NF equality) are used somewhat interchangeably. The Lean adds a fourth (record equality). 'The atom-knot of type (Z,N)' presupposes a canonical representative whose uniqueness is exactly what's at issue.",
+        "notes": "'Unique' is overloaded across braid-Markov-equivalence, closure-isotopy, NF-equality, and record-equality; the block does not cleanly fix which uniqueness is claimed vs proved."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "No numerical content."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "The physical reading (isomers as distinct atom-knots at same (Z,N); md:37-39) is sensible. No units/conservation issue."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atom-knot-unique.ts has no computation/witness field.",
+        "notes": "No backing compute to be stale."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b9c5dbfe8bdd",
+          "ts": "9959e9bff925",
+          "lean": "11e3b2569183"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict=major-revision. Strongest objection: the proposition claims Markov-equivalence/isotopy uniqueness, but (a) the narrative proof's central step 'same NF ⇒ braids related by Reidemeister/Markov moves' (md:16-28) is a non-sequitur (the Hecke quotient is many-to-one), and (b) the Lean (lean:17-26) proves only trivial record extensionality K₁=K₂ from all-fields-equal, not the topological claim — plus the .ts ref name (AtomKnot.unique) doesn't match the decl (AtomKnot.unique_up_to_markov).",
+        "notes": "referee_argument: As stated, the result is not established. Either prove the genuine lemma 'two braids with the same Hecke NF have Markov-equivalent closures' (which needs justification beyond NF equality and may require additional hypotheses, as the Scope section itself signals with the w_q^Z caveat), or restate the proposition as 'the NF block decomposition is unique' (the Diamond-Lemma fact that IS true) and drop the isotopy claim. Replace the vacuous Lean record-extensionality theorem with one that actually carries Markov-closure content, and fix the lean.ref name mismatch."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:24.549Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

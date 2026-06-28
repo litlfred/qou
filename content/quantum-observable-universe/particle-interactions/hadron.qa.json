@@ -913,7 +913,247 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definitional block: a hadron is a stable composite with E_cross<0. No universally-quantified claim that could be false; it names a construction. The Lean Hadron.meson_or_baryon_or_exotic is a true omega fact."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean QOU.Hadron is a content-bearing structure (theta, phi, constituents, constituents_nonempty:length≥2) with real downstream theorems (meson_or_baryon_or_exotic via omega, baryon_ge_two). Not ':True:=trivial', not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "A definition asserts no derivation; nothing back-fitted. No calibration smuggled."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The .md states a definition with a stability condition; it does not claim to prove existence or uniqueness (those live in sibling blocks hadron-exists/hadron-unique). Scope is appropriately narrow."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameters; the localization point p and linking L are declared structural data, with the .md explicitly noting colour-tube coupling 'is not an independent datum — inherited from p'. No hidden free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition, no inferential chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron.md:13-17 vs hadron.lean:35-44, :82-91",
+        "notes": "The .md defines a hadron by the STABILITY condition E_cross(H_p)<0. The Lean structure Hadron encodes NO stability/negativity field — constituents_nonempty:length≥2 is the only constraint, and HadronBinding.bindingMass_nonneg is commented out as 'not meaningful over R_q' (lean:91). So the Lean 'Hadron' is just 'a ≥2-constituent localized composite', strictly weaker than the .md's defining stability predicate. The structural heart of the definition (E_cross<0) is absent from the formalization."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean -- Ref entries cite [manuscript] §3 and [kock2004] (Frobenius algebras, CUP). [kock2004] is an appropriate general reference for the Frobenius/monoidal substrate; no specific result is mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron.md:9-25",
+        "notes": "H_p=[K1,…,Kn]_p ⊕ L mixes notations: ⊕ is said to denote 'the linking operation' yet is the direct-sum symbol; 'prime knot types' vs the Lean's BraidWord constituents; and the .md gives no arity bound while the Lean fixes length≥2. The defining E_cross depends on def:crossing-energy which must carry the sign convention. Mild ambiguity, definition still usable."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match asserted in this definition block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Hadron = stable bound composite with negative binding energy; mesons=2, baryons=3 constituents matches QCD valence counting. Physically standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness attached to this definition block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "516eaca324a6",
+          "ts": "2e8f7e22e9e6",
+          "lean": "11b9d81d4401"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "hadron.md:13-17; hadron.lean:35-44",
+        "notes": "verdict: accept-with-minor-revisions. Strongest objection (referee_argument): the .md DEFINES a hadron by the stability inequality E_cross<0, but the Lean structure Hadron omits this predicate entirely (the only constraint is ≥2 constituents; the nonneg-mass field is commented out as meaningless over the Laurent ground ring). The formal object is therefore a 'localized ≥2-knot composite', not the 'stable composite' of the prose — the central defining condition is unformalized. Definition is otherwise coherent and physically standard."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:24.078Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

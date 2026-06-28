@@ -815,7 +815,238 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:1-2 'Bring's surface (χ=-6) as the spacetime base'.",
+        "notes": "Bring's curve/surface has genus 4, Euler characteristic χ=2-2g=-6; the stated value is correct. Prose section intro, no other quantitative claim."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Kind=prose, a navigational section opener; legitimately non-claim-bearing exposition, not a disguised vacuous theorem."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No derivation; descriptive roadmap of the section's two movements."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:5-8 'identify Bring as the natural fixed point' and .md:14-16 'the x₅-automorphism / Bring-descent / Prym-Jacobian blocks identify Bring as the natural fixed point'.",
+        "notes": "The intro asserts the downstream blocks 'identify Bring as the natural fixed point' as settled; whether Bring is genuinely the unique categorical fixed point (vs one of several admissible surfaces) is the content those blocks must establish. As a section roadmap this is forward-referential framing, but it pre-announces a conclusion (Bring is THE natural choice) the surveyed material may only motivate. Minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose roadmap; no parameters or coefficients."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No inferential chain; describes the arc of subsequent blocks."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Prose block, no Lean sibling (kind=prose requires none)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": ".ts has no cites[]; no references invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:6-8 references 'the genus-2 quintic, the hyperelliptic family, and the Z/5Z-Bring descent' and .md:11-16 the 'x₅-automorphism / Bring-descent / Prym-Jacobian blocks' without defining them in-block.",
+        "notes": "Acceptable for a section opener (terms are defined in the blocks it surveys), but a reader hitting this prose first encounters 'genus-2 quintic' and 'natural fixed point' as undefined. Mild; inherent to an intro."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical claim."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:1-4 'Bring's surface … as the spacetime base; substrate compatible with a family of base surfaces of varying Euler characteristic'.",
+        "notes": "Framing statement; internally consistent with the framework's stated geometry, no measurable physical claim to contradict."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness; prose."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d52ef8a861cc",
+          "ts": "fc511cae37fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "verdict: accept. A correct, well-scoped section roadmap (χ=-6 for Bring is right; two-movement structure clearly described).",
+        "notes": "referee_argument: Only quibble is the forward-referential 'identify Bring as the natural fixed point' (da-overclaim warn) pre-announcing a conclusion the surveyed blocks must earn; harmless for an intro. No structural defect."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

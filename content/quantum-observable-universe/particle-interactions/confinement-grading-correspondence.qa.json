@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.md"
   },
   "source_hashes": {
-    "md": "b831e974061a",
+    "md": "956e12f46965",
     "ts": "d8fd4ed852ba"
   },
   "criteria": {
@@ -935,7 +935,241 @@
           "value": 0.72
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Correctly typed as a conjecture; the iff (confinement filtration ⟺ KLR Z-grading top piece) is plausible and explicitly stated as conjectural, not asserted true."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.ts:7 lean.ref 'qou:QOU.BraidKnot.ConfinementGradingCorrespondence' validation:'stub'",
+        "notes": "The .ts marks the Lean as a stub; the conjecture's content is real (the iff), but the formal carrier is a stub, so the formalization side is currently content-light. Acceptable for a conjecture per §3b but worth flagging that no content-bearing class encodes the iff yet."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; the conjecture proposes an identification between two independently-defined filtrations and asks whether they agree on the nose."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:18-27 'Computational role ... providing a rigorous justification for the existing heuristic confinement cutoff and a quantitative speed-up'",
+        "notes": "Describing the conjecture as already 'providing a rigorous justification' for the production cutoff overstates: a conjectural identification cannot rigorously justify a production heuristic until proved. The 'Why a conjecture' section (:29-37) partially walks this back, so minor."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No free numeric parameter; k_max≤7 is the empirical support range, not a tuned constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Internally coherent; the engine-pruning consequence follows from the conjectured iff if granted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.ts:7 validation:'stub'; no .lean sibling file present (only the *-conditional.lean variant exists)",
+        "notes": "The base block's lean.ref points at QOU.BraidKnot.ConfinementGradingCorrespondence marked 'stub'; the substantive Lean lives in the separate *-conditional triple. The base conjecture's formal carrier is a stub, so Lean vs narrative are not yet aligned (conjecture, so not a fail)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites brundankleshchev2009 (Brundan–Kleshchev iso, KLR) and khovanovlauda2009 (KLR/Z-grading) — both correctly invoked for the grading/isomorphism claims."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:8-15 'KLR-module lift 𝔐_K'",
+        "notes": "The KLR-module lift 𝔐_K of a closed braid K is invoked without a definition in-block (which functor/lift?); the iff hinges on this lift being canonical, which is not pinned here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:37 'supported by all witnessed atom knots up to k_max ≤ 7'",
+        "notes": "Empirical support is cited as a bound (k_max≤7) with no linked witness file or count; the claim is not reproducible from the block and the range is small."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No direct physical-observable claim; structural/algebraic conjecture."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-grading-correspondence.md:37 k_max≤7 support claim with no witness path",
+        "notes": "No *.witness.json referenced to reproduce the 'all witnessed atom knots up to k_max≤7' support."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "notes": "verdict: accept-as-conjecture-with-minor-revisions. referee_argument: Properly typed as a conjecture with appropriate citations and an honest 'why a conjecture' caveat. Weakest point: the 'Computational role' prose claims the conjecture 'provides a rigorous justification' for the production confinement cutoff and a speed-up — language that presumes the very identification still open; and the empirical support ('all witnessed atom knots up to k_max≤7') is unbacked by a linked witness and the KLR-module lift 𝔐_K is left undefined in-block. Soften the justification language and link the support data."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.726Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

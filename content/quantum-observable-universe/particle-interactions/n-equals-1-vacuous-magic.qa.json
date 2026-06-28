@@ -1355,7 +1355,239 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "n-equals-1-vacuous-magic.md:31-36 proves the claim by vacuous truth over the empty set of decompositions of 1.",
+        "notes": "The vacuity is honest and self-described in the title ('Vacuous primality at n=1') and prose. The Lean proof is non-trivial (list induction + omega), not ': True := trivial'. This is a legitimate base-case statement, not an audit-dodge; flagged only because the mathematical content is, by design, content-free as a primality fact."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The 'magic-1' remark (md:54-62) explicitly frames inclusion of 1 in the magic set as a presentation choice, not a physical prediction matching the empirical {2,8,...}. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Lean one_isAlgebraicallyPrime (q:ℝ): IsAlgebraicallyPrime 1 q re-exports the proved AlgebraicPrimality theorem; matches the md claim of vacuous primality for every q>1. The md says q>1 while Lean quantifies all q:ℝ — Lean is more general, not weaker."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Only -- Ref: [manuscript] used; no external citation to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Algebraic primality is referenced via def:algebraic-primality and encoded as IsAlgebraicallyPrime; psi_1(q) appears in prose only as motivation, not load-bearing for the arithmetic claim."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure arithmetic claim, no numerical match to experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physical prediction; the magic-number connection is explicitly a presentation choice."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness; claim is a Lean proof asserted sorry-free."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5bd956457824",
+          "ts": "8f8cc9a53a1e",
+          "lean": "682ee3abe09b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict: accept. Honest, self-described vacuous base case with a non-trivial Lean proof matching the narrative. No false claim, no hidden DOF, no overclaim. referee_argument: the only quibble is that 'n=1 is magic' is mathematical bookkeeping with no nuclear-physics content, which the block itself concedes."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

@@ -976,7 +976,255 @@
           "value": 0.7
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Kind=conjecture; the block is explicitly open (no proof claimed), so a falsity objection against an asserted theorem does not apply. The folding mechanism is stated as a conjecture under §7b."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "type-b-folding-cpt.lean:26-28 — class TypeBFoldingCpt where holds : Prop. The axiomatisation class carries a single bare 'holds : Prop' field encoding none of the conjecture's content.",
+        "notes": "AGENTS.md §3b-tax: a conjecture carrier must assert its content as Prop fields (iota involution, bar-invariance, CPT decomposition), not an empty/opaque 'holds : Prop'. The .md sketches a content-bearing class (md:86-99) but the actual sibling .lean is content-free. proof-claims-unencoded / under-specified carrier."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The conjecture proposes a structural realisation (Type-B fold ⇒ bar-invariance by construction); it does not back-fit a numerical target or smuggle a calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "type-b-folding-cpt.md:5-8,79-81 repeatedly asserts the GS normal forms are 'bar-involution invariant by construction' as if established, while md:102-113 (Open R&D) admits items 1–3 are unverified and the Lean class is uninhabited.",
+        "notes": "The 'by construction' phrasing reads as proved structural fact; the block is a conjecture whose mechanism is not yet verified (md:104 'Verify … numerically'). Conditional-as-proved tone, mitigated by the explicit Conjecture banner."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical free parameter is introduced; the construction is purely structural (Cartan folding involution)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "type-b-folding-cpt.md:51-62 asserts D22 Type-B folding is an 'alternative categorical realisation' of the same CPT composite as D6/D7/D8, but no argument is given that the fold automorphism ι:α_i↔α_{n-i} actually realises the same bar action as the explicit σ_i↔σ_i^{-1} map.",
+        "notes": "The equivalence of the two CPT decompositions is asserted, not derived; the bridging lemma (fold-Z/2 = braid-mirror-Z/2 on Hecke generators) is missing. Acceptable for a conjecture but the 'two views of the same composite' claim is unjustified."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "type-b-folding-cpt.lean:26-28 (class with only 'holds : Prop') vs md:86-99 (sketched class with iota_cartan_fold, iota_involution, folded_gs_nf_bar_invariant, stable_matter_def, cpt_via_type_b).",
+        "notes": "The actual Lean sibling encodes none of the five fields the .md advertises; the formalisation is strictly weaker (empty marker) than the narrative class it claims to formalise. The .ts is tagged 'conditional-on-class' but no usable class exists."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites[] (kashiwara1991, khovanov-lauda2009, brundan-kleshchev2009, lecouvey2007) are the standard references for KLR / Type-B symmetric crystals and are invoked appropriately for the folding construction; no mis-attribution detected."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "type-b-folding-cpt.md:3-6 — the involution ι:α_i↔α_{n-i} folds sl_n to B_{n/2}, but for sl_n the standard fold giving type B/C requires care about n parity and which diagram (B vs C); the block writes B_{n/2} without specifying n even and without distinguishing the Type-B vs Type-C outcome.",
+        "notes": "'Type-B' folding of A_{n-1} via α_i↔α_{n-i} canonically yields type C (or B) depending on convention; the block does not pin the regime, leaving the central object ambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match to experiment is claimed; structural conjecture only."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "type-b-folding-cpt.md:8-9 identifies 'stable matter = fixed points of the folded crystal; antimatter = the ι-orbit complement', and md:38-39 maps P (parity) onto the Cartan fold.",
+        "notes": "Equating CPT's P specifically with a Cartan-diagram fold (a flavor/algebra symmetry, not a spatial reflection) is a strong physical identification a domain expert would question; offered as conjecture, so not disqualifying, but the P↔fold assignment is physically non-obvious."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing compute/witness with a hash is claimed; md:104 lists numerical verification as open R&D, not as an existing reproducible result."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: the sibling Lean class (type-b-folding-cpt.lean:26-28) is an empty 'holds : Prop' marker that encodes none of the conjecture's content, violating AGENTS.md §3b-tax 'the carrier must assert something.'",
+        "notes": "verdict=acceptable-as-conjecture-but-fix-carrier. As an open §7b-derived conjecture the block is legitimate, but its formal carrier is vacuous and the D22=D6/D7/D8 equivalence and P↔fold identifications are asserted without bridging arguments."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.998Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

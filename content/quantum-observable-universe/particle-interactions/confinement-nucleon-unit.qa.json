@@ -835,7 +835,235 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-nucleon-unit.md:24-27 — 'Gram indefiniteness (det G < 0, eigenvalue ≈ -0.741) shows that energy minimization has a global minimum at tr_M = 0 (massless).'",
+        "notes": "An indefinite Gram matrix (negative eigenvalue) does not by itself imply a global minimum at tr_M=0; an indefinite quadratic form has no global minimum at all unless constrained. The stated implication is loose, though the downstream 'confinement is topological not energetic' reading is the intended (defensible) point. Not clearly false, hence warn."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-nucleon-unit.md:15-16,40-42 — 'This is exact (not an approximation)' and 'the nucleon-as-unit approximation introduces no error for the transfer matrix (it is exact at the inter-nucleon crossing level).'",
+        "notes": "The block asserts exactness for the full physical transfer-matrix prediction, but the cited LP/Gram results only establish that disconnected quark states are LP-infeasible (confinement) — they do not prove that inter-nucleon crossings are independent of intra-nucleon quark arrangement to all orders. 'No error' is an absolute claim from a scope-limited algebraic feasibility result; should be re-scoped to 'exact at the modeled inter-nucleon crossing level, modulo the nucleon-NF precompute.'"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-nucleon-unit.md:31-38 — '(3) Consequence: since quarks cannot unbind ... the inter-nucleon crossing depends only on the nucleon types, not on the quark arrangement.'",
+        "notes": "'Quarks cannot unbind' (confinement) does not logically entail 'inter-nucleon crossing depends only on nucleon type' (factorization of the link invariant). Confinement bounds the strands inside a nucleon; it does not establish that the Skein weight of an inter-nucleon crossing is insensitive to internal configuration. A factorization lemma is asserted, not proved."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark with no sibling .lean; it interprets prop:confinement-lp."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confinement-nucleon-unit.md:13-14 — crossing coefficients 'pp:(1,0), nn:(1,-HA), pn:(1,-HA/2)' with HA undefined in-block.",
+        "notes": "'HA' (presumably ℏ_q² or a Habiro/h²α factor) is used without definition or cross-reference in this block; a reader cannot resolve it from the remark alone."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block makes no numerical-accuracy claim; eigenvalue -0.741 is structural."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confinement-nucleon-unit.md:46-47 cites 'confinement-lp.witness.json'; the live file resolves only to computations/_deprecated/confinement-lp.witness.json (no current computations/confinement-lp.witness.json).",
+        "notes": "The primary witness backing the block's central LP-confinement claim has been moved to _deprecated/. The block's evidentiary support is stale; either re-point to the live witness (confinement-operator-selection.witness.json / lp-confinement-nf-forcing.witness.json) or restore the cited one."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "afde956c83d6",
+          "ts": "bc37ed25a8ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict=major-revision. Strongest objection: confinement-nucleon-unit.md:15-16,40-42 ('exact, no error') over the witness in _deprecated/ (md:46-47).",
+        "notes": "referee_argument: The remark over-states a scope-limited algebraic feasibility result (quark states LP-infeasible) into a global 'exact, no error' factorization of the inter-nucleon transfer matrix, supplying no factorization lemma (md:31-38), and rests on a witness that has been deprecated. Re-scope the exactness claim and refresh the witness citation; the core confinement-as-topological reading is sound."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.860Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

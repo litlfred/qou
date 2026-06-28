@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/nucleon-nf-observability.md"
   },
   "source_hashes": {
-    "md": "c02e97180b8f",
+    "md": "6cd452f7b0a6",
     "ts": "cbdbaa6eba5e"
   },
   "criteria": {
@@ -835,7 +835,247 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nucleon-nf-observability.md:54-56 — '$\\ell = 3$: the product $\\sigma_0\\sigma_1\\sigma_0$ is the trefoil knot'. In B_3, σ₀σ₁σ₀ (a single positive half-twist relation word, = σ₁σ₀σ₁) is the braid whose CLOSURE is the trefoil only as a specific closure; as a 2-crossing-after-reduction word it is more naturally the (2,1) or unknot/Hopf region depending on closure convention. More clearly false: line 16-17 labels BOTH σ₀σ₁ and σ₁σ₀ as 'Hopf link' with ℓ=2 and 'cannot be separated by any ambient isotopy' — but the closure of a 2-braid σ₀σ₁ in B_3 (3-strand) is generally NOT the Hopf link (Hopf link is the closure of σ₁² in B_2). The knot/link column assignments (length-ℓ word → specific knot) are asserted without a stated closure convention and several are topologically incorrect.",
+        "notes": "The word→knot dictionary conflates braid-word length with knot type and mislabels 3-strand 2-letter words as Hopf links. Since this is a remark interpreting prop:nuclear-groebner-reduction, the numerical coefficients may be fine but the topological identifications are not rigorously correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark carries substantive (if contestable) content: coefficient table, sign patterns, observability classification. Not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-nf-observability.md:117-139 — the 'leptonic debt' / beta-decay narrative reads the sign of NF coefficients as the driver of n→p+e+ν̄, then states the neutron 'pays down its excess debt by emitting the physical electron'. The identification of negative NF coefficients with 'debt requiring emission of exactly e⁻ and ν̄' is asserted to explain beta decay, but the channels (γ, L_+, e⁻) were named to match the decay products — the interpretation is fitted to the known decay rather than predicting it.",
+        "notes": "Interpretive remark; the debt→decay story is suggestive but the channel labels (photon/electron/neutrino) are assigned post-hoc to the basis elements to match the physical decay. Minor for a remark."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nucleon-nf-observability.md:94-100 — 'the nucleon's internal energy lives overwhelmingly in the color tube fiber direction … This is the algebraic expression of color confinement.' Claiming that σ₁-coefficient dominance (a basis-coordinate magnitude in a particular GS basis) IS color confinement is far stronger than the computation (one tr_M coefficient table at one q₀) supports.",
+        "notes": "A basis-dependent coefficient dominance is elevated to 'the algebraic expression of color confinement'. The ~94% figure is basis- and normalization-dependent (NF coordinates, not an invariant)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nucleon-nf-observability.md:1-7 — the 'typed crossings' assignment $u$-$d = \\sigma - \\tfrac12(q-q^{-1})\\mathbf 1$ introduces a factor of 1/2 with no derivation from the canonical chain; lines 31-33 state this 1/2-shifted d-d/u-d typing is what 'flips' the neutron L_+ sign. The 1/2 coefficient is an off-menu free choice that controls the headline sign-flip result.",
+        "notes": "The ½(q−q⁻¹) typed-crossing weight is a tunable coefficient whose value drives the qualitative conclusion (neutron L_+ sign flip). No canonical-chain origin is cited for the 1/2."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-nf-observability.md:36-52 — the 'observability criterion' asserts ℓ=1 words are 'virtual (Reidemeister-I removable)' and ℓ=2 words are 'observable Hopf links cannot be separated'. The jump from braid-word length to topological non-triviality of the closure skips the closure step (a long braid word can close to the unknot; a short one can be knotted). 'therefore observable' (line 52) does not follow from ℓ=2 alone.",
+        "notes": "Word-length is used as a proxy for knot non-triviality without the intervening closure/Markov-move argument."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark block; no sibling .lean (ts has no lean field). interprets prop:nuclear-groebner-reduction. No Lean to diverge."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref: in this remark; nothing mis-attributed."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-nf-observability.md:1-7 — 'typed crossings (u-u=σ, d-d=σ−(q−q⁻¹)1, u-d=σ−½(q−q⁻¹)1)' are used as if defined, but no def block is cited for the typed-crossing scheme; 'observable' is defined twice (topological non-triviality line 37-38, vs. 'free particle' line 70) with no reconciliation; closure convention for the word→knot map is never stated.",
+        "notes": "Key notions ('typed crossing', 'observable') used with multiple/implicit definitions and no closure convention."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nucleon-nf-observability.md:20 — coefficients quoted to 6 sig figs ('-0.201704', '+1.008995') 'at q_0 ≈ 1.1100', but the Δ values line 132-134 (Δ_ν=-0.10205, Δ_L+=-0.10899, Δ_e-=-0.00098) are presented as 'driving beta decay' without error bars or cross-anchor (muon vs proton q₀) sensitivity. The headline neutron-L_+-sign-flip depends on a coefficient (-0.009641) within ~1% of zero, hence fragile to the q₀ pin and to the ad-hoc ½ typed-crossing weight.",
+        "notes": "A sign-flip conclusion hinges on a coefficient ≈ −0.0096 (close to zero); the report gives no sensitivity to the q₀ anchor convention (AGENTS.md flags muon vs proton pin); 6-sig-fig precision is not justified by f64-fallback witness."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "nucleon-nf-observability.md:13 — the identity element $\\mathbf 1$ (ℓ=0) is mapped to 'the photon γ'. Identifying the algebra identity with a physical photon, and ℓ=1 single crossings with 'virtual' particles, is a heuristic dictionary; a domain expert would note the photon is massless/spin-1 and cannot be the GS identity coefficient in any standard sense.",
+        "notes": "The basis-element→particle dictionary (1↦γ, σ↦virtual, trefoil↦e⁻) is metaphorical; flagged as physically loose, not a hard contradiction, in a remark."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "nucleon-nf-observability.md:157-158 cites witness 'free-neutron-decay.witness.json (typed crossings; 17 reductions for n; 18 for p)'. The witness file exists (computations/free-neutron-decay.witness.json) but is not referenced via the .ts computation field, and the .md quotes 6-sig-fig coefficients not shown to be the witness's values; no scriptHash/scriptCommitSha check ties the quoted table to a current producer run.",
+        "notes": "Quoted numbers are not traceably pinned to the named witness (no computation block in .ts; coefficients embedded as literals in prose). Should be witnessed-values-linked per AGENTS.md witnessed-values discipline."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6cd452f7b0a6",
+          "ts": "cbdbaa6eba5e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision. referee_argument: The remark's central topological claims (word-length ⇒ knot type; σ₀σ₁ ⇒ 'Hopf link'; identity ⇒ photon) are stated without a closure convention and several are topologically incorrect for 3-strand words. The headline neutron L_+ sign-flip depends on (a) an off-menu ½ typed-crossing weight with no canonical-chain derivation and (b) a coefficient ≈ −0.0096 within ~1% of zero, with no q₀-anchor sensitivity. Coefficients are quoted to 6 sig figs from an f64-fallback witness not value-linked in the manifest. Strong interpretive overclaim ('the algebraic expression of color confinement') on a basis-dependent coordinate magnitude. Recommend: state closure convention, derive or flag the ½ weight, pin numbers to the witness, soften confinement claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.202Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

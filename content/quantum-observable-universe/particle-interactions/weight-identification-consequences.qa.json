@@ -835,7 +835,234 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "weight-identification-consequences.md:25-31 'four-dimensional rational isotype is exactly filled by the Seifert surface of T_{2,5} (Seifert genus 2, dim H^1 = 4); a two-dimensional sub-isotype is filled by the trefoil T_{2,3}'.",
+        "notes": "The Seifert-genus/H^1-dimension arithmetic is correct (genus g ⇒ dim H^1 = 2g). But 'exactly filled by' and 'representation-theoretic dimensions match the Seifert dimensions exactly ... not a phenomenological coincidence' (md:30-32) asserts a canonical isomorphism of the Z5-isotype with a Seifert H^1 that is dimension-matching only — equal dimension is not an identification. Borderline false-as-stated (claims more than equal dimension)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "weight-identification-consequences.md:29-32 'The representation-theoretic dimensions match the Seifert dimensions exactly for these two knots — a consequence of cyclic representation theory on X5, not a phenomenological coincidence.'",
+        "notes": "A dimension coincidence (4=4, 2=2) is upgraded to 'a consequence of cyclic representation theory ... not a coincidence' with no map exhibited. Likewise md:34-47 promotes 'one U(1) phase tube' = 'one cyclic weight observed' as exact, organizing five Lagrange weights as 'trivial + three colour tubes + chiral conjugate ... by SU(3)-triality from S5' — an SU(3)-triality-from-S5 identification asserted, not derived. Conclusions exceed the supporting argument."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "weight-identification-consequences.md:40-43 maps five Z5 weights to 'the trivial weight plus three colour tubes plus a chiral conjugate, organised by SU(3)-triality from S5'.",
+        "notes": "The decomposition 1 (trivial) + 3 (colour) + 1 (chiral conjugate) = 5 weights via 'SU(3)-triality from S5' is asserted as a 'therefore' without the bridging representation-theory lemma; the route from the cyclic Z5 grading to an SU(3) triality structure is not shown."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark, no .lean sibling; interprets prop:x5-bring-weight-identification."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:; uses[] are internal block labels only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "weight-identification-consequences.md:7-9 'spectral coordinate w_1 ... the first Lagrange resolvent'; md:34 'one U(1) phase tube'.",
+        "notes": "'Spectral coordinate w_1', 'Lagrange resolvent', and 'colour tube' / 'U(1) phase tube' are used as established terms; their precise definitions live in other blocks (uses[] points to rem:* not def:*). The reader cannot pin 'one tube = one cyclic weight observed' without the referenced remarks; meaning is borrowed, not fixed here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "weight-identification-consequences.md:42-43 'three colour tubes plus a chiral conjugate, organised by SU(3)-triality from S5'.",
+        "notes": "Mapping a Z5/S5 cyclic weight system onto QCD-style SU(3) colour triality is a strong physical identification a domain expert would push back on: S5 has no canonical SU(3) and 'colour' here is metaphorical. Not a unit/conservation error, hence warn not fail, but the physics language outruns the established structure."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8dcadb3fd3ea",
+          "ts": "1e1e7f2d7955"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: 'As an interpretive remark it is mostly sound, but it repeatedly upgrades dimension coincidences and metaphors to canonical statements: the T_{2,3}/T_{2,5} Seifert dimensions are said to match the Z5-isotype dimensions \"exactly ... not a coincidence\" without exhibiting a map, and the five Lagrange weights are organized via \"SU(3)-triality from S5\" with no derivation. Soften to dimension-level statements or cite the representation-theoretic identification; demote the colour/triality physics language to clearly-flagged interpretation.'"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.180Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

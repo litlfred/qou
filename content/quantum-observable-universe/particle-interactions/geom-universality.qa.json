@@ -995,7 +995,260 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "geom-universality.md:62-71 (Step 3) — 'For torus knots, Vol=0 and the representation variety consists of a single abelian flat connection' and CS(T_{m,n})=π²(m²−1)(n²−1)/(12mn). Torus-knot complements are Seifert-fibered with NON-abelian SL(2,C) (and SU(2)) representations beyond the single abelian one (irreducible reps give the nontrivial CS values used in the very formula quoted); 'a single abelian flat connection' is false — the CS formula cited comes from the irreducible (non-abelian) reps.",
+        "notes": "The step's premise ('single abelian flat connection') contradicts the source of its own CS formula. As a conjecture the headline is allowed to be open, but this supporting step misstates the torus-knot representation variety."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "geom-universality.lean:166-175 `geom_universality_conditional` proves ∃! G with [GeomFullFunctorial G] and GeomFullCanonicalSeed G seed; existence is witnessed by `seed` itself (refine ⟨seed, ⟨inferInstance, ⟨fun _ _ => rfl⟩⟩, …⟩) and uniqueness collapses via matches_seed (G k q = seed k q by definition). The two named conjecture instances [HyperbolicVolumeTranscendence] [PLCorrectnessHypotheses] are admitted unused (lean:160-165 docstring concedes 'NOT used in this Lean-level proof'). PLCorrectnessHypotheses.pl_decomposition_lower_bound is `(0:ℝ) ≤ 0` (lean:22-23) — a tautology field.",
+        "notes": "The 'universality' theorem reduces to: anything equal to seed equals anything else equal to seed — trivially true by the seed-matching field. The Vol/CS content lives entirely in the unproved seed; the conjecture-class PLCorrectnessHypotheses carries a `0≤0` field, i.e. asserts nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "geom-universality.md:54-60 (Step 2 uniqueness) — 'The scalar is fixed by the two normalisations: Geom(○)=0 … Geom(4_1)=Vol(4_1)/ℏ_q² (this is the equation that defines q₀).' The uniqueness/normalisation that 'fixes q₀' uses Vol(4_1)/ℏ_q² as the defining input, i.e. the geometric value being 'derived' is the same datum used to pin q₀. The functional is shown unique by assuming the Frobenius pairing is unique 'up to scalar' (Yekutieli) and then fixing the scalar by the target value.",
+        "notes": "The normalization that pins q₀ (Geom(4_1)=Vol(4_1)/ℏ_q²) is also the calibration; the 'uniqueness' is up-to-scalar with the scalar set by the desired geometric output. Mild smuggled-calibration / self-reference in the uniqueness step."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "geom-universality.md:1-20 states a 'Proposition (conditional on …)' that asserts the categorical volume form 'yields Vol(K) … and CS(K) … This identification is universal: it is the UNIQUE evaluation compatible with the Frobenius–Hopf structure', followed by a 'Proof. … □' (lines 21-82). But the block kind is `conjecture` (.ts:3) and the Lean proves only seed-uniqueness (a tautology), NOT the Vol/CS identification. Presenting a □-closed 'Proof' of a 'Proposition' for what is manifestly a conjecture (existence of the seed = Vol/CS evaluator is the open work, lean:147-157) is conditional-as-proved overclaim.",
+        "notes": "A conjecture is dressed as a Proposition with a completed proof; the actual open content (the Vol/CS-valued seed) is precisely what is NOT proved. The QED box overstates the status."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "geom-universality.md:18-19 — Normalisation 'Geom(4_1)=Vol(4_1)/ℏ_q² (fixes q₀)' folds the q₀ pin into the normalization of the universal functional; ℏ_q²=(1−1/q)² appears in lean:17 HyperbolicVolumeTranscendence with the only 'content' being (vol/h)(h/vol)=1, a tautology. The scale factor ℏ_q² exchanging Vol↔CS (md:72-76) is asserted, not derived.",
+        "notes": "q₀/ℏ_q² enters as a normalization knob; its role is calibration-like but disclosed in the cheat-sheet, so minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "geom-universality.md:46-60 (Step 2) — 'Yekutieli's rigidity theorem states this pairing is unique up to scalar. … Therefore any functional satisfying properties 1–3 must equal Geom.' Uniqueness of the Frobenius PAIRING up to scalar does not entail uniqueness of the volume FUNCTIONAL Geom across all knots; the step from 'pairing unique up to scalar + two normalisations' to 'the functional on all knot complements is unique' skips that the evaluation map's values on every knot are determined (the functoriality/seed extension, conceded open in lean:147-157).",
+        "notes": "'Therefore … must equal Geom' does not follow from pairing-rigidity + two point normalisations; the all-knots determination is the missing lemma (and is the open seed extension)."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "geom-universality.md claims (and 'proves' with □) existence+uniqueness of a Vol(K)/CS(K)-valued universal functional. geom-universality.lean:123-175 proves vol_density_per_knot_unique and geom_universality_conditional, which are SEED-relative: 'any two evaluators matching a common seed are equal' and '∃! G matching the seed', with existence witnessed by the seed itself by `rfl`. The Lean never references Vol, CS, Neumann–Zagier, or the Bloch–Wigner dilog; it proves a generic subsingleton-of-seed-matchers fact (lean:137-145 vol_density_subsingleton). The .md's Vol/CS content is absent from the Lean.",
+        "notes": "Lean proves a weaker, seed-relative tautology (matchers of a seed are unique); the .md's geometric identification (the whole point) is not in the Lean. The lean.ref validation is `not_checked` (.ts:8). Clear proof-statement-integrity divergence."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "geom-universality.md:24-44 cites neumann-zagier1985 for 'Vol(K)+i·CS(K)=Σ_j(L(z_j)+arg(z_j)log|z_j|)'. The Neumann–Zagier 1985 result concerns the volume and the variation of CS under Dehn surgery (the Neumann–Zagier symplectic/potential function); the clean 'Vol+iCS = Σ Rogers/Bloch–Wigner dilog' complexified-volume formula is more precisely attributed to later work (Neumann 2004, Zickert). The cited paper does not state the formula in the form given.",
+        "notes": "Formula form (complex volume as a dilog sum) is mis-attributed to neumann-zagier1985; the 1985 paper gives the surgery variation, not this closed dilog identity. Minor citation slip."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "geom-universality.md uses Geom(K) (md) while the Lean uses GeomFullEval/VolDensity (lean:56-60); md:42 introduces a 'volume form ω' and τ 'evaluates ω', but ω is never defined; 'the UNIQUE evaluation' (md:8) asserts uniqueness as part of the definition without it being established. lean:60 admits Knot is 'abstracted as a generic type to avoid committing to a specific knot encoding' — so 'per knot' uniqueness is over an unspecified type.",
+        "notes": "Geom vs VolDensity naming mismatch md↔lean; ω undefined; 'the unique evaluation' presupposes the uniqueness it should prove; knot type left abstract."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match quoted in this block; it is a structural/geometric conjecture (the q₀-pin number lives elsewhere)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Vol/CS duality and connected-sum additivity are standard, physically reasonable structural properties; no unit/conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness attached to this conjecture block (no computation field in .ts)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revision (as a conjecture, the open status is fine; the presentation is not). referee_argument: The block is a `conjecture` but is written as a 'Proposition' with a completed '□' proof, while the sibling Lean proves only a seed-relative tautology (matchers of a common seed are equal; existence witnessed by the seed via rfl) that never mentions Vol, CS, or Neumann–Zagier — so the geometric identification (the actual claim) is unproved in both prose and Lean. Step 2's 'pairing unique up to scalar ⇒ functional unique on all knots' is a non-sequitur (the all-knots extension is exactly the conceded-open seed). Step 3 misstates torus-knot reps as 'a single abelian flat connection'. The complex-volume dilog formula is mis-attributed to neumann-zagier1985. Recommend: relabel as conjecture throughout, drop the □, fix the torus-knot and citation errors, and make the Lean reflect what is actually conditional."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

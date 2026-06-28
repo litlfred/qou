@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.md"
   },
   "source_hashes": {
-    "md": "cc99bece9117",
+    "md": "77a62a5f2555",
     "ts": "4ec73eb5f097"
   },
   "criteria": {
@@ -935,7 +935,238 @@
           "value": 0.74
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Correctly typed as a conjecture (kind=conjecture); the central claim (Type-B folding forces conjugate-pair production) is presented as conjectural, not asserted true. The supporting det-pair identity det rho_lambda(w)*det rho_lambda'(w)=+-1 is a genuine fact (md:51-56)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The conjecture asserts substantive content (paired Kashiwara operators, bar-conjugate descendants); the Lean class carries content fields (verified stub at QOU.BraidKnot.SymmetricCrystalPairProduction with bar-image field), not an empty marker."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No back-fitting; the conjecture states an open structural claim and is honest that the matter/antimatter correspondence 'remains conjectural' (md:41-50)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:51-57 'The empirical evidence is the det rho_lambda(w)*det rho_lambda'(w)=+-1 identity ... is the bar-involution acting on Wedderburn blocks and is the strongest available shadow of the conjecture'.",
+        "notes": "The det-product=+-1 identity is a determinant/sign fact about conjugate partitions; calling it the 'bar-involution acting on Wedderburn blocks' and 'shadow of the conjecture' is interpretive — it evidences a sign-pairing but does not specifically support the dynamical claim that pair-production is forced/atomically paired. Conjecture status mitigates; minor overclaim of evidential strength."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical parameters; purely structural (folding, crystal operators)."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:10-26: from 'symmetric crystal admits no unimodal f_i step from a bar-invariant source; every step is a paired operator' it is inferred that descendants come in bar-conjugate pairs.",
+        "notes": "The step from 'folded operators come in pairs (f_i, f_{ibar})' to 'a transition from a bar-invariant highest weight produces two descendants that are exact bar-conjugates, T_{v-}bar=T_{v+}' is the crux and is asserted, not derived — precisely what the block concedes is conjectural (md:41-50). As a conjecture this is acceptable, so warn not fail."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".ts:7 lean ref qou:QOU.BraidKnot.SymmetricCrystalPairProduction validation:'stub'; lean class is generic over {R:CommRing}(q:R) whereas md states it for H_n(R,q) and the CPT-pair correspondence.",
+        "notes": "The Lean is a class-axiomatisation stub (validation:'stub'), so it encodes the conjecture as hypotheses rather than proving anything — appropriate for a conjecture. Minor divergence: the Lean stub captures the bar-invariance-of-GS-image content but not the full v0->v-||v+ pair-production dynamics described in the md; the formalised content is narrower than the narrative conjecture. Honest for a conjecture stub."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites kashiwara1991, lecouvey2007, khovanovlauda2009, brundankleshchev2009 — all genuinely support Type-B crystal folding / KLR bar-involution context; invoked for the 'established at generic level' claim, not for the conjectural step. Appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:7-8 Dynkin involution 'i -> ibar = n - i'; md:11 'Cryst^sym(so_{2n+1})'.",
+        "notes": "The folding index map i -> n-i and the resulting type (so_{2n+1} vs the type B/C subtleties of folding A_{n-1}) are stated tersely; 'no Kashiwara lowering operator as a unimodal step from a bar-invariant source' is a non-standard phrasing whose precise meaning is not pinned down. Reader must trust the cited literature for the exact construction. Minor, expected for a conjecture sketch."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The cited det-product=+-1 identity is an exact algebraic sign identity (det in {+-1}), not a precision-sensitive numerical fit; no q0-anchor swing exposure."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The matter/antimatter-pairing / CPT framing is physically reasonable and explicitly flagged as the conjectural identification; no contradiction with measurement is claimed as established."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:53-54 references computations/det_pair_law.py as the empirical shadow; the .ts has no `computation` block wiring a witness.",
+        "notes": "det_pair_law.py exists at computations/det_pair_law.py, but the conjecture .ts wires no witness (no computation field), so the 'empirical evidence' is cited in prose without a pinned witness JSON. The script is present (reproducible in principle) but unbacked by a committed witness reference. Minor."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "77a62a5f2555",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "verdict=accept-as-conjecture. referee_argument: The block is honestly typed and scoped as a conjecture, concedes exactly which step is unproved (the cyclotomic-quotient folding -> CPT-pair correspondence), and cites appropriate literature plus a genuine sign-identity shadow. The only soft spots (evidential overstatement of det-pair identity, no wired witness, narrower Lean stub) are minor and consistent with conjecture status."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.227Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

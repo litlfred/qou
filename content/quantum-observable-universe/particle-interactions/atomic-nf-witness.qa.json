@@ -1605,7 +1605,242 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The five sub-claims (global Φ₁ minimum, greedy electron placement, GS convergence via Diamond Lemma, no-strip for A≤9, Pauli-character definition) are each plausibly true as stated; no counterexample or quantifier slip in the narrative statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lean/QOU/ParticleInteractions/atomic_nf_witness.lean:105-112 — theorem atomic_nf_witness projects the class fields (ctx.claim_i_global_min_ordering, …, ctx.claim_v_certificate_definition) directly into the conjunction it claims to prove.",
+        "notes": "Self-assuming projection: the conclusion is carried verbatim as class fields and the 'proof' is ⟨field, field, …⟩. AGENTS.md §3b-cond item 5 forbids a class that axiomatises its own conclusion with a theorem that merely projects it. The Lean derives nothing."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The proposition asserts a computational verification property (NF-ness of constructed braids), not a back-fit numerical target; no smuggled calibration in the statement itself."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-nf-witness.md:1-4 states the construction 'is verified to be in Gröbner–Shirshov normal form' for all Z=1–20, but md:8 admits exactness only for C(A,Z)≤50000 and steepest-descent (heuristic, not exact) otherwise; md:21-24 admits stripping for A>9.",
+        "notes": "The blanket 'verified … in normal form' is stronger than the heuristic/approximate procedure it rests on for larger atoms; the exact-vs-heuristic boundary should be in the claim, not buried in clause (1)/(4)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-nf-witness.md:22 — stripping thresholds '200k–500k words' are pragmatic parameters with no canonical-chain origin.",
+        "notes": "A 2.5× range of word-count thresholds is an undisclosed tunable affecting the accumulated F_Pauli; not a calibration of an observable but still an off-menu numerical knob."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The Diamond-Lemma convergence step (md:16-18) is a standard, correctly-invoked argument; the chain from construction steps to NF accumulation is internally coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "lean atomic_nf_witness.lean:105-112 vs md:1-38 — the Lean conjunction omits the .md's central claim that the construction produces an element of H_{A+Z}(q) verified to be in GS normal form (the NF-ness property is replaced by an opaque predicate NF_no_strip and the transfer-matrix NF claim md:31-38 is absent), and every retained clause is discharged by projecting an assumed class field.",
+        "notes": "The Lean proves a weaker, self-assumed conjunction, not the manuscript proposition; proof-statement-integrity fails."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] on the .ts and no external bibliographic -- Ref: in the Lean beyond [manuscript]; nothing to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-nf-witness.md:24 defines F_Pauli = |tr_alt/net| but 'tr_alt' (alternating trace) and 'net' are not defined in-block nor linked; md:7 'Φ₁' and the other Wedderburn invariants Φ₂,Φ₃ (md:31) are referenced without local definition.",
+        "notes": "Key quantities (tr_alt, net, Φ₁₋₃) are used as if defined; a reader cannot reconstruct F_Pauli from this block alone."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The proposition is a structural/verification claim; it states no numerical observable matched to experiment, so empirical-fragility does not apply."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No direct physics observable claim (mass/width/conservation) is made in this block; it is an algebraic-construction proposition."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-nf-witness.md:26-29 asserts per-atom JSON certificates are committed, but the block cites no specific witness path and no scriptHash/scriptCommitSha; the certificates' existence/currency cannot be verified from the block.",
+        "notes": "Claim of committed certificates is unbacked by a resolvable witness reference; reproducibility of the cited certificate set is unverifiable here."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Strongest objection: Lean is a self-assuming projection (atomic_nf_witness.lean:105-112) that omits the central NF-ness claim, and the .md over-blankets 'verified in NF' over a heuristic/stripped procedure for larger atoms.",
+        "notes": "verdict=major-revision. referee_argument: the proposition's formal backing proves nothing it does not assume, and its scholarly statement claims exactness it admits it lacks for A>9 / C(A,Z)>50000."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

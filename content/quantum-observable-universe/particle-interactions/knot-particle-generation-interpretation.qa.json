@@ -1042,7 +1042,238 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-particle-generation-interpretation.md:62-71 — the figure-eight 4_1 'arises from a crossing change on a linked trefoil pair: T_{2,3} ∪_Hopf T_{2,3} →σ 4_1 + (Skein remainder).'",
+        "notes": "A single Skein crossing change relates three links L+,L−,L0 with the SAME ambient diagram; obtaining 4_1 (a knot) from a 2-component Hopf-linked trefoil pair (a link) via one crossing change is not a standard Skein triple and is asserted with an unspecified 'remainder'. As written the topological claim is unverified and likely imprecise; warn rather than fail since 'remainder' hedges it."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "knot-particle-generation-interpretation.md:73 — 'The muon is literally a Skein excitation of the electron.'",
+        "notes": "The word 'literally' converts a heuristic categorical analogy (figure-eight from a crossing change) into a definite physical identity. Nothing in the preceding paragraph establishes that the muon is an excitation of the electron in any rigorous sense — the muon↔4_1, electron↔unknot/trefoil identifications are interpretive. Drop 'literally' or demote to conjecture-style phrasing."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical prediction or free parameter in this remark."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-particle-generation-interpretation.md:47-51 — 'The S_3 ⊂ S_5 permutation symmetry ... ensures this linking is invariant ... reproducing the SU(3) color confinement condition: only color-singlet combinations produce observable hadrons.'",
+        "notes": "S_3 color-coordinate permutation symmetry does not entail SU(3) color confinement; the step from a finite permutation invariance to the continuous-gauge color-singlet projection is a leap with no intermediate lemma. Stated as 'ensures ... reproducing' without justification."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark, no sibling .lean; interprets def:knot-particle-generation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Cross-refs def:color-tube-coordinates, rem:color-tube-interpretation, def:knot-particle-generation all resolve; no external citation invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "knot-particle-generation-interpretation.md:1-5,19-22 — 'the neutrino at rest' (T_{1,0} unknot), 'unit of vertical charge' at Reeb degree 1 used without defining the particle↔knot dictionary in-block.",
+        "notes": "Identifications (unknot=neutrino, T_{2,3}=electron implied, 4_1=muon) are asserted; the underlying def:knot-particle-generation presumably fixes them but the remark uses them as if self-evident, and 'vertical charge' is undefined here."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match in this remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "knot-particle-generation-interpretation.md:73 'muon is literally a Skein excitation of the electron'; md:18 'the neutrino at rest' as a degree-0 unknot.",
+        "notes": "A particle physicist would reject 'the muon is literally an excitation of the electron' — muon and electron are distinct fundamental fermions of different generations, not excitation states of one another; lepton flavor is conserved. As physics this is implausible as stated; as a categorical metaphor it needs explicit 'metaphor/interpretation' hedging."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Interpretive remark; no backing compute/witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "be3bd31affd0",
+          "ts": "408ff79a2d5d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "verdict=major-revision. Strongest objection: knot-particle-generation-interpretation.md:73 'The muon is literally a Skein excitation of the electron.'",
+        "notes": "referee_argument: The remark's three linking operations are a reasonable interpretive sketch, but it repeatedly states interpretive analogies as physical fact: 'literally' a Skein excitation (md:73), S_3 symmetry 'reproducing SU(3) color confinement' (md:47-51), and an unverified Skein triangle producing 4_1 from a trefoil pair (md:62-71). For a one-voice scholarly register these must be hedged as interpretation/conjecture and the crossing-change topology made precise or cited."
+      }
     ]
   },
-  "updated_at": "2026-06-27T14:33:06.940Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

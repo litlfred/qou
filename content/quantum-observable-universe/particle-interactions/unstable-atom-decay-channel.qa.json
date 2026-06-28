@@ -1356,7 +1356,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "unstable-atom-decay-channel.md:14-16 'Pick the unique optimal vertex x*_LP closest to an integer point'; :33-39 uniqueness argument",
+        "notes": "The 'unique optimal vertex closest to an integer point' is not well-defined: an LP can have an entire optimal face, and 'closest to an integer point' presupposes a selection rule not specified. The uniqueness claim is only shown 'generically (off a measure-zero boundary variety)', so the stated proposition ('the unique violated constraint is well-defined') overstates what the proof gives; defensible as 'generically unique' but the as-stated unconditional 'unique' is not proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "unstable-atom-decay-channel.lean:23-30 'def UnstableAtom.decay_channel_unique ... : True := trivial'",
+        "notes": "The .lean discharges a content-free ': True := trivial' while the .md states a substantive uniqueness proposition. Per AGENTS.md §1a this is exactly the forbidden vacuous/self-trivializing disposition (def-disguised-True); the proposition is not formalized at all."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Argument runs ILP-infeasibility → LP relaxation → argmin violated constraint → LP-duality shadow price; does not assume its conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "unstable-atom-decay-channel.md:2-5 title/statement 'the unique violated constraint is well-defined' vs :38-39 'Generically (off the boundary variety), λ* is unique'",
+        "notes": "Statement claims unconditional uniqueness/well-definedness; the proof only delivers genericity off a measure-zero variety. The conclusion is stronger than the argument supports (unconditional-as-proved vs generic). Should be restated as 'generically unique'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No undisclosed numeric parameter or off-menu coefficient; G(q), confinement level ℓ(K,q) are upstream-defined."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "unstable-atom-decay-channel.md:11-16 'Run the LP relaxation ... Pick the unique optimal vertex'; :18-25 argmin defines γ*",
+        "notes": "Gap between 'the ILP is infeasible' and 'therefore the rounded LP vertex ⌈x*_LP⌉ identifies the violated constraint': there is no lemma that the argmin of (G·⌈x*_LP⌉)_γ at a rounded relaxation point coincides with the actual ILP-infeasibility certificate. The LP-duality step (:27-31) is invoked but the bridge from rounded-primal to the dual-certified violated constraint is missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "unstable-atom-decay-channel.lean:30 ': True := trivial'; .ts:6 lean.ref 'qou:QOU.BraidKnot.UnstableAtom.decay_channel'",
+        "notes": "Lean proves True, vacuously, while .md claims a uniqueness proposition — proof-statement-integrity violation. Additionally the .ts ref names decl 'decay_channel' but the file defines 'decay_channel_unique' (name mismatch), so the ref does not even resolve to the present stub."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "-- Ref: [manuscript] braids-and-knots/local-shadow-ordering is a manuscript self-reference; no external citation to mis-attribute."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.md:14-16 'unique optimal vertex x*_LP closest to an integer point'",
+        "notes": "'Closest to an integer point' under which norm, and 'the unique optimal vertex' when the LP optimum {x: Gx≥0} is a cone with x=0 always optimal — the selection rule for x*_LP is ambiguous. 'Decay channel = unique violated constraint' inherits this ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match / witness value asserted; purely structural proposition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Phase-boundary picture (stability flips at q* where |y_{λ*}(q*)|=0) is internally consistent and physically reasonable as a confinement-transition statement."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness/compute referenced to reproduce."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "287bca919baa",
+          "ts": "6e21abfe8217",
+          "lean": "4c37527e561a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revisions. referee_argument: Two compounding defects. (1) Logical: the proposition title asserts unconditional uniqueness/well-definedness of the decay channel, but the proof only establishes genericity off a measure-zero boundary variety, and the bridge from a rounded LP-relaxation vertex to the ILP-infeasibility certificate is asserted, not proved (the 'unique optimal vertex closest to an integer point' is ill-posed since x=0 is always LP-optimal). (2) Formal: the Lean sibling is 'def ... : True := trivial' (AGENTS.md §1a forbidden vacuity) AND its .ts lean.ref ('decay_channel') does not match the declared name ('decay_channel_unique'), so the proposition is unformalized and the ref is broken. Restate as 'generically unique', supply the primal→dual certificate lemma, and replace the True stub with the real statement (sorry + -- Ref:) or a conjecture."
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

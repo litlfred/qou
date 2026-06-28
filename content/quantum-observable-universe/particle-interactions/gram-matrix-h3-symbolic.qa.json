@@ -1635,7 +1635,240 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.md:26 claims symbolic entries 'match computations/gram-matrix-dual.witness.json at q_0 ≈ 1.110 to max absolute difference ≈ 2.1×10⁻¹⁶ across all 36 entries.' The regression witness gram-h3-symbolic-regression.witness.json reports allPassed:False with assertion gram_h3_symbolic_matches_pyhecke -> False.",
+        "notes": "The prose asserts an exact 1e-16 match while the live regression witness records the match assertion as FAILED. Either the symbolic entries do not reproduce the pyhecke Gram at q_0, or the witness is stale/broken; in either reading the .md's headline match claim is currently unsupported by its own backing witness. The structural claims (symmetry, G[0,0]=1) are independently sound; the contested claim is the numerical agreement. Warn (could be witness staleness rather than a wrong formula), but the contradiction is direct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.ts:10 title claims '36 explicit Laurent-polynomial entries ... with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved'; gram-matrix-h3-symbolic.md:23 lists det G(q) ≠ 0 for q>0, q≠1 as proposition part (3); md:32 calls the remaining det≠0 proof 'a single, routine symbolic-determinant computation.'",
+        "notes": "Proposition part (3) (det ≠ 0) is stated as a proposition clause but is admittedly NOT proved (authorNotes 'Deferred to Phase 1b-2: gramMatrix_det_ne_zero', .ts:30-34) and only numerically observed (det≈-0.189). The proposition kind asserts all three parts; one is conjectural/unproven. The 'routine computation' framing understates that a symbolic det of a 6×6 Laurent matrix with the listed entries is non-trivial. Conditional/unproven clause presented within a proposition; warn."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".ts:10 advertises only '2 of 3 structural axioms ... Lean-proved' while the .md proposition (md:20-23) states three properties including det≠0. The .ts lean.ref is QOU.Interactions.GramMatrixH3Symbolic.gramMatrix.",
+        "notes": "By the .ts's own admission the Lean proves a strictly weaker set than the .md proposition (det≠0 not proved in Lean). This is an acknowledged gap rather than a hidden one, so warn; but the .md proposition statement (part 3) is not Lean-backed, a proof-statement-integrity shortfall. (Could not load Lean LSP in this sandbox to verify the two proved lemmas are sorry-free; assessed from manifest + .md.)"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "cites halverson_ram_1998 (references.ts:5560). md:39 attributes the canonical NF basis + TR_M to pyhecke; the Hoefsmit-seminormal form is standard Halverson–Ram material.",
+        "notes": "halverson_ram_1998 is a legitimate source for Hoefsmit/seminormal Hecke representations (note in references.ts confirms the entry, year 1996 with id retained). Attribution appropriate; pass."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "gram-matrix-h3-symbolic.md:1 sets u=√q with u>0 (q>0) — generic-ring vs archimedean: the entries are Laurent in u=√q, requiring a real square root, so the proposition is implicitly over ℝ (q>0), but it is presented as a categorical/universal closed form (.ts refined-framing, ts:46-48 'hold for EVERY positive u').",
+        "notes": "The √q substitution fixes an archimedean base ring (q>0 real), yet the surrounding framing calls the entries 'universal rational functions in u' and 'categorical' (ts:42-48). 'Universal' over which ring is ambiguous: as Laurent polys in u they are ring-generic, but the proposition's quantifier (q>0, q≠1, part 3) is real-archimedean. Minor base-ring/regime ambiguity."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "gram-matrix-h3-symbolic.md:26 cites max abs diff ≈2.1×10⁻¹⁶'across all 36 entries (see gram-h3-symbolic-regression.witness.json for the live value)' but that witness has allPassed:False and gram_h3_symbolic_matches_pyhecke:False. The .ts computation.status:'verified' (ts:64).",
+        "notes": "The .md explicitly defers its precision claim to a live witness that currently FAILS the match assertion. A precision/agreement claim whose own designated live witness contradicts it is empirically fragile/stale. The .ts marks the computation 'verified' (ts:64) and authorNotes claim 'Sympy-verified ... to 1e-16' (ts:29) — both contradicted by the regression witness's allPassed:False. This is the core finding for this block: prose-approximate vs witness-state mismatch."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure linear-algebra/combinatorics proposition; no physical observable asserted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "gram-h3-symbolic-regression.witness.json: allPassed:False, assertion gram_h3_symbolic_matches_pyhecke:False; witness scriptCommitSha bed609a63c5... and `git log -1 -- gram_h3_symbolic_regression.py` returns empty (the witness's recorded scriptFile path 'gram_h3_symbolic_regression.py' has no git history at that bare name — the script lives at computations/gram_h3_symbolic_regression.py).",
+        "notes": "Two reproducibility problems: (1) the live regression witness is in a FAILED state (the match assertion does not pass), and (2) the witness's scriptCommitSha cannot be confirmed against current HEAD for the recorded scriptFile (bare-name path resolves with no git log). The block's central numerical support is therefore not currently reproducible as claimed. .ts computation.status:'verified' overstates the witness state."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Block-level rollup over gram-matrix-h3-symbolic.{md,ts} + its two witnesses.",
+        "notes": "verdict=major-revision. referee_argument: The proposition's structural content (symmetry, G[0,0]=1) is sound and partially Lean-proved, but its two empirical pillars are currently broken: the .md's headline '≈2.1×10⁻¹⁶ across all 36 entries' agreement (md:26) is contradicted by its own live regression witness, which reports allPassed:False / gram_h3_symbolic_matches_pyhecke:False, while the .ts simultaneously marks computation.status:'verified' (ts:64) and 'Sympy-verified to 1e-16' (ts:29). Proposition clause (3) det≠0 is stated but unproven (deferred, only numerically observed). A referee would require: refresh the regression witness to green (or correct the prose to the actual residual), reconcile the 'verified' status flag with the failing assertion, and either prove or demote the det≠0 clause."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

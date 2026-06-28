@@ -835,7 +835,231 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Genus data is consistent: u1-phase-tube.md:9 'genus-4 Bring geometry' (Bring g=4) and :32/:36 'genus-2 substrate X_5' (X_5 g=2) are the standard values; no false assertion identified."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "u1-phase-tube.md:31-34 '\"single phase tube\" is therefore precisely the weight-(-1) isotypical component ... not a vague geometric collapse' and :7-10 'originate from the S_5-symmetric action ... which lifts to a normal bundle structure on the exceptional divisor supporting three distinct SU(3)-triality-compatible fibres' assert sharp structural identifications inside a physical-interpretation remark.",
+        "notes": "Strong 'precisely'/'three SU(3)-triality fibres' claims exceed what an interpretive remark backed by prop:u1-equivariant-reduction (a U(1) torus reduction) establishes; the SU(3)/triality and exceptional-divisor normal-bundle assertions have no cited backing here."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "u1-phase-tube.md:7-10 jumps from 'three color tubes originate from the S_5-symmetric action on genus-4 Bring' to 'three distinct SU(3)-triality-compatible fibres' with no intermediate lemma linking the S_5 action to an SU(3) triality structure.",
+        "notes": "The SU(3)-triality step does not obviously follow from the U(1)/S_5 content cited; missing bridge."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "u1-phase-tube.ts has no cites[]; only internal cross-refs."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "u1-phase-tube.md:6 names 'the non-abelian observable channels (u, d, s-sector and their cyclic images)' and :24-27 'five Lagrange weights ζ_5^0,...,ζ_5^{-4}' = 'trivial weight plus three colour tubes plus a chiral conjugate' — the bookkeeping that maps 3 color tubes + chiral conjugate + trivial to exactly 5 weights is asserted, not defined.",
+        "notes": "The 1+3+1=5 weight accounting and the 'three color tubes' vs 'three SU(3) fibres' correspondence are stated loosely."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "u1-phase-tube.md:50-55 correctly notes the commutative-limit defects carry S_n statistics (not anyonic), deferring anyons to the root-of-unity MTC — physically careful."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3bd7a3d15465",
+          "ts": "629e546378f4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Strongest objection: u1-phase-tube.md:7-10 asserts 'three distinct SU(3)-triality-compatible fibres' and :31-34 'precisely the weight-(-1) isotypical component' beyond what the interpreted prop:u1-equivariant-reduction (a U(1) torus truncation) supports.",
+        "notes": "verdict=minor-revision. referee_argument: a legitimate interpretive remark, but soften the 'precisely'/SU(3)-triality structural claims or cite the source establishing the exceptional-divisor/SU(3) lift; otherwise it reads as derived where it is suggestive."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.357Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

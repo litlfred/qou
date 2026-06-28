@@ -1583,7 +1583,237 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The core claims (B3 closure is a nontrivial 6-crossing Brunnian 3-link, baryon/meson dichotomy n>=3) are machine-checked at n=3: borromean_linking_signature, borromean_crossing_counts, borromean_sublinks_trivial by `decide`, and crossing-minimality at n=3 by native_decide in KauffmanTL3. No false statement found."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The context-class fields encode genuine sub-claims (Brunnian, Nontrivial, crossing minimality, n>=3 dichotomy) and the n=3 instance has real machine-proved cores; not a `: True` projection."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Selection is now input-free topological (Brunnian minimality), explicitly decoupled from physical net/mass data which is demoted to a 'consistency check' (.md:16-18, 75-82). The refuted min-action-on-Gram framing is documented as refuted, not smuggled back."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": ".md:5-6 states 'B_3 is the crossing-minimal such [Brunnian] link' as fact; .md:68-72 'No braid of fewer than six crossings is nontrivially Brunnian'. The Lean class field `is_minimal` (confinement_operator_selection.lean:170-171) is an UNPROVED hypothesis for general n; only the n=3 instance is machine-proved (KauffmanTL3.borromean_crossing_minimal), and that enumerates 3-braid words, not all links.",
+        "notes": "Narrative asserts crossing-minimality flatly; the Lean docstring (lines 30-33, 50-58) correctly scopes it to 'among 3-braid closures, not full link-theoretic uniqueness'. The .md inherits the scope caveat only via authorNotes ('minimality among three-braid closures'), but the body prose reads as an absolute minimality claim. Scope-limited result stated as structural — re-scope the .md body to match the Lean's 3-braid-closure caveat."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Witness params (q0, HA, z, E_cross) all trace to the substrate q0 and canonical chain; the topological selector uses 'no physical input' (.md:73). No off-menu coefficient."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:75-82 — the 'net consistency check' notes the identity gamma has slightly LOWER trace (0.415 vs 0.420) yet B_3 is selected; the inference that a lower |Delta net| 'confirms' B_3 while the trace-minimisation would prefer the identity is asserted, not argued.",
+        "notes": "The two numeric proxies (|Delta net| and trace) point at different winners; the prose picks |Delta net| as the confirming metric without justifying why trace is not the relevant consistency check. Minor since selection is explicitly topological, not metric-based — but the 'consistency check' subsection's logic is loose."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean `confinement_operator_selection` (lines 194-206) proves the conjunction purely by projecting context-class fields (exists_impl_three_le, is_*, borromean_identity, confine_three) — the general-n minimality/Brunnian/nontriviality are HYPOTHESES, not derived. The .md presents these as established (.md:5-6,68-73).",
+        "notes": "This is the honest §3b/context-class placeholder pattern (docstring is explicit), so it is not a `: True` violation — but a referee reading only the .md would believe general-n crossing-minimality is proved, whereas Lean assumes it. The n=3 machine-proved cores (KauffmanTL3, BraidModel) are the only closed parts. Flag as Lean-weaker-than-narrative for the general statement."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Cites probe scripts (b3_brunnian_selection_scope.py, b3_brunnian_minimality_enumeration.py, b3_dense_sdp_wedderburn_projector.py) and the audit doc as support for the topological selection and the SDP refutation; attributions match the claims. uses: prop:frobenius-gram-matrix is genuinely the Gram data referenced."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "'Brunnian', 'confinement', 'crossing-minimal' are all defined in-block (.md:3-6) and in the Lean class fields; 'net' and 'demand channels' defined in .md:32-36, 54-56."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": ".md:79 cites trace 0.415 vs 0.420 (a 1.2% gap) and NF coefficients to 3 decimals (e.g. .md:29 -0.105 gamma, .md:91-93 -0.100 gamma ... -0.043 e-); witness q0=1.10997859555 (muon-canonical).",
+        "notes": "The numbers are NF demand-profile coefficients, not accuracy claims against experiment, so empirical fragility is limited; but the 0.415-vs-0.420 distinction is presented as decision-relevant at a margin smaller than the stated precision warrants. Witness is muon-q0 canonical (not stale)."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Confinement = nontrivial Brunnian, baryon (n=3) vs meson (n=2) dichotomy, and the e- demand reading as a beta-decay channel are internally consistent with the framework's categorical-knot picture; no broken conservation or unit error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Witness computations/confinement-operator-selection.witness.json present, q0=1.10997859555 matches the muon-q0 canonical layer; carries LP dual fields (y0_star, dual_obj, duality_gap, y_star, active_set, primal_obj) per the LP/SDP infra rule. Not stale relative to the computations/ convention."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict=minor-revision. referee_argument: the topological-selection reframing is sound and the n=3 core is genuinely machine-proved (decide/native_decide over an explicit braid-word model + KauffmanTL3 enumeration), which is a real strength. The strongest objection: the .md BODY asserts general crossing-minimality ('B_3 is the crossing-minimal such link', 'no braid of fewer than six crossings is nontrivially Brunnian') as established fact, whereas the Lean proves only the n=3 instance and carries general-n minimality/Brunnian as context-class HYPOTHESES (is_minimal field, lines 170-171). Re-scope the narrative body to the 3-braid-closure caveat already present in the Lean docstring and authorNotes."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

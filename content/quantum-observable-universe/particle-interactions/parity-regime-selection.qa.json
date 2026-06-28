@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/parity-regime-selection.md"
   },
   "source_hashes": {
-    "md": "c70bb95925ff",
+    "md": "23f26640f86a",
     "ts": "9611ff875e58"
   },
   "criteria": {
@@ -1605,7 +1605,246 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Sign identity sign(a^Z·b^{N-1})=(-1)^{A-1} follows correctly from a<0,b<0: (-1)^Z(-1)^{N-1}=(-1)^{Z+N-1}=(-1)^{A-1}. Holds for N>=1 (the b^{N-1} exponent assumes a neutron spectator). No counterexample in the stated regime."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "parity_regime_selection.lean:78-83 — theorem proves the conjunction by literally projecting the four class fields (ctx.claim_i_sign_identity, ctx.claim_ii_odd_A_regime, ctx.claim_iii_even_A_regime, ctx.claim_iv_A_one_neutron_decay) which ARE the conclusion (declared on the class at lines 42,51,56,59).",
+        "notes": "Classic self-assuming projection: the ParityRegimeSelectionContext class carries the theorem's own conclusion as hypothesis fields, and the 'proof' just unpacks them. Derives nothing; fails proof-statement-integrity / §3b-cond non-degeneracy. The .md presents this as a proved Theorem, not a conditional."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "parity-regime-selection.md:1-4 claims 'This is not a fitting parameter'. The three Q-value regimes (lines 17-43) are constructed to make Q>0 in each parity class — even-A uses (Σ_FP+1), A=1 uses (SΔ+1) positron correction — i.e. the form is chosen per-regime to land near the experimental Q.",
+        "notes": "Not strictly back-fitting the sign theorem, but the per-parity regime formulas are reverse-engineered to produce positive Q-values; the +1 corrections are selected post-hoc per case rather than derived uniformly."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "parity-regime-selection.md:8 labels the block '**Theorem.**' and the .ts (line 3) uses kind=theorem; but the only formal content (lean) is a self-assuming projection over an axiomatised context class, and the numerical table (lines 64-68) shows errors up to +3.68% (⁶He→⁶Li) and -3.64% (³H→³He).",
+        "notes": "A genuine sign lemma (which is provable) is dressed as a full 'Q-value regime' theorem whose quantitative regimes are only approximate (multi-% errors) and whose Lean does not derive them."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "parity-regime-selection.md:31-36,42 — the '+1 positron correction' added in the even-A and A=1 regimes, and the Frobenius-positivity restriction Σ_FP selecting 'physically admissible configs', are choices that adjust the predicted Q.",
+        "notes": "The per-regime additive +1 and the config-selection filter are degrees of freedom in how Q is assembled; their canonical-chain origin (positron-correction prop, confinement-LP) is cited but the selection of which configs are 'admissible' is a tunable knob."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "parity-regime-selection.md:45-60 — the proof establishes only the SIGN identity, then asserts the three Q-value regime formulas (lines 17-43) without deriving them; the even-A jump to Q=(Σ_FP+1)·m_e (line 31) does not follow from the sign argument.",
+        "notes": "The 'Proof' section proves the sign claim only; the regime formulas are stated, not proved, so the conjunction-as-theorem has a logical gap between the sign lemma and the quantitative regimes."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "parity_regime_selection.lean:5-12 self-describes as a 'Placeholder canonical … full Lean statement and proof are pending'; the theorem (lines 78-83) merely projects class fields and does not prove the sign identity from a<0,b<0 nor derive any regime. The .md (line 8) asserts a proved Theorem.",
+        "notes": "Lean proves a vacuous projection over an assumed context, strictly weaker than the .md's claimed Theorem. proof-statement-integrity violation."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "uses[] cites prop:branching-qvalue-factorization and prop:confinement-lp; -- Ref:[manuscript] in lean. No specific external reference is mis-attributed in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "parity-regime-selection.md:12,24,48 use a,b (spectator amplitudes) and Σ_FP without defining them in-block; b^{N-1} (line 12) is undefined for N=0 (b^{-1}); 'Frobenius-positive configs' (line 34) relies on an external selection rule.",
+        "notes": "The sign formula implicitly assumes N>=1 (a neutron spectator); for N=0 the b^{N-1} factor is b^{-1} and the (-1)^{A-1} bookkeeping changes. Edge regime not stated."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "parity-regime-selection.md:67-68 — ³H→³He error -3.64% and ⁶He→⁶Li error +3.68%, both ~order-percent, far outside any 100x-experimental target; only n→p (-0.10%) is close.",
+        "notes": "Two of three tabulated decays miss at the few-percent level. The 'regime selection' reproduces the qualitative sign but the quantitative Q is fragile; the percent-level agreement is not a precision result."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Parity-of-A controlling a fermionic spectator sign is physically reasonable; Q-values are positive and order-correct. No unit error or conservation violation."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block declares no computation{} witness in its .ts; the numerical table has no attached witness JSON to check for hash drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "23f26640f86a",
+          "ts": "9611ff875e58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Lean is a self-assuming projection (lines 78-83) over an axiomatised context whose fields are the conclusion; .md sells a 'Theorem' whose quantitative regimes miss by up to 3.7%.",
+        "notes": "verdict=major-revision. referee_argument: The provable kernel is only the sign identity (-1)^{A-1}, which is sound; everything around it — the three Q-value regimes and the Lean 'proof' — is either approximate (multi-% error) or vacuous (projection over an assumed class). Demote to a sign-lemma + remarks, or restructure the class so it carries genuine sub-hypotheses the theorem composes (§3b-cond non-degeneracy)."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

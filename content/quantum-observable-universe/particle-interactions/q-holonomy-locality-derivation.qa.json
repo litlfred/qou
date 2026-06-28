@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.md"
   },
   "source_hashes": {
-    "md": "2c36aa468549",
+    "md": "f3612d62c970",
     "ts": "86bf1e5a2bf1"
   },
   "criteria": {
@@ -835,7 +835,244 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Block is a remark with an explicit 'Proof sketch'; the Kohno–Drinfeld flatness statement (md:25-35) is correctly stated. No false proposition asserted as proved."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Substantive derivation sketch; not content-free."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No fitted target; ξ(q₀)≈93.4 is computed from D(λ) and ħ_q², not back-fitted to a known mass."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-holonomy-locality-derivation.md:62-75 'Proof sketch' ending in □, interprets conj:lifted-crossing-locality.",
+        "notes": "Closing the proof sketch with □ (QED) overstates: the block is a remark interpreting a *conjecture* (lifted-crossing-locality is conj:), and steps 2–3 (simultaneous diagonalization + Φ_q acts by scalar on each eigenstrand) are asserted, not established. A □ on a sketch downstream of an open conjecture overclaims proof status; per AGENTS.md §3b this must remain a proof sketch, which the kind correctly is, but the □ and 'Proof' framing should be softened."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-holonomy-locality-derivation.md:135-138 'ξ(q₀)=D(λ(E_q0))/ħ_q² ≈ 0.9170/0.00982 ≈ 93.4, so each crossing multiplies mass by ≈94'.",
+        "notes": "The constant ξ(q₀)≈93.4 and the homogeneous-fixed-point assumption η(c)≡1 (md:127) are introduced to produce the 'each crossing ×94' scaling; η(c) is a per-crossing free function set to 1 by fiat, and the literals 0.9170, 0.00982 are hardcoded with no :val pin or witness in the .ts (which has no computation block). The off-chain origin of these specific numbers is not traced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-holonomy-locality-derivation.md:66-72 step 3 'The Φ_q insertions act by scalar on each eigenstrand (they are diagonal in the R-matrix eigenbasis)'; step 4 'Therefore the multi-crossing expectation is a product of single-crossing expectations.'",
+        "notes": "The crux factorization rests on step 3 — that the quantum-dilogarithm operators Φ_q(z_c) are simultaneously diagonal in the same eigenbasis as the commuting monodromies — which is asserted with no justification. Commuting monodromies (step 1, from flatness) does NOT imply the inserted Φ_q operators share that eigenbasis; this is precisely the non-trivial content. Step 4's 'therefore' does not follow from steps 1–3 as stated. The whole locality/factorization conclusion hinges on this unbridged gap."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No .lean sibling for this remark (lifted-crossing-locality.lean is the conjecture's file, a different block). Remark kind requires none."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "q-holonomy-locality-derivation.ts cites:['kohno1987']; references.ts:3670-3687 kohno1987 = Kohno, 'Monodromy representations of braid groups and Yang-Baxter equations', Ann. Inst. Fourier 37(4) 1987, DOI 10.5802/aif.1075.",
+        "notes": "The Kohno–Drinfeld flatness/monodromy attribution (md:25) is correctly supported by the cited Kohno 1987 paper; the reference note itself describes exactly this content. Citation is apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "q-holonomy-locality-derivation.md:42-45 'lifted crossing inserts a quantum-dilogarithm operator Φ_q(z_c)'; md:90-93 golden degeneration 'z_q is undefined and locality is vacuous'.",
+        "notes": "Φ_q(z_c) (quantum dilogarithm, Faddeev) vs the Li_2^q (Rogers) variant is a known context-sorting hazard per the cheat sheet; the block uses Φ_q without specifying which, and z_c/z_q (the Descartes-curve coordinate) is referenced before definition. The 'puncture = crossing' identification is also informal."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-holonomy-locality-derivation.md:135-138 ξ(q₀)≈93.4 from 0.9170/0.00982; md:96-113 q₀≈1.11, ℓ_*(q₀)≈10.",
+        "notes": "The 'each crossing ×94' result depends on hardcoded D(λ)≈0.9170 and ħ_q²≈0.00982 at a specific q₀ with no committed witness or :val pin; ħ_q²=(1−1/q₀)² at q₀≈1.10998 gives ≈0.00982 only for the muon-anchored pin, and per AGENTS.md two pins (muon vs proton, ~11.5 ppb apart) coexist — the block does not state which, so the figure is anchor-fragile and unpinned."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-holonomy-locality-derivation.md:116-138 mass formula m(K;q₀)=m_GB(K)·∏(1+ξη(c)) → m_GB·(1+ξ)^c with each crossing ×≈94.",
+        "notes": "A multiplicative ≈94× per crossing implies wildly exponential mass growth in crossing number (e.g. a 3-crossing trefoil → ~94³≈8.3×10⁵ × m_GB), which is physically implausible for hadron/nucleon masses and is in tension with the canonical mass formula m(K)=m_e·Vol(K)·ρ(K)/ħ_q² (AGENTS.md banner) — there is no per-crossing ×94 factor in the canonical chain. The 'empirical signature' claim (md:138) is asserted, not demonstrated against any measured mass."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "q-holonomy-locality-derivation.ts has no computation/witness block; md numerics (0.9170, 0.00982, 93.4, ℓ_*≈10) are hardcoded in prose.",
+        "notes": "None of the quoted numerical values are backed by a committed witness or :val pin, so they cannot be reproduced or checked for drift against the substrate q₀. The corollary's headline (×94 per crossing) rests entirely on unpinned literals."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f3612d62c970",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict=major-revision. Strongest objection (referee_argument): the factorization 'proof sketch' (closed with □) hinges on step 3 — Φ_q insertions being simultaneously diagonal with the commuting monodromies — which is asserted without justification and does not follow from KZ flatness; commuting holonomies do not force a shared eigenbasis with the dilogarithm insertions. Compounded by an unpinned ξ(q₀)≈94-per-crossing corollary that implies physically implausible exponential mass growth inconsistent with the canonical mass formula, all from hardcoded literals with no witness. The block correctly stays a remark interpreting a conjecture (good), and the Kohno 1987 citation is apt, but the □ overstates and the central step is a logical gap."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.947Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

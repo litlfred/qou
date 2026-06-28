@@ -815,7 +815,233 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Pure expository prose introducing five worked examples; makes no standalone mathematical claim to falsify."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atoms-intro.md:1-3 — 'instantiate them on five concrete light nuclei to confirm that the regime predictions match the empirical normal forms and binding energies'; calls Deuterium binding 'a zero-parameter prediction against AME2020'.",
+        "notes": "The prose frames the five nuclei as confirmation of the §4 regime predictions, but the corpus (Δ_λ gate, CAL-2 floor) shows the light-nuclei binding fits are calibration-anchored, not parameter-free across the board. Calling them 'zero-parameter prediction' in an intro risks presenting calibrated/anchored quantities as independent confirmation. Minor — it is an intro and defers detail to the example blocks — but the 'confirm' framing should be 'compare'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atoms-intro.md:3 'extracts the structural binding energy from the Markov trace as a zero-parameter prediction against AME2020'.",
+        "notes": "'Zero-parameter prediction' overclaims for the binding-energy programme given the Δ_λ closure is an open Track-A blocker (AGENTS.md) and the deuteron is the canonical failing case for six ansätze. For deuterium specifically the prose may be defensible, but stated as a general property of the five-nucleus set it is stronger than the corpus supports. Severity minor (block is _[draft]_)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Transitional prose; no inference chain to break."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "prose block, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and no -- Ref:."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Terms (normal form, binding energy, magic) are defined in referenced sibling blocks; intro prose need not redefine them."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "derived-atoms-intro.md:3 'as a zero-parameter prediction against AME2020' without quoting an error figure or stating the q0 anchor.",
+        "notes": "Headline accuracy claim with no number and no anchor disclosure; per the precision-goals discipline a binding-energy claim against AME2020 should state the residual and which q0 pin. Deferring to the example block is acceptable for an intro, hence warn not fail."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No physically implausible claim; the nuclei and doubly-magic points (He-4, O-16) are correctly identified."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "efa02272c896",
+          "ts": "9c62e55b1774"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Rollup: draft intro prose; the only objection is the 'zero-parameter prediction / confirm' framing (.md:1,3).",
+        "notes": "verdict: minor-revision. referee_argument: Acceptable expository intro, but soften 'confirm that the regime predictions match' and 'zero-parameter prediction' to 'compare against', given the Δ_λ closure is an open blocker and the binding fits are calibration-anchored. Marked _[draft]_, so low priority."
+      }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

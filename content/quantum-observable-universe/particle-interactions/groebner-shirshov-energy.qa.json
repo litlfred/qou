@@ -1338,7 +1338,259 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The provable parts (only Hecke relation changes word length/energy; ΔE_step=|c||q−q⁻¹|; energy increases for q>1) are correct given the definitions and match the Lean lemmas heckeEnergyChange_pos / nonneg, which are sorry-free."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.lean:101-103 'axiom beta_decay_energy_negative (q)(hq)(p n)(hn) : ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par'.",
+        "notes": "The Lean axiom intended to encode 'beta decay releases energy (daughter < parent)' is logically vacuous: ∃ a b : ℝ, b < a is trivially true (take a=1,b=0) with no reference to p,n,q or any energy functional. It asserts nothing about the actual transition energies. (It is an axiom, not a proof, so the vacuity is in the *statement*: even if proved it would be content-free.)"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No fitted target; the energy functional is defined structurally."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.md:7 'Theorem.' and md:28-37 'Energy is path-independent ... follows from confluence'; but groebner-shirshov-energy.lean:89-95 makes path-independence an 'axiom energy_path_independent', and md:140-142 'always negative (verified computationally for all A≤6)' is lean:101 'axiom beta_decay_energy_negative'.",
+        "notes": "The .md presents path-independence and beta-decay-negativity as proved parts of a Theorem ('This follows from the confluence (Bergman diamond lemma)'), but the Lean encodes both as axioms, not theorems — they are assumed, not derived in the formalization. Presenting an axiomatized claim as a proved theorem conclusion overclaims rigor. The .ts also marks lean validation:'not_checked'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No fitted numerical constant; ΔE values in the verification table come from the cited compute."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.md:135-142 half-life 'determined by ΔE=E(N(p+1,n−1))−E(N(Z,N))' and 'always negative ... consistent with beta decay releasing energy'.",
+        "notes": "The leap from the abstract energy functional E (a Σ|c_w||ℓ(w)| weight, dimensionless) to a *half-life* and to a sign-of-released-energy statement is a non-sequitur without the energy-scale map (E₀, supplied in a different block) and without showing E correlates with physical Q-value; 'consistent with releasing energy' is asserted from a sign that the vacuous axiom does not even capture."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.lean:44-50 'yangBaxter_energy_zero (step)(h:step=.yangBaxter) : (0:ℝ)=0 := rfl' and farComm_energy_zero similarly conclude (0:ℝ)=0; lean:89,101 path-independence and beta-decay as axioms.",
+        "notes": "proof-statement-integrity violation: the Lean theorems yangBaxter_energy_zero / farComm_energy_zero are stated as '(0:ℝ)=0 := rfl' — they prove a trivial tautology and ignore their own hypothesis h:step=.yangBaxter, NOT the .md claim that Yang–Baxter/far-comm steps 'preserve all coefficients and word lengths' (Part 1). The two substantive claims (path-independence Part 2, beta-decay-negative) are axioms. So the Lean proves strictly weaker/vacuous statements than the narrative Theorem asserts. The top-level alias groebner_shirshov_energy is just totalEnergyChange (a def), carrying no theorem content for the manifest's thm: label."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "groebner-shirshov-energy.lean:88 '-- Ref: [manuscript] unital-groebner-bases/main-theorem'; uses[] cites unital-groebner-bases:thm:main-theorem.",
+        "notes": "The diamond-lemma / confluence citation to the UGB main theorem is appropriate for the Bergman diamond lemma invocation. [manuscript] self-references are honest placeholders per §1."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "groebner-shirshov-energy.md:13-18 E(ξ)=Σ|c_w(q)|·ℓ(w) with c_w(q) Laurent polynomials, then md:43-52 ΔE_step=|c|·|q−q⁻¹| treats |c| as a real magnitude.",
+        "notes": "|c_w(q)| is ambiguous: c_w are Laurent polynomials in q (per Part 1/substrate-internal note md:95, E takes values in ℤ_{≥0}[q^{±1}]), so |c_w(q)| as an absolute value is only defined after archimedean realization at real q₀ — yet the energy-functional definition and 'increases by |c|(q−q⁻¹)' mix the formal-polynomial and real-evaluated regimes. The base-ring/realization boundary is blurred."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.md:124-129 ΔE table (³H +0.260, ⁴He +0.641, ⁶Li +4.233) and md:144-148 transition ΔE (³H→³He −0.027, ⁶Li→⁶Be −0.828) attributed to hecke_division.py, 'verified computationally for all A≤6'.",
+        "notes": "These numerical ΔE values are hardcoded in prose (no :val pinning) and attributed to hecke_division.py with no witness JSON in the .ts manifest (the .ts has no computation block at all). Reproducibility of the quoted +0.260/+0.641/+4.233/−0.828 cannot be checked against a committed witness; values could drift silently."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.md:135-142 'The half-life is determined by ΔE ...'.",
+        "notes": "A dimensionless GS word-weight difference ΔE (e.g. −0.027 for ³H→³He) is claimed to determine a half-life, but ³H→³He is a real decay with Q≈18.6 keV and t½≈12.3 yr; nothing connects the −0.027 weight to that observable, and the sign/magnitude pattern (⁶Li→⁶Be −0.828) is not matched to known Q-values. The half-life claim is physically unsupported."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "groebner-shirshov-energy.ts has no computation/witness field; md:121-122 cites hecke_division.py and md:144 'verified computationally for all A≤6' with no committed witness; .ts lean validation:'not_checked'.",
+        "notes": "The computational verification tables are not backed by a witness in the manifest, and the Lean is marked not_checked, so neither the numbers nor the formal claims have a reproducible/checked backing recorded on the block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "86d931e6f0ba",
+          "ts": "2469a091c744",
+          "lean": "fd32f78a9a90"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict=major-revision. Strongest objection (referee_argument): the block is labeled a Theorem and the .md presents path-independence and beta-decay energy-negativity as proved consequences of the diamond lemma, but the Lean sibling encodes both as AXIOMS, the energy-preservation lemmas are degenerate '(0:ℝ)=0 := rfl' tautologies ignoring their hypotheses, and beta_decay_energy_negative is logically vacuous (∃ a b:ℝ, b<a). lean validation is 'not_checked' and the numerical verification tables have no committed witness. The genuinely-proved core (only Hecke steps change energy; positivity for q>1) is sound and Lean-backed, but the manifest's thm: label substantially overstates what is formalized. Demote the unproved parts to axioms-in-prose or supply real proofs/witnesses."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:25.759Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

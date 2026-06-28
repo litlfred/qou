@@ -913,7 +913,257 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "stable-atom.md:37-41 'The continuous LP relaxation ... is always feasible (the trivial identity NF $T_e=e_{(k)}$ has $y_{(k)}=0$).'",
+        "notes": "The claim that the LP $Gx\\ge0,\\,x\\ge0$ is 'always feasible' is trivially true since $x=0$ satisfies $G\\cdot0=0\\ge0$ for any G — so the cited witness ($T_e$, $y_{(k)}=0$) and indeed the whole 'always feasible' remark is vacuously true and does not distinguish stable from unstable atoms unless an additional normalization/non-triviality constraint (e.g. a fixed total demand) is imposed. As stated the homogeneous feasibility claim is true-but-degenerate, bordering on misleading. Same degeneracy threatens the ILP definition (x=0 is feasible)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "stable-atom.md:17-29 defines stability as $\\exists x\\in\\mathbb{Z}_{\\ge0}^N$ with $G(q)x\\ge0$ coordinatewise; no normalization excludes $x=0$.",
+        "notes": "$x=0$ trivially satisfies $G(q)\\cdot0=0\\ge0$, so the ILP-feasibility predicate as written is satisfied by EVERY atom at EVERY q — the definition is vacuous (always-true) without an additional constraint (e.g. $\\sum x_\\lambda=$ crossing number, or $x\\ne0$ in a target block). The .md's own proton example (.md:42-49) describes finding a *nontrivial* integer solution, implying the intended definition has a demand constraint that the displayed inequality omits. The Lean (StableAtom.feasible : Bool) stores the verdict opaquely and so cannot expose this gap."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The ILP-feasibility criterion does not assume its own conclusion; it is a forward predicate. The proton example references mass-endomorphism-tower for the infeasibility result rather than back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "stable-atom.md:42-49 'ILP search adjoining $\\{\\sigma_0,\\sigma_1,L_+,L_-\\}$ finds the unique integer solution ... restoring stability.'",
+        "notes": "'the unique integer solution' asserts uniqueness of the ILP solution without proof or a witness reference; ILP solutions are generically non-unique, and uniqueness here is a strong claim presented in passing inside a definition block. Should cite the witness establishing uniqueness or weaken to 'a solution'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "stable-atom.md:42-49 adjoins generators $\\{\\sigma_0,\\sigma_1,L_+,L_-\\}$ and selects '$\\sigma_0\\to\\sigma_0$ (2 gluon crossings)'.",
+        "notes": "The choice of which extra generators to adjoin to the ILP, and the '2 gluon crossings' count, are presented as the resolution but their selection rule is not derived in-block — the adjoined generator set is an effective degree of freedom in what counts as 'restoring stability'. Cross-reference to mass-endomorphism-tower is given but the in-block reader sees a chosen, not derived, generator set."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The connection-to-LP and confined-operators paragraphs follow coherently from the ILP definition; no broken inference."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "stable-atom.lean:20-27 — `structure StableAtom (R) [CommRing R] := { knot : AtomKnot, q : R, feasible : Bool }` vs .md:17-29 ILP-feasibility predicate.",
+        "notes": "The Lean does NOT formalize the definition: it stores `feasible : Bool` as an opaque field rather than defining stability as $\\exists x\\in\\mathbb{Z}_{\\ge0}^N,\\,G(q)x\\ge0$. There is no Gram matrix G, no integer vector x, no positivity constraint, no confinement filtration. For a `definition` block (Lean required and enforced), the Lean is a data-record placeholder that captures none of the mathematical content of the .md — a definitional divergence. The 'feasible' boolean is unconstrained, so any StableAtom can be constructed with feasible := true."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites[] empty; no -- Ref: in Lean."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "stable-atom.md:20-25 ILP feasibility $G(q)x\\ge0$ with no demand/normalization constraint; .md:6 G(q) is 'the Frobenius Gram matrix' but N (= number of primitives) and the basis cutoff $k_{\\max}$ are introduced without binding to a fixed regime.",
+        "notes": "Key ambiguity: the stability predicate is under-specified (homogeneous $Gx\\ge0$ admits x=0, see da-vacuous), so 'stable' has no discriminating reading as literally written; the intended definition apparently carries a demand constraint that is omitted. Also 'unique integer solution' (.md:48) invokes uniqueness without a uniqueness clause in the definition. The reader gets two incompatible readings (homogeneous-always-feasible vs demand-constrained-nontrivial)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition block; no numerical accuracy claim against experiment in-block."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "stable-atom.md:31-35 'An atom may be stable at $q_0$ and unstable at $q_0+\\epsilon$ without contradiction: stability tracks ILP-feasibility pointwise.'",
+        "notes": "Physical stability of a nucleus being a pointwise (discontinuous in q) ILP property is a strong modelling choice: real nuclear stability is robust, not knife-edge in the substrate parameter. Defining stability so it can flip on an arbitrarily small q-perturbation makes the predicate physically brittle and arguably non-physical as a stability notion. Flag for discussion, not reject — it may be an intended feature of the discrete model."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness JSON cited in-block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8de59ed0bba1",
+          "ts": "d518d6f9ad14",
+          "lean": "6f25ddfcd48e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Rollup: vacuous homogeneous ILP predicate (.md:20-25, x=0 always feasible), Lean stores only `feasible : Bool` (lean:20-27) capturing none of the definition, unstated uniqueness (.md:48).",
+        "notes": "verdict: major-revision. referee_argument: As literally written the stability predicate $\\exists x\\in\\mathbb{Z}_{\\ge0}^N,\\,G(q)x\\ge0$ is satisfied by $x=0$ for every atom at every q, so it is vacuous and cannot distinguish stable from unstable — the worked proton example implies an intended demand/normalization constraint that the displayed definition omits. The Lean record (`feasible : Bool`) formalizes none of this. Add the missing nontriviality/demand constraint, formalize G, x, and the positivity constraint in Lean, and justify or qualify the 'unique integer solution' and pointwise-in-q stability claims."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:21.697Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

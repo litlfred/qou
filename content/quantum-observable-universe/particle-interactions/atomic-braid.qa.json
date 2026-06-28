@@ -913,7 +913,254 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The arithmetic identity is correct: totalStrands = A + Z = (Z+N) + Z = Z+N+Z, proved in Lean (lean:32-35). The definition of the atomic braid in $H_{A+Z}(q)$ is internally consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid.lean:21-35 — `structure NeutralAtom` carries only Z,N and derived A, totalStrands; the only theorem proves totalStrands = Z+N+Z (an unfolding of the field defaults).",
+        "notes": "The Lean is a near-trivial bookkeeping record + a definitional-unfolding theorem (simp+omega on the default values). It formalizes none of the substantive content of the .md (crossing-coefficient table, $\\Phi_1$ ground-state ordering, greedy electron insertion, ep pairs, $\\mathcal{B}_3$-dressed eigenvalues). Not flagged as fail because for a `definition` block the Lean is permitted to be a data declaration, but the theorem is content-light (proves only what the field defaults state)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid.md:11-13 'minimize $\\Phi_1$ over all permutations ... (exact search for $\\binom{A}{Z}\\le50000$, steepest descent otherwise)'.",
+        "notes": "The ground-state ordering is presented as 'determined by' minimizing $\\Phi_1$, but for $\\binom{A}{Z}>50000$ the procedure switches to steepest descent, which gives a *local* not *global* minimum — so 'the ground-state ordering' is not guaranteed to be found for larger atoms. Calling the descent output 'the ground-state ordering' overclaims global optimality; should say 'an approximate ground-state ordering'."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid.md:24-25 'The $\\mathfrak{p}e$ crossing uses the $\\mathcal{B}_3$-dressed eigenvalues $(q^5,-q^{-5})$ instead of bare $(q^{-1},-q)$.'",
+        "notes": "The exponent-5 dressing $(q^5,-q^{-5})$ for the proton-electron crossing is asserted without in-block derivation of why $\\mathcal{B}_3$ dressing yields exactly power 5. As written the dressing power is an effective parameter; it is presumably fixed upstream ($\\mathcal{B}_3$ = Borromean 3-braid) but the reader cannot verify the 5 is forced rather than chosen. Cross-reference to the dressing derivation would resolve it. Note the bare eigenvalues $(q^{-1},-q)$ also differ in sign-convention from §7a's $(q,-q^{-1})$."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The ordering→insertion→ep-pairs narrative is a coherent procedural definition; no claimed inference that fails to follow."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "atomic-braid.lean:21-35 formalizes only strand counting (Z,N,A,totalStrands and totalStrands=Z+N+Z) vs atomic-braid.md:1-25 which defines crossing coefficients, $\\Phi_1$-minimizing ground-state ordering, greedy electron insertion, ep pairs, and $\\mathcal{B}_3$-dressed $\\mathfrak{p}e$ eigenvalues.",
+        "notes": "The Lean captures essentially none of the definition's mathematical substance — it proves a strand-count tautology and omits the crossing-coefficient assignment, the ground-state ordering rule, the insertion algorithm, and the eigenvalue dressing. For a `definition` block this is a significant narrative-Lean divergence: the formal artifact does not define the object the .md defines (the atomic braid element of $H_{A+Z}(q)$); it only counts strands. PairType (lean:5-12) is declared but the braid element itself is never constructed."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "cites[] empty; lean -- Ref: [manuscript] Ch.6 only, which is the source itself (not a misattributable external result)."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid.md:5-7 'The crossing coefficients are:' then defers entirely to '[Table 1](#tbl:atomic-braid-table1-data)'; $\\Phi_1$ (.md:11) is used as the ordering objective without an in-block definition.",
+        "notes": "Two key ingredients are not self-contained: the crossing coefficients live in an external table (acceptable but the definition is incomplete without it), and $\\Phi_1$ — the functional being minimized to fix the ground state — is invoked but not defined or `uses[]`-linked (uses[] lists only def:derived-atom). A reader cannot determine what $\\Phi_1$ is from this block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition block; no numerical accuracy claim against experiment."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "atomic-braid.md:19-20 'each electron sits immediately before its proton. The $\\mathfrak{n}e=\\mathrm{id}$ crossing means electrons pass through neutrons without generating Hecke generators.'",
+        "notes": "Modelling the electron-neutron crossing as the identity ($\\mathfrak{n}e=\\mathrm{id}$) encodes electrical neutrality of the neutron, which is physically reasonable as a leading approximation, but it discards the neutron's magnetic moment / weak coupling to electrons entirely. As a structural simplification it is plausible; flagged only because it is a physics modelling choice stated as definitional fact without caveat."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No witness JSON cited in-block; the $\\binom{A}{Z}\\le50000$ search threshold is a procedural constant, not a reproducibility-gated value."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "045903f4f148"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Rollup: Lean formalizes only strand counting (lean:21-35), omitting crossing coefficients, $\\Phi_1$ ordering, insertion, and $\\mathcal{B}_3$-dressed eigenvalues; $\\Phi_1$ undefined in-block (md:11); descent-as-'the ground-state' overclaim (md:11-13).",
+        "notes": "verdict: minor-to-major-revision. referee_argument: The definition is procedurally clear in prose but the Lean defines only strand counts, not the atomic braid element it names — a definition-block whose formal sibling omits the construction. Self-containment gaps ($\\Phi_1$ undefined, crossing coefficients only in an external table, $(q^5,-q^{-5})$ dressing power unjustified in-block) and the global-vs-local 'ground-state ordering' overclaim should be addressed. Tighten the .md ($\\Phi_1$ link, 'approximate ground state') and either expand the Lean to construct the braid or document the scope of the strand-count formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.828Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

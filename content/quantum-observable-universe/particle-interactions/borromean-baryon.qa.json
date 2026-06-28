@@ -913,7 +913,253 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition (not a claim). B := B_3(K,K,K) ⊕ L_H (md:8-12) names a construction; nothing asserted to be true/false. Lean borromean_volume_pos:20 (7.32772>0) is correct by norm_num."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "borromean-baryon.lean:9-13 structure BorromeanBaryon has orientation:Fin 3→Int and a default volume:=7.32772; the only theorem (lean:20) is borromean_volume_pos : (7.32772:ℝ)>0 := norm_num.",
+        "notes": "For a definition block a sibling .lean is required and a structure is legitimate. But the accompanying 'theorem' borromean_volume_pos is near-vacuous content (a hardcoded literal is positive) and does not connect to the structure's volume field or to any Borromean property — it proves a tautology about the numeral, not about the baryon. Minor: the structure itself is acceptable definitional content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Definition; no derivation to be circular."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "States a definition with no quantitative prediction; the md:1 header even scopes the ℝ specialisation per §7c. No overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "borromean-baryon.lean:13 volume:ℝ:=7.32772 is hardcoded; lean:16-17 charge := orientation 0 + 1 + 2 (sum of ±1 over 3 components).",
+        "notes": "The volume literal 7.32772 (≈ Vol of Borromean complement = 2·Vol(ideal octahedron)≈7.327724753) is a buried constant with no witness link in this block; per AGENTS.md witnessed-values discipline a numerical literal should pin to a witness/canonical source. Not a calibration DOF in the physics sense, but an un-witnessed magic number. Minor."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No inferential chain in a definition."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:8-12 defines B = B_3(K_{0_1},K_{0_1},K_{0_1}) ⊕ L_H (three unknots Borromean-linked, Hopf-bound). borromean-baryon.lean:9-17 models a BorromeanBaryon only as orientation:Fin 3→Int + a volume literal + a charge=sum-of-orientations.",
+        "notes": "The Lean structure does not encode the Borromean link B_3, the unknot constituents K_{0_1}, or the Hopf binding L_H from the .md — it reduces the definition to three signed orientations plus a hardcoded volume. The formal object is a weaker proxy than the narrative definition (no link/Hopf data). For a definition this is under-formalisation rather than a false equivalence; flagged minor."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] in .ts and only [manuscript] Ch.4 in .lean; no external result invoked."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "md:8-12 uses '⊕' for 'B_3(...) ⊕ L_H' (a baryon = Borromean triple ⊕ Hopf link) and 'bound by the Hopf link'; neither ⊕ (direct sum? disjoint union? superposition of links?) nor 'bound by' is defined in-block.",
+        "notes": "The operator ⊕ joining a 3-component Borromean link to a Hopf link L_H is notationally ambiguous (it is not a standard link operation), and 'three constituents are unknots joined by the Borromean link, bound by the Hopf link' mixes two binding notions without specifying the composite link diagram. Relies on def:hadron upstream but the ⊕/binding semantics are not pinned. Minor."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No empirical match; the 7.32772 volume is a mathematical constant, not a data fit."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Identifying a baryon with a 3-constituent (3-quark) Borromean structure with ±1 orientations summing to charge is internally consistent with the framework's color picture; charge=sum of three ±1 gives integer charges, physically sane for the hadron context."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "borromean-baryon.lean:13 volume:=7.32772 carries no witness/source; the true Borromean-complement volume is ≈7.327724753, so 7.32772 is truncated and un-pinned.",
+        "notes": "The literal is correct to its stated digits but is not tied to a computations/*.witness.json or canonical constant, so it cannot be audited for drift. Recommend pinning to the canonical Borromean-volume witness. Minor."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c36760b978d5",
+          "ts": "290dc40636f2",
+          "lean": "6aee1340d7de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "Definition is sound; Lean under-formalises (no B_3/L_H structure, hardcoded volume 7.32772 lean:13, near-vacuous borromean_volume_pos lean:20).",
+        "notes": "verdict=accept-with-minor-revisions. referee_argument: The definition itself is legitimate and physically coherent (a baryon as Borromean-linked unknots, Hopf-bound). Weaknesses are formal-hygiene only: (i) the Lean structure does not capture the Borromean/Hopf link data the .md defines, (ii) the volume literal is an un-witnessed magic number that should pin to the canonical Borromean-complement witness, (iii) the lone theorem proves only that a numeral is positive. None block acceptance; address by enriching the structure and witnessing the constant."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:20.207Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

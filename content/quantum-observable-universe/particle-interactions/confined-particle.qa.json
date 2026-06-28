@@ -913,7 +913,246 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confined-particle.md:1-48 — a definition (tuple + canonical representative), not a claim.",
+        "notes": "Definitions name constructions; no falsifiable proposition asserted. The 'Two particles are equal iff names equal iff GS(P_1)=GS(P_2)' (line 47-48) is a chained biconditional definitional convention, internally consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "confined-particle.lean:52 `def confined : ConfinedParticle → ℝ → Prop := fun _ _ => True`, with the docstring 'Concrete model: every particle is confined at every q' (lean lines 47-48). The .md (confined-particle.md:33-37) defines confinement as a non-trivial q-indexed predicate that 'holds iff the matrix Frobenius PSD cone admits a feasible Φ* ⪰ 0 (confinement SDP).'",
+        "notes": "The Lean `confined` predicate is the constant `True`, so it proves something strictly weaker/vacuous relative to the .md's SDP-feasibility predicate. The Lean comment is honest that it is a surrogate stub, but the named decl `confined` formalizes the .md's central confinement notion as a tautology — proof-statement-integrity divergence. The structures MarkovClass/ConfinedParticle (lean 23-41) do faithfully mirror the tuple, so the tuple part is fine; the divergence is the `confined` predicate specifically. Note: the .ts lean.ref points to QOU.BraidKnot.ConfinedParticle (the structure), not to `confined`, which mitigates but does not remove the in-file stub."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No cites[] and only [manuscript] -- Ref: lines (lean 22,32,51), which point to in-repo blocks, not external literature."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confined-particle.md:42-48 ('Canonical representative') selects 'the one with shortlex-minimal Gröbner–Shirshov normal form' as canonical — 'the unique X' style selection. confined-particle.md:38-40 also asserts 'Unstable species ... are confined particles for all q in the generic locus.'",
+        "notes": "Uniqueness of the shortlex-minimal GS normal form within a Markov class is presumed but not justified in-block (existence/uniqueness of a shortlex-minimum requires a total order on NFs and confluence, cited only as 'Gröbner-Shirshov normal form'). The 'generic locus' (q outside a discrete bad set) is invoked without definition. Minor for a definition block, but the canonical-representative well-definedness leans on an unstated confluence/uniqueness result."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical match claimed."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "confined-particle.md:58-66 assigns `photon`: ℓ=0, n_0=4, [K]_M=[1_{B_4}] (four-strand identity, no crossings); confined-particle.md:53-57 assigns `neutrino` the unknot 0_1.",
+        "notes": "Assigning the photon a 4-strand identity braid (trivial/no-crossing) and the neutrino the unknot is a modeling choice with physical labels; a domain physicist would question how a crossingless braid carries the photon's two physical polarization DOF (the block claims 'four polarisation × chirality components') versus the standard two transverse polarizations. Not a hard contradiction (it is a definitional dictionary entry, examples only), so warn rather than fail — but the count '4 components' for the photon overstates the on-shell physical DOF."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No computation/witness attached to this definition block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "61f696e2544c",
+          "ts": "74c025de9fe4",
+          "lean": "339d8f006463"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "Block-level rollup over confined-particle.{md,lean}.",
+        "notes": "verdict=minor-revision. referee_argument: The narrative is a clean definition, but the Lean `confined` predicate is `fun _ _ => True` (lean:52) while the .md (md:33-37) defines confinement as genuine SDP PSD-cone feasibility. The central predicate of the definition is thus formalized as a tautology — the strongest objection (da-lean-narrative-divergence). The stub is self-declared (lean:47-50) and the block's lean.ref targets the structure rather than `confined`, but a reader who follows the predicate gets a vacuous surrogate. Secondary: photon 4-component DOF assignment (md:58-61) and the unstated uniqueness of the shortlex-minimal GS representative (md:43-44)."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:19.262Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

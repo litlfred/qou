@@ -1340,7 +1340,251 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Narrative statement (Markov property tr_M∘ι=tr_M ⇒ trace preserved when higher Wedderburn blocks vanish) is correct standard Hecke-tower theory; not false."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "level-sufficiency.lean:56 'def markovTrace : ... := fun _ q => 0 * q' and :72-76 'theorem LevelSufficiency ... markovTrace P q = markovTrace P' q := rfl' with hypotheses _h_unfold, _h_cover unused.",
+        "notes": "The Lean theorem reduces to 0 = 0; the docstring admits (lean:47-50) 'concrete model returns 0, so any two evaluations agree by rfl ... the constant-0 model is intentional.' Both nontrivial hypotheses (unfolds, kMax ≤ coarseStrands) are discarded. The formal content is empty relative to the .md claim."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Narrative does not assume its conclusion; the vanishing-of-higher-blocks hypothesis is genuine input, not the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "level-sufficiency.md:85-89 Corollary: 'Default-coarse computation is not a performance heuristic — it is the content of this proposition.' vs Lean proving only 0=0.",
+        "notes": "The .md presents a sharp, general 'computationally sufficient / exact at coarsest level' claim, but the formal backing (Lean) establishes it only on a degenerate constant-0 model. The exactness corollary is stronger than what is proved."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No calibration constants introduced."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Narrative proof steps follow: Markov property + vanishing of blocks k>n₀ ⇒ ι T_w^↓ has no extra contribution ⇒ traces equal. The chain is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "level-sufficiency.md:22-45 claims tr_M(T_w^↓)=tr_M(T_w^↑) under k_max≤n₀ via the Markov property; level-sufficiency.lean:56,76 instead proves markovTrace (≡0) equal to itself by rfl, ignoring _h_cover and _h_unfold.",
+        "notes": "Lean proves a vacuously-implied statement (0=0) rather than the conditional trace-preservation the .md asserts. The hypotheses that carry the mathematical content of the proposition are inert in the formalization (proof-statement-integrity violation)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "evidence": "level-sufficiency.md:53 [Jones 1987] for the Markov property; lean:52-55,68-71 Ref [jones1987].",
+        "notes": "Jones 1987 genuinely establishes the Ocneanu–Jones Markov trace and Markov property; citation is apt."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "level-sufficiency.md:14-15,42-43 uses both 'k_max(P,q)' and 'k_max(P,q,n)' for the partition truncation; the n-argument variant in the sufficiency clause (line 43) is not defined.",
+        "notes": "The witnessed-partition-truncation k_max appears with two different arities; the coarsest-level condition 'k_max(P,q,n)≤n' uses an n-dependent form whose definition is not given in-block."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No numerical comparison; structural proposition."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "Computing at nucleon level and unfolding to quark level only when forced is physically reasonable within the framework."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No backing witness; Lean-only block."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e2810bf11570",
+          "ts": "cd305107d482",
+          "lean": "396466097cbb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: major-revisions. referee_argument: the narrative proposition is mathematically sound (standard Markov-trace compatibility along the Hecke tower), but the Lean formalization is vacuous — markovTrace is the constant 0, so 'LevelSufficiency' is 0=0 by rfl with the two load-bearing hypotheses unused. The sharp 'exactness' corollary is unsupported by any non-degenerate formal model. Either formalize tr_M with real content keyed to the k_max≤n₀ hypothesis, or demote the exactness claim."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:25.784Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }

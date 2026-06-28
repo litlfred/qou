@@ -1605,7 +1605,245 @@
           "agent_date": "2026-06-25"
         }
       }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "The closed form Q=m_e·3(q²-1)³(q²+1)²(3q⁴+4q²+3)/(32q⁷) is the field-algebra simplification of |a·b·(a-b)|·m_e with a=-h/2, b=-3(q²-1)(q²+1)²/(4q³), h=q-q⁻¹; the Lean tritium_qvalue_symbolic verifies the (unsigned) identity via field_simp;ring. Consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "tritium_qvalue_symbolic.lean:38-59 carries the branching ansatz qvalue_branching: Q = a*b*(a-b)*m_e plus a_eq, b_eq as class hypotheses; the theorem (lines 69-77) rewrites by those hypotheses then field_simp;ring.",
+        "notes": "This is NOT a pure self-assuming projection: the closed rational form is genuinely DERIVED from the channel-sum definitions a_eq/b_eq by field algebra (the conclusion is not a stored class field). The branching ansatz Q=a·b·(a-b)·m_e is itself a hypothesis (the categorical input), which is legitimate — the block's content is the algebraic simplification, which is real. The 2026-06-25 qa re-audit notes (.qa.json proof-no-self-assuming-projection) disagree, reading h_closed_form as asserted, but the current .lean has no h_closed_form field; the projection concern is stale relative to this file. Flagged warn because the physics input (Q=|ab(a-b)|m_e) is assumed, not derived."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "q₀ is fixed independently (Vol(4_1), m_μ/m_e, m_e) per md:48-50; the tritium Q-value is then a prediction, not back-fitted to the 0.0186 MeV experimental value."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.md:29-33 writes the derivation as a^1·b^1·(a-b)=ab(a-b) and then Q=|ab(a-b)|×m_e (absolute value introduced silently). The Lean theorem (lines 69-72) proves the SIGNED identity Q = m_e·3(...)/(32q⁷) without absolute value.",
+        "notes": "The md uses |ab(a-b)| (md:33) but the stated closed form and the Lean omit the modulus; for q>1 the bracket 3(q²-1)³(q²+1)²(3q⁴+4q²+3)/(32q⁷) is positive so they agree numerically, but the |·| vs signed discrepancy between md and Lean is a small sign-handling overclaim. Also '50 dps' precision (md:40) is reported but the result is only good to -3.64%, so the digit count is decorative."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "md:48-50 explicitly states three CODATA inputs fix q₀ with zero additional fitting; a and b are categorical channel sums, not free parameters."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.md:24-30 asserts 'Σ_{4³ configs} Δm_e = a^1·b^1·(a-b)' with no derivation of why the 64-configuration sum factorizes as a·b·(a-b); it is cited to prop:branching-qvalue-factorization but the exponents (a to the 1, b to the 1) for (Z,N)=(1,2) are stated, not shown.",
+        "notes": "The factorization is the load-bearing step and is deferred entirely to the upstream proposition; within this block the channel-sum-to-product step is a 'therefore' with the lemma off-page. Acceptable if prop:branching-qvalue-factorization genuinely supplies it, but unverifiable from this block alone."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "The 2026-06-22 qa-agent-drain flagged proof-narrative-lean-equiv FAIL ('Narrative claims completed proof but Lean uses a sorry stub'), later overturned 2026-06-24 (narrative-lean-rerate: source sorry-free) in tritium-qvalue-symbolic.qa.json:1109-1140. Current .lean is sorry-free (field_simp;ring).",
+        "notes": "The divergence is now the md|·| vs Lean signed form (see da-overclaim) and the fact that the ab(a-b) physics derivation lives only in md prose while Lean assumes it as a hypothesis (qvalue_branching). The completed-proof claim is satisfied; residual divergence is minor."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "notes": "No external cites[]; -- Ref: [manuscript] only."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.md:24 references 'Σ_{4³ configs}' and 'channel sums a, b' without defining the configuration space or the channels in-block; 'odd regime' (md:17) is named but not defined here.",
+        "notes": "All hinge on the upstream branching factorization; a reader cannot reconstruct a=-h/2 or b's expression from this block. Base ring is ℝ in Lean (consistent with archimedean q₀ evaluation). Terms are well-defined upstream but locally opaque."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "tritium-qvalue-symbolic.md:40-48 reports Q≈0.0179 MeV at q₀=1.109978595554181... (50 dps) vs Q_exp=0.0186 MeV, error -3.64%. The q₀ value 1.109978595554181 is the MUON-anchored pin (per AGENTS.md the computations/ layer is muon-q₀ canonical), but the block does not state which pin nor whether the -3.64% survives the proton re-pin.",
+        "notes": "A -3.64% miss on a ~18 keV quantity is well outside experimental error (tritium Q is known to eV precision), so this is a scope-limited prediction presented without an error-budget caveat. The '50 dps' precision is irrelevant given the 3.64% model error — cherry-picked precision display. Cross-anchor swing (muon vs proton q₀) not reported. da-empirical-fragility applies: stale-pin ambiguity + decorative precision."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.md:47-48: predicted 0.0179 MeV vs measured 0.0186 MeV. The experimental tritium endpoint Q is 18.592 keV (KATRIN-grade, eV uncertainty); a -3.64% prediction is ~677 eV off, ~10^5σ.",
+        "notes": "Units and sign are correct and the order of magnitude is right (genuinely nontrivial for a parameter-free formula), so not implausible as a leading-order estimate — but presenting it without flagging that it is 5 orders of magnitude outside the measurement uncertainty risks overstating agreement. Warn, not fail: the framework openly reports the -3.64% error."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "evidence": "tritium-qvalue-symbolic.qa.json compute-prop-has-probe = FAIL and compute-prop-has-consumer = FAIL (lines 557-596): 'no probe: field or computation: block declared'; the prop is NOT-WIRED. The numerical claims (0.0179 MeV, -3.64%) in md:44-48 have no backing *.witness.json pinned in the .ts.",
+        "notes": "The closed form is Lean-verified, but the numerical evaluation at q₀ that produces 0.0179 MeV / -3.64% is asserted in prose with no reproducible witness and no consumer script. q₀=1.109978595554181 is a hardcoded literal in prose, not pinned to a witness. Per CLAUDE.md witnessed-values + compute-integration, the numeric claim is unreproducible from the corpus."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d4b5f78a6327",
+          "ts": "006729f446ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-da-adversarial-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T06:58:25.303Z",
+        "reviewed_sha": "fe9135de23d002bd14da1b37d06ac295a1884a55",
+        "severity": "major",
+        "notes": "verdict: minor-revision. referee_argument: the symbolic closed form is correct and Lean-verified (sorry-free field_simp;ring), and the parameter-free -3.64% estimate is a respectable leading-order result. The objections are (1) the numerical evaluation (0.0179 MeV, q₀ literal, -3.64%) is NOT wired to any witness/probe — compute-prop-has-probe and compute-prop-has-consumer both FAIL — so the headline number is unreproducible from the corpus; (2) the q₀ pin (muon vs proton) is unstated and cross-anchor swing unreported; (3) md uses |ab(a-b)| while the stated/Lean form is signed, and '50 dps' is decorative against a 3.64% model error. Wire a probe witness and add the pin/error caveats before publication."
+      }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-28T06:58:25.303Z"
 }
