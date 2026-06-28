@@ -85,7 +85,7 @@ the figure-8 knot, embedded in Bring's surface, has hyperbolic
 volume $2\,\mathrm{Cl}_2(\pi/3) = 2\,\mathrm{Im}\,\mathrm{Li}_2(e^{i\pi/3})$.
 One $\mathrm{Li}_2$ factor $\Rightarrow$ iterated-integral depth $2$,
 matching the Bloch-regulator class of the archimedean image. See the
-explicit numerical witness in
+explicit canonical witness in
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 
 ### Discharge targets

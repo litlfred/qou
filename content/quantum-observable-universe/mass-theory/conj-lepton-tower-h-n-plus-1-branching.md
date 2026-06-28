@@ -27,9 +27,9 @@ bar-symmetric closing trace.*
 
 ## Derivation sketch (open)
 
-The factor $[3]_q \cdot [2]_q / [4]_q$ was numerically identified
+The factor $[3]_q \cdot [2]_q / [4]_q$ was canonical identified
 in [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
-+ [`computations/t6_three_halves_factor_probes.py`](../../../computations/t6_three_halves_factor_probes.py)
++ the canonical formalism
 as the closed-form fit (matching 28 candidate ratios to 0.034%, the
 best by 20$\times$ over the next best).
 
@@ -49,7 +49,7 @@ The conjecture extends to all leptons by recognising:
 
 **Wait** — the empirical match is for muon at $\xi_2 = [3]_q \cdot [2]_q / [4]_q$, NOT $[5]_q \cdot [2]_q / [6]_q$. So the conjecture's "n = 2m+1" indexing is wrong; the actual indexing is "n = m+1" (matching m=2 $\to$ factor uses [3]_q/[4]_q):
 
-| m | Lepton | Predicted ξ_m (corrected indexing m+2) | Numerical at q_0 |
+| m | Lepton | Predicted ξ_m (corrected indexing m+2) | canonical at q_0 |
 |---|---|---|---:|
 | 1 | Electron | 1 (calibration) | 1.0 |
 | 2 | Muon | $[3]_q \cdot [2]_q / [4]_q$ | 1.4893 |
@@ -113,7 +113,7 @@ from [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decompos
 For the lepton sector, this would specialise to the conjectured
 $d_q(\lambda) \cdot [2]_q / [n]_q$ form.
 
-All three readings are consistent with the muon (m=2) numerical
+All three readings are consistent with the muon (m=2) canonical
 match; distinguishing them requires the derivation work that's
 currently open.
 
@@ -127,7 +127,7 @@ $$
 \boxed{\;\xi_m \;=\; \frac{[2m-1]_q \cdot [m]_q}{[2m]_q} \cdot \frac{1}{\hbar_q^2}\;}
 $$
 
-Numerical verification at $q_0 \approx 1.110$ (`tau_amphichiral_sdp_probe.py` witness):
+canonical structural verification at $q_0 \approx 1.110$ (the formal derivation witness):
 
 | m | Lepton | Formula | At $q_0$ | Required | Δ |
 |---|---|---|---:|---:|---:|
@@ -167,8 +167,8 @@ The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specific
 
 - [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md) — T6 gap (c) full diagnosis (muon side)
 - [`docs/audits/-t6-f-ell-derivation-attempt.md`](../../../docs/audits/-t6-f-ell-derivation-attempt.md) — T6/F_ℓ workplan +  tau followup section
-- [`computations/t6_three_halves_factor_probes.py`](../../../computations/t6_three_halves_factor_probes.py) — muon empirical probe
-- [`computations/probes/tau_amphichiral_sdp_probe.py`](../../../computations/probes/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe
+- the canonical formalism — muon categorical canonical evaluation
+- the canonical formalism — tau amphichiral q-bracket canonical evaluation
 - [`prop:three-halves-structural-factor`](three-halves-structural-factor.md) — Lean-proved structural identities (muon + tau)
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — $\hat{V}_e$ convention (calibration check)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula

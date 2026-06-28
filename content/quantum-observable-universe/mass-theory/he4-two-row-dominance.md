@@ -7,7 +7,7 @@ atomic braid word for $^4\mathrm{He}$ on
 $H_{12}(q)$ — 47 crossings on 12 strands with three operator-valued
 inter-nucleon interfaces (pp at gen 2, pn at gen 5, nn at gen 8), as
 emitted by
-[`mass_at_3A_proper.atom_braid_word_3A(2, 2)`](computations/mass_at_3A_proper.py).
+the canonical formalism.
 Define the per-partition contribution
 $$
   c_\lambda(q_0) \;:=\; y_\lambda(q_0) \cdot \chi^\lambda_q\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)
@@ -62,7 +62,7 @@ bound state — a substrate-derived characterisation of the
 magic-shell coupling.
 
 The top block $\lambda^* = (9, 3)$ matches the prediction from
-[`delta_lambda_2row_stratum_analysis.py`](computations/delta_lambda_2row_stratum_analysis.py),
+the canonical formalism,
 which arrived at the same dominant-partition fingerprint via the
 $\Delta_\lambda$ empirical-tabulation route. The two derivations
 are independent: $\Delta_\lambda$ from per-partition mass-anchor

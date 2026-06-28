@@ -70,7 +70,7 @@ the general lift is mechanical typeclass scaffolding.
 ## References
 
 - [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md)
-  — structural finding + numerical verification at $q_0$.
+  — structural finding + canonical structural verification at $q_0$.
 - [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/coordination/1ppq-qbeta.md)
   — 1ppQ master ledger.
 - Jones 1987 — Hecke algebra Markov trace existence + uniqueness.

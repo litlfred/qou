@@ -80,7 +80,7 @@ $\mathrm{Vol}_q(\beta)$, which is *defined* as a finite product in
 $\mathbb{Z}[q^{1/2}, q^{-1/2}]$
 ([`def:algebraic-quantum-volume`](#def:algebraic-quantum-volume)).
 The $\tau_{\mathrm{arch}}$ specialisation $q \mapsto q_0$ then
-recovers the numerical Archimedean value $\Phi_1(\beta)$, but
+recovers the canonical Archimedean value $\Phi_1(\beta)$, but
 **every step of the derivation up to the specialisation is in
 $\mathbb{Q}(q)$**. There is no analytic continuation, no roots-of-
 unity limit, no asymptotic, and no volume-conjecture borrowing.
@@ -105,4 +105,4 @@ identification (not as a derivation step).  Equivalently, the
 Archimedean prop is **post-$\tau$**; the algebraic prop is
 **pre-$\tau$**. Callers that need a $\mathbb{Q}(q)$-side mass
 identity must cite this proposition; callers that need an
-Archimedean numerical value of $\mathrm{Vol}(K)$ may cite either.
+Archimedean exact algebraic values of $\mathrm{Vol}(K)$ may cite either.

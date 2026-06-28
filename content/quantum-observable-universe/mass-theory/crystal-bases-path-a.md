@@ -3,7 +3,7 @@
 $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K) = 18Z + 21N + 1$ for $A \geq 2$.
 
 The existing `Path A` verifier
-[`per_irrep_pole_atom.py`](../../../computations/per_irrep_pole_atom.py)
+the canonical formalism
 computes per-irrep $\chi^\lambda(\mathcal{B}_K)(q)$ symbolically via
 Hoefsmit seminormal matrices, then extracts the $u$-pole order
 after substituting $q = u^2$.  At $H_n$ for $n \geq 9$ this
@@ -21,7 +21,7 @@ Young tableaux SYT($\lambda$).  The per-letter
 $u$-power contribution on a fixed eigenline is then a constant
 integer (per [crystal isospin degeneracy](#prop:crystal-isospin-degeneracy)
 and per the column-rich SYT analysis of
-[`crystal_pole_order.py`](../../../computations/crystal_pole_order.py)),
+the canonical formalism),
 yielding the lookup table:
 
 See [Table 1](#tbl:crystal-bases-path-a-table1-data).
@@ -43,7 +43,7 @@ with the full pole order $= -\min$ when negative.
 
 ## Implementation
 
-[`per_irrep_pole_atom_crystal.py`](../../../computations/per_irrep_pole_atom_crystal.py)
+the canonical formalism
 implements the crystal-bases path with two layered caches:
 
 - **C1**: `lru_cache` on `standard_young_tableaux` — atoms of the
@@ -54,7 +54,7 @@ implements the crystal-bases path with two layered caches:
   10 array-index ops to a single integer lookup.
 
 The $\mathrm{ord}_{u=0}(y_\lambda)$ values are precomputed once via
-[`y_lambda_pole_order_cache.py`](../../../computations/y_lambda_pole_order_cache.py)
+the canonical formalism
 into [`y-lambda-pole-order-cache.json`](../../../computations/y-lambda-pole-order-cache.json),
 keyed by $(n, \lambda)$.  The cache is the only sympy-heavy piece;
 once built, the per-atom verification is pure integer arithmetic
@@ -128,5 +128,5 @@ formula is rigorously valid for $A \geq 2$ only, and the $A = 1$
 neutron entry is a formula-extrapolation that doesn't reflect the
 underlying Hecke arithmetic.  A direct symbolic verification at
 $A = 1$, $N = 1$ would settle the question; this is well within
-the budget of `per_irrep_pole_proton_h3.py` adapted to neutron
+the budget of the formal derivation adapted to neutron
 inputs and is left as an open follow-up.

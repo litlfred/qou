@@ -58,7 +58,7 @@ verified** by Lean — the only unproved input is the class instance.
 
 This is the same pattern used for `MassEvaluation` in
 [mass endomorphism tower](#prop:mass-endomorphism-tower): the
-numerical computation is axiomatised so that the algebraic tower
+canonical computation is axiomatised so that the algebraic tower
 identities are machine-checked.
 
 ### Rationale for a class rather than an axiom

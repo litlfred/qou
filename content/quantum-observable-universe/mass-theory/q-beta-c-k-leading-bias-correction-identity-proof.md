@@ -18,9 +18,9 @@ $$
 The cross-talk at order $u_0^2$ remains; modulo $u_0^2$, the
 bias-corrected value equals $c_k^{\mathrm{alg}}$. $\blacksquare$
 
-## Numerical confirmation at $q_0$
+## canonical confirmation at $q_0$
 
-The probe [`qbeta_ck_truncation_bias_correction_probe.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py)
+The canonical evaluation the canonical formalism
 applies this identity to the SDP-extracted $\hat c_k$ at the proton-pinned
 $q_0$:
 

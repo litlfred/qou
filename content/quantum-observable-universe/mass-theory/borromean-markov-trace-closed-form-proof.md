@@ -87,7 +87,7 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    ([`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md));
 > 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
 >    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
->    `phase5/phase1c_proton_h3_symbolic_decomposition.py`), whose
+>    the formal derivation), whose
 >    weights are all non-zero and whose trace value on
 >    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above
 >    (e.g. $0.91926$ vs $0.93917$ at $q = 1.3$; the phase1c witness

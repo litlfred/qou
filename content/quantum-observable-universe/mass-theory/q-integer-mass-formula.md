@@ -197,7 +197,7 @@ strand count.*
 
 5. *Apply the seven-term liquid-drop ansatz.*
 
-*No intermediate fitting, no free parameters, no numerical
+*No intermediate fitting, no free parameters, no canonical
 optimization.  The entire phenomenological match is derived
 from the single substrate parameter $q_0$.  For higher-precision
 predictions, use the production

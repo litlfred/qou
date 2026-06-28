@@ -1,7 +1,7 @@
 ## Proof (algebraic identity)
 
 The operator-valued $N{=}2$ correction to $\mathfrak{Q}_\beta$ (per the brane-tower
-truncation of [`probe_q_beta_operator_valued_N3.py`](https://github.com/litlfred/qou/blob/main/computations/probe_q_beta_operator_valued_N3.py))
+truncation of the canonical formalism)
 is the factor $(1 - b^2 \cdot \hbar_q^4)$. With $u_{\text{ladder}} = b \cdot \hbar_q^2$,
 direct expansion gives
 

@@ -112,9 +112,9 @@ $$
   \quad \text{(conditional on Beilinson).}
 $$
 
-### Numerical PSLQ certification at $K = 5, 7$
+### canonical PSLQ certification at $K = 5, 7$
 
-[`cyclotomic_depth3_dimension_pslq.py`](https://github.com/litlfred/qou/blob/main/computations/cyclotomic_depth3_dimension_pslq.py),
+the canonical formalism,
 [witness](https://github.com/litlfred/qou/blob/main/computations/cyclotomic-depth3-dimension-pslq.witness.json):
 
 See [Table 1](#tbl:cyclotomic-depth3-dimension-synthesis-table1-data).
@@ -127,4 +127,4 @@ beyond the Bring-natural $K = 5$ case.
 See [Table 2](#tbl:cyclotomic-depth3-dimension-synthesis-table2-data).
 
 Extending the PSLQ certificate to $K \geq 11$ is straightforward (the
-same script works); each test takes ~30 seconds at 50 dps.
+same formalism works); each test takes ~30 seconds at 50 dps.

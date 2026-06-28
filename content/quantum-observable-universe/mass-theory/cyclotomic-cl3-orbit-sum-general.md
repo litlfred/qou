@@ -39,7 +39,7 @@ $N \geq 2$". Concretely:
   [`prop:cl3-zeta5-orbit-sum-identity`](#prop:cl3-zeta5-orbit-sum-identity)
 - Companion imaginary-part theorem:
   [`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)
-- Numerical witness (verified at $N = 3, 4, 5, 6, 7, 10, 11, 12, 13$ at 50 dps):
+- canonical witness (verified at $N = 3, 4, 5, 6, 7, 10, 11, 12, 13$ at 50 dps):
   [`cyclotomic-trilog-imaginary.witness.json`](https://github.com/litlfred/qou/blob/main/computations/cyclotomic-trilog-imaginary.witness.json)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
 - PSLQ certification at $\zeta_5$ (open beyond):

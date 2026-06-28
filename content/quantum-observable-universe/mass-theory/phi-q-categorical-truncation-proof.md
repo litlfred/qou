@@ -115,18 +115,18 @@ $$
 holds as a Frobenius-paired equality, derived from depth-orthogonality
 under the Frobenius pairing on $Z(A)$.
 
-**Remaining gap (numerical, not structural).**
+**Remaining gap (canonical, not structural).**
 The Frobenius-paired identity above is a **categorical equality**: the
 sums $\sum_k \langle \phi_q^{(k)}(z_i), T_w \rangle$ and the analytic
 $\mathrm{tr}_M(\Phi_q(z_i) \cdot T_w)$ agree as elements of $R$. To
-conclude that the *numerical* mass formula at $q = q_0$ with $\Phi_q$
+conclude that the *canonical* mass formula at $q = q_0$ with $\Phi_q$
 replaced by $\Phi_q^{[\leq k_\star(T_w)]}$ gives the same real-valued
 answer, one needs the depth-$k$ projections
 $\mathrm{proj}_{Z^{(k)}}(\Phi_q(z_i))$ to be uniformly bounded as
 $|z_i| \to q$. The analytic infinite product diverges in this limit;
 the Frobenius-paired identity says that whatever divergent content
 $\Phi_q(z_i)$ accumulates above depth $k_\star(T_w)$ pairs to zero
-with $T_w$, but the **uniform numerical bound** on the truncated
+with $T_w$, but the **uniform canonical bound** on the truncated
 remainder is the open part — the conjectural target of
 [$z$-Habiro completion](#conj:brane-tower-z-habiro).
 
@@ -138,7 +138,7 @@ representation up to the depth-$k_\star$ truncation — is closed
 modulo the depth-stratified version of $\Phi_q$
 ([prop:quantum-dilogarithm-stratified](#prop:quantum-dilogarithm-stratified)).
 The remaining gap is between the categorical equality and its
-real-valued numerical evaluation at $|\hat{V}|\approx 1$.
+real-valued canonical evaluation at $|\hat{V}|\approx 1$.
 
 The empirical $k=2$ subtractive sweet spot
 ([brane-tower in $z$-Habiro §"Empirical observation"](#conj:brane-tower-z-habiro))

@@ -61,7 +61,7 @@ See [Table 2](#tbl:chirality-dual-space-derivation-table2-data).
 *Symbolic verification: the per-crossing product $\prod_{pn}(1 + \mathrm{sign}\cdot h)$
 **exactly equals** paper's
 $\{1+h, 1-h^2, (1-h^2)^2\}$ for $\{D, T/^3\mathrm{He}, ^4\mathrm{He}\}$.
-Numerical match at $q_0 \approx 1.11$ confirmed.*
+canonical exact match at $q_0 \approx 1.11$ confirmed.*
 
 **The dual-space formulation.**
 

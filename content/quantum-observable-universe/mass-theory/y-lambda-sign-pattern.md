@@ -35,7 +35,7 @@ $$
 $$
 
 is **infeasible** at $n = 4, 5, 6$ — empirically verified via
-[`y_lambda_sdp.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_sdp.py).
+the canonical formalism.
 The full sign pattern at $n \in \{2, \ldots, 6\}$ — including the
 sign-changing entries $y_{(1^4)} \approx -8.4 \times 10^{-4}$ at
 $n = 4$ and $y_{(2, 1^3)} \approx -9.3 \times 10^{-4}$ at $n = 5$
@@ -99,7 +99,7 @@ At $n \in \{2, \ldots, 6\}$, the unconstrained LS solve (cvxpy /
 CLARABEL) reproduces the linear-solve $y_\lambda$ to $\sim 10^{-15}$
 ([`y-lambda-sdp-witness.json`](#)).  Symbolic linear-solve via
 sympy
-([`y_lambda_symbolic.py`](#)) gives exact $q$-rational forms,
-matching the numerical values to machine precision at $q_0$.  All
+([the formal derivation](#)) gives exact $q$-rational forms,
+matching the exact algebraic values to machine precision at $q_0$.  All
 three pathways agree; the negative components are real, not
 artifacts.

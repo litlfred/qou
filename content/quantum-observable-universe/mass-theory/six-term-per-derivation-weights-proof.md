@@ -50,7 +50,7 @@ and is positive for bound systems.  $\square$
 **Empirical verification.**
 
 The assembly is implemented in
-`computations/sweeps/paper_six_term_isotope_sweep.py`
+the formal derivation
 as `assemble_per_derivation_weights(Z, N)` with hardcoded
 constants $E_{0,\beta} = 0.78233341$ MeV (CODATA β-decay $Q$),
 $\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV.

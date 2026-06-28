@@ -51,7 +51,7 @@ and alternating representations).  For $n \geq 4$, the Hecke algebra
 has additional irreducible representations (one per partition of $n$),
 producing additional invariants not captured by the $2 \times 2$
 transfer matrix.  The partition-by-partition computation
-(`atom_mass_partition.py`) computes all partitions exactly via
+(the formal derivation) computes all partitions exactly via
 Young's seminormal form in polynomial time.  The mass functional
 uses the three extremal invariants as the leading-order formula;
 the full partition sum gives the exact Markov trace.*

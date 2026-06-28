@@ -111,9 +111,9 @@ next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
 Full discipline:
 [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../../../docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).
 
-## Numerical precision ladder
+## canonical precision ladder
 
-Verified at $q_0$ via [`binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) at 50 dps:
+Verified at $q_0$ via the canonical formalism at 50 dps:
 
 See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 
@@ -134,7 +134,7 @@ correction absorbs this and brings the residual under the c(K) ceiling.
 
 ## Implication for $\Delta S$ (n−p mass split, 1 ppb)
 
-From [`audit_delta_S_chain.py`](../../computations/audit_delta_S_chain.py):
+From the canonical formalism:
 
 $$
   \varepsilon_{\Delta S} \;=\; \frac{\mathfrak{Q}_\beta}{\mathfrak{Q}_\beta + m_e} \cdot \varepsilon_Q

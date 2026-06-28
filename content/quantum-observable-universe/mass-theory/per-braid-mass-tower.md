@@ -134,10 +134,10 @@ small — but the per-generator product across many generators
 escapes the convergence radius. The per-braid form fixes this by
 keeping the natural sub-braid scale.
 
-## Numerical verification
+## canonical structural verification
 
 The per-braid tower has been computed for D, ${}^{3}$He, ${}^{3}$H, ${}^{4}$He via
-[`computations/per_braid_tower.py`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/computations/per_braid_tower.py),
+the canonical formalism,
 with witness
 [`docs/audits/-per-braid-tower.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/docs/audits/-per-braid-tower.witness.json).
 

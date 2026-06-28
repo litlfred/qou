@@ -73,11 +73,11 @@ defining identity for the algebraic level-2 primitive in $\mathcal{H}_q$.
 Computational consequences of the post-$\tau$ pentagon (R):
 
 1. **T3 reorganisation**:
-   [`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/computations/pentagon_reduction_li2q.py)
+   the canonical formalism
    uses (P$'$) — the duplication form of (R) — to evaluate
    $\mathrm{Li}_2^q(|V_i V_j|)$ at out-of-radius arguments via factorisation
    $z = uv$ with $|u|, |v| < q_0$. The Rogers $\log_q^2$ correction
-   ensures the reorganisation is numerically consistent.
+   ensures the reorganisation is canonical consistent.
 
 2. **Algebraic-side ratios** (per the Habiro framework
    [`prop:full-pole-structure-mass-trace`](#prop:full-pole-structure-mass-trace)):
@@ -105,7 +105,7 @@ arithmetic).
 
 ### Falsifiability
 
-The numerical residual at $u = v = 0.7$ is $2.3 \times 10^{-3}$ — the
+The canonical residual at $u = v = 0.7$ is $2.3 \times 10^{-3}$ — the
 upper end of the empirical $O((q-1)^2)$ behaviour. A direct
 high-precision computation at this point disagreeing by more than
 $O((q-1)^3 \cdot u v)$ refutes the proposed q-correction; tracked

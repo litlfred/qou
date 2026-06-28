@@ -14,7 +14,7 @@ a distinguished knot ideal — empirically $k_* = 4$.
 
 The total sum is bounded: $\sum_{\lambda \vdash n} \tilde w_\lambda$
 is finite for every $n$ and equals $1$ exactly at $q = 1$; at
-$q_0 = 1.109978595554181\ldots$ (50 dps) it deviates from $1$ — empirically
+$q_0 = 1.109978595554181\ldots$ (50 dps) it deviates from $1$ — categorically
 $\sum \tilde w_\lambda \approx 1.51$ at $n = 12$
 ([prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness)
 remark on q-deformed alternative). Boundedness of $\Phi_k$ follows
@@ -27,7 +27,7 @@ Plancherel measure. $\square$
 **Logarithmic control of scale.** *The bare Wedderburn-weighted
 character sum $\sum_\lambda \tilde w_\lambda \cdot
 \chi_\lambda(\beta) / \dim_q V_\lambda$ is bounded by a finite
-constant (numerically $\lesssim 2$ at $q_0$ for $n \leq 12$), giving
+constant (canonical $\lesssim 2$ at $q_0$ for $n \leq 12$), giving
 a similarly small MeV-scale ceiling — too small for MeV-scale
 binding gaps. Replacing $\chi_\lambda$ with
 $\log|\!\int_{A_\lambda}\!\cdot|$ keeps the Wedderburn weighting
@@ -47,8 +47,8 @@ sequence's collapse at $E_1$
 with $\mathrm{HH}^0 = Z(H_n(R, q))$ paired against the logarithmic
 Frobenius integral.*
 
-**Naming note.** *Earlier drafts (and the legacy script
-`plancherel_term_7.py`) referred to $\tilde w_\lambda =
+**Naming note.** *Earlier drafts (and the legacy formalism
+the formal derivation) referred to $\tilde w_\lambda =
 \dim_q^2/[n]_q!$ as the "q-Plancherel weight" and claimed
 $\sum_\lambda \tilde w_\lambda = 1$ via a "q-Plancherel identity"
 $\sum_\lambda \dim_q^2 V_\lambda = [n]_q!$. That identity does not
@@ -62,8 +62,8 @@ The current proposition uses $\tilde w_\lambda$ as the
 q-deformed Wedderburn-block weight, not the Plancherel measure;
 they coincide at $q = 1$.*
 
-**Numerical witness.**
-[`computations/plancherel_term_7.py`](#) computes
+**canonical witness.**
+[the formal derivation](#) computes
 $\Phi_k$ for D, T, ${}^3\mathrm{He}$, ${}^4\mathrm{He}$, evaluating
 $\chi_\lambda(\beta_\mathrm{atom})$ via Hoefsmit seminormal form
 characters at $q_0$ and summing with the q-deformed Wedderburn weights

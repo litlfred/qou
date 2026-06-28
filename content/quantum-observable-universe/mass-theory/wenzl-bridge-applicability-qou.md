@@ -35,7 +35,7 @@ $\mathrm{tr}_M(1) = 1$, and equals the closed form
 ## Empirical verification
 
 The closed form has been verified against the linear-system
-witness at $n = 3, \ldots, 11$ (193 partitions) to MPFR 50-dps
+witness at $n = 3, \ldots, 11$ (193 partitions) to MPFR exact representation
 precision (max per-partition $|\Delta| \le 4 \times 10^{-51}$):
 [`y-lambda-wenzl-vs-mpfr-cross-check.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-wenzl-vs-mpfr-cross-check.json).  Two independent
 computational paths (closed-form principal Schur specialisation;

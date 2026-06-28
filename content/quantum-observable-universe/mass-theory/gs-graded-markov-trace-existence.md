@@ -62,9 +62,9 @@ theorem requires:*
 value directly.*
 
 **Empirical witness.**
-*The numerical values of $\mathrm{tr}_{M, \ell}(T_w)$ for the proton,
+*The exact algebraic values of $\mathrm{tr}_{M, \ell}(T_w)$ for the proton,
 neutron, and deuteron atoms are emitted by
-`markov_pipeline_cross_validator.py` and stored under
+the formal derivation and stored under
 `computations/markov/markov-pipeline-cross-validation.witness.json`,
 agreeing with the Habiro-side values to relative tolerance $\le$ $10^{-9}$
 across every available atom.*

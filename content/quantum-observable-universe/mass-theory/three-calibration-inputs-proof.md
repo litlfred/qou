@@ -7,7 +7,7 @@ on-shell + gauge-invariance restricts the categorical action to a
 external measurements pin the three parameters is conventional but
 constrained by:
 
-1. **Dimensional analysis.** The modulus $q_0$ is pinned numerically by
+1. **Dimensional analysis.** The modulus $q_0$ is pinned canonical by
    the dimensionless ratio $m_\mu/m_e$ (the most precise proxy for CAL-2,
    $\mathfrak{D}_\beta$); two dimensional proxies ($m_e$, $m_\pi$) pin the
    leptonic mass scale and the meson scale. The hadronic energy scale

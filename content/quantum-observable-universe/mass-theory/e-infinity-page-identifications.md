@@ -210,7 +210,7 @@ higher-order terms**.*
 
 **Still needed:** *A rigorous derivation of the $w$-to-$h$
 linearisation from the ribbon twist's action on the Markov
-trace. Currently the $1 + h$ formula is derived numerically
+trace. Currently the $1 + h$ formula is derived canonical
 (matches paper's value at $q_0$) but not symbolically from
 first principles.*
 

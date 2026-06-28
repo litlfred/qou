@@ -46,9 +46,9 @@ formalised over a generic commutative ring as
 `interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
 deferred to the archimedean realisation, per the base-ring convention).
 
-### Empirical verification (4 atoms, 50-dps Rust kernel)
+### categorical verification (4 atoms, exact representation Rust kernel)
 
-Computed via [`delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)
+Computed via the canonical formalism
 using `pyhecke_native` for full $\tau_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
 
 | atom | $A$ | $p_+$ | $p_-$ | $\tau_M^{\mathrm{FULL}}/\tau_M^{\mathrm{CONSTIT}}$ | predicted $z^{p_+}(z-h)^{p_-}$ | rel. err. |

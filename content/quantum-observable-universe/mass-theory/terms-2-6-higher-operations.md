@@ -51,7 +51,7 @@ gives the full $\Phi_q$ kernel.*
 
 **Proved (symbolic computation): $HH^1(H_3(R, q)) = 0$ at generic $q$.**
 
-*Direct symbolic computation in `hochschild_h3.py`:*
+*Direct symbolic computation in the formal derivation:*
 
 - *dim Der$(H_3(R, q)) = 3$ (total derivations, linear-algebra nullspace
  of $216$ constraint equations on $36$ matrix entries).*
@@ -117,7 +117,7 @@ NOT from HH cup products. Possible sources:*
 
 ***Option 2 (deformation cohomology) ruled out.***
 *Direct computation in
-`computations/deformation_cohomology_s3.py`:*
+the formal derivation:*
 
 - *$\dim \mathrm{Der}(\mathbb{R}[S_3]) = 3 = \dim \mathrm{Inner}(\mathbb{R}[S_3])$*
 - *$HH^1(\mathbb{R}[S_3]) = 0$*
@@ -317,7 +317,7 @@ question, not a missing-derivation question.*
 
 **Previous naive proxy test (for reference).**
 
-*Script `cup_product_tower_probe.py` tested the simplest proxy:
+*formalism the formal derivation tested the simplest proxy:
 compute $\mathrm{tr}_M(\sigma_0^k)$ (algebra power) symbolically in
 $H_3(R, q)$ and compare to $\Phi_q$ Cauchy Taylor coefficients
 $1/(q; q)_k$.*

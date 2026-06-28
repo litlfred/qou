@@ -124,8 +124,8 @@ the class instance** per AGENTS.md §3b-cond.
 The QOU production stack computes $\tau_M$ on the
 **11-crossing canonical proton / neutron braid** via four
 independent paths — Hoefsmit seminormal matrices
-(`atomic_tr_m_mpfr_50dps.py`), `markov_peel`, the $\chi$-cache
-combiner (`canonical_tr_m_via_chi_cache.py`), and the Habiro
+(the formal derivation), `markov_peel`, the $\chi$-cache
+combiner (the formal derivation), and the Habiro
 integer-$a_m$ expansion — which agree to $\leq 2 \times 10^{-15}$
 at the proton-pinned $q_0$:
 

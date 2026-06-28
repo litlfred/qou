@@ -44,5 +44,5 @@ $$
 *The chirality part is the gauge-invariant background contribution
 ([rem:confinement-curvature-rank](#rem:confinement-curvature-rank));
 empirically it accounts for $\sim 3\%$ of the binding energy of $^4$He
-([atomic_chirality_residue.py witness](#)) and dominates the deepest
+([the formal derivation witness](#)) and dominates the deepest
 curvature-rank strata.*

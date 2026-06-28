@@ -10,7 +10,7 @@ A long-standing mystery in the computation of macroscopic multi-nucleon observab
 
 ## Resolution via Littlewood-Richardson Fusion
 
-This concentration is not a numerical artifact; it is a direct structural consequence of the **tensor factorization of the multi-nucleon interface**. 
+This concentration is not a canonical artifact; it is a direct structural consequence of the **tensor factorization of the multi-nucleon interface**. 
 
 A multi-nucleon atom of mass number $A$ is topologically composed of $A$ distinct 3-strand nucleon braids (protons and neutrons). The total $3A$-strand braid therefore factors through the sub-algebra:
 $$ (H_3)^{\otimes A} \hookrightarrow H_{3A} $$

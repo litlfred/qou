@@ -195,7 +195,7 @@ transcendental continuum required for geometric measurement. See
 
 ## Witness
 
-No numerical witness is appropriate for a uniqueness claim. The
+No canonical witness is appropriate for a uniqueness claim. The
 relevant cross-check is that any new closed form for a QOU
 observable proposed in this repository must be expressible as a
 $\tau_{\text{arch}}$-image of a pentagon-coherent

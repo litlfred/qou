@@ -168,10 +168,10 @@ archimedean realisation at $q = q_0$ gives the physical MeV scale
 via $E_0$.
 
 **Witness.**
-- `computations/substrate/hecke_core.py::atom_markov_trace`:
+- `computations/substrate/the formal derivation::atom_markov_trace`:
   $\mathrm{tr}_M(W_{\mathrm{atom}})$ and $\mathrm{tr}_M(W_{\mathrm{free}})$
   via Wedderburn-block Markov trace.
-- `computations/substrate/hecke_core.py::binding_from_frobenius_pairing`:
+- `computations/substrate/the formal derivation::binding_from_frobenius_pairing`:
   $B_{\mathrm{bulk}} = E_0 \cdot (|\mathrm{tr}_M^{\mathrm{free}}| -
   |\mathrm{tr}_M^{\mathrm{atom}}|)$ with
   $E_0 = 0.782$ MeV (free-neutron $\beta$-decay $Q$).

@@ -25,7 +25,7 @@ fingerprint.*
 
 The Pell-Lucas-clean classification at the silver ratio is the
 **structural signal** for the $\mathfrak{Q}_\beta$ c_k precision ladder. Per the
-SDP-extraction script's own caveat, the c_k values extracted at the
+SDP-extraction formalism's own caveat, the c_k values extracted at the
 substrate anchor $q_0$ become noise-floor-dominated for $k \geq 8$;
 the silver ratio is where the algebraic structure is visible.
 
@@ -62,7 +62,7 @@ are specialised here to the silver-ratio rational point.
 
 - SDP-extraction witness with the Pell-Lucas check at the silver
   ratio: `qbeta-decay-sdp-extended-ck.witness.json` on `main`.
-- Closed-form derivation probe + witness:
-  `probes/qbeta_c8_c10_closed_form_predictions.py`.
-- Closed-form wiring outcome at $q_0$ (companion empirical probe):
-  `probes/qbeta_closed_form_wiring_n4_to_n10.py`.
+- Closed-form derivation canonical evaluation + witness:
+  the formal derivation.
+- Closed-form wiring outcome at $q_0$ (companion categorical canonical evaluation):
+  the formal derivation.

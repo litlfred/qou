@@ -46,7 +46,7 @@ The
 suffices for the W-3 D(u) closure at the column maximizer
 $\lambda^* = (1^p)$ (1-dim irrep). The
 [refined / operator-valued form](../../../docs/audits/-sublemma-2-1-refined.md)
-was open for general multidim $\lambda$ (verified numerically 11/11
+was open for general multidim $\lambda$ (verified canonical 11/11
 on the deuteron, but lacked a categorical proof).
 
 This block closes the operator-valued form **categorically modulo**
@@ -88,9 +88,9 @@ unconditional structural lemmas
 `axkia_pole_T_2_9`, `axkia_pole_T_3_5` are all proved by `rfl` /
 `decide` from the class field, requiring no further hypothesis.
 
-## Numerical verification (witness)
+## canonical structural verification (witness)
 
-[`computations/crystal_pole_order.py`](../../../computations/crystal_pole_order.py)
+the canonical formalism
 computes the column-SYT pole-per-cycle for seven torus-knot
 interfaces $\{T_{(2, 1)}, T_{(2, 3)}, T_{(2, 5)}, T_{(2, 9)}, T_{(3, 4)}, T_{(3, 5)}, T_{(3, 7)}\}$
 plus six non-column $\lambda$ shapes for $n \in \{2, 3, 4\}$.

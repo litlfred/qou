@@ -29,12 +29,12 @@ recovered.
 The resolution is interpretive:
 
 - The $S = \mathfrak{Q}_\beta / E_0$ in the audit doc is the **SDP-constraint
-  scalar** (numerical at $q_0$ — the affine target $n_{\text{target}} = S(q_0) \approx 0.18689$
+  scalar** (canonical at $q_0$ — the affine target $n_{\text{target}} = S(q_0) \approx 0.18689$
   that the operator-selection program solves for).
 - The **$c_k$ ladder normalization** is a different object,
   namely $\mathfrak{Q}_\beta / [Q_A \cdot \cos(\alpha_{\text{eff}})]$, with
   $Q_A$ and $\alpha$ read from the operator-valued $N{=}3$ witness
-  (see [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_1ppq_achieved.py)).
+  (see the canonical formalism).
 
 This proposition is therefore the algebraic obstruction that pins the
 gap and identifies the missing categorical input

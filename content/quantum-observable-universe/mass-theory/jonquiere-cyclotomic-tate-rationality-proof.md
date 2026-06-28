@@ -96,9 +96,9 @@ $$
   \;=\; -\frac{2 \pi^5}{15}\,B_5(1/K).
 $$
 
-### Numerical verification at 50 dps
+### canonical structural verification at 50 dps
 
-[`jonquiere_cyclotomic_general.py`](https://github.com/litlfred/qou/blob/main/computations/jonquiere_cyclotomic_general.py),
+the canonical formalism,
 [witness](https://github.com/litlfred/qou/blob/main/computations/jonquiere-cyclotomic-general.witness.json):
 
 Verified at $n \in \{2, 3, 4, 5\}$ and $K \in \{3, 4, 5, 6, 7\}$ —

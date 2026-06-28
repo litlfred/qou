@@ -95,7 +95,7 @@ $$
 at $A = 2$: the liquid-drop approximation has no droplet to speak
 of with only two nucleons. Multiplying by any chirality factor
 $a_K > 0$ keeps $B_{\mathrm{pred}} < 0$, which is unphysical. The
-$D$ chirality probe `d_chirality_probe.py` verified this: no
+$D$ chirality canonical evaluation the formal derivation verified this: no
 choice of $a_K \in [-2, 2]$ with the form
 $B = a_K \cdot B_{\mathrm{bulk}}$ matches $B_{\mathrm{AME}}$
 positively; the closest positive match requires $a_K < 0$
@@ -115,7 +115,7 @@ remaining per-vortex substrate cost. Result: $B_D^{\mathrm{pred}}
 *The Schur–Weyl pipeline describes $A = 2$ because:*
 
 1. *Only $p(6) = 11$ partitions to sum over.*
-2. *Max Specht dimension $f^\lambda = 16$ — tractable numerically.*
+2. *Max Specht dimension $f^\lambda = 16$ — tractable canonical.*
 3. *No collective motion is present (no liquid-drop approximation needed).*
 4. *Only one inter-nucleon crossing — the tower structure is minimal.*
 
@@ -152,7 +152,7 @@ computation per $A$.*
 **Paper D chirality assignment is a category error.**
 
 *The paper assigns $D \to (1 + h)$ as chirality factor; empirically
-this fails by $-353\%$. Probe `d_chirality_probe.py` tested $13$
+this fails by $-353\%$. canonical evaluation the formal derivation tested $13$
 alternatives and continuous optimisation in $a_K \in [-2, 2]$;
 no positive chirality factor fits. The resolution: **$D$ is not
 in the BW regime at all**, so asking for its chirality factor is
@@ -195,7 +195,7 @@ interpolates between SW+Frob ($A \leq 2$) and BW+$\chi$ ($A \geq 3$)
 transitions at $A = 2.5$. At present this is empirical; the
 categorical derivation of $w_A$ is open.*
 
-**Integrated witness table (from `mass_formula_6term.py`).**
+**Integrated witness table (from the formal derivation).**
 
 See [Table 2](#tbl:mass-formula-regime-switching-table2-data).
 

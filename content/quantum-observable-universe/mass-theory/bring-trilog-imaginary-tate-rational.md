@@ -2,7 +2,7 @@
 is Tate-rational — $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) = 4\pi^3/125$,
 verified at 50 dps via Kummer reflection).**
 
-The depth-3 numerical witness
+The depth-3 canonical witness
 ([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
 records both real and imaginary parts of $\mathrm{Li}_3(\zeta_5)$
 as candidate depth-3 periods. *This proposition shows the

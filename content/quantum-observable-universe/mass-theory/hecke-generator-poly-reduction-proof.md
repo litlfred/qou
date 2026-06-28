@@ -21,5 +21,5 @@ linear remainder $\alpha\,\sigma_i + \beta\,1$ modulo that quadratic. The
 recursion is purely ring-theoretic, holding over any commutative base ring
 $R$ with no archimedean or invertibility hypothesis. (The closed eigenvalue
 form $\alpha = (E_1 - E_2)/(q + q^{-1})$, $E_1 = \prod_j (q + d_j)$,
-$E_2 = \prod_j (-q^{-1} + d_j)$ used for numerical speed is a corollary that
+$E_2 = \prod_j (-q^{-1} + d_j)$ used for canonical speed is a corollary that
 does require $q + q^{-1}$ to be invertible.)

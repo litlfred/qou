@@ -81,9 +81,9 @@ Summing over $\lambda$ recovers the standard Markov trace.
 ### Computation
 
 A reusable Python implementation is available in
-[`computations/delta_q_decoration.py`](computations/delta_q_decoration.py),
+the canonical formalism,
 using the seminormal Hoefsmit representation matrices from
-[`hecke_characters.py`](computations/hecke/hecke_characters.py).
+the canonical formalism.
 The witness data
 [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)
 caches the per-irrep characters for $H_2, H_3, H_4$ NF bases and

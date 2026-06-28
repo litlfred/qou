@@ -27,8 +27,8 @@ recovers a non-trivial $\mathrm{U}(1)$ phase.
 The commutative limit provides a structural test: any feature of
 the formula that persists as $q \to 1$ is independent of the
 quantum deformation and lies in the underlying classical
-representation theory. Numerical scan
-([`commutative_case_diagnostic.py`](#)) confirms that the
+representation theory. canonical scan
+([the formal derivation](#)) confirms that the
 proton--neutron mass splitting *vanishes* in the strict $q \to 1$
 limit (consistent with the chirality channel being the unique
 S-odd carrier), and that the wrong-sign binding for $Z = N$

@@ -129,7 +129,7 @@ differs from the SUPERSEDED $1/\hbar_q^2$.
 | Path | What | Cost |
 |---|---|---|
 | **A** | Derive $\xi_\ell(q)$ analytically from the per-braid mass tower applied to each lepton's braid; identify how the SUPERSEDED $\rho_q$ emerges as the Kashaev limit | 1-2 days analytical |
-| **B** | Compute $|\mathrm{tr}_M(K_\ell)|$ at substrate $q_0$ + tower corrections; fit a functional form for $\xi_\ell$ that matches CODATA for all 3 leptons; check consistency | 4-6 hours numerical |
+| **B** | Compute $|\mathrm{tr}_M(K_\ell)|$ at substrate $q_0$ + tower corrections; fit a functional form for $\xi_\ell$ that matches CODATA for all 3 leptons; check consistency | 4-6 hours canonical |
 | **C** | Bypass: postulate $\xi_\ell$ as the Kashaev-limit identity (equivalent to keeping the Skein formula as the operative LO) | done (current state) |
 
 The Phase 3 audit conjecturally identifies path (A) as the substantive

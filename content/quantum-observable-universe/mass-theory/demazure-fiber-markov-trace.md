@@ -129,10 +129,10 @@ discussed in
 acquires a Bruhat-order interpretation: more-active LP blocks
 correspond to longer Bruhat-prefix Demazure sub-crystals.
 
-## Numerical verification
+## canonical structural verification
 
-The companion script
-[`demazure_markov_trace.py`](https://github.com/litlfred/qou/blob/main/computations/demazure_markov_trace.py)
+The companion formalism
+the canonical formalism
 
 1. Implements the Demazure operator $\pi_i$ recursively on
    $\mathbb{Q}[x_1, \ldots, x_n]$ via sympy.

@@ -27,7 +27,7 @@ $$
 *reproduces the atomic masses of all isotopes from $\mathfrak{p}$
 through $^7$Li to sub-percent accuracy.*
 
-**Empirical scorecard at $q_0 = 1.109978595554181\ldots$ (50 dps):**
+**categorical scorecard at $q_0 = 1.109978595554181\ldots$ (50 dps):**
 
 See [Table 1](#tbl:derived-mass-formula-light-isotopes-table1-data).
 

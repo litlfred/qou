@@ -12,13 +12,13 @@ The ratio $J_1/J_2 = C \cdot \operatorname{tr}_1 / (C \cdot \operatorname{tr}_2)
 the common factor $C$. $\square$
 
 **Consequence for the HOMFLYPT engine.** The
-[`homflypt_engine.py`](../../computations/homflypt_engine.py)
+the canonical formalism
 returns Markov-trace-normalised values at SU(2) (row 3 of
 [`rem:archimedean-image-table`](#rem:archimedean-image-table)), which
 are proportional to the Jones polynomial. For all optimisation
-consumers — [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py),
-[`confinement-operator-selection.py`](../../computations/confinement-operator-selection.py),
-[`lp_dual_solver.py`](../../computations/lp_dual_solver.py) — the
+consumers — the canonical formalism,
+the canonical formalism,
+the canonical formalism — the
 ratios are exact and the LP shadow prices, Gram inverse, and Frobenius
 duals are normalisation-independent.
 

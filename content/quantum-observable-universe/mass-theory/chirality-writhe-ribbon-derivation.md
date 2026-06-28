@@ -113,8 +113,8 @@ character-weighted average $\langle c\rangle_\beta$ equals a
 specific non-zero number determined by the imbalance between
 $\chi^\lambda$ and $\chi^{\lambda^T}$.*
 
-**Numerical test at $H_6(R, q)$ (satellite $D$) — refuted (predicted $a_K = -2.164$ vs paper's $a_D = +1.209$).**
-*Script `ribbon_content_average.py` computes
+**canonical test at $H_6(R, q)$ (satellite $D$) — refuted (predicted $a_K = -2.164$ vs paper's $a_D = +1.209$).**
+*formalism the formal derivation computes
 $\langle c\rangle_\beta$ and the predicted
 $a_K = 1 + w(\beta) \cdot \langle c\rangle_\beta \cdot h$
 for the deuteron atomic braid. Results:*
@@ -211,11 +211,11 @@ falsification here (for D) shows the specific form needs
 adjustment.*
 
 **Reference implementation.**
-*`computations/ribbon_content_average.py` +
+*the formal derivation +
 `ribbon-content-average.witness.json`.*
 
 **Variant sweep.**
-*Script `chirality_variants_probe.py` tested 8 candidate writhe-
+*formalism the formal derivation tested 8 candidate writhe-
 ribbon formulas (varying weighting, writhe convention, and
 normalisation) against paper's assigned factors for $D$, $T$.
 **No variant matches within $20\%$**.*

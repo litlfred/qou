@@ -103,12 +103,12 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 ## Open R&D
 
-1. **Verify numerically** that the Hecke quadratic preserves under P
+1. **Verify canonical** that the Hecke quadratic preserves under P
    (since both $\sigma_i$ and $\sigma_i^{-1}$ satisfy the same
    relation): the quadratic
    $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is invariant under P
    because $(\sigma_i^{-1} - q)(\sigma_i^{-1} + q^{-1}) = 0$ also
-   holds (multiply the original by $\sigma_i^{-2}$). Concrete probe
+   holds (multiply the original by $\sigma_i^{-2}$). Concrete canonical evaluation
    in a follow-up.
 2. **D7 to closed** requires the Lean class instance + a `prop:` block
    stating bar = P $\cdot$ C $\cdot$ T as a derivable identity.

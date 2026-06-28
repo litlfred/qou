@@ -160,7 +160,7 @@ Two computational witnesses bracket the conjecture's strong form:
   tetrahedral shape parameters for $\mathtt{m004}$, $\mathtt{m003}$,
   and the Borromean rings $\mathtt{L6a4}$. The bare seeds sit at
   distance $\sim 0.4$–$0.9$ from SnapPy's $z_k$, so the pole-to-cusp
-  bijection cannot be a literal numerical identity
+  bijection cannot be a literal canonical identity
   $q_0^{-k} = z_k$. The conjecture must be interpreted as a bijection
   of **labels** (algebraic-pole index $\leftrightarrow$ cusp index)
   with the actual shape parameter being a non-trivial function
@@ -168,5 +168,5 @@ Two computational witnesses bracket the conjecture's strong form:
   of that function is the subject of further work.
 
 The two witnesses together support the conjecture's *structural*
-content (algebraic poles label cusps) while bounding its *numerical*
+content (algebraic poles label cusps) while bounding its *canonical*
 form (the bare $q_0^{-k}$ are not literally the cusp shapes).

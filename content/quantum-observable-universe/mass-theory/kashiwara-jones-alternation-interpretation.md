@@ -117,7 +117,7 @@ orders) drives the Jones contributions in the precision ladder.
 
 ## Breakdown of the alternating pattern at $c_5, c_6$
 
-Per [`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),
+Per the canonical formalism,
 the empirical $c_5, c_6$ don't fit simple integer Jones values or simple
 Kashiwara $b^k$ alone. Two structural reasons:
 

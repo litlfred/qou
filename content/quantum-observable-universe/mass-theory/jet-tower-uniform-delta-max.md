@@ -17,7 +17,7 @@ The audit
 flagged this hypothesis as open (GAP 14a). This block names the
 hypothesis as a conjecture, summarises the empirical evidence at
 $n = 1, 2, 3$ for D, T, ${}^{3}$He, and points to the measurement
-infrastructure (`unified_lift.py` + the new
+infrastructure (the formal derivation + the new
 `jet-tower-delta-max.witness.json`).
 
 ## Statement
@@ -47,10 +47,10 @@ but not on $n$).*
 
 ## Empirical evidence (path (b) deliverable)
 
-The measurement script
-[`computations/jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)
+The measurement formalism
+the canonical formalism
 runs `unified_lift.unified_atom_binding` (which already computes
-`delta_n` per jet level — see `unified_lift.py` line 158) for
+`delta_n` per jet level — see the formal derivation line 158) for
 $\mathrm{D}$, $\mathrm{T}$, $^3\mathrm{He}$ across
 $n = 1, \dots, N_{\max}$ and reports
 
@@ -72,7 +72,7 @@ T       3         <empirical> <empirical>      (yes)
 ³He     3         <empirical> <empirical>      (yes)
 ```
 
-(Concrete numerical entries are produced on each run; the
+(Concrete canonical entries are produced on each run; the
 witness JSON is the canonical record.)
 
 The empirical observation
@@ -136,7 +136,7 @@ empirical motivation citable.
 ## Discussion
 
 **Status: conjectural** under AGENTS.md §3b, with strong empirical
-support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`.
+support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via the formal derivation.
 The downstream cone of this conjecture includes
 [prop:jet-tower-convergence](#prop:jet-tower-convergence) — but
 that proposition's *statement* is provable in pure analysis (the

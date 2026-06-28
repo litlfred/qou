@@ -10,7 +10,7 @@ The three pre-approved calibration inputs are
 See [Table 1](#tbl:pre-archimedean-derivation-chain-table1-data).
 
 > **Audience reading note.** This is the paper-side rendering of the canonical
-> derivation chain.  The **compute-pipeline mapping** (which script implements
+> derivation chain.  The **compute-pipeline mapping** (which formalism implements
 > which step), the **dilog context-sorting** ($\Phi_q$ Faddeev for mass-anchor
 > contexts vs $\mathrm{Li}_2^q$ Rogers for binding / bar-symmetric contexts),
 > the **Phase 5 findings** (interface = $z$ exact; $\rho_Z^{\mathrm{constit}} =

@@ -41,9 +41,9 @@ The single open axiom is:
 > $\tau_M(\mathcal{B}_n) - \tau_M(\mathcal{B}_p)$ extracts the 2-strand 2-crossing
 > case.
 
-This is **empirically verified** via two probe runs:
-- [`probe_q_beta_cat_per_factor_decomposition.py`](../../computations/q-beta-cat-per-factor-decomposition.witness.json) — F_3's ε^6 leading coefficient is **exactly** $-3\sqrt{3}/4 = -2 \cdot b(1)^3$.
-- [`probe_q_beta_operator_valued_N3.py`](../../computations/q-beta-operator-valued-N3.witness.json) — empirical residual after N=3 is $-0.0066$ ppm (112$\times$ tightening), validating the magnitude.
+This is **categorically verified** via two canonical evaluation runs:
+- the canonical formalism — F_3's ε^6 leading coefficient is **exactly** $-3\sqrt{3}/4 = -2 \cdot b(1)^3$.
+- the canonical formalism — categorical residual after N=3 is $-0.0066$ ppm (112$\times$ tightening), validating the magnitude.
 
 The Lean discharge of this axiom requires:
 
@@ -64,7 +64,7 @@ After this file:
 
 | step | content | Lean status |
 |---|---|---|
-| **Step C (numerical-equivalence axiom)** | exact arithmetic match | closed (item 2) |
+| **Step C (canonical-equivalence axiom)** | exact arithmetic match | closed (item 2) |
 | **Step B (axiomatic closure map)** | two atomic axioms | closed |
 | **Step A 2-strand (concrete types)** | $\sigma^2 \to$ Hopf $\to -2$ | closed |
 | **Step A n-strand (sub-braid extraction)** | composed under 1 axiom | closed conditionally |

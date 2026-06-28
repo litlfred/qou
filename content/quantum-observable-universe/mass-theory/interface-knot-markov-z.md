@@ -75,7 +75,7 @@ sorry-free alongside the interface identity (same `.lean` file):
 
 ### Implementation reference
 
-- Script: [`computations/delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)
+- formalism: the canonical formalism
 - Witness: `computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
 - Cross-reference: `def:ew-interface-knot` (the canonical interface-knot definition).
 - Cross-reference: Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.

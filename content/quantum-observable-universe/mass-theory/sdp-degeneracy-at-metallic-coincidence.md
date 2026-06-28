@@ -37,11 +37,11 @@ identification of binding constraints, multiple optimal solutions
 returned.
 
 **Empirical verification.**  The n=2 LP active-set sweep
-(`computations/two_quark_active_set_mahler_sweep.py`)
+(the formal derivation)
 observed exactly this signature: below silver the active set was
 $\{0\}$ (row 1 tight), AT silver it was $\emptyset$ (degenerate),
 above silver it was $\{1\}$ (row 2 tight).  The degeneracy at silver
-is the **first non-null result** in a series of five prior numerical
+is the **first non-null result** in a series of five prior canonical
 probes that all returned smooth observables.
 
 **Structural significance.**  The metallic-ratio ladder
@@ -76,7 +76,7 @@ of $q$.  The pairwise coincidence equations $t_i(q) = t_j(q)$ have
 rational-function solutions; those solutions that lie on the metallic
 ladder constitute the set $S(n) \subseteq \{\delta_k : k \le n\}$ of
 LP-degeneracy points for n strands.  For n=2 we have proven $S(2) = \{2\}$
-(silver only).  For n=3 the empirical probe (with Gram approximation)
+(silver only).  For n=3 the categorical canonical evaluation (with Gram approximation)
 also returned $\{\delta_{\rm silver}\}$; the full higher-strand
 characterisation is the content of the conditional class
 `SDPDegeneracyDetectsMetallic` in `MetallicLPIdentities.lean`.

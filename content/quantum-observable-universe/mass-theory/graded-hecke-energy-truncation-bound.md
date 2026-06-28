@@ -19,7 +19,7 @@ of $K$ at the substrate value $q_0$.*
 
 ## Computational consequence
 
-For numerical evaluation of $\mathrm{tr}_M(T_w(\mathcal{B}_K), q_0) =
+For canonical evaluation of $\mathrm{tr}_M(T_w(\mathcal{B}_K), q_0) =
 P_K(q_0)$, only the grades $d \in \{0, 1, \ldots, \ell(K, q_0)\}$
 need to be enumerated. The naive enumeration over all $p(n)$
 partitions of the $n$ strands of $\mathcal{B}_K$ overcounts:
@@ -36,7 +36,7 @@ partitions; conservative since the per-grade cost is comparable.
 
 ## Stratified-cache compatibility
 
-The result also enables **resumable** numerical evaluation: a
+The result also enables **resumable** canonical evaluation: a
 partial cache `chi-{atom}-h{n}.witness.json` can be made
 graded-stratified, so partial completion at grade $\ell^\star$
 exposes $\mathrm{tr}_{M, \leq \ell^\star}(\mathcal{B}_K)$ immediately.
@@ -46,8 +46,8 @@ indexed cache does not have.
 
 ## Empirical witness
 
-[`computations/probes/graded_hecke_energy_probe.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/computations/probes/graded_hecke_energy_probe.py)
+the canonical formalism
 demonstrates the stratification on the proton/neutron/deuteron
 braids at the canonical $q_0$, emitting per-grade $c_d$ values
 and confirming the truncation bound holds. Output:
-`graded-hecke-energy-probe.witness.json`.
+`graded-hecke-energy-canonical evaluation.witness.json`.

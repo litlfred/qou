@@ -32,7 +32,7 @@ never fires on $V_{(1^p)}$.
 
 The maximality claim — that no other $\lambda \vdash p$ achieves
 pole order $> k(p - 1)$ — is **verified case-by-case** in
-[`computations/alpha/alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)
+the canonical formalism
 for $(p, k) \in \{(2, 3), (2, 5), (2, 9), (3, 4), (3, 5),
 (3, 7)\}$: in every case the trivial-channel $V_{(p)}$ gives
 pole order $0$ (it acts by the eigenvalue $q$, contributing

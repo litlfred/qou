@@ -100,12 +100,12 @@ $$
               \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1}.
 $$
 
-*Numerical probe (`kashaev-integration-identity.witness.json`): the
+*canonical canonical evaluation (`kashaev-integration-identity.witness.json`): the
 left integral at $q_0 \approx 1.110$ for $V \in (0, 1)$ is bounded
 in $[0.1, 0.82]$, while the right-hand product $\Phi_q(V)$ grows
 unboundedly (e.g. $\Phi_q(0.989) \approx 6.7 \times 10^5$).  The
 two sides differ by 6 orders of magnitude at $V = 0.989$ — the
-identity does NOT hold numerically.*
+identity does NOT hold canonical.*
 
 *The integral is a $q$-deformed dilogarithm $-\mathrm{Li}_2^q(-V)$,
 not the quantum dilogarithm $\Phi_q$.  These are distinct functions
@@ -123,7 +123,7 @@ consequence is the $-737$ MeV mirror-nucleus pathology
 $\tfrac{\alpha}{2} \cdot \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ (with $\alpha = m_e \cdot 8G$,
 the Borromean binding scale `prop:binding-scale-catalan`), which gives
 0.19% mean atomic-mass error across $Z = 1$..$10$ with zero fitted
-parameters — but the integration probe shows the
+parameters — but the integration canonical evaluation shows the
 $\int (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$ identity doesn't
 reduce to $\alpha \cdot \ln|V|$ either.*
 
@@ -149,14 +149,14 @@ the correct specialisation; this needs paper-side verification.*
 the mass-endomorphism tower uses $-\mathrm{Li}_2^q(-|\hat V_i|)$ in
 place of $\Phi_q(|\hat V_i|)$; see the proposition statement below.
 The production compute pipeline at
-[`canonical_plus_multibrane.py`](computations/canonical_plus_multibrane.py)
+the canonical formalism
 and
-[`paper_six_term_isotope_sweep.py`](computations/sweeps/paper_six_term_isotope_sweep.py)
+the canonical formalism
 use `tower_mode="li2q"` and evaluate $-\mathrm{Li}_2^q(-|V|)$ via the
 symmetric q-dilogarithm series
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$. The
 $\Phi_q$ product form survives only in
-[`brane_tower_isospin_diagnosis.py`](computations/brane_tower_isospin_diagnosis.py)
+the canonical formalism
 as a **diagnostic** that exposes the $-737$ MeV mirror-nucleus
 pathology — it documents the bug, not the corrected mass formula.
 The Lean stub
@@ -192,10 +192,10 @@ With $z = |\hat V_i^{\mathrm{full}}|$ and the standard recognition of
 $|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
 transfer-matrix chain, each $z^n$ summand factors through
 $\mathrm{tr}_M(\sigma_i^n)$ — which IS Markov-invariant.  See
-`brane_tower_plancherel_scaffold.py` for a numerical scaffold; the
+the formal derivation for a canonical scaffold; the
 production wiring depends on the term-trace infrastructure noted
 above. An equivalent Kähler-derivative reformulation is available
-via `kahler_lift.py` (recursion-fixed).
+via the formal derivation (recursion-fixed).
 
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative
@@ -226,7 +226,7 @@ $\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
 revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric
 q-dilogarithm).  Both are q-deformations of the classical dilogarithm
 but use different q-integer conventions
-(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  Numerical probe
+(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  canonical canonical evaluation
 `kashaev-integration-identity.witness.json` shows the literal Briggs–Klein
 integration evaluates to $-\mathrm{Li}_2^q(-z_p)$ in the symmetric
 convention (see proof below).  The Faddeev $\Phi_q$ form is empirically

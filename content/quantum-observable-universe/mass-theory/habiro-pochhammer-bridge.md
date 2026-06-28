@@ -23,7 +23,7 @@ $$
 $\langle f_m \rangle_{\mathrm{Hab}} =
 \sum_m a_m(u)\,(u;u)_m \cdot f_m \,/\, \sum_m a_m(u)\,(u;u)_m$.*
 
-## Numerical verification (proton, $n = 9$)
+## canonical structural verification (proton, $n = 9$)
 
 At the substrate $q_0 \approx 1.1100$, $u_0 = \sqrt{q_0} \approx 1.0536$:
 

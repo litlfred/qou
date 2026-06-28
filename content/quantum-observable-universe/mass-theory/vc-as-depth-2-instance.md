@@ -73,7 +73,7 @@ Garoufalidis–Lê for torus knots; many others).
 
 ### Cross-reference
 
-For an explicit depth-2 numerical witness on the figure-8 knot
+For an explicit depth-2 canonical witness on the figure-8 knot
 embedded in Bring's genus-4 surface, see
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 The 50-digit value $2\,\mathrm{Cl}_2(\pi/3) \approx :val[vol_4_1_decimal_50]{precision=6, witness=computations/hyperbolic-volumes.witness.json}\ldots$

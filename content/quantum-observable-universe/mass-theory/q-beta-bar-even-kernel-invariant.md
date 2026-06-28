@@ -36,10 +36,10 @@ $t \mapsto -t$, so:
 The bar-even invariant is the **§4(b) formalize-first gate** of the
 [refuted-class map](../../../docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md):
 *any candidate kernel $R(q,\xi)$ for the Habiro element $F(q)$ must clear
-the bar-evenness check before the numerical anchor sweep runs*.
+the bar-evenness check before the canonical anchor sweep runs*.
 ## Use in the formalize-first gate for new $F(q)$ candidates
 
-Before any numerical anchor sweep on a new candidate $F(q)$ / kernel
+Before any canonical anchor sweep on a new candidate $F(q)$ / kernel
 $R(q,\xi)$:
 
 1. **State the candidate** as a power series in $t = q - 1$ (or
@@ -51,7 +51,7 @@ $R(q,\xi)$:
    ladder.
 4. **Stop**: a candidate failing this check is a member of refuted class
    C1–C2 (real-q forms with anchor-dependent odd-$t$ content) — add a row
-   to the refuted-class map §2 and abort the numerical sweep.
+   to the refuted-class map §2 and abort the canonical sweep.
 
 This is the bar-involution test of the §4 invariants from the
 refuted-class map, formalised. It complements the

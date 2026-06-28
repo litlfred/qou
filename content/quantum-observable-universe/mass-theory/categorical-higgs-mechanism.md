@@ -119,7 +119,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
    specific projectors —
    — now authored as
    [`conj:weinberg-angle-categorical`](#conj:weinberg-angle-categorical)
-   (Tier A2, this branch). Simple-multiplicity reading numerically
+   (Tier A2, this branch). Simple-multiplicity reading canonical
    fails; corrected version requires non-uniform Hoefsmit
    multiplicities + the Higgs-vev induced Hoefsmit-decomposition
    automorphism.

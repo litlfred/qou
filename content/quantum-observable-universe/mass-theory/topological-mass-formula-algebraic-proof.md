@@ -26,7 +26,7 @@ with three observations:
 The full sum is therefore an element of
 $\widehat{\mathbb{Z}[q]} \subset \mathbb{Q}(q)$ at every step. The
 $\tau_{\mathrm{arch}}$ specialisation at $q = q_0$ then produces
-the numerical mass; multiplication by $\hbar_q^{-2}$ and
+the canonical mass; multiplication by $\hbar_q^{-2}$ and
 identification with $\mathrm{Vol}(K) / \hbar_{q_0}^{2}$ via the
 volume conjecture is the τ-image step recorded by
 [`prop:topological-mass-formula`](#prop:topological-mass-formula).

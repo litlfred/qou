@@ -22,8 +22,8 @@ law.
 
 ### Empirical support
 
-Numerical match at $q_0 = 1.10998\ldots$ for the four atoms in the table
-([per-atom δρ probe](../../../computations/per-atom-rho-deviation.witness.json)):
+canonical exact match at $q_0 = 1.10998\ldots$ for the four atoms in the table
+([per-atom δρ canonical evaluation](../../../computations/per-atom-rho-deviation.witness.json)):
 
 | atom | err (Kashaev) | err (corrected) | improvement |
 |------|--------------:|----------------:|------------:|

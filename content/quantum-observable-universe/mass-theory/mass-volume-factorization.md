@@ -114,7 +114,7 @@ mutually **inconsistent**: D uses $6_2$ ($V=4.400$) whereas the
 binding-link census assigns D the Hopf link ($V=0$,
 [binding-link-volumes.witness.json](../../../computations/binding-link-volumes.witness.json)),
 and ${}^3\mathrm{He}$ uses one Borromean copy ($8G$) while
-${}^4\mathrm{He}$ uses four ($4\cdot 8G$). The companion probe
+${}^4\mathrm{He}$ uses four ($4\cdot 8G$). The companion canonical evaluation
 [rho-f-volume-binding-gap.witness.json](../../../computations/rho-f-volume-binding-gap.witness.json)
 inverts $\rho_F\cdot V_{\mathrm{hyp}} = \Delta_{\mathrm{binding}}$ and
 finds **no** fixed link primitive reproduces the light-isotope bindings

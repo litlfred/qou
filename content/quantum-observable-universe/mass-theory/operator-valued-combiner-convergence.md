@@ -74,10 +74,10 @@ the dependency cone reaches
 ## Production wiring and verification
 
 The recursion is realised in
-[`canonical_tr_m_via_branching.py`](../../../computations/canonical_tr_m_via_branching.py)
+the canonical formalism
 (`compute_tr_m_via_branching`), wired into the canonical mass table via
 `--method branching` in
-[`canonical_mass_table_extended.py`](../../../computations/canonical_mass_table_extended.py):
+the canonical formalism:
 
 - **$A = 2$ (deuteron)** runs the operator-valued branching end-to-end,
   agreeing with `markov_peel.tr_M_atomic` at $0.72$ ppb (Phase A

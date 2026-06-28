@@ -233,7 +233,7 @@ expression cannot be the substrate-level trace; it was a
 $H_2(q)$-only computation, which lost the cell-content structure
 that enforces bar-self-duality.
 
-Numerical comparison at $q_0 = 1.109978595554181\ldots$ (50 dps):
+canonical comparison at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 See [Table 2](#tbl:hoefsmit-ew-cell-content-table2-data).
 

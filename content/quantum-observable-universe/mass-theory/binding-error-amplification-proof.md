@@ -36,7 +36,7 @@ separable from it.
 
 This also explains why computing binding as a difference of two large
 Markov traces $\mathrm{tr}_M(W_{\mathrm{free}}) - \mathrm{tr}_M(W_{\mathrm{atom}})$
-is numerically hostile: it subjects the small binding signal to the same
+is canonical hostile: it subjects the small binding signal to the same
 catastrophic cancellation, so any systematic in the trace is magnified by
 $\mathcal{A}$. Forming the difference object *before* evaluating — so that
 binding is computed as a single quantity rather than a cancellation of two

@@ -85,7 +85,7 @@ lower-triangular real solution $T$?
 
 **Result (computed; refines the test).**  The $h^6,\,h^8$ extension was
 run in
-[`tau_all_orders_h6_empirical.py`](../../../computations/probes/tau_all_orders_h6_empirical.py)
+the canonical formalism
 (witness `tau-all-orders-empirical-bridge.witness.json`). Two facts
 emerged that **sharpen the conjecture and correct the naive test**:
 

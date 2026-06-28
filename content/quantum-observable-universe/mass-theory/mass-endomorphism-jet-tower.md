@@ -112,7 +112,7 @@ inserted as explicit level-$n$ contributions overshoot the target
 (0.6–1.3% at the same atoms), confirming the pentagon ascension:
 order-$\geq 3$ defects belong at level $n+1$, not as explicit
 cubic terms at level $n$
-(see `adjacent-vs-full-probe.witness.json`).
+(see `adjacent-vs-full-canonical evaluation.witness.json`).
 
 ## Remaining open subconjectures
 
@@ -127,8 +127,8 @@ cubic terms at level $n$
  $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
  The uniform bound is now an explicit conjecture with empirical
  support: the
- [`jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)
- measurement script confirms `uniform_bound_pass = true` for
+ the canonical formalism
+ measurement formalism confirms `uniform_bound_pass = true` for
  D, T, ${}^{3}$He across $n = 1, \dots, 7$. The path-(a) proof from
  GS spectral-sequence $E_2$-collapse remains open.
 2. **Pentagon $\to$ uv-commutation** — *(resolved)* by

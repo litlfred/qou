@@ -36,7 +36,7 @@ The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHA
 
 - PR #1750 (merged) — substrate-model proof + paper proof + accuracy diagnostic + audit doc.
 - [PR #1761](https://github.com/litlfred/qou/pull/1761) (merged) — general-lift Lean infrastructure + this content block.
-- [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](../../../docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md) — structural finding + numerical verification at $q_0$.
+- [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](../../../docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md) — structural finding + canonical structural verification at $q_0$.
 - [`prop:markov-trace-frobenius-selection`](markov-trace-frobenius-selection.md) — Wenzl–Jones uniqueness theorem (the source of $\tau_M$'s non-degeneracy).
 - Jones 1987 — Markov-trace existence + uniqueness.
 - Wenzl 1988 — non-degeneracy of the Markov trace.

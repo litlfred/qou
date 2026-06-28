@@ -55,7 +55,7 @@ $\square$
 
 ## Computational verification
 
-The symbolic pipeline `habiro_coefficients_atomic.py` implements
+The symbolic pipeline the formal derivation implements
 the cyclotomic-division algorithm and verifies the corollary for
 the smallest atomic braids:
 
@@ -68,7 +68,7 @@ the smallest atomic braids:
 Observed $m_{\max}$ saturates the Step-3 bound to within one step,
 consistent with the cyclotomic structure of $p(u)$ inherited from
 Markov–Jones integrality. Pointwise agreement with the
-numerical-interpolation pipeline at $q_0 \approx 1.1100$ to 50
+canonical-interpolation pipeline at $q_0 \approx 1.1100$ to 50
 decimal digits cross-validates the two paths:
 
 - $\mathrm{tr}_M(\mathrm{proton}, q_0) = 2.12258250945\ldots$

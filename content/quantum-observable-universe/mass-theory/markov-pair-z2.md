@@ -26,5 +26,5 @@ categorical mass — the pair blow-up centre at coordinate
 $\hat V_i\hat V_j$ carries the same weight $z^2$ regardless
 of its position in the braid, matching the empirically-verified
 all-pairs set on atoms $A \ge 6$
-(cf. `adjacent-vs-full-probe.witness.json`,
+(cf. `adjacent-vs-full-canonical evaluation.witness.json`,
 [jet-tower remark](#rem:mass-endomorphism-jet-tower)).

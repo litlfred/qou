@@ -8,7 +8,7 @@ crossings in an atomic braid word.
 written in **signed-generator form**: each letter is $\sigma_i$ or
 $\sigma_i^{-1}$ for some $i$.  It does **not** automatically extend
 to the canonical convention of
-[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py),
+the canonical formalism,
 which uses an operator-valued **dual-pairing interface**
 $\bowtie_K = \sigma_g - \frac{h}{2} \cdot \mathbf{1}$
 (the "averaged" crossing) between unlike-isospin nucleons,
@@ -43,7 +43,7 @@ $$
 
 **Term 7 is isospin-blind at the crystal limit, even in the legacy
 disjoint-product convention.** The current
-[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)
+the canonical formalism
 assigns *the same* crystal-side shell residual to T and to
 $^3\mathrm{He}$.  Experimentally
 $\mathfrak{m}({}^3\mathrm{H}) - \mathfrak{m}({}^3\mathrm{He})
@@ -96,7 +96,7 @@ $$
 *satisfies $\Delta S(K, K')(0) = 0$ and (empirically, for $K = T$,
 $K' = {}^3\mathrm{He}$, $q_0 \approx 1.110$) $\Delta S(K, K')(q_0)
 \neq 0$.  The function $q \mapsto \Delta S(K, K')(q)$ is therefore
-a direct probe of the **curvature** of the flat-transport map
+a direct canonical evaluation of the **curvature** of the flat-transport map
 underlying $\alpha_5$ at the height-$6$ stratum (cf.\ the
 ontological-agnosticism remark in this chapter).*
 
@@ -110,10 +110,10 @@ persists in the canonical $\bowtie_K$-coupled convention at finite
 $q$.  Two follow-ups remain to bridge the two:
 
 1. **Migrate
-   [`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)
+   the canonical formalism
    to the canonical word
-   [`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py).**
-   The script's hardcoded `ATOMS` list treats each nucleon as a
+   the canonical formalism.**
+   the formalism's hardcoded `ATOMS` list treats each nucleon as a
    disjoint 3-strand sub-word with no inter-nucleon coupling.  The
    canonical word emits triples $(c, d, g)$ with
    $d \in \{0, -h, -h/2\}$ encoding $\sigma_g$, $\sigma_g^{-1}$, and
@@ -149,7 +149,7 @@ $q$.  Two follow-ups remain to bridge the two:
    the bare Plancherel weight expects.  The empirical result of
    running this renormalisation on the canonical $D$, $T$,
    $^3\mathrm{He}$, $^4\mathrm{He}$ words is essentially zero
-   for $D$ ($\sim 10^{-19}$) and small numerical residuals for the
+   for $D$ ($\sim 10^{-19}$) and small canonical residuals for the
    isobars — non-trivial but quantitatively unconvincing as a
    replacement for the legacy crystal functional.
 
@@ -181,7 +181,7 @@ $\sigma_5 \leftrightarrow \sigma_5^{-1}$.
 **Scoping caveat.** The 2-row dominance fractions in the table
 are computed from the canonical $\bowtie_K$-coupled atomic braid
 words via
-[`global_wedderburn_sum_q_hecke_seminormal`](../../../computations/wedderburn_jones_markov.py)
+the canonical formalism
 at $q = q_0$.  They are **physical** quantities.  The proposition
 above, by contrast, currently lives in the legacy disjoint-product
 convention, so it can only address the structural part of the
@@ -198,9 +198,9 @@ convention until the canonical $\bowtie_K$ migration completes
 
 1. *For every pair of legacy-convention atomic braid words that
    differ only by signed-generator inversions, the
-   $S_{\mathrm{crystal}}$ values match to within numerical precision
+   $S_{\mathrm{crystal}}$ values match to within canonical precision
    (50 dps via
-   [`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)).*
+   the canonical formalism).*
 
 2. *Once the canonical $\bowtie_K$ extension is in place, the
    crystal-side prediction of the $T$–${}^3\mathrm{He}$ mass
