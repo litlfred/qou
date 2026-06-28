@@ -109,6 +109,19 @@ levers, all of which add or reshape ℓ¹ mass and so escape the ceiling:
 - **PROBE-2** (ae4b/ae42/ae43, A=4 interface operator) — a genuinely new
   many-body term; adds magnitude. Not excluded.
 
+**Route-(i) follow-up (scope (a)).** The cheapest magnitude route is to
+re-derive the block magnitude `|Δ_λ|`. Replacing the classical `dim_λ` by
+the **balanced quantum dimension** `dim_q,λ = [n]_q!/∏[hook]_q` at `q_0`
+([`delta-lambda-qdim-route-probe.witness.json`](../../computations/delta-lambda-qdim-route-probe.witness.json))
+raises the ceiling to `‖c_q‖₁/|target|` = {D 0.55, T 0.46, ³He 0.77,
+⁴He 0.79} — **still < 1**, so this convention *alone* does not close the
+deficit. But it lifts the heavy-isotope ceiling sharply (⁴He 0.41 → 0.79),
+i.e. the q-deformation supplies a *large part* of the missing magnitude —
+constructive evidence for the fibre q-kernel direction (z2bn, #2899).
+Scope **(a)** (this convention as sole fix only): other q-dim conventions
+and route (i) combined with (ii)/(iii) are not excluded; no invariant
+forbids a different magnitude rule, so this is not a (b) exclusion.
+
 ## Machine-checked core (Lean)
 
 The logical core is formalized sorry-free in
