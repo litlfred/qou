@@ -1,0 +1,26 @@
+{
+  "computation": "frakV_descent_zeta4_partner_probe",
+  "description": "Verifies the \u03b6\u2084-partner relation V\u2080(\u03b7+i\u03c0/2)=\u2212conj V\u2080(\u03b7) of the complex-volume model (Lean-certified) and maps the remaining gap for conj:binding-qbeta-complex-volume, confirming the descent stays open (gated on the Q_\u03b2 keystone).",
+  "discipline": "no fit; sympy symbolic exact; Lean-certified core; descent-OPEN (a)-scoped.",
+  "auditOnly": "docs/audits/2026-06-28-frakV-descent-zeta4-partner.md",
+  "results": {
+    "V0(eta+i*pi/2)": "I*sinh(eta) - cosh(eta)",
+    "neg_conj_V0(eta)": "I*sinh(eta) - cosh(eta)",
+    "explicit_-cosh+i*sinh": "I*sinh(eta) - cosh(eta)",
+    "partner_eq_neg_conj": true,
+    "partner_eq_explicit": true,
+    "lean_cert": "QOU/Mass/ComplexVolumeZeta4Partner.vModel_zeta4_partner (sorry-free)",
+    "descent_gap_map": {
+      "Re_V_binding": "characterized: q-Hermite/Rogers-Szeg\u0151 MOMENT, Habiro (q-1)\u00b7cyclotomic log-coeff tower (PR #2899/#2929) \u2014 NOT closed (no finite low-order q-difference operator; Stages 3-4)",
+      "Im_V_qbeta": "GATED: the c_k Habiro element / SW-residue jet-prolongation symbol R(q,\u03be) (conj:qdifference-kernel-prolongation-symbol); fitting \u03a6\u2082 is the forbidden 'seventh ansatz' (2026-06-09 scope)",
+      "single_fibre_V": "OPEN: that Re and Im descend from ONE \ud835\udd19 = E\u2080\u00b7tr_M((\u03a0_free\u22121)\u2218\u2133). Established: \u03b6\u2084 generator coupling + \u03b6\u2084-partner relation + bar-parity class. Missing: both fibre kernels AND their assembly into one trace object.",
+      "observable_level": "DEGENERATE (Im(q\u2080)=0) \u2014 must NOT be used to claim closure (numerology guard, #2951)."
+    }
+  },
+  "assertions": {
+    "zeta4_partner_eq_neg_conj": true,
+    "zeta4_partner_eq_explicit_form": true
+  },
+  "allPassed": true,
+  "verdict": "\u03b6\u2084-PARTNER RELATION VERIFIED (Lean-certified): V\u2080(\u03b7+i\u03c0/2) = \u2212conj V\u2080(\u03b7) = \u2212cosh \u03b7 + i\u00b7sinh \u03b7 \u2014 the \u03b6\u2084=i rotation negates the bar-even (binding/Re) channel and keeps the bar-odd (Q_\u03b2/Im) channel, the fibre-level coupling of \ud835\udd19 = Vol + i\u00b7CS. DESCENT STILL OPEN: closing conj:binding-qbeta-complex-volume needs (i) the binding fibre kernel (characterized, not a finite low-order operator), (ii) the Q_\u03b2 fibre kernel (GATED on the SW-residue keystone; \u03a6\u2082 fit forbidden), and (iii) their assembly into one trace object \ud835\udd19. The generator coupling + \u03b6\u2084-partner relation + bar-parity class are proved; the kernel descent is not, and the observable-level test is degenerate (must not be used to claim closure). Advanced, not closed."
+}
