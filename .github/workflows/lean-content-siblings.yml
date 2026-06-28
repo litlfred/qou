@@ -18,10 +18,12 @@ name: lean-content-siblings
 #         defects exist tree-wide (docs/audits/2026-06-07-conjecture-triage.md
 #         §K); a whole-tree gate would block every PR. This blocks NEW drift.
 #         The high-recall vacuity categories stay warn-only (agent-adjudicated).
-#     (b) agent-inspection ledger gate (`--check-ledger`): fails if any
-#         non-exempt vacuity candidate lacks a fresh agent verdict in
-#         docs/audits/lean-vacuity-review-ledger.json (a verdict goes stale the
-#         moment the .lean changes). Whole-corpus, cheap, deterministic.
+#     (b) agent-inspection ledger gate (`--check-ledger`): fails if a .lean
+#         file THIS PR changes carries a vacuity candidate lacking a fresh
+#         agent verdict in docs/audits/lean-vacuity-review-ledger.json (a
+#         verdict goes stale the moment the .lean changes). Diff-scoped (not
+#         whole-corpus) so main's pre-existing inspection backlog never blocks
+#         an unrelated PR.
 #
 #   content-sibling-compile — `lean`-direct type-check of the content-sibling
 #     .lean files a PR changes (outside the lean/ library tree). Catches the
@@ -56,9 +58,17 @@ jobs:
             ${{ steps.changed.outputs.files }} \
             --quiet \
             --fail-on proof-no-trivial-type-mismatch,lean-import-after-content
-      - name: Agent-inspection ledger gate (whole corpus)
+      - name: Agent-inspection ledger gate (changed files only)
+        if: steps.changed.outputs.files != ''
         run: |
-          bun run content/pipeline/lean-vacuity-axiom-audit.ts content \
+          # Diff-scoped (like the compile-validity gate above): fail only if a
+          # .lean file THIS PR changes carries a vacuity candidate lacking a
+          # fresh agent verdict. A whole-corpus check would couple every PR's
+          # CI to the global inspection backlog (main may carry uninspected
+          # candidates at any time), blocking unrelated PRs — the same reason
+          # the compile-validity gate is diff-scoped.
+          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+            ${{ steps.changed.outputs.files }} \
             --quiet \
             --check-ledger docs/audits/lean-vacuity-review-ledger.json
 
