@@ -36,6 +36,7 @@ export default chapter({
       blocks: [
         "transfer-matrix-mass-intro",
         "categorical-transfer-matrix",
+        "categorical-transfer-matrix-properties",
         "transfer-matrix-level-independence",
         "tmli-constituent-composite-agreement",
         "tmli-constituent-composite-agreement-proof",
@@ -107,6 +108,7 @@ export default chapter({
           blocks: [
             "pentagon-uv-commutation",
             "transfer-matrix-operator",
+            "transfer-matrix-operator-properties",
             "transfer-matrix-identities",
             "skein-polynomial-transfer-matrix",
             "beta-decay-transfer-matrix",
@@ -397,6 +399,7 @@ export default chapter({
         "canonical-braid-interface-composition-table1-data",
         "prop-rigid-monoidal-structural-gap-invariance",
         "qz-bicompletion",
+        "qz-bicompletion-properties",
         "quantum-dilogarithm-stratified",
         "quantum-dilogarithm-stratified-proof",
         "q-pochhammer-partial-product",
