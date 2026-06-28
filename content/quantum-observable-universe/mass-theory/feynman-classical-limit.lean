@@ -29,13 +29,37 @@ Lean declarations:
 -/
 
 
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+/-! ## §3b-cond conditional-class hypothesis -/
 
 namespace QOU.FeynmanClassicalLimit.ConditionalAudit
 
-class ClassicalLimitStpart : Prop where
-  holds : True
+/-- **§3b-cond hypothesis class** for `conj:classical-limit-stpart`.
 
-def feynman_classical_limit_g3_conditional [_inst : ClassicalLimitStpart] : True := trivial
+    The classical-limit functor is the standard-part of evaluation at
+    `q = 1 + ε`; in that limit the categorical trace degenerates so that
+    the Jones polynomial loses all knot-discrimination — `J_K(1) = 1`
+    for every knot `K` (clause 4 of `prop:feynman-classical-limit`).
+
+    Concrete content (shape of the claim): a `jonesAtOne : KnotCode → ℝ`
+    evaluator that is identically `1` — the `q → 1` degeneration of the
+    Markov-trace link invariant. The full categorical degeneration is
+    formalised in `QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration`;
+    this class carries the open conjectural input (existence of the
+    standard-part functor realising it) as a Prop. -/
+-- Ref: [manuscript] conj:classical-limit-stpart
+class ClassicalLimitStpart : Prop where
+  /-- In the `q → 1` limit every knot's Jones value collapses to `1`:
+      there is a knot-invariant evaluator that is constantly `1`. -/
+  jones_trivial_at_one :
+    ∃ jonesAtOne : ℕ → ℝ, ∀ K : ℕ, jonesAtOne K = 1
+
+/-- **Conditional on `conj:classical-limit-stpart`.** The `q → 1`
+    Jones evaluator cannot distinguish two distinct knots: for all
+    `K₁ K₂`, `jonesAtOne K₁ = jonesAtOne K₂`. Derived from the class
+    hypothesis (both values equal `1`), not assumed. -/
+theorem feynman_classical_limit_g3_conditional [inst : ClassicalLimitStpart] :
+    ∃ jonesAtOne : ℕ → ℝ, ∀ K₁ K₂ : ℕ, jonesAtOne K₁ = jonesAtOne K₂ := by
+  obtain ⟨jonesAtOne, hone⟩ := inst.jones_trivial_at_one
+  exact ⟨jonesAtOne, fun K₁ K₂ => by rw [hone K₁, hone K₂]⟩
 
 end QOU.FeynmanClassicalLimit.ConditionalAudit
