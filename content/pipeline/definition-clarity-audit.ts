@@ -339,6 +339,19 @@ function wordCount(s: string): number {
   return s.split(/\s+/).filter((w) => /[a-zA-Z0-9]/.test(w)).length;
 }
 
+/** A statement block's word count should measure the STATEMENT, not an inline
+ *  proof. In this corpus proofs are conventionally separate `*-proof` blocks,
+ *  but many provable blocks carry an inline `**Proof.**` / `## Proof` / `*Proof*`
+ *  section; counting those words made `clarity-stmt-tight` measure proof length
+ *  rather than statement rambling (calibration 2026-06-28: 71/86 majors were
+ *  proof-driven, not rambling-statement). Strip everything from the first proof
+ *  marker onward so the check sees only the statement. */
+const PROOF_MARKER = /(^|\n)[ \t]*(#{1,6}[ \t]*|\*{1,2}|_{1,2})?[ \t]*Proof\b/;
+function stripProof(md: string): string {
+  const m = md.match(PROOF_MARKER);
+  return m && m.index !== undefined && m.index > 0 ? md.slice(0, m.index) : md;
+}
+
 /** bold spans that begin a paragraph/line and read like section headers:
  *  `**Pentagon identity.**`, `**Iterated-primitive definition.**` … */
 function boldHeaders(md: string): string[] {
@@ -640,13 +653,15 @@ function checkDefnTight(b: Block): Finding {
 }
 
 function checkStmtTight(b: Block): Finding {
-  const p = prose(b.md);
+  // Measure the STATEMENT only — exclude any inline proof (see stripProof).
+  const stmtMd = stripProof(b.md);
+  const p = prose(stmtMd);
   const words = wordCount(p);
-  const headers = boldHeaders(b.md).length;
-  const dispIdx = firstDisplayIdx(b.md);
-  const preamble = dispIdx < 0 ? words : wordCount(prose(b.md.slice(0, dispIdx)));
+  const headers = boldHeaders(stmtMd).length;
+  const dispIdx = firstDisplayIdx(stmtMd);
+  const preamble = dispIdx < 0 ? words : wordCount(prose(stmtMd.slice(0, dispIdx)));
   const base = mkFinding(b, "clarity-stmt-tight");
-  base.metrics = { words, boldHeaders: headers, preambleWords: preamble };
+  base.metrics = { words, boldHeaders: headers, preambleWords: preamble, totalWords: wordCount(prose(b.md)) };
   const rambling =
     words > T.stmtWords ||
     headers >= T.stmtHeaders ||
