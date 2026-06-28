@@ -153,7 +153,15 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
     breakdown = []
     for entry in habiro_entry.get("habiro_coefficients", []):
         m = entry["m"]
-        a_m_poly = sp.sympify(entry["a_m"])
+        # The witness serializes a_m polynomials in the q^{1/2} variable
+        # under the symbol name `check_q` (the producer's convention; see
+        # markov_substrate_realizer.py:93, habiro_frobenius_probe.py:168,
+        # habiro_expansion_atomic_probe.py:55). Map it to the local `u`
+        # at sympify time so it is substituted along with `u` below —
+        # otherwise it survives as a stray free symbol and mp.mpf(str(...))
+        # raises on the A>=3 rows ("could not convert string to float:
+        # '-74.0*check_q - 74.0'").
+        a_m_poly = sp.sympify(entry["a_m"], locals={"check_q": u})
         # Per gemini-code-assist PR #534 high-priority review: avoid the
         # complex(...) cast which drops precision from mp.mp.dps to ~15
         # digits (float64). evalf(mp.mp.dps) honours the global precision
@@ -170,7 +178,7 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf,
 
     # Divide by denom(u) at u_val
     denom_str = habiro_entry.get("denom_in_u", "1")
-    denom_poly = sp.sympify(denom_str)
+    denom_poly = sp.sympify(denom_str, locals={"check_q": u})
     # Per gemini-code-assist PR #534 high-priority review: same
     # precision-preservation as the numerator coefficient above.
     denom_val = mp.mpf(str(denom_poly.subs(u, u_val_sym).evalf(mp.mp.dps)))
