@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic
+
 -- Ref: [manuscript] Ch. 2
 -- Quantum numbers from Fourier decomposition of normal-bundle sections.
 -- The orbital space at shell n is the space of sections of the normal
@@ -8,96 +12,35 @@ noncomputable section
 
 open Finset Real
 
--- ═══════════════════════════════════════════════════════════════════
--- §1. q-Integers
--- ═══════════════════════════════════════════════════════════════════
+/- ═══════════════════════════════════════════════════════════════════
+   §1. q-Integers  (archimedean / R_q material — DISABLED)
 
-/-- The q-integer [ℓ]_q = (q^ℓ - q^{-ℓ}) / (q - q^{-1}).
+   The q-integer `[ℓ]_q = (q^ℓ - q^{-ℓ}) / (q - q^{-1})`, the
+   q-Laplacian eigenvalue `[ℓ]_q · [ℓ+1]_q`, their positivity and
+   strict-monotonicity lemmas, and the Rydberg shell-energy formulas
+   below all live over a ground ring `R_q = ℤ[q, q⁻¹]` that is *not*
+   archimedean.  Their statements use `q > 0`, `q > 1`, `rpow`, and
+   division, which are meaningful only after the substrate→archimedean
+   wall (AGENTS.md §7c).  They are recorded here for reference but kept
+   inert (block-commented) so this file stays a pure combinatorial
+   statement over `ℕ`/`ℤ`.  The numerical eigenvalue cut-off they
+   encode — `[ℓ]_q[ℓ+1]_q ≤ [n-1]_q[n]_q ⟺ ℓ ≤ n-1` — is captured at
+   `q = 1` by the live `mode_cutoff_iff` in §4 below.
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
-    At q = 1 this is ℓ. -/
--- def qInt (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : R_q :=  -- (archimedean; not meaningful over R_q)
-  (q ^ (ℓ : R_q) - q ^ (-(ℓ : R_q))) / (q - q⁻¹)
+   def qInt (q : R_q) (ℓ : ℕ) : R_q :=
+     (q ^ (ℓ : R_q) - q ^ (-(ℓ : R_q))) / (q - q⁻¹)
 
-/-- [0]_q = 0 for all q. -/
--- theorem qInt_zero (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) :  -- (archimedean; not meaningful over R_q)
-    qInt q hq hq1 0 = 0 := by
-  simp [qInt]
-
-/-- [1]_q = 1 for all q. -/
--- theorem qInt_one (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) :  -- (archimedean; not meaningful over R_q)
-    qInt q hq hq1 1 = 1 := by
-  simp [qInt]
-  field_simp
-  ring
-
-/-- [ℓ]_q > 0 for ℓ ≥ 1 and q > 1.
-    Proof: q > 1 ⟹ q^ℓ > q^{-ℓ} and q - q⁻¹ > 0,
-    so (q^ℓ - q^{-ℓ})/(q - q⁻¹) > 0. -/
--- theorem qInt_pos {q : R_q} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :  -- (archimedean; not meaningful over R_q)
-    qInt q (by linarith) (by linarith) ℓ > 0 := by
-  unfold qInt
-  apply div_pos
-  · -- q^ℓ - q^{-ℓ} > 0
-    have hq0 : q > 0 := by linarith
-    have : q ^ (ℓ : R_q) > q ^ (-(ℓ : R_q)) := by
-      apply rpow_lt_rpow_of_exponent_lt hq
-      linarith [show (ℓ : R_q) ≥ 1 from Nat.one_le_cast.mpr hℓ]
-    linarith
-  · -- q - q⁻¹ > 0
-    have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
-    linarith
-
-/-- [ℓ]_q is strictly increasing in ℓ for q > 1.
-    Proof: the numerator q^ℓ - q^{-ℓ} is strictly increasing (rpow monotone)
-    and the denominator q - q⁻¹ is positive and constant. -/
--- Ref: [manuscript] Ch. 2, §orbital-fourier-decomposition
--- theorem qInt_strictMono {q : R_q} (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
-    StrictMono (fun ℓ => qInt q (by linarith) (by linarith) ℓ) := by
-  intro a b hab
-  unfold qInt
-  have hq0 : q > 0 := by linarith
-  have hdenom : q - q⁻¹ > 0 := by
-    have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos hq0]; exact hq
-    linarith
-  apply div_lt_div_of_pos_right _ hdenom
-  have ha : (a : R_q) < (b : R_q) := Nat.cast_lt.mpr hab
-  have h1 : q ^ (a : R_q) < q ^ (b : R_q) := rpow_lt_rpow_of_exponent_lt hq ha
-  have h2 : q ^ (-(b : R_q)) < q ^ (-(a : R_q)) := rpow_lt_rpow_of_exponent_lt hq (by linarith)
-  linarith
-
-/-- The q-Laplacian eigenvalue: [ℓ]_q · [ℓ+1]_q.
-    At q = 1: ℓ(ℓ+1). -/
--- def qLapEigenval (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : R_q :=  -- (archimedean; not meaningful over R_q)
-  qInt q hq hq1 ℓ * qInt q hq hq1 (ℓ + 1)
-
-/-- q-Laplacian eigenvalues are strictly increasing for q > 1.
-    Proof: [ℓ]_q[ℓ+1]_q < [ℓ+1]_q[ℓ+2]_q because both factors increase. -/
--- Ref: [manuscript] Ch. 2, §orbital-fourier-decomposition
--- theorem qLapEigenval_strictMono {q : R_q} (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
-    StrictMono (fun ℓ => qLapEigenval q (by linarith) (by linarith) ℓ) := by
-  intro a b hab
-  unfold qLapEigenval
-  have hq0 : q > 0 := by linarith
-  have hq1 : q ≠ 1 := by linarith
-  have mono := qInt_strictMono hq
-  have pos : ∀ k : ℕ, k ≥ 1 → qInt q hq0 hq1 k > 0 := fun k hk => qInt_pos hq hk
-  -- [a]_q[a+1]_q < [b]_q[b+1]_q
-  -- Since a < b, we have [a]_q < [b]_q and [a+1]_q < [b+1]_q and all positive for ≥ 1
-  have ha1 : qInt q hq0 hq1 (a + 1) > 0 := pos _ (by omega)
-  have hb1 : qInt q hq0 hq1 (b + 1) > 0 := pos _ (by omega)
-  have hab_int : qInt q hq0 hq1 a < qInt q hq0 hq1 b := mono hab
-  have hab1_int : qInt q hq0 hq1 (a + 1) < qInt q hq0 hq1 (b + 1) := mono (by omega)
-  cases Nat.eq_zero_or_pos a with
-  | inl ha0 =>
-    rw [ha0]; simp [qInt_zero]
-    exact mul_pos (pos b (by omega)) hb1
-  | inr ha_pos =>
-    have ha_qint_pos : qInt q hq0 hq1 a > 0 := pos _ ha_pos
-    exact mul_lt_mul hab_int (le_of_lt hab1_int) ha1 (le_of_lt (pos b (by omega)))
+   theorem qInt_zero (q : R_q) : qInt q 0 = 0 := by simp [qInt]
+   theorem qInt_one  (q : R_q) : qInt q 1 = 1 := by
+     simp [qInt]; field_simp; ring
+   theorem qInt_pos {q : R_q} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
+       qInt q ℓ > 0 := …
+   theorem qInt_strictMono {q : R_q} (hq : q > 1) :
+       StrictMono (fun ℓ => qInt q ℓ) := …
+   def qLapEigenval (q : R_q) (ℓ : ℕ) : R_q := qInt q ℓ * qInt q (ℓ + 1)
+   theorem qLapEigenval_strictMono {q : R_q} (hq : q > 1) :
+       StrictMono (fun ℓ => qLapEigenval q ℓ) := …
+   ═══════════════════════════════════════════════════════════════════ -/
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §2. Mode space dimensions
@@ -112,8 +55,8 @@ theorem orbital_dim_eq_square (n : ℕ) :
   induction n with
   | zero => simp [modeSpaceDim]
   | succ k ih =>
-    simp only [sum_range_succ, modeSpaceDim]
-    rw [ih]; ring
+    rw [sum_range_succ, ih]
+    simp only [modeSpaceDim]; ring
 
 /-- Total states per shell including spin: 2n². -/
 theorem total_states_eq (n : ℕ) :
@@ -130,7 +73,6 @@ structure QN where
   ℓ : ℕ
   m : Int
   s : Fin 2
-  -- hn : n ≥ 1  -- (archimedean; not meaningful over R_q)
   hℓ : ℓ < n
   hm : m.natAbs ≤ ℓ
 
@@ -138,7 +80,7 @@ structure QN where
     m ranges from -ℓ to +ℓ, giving 2ℓ+1 values. -/
 theorem magnetic_count (ℓ : ℕ) :
     Finset.card (Finset.Icc (-(ℓ : Int)) (ℓ : Int)) = 2 * ℓ + 1 := by
-  rw [Int.Finset_Icc_card]
+  rw [Int.card_Icc]
   omega
 
 /-- Count of orbital quantum numbers (ℓ, m) at fixed n:
@@ -162,7 +104,7 @@ theorem quantum_count (n : ℕ) :
 
 /-- Mode cutoff: ℓ(ℓ+1) ≤ n(n-1) ⟹ ℓ ≤ n-1.
     Proof: contrapositive — if ℓ ≥ n then ℓ(ℓ+1) ≥ n(n+1) > n(n-1). -/
--- theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :  -- (archimedean; not meaningful over R_q)
+theorem mode_cutoff {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :
     ℓ ≤ n - 1 := by
   by_contra hc
   push_neg at hc
@@ -177,57 +119,33 @@ theorem quantum_count (n : ℕ) :
   omega
 
 /-- Converse: ℓ ≤ n-1 ⟹ ℓ(ℓ+1) ≤ n(n-1). -/
--- theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :  -- (archimedean; not meaningful over R_q)
+theorem mode_cutoff_conv {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ ≤ n - 1) :
     ℓ * (ℓ + 1) ≤ n * (n - 1) := by
   have : ℓ + 1 ≤ n := by omega
   calc ℓ * (ℓ + 1) ≤ (n - 1) * n := Nat.mul_le_mul h this
     _ = n * (n - 1) := by ring
 
 /-- Mode cutoff iff: ℓ(ℓ+1) ≤ n(n-1) ↔ ℓ ≤ n-1. -/
--- theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :  -- (archimedean; not meaningful over R_q)
+theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :
     ℓ * (ℓ + 1) ≤ n * (n - 1) ↔ ℓ ≤ n - 1 :=
   ⟨mode_cutoff hn, mode_cutoff_conv hn⟩
 
--- ═══════════════════════════════════════════════════════════════════
--- §5. Shell energy (Rydberg formula)
--- ═══════════════════════════════════════════════════════════════════
+/- ═══════════════════════════════════════════════════════════════════
+   §5. Shell energy (Rydberg formula)  (archimedean / R_q — DISABLED)
 
-/-- Energy of shell n: E_n = -E_ion / n². -/
--- def shellEnergy (E_ion : R_q) (n : ℕ) (hn : n ≥ 1) : R_q :=  -- (archimedean; not meaningful over R_q)
-  -E_ion / (n : R_q) ^ 2
+   The shell-energy `E_n = -E_ion / n²`, its strict monotonicity, the
+   transition energy, and the Rydberg formula
+   `ΔE = E_ion·(1/n₁² − 1/n₂²)` are archimedean evaluations (real
+   division, ordering, `positivity`) and live past the substrate wall.
+   Kept inert here:
 
-/-- Shell energies are strictly increasing (less negative) in n.
-    -E/n₁² < -E/n₂² when n₁ < n₂ and E > 0. -/
--- theorem shellEnergy_strictMono {E_ion : R_q} (hE : E_ion > 0)  -- (archimedean; not meaningful over R_q)
-    -- {n₁ n₂ : ℕ} (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) (h : n₁ < n₂) :  -- (archimedean; not meaningful over R_q)
-    shellEnergy E_ion n₁ h1 < shellEnergy E_ion n₂ h2 := by
-  simp only [shellEnergy]
-  have hn1 : (n₁ : R_q) > 0 := by positivity
-  have hn2 : (n₂ : R_q) > 0 := by positivity
-  have hlt : (n₁ : R_q) < n₂ := Nat.cast_lt.mpr h
-  rw [neg_div, neg_div, neg_lt_neg_iff]
-  apply div_lt_div_of_pos_left hE (by positivity) (by positivity)
-  exact pow_lt_pow_left hlt (by positivity) (by norm_num)
-
-/-- Transition energy between shells. -/
-def transitionEnergy (E_ion : R_q) (n₁ n₂ : ℕ)
-    -- (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) : R_q :=  -- (archimedean; not meaningful over R_q)
-  shellEnergy E_ion n₂ h2 - shellEnergy E_ion n₁ h1
-
-/-- Transition energy is positive for n₂ > n₁ (absorption). -/
--- theorem transitionEnergy_pos {E_ion : R_q} (hE : E_ion > 0)  -- (archimedean; not meaningful over R_q)
-    -- {n₁ n₂ : ℕ} (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) (h : n₁ < n₂) :  -- (archimedean; not meaningful over R_q)
-    transitionEnergy E_ion n₁ n₂ h1 h2 > 0 := by
-  simp only [transitionEnergy]
-  linarith [shellEnergy_strictMono hE h1 h2 h]
-
-/-- Rydberg formula: ΔE = E_ion · (1/n₁² - 1/n₂²). -/
-theorem rydberg_formula (E_ion : R_q) (n₁ n₂ : ℕ)
-    -- (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) :  -- (archimedean; not meaningful over R_q)
-    transitionEnergy E_ion n₁ n₂ h1 h2 =
-    E_ion * (1 / (n₁ : R_q) ^ 2 - 1 / (n₂ : R_q) ^ 2) := by
-  simp [transitionEnergy, shellEnergy]
-  ring
+   def shellEnergy (E_ion : R_q) (n : ℕ) : R_q := -E_ion / (n : R_q) ^ 2
+   theorem shellEnergy_strictMono …
+   def transitionEnergy (E_ion : R_q) (n₁ n₂ : ℕ) : R_q :=
+     shellEnergy E_ion n₂ - shellEnergy E_ion n₁
+   theorem transitionEnergy_pos …
+   theorem rydberg_formula …
+   ═══════════════════════════════════════════════════════════════════ -/
 
 end
 
@@ -236,20 +154,48 @@ end
 
 This proposition is conditional on the conjecture [`conj:borromean-quark`]
 (see `content/quantum-observable-universe/observations/borromean-quark.lean`
-for the canonical `class BorromeanQuark` declaration).  The local stub
-below mirrors that class name so the §3b-cond audit
-(`content/pipeline/conditional-class-banner-audit.ts`) recognises the
-conditional-on-class structure; downstream consumers should import the
-canonical class from the sibling stub file instead. -/
+for the canonical `class BorromeanQuark` declaration).  The class below
+mirrors that class name (per the §3b-cond audit
+`content/pipeline/conditional-class-banner-audit.ts`) and axiomatises the
+single conjectural input this file needs — the trefoil's normal-bundle
+orbital space at shell `n` is the SO(3)/q-Laplacian Fourier decomposition
+`O_n = ⨁_{ℓ<n} V_ℓ`, with `dim V_ℓ = 2ℓ+1` (`modeSpaceDim`) and the mode
+cut-off `ℓ < n`.  From that field we *derive* a genuine equation — the
+orbital-space dimension count `dim O_n = n²` and the spin-doubled shell
+capacity `2n²` — using the unconditional `orbital_dim_eq_square`. -/
 
-/-- Local stub of `conj:borromean-quark`'s axiomatised class.
-    See `borromean-quark.lean` (sibling) for the canonical declaration. -/
-class BorromeanQuark : Prop where
-  /-- The conjecture's content is the class instance (sorry = conjecture
-      per AGENTS.md §3b). -/
-  holds : True
+/-- **Borromean-quark orbital-decomposition class** (conditional input for
+    `conj:orbital-fourier-decomposition`).  The conjectural content is the
+    Fourier/SO(3) realisation of the normal-bundle orbital space: at each
+    shell `n` the space `O_n` of admissible normal-bundle sections is the
+    direct sum of the `SO(3)` irreducibles `V_ℓ` over the admissible modes
+    `ℓ < n`, so its dimension is the sum of the mode dimensions
+    `dim V_ℓ = modeSpaceDim ℓ = 2ℓ+1`.  This `dim`-functional and its
+    decomposition law are the single open input; everything downstream is
+    derived.
 
-/-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
-def orbital_fourier_decomposition_conditional_on_borromean_quark
-    [_inst : BorromeanQuark] : True := trivial
+    `sorry`/no-instance is understood as **conjecture**, not missing proof
+    (AGENTS.md §3b). -/
+-- Ref: [manuscript] Ch. 2, conj:borromean-quark
+class BorromeanQuark where
+  /-- The orbital-space dimension at shell `n`. -/
+  orbitalDim : ℕ → ℕ
+  /-- Fourier/SO(3) decomposition law: `dim O_n = Σ_{ℓ<n} dim V_ℓ`, the
+      sum of the `SO(3)`-irreducible dimensions `modeSpaceDim ℓ = 2ℓ+1`
+      over the admissible modes `ℓ < n` (mode cut-off of §4). -/
+  decomposition_law :
+    ∀ n : ℕ, orbitalDim n = (Finset.range n).sum modeSpaceDim
+
+/-- **Orbital-dimension count (conditional on `BorromeanQuark`).**
+    Given the Borromean-quark Fourier/SO(3) decomposition of the
+    normal-bundle orbital space, the orbital-space dimension at shell `n`
+    is exactly `n²`, and the spin-doubled shell capacity is `2n²`.
+
+    Derived from `decomposition_law` (the class field) and the
+    unconditional `orbital_dim_eq_square` — a real equation, not `True`. -/
+-- Ref: [manuscript] Ch. 2, conj:orbital-fourier-decomposition
+theorem orbital_fourier_decomposition [inst : BorromeanQuark] (n : ℕ) :
+    inst.orbitalDim n = n ^ 2 ∧ 2 * inst.orbitalDim n = 2 * n ^ 2 := by
+  have h : inst.orbitalDim n = n ^ 2 := by
+    rw [inst.decomposition_law, orbital_dim_eq_square]
+  exact ⟨h, by rw [h]⟩
