@@ -242,6 +242,7 @@ export default chapter({
         "fivefold-symmetry",
         "fivefold-symmetry-table2-data",
         "fivefold-symmetry-table1-data",
+        "klein-bring-icosahedral-bridge",
         "cohomological-embedding",
         "cohomological-embedding-table1-data",
         "cohomological-embedding-table2-data",

@@ -100,3 +100,14 @@ audit stand; only part (iii) is re-scoped here.
 Bring-radical map as the actual `ζ₅`-pentagon ↔ icosahedral-`ℂP¹` bridge — that
 is where any geometric tie between the ED and the `S³/2I` arena must come from,
 and it is a classical construction rather than the (refuted) direct base action.
+
+> **Done (2026-06-28):** authored as
+> [`conj:klein-bring-icosahedral-bridge`](../../content/quantum-observable-universe/brings-surface/klein-bring-icosahedral-bridge.md)
+> (paper) + `QOU.KleinBringBridge` (Lean §3b-tax primary conjecture over a proved
+> arithmetic skeleton). The user's involution refinement is incorporated: the
+> order-2 Möbius involution `z ↦ 1/z` (`rem:braid-group-action`) extends the `C₅`
+> pentagon to `D₅ ⊂ A₅`, and with the order-3 colour/trefoil 3-cycle the three
+> force orders `{2,3,5}` are the icosahedral triangle generators. The skeleton
+> (Bring curve = Bring–Jerrard variety; `(2,3,5) ≅ A₅`; orbit obstruction) is
+> proved; the single-sphere `A₅` assembly + `ED/A₅ ≅ S²(2,3,5)` keystone-base
+> identification is the conjectural content.
