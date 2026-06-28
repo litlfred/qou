@@ -66,15 +66,23 @@ mp.mp.dps = COMPUTE_DPS + 15
 TOL = mp.mpf("1e-25")  # the compute-author 50-dps cross-check bar
 
 
+def _sqrt(q):
+    """sqrt selecting the impl by input type — works for both a SymPy
+    symbol/expr and an mpmath mpf (per Gemini review on PR #2978)."""
+    return sp.sqrt(q) if isinstance(q, sp.Basic) else mp.sqrt(q)
+
+
 def jones_norm_factor(n: int, q):
-    """C(n, q) = (-q^{1/2} - q^{-1/2})^{n-1}. Depends only on (n, q)."""
-    qh = mp.sqrt(q)
+    """C(n, q) = (-q^{1/2} - q^{-1/2})^{n-1}. Depends only on (n, q).
+    Generic over sympy / mpmath inputs."""
+    qh = _sqrt(q)
     return (-(qh + 1 / qh)) ** (n - 1)
 
 
 def markov_z_h(q):
-    """Markov parameter z = 1/(q^{1/2}+q^{-1/2}) and h = q - q⁻¹ at q (mpf)."""
-    qh = mp.sqrt(q)
+    """Markov parameter z = 1/(q^{1/2}+q^{-1/2}) and h = q - q⁻¹ at q.
+    Generic over sympy / mpmath inputs."""
+    qh = _sqrt(q)
     z = 1 / (qh + 1 / qh)
     h = q - 1 / q
     return z, h
@@ -172,9 +180,9 @@ def main() -> int:
 
     # (C) SYMBOLIC exactness: the cancellation is an identity in ℚ(q).
     qs = sp.Symbol("q", positive=True)
-    zs = 1 / (sp.sqrt(qs) + 1 / sp.sqrt(qs))
-    hs = qs - 1 / qs
-    Cs = (-(sp.sqrt(qs) + 1 / sp.sqrt(qs))) ** (3 - 1)  # n=3
+    # Reuse the now-generic helpers symbolically (per Gemini review).
+    zs, hs = markov_z_h(qs)
+    Cs = jones_norm_factor(3, qs)  # n=3
     w0 = (0, 1, 0)
     w1 = (0, 1)
     tr0 = sp.nsimplify(tr_M_word(w0, 3, zs, hs))
