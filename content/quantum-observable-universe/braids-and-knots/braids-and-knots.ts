@@ -88,6 +88,7 @@ export default chapter({
             "hecke-normal-form",
             "dark-vision-strand-bandwidth",
             "markov-moves-brane-tower",
+            "markov-trace-ambient-s3",
           ],
         }),
         section({
