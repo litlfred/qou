@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/photon-threading-mass.md"
   },
   "source_hashes": {
-    "md": "d7e7bafc2970",
-    "ts": "e7c015b9dccb"
+    "md": "80fa299b9650",
+    "ts": "b1d89e23027c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1047,6 +1047,36 @@
         "reviewed_at": "2026-06-22T02:56:27.408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "fit-section-chapter": [
@@ -1066,6 +1096,36 @@
         "reviewed_at": "2026-06-22T02:56:27.763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1145,36 @@
         "reviewed_at": "2026-06-22T02:56:28.205Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-proof": [
@@ -1104,6 +1194,36 @@
         "reviewed_at": "2026-06-22T02:56:28.497Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1137,6 +1257,36 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Information/photon_threading_mass.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1198,6 +1348,36 @@
           "max": 1,
           "value": 0.64
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1259,6 +1439,36 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-novelty": [
@@ -1320,6 +1530,36 @@
           "max": 1,
           "value": 0.6
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-statement-integrity": [
@@ -1373,6 +1613,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1426,6 +1696,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-trivial-true": [
@@ -1462,6 +1762,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-false-premise": [
@@ -1515,6 +1845,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1568,6 +1928,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-decide-masking": [
@@ -1604,6 +1994,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -1622,6 +2042,36 @@
         "notes": "No false claims identified in 'Mass as photon threading cost': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-vacuous": [
@@ -1639,6 +2089,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Mass as photon threading cost' presents substantial mathematical content: The categorical mass $\\mathfrak{m}_{\\mathfrak{H}}$ ([mass identity](#def:mass-id...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-circular": [
@@ -1657,6 +2137,36 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Mass as photon threading cost'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-overclaim": [
@@ -1674,6 +2184,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Mass as photon threading cost' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-hidden-dof": [
@@ -1692,6 +2232,40 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass as photon threading cost'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -1710,6 +2284,36 @@
         "notes": "The argument flow in 'Mass as photon threading cost' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1727,6 +2331,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The referenced Lean file content/quantum-observable-universe/information-theory/photon-threading-mass.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-citation-misuse": [
@@ -1745,6 +2379,36 @@
         "notes": "Citations to yekutieli2015, reshetikhin1991 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1763,6 +2427,36 @@
         "notes": "Key terms and symbols in 'Mass as photon threading cost' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -1781,6 +2475,36 @@
         "notes": "The algebraic and logical relations in 'Mass as photon threading cost' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-physical-implausibility": [
@@ -1799,6 +2523,36 @@
         "notes": "The physical concepts described in 'Mass as photon threading cost' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-reproducibility": [
@@ -1817,6 +2571,36 @@
         "notes": "The derivation steps and formal definitions in 'Mass as photon threading cost' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-threading-mass.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-referee-verdict": [
@@ -1836,8 +2620,38 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/information-theory/photon-threading-mass.lean is missing, preventing formal verification of the claims in 'Mass as photon threading cost'."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "80fa299b9650",
+          "ts": "b1d89e23027c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

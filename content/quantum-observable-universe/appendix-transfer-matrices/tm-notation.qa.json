@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.md"
   },
   "source_hashes": {
-    "md": "1bf0d9d1ac5a",
+    "md": "72b381d5e046",
     "ts": "a2e097daaed8"
   },
   "criteria": {
@@ -798,6 +798,36 @@
         "reviewed_at": "2026-06-22T02:56:19.757Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-false-claim": [
@@ -816,6 +846,36 @@
         "notes": "Checked mathematical consistency of the claim 'Symbols' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-vacuous": [
@@ -833,6 +893,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'tm-notation'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-circular": [
@@ -851,6 +941,36 @@
         "notes": "Traced dependencies [] for 'tm-notation' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-overclaim": [
@@ -868,6 +988,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'tm-notation' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-hidden-dof": [
@@ -886,6 +1036,36 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-non-sequitur": [
@@ -904,6 +1084,36 @@
         "notes": "Logical transitions in the derivation of 'Symbols' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -921,6 +1131,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No Lean sibling required; narrative matches specifications.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-citation-misuse": [
@@ -939,6 +1179,36 @@
         "notes": "All references and uses [] cited in 'tm-notation' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-definitional-ambiguity": [
@@ -957,6 +1227,36 @@
         "notes": "All terms and algebraic structures in 'tm-notation' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-empirical-fragility": [
@@ -975,6 +1275,36 @@
         "notes": "The algebraic statements in 'tm-notation' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-physical-implausibility": [
@@ -993,6 +1323,36 @@
         "notes": "Physical dimensions and units in 'tm-notation' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-transfer-matrices/tm-notation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-reproducibility": [
@@ -1010,6 +1370,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-referee-verdict": [
@@ -1029,8 +1419,38 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "72b381d5e046",
+          "ts": "a2e097daaed8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:44.350Z"
+  "updated_at": "2026-06-28T17:38:27.234Z"
 }

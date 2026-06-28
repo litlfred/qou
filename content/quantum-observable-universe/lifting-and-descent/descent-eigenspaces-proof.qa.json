@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-eigenspaces-proof.md"
   },
   "source_hashes": {
-    "md": "7c12395f6248",
+    "md": "0087514a16e2",
     "ts": "cfb33580f286"
   },
   "criteria": {
@@ -1013,7 +1013,39 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Since \\hat{\\tau}n is an idempotent endomorphism of the R-algebra' are consistent."
       }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "0087514a16e2",
+          "ts": "cfb33580f286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The idempotent splitting argument is standard and mathematically sound."
+      },
+      {
+        "field_hash": {
+          "md": "0087514a16e2",
+          "ts": "cfb33580f286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The idempotent splitting argument is standard and mathematically sound."
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

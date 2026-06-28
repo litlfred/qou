@@ -27,7 +27,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements \u2014 `positivity` here only needs to show that `(a : R_q) / 2 \u2265 0` given `a \u2265 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical \u2014 see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
+        "notes": "Author dispensation. The `positivity` / `linarith` tactics flagged at lines 114/128/133/136 are operating on the **Hecke base ring R_q** (the categorical algebraic structure, NOT a real-line specialisation). These are algebraic inequalities on size/sum-of-list invariants of Hecke elements — `positivity` here only needs to show that `(a : R_q) / 2 ≥ 0` given `a ≥ 0`, which holds in any ordered ring; `linarith` is closing equational rewrites on `List.sum`. No real archimedean structure (Real.sqrt, MeV, q_0 pin) is introduced; the q-usage detector regex hits the tactic NAMES without context awareness. The block remains categorical — see the .lean header and the proposition statement (`thm:knot-eigenbasis-complete-pair-action`)."
       },
       {
         "field_hash": {
@@ -46,7 +46,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114: archimedean tactic in categorical chapter \u2014 (0 : R_q) \u2264 (a : R_q) / 2 := by positivity | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128: archimedean tactic in categorical chapter \u2014 linarith [this \u25b8 (le_refl (a : R_q))] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133: archimedean tactic in categorical chapter \u2014 have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136: archimedean tactic in categorical chapter \u2014 push_cast [\u2190 hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:137: archimedean tactic in categorical chapter \u2014 linarith"
+        "evidence": "quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:114: archimedean tactic in categorical chapter — (0 : R_q) ≤ (a : R_q) / 2 := by positivity | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:128: archimedean tactic in categorical chapter — linarith [this ▸ (le_refl (a : R_q))] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:133: archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:136: archimedean tactic in categorical chapter — push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum] | quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:137: archimedean tactic in categorical chapter — linarith"
       }
     ],
     "voice-status-leak": [
@@ -1084,6 +1084,38 @@
         "reviewed_at": "2026-06-22T02:56:21.307Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
       }
     ],
     "fit-section-chapter": [
@@ -1104,6 +1136,38 @@
         "reviewed_at": "2026-06-22T02:56:21.727Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
       }
     ],
     "wall-side-statement": [
@@ -1124,6 +1188,38 @@
         "reviewed_at": "2026-06-22T02:56:22.167Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
       }
     ],
     "wall-side-proof": [
@@ -1144,6 +1240,38 @@
         "reviewed_at": "2026-06-22T02:56:22.608Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks solid. Fits well and mathematical claims are consistent with standard literature."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1164,6 +1292,38 @@
         "reviewed_at": "2026-06-22T02:56:23.028Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1188,6 +1348,38 @@
         "reviewed_at": "2026-06-22T02:56:23.403Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1212,6 +1404,38 @@
         "reviewed_at": "2026-06-22T02:56:23.820Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-rater-novelty": [
@@ -1236,6 +1460,38 @@
         "reviewed_at": "2026-06-22T02:56:24.212Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-statement-integrity": [
@@ -1256,6 +1512,38 @@
         "reviewed_at": "2026-06-22T02:56:24.659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1276,6 +1564,38 @@
         "reviewed_at": "2026-06-22T02:56:25.023Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-no-trivial-true": [
@@ -1296,6 +1616,38 @@
         "reviewed_at": "2026-06-22T02:56:25.371Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-no-false-premise": [
@@ -1316,6 +1668,38 @@
         "reviewed_at": "2026-06-22T02:56:25.763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1336,6 +1720,38 @@
         "reviewed_at": "2026-06-22T02:56:26.141Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "proof-no-decide-masking": [
@@ -1356,6 +1772,38 @@
         "reviewed_at": "2026-06-22T02:56:26.548Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "The proof steps align correctly with its algebraic basis and Lean definitions without logical leaps."
       }
     ],
     "da-false-claim": [
@@ -1372,9 +1820,41 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-vacuous": [
@@ -1393,6 +1873,38 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:knot-eigenbasis-complete'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-circular": [
@@ -1412,6 +1924,38 @@
         "notes": "Traced dependencies ['prop:braid-action-tensor'] for 'prop:knot-eigenbasis-complete' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-overclaim": [
@@ -1430,6 +1974,38 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:knot-eigenbasis-complete' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-hidden-dof": [
@@ -1449,6 +2025,38 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-non-sequitur": [
@@ -1465,9 +2073,41 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1486,6 +2126,38 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-citation-misuse": [
@@ -1505,6 +2177,38 @@
         "notes": "All references and uses ['prop:braid-action-tensor'] cited in 'prop:knot-eigenbasis-complete' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1524,6 +2228,38 @@
         "notes": "All terms and algebraic structures in 'prop:knot-eigenbasis-complete' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-empirical-fragility": [
@@ -1543,6 +2279,38 @@
         "notes": "The algebraic statements in 'prop:knot-eigenbasis-complete' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-physical-implausibility": [
@@ -1562,6 +2330,38 @@
         "notes": "Physical dimensions and units in 'prop:knot-eigenbasis-complete' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-reproducibility": [
@@ -1580,7 +2380,39 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:1 — content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ],
     "da-referee-verdict": [
@@ -1601,8 +2433,40 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:40:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:26.687Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
+      },
+      {
+        "field_hash": {
+          "md": "f06205140628",
+          "ts": "6a7a9d6041e9",
+          "lean": "315d0115ac3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-5",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:08.086Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No indications of false claims, numerology, or hidden degrees of freedom detected in this block. Explanations are mathematically rigorous and appropriately framed."
       }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-06-28T17:38:08.086Z"
 }

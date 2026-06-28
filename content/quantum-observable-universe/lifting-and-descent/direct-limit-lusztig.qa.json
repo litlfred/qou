@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-lusztig.md"
   },
   "source_hashes": {
-    "md": "5771b75a2652",
+    "md": "9c9dc9aef7b5",
     "ts": "f583856ba208"
   },
   "criteria": {
@@ -852,6 +852,38 @@
         "notes": "No false claims identified in 'The algebra \\mathcal{A}\\infty': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/direct-limit-lusztig.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9c9dc9aef7b5",
+          "ts": "f583856ba208"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Claims the formal group of SU(2) over Z_p reduces modulo p to a 'commutative' formal group H over F_p. The reduction of a non-abelian group does not become commutative."
+      },
+      {
+        "field_hash": {
+          "md": "9c9dc9aef7b5",
+          "ts": "f583856ba208"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Claims the formal group of SU(2) over Z_p reduces modulo p to a 'commutative' formal group H over F_p. The reduction of a non-abelian group does not become commutative."
       }
     ],
     "da-vacuous": [
@@ -1069,5 +1101,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

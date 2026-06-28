@@ -892,6 +892,38 @@
         "reviewed_at": "2026-06-22T02:56:19.658Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "wall-side-statement": [
@@ -912,6 +944,38 @@
         "reviewed_at": "2026-06-22T02:56:20.026Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-false-claim": [
@@ -932,6 +996,38 @@
         "notes": "No false claims identified in 'Covalent bond (shared Hopf links)': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-vacuous": [
@@ -951,6 +1047,38 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Covalent bond (shared Hopf links)' presents substantial mathematical content: Metallic bonding ([metallic character](#prop:metallic-character-knot)) arises wh...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-circular": [
@@ -971,6 +1099,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Covalent bond (shared Hopf links)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-overclaim": [
@@ -990,6 +1150,38 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Covalent bond (shared Hopf links)' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-hidden-dof": [
@@ -1010,6 +1202,38 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Covalent bond (shared Hopf links)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-non-sequitur": [
@@ -1030,6 +1254,38 @@
         "notes": "The argument flow in 'Covalent bond (shared Hopf links)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1049,6 +1305,38 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Covalent bond (shared Hopf links)' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-citation-misuse": [
@@ -1069,6 +1357,38 @@
         "notes": "No citations are present in 'Covalent bond (shared Hopf links)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1089,6 +1409,38 @@
         "notes": "Key terms and symbols in 'Covalent bond (shared Hopf links)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-empirical-fragility": [
@@ -1109,6 +1461,38 @@
         "notes": "The algebraic and logical relations in 'Covalent bond (shared Hopf links)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-physical-implausibility": [
@@ -1129,6 +1513,38 @@
         "notes": "The physical concepts described in 'Covalent bond (shared Hopf links)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-reproducibility": [
@@ -1149,6 +1565,38 @@
         "notes": "The derivation steps and formal definitions in 'Covalent bond (shared Hopf links)' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/covalent-bond-types.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-referee-verdict": [
@@ -1170,8 +1618,40 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Covalent bond (shared Hopf links)' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a59164b24049",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T17:38:27.234Z"
 }

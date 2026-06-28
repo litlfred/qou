@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.md"
   },
   "source_hashes": {
-    "md": "ce3b76f5c907",
+    "md": "0ce5bd1ed939",
     "ts": "2f608bf936e5"
   },
   "criteria": {
@@ -798,6 +798,38 @@
         "notes": "No false claims identified in 'The proof mirrors the ascent': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0ce5bd1ed939",
+          "ts": "2f608bf936e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Step 1 claims the jet object is the tensor product $J^1(A) = A \\\\otimes \\\\Omega^1(A)$, rather than the correct square-zero extension splitting as $A \\\\oplus \\\\Omega^1(A)$. Furthermore, it claims the map $\\\\eta \\\\otimes \\\\mathrm{id}\\\\colon \\\\Omega^1(A) \\\\hookrightarrow A \\\\otimes \\\\Omega^1(A)$ embeds $A$ as a direct summand, which is dimensionally and categorically nonsensical since the domain is $\\\\Omega^1(A)$."
+      },
+      {
+        "field_hash": {
+          "md": "0ce5bd1ed939",
+          "ts": "2f608bf936e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Step 1 claims the jet object is the tensor product $J^1(A) = A \\\\otimes \\\\Omega^1(A)$, rather than the correct square-zero extension splitting as $A \\\\oplus \\\\Omega^1(A)$. Furthermore, it claims the map $\\\\eta \\\\otimes \\\\mathrm{id}\\\\colon \\\\Omega^1(A) \\\\hookrightarrow A \\\\otimes \\\\Omega^1(A)$ embeds $A$ as a direct summand, which is dimensionally and categorically nonsensical since the domain is $\\\\Omega^1(A)$."
       }
     ],
     "da-vacuous": [
@@ -1015,5 +1047,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

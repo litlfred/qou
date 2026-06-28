@@ -814,6 +814,36 @@
         "reviewed_at": "2026-06-22T02:56:26.307Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
       }
     ],
     "da-false-claim": [
@@ -831,6 +861,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No claims are made in this one-line introduction.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
       }
     ],
     "da-vacuous": [
@@ -848,6 +908,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block is a standard section introduction.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
       }
     ],
     "da-circular": [
@@ -865,6 +955,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
       }
     ],
     "da-overclaim": [
@@ -882,6 +1002,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No overclaims are present.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
       }
     ],
     "da-hidden-dof": [
@@ -899,6 +1049,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
       }
     ],
     "da-non-sequitur": [
@@ -916,6 +1096,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No logical gaps.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -933,6 +1143,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No lean sibling exists.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
       }
     ],
     "da-citation-misuse": [
@@ -950,6 +1190,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No citations are used.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
       }
     ],
     "da-definitional-ambiguity": [
@@ -967,6 +1237,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No ambiguous terms.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
       }
     ],
     "da-empirical-fragility": [
@@ -984,6 +1284,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Not applicable.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
       }
     ],
     "da-physical-implausibility": [
@@ -1001,6 +1331,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No physical claims.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
       }
     ],
     "da-reproducibility": [
@@ -1018,6 +1378,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No calculations are performed.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
       }
     ],
     "da-referee-verdict": [
@@ -1036,8 +1426,38 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "none — one-line section intro contains no claims."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
+      },
+      {
+        "field_hash": {
+          "md": "842f40ebd123",
+          "ts": "e0716c954e8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:42.356Z"
+  "updated_at": "2026-06-28T17:38:15.393Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance-proof.md"
   },
   "source_hashes": {
-    "md": "fb424cd67f05",
+    "md": "55efa1e59a22",
     "ts": "d9a78d74588c"
   },
   "criteria": {
@@ -1013,7 +1013,39 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'By \\[Theorem 1.1, yekutieli2010], a weak equivalence of central' are consistent."
       }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "55efa1e59a22",
+          "ts": "d9a78d74588c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Logical connections are sound. Properly deduces invariance for the GNS representation from the isomorphism of global objects and the idempotence of the descent involution."
+      },
+      {
+        "field_hash": {
+          "md": "55efa1e59a22",
+          "ts": "d9a78d74588c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Logical connections are sound. Properly deduces invariance for the GNS representation from the isomorphism of global objects and the idempotence of the descent involution."
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

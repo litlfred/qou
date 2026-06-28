@@ -1,0 +1,674 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:ordering-jet-compatibility",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility-proof.md"
+  },
+  "source_hashes": {
+    "md": "669b74006436",
+    "ts": "9d3fe2b2ee5c"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:15:07.592Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
+      },
+      {
+        "field_hash": {
+          "md": "669b74006436",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T17:38:22.668Z"
+}

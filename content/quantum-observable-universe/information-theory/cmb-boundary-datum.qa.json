@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean"
   },
   "source_hashes": {
-    "md": "8f7d20b04fcf",
+    "md": "10f58450834d",
     "ts": "8bab424dc206",
     "lean": "b1e8f63c9bb2"
   },
@@ -892,6 +892,38 @@
         "reviewed_at": "2026-06-22T02:56:26.433Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
       }
     ],
     "wall-side-statement": [
@@ -912,6 +944,38 @@
         "reviewed_at": "2026-06-22T02:56:26.916Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against wall-side-statement criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against wall-side-statement criteria."
       }
     ],
     "da-false-claim": [
@@ -931,6 +995,38 @@
         "notes": "The claim in 'CMB as boundary datum of a big bang state' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
       }
     ],
     "da-vacuous": [
@@ -949,6 +1045,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'CMB as boundary datum of a big bang state' presents substantial mathematical content: Let $\\mathcal{S}_0$ be a big bang state ([big bang state](#def:big-bang-state)) ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
       }
     ],
     "da-circular": [
@@ -968,6 +1096,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'CMB as boundary datum of a big bang state'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
       }
     ],
     "da-overclaim": [
@@ -986,6 +1146,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'CMB as boundary datum of a big bang state' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
       }
     ],
     "da-hidden-dof": [
@@ -1005,6 +1197,38 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'CMB as boundary datum of a big bang state'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
       }
     ],
     "da-non-sequitur": [
@@ -1024,6 +1248,38 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1042,6 +1298,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
       }
     ],
     "da-citation-misuse": [
@@ -1061,6 +1349,38 @@
         "notes": "No citations are present in 'CMB as boundary datum of a big bang state', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1080,6 +1400,38 @@
         "notes": "Key terms and symbols in 'CMB as boundary datum of a big bang state' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
       }
     ],
     "da-empirical-fragility": [
@@ -1099,6 +1451,38 @@
         "notes": "The algebraic and logical relations in 'CMB as boundary datum of a big bang state' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
       }
     ],
     "da-physical-implausibility": [
@@ -1118,6 +1502,38 @@
         "notes": "The physical concepts described in 'CMB as boundary datum of a big bang state' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
       }
     ],
     "da-reproducibility": [
@@ -1137,6 +1553,38 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean:28:23: error: Invalid field notation: Type of"
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
       }
     ],
     "da-referee-verdict": [
@@ -1157,8 +1605,40 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean:28:23: error: Invalid field notation: Type of, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
+      },
+      {
+        "field_hash": {
+          "md": "10f58450834d",
+          "ts": "8bab424dc206",
+          "lean": "b1e8f63c9bb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:15.393Z"
 }

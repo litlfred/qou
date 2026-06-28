@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou-proof.md"
   },
   "source_hashes": {
-    "md": "d1a25cf6c505",
+    "md": "dd0f56885da9",
     "ts": "9217c0705548"
   },
   "criteria": {
@@ -798,6 +798,38 @@
         "notes": "No false claims identified in 'Yekutieli lifting establishes that the constructed': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou-proof.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Item (4) incorrectly states Riemann-Hurwitz formula with an absolute value $|\\\\chi(A)|$ resulting in $R_{tot} = 2d + |\\\\chi(A)|$, which is false (it should be $2d - \\\\chi(A)$). Also, Item (1) falsely claims that observability forcing a faithful action means any invariant element gives a non-zero element in Hom. This confuses faithful representations (trivial kernel) with those lacking trivial subrepresentations."
+      },
+      {
+        "field_hash": {
+          "md": "dd0f56885da9",
+          "ts": "9217c0705548"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Item (4) incorrectly states Riemann-Hurwitz formula with an absolute value $|\\\\chi(A)|$ resulting in $R_{tot} = 2d + |\\\\chi(A)|$, which is false (it should be $2d - \\\\chi(A)$). Also, Item (1) falsely claims that observability forcing a faithful action means any invariant element gives a non-zero element in Hom. This confuses faithful representations (trivial kernel) with those lacking trivial subrepresentations."
       }
     ],
     "da-vacuous": [
@@ -1015,5 +1047,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

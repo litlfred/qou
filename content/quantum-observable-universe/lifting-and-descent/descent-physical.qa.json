@@ -1029,6 +1029,38 @@
         "notes": "The physical concepts described in 'At dimension 1 the physical content simplifies drastically.' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-physical.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "460838d9660f",
+          "ts": "a216f7ef961a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Invokes a 2-dimensional nonabelian Stokes theorem over a surface \\Sigma while simultaneously stating that the entire manifold is 1-dimensional, which makes the existence of a 2-dimensional surface impossible."
+      },
+      {
+        "field_hash": {
+          "md": "460838d9660f",
+          "ts": "a216f7ef961a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Invokes a 2-dimensional nonabelian Stokes theorem over a surface \\Sigma while simultaneously stating that the entire manifold is 1-dimensional, which makes the existence of a 2-dimensional surface impossible."
       }
     ],
     "da-reproducibility": [
@@ -1069,5 +1101,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

@@ -279,6 +279,36 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -297,6 +327,36 @@
         "notes": "No false claims identified in 'Swampland correspondence: the brane tower and the Distance Conjecture': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-vacuous": [
@@ -314,6 +374,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Swampland correspondence: the brane tower and the Distance Conjecture' presents substantial mathematical content: The recursive brane tower ([recursive brane tower](#def:recursive-brane-tower)) ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-circular": [
@@ -332,6 +422,36 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Swampland correspondence: the brane tower and the Distance Conjecture'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-overclaim": [
@@ -349,6 +469,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Swampland correspondence: the brane tower and the Distance Conjecture' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-hidden-dof": [
@@ -367,6 +517,40 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Swampland correspondence: the brane tower and the Distance Conjecture'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -385,6 +569,36 @@
         "notes": "The argument flow in 'Swampland correspondence: the brane tower and the Distance Conjecture' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -402,6 +616,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-citation-misuse": [
@@ -420,6 +664,36 @@
         "notes": "Citations to ooguri-vafa2007 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -438,6 +712,36 @@
         "notes": "Key terms and symbols in 'Swampland correspondence: the brane tower and the Distance Conjecture' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -456,6 +760,36 @@
         "notes": "The algebraic and logical relations in 'Swampland correspondence: the brane tower and the Distance Conjecture' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-physical-implausibility": [
@@ -474,6 +808,36 @@
         "notes": "The physical concepts described in 'Swampland correspondence: the brane tower and the Distance Conjecture' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-reproducibility": [
@@ -492,6 +856,36 @@
         "notes": "The derivation steps and formal definitions in 'Swampland correspondence: the brane tower and the Distance Conjecture' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-distance-conjecture.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-referee-verdict": [
@@ -511,8 +905,38 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Swampland correspondence: the brane tower and the Distance Conjecture' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "4f72d392d1c4",
+          "ts": "77cdf454d0f4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

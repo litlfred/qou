@@ -834,6 +834,36 @@
         "reviewed_at": "2026-06-22T02:56:28.745Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-false-claim": [
@@ -852,6 +882,36 @@
         "notes": "No false claims identified in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-vacuous": [
@@ -869,6 +929,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' are non-vacuous as they present substantial mathematical content.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-circular": [
@@ -887,6 +977,36 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-overclaim": [
@@ -904,6 +1024,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "minor",
+        "evidence": "mass-brane-intro.md: 'Brane mass accounts for all observable mass'",
+        "notes": "Make sure the statement does not overclaim current observational evidence."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "minor",
+        "evidence": "mass-brane-intro.md: 'Brane mass accounts for all observable mass'",
+        "notes": "Make sure the statement does not overclaim current observational evidence."
       }
     ],
     "da-hidden-dof": [
@@ -922,6 +1076,36 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-non-sequitur": [
@@ -940,6 +1124,36 @@
         "notes": "The argument flow in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -957,6 +1171,36 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-citation-misuse": [
@@ -975,6 +1219,36 @@
         "notes": "No citations are present in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
       }
     ],
     "da-definitional-ambiguity": [
@@ -993,6 +1267,36 @@
         "notes": "Key terms and symbols in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-empirical-fragility": [
@@ -1011,6 +1315,36 @@
         "notes": "The algebraic and logical relations in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-physical-implausibility": [
@@ -1029,6 +1363,36 @@
         "notes": "The physical concepts described in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-reproducibility": [
@@ -1047,6 +1411,36 @@
         "notes": "The derivation steps and formal definitions in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/betti-numbers-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-referee-verdict": [
@@ -1066,8 +1460,38 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let bk(\\mathcal{S}n) = \\dim H^k(\\mathcal{S}n, \\mathbb{R}) denote the k...' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
+      },
+      {
+        "field_hash": {
+          "md": "c7194aa95ff9",
+          "ts": "f3138e912670"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:22.668Z"
 }

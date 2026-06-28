@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean"
   },
   "source_hashes": {
-    "md": "954da41e62e7",
+    "md": "4d54d256b43b",
     "ts": "56dbca9b823c",
     "lean": "d3fb900f8dd6"
   },
@@ -1358,6 +1358,36 @@
         "notes": "No false claims identified in 'Proposition.': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2"
+      },
+      {
+        "field_hash": {
+          "md": "4d54d256b43b",
+          "ts": "56dbca9b823c",
+          "lean": "d3fb900f8dd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2"
       }
     ],
     "da-vacuous": [
@@ -1589,5 +1619,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

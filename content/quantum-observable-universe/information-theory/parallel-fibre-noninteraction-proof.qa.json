@@ -1,0 +1,468 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:parallel-fibre-noninteraction",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/information-theory/parallel-fibre-noninteraction-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/information-theory/parallel-fibre-noninteraction-proof.md"
+  },
+  "source_hashes": {
+    "md": "a0888e91ae7a",
+    "ts": "4534e259fd4b"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "a0888e91ae7a",
+          "ts": "4534e259fd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T17:38:00.488Z"
+}

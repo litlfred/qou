@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/motivic-substrate.lean"
   },
   "source_hashes": {
-    "md": "7548b9781f72",
+    "md": "06a43ea083d8",
     "ts": "b09911373ee7",
     "lean": "9230f01223ce"
   },
@@ -894,6 +894,38 @@
         "reviewed_at": "2026-06-22T02:56:28.760Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "wall-side-statement": [
@@ -914,6 +946,38 @@
         "reviewed_at": "2026-06-22T02:56:29.213Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-false-claim": [
@@ -933,6 +997,38 @@
         "notes": "No false claims identified in 'The QOU framework's algebraic substrate has appeared so far through': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-vacuous": [
@@ -952,6 +1048,38 @@
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/motivic-substrate.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-circular": [
@@ -971,6 +1099,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The QOU framework's algebraic substrate has appeared so far through'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-overclaim": [
@@ -989,6 +1149,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'The QOU framework's algebraic substrate has appeared so far through' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-hidden-dof": [
@@ -1008,6 +1200,38 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The QOU framework's algebraic substrate has appeared so far through'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-non-sequitur": [
@@ -1027,6 +1251,38 @@
         "notes": "The argument flow in 'The QOU framework's algebraic substrate has appeared so far through' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1045,6 +1301,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'The QOU framework's algebraic substrate has appeared so far through' (though incomplete).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-citation-misuse": [
@@ -1064,6 +1352,38 @@
         "notes": "Citations to kontsevich1995, denef-loeser2001, tate1967 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1083,6 +1403,38 @@
         "notes": "Key terms and symbols in 'The QOU framework's algebraic substrate has appeared so far through' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-empirical-fragility": [
@@ -1102,6 +1454,38 @@
         "notes": "The algebraic and logical relations in 'The QOU framework's algebraic substrate has appeared so far through' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-physical-implausibility": [
@@ -1121,6 +1505,38 @@
         "notes": "The physical concepts described in 'The QOU framework's algebraic substrate has appeared so far through' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-reproducibility": [
@@ -1140,6 +1556,38 @@
         "notes": "The derivation steps and formal definitions in 'The QOU framework's algebraic substrate has appeared so far through' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-referee-verdict": [
@@ -1160,8 +1608,40 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'The QOU framework's algebraic substrate has appeared so far through' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lifting-and-descent/motivic-substrate.lean."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
+      },
+      {
+        "field_hash": {
+          "md": "06a43ea083d8",
+          "ts": "b09911373ee7",
+          "lean": "9230f01223ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:22.668Z"
 }

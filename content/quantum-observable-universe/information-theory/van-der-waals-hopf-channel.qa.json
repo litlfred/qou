@@ -894,6 +894,38 @@
         "reviewed_at": "2026-06-22T02:56:27.225Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-statement": [
@@ -914,6 +946,38 @@
         "reviewed_at": "2026-06-22T02:56:27.616Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -933,6 +997,38 @@
         "notes": "No false claims identified in 'The van der Waals channel — the Hopf symmetric block': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-vacuous": [
@@ -951,6 +1047,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'The van der Waals channel — the Hopf symmetric block' presents substantial mathematical content: algebra $H_2(q)$ (two molecules $=$ two strands), the **van der Waals channel** ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-circular": [
@@ -970,6 +1098,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The van der Waals channel — the Hopf symmetric block'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-overclaim": [
@@ -988,6 +1148,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'The van der Waals channel — the Hopf symmetric block' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-hidden-dof": [
@@ -1007,6 +1199,42 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The van der Waals channel — the Hopf symmetric block'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -1026,6 +1254,38 @@
         "notes": "The argument flow in 'The van der Waals channel — the Hopf symmetric block' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1044,6 +1304,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Lean formalization and narrative for 'The van der Waals channel — the Hopf symmetric block' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-citation-misuse": [
@@ -1063,6 +1355,38 @@
         "notes": "No citations are present in 'The van der Waals channel — the Hopf symmetric block', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1082,6 +1406,38 @@
         "notes": "Key terms and symbols in 'The van der Waals channel — the Hopf symmetric block' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -1101,6 +1457,38 @@
         "notes": "The algebraic and logical relations in 'The van der Waals channel — the Hopf symmetric block' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-physical-implausibility": [
@@ -1120,6 +1508,38 @@
         "notes": "The physical concepts described in 'The van der Waals channel — the Hopf symmetric block' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-reproducibility": [
@@ -1139,6 +1559,38 @@
         "notes": "The derivation steps and formal definitions in 'The van der Waals channel — the Hopf symmetric block' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-referee-verdict": [
@@ -1159,8 +1611,40 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The van der Waals channel — the Hopf symmetric block' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "930253ae7d8f",
+          "ts": "df203dbb5562",
+          "lean": "b76d0bd893bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

@@ -798,6 +798,38 @@
         "notes": "No false claims identified in 'Continuing jet prolongation for SU(2), we': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "72f351f72cfb",
+          "ts": "2ffee7862243"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Contains major factual errors: 1) Falsely claims J^1(J^1(A)) is isomorphic to J^2(A) (conflating holonomic and non-holonomic jets). 2) Justifies stabilization using the cohomology of CP^1, which is entirely disjoint from the base space SU(2) ~ S^3 being discussed."
+      },
+      {
+        "field_hash": {
+          "md": "72f351f72cfb",
+          "ts": "2ffee7862243"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Contains major factual errors: 1) Falsely claims J^1(J^1(A)) is isomorphic to J^2(A) (conflating holonomic and non-holonomic jets). 2) Justifies stabilization using the cohomology of CP^1, which is entirely disjoint from the base space SU(2) ~ S^3 being discussed."
       }
     ],
     "da-vacuous": [
@@ -1015,5 +1047,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

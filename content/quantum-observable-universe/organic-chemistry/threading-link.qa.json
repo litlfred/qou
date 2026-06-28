@@ -894,6 +894,38 @@
         "reviewed_at": "2026-06-22T02:56:19.607Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "wall-side-statement": [
@@ -914,6 +946,38 @@
         "reviewed_at": "2026-06-22T02:56:20.003Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-false-claim": [
@@ -934,6 +998,38 @@
         "notes": "The claim in 'Threading link $T(2,N)$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-vacuous": [
@@ -953,6 +1049,38 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Threading link $T(2,N)$' presents substantial mathematical content: A **threading link** is a single torus link that passes through all atoms in a m...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-circular": [
@@ -973,6 +1101,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Threading link $T(2,N)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-overclaim": [
@@ -992,6 +1152,38 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Threading link $T(2,N)$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-hidden-dof": [
@@ -1012,6 +1204,38 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Threading link $T(2,N)$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-non-sequitur": [
@@ -1032,6 +1256,38 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/threading-link.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1051,6 +1307,38 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/threading-link.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-citation-misuse": [
@@ -1071,6 +1359,38 @@
         "notes": "No citations are present in 'Threading link $T(2,N)$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1091,6 +1411,38 @@
         "notes": "Key terms and symbols in 'Threading link $T(2,N)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-empirical-fragility": [
@@ -1111,6 +1463,38 @@
         "notes": "The algebraic and logical relations in 'Threading link $T(2,N)$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-physical-implausibility": [
@@ -1131,6 +1515,42 @@
         "notes": "The physical concepts described in 'Threading link $T(2,N)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "These two components are the topological realisation of the two delocalised pi electrons.",
+        "notes": "Benzene has 6 pi electrons, not 2."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "These two components are the topological realisation of the two delocalised pi electrons.",
+        "notes": "Benzene has 6 pi electrons, not 2."
       }
     ],
     "da-reproducibility": [
@@ -1151,6 +1571,38 @@
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/threading-link.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/threading-link.lean:1 — content/quantum-observable-universe/organic-chemistry/threading-link.lean:37:9: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-referee-verdict": [
@@ -1172,8 +1624,40 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/threading-link.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/threading-link.lean:37:9: error: Function expected at, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "a95cf8fe92dc",
+          "ts": "6bd65e38d4ce",
+          "lean": "6297f6d06d59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T17:38:27.234Z"
 }

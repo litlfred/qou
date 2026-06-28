@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/gravitational-constant.lean"
   },
   "source_hashes": {
-    "md": "054d3140ca8c",
+    "md": "bf8a28a877d7",
     "ts": "1290d0055194",
     "lean": "92ac43e7cd45"
   },
@@ -892,6 +892,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Gravitational constant from information geometry'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-statement": [
@@ -911,6 +943,38 @@
         "notes": "The Lean theorem statement in content/quantum-observable-universe/information-theory/gravitational-constant.lean matches the mathematical statement in content/quantum-observable-universe/information-theory/gravitational-constant.md.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.lean:1 — Lean file exists"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -930,6 +994,40 @@
         "notes": "The claim in 'Gravitational constant from information geometry' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-vacuous": [
@@ -948,6 +1046,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Gravitational constant from information geometry' presents substantial mathematical content: The **gravitational constant** $G_q$ is the normalisation of the $q$-Yang--Mills...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-circular": [
@@ -967,6 +1099,40 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Gravitational constant from information geometry'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-overclaim": [
@@ -985,6 +1151,42 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Gravitational constant from information geometry' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-hidden-dof": [
@@ -1004,6 +1206,42 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Gravitational constant from information geometry'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -1023,6 +1261,40 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/gravitational-constant.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1041,6 +1313,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/gravitational-constant.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-citation-misuse": [
@@ -1060,6 +1366,38 @@
         "notes": "Citations to jacobson1995, bekenstein1981, mcmullen1998 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1079,6 +1417,38 @@
         "notes": "Key terms and symbols in 'Gravitational constant from information geometry' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -1098,6 +1468,42 @@
         "notes": "The algebraic and logical relations in 'Gravitational constant from information geometry' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-physical-implausibility": [
@@ -1117,6 +1523,42 @@
         "notes": "The physical concepts described in 'Gravitational constant from information geometry' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-reproducibility": [
@@ -1136,6 +1578,40 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/gravitational-constant.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/gravitational-constant.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/gravitational-constant.lean:52:3: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-referee-verdict": [
@@ -1156,8 +1632,42 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/gravitational-constant.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/gravitational-constant.lean:52:3: error: unknown tactic, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
+      },
+      {
+        "field_hash": {
+          "md": "bf8a28a877d7",
+          "ts": "1290d0055194",
+          "lean": "92ac43e7cd45"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

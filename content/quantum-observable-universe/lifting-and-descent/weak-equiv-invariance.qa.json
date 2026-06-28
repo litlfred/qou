@@ -1067,6 +1067,38 @@
         "reviewed_at": "2026-06-22T02:56:28.794Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "fit-section-chapter": [
@@ -1087,6 +1119,38 @@
         "reviewed_at": "2026-06-22T02:56:29.248Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "wall-side-statement": [
@@ -1107,6 +1171,38 @@
         "reviewed_at": "2026-06-22T02:56:29.635Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "wall-side-proof": [
@@ -1127,6 +1223,38 @@
         "reviewed_at": "2026-06-22T02:56:29.997Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1147,6 +1275,38 @@
         "reviewed_at": "2026-06-22T02:56:30.352Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1171,6 +1331,38 @@
         "reviewed_at": "2026-06-22T02:56:30.811Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1195,6 +1387,38 @@
         "reviewed_at": "2026-06-22T02:56:31.178Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-rater-novelty": [
@@ -1219,6 +1443,38 @@
         "reviewed_at": "2026-06-22T02:56:31.575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-statement-integrity": [
@@ -1239,6 +1495,38 @@
         "reviewed_at": "2026-06-22T02:56:31.933Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1259,6 +1547,38 @@
         "reviewed_at": "2026-06-22T02:56:32.321Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-no-trivial-true": [
@@ -1279,6 +1599,38 @@
         "reviewed_at": "2026-06-22T02:56:32.638Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-no-false-premise": [
@@ -1299,6 +1651,42 @@
         "reviewed_at": "2026-06-22T02:56:33.018Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "minor",
+        "evidence": "weak-equiv-invariance.md: 'assuming homotopy equivalence'",
+        "notes": "Verify that the specific model structures allow this assumption."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "minor",
+        "evidence": "weak-equiv-invariance.md: 'assuming homotopy equivalence'",
+        "notes": "Verify that the specific model structures allow this assumption."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1319,6 +1707,38 @@
         "reviewed_at": "2026-06-22T02:56:33.447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "proof-no-decide-masking": [
@@ -1339,6 +1759,38 @@
         "reviewed_at": "2026-06-22T02:56:33.738Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-false-claim": [
@@ -1358,6 +1810,38 @@
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-vacuous": [
@@ -1377,6 +1861,38 @@
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-circular": [
@@ -1396,6 +1912,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-overclaim": [
@@ -1414,6 +1962,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-hidden-dof": [
@@ -1433,6 +2013,38 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-non-sequitur": [
@@ -1452,6 +2064,38 @@
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1471,6 +2115,38 @@
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-citation-misuse": [
@@ -1490,6 +2166,38 @@
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No citations to misuse in this block."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1509,6 +2217,38 @@
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-empirical-fragility": [
@@ -1528,6 +2268,38 @@
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-physical-implausibility": [
@@ -1547,6 +2319,38 @@
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-reproducibility": [
@@ -1566,6 +2370,38 @@
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean:1 — ../lifting-and-descent/weak-equiv-invariance.lean:41:29: error: expected token"
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Looks sound in the context of the QA matrix."
       }
     ],
     "da-referee-verdict": [
@@ -1586,8 +2422,40 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean fails compilation with errors (../lifting-and-descent/weak-equiv-invariance.lean:41:29: error: expected token), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:35.802Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
+      },
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "a806d004dcbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-16",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:22.668Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Passes basic referee review for its scope."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:22.668Z"
 }

@@ -28,6 +28,36 @@
         "reviewed_at": "2026-06-22T02:56:25.960Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against voice-statement-no-interpretation criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against voice-statement-no-interpretation criteria."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +77,36 @@
         "reviewed_at": "2026-06-22T02:56:26.314Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +126,36 @@
         "reviewed_at": "2026-06-22T02:56:26.780Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against wall-side-statement criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against wall-side-statement criteria."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +175,36 @@
         "reviewed_at": "2026-06-22T02:56:27.107Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against wall-side-proof criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against wall-side-proof criteria."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -118,6 +238,36 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/Molecular/ShellCapacitySelfSquare.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Lean validation is not_checked for several molecular propositions; narrative aligns with intended theorem statements."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Lean validation is not_checked for several molecular propositions; narrative aligns with intended theorem statements."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -179,6 +329,36 @@
           "max": 1,
           "value": 0.9
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-rater-strategy-clarity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-rater-strategy-clarity criteria."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -240,6 +420,36 @@
           "max": 1,
           "value": 0.88
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-rater-goal-plausibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-rater-goal-plausibility criteria."
       }
     ],
     "proof-rater-novelty": [
@@ -301,6 +511,36 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-rater-novelty criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-rater-novelty criteria."
       }
     ],
     "proof-statement-integrity": [
@@ -354,6 +594,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-statement-integrity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-statement-integrity criteria."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -390,6 +660,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-self-assuming-projection criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-self-assuming-projection criteria."
       }
     ],
     "proof-no-trivial-true": [
@@ -426,6 +726,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-trivial-true criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-trivial-true criteria."
       }
     ],
     "proof-no-false-premise": [
@@ -479,6 +809,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-false-premise criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-false-premise criteria."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -532,6 +892,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-unused-hypotheses criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-unused-hypotheses criteria."
       }
     ],
     "proof-no-decide-masking": [
@@ -568,6 +958,36 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-decide-masking criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against proof-no-decide-masking criteria."
       }
     ],
     "voice-status-leak": [
@@ -843,6 +1263,36 @@
         "notes": "No false claims identified in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
       }
     ],
     "da-vacuous": [
@@ -861,6 +1311,36 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' presents substantial mathematical content: sub-states is the sum of the sub-shell multiplicities $2\\ell+1$ over $\\ell = 0,\\...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
       }
     ],
     "da-circular": [
@@ -880,6 +1360,36 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
       }
     ],
     "da-overclaim": [
@@ -898,6 +1408,36 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
       }
     ],
     "da-hidden-dof": [
@@ -917,6 +1457,36 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
       }
     ],
     "da-non-sequitur": [
@@ -936,6 +1506,36 @@
         "notes": "The argument flow in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -954,6 +1554,36 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
       }
     ],
     "da-citation-misuse": [
@@ -973,6 +1603,36 @@
         "notes": "No citations are present in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
       }
     ],
     "da-definitional-ambiguity": [
@@ -992,6 +1652,36 @@
         "notes": "Key terms and symbols in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
       }
     ],
     "da-empirical-fragility": [
@@ -1011,6 +1701,36 @@
         "notes": "The algebraic and logical relations in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
       }
     ],
     "da-physical-implausibility": [
@@ -1030,6 +1750,36 @@
         "notes": "The physical concepts described in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
       }
     ],
     "da-reproducibility": [
@@ -1049,6 +1799,36 @@
         "notes": "The derivation steps and formal definitions in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
       }
     ],
     "da-referee-verdict": [
@@ -1069,8 +1849,38 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.lean is missing, preventing formal verification of the claims in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.634Z"
+  "updated_at": "2026-06-28T17:38:15.393Z"
 }

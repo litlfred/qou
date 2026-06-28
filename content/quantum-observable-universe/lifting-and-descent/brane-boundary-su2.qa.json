@@ -798,6 +798,38 @@
         "notes": "No false claims identified in 'Continuing the brane tower for SU(2),': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/brane-boundary-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ccdc0bf7184f",
+          "ts": "b02f93834da2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Claims U(1) x S^2 is a solid torus boundary. A solid torus is S^1 x D^2 and its boundary is T^2 = S^1 x S^1, not S^1 x S^2."
+      },
+      {
+        "field_hash": {
+          "md": "ccdc0bf7184f",
+          "ts": "b02f93834da2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Claims U(1) x S^2 is a solid torus boundary. A solid torus is S^1 x D^2 and its boundary is T^2 = S^1 x S^1, not S^1 x S^2."
       }
     ],
     "da-vacuous": [
@@ -1015,5 +1047,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

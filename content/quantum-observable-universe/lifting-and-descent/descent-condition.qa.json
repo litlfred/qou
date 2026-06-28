@@ -1358,6 +1358,40 @@
         "notes": "The mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let' are verified by the compiling Lean proof.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/descent-condition.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c8442322ffa5",
+          "ts": "5433bed97943",
+          "lean": "b6e17917a0ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Mismatched Cech degrees in the twisted 2-cocycle condition: d(g_{ijk}) = a_{ij} g_{ijk} a_{jk}^{-1}. Since g_{ijk} is a 2-cochain, its coboundary d(g_{ijk}) is a 3-cochain (requiring 4 indices), but the RHS is evaluated on triple intersections. The twisted 2-cocycle condition should be on g_{ijk} itself."
+      },
+      {
+        "field_hash": {
+          "md": "c8442322ffa5",
+          "ts": "5433bed97943",
+          "lean": "b6e17917a0ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Mismatched Cech degrees in the twisted 2-cocycle condition: d(g_{ijk}) = a_{ij} g_{ijk} a_{jk}^{-1}. Since g_{ijk} is a 2-cochain, its coboundary d(g_{ijk}) is a 3-cochain (requiring 4 indices), but the RHS is evaluated on triple intersections. The twisted 2-cocycle condition should be on g_{ijk} itself."
       }
     ],
     "da-vacuous": [
@@ -1588,5 +1622,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/skein-turing-machine.md"
   },
   "source_hashes": {
-    "md": "605c59df1ef8",
+    "md": "0449da8d94e9",
     "ts": "b6414960fd74"
   },
   "criteria": {
@@ -834,6 +834,36 @@
         "reviewed_at": "2026-06-22T02:56:27.253Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -852,6 +882,38 @@
         "notes": "No false claims identified in 'A Turing machine is a braid; its Skein decomposition is the path integral': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-vacuous": [
@@ -869,6 +931,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'A Turing machine is a braid; its Skein decomposition is the path integral' presents substantial mathematical content: A Turing machine computation of $N$ gates encodes as a braid $\\beta$ on $n$ stra...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-circular": [
@@ -887,6 +981,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'A Turing machine is a braid; its Skein decomposition is the path integral'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-overclaim": [
@@ -904,6 +1030,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'A Turing machine is a braid; its Skein decomposition is the path integral' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-hidden-dof": [
@@ -922,6 +1082,40 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'A Turing machine is a braid; its Skein decomposition is the path integral'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -940,6 +1134,38 @@
         "notes": "The argument flow in 'A Turing machine is a braid; its Skein decomposition is the path integral' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -957,6 +1183,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-citation-misuse": [
@@ -975,6 +1233,36 @@
         "notes": "No citations are present in 'A Turing machine is a braid; its Skein decomposition is the path integral', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -993,6 +1281,36 @@
         "notes": "Key terms and symbols in 'A Turing machine is a braid; its Skein decomposition is the path integral' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -1011,6 +1329,40 @@
         "notes": "The algebraic and logical relations in 'A Turing machine is a braid; its Skein decomposition is the path integral' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-physical-implausibility": [
@@ -1029,6 +1381,40 @@
         "notes": "The physical concepts described in 'A Turing machine is a braid; its Skein decomposition is the path integral' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-reproducibility": [
@@ -1047,6 +1433,38 @@
         "notes": "The derivation steps and formal definitions in 'A Turing machine is a braid; its Skein decomposition is the path integral' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/skein-turing-machine.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-referee-verdict": [
@@ -1066,8 +1484,40 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'A Turing machine is a braid; its Skein decomposition is the path integral' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
+      },
+      {
+        "field_hash": {
+          "md": "0449da8d94e9",
+          "ts": "b6414960fd74"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

@@ -928,6 +928,40 @@
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/localized-knot.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c26aadb4779a",
+          "ts": "e171b2a598f2",
+          "lean": "73554dd87c09"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "The block claims the fibre S_p is isomorphic to CP^1 and calls it a 'topological S^3 neighborhood'. CP^1 is homeomorphic to S^2, not S^3. Furthermore, any knot embedded in S^2 is trivial (the unknot), making the 'knot sheaf' (knot types embeddable in the fibre) mathematically vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "c26aadb4779a",
+          "ts": "e171b2a598f2",
+          "lean": "73554dd87c09"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "The block claims the fibre S_p is isomorphic to CP^1 and calls it a 'topological S^3 neighborhood'. CP^1 is homeomorphic to S^2, not S^3. Furthermore, any knot embedded in S^2 is trivial (the unknot), making the 'knot sheaf' (knot types embeddable in the fibre) mathematically vacuous."
       }
     ],
     "da-vacuous": [
@@ -1159,5 +1193,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

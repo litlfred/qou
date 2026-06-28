@@ -1029,6 +1029,38 @@
         "notes": "The physical concepts described in 'Let \\alpha be a harmonic 1-form in the basis of' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/algebraic-filter.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "a94e501e3f9f",
+          "ts": "f97452820774"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Mentions '-6 index fixed points'. By the Poincaré-Hopf theorem, the sum of indices of a vector field on S^2 is 2, making a single fixed point of index -6 mathematically and physically implausible in this context."
+      },
+      {
+        "field_hash": {
+          "md": "a94e501e3f9f",
+          "ts": "f97452820774"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Mentions '-6 index fixed points'. By the Poincaré-Hopf theorem, the sum of indices of a vector field on S^2 is 2, making a single fixed point of index -6 mathematically and physically implausible in this context."
       }
     ],
     "da-reproducibility": [
@@ -1069,5 +1101,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

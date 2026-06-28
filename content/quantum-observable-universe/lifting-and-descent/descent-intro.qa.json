@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-intro.md"
   },
   "source_hashes": {
-    "md": "9894a0ce5b8a",
+    "md": "764e5c116950",
     "ts": "79bbd22716a9"
   },
   "criteria": {
@@ -1047,7 +1047,39 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The :refterm[descent]{descent} machinery connects the infinite brane tower t...' are consistent."
       }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "764e5c116950",
+          "ts": "79bbd22716a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Clear, well-structured introduction summarizing the three movements of the descent machinery without overclaims or false premises."
+      },
+      {
+        "field_hash": {
+          "md": "764e5c116950",
+          "ts": "79bbd22716a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Clear, well-structured introduction summarizing the three movements of the descent machinery without overclaims or false premises."
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

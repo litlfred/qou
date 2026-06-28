@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean"
   },
   "source_hashes": {
-    "md": "89b03c63bc80",
+    "md": "982df148e3f4",
     "ts": "0da5f2ae76a0",
     "lean": "99a7e82b78c0"
   },
@@ -1974,6 +1974,40 @@
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over a Noetherian': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "The branch point formula claims R_{tot} = 2d + |\\chi(A)| based on Riemann-Hurwitz. For a covering of P^1 by P^1, Riemann-Hurwitz dictates R_{tot} = 2d - 2. Since an absolute value cannot be -2, the formula is false."
+      },
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "The branch point formula claims R_{tot} = 2d + |\\chi(A)| based on Riemann-Hurwitz. For a covering of P^1 by P^1, Riemann-Hurwitz dictates R_{tot} = 2d - 2. Since an absolute value cannot be -2, the formula is false."
       }
     ],
     "da-vacuous": [
@@ -2204,5 +2238,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

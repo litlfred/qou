@@ -836,6 +836,36 @@
         "reviewed_at": "2026-06-22T02:56:26.340Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
       }
     ],
     "da-false-claim": [
@@ -853,6 +883,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The normal form and trace equations are mathematically correct.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
       }
     ],
     "da-vacuous": [
@@ -870,6 +930,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block discusses a concrete hadron-level representation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
       }
     ],
     "da-circular": [
@@ -887,6 +977,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
       }
     ],
     "da-overclaim": [
@@ -904,6 +1024,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claim that the hadron-level representation captures 'the same Markov trace and Frobenius stability as the full quark-level braid word' is stated without mathematical proof or citation.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
       }
     ],
     "da-hidden-dof": [
@@ -921,6 +1071,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters are introduced.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
       }
     ],
     "da-non-sequitur": [
@@ -938,6 +1118,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The logic is sound.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -955,6 +1165,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No divergence is found.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
       }
     ],
     "da-citation-misuse": [
@@ -972,6 +1212,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The citations are correct.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
       }
     ],
     "da-definitional-ambiguity": [
@@ -989,6 +1259,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The six-element basis {\\gamma, \\sigma_0, \\sigma_1, L_+, L_-, e^-}, the matrix G, and the 'physical cone of H_3(q)' are not defined mathematically.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
       }
     ],
     "da-empirical-fragility": [
@@ -1006,6 +1306,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The calculation is exact.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
       }
     ],
     "da-physical-implausibility": [
@@ -1023,6 +1353,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Mapping physical hadrons and atoms to a physical cone of H_3(q) lacks any physical mechanism or backing.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
       }
     ],
     "da-reproducibility": [
@@ -1040,6 +1400,36 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The calculations are verified by the hadron_knot_table script.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
       }
     ],
     "da-referee-verdict": [
@@ -1058,8 +1448,38 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The six-element basis and the 'physical cone' are not mathematically defined, and the claim that hadron-level representations capture the same Markov trace as the full quark-level braid word is stated without proof."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
+      },
+      {
+        "field_hash": {
+          "md": "cd40d1077567",
+          "ts": "c359465e231b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:42.356Z"
+  "updated_at": "2026-06-28T17:38:15.393Z"
 }

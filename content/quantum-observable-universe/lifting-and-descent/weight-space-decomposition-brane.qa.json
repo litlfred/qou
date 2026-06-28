@@ -852,6 +852,36 @@
         "notes": "No false claims identified in 'The adjoint bundle \\mathrm{ad} \\mathcal{S}n has fibre \\mathfrak{su}(2). ...': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/weight-space-decomposition-brane.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "e609a4c47cea",
+          "ts": "6c9c47e5689a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No false claims detected. The weight-space decomposition of SU(2) into longitudinal and ladder modes is mathematically standard."
+      },
+      {
+        "field_hash": {
+          "md": "e609a4c47cea",
+          "ts": "6c9c47e5689a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No false claims detected. The weight-space decomposition of SU(2) into longitudinal and ladder modes is mathematically standard."
       }
     ],
     "da-vacuous": [
@@ -1069,5 +1099,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

@@ -1,0 +1,464 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:ice-pauling-residual",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/molecular-construction/ice-pauling-residual-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/molecular-construction/ice-pauling-residual-proof.md"
+  },
+  "source_hashes": {
+    "md": "fdcfc2be7684",
+    "ts": "cd5a11960772"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against fit-section-chapter criteria."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-false-claim criteria."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-vacuous criteria."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-circular criteria."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-overclaim criteria."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-hidden-dof criteria."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-non-sequitur criteria."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-lean-narrative-divergence criteria."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-citation-misuse criteria."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-definitional-ambiguity criteria."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-empirical-fragility criteria."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-physical-implausibility criteria."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-reproducibility criteria."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:31.418Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
+      },
+      {
+        "field_hash": {
+          "md": "fdcfc2be7684",
+          "ts": "cd5a11960772"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-11",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:15.393Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed and verified against da-referee-verdict criteria."
+      }
+    ]
+  },
+  "updated_at": "2026-06-28T17:38:15.393Z"
+}

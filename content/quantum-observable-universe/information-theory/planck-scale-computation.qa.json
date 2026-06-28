@@ -814,6 +814,36 @@
         "reviewed_at": "2026-06-22T02:56:27.439Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -832,6 +862,38 @@
         "notes": "No false claims identified in 'sec:planck-scale-computation': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-vacuous": [
@@ -849,6 +911,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'sec:planck-scale-computation' presents substantial mathematical content: This section frames every Planck-time step as the application of a single transf...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-circular": [
@@ -867,6 +961,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:planck-scale-computation'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-overclaim": [
@@ -884,6 +1010,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'sec:planck-scale-computation' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-hidden-dof": [
@@ -902,6 +1062,40 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:planck-scale-computation'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -920,6 +1114,38 @@
         "notes": "The argument flow in 'sec:planck-scale-computation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -937,6 +1163,38 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-citation-misuse": [
@@ -955,6 +1213,36 @@
         "notes": "No citations are present in 'sec:planck-scale-computation', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -973,6 +1261,36 @@
         "notes": "Key terms and symbols in 'sec:planck-scale-computation' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -991,6 +1309,40 @@
         "notes": "The algebraic and logical relations in 'sec:planck-scale-computation' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-physical-implausibility": [
@@ -1009,6 +1361,40 @@
         "notes": "The physical concepts described in 'sec:planck-scale-computation' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-reproducibility": [
@@ -1027,6 +1413,38 @@
         "notes": "The derivation steps and formal definitions in 'sec:planck-scale-computation' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/planck-scale-computation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-referee-verdict": [
@@ -1046,8 +1464,40 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:planck-scale-computation' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
+      },
+      {
+        "field_hash": {
+          "md": "fe8b0935b133",
+          "ts": "3af92b380b49"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

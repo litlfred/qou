@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean"
   },
   "source_hashes": {
-    "md": "a9ff52add0d3",
+    "md": "ae106fdca4d8",
     "ts": "d4b902c48a21",
-    "lean": "e383a6d19ff3"
+    "lean": "0b5f33d6cb39"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1067,6 +1067,38 @@
         "reviewed_at": "2026-06-22T02:56:27.295Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "fit-section-chapter": [
@@ -1087,6 +1119,38 @@
         "reviewed_at": "2026-06-22T02:56:27.756Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-statement": [
@@ -1107,6 +1171,38 @@
         "reviewed_at": "2026-06-22T02:56:28.111Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-proof": [
@@ -1127,6 +1223,38 @@
         "reviewed_at": "2026-06-22T02:56:28.432Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1147,6 +1275,38 @@
         "reviewed_at": "2026-06-22T02:56:28.750Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1171,6 +1331,38 @@
         "reviewed_at": "2026-06-22T02:56:29.178Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1195,6 +1387,38 @@
         "reviewed_at": "2026-06-22T02:56:29.540Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-novelty": [
@@ -1219,6 +1443,38 @@
         "reviewed_at": "2026-06-22T02:56:29.950Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-statement-integrity": [
@@ -1239,6 +1495,38 @@
         "reviewed_at": "2026-06-22T02:56:30.361Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1295,6 +1583,38 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-trivial-true": [
@@ -1315,6 +1635,38 @@
         "reviewed_at": "2026-06-22T02:56:31.061Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-false-premise": [
@@ -1335,6 +1687,38 @@
         "reviewed_at": "2026-06-22T02:56:31.463Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1355,6 +1739,38 @@
         "reviewed_at": "2026-06-22T02:56:31.855Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-decide-masking": [
@@ -1375,6 +1791,38 @@
         "reviewed_at": "2026-06-22T02:56:32.217Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -1394,6 +1842,40 @@
         "notes": "The claim in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-vacuous": [
@@ -1412,6 +1894,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity' presents substantial mathematical content: Let $\\beta$ be a braid on $n$ strands with $c$ crossings, $L = \\hat{\\beta}$ its ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-circular": [
@@ -1431,6 +1947,40 @@
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-overclaim": [
@@ -1449,6 +1999,42 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-hidden-dof": [
@@ -1468,6 +2054,42 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -1487,6 +2109,40 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1505,6 +2161,40 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-citation-misuse": [
@@ -1524,6 +2214,38 @@
         "notes": "Citations to cook1971, freedman2003 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1543,6 +2265,38 @@
         "notes": "Key terms and symbols in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -1562,6 +2316,42 @@
         "notes": "The algebraic and logical relations in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-physical-implausibility": [
@@ -1581,6 +2371,42 @@
         "notes": "The physical concepts described in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ as jet horizon opacity' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-reproducibility": [
@@ -1600,6 +2426,40 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "major",
+        "notes": "Potential issue related to overclaiming or physical implausibility."
       }
     ],
     "da-referee-verdict": [
@@ -1620,8 +2480,42 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
+      },
+      {
+        "field_hash": {
+          "md": "ae106fdca4d8",
+          "ts": "d4b902c48a21",
+          "lean": "0b5f33d6cb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Would likely be rejected by a physics or math referee due to numerological claims and mixing of abstract topology with empirical constants."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

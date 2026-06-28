@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou-su2.md"
   },
   "source_hashes": {
-    "md": "57d71212672e",
+    "md": "2f9831b8a450",
     "ts": "d60d2ac275c9"
   },
   "criteria": {
@@ -798,6 +798,38 @@
         "notes": "No false claims identified in 'Continuing': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou-su2.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:37.861Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Contains multiple mathematical contradictions: 1) Claims the spectrum of the affine ring O(SU(2))^{SU(2)} is CP^1, which is impossible since CP^1 is projective and has no non-constant global functions. 2) Claims an identity covering (degree d=1) has 2 branch points with ramification index e=2. An identity map cannot have ramification."
+      },
+      {
+        "field_hash": {
+          "md": "2f9831b8a450",
+          "ts": "d60d2ac275c9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-17",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:26.691Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "notes": "Contains multiple mathematical contradictions: 1) Claims the spectrum of the affine ring O(SU(2))^{SU(2)} is CP^1, which is impossible since CP^1 is projective and has no non-constant global functions. 2) Claims an identity covering (degree d=1) has 2 branch points with ramification index e=2. An identity map cannot have ramification."
       }
     ],
     "da-vacuous": [
@@ -1015,5 +1047,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-06-28T17:38:26.691Z"
 }

@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean"
   },
   "source_hashes": {
-    "md": "4d17840734b2",
+    "md": "894aac8ae98d",
     "ts": "de698ddcfef5",
-    "lean": "71a933450f8c"
+    "lean": "a9fda10ab617"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1065,6 +1065,38 @@
         "reviewed_at": "2026-06-22T02:56:27.368Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "fit-section-chapter": [
@@ -1085,6 +1117,38 @@
         "reviewed_at": "2026-06-22T02:56:27.749Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-statement": [
@@ -1105,6 +1169,38 @@
         "reviewed_at": "2026-06-22T02:56:28.107Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "wall-side-proof": [
@@ -1125,6 +1221,38 @@
         "reviewed_at": "2026-06-22T02:56:28.529Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1145,6 +1273,38 @@
         "reviewed_at": "2026-06-22T02:56:28.964Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1169,6 +1329,38 @@
         "reviewed_at": "2026-06-22T02:56:29.390Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1193,6 +1385,38 @@
         "reviewed_at": "2026-06-22T02:56:29.703Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-rater-novelty": [
@@ -1217,6 +1441,38 @@
         "reviewed_at": "2026-06-22T02:56:30.162Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-statement-integrity": [
@@ -1237,6 +1493,38 @@
         "reviewed_at": "2026-06-22T02:56:30.555Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1257,6 +1545,38 @@
         "reviewed_at": "2026-06-22T02:56:30.878Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-trivial-true": [
@@ -1295,6 +1615,38 @@
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-false-premise": [
@@ -1315,6 +1667,38 @@
         "reviewed_at": "2026-06-22T02:56:31.658Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1335,6 +1719,38 @@
         "reviewed_at": "2026-06-22T02:56:32.000Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "proof-no-decide-masking": [
@@ -1355,6 +1771,38 @@
         "reviewed_at": "2026-06-22T02:56:32.387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-vacuous": [
@@ -1387,6 +1835,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1419,6 +1899,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-empirical-fragility": [
@@ -1451,6 +1963,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-overclaim": [
@@ -1483,6 +2027,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-false-claim": [
@@ -1515,6 +2091,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-citation-misuse": [
@@ -1547,6 +2155,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-referee-verdict": [
@@ -1568,6 +2208,38 @@
         },
         "reviewed_at": "2026-06-24T12:33:51Z",
         "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-circular": [
@@ -1587,6 +2259,38 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-hidden-dof": [
@@ -1606,6 +2310,42 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "severity": "critical",
+        "evidence": "See claims mapping substrate parameters to physical constants or complexity classes.",
+        "notes": "Strongly suspected numerology, overfitting, or post-hoc rationalization. Mathematical definitions are mapped to physical constants (like latent heat, gravitational constant, or P vs NP) without rigorous mechanistic justification."
       }
     ],
     "da-non-sequitur": [
@@ -1625,6 +2365,38 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1644,6 +2416,38 @@
         "notes": "Key terms and symbols in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-physical-implausibility": [
@@ -1663,6 +2467,38 @@
         "notes": "The physical concepts described in 'Peter--Weyl decomposition of the $q$-heat kernel (archimedean)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ],
     "da-reproducibility": [
@@ -1682,8 +2518,40 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:35:9: error: failed to synthesize"
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:21.765Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
+      },
+      {
+        "field_hash": {
+          "md": "894aac8ae98d",
+          "ts": "de698ddcfef5",
+          "lean": "a9fda10ab617"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-14",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:00.488Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "No issues detected."
       }
     ]
   },
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "updated_at": "2026-06-28T17:38:00.488Z"
 }

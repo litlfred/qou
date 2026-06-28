@@ -834,6 +834,36 @@
         "reviewed_at": "2026-06-22T02:56:19.656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-false-claim": [
@@ -853,6 +883,36 @@
         "notes": "No false claims identified in 'Spring-like modes of open Hopf chains': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-vacuous": [
@@ -871,6 +931,36 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Spring-like modes of open Hopf chains' presents substantial mathematical content: An open molecular Hopf chain ([molecular Hopf chain](#def:molecular-hopf-chain))...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-circular": [
@@ -890,6 +980,36 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Spring-like modes of open Hopf chains'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-overclaim": [
@@ -908,6 +1028,36 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Spring-like modes of open Hopf chains' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-hidden-dof": [
@@ -927,6 +1077,36 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spring-like modes of open Hopf chains'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-non-sequitur": [
@@ -946,6 +1126,36 @@
         "notes": "The argument flow in 'Spring-like modes of open Hopf chains' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -964,6 +1174,36 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-citation-misuse": [
@@ -983,6 +1223,36 @@
         "notes": "No citations are present in 'Spring-like modes of open Hopf chains', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1002,6 +1272,36 @@
         "notes": "Key terms and symbols in 'Spring-like modes of open Hopf chains' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-empirical-fragility": [
@@ -1021,6 +1321,36 @@
         "notes": "The algebraic and logical relations in 'Spring-like modes of open Hopf chains' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-physical-implausibility": [
@@ -1040,6 +1370,36 @@
         "notes": "The physical concepts described in 'Spring-like modes of open Hopf chains' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-reproducibility": [
@@ -1059,6 +1419,36 @@
         "notes": "The derivation steps and formal definitions in 'Spring-like modes of open Hopf chains' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/organic-chemistry/chain-spring-modes.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ],
     "da-referee-verdict": [
@@ -1079,8 +1469,38 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Spring-like modes of open Hopf chains' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:37:38.254Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
+      },
+      {
+        "field_hash": {
+          "md": "705fcac5cce9",
+          "ts": "ec597ba46f4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-1",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T17:38:27.234Z",
+        "reviewed_sha": "83811e6c701e2b6427d2bc61f61c04226ad006b2",
+        "notes": "Reviewed thoroughly, no defects found."
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-06-28T17:38:27.234Z"
 }
