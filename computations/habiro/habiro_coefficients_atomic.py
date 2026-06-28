@@ -327,6 +327,16 @@ if __name__ == "__main__":
     ]
     if os.environ.get("HABIRO_WITH_DEUTERON"):
         cases.append(("D (deuteron, A=2)", 1, 1, True))
+    # A=3 (tritium, helium-3): 35-crossing braids over partitions of 9
+    # (30 partitions) — substantially heavier than the deuteron's
+    # 23-crossing / 11-partition case.  Gated behind HABIRO_WITH_A3 so
+    # the default (p, n only) and the deuteron-only run stay cheap.  T and
+    # ³He let path_b_habiro_mass_probe.py fill the A=3 rows and test the
+    # sub-1% binding claim (bean t6ba follow-up).  Mirrors the
+    # HABIRO_WITH_DEUTERON gate above.
+    if os.environ.get("HABIRO_WITH_A3"):
+        cases.append(("T (tritium, A=3)", 1, 2, True))
+        cases.append(("3He (helium-3, A=3)", 2, 1, True))
 
     results = {}
     for label, Z, N, inter in cases:
@@ -350,7 +360,9 @@ if __name__ == "__main__":
         "computation": "habiro-coefficients-atomic",
         "description": (
             "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(check_q;check_q)_m "
-            "(check_q = q^{1/2}) for atomic braids p, n, D. Verifies the integrality "
+            "(check_q = q^{1/2}) for atomic braids p, n (default), D "
+            "(HABIRO_WITH_DEUTERON=1), and T / ³He (HABIRO_WITH_A3=1). "
+            "Verifies the integrality "
             "and termination properties of the Habiro coefficients claimed "
             "in habiro-ring.md and full-pole-structure-mass-trace.md."
         ),
