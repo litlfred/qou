@@ -1,71 +1,70 @@
-import Mathlib.Tactic
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.BaryonWeight.beta4_hook
 
-**Placeholder canonical** for content block
+Canonical Lean declaration for content block
 [`prop:hook-weight-derivation`](../../../quantum-observable-universe/braids-and-knots/hook-weight-derivation.md): *QOU.BaryonWeight.beta4_hook*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BaryonWeight.beta4_hook` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The hook coefficient identity `β₄ = −½·w_{[2,2]}(4)` is a genuine
+algebraic relation: `β₄` is *defined* as `−½·w_{[2,2]}` (pattern A of
+the vacuity-fix playbook), so the identity is derived by `ring`.  The
+only open empirical input is the numerical value of the Wedderburn-Artin
+weight `w_{[2,2]}(4) ≈ 0.166`, carried as the single hypothesis
+`[Hook22Weight]`; the bound `|β₄ + 0.083| < 0.005` is then *derived*
+from it, not assumed.
 -/
 
 namespace QOU.BaryonWeight
 
-
-/-- Abstract context for the `beta4_hook` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class Beta4HookContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The hook coefficient `β_4`. -/
-  beta4 : ℝ
+/-- The one genuinely-open input for the `β₄` hook coefficient: the
+    empirical value of the Wedderburn-Artin weight
+    `w_{[2,2]}(4) = dim_q([2,2])² / [4]_q! ≈ 0.166` read off the
+    `H₄(R, q)` decomposition at the substrate `q₀`.  A categorical
+    derivation of the numerical value is open (the §3b conjectural
+    hypothesis); the hook identity below is *derived* from it. -/
+class Hook22Weight where
   /-- Wedderburn-Artin weight `w_{[2,2]}(4) = dim_q([2,2])² / [4]_q!`. -/
   w_22 : ℝ
-  /-- Manuscript identity: `β_4 = −½ · w_{[2,2]}(4) ≈ −0.083`. -/
-  claim_beta4_hook : beta4 = - (1/2) * w_22 ∧ |beta4 + 0.083| < 0.005
+  /-- The `H₄(R, q)` decomposition at the substrate yields
+      `w_{[2,2]}(4) ≈ 0.166`. -/
+  w_22_approx : |w_22 - 0.166| < 0.01
 
-/-- **Proposition statement** (from manuscript):
+/-- The hook coefficient `β₄`, **defined** as `−½·w_{[2,2]}(4)` (not
+    assumed). -/
+noncomputable def beta4 [w : Hook22Weight] : ℝ := - (1 / 2) * w.w_22
 
-The coefficient of the hook invariant $\Phi_4$ in the
-four-channel mass formula is*
+/-- **Proposition** (hook-weight derivation).
+
+The coefficient of the hook invariant $\Phi_4$ in the four-channel mass
+formula is
 
 $$
   \beta_4 = -\tfrac{1}{2}\, w_{[2,2]}(4)
           = -\frac{\dim_q([2,2])^2}{2\,[4]_q!}
-          \approx -0.083
+          \approx -0.083 ,
 $$
 
-*where $w_{[2,2]}(4) = \dim_q([2,2])^2 / [4]_q!$ is the
-Wedderburn-Artin weight of the hook partition $[2,2]$ in $H_4(R, q)$,
-the baryon's internal Hecke algebra (3 quarks + gluon =
-4 strands).*
+where $w_{[2,2]}(4) = \dim_q([2,2])^2 / [4]_q!$ is the Wedderburn-Artin
+weight of the hook partition $[2,2]$ in $H_4(R, q)$, the baryon's
+internal Hecke algebra (3 quarks + gluon = 4 strands).
 
-*Proof.*
-The Wedderburn-Artin decomposition of $H_n(R, q)$ assigns weight
-$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ to each irreducible
-representation $\lambda$.  The mass formula uses the Markov
-trace, which decomposes as
-$\mathrm{tr}_M = \sum_\lambda w_\lambda \cdot
-\mathrm{tr}_\lambda / \dim_\lambda$.
-
-For the nuclear braid $H_A(R, q)$ with $A \geq 4$ strands, the
-hook partition $[A{-}2, 2]$ contributes a fourth independent
-invariant $\Phi_4 = \sum_i \ln|\mathrm{tr}_{[A-2,2]}(\text{chain}_i)|$
-beyond the three extremal channels.
-
-The coefficient $\beta_4$ is set by the
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+The identity `β₄ = −½·w_{[2,2]}` is **derived** by `ring` from the
+definition of `β₄`; the numerical bound `|β₄ + 0.083| < 0.005` is
+**derived** from the empirical weight bound `|w_{[2,2]} − 0.166| < 0.01`
+carried by `[Hook22Weight]` — the lone open input. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
-theorem beta4_hook [ctx : Beta4HookContext] :
-    ctx.beta4 = - (1/2) * ctx.w_22 ∧ |ctx.beta4 + 0.083| < 0.005 :=
-  ctx.claim_beta4_hook
+theorem beta4_hook [w : Hook22Weight] :
+    beta4 = - (1 / 2) * w.w_22 ∧ |beta4 + 0.083| < 0.005 := by
+  have hbeta : beta4 = - (1 / 2) * w.w_22 := rfl
+  have hw := w.w_22_approx
+  rw [abs_lt] at hw
+  obtain ⟨hw1, hw2⟩ := hw
+  refine ⟨hbeta, ?_⟩
+  rw [abs_lt, hbeta]
+  refine ⟨?_, ?_⟩ <;> linarith
 
 end QOU.BaryonWeight

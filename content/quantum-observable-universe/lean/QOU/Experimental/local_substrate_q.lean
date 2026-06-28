@@ -1,23 +1,27 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.Experimental.local_substrate_q
 
-**Placeholder canonical** for content block referenced by
+Canonical Lean declaration for content block referenced by
 `qou:QOU.Experimental.local_substrate_q`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-AGENTS.md §1.
+The manuscript claim — that in a sufficiently small neighbourhood the
+substrate parameter `q` agrees with its measured value within the
+uncertainty `Δq` — is an *empirical consistency* statement about an
+opaque substrate parameter.  No faithful Mathlib structure reduces it,
+so this is pattern C of the vacuity-fix playbook: the context class is
+the carrier of the substrate data, and `LocalSubstrateQ` **names** the
+conditional conjecture as a `Prop` (it is honestly *not asserted* — no
+`theorem … := ⟨ctx.claim_*⟩` self-assuming projection; an instance
+discharging it is the open conditional claim).
 -/
 
 namespace QOU.Experimental
 
-
-/-- Abstract context for the `local_substrate_q` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Substrate data for the `local_substrate_q` claim: the substrate
+parameter `q`, its locally measured value `q_measured`, and the
+measurement uncertainty `Δq > 0`. -/
 class LocalSubstrateQContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -25,24 +29,24 @@ class LocalSubstrateQContext where
   q_measured : ℝ
   /-- Measurement uncertainty `Δq`. -/
   Δq : ℝ
+  /-- The uncertainty is strictly positive. -/
   Δq_pos : 0 < Δq
-  /-- Manuscript identity: locally, the substrate parameter `q`
-      satisfies `|q − q_measured| ≤ Δq` (CODATA-style consistency). -/
-  claim_local_substrate_q : |q - q_measured| ≤ Δq
 
-/-- **Content statement** (from manuscript):
+/-- **Content statement** (from manuscript), named as a `Prop`:
 
-In any sufficiently small neighbourhood $U \subset M$ of the observable
-universe, the substrate parameter $q$
-([substrate parameter](#def:substrate-parameter)) satisfies
+In any sufficiently small neighbourhood `U ⊂ M` of the observable
+universe, the substrate parameter `q`
+([substrate parameter](#def:substrate-parameter)) agrees with its
+locally measured value within the measurement uncertainty:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+  `|q − q_measured| ≤ Δq`.
+
+This is the §3b "name the conditional conjecture" disposition (pattern
+C): `LocalSubstrateQ ctx` is the proposition the manuscript conjectures
+for the substrate data `ctx`; the open state is honestly represented by
+the absence of an instance.  It is *not* a self-assuming projection. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
-theorem local_substrate_q [ctx : LocalSubstrateQContext] :
-    |ctx.q - ctx.q_measured| ≤ ctx.Δq :=
-  ctx.claim_local_substrate_q
+def LocalSubstrateQ (ctx : LocalSubstrateQContext) : Prop :=
+    |ctx.q - ctx.q_measured| ≤ ctx.Δq
 
 end QOU.Experimental

@@ -195,31 +195,31 @@ agree: in the q=1 limit (MN) they are equal, but at finite q the
 axial-distance dependence of the Hoefsmit matrices produces
 different traces.
 
-The two instance arguments carry explicit partition arguments
-(`lamZ1N2`, `lamZ2N1`) for the unspecified atomic-braid partitions
-of the two atoms; the body returns `trivial` because the substantive
-non-equality of their Hoefsmit-matrix traces is an open
-research-grade Lean construction.
-
-**Status (interpretive placeholder).** The intended content —
-Hoefsmit-matrix word-sensitivity separates mirror nuclei (e.g.
-³He vs ³H) even when their atomic-braid permutations share a cycle
-type — requires a concrete `HoefsmitRepresentation` instance for the
-specific atomic braid words; that construction lives in the Python
-implementation (`hecke_seminormal.py`) and a Lean-side instance is a
-research-grade follow-up.  The current statement is the trivial
-`True` placeholder pending that construction; it is *not* the
-word-sensitivity inequality itself.
+**Word-sensitivity, named as a `Prop`.** The substantive content —
+that the Hoefsmit forms separate mirror nuclei (e.g. ³He vs ³H) even
+when their atomic-braid permutations share a cycle type — is that
+*there is an atomic braid word `w` whose Hoefsmit-matrix trace at the
+two partitions differs*:
+`trace (wordImage w at λ_{Z1N2}) ≠ trace (wordImage w at λ_{Z2N1})`.
+A constructive witness requires the explicit `HoefsmitRepresentation`
+matrix entries (which live in the Python implementation
+`hecke_seminormal.py`); a Lean-side instance is a research-grade
+follow-up.  Per pattern C of the vacuity-fix playbook we therefore
+**name** the conditional conjecture as a `def : Prop` rather than
+asserting a vacuous `True`.  The open state is honestly represented by
+the absence of a proof — there is no self-assuming projection and no
+`: True := trivial`.
 
 - Ref: [manuscript] prop:atom-knot-mass-derivation §"Word sensitivity"
 - Ref: [hoefsmit1974] https://search.proquest.com/docview/302700007 (PhD thesis)
 - Ref: [mathas1999] https://doi.org/10.1090/ulect/015 §3.31 -/
-theorem hoefsmit_distinguishes_word_sensitivity
+def HoefsmitDistinguishesWordSensitivity
     (lamZ1N2 lamZ2N1 : Partition n)
-    [_HR_Z1N2 : HoefsmitRepresentation n q A lamZ1N2]
-    [_HR_Z2N1 : HoefsmitRepresentation n q A lamZ2N1] :
-    True :=
-  trivial
+    [HR_Z1N2 : HoefsmitRepresentation n q A lamZ1N2]
+    [HR_Z2N1 : HoefsmitRepresentation n q A lamZ2N1] : Prop :=
+  ∃ w : List (Generator n),
+    Matrix.trace (wordImage (lam := lamZ1N2) (HR := HR_Z1N2) w) ≠
+      Matrix.trace (wordImage (lam := lamZ2N1) (HR := HR_Z2N1) w)
 
 end HoefsmitRepresentation
 
