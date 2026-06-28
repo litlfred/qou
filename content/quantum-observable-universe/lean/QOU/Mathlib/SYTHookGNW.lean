@@ -28,7 +28,7 @@ Pure combinatorics on `ℕ`/`ℚ`; nothing archimedean; no fit.
 
 namespace QOU.Mathlib.SYTEnum
 
-open QOU.BraidKnot.IdentityI (prodHooks dimHLF sz)
+open QOU.BraidKnot.IdentityI (prodHooks dimHLF sz colLen colLen_duality)
 
 /-! ## Corner-removal infrastructure -/
 
@@ -37,6 +37,9 @@ corner, i.e. the next row is strictly shorter (treating "beyond the last row" as
 weakly-decreasing positive shape this is exactly the set of cells whose deletion leaves a shape. -/
 def IsCorner (l : List ℕ) (i : ℕ) : Prop :=
   i < l.length ∧ l.getD (i + 1) 0 < l.getD i 0
+
+instance (l : List ℕ) (i : ℕ) : Decidable (IsCorner l i) := by
+  unfold IsCorner; infer_instance
 
 /-- Remove one cell from the end of row `i`: decrement that row's length, then drop the row entirely
 if it has shrunk to `0` (which, for a removable corner of a weakly-decreasing positive shape, happens
@@ -123,5 +126,191 @@ theorem removeCorner_pos (l : List ℕ) (i : ℕ) : ∀ a ∈ removeCorner l i, 
   rw [List.mem_filter] at ha
   have : a ≠ 0 := by simpa using ha.2
   omega
+
+/-! ## Hook product is positive, and the corner index set -/
+
+/-- A list of positive naturals has positive product. -/
+theorem list_prod_pos : ∀ (L : List ℕ), (∀ x ∈ L, 0 < x) → 0 < L.prod
+  | [], _ => by simp
+  | a :: t, h => by
+    rw [List.prod_cons]
+    exact Nat.mul_pos (h a (by simp)) (list_prod_pos t (fun x hx => h x (List.mem_cons_of_mem a hx)))
+
+/-- **The hook product is positive** on a weakly-decreasing positive shape: every cell `(i, j)` with
+`j < λ_i` has hook `(λ_i − j) + (colLen j − i) − 1 ≥ 1`, since `λ_i − j ≥ 1` and `colLen j > i` (the
+column through an existing cell is at least `i + 1` tall, by `colLen_duality`). -/
+theorem prodHooks_pos (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a) :
+    0 < prodHooks l := by
+  unfold prodHooks
+  apply list_prod_pos
+  intro x hx
+  rw [List.mem_map] at hx
+  obtain ⟨i, _hi, rfl⟩ := hx
+  apply list_prod_pos
+  intro y hy
+  rw [List.mem_map] at hy
+  obtain ⟨j, hj, rfl⟩ := hy
+  rw [List.mem_range] at hj
+  have hcol : i < colLen l j := (colLen_duality l hl i j).mpr hj
+  omega
+
+/-- The removable corners of `l`, as the list of row indices `i` with `IsCorner l i`. -/
+def corners (l : List ℕ) : List ℕ :=
+  (List.range l.length).filter (fun i => decide (IsCorner l i))
+
+/-- Membership in `corners l` is exactly being a removable corner. -/
+theorem mem_corners {l : List ℕ} {c : ℕ} (h : c ∈ corners l) : IsCorner l c := by
+  unfold corners at h
+  rw [List.mem_filter] at h
+  exact of_decide_eq_true h.2
+
+/-- A removable corner of a positive shape has positive row length, so `removeCorner` shrinks `sz`. -/
+theorem getD_pos_of_corner {l : List ℕ} (hpos : ∀ a ∈ l, 0 < a) {c : ℕ} (hc : IsCorner l c) :
+    1 ≤ l.getD c 0 := by
+  rw [getD_eq_getElem' l c hc.1]
+  exact hpos _ (List.getElem_mem hc.1)
+
+/-- Pull a constant out of a list sum-of-map: `∑ (A · f c) = A · ∑ f c`. -/
+theorem sum_map_const_mul (A : ℚ) (L : List ℕ) (f : ℕ → ℚ) :
+    (L.map (fun c => A * f c)).sum = A * (L.map f).sum := by
+  induction L with
+  | nil => simp
+  | cons a t ih => simp [List.sum_cons, ih, mul_add]
+
+/-! ## The two residual GNW identities (cited `sorry` — self-contained, unblocked)
+
+Unlike `SYTHookFormulaGeneral.dimAitkenIdentity` (blocked: needs Specht/RSK/Frobenius-determinant
+infrastructure absent from the pinned Mathlib), both statements below are pure `ℕ`/`ℚ` combinatorics on
+the list shape model and are in principle provable on the current toolchain. -/
+
+/-- **(GNW count) corner recursion of the standard-tableau count.**  In any standard tableau of shape
+`λ` the largest entry `n` occupies a removable corner; deleting it is a bijection
+`SYT(λ) ≃ ⨆_{corners c} SYT(λ ∖ c)`, whence the count splits as a sum. -/
+theorem cornerRecursion (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
+    (hne : l ≠ []) :
+    numSYTenum l = ((corners l).map (fun c => numSYTenum (removeCorner l c))).sum := by
+  -- Ref: [sagan2001] https://doi.org/10.1007/978-1-4757-6804-6 (branching rule for SYT; the largest
+  -- entry sits in a removable corner, deletion is a bijection — §3.x).  Self-contained ℕ bijection.
+  sorry
+
+/-- **(GNW hook) hook-summation identity.**  Summing the hook-product ratios over the removable corners
+gives the cell count: `∑_{corners c} ∏h_λ / ∏h_{λ∖c} = n`.  This is the partial-fractions / telescoping
+core of the Greene–Nijenhuis–Wilf proof — the rational identity that turns the count recursion into the
+hook-length formula. -/
+theorem gnwHookIdentity (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
+    (hne : l ≠ []) :
+    ((corners l).map (fun c => (prodHooks l : ℚ) / (prodHooks (removeCorner l c) : ℚ))).sum
+      = (sz l : ℚ) := by
+  -- Ref: [sagan2001] https://doi.org/10.1007/978-1-4757-6804-6 (Greene–Nijenhuis–Wilf hook walk; the
+  -- corner hook-ratio sum equals n — §3.x, partial fractions).  Self-contained ℚ identity.
+  sorry
+
+/-! ## The sorry-free reduction: corner recursion + GNW hook identity ⟹ HLF
+
+Strong induction on `n = sz l` combining `cornerRecursion` and `gnwHookIdentity`.  Everything below is
+machine-checked; the *only* unproved inputs are the two identities above. -/
+
+/-- Strong-induction core: `#SYT(λ) = n! / ∏h_λ` over `ℚ`, conditional on the two GNW identities. -/
+private theorem numSYTenum_eq_div_aux :
+    ∀ (n : ℕ) (l : List ℕ), sz l = n → List.Sorted (· ≥ ·) l → (∀ a ∈ l, 0 < a) →
+      (numSYTenum l : ℚ) = ((sz l).factorial : ℚ) / (prodHooks l : ℚ) := by
+  intro n
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    intro l hsz hl hpos
+    rcases eq_or_ne l [] with hnil | hne
+    · subst hnil
+      have h1 : numSYTenum [] = 1 := by decide
+      have h2 : prodHooks [] = 1 := by decide
+      simp [h1, h2, sz]
+    · -- inductive step
+      have hph : 0 < prodHooks l := prodHooks_pos l hl hpos
+      have hphQ : (prodHooks l : ℚ) ≠ 0 := by exact_mod_cast hph.ne'
+      have hn1 : 1 ≤ n := by
+        rcases l with _ | ⟨a, t⟩
+        · exact absurd rfl hne
+        · have := hpos a (List.mem_cons_self ..)
+          rw [← hsz]; unfold sz; rw [List.sum_cons]; omega
+      have hcr := cornerRecursion l hl hpos hne
+      have hgnw := gnwHookIdentity l hl hpos hne
+      -- value of the inner ∑ (∏h_{λ∖c})⁻¹
+      have hSval : ((corners l).map (fun c => (prodHooks (removeCorner l c) : ℚ)⁻¹)).sum
+          = (sz l : ℚ) / prodHooks l := by
+        have hg : (prodHooks l : ℚ)
+            * ((corners l).map (fun c => (prodHooks (removeCorner l c) : ℚ)⁻¹)).sum = (sz l : ℚ) := by
+          rw [← sum_map_const_mul, ← hgnw]
+          apply congrArg List.sum
+          apply List.map_congr_left
+          intro c _
+          rw [div_eq_mul_inv]
+        rw [eq_div_iff hphQ, mul_comm]
+        exact hg
+      -- n! = n · (n−1)!
+      have hfact : (n.factorial : ℚ) = (n : ℚ) * ((n - 1).factorial : ℚ) := by
+        rcases n with _ | m
+        · omega
+        · simp only [Nat.add_sub_cancel, Nat.factorial_succ]; push_cast; ring
+      calc (numSYTenum l : ℚ)
+          = ((corners l).map (fun c => (numSYTenum (removeCorner l c) : ℚ))).sum := by
+            rw [hcr]; push_cast; rw [List.map_map]; rfl
+        _ = ((corners l).map
+              (fun c => ((n - 1).factorial : ℚ) * (prodHooks (removeCorner l c) : ℚ)⁻¹)).sum := by
+            apply congrArg List.sum
+            apply List.map_congr_left
+            intro c hc
+            have hcorner := mem_corners hc
+            have hszc1 : sz (removeCorner l c) + 1 = sz l :=
+              sz_removeCorner l c hcorner.1 (getD_pos_of_corner hpos hcorner)
+            have hszc : sz (removeCorner l c) = n - 1 := by omega
+            have hmlt : sz (removeCorner l c) < n := by omega
+            have hihc := ih (sz (removeCorner l c)) hmlt (removeCorner l c) rfl
+              (sorted_removeCorner l c hl hcorner) (removeCorner_pos l c)
+            rw [hihc, hszc, div_eq_mul_inv]
+        _ = ((n - 1).factorial : ℚ)
+              * ((corners l).map (fun c => (prodHooks (removeCorner l c) : ℚ)⁻¹)).sum := by
+            rw [sum_map_const_mul]
+        _ = ((sz l).factorial : ℚ) / (prodHooks l : ℚ) := by
+            rw [hSval, hsz, hfact]; field_simp
+
+/-- **#SYT(λ) = n!/∏h_λ over `ℚ`** — conditional on `cornerRecursion` + `gnwHookIdentity`. -/
+theorem numSYTenum_eq_factorial_div (l : List ℕ) (hl : List.Sorted (· ≥ ·) l)
+    (hpos : ∀ a ∈ l, 0 < a) :
+    (numSYTenum l : ℚ) = ((sz l).factorial : ℚ) / (prodHooks l : ℚ) :=
+  numSYTenum_eq_div_aux (sz l) l rfl hl hpos
+
+/-- **Divisor-free HLF `#SYT(λ) · ∏h_λ = n!`** (over `ℕ`) — conditional on the two GNW identities.
+This is exactly the divisor-free Frame–Robinson–Thrall form; proving the two GNW identities makes it
+unconditional. -/
+theorem numSYTenum_mul_prodHooks (l : List ℕ) (hl : List.Sorted (· ≥ ·) l)
+    (hpos : ∀ a ∈ l, 0 < a) :
+    numSYTenum l * prodHooks l = (sz l).factorial := by
+  have hQ := numSYTenum_eq_factorial_div l hl hpos
+  have hph : 0 < prodHooks l := prodHooks_pos l hl hpos
+  have hphQ : (prodHooks l : ℚ) ≠ 0 := by exact_mod_cast hph.ne'
+  have hmul : (numSYTenum l : ℚ) * prodHooks l = ((sz l).factorial : ℚ) := by
+    rw [hQ]; field_simp
+  exact_mod_cast hmul
+
+/-- **General HLF `#SYT(λ) = dimHLF λ`** via the GNW route — conditional on the two GNW identities.
+Same statement as `SYTHookFormulaGeneral.numSYTenum_eq_dimHLF`, but routed through the self-contained
+corner recursion rather than the Mathlib-blocked Aitken determinant. -/
+theorem numSYTenum_eq_dimHLF_gnw (l : List ℕ) (hl : List.Sorted (· ≥ ·) l)
+    (hpos : ∀ a ∈ l, 0 < a) :
+    numSYTenum l = dimHLF l := by
+  have hkey := numSYTenum_mul_prodHooks l hl hpos
+  have hph : 0 < prodHooks l := prodHooks_pos l hl hpos
+  unfold dimHLF
+  rw [← hkey, Nat.mul_div_cancel _ hph]
+
+/-- **The Aitken/Frobenius determinant identity, derived from the GNW route.**  Identical statement to
+the *blocked* `SYTHookFormulaGeneral.dimAitkenIdentity` (which needs Specht/RSK infra absent from the
+pinned Mathlib), here obtained with no determinant infrastructure: combine the divisor-free HLF
+`#SYT·∏h = n!` with the merged hook-product identity (i) `∏h · betaProdGap = betaFactProd`. -/
+theorem dimAitkenIdentity_of_gnw (l : List ℕ) (hl : List.Sorted (· ≥ ·) l)
+    (hpos : ∀ a ∈ l, 0 < a) :
+    numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by
+  have hi := prodHooks_mul_betaProdGap l hl
+  have hkey := numSYTenum_mul_prodHooks l hl hpos
+  rw [← hi, ← mul_assoc, hkey]
 
 end QOU.Mathlib.SYTEnum
