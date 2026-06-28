@@ -196,6 +196,7 @@ export default chapter({
         "transfer-beta-decay-q-beta-spectral-intro",
         "q-beta-spectral-bridge",
         "q-beta-spectral-bridge-proof",
+        "archimedean-remainder-exponential-decay",
         "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
