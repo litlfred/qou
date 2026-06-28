@@ -5,26 +5,28 @@ import Mathlib.Tactic
 
 Formalises [`conj:klein-bring-icosahedral-bridge`](klein-bring-icosahedral-bridge.md):
 a faithful icosahedral `A₅`-action on the categorical base `ℙ(V)` (archimedean
-realisation `τ(ℙ(V)) ≅ ℙ¹(ℂ)`) realising Klein's solution of the
-Bring–Jerrard quintic, with quotient `ℙ(V)/A₅ ≅ S²(2,3,5)` = the keystone
-Seifert base of `S³/2I`.
+realisation `τ(ℙ(V)) ≅ ℙ¹(ℂ)`) whose order-5 generator is the corpus `ζ₅`
+pentad, realising Klein's solution of the Bring–Jerrard quintic, with quotient
+`ℙ(V)/A₅ ≅ S²(2,3,5)` = the keystone Seifert base of `S³/2I`.
 
-Three layers (AGENTS.md §3b / §3b-tax):
+Layers (AGENTS.md §3b / §3b-tax), all the arithmetic/group facts sorry-free:
 
-* a **proved arithmetic skeleton** — spherical `(2,3,5)`, icosahedral order `60`,
-  orbit obstruction;
-* a **proved refutation of the naive assembly** — `dihedral_two_cycle_sq`: the
-  corpus's canonical order-2/order-3 force generators (`def:su2-generators`,
-  `βαβ⁻¹ = α⁻¹`) satisfy `(βα)² = 1`, the `(2,3,2)` dihedral relation, so they
-  generate the trefoil `S₃`, **not** the icosahedral `(2,3,5)`; and
-* the **sharpened primary conjecture** `KleinBringIcosahedralBridge` — a
-  content-bearing class with **no instance** requiring an order-5 product
-  `(c₂ c₃)^5 = 1` (icosahedral-angle generators, *distinct* from the trefoil
-  pair the refutation excludes). `-- Ref: [klein1888]`.
+* **arithmetic skeleton** — spherical `(2,3,5)`, order `60`, orbit obstruction;
+* **refutation of the naive assembly** — `dihedral_two_cycle_sq`: the corpus's
+  canonical order-2/order-3 force generators (`def:su2-generators`,
+  `βαβ⁻¹ = α⁻¹`) give `(βα)² = 1`, the `(2,3,2)` trefoil — NOT `(2,3,5)`;
+* **construction of the surviving core** — `icosahedral_235_realizable`: explicit
+  even permutations realise the `(2,3,5)` relation (`c₂c₃` a 5-cycle), the
+  positive complement; the explicit Klein generators `S = ζ₅` pentad, `T`
+  (icosahedral 2-fold) live in `keystone_klein_icosahedral_construction.py`;
+* the **residual primary conjecture** `KleinBringIcosahedralBridge` — now the
+  *sole* open content is the orbifold identification `ℙ(V)/⟨c₂,c₃⟩ ≅ KB` (the
+  keystone Seifert base `S²(2,3,5)`); content-bearing, no instance. `-- Ref: [klein1888]`.
 
-Base ring (§7c): `ℕ`/`ℚ` arithmetic + abstract group data — no archimedean
-construct, no `ℝ`. Authored in a sandbox without a Lean toolchain;
-**not yet `lean`-direct verified** (manifest `validation: not_checked`).
+Base ring (§7c): `ℕ`/`ℚ` arithmetic + abstract group/`Perm` data — no
+archimedean construct, no `ℝ`. Authored in a sandbox without a Lean toolchain;
+group lemmas + the construction cross-checked in Python;
+**not yet `lean`-direct verified** (`validation: not_checked`).
 -/
 
 namespace QOU.KleinBringBridge
@@ -42,34 +44,26 @@ theorem icoOrder_two   : icoOrder = 2 * 30 := by norm_num [icoOrder]
 theorem icoOrder_three : icoOrder = 3 * 20 := by norm_num [icoOrder]
 theorem icoOrder_five  : icoOrder = 5 * 12 := by norm_num [icoOrder]
 
-/-- `A₅`-orbit sizes on `ℙ(V) = S²` are `60/{1,2,3,5} = {60,30,20,12}` (cyclic
-point-stabilisers). **No orbit has size `6`** and the minimum is `12`, so the
-ED's six branch points `{ζ₅ᵏ, ∞}` are not `A₅`-invariant (they are the
-`C₅`-pentagon). -/
+/-- `A₅`-orbit sizes on `ℙ(V) = S²` are `60/{1,2,3,5} = {60,30,20,12}`; no orbit
+has size `6`, so the ED's six branch points `{ζ₅ᵏ, ∞}` are not `A₅`-invariant. -/
 theorem no_orbit_of_size_six :
     ∀ k ∈ ({1, 2, 3, 5} : Finset ℕ), icoOrder / k ≠ 6 := by decide
 
-/-! ## Proved refutation of the naive assembly (the trefoil generators are dihedral) -/
+/-! ## Refutation of the naive assembly (the trefoil generators are dihedral) -/
 
 /-- **The canonical force generators are `(2,3,2)`-dihedral, not `(2,3,5)`.**
-In any group, the dihedral relation `β α β = α⁻¹` (the `def:su2-generators`
-relation `βαβ⁻¹ = α⁻¹` with `β² = 1`, so `β⁻¹ = β`) forces the product `βα` to
-square to the identity:
-`(βα)² = (βαβ)·α = α⁻¹·α = 1`.
-Hence `βα` has order dividing `2` — it can **never** have the order `5` an
-icosahedral `(2,3,5)` triangle relation demands. The corpus's order-3 colour
-`α = exp((2π/3)e₃)` and order-2 EM `β = exp(πe₁)` therefore generate the trefoil
-`S₃ ≅ D₃`, refuting the naive "reuse the trefoil generators" assembly of the
-bridge (scope-limited). -/
+The `def:su2-generators` relation `βαβ⁻¹ = α⁻¹` with `β² = 1` gives `βαβ = α⁻¹`,
+forcing `(βα)² = (βαβ)·α = α⁻¹·α = 1`. So `βα` has order dividing `2` — never the
+order `5` an icosahedral `(2,3,5)` relation demands; `⟨α, β⟩` is the trefoil
+`S₃ ≅ D₃`. -/
 theorem dihedral_two_cycle_sq {G : Type*} [Group G] (α β : G)
     (h : β * α * β = α⁻¹) : (β * α) * (β * α) = 1 := by
   have hassoc : (β * α) * (β * α) = (β * α * β) * α := by group
-  rw [hassoc, h]
-  group
+  rw [hassoc, h]; group
 
-/-- Corollary: a `(2,3,2)`-dihedral pair cannot satisfy the icosahedral order-5
-product relation `(βα)·(βα)·(βα)·(βα)·(βα) = 1` unless `βα = 1` (the degenerate
-case). Since `(βα)² = 1`, the fifth power collapses to `βα`. -/
+/-- Corollary: a `(2,3,2)`-dihedral pair collapses the would-be order-5 product
+to `βα` itself (`(βα)⁵ = βα`), so it cannot satisfy the icosahedral relation
+unless `βα = 1`. -/
 theorem dihedral_not_order_five {G : Type*} [Group G] (α β : G)
     (h : β * α * β = α⁻¹) :
     (β * α) * ((β * α) * ((β * α) * ((β * α) * (β * α)))) = β * α := by
@@ -80,35 +74,58 @@ theorem dihedral_not_order_five {G : Type*} [Group G] (α β : G)
     _ = (β * α) * (1 * 1) := by rw [h2]
     _ = β * α := by group
 
-/-! ## The sharpened primary conjecture (open QOU wiring) -/
+/-! ## Construction of the surviving core: the `(2,3,5)` relation IS realizable -/
+
+open Equiv in
+/-- **The icosahedral `(2,3,5)` relation is realizable in `A₅`** — the positive
+complement to `dihedral_two_cycle_sq`. The explicit even permutations
+`c₂ = (1 2)(3 4)` (order 2) and `c₃ = (0 2 4)` (order 3) have product
+`c₂ c₃ = (0 1 2 3 4)` of order **exactly 5**. So order-2/order-3 generators at
+the icosahedral angle exist (unlike the perpendicular trefoil pair). Klein's
+explicit realization on `ℙ(V)` with `c₂ c₃ =` the `ζ₅` pentad is verified in
+`scripts/keystone_klein_icosahedral_construction.py`. -/
+theorem icosahedral_235_realizable :
+    ∃ c2 c3 : Equiv.Perm (Fin 5),
+      (c2 ^ 2 = 1 ∧ c2 ≠ 1) ∧ (c3 ^ 3 = 1 ∧ c3 ≠ 1) ∧
+      ((c2 * c3) ^ 5 = 1 ∧ c2 * c3 ≠ 1 ∧ (c2 * c3) ^ 2 ≠ 1) :=
+  ⟨swap (1 : Fin 5) 2 * swap 3 4, swap (0 : Fin 5) 2 * swap 2 4,
+    by decide, by decide, by decide⟩
+
+/-! ## The residual primary conjecture (sole open content: the keystone-base quotient) -/
 
 /-- **Klein icosahedral–quintic / Bring-radical bridge** (PRIMARY conjecture,
-§3b-tax — content-bearing class, no instance = open state).
+§3b-tax). The group-theoretic core is now *discharged* (`icosahedral_235_realizable`
++ the Klein witness): an order-2/order-3 pair with `c₂c₃` the `ζ₅` pentad exists
+and generates a faithful `A₅`. This class isolates the **sole residual open
+content** — the orbifold identification `ℙ(V)/⟨c₂,c₃⟩ ≅ KB`, where `KB` is the
+keystone Seifert base `S²(2,3,5)` of `S³/2I`. The map `proj : P → KB` realising
+the quotient is the open geometric object (no instance is constructed).
 
-`G` is the conjectural icosahedral `A₅` acting on the categorical base
-`P := ℙ(V)` via `act`; `c2, c3 : G` are an **order-2 / order-3 pair at the
-icosahedral angle** — *distinct* from the corpus trefoil generators, which
-`dihedral_two_cycle_sq` proves cannot satisfy the field `triangle_relation`
-below. The decisive open hypothesis is `triangle_relation`: their product has
-order exactly `5` (the `(2,3,5)` icosahedral relation). The deep classical
-inputs — Klein's icosahedral solution of the Bring–Jerrard quintic and the
-identification `ℙ(V)/A₅ ≅ S²(2,3,5)` (keystone Seifert base) — are carried as
-the conjectural hypothesis; no instance is constructed.
+* `act` — the `A₅`-action on the base `P = ℙ(V)`;
+* `c2, c3` — the icosahedral-angle generators (orders 2, 3; `c₂c₃` order 5);
+* `proj` — the conjectural quotient map onto the keystone base `KB`.
 
 -- Ref: [klein1888] https://archive.org/details/lecturesonikosa00kleigoog
 -- Ref: [bring1786] (Bring–Jerrard reduction of the quintic) -/
 class KleinBringIcosahedralBridge
-    (G : Type*) [Monoid G] (P : Type*) (act : G → P → P)
-    (c2 c3 : G) : Prop where
-  /-- the order-2 generator (icosahedral 2-fold, distinct from the EM trefoil β). -/
+    (G : Type*) [Monoid G] (P : Type*) (act : G → P → P) (c2 c3 : G)
+    (KB : Type*) (proj : P → KB) : Prop where
+  /-- order-2 icosahedral generator (distinct from the refuted EM trefoil `β`). -/
   order_c2 : c2 ^ 2 = 1 ∧ c2 ≠ 1
-  /-- the order-3 generator (icosahedral 3-fold, distinct from the colour trefoil α). -/
+  /-- order-3 icosahedral generator (distinct from the colour trefoil `α`). -/
   order_c3 : c3 ^ 3 = 1 ∧ c3 ≠ 1
-  /-- **the decisive icosahedral relation**: the product `c2 c3` has order
-      exactly `5` (`(2,3,5)`). This is what the corpus trefoil pair provably
-      fails (`dihedral_two_cycle_sq`: there `(βα)² = 1`). -/
-  triangle_relation : (c2 * c3) ^ 5 = 1 ∧ (c2 * c3) ≠ 1 ∧ (c2 * c3) ^ 2 ≠ 1
-  /-- the icosahedral group acts faithfully on the base `P = ℙ(V)`. -/
+  /-- the icosahedral `(2,3,5)` relation: `c₂c₃` (the `ζ₅` pentad) has order
+      exactly `5` — realizable (`icosahedral_235_realizable`), unlike the trefoil. -/
+  triangle_relation : (c2 * c3) ^ 5 = 1 ∧ c2 * c3 ≠ 1 ∧ (c2 * c3) ^ 2 ≠ 1
+  /-- `A₅` acts faithfully on `P = ℙ(V)`. -/
   faithful : ∀ g h : G, (∀ p : P, act g p = act h p) → g = h
+  /-- **open content (i):** `proj` is constant on `⟨c₂,c₃⟩`-orbits — it descends
+      to the orbit space. -/
+  proj_orbit_constant : ∀ (g : G) (p : P), proj (act g p) = proj p
+  /-- **open content (ii):** `proj` realises the quotient isomorphism
+      `ℙ(V)/A₅ ≅ KB` — distinct orbits map to distinct points of the keystone
+      base (so `proj` is injective on the orbit space). Exhibiting such a `proj`
+      onto the keystone Seifert base `S²(2,3,5)` is the open geometric problem. -/
+  proj_separates_orbits : ∀ p p' : P, proj p = proj p' → ∃ g : G, act g p = p'
 
 end QOU.KleinBringBridge
