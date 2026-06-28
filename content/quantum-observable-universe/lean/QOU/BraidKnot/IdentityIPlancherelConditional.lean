@@ -111,4 +111,27 @@ instance plancherelSnData_two : PlancherelSnData 2 where
   sum_dim_sq := by decide
   two_sum_dim_sq_content := by decide
 
+/-- **Stronger non-vacuity witness — `PlancherelSnData 4` from genuine combinatorics.** The
+`n = 2` instance above takes `dim ≡ 1` (both partitions one-dimensional), so it does not exercise
+the dimensions at all.  This instance is the first with **non-trivial SYT dimensions**: the five
+partitions of `4` are `[4],[3,1],[2,2],[2,1,1],[1,1,1,1]` with `dim = 1,3,2,3,1`, and crucially
+`dim := dimHLF` is the **actual Frame–Robinson–Thrall hook-length dimension** (not a hand-supplied
+constant).  Both standard axioms then check against real partition combinatorics by `decide`:
+
+* **(i)** `Σ dim² = 1+9+4+9+1 = 24 = 4!` (`sum_dim_sq`); and
+* **(ii)** `2·Σ dim²·Σc² = 2·144 = 288 = 4·3·4!` (`two_sum_dim_sq_content`), the cleared
+  content-square Plancherel mean — the per-partition `Σc²` being `14,6,2,6,14`.
+
+So the conditional Identity I (`two_sum_dim_sq_hooks`, `twoM_eq_plancherel_hook_sum`) is
+non-degenerate over a model where the dimensions are the genuine `dimHLF` values and the two
+axioms are not vacuously `dim ≡ 1` arithmetic — it is the same `dimHLF`/`sumSqContents`
+combinatorics that `idB_verified_le12` / `dim_validated_le12` verify across all `n ≤ 12`. -/
+instance plancherelSnData_four : PlancherelSnData 4 where
+  parts := {[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]}
+  parts_sorted := by decide
+  parts_sz := by decide
+  dim := dimHLF
+  sum_dim_sq := by decide
+  two_sum_dim_sq_content := by decide
+
 end QOU.BraidKnot.IdentityI
