@@ -279,6 +279,7 @@ def build_chi_cache_at_q0(
                     f"Re-running picks up cached partitions and computes the "
                     f"remaining ones."
                 ),
+                "convention": "averaged-crossings",
                 "q_0_50dps": str(q),
                 "dps": dps,
                 "n_strands": n,
@@ -326,6 +327,7 @@ def save_witness(record: dict) -> Path:
             f"symbolic data is not yet available. ~100× faster to build "
             f"than the symbolic counterpart (no sympy poly arithmetic)."
         ),
+        "convention": "averaged-crossings",
         "q_0_50dps": Q_50_DIGIT_STR,
         "dps": 50,
         "n_strands": n,

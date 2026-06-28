@@ -147,6 +147,7 @@ def run_atom(atom: str, Z: int, N: int, dps: int = 50) -> Path:
             f"χ(q_0)·χ(q_0^{{-1}}).  Same partition order as the "
             f"sibling `chi-{atom}-h{n}-at-q0-50dps.witness.json`."
         ),
+        "convention": "averaged-crossings",
         "q_inv_50dps_str": q_inv,
         "dps": dps,
         "n_strands": n,
