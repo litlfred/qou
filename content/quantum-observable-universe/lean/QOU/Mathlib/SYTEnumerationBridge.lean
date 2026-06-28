@@ -1,5 +1,6 @@
 import QOU.Mathlib.SYTEnumeration
 import Mathlib.Data.List.Permutation
+import Mathlib.Combinatorics.Young.YoungDiagram
 
 /-!
 # QOU.Mathlib.SYTEnumerationBridge — `numSYTenum` as a count of distinct standard fillings
@@ -75,5 +76,32 @@ theorem mem_standardFillings_iff (l a : List ℕ) :
     a ∈ standardFillings l ↔
       (a.Perm ((List.range l.sum).map (· + 1)) ∧ isStdFilling l a = true) := by
   rw [standardFillings, List.mem_filter, mem_allPerms_iff_perm]
+
+/-- **The Young diagram of a row-length list has exactly `∑l` cells** (a Mathlib gap: there is no
+`card (cellsOfRowLens w) = w.sum` in the pinned toolchain).  Proved by induction on the recursive
+`cellsOfRowLens`: each cons adds a fresh row `{0} ×ˢ range a` (card `a`) disjoint from the rest
+(whose first coordinate is `Nat.succ _ ≥ 1`).  This is the cardinality `n` that the
+`StandardYoungTableau.bijOn` field ranges over (`Set.Icc 1 μ.cells.card`), pinning it to `∑l` — the
+load-bearing fact for the remaining `numSYTenum = dimSYT` bijection. -/
+theorem card_cellsOfRowLens (w : List ℕ) :
+    (YoungDiagram.cellsOfRowLens w).card = w.sum := by
+  induction w with
+  | nil => simp [YoungDiagram.cellsOfRowLens]
+  | cons a ws ih =>
+    rw [YoungDiagram.cellsOfRowLens, List.sum_cons]
+    rw [Finset.card_union_of_disjoint, Finset.card_map, ih]
+    · simp
+    · rw [Finset.disjoint_left]
+      rintro ⟨i, j⟩ h1 h2
+      simp only [Finset.mem_product, Finset.mem_singleton, Finset.mem_range] at h1
+      obtain ⟨rfl, -⟩ := h1
+      rw [Finset.mem_map] at h2
+      obtain ⟨⟨i', j'⟩, -, heq⟩ := h2
+      simp [Function.Embedding.prodMap] at heq
+
+/-- `#cells (ofRowLens w hw) = ∑w`. -/
+theorem card_cells_ofRowLens (w : List ℕ) (hw : List.Sorted (· ≥ ·) w) :
+    (YoungDiagram.ofRowLens w hw).cells.card = w.sum :=
+  card_cellsOfRowLens w
 
 end QOU.Mathlib.SYTEnum
