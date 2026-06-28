@@ -9,8 +9,6 @@ export default remark({
     "def:categorical-fourier",
     "def:categorical-laplace",
     "prop:tannaka-krein-reconstruction",
-    "rem:lagrange-resolvents",
-    "def:briggs-klein-chart",
-    "rem:brings-smoothness",
+    "rem:laplace-fourier-wick-rotation",
   ],
 });

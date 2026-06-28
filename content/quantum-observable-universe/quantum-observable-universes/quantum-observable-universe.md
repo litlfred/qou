@@ -13,9 +13,7 @@ conditions hold:
 
 2. *(observability)* there are no hidden global symmetries:
  $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
- ($A$ acted on by conjugation). Physically, this means every
- internal degree of freedom is accessible to measurement — no
- gauge transformation acts as the identity on all observables. The
+ ($A$ acted on by conjugation). The
  formal statement is that every morphism
  $\mathbf{1} \to \mathrm{Ad}(A)$ is zero:
 
@@ -51,13 +49,6 @@ conditions hold:
      c_2(\mathrm{Ad}(A)) = 0.
    $$
 
- The first condition ensures the adjoint bundle is
- orientable, precluding global anomalies; the second ensures
- the volume form acquires no topological phases (see
- [Remark](#rem:yekutieli-stokes) for the connection to
- categorical flatness via Yekutieli's nonabelian Stokes theorem).
- For many applications, axioms (1), (2), and (3) suffice — axiom
- (3) is needed only when global topology of $M$ matters.
 
 4. *(categorical volume constraint)*
  let $V$ denote the fundamental object of $\mathbf{C}$
