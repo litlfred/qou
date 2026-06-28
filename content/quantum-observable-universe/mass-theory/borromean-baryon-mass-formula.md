@@ -97,7 +97,7 @@ from CAL-1 + CAL-2 + $\mathrm{Vol}(\mathcal{B}_3)$ alone (no fit to
 proton or neutron individually) is the first non-trivial substrate
 test of the common-scale hypothesis.
 
-## Why this is a conjecture, not a fit
+## Conjectural status versus a fit
 
 The formula is testable without ever solving for
 $\lambda_{\mathrm{scale}}$ from $m_p$ or $m_n$: under the common-scale

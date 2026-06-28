@@ -59,7 +59,7 @@ $$
    energy pipeline (cf.
    [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)).*
 
-## Why this is the structural form of Kashaev
+## Relation to the structural form of Kashaev
 
 The conjecture is the **QOU-native, partial-product** form of the
 Kashaev–Murakami–Murakami theorem

@@ -57,7 +57,7 @@ form that interpolates them):*
    CODATA-calibrated $E_0^{(\text{cal})} \approx 4.155$ MeV instead
    of overshooting it.*
 
-## Why the naive geometric recursion fails
+## Failure of the naive geometric recursion
 
 A naive bridging would assert $\alpha_k = \hbar_q^{2(k-1)} \cdot \alpha_{k-1}$
 for $k \geq 1$, so that $\sum_k \alpha_k \cdot \hbar_q^{2k} = \alpha_0 / (1 - \hbar_q^2)$.
@@ -79,7 +79,7 @@ but the actual value is $z^2 \neq 0$. So the geometric closure
 (a) is **not** the naive substitution; if it holds, it does so as
 a non-obvious resummation identity over the $\alpha_k$ family.
 
-## Why the bounded Li_2^q candidate is plausible
+## Plausibility of the bounded Li_2^q candidate
 
 The mass-endomorphism tower
 ([`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)

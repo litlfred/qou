@@ -349,7 +349,7 @@ volume-match search that bypasses Step 1a entirely — is forbidden by
 this proposition: it reverse-engineers the knot from the AME target
 rather than deriving it from the categorical pipeline.
 
-## Where the gaps actually are
+## Location of the remaining gaps
 
 After the pre-Archimedean / post-Archimedean simplification (Yekutieli
 at finite slices replaces the geometric leg with finite-categorical
