@@ -38,7 +38,16 @@ del _sys, _Path, _bridge
 
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
 
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
+# m_e: full 11-sig-fig CODATA-2022 value 0.51099895069(15) MeV.
+# Canonical source of truth: computations/codata_2022_source.M_E_MEV
+# (codata_constants.py imports it from there as an mpf). This
+# float-registry mirrors the value as a literal — rather than
+# importing from codata_2022_source — because ~40 of its importers
+# run mpmath-free and the canonical source pulls in mpmath. Prior
+# literal 0.51099895000 was truncated by 3 sig figs (the ...069 tail
+# dropped); corrected per bean ct80 (1.35e-9 rel, single-source
+# hygiene, physically negligible).
+M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV
 M_E_MEV_ERR = 0.00000000015
 
 # Energy scale for Q-values: κ = m_e / 3
