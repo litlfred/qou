@@ -63,7 +63,7 @@ invariants. The birthday refinement is *not* a categorification
 similarly: both refinements expose previously hidden tableau-level
 data.
 
-## What would prove or disprove this
+## Criteria for proof or disproof
 
 - **Proof**: produce two knots with identical Jones polynomials
   and distinct birthday refinements, computed via Hoefsmit's

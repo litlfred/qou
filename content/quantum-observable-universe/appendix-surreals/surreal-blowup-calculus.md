@@ -83,7 +83,7 @@ standard-part collapses it to $\mathbb{R}$. This gives a
 where each subtraction reduces the birthday by a controlled
 ordinal amount.
 
-## Why this matters for QOU
+## Significance for QOU
 
 The QOU mass formula has, by design, no divergences — Hoefsmit
 seminormal form and the Markov trace produce finite rational

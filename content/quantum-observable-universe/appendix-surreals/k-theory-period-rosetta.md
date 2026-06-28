@@ -39,7 +39,7 @@ $K_*^{\mathrm{ind}}$ denotes the *indecomposable* part of higher
 K-theory, modulo the image of products of lower K-groups —
 equivalently, the part that detects "new" periods.)
 
-### Why the dictionary is exact (heuristic)
+### Exactness of the dictionary (heuristic)
 
 The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
 asserts $\tau_{\mathrm{arch}}\bigl( G^{(n)}(\mathcal{H}_q) \bigr)
@@ -72,7 +72,7 @@ relevant K-group is $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K))
 | $\mathrm{Cl}_3(2\pi/5)$, $S_3(2\pi/5)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$ | open ([`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)) |
 | $\zeta(3)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}) \otimes \mathbb{Q}$ | Borel regulator on $\mathbb{Q}$ |
 
-### What this adds to the paper
+### Contribution to the paper
 
 K-theory was **not previously used** in the paper as a working
 language. The transcendental-accounting ledger
@@ -92,7 +92,7 @@ should freely use whichever is cleaner in context:
  external results (Borel's regulator theorem, Beilinson's conjecture
  on $L$-values, Bloch's elliptic dilogarithm program).
 
-### Significance for B1's discharge — what K-theory actually buys
+### Significance for B1's discharge — the K-theoretic contribution
 
 The keystone's discharge targets, restated in K-theoretic language:
 

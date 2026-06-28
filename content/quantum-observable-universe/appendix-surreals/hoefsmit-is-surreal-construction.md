@@ -101,7 +101,7 @@ The Lean stub axiomatises the bijection
 ([sign sequence functor](#def:sign-sequence-of-braid)) pending
 these prerequisites.
 
-## Consequences
+## Corollaries
 
 This identification has several immediate consequences:
 

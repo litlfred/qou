@@ -53,7 +53,7 @@ For each torus-knot row $K = T(p, q)$ in B1:
 Combining (1)–(3): B1 at every torus-knot row is **theorem-level
 and degenerate** — no genuine trilog content arises here.
 
-### Why torus-knot rows are *less* informative than figure-8
+### Reduced informativeness of torus-knot rows relative to figure-8
 
 The figure-8 row of B1 ([`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem))
 realises a **non-trivial** depth-2 period $\mathrm{Vol}(4_1) =

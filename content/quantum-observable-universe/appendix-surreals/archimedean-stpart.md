@@ -75,7 +75,7 @@ This conjecture is the **categorical** counterpart of
 The two conjectures are likely equivalent modulo functoriality,
 but a precise reduction is open.
 
-## What this would unlock
+## Consequences of the lift
 
 If true, the appendix's $\varepsilon$-relaxation is a *strict*
 generalisation of the main paper:

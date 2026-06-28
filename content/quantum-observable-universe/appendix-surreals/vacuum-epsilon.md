@@ -29,7 +29,7 @@ QOU satisfies this relaxation with some choice of $\varepsilon
 > 0$, and the standard-part recovers the strict vacuum:
 $\mathrm{st}(\varepsilon) = 0$.
 
-## Consequences
+## Corollaries
 
 If the conjecture holds, several existing results lift:
 
@@ -60,7 +60,7 @@ If the conjecture holds, several existing results lift:
  archimedean predictions unchanged, while a surreal-infinite
  multiplier returns a finite force.
 
-## Why this matters
+## Significance
 
 Two reasons:
 

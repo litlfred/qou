@@ -30,7 +30,7 @@ smallness), every positive integer multiple $n \cdot \varepsilon^4$ is
 still bounded above by any standard real.  In particular
 $\varepsilon^4 < \delta^2$.  $\square$
 
-**What the lemma says.**
+**Interpretation of the lemma.**
 The "cost" of a standard-scale deviation $\delta$ from the classical
 configuration — whether a zero off the critical line, a singular spike
 in the velocity gradient, or a non-trivial Collatz orbit — is

@@ -66,7 +66,7 @@ large $q$:
 | $(3^2, 8^1)$ | $9 - 8 = 1$ | $q + 2q^2 + q^3 - q^5 - q^6 - q^7$ | No |
 | $(4^2, 15^1)$ | $16 - 15 = 1$ | negative high-degree terms | No |
 
-### Why $(2, 3)$ is unique
+### Uniqueness of $(2, 3)$
 
 Collatz $(2^2, 3^1)$ is the **unique** critical case
 where the $q$-gap is a monomial.  The identity
@@ -86,7 +86,7 @@ linear term.  For $[a]_q^2 - [a^2-1]_q$ with $a \geq 3$,
 the gap polynomial has degree $2(a-1)$ vs $a^2 - 2$, and
 the high-degree terms of $[a^2-1]_q$ overwhelm $[a]_q^2$.
 
-### What is proved and what remains
+### Proved results and remaining conjectures
 
 **Proved (in Lean):**
 - $[3]_q = q[2]_q + 1$ — Skein divisibility (`skein_divisibility`)
@@ -96,7 +96,7 @@ the high-degree terms of $[a^2-1]_q$ overwhelm $[a]_q^2$.
 - $(3, 4)$ gap positive for $q > 0$ — trivial case (`qInt_gap_3_4`)
 - $(3, 8)$ gap fails for $q > 2$ — critical failure (`qInt_gap_3_8_fails`)
 
-**What remains conjectural:**
+**Remaining conjectures:**
 the orbit structure provides the two halvings.
 The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ — how
 deeply the result of each odd step is divisible by $[2]_q$

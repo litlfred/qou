@@ -76,7 +76,7 @@ Conjecture predicts. So B1 at this row is fully discharged:
 
 $\square$
 
-### What this proves
+### Content of the result
 
 **B1 keystone at the figure-8 row over $\mathbb{Q}(\zeta_6)$ is a
 theorem**:

@@ -64,7 +64,7 @@ Informally: $q(x) = 1 + (q_0 - 1) + \delta(x)$ where $\delta(x)$
 is a strictly-infinitesimal local fluctuation with zero mean and
 birthday-ordered magnitude distribution.
 
-## Why this matters
+## Significance
 
 1. **Halo structure**: every classical real point of $X$ is
  surrounded by a *halo* (monad) of infinitesimally-fluctuated

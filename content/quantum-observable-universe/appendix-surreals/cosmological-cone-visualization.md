@@ -27,7 +27,7 @@ heat death, i.e.\ at $q \to \infty$.  The direction is recorded
 in [Big Bang / heat death](#conj:bigbang-heatdeath); we restate
 it here because the two endpoints are easy to swap.
 
-**What this is and isn't.**  The cone is a schematic mnemonic for
+**Scope and limitations.**  The cone is a schematic mnemonic for
 the $q$-parameter family of QOUs.  It does *not*
 
 - introduce a metric on the parameter axis (no claim that

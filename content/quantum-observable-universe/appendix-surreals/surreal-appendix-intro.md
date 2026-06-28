@@ -15,7 +15,7 @@ either **remarks** interpreting existing blocks, **conjectures**
 pending further development, or **definitions** of new auxiliary
 structures.
 
-## Why consider surreals?
+## Motivation for the surreal lift
 
 Four distinct uses motivate the lift:
 
@@ -52,7 +52,7 @@ Four distinct uses motivate the lift:
    standard-parts; the surreal theory is strictly stronger
    (carries information about the infinitesimal deviation).
 
-## How lossy is the lift, really?
+## Lossiness of the lift
 
 A first-pass survey suggests that replacing $\mathbb{R}$ with
 $\mathbf{No}$ must cost us Lebesgue measure, Hilbert-space
