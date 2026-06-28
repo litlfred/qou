@@ -41,9 +41,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-# CODATA 2022 (matches codata_2022_source.M_E_MEV; m_e cancels in the
-# deuteron-pinned B_pred, so this only sets the reported value + ρ_0).
-M_E_MEV = 0.51099895069
+# CODATA 2022 — single source of truth is codata_2022_source.M_E_MEV
+# (= 0.51099895069). float()-cast on import: m_e cancels in the
+# deuteron-pinned B_pred, and the witness is json.dumps'd downstream
+# (an mpf would not serialize). codata_2022_source lives alongside this
+# script in computations/ (on sys.path[0]); it is pure literals — no
+# witness-file loading — so the import is cheap and dependency-free.
+from codata_2022_source import M_E_MEV as _M_E_MEV  # noqa: E402
+M_E_MEV = float(_M_E_MEV)
 
 # Experimental binding energies, AME 2020 / NIST (MeV)
 B_EXP_MEV: dict[str, float] = {
