@@ -17,5 +17,3 @@ Since the [well-posedness theorem](#thm:q-ns-wellposedness) shows
 solutions are global for $q > 1$, the integral is always finite
 when $q > 1$.  The criterion becomes non-trivial only in the
 $q \to 1$ limit.
-
-The $q$-vorticity estimate is a direct algebraic translation of the classical Beale-Kato-Majda criterion; here the bound functions as a diagnostic limit check in the observable universe. Because the deformed Navier-Stokes system is unconditionally globally regular for $q > 1$, the integral is finite in the bulk, so the BKM condition shifts from a PDE survival test to an obstruction indicator at the $q \to 1$ substrate boundary.

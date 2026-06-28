@@ -156,6 +156,7 @@ export default chapter({
         "p5-counterexample",
         "q-aubin-lions",
         "q-bkm-criterion",
+        "q-bkm-criterion-interpretation",
         "vorticity-lower-bound",
         "levi-degeneracy-conjecture",
         "townsend-biot-savart-strain",
