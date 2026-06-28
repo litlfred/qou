@@ -53,16 +53,6 @@ for the analytic identity stated above; the Lean theorem
 `HabiroResidueSumEquivalence` records the agreement as an axiom-level
 class.
 
-**Why this matters.** The polynomial-ring path is **constructive** (the
-Habiro coefficients $a_m(u)$ are computed by sequential cyclotomic
-division, see [`cor:habiro-expansion-atomic`](#cor:habiro-expansion-atomic))
-while the residue path is **analytic** (it requires the quantum
-dilogarithm $\Phi_q$ and complex-analytic residues at primitive roots
-of unity).  The equivalence shows the two viewpoints are
-two computational handles on the **same underlying object** in the
-Habiro ring, and lets later proofs use whichever is more tractable
-without losing rigour.
-
 **Cross-validation infrastructure.** The check is run by
 `markov_pipeline_cross_validator.py`; output witness
 `markov-pipeline-cross-validation.witness.json` records:

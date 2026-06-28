@@ -79,6 +79,7 @@ export default chapter({
         "frobenius-s-classification-table2-data",
         "frobenius-s-classification-table1-data",
         "commutative-chirality-vanishes",
+        "commutative-chirality-vanishes-interpretation",
         "derived-mass-formula-light-isotopes",
         "derived-mass-formula-light-isotopes-table1-data",
         "derived-mass-formula-light-isotopes-table2-data",
@@ -175,6 +176,7 @@ export default chapter({
       blocks: [
         "intro-hoefsmit-convergence-atomic",
         "operator-selection-lp",
+        "operator-selection-lp-interpretation",
         "sdp-degeneracy-at-metallic-coincidence",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
@@ -289,6 +291,7 @@ export default chapter({
         "q-beta-over-e0-classical-vanishing",
         "qbeta-c8-c10-silver-rationals",
         "q-beta-c-k-recursion-from-habiro-q-difference",
+        "q-beta-c-k-recursion-from-habiro-q-difference-interpretation",
         "qbeta-c4-from-c3-c8-product-identity",
         "qbeta-z-recursion-to-ck-recursion-bridge",
         "q-beta-c-2-eq-neg-one-structural",
@@ -340,6 +343,7 @@ export default chapter({
         "garside-as-compound-flow",
         "garside-flow-explicit-closed-form",
         "ramified-disc-fusion",
+        "ramified-disc-fusion-interpretation",
         "reeb-bundle-complement-equals-volume",
         "torus-knot-zero-volume-via-reeb",
         "hyperbolic-knot-positive-volume-via-reeb",
@@ -401,6 +405,7 @@ export default chapter({
         "quantum-dilogarithm-stratified-proof",
         "q-pochhammer-partial-product",
         "phi-q-categorical-truncation",
+        "phi-q-categorical-truncation-interpretation",
         "phi-q-categorical-truncation-proof",
         // Re-homed from the geometric-bridges collection: the pentagon
         // identities belong with the quantum dilogarithm.
@@ -440,6 +445,7 @@ export default chapter({
       blocks: [
         "mass-bridge-orphan-reconnect-intro",
         "categorical-linking-operation",
+        "categorical-linking-operation-interpretation",
         "crossed-module-euler-characteristic",
         "geom-bridge-status",
         "tau-all-orders-bridge",
@@ -489,6 +495,7 @@ export default chapter({
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",
         "pieri-photon-shift",
+        "pieri-photon-shift-interpretation",
         "phi-q-tower-jsj-bridge",
         "dilogarithm-archimedean-limit",
         "phi-q-wkb-greens-function",
@@ -573,7 +580,9 @@ export default chapter({
         "term6-binding-density-table2-data",
         "term6-binding-density-table1-data",
         "full-pole-structure-mass-trace",
+        "full-pole-structure-mass-trace-interpretation",
         "habiro-residue-sum-equivalence",
+        "habiro-residue-sum-equivalence-interpretation",
         // Re-homed orphan: the Borromean h^4 = -3/4 categorical derivation
         // (R-matrix character × Markov normalisation via Schur–Weyl)
         // consumes the Habiro residue sum + the H_3 Markov–Wenzl weights.
@@ -635,9 +644,12 @@ export default chapter({
       blocks: [
         "intro-lp-dual-jucys-murphy",
         "jucys-murphy-central-elements-qou",
+        "jucys-murphy-central-elements-qou-interpretation",
         "spin-involution-lp-dual-invariance",
+        "spin-involution-lp-dual-invariance-interpretation",
         "lp-dual-scaling-conjecture",
         "wigner-2-coefficient",
+        "wigner-2-coefficient-interpretation",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
         "mass-endomorphism-jet-tower-table1-data",
@@ -652,6 +664,7 @@ export default chapter({
         "jet-prefix-gb-filtration",
         "chirality-from-frobenius-self-pairing",
         "curvature-rank-gb-stratification",
+        "curvature-rank-gb-stratification-interpretation",
         "curvature-rank-gb-stratification-table-data",
         // Algebraic shortcut of KS ind-constructibility via the Diamond Lemma.
         "ks-finiteness-via-diamond-lemma",
@@ -691,6 +704,7 @@ export default chapter({
         "alpha-em-categorical-trace",
         "plancherel-term-7-formulation",
         "plancherel-weight-boundedness",
+        "plancherel-weight-boundedness-interpretation",
         "plancherel-weight-boundedness-table-data",
         "unified-curvature-rank-mass-formula",
         "unified-curvature-rank-mass-formula-table-data",
@@ -881,6 +895,7 @@ export default chapter({
         "chirality-dual-space-derivation-table2-data",
         "chirality-dual-space-derivation-table1-data",
         "frobenius-antipode-unifies-chirality-and-tower",
+        "frobenius-antipode-unifies-chirality-and-tower-interpretation",
       ],
     }),
 
@@ -935,6 +950,7 @@ export default chapter({
         "categorical-higgs-mechanism",
         "interface-knot-markov-z",
         "rho-k-h3a-refinement",
+        "rho-k-h3a-refinement-interpretation",
         "s4-s3-half-symmetric-projection",
         "weak-symmetric-normalization",
         "z-eq-n-rho-correction",

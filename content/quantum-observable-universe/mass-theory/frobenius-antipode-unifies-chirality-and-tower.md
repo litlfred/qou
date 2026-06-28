@@ -94,23 +94,6 @@ Frobenius-antipode invariants of a $2 \times 2$ chain matrix.*
 **zero**.  Approximation $\alpha = G/3 = 0.305322$ (where
 $G$ is the Catalan constant) gives $\mathrm{err}_n = 100\;\mathrm{ppm}$.*
 
-**Geometric interpretation of $G/3$.**
-*Catalan's constant $G$ has the established interpretation
-$8G = \mathrm{Vol}(B_3)$ — the hyperbolic volume of the
-Borromean link
-([algebraic quantum volume](#def:algebraic-quantum-volume),
-[Kashaev volume density](#rem:kashaev-volume-density)).  Therefore*
-
-$$
-  \frac{G}{3} \;=\; \frac{\mathrm{Vol}(B_3)}{24} \;=\; \frac{\mathrm{Vol}(B_3)}{|S_4|},
-$$
-
-*the Borromean volume divided by the order of the symmetric group
-$S_4$ (4 nucleons).  Suggestive but not yet a derivation: the
-factor $24 = |S_4|$ would correspond to averaging over 4-nucleon
-permutations.  The remaining $0.16\%$ gap between $G/3$ and
-$\alpha^*$ is unexplained.*
-
 **Unified structural picture.**
 *The Frobenius antipode $S$ is the categorical primitive
 underlying:*

@@ -45,16 +45,6 @@ $1$ in $\gamma$ contributes $V_\lambda$ unchanged. By
 $\mathbb{C}$-linearity (Wedderburn--Artin), the support of $\gamma \beta_m$
 is therefore contained in the union claimed.
 
-**Interpretation in the non-commutative Fourier picture.**
-Under the spectral identification of
-[Wedderburn--Artin = inverse non-commutative Fourier transform](#prop:wedderburn-as-noncomm-fourier),
-$\gamma$ acts on the spectrum
-$\widehat{H_n(q)} = \{\lambda \vdash n\}$ as a finite-difference
-*box-shift* — the non-commutative analogue of a single-step shift on
-$\mathbb{Z}$ in the commutative Fourier picture. Multiplying by
-$\gamma$ raises or lowers the Young-diagram support by one box, never
-more.
-
 **Scope.**
 The proposition gives a *containment* of supports, not equality. The
 actual coefficients are dictated by the $\phi_i$ and the Hecke-algebra
