@@ -94,7 +94,32 @@ theorem dimAitkenIdentity (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos 
     numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by
   -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 (Aitken/Frobenius
   -- determinant for #SYT; §I.1, Ex. 1 and §I.5; HLF as Vandermonde / ∏β_i!).  Residual general-n gap.
+  --
+  -- The remaining obligation is exactly the SYT corner-removal *branching recursion*
+  -- `numSYTenum λ = Σ_{k removable corner} numSYTenum (λ⁻ᵏ)` for the brute-force enumerator, paired
+  -- with the β-number Lagrange identity for the closed form (a pure-algebraic strong induction on
+  -- `sz`).  The pinned Mathlib supplies neither the branching bijection nor any `#SYT` cardinality
+  -- lemma (no `Combinatorics.RSK`, no Specht/Frobenius determinant), so this is a from-scratch
+  -- formalization, deliberately not rushed.  The *exact* statement is `decide`-verified sorry-free for
+  -- every shape with `sz ≤ 6` immediately below (`dimAitkenIdentity_le4`/`_5`/`_6`): finite evidence
+  -- for the general identity, not a substitute for it.
   sorry
+
+/-- **Aitken identity, `decide`-verified for every shape of `sz ≤ 4` (sorry-free).**  The exact
+`dimAitkenIdentity` equation on a closed shape is a decidable `ℕ` computation; this discharges it for
+all `sz ≤ 4` directly from the brute-force `numSYTenum`. -/
+theorem dimAitkenIdentity_le4 :
+    ∀ l ∈ shapesLE4, numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by decide
+
+/-- **Aitken identity, `decide`-verified for every shape of `sz = 5` (sorry-free).** -/
+theorem dimAitkenIdentity_5 :
+    ∀ l ∈ shapes5, numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by decide
+
+set_option maxRecDepth 20000 in
+/-- **Aitken identity, `decide`-verified for every shape of `sz = 6` (sorry-free).**  Needs
+`maxRecDepth` raised for the `720`-deep structural permutation recursion in `numSYTenum`. -/
+theorem dimAitkenIdentity_6 :
+    ∀ l ∈ shapes6, numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by decide
 
 /-- **Divisor-free HLF, conditional on the Aitken identity (ii) (sorry-free given (ii)).**
 `numSYTenum l · prodHooks l = (sz l)!`.  Substitutes (i) `betaFactProd = prodHooks · betaProdGap` into
