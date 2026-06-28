@@ -97,6 +97,23 @@ theorem encode_injective : Function.Injective (encode : StandardYoungTableau μ 
 instance instFinite : Finite (StandardYoungTableau μ) :=
   Finite.of_injective _ encode_injective
 
+/-- **Decidable equality** (brick 1 of computability).  Two standard tableaux are equal iff their
+entries agree on the (finite) cells of `μ` — off-cell entries are both `0` (`zeros`), so cell
+agreement forces full `entry` agreement, hence `SemistandardYoungTableau.ext` gives `toSsyt`
+equality and the `bijOn` proof field is irrelevant.  The cell check is a `Finset.decidableBAll`
+over `μ.cells` of `ℕ`-equalities, so the whole comparison is decidable. -/
+instance instDecidableEq : DecidableEq (StandardYoungTableau μ) := fun S T =>
+  decidable_of_iff (∀ c ∈ μ.cells, S.entry c.1 c.2 = T.entry c.1 c.2)
+    ⟨fun h => by
+        have hall : ∀ i j, S.toSsyt.entry i j = T.toSsyt.entry i j := by
+          intro i j
+          by_cases hij : (i, j) ∈ μ
+          · exact h (i, j) ((YoungDiagram.mem_cells (i, j)).mpr hij)
+          · exact (S.toSsyt.zeros hij).trans (T.toSsyt.zeros hij).symm
+        have hssyt : S.toSsyt = T.toSsyt := SemistandardYoungTableau.ext hall
+        cases S; cases T; cases hssyt; rfl,
+      fun h _ _ => by rw [h]⟩
+
 end StandardYoungTableau
 
 /-- **`#SYT(μ)`** — the number of standard Young tableaux of shape `μ`, as `Nat.card` (total; no
